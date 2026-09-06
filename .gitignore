@@ -5,6 +5,7 @@ node_modules/
 
 # Next.js & Turbopack
 .next/
+.next-e2e/
 .turbo/
 out/
 

@@ -11,16 +11,14 @@ async function solve(page: Page, n: number) {
   for (let i = 0; i < n; i++) {
     const title = await page.locator('.question h2').innerText();
     const q = seed.find((q) => q.question === title)!;
-    const choice =
-      i === 0
-        ? q.choices.find((c) => !q.answer.includes(c.id))!
-        : q.choices.find((c) => q.answer.includes(c.id))!;
-    await page
-      .getByRole('radio')
-      .nth(q.choices.findIndex((c) => c.id === choice.id))
-      .check();
+    const ids = i === 0 ? [q.choices.find((c) => !q.answer.includes(c.id))!.id] : q.answer;
+    for (const id of ids)
+      await page
+        .locator('.question fieldset input')
+        .nth(q.choices.findIndex((c) => c.id === id))
+        .check();
     await page.getByRole('button', { name: '回答を確認する' }).click();
-    await expect(page.getByRole('heading', { name: '選択肢ごとの解説' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
     await page.getByRole('button', { name: i === n - 1 ? '演習を終了する' : '次の問題へ' }).click();
   }
 }
@@ -97,11 +95,13 @@ test('50-question practice remains immediate-feedback and small bank fallback is
   await page.getByRole('button', { name: '50問', exact: true }).click();
   await expect(page.getByText(/公式試験の問題数が50問固定/)).toBeVisible();
   await page.getByRole('button', { name: '演習を開始する' }).click();
-  await expect(page.getByRole('status')).toContainText('指定50問から12問');
-  await expect(page.locator('.question .tag').first()).toContainText('1 / 12');
-  await page.getByRole('radio').first().check();
+  if (seed.length < 50) await expect(page.getByRole('status')).toContainText('指定50問から');
+  await expect(page.locator('.question .tag').first()).toContainText(
+    `1 / ${Math.min(50, seed.length)}`,
+  );
+  await page.locator('.question fieldset input').first().check();
   await page.getByRole('button', { name: '回答を確認する' }).click();
-  await expect(page.getByRole('heading', { name: '選択肢ごとの解説' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
 });
 test('default mock uses verified, defers explanation and adjusts actual timer', async ({
   page,
@@ -113,11 +113,13 @@ test('default mock uses verified, defers explanation and adjusts actual timer', 
     'true',
   );
   await page.getByRole('button', { name: '模試を開始する', exact: true }).click();
-  await expect(page.getByRole('status')).toContainText('指定50問から12問');
-  await expect(page.locator('.timer')).toContainText('18 分');
+  if (seed.length < 50) await expect(page.getByRole('status')).toContainText('指定50問から');
+  await expect(page.locator('.timer')).toContainText(
+    `${Math.ceil(Math.min(50, seed.length) * 1.5)} 分`,
+  );
   await expect(page.locator('.question-meta')).toContainText('Verified');
   await expect(page.getByRole('button', { name: '回答を確認する' })).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: '選択肢ごとの解説' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toHaveCount(0);
 });
 test('practice setup has no overflow and keyboard focus remains visible', async ({ page }) => {
   await page.goto('/');

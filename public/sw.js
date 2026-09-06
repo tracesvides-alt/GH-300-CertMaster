@@ -1,10 +1,33 @@
-// Version must change whenever the bundled content or shell changes.
-const CACHE = 'certmaster-2026-08-07-v2';
+// Cache the HTML and its required bundles together: never save a broken app shell.
+const CACHE = 'certmaster-2026-08-07-v3';
+async function cacheShell(response) {
+  if (!response.ok) throw new Error('App shell unavailable');
+  const html = await response.clone().text();
+  const urls = [
+    ...new Set(
+      [...html.matchAll(/(?:src|href)="([^\"]+)"/g)]
+        .map((match) => match[1].replaceAll('&amp;', '&'))
+        .filter((url) => url.startsWith('/_next/static/') && /\.(?:js|css)(?:\?|$)/.test(url)),
+    ),
+  ];
+  if (!urls.length) throw new Error('App bundles missing');
+  const responses = await Promise.all(
+    urls.map(async (url) => {
+      const asset = await fetch(url);
+      if (!asset.ok) throw new Error('App bundle unavailable');
+      return [url, asset];
+    }),
+  );
+  const cache = await caches.open(CACHE);
+  for (const [url, asset] of responses) await cache.put(url, asset);
+  await cache.put('/', response.clone());
+  return response;
+}
 self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
-      const cache = await caches.open(CACHE);
-      await cache.addAll(['/', '/icon.svg', '/manifest.webmanifest']);
+      await cacheShell(await fetch('/', { cache: 'reload' }));
+      await (await caches.open(CACHE)).addAll(['/icon.svg', '/manifest.webmanifest']);
     })(),
   );
 });
@@ -28,15 +51,19 @@ self.addEventListener('fetch', (event) => {
     return;
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request)
-        .then(async (response) => {
-          if (response.ok) {
-            const cache = await caches.open(CACHE);
-            await cache.put('/', response.clone());
-          }
-          return response;
-        })
-        .catch(() => caches.match('/')),
+      (async () => {
+        try {
+          return await cacheShell(await fetch(event.request));
+        } catch {
+          return (
+            (await (await caches.open(CACHE)).match('/')) ??
+            new Response('オンラインでページを再読み込みしてください。', {
+              status: 503,
+              headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+            })
+          );
+        }
+      })(),
     );
     return;
   }
@@ -46,16 +73,13 @@ self.addEventListener('fetch', (event) => {
   ) {
     event.respondWith(
       (async () => {
-        const cached = await caches.match(event.request);
+        const cache = await caches.open(CACHE),
+          cached = await cache.match(event.request);
         if (cached) return cached;
         const response = await fetch(event.request);
-        if (response.ok) {
-          const cache = await caches.open(CACHE);
-          await cache.put(event.request, response.clone());
-        }
+        if (response.ok) await cache.put(event.request, response.clone());
         return response;
       })(),
     );
   }
 });
-

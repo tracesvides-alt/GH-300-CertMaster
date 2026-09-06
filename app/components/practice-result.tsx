@@ -40,6 +40,18 @@ export default function PracticeResult({
         {run.options.mode} · 指定{run.options.count}問 / 実施{result.total}問
         {run.options.count === 50 ? ' · 本番想定のPractice（即時解説）' : ''}
       </p>
+      <h3>難易度別結果 (Difficulty Analytics)</h3>
+      <div className="difficulty-results-grid">
+        {result.byDifficulty.map((d) => (
+          <div key={d.difficulty} className={`diff-card diff-${d.difficulty}`}>
+            <span className="diff-label">{d.label}</span>
+            <strong className="diff-score">
+              {d.correct} / {d.total}
+            </strong>
+            <span className="diff-pct">{Math.round((d.correct / d.total) * 100)}%</span>
+          </div>
+        ))}
+      </div>
       <h3>Domain別結果</h3>
       {result.byDomain.map((d) => (
         <div key={d.id} className="result-row">

@@ -27,6 +27,35 @@ export function practiceResult(run: PracticeRun) {
         correct: run.answers.filter((a) => a.domainId === d.id && a.correct).length,
       }))
       .filter((d) => d.total),
+    byDifficulty: [
+      {
+        difficulty: 'beginner' as const,
+        label: 'Foundation（基礎）',
+        total: run.questions.filter((q) => q.difficulty === 'beginner').length,
+        correct: run.answers.filter((a) => {
+          const q = run.questions.find((x) => x.id === a.questionId);
+          return q?.difficulty === 'beginner' && a.correct;
+        }).length,
+      },
+      {
+        difficulty: 'intermediate' as const,
+        label: 'Applied（標準応用）',
+        total: run.questions.filter((q) => q.difficulty === 'intermediate').length,
+        correct: run.answers.filter((a) => {
+          const q = run.questions.find((x) => x.id === a.questionId);
+          return q?.difficulty === 'intermediate' && a.correct;
+        }).length,
+      },
+      {
+        difficulty: 'advanced' as const,
+        label: 'Exam（本番レベル）',
+        total: run.questions.filter((q) => q.difficulty === 'advanced').length,
+        correct: run.answers.filter((a) => {
+          const q = run.questions.find((x) => x.id === a.questionId);
+          return q?.difficulty === 'advanced' && a.correct;
+        }).length,
+      },
+    ].filter((d) => d.total > 0),
     wrongObjectiveIds,
     recommendedLessons: lessons.filter((l) =>
       l.relatedObjectives.some((id) => wrongObjectiveIds.includes(id)),

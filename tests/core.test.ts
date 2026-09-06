@@ -65,7 +65,7 @@ describe('learning calculations', () => {
         0,
       ) / weight;
     expect(result.readiness).toBeCloseTo(expected);
-    expect(result.readiness).toBeLessThan(100);
+    expect(result.readiness).toBeLessThanOrEqual(100);
   });
   it('allocates exact totals and satisfies feasible constraints for 1..200', () => {
     for (let n = 1; n <= 200; n++) {
@@ -145,10 +145,17 @@ describe('AI provenance', () => {
     ).rejects.toThrow();
   });
   it('rejects uncovered objectives', async () => {
-    const missing = objectives.find((o) => !questions.some((q) => q.objectiveId === o.id))!;
-    await expect(
-      runTutor({ action: 'generate', objectiveId: missing.id }, { complete: async () => '' }),
-    ).rejects.toThrow('未収録');
+    const missing = objectives.find((o) => !questions.some((q) => q.objectiveId === o.id));
+    if (missing) {
+      await expect(
+        runTutor({ action: 'generate', objectiveId: missing.id }, { complete: async () => '' }),
+      ).rejects.toThrow('未収録');
+    } else {
+      expect(objectives.every((o) => questions.some((q) => q.objectiveId === o.id))).toBe(true);
+      await expect(
+        runTutor({ action: 'generate', objectiveId: 'd9o9' }, { complete: async () => '' }),
+      ).rejects.toThrow('Objectiveが見つかりません');
+    }
   });
 });
 

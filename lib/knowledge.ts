@@ -172,6 +172,27 @@ export const officialSourceSchema = z.object({
 export type OfficialSource = z.infer<typeof officialSourceSchema>;
 
 // ────────────────────────────────────────────
+// ScenarioSet (Multi-question scenario context)
+// ────────────────────────────────────────────
+export const cognitiveLevelEnum = z.enum(['recall', 'understand', 'apply', 'analyze']);
+export type CognitiveLevel = z.infer<typeof cognitiveLevelEnum>;
+
+export const scenarioSetSchema = z.object({
+  id: nonempty,
+  title: nonempty,
+  scenario: nonempty,
+  domainIds: z.array(nonempty).min(1),
+  objectiveIds: z.array(nonempty).min(1),
+  difficulty: difficulty,
+  questionIds: z.array(nonempty).min(2),
+  sourceIds: z.array(nonempty).min(1),
+  syllabusVersion: syllabusVersionLiteral,
+  lastVerifiedAt: nonempty,
+  status: contentStatus.default('verified'),
+});
+export type ScenarioSet = z.infer<typeof scenarioSetSchema>;
+
+// ────────────────────────────────────────────
 // Knowledge Base container
 // ────────────────────────────────────────────
 export type KnowledgeBase = {
@@ -181,6 +202,7 @@ export type KnowledgeBase = {
   glossaryTerms: GlossaryTerm[];
   comparisonGuides: ComparisonGuide[];
   sources: OfficialSource[];
+  scenarioSets?: ScenarioSet[];
   questionIds: string[];
   version: string;
 };

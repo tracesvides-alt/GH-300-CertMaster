@@ -1,5 +1,5 @@
 'use client';
-import { ArrowRight, Shuffle, Target, Scale } from 'lucide-react';
+import { ArrowRight, Shuffle, Target, Scale, Layers, BookOpen, Flame } from 'lucide-react';
 import { domains, objectives } from '@/lib/content';
 import { questionCounts, type SelectionOptions } from '@/lib/selection';
 export function CountPicker({
@@ -91,6 +91,46 @@ export default function PracticeSetup({
               type="radio"
               checked={options.mode === id}
               onChange={() => patch({ mode: id as SelectionOptions['mode'] })}
+            />
+            <Icon size={20} />
+            <span>
+              <strong>{title}</strong>
+              <small>{text}</small>
+            </span>
+          </label>
+        ))}
+      </fieldset>
+      <fieldset className="selection-modes">
+        <legend>難易度バランス</legend>
+        {[
+          {
+            id: 'balanced',
+            title: 'バランス（標準）',
+            text: '基礎20% · 応用40% · 本番40%。知識定着と実戦力を両立。',
+            icon: Layers,
+          },
+          {
+            id: 'foundation',
+            title: '基礎中心',
+            text: '基礎60% · 応用35% · 本番5%。教材学習直後の用語・概念確認。',
+            icon: BookOpen,
+          },
+          {
+            id: 'exam',
+            title: '本番レベル',
+            text: '本番シナリオ70〜80% · 応用20〜30%。試験直前の高負荷演習。',
+            icon: Flame,
+          },
+        ].map(({ id, title, text, icon: Icon }) => (
+          <label
+            className={`selection-mode ${options.difficultyMode === id ? 'chosen' : ''}`}
+            key={id}
+          >
+            <input
+              name="difficulty-mode"
+              type="radio"
+              checked={options.difficultyMode === id}
+              onChange={() => patch({ difficultyMode: id as SelectionOptions['difficultyMode'] })}
             />
             <Icon size={20} />
             <span>

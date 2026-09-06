@@ -15,6 +15,7 @@ export const selectionOptionsSchema = z
     domainId: z.string().default('all'),
     objectiveId: z.string().default('all'),
     scope: z.enum(['all', 'incorrect', 'bookmarked']).default('all'),
+    difficultyMode: z.enum(['balanced', 'foundation', 'exam']).default('balanced'),
   })
   .refine(
     (o) => !(o.verifiedOnly && o.includeAI),
@@ -169,15 +170,23 @@ export function calculateQuestionWeights(
       bank.filter((q) => q.objectiveId === id).length,
     ]),
   );
+  const difficultyMultipliers = {
+    balanced: { beginner: 1.0, intermediate: 1.0, advanced: 1.0 },
+    foundation: { beginner: 3.5, intermediate: 1.0, advanced: 0.15 },
+    exam: { beginner: 0.05, intermediate: 0.8, advanced: 2.5 },
+  }[options.difficultyMode ?? 'balanced'];
+
   return new Map(
     bank.map((q) => {
       const h = history[q.id],
         count = h?.answerCount ?? 0;
       const base = q.status === 'verified' ? 1 : 0.25;
       const repetition = 1 / Math.sqrt(1 + count * 0.15);
+      const diffWeight = difficultyMultipliers[q.difficulty] ?? 1.0;
       return [
         q.id,
         (base *
+          diffWeight *
           applyUnansweredBonus(count, options.preferUnanswered) *
           applyRecentQuestionPenalty(h?.lastAnsweredAt, now, options.avoidRecent) *
           repetition *
@@ -420,7 +429,13 @@ export function selectMockQuestions(
 ) {
   return selectQuestions(
     bank,
-    { ...defaultSelectionOptions, count, mode: 'Syllabus Weighted' },
+    {
+      ...defaultSelectionOptions,
+      count,
+      mode: 'Syllabus Weighted',
+      difficultyMode: 'exam',
+      verifiedOnly: true,
+    },
     context,
   );
 }

@@ -8,9 +8,9 @@ test('dashboard → practice → answer → explanation persists', async ({ page
     .getByRole('button', { name: /Practice/ })
     .click();
   await page.getByRole('button', { name: '演習を開始する' }).click();
-  await page.getByRole('radio').first().check();
+  await page.locator('.question fieldset input').first().check();
   await page.getByRole('button', { name: '回答を確認する' }).click();
-  await expect(page.getByRole('heading', { name: '選択肢ごとの解説' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Official Source' })).toBeVisible();
   await page.getByRole('button', { name: 'ブックマーク', exact: true }).click();
   await page.reload();
@@ -29,7 +29,7 @@ test('mini mock resumes and shows results', async ({ page }) => {
     .getByRole('button', { name: /Mock/ })
     .click();
   await page.getByRole('button', { name: '5問のミニ模試' }).click();
-  await page.getByRole('radio').first().check();
+  await page.locator('.question fieldset input').first().check();
   await page.getByRole('button', { name: '回答を保存して次へ' }).click();
   await page.reload();
   await page
@@ -38,7 +38,7 @@ test('mini mock resumes and shows results', async ({ page }) => {
     .click();
   await page.getByRole('button', { name: /中断した模試を再開/ }).click();
   for (let i = 1; i < 5; i++) {
-    await page.getByRole('radio').first().check();
+    await page.locator('.question fieldset input').first().check();
     await page
       .getByRole('button', { name: i < 4 ? '回答を保存して次へ' : '模試を終了する' })
       .click();

@@ -4,11 +4,13 @@ import sourcesData from '@/content/gh300/2026-08-07/sources.json';
 import lessonsData from '@/content/gh300/2026-08-07/lessons/seed.json';
 import glossaryData from '@/content/gh300/2026-08-07/glossary/terms.json';
 import comparisonsData from '@/content/gh300/2026-08-07/comparisons/guides.json';
+import scenarioSetsData from '@/content/gh300/2026-08-07/scenario-sets/seed.json';
 import seeds from '@/content/gh300/2026-08-07/questions/seed.json';
 import {
   type Lesson,
   type GlossaryTerm,
   type ComparisonGuide,
+  type ScenarioSet,
   type OfficialSource,
   type KnowledgeBase,
   validateKnowledgeBase,
@@ -19,7 +21,7 @@ import {
 } from './knowledge';
 
 export { searchGlossary, globalSearch };
-export type { GlossaryFilter, SearchResult, GlossaryTerm, ComparisonGuide, Lesson as KBLesson, OfficialSource };
+export type { GlossaryFilter, SearchResult, GlossaryTerm, ComparisonGuide, ScenarioSet, Lesson as KBLesson, OfficialSource };
 
 export const domains = syllabus.domains,
   version = syllabus.version;
@@ -95,6 +97,11 @@ export const glossaryTerms = glossaryData as GlossaryTerm[];
 export const comparisonGuides = comparisonsData as ComparisonGuide[];
 
 // ────────────────────────────────────────────
+// Scenario Sets
+// ────────────────────────────────────────────
+export const scenarioSets = scenarioSetsData as ScenarioSet[];
+
+// ────────────────────────────────────────────
 // Knowledge Base
 // ────────────────────────────────────────────
 export function buildKnowledgeBase(): KnowledgeBase {
@@ -149,6 +156,7 @@ export function buildKnowledgeBase(): KnowledgeBase {
     })),
     glossaryTerms,
     comparisonGuides,
+    scenarioSets,
     sources: sources.map((s) => ({
       id: s.id,
       title: s.title,
@@ -170,7 +178,7 @@ export function buildKnowledgeBase(): KnowledgeBase {
 }
 
 // ────────────────────────────────────────────
-// Question schema (unchanged from original)
+// Question schema (extended with difficulty & exam metadata)
 // ────────────────────────────────────────────
 const nonempty = z.string().trim().min(1);
 export const questionSchema = z
@@ -191,6 +199,15 @@ export const questionSchema = z
     trustedSourceFacts: z.array(nonempty).optional(),
     createdAt: nonempty,
     lastVerifiedAt: z.string().nullable(),
+    // Extended difficulty & scenario metadata
+    cognitiveLevel: z.enum(['recall', 'understand', 'apply', 'analyze']).optional(),
+    scenarioType: z.string().optional(),
+    testedConcepts: z.array(nonempty).optional(),
+    distractorQuality: z.string().optional(),
+    estimatedAnswerSeconds: z.number().optional(),
+    examLike: z.boolean().optional(),
+    scenarioSetId: z.string().nullable().optional(),
+    clues: z.array(nonempty).optional(),
   })
   .superRefine((q, c) => {
     const fail = (message: string) => c.addIssue({ code: 'custom', message });

@@ -186,12 +186,13 @@ describe('history and question weighting', () => {
     expect(Math.min(...counts)).toBeGreaterThanOrEqual(5);
   });
   it('continues with entirely recent small banks, reports actual count, never reuses an ID', () => {
-    const result = selectQuestions(questions, options({ count: 50 }), {
-      attempts: questions.map((q) => answer(q)),
+    const smallBank = questions.slice(0, 12);
+    const result = selectQuestions(smallBank, options({ count: 50 }), {
+      attempts: smallBank.map((q) => answer(q)),
       now,
       rng: rng(),
     });
-    expect(result.actualCount).toBe(questions.length);
+    expect(result.actualCount).toBe(smallBank.length);
     expect(result.questions.every((q) => q.status === 'verified')).toBe(true);
     expect(result.notices.join(' ')).toContain('最近回答');
     expect(result.notices.join(' ')).toContain('指定50問');

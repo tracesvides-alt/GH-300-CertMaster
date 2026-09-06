@@ -11,6 +11,12 @@ export type Attempt = {
   status: Question['status'];
   sessionId?: string;
 };
+export const difficultyMasteryWeights = {
+  beginner: 1.0,
+  intermediate: 1.2,
+  advanced: 1.4,
+} as const;
+
 export const score = (q: Question, answer: string[]) =>
   answer.length === q.answer.length &&
   new Set(answer).size === answer.length &&
@@ -22,8 +28,15 @@ export function mastery(attempts: Attempt[]) {
   const byObjective = Object.fromEntries(
     objectives.map((o) => {
       const bank = questions.filter((q) => q.objectiveId === o.id);
-      const correct = bank.filter((q) => latest.get(q.id)?.correct).length;
-      return [o.id, bank.length ? (correct / bank.length) * 100 : 0];
+      if (!bank.length) return [o.id, 0];
+      const totalWeight = bank.reduce(
+        (sum, q) => sum + (difficultyMasteryWeights[q.difficulty] ?? 1.0),
+        0,
+      );
+      const earnedWeight = bank
+        .filter((q) => latest.get(q.id)?.correct)
+        .reduce((sum, q) => sum + (difficultyMasteryWeights[q.difficulty] ?? 1.0), 0);
+      return [o.id, totalWeight ? (earnedWeight / totalWeight) * 100 : 0];
     }),
   );
   const byDomain = Object.fromEntries(

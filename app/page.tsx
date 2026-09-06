@@ -14,6 +14,7 @@ import {
   Home,
   Layers,
   Library,
+  Lightbulb,
   ListChecks,
   RotateCcw,
   Search,
@@ -22,6 +23,7 @@ import {
   Star,
   Target,
   Timer,
+  FileText,
   X,
   Zap,
 } from 'lucide-react';
@@ -34,10 +36,12 @@ import {
   version,
   glossaryTerms,
   comparisonGuides,
+  scenarioSets,
   buildKnowledgeBase,
   searchGlossary,
   globalSearch,
   type Question,
+  type ScenarioSet,
   type GlossaryTerm,
   type ComparisonGuide,
   type GlossaryFilter,
@@ -140,6 +144,10 @@ export default function App() {
     bank = [...questions, ...generated],
     q = session && !session.completed ? session.questions[session.index] : queue[index];
   const activeMock = !!session && !session.completed;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.querySelector<HTMLElement>('#main h1')?.focus({ preventScroll: true });
+  }, [tab, q?.id, practiceSummary?.id]);
   const answered = attempts.length,
     correct = attempts.filter((a) => a.correct).length;
   const weak = objectives
@@ -156,6 +164,23 @@ export default function App() {
     update();
     window.addEventListener('online', update);
     window.addEventListener('offline', update);
+    if ('serviceWorker' in navigator && process.env.NODE_ENV !== 'production') {
+      // A worker from a previous production run must not cache mutable dev chunks.
+      void navigator.serviceWorker
+        .getRegistrations()
+        .then(async (registrations) => {
+          for (const registration of registrations) {
+            const url = registration.active?.scriptURL ?? registration.waiting?.scriptURL;
+            if (url === new URL('/sw.js', location.origin).href) await registration.unregister();
+          }
+          for (const name of await caches.keys()) {
+            if (name.startsWith('certmaster-')) await caches.delete(name);
+          }
+        })
+        .catch(() =>
+          setNotice('開発用キャッシュを更新できませんでした。ページを再読み込みしてください。'),
+        );
+    }
     if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production')
       navigator.serviceWorker
         .register('/sw.js')
@@ -510,7 +535,7 @@ export default function App() {
           <div className="pageheading">
             <div>
               <div className="eyebrow">GH-300 / YOUR NEXT CHAPTER</div>
-              <h1>
+              <h1 tabIndex={-1}>
                 {activeMock
                   ? '模試に集中しよう'
                   : q && tab === 'Practice'
@@ -564,15 +589,40 @@ export default function App() {
                 <div className="question-meta">
                   <span className={q!.status === 'verified' ? 'verified' : 'ai-badge'}>
                     {q!.status === 'verified' ? <ShieldCheck size={14} /> : <Sparkles size={14} />}{' '}
-                    {q!.status === 'verified'
-                      ? 'Verified · 公式準拠'
-                      : 'AI Generated'}
+                    {q!.status === 'verified' ? 'Verified · 公式準拠' : 'AI Generated'}
                   </span>
                   <span className="tag">{domains.find((d) => d.id === q!.domainId)?.name}</span>
-                  <span className="tag">{objectives.find((o) => o.id === q!.objectiveId)?.title}</span>
+                  <span className="tag">
+                    {objectives.find((o) => o.id === q!.objectiveId)?.title}
+                  </span>
                   <span className="tag">{difficulty[q!.difficulty]}</span>
-                  <span className="tag">{q!.type === 'single-select' ? '単一選択' : '複数選択'}</span>
+                  {q!.examLike && <span className="tag exam-badge">本番シナリオ型</span>}
+                  <span className="tag">
+                    {q!.type === 'single-select' ? '単一選択' : '複数選択'}
+                  </span>
                 </div>
+                {(() => {
+                  if (!q!.scenarioSetId) return null;
+                  const currentSet = scenarioSets.find((s) => s.id === q!.scenarioSetId);
+                  if (!currentSet) return null;
+                  const qNumInSet = currentSet.questionIds.indexOf(q!.id) + 1;
+                  return (
+                    <details className="scenario-panel" open>
+                      <summary className="scenario-summary">
+                        <span className="scenario-title">
+                          <FileText size={16} />
+                          <strong>共通実務シナリオ: {currentSet.title}</strong>
+                        </span>
+                        <span className="scenario-step">
+                          Question {qNumInSet > 0 ? qNumInSet : 1} / {currentSet.questionIds.length}
+                        </span>
+                      </summary>
+                      <div className="scenario-body">
+                        <p>{currentSet.scenario}</p>
+                      </div>
+                    </details>
+                  );
+                })()}
                 <h2>{q!.question}</h2>
                 <fieldset disabled={revealed || busy}>
                   <legend className="sr-only">回答を選択</legend>
@@ -635,7 +685,9 @@ export default function App() {
                         <span className="ai-insight-badge">
                           <Sparkles size={14} /> AI INSIGHT
                         </span>
-                        <h3 className={score(q!, selected) ? 'correct-heading' : 'incorrect-heading'}>
+                        <h3
+                          className={score(q!, selected) ? 'correct-heading' : 'incorrect-heading'}
+                        >
                           {score(q!, selected) ? '正解です！' : 'ここが学びのポイント'}
                         </h3>
                       </div>
@@ -655,6 +707,23 @@ export default function App() {
                         <h4>Why this is correct</h4>
                         <p>{q!.explanation}</p>
                       </div>
+                      {q!.clues && q!.clues.length > 0 && (
+                        <div className="key-clues-section">
+                          <h4>
+                            <Lightbulb size={16} /> Key Clues（問題文中の判断材料）
+                          </h4>
+                          <div className="clues-list">
+                            {q!.clues.map((clue, ci) => (
+                              <span key={ci} className="clue-tag">
+                                &ldquo;{clue}&rdquo;
+                              </span>
+                            ))}
+                          </div>
+                          <p className="caption">
+                            実務要件と制約から上記の条件を抽出し、最適なアプローチを判断します。
+                          </p>
+                        </div>
+                      )}
                       <div className="choice-explanations">
                         <h4>選択肢ごとの詳細分析</h4>
                         {q!.choices.map((c) => (
@@ -773,17 +842,63 @@ export default function App() {
                     </article>
                     <article className="panel daily">
                       <div className="row">
-                        <span className="eyebrow">TODAY'S FOCUS</span>
+                        <span className="eyebrow">RECOMMENDED PRACTICE</span>
                         <span className="spark-icon">
                           <Sparkles size={20} />
                         </span>
                       </div>
-                      <span className="tag">おすすめ · 5問</span>
-                      <h2>{weak.length ? '弱点を、得意に。' : '理解を、もう一歩。'}</h2>
-                      <p>{weak[0]?.title ?? 'これまで学んだ内容を復習しましょう。'}</p>
-                      <button className="textbutton" onClick={quickWeak}>
-                        弱点トレーニング <ArrowRight size={17} />
-                      </button>
+                      {(() => {
+                        const rec =
+                          m.readiness < 40
+                            ? {
+                                title: '基礎固め 10問',
+                                mode: 'foundation' as const,
+                                count: 10 as const,
+                                desc: 'まずは用語・基本概念（Foundation問題中心）を固めましょう。',
+                                tag: '基礎中心',
+                              }
+                            : m.readiness < 70
+                              ? {
+                                  title: 'バランス実践 10問',
+                                  mode: 'balanced' as const,
+                                  count: 10 as const,
+                                  desc: '基礎・応用・実務シナリオをバランスよく解き、合格ラインを目指しましょう。',
+                                  tag: 'バランス',
+                                }
+                              : {
+                                  title: '本番レベル実戦 20問',
+                                  mode: 'exam' as const,
+                                  count: 20 as const,
+                                  desc: '複数要件の抽出と高度な判断を問う本番相当シナリオで総仕上げを行います。',
+                                  tag: '本番レベル',
+                                };
+                        return (
+                          <>
+                            <span className="tag">
+                              {rec.tag} · {rec.count}問
+                            </span>
+                            <h2>{rec.title}</h2>
+                            <p>{rec.desc}</p>
+                            <button
+                              className="textbutton"
+                              onClick={() => {
+                                setPracticeOptions((prev) => ({
+                                  ...prev,
+                                  count: rec.count,
+                                  difficultyMode: rec.mode,
+                                }));
+                                void practice({
+                                  ...defaultSelectionOptions,
+                                  count: rec.count,
+                                  difficultyMode: rec.mode,
+                                });
+                              }}
+                            >
+                              この難易度で演習を開始 <ArrowRight size={17} />
+                            </button>
+                          </>
+                        );
+                      })()}
                     </article>
                   </section>
                   <section className="stats">
@@ -917,45 +1032,66 @@ export default function App() {
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
                   </div>
-                  {searchQuery.trim() && (() => {
-                    const results = globalSearch(kb, searchQuery);
-                    return results.length ? (
-                      <div className="search-results">
-                        {results.slice(0, 10).map((r) => (
-                          <button
-                            className="search-result-item"
-                            key={`${r.type}-${r.id}`}
-                            onClick={() => {
-                              setSearchQuery('');
-                              if (r.type === 'Lesson') { setStudyTab('Learn'); setLessonId(r.id); }
-                              else if (r.type === 'Glossary') { setStudyTab('Glossary'); setGlossaryTermId(r.id); }
-                              else { setStudyTab('Compare'); setComparisonId(r.id); }
-                            }}
-                          >
-                            <span className={`search-result-type ${r.type.toLowerCase()}`}>{r.type}</span>
-                            <div className="search-result-info">
-                              <strong>{r.title}</strong>
-                              <small>{r.detail}</small>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="panel" style={{ padding: '16px', marginBottom: '16px' }}>
-                        <p>「{searchQuery}」に一致する教材はありません。</p>
-                      </div>
-                    );
-                  })()}
+                  {searchQuery.trim() &&
+                    (() => {
+                      const results = globalSearch(kb, searchQuery);
+                      return results.length ? (
+                        <div className="search-results">
+                          {results.slice(0, 10).map((r) => (
+                            <button
+                              className="search-result-item"
+                              key={`${r.type}-${r.id}`}
+                              onClick={() => {
+                                setSearchQuery('');
+                                if (r.type === 'Lesson') {
+                                  setStudyTab('Learn');
+                                  setLessonId(r.id);
+                                } else if (r.type === 'Glossary') {
+                                  setStudyTab('Glossary');
+                                  setGlossaryTermId(r.id);
+                                } else {
+                                  setStudyTab('Compare');
+                                  setComparisonId(r.id);
+                                }
+                              }}
+                            >
+                              <span className={`search-result-type ${r.type.toLowerCase()}`}>
+                                {r.type}
+                              </span>
+                              <div className="search-result-info">
+                                <strong>{r.title}</strong>
+                                <small>{r.detail}</small>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="panel" style={{ padding: '16px', marginBottom: '16px' }}>
+                          <p>「{searchQuery}」に一致する教材はありません。</p>
+                        </div>
+                      );
+                    })()}
 
                   {/* Study Sub-Tabs */}
                   {!searchQuery.trim() && (
                     <>
                       <div className="study-subtabs">
-                        {([['Learn', BookOpen, 'Learn'], ['Glossary', Library, '用語集'], ['Compare', GitCompareArrows, '比較']] as const).map(([id, Icon, label]) => (
+                        {(
+                          [
+                            ['Learn', BookOpen, 'Learn'],
+                            ['Glossary', Library, '用語集'],
+                            ['Compare', GitCompareArrows, '比較'],
+                          ] as const
+                        ).map(([id, Icon, label]) => (
                           <button
                             key={id}
                             className={studyTab === id ? 'active' : ''}
-                            onClick={() => { setStudyTab(id as StudyTab); setLessonId(null); setGlossaryTermId(null); setComparisonId(null); }}
+                            onClick={() => {
+                              setStudyTab(id as StudyTab);
+                              setLessonId(null);
+                              setGlossaryTermId(null);
+                              setComparisonId(null);
+                            }}
                           >
                             <Icon size={17} />
                             {label}
@@ -971,11 +1107,22 @@ export default function App() {
                               <button className="textbutton" onClick={() => setLessonId(null)}>
                                 ← 教材一覧
                               </button>
-                              <div className="eyebrow">FOUNDATION LESSON · {lesson.syllabusVersion}</div>
+                              <div className="eyebrow">
+                                FOUNDATION LESSON · {lesson.syllabusVersion}
+                              </div>
                               <h2>{lesson.title}</h2>
                               <div className="lesson-meta">
-                                {lesson.estimatedMinutes && <span className="tag"><Timer size={13} /> {lesson.estimatedMinutes}分</span>}
-                                {lesson.difficulty && <span className="tag">{difficulty[lesson.difficulty as keyof typeof difficulty] ?? lesson.difficulty}</span>}
+                                {lesson.estimatedMinutes && (
+                                  <span className="tag">
+                                    <Timer size={13} /> {lesson.estimatedMinutes}分
+                                  </span>
+                                )}
+                                {lesson.difficulty && (
+                                  <span className="tag">
+                                    {difficulty[lesson.difficulty as keyof typeof difficulty] ??
+                                      lesson.difficulty}
+                                  </span>
+                                )}
                                 {lesson.status && <span className="tag">{lesson.status}</span>}
                               </div>
                               <p>{lesson.summary}</p>
@@ -1010,7 +1157,15 @@ export default function App() {
                                     {lesson.glossaryIds.map((gid) => {
                                       const term = glossaryTerms.find((g) => g.id === gid);
                                       return term ? (
-                                        <button className="related-link" key={gid} onClick={() => { setStudyTab('Glossary'); setGlossaryTermId(gid); setLessonId(null); }}>
+                                        <button
+                                          className="related-link"
+                                          key={gid}
+                                          onClick={() => {
+                                            setStudyTab('Glossary');
+                                            setGlossaryTermId(gid);
+                                            setLessonId(null);
+                                          }}
+                                        >
                                           <Library size={14} />
                                           {term.term}
                                         </button>
@@ -1026,7 +1181,15 @@ export default function App() {
                                     {lesson.comparisonIds.map((cid) => {
                                       const cmp = comparisonGuides.find((c) => c.id === cid);
                                       return cmp ? (
-                                        <button className="related-link" key={cid} onClick={() => { setStudyTab('Compare'); setComparisonId(cid); setLessonId(null); }}>
+                                        <button
+                                          className="related-link"
+                                          key={cid}
+                                          onClick={() => {
+                                            setStudyTab('Compare');
+                                            setComparisonId(cid);
+                                            setLessonId(null);
+                                          }}
+                                        >
                                           <GitCompareArrows size={14} />
                                           {cmp.title}
                                         </button>
@@ -1058,7 +1221,10 @@ export default function App() {
                               <div className="filterline">
                                 <label>
                                   Domain
-                                  <select value={domain} onChange={(e) => setDomain(e.target.value)}>
+                                  <select
+                                    value={domain}
+                                    onChange={(e) => setDomain(e.target.value)}
+                                  >
                                     <option value="all">すべての分野</option>
                                     {domains.map((d) => (
                                       <option value={d.id} key={d.id}>
@@ -1068,7 +1234,8 @@ export default function App() {
                                   </select>
                                 </label>
                                 <span className="muted">
-                                  {lessons.length}教材 / {objectives.length} Objectives · 収録範囲を順次拡充
+                                  {lessons.length}教材 / {objectives.length} Objectives ·
+                                  収録範囲を順次拡充
                                 </span>
                               </div>
                               <div className="study-grid">
@@ -1100,10 +1267,16 @@ export default function App() {
                                                 <ChevronRight size={16} />
                                               </button>
                                             ))}
-                                          {!lessons.some((l) => l.relatedObjectives.includes(o.id)) && (
+                                          {!lessons.some((l) =>
+                                            l.relatedObjectives.includes(o.id),
+                                          ) && (
                                             <span className="caption">
                                               教材未収録 ·{' '}
-                                              <a href={sources[0].url} target="_blank" rel="noreferrer">
+                                              <a
+                                                href={sources[0].url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                              >
                                                 公式範囲を確認 ↗
                                               </a>
                                             </span>
@@ -1131,121 +1304,189 @@ export default function App() {
                       {/* ─── Glossary Tab ─── */}
                       {studyTab === 'Glossary' && (
                         <>
-                          {glossaryTermId ? (() => {
-                            const term = glossaryTerms.find((g) => g.id === glossaryTermId);
-                            if (!term) return null;
-                            return (
-                              <article className="panel glossary-detail">
-                                <button className="textbutton" onClick={() => setGlossaryTermId(null)}>
-                                  ← 用語一覧
-                                </button>
-                                <div className="term-header" style={{ marginBottom: '8px' }}>
-                                  <h2>{term.term}</h2>
-                                  <span className={`importance-badge ${term.importance}`}>{importanceLabels[term.importance]}</span>
-                                </div>
-                                <div className="full-name">{term.fullName}</div>
-                                <div className="detail-section">
-                                  <h3>定義</h3>
-                                  <p>{term.detailedDefinition}</p>
-                                </div>
-                                <div className="detail-section">
-                                  <h3>GH-300で重要な理由</h3>
-                                  <p>{term.whyItMatters}</p>
-                                </div>
-                                {term.useCases.length > 0 && (
-                                  <div className="detail-section">
-                                    <h3>利用場面</h3>
-                                    <ul>{term.useCases.map((u) => <li key={u}>{u}</li>)}</ul>
+                          {glossaryTermId ? (
+                            (() => {
+                              const term = glossaryTerms.find((g) => g.id === glossaryTermId);
+                              if (!term) return null;
+                              return (
+                                <article className="panel glossary-detail">
+                                  <button
+                                    className="textbutton"
+                                    onClick={() => setGlossaryTermId(null)}
+                                  >
+                                    ← 用語一覧
+                                  </button>
+                                  <div className="term-header" style={{ marginBottom: '8px' }}>
+                                    <h2>{term.term}</h2>
+                                    <span className={`importance-badge ${term.importance}`}>
+                                      {importanceLabels[term.importance]}
+                                    </span>
                                   </div>
-                                )}
-                                {term.examPoints.length > 0 && (
+                                  <div className="full-name">{term.fullName}</div>
                                   <div className="detail-section">
-                                    <h3>試験ポイント</h3>
-                                    <ul>{term.examPoints.map((e) => <li key={e}>{e}</li>)}</ul>
+                                    <h3>定義</h3>
+                                    <p>{term.detailedDefinition}</p>
                                   </div>
-                                )}
-                                {term.commonConfusions.length > 0 && (
                                   <div className="detail-section">
-                                    <h3>混同しやすい用語</h3>
-                                    <ul>{term.commonConfusions.map((c) => <li key={c}>{c}</li>)}</ul>
+                                    <h3>GH-300で重要な理由</h3>
+                                    <p>{term.whyItMatters}</p>
                                   </div>
-                                )}
-                                {term.relatedTermIds.length > 0 && (
-                                  <div className="detail-section">
-                                    <h3>関連用語</h3>
-                                    <div className="related-links">
-                                      {term.relatedTermIds.map((rid) => {
-                                        const rt = glossaryTerms.find((g) => g.id === rid);
-                                        return rt ? (
-                                          <button className="related-link" key={rid} onClick={() => setGlossaryTermId(rid)}>
-                                            <Library size={14} />
-                                            {rt.term}
-                                          </button>
-                                        ) : null;
-                                      })}
+                                  {term.useCases.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>利用場面</h3>
+                                      <ul>
+                                        {term.useCases.map((u) => (
+                                          <li key={u}>{u}</li>
+                                        ))}
+                                      </ul>
                                     </div>
-                                  </div>
-                                )}
-                                {term.lessonIds.length > 0 && (
-                                  <div className="detail-section">
-                                    <h3>関連教材</h3>
-                                    <div className="related-links">
-                                      {term.lessonIds.map((lid) => {
-                                        const l = lessons.find((les) => les.id === lid);
-                                        return l ? (
-                                          <button className="related-link" key={lid} onClick={() => { setStudyTab('Learn'); setLessonId(lid); setGlossaryTermId(null); }}>
-                                            <BookOpen size={14} />
-                                            {l.title}
-                                          </button>
-                                        ) : null;
-                                      })}
+                                  )}
+                                  {term.examPoints.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>試験ポイント</h3>
+                                      <ul>
+                                        {term.examPoints.map((e) => (
+                                          <li key={e}>{e}</li>
+                                        ))}
+                                      </ul>
                                     </div>
-                                  </div>
-                                )}
-                                {term.comparisonIds.length > 0 && (
-                                  <div className="detail-section">
-                                    <h3>関連比較ガイド</h3>
-                                    <div className="related-links">
-                                      {term.comparisonIds.map((cid) => {
-                                        const c = comparisonGuides.find((cmp) => cmp.id === cid);
-                                        return c ? (
-                                          <button className="related-link" key={cid} onClick={() => { setStudyTab('Compare'); setComparisonId(cid); setGlossaryTermId(null); }}>
-                                            <GitCompareArrows size={14} />
-                                            {c.title}
-                                          </button>
-                                        ) : null;
-                                      })}
+                                  )}
+                                  {term.commonConfusions.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>混同しやすい用語</h3>
+                                      <ul>
+                                        {term.commonConfusions.map((c) => (
+                                          <li key={c}>{c}</li>
+                                        ))}
+                                      </ul>
                                     </div>
-                                  </div>
-                                )}
-                                {term.sourceIds.length > 0 && (
-                                  <div className="detail-section">
-                                    <h3>Official Sources</h3>
-                                    {sourceLinks(term.sourceIds)}
-                                  </div>
-                                )}
-                              </article>
-                            );
-                          })() : (
+                                  )}
+                                  {term.relatedTermIds.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>関連用語</h3>
+                                      <div className="related-links">
+                                        {term.relatedTermIds.map((rid) => {
+                                          const rt = glossaryTerms.find((g) => g.id === rid);
+                                          return rt ? (
+                                            <button
+                                              className="related-link"
+                                              key={rid}
+                                              onClick={() => setGlossaryTermId(rid)}
+                                            >
+                                              <Library size={14} />
+                                              {rt.term}
+                                            </button>
+                                          ) : null;
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                  {term.lessonIds.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>関連教材</h3>
+                                      <div className="related-links">
+                                        {term.lessonIds.map((lid) => {
+                                          const l = lessons.find((les) => les.id === lid);
+                                          return l ? (
+                                            <button
+                                              className="related-link"
+                                              key={lid}
+                                              onClick={() => {
+                                                setStudyTab('Learn');
+                                                setLessonId(lid);
+                                                setGlossaryTermId(null);
+                                              }}
+                                            >
+                                              <BookOpen size={14} />
+                                              {l.title}
+                                            </button>
+                                          ) : null;
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                  {term.comparisonIds.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>関連比較ガイド</h3>
+                                      <div className="related-links">
+                                        {term.comparisonIds.map((cid) => {
+                                          const c = comparisonGuides.find((cmp) => cmp.id === cid);
+                                          return c ? (
+                                            <button
+                                              className="related-link"
+                                              key={cid}
+                                              onClick={() => {
+                                                setStudyTab('Compare');
+                                                setComparisonId(cid);
+                                                setGlossaryTermId(null);
+                                              }}
+                                            >
+                                              <GitCompareArrows size={14} />
+                                              {c.title}
+                                            </button>
+                                          ) : null;
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                  {term.sourceIds.length > 0 && (
+                                    <div className="detail-section">
+                                      <h3>Official Sources</h3>
+                                      {sourceLinks(term.sourceIds)}
+                                    </div>
+                                  )}
+                                </article>
+                              );
+                            })()
+                          ) : (
                             <>
                               <div className="glossary-filters">
                                 <input
                                   type="search"
                                   placeholder="用語を検索…"
                                   value={glossaryFilter.keyword ?? ''}
-                                  onChange={(e) => setGlossaryFilter({ ...glossaryFilter, keyword: e.target.value })}
-                                  style={{ padding: '8px 12px', background: '#202833', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text)', fontSize: '14px', flex: 1, minWidth: '150px' }}
+                                  onChange={(e) =>
+                                    setGlossaryFilter({
+                                      ...glossaryFilter,
+                                      keyword: e.target.value,
+                                    })
+                                  }
+                                  style={{
+                                    padding: '8px 12px',
+                                    background: '#202833',
+                                    border: '1px solid var(--border)',
+                                    borderRadius: '8px',
+                                    color: 'var(--text)',
+                                    fontSize: '14px',
+                                    flex: 1,
+                                    minWidth: '150px',
+                                  }}
                                 />
                                 <select
                                   value={glossaryFilter.domainId ?? 'all'}
-                                  onChange={(e) => setGlossaryFilter({ ...glossaryFilter, domainId: e.target.value })}
+                                  onChange={(e) =>
+                                    setGlossaryFilter({
+                                      ...glossaryFilter,
+                                      domainId: e.target.value,
+                                    })
+                                  }
                                 >
                                   <option value="all">全Domain</option>
-                                  {domains.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
+                                  {domains.map((d) => (
+                                    <option key={d.id} value={d.id}>
+                                      {d.name}
+                                    </option>
+                                  ))}
                                 </select>
                                 <select
                                   value={glossaryFilter.importance ?? ''}
-                                  onChange={(e) => setGlossaryFilter({ ...glossaryFilter, importance: (e.target.value || undefined) as GlossaryFilter['importance'] })}
+                                  onChange={(e) =>
+                                    setGlossaryFilter({
+                                      ...glossaryFilter,
+                                      importance: (e.target.value ||
+                                        undefined) as GlossaryFilter['importance'],
+                                    })
+                                  }
                                 >
                                   <option value="">全重要度</option>
                                   <option value="essential">必須</option>
@@ -1254,14 +1495,21 @@ export default function App() {
                                 </select>
                               </div>
                               <p className="caption" style={{ marginBottom: '12px' }}>
-                                {searchGlossary(glossaryTerms, glossaryFilter).length} / {glossaryTerms.length} 用語
+                                {searchGlossary(glossaryTerms, glossaryFilter).length} /{' '}
+                                {glossaryTerms.length} 用語
                               </p>
                               <div className="glossary-grid">
                                 {searchGlossary(glossaryTerms, glossaryFilter).map((g) => (
-                                  <button className="glossary-card" key={g.id} onClick={() => setGlossaryTermId(g.id)}>
+                                  <button
+                                    className="glossary-card"
+                                    key={g.id}
+                                    onClick={() => setGlossaryTermId(g.id)}
+                                  >
                                     <div className="term-header">
                                       <h3>{g.term}</h3>
-                                      <span className={`importance-badge ${g.importance}`}>{importanceLabels[g.importance]}</span>
+                                      <span className={`importance-badge ${g.importance}`}>
+                                        {importanceLabels[g.importance]}
+                                      </span>
                                     </div>
                                     <p>{g.shortDefinition}</p>
                                     <span className="caption">{g.category}</span>
@@ -1276,103 +1524,151 @@ export default function App() {
                       {/* ─── Compare Tab ─── */}
                       {studyTab === 'Compare' && (
                         <>
-                          {comparisonId ? (() => {
-                            const cmp = comparisonGuides.find((c) => c.id === comparisonId);
-                            if (!cmp) return null;
-                            return (
-                              <article className="panel comparison-detail">
-                                <button className="textbutton" onClick={() => setComparisonId(null)}>
-                                  ← 比較一覧
-                                </button>
-                                <div className="eyebrow">COMPARISON GUIDE</div>
-                                <h2>{cmp.title}</h2>
-                                <p>{cmp.summary}</p>
-                                <h3>比較表</h3>
-                                <table className="comparison-table">
-                                  <thead>
-                                    <tr>
-                                      <th>観点</th>
-                                      {cmp.comparedTermIds.map((tid) => {
-                                        const t = glossaryTerms.find((g) => g.id === tid);
-                                        return <th key={tid}>{t?.term ?? tid}</th>;
-                                      })}
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    {cmp.comparisonAxes.map((axis) => (
-                                      <tr key={axis.axis}>
-                                        <td style={{ fontWeight: 600, color: 'var(--text)' }}>{axis.axis}</td>
-                                        {axis.values.map((v, i) => {
-                                          const parts = v.split(': ');
-                                          return <td key={i}>{parts.length > 1 ? parts.slice(1).join(': ') : v}</td>;
+                          {comparisonId ? (
+                            (() => {
+                              const cmp = comparisonGuides.find((c) => c.id === comparisonId);
+                              if (!cmp) return null;
+                              return (
+                                <article className="panel comparison-detail">
+                                  <button
+                                    className="textbutton"
+                                    onClick={() => setComparisonId(null)}
+                                  >
+                                    ← 比較一覧
+                                  </button>
+                                  <div className="eyebrow">COMPARISON GUIDE</div>
+                                  <h2>{cmp.title}</h2>
+                                  <p>{cmp.summary}</p>
+                                  <h3>比較表</h3>
+                                  <table className="comparison-table">
+                                    <thead>
+                                      <tr>
+                                        <th>観点</th>
+                                        {cmp.comparedTermIds.map((tid) => {
+                                          const t = glossaryTerms.find((g) => g.id === tid);
+                                          return <th key={tid}>{t?.term ?? tid}</th>;
                                         })}
                                       </tr>
-                                    ))}
-                                  </tbody>
-                                </table>
-                                <h3>判断ガイド</h3>
-                                {cmp.decisionGuide.map((d) => (
-                                  <div className="decision-guide-item" key={d}>{d}</div>
-                                ))}
-                                {cmp.commonTraps.length > 0 && (
-                                  <>
-                                    <h3>よくある落とし穴</h3>
-                                    <ul>{cmp.commonTraps.map((t) => <li key={t}>{t}</li>)}</ul>
-                                  </>
-                                )}
-                                {cmp.examTips.length > 0 && (
-                                  <>
-                                    <h3>試験対策のヒント</h3>
-                                    <ul>{cmp.examTips.map((t) => <li key={t}>{t}</li>)}</ul>
-                                  </>
-                                )}
-                                {cmp.comparedTermIds.length > 0 && (
-                                  <div style={{ marginTop: '16px' }}>
-                                    <h3>関連用語</h3>
-                                    <div className="related-links">
-                                      {cmp.comparedTermIds.map((tid) => {
-                                        const t = glossaryTerms.find((g) => g.id === tid);
-                                        return t ? (
-                                          <button className="related-link" key={tid} onClick={() => { setStudyTab('Glossary'); setGlossaryTermId(tid); setComparisonId(null); }}>
-                                            <Library size={14} />
-                                            {t.term}
-                                          </button>
-                                        ) : null;
-                                      })}
+                                    </thead>
+                                    <tbody>
+                                      {cmp.comparisonAxes.map((axis) => (
+                                        <tr key={axis.axis}>
+                                          <td style={{ fontWeight: 600, color: 'var(--text)' }}>
+                                            {axis.axis}
+                                          </td>
+                                          {axis.values.map((v, i) => {
+                                            const parts = v.split(': ');
+                                            return (
+                                              <td key={i}>
+                                                {parts.length > 1 ? parts.slice(1).join(': ') : v}
+                                              </td>
+                                            );
+                                          })}
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                  <h3>判断ガイド</h3>
+                                  {cmp.decisionGuide.map((d) => (
+                                    <div className="decision-guide-item" key={d}>
+                                      {d}
                                     </div>
-                                  </div>
-                                )}
-                                {cmp.lessonIds.length > 0 && (
-                                  <div style={{ marginTop: '16px' }}>
-                                    <h3>関連教材</h3>
-                                    <div className="related-links">
-                                      {cmp.lessonIds.map((lid) => {
-                                        const l = lessons.find((les) => les.id === lid);
-                                        return l ? (
-                                          <button className="related-link" key={lid} onClick={() => { setStudyTab('Learn'); setLessonId(lid); setComparisonId(null); }}>
-                                            <BookOpen size={14} />
-                                            {l.title}
-                                          </button>
-                                        ) : null;
-                                      })}
+                                  ))}
+                                  {cmp.commonTraps.length > 0 && (
+                                    <>
+                                      <h3>よくある落とし穴</h3>
+                                      <ul>
+                                        {cmp.commonTraps.map((t) => (
+                                          <li key={t}>{t}</li>
+                                        ))}
+                                      </ul>
+                                    </>
+                                  )}
+                                  {cmp.examTips.length > 0 && (
+                                    <>
+                                      <h3>試験対策のヒント</h3>
+                                      <ul>
+                                        {cmp.examTips.map((t) => (
+                                          <li key={t}>{t}</li>
+                                        ))}
+                                      </ul>
+                                    </>
+                                  )}
+                                  {cmp.comparedTermIds.length > 0 && (
+                                    <div style={{ marginTop: '16px' }}>
+                                      <h3>関連用語</h3>
+                                      <div className="related-links">
+                                        {cmp.comparedTermIds.map((tid) => {
+                                          const t = glossaryTerms.find((g) => g.id === tid);
+                                          return t ? (
+                                            <button
+                                              className="related-link"
+                                              key={tid}
+                                              onClick={() => {
+                                                setStudyTab('Glossary');
+                                                setGlossaryTermId(tid);
+                                                setComparisonId(null);
+                                              }}
+                                            >
+                                              <Library size={14} />
+                                              {t.term}
+                                            </button>
+                                          ) : null;
+                                        })}
+                                      </div>
                                     </div>
-                                  </div>
-                                )}
-                                <h3>Official Sources</h3>
-                                {sourceLinks(cmp.sourceIds)}
-                              </article>
-                            );
-                          })() : (
+                                  )}
+                                  {cmp.lessonIds.length > 0 && (
+                                    <div style={{ marginTop: '16px' }}>
+                                      <h3>関連教材</h3>
+                                      <div className="related-links">
+                                        {cmp.lessonIds.map((lid) => {
+                                          const l = lessons.find((les) => les.id === lid);
+                                          return l ? (
+                                            <button
+                                              className="related-link"
+                                              key={lid}
+                                              onClick={() => {
+                                                setStudyTab('Learn');
+                                                setLessonId(lid);
+                                                setComparisonId(null);
+                                              }}
+                                            >
+                                              <BookOpen size={14} />
+                                              {l.title}
+                                            </button>
+                                          ) : null;
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                  <h3>Official Sources</h3>
+                                  {sourceLinks(cmp.sourceIds)}
+                                </article>
+                              );
+                            })()
+                          ) : (
                             <>
                               <p className="caption" style={{ marginBottom: '12px' }}>
-                                {comparisonGuides.length} Comparison Guides · 似た機能の使い分けを学ぶ
+                                {comparisonGuides.length} Comparison Guides ·
+                                似た機能の使い分けを学ぶ
                               </p>
                               <div className="comparison-grid">
                                 {comparisonGuides.map((c) => (
-                                  <button className="comparison-card" key={c.id} onClick={() => setComparisonId(c.id)}>
-                                    <span className="vs-badge"><GitCompareArrows size={15} /> COMPARISON</span>
+                                  <button
+                                    className="comparison-card"
+                                    key={c.id}
+                                    onClick={() => setComparisonId(c.id)}
+                                  >
+                                    <span className="vs-badge">
+                                      <GitCompareArrows size={15} /> COMPARISON
+                                    </span>
                                     <h3>{c.title}</h3>
-                                    <p style={{ color: 'var(--muted)', margin: 0, fontSize: '14px' }}>{c.summary}</p>
+                                    <p
+                                      style={{ color: 'var(--muted)', margin: 0, fontSize: '14px' }}
+                                    >
+                                      {c.summary}
+                                    </p>
                                   </button>
                                 ))}
                               </div>

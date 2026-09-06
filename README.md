@@ -9,7 +9,9 @@ GitHub Copilot Certification「**GH-300**」のための、知的な開発者ワ
 ## 🌟 主な特徴
 
 ### 1. 「AI・開発者ツール・知的なワークスペース」デザインシステム
+
 単なる一般的な問題集アプリではなく、洗練された開発環境のような上質さと学習効率を両立したUIを提供します。
+
 - **トーンの黄金比**: `70% clean and minimal` / `20% technical and intelligent` / `10% futuristic accent`
 - **Color System**: 深みのあるダークグラファイト（`#0b0f14`, `#131922`）を基調とし、知的なクールAIシアン（`#00d4e6`）をアクセントに採用。
 - **Background Treatment**: 文字可読性を100%維持した微小ソフトビネットと極小テクニカルパターンテクスチャ。
@@ -17,7 +19,9 @@ GitHub Copilot Certification「**GH-300**」のための、知的な開発者ワ
 - **Mobile First**: 片手操作に最適化された48px以上のタップ領域と、ブラー効果を備えた洗練されたボトムナビゲーション。
 
 ### 2. 包括的な教材Knowledge Base（2026-08-07シラバス完全網羅）
+
 GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教材データベースを内蔵。
+
 - **構造化レッスン 28本**:
   - 1本あたり平均8.0分で読めるマイクロラーニング形式。
   - `Core Concepts`（概念解説）、`How It Works`（動作メカニズム）、`Scenario Application`（実務・試験シナリオ）、`30-Second Check`（理解度確認）、`Official Sources`（公式出典リンク）を完全完備。
@@ -31,6 +35,7 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
   - Microsoft LearnおよびGitHub Docsの公式ドキュメントURL、確認日、関連Objectiveを一元管理。
 
 ### 3. 多彩な学習・演習モード
+
 - **Dashboard（AI学習コックピット）**:
   - **Exam Readiness ヒーローカード**: 合格目標ライン（700点 / 70%）への到達度を示す知的なテクニカルリングプログレス。
   - **Domain Mastery**: 6分野の出題重み比率と習熟度バーを即座に可視化。
@@ -48,6 +53,7 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
   - 過去の回答履歴、ブックマークした問題、要復習項目の確認。
 
 ### 4. 統計的・科学的な習熟度アルゴリズム
+
 - **Weak Point Selection**:
   - ベータ分布 $\text{Beta}(2,2)$ によるベイズ平滑化スコアを算出し、1〜2回の偶発的なミスでスコアが極端に変動するのを防止。
 - **Question Selection Engine**:
@@ -58,17 +64,21 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 ## 🚀 起動方法
 
 ### 前提環境
+
 - Node.js 20以上（推奨: Node.js 22+）
 - npm
 
 ### 開発サーバーの起動
+
 ```bash
 npm ci
 npm run dev
 ```
+
 ブラウザで [http://localhost:3000](http://localhost:3000)（または表示されたポート）を開いてください。
 
 ### 本番ビルドと起動
+
 ```bash
 npm run build
 npm run start
@@ -152,3 +162,15 @@ npm run syllabus:check
 ## 📄 ライセンス・免責事項
 
 本アプリはGitHubおよびMicrosoftの公式アプリケーションではありません。公式の試験問題を漏洩・転載したものではなく、公式ドキュメントおよび公開シラバスに基づき独自に作成された試験対策学習アプリです。
+
+## ローカル更新時の表示・操作不具合を防ぐ
+
+ファイルを編集しながら利用する場合は `npm run dev` を使用します。`next start` の稼働中に同じ `.next` を再ビルドすると、サーバーが古いHTML・新しいアセットの組み合わせを配信し、CSSの500エラーやJavaScript未実行によりボタンが反応しなくなる場合があります。本番モードで更新する場合はサーバー停止 → `npm run build` → `npm run start` の順に実行してください。
+
+`npm run test:e2e` は専用の `.next-e2e` にビルドし、127.0.0.1:3100で検証します。利用中の3000番サーバーやビルドを流用しません。3100番が使用中の場合は別のサーバーを誤ってテストせずエラーにします。
+
+開発モードはアプリ専用Service Workerを解除し、古い開発用アセットのキャッシュを残しません。IndexedDBの回答履歴には触れません。本番PWAはHTMLと必要なCSS/JavaScriptがすべて取得できた場合にだけオフラインシェルを更新します。
+
+演習開始・次の問題・結果への移動時は画面を先頭へ戻し、見出しへフォーカスを移します。320px幅での設定画面、CSS/JavaScript読込、開始から回答・解説までを回帰テストしています。
+
+修正後の検証: TypeScriptチェック成功、専用領域での本番ビルド成功、Vitest 93件成功、PC/モバイルPlaywright 24件成功。実際のlocalhost:3000画面でも演習開始とレイアウトを確認済みです。
