@@ -1,0 +1,199 @@
+[
+  {
+    "id": "guide",
+    "title": "GH-300 Study Guide",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+    "publisher": "Microsoft Learn",
+    "sourceType": "official-guide",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d1o1", "d1o2",
+      "d2o1", "d2o2", "d2o3", "d2o4",
+      "d3o1", "d3o2",
+      "d4o1", "d4o2",
+      "d5o1", "d5o2",
+      "d6o1", "d6o2"
+    ]
+  },
+  {
+    "id": "responsible",
+    "title": "Responsible use: inline suggestions",
+    "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d1o1", "d1o2", "d6o1", "d6o2", "d2o1"]
+  },
+  {
+    "id": "chat",
+    "title": "Responsible use: Copilot Chat",
+    "url": "https://docs.github.com/copilot/responsible-use/chat-in-github",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o1", "d2o2", "d2o3", "d2o4", "d3o1", "d3o2"]
+  },
+  {
+    "id": "prompt",
+    "title": "Prompt engineering for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d4o1", "d4o2"]
+  },
+  {
+    "id": "tests",
+    "title": "Writing tests with GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/tutorials/write-tests",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d5o1", "d5o2"]
+  },
+  {
+    "id": "exclusion",
+    "title": "Excluding content from GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d6o1", "d6o2"]
+  },
+  {
+    "id": "cli",
+    "title": "Using GitHub Copilot in the CLI",
+    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-cli",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o2"]
+  },
+  {
+    "id": "agent-mode",
+    "title": "Using GitHub Copilot Agent Mode in VS Code",
+    "url": "https://code.visualstudio.com/docs/copilot/copilot-chat#_agent-mode",
+    "publisher": "VS Code Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o1", "d2o3"]
+  },
+  {
+    "id": "mcp",
+    "title": "Using Model Context Protocol with GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-model-context-protocol",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3"]
+  },
+  {
+    "id": "instructions",
+    "title": "Adding custom instructions for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3", "d4o1"]
+  },
+  {
+    "id": "prompt-files",
+    "title": "Creating reusable prompt files for Copilot",
+    "url": "https://docs.github.com/en/copilot/customizing-copilot/creating-prompt-files-for-copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3", "d4o1", "d4o2"]
+  },
+  {
+    "id": "spaces",
+    "title": "About GitHub Copilot Spaces",
+    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-spaces",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3"]
+  },
+  {
+    "id": "spark",
+    "title": "GitHub Spark overview and micro-app creation",
+    "url": "https://github.blog/news-insights/product-news/introducing-github-spark/",
+    "publisher": "GitHub Blog",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3"]
+  },
+  {
+    "id": "code-review",
+    "title": "Using GitHub Copilot Code Review in Pull Requests",
+    "url": "https://docs.github.com/en/copilot/using-github-copilot/code-review-with-copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o3", "d2o4", "d5o1"]
+  },
+  {
+    "id": "policies",
+    "title": "Managing policies for Copilot in your organization",
+    "url": "https://docs.github.com/en/copilot/managing-copilot/managing-policies-for-copilot-in-your-organization",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o4", "d6o1", "d6o2"]
+  },
+  {
+    "id": "audit-log",
+    "title": "Reviewing audit logs for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/managing-copilot/reviewing-audit-logs-for-copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o4"]
+  },
+  {
+    "id": "rest-api",
+    "title": "GitHub Copilot user management and metrics REST API",
+    "url": "https://docs.github.com/en/rest/copilot",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d2o4"]
+  },
+  {
+    "id": "privacy",
+    "title": "GitHub Copilot Trust Center & Privacy Statement",
+    "url": "https://resources.github.com/copilot-trust-center/",
+    "publisher": "GitHub Trust Center",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d3o1", "d3o2", "d6o1", "d6o2"]
+  },
+  {
+    "id": "architecture",
+    "title": "GitHub Copilot Architecture, Context, and LLM Lifecycle",
+    "url": "https://docs.github.com/en/copilot/about-github-copilot/how-github-copilot-works",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-06",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": ["d3o1", "d3o2"]
+  }
+]

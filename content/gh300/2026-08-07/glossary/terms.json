@@ -1,0 +1,5696 @@
+[
+  {
+    "id": "g-generative-ai",
+    "term": "Generative AI",
+    "fullName": "生成AI (Generative Artificial Intelligence)",
+    "aliases": [
+      "GenAI",
+      "生成系AI"
+    ],
+    "shortDefinition": "プロンプトや文脈入力に基づいて、テキスト、コード、画像などの新しいコンテンツを自律的に生成するAI技術。",
+    "detailedDefinition": "GitHub Copilotの基盤となる技術。大規模言語モデル(LLM)が数十億行のソースコードやテキストパターンから学習し、開発者の入力に対して文脈に応じたコードや自然言語の回答を生成する。ただし出力をそのまま盲信せず、人間が検証を行う責任がある。",
+    "category": "AI基礎概念",
+    "importance": "essential",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o1"
+    ],
+    "whyItMatters": "GH-300の基盤概念。生成AIの特性・動作原理・限界を理解していることがすべての問題の前提となる。",
+    "useCases": [
+      "コードの自動生成",
+      "自然言語によるコード解説",
+      "テストシナリオの提案"
+    ],
+    "examPoints": [
+      "確率モデルであり事実を保証するものではない",
+      "訓練データに基づく統計的パターン生成である",
+      "人間の意思決定の支援ツールとして機能する"
+    ],
+    "commonConfusions": [
+      "従来の静的コード解析やルールベースの自動補完との混同",
+      "AIが論理を『理解』しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-hallucination",
+      "g-responsible-ai",
+      "g-nondeterminism"
+    ],
+    "lessonIds": [
+      "lesson-d1-principles",
+      "lesson-d1-risks"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q01"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-hallucination",
+    "term": "Hallucination",
+    "fullName": "AIハルシネーション",
+    "aliases": [
+      "幻覚",
+      "ハルシネーション"
+    ],
+    "shortDefinition": "AIが流暢かつもっともらしいが、事実と異なる、または存在しないAPI・コードを生成する現象。",
+    "detailedDefinition": "大規模言語モデルは確率的に自然なトークン列を予測して出力するため、文法的に正しく自信に満ちたコードであっても、実在しないライブラリや引数を生成することがある。GitHub Copilotの利用において開発者が常にコードを検証・実行して確認しなければならない最大の理由である。",
+    "category": "AI基礎概念",
+    "importance": "essential",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d1o2"
+    ],
+    "whyItMatters": "GH-300ではAI出力を無条件に信頼するリスクへの理解が最重要視される。Responsible AIの中核概念。",
+    "useCases": [
+      "生成されたAPI呼び出しの実在性確認",
+      "ライブラリバージョンの適合性検証",
+      "チャットでの技術的回答の事実確認"
+    ],
+    "examPoints": [
+      "流暢さや自信ありげなトーンは正確性の証明にならない",
+      "存在しない関数やメソッドを捏造することがある",
+      "コードの動作確認とテストが必須の対策となる"
+    ],
+    "commonConfusions": [
+      "流暢な回答は正確という誤解",
+      "AIのバグ（実装エラー）とハルシネーションの混同"
+    ],
+    "relatedTermIds": [
+      "g-generative-ai",
+      "g-responsible-ai",
+      "g-verification-validation"
+    ],
+    "lessonIds": [
+      "lesson-d1-principles",
+      "lesson-d1-risks",
+      "lesson-d1-validation",
+      "lesson-d1-security-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q01"
+    ],
+    "sourceIds": [
+      "responsible",
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-responsible-ai",
+    "term": "Responsible AI",
+    "fullName": "責任あるAIの利用",
+    "aliases": [
+      "Responsible use",
+      "責任あるAI"
+    ],
+    "shortDefinition": "AIシステムを公平、安全、透明、説明可能かつ信頼できる方法で開発・運用・活用する原則と実践。",
+    "detailedDefinition": "GitHub CopilotにおけるResponsible AIとは、AI生成コードや説明を採用する前に開発者が正確性・セキュリティ・ライセンス・バイアスを評価・検証する取り組みを指す。コードの最終的な責任はCopilotではなく常に人間の開発者にある。",
+    "category": "AI基礎概念",
+    "importance": "essential",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d1o2"
+    ],
+    "whyItMatters": "GH-300 Domain 1の中心テーマ。試験全体の15〜20%を占める重要領域。",
+    "useCases": [
+      "コード提案の採用前レビュー",
+      "AI生成テストの実行による検証",
+      "著作権やライセンス適合性の確認"
+    ],
+    "examPoints": [
+      "AI出力の最終責任は人間（開発者・組織）にある",
+      "採用前にレビューと自動テストで検証する義務がある",
+      "セキュリティ脆弱性をAIが混入させるリスクを認識する"
+    ],
+    "commonConfusions": [
+      "AI提供者（GitHub/Microsoft）がコード品質を法的に保証するという誤解",
+      "倫理的議論にとどまり実務上の検証手順を伴わないという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-accountability",
+      "g-hallucination",
+      "g-verification-validation"
+    ],
+    "lessonIds": [
+      "lesson-d1-principles",
+      "lesson-d1-risks",
+      "lesson-d1-validation",
+      "lesson-d1-security-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-ai-bias",
+    "term": "AI Bias & Fairness",
+    "fullName": "AIバイアスと公平性",
+    "aliases": [
+      "アルゴリズムバイアス",
+      "バイアス"
+    ],
+    "shortDefinition": "学習データやアルゴリズムに起因して、特定の属性・パターン・人口統計に対して不公正または偏った出力が生じる現象。",
+    "detailedDefinition": "LLMは公開コードやテキストから学習するため、過去のステレオタイプ、偏ったコーディング規約、あるいはマイナーな言語やフレームワークに対する過小評価などが生成コードや回答に反映される可能性がある。開発者は公平性と多様性を意識して出力を評価する必要がある。",
+    "category": "AI基礎概念",
+    "importance": "important",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o1"
+    ],
+    "whyItMatters": "AIの社会的影響と潜在的欠陥を理解し、偏りのあるコードやUI設計の採用を防ぐために不可欠。",
+    "useCases": [
+      "UI/UX設計におけるアクセシビリティ考慮",
+      "ユーザー属性判定ロジックの公平性チェック",
+      "特定文化に依存した名称・前提の排除"
+    ],
+    "examPoints": [
+      "公開データ由来の偏りが生成結果に反映されうること",
+      "公平性を担保するために人間の介入が必須であること"
+    ],
+    "commonConfusions": [
+      "AIは数学的モデルだから完全に中立であるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-responsible-ai",
+      "g-generative-ai"
+    ],
+    "lessonIds": [
+      "lesson-d1-risks",
+      "lesson-d1-principles"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-ip-copyright",
+    "term": "Intellectual Property & Copyright",
+    "fullName": "知的財産権と著作権 (IP & Copyright)",
+    "aliases": [
+      "著作権",
+      "ライセンス保護"
+    ],
+    "shortDefinition": "AI生成物およびその学習データに関連する著作権、特許、ライセンス等の法的権利と義務。",
+    "detailedDefinition": "GitHub Copilotが生成するコードに関して、GitHubはCopilot Copyright Commitmentを通じて商用顧客への知財補償を提供する一方、開発者は公開コードと一致するコードをフィルタリングする機能（Public Code Matching）を適切に構成し、ライセンス侵害を防止する責任を持つ。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d1",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d6o1"
+    ],
+    "whyItMatters": "企業の法務リスク管理に直結し、Public Code MatchingやOutput Ownershipの理解の根拠となる。",
+    "useCases": [
+      "OSSライセンス遵守の確認",
+      "自社独自プロパティの保護",
+      "著作権侵害リスクの低減"
+    ],
+    "examPoints": [
+      "Public Code Matching機能で一致をブロック可能",
+      "Copilot Copyright Commitmentの対象と条件",
+      "生成コードの最終責任と権利帰属"
+    ],
+    "commonConfusions": [
+      "AI生成コードはすべてパブリックドメインであるという誤解",
+      "GitHubがすべてのコードの権利を保有するという誤解"
+    ],
+    "relatedTermIds": [
+      "g-public-code-matching",
+      "g-output-ownership"
+    ],
+    "lessonIds": [
+      "lesson-d1-risks",
+      "lesson-d6-ownership-privacy",
+      "lesson-d1-principles",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "exclusion"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-transparency",
+    "term": "Transparency and Explainability",
+    "fullName": "透明性と説明可能性",
+    "aliases": [
+      "Explainability",
+      "透明性"
+    ],
+    "shortDefinition": "AIシステムがどのように動作し、なぜその出力を生成したのかを理解・説明できるようにする性質。",
+    "detailedDefinition": "Copilotがコードを提案する際、どのファイルやコンテキストを参照したか、どのようなプロンプト組み立てが行われたかを理解することは、提案の妥当性を評価する上で極めて重要である。Copilot Chatの参照コンテキスト表示や理由説明コマンドがこれを支える。",
+    "category": "AI基礎概念",
+    "importance": "supplementary",
+    "domainIds": [
+      "d1",
+      "d3"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d3o1"
+    ],
+    "whyItMatters": "ブラックボックスとして扱わず、根拠を確認する姿勢を受験者に求めるため。",
+    "useCases": [
+      "Chatで参照されたファイルリストの確認",
+      "提案されたコードの根拠説明の要求",
+      "コンテキストに含まれた変数の把握"
+    ],
+    "examPoints": [
+      "Copilotは参照したコンテキストを明示できる",
+      "推論プロセスを質問して説明させることが可能"
+    ],
+    "commonConfusions": [
+      "AIが人間の思考と同じプロセスで説明しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-responsible-ai"
+    ],
+    "lessonIds": [
+      "lesson-d1-risks",
+      "lesson-d1-principles",
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-accountability",
+    "term": "Code Accountability & Human-in-the-Loop",
+    "fullName": "コードの説明責任と人間による関与 (Human-in-the-Loop)",
+    "aliases": [
+      "Human-in-the-loop",
+      "人間による確認",
+      "説明責任"
+    ],
+    "shortDefinition": "AIの生成サイクルにおいて人間が最終的な判断者・承認者として常に関与し、コードの動作と品質の責任を負う運用モデル。",
+    "detailedDefinition": "GitHub Copilotは開発者を自律的に代替するものではなく、常に開発者（人間）が提案をレビューし、承認・修正・却下の決定権を持つ「副操縦士（Copilot）」である。本番コードに混入したバグや脆弱性の責任は、提案を採用した人間に帰属する。",
+    "category": "AI基礎概念",
+    "importance": "essential",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d1o2"
+    ],
+    "whyItMatters": "Copilotの製品思想そのものであり、試験で最も頻出する前提原則。",
+    "useCases": [
+      "Ghost textのTabキー押下前の目視確認",
+      "Agent Modeが提案した全diffの確認と承認",
+      "プルリクエストにおける人間のピアレビュー"
+    ],
+    "examPoints": [
+      "Copilotは『Autopilot』ではなく『Copilot』である",
+      "すべてのAI提案は人間の承認を経て初めてコードベースに入る",
+      "本番障害の責任をAIに転嫁することはできない"
+    ],
+    "commonConfusions": [
+      "完全自律エージェントと支援型Copilotの混同"
+    ],
+    "relatedTermIds": [
+      "g-responsible-ai",
+      "g-verification-validation",
+      "g-agent-mode"
+    ],
+    "lessonIds": [
+      "lesson-d1-principles",
+      "lesson-d2-agent-edits",
+      "lesson-d1-risks",
+      "lesson-d1-validation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-nondeterminism",
+    "term": "Nondeterminism in LLMs",
+    "fullName": "LLMの非決定性",
+    "aliases": [
+      "非決定性",
+      "出力のばらつき"
+    ],
+    "shortDefinition": "同一のプロンプトを入力しても、サンプリング温度や内部状態により異なる出力が生成される性質。",
+    "detailedDefinition": "大規模言語モデルは確率的に次のトークンを選択するため、同じコード箇所やプロンプトに対しても常に同じ提案が返るわけではない。このため、テストの自動生成やリファクタリングでは毎回出力を検証し、再現性を前提にしない運用が求められる。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d1",
+      "d3"
+    ],
+    "objectiveIds": [
+      "d1o1",
+      "d3o2"
+    ],
+    "whyItMatters": "なぜテストや検証が必須なのか、なぜキャッシュや同一結果を盲信してはいけないかの技術的根拠となる。",
+    "useCases": [
+      "複数回の提案生成による最適な解の比較",
+      "再試行による改善された提案の獲得"
+    ],
+    "examPoints": [
+      "同じプロンプトでも毎回同一のコードが出るとは限らない",
+      "温度（Temperature）パラメータが非決定性に影響する"
+    ],
+    "commonConfusions": [
+      "決定的なコンパイラやトランスパイラと同等に捉える誤解"
+    ],
+    "relatedTermIds": [
+      "g-temperature-determinism",
+      "g-generative-ai"
+    ],
+    "lessonIds": [
+      "lesson-d1-risks",
+      "lesson-d1-principles",
+      "lesson-d3-lifecycle-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-verification-validation",
+    "term": "Verification & Validation",
+    "fullName": "検証と妥当性確認 (V&V)",
+    "aliases": [
+      "コード検証",
+      "出力確認"
+    ],
+    "shortDefinition": "AIが生成したコードが仕様を満たし、正確で安全かつ期待通りに動作するかを体系的に確認するプロセス。",
+    "detailedDefinition": "静的コード解析、リンター、コンパイル、単体テスト、セキュリティスキャン、および開発者自身の目視レビューを組み合わせて、Copilotの提案を本番採用する前に多層的に検査する一連のエンジニアリングプラクティス。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d1",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d1o2",
+      "d5o2"
+    ],
+    "whyItMatters": "Responsible AIを具現化する具体的な技術的手法であり、試験で高頻度で問われる実務要件。",
+    "useCases": [
+      "テストスイートの実行によるリグレッション確認",
+      "静的解析ツールによる構文・セキュリティ検査",
+      "エッジケースにおける手動動作確認"
+    ],
+    "examPoints": [
+      "目視だけでなく自動テストの実行を伴う検証が推奨される",
+      "シンタックスエラーだけでなく論理バグの確認が必要",
+      "既存のCI/CDパイプラインでの検証が必須"
+    ],
+    "commonConfusions": [
+      "IDE上でエラー表示が出ていないことだけで十分とする誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-correctness",
+      "g-security-vulnerability-scan",
+      "g-unit-test-generation"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d1-security-review",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q01",
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible",
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-automation-bias",
+    "term": "Over-reliance / Automation Bias",
+    "fullName": "過度の依存と自動化バイアス",
+    "aliases": [
+      "過度の信頼",
+      "過信"
+    ],
+    "shortDefinition": "AIの出力が洗練されているために批判的思考を停止し、提案を精査せずに無批判に受け入れてしまう人間の心理傾向。",
+    "detailedDefinition": "Copilotの生成コードが一見整然として動作するように見える場合、開発者が詳細なロジック検証やエッジケース確認を怠り、潜在的なバグや脆弱性を見落としてしまう危険性。GH-300ではこのリスクを意識した運用規律が求められる。",
+    "category": "AI基礎概念",
+    "importance": "important",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o2"
+    ],
+    "whyItMatters": "AI導入現場で最も発生しやすい人的リスクであり、責任あるAI運用テストの定番テーマ。",
+    "useCases": [
+      "複雑な正規表現やアルゴリズムの提案レビュー",
+      "外部ライブラリ呼び出し箇所の安全性確認"
+    ],
+    "examPoints": [
+      "提案をTabキーで盲目的に受け入れ続ける行為の危険性",
+      "ジュニア・シニア問わず発生しうる認知的バイアスであること"
+    ],
+    "commonConfusions": [
+      "AIツールのスキルが高いほど自動化バイアスがゼロになるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-responsible-ai",
+      "g-critical-evaluation"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d1-security-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-critical-evaluation",
+    "term": "Critical Evaluation of Suggestions",
+    "fullName": "提案の批判的評価",
+    "aliases": [
+      "批判的思考",
+      "コード精査"
+    ],
+    "shortDefinition": "AIの提案に対して「本当にこの要件に適しているか」「潜在的な副作用はないか」と疑問を持ちながら精査する態度。",
+    "detailedDefinition": "提案されたコードの効率性、保守性、セキュリティ、エラーハンドリングの網羅性を自発的に分析するプロセス。Copilotが提示する複数候補（Completions Panel）を比較検討することも含まれる。",
+    "category": "AI基礎概念",
+    "importance": "important",
+    "domainIds": [
+      "d1"
+    ],
+    "objectiveIds": [
+      "d1o2"
+    ],
+    "whyItMatters": "開発者の主体的役割を強調するGH-300の重要コンピテンシー。",
+    "useCases": [
+      "代替アルゴリズムの検討",
+      "メモリやパフォーマンスのボトルネックチェック"
+    ],
+    "examPoints": [
+      "提示された第1候補が常に最適とは限らない",
+      "プロンプトを修正して異なる解を再要求するアプローチ"
+    ],
+    "commonConfusions": [
+      "単に提案を拒否することと、客観的に評価することの混同"
+    ],
+    "relatedTermIds": [
+      "g-automation-bias",
+      "g-verification-validation"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d1-security-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-correctness",
+    "term": "Code Correctness Verification",
+    "fullName": "コード正確性の検証",
+    "aliases": [
+      "正当性検証",
+      "論理検証"
+    ],
+    "shortDefinition": "生成されたコードが論理的に正しく、境界条件や異常系を適切に処理しているかを確認すること。",
+    "detailedDefinition": "コンパイルが通り型エラーがない場合でも、オフバイワンエラー、null/undefinedポインタ、例外処理の欠落などの論理的誤りが存在しうる。これらをテストケースやドライランで確認する。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d1",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d1o2",
+      "d5o1"
+    ],
+    "whyItMatters": "見かけ上の完成度に騙されず、品質基準をクリアするための核心実務。",
+    "useCases": [
+      "境界値テスト（Boundary testing）の実行",
+      "異常系パラメータ入力時の動作確認"
+    ],
+    "examPoints": [
+      "型安全であってもビジネスロジックの正当性は保証されない",
+      "ユニットテストとの併用が必須"
+    ],
+    "commonConfusions": [
+      "文法チェックの通過とロジックの正当性の混同"
+    ],
+    "relatedTermIds": [
+      "g-verification-validation",
+      "g-unit-test-generation"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d1-security-review",
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-security-vulnerability-scan",
+    "term": "Security Vulnerability Scanning in AI Output",
+    "fullName": "AI生成出力に対するセキュリティ脆弱性スキャン",
+    "aliases": [
+      "脆弱性検査",
+      "セキュリティスキャン"
+    ],
+    "shortDefinition": "AIが生成したコードにSQLインジェクション、XSS、安全でないデシリアライズ等の脆弱性が含まれていないか検証するプロセス。",
+    "detailedDefinition": "LLMは過去の公開コードに存在した古い書き方や脆弱なパターンを学習している可能性があるため、生成コードに対してもGitHub Advanced Security (CodeQL) などのSASTツールやDependabotを実行し、セキュリティ監査を行う必要がある。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d1",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d1o2",
+      "d5o2"
+    ],
+    "whyItMatters": "AIの導入によって脆弱性が増加する懸念に対する企業の主要対策。試験頻出。",
+    "useCases": [
+      "CodeQLによるAI生成コードのCIスキャン",
+      "シークレットやハードコード認証情報の検知",
+      "入力値バリデーションの実装確認"
+    ],
+    "examPoints": [
+      "Copilotは脆弱なコードを生成する可能性がある",
+      "CI/CDにおける自動セキュリティスキャンの重要性",
+      "GitHub Advanced Securityとの連携シナリオ"
+    ],
+    "commonConfusions": [
+      "Copilot自身が完璧なセキュリティ検証を内部で保証しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-secret-leak-prevention",
+      "g-vulnerability-remediation"
+    ],
+    "lessonIds": [
+      "lesson-d1-security-review",
+      "lesson-d1-validation",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "privacy"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-peer-review-ai",
+    "term": "Peer Review for AI-Generated Code",
+    "fullName": "AI生成コードに対するピアレビュー",
+    "aliases": [
+      "コードレビュー",
+      "人間による相互レビュー"
+    ],
+    "shortDefinition": "開発者がCopilotを活用して作成したコードを、チームの他のエンジニアがプルリクエスト等で通常通り厳格に査読するプロセス。",
+    "detailedDefinition": "AIを使って記述したコードであっても、人間が書いたコードと同様、あるいはそれ以上に厳格なコードレビュー基準を適用する組織プラクティス。Copilot Code ReviewなどのAIアシストを活用しつつも、最終的なMerge承認は人間が行う。",
+    "category": "AI基礎概念",
+    "importance": "important",
+    "domainIds": [
+      "d1",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d1o2",
+      "d5o1"
+    ],
+    "whyItMatters": "チーム開発におけるガバナンスとコード品質担保の要。",
+    "useCases": [
+      "PR作成時のAI利用フラグまたは明示",
+      "レビュー時の設計妥当性・可読性の確認"
+    ],
+    "examPoints": [
+      "AI生成コードを特別扱いしてレビューを免除してはならない",
+      "レビュー担当者も責任の一端を担う"
+    ],
+    "commonConfusions": [
+      "AIツールを使えばチームレビューを廃止できるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-accountability",
+      "g-copilot-code-review"
+    ],
+    "lessonIds": [
+      "lesson-d1-security-review",
+      "lesson-d2-pr-code-review",
+      "lesson-d1-validation",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "code-review"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-inline-suggestions",
+    "term": "Inline Suggestions",
+    "fullName": "GitHub Copilot インライン提案",
+    "aliases": [
+      "コード補完",
+      "Inline completions"
+    ],
+    "shortDefinition": "エディタでコード編集中にリアルタイムでカーソル直後にグレーの文字（ゴーストテキスト）で表示されるコード提案。",
+    "detailedDefinition": "開いているファイルの内容、カーソルの前後コード、隣接タブの文脈を分析し、関数全体の補完やコメントからのコード生成を即座に提示するCopilotの最も基本的な機能。Tabで採用、Escで却下、Alt+] (Option+]) で次の候補を閲覧可能。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "whyItMatters": "IDEでの日々のコーディングワークフローの中核。ショートカットや動作挙動が問われる。",
+    "useCases": [
+      "関数シグネチャからの本体コード自動補完",
+      "自然言語コメントからの実装コード導出",
+      "反復的なデータ変換処理の記述"
+    ],
+    "examPoints": [
+      "Tabキーで受入れ、Escキーで破棄",
+      "Alt+] (Option+]) で複数提案を順送り",
+      "開いているファイル（隣接タブ）のコンテキストが利用される"
+    ],
+    "commonConfusions": [
+      "Copilot Chatとの操作性の違い",
+      "提案が強制適用されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-ghost-text",
+      "g-completions-panel",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "questionIds": [
+      "q03"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-ghost-text",
+    "term": "Ghost Text",
+    "fullName": "ゴーストテキスト",
+    "aliases": [
+      "グレーテキスト",
+      "提案表示"
+    ],
+    "shortDefinition": "インライン提案がエディタ上で未確定のまま薄いグレー文字でインライン表示されている状態。",
+    "detailedDefinition": "開発者がTabキーを押して確定するまで、ファイル自体にはまだ書き込まれていない揮発的な提案テキスト。開発者のタイピングを妨げず、そのまま入力を続ければ自然に消滅または更新される。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "whyItMatters": "IDE統合UIの基本仕様であり、エディタとの親和性の理解に寄与する。",
+    "useCases": [
+      "タイピング中のリアルタイム補完プレビュー",
+      "提案の一部のみの採用（単語単位採用: Ctrl+Right / Cmd+Right）"
+    ],
+    "examPoints": [
+      "Tabで全体受入れ、単語ごとの部分受入れも可能",
+      "エディタの通常の文字入力と衝突しない非侵襲的なUI"
+    ],
+    "commonConfusions": [
+      "すでに挿入された実際のコードとの混同"
+    ],
+    "relatedTermIds": [
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-completions-panel",
+    "term": "Copilot Completions Panel",
+    "fullName": "Copilot 提案パネル (Completions Panel)",
+    "aliases": [
+      "提案一覧",
+      "複数提案パネル",
+      "Copilot Panel"
+    ],
+    "shortDefinition": "現在のカーソル位置に対して生成された最大10件のコード提案を別タブで一覧表示し比較できる機能。",
+    "detailedDefinition": "ショートカット（Ctrl+Enter / Cmd+Enter）によって呼び出され、AIが生成した複数の異なるアプローチのコード候補を並列して確認し、気に入った提案を選んでエディタに直接挿入できる機能。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "whyItMatters": "1つの提案だけに頼らず、異なる実装手法を比較検討する際の公式推奨機能。",
+    "useCases": [
+      "アルゴリズムの異なる実装方法の比較",
+      "単一のゴーストテキストで期待通りの解が出ない場合の網羅探索"
+    ],
+    "examPoints": [
+      "Ctrl+Enter (Cmd+Enter) でパネルを起動",
+      "最大10件の提案が合成表示される",
+      "「コードの受入れ」ボタンで選択適用"
+    ],
+    "commonConfusions": [
+      "Copilot Chatウィンドウとの混同"
+    ],
+    "relatedTermIds": [
+      "g-inline-suggestions",
+      "g-critical-evaluation"
+    ],
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-chat",
+    "term": "Copilot Chat",
+    "fullName": "GitHub Copilot Chat",
+    "aliases": [
+      "チャット機能",
+      "Copilot対話"
+    ],
+    "shortDefinition": "IDEサイドバーやGitHub.com上で、自然言語を用いてコードに関する質問、設計相談、リファクタリング指示を行える対話機能。",
+    "detailedDefinition": "開発者との継続的な対話を通じてコードベースの理解、不具合の特定、テスト作成を支援する。@workspaceなどのChat Participants、/explainなどのSlash Commands、#fileなどのVariablesを用いて文脈を精密に制御できる。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3",
+      "d4o1"
+    ],
+    "whyItMatters": "GH-300の中心となる対話インターフェース。機能・コマンド・コンテキスト管理のすべてに関係する。",
+    "useCases": [
+      "コードの解説要求（/explain）",
+      "バグ修正の相談（/fix）",
+      "新機能の実装手順や設計パターンの相談"
+    ],
+    "examPoints": [
+      "対話履歴がコンテキストとして維持される",
+      "ParticipantsやCommandsで精度を向上可能",
+      "生成されたコードはエディタに直接適用またはコピー可能"
+    ],
+    "commonConfusions": [
+      "Inline Suggestionsとの使い分け",
+      "Agent Modeとの自律性の違い"
+    ],
+    "relatedTermIds": [
+      "g-inline-chat",
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-agent-mode"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d4-refinement",
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-agent-edits"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline",
+      "cmp-agent-vs-chat",
+      "cmp-spaces-vs-chat"
+    ],
+    "questionIds": [
+      "q04"
+    ],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-inline-chat",
+    "term": "Inline Chat",
+    "fullName": "インラインチャット (Ctrl+I / Cmd+I)",
+    "aliases": [
+      "エディタ内チャット",
+      "インライン対話"
+    ],
+    "shortDefinition": "エディタ内のコード選択箇所で直接入力欄を開き、その場でコード修正や生成を指示できる機能。",
+    "detailedDefinition": "サイドバーを開くことなく、作業中のコード上でCtrl+I (Cmd+I)を押して起動する。指示された変更がインラインDiff（差分表示）としてプレビューされ、AcceptまたはDiscardを選択できるため、集中を途切れさせずにリファクタリングできる。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "whyItMatters": "エディタ操作の中心機能。差分確認と適用のワークフローが試験で問われる。",
+    "useCases": [
+      "特定関数のその場リファクタリング",
+      "選択したコードへのJSDoc/コメント追加",
+      "選択コードに対する型アノテーション付与"
+    ],
+    "examPoints": [
+      "Ctrl+I / Cmd+I で起動",
+      "差分がDiffビューでプレビュー表示される",
+      "Acceptで適用、Discardで元に戻す"
+    ],
+    "commonConfusions": [
+      "サイドバーChatとの表示領域・目的の違い"
+    ],
+    "relatedTermIds": [
+      "g-copilot-chat",
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d2-inline-suggestions"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-chat-participants",
+    "term": "Chat Participants",
+    "fullName": "チャット参加者 (Chat Participants)",
+    "aliases": [
+      "@エージェント",
+      "Chat Agents",
+      "@workspace等"
+    ],
+    "shortDefinition": "Copilot Chatにおいて、特定のドメイン知識や機能スコープを持つ専門エージェントを `@` 記号で指定して呼び出す仕組み。",
+    "detailedDefinition": "VS Code等のIDEで利用可能な機能。`@workspace`（ワークスペース全体のコードベース探索）、`@vscode`（エディタ設定やコマンド）、`@terminal`（ターミナルバッファやシェル操作）など、タスクに適したコンテキストを持つ参加者を指定して高精度な応答を得る。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "whyItMatters": "プロンプトのスコープを適切に狭め、誤ったコンテキストによるノイズを防ぐための必須知識。",
+    "useCases": [
+      "`@workspace` でプロジェクト全体の依存関係や未定義エラーを調査",
+      "`@vscode` でIDEショートカットや設定変更方法を検索",
+      "`@terminal` で直前のコマンド実行エラーの原因を質問"
+    ],
+    "examPoints": [
+      "`@` 記号で呼び出す",
+      "参加者ごとにアクセス可能な情報と実行権限が異なる",
+      "`@workspace` はリポジトリインデックスを参照する"
+    ],
+    "commonConfusions": [
+      "Slash Commands（/）とParticipants（@）の役割の違い"
+    ],
+    "relatedTermIds": [
+      "g-slash-commands",
+      "g-chat-variables",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q05"
+    ],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-slash-commands",
+    "term": "Slash Commands",
+    "fullName": "スラッシュコマンド (Slash Commands)",
+    "aliases": [
+      "スラッシュコマンド",
+      "/explain等"
+    ],
+    "shortDefinition": "Copilot Chatで頻出する一般的なタスク（説明、修正、テスト生成など）を `/` から始まるキーワードで直接指示する構文。",
+    "detailedDefinition": "定型的な指示を簡潔に行うためのコマンド。`/explain`（コードの解説）、`/fix`（バグや問題の修正提案）、`/tests`（テストコード生成）、`/doc`（ドキュメント作成）、`/new`（新規スキャフォールド）、`/clear`（チャットセッション初期化）などがある。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "whyItMatters": "試験問題で「ある操作を行うのに最も適したコマンドはどれか」という形式で頻繁に出題される。",
+    "useCases": [
+      "`/explain` で難解な正規表現やSQLの意図を把握",
+      "コンパイルエラー箇所を選択して `/fix` を実行",
+      "新関数を作成して `/tests` でテスト骨格を自動作成"
+    ],
+    "examPoints": [
+      "`/explain` は説明、`/fix` はバグ修正、`/tests` はテスト作成",
+      "参加者と組み合わせて利用可能（例: `@workspace /explain`）",
+      "長いプロンプトを書かずに意図を正確に伝達できる"
+    ],
+    "commonConfusions": [
+      "Chat Variables（#）との混同",
+      "CLIコマンドとの混同"
+    ],
+    "relatedTermIds": [
+      "g-chat-participants",
+      "g-chat-variables",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q05"
+    ],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-chat-variables",
+    "term": "Chat Variables",
+    "fullName": "チャット変数 (Chat Variables)",
+    "aliases": [
+      "コンテキスト変数",
+      "#file等"
+    ],
+    "shortDefinition": "Copilot Chatのプロンプト内に `#` を使って特定のファイルやエディタ状態を明示的に参照コンテキストとして含める構文。",
+    "detailedDefinition": "AIに渡す文脈を正確に指定するための仕組み。`#file:path/to/file`（特定ファイル全体）、`#selection`（現在選択中のコード範囲）、`#editor`（現在アクティブなエディタの可視範囲）、`#terminalLastCommand`（ターミナルの直前実行内容）などを指定できる。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d4o1"
+    ],
+    "whyItMatters": "コンテキストウィンドウの消費を抑えつつ、必要な情報をピンポイントでAIに渡す技術の基礎。",
+    "useCases": [
+      "別ファイルで定義されたインターフェースを `#file` で参照しながら実装",
+      "選択したコードブロックのみを `#selection` で修正対象に指定"
+    ],
+    "examPoints": [
+      "`#` 記号でファイルやエディタ状態を指定する",
+      "不要なファイルを含めず必要な情報だけを厳選するのに有効",
+      "自動コンテキスト収集の精度を補強できる"
+    ],
+    "commonConfusions": [
+      "プロンプト内にファイルの中身を手動で全文コピペする非効率な手法との対比"
+    ],
+    "relatedTermIds": [
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-context-gathering"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d2-inline-suggestions",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-status-menu",
+    "term": "Copilot Status Menu & Icon",
+    "fullName": "Copilot ステータスメニューとアイコン",
+    "aliases": [
+      "ステータスバーアイコン",
+      "Copilot状態"
+    ],
+    "shortDefinition": "IDEのステータスバーに表示されるGitHub Copilotの動作状態インジケータおよび設定メニュー。",
+    "detailedDefinition": "Copilotが現在有効か、待機中か、エラーが発生しているか、あるいはContent Exclusionによって対象ファイルが無効化されているかをアイコンで確認できる。クリックして言語ごとの補完の有効/無効化やログの確認が可能。",
+    "category": "Copilot機能",
+    "importance": "supplementary",
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d6o2"
+    ],
+    "whyItMatters": "Content Exclusionが正常に適用されているかの目視確認やトラブルシューティングで登場する。",
+    "useCases": [
+      "ファイルがContent Exclusion対象かどうかのアイコン確認",
+      "特定言語（Markdownなど）での補完の一時無効化"
+    ],
+    "examPoints": [
+      "ステータスバーアイコンに斜線や警告が付いている場合は無効または除外状態",
+      "クリックしてステータスメニューを開ける"
+    ],
+    "commonConfusions": [
+      "プラグイン全体のクラッシュとポリシーによる無効化の判別"
+    ],
+    "relatedTermIds": [
+      "g-client-exclusion-check",
+      "g-content-exclusion"
+    ],
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d2-chat-essentials",
+      "lesson-d6-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "exclusion",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-cli",
+    "term": "GitHub Copilot in the CLI",
+    "fullName": "GitHub Copilot in the CLI",
+    "aliases": [
+      "gh copilot",
+      "Copilot CLI"
+    ],
+    "shortDefinition": "ターミナル環境で自然言語を用いてシェルコマンドやGit操作の提案・説明を受けられるGitHub CLI拡張機能。",
+    "detailedDefinition": "`gh extension install github/gh-copilot` で導入されるツール。ターミナル上で `gh copilot explain` や `gh copilot suggest` を実行することで、複雑なコマンドライン構文やシェルスクリプトの作成・解説を対話形式で支援する。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "Domain 2の独立したObjective (d2o2) であり、試験で必ず出題される機能群。",
+    "useCases": [
+      "複雑なfindやawk、sedコマンドの作成",
+      "難解なgit rebaseやcherry-pickコマンドの解説",
+      "スクリプト実行前の挙動確認"
+    ],
+    "examPoints": [
+      "GitHub CLI (`gh`) の拡張機能として動作する",
+      "`explain` と `suggest` の2大主要サブコマンドがある",
+      "Content ExclusionはCLIではサポートされていない（重要）"
+    ],
+    "commonConfusions": [
+      "IDE内ターミナルの `@terminal` と、スタンドアロンの `gh copilot` コマンドの混同"
+    ],
+    "relatedTermIds": [
+      "g-gh-copilot-explain",
+      "g-gh-copilot-suggest",
+      "g-cli-execution-confirm"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-gh-copilot-explain",
+    "term": "gh copilot explain",
+    "fullName": "`gh copilot explain` サブコマンド",
+    "aliases": [
+      "コマンド解説",
+      "copilot explain"
+    ],
+    "shortDefinition": "指定したシェルコマンドやフラグの意味・動作を自然言語で詳細に解説させるCopilot CLIコマンド。",
+    "detailedDefinition": "構文: `gh copilot explain \"<コマンド文字列>\"`。難解なパイプラインや普段使わないオプションの意味を段階的に分解して説明してくれるため、見慣れないスクリプトを実行する前の安全確認に利用される。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "`suggest` との使い分けが試験で直接問われる中核コマンド。",
+    "useCases": [
+      "`gh copilot explain \"iptables -L -n -v\"` でファイアウォール設定の意味を理解",
+      "`git log --graph --oneline --all` のフラグ確認"
+    ],
+    "examPoints": [
+      "目的は『既存コマンドの理解・説明』であること",
+      "実行は行わず説明のみを出力する",
+      "ダブルクォートでコマンドを囲むのが基本"
+    ],
+    "commonConfusions": [
+      "新しくコマンドを作らせる `suggest` との混同"
+    ],
+    "relatedTermIds": [
+      "g-copilot-cli",
+      "g-gh-copilot-suggest"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-gh-copilot-suggest",
+    "term": "gh copilot suggest",
+    "fullName": "`gh copilot suggest` サブコマンド",
+    "aliases": [
+      "コマンド提案",
+      "copilot suggest"
+    ],
+    "shortDefinition": "やりたい作業を自然言語で入力し、適切なシェルコマンドやGitコマンドを提案させるCopilot CLIコマンド。",
+    "detailedDefinition": "構文: `gh copilot suggest \"<やりたいこと>\"`。コマンドの種類として `generic shell command`, `gh command`, `git command` のいずれの対象かを対話型で選択でき、生成されたコマンドを実行、クリップボードにコピー、または再修正できる。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "CLI上で自然言語からコマンドを生成する主力機能であり、オプション選択ワークフローが出題対象。",
+    "useCases": [
+      "`gh copilot suggest \"Undo the last git commit without losing changes\"`",
+      "`gh copilot suggest \"Find all .log files older than 30 days and delete them\"`"
+    ],
+    "examPoints": [
+      "目的は『やりたいことからコマンドを生成する』こと",
+      "コマンドタイプ（generic / gh / git）を選択可能",
+      "提案後に実行確認（Execute command）を求められる安全設計"
+    ],
+    "commonConfusions": [
+      "`explain` との混同",
+      "提案されたコマンドが自動的に即時実行されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-copilot-cli",
+      "g-gh-copilot-explain",
+      "g-cli-execution-confirm"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-cli-shell-aliases",
+    "term": "Terminal Shell Aliases (ghcs / ghce)",
+    "fullName": "CLIシェルエイリアス (`ghcs` / `ghce`)",
+    "aliases": [
+      "ghcs",
+      "ghce",
+      "CLIエイリアス"
+    ],
+    "shortDefinition": "Copilot CLIのコマンド入力を短縮し、対話型実行をシェルから素早く呼び出すための公式推奨エイリアス設定。",
+    "detailedDefinition": "`gh copilot alias -- bash` 等を実行して `.bashrc` や `.zshrc` に登録する。`ghcs` (`gh copilot suggest`) と `ghce` (`gh copilot explain`) が登録され、長いコマンド入力を省いて即座に支援を呼び出せる。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "実務的なCLIセットアップ手順として公式ドキュメントで強調されている。",
+    "useCases": [
+      "`ghcs \"tar extract to specific directory\"`",
+      "`ghce \"kill -9 $(lsof -t -i:8080)\"`"
+    ],
+    "examPoints": [
+      "`ghcs` は suggest のエイリアス",
+      "`ghce` は explain のエイリアス",
+      "シェル設定ファイルに評価スクリプトを追加して設定する"
+    ],
+    "commonConfusions": [
+      "デフォルトで自動的に設定されているという誤解（明示的な設定が必要）"
+    ],
+    "relatedTermIds": [
+      "g-copilot-cli",
+      "g-gh-copilot-suggest",
+      "g-gh-copilot-explain"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-cli-execution-confirm",
+    "term": "CLI Execution Confirmation & Safeguards",
+    "fullName": "CLI実行確認とセーフガード",
+    "aliases": [
+      "実行確認",
+      "コマンド実行保護"
+    ],
+    "shortDefinition": "Copilot CLIが提案したコマンドをユーザーが内容を確認・承認するまで自動実行しない安全保護機構。",
+    "detailedDefinition": "`gh copilot suggest` はコマンド生成後、直ちにシェルで実行するのではなく、「Copy to clipboard」「Execute command」「Revise command」「Exit」の選択肢を提示する。危険なコマンド（rm -rfなど）による誤動作を防止する。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "Responsible AI原則（Human-in-the-loop）がCLI製品においてどう実装されているかを示す好例。",
+    "useCases": [
+      "破壊的なファイル削除やGit操作前の確認",
+      "修正が必要な場合の「Revise command」によるプロンプト調整"
+    ],
+    "examPoints": [
+      "提案されたコマンドはデフォルトで自動実行されない",
+      "ユーザーが明示的に「Execute command」を選択して実行する",
+      "実行前にコマンドの修正やコピーが可能"
+    ],
+    "commonConfusions": [
+      "CLIは危険なので実行機能自体が存在しないという誤解（確認付きで実行可能）"
+    ],
+    "relatedTermIds": [
+      "g-copilot-cli",
+      "g-code-accountability",
+      "g-gh-copilot-suggest"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli",
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-cli-context-limits",
+    "term": "CLI Context Limitations",
+    "fullName": "CLIにおけるコンテキスト制約",
+    "aliases": [
+      "CLIコンテキスト制限"
+    ],
+    "shortDefinition": "Copilot CLIが参照できるコンテキストは入力されたプロンプトやコマンド文字列に限られ、IDEのようにリポジトリ全体を自動解析しない制約。",
+    "detailedDefinition": "IDE統合版のCopilotと異なり、CLI版は現在開いている複数ファイルのタブやワークスペースのコードベースインデックスを自動参照しない。必要な文脈（OS環境、エラーメッセージ、ファイルパス）はプロンプト内で明示的に渡す必要がある。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "whyItMatters": "IDE版とCLI版の動作の違い・使い分けを問う問題の要点。",
+    "useCases": [
+      "プロンプトに環境情報（例: Ubuntu 24.04上）を含めて質問",
+      "エラーメッセージをプロンプトに引用して原因調査"
+    ],
+    "examPoints": [
+      "CLIはリポジトリの全ファイルを自動インデックスしない",
+      "コンテキストはプロンプトの記述内容に大きく依存する",
+      "Content ExclusionはCLIでは適用対象外である"
+    ],
+    "commonConfusions": [
+      "IDEの `@workspace` と同じようにCLIがプロジェクト構造を把握しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-copilot-cli",
+      "g-exclusion-limitations"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli",
+      "exclusion"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-agent-mode",
+    "term": "Agent Mode",
+    "fullName": "GitHub Copilot Agent Mode",
+    "aliases": [
+      "エージェントモード",
+      "Agent Mode in VS Code"
+    ],
+    "shortDefinition": "複数ファイルの編集、ターミナルコマンドの実行、エラーの自己修正を自律的に繰り返してタスクを完遂するCopilotの高度な自律モード。",
+    "detailedDefinition": "Copilot Chatの実行モードの1つ。ユーザーの高レベルな指示（例:「新機能を実装してテストを通す」）に対し、作業計画の立案、複数ファイルのコード編集、ターミナルでのテストやビルドの実行、エラーログの分析と修正を自律的なループで行う。最終的な変更はユーザーがレビューして適用する。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "whyItMatters": "2026年シラバスの最重要新規トピック。従来のChatやEditsとの決定的な違いが問われる。",
+    "useCases": [
+      "複数ファイルにまたがるAPI仕様変更のリファクタリング",
+      "新機能のスキャフォールドとユニットテストの追加・全件パス",
+      "ビルドエラーの原因特定と自律修正"
+    ],
+    "examPoints": [
+      "複数ファイルの作成・編集が可能",
+      "ターミナルコマンドを実行して結果をフィードバックできる",
+      "エラーが発生した場合に自律的に再試行・修正する",
+      "MCPサーバーと連携して外部ツールを利用可能"
+    ],
+    "commonConfusions": [
+      "Copilot Editsとの違い（Editsはコマンド実行や自律ループを行わない）",
+      "単なるチャットとの違い"
+    ],
+    "relatedTermIds": [
+      "g-copilot-edits",
+      "g-mcp",
+      "g-agent-sessions",
+      "g-sub-agents"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials"
+    ],
+    "comparisonIds": [
+      "cmp-agent-vs-edits",
+      "cmp-agent-vs-chat"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-edits",
+    "term": "Copilot Edits",
+    "fullName": "GitHub Copilot Edits",
+    "aliases": [
+      "コパイロットエディット",
+      "マルチファイル編集セッション"
+    ],
+    "shortDefinition": "複数の指定ファイルに対して、自然言語のプロンプトで一括かつ協調的なコード修正を提案させるマルチファイル編集機能。",
+    "detailedDefinition": "作業ワーキングセット（Working Set）に編集対象のファイルを指定し、プロンプトを入力することで、ファイル間の整合性を保ちながら一括で変更差分（Diff）を提案する。ターミナルの自律実行は伴わず、ユーザーが直接編集内容をコントロールする。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "whyItMatters": "Agent Modeとの境界線、および単一ファイル編集との違いが試験で頻出。",
+    "useCases": [
+      "インターフェース変更に伴う複数ファイルの実装追従",
+      "モデル定義とコントローラーの同時更新"
+    ],
+    "examPoints": [
+      "Working Setに対象ファイルを追加して指示を与える",
+      "複数ファイルの変更Diffをまとめてレビュー・適用できる",
+      "ターミナルコマンドの自律実行や修正ループは行わない（Agent Modeとの差）"
+    ],
+    "commonConfusions": [
+      "Agent Modeとの混同（ターミナル自動実行の有無が鍵）"
+    ],
+    "relatedTermIds": [
+      "g-agent-mode",
+      "g-copilot-chat",
+      "g-inline-chat"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials",
+      "lesson-d2-mcp"
+    ],
+    "comparisonIds": [
+      "cmp-agent-vs-edits"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode",
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-mcp",
+    "term": "Model Context Protocol (MCP)",
+    "fullName": "Model Context Protocol (MCP)",
+    "aliases": [
+      "モデルコンテキストプロトコル",
+      "MCP"
+    ],
+    "shortDefinition": "AIモデルやエージェントが、外部のデータソース、ツール、サービスと安全かつ標準化された方法で連携するためのオープンプロトコル。",
+    "detailedDefinition": "Anthropicによって提唱されGitHub Copilotにも採用された標準規格。Copilot（特にAgent Mode）がMCP Serverを介して社内データベース、課題追跡システム（Jira/GitHub Issues）、ファイルシステム、外部APIに安全にアクセスし、コンテキスト取得やツール呼び出しを行えるようにする。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "2026年シラバスで追加されたエコシステムの目玉概念。Copilot Extensionsとの違いも問われる。",
+    "useCases": [
+      "社内データベースのスキーマ情報をリアルタイム取得してクエリ生成",
+      "GitHub IssueやPRの情報を直接読み取ってコード修正",
+      "外部デプロイAPIとの連携"
+    ],
+    "examPoints": [
+      "外部データソースやツールとAIを接続する標準プロトコル",
+      "Copilot Agent ModeからMCP Toolsを呼び出して実行可能",
+      "クライアント（IDE/Copilot）とサーバー（MCP Server）の分離構造"
+    ],
+    "commonConfusions": [
+      "Copilot Extensionsとの違い",
+      "単なるREST API呼び出しとの違い（プロトコル標準化とエージェント対話）"
+    ],
+    "relatedTermIds": [
+      "g-mcp-server",
+      "g-mcp-client",
+      "g-mcp-tools",
+      "g-agent-mode"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp",
+      "lesson-d2-agent-edits",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-mcp-vs-extensions"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp",
+      "agent-mode",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-mcp-server",
+    "term": "MCP Server",
+    "fullName": "MCP サーバー (Model Context Protocol Server)",
+    "aliases": [
+      "MCPサーバー"
+    ],
+    "shortDefinition": "MCP規格に準拠し、特定のデータソースや実行可能ツールをAIクライアントに公開する軽量サーバープログラム。",
+    "detailedDefinition": "ローカル環境またはリモートで動作し、データベース接続、ファイル操作、Web検索、特定APIの呼び出しなどの機能を「ツール」や「リソース」としてCopilotなどのMCPクライアントに提供する。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "開発チームが独自の社内ツールやデータをCopilotに統合するためのアーキテクチャ要件。",
+    "useCases": [
+      "PostgreSQL用MCPサーバーによるDBスキーマ連携",
+      "社内GitLab/Backlog用MCPサーバーの接続"
+    ],
+    "examPoints": [
+      "Tools（実行可能関数）とResources（参照データ）を提供する",
+      "VS Code等の設定ファイルで接続先を構成する",
+      "実行にはユーザーのセキュリティ承認が必要"
+    ],
+    "commonConfusions": [
+      "Copilotの中央バックエンドサーバーとの混同"
+    ],
+    "relatedTermIds": [
+      "g-mcp",
+      "g-mcp-client",
+      "g-mcp-tools"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp",
+      "lesson-d2-agent-edits",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-mcp-client",
+    "term": "MCP Client",
+    "fullName": "MCP クライアント (Model Context Protocol Client)",
+    "aliases": [
+      "MCPクライアント"
+    ],
+    "shortDefinition": "ユーザーの指示を処理するAIアプリケーション（VS Code上のGitHub Copilotなど）のうち、MCPサーバーと通信して機能を利用する側。",
+    "detailedDefinition": "ユーザーからのプロンプトを解析し、接続されたMCPサーバーが公開しているツールやリソースの中から適切なものを選択・要求し、その結果をプロンプトのコンテキストに統合して回答を生成する役割を担う。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "MCPアーキテクチャの役割分担を理解するために必要。",
+    "useCases": [
+      "VS Code Copilotが利用可能なMCPツールを検知して一覧化",
+      "Agent Modeがツールの実行許可をユーザーにプロンプト表示"
+    ],
+    "examPoints": [
+      "GitHub Copilot（IDE拡張）がMCP Clientとして機能する",
+      "ツールの実行判断とユーザーへの確認ダイアログの表示を行う"
+    ],
+    "commonConfusions": [
+      "MCP Serverとの役割の逆転"
+    ],
+    "relatedTermIds": [
+      "g-mcp",
+      "g-mcp-server"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp",
+      "lesson-d2-agent-edits",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-mcp-tools",
+    "term": "MCP Tools & Resources",
+    "fullName": "MCP ツールとリソース (Tools and Resources)",
+    "aliases": [
+      "MCP Tools",
+      "MCP Resources"
+    ],
+    "shortDefinition": "MCPサーバーがクライアントに提供する、実行可能なアクション（Tools）および読み取り専用のデータ（Resources）。",
+    "detailedDefinition": "Toolsは副作用を伴う可能性のある操作（ファイル作成、SQL実行、API呼び出しなど）であり、実行には明示的な承認が求められる。Resourcesはコンテキストとして読み込まれるデータ（ドキュメント、スキーマ定義など）である。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "AIによる外部操作の安全性（副作用管理と読み取りの区別）に関する知識を担保するため。",
+    "useCases": [
+      "Read-onlyリソースとしてのAPI仕様書読み込み",
+      "Toolとしてのテストランナーコマンド実行"
+    ],
+    "examPoints": [
+      "Toolsは実行可能（Action）、Resourcesは参照用データ（Data）",
+      "Toolsの実行には安全のための確認機構が介在する"
+    ],
+    "commonConfusions": [
+      "すべてのアクションが無条件でバックグラウンド実行されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-mcp",
+      "g-mcp-server"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp",
+      "lesson-d2-agent-edits",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-agent-sessions",
+    "term": "Agent Sessions",
+    "fullName": "エージェントセッション (Agent Sessions)",
+    "aliases": [
+      "Agent Session",
+      "エージェント対話セッション"
+    ],
+    "shortDefinition": "Agent Modeが1つのタスクを遂行する一連の対話履歴、作業ログ、試行錯誤のステップをカプセル化した実行単位。",
+    "detailedDefinition": "Agent Mode実行時に作成され、計画→実行→検証→修正のループ全体を記録する。セッションごとに過去のツール実行結果やDiffがコンテキストとして保持され、タスク完了時にまとめてコミットや破棄が行える。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "長時間動作する自律エージェントの作業管理・監査単位を理解するため。",
+    "useCases": [
+      "途中でタスクを中断・再開する際のセッション管理",
+      "試行錯誤のステップ履歴を確認して不要な変更をロールバック"
+    ],
+    "examPoints": [
+      "セッション単位で作業状態やツール実行履歴が管理される",
+      "タスク単位で独立したスレッドとして機能する"
+    ],
+    "commonConfusions": [
+      "通常の単発チャット履歴との混同"
+    ],
+    "relatedTermIds": [
+      "g-agent-mode",
+      "g-sub-agents"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-sessions-vs-subagents"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-sub-agents",
+    "term": "Sub-Agents",
+    "fullName": "サブエージェント (Sub-Agents)",
+    "aliases": [
+      "子エージェント",
+      "Sub-Agent"
+    ],
+    "shortDefinition": "メインエージェントから特定の下位タスク（調査、テスト作成、ファイル探索など）を委譲されて並行または階層的に動作する特殊エージェント。",
+    "detailedDefinition": "複雑な開発タスクにおいて、メインのコンテキストウィンドウを汚染せずに独立して調査や試行を行い、要約した結果のみを親エージェントに返すことで、大規模な問題解決を可能にする仕組み。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "高度なエージェントアーキテクチャにおけるコンテキスト効率化の重要概念。",
+    "useCases": [
+      "巨大リポジトリ内での特定エラーの発生箇所調査の委譲",
+      "依存関係ツリーの事前解析"
+    ],
+    "examPoints": [
+      "親エージェントから独立したタスクを引き受ける",
+      "コンテキストウィンドウの過消費を防ぐ役割を果たす"
+    ],
+    "commonConfusions": [
+      "単一のLLMプロンプト連鎖との混同"
+    ],
+    "relatedTermIds": [
+      "g-agent-mode",
+      "g-agent-sessions"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-sessions-vs-subagents"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-code-review",
+    "term": "Copilot Code Review",
+    "fullName": "GitHub Copilot Code Review",
+    "aliases": [
+      "AIコードレビュー",
+      "Copilot PR Review"
+    ],
+    "shortDefinition": "プルリクエストにおいて、変更差分をAIが自動分析してコード品質、潜在バグ、改善提案のコメントを投稿する機能。",
+    "detailedDefinition": "GitHub.com上のPull Requestで動作する。差分に含まれる論理エラー、セキュリティ上の懸念、可読性の問題を見つけ出し、該当行に直接サジェスト付きコメントを行う。組織ポリシーにより自動実行や必須レビュー対象として設定可能。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d2o4",
+      "d5o1"
+    ],
+    "whyItMatters": "開発フローの自動化と品質向上の中核。ポリシー設定（d2o4）と生産性（d5o1）の架け橋。",
+    "useCases": [
+      "PR作成時の初回自動レビューによる見落とし防止",
+      "レビュアーの負荷軽減とレビューサイクルの短縮"
+    ],
+    "examPoints": [
+      "Pull Requestの差分に対してインラインコメントを投稿できる",
+      "組織設定で自動レビューポリシーを適用可能",
+      "最終的なマージ承認権限は人間のレビュアーが持つ"
+    ],
+    "commonConfusions": [
+      "PR Summary（要約作成）とCode Review（指摘・改善提案）の違い"
+    ],
+    "relatedTermIds": [
+      "g-pr-summaries",
+      "g-code-review-policies",
+      "g-peer-review-ai"
+    ],
+    "lessonIds": [
+      "lesson-d2-pr-code-review",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts"
+    ],
+    "comparisonIds": [
+      "cmp-review-vs-summary"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "code-review",
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-pr-summaries",
+    "term": "Pull Request Summaries",
+    "fullName": "プルリクエスト要約 (PR Summaries)",
+    "aliases": [
+      "Copilot for PRs",
+      "PR要約"
+    ],
+    "shortDefinition": "プルリクエストに含まれるコミット群や変更Diffを分析し、変更点、影響範囲、テスト方法をまとめた説明文を自動生成する機能。",
+    "detailedDefinition": "GitHub.com上でPR作成時または編集時にボタン一つで呼び出せる。変更されたファイルや関数の目的を構造化されたMarkdown（箇条書き、ウォークスルー）で生成し、人間のレビュアーが差分の全体像を迅速に把握できるようにする。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d5o1"
+    ],
+    "whyItMatters": "開発生産性を直接向上させるGitHub.com連携の代表機能。",
+    "useCases": [
+      "大規模なPR説明文の自動ドラフト作成",
+      "変更箇所のPoemやサマリーの迅速な共有"
+    ],
+    "examPoints": [
+      "PR本文にMarkdown形式で変更内容の要約を挿入する",
+      "レビュー指摘を行うCode Reviewとは異なり『変更内容の記述・要約』に特化"
+    ],
+    "commonConfusions": [
+      "Copilot Code Reviewとの役割の混同"
+    ],
+    "relatedTermIds": [
+      "g-copilot-code-review",
+      "g-doc-generation"
+    ],
+    "lessonIds": [
+      "lesson-d2-pr-code-review",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts"
+    ],
+    "comparisonIds": [
+      "cmp-review-vs-summary"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "code-review",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-custom-instructions",
+    "term": "Custom Instructions (`copilot-instructions.md`)",
+    "fullName": "カスタムインストラクション (`copilot-instructions.md`)",
+    "aliases": [
+      "Custom Instructions",
+      "プロジェクト固有指示"
+    ],
+    "shortDefinition": "リポジトリの `.github/copilot-instructions.md` にプロジェクトの規約、使用技術、コーディングスタイルを記述し、Copilotの全対話・生成に自動適用させる機能。",
+    "detailedDefinition": "リポジトリルートの `.github/copilot-instructions.md` ファイルにMarkdownで記述された指示が、Copilot Chatやコード補完のシステムプロンプト/コンテキストに自動的に注入される。プロンプトごとに都度「TypeScriptで書いて」「テストはVitestを使って」と繰り返す必要がなくなる。",
+    "category": "Copilot機能",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d4o1"
+    ],
+    "whyItMatters": "チーム全体でCopilotの出力品質と一貫性を担保するデファクトスタンダード手法。試験頻出。",
+    "useCases": [
+      "アーキテクチャ規約（例: Clean Architectureに従う）の遵守",
+      "非推奨APIや禁止ライブラリの明示",
+      "特定の言語バージョンやテストフレームワークの指定"
+    ],
+    "examPoints": [
+      "パスは `.github/copilot-instructions.md` である",
+      "リポジトリ内のすべてのCopilot操作に自動で適用される",
+      "個人設定（ユーザーレベル）とリポジトリ設定の両方が存在する"
+    ],
+    "commonConfusions": [
+      "Prompt Files（手動呼び出し）とCustom Instructions（常時自動適用）の違い"
+    ],
+    "relatedTermIds": [
+      "g-scoped-instructions",
+      "g-prompt-files",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-instructions-vs-prompts"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "instructions",
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-scoped-instructions",
+    "term": "Scoped Instructions",
+    "fullName": "スコープ付きインストラクション (`.github/instructions/*.md`)",
+    "aliases": [
+      "ディレクトリ別指示",
+      "Scoped Instructions"
+    ],
+    "shortDefinition": "特定のディレクトリやファイルパターン（フロントエンド、バックエンドなど）ごとに個別の指示ファイルを適用する高度な構成。",
+    "detailedDefinition": "モノレポや複数言語が混在するプロジェクトにおいて、`.github/instructions/` ディレクトリ配下にターゲットを限定した指示ファイルを配置し、作業対象のファイルパスに応じて最適なインストラクションを動的に切り替える仕組み。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d4o1"
+    ],
+    "whyItMatters": "大規模リポジトリにおけるインストラクションの肥大化・コンテキスト圧迫を避けるための必須設計知識。",
+    "useCases": [
+      "フロントエンド（React規約）とバックエンド（Go規約）で異なる指示を適用",
+      "テストディレクトリ内のみ適用するモック作成指針"
+    ],
+    "examPoints": [
+      "特定パスやスコープに限定して指示を適用できる",
+      "全域インストラクション（`copilot-instructions.md`）と併用可能"
+    ],
+    "commonConfusions": [
+      "リポジトリ全体に1つしか置けないという誤解"
+    ],
+    "relatedTermIds": [
+      "g-custom-instructions",
+      "g-prompt-files"
+    ],
+    "lessonIds": [
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "instructions"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-prompt-files",
+    "term": "Prompt Files (`.github/prompts/*.prompt.md`)",
+    "fullName": "プロンプトファイル (`.prompt.md`)",
+    "aliases": [
+      "Prompt Files",
+      "再利用可能プロンプト"
+    ],
+    "shortDefinition": "よく使う定型的なプロンプト（コードレビュー、リファクタリング、特定形式のテスト生成など）をファイル化してチームで再利用・共有する仕組み。",
+    "detailedDefinition": "`.github/prompts/` ディレクトリ内に `.prompt.md` 拡張子で保存する。フロントマターにモデルやコンテキスト参照を含めることができ、Copilot Chatの入力欄からスラッシュコマンドのように直接呼び出して定型タスクを実行できる。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d4o1"
+    ],
+    "whyItMatters": "プロンプトエンジニアリングのチーム共有・標準化手法として2026年シラバスで重要度が増した機能。",
+    "useCases": [
+      "「アクセシビリティ監査用プロンプト」の共有",
+      "「DBマイグレーションスクリプト作成プロンプト」の標準化"
+    ],
+    "examPoints": [
+      "拡張子は `.prompt.md` である",
+      "チーム内でバージョン管理（Git管理）して共有可能",
+      "呼び出すことでパラメータや文脈に応じたタスクを実行"
+    ],
+    "commonConfusions": [
+      "常時自動適用される `copilot-instructions.md` と、オンデマンドで呼び出す `*.prompt.md` の違い"
+    ],
+    "relatedTermIds": [
+      "g-custom-instructions",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-instructions-vs-prompts"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt-files",
+      "instructions"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-spaces",
+    "term": "GitHub Copilot Spaces",
+    "fullName": "GitHub Copilot Spaces",
+    "aliases": [
+      "Copilot Spaces",
+      "コラボレーションスペース"
+    ],
+    "shortDefinition": "複数のリポジトリ、ドキュメント、課題、メモをまとめて単一の共有AIコンテキストとして保持・対話できるWebベースの作業空間。",
+    "detailedDefinition": "GitHub.com上で提供される機能。特定のリポジトリ単体を超えて、複数サービスにまたがるシステムや外部ドキュメントを1つのSpaceにまとめ、チーム全体で同じコンテキストを共有しながら横断的なブレインストーミングや仕様調査を行える。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "複数リポジトリ構成（マイクロサービス）でのCopilot活用における新機軸。",
+    "useCases": [
+      "マイクロサービス間を横断するデータ連携の設計検討",
+      "リポジトリと仕様書ドキュメントを組み合わせたオンボーディング"
+    ],
+    "examPoints": [
+      "複数リポジトリやドキュメントを単一のコンテキスト空間に束ねられる",
+      "チームメンバー間でコンテキストとチャットを共有可能"
+    ],
+    "commonConfusions": [
+      "単一リポジトリを対象とするIDEサイドバーChatとのスコープの違い"
+    ],
+    "relatedTermIds": [
+      "g-copilot-chat",
+      "g-spaces"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-spaces-vs-chat"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "spaces",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-spark",
+    "term": "GitHub Spark",
+    "fullName": "GitHub Spark",
+    "aliases": [
+      "Spark",
+      "マイクロアプリビルダー"
+    ],
+    "shortDefinition": "自然言語の対話だけでアイデアからフルスタックのマイクロアプリケーションを構築・カスタマイズ・ホストできるAIツール。",
+    "detailedDefinition": "開発環境の構築やデプロイ設定を一切行わずに、プロンプトで指示するだけでデータ永続化とUIを備えたWebアプリケーション（Spark）を即座に作成・反復改善できる革新的なプラットフォーム。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "2026年シラバスの最先端機能の1つ。プロトタイピングや社内ツールの迅速な構築手法として位置付けられる。",
+    "useCases": [
+      "アイデアの即時プロトタイピング",
+      "チーム内専用の簡単な投票ツールやダッシュボードの構築"
+    ],
+    "examPoints": [
+      "自然言語による指示で動くWebアプリを生成・ホストする",
+      "コードを直接記述・編集するモードも備える"
+    ],
+    "commonConfusions": [
+      "IDE用コード補完プラグインとの混同"
+    ],
+    "relatedTermIds": [
+      "g-generative-ai",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "spark",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-extensions",
+    "term": "Copilot Extensions",
+    "fullName": "GitHub Copilot Extensions",
+    "aliases": [
+      "Copilot 拡張機能",
+      "Copilot エクステンション"
+    ],
+    "shortDefinition": "サードパーティの開発ツールやクラウドプラットフォーム（Docker, Azure, Datadog等）の機能をCopilot Chat内から直接操作・連携できる拡張機構。",
+    "detailedDefinition": "GitHub Marketplaceで提供される連携アプリ。チャット内で `@docker` や `@azure` などの参加者を呼び出し、外部サービスのログ確認、リソースのデプロイ、エラー調査などをCopilotの対話UIを離れずに行える。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "MCPとの違いや、組織で利用可能なサードパーティ連携の管理方法を理解するために重要。",
+    "useCases": [
+      "`@azure` でクラウド環境のリソース障害をチャットから調査",
+      "`@docker` でDockerfileの最適化とコンテナ診断を実行"
+    ],
+    "examPoints": [
+      "GitHub Marketplaceから組織またはアカウントにインストールして利用",
+      "チャット参加者として呼び出す",
+      "組織管理者は拡張機能のインストール・利用をポリシーで制御可能"
+    ],
+    "commonConfusions": [
+      "MCP（オープンプロトコル規格）とCopilot Extensions（GitHub Marketplaceのエコシステム）の対比"
+    ],
+    "relatedTermIds": [
+      "g-mcp",
+      "g-chat-participants"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp",
+      "lesson-d2-agent-edits",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-mcp-vs-extensions"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-org-policies",
+    "term": "Organization Copilot Policies",
+    "fullName": "組織レベルのCopilotポリシー (Organization Policies)",
+    "aliases": [
+      "組織ポリシー",
+      "Copilot設定ポリシー"
+    ],
+    "shortDefinition": "GitHub Organizationの管理者が、所属メンバーのCopilot機能の有効化・制限・動作条件を一元管理するルール設定。",
+    "detailedDefinition": "組織管理者は、Suggestions matching public code（公開コード一致時のブロック）、Copilot in CLI、Copilot Chat in IDE、Copilot PR Reviewなどの各機能について、組織全体で「Enabled」「Disabled」またはEnterpriseからの継承を設定できる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "whyItMatters": "管理者が統制すべきセキュリティ・知財ポリシーの中核。試験で必須の管理知識。",
+    "useCases": [
+      "全メンバーに対してPublic Code Matchingの強制有効化",
+      "CLI版Copilotの社内利用の制限または許可"
+    ],
+    "examPoints": [
+      "Enterprise設定でロックされていない限りOrgレベルで上書き・設定可能",
+      "Public code suggestionsのブロック設定はポリシーで強制可能",
+      "ポリシー変更は組織内の全シートに適用される"
+    ],
+    "commonConfusions": [
+      "個々の開発者が個人設定で組織のポリシーを無効化できるという誤解（組織ポリシーが優先）"
+    ],
+    "relatedTermIds": [
+      "g-enterprise-policies",
+      "g-policy-inheritance",
+      "g-public-code-matching"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d6-public-code-matching",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-enterprise-policies",
+    "term": "Enterprise Copilot Policies",
+    "fullName": "エンタープライズレベルのCopilotポリシー",
+    "aliases": [
+      "Enterprise Policies",
+      "企業全体ポリシー"
+    ],
+    "shortDefinition": "GitHub Enterpriseの管理者が、傘下のすべてのOrganizationに対して適用する最上位の統制ポリシー。",
+    "detailedDefinition": "Enterprise管理者は、Copilotポリシー（Public Code Matching、Copilot Chat、CLI、Code Review等）に対して「No policy (組織に委任)」「Allowed」「Blocked」のいずれかを強制（Enforce）でき、傘下のOrg管理者が勝手に緩めることを禁止できる。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "whyItMatters": "大規模企業ガバナンスにおける最上位設定の優先順位ルールを理解するため。",
+    "useCases": [
+      "企業全体でのPublic code matchingの無条件ブロック強制",
+      "社内全OrgでのCopilot Code Reviewの統一適用"
+    ],
+    "examPoints": [
+      "EnterpriseでEnforceされたポリシーは傘下のOrganizationで変更不可",
+      "最上位のガバナンス層として機能する"
+    ],
+    "commonConfusions": [
+      "Org設定がEnterprise設定に勝てるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-org-policies",
+      "g-policy-inheritance"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "policies"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-seat-management",
+    "term": "Seat Assignment and Management",
+    "fullName": "シートの割り当てとライセンス管理",
+    "aliases": [
+      "Seat assignment",
+      "ライセンス付与"
+    ],
+    "shortDefinition": "GitHub Copilotの有料サブスクリプションシートを組織メンバーやチームに対して割り当て、剥奪、監視する運用。",
+    "detailedDefinition": "組織管理者は、特定のユーザー個人、または特定のGitHub Teamに対してCopilotシートを付与できる。シートが割り当てられたユーザーのみがIDEやCLIでCopilotを認証・利用可能となり、月額利用料がカウントされる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o4"
+    ],
+    "whyItMatters": "管理者の日常業務であり、REST APIやチーム管理と直結する実務テーマ。",
+    "useCases": [
+      "新入社員へのチーム単位での自動シート付与",
+      "未アクティブユーザーからのシート回収とコスト最適化"
+    ],
+    "examPoints": [
+      "個人指定またはチーム単位でシートを付与できる",
+      "シートを持たないユーザーは利用不可",
+      "REST APIを使用して割り当ての自動化が可能"
+    ],
+    "commonConfusions": [
+      "Organizationに所属していれば自動で全員が使えるという誤解（シート割り当てが必要）"
+    ],
+    "relatedTermIds": [
+      "g-subscription-plans",
+      "g-usage-metrics-api"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "rest-api"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-subscription-plans",
+    "term": "Copilot Subscription Plans (Business vs Enterprise vs Pro)",
+    "fullName": "Copilot サブスクリプションプラン体系",
+    "aliases": [
+      "Copilotプラン",
+      "Business vs Enterprise"
+    ],
+    "shortDefinition": "個人向けのCopilot Individual (Pro)、組織向けのCopilot Business、大規模企業向けのCopilot Enterpriseといった提供プランの違い。",
+    "detailedDefinition": "Businessでは組織ポリシー管理、Content Exclusion、シート管理、ゼロデータ保持（コードスニペットの非学習）が提供される。Enterpriseではさらに、Copilot in GitHub.comでのリポジトリ横断インデックス、Copilot Spaces、カスタムモデルファインチューニング、より高度な監査ログが追加される。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "whyItMatters": "どのプランでどの機能（Content Exclusionやゼロデータ保持など）が利用できるかの正確な理解が問われる。",
+    "useCases": [
+      "企業導入時のプラン選定",
+      "コンプライアンス要件に応じたBusiness以上の選択"
+    ],
+    "examPoints": [
+      "BusinessとEnterpriseではコードスニペットがモデル学習に利用されない（ゼロ保持）",
+      "Content ExclusionはBusinessおよびEnterpriseで利用可能",
+      "EnterpriseではGitHub.com上での高度な検索やSpacesが利用可能"
+    ],
+    "commonConfusions": [
+      "個人プランと組織プランでプライバシーポリシーが同一であるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-retention-policy",
+      "g-enterprise-data-privacy",
+      "g-content-exclusion"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d3-retention-privacy",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-audit-logs",
+    "term": "Copilot Audit Logs",
+    "fullName": "Copilot 監査ログ (Audit Logs)",
+    "aliases": [
+      "監査ログ",
+      "Audit Events"
+    ],
+    "shortDefinition": "組織内でのCopilot関連の管理操作（シート付与/剥奪、ポリシー変更、除外ルール更新等）を記録した改ざん耐性のあるログ。",
+    "detailedDefinition": "GitHub Enterprise / OrganizationのAudit Log機能を通じて追跡できる。`copilot.enable`, `copilot.disable`, `copilot.cf_update` などのイベントタイプが記録され、いつ誰がどのポリシーを変更したかをコンプライアンス監査のために証明できる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o4"
+    ],
+    "whyItMatters": "セキュリティ監査とエンタープライズコンプライアンスの観点で必須の出題テーマ。",
+    "useCases": [
+      "不意のポリシー変更（Public Code Matchingの無効化など）の実行者調査",
+      "ライセンス割り当て履歴の外部監査報告"
+    ],
+    "examPoints": [
+      "管理者の設定変更イベントが記録される",
+      "SIEMツール（Splunk, Datadog等）にストリーミング可能",
+      "個々のプロンプト内容自体は監査ログには記録されない（プライバシー保護）"
+    ],
+    "commonConfusions": [
+      "監査ログに開発者の書いたソースコードやプロンプト全文が残るという誤解"
+    ],
+    "relatedTermIds": [
+      "g-org-policies",
+      "g-compliance-auditability"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "audit-log",
+      "policies"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-usage-metrics-api",
+    "term": "Copilot Metrics API / REST API",
+    "fullName": "Copilot 利用状況メトリクス API / REST API",
+    "aliases": [
+      "Usage Metrics API",
+      "Copilot REST API"
+    ],
+    "shortDefinition": "組織やEnterpriseにおけるCopilotの利用率、提案受入率、アクティブユーザー数をプログラマティックに取得・分析するためのREST API。",
+    "detailedDefinition": "`GET /orgs/{org}/copilot/usage` などのエンドポイントを通じて、日ごとのアクティブユーザー数、コード提案の合計提示数および採用数（受入率）、言語別の利用統計などの集計メトリクスを取得し、導入効果の測定やROI分析に役立てられる。",
+    "category": "Copilot機能",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o4"
+    ],
+    "whyItMatters": "組織の管理者向けAPI機能（d2o4）としてシラバスに明記されている。",
+    "useCases": [
+      "社内BIダッシュボードでのCopilot受入率の可視化",
+      "言語別のCopilot活用度合いの分析と教育施策の立案"
+    ],
+    "examPoints": [
+      "組織・Enterprise全体の集計データを提供する",
+      "特定個人の詳細なコード内容を取得するAPIではない（プライバシー保護）",
+      "受入率（Acceptance rate）やアクティブシート数の把握に利用"
+    ],
+    "commonConfusions": [
+      "APIで個人の書いたプロンプトを盗み見できるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-seat-management",
+      "g-org-policies"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "rest-api",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-review-policies",
+    "term": "Copilot Code Review Policies",
+    "fullName": "Copilot コードレビューポリシー",
+    "aliases": [
+      "PRレビューポリシー",
+      "AIレビュー強制"
+    ],
+    "shortDefinition": "組織管理者がPull RequestにおいてCopilotによる自動コードレビューを自動トリガーするかどうかを制御するポリシー。",
+    "detailedDefinition": "組織のSettings > Copilot > Policiesで設定可能。新規PR作成時に自動でCopilot Code Reviewを実行するか、あるいは作成者が手動で要求した場合のみにするかを組織一括で決定できる。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o4"
+    ],
+    "whyItMatters": "シラバスのTopicに含まれる具体的な管理ポリシー項目。",
+    "useCases": [
+      "すべての新規Pull Requestに対する初動AIレビューの自動義務化",
+      "ドラフトPRに対するレビューの除外設定"
+    ],
+    "examPoints": [
+      "組織レベルでレビューのトリガー条件（自動/手動）を制御可能",
+      "レビュー担当者の負担軽減とセキュリティチェックの標準化に寄与"
+    ],
+    "commonConfusions": [
+      "人間のレビューを完全に代替・禁止できるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-copilot-code-review",
+      "g-org-policies"
+    ],
+    "lessonIds": [
+      "lesson-d2-pr-code-review",
+      "lesson-d2-org-governance"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "code-review",
+      "policies"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-policy-inheritance",
+    "term": "Policy Inheritance (Enterprise -> Org -> Repo)",
+    "fullName": "ポリシーの継承関係 (Enterprise → Organization → Repository)",
+    "aliases": [
+      "ポリシー継承",
+      "階層的ガバナンス"
+    ],
+    "shortDefinition": "Enterpriseレベルで設定されたポリシーが組織（Organization）およびリポジトリ（Repository）に下り、上位の設定が下位を拘束する階層構造。",
+    "detailedDefinition": "上位のEnterpriseで「無効（Disabled）」または「強制（Enforced）」された設定は、下位のOrganizationやRepositoryで勝手に有効化または緩和することはできない。上位が「No policy (組織に委任)」としている場合のみ、下位で独自ルールを設定できる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "whyItMatters": "GitHubのガバナンスモデルの鉄則であり、トラブルシューティングや権限問題の最重要ロジック。",
+    "useCases": [
+      "「なぜOrgで設定が変更できないのか」の原因特定（Enterpriseでのロック）",
+      "Content Exclusionの組織からリポジトリへの継承"
+    ],
+    "examPoints": [
+      "上位の制限を下位で解除することはできない",
+      "Enterpriseが最上位、次がOrganization、最下位がRepository",
+      "上位が『委任』した場合のみ下位で選択可能"
+    ],
+    "commonConfusions": [
+      "リポジトリ管理者が企業のセキュリティポリシーを上書きできるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-enterprise-policies",
+      "g-org-policies"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-data-flow",
+    "term": "Copilot Data Flow",
+    "fullName": "Copilot データフロー (Data Flow Architecture)",
+    "aliases": [
+      "データ送受信フロー",
+      "アーキテクチャフロー"
+    ],
+    "shortDefinition": "IDEやクライアントからコンテキストが収集され、プロンプトが合成され、プロキシを経てLLMに送信され、フィルタリングされて提案が返る一連の経路。",
+    "detailedDefinition": "クライアント（エディタ）→ 安全なTLS通信 → GitHub Copilot Proxy（認証・Content Exclusionチェック・プロンプト組み立て）→ Azure OpenAI LLM（推論）→ GitHub Proxy（セーフティフィルタ・Public Code Matching）→ クライアント（提案表示）という厳格なパイプラインで構成される。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "whyItMatters": "Domain 3の中核。データがどこを通り、どこでフィルタリングされるかを把握していないとアーキテクチャ問題に答えられない。",
+    "useCases": [
+      "セキュリティ部門へのデータ処理経路の説明",
+      "通信エラー発生箇所の特定"
+    ],
+    "examPoints": [
+      "クライアントとLLMの間には常にGitHub Proxyが介在する",
+      "プロキシ層で認証、除外チェック、レスポンスフィルタが行われる",
+      "すべて暗号化されたHTTPS/TLS通信で行われる"
+    ],
+    "commonConfusions": [
+      "クライアント（IDE）が直接OpenAIのAPIエンドポイントに直接通信しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-copilot-proxy",
+      "g-prompt-construction",
+      "g-post-processing"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-context-gathering",
+    "term": "Context Gathering & Determination",
+    "fullName": "コンテキスト収集と決定",
+    "aliases": [
+      "Context determination",
+      "文脈収集"
+    ],
+    "shortDefinition": "Copilotが的確な提案を行うために、カーソル位置の前後コード、関連ファイル、隣接タブなどから必要な情報を自動的に選別・収集する処理。",
+    "detailedDefinition": "IDE拡張機能内のアルゴリズムが、現在編集中のファイル、直近で開いていたタブ（Neighboring tabs）、インポートされているモジュール、カーソル周辺のシグネチャなどをスキャンし、トークン制限（Token budget）に収まる最も関連性の高い情報スニペットを特定する。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d4o1"
+    ],
+    "whyItMatters": "なぜ「関連ファイルを開いておくと提案精度が上がるのか」の技術的理由であり、試験頻出。",
+    "useCases": [
+      "型定義ファイルやテスト対象ファイルを開いた状態でのコーディング",
+      "関連のない巨大ファイルを閉じてノイズを減らす工夫"
+    ],
+    "examPoints": [
+      "開いている関連タブ（Neighboring tabs）がコンテキスト収集の重要要素",
+      "カーソルの直前・直後のコード（Prefix / Suffix）が重み付けされる",
+      "無制限に全ファイルを送るのではなくトークン予算内で取捨選択される"
+    ],
+    "commonConfusions": [
+      "Copilotはリポジトリの全ファイルを常に自動で完璧に読み込んでいるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-prompt-construction",
+      "g-context-window",
+      "g-context-priming"
+    ],
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow",
+      "lesson-d3-retention-privacy",
+      "lesson-d4-crafting"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-prompt-construction",
+    "term": "Prompt Construction Pipeline",
+    "fullName": "プロンプト構築パイプライン",
+    "aliases": [
+      "Prompt building",
+      "プロンプト生成処理"
+    ],
+    "shortDefinition": "収集されたコードスニペット、システム指示、ファイルパス、言語情報をモデルが理解しやすいプロンプト構造へと組み立てる内部処理。",
+    "detailedDefinition": "単にコードを文字列結合するのではなく、言語に応じたコメントプレフィックス、関連ファイルの参照タグ、Custom Instructionsの内容、およびモデルへの厳格なシステム指示をフォーマットし、1つの構造化された入力文字列（Prompt）を生成する。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "whyItMatters": "LLMに送られる実際のデータ形式と、システム指示がどう影響するかを理解するために不可欠。",
+    "useCases": [
+      "Custom instructionsがどのようにプロンプトに組み込まれるかの理解",
+      "トークン超過時のトランケーション（切り捨て）挙動の予測"
+    ],
+    "examPoints": [
+      "システム指示、コンテキストスニペット、作業中コードが合成される",
+      "トークンリミットを超過した場合、優先度の低い文脈が切り捨てられる"
+    ],
+    "commonConfusions": [
+      "ユーザーが画面で見ているコードそのままがモデルに渡されているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-custom-instructions",
+      "g-data-flow"
+    ],
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow",
+      "lesson-d3-retention-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-copilot-proxy",
+    "term": "Copilot Proxy & Gateway",
+    "fullName": "Copilot プロキシとセキュアゲートウェイ",
+    "aliases": [
+      "Copilot Proxy",
+      "プロキシゲートウェイ"
+    ],
+    "shortDefinition": "クライアントとAIモデルの間に立ち、認証、ポリシー検証、Content Exclusionの評価、ログ処理を担うGitHubのバックエンドサーバー群。",
+    "detailedDefinition": "すべてのCopilotリクエストが経由する中継基盤。クライアントから送られたファイルパスがContent Exclusion対象でないか検証し、対象であればモデル呼び出しを即座にブロックする。また、モデルからの出力に対してもセーフティチェックやPublic Code Match判定を実施する。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o1"
+    ],
+    "whyItMatters": "セキュリティとポリシーの強制が「どこで」行われるのかを示す核心インフラ。",
+    "useCases": [
+      "Content Exclusionルールのサーバーサイドでの強制",
+      "不正な認証トークンを持つリクエストの遮断"
+    ],
+    "examPoints": [
+      "Content Exclusionの判定はプロキシ層で行われる",
+      "モデル（LLM）自体に直接クライアントがアクセスすることはない",
+      "知財フィルタリングや有害コンテンツ検出もプロキシで実行される"
+    ],
+    "commonConfusions": [
+      "Content ExclusionはIDE側だけで処理されているという誤解（プロキシで厳格に検証される）"
+    ],
+    "relatedTermIds": [
+      "g-data-flow",
+      "g-post-processing",
+      "g-content-exclusion"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "privacy"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-telemetry-data",
+    "term": "Engagement and Telemetry Data",
+    "fullName": "エンゲージメントと利用状況テレメトリデータ",
+    "aliases": [
+      "Telemetry",
+      "利用状況データ"
+    ],
+    "shortDefinition": "製品の品質向上や受入率測定のために収集される、コード内容を含まない利用メトリクスやイベント情報。",
+    "detailedDefinition": "提案が表示されたか、採用（Tab押下）されたか、却下されたか、レスポンスにかかった時間（レイテンシ）、IDEや拡張機能のバージョンなどのメタデータ。BusinessやEnterprise契約においてコードスニペットと明確に区別されて扱われる。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o1"
+    ],
+    "whyItMatters": "「テレメトリ」と「コードスニペット」のデータ区別は企業のセキュリティ審査で頻出。",
+    "useCases": [
+      "組織の利用状況メトリクスAPIへの反映",
+      "サービスレイテンシや障害の検知"
+    ],
+    "examPoints": [
+      "コードスニペット（ソースコードそのもの）とは明確に区別される",
+      "提案の表示・受入・却下のイベントメトリクスが含まれる",
+      "製品改善や稼働状況監視の目的で使用される"
+    ],
+    "commonConfusions": [
+      "テレメトリデータの中に顧客の独自ロジックや機密コードが含まれるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-retention-policy",
+      "g-enterprise-data-privacy"
+    ],
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy",
+      "lesson-d3-data-flow",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-retention-policy",
+    "term": "Code Snippet Retention Policy (Zero Retention)",
+    "fullName": "コードスニペット保持ポリシー (ゼロデータ保持)",
+    "aliases": [
+      "Zero Retention",
+      "コード非保持ポリシー"
+    ],
+    "shortDefinition": "Copilot BusinessおよびEnterpriseにおいて、ユーザーのコードスニペットやプロンプトを推論後に一切永続化（保存）せず即時破棄する規約。",
+    "detailedDefinition": "モデルが提案を返した瞬間に、送信されたプロンプトと生成されたコードスニペットはGitHubおよびモデルホスト（Azure）のメモリから破棄され、ディスクに保存されない。また、これらが基礎モデルの再学習・トレーニングに利用されることも一切ない。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o1"
+    ],
+    "whyItMatters": "企業の最高情報セキュリティ責任者(CISO)が最も確認する項目であり、試験でも超頻出。",
+    "useCases": [
+      "機密リポジトリでのCopilot利用の安全保障",
+      "サードパーティ監査へのゼロリテンション証明"
+    ],
+    "examPoints": [
+      "BusinessおよびEnterpriseプランではゼロリテンション（非保持）が標準",
+      "送信されたコードが他社のためのAI学習データとして使われることはない",
+      "推論完了後にスニペットは即座に破棄される"
+    ],
+    "commonConfusions": [
+      "Copilotを使うと自社のコードが世界中に流出・学習されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-enterprise-data-privacy",
+      "g-subscription-plans",
+      "g-telemetry-data"
+    ],
+    "lessonIds": [
+      "lesson-d3-retention-privacy",
+      "lesson-d6-ownership-privacy",
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-tokenization",
+    "term": "Tokenization and Input Processing",
+    "fullName": "トークン化と入力処理 (Tokenization)",
+    "aliases": [
+      "トークン化",
+      "トークン変換"
+    ],
+    "shortDefinition": "ソースコードやテキストを、大規模言語モデルが処理可能な最小単位（トークン）の数値列へと分解・変換する処理。",
+    "detailedDefinition": "1つのトークンは英語でおよそ3〜4文字または1単語に相当するが、プログラミング言語の予約語、記号、インデントの空白文字などもトークンとしてエンコードされる。コンテキストウィンドウの上限は文字数ではなくトークン数で厳格に管理される。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "whyItMatters": "モデルのサイズ制限（Token budget）やコスト、処理速度の基本単位となるため。",
+    "useCases": [
+      "プロンプトの長さとトークン消費量の見積もり",
+      "マルチバイト文字（日本語）によるトークン消費の増加の考慮"
+    ],
+    "examPoints": [
+      "コンテキストリミットはバイト数や文字数ではなくトークン数で定義される",
+      "コード内の記号や空白もトークンを消費する"
+    ],
+    "commonConfusions": [
+      "1文字＝1トークンであるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-window",
+      "g-prompt-construction"
+    ],
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow",
+      "lesson-d3-retention-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-post-processing",
+    "term": "Post-processing & Content Filtering",
+    "fullName": "後処理とコンテンツフィルタリング (Post-processing)",
+    "aliases": [
+      "出力後処理",
+      "Output filtering"
+    ],
+    "shortDefinition": "LLMが生成した生のテキスト出力を検査し、有害性チェック、書式整形、公開コードとの照合を行ってからユーザーに届ける処理。",
+    "detailedDefinition": "AIモデルが回答を出力した直後にGitHub Proxy上で実行される。有害・不適切な内容を遮断するセーフティフィルタ、不要な重複トークンのトリミング、そして組織設定に応じたPublic Code Matching（公開コードと一致した提案のブロック）がここで行われる。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o2"
+    ],
+    "whyItMatters": "生成AIが安全に動作するための最後の防衛線。アーキテクチャとセキュリティの両面で重要。",
+    "useCases": [
+      "悪意のあるコードや攻撃的コンテンツの自動遮断",
+      "公開リポジトリのライセンス付きコードと重複した提案の破棄"
+    ],
+    "examPoints": [
+      "LLMの出力がそのまま直接ユーザー画面に出るのではなく後処理が入る",
+      "Public Code Matchingの検知・ブロックは後処理パイプラインで実行される",
+      "責任あるAIのセーフガードが適用される"
+    ],
+    "commonConfusions": [
+      "入力時のみフィルタリングされ、出力時は無防備であるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-public-code-matching",
+      "g-copilot-proxy",
+      "g-data-flow"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy",
+      "lesson-d6-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "privacy"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-transit-encryption",
+    "term": "Encryption in Transit & TLS",
+    "fullName": "転送中データの暗号化とTLS",
+    "aliases": [
+      "TLS暗号化",
+      "転送時暗号化"
+    ],
+    "shortDefinition": "開発者のIDE、GitHubバックエンドプロキシ、モデルホスティング基盤の間で行われるすべての通信が暗号化されている保護状態。",
+    "detailedDefinition": "すべてのCopilotトラフィックは最新のTLS（Transport Layer Security）1.2/1.3プロトコルによって保護され、HTTPSポート443経由で送信される。中間者攻撃(MITM)によるコードの盗聴や改ざんを防止する。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o1"
+    ],
+    "whyItMatters": "ネットワークセキュリティ要件および社内プロキシ構成時のファイアウォール設定で問われる。",
+    "useCases": [
+      "企業の社内プロキシ/ファイアウォールでのGitHub Copilotエンドポイント許可",
+      "通信路の安全性検証"
+    ],
+    "examPoints": [
+      "すべての通信はTLS/HTTPSによってエンドツーエンドで暗号化される",
+      "平文のHTTPで通信されることはない"
+    ],
+    "commonConfusions": [
+      "データが暗号化されずにインターネット上を流れているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-data-flow",
+      "g-copilot-proxy"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-suggestion-lifecycle",
+    "term": "Code Suggestion Lifecycle",
+    "fullName": "コード提案のライフサイクル (Suggestion Lifecycle)",
+    "aliases": [
+      "提案ライフサイクル",
+      "Suggestion Lifecycle"
+    ],
+    "shortDefinition": "開発者のキーボード入力から、トリガー検知、コンテキスト収集、プロンプト送信、推論、フィルタリング、表示、確定に至るミリ秒単位の一連の推移。",
+    "detailedDefinition": "1. 入力休止検知（タイピングのポーズ）→ 2. トリガー判定（コメント、構文末尾等）→ 3. ローカルコンテキスト収集（Prefix/Suffix/隣接タブ）→ 4. プロキシへの送信 → 5. LLM推論 → 6. 後処理フィルタ → 7. エディタにゴーストテキスト描画 → 8. ユーザーの受入/破棄/無視の決定。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o2"
+    ],
+    "whyItMatters": "シラバスのTopic名（Code suggestion lifecycle）にそのまま指定されている超重要概念。",
+    "useCases": [
+      "タイピング中のレイテンシ発生原因の特定",
+      "どのようなタイミングで補完が発火するか（トリガー条件）の理解"
+    ],
+    "examPoints": [
+      "タイピング休止（ミリ秒単位のアイドル時間）でトリガーされる",
+      "提案の表示後、Tabで確定、タイピング継続で破棄/再計算される",
+      "ネットワーク遅延や除外設定により途中でキャンセルされうる"
+    ],
+    "commonConfusions": [
+      "全文字入力ごとに毎回無制限に通信が発生するという誤解（適切なデバウンス制御が存在）"
+    ],
+    "relatedTermIds": [
+      "g-inline-suggestions",
+      "g-latency-tradeoff",
+      "g-data-flow"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-context-window",
+    "term": "Context Window & Token Budget",
+    "fullName": "コンテキストウィンドウとトークン予算 (Token Budget)",
+    "aliases": [
+      "コンテキスト長",
+      "Token Budget",
+      "コンテキスト制限"
+    ],
+    "shortDefinition": "LLMが1回のリクエストにおいて入力プロンプトと出力生成に割り当て可能なトークンの総量上限。",
+    "detailedDefinition": "AIモデルは一度に処理できる情報量（Context Window）に上限がある。Copilotではこの予算（Token Budget）内で、システム指示、直前の会話履歴、開いているファイルのコードスニペットを適切に配分する。超過した古い情報や重要度の低いファイルは自動的に省かれる。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d3o2",
+      "d4o1"
+    ],
+    "whyItMatters": "LLMの根本的制約であり、プロンプトエンジニアリングやファイル厳選が必要な物理的根拠。",
+    "useCases": [
+      "長大なチャット履歴を `/clear` でリセットして精度を回復",
+      "巨大リポジトリから関係するコードのみを厳選して渡す工夫"
+    ],
+    "examPoints": [
+      "コンテキストウィンドウには物理的な上限がある",
+      "チャット履歴が長くなりすぎると古い文脈が抜け落ちる",
+      "不要なファイルを開きすぎると重要な情報がトークン枠から溢れる"
+    ],
+    "commonConfusions": [
+      "モデルは何百万行のプロジェクト全体を常に一度に丸ごと見ているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-tokenization",
+      "g-context-pruning",
+      "g-thread-reset"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits",
+      "lesson-d4-decomposition-pruning",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture",
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-latency-tradeoff",
+    "term": "Latency vs Quality Tradeoff in Completions",
+    "fullName": "補完におけるレイテンシと品質のトレードオフ",
+    "aliases": [
+      "レイテンシトレードオフ",
+      "応答速度と精度"
+    ],
+    "shortDefinition": "インラインコード補完において、開発者のタイピング速度に追従する低レイテンシ（数百ミリ秒）と、提案の推論深さ・精度のバランス設計。",
+    "detailedDefinition": "Inline Suggestionsでは快適な入力を実現するためミリ秒単位の高速応答が要求され、比較的小型で最適化されたモデルや短縮コンテキストが用いられる。一方、Copilot ChatやAgent Modeでは数秒〜数十秒の時間をかけて巨大モデルによる深い推論と複数ファイル解析が行われる。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o2"
+    ],
+    "whyItMatters": "なぜインライン補完とチャットで機能や応答速度、精度が異なるのかを技術的に説明する鍵。",
+    "useCases": [
+      "即時のタイピング補助にはInline Suggestionsを活用",
+      "複雑な設計や不具合の深層解析にはChatやAgent Modeを活用"
+    ],
+    "examPoints": [
+      "インライン提案は速度（レイテンシ）を最優先に設計されている",
+      "チャットやエージェントは推論の深さと品質を重視して設計されている"
+    ],
+    "commonConfusions": [
+      "すべてのCopilot機能がまったく同一のモデル設定で動作しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-suggestion-lifecycle",
+      "g-inline-suggestions",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-temperature-determinism",
+    "term": "Temperature & LLM Determinism",
+    "fullName": "温度パラメータとLLMの決定性 (Temperature)",
+    "aliases": [
+      "Temperature",
+      "サンプリング温度"
+    ],
+    "shortDefinition": "LLMが出力を生成する際のランダム性（創造性）を制御する数値パラメータ。",
+    "detailedDefinition": "温度（Temperature）が0に近いほど、モデルは確率が最も高い決定論的なトークンを予測し、再現性の高い安定したコードを出力する。温度を上げると多様で創造的な提案が出るが、ハルシネーションの確率も上昇する。Copilotではタスクに応じて適切な温度が事前設定されている。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o2"
+    ],
+    "whyItMatters": "LLMの振る舞いとばらつきを理解するための数理的背景。",
+    "useCases": [
+      "コード生成における一貫性の確保（低Temperature）",
+      "アイデア出しや代替実装の探索（高Temperature）"
+    ],
+    "examPoints": [
+      "温度が低いほど出力は固定的・決定的になる",
+      "コード生成タスクでは構文破壊を防ぐため比較的低い温度が好まれる"
+    ],
+    "commonConfusions": [
+      "AIモデルのパラメータはユーザーがVS Codeから自由にいじれるという誤解（製品側で最適化管理）"
+    ],
+    "relatedTermIds": [
+      "g-nondeterminism",
+      "g-generative-ai"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-knowledge-cutoff",
+    "term": "Knowledge Cutoff & Recency Limitations",
+    "fullName": "ナレッジカットオフと情報の鮮度制限",
+    "aliases": [
+      "知識カットオフ",
+      "モデルの知識期限"
+    ],
+    "shortDefinition": "基盤となるLLMが事前学習を完了した時点の日時以降にリリースされた最新ライブラリや言語仕様をモデル自身が知らない制約。",
+    "detailedDefinition": "事前学習済みモデルはカットオフ日以降に登場した新機能（例: 新規メジャーバージョンで追加された構文）を内部知識として持たない。この制約を補うために、最新コードのドキュメントをプロンプトやコンテキストで明示的に渡すか、MCPやWeb検索ツールを併用する。",
+    "category": "アーキテクチャ",
+    "importance": "important",
+    "domainIds": [
+      "d3",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d3o2",
+      "d4o1"
+    ],
+    "whyItMatters": "最新フレームワークで誤った古い書き方が提案される原因と、その対策を問う問題に対応。",
+    "useCases": [
+      "リリースされたばかりのライブラリ仕様をプロンプトで提供してコード生成",
+      "非推奨（deprecated）となった古い記法をカスタム指示で禁止"
+    ],
+    "examPoints": [
+      "モデルの事前学習知識には期限（カットオフ）がある",
+      "最新情報を扱う際は外部ドキュメントや明示的なコンテキスト補強が必須"
+    ],
+    "commonConfusions": [
+      "AIはインターネット上の最新情報を常に秒単位でリアルタイム学習しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-mcp",
+      "g-custom-instructions"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture",
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-context-scope-limits",
+    "term": "Context Scope Limitations (Local vs Remote)",
+    "fullName": "コンテキストスコープの制限 (ローカル vs リモート)",
+    "aliases": [
+      "スコープ制限",
+      "参照範囲の限界"
+    ],
+    "shortDefinition": "Copilotが参照できる情報が、現在ローカルマシンで開いているファイルやワークスペースに限定され、外部リポジトリや非公開クラウドリソースを自動参照できない制約。",
+    "detailedDefinition": "特にIDEインライン補完や基本チャットでは、ローカルのワークスペース外にある別リポジトリや社内Wiki、プライベートなCIログなどはスコープ外となる。これらにアクセスするには、Copilot Spaces、MCPサーバー、あるいはCopilot Extensionsなどの専用機構が必要となる。",
+    "category": "アーキテクチャ",
+    "importance": "essential",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o2"
+    ],
+    "whyItMatters": "「なぜこの情報をCopilotが見てくれないのか」「どのツールを導入すべきか」の判断の土台。",
+    "useCases": [
+      "別リポジトリのAPIを参照するためにMCPサーバーを接続",
+      "ローカルにないドキュメントをCopilot Spacesに追加"
+    ],
+    "examPoints": [
+      "通常のCopilotはローカルエディタのスコープに閉じた情報参照が基本",
+      "外部リソース接続にはMCPやExtensions、Spacesを明示的に選択する"
+    ],
+    "commonConfusions": [
+      "Copilotは社内ネットワークの全サーバーを自動で巡回・把握しているという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-mcp",
+      "g-spaces"
+    ],
+    "lessonIds": [
+      "lesson-d3-lifecycle-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-prompt-engineering",
+    "term": "Prompt Engineering",
+    "fullName": "プロンプトエンジニアリング (Prompt Engineering)",
+    "aliases": [
+      "プロンプト設計",
+      "プロンプト技術"
+    ],
+    "shortDefinition": "AIモデルから意図した高品質かつ安全な出力を引き出すために、入力プロンプトの構成、表現、文脈を最適化する実践的技術。",
+    "detailedDefinition": "曖昧な指示を避け、明確な目標（Goal）、必要な文脈（Context）、遵守すべき制約条件（Constraints）、期待する入出力例（Examples）を論理的に組み立てることで、Copilotのハルシネーションを減らしコード品質を最大化する。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1",
+      "d4o2"
+    ],
+    "whyItMatters": "Domain 4（プロンプトとコンテキスト）の根幹概念。試験全体の10〜15%を占める。",
+    "useCases": [
+      "複雑なビジネスロジックの実装指示",
+      "特定のコーディング規約に沿ったリファクタリング",
+      "型安全なコード生成のための制約指定"
+    ],
+    "examPoints": [
+      "目的・文脈・制約・具体例の4要素を意識する",
+      "指示は具体的で曖昧さがないほど精度が向上する",
+      "試行錯誤（反復的改善）が前提の技術である"
+    ],
+    "commonConfusions": [
+      "長文を書けば書くほど良いという誤解（長すぎるとノイズやコンテキスト超過を招く）"
+    ],
+    "relatedTermIds": [
+      "g-prompt-anatomy",
+      "g-zero-shot",
+      "g-few-shot",
+      "g-iterative-refinement"
+    ],
+    "lessonIds": [
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q07",
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-zero-shot",
+    "term": "Zero-shot Prompting",
+    "fullName": "ゼロショットプロンプティング (Zero-shot Prompting)",
+    "aliases": [
+      "ゼロショット",
+      "Zero-shot"
+    ],
+    "shortDefinition": "具体例（入出力例）を一切提示せず、タスクの指示や説明文のみを与えてAIにコードや回答を生成させる手法。",
+    "detailedDefinition": "例:「TypeScriptでメールアドレスを検証する関数を作成して」。一般的な構文や標準的アルゴリズムなど、LLMが事前学習で十分に習熟しているタスクに対して極めて効率的だが、独自ドメインの複雑な入出力形式を指定する場合は精度が落ちやすい。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "Few-shotとの対比がGH-300の定番問題。適切な使い分けの判断が問われる。",
+    "useCases": [
+      "標準的なユーティリティ関数の生成",
+      "シンプルなコードブロックの解説要求（/explain）",
+      "一般的なSQLクエリの作成"
+    ],
+    "examPoints": [
+      "具体例を含まない直接的な指示手法",
+      "標準的タスクでは迅速で効果的",
+      "独自フォーマットや厳密な出力制御にはFew-shotが優れる"
+    ],
+    "commonConfusions": [
+      "常にZero-shotよりFew-shotが優れているという誤解（単純タスクではZero-shotで十分）"
+    ],
+    "relatedTermIds": [
+      "g-few-shot",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-crafting"
+    ],
+    "comparisonIds": [
+      "cmp-zero-vs-few-shot"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-few-shot",
+    "term": "Few-shot Prompting",
+    "fullName": "フューショットプロンプティング (Few-shot Prompting)",
+    "aliases": [
+      "フューショット",
+      "Few-shot"
+    ],
+    "shortDefinition": "入力と期待される出力の具体例を1〜数件プロンプト内に提示してから、新しい入力に対する出力をAIに生成させる手法。",
+    "detailedDefinition": "例:「入力: 2026-08-07 → 出力: 令和8年8月7日」といった模範例をプロンプトに含めることで、AIにデータ構造、ネーミング規則、例外処理のスタイルなどのパターンを即座に模倣させ、意図通りの形式で正確に出力させる。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "出力フォーマットの統一や複雑なデータ変換において最も信頼性の高いプロンプト手法。",
+    "useCases": [
+      "独自JSONスキーマへのデータ変換",
+      "チーム独自のテスト命名規則に従った単体テスト作成",
+      "レガシーコードの特定フレームワーク記法への書き換え"
+    ],
+    "examPoints": [
+      "1〜数件の入出力例（Examples）を提示する",
+      "出力の構造やトーン、パターンを厳密に制御できる",
+      "例自体の品質や正確性がAIの出力に決定的な影響を与える"
+    ],
+    "commonConfusions": [
+      "Zero-shotとの混同",
+      "例を何十件も過剰に与えてコンテキストを圧迫する誤った運用"
+    ],
+    "relatedTermIds": [
+      "g-zero-shot",
+      "g-prompt-engineering",
+      "g-prompt-anatomy"
+    ],
+    "lessonIds": [
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-crafting"
+    ],
+    "comparisonIds": [
+      "cmp-zero-vs-few-shot"
+    ],
+    "questionIds": [
+      "q07"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-system-prompt",
+    "term": "System Prompt & Instructions Context",
+    "fullName": "システムプロンプトと指示コンテキスト",
+    "aliases": [
+      "システムプロンプト",
+      "System Instructions"
+    ],
+    "shortDefinition": "ユーザープロンプトに先立ってAIモデルに渡される、役割（ロール）、動作のルール、安全基準を定めた最上位の指示枠組み。",
+    "detailedDefinition": "GitHub Copilotが裏側で自動的に付与する「You are GitHub Copilot...」といった組み込み指示に加え、`.github/copilot-instructions.md` やPrompt Filesから読み込まれたプロジェクト固有ルールがこのレイヤーに統合されてモデルの基本行動を規定する。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "プロンプト階層（システム指示 vs ユーザー指示）の優先度と動作原理を把握するため。",
+    "useCases": [
+      "コーディングスタイルや規約の全体強制",
+      "回答言語（日本語での回答など）の基本規定"
+    ],
+    "examPoints": [
+      "ユーザー入力の前段でAIの振る舞いを決定づける",
+      "Custom Instructionsはシステムレベルの指示として注入される"
+    ],
+    "commonConfusions": [
+      "チャット欄に入力するユーザープロンプトとの混同"
+    ],
+    "relatedTermIds": [
+      "g-custom-instructions",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d2-instructions-prompts",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt",
+      "instructions"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-prompt-anatomy",
+    "term": "Prompt Anatomy (Goal, Context, Constraints, Examples)",
+    "fullName": "プロンプトの構成要素 (目標・文脈・制約・具体例)",
+    "aliases": [
+      "プロンプトの4要素",
+      "Prompt Anatomy"
+    ],
+    "shortDefinition": "高品質なプロンプトを作成するための4つの標準構成要素: ゴール（達成したいこと）、コンテキスト（前提情報）、制約（守るべきルール）、具体例（期待する入出力）。",
+    "detailedDefinition": "1. Goal: 何を作成または解決したいか。 2. Context: 現在の技術スタック、関連ファイル、背景。 3. Constraints: 使用禁止ライブラリ、型要件、パフォーマンス制約。 4. Examples: 期待する形式の模範例。これらを整然と構造化して提示することで最高精度の回答が得られる。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "Microsoft公式のCopilotプロンプトガイドラインの中核フレームワーク。",
+    "useCases": [
+      "複雑なリファクタリング指示書の作成",
+      "新規APIエンドポイントの実装指示"
+    ],
+    "examPoints": [
+      "Goal（目標）、Context（背景）、Constraints（制約）、Examples（例）の4要素",
+      "制約条件を明示することで不要なライブラリ導入やバグを防げる",
+      "構造化された箇条書きプロンプトが推奨される"
+    ],
+    "commonConfusions": [
+      "「このコードを直して」のようなGoalだけの曖昧なプロンプトとの対比"
+    ],
+    "relatedTermIds": [
+      "g-prompt-engineering",
+      "g-negative-prompting",
+      "g-few-shot"
+    ],
+    "lessonIds": [
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q07",
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-role-prompting",
+    "term": "Role Prompting & Personas",
+    "fullName": "ロールプロンプティングとペルソナ指定",
+    "aliases": [
+      "役割指定",
+      "Role prompting"
+    ],
+    "shortDefinition": "プロンプトの冒頭でAIに特定の専門家（シニアセキュリティエンジニア、アクセシビリティ監査官など）の役割を演じるよう指定する技法。",
+    "detailedDefinition": "例:「あなたはパフォーマンスチューニングに精通したPostgreSQLのシニアDBAです。このスロークエリを分析してください」。役割を付与することで、モデルはその専門分野のベストプラクティスや視点を重点的に活性化させ、より深い洞察を含む回答を出力する。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "レビューや専門的改善タスクで回答の視点をコントロールする重要テクニック。",
+    "useCases": [
+      "セキュリティ監査（「ホワイトハッカーとして脆弱性を探して」）",
+      "初心者のオンボーディング支援（「プログラミング初学者向けに噛み砕いて説明して」）"
+    ],
+    "examPoints": [
+      "AIに専門的な視点や基準を持たせる手法",
+      "汎用的な回答から専門性の高い詳細な回答へと誘導できる"
+    ],
+    "commonConfusions": [
+      "単に挨拶や無駄なロールプレイを行うことと、専門的基準を指定することの混同"
+    ],
+    "relatedTermIds": [
+      "g-prompt-engineering",
+      "g-prompt-anatomy"
+    ],
+    "lessonIds": [
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-crafting"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-step-by-step",
+    "term": "Step-by-Step / Chain-of-Thought Prompting",
+    "fullName": "ステップバイステップ指示 (思考の連鎖 / CoT)",
+    "aliases": [
+      "Chain of Thought",
+      "段階的指示",
+      "ステップバイステップ"
+    ],
+    "shortDefinition": "複雑なタスクを一気に解かせず、「段階的に考えて」「ステップ1、ステップ2の手順で実行して」と推論過程を順序立てて出力させる技法。",
+    "detailedDefinition": "LLMは中間推論ステップをテキストとして出力しながら思考を進めることで、論理的飛躍や計算ミスを大幅に削減できる。複雑なリファクタリングや数式処理、依存関係の整理に極めて高い効果を発揮する。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "複雑なタスクでハルシネーションを防ぎ、論理的正確性を引き出すための最有力手法。",
+    "useCases": [
+      "複雑なアルゴリズムの段階的実装",
+      "大規模な型定義の移行手順の整理",
+      "マルチステップのバグ原因究明"
+    ],
+    "examPoints": [
+      "『ステップバイステップで考えて』と指示することで推論精度が向上する",
+      "複雑な問題を小さな論理ステップに分割して解かせる"
+    ],
+    "commonConfusions": [
+      "結論だけをいきなり求めるとモデルが推論を省略して誤答しやすくなる現象の対比"
+    ],
+    "relatedTermIds": [
+      "g-task-decomposition",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-crafting"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-context-priming",
+    "term": "Context Priming via Neighboring Tabs",
+    "fullName": "隣接タブを活用したコンテキストプライミング",
+    "aliases": [
+      "タブコンテキスト",
+      "Neighboring tabs"
+    ],
+    "shortDefinition": "関連するコードやスキーマ定義ファイルをIDEの別タブで開いておくことで、Copilotの自動コンテキスト収集を意図的に誘導する手法。",
+    "detailedDefinition": "Copilotのインライン補完アルゴリズムは現在開いているタブ（Neighboring tabs）を優先的にスキャンする。関連するインターフェースやテストファイルを開いてからコードを記述することで、プロンプトを手動で書くことなく高精度な提案を引き出せる。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "whyItMatters": "IDEでの日常的なCopilot使いこなしにおいて最も即効性のあるベストプラクティス。試験頻出。",
+    "useCases": [
+      "型定義（`.d.ts`）ファイルを開きながら実装ファイルを書く",
+      "実装ファイルを開きながらテストファイルを書く"
+    ],
+    "examPoints": [
+      "開いている関連タブはCopilotの補完コンテキストとして自動活用される",
+      "無関係なファイルを開きすぎるとコンテキストノイズになるため閉じるのが推奨される"
+    ],
+    "commonConfusions": [
+      "ファイルを開くだけでは効果がなく、コード内に毎回インポート文を書かなければならないという誤解"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt",
+      "architecture",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-iterative-refinement",
+    "term": "Iterative Prompt Refinement",
+    "fullName": "反復的プロンプト改善 (Iterative Refinement)",
+    "aliases": [
+      "プロンプト反復",
+      "対話型改善"
+    ],
+    "shortDefinition": "1回目の出力が不十分な場合に諦めず、制約や具体例を追加して対話型で徐々に理想のコードへとブラッシュアップするプロセス。",
+    "detailedDefinition": "Copilot Chatとの対話において、「良いが、外部ライブラリを使わずに標準機能だけで書き直して」「エラー処理にカスタム例外クラスを使用して」と段階的に要件を肉付けしていく。完璧な一発プロンプトを目指すより効率的である。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "プロンプトエンジニアリングは単発のコマンド実行ではなく「対話的な共同作業」であるという思想の体現。",
+    "useCases": [
+      "骨格コードの生成 → エラー処理の追加 → テスト容易性の改善という段階的対話",
+      "パフォーマンスのボトルネックを指摘して再提案を促す"
+    ],
+    "examPoints": [
+      "1回で完璧なコードが出なくても、追加指示で修正させるアプローチが基本",
+      "会話履歴を活かして差分や改善点を指定する"
+    ],
+    "commonConfusions": [
+      "最初の出力が間違っていたらCopilot自体の限界と決めつけて破棄してしまう非効率な態度"
+    ],
+    "relatedTermIds": [
+      "g-prompt-engineering",
+      "g-thread-reset"
+    ],
+    "lessonIds": [
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-thread-reset",
+    "term": "Chat Thread Reset & History Management",
+    "fullName": "チャットスレッド初期化と履歴管理 (`/clear`)",
+    "aliases": [
+      "スレッドリセット",
+      "/clear",
+      "新規トピック開始"
+    ],
+    "shortDefinition": "別の話題に移る際や過去の誤った文脈を引きずっている際に、チャットセッションをクリアして白紙から新しい対話を始めるプラクティス。",
+    "detailedDefinition": "過去の会話履歴はすべてコンテキストウィンドウに蓄積される。話題が変わった後も同じスレッドを使い続けると、古い不要なコード情報が混入してトークンを圧迫し、回答精度が低下する。`/clear` や新規チャットボタンで頻繁にリセットすることが推奨される。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "チャットが誤った回答をループし始めた際の最も有効なトラブルシューティング手法。試験頻出。",
+    "useCases": [
+      "バックエンドの作業からフロントエンドのタスクへ切り替える際のリセット",
+      "モデルが過去の誤ったコードに引きずられている時の文脈リフレッシュ"
+    ],
+    "examPoints": [
+      "`/clear` でチャット履歴を初期化できる",
+      "話題ごとに新しいスレッドを開始するのがベストプラクティス",
+      "履歴の肥大化によるコンテキスト汚染を防ぐ"
+    ],
+    "commonConfusions": [
+      "1つのスレッドで何日もすべての開発相談を続けようとする非推奨な運用"
+    ],
+    "relatedTermIds": [
+      "g-context-pruning",
+      "g-context-window",
+      "g-copilot-chat"
+    ],
+    "lessonIds": [
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-task-decomposition",
+    "term": "Task Decomposition (breaking complex tasks)",
+    "fullName": "タスクの段階的分解 (Task Decomposition)",
+    "aliases": [
+      "タスク分解",
+      "小さな単位への分割"
+    ],
+    "shortDefinition": "巨大で複雑な開発要件を、AIが扱いやすい小さく自己完結したサブタスクへと分割して順次指示する設計手法。",
+    "detailedDefinition": "「Eコマースのチェックアウトシステム全体を作って」と一度に依頼するのではなく、「1. カート合計金額の計算関数」「2. クーポン適用の割引ロジック」「3. 決済ゲートウェイへのペイロード構築」のように分割して1つずつ解決させることで、高品質でバグのないコードを積み上げる。",
+    "category": "プロンプト技法",
+    "importance": "essential",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "LLMの注意機構とトークン制限を克服するための最も強力なエンジニアリングアプローチ。",
+    "useCases": [
+      "大規模なモノリスからマイクロサービスへの切り出し手順",
+      "複雑なステート管理ロジックの実装"
+    ],
+    "examPoints": [
+      "大きなタスクは小さく管理可能なステップに分解して指示する",
+      "各ステップごとにテストと動作確認を挟むのが定石",
+      "ハルシネーションの劇的な削減につながる"
+    ],
+    "commonConfusions": [
+      "巨大な仕様書全体を一発のプロンプトで投げて完璧なコードを期待する誤り"
+    ],
+    "relatedTermIds": [
+      "g-step-by-step",
+      "g-iterative-refinement",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d4-decomposition-pruning",
+      "lesson-d4-refinement"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-context-pruning",
+    "term": "Context Pruning & Dilution Avoidance",
+    "fullName": "コンテキストのプルーニングと希釈回避",
+    "aliases": [
+      "Context pruning",
+      "コンテキスト希釈防止"
+    ],
+    "shortDefinition": "プロンプトや作業環境から無関係なファイル、冗長なコード、不要な過去履歴を積極的に取り除き、AIの注意力を保つ技術。",
+    "detailedDefinition": "LLMに過剰な情報を与えると「Context Dilution（コンテキスト希釈）」が発生し、最も重要な指示や境界条件をモデルが見落としやすくなる。関連のないタブを閉じる、`#file` や `#selection` でピンポイントに範囲を絞ることで、モデルの注意集中（Attention）を高める。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "「情報を多く与えれば与えるほど良い」という初心者の思い込みを正す試験のキーポイント。",
+    "useCases": [
+      "1000行の巨大ファイルから修正対象の30行だけを `#selection` で渡す",
+      "作業に関係のないビルドアーティファクトやログファイルをエディタで閉じる"
+    ],
+    "examPoints": [
+      "無関係な情報が多すぎるとAIは重要な指示を見失う（コンテキスト希釈）",
+      "必要最小限の文脈に絞り込む（Pruning）ことが精度向上の鍵"
+    ],
+    "commonConfusions": [
+      "「とりあえず全ファイルを渡せばAIが勝手に判断してくれる」という過信"
+    ],
+    "relatedTermIds": [
+      "g-context-window",
+      "g-thread-reset",
+      "g-chat-variables"
+    ],
+    "lessonIds": [
+      "lesson-d4-decomposition-pruning",
+      "lesson-d4-refinement"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt",
+      "architecture"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-negative-prompting",
+    "term": "Specifying Constraints & Negative Prompting",
+    "fullName": "制約条件の明示とネガティブプロンプティング",
+    "aliases": [
+      "ネガティブプロンプト",
+      "禁止事項の指定",
+      "Constraints"
+    ],
+    "shortDefinition": "「やってはいけないこと」「使用してはならないライブラリ」「避けるべきパターン」をプロンプト内で明確に禁止・制約する技法。",
+    "detailedDefinition": "例:「Lodashなどの外部ライブラリは使用しないでください」「any型を使わずに厳格に型定義してください」「非同期処理にコールバックではなくasync/awaitを使用してください」。明示的な制約を設けることで、望まない古い書き方や不要な依存関係の混入を確実に防ぐ。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "生成コードを組織の技術スタックやセキュリティ要件に厳密に準拠させるための必須スキル。",
+    "useCases": [
+      "レガシーAPIやセキュリティ上非推奨な関数の利用禁止",
+      "特定パッケージマネージャー（pnpmなど）の強制指定"
+    ],
+    "examPoints": [
+      "『何をするか』だけでなく『何をしないか（制約）』を明確に書く",
+      "依存関係の増大や古い記法を防ぐために有効"
+    ],
+    "commonConfusions": [
+      "肯定的な指示だけで制約を察知してくれるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-prompt-anatomy",
+      "g-prompt-engineering"
+    ],
+    "lessonIds": [
+      "lesson-d4-decomposition-pruning",
+      "lesson-d4-refinement"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-output-specification",
+    "term": "Output Format Specification",
+    "fullName": "出力フォーマットの明示的指定",
+    "aliases": [
+      "出力形式指定",
+      "Format specification"
+    ],
+    "shortDefinition": "AIに対して、期待する出力の形式（「コードブロックのみ出力し前後の解説文は含めないで」「JSON形式で出力して」など）を厳格に指示すること。",
+    "detailedDefinition": "パイプライン処理やスクリプト自動化、特定ドキュメントへの貼り付けを行う際、モデルが前後に挨拶や解説文を出力すると後続処理が失敗する。フォーマット（純粋なコード、Markdownテーブル、JSON、TypeScript型定義など）を厳格に指定して出力を整型する。",
+    "category": "プロンプト技法",
+    "importance": "important",
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "whyItMatters": "開発ツールの自動化やテストケース作成で出力をそのまま利用するための実務的必須要件。",
+    "useCases": [
+      "「説明文は一切省き、有効なJSONオブジェクトのみを出力してください」",
+      "「Markdownの比較表形式で出力してください」"
+    ],
+    "examPoints": [
+      "出力形式を限定することで後処理やコピー＆ペーストの摩擦を減らす",
+      "JSONスキーマや型定義を提示して形式を拘束可能"
+    ],
+    "commonConfusions": [
+      "モデルは自然言語で会話したがるため、コードのみが必要な場合は明示的指定が必須"
+    ],
+    "relatedTermIds": [
+      "g-prompt-anatomy",
+      "g-few-shot"
+    ],
+    "lessonIds": [
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "prompt"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-generation",
+    "term": "AI-Assisted Code Generation",
+    "fullName": "AIアシストによるコード自動生成",
+    "aliases": [
+      "コード生成",
+      "Code generation"
+    ],
+    "shortDefinition": "自然言語の説明、コメント、型定義、またはシグネチャに基づいて、AIが動作可能なコードブロックや関数を生成するプロセス。",
+    "detailedDefinition": "定型的なボイラープレートの記述、複雑なアルゴリズムの初動実装、正規表現の作成、API呼び出しクライアントの構築など、開発者がゼロからコーディングする時間を大幅に削減し、本質的なビジネスロジックに集中できるようにする。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "開発生産性向上の最も分かりやすい価値提供であり、試験全体の基礎。",
+    "useCases": [
+      "関数のドックコメントからの関数本体の自動生成",
+      "CRUD操作のデータベースアクセス層のコード生成"
+    ],
+    "examPoints": [
+      "生成されたコードは必ず人間がレビュー・テストする",
+      "適切なコメントや関数名を付けることで生成精度が飛躍的に向上する"
+    ],
+    "commonConfusions": [
+      "生成されたコードがそのまま本番デプロイ可能であるという盲信"
+    ],
+    "relatedTermIds": [
+      "g-code-correctness",
+      "g-boilerplate-reduction",
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "guide",
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-refactoring",
+    "term": "Code Refactoring with Copilot",
+    "fullName": "Copilotを活用したコードリファクタリング",
+    "aliases": [
+      "リファクタリング",
+      "コード改善"
+    ],
+    "shortDefinition": "外部から見た振る舞いを変えずに、コードの可読性、保守性、パフォーマンス、設計構造を改善する作業をAIで支援すること。",
+    "detailedDefinition": "ネストが深すぎる条件分岐の早期リターン化、巨大関数の適切な責務分割、マジックナンバーの定数化、現代的な言語機能（ラムダ式、Optional chaining等）への書き換えなどを、Copilot ChatやInline Chat（Ctrl+I）を用いて素早く実施する。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "既存コードベースの品質維持においてCopilotが最も活躍するユースケースの1つ。",
+    "useCases": [
+      "「この関数の認知複雑度を下げてリファクタリングして」",
+      "コールバック地獄をasync/awaitに書き換え"
+    ],
+    "examPoints": [
+      "リファクタリング前後で単体テストがパスすることを確認しながら進める",
+      "振る舞いを変更する『機能追加』と『リファクタリング』を明確に分ける"
+    ],
+    "commonConfusions": [
+      "リファクタリング中にAIが勝手に仕様や振る舞いを変更してしまうリスクへの配慮不足"
+    ],
+    "relatedTermIds": [
+      "g-inline-chat",
+      "g-unit-test-generation",
+      "g-legacy-modernization"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-doc-generation",
+    "term": "Documentation Generation (JSDoc, Docstrings)",
+    "fullName": "ドキュメント自動生成 (JSDoc / Docstrings)",
+    "aliases": [
+      "ドキュメント生成",
+      "/doc",
+      "コードコメント作成"
+    ],
+    "shortDefinition": "既存のコード構造、引数、戻り値、例外を分析し、標準化された関数コメントやAPIドキュメントを自動生成する機能。",
+    "detailedDefinition": "VS Codeの `/doc` スラッシュコマンドやチャット指示により、JSDoc、Python docstrings、Go docなどの標準形式で、各パラメータの型や説明、使用例（Usage example）を含む包括的なドキュメントコメントを瞬時に付与する。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "コードベースの保守性とチーム開発の知識共有を底上げする定番の生産性向上テクニック。",
+    "useCases": [
+      "公開APIライブラリへのJSDoc一括付与",
+      "複雑なビジネスロジックへの処理概要コメントの追記"
+    ],
+    "examPoints": [
+      "`/doc` コマンドで選択コードに対するドキュメントを生成可能",
+      "引数や戻り値の型情報をコードから自動抽出する",
+      "ドキュメント内容の正確性も人間の検証対象となる"
+    ],
+    "commonConfusions": [
+      "コメント生成時にコードロジック自体も変更されてしまうという誤解（コメントのみを生成可能）"
+    ],
+    "relatedTermIds": [
+      "g-slash-commands",
+      "g-code-explanation"
+    ],
+    "lessonIds": [
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-legacy-modernization",
+    "term": "Legacy Code Modernization",
+    "fullName": "レガシーコードのモダナイゼーション",
+    "aliases": [
+      "レガシー移行",
+      "コード刷新"
+    ],
+    "shortDefinition": "古い言語バージョン、サポート終了したフレームワーク、非推奨APIで書かれた既存コードを、安全に最新のアーキテクチャや構文へと移行する作業。",
+    "detailedDefinition": "例: JavaScript ES5からTypeScriptへの移行、Python 2からPython 3への書き換え、古いJava EEからSpring Bootへの再構築。Copilotにコードの意図を解説させながら、段階的に現代的な型安全なコードへと書き換える。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "企業のDXや技術的負債解消においてAIのROI（費用対効果）が最も高く評価される領域。",
+    "useCases": [
+      "非同期コールバックからPromise/async-awaitへの移行",
+      "古いORM呼び出しからモダンなクエリビルダーへの置換"
+    ],
+    "examPoints": [
+      "レガシーコードの解説（Explain）と移行（Modernize）を組み合わせて進める",
+      "移行前に既存動作を保証するテストをAIで整備してから書き換えるのがベストプラクティス"
+    ],
+    "commonConfusions": [
+      "テストがない状態でいきなり全体を一括書き換えしてしまう危険な運用"
+    ],
+    "relatedTermIds": [
+      "g-code-refactoring",
+      "g-code-translation",
+      "g-unit-test-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-translation",
+    "term": "Code Translation across Languages",
+    "fullName": "言語間コード翻訳 (Code Translation)",
+    "aliases": [
+      "言語変換",
+      "言語移行"
+    ],
+    "shortDefinition": "あるプログラミング言語で記述されたコードのロジックやアルゴリズムを、別の言語（例: Python → Go, Java → C#）へと忠実に移植・変換する作業。",
+    "detailedDefinition": "言語ごとのイディオム（慣用句）、標準ライブラリの違い、エラーハンドリング思想の違い（例外 vs 戻り値エラー）を考慮しながら、等価な機能を持つコードへと書き換える。Copilot Chatで直接指示できる。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "システム移行やマルチプラットフォーム開発においてシラバスで言及される機能。",
+    "useCases": [
+      "Pythonで検証したプロトタイプアルゴリズムのGo言語への高速化移植",
+      "シェルスクリプトのクロスプラットフォームなNode.jsスクリプト化"
+    ],
+    "examPoints": [
+      "単なる機械的な単語置換ではなく言語イディオムに沿った変換を行わせる",
+      "言語間のデータ型や並行処理モデルの違いに注意が必要"
+    ],
+    "commonConfusions": [
+      "完全自動でテストなしに移植が完了するという誤信"
+    ],
+    "relatedTermIds": [
+      "g-legacy-modernization",
+      "g-code-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-explanation",
+    "term": "Code Explanation and Developer Onboarding",
+    "fullName": "コード解説とオンボーディング支援 (`/explain`)",
+    "aliases": [
+      "コード解説",
+      "/explain",
+      "オンボーディング"
+    ],
+    "shortDefinition": "見慣れないコードベース、複雑な正規表現、難解なビジネスロジックの動作原理を自然言語で分かりやすく解説させる活用法。",
+    "detailedDefinition": "新しくプロジェクトに参加した開発者が、コードを選択して `/explain` を実行することで、アーキテクチャの役割、各行の処理、前提条件を即座に把握できる。シニアエンジニアへの質問回数を減らし立ち上がり期間を短縮する。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "チームの立ち上がり速度（オンボーディング）向上という定量的な生産性指標に貢献する。",
+    "useCases": [
+      "複雑なビット演算や正規表現の解読",
+      "古い社内独自フレームワークの処理フロー理解"
+    ],
+    "examPoints": [
+      "`/explain` コマンドで選択範囲の解説を取得可能",
+      "初学者向けに噛み砕いた解説をプロンプトで追加要求できる",
+      "解説自体にハルシネーションが含まれる可能性も意識する"
+    ],
+    "commonConfusions": [
+      "解説を読めばコードに潜むバグがゼロであると保証されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-slash-commands",
+      "g-doc-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-algorithm-optimization",
+    "term": "Algorithm Implementation and Optimization",
+    "fullName": "アルゴリズムの実装とパフォーマンス最適化",
+    "aliases": [
+      "アルゴリズム最適化",
+      "計算量改善"
+    ],
+    "shortDefinition": "計算量（Time complexity: O(N^2) → O(N log N) など）やメモリフットプリントを改善するためのアルゴリズム最適化をCopilotに提案させること。",
+    "detailedDefinition": "非効率な二重ループや全件走査を行っているコードに対し、「この関数の計算量を改善して」「ハッシュマップや二分探索木を用いた効率的な解法を提案して」と依頼し、ベンチマーク付きの高速化コードを得る。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "単に動くコードを作るだけでなく、商用品質の最適化を行うエンジニアリング能力が問われる。",
+    "useCases": [
+      "大量データ処理におけるメモリリーク解消",
+      "データベースクエリ回数（N+1問題）の削減提案"
+    ],
+    "examPoints": [
+      "計算量（Big-O記法）を指定して最適化を指示できる",
+      "最適化によって可読性が低下しないかバランスを評価する"
+    ],
+    "commonConfusions": [
+      "AIが提案した最適化がエッジケースの挙動を破壊していないかの確認を怠る誤り"
+    ],
+    "relatedTermIds": [
+      "g-perf-bottlenecks",
+      "g-code-refactoring"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-boilerplate-reduction",
+    "term": "Boilerplate Code Reduction",
+    "fullName": "ボイラープレートコードの削減",
+    "aliases": [
+      "ボイラープレート削減",
+      "定型コード生成"
+    ],
+    "shortDefinition": "ゲッター/セッター、DTO変換、エラーハンドリングの定型文、CRUD処理などの反復的で退屈なコード記述作業を自動化すること。",
+    "detailedDefinition": "開発者が最も疲弊しタイピングミスを起こしやすい定型作業をCopilotのインライン補完やチャットで一瞬で終わらせることで、認知的負荷を大幅に軽減する。",
+    "category": "開発生産性",
+    "importance": "supplementary",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "開発者のコーディング体験（DevEx）と満足度向上に直結する定番メリット。",
+    "useCases": [
+      "JSON構造体に対応するTypeScript型定義の自動生成",
+      "オブジェクト間のマッピングコードの補完"
+    ],
+    "examPoints": [
+      "反復的なパターンを素早く学習して補完するCopilotの得意領域",
+      "定型作業の自動化により論理的思考に時間を充当できる"
+    ],
+    "commonConfusions": [
+      "定型コードだからといってテストやレビューを省略してよいという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-generation",
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-unit-test-generation",
+    "term": "Unit Test Generation with Copilot",
+    "fullName": "Copilotによる単体テストコード自動生成 (`/tests`)",
+    "aliases": [
+      "ユニットテスト生成",
+      "/tests",
+      "テスト自動作成"
+    ],
+    "shortDefinition": "既存の関数やクラスを選択し、境界条件、正常系、異常系を網羅したテストスイートを自動生成する機能。",
+    "detailedDefinition": "`/tests` コマンドや「Jest/Vitestでこの関数の単体テストを作成して」というプロンプトにより、モック作成、期待値のアサーション、テストケースの記述を一瞬で完了させる。テスト駆動開発(TDD)やレガシーコード保護の強力な武器となる。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "Domain 5の最重要テーマ（d5o2）。コード品質と安全性を担保する中核技術。",
+    "useCases": [
+      "`/tests` による単体テスト骨格の一括生成",
+      "カバレッジ不足箇所の追加テストケース生成",
+      "パラメタライズドテスト（テーブル駆動テスト）の記述"
+    ],
+    "examPoints": [
+      "`/tests` コマンドで直接テストを生成可能",
+      "正常系だけでなくエッジケースや異常系のテスト生成を指示するのが肝要",
+      "テスト自体がパスするか実際にテストランナーで実行確認する"
+    ],
+    "commonConfusions": [
+      "AIが生成したテストのアサーション値（期待値）が常に正しいと思い込む誤り（ハルシネーションに注意）"
+    ],
+    "relatedTermIds": [
+      "g-slash-commands",
+      "g-edge-case-discovery",
+      "g-test-assertions-mocking"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [
+      "cmp-unit-vs-integration-tests"
+    ],
+    "questionIds": [
+      "q09",
+      "q10"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-integration-test-generation",
+    "term": "Integration Test Generation",
+    "fullName": "統合テスト生成 (Integration Tests)",
+    "aliases": [
+      "結合テスト生成",
+      "インテグレーションテスト"
+    ],
+    "shortDefinition": "複数のモジュール、データベースアクセス、外部API連携が組み合わさったエンドツーエンドまたはコンポーネント間の結合動作を検証するテストの作成。",
+    "detailedDefinition": "単一関数のモックテストにとどまらず、TestcontainersやAPIクライアントを用いた実際の対話フローを検証する結合テストケースをCopilotと対話しながら組み立てる。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "単体テストと統合テストのスコープの違いおよびAI支援の適応範囲を理解するため。",
+    "useCases": [
+      "APIエンドポイントに対するリクエスト/レスポンス統合テストの生成",
+      "DBトランザクションを含むリポジトリ層のテスト"
+    ],
+    "examPoints": [
+      "複数コンポーネントの連携を検証するテスト",
+      "環境セットアップやフィクスチャデータの生成もCopilotで支援可能"
+    ],
+    "commonConfusions": [
+      "単体テスト（Unit test）との混同"
+    ],
+    "relatedTermIds": [
+      "g-unit-test-generation",
+      "g-edge-case-discovery"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [
+      "cmp-unit-vs-integration-tests"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-edge-case-discovery",
+    "term": "Edge Case Discovery via Copilot",
+    "fullName": "エッジケースと境界条件の洗い出し",
+    "aliases": [
+      "エッジケース探索",
+      "境界値分析"
+    ],
+    "shortDefinition": "人間が見落としやすい極端な入力条件（null、空文字、巨大配列、境界値、ゼロ除算、タイムアウトなど）をCopilotに質問してリストアップさせる手法。",
+    "detailedDefinition": "プロンプト例:「この関数に潜む境界条件や見落としがちなエッジケースを5つ挙げ、それらを検証するテストケースを書いてください」。AIの広範なパターン認識能力を活用して、防御的プログラミングを徹底する。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "堅牢なソフトウェアを構築するためのシラバス特記項目（Edge cases）。試験頻出。",
+    "useCases": [
+      "決済ロジックにおけるマイナス金額や通貨丸め誤差の検証",
+      "文字列処理におけるUnicodeサロゲートペアや特殊文字のテスト"
+    ],
+    "examPoints": [
+      "AIに潜在的なエッジケースを積極的に質問して洗い出させる",
+      "境界値（Boundary conditions）に対するテストを網羅する"
+    ],
+    "commonConfusions": [
+      "正常系（Happy path）のテストだけで満足してしまう不十分なテスト設計"
+    ],
+    "relatedTermIds": [
+      "g-unit-test-generation",
+      "g-test-assertions-mocking"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q09",
+      "q10"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-test-assertions-mocking",
+    "term": "Test Assertions and Mock Generation",
+    "fullName": "テストアサーションとモックの自動生成",
+    "aliases": [
+      "モック生成",
+      "アサーション品質",
+      "Mocking"
+    ],
+    "shortDefinition": "外部依存（データベース、ネットワークAPI、ファイルI/O）を模倣するモックオブジェクトやスタブ、厳密な検証アサーションを自動生成すること。",
+    "detailedDefinition": "Jestの `jest.fn()` や `jest.mock()`、Goのgomockなど、記述に手間のかかるモックのセットアップやスパイ関数呼び出しの検証コードをCopilotに作成させ、純粋なロジック検証に集中させる。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "単体テスト作成において最も記述量が多くミスの起きやすいモック作成を効率化するため。",
+    "useCases": [
+      "外部決済APIクライアントのHTTPレスポンスモック作成",
+      "DBリポジトリインターフェースのインメモリスタブ生成"
+    ],
+    "examPoints": [
+      "外部依存を遮断して高速かつ決定的なテストを作るためのモック生成",
+      "アサーション（期待値）が甘すぎないか人間が確認する"
+    ],
+    "commonConfusions": [
+      "モックの挙動が本物のAPI仕様と乖離してしまうリスクへの考慮不足"
+    ],
+    "relatedTermIds": [
+      "g-unit-test-generation",
+      "g-edge-case-discovery"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q09"
+    ],
+    "sourceIds": [
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-vulnerability-remediation",
+    "term": "Security Vulnerability Remediation (`/fix`)",
+    "fullName": "セキュリティ脆弱性の修正提案 (`/fix`)",
+    "aliases": [
+      "脆弱性修正",
+      "/fix",
+      "セキュリティ修復"
+    ],
+    "shortDefinition": "静的解析やCodeQLで検出されたセキュリティ上の問題（SQLi、XSS、CSRFなど）に対し、Copilotを用いて安全な実装コードへと修正するプロセス。",
+    "detailedDefinition": "脆弱性のあるコードを選択して `/fix` を実行するか、セキュリティ指摘内容をチャットに貼り付けて「このSQLインジェクション脆弱性をプレースホルダー（バインド変数）を使って修正して」と指示し、安全な代替コードを取得する。",
+    "category": "開発生産性",
+    "importance": "essential",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "脆弱性を発見するだけでなく「どう安全に修正するか」の実務対応力を問う重要トピック。",
+    "useCases": [
+      "文字列連結によるSQL構築をパラメータ化クエリへ修正",
+      "サニタイズされていないHTML出力をエスケープ処理へ修正"
+    ],
+    "examPoints": [
+      "`/fix` コマンドで問題の修正案を即座に提示できる",
+      "修正によって別の脆弱性や仕様破壊が起きていないか再スキャンする"
+    ],
+    "commonConfusions": [
+      "AIに『直して』と頼めば盲目的に完全に安全になるという過信"
+    ],
+    "relatedTermIds": [
+      "g-slash-commands",
+      "g-security-vulnerability-scan",
+      "g-secret-leak-prevention"
+    ],
+    "lessonIds": [
+      "lesson-d5-security-remediation",
+      "lesson-d5-testing"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-static-analysis-copilot",
+    "term": "Static Analysis Integration with Copilot",
+    "fullName": "静的解析ツールとCopilotの連携",
+    "aliases": [
+      "静的解析連携",
+      "SAST連携",
+      "CodeQL連携"
+    ],
+    "shortDefinition": "ESLint、CodeQL、SonarQubeなどの静的コード解析ツールが指摘したエラーや警告を、Copilotに読み込ませて迅速に自動解消させる運用。",
+    "detailedDefinition": "IDEのエラー一覧（Problemsタブ）やCIのCodeQLスキャン結果のアラートを選択・コピーし、Copilotに「この静的解析エラーの原因を説明し、ルールに準拠した修正を行って」と依頼することで、規約違反を短時間でゼロにする。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "ルールの決定論的検査（静的解析）と修正案の確率的生成（AI）の理想的な相乗効果を示す。",
+    "useCases": [
+      "TypeScriptの厳格な型チェックエラー（`no-explicit-any`）の一括解消",
+      "CodeQLアラートに対するセキュリティパッチ作成"
+    ],
+    "examPoints": [
+      "静的解析（決定的なルールチェック）とCopilot（修正案生成）の組み合わせが推奨される",
+      "ツールの指摘メッセージをプロンプトに渡すことで的確な修正が可能"
+    ],
+    "commonConfusions": [
+      "CopilotがあればESLintやCodeQLなどの静的解析ツールが不要になるという誤解（双方が必須）"
+    ],
+    "relatedTermIds": [
+      "g-security-vulnerability-scan",
+      "g-vulnerability-remediation"
+    ],
+    "lessonIds": [
+      "lesson-d5-security-remediation",
+      "lesson-d5-testing"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "tests",
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-perf-bottlenecks",
+    "term": "Performance Bottleneck Identification",
+    "fullName": "パフォーマンスボトルネックの特定",
+    "aliases": [
+      "ボトルネック特定",
+      "性能診断"
+    ],
+    "shortDefinition": "メモリ消費、過剰なループ、不要な再レンダリング、DBクエリの多発など、コード内の潜在的な性能劣化要因をAIに診断させること。",
+    "detailedDefinition": "大量データを扱う関数や高頻度で呼ばれるコンポーネントのコードをCopilotに分析させ、「このコードでスケーラビリティの障害となる箇所を指摘し、メモリ効率を高める方法を提示して」と指示して改善案を得る。",
+    "category": "開発生産性",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "シラバスの明確なTopic（Performance optimization）に対応する実践知識。",
+    "useCases": [
+      "Reactコンポーネントでの不要な再レンダリングの診断",
+      "大量ファイル読み込み時のストリーム処理への書き換え提案"
+    ],
+    "examPoints": [
+      "プロファイリング結果や想定データ量をプロンプトで伝えると診断精度が上がる",
+      "可読性と性能のトレードオフを考慮して採用を判断する"
+    ],
+    "commonConfusions": [
+      "実行プロファイラによる計測を行わずに推測だけで過剰な最適化を行うアンチパターン"
+    ],
+    "relatedTermIds": [
+      "g-algorithm-optimization",
+      "g-code-refactoring"
+    ],
+    "lessonIds": [
+      "lesson-d5-security-remediation",
+      "lesson-d5-testing"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-secret-leak-prevention",
+    "term": "Secret & Credential Leak Prevention",
+    "fullName": "シークレットおよび認証情報の漏洩防止",
+    "aliases": [
+      "シークレット保護",
+      "認証情報保護",
+      "Secret scanning"
+    ],
+    "shortDefinition": "APIキー、パスワード、秘密鍵などの機密情報がAIのプロンプトとして送信されたり、生成コード内にハードコードされたりすることを防ぐ保護策。",
+    "detailedDefinition": "開発者は環境変数（`.env`）やSecret Managerを活用し、プロンプト内に生のAPIトークンを含めない規律を徹底する。また、GitHub Secret ScanningやPush Protectionを有効にして、AIが生成したダミーキーや誤ってコミットされたシークレットを即時検知する。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d5",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d5o2",
+      "d6o1"
+    ],
+    "whyItMatters": "企業のクラウドセキュリティにおける最優先防護対象。試験頻出。",
+    "useCases": [
+      "テストコード生成時に本物のAPIキーではなく環境変数参照を強制",
+      "`.env` ファイルを `.gitignore` およびContent Exclusionに対象指定"
+    ],
+    "examPoints": [
+      "プロンプトやコードに本物のパスワードやAPIトークンを含めてはならない",
+      "環境変数やシークレット管理サービスを使用する",
+      "GitHub Secret Scanningとの併用が推奨される"
+    ],
+    "commonConfusions": [
+      "「Copilotに渡しても外部には漏れないから平文でキーを書いても大丈夫」という致命的な誤解"
+    ],
+    "relatedTermIds": [
+      "g-security-vulnerability-scan",
+      "g-content-exclusion"
+    ],
+    "lessonIds": [
+      "lesson-d1-security-review",
+      "lesson-d5-security-remediation",
+      "lesson-d5-testing",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "exclusion"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-content-exclusion",
+    "term": "Content Exclusion",
+    "fullName": "コンテンツ除外 (Content Exclusion)",
+    "aliases": [
+      "ファイル除外",
+      "コンテキスト除外"
+    ],
+    "shortDefinition": "特定のファイル、ディレクトリ、またはリポジトリ全体を、GitHub Copilotが参照・補完・処理する対象から除外するセキュリティ機能。",
+    "detailedDefinition": "Organization設定またはRepository設定でパスルール（ワイルドカード対応）を指定することで、対象ファイルを開いている際はInline Suggestionsが無効化され、Chatでの明示的参照もブロックされる。ただしCLIや一部のAgent Mode機能など、適用対象外となるツールが存在する点に注意が必要。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1",
+      "d6o2"
+    ],
+    "whyItMatters": "Domain 6（プライバシーと保護）の中心テーマ。試験全体の10〜15%を占める最重要概念。",
+    "useCases": [
+      "機密アルゴリズムを含む特許関連コードの除外",
+      "認証情報や秘密鍵が記述された設定ファイルの除外",
+      "サードパーティライセンス契約でAI処理が禁じられているリポジトリの除外"
+    ],
+    "examPoints": [
+      "ファイルパスのパターン（例: `secrets/*`）で指定可能",
+      "除外ファイルではインライン提案が無効になりアイコンが変化する",
+      "CLI、Cloud Agent、IDE ChatのAgent Modeでは除外がサポートされていない場合がある（重要）",
+      "設定変更のクライアント反映には最大30分の伝播遅延がある"
+    ],
+    "commonConfusions": [
+      "Public Code Matchingとの混同",
+      "すべてのCopilot機能（CLI含む）で完全に除外が効くという誤解"
+    ],
+    "relatedTermIds": [
+      "g-repo-content-exclusion",
+      "g-org-content-exclusion",
+      "g-exclusion-syntax",
+      "g-exclusion-limitations",
+      "g-public-code-matching"
+    ],
+    "lessonIds": [
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-public-code-matching",
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "questionIds": [
+      "q11",
+      "q12"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-repo-content-exclusion",
+    "term": "Repository-Level Content Exclusion",
+    "fullName": "リポジトリレベルのコンテンツ除外",
+    "aliases": [
+      "リポジトリ除外設定",
+      "Repo Exclusion"
+    ],
+    "shortDefinition": "個別のリポジトリ設定画面（Settings > Copilot > Content exclusion）において、そのリポジトリ内の特定ファイルパスを除外する設定。",
+    "detailedDefinition": "リポジトリ管理者が構成可能。Organizationレベルで除外がロックされていない場合、プロジェクト固有の機密パス（例: `src/proprietary/*`）を柔軟に除外リストに追加できる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "whyItMatters": "リポジトリ管理者の権限スコープと設定手順を理解するために重要。",
+    "useCases": [
+      "特定リポジトリの `credentials.json` や `certs/*` の除外設定"
+    ],
+    "examPoints": [
+      "リポジトリの管理者権限が必要",
+      "Organizationで設定された除外ルールをリポジトリ側で解除することはできない（継承の原則）"
+    ],
+    "commonConfusions": [
+      "リポジトリ設定でOrganizationの除外ルールを上書き無効化できるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-org-content-exclusion",
+      "g-policy-inheritance"
+    ],
+    "lessonIds": [
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "policies"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-org-content-exclusion",
+    "term": "Organization-Level Content Exclusion",
+    "fullName": "組織レベルのコンテンツ除外",
+    "aliases": [
+      "組織除外設定",
+      "Org Exclusion"
+    ],
+    "shortDefinition": "Organization設定において、傘下のすべてのリポジトリ、または特定のリポジトリ群に一括適用される最上位の除外ルール。",
+    "detailedDefinition": "組織管理者が構成する。`https://github.com/my-org/my-repo:path/to/file` の形式や、全リポジトリ共通のパターン（例: `**/.env*`）を指定して、組織全体で統一したコンテンツ保護を強制できる。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "whyItMatters": "企業セキュリティガバナンスにおける全社統一ルールの設定方法として問われる。",
+    "useCases": [
+      "全リポジトリにおける本番環境設定ファイル（`config/production.*`）の一括除外",
+      "特定の極秘プロジェクトリポジトリの全ファイル除外"
+    ],
+    "examPoints": [
+      "リポジトリURLを含めた構文で組織内の対象を特定可能",
+      "個別リポジトリの管理者が組織除外設定を解除することは不可能"
+    ],
+    "commonConfusions": [
+      "各リポジトリで個別に同じ設定を手動入力しなければならないという誤解（Orgで一元管理可能）"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-repo-content-exclusion",
+      "g-policy-inheritance"
+    ],
+    "lessonIds": [
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "policies"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-exclusion-syntax",
+    "term": "Content Exclusion Syntax & Wildcards",
+    "fullName": "コンテンツ除外の記述構文とワイルドカード",
+    "aliases": [
+      "除外構文",
+      "ワイルドカード構文",
+      "Exclusion syntax"
+    ],
+    "shortDefinition": "Content Exclusionを設定する際にパスを指定するための標準構文規則（`*`, `**`, 相対パス指定など）。",
+    "detailedDefinition": "構文規則: `*` は単一ディレクトリ内の任意文字列にマッチ、`**` はディレクトリ階層を越えた再帰的マッチ（例: `**/secrets/**`）、完全一致のファイル名指定、大文字小文字の区別など。正確な構文を指定しないと除外が機能しない。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "whyItMatters": "「この除外パターンで正しく対象ファイルが保護されるか」という構文理解問題が出題される。",
+    "useCases": [
+      "`**/*.pem` によるすべての秘密鍵ファイルの除外",
+      "`client/src/internal/**` による特定サブシステムの除外"
+    ],
+    "examPoints": [
+      "`**` は複数階層のディレクトリに再帰的にマッチする",
+      "先頭のスラッシュの有無や大文字小文字の扱いに注意",
+      "構文エラーがあると意図した除外が行われないリスクがある"
+    ],
+    "commonConfusions": [
+      "`.gitignore` の構文と完全に同一であるという誤解（微妙な規則の違いに注意）"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-exclusion-propagation"
+    ],
+    "lessonIds": [
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "exclusion"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-output-ownership",
+    "term": "Code Output Ownership & Intellectual Property",
+    "fullName": "生成コードの所有権と知的財産権 (Output Ownership)",
+    "aliases": [
+      "出力の権利帰属",
+      "コード所有権"
+    ],
+    "shortDefinition": "GitHub Copilotが生成したコードに対する権利帰属の規定。GitHubは生成コードに対する著作権や所有権を主張しない。",
+    "detailedDefinition": "GitHubの利用規約において、Copilotが生成したコードの知的財産権や所有権はすべて顧客（ユーザー/企業）に帰属することが明記されている。GitHubが顧客の生成コードに対して権利を主張したり、ライセンス料を要求することはない。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "whyItMatters": "企業がCopilotを商用製品開発に安心して採用できる法的根拠。",
+    "useCases": [
+      "法務部門による商用ソフトウェア開発へのCopilot利用許可の審査",
+      "自社プロダクトの著作権保護"
+    ],
+    "examPoints": [
+      "GitHubは生成コードの所有権・著作権を主張しない",
+      "生成コードの権利はユーザー/顧客に帰属する",
+      "生成されたコードが第三者の権利を侵害していないかの確認責任は利用者が負う"
+    ],
+    "commonConfusions": [
+      "生成コードはGitHubのオープンソースライセンス下に置かれるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-ip-copyright",
+      "g-enterprise-data-privacy"
+    ],
+    "lessonIds": [
+      "lesson-d6-ownership-privacy",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-enterprise-data-privacy",
+    "term": "Data Privacy in Copilot Business and Enterprise",
+    "fullName": "Copilot Business / Enterprise におけるデータプライバシー",
+    "aliases": [
+      "企業データプライバシー",
+      "Trust Center"
+    ],
+    "shortDefinition": "商用プラン（Business/Enterprise）において、顧客のコード、プロンプト、個人データを保護するための厳格なセキュリティ・プライバシー保証体系。",
+    "detailedDefinition": "1. ゼロデータ保持（コードスニペットの非永続化）、2. モデル学習への不使用、3. 転送時の暗号化、4. SOC 2 Type 2やISO 27001などの国際セキュリティ標準準拠、5. Content Exclusionによる機密保護から構成される。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "whyItMatters": "企業のセキュリティコンプライアンス要件（SOC2, GDPR等）を満たすための公式エビデンス。",
+    "useCases": [
+      "社内コンプライアンス審査におけるセキュリティチェックシートの回答",
+      "EUデータ保護規則（GDPR）対応の確認"
+    ],
+    "examPoints": [
+      "Business/Enterprise契約ではコードスニペットがモデル学習に使われない",
+      "個人プラン（Individual）とはデータ保持ポリシーが異なる",
+      "業界標準のセキュリティ認証を取得している"
+    ],
+    "commonConfusions": [
+      "クラウドAIを使うとすべての社内資産が無防備になるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-code-retention-policy",
+      "g-content-exclusion",
+      "g-subscription-plans"
+    ],
+    "lessonIds": [
+      "lesson-d3-retention-privacy",
+      "lesson-d6-ownership-privacy",
+      "lesson-d6-content-exclusion-setup"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-public-code-matching",
+    "term": "Public Code Matching / Filtering",
+    "fullName": "パブリックコードとの一致検出とフィルタリング",
+    "aliases": [
+      "Public code filter",
+      "公開コードフィルタリング",
+      "コード一致検出"
+    ],
+    "shortDefinition": "Copilotが生成した約150文字以上のコード提案が、GitHub上の公開リポジトリのコードと一致するか照合し、ブロックまたは参照情報を提示する保護機能。",
+    "detailedDefinition": "組織設定で「Suggestions matching public code」を「Block」に設定することで、公開コードと一致する提案をユーザー画面に表示させず遮断できる。これにより、意図しないGPL等のライセンス伝播や著作権侵害のリスクを未然に防止する。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "Content Exclusionと並ぶDomain 6の二大必須機能。両者の役割の相違が試験で問われる。",
+    "useCases": [
+      "ライセンス汚染（Copyleftライセンスの混入）を厳格に防ぐ企業設定",
+      "提案されたコードの一致元リポジトリとライセンスの確認"
+    ],
+    "examPoints": [
+      "約150文字（tokens）以上の一致が照合対象",
+      "設定で「Block（ブロック）」または「Allow（許可・参照情報表示）」を選択可能",
+      "Content Exclusion（自社ファイルの保護）とは保護の方向性が逆（公開コードの自社への流入防止）"
+    ],
+    "commonConfusions": [
+      "Content Exclusion（自社コードを送信しない）とPublic Code Matching（他者の公開コードを取り込まない）の混同"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-public-code-log",
+      "g-org-policies"
+    ],
+    "lessonIds": [
+      "lesson-d1-risks",
+      "lesson-d6-public-code-matching",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "comparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-public-code-log",
+    "term": "Public Code Match Reference Log & Code Search",
+    "fullName": "公開コード一致リファレンスログとコード検索",
+    "aliases": [
+      "一致ログ",
+      "Reference Log",
+      "GitHub Code Search連携"
+    ],
+    "shortDefinition": "Public Code Matchingで「Allow」が設定されている場合、提案を受け入れた際に一致した公開リポジトリのURL、ライセンス、ファイルパスの参照情報をログやUIで確認できる機能。",
+    "detailedDefinition": "エディタのCopilotログやGitHub.comの参照ログに、一致が検出された公開リポジトリの情報（リポジトリ名、該当パス、検出されたOSSライセンス等）が記録され、開発者がライセンス表記義務を満たすための調査を行える。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "OSSコンプライアンス管理における実務上のトレース手段。",
+    "useCases": [
+      "提案コードを採用する際のライセンス確認（MITかGPLか等）",
+      "OSS属性表記（Attribution）の作成"
+    ],
+    "examPoints": [
+      "一致した公開コードのライセンスやリポジトリURLを追跡可能",
+      "Allow設定時の一致箇所の特定に利用される"
+    ],
+    "commonConfusions": [
+      "Block設定にしている時でもログを見ながら採用できるという誤解（Block時はそもそも提案が出ない）"
+    ],
+    "relatedTermIds": [
+      "g-public-code-matching",
+      "g-ip-copyright"
+    ],
+    "lessonIds": [
+      "lesson-d6-public-code-matching",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "privacy"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-exclusion-propagation",
+    "term": "Content Exclusion Propagation Delay & Troubleshooting",
+    "fullName": "コンテンツ除外の反映伝播遅延とトラブルシューティング",
+    "aliases": [
+      "除外反映遅延",
+      "30分伝播遅延",
+      "除外トラブルシューティング"
+    ],
+    "shortDefinition": "GitHub.com上でContent Exclusionルールを設定または変更した後、クライアント（IDE）に設定が反映されるまでに最大30分程度の遅延が発生する仕様。",
+    "detailedDefinition": "設定変更後、すぐにエディタで除外が有効にならない場合がある。トラブルシューティング手順として、1. 最大30分待機する、2. IDEウィンドウを再読み込み（Reload Window）する、3. ステータスバーアイコンの変化を確認する、という公式手順が定められている。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "シラバスの明記Topic（Troubleshooting content exclusions）。試験のシナリオ問題の定番。",
+    "useCases": [
+      "「除外設定したのにエディタで補完が出てしまう」という問い合わせのトラブルシューティング",
+      "IDEの強制再接続による即時反映"
+    ],
+    "examPoints": [
+      "設定変更からクライアントへの反映には最大30分かかることがある",
+      "IDEの再起動やリロード（Developer: Reload Window）で強制更新を試みる",
+      "ステータスバーのCopilotアイコンで除外適用を確認可能"
+    ],
+    "commonConfusions": [
+      "設定を保存した瞬間にミリ秒単位で全世界のIDEに即時適用されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-client-exclusion-check"
+    ],
+    "lessonIds": [
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d6-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q12"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-client-exclusion-check",
+    "term": "Client-side Exclusion Verification & Status",
+    "fullName": "クライアント側での除外適用確認とステータス表示",
+    "aliases": [
+      "除外アイコン確認",
+      "エディタ除外表示"
+    ],
+    "shortDefinition": "開発者がエディタ上で開いているファイルがContent Exclusionによって正常に保護されているかを視覚的に確認する方法。",
+    "detailedDefinition": "除外対象のファイルを開くと、IDEのステータスバーにあるCopilotアイコンに対角線（斜線）が引かれ、ホバーすると「Copilot is disabled for this file by your organization」と表示される。またインライン補完やInline Chatが無効化される。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "開発者が「現在保護されているか」を目視確認するための実務知識。",
+    "useCases": [
+      "機密ファイルを開いた際のCopilot無効化状態の確認",
+      "除外設定が正しく効いているかの検証"
+    ],
+    "examPoints": [
+      "ステータスバーアイコンに斜線が入り無効表示になる",
+      "ツールチップで組織ポリシーにより無効化されている理由が表示される"
+    ],
+    "commonConfusions": [
+      "除外されているのに気づかずにプラグインの故障と誤認するケース"
+    ],
+    "relatedTermIds": [
+      "g-status-menu",
+      "g-content-exclusion",
+      "g-exclusion-propagation"
+    ],
+    "lessonIds": [
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d6-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q12"
+    ],
+    "sourceIds": [
+      "exclusion"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-exclusion-limitations",
+    "term": "Content Exclusion Support Limitations (CLI / Agent Mode)",
+    "fullName": "コンテンツ除外の適用対象外機能と制約",
+    "aliases": [
+      "除外の制限",
+      "CLIでの非対応",
+      "Exclusion Limitations"
+    ],
+    "shortDefinition": "Content ExclusionがすべてのCopilot機能に適用されるわけではなく、GitHub Copilot in the CLI、Cloud Agent、一部のAgent Mode等では除外がサポートされていないという重要な仕様上の制約。",
+    "detailedDefinition": "公式ドキュメントに明記されている重大な注意事項。Webブラウザ上のCopilotやIDEエディタ補完では除外が効くが、CLI環境で除外対象ファイルを引数に指定したり、Agent Modeで自律探索させた場合、除外が適用されずに内容が処理される危険がある。機密管理の設計で最重要。",
+    "category": "プライバシーと管理",
+    "importance": "essential",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "「Content Exclusionを設定していればあらゆるCopilot機能で100%安全か」という問いに対する試験の最重要トラップ。",
+    "useCases": [
+      "極秘コードを扱うリポジトリでCLI版Copilotの利用ポリシーを禁止に設定",
+      "Agent Mode利用時の機密ファイルアクセス制限"
+    ],
+    "examPoints": [
+      "GitHub Copilot in the CLIはContent Exclusionをサポートしていない（最重要）",
+      "Cloud agentや一部のAgent Modeでも除外が効かない場合がある",
+      "全機能万能のセキュリティ境界ではないため多層防御が必要"
+    ],
+    "commonConfusions": [
+      "Content Exclusionを設定すればCLIでも自動的にファイルが保護されるという危険な思い込み"
+    ],
+    "relatedTermIds": [
+      "g-content-exclusion",
+      "g-copilot-cli",
+      "g-agent-mode"
+    ],
+    "lessonIds": [
+      "lesson-d2-cli",
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d6-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "cli",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-compliance-auditability",
+    "term": "Enterprise Compliance and Auditability",
+    "fullName": "エンタープライズコンプライアンスと監査可能性",
+    "aliases": [
+      "コンプライアンス監査",
+      "企業コンプライアンス"
+    ],
+    "shortDefinition": "企業が法令、業界規制（PCI-DSS, HIPAA等）、社内セキュリティ規定に準拠してCopilotを運用し、それを監査ログやポリシーで証明できる能力。",
+    "detailedDefinition": "シートの利用状況、ポリシーの強制履歴、Content Exclusionの適用状況をAudit LogやREST APIを通じて外部のSIEMや監査役に提示できる状態を維持すること。知財補償（Copyright Commitment）の適用要件の確認も含まれる。",
+    "category": "プライバシーと管理",
+    "importance": "important",
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "whyItMatters": "大企業へのAI導入の最終承認要件であり、試験のエンタープライズシナリオに直結。",
+    "useCases": [
+      "定期的なセキュリティ監査でのポリシー設定証明",
+      "知財侵害リスクに対する保険としてのCopyright Commitmentの構成確認"
+    ],
+    "examPoints": [
+      "監査ログ（Audit Log）を活用してポリシー遵守を証明できる",
+      "Public Code Matchingを有効にしておくことが知財補償の推奨前提条件となる"
+    ],
+    "commonConfusions": [
+      "AIツールは監査不能なブラックボックスでありコンプライアンス適合できないという誤解"
+    ],
+    "relatedTermIds": [
+      "g-audit-logs",
+      "g-org-policies",
+      "g-public-code-matching"
+    ],
+    "lessonIds": [
+      "lesson-d6-public-code-matching",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  }
+]

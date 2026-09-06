@@ -1,0 +1,21 @@
+name: GH-300 syllabus watch
+on:
+  schedule:
+    - cron: '23 3 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-syllabus.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: syllabus-human-review
+          path: artifacts/
+          retention-days: 90

@@ -1,0 +1,173 @@
+{
+  "version": "2026-08-07",
+  "normalization": "Detailed headings define six domains; duplicated glance entry omitted.",
+  "domains": [
+    {
+      "id": "d1",
+      "name": "Responsible AI",
+      "title": "責任あるAIの利用",
+      "min": 15,
+      "max": 20,
+      "topics": ["Responsible AI", "Generative AI risks and limitations", "AI output validation"],
+      "objectives": [
+        {
+          "id": "d1o1",
+          "title": "Understand responsible AI principles"
+        },
+        {
+          "id": "d1o2",
+          "title": "Validate and operate AI tools"
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Copilot Features",
+      "title": "Copilotの機能を使いこなす",
+      "min": 25,
+      "max": 30,
+      "topics": [
+        "IDE integration",
+        "Inline suggestions",
+        "Copilot Chat",
+        "Agent Mode",
+        "Copilot Edits",
+        "GitHub Copilot CLI",
+        "MCP",
+        "Agent Sessions",
+        "Sub-Agents",
+        "Code Review",
+        "Spaces",
+        "Spark",
+        "Pull Request summaries",
+        "Instructions files",
+        "Prompt files",
+        "Organization-wide policies",
+        "Copilot Code Review policies",
+        "Audit logs",
+        "REST API subscription management"
+      ],
+      "objectives": [
+        {
+          "id": "d2o1",
+          "title": "Use GitHub Copilot in the IDE"
+        },
+        {
+          "id": "d2o2",
+          "title": "Use GitHub Copilot CLI"
+        },
+        {
+          "id": "d2o3",
+          "title": "Use GitHub Copilot features and capabilities"
+        },
+        {
+          "id": "d2o4",
+          "title": "Manage organization-wide settings and policies"
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Data & Architecture",
+      "title": "データとアーキテクチャ",
+      "min": 10,
+      "max": 15,
+      "topics": [
+        "Data flow",
+        "Input processing",
+        "Prompt building",
+        "Proxy filtering",
+        "Post-processing",
+        "Code suggestion lifecycle",
+        "LLM limitations"
+      ],
+      "objectives": [
+        {
+          "id": "d3o1",
+          "title": "Describe data handling and flow"
+        },
+        {
+          "id": "d3o2",
+          "title": "Understand lifecycle and limitations"
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "name": "Prompt Engineering",
+      "title": "プロンプトとコンテキスト",
+      "min": 10,
+      "max": 15,
+      "topics": [
+        "Prompt structure",
+        "Context determination",
+        "Zero-shot prompting",
+        "Few-shot prompting",
+        "Prompt engineering",
+        "Chat history"
+      ],
+      "objectives": [
+        {
+          "id": "d4o1",
+          "title": "Craft effective prompts"
+        },
+        {
+          "id": "d4o2",
+          "title": "Engineer prompts for performance"
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "Developer Productivity",
+      "title": "開発生産性を高める",
+      "min": 10,
+      "max": 15,
+      "topics": [
+        "Code generation",
+        "Refactoring",
+        "Documentation",
+        "Legacy code modernization",
+        "Unit tests",
+        "Integration tests",
+        "Edge cases",
+        "Assertions",
+        "Security improvements",
+        "Performance optimization"
+      ],
+      "objectives": [
+        {
+          "id": "d5o1",
+          "title": "Enhance productivity and code quality"
+        },
+        {
+          "id": "d5o2",
+          "title": "Support testing and security"
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "Privacy & Safeguards",
+      "title": "プライバシーと保護",
+      "min": 10,
+      "max": 15,
+      "topics": [
+        "Content exclusions",
+        "Output ownership and limitations",
+        "Public code matching/filtering",
+        "Troubleshooting content exclusions"
+      ],
+      "objectives": [
+        {
+          "id": "d6o1",
+          "title": "Manage privacy settings and exclusions"
+        },
+        {
+          "id": "d6o2",
+          "title": "Apply safeguards and troubleshoot"
+        }
+      ]
+    }
+  ]
+}

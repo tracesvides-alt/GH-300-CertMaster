@@ -1,0 +1,782 @@
+[
+  {
+    "id": "cmp-chat-vs-inline",
+    "title": "Copilot Chat vs Inline Suggestions",
+    "slug": "chat-vs-inline-suggestions",
+    "summary": "エディタ上で思考を止めずにタイピング中にリアルタイム補完を受けるInline Suggestionsと、自然言語で設計相談・不具合調査・コード解説を行うCopilot Chatの使い分け。",
+    "comparedTermIds": [
+      "g-copilot-chat",
+      "g-inline-suggestions"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "起動方法とUI",
+        "values": [
+          "Chat: サイドバーまたはInline Chat (Ctrl+I)",
+          "Inline: エディタ内でタイピング中にゴーストテキスト自動表示"
+        ]
+      },
+      {
+        "axis": "主な用途",
+        "values": [
+          "Chat: コード解説、バグ特定(/fix)、設計相談、テスト生成",
+          "Inline: 行/関数単位のリアルタイム自動補完、ボイラープレート記述"
+        ]
+      },
+      {
+        "axis": "入力形式",
+        "values": [
+          "Chat: 自然言語プロンプト、スラッシュコマンド、変数(#file)",
+          "Inline: 前後コードと隣接タブの暗黙的コンテキスト"
+        ]
+      },
+      {
+        "axis": "レイテンシ",
+        "values": [
+          "Chat: 数秒（深い推論モデル）",
+          "Inline: 数百ミリ秒（超高速・タイピング追従）"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "関数やループの定型コードをすばやくタイピングしたい → Inline Suggestions",
+      "なぜこのバグが発生するのか理由を解明したい → Copilot Chat (/explain)",
+      "既存のコードを選択して特定の規約に沿って書き換えたい → Inline Chat (Ctrl+I) または Chat",
+      "新しいテストファイルをゼロから作成したい → Copilot Chat (/tests)"
+    ],
+    "commonTraps": [
+      "簡単な1行の補完を得るためにわざわざチャット欄に質問を入力してしまう非効率",
+      "複雑なアーキテクチャの相談をエディタ上のインライン補完だけで済ませようとすること"
+    ],
+    "examTips": [
+      "「タイピングの流れを止めない補完」はInline Suggestions、「質問・解説・テスト生成」はChatが正解です。",
+      "Inline Chat（Ctrl+I）はエディタ内でDiff確認しながら修正できる中間的な機能です。"
+    ],
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials"
+    ],
+    "questionIds": [
+      "q03",
+      "q04"
+    ],
+    "sourceIds": [
+      "responsible",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-agent-vs-edits",
+    "title": "Agent Mode vs Copilot Edits",
+    "slug": "agent-mode-vs-copilot-edits",
+    "summary": "どちらも複数ファイル（マルチファイル）の編集を扱えるが、Agent Modeはターミナルコマンド実行と自律的なエラー自己修正ループを備え、Editsは複数ファイルに対する差分提案のみに特化する。",
+    "comparedTermIds": [
+      "g-agent-mode",
+      "g-copilot-edits"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "自律動作ループ",
+        "values": [
+          "Agent Mode: ビルドやテストを実行し、エラーを自己解析して自動再試行する",
+          "Copilot Edits: 指示に基づくDiffを生成するのみ（自律ループなし）"
+        ]
+      },
+      {
+        "axis": "ターミナルコマンド実行",
+        "values": [
+          "Agent Mode: 可能（テスト実行、パッケージ導入等を自律実行）",
+          "Copilot Edits: 不可（ターミナル操作は行わない）"
+        ]
+      },
+      {
+        "axis": "対象スコープ",
+        "values": [
+          "Agent Mode: プロジェクト全体・外部MCPツール・ターミナル",
+          "Copilot Edits: Working Setに指定した複数ファイル"
+        ]
+      },
+      {
+        "axis": "Content Exclusion",
+        "values": [
+          "Agent Mode: 一部機能で適用対象外となる場合がある（制約に注意）",
+          "Copilot Edits: エディタ設定に準拠して適用"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "複数ファイルの修正に加えて、テストを実行して全件パスするまで自動修正させたい → Agent Mode",
+      "指定した複数ファイル（モデルとコントローラー）の差分を一括提案してもらい、自分で手動確認したい → Copilot Edits",
+      "外部のデータベースやMCPツールと連携してタスクを遂行したい → Agent Mode"
+    ],
+    "commonTraps": [
+      "Agent ModeとCopilot Editsを同一機能と混同する（コマンド実行と自己修正の有無が境界線）",
+      "Agent Modeは人間の承認なしに直接Gitにコミットしてしまうという誤解（最終Diffは人間が承認）"
+    ],
+    "examTips": [
+      "「ターミナルでテストを実行しながらエラーを自律修正」は確実にAgent Modeです。",
+      "「指定ファイルの変更Diffを一括提示」はCopilot Editsです。"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-agent-vs-chat",
+    "title": "Agent Mode vs Copilot Chat",
+    "slug": "agent-mode-vs-copilot-chat",
+    "summary": "対話を通じてコードスニペットや助言を提示するアシスタント型のCopilot Chatと、環境内のツールを使って実際にファイル作成やコマンド実行を自律遂行するAgent Modeの違い。",
+    "comparedTermIds": [
+      "g-agent-mode",
+      "g-copilot-chat"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o1",
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "作業の主体",
+        "values": [
+          "Agent Mode: AIが計画を立てて自律的に作業ステップを実行",
+          "Chat: 開発者が主導し、AIは助言やコード断片を提示"
+        ]
+      },
+      {
+        "axis": "ファイル操作",
+        "values": [
+          "Agent Mode: ワークスペース内に直接ファイルを作成・編集",
+          "Chat: チャット欄にコードブロックを提示し、ユーザーがコピペまたは適用"
+        ]
+      },
+      {
+        "axis": "ツールの利用 (MCP)",
+        "values": [
+          "Agent Mode: MCP Toolsを呼び出して外部操作を実行可能",
+          "Chat: 主に対話テキストとインライン参照のみ"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "「この正規表現の意味を教えて」「このエラーの原因は何？」という質問・相談 → Copilot Chat",
+      "「この仕様書に従って新機能をスキャフォールドし、動作確認まで完了して」という総合タスク → Agent Mode"
+    ],
+    "commonTraps": [
+      "単なるチャットウィンドウ内でコードが自動で書き換えられると思い込むこと",
+      "Agent Modeに単純な質問をして余計なファイル変更を誘発してしまうこと"
+    ],
+    "examTips": [
+      "「助言・解説を受ける」＝ Chat、「タスクの自律遂行・実行」＝ Agent Mode です。"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-chat-essentials"
+    ],
+    "questionIds": [
+      "q04"
+    ],
+    "sourceIds": [
+      "agent-mode",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-mcp-vs-extensions",
+    "title": "Model Context Protocol (MCP) vs Copilot Extensions",
+    "slug": "mcp-vs-copilot-extensions",
+    "summary": "オープンスタンダードとしてローカル/リモートのツールやDBとAIを接続するMCPと、GitHub Marketplace経由でサードパーティサービスをChatに統合するCopilot Extensionsの違い。",
+    "comparedTermIds": [
+      "g-mcp",
+      "g-copilot-extensions"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "プロトコル / 規格",
+        "values": [
+          "MCP: オープンプロトコル標準（Anthropic提唱、GitHub採用）",
+          "Extensions: GitHub独自のMarketplace統合アプリ"
+        ]
+      },
+      {
+        "axis": "接続先とホスティング",
+        "values": [
+          "MCP: 自社内DB、ローカルスクリプト、プライベートAPIなど自由に接続可能",
+          "Extensions: Marketplaceで公開されたSaaSプラットフォーム（Azure, Docker, Sentry等）"
+        ]
+      },
+      {
+        "axis": "連携先機能",
+        "values": [
+          "MCP: 主にAgent ModeからTools/Resourcesとして呼び出し",
+          "Extensions: チャット参加者（`@docker` 等）として対話UIから呼び出し"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "社内のPostgreSQLデータベースや独自リソースとCopilotを接続したい → MCP Serverを構築",
+      "GitHub.comやIDEのチャットから直接SaaS（AzureやDocker）のログやリソースを操作したい → Copilot Extensionsを導入"
+    ],
+    "commonTraps": [
+      "社内非公開システムを接続するのにMarketplaceのExtensionsが必要と思い込む誤り（MCPなら独自ホスト可能）"
+    ],
+    "examTips": [
+      "「オープンプロトコルによる外部ツール接続」はMCP、「Marketplaceのチャット参加者連携」はExtensionsです。"
+    ],
+    "lessonIds": [
+      "lesson-d2-mcp"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-instructions-vs-prompts",
+    "title": "Custom Instructions vs Prompt Files",
+    "slug": "custom-instructions-vs-prompt-files",
+    "summary": "リポジトリ全体に常時自動適用される `copilot-instructions.md` と、チームで共有しオンデマンドで呼び出す再利用可能テンプレート `.prompt.md` の役割分担。",
+    "comparedTermIds": [
+      "g-custom-instructions",
+      "g-prompt-files"
+    ],
+    "domainIds": [
+      "d2",
+      "d4"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d4o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "適用タイミング",
+        "values": [
+          "Custom Instructions: リポジトリ内のすべてのCopilot対話・生成に常時自動適用",
+          "Prompt Files: チャット欄等からユーザーが明示的に呼び出して実行"
+        ]
+      },
+      {
+        "axis": "ファイルパスと形式",
+        "values": [
+          "Custom Instructions: `.github/copilot-instructions.md` (Markdown)",
+          "Prompt Files: `.github/prompts/*.prompt.md` (フロントマター付きMarkdown)"
+        ]
+      },
+      {
+        "axis": "主な用途",
+        "values": [
+          "Custom Instructions: プロジェクト全体の基本規約（TypeScript必須、Vitest使用等）",
+          "Prompt Files: 定型タスク（セキュリティ監査、リリースノート作成、特定API生成）"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "チーム全員がCopilotを使う際、常に守るべきコーディング標準を設定したい → `copilot-instructions.md`",
+      "週に1度行う複雑な脆弱性チェックの定型プロンプトをチームで共有・再利用したい → `*.prompt.md`"
+    ],
+    "commonTraps": [
+      "Prompt Filesを置いておけば自動で全チャットに適用されると勘違いすること（手動呼び出しが必要）",
+      "常時適用されるInstructionsに特定タスクの長大なプロンプトを詰め込んでトークンを浪費すること"
+    ],
+    "examTips": [
+      "「常時自動適用」＝ Custom Instructions、「オンデマンド再利用」＝ Prompt Files です。",
+      "それぞれのファイルパス規則は確実に問われます。"
+    ],
+    "lessonIds": [
+      "lesson-d2-instructions-prompts"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "instructions",
+      "prompt-files",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-spaces-vs-chat",
+    "title": "GitHub Copilot Spaces vs 通常のChat Context",
+    "slug": "spaces-vs-normal-chat-context",
+    "summary": "単一リポジトリやローカルエディタに閉じた通常のChat Contextと、複数リポジトリやドキュメントを横断して単一のAI作業空間に束ねるCopilot Spacesの違い。",
+    "comparedTermIds": [
+      "g-spaces",
+      "g-copilot-chat"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "リポジトリのスコープ",
+        "values": [
+          "Spaces: 複数のリポジトリ、ドキュメント、メモを横断バインド",
+          "通常のChat: 現在開いている単一のローカルワークスペースが基本"
+        ]
+      },
+      {
+        "axis": "プラットフォーム",
+        "values": [
+          "Spaces: GitHub.com上のコラボレーション空間",
+          "通常のChat: VS Code等のIDEサイドバー"
+        ]
+      },
+      {
+        "axis": "コラボレーション",
+        "values": [
+          "Spaces: チームメンバー間でコンテキストとチャットスレッドを永続共有",
+          "通常のChat: 開発者個人のローカルセッション"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "マイクロサービス構成で、フロントエンドとバックエンドの2つのリポジトリを跨いで設計相談したい → Copilot Spaces",
+      "手元のエディタで今開いている1つのリポジトリのコードを素早く修正したい → 通常のCopilot Chat"
+    ],
+    "commonTraps": [
+      "IDEの通常チャットで別リポジトリのコードが自動的に読み込まれると思い込むこと"
+    ],
+    "examTips": [
+      "「複数リポジトリを横断したコンテキスト共有」というキーワードが出たら「Copilot Spaces」です。"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "spaces",
+      "chat",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-sessions-vs-subagents",
+    "title": "Agent Sessions vs Sub-Agents",
+    "slug": "agent-sessions-vs-sub-agents",
+    "summary": "1つの自律タスクの試行錯誤ログや作業単位を管理・監査するAgent Sessionsと、親エージェントから特定調査を委譲されるSub-Agentsの役割の違い。",
+    "comparedTermIds": [
+      "g-agent-sessions",
+      "g-sub-agents"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "役割",
+        "values": [
+          "Agent Sessions: タスク単位の作業コンテナ・履歴・コミット管理単位",
+          "Sub-Agents: 独立した下位調査やタスクを実行する作業実行エージェント"
+        ]
+      },
+      {
+        "axis": "コンテキスト管理",
+        "values": [
+          "Agent Sessions: セッション全体で累積されたDiffやツールログを保持",
+          "Sub-Agents: 自身の隔離されたコンテキストで作業し、要約結果のみを親に返す"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "エージェントの作業履歴を確認し、過去の変更点にロールバックしたい → Agent Sessionsの管理",
+      "メインエージェントのトークンを汚染せずに巨大コードベースから特定エラー箇所を調査させたい → Sub-Agents"
+    ],
+    "commonTraps": [
+      "Sub-Agentsを単なるユーザーチャット履歴と混同すること"
+    ],
+    "examTips": [
+      "Sub-Agentsはコンテキストウィンドウの過消費（希釈）を防ぐための仕組みです。"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-review-vs-summary",
+    "title": "Copilot Code Review vs Pull Request Summaries",
+    "slug": "code-review-vs-pr-summaries",
+    "summary": "Pull Requestの変更行に対して品質・セキュリティの改善指摘コメントを行うCode Reviewと、PR全体の変更内容・目的の要約文を作成するPR Summariesの違い。",
+    "comparedTermIds": [
+      "g-copilot-code-review",
+      "g-pr-summaries"
+    ],
+    "domainIds": [
+      "d2",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d2o3",
+      "d5o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "アウトプット形式",
+        "values": [
+          "Code Review: コード差分の特定行に対するインライン指摘・改善サジェストコメント",
+          "PR Summaries: PR説明文（本文）に挿入されるMarkdown形式の要約とウォークスルー"
+        ]
+      },
+      {
+        "axis": "目的",
+        "values": [
+          "Code Review: バグ防止、セキュリティチェック、コード品質・可読性の担保",
+          "PR Summaries: レビュアーが変更全体像を迅速に把握するための解説"
+        ]
+      },
+      {
+        "axis": "自動トリガー設定",
+        "values": [
+          "Code Review: 組織ポリシーで新規PR作成時に自動実行可能",
+          "PR Summaries: 主にPR作成者・編集者がボタンを押してドラフト生成"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "PRの概要欄に、変更したファイル一覧と修正意図を分かりやすくまとめたい → Pull Request Summaries",
+      "PRのマージ前に、変更差分にセキュリティ脆弱性や論理エラーがないか機械的に検査させたい → Copilot Code Review"
+    ],
+    "commonTraps": [
+      "PR Summariesを作ればコードレビューを省略できるという誤認",
+      "Code ReviewがPR説明文を自動で書いてくれるという混同"
+    ],
+    "examTips": [
+      "「PR本文への要約生成」＝ PR Summaries、「差分行へのレビューコメント投稿」＝ Code Review です。"
+    ],
+    "lessonIds": [
+      "lesson-d2-pr-code-review"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "code-review",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-exclusion-vs-publicmatch",
+    "title": "Content Exclusion vs Public Code Matching",
+    "slug": "content-exclusion-vs-public-code-matching",
+    "summary": "自社の機密ファイルをCopilotに送信・処理させない「内から外への防護（Content Exclusion）」と、外部の公開OSSコードが自社に混入するのを防ぐ「外から内への防護（Public Code Matching）」の決定的な違い。",
+    "comparedTermIds": [
+      "g-content-exclusion",
+      "g-public-code-matching"
+    ],
+    "domainIds": [
+      "d6"
+    ],
+    "objectiveIds": [
+      "d6o1",
+      "d6o2"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "保護の方向性",
+        "values": [
+          "Content Exclusion: 内 → 外（自社の機密資産の漏洩・送信防止）",
+          "Public Code Matching: 外 → 内（他者の公開コード・ライセンスの自社混入防止）"
+        ]
+      },
+      {
+        "axis": "判定対象",
+        "values": [
+          "Content Exclusion: ファイルパス、ディレクトリ、リポジトリURL",
+          "Public Code Matching: 生成されたコード提案のテキスト（約150文字以上の一致）"
+        ]
+      },
+      {
+        "axis": "設定場所",
+        "values": [
+          "Content Exclusion: Organization / RepositoryのContent exclusion設定",
+          "Public Code Matching: Organization / EnterpriseのPolicies（Suggestions matching public code）"
+        ]
+      },
+      {
+        "axis": "CLIでの対応状況",
+        "values": [
+          "Content Exclusion: CLIでは非対応（サポート対象外）",
+          "Public Code Matching: バックエンドプロキシで判定適用"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "社内の秘密鍵や特許アルゴリズムのファイルをCopilotに絶対に見せたくない → Content Exclusion",
+      "自社のプロプライエタリ製品にGPLなどの外部OSSライセンスコードが混入するのを防ぎたい → Public Code Matching (Block)"
+    ],
+    "commonTraps": [
+      "両者の防護の方向性を逆に覚えてしまうこと（試験最頻出の落とし穴）",
+      "Content Exclusionを設定すれば公開コードの一致も防げると誤解すること"
+    ],
+    "examTips": [
+      "「機密コードの送信遮断」＝ Content Exclusion、「公開コード一致のブロック」＝ Public Code Matching です。",
+      "CLIでContent Exclusionが効かない点もセットで出題されます。"
+    ],
+    "lessonIds": [
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-public-code-matching"
+    ],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "policies",
+      "privacy",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-zero-vs-few-shot",
+    "title": "Zero-shot vs Few-shot Prompting",
+    "slug": "zero-shot-vs-few-shot",
+    "summary": "具体例なしで迅速に指示するZero-shotと、1〜数件の入出力例を提示して出力フォーマットやコーディング規約を厳密に制御するFew-shotの使い分け。",
+    "comparedTermIds": [
+      "g-zero-shot",
+      "g-few-shot"
+    ],
+    "domainIds": [
+      "d4"
+    ],
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "具体例の提示",
+        "values": [
+          "Zero-shot: 例示なし（指示文のみ）",
+          "Few-shot: 入力と出力の模範例を1〜数件提示"
+        ]
+      },
+      {
+        "axis": "出力形式の制御性",
+        "values": [
+          "Zero-shot: モデルの確率依存（ばらつきが生じやすい）",
+          "Few-shot: 提示した例のパターンに沿って高度に制御可能"
+        ]
+      },
+      {
+        "axis": "適したユースケース",
+        "values": [
+          "Zero-shot: 一般的なアルゴリズム、単純なコード解説",
+          "Few-shot: 独自形式へのパース、特殊な命名規約、型変換"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "標準的なユーティリティ関数（例: メールアドレス検証）を素早く書きたい → Zero-shot",
+      "自社独自のJSONスキーマや特殊な日付フォーマットへの厳密な変換を行わせたい → Few-shot"
+    ],
+    "commonTraps": [
+      "単純なタスクで過剰なFew-shot例を書いてトークンを無駄遣いすること",
+      "独自フォーマットの指定なのにZero-shotで済ませようとして期待外れの出力を得ること"
+    ],
+    "examTips": [
+      "「出力形式を厳密に揃えたい」場合の正解は「Few-shot」です。"
+    ],
+    "lessonIds": [
+      "lesson-d4-zero-few-shot"
+    ],
+    "questionIds": [
+      "q07"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-unit-vs-integration-tests",
+    "title": "Unit Tests vs Integration Tests with Copilot",
+    "slug": "unit-tests-vs-integration-tests-copilot",
+    "summary": "単一関数やモックを対象に境界条件を高速検証するUnit Testsと、DBや複数サービス間の協調動作を実環境に近い形で検証するIntegration Testsの使い分け。",
+    "comparedTermIds": [
+      "g-unit-test-generation",
+      "g-integration-test-generation"
+    ],
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "テストスコープ",
+        "values": [
+          "Unit Tests: 単一の関数、クラス、メソッド（外部依存はモック化）",
+          "Integration Tests: 複数コンポーネント、DBアクセス、API通信の結合フロー"
+        ]
+      },
+      {
+        "axis": "Copilotの役割",
+        "values": [
+          "Unit Tests: `/tests` によるエッジケース網羅とモック生成",
+          "Integration Tests: テストシナリオの設計、リクエスト/レスポンスフィクスチャの生成"
+        ]
+      },
+      {
+        "axis": "実行速度と決定性",
+        "values": [
+          "Unit Tests: ミリ秒単位で極めて高速かつ確定的",
+          "Integration Tests: 環境依存があり比較的低速"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "複雑なビジネス計算ロジックのエッジケースを網羅したい → Unit Tests (/tests)",
+      "ユーザー登録APIのエンドポイントがDBと正しく連携してステータス201を返すか確認したい → Integration Tests"
+    ],
+    "commonTraps": [
+      "Unit Testsだけで満足し、外部APIとの結合部で発生する不具合を見落とすこと"
+    ],
+    "examTips": [
+      "Copilotにテストを作らせる際は、Unit Testsでの「モック（Mocking）」の活用が重視されます。"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "questionIds": [
+      "q09",
+      "q10"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-org-vs-enterprise-policies",
+    "title": "Organization Policies vs Enterprise Policies",
+    "slug": "organization-vs-enterprise-policies",
+    "summary": "単一のOrganization内でシートや個別機能を管理するOrganization Policiesと、全社傘下の全組織に対してセキュリティ・知財設定を強制するEnterprise Policiesの階層関係。",
+    "comparedTermIds": [
+      "g-org-policies",
+      "g-enterprise-policies"
+    ],
+    "domainIds": [
+      "d2",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "管理スコープ",
+        "values": [
+          "Enterprise: 企業傘下のすべてのOrganizationおよびリポジトリ",
+          "Organization: 自組織に所属するリポジトリおよびチーム/メンバー"
+        ]
+      },
+      {
+        "axis": "ポリシーの優先順位",
+        "values": [
+          "Enterprise: 最上位。設定を「Enforce（強制）」するとOrgで変更不能",
+          "Organization: Enterpriseが「No policy (委任)」とした場合のみ設定可能"
+        ]
+      },
+      {
+        "axis": "主な管理対象",
+        "values": [
+          "Enterprise: 全社的なPublic code matching強制、知財補償要件、監査ログ集約",
+          "Organization: 日常のシート割当、チーム別アクセス権、個別PRレビューポリシー"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "全社のすべてのリポジトリでパブリックコード一致を例外なく一括ブロックしたい → Enterprise Policies",
+      "自チームの開発リポジトリでCopilot Code Reviewの自動実行を有効化したい → Organization Policies"
+    ],
+    "commonTraps": [
+      "Organization管理者がEnterpriseレベルで強制されたポリシーを上書き解除できると誤認すること"
+    ],
+    "examTips": [
+      "「上位（Enterprise）でEnforcedされたポリシーは下位（Org）で変更できない」は鉄則です。"
+    ],
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  }
+]

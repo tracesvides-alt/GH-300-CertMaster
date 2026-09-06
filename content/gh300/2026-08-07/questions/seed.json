@@ -1,0 +1,482 @@
+[
+  {
+    "id": "q01",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d1",
+    "objectiveId": "d1o1",
+    "difficulty": "intermediate",
+    "type": "single-select",
+    "status": "verified",
+    "question": "AIが流暢な説明を生成しました。正確性について適切な理解は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "流暢でも誤りを含む場合がある"
+      },
+      {
+        "id": "B",
+        "text": "流暢さが正確性を保証する"
+      },
+      {
+        "id": "C",
+        "text": "長い回答ほど必ず正しい"
+      },
+      {
+        "id": "D",
+        "text": "有料プランなら誤りはない"
+      }
+    ],
+    "answer": ["A"],
+    "explanation": "ハルシネーションは、自然に見えても誤った内容が生成される現象です。",
+    "choiceExplanations": {
+      "A": "文章の自然さと事実の正確さは別です。",
+      "B": "表現の流暢さは根拠になりません。",
+      "C": "長さは保証になりません。",
+      "D": "料金によって誤りがなくなるわけではありません。"
+    },
+    "sourceIds": ["responsible"],
+    "trustedSourceFacts": ["もっともらしいAI出力でも、事実と異なる場合があります。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q02",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d1",
+    "objectiveId": "d1o2",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "Copilotの提案を採用する前に行うべきことは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "コメントがあれば検証を省く"
+      },
+      {
+        "id": "B",
+        "text": "レビューと検証を行う"
+      },
+      {
+        "id": "C",
+        "text": "常にそのまま本番に反映する"
+      },
+      {
+        "id": "D",
+        "text": "責任をAIに委ねる"
+      }
+    ],
+    "answer": ["B"],
+    "explanation": "提案をレビューし、実行環境に適した検証を行う責任は利用者にあります。",
+    "choiceExplanations": {
+      "B": "利用者が妥当性を確認します。",
+      "C": "未検証の変更には誤りが残り得ます。",
+      "D": "利用者の責任はなくなりません。",
+      "A": "コメントだけでは動作を確認できません。"
+    },
+    "sourceIds": ["responsible"],
+    "trustedSourceFacts": ["採用前に生成コードの正確さと適切さを確認します。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q03",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d2",
+    "objectiveId": "d2o1",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "IDEのinline suggestionへの対応として可能なのは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "採用後しか閲覧できない"
+      },
+      {
+        "id": "B",
+        "text": "IDEでは利用できない"
+      },
+      {
+        "id": "C",
+        "text": "内容を確認し採用または無視する"
+      },
+      {
+        "id": "D",
+        "text": "必ず自動で採用する"
+      }
+    ],
+    "answer": ["C"],
+    "explanation": "提案は受け入れることも、無視することもできます。",
+    "choiceExplanations": {
+      "C": "開発者が提案を選択します。",
+      "D": "必須ではありません。",
+      "A": "提案を見て判断できます。",
+      "B": "IDE内の機能です。"
+    },
+    "sourceIds": ["responsible"],
+    "trustedSourceFacts": ["Inline suggestionsは編集の流れの中で提示されます。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q04",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d2",
+    "objectiveId": "d2o3",
+    "difficulty": "intermediate",
+    "type": "single-select",
+    "status": "verified",
+    "question": "既存コードの意味を理解したいときの適切な使い方は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "一般情報の完全な正解源として使う"
+      },
+      {
+        "id": "B",
+        "text": "出力の検証を禁止する"
+      },
+      {
+        "id": "C",
+        "text": "文脈なしで必ず正解すると考える"
+      },
+      {
+        "id": "D",
+        "text": "コードの説明をChatに依頼し検証する"
+      }
+    ],
+    "answer": ["D"],
+    "explanation": "生成された説明も利用者が確認する必要があります。",
+    "choiceExplanations": {
+      "D": "説明を学習の補助にできます。",
+      "A": "コーディング支援が目的です。",
+      "B": "検証が必要です。",
+      "C": "文脈と検証が重要です。"
+    },
+    "sourceIds": ["chat"],
+    "trustedSourceFacts": ["Copilot Chatはコードに関する質問や説明に利用できます。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q05",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d3",
+    "objectiveId": "d3o1",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "Copilot Chatの入力処理として適切なのは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "入力と文脈を組み合わせてモデルに渡す"
+      },
+      {
+        "id": "B",
+        "text": "文脈を必ずすべて捨てる"
+      },
+      {
+        "id": "C",
+        "text": "モデルには入力を渡さない"
+      },
+      {
+        "id": "D",
+        "text": "回答は常に固定テンプレートだけ"
+      }
+    ],
+    "answer": ["A"],
+    "explanation": "前処理ではユーザーの入力にコンテキストが追加されます。",
+    "choiceExplanations": {
+      "A": "前処理で文脈を補います。",
+      "B": "文脈を利用します。",
+      "C": "入力はモデルの分析に使われます。",
+      "D": "入力に応じて生成します。"
+    },
+    "sourceIds": ["chat"],
+    "trustedSourceFacts": ["入力は関連する文脈と組み合わされ、言語モデルに渡されます。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q06",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d3",
+    "objectiveId": "d3o2",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "回答が整形されて表示された後の適切な行動は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "コードなら無条件で実行する"
+      },
+      {
+        "id": "B",
+        "text": "回答の正確性と適切さを確認する"
+      },
+      {
+        "id": "C",
+        "text": "整形済みなら正しいと断定する"
+      },
+      {
+        "id": "D",
+        "text": "文脈を一切確認しない"
+      }
+    ],
+    "answer": ["B"],
+    "explanation": "生成、出力整形を経ても、利用者による確認が必要です。",
+    "choiceExplanations": {
+      "B": "表示後も確認が必要です。",
+      "C": "見た目は正確性の証明ではありません。",
+      "D": "文脈との整合性が必要です。",
+      "A": "実行前に評価します。"
+    },
+    "sourceIds": ["chat"],
+    "trustedSourceFacts": ["回答は入力と文脈に基づく生成結果であり、正しさは保証されません。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q07",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d4",
+    "objectiveId": "d4o1",
+    "difficulty": "intermediate",
+    "type": "single-select",
+    "status": "verified",
+    "question": "日付解析の依頼で有用な追加情報は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "関係のない長い履歴"
+      },
+      {
+        "id": "B",
+        "text": "要件の省略"
+      },
+      {
+        "id": "C",
+        "text": "入力形式と期待される出力例"
+      },
+      {
+        "id": "D",
+        "text": "「いい感じに」の一言だけ"
+      }
+    ],
+    "answer": ["C"],
+    "explanation": "入力と期待する出力の例を添えて、曖昧さを減らします。",
+    "choiceExplanations": {
+      "C": "例が期待する動作を伝えます。",
+      "D": "曖昧なままです。",
+      "A": "不要な文脈が混ざります。",
+      "B": "要件が伝わりません。"
+    },
+    "sourceIds": ["prompt"],
+    "trustedSourceFacts": ["目的、制約、具体例を伝えると意図を共有しやすくなります。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q08",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d4",
+    "objectiveId": "d4o2",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "Chatで別の作業を始めるときの良い工夫は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "無関係な履歴を増やす"
+      },
+      {
+        "id": "B",
+        "text": "過去の会話は絶対に使われないと考える"
+      },
+      {
+        "id": "C",
+        "text": "目的を伝えない"
+      },
+      {
+        "id": "D",
+        "text": "新しいスレッドで関連する文脈に絞る"
+      }
+    ],
+    "answer": ["D"],
+    "explanation": "別の作業に移るときは新しいスレッドで文脈を整理できます。",
+    "choiceExplanations": {
+      "D": "関連性のある履歴に整理できます。",
+      "A": "文脈が散らかります。",
+      "B": "会話履歴は文脈に使われます。",
+      "C": "明確な目的が必要です。"
+    },
+    "sourceIds": ["prompt"],
+    "trustedSourceFacts": ["会話履歴もコンテキストになります。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q09",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d5",
+    "objectiveId": "d5o2",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "テスト生成を依頼するとき、より有用なのは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "境界値と例外処理も指定する"
+      },
+      {
+        "id": "B",
+        "text": "正常系だけで完全とする"
+      },
+      {
+        "id": "C",
+        "text": "生成されたら実行しない"
+      },
+      {
+        "id": "D",
+        "text": "assertionをすべて削除する"
+      }
+    ],
+    "answer": ["A"],
+    "explanation": "生成テストを実行し、網羅できていないケースも確認します。",
+    "choiceExplanations": {
+      "A": "必要なケースを明示できます。",
+      "B": "異常系も必要です。",
+      "C": "実行して確認します。",
+      "D": "検証条件が失われます。"
+    },
+    "sourceIds": ["tests"],
+    "trustedSourceFacts": ["テスト生成では境界値、例外、データ検証を明示します。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q10",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d5",
+    "objectiveId": "d5o2",
+    "difficulty": "intermediate",
+    "type": "single-select",
+    "status": "verified",
+    "question": "通知サービスと連携する処理のテストで適切なのは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "メソッド名だけを確認する"
+      },
+      {
+        "id": "B",
+        "text": "モックを使って呼び出しを検証する"
+      },
+      {
+        "id": "C",
+        "text": "連携部分を検証対象から外す"
+      },
+      {
+        "id": "D",
+        "text": "必ず本番通知を送信する"
+      }
+    ],
+    "answer": ["B"],
+    "explanation": "外部サービスとの連携はモックを利用してテストできます。",
+    "choiceExplanations": {
+      "B": "相互作用を確認できます。",
+      "C": "統合部分が未検証になります。",
+      "D": "モックで代替できます。",
+      "A": "呼び出しや結果の検証が必要です。"
+    },
+    "sourceIds": ["tests"],
+    "trustedSourceFacts": ["統合テストはコンポーネント間の連携を確認します。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q11",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d6",
+    "objectiveId": "d6o1",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "Content exclusionについて正しいのは？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "機密情報の完全な保護を保証する"
+      },
+      {
+        "id": "B",
+        "text": "管理者設定は存在しない"
+      },
+      {
+        "id": "C",
+        "text": "CLIやAgent modeにも効くとは限らない"
+      },
+      {
+        "id": "D",
+        "text": "すべての機能に必ず適用される"
+      }
+    ],
+    "answer": ["C"],
+    "explanation": "CLI、cloud agent、IDE ChatのAgent modeはcontent exclusionをサポートしていません。",
+    "choiceExplanations": {
+      "C": "公式資料で非対応の機能を確認します。",
+      "D": "適用範囲に制限があります。",
+      "A": "完全な保護の保証ではありません。",
+      "B": "管理設定があります。"
+    },
+    "sourceIds": ["exclusion"],
+    "trustedSourceFacts": ["Content exclusionには機能ごとの適用範囲があります。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  },
+  {
+    "id": "q12",
+    "syllabusVersion": "2026-08-07",
+    "domainId": "d6",
+    "objectiveId": "d6o2",
+    "difficulty": "beginner",
+    "type": "single-select",
+    "status": "verified",
+    "question": "除外設定がすぐ反映されない場合の確認方法は？",
+    "choices": [
+      {
+        "id": "A",
+        "text": "除外対象の機密情報を公開する"
+      },
+      {
+        "id": "B",
+        "text": "設定は即時反映のみだと決めつける"
+      },
+      {
+        "id": "C",
+        "text": "検証せず保護済みとする"
+      },
+      {
+        "id": "D",
+        "text": "IDEを再読み込みし対象ファイルで確認する"
+      }
+    ],
+    "answer": ["D"],
+    "explanation": "IDEの再読み込みと除外対象ファイルでの動作確認が役立ちます。",
+    "choiceExplanations": {
+      "D": "反映と動作を確認できます。",
+      "A": "公開する必要はありません。",
+      "B": "反映に時間を要する場合があります。",
+      "C": "動作確認が必要です。"
+    },
+    "sourceIds": ["exclusion"],
+    "trustedSourceFacts": ["除外設定の反映には時間がかかる場合があります。"],
+    "createdAt": "2026-09-06",
+    "lastVerifiedAt": "2026-09-06"
+  }
+]

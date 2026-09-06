@@ -1,0 +1,1947 @@
+[
+  {
+    "id": "lesson-d1-principles",
+    "title": "責任あるAIの基本原則とハルシネーション対策",
+    "slug": "responsible-ai-principles",
+    "domainId": "d1",
+    "objectiveIds": [
+      "d1o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "GitHub Copilotは副操縦士（Copilot）であり自律操縦士（Autopilot）ではありません。流暢なコード提案であってもハルシネーションの可能性を常に考慮し、人間が最終的な説明責任と検証義務を負います。",
+    "estimatedMinutes": 8,
+    "difficulty": "beginner",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Responsible AIの基本理念、大規模言語モデルにおけるハルシネーション（幻覚）の発生メカニズム、そして開発者が果たすべき「Human-in-the-Loop（人間の関与）」の具体的責任を理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: 生成AIとハルシネーション",
+        "content": "GitHub Copilotは統計的パターンに基づいて最も確率の高いトークン列を予測して出力します。文法的に極めて自然で説得力のあるコードであっても、実在しないライブラリ関数、非推奨のAPI引数、あるいは架空のセキュリティパラメータを生成することがあります。この現象をハルシネーション（幻覚）と呼びます。有料のEnterprise契約であってもAIの確率的推論の性質上、ハルシネーションを技術的にゼロにすることはできません。"
+      },
+      {
+        "heading": "3. How It Works: Human-in-the-Loopの運用モデル",
+        "content": "コードライフサイクルにおいて、AIはアイデア出しや実装のドラフト作成を担当し、人間（開発者）がレビュー、静的解析、自動テスト、コンパイルの実行を通じてコードの妥当性を評価します。最終的にリポジトリへマージされたコードの不具合や脆弱性の責任は、すべて採用を判断した人間に帰属します。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】チームメンバーがCopilotの提案をすべてTabキーで即座に承認し、レビューを行わずにPRを作成している現場に遭遇した場合。適切な対応は「AIの提案は未検証のドラフトとして扱い、必ず開発者がロジックと動作を確認してからコミットする運用ルールを徹底する」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・AIの流暢さはコードの正確性や安全性を保証しません。\n・自信ありげなチャット回答でも、ライブラリのバージョン差異によって動作しないことがあります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: Copilotの有料プランを契約すればハルシネーションは完全に防止されるか？ → No。モデルの確率的性質上必ず発生し得ます。\nQ2: 生成コードが原因で本番障害が発生した際、責任は誰にあるか？ → 提案を採用・マージした開発者および組織にあります。"
+      }
+    ],
+    "keyPoints": [
+      "AI生成コードの最終責任は常に人間の開発者が負う（Human-in-the-Loop）。",
+      "ハルシネーションはプランに関係なく発生しうるため、実行・テストによる検証が不可欠。",
+      "Copilotは支援ツールであり、自動でコードの正しさを保証するものではない。"
+    ],
+    "commonMistakes": [
+      "文法エラーが出ていないからロジックも正しいと思い込むこと。",
+      "AIツールが生成したのだから自社のテスト基準を免除できると考えること。"
+    ],
+    "examTips": [
+      "「流暢さ＝正確性」と見なす選択肢はすべて誤りです。",
+      "開発者の説明責任（Accountability）を肯定する選択肢を選びましょう。"
+    ],
+    "glossaryIds": [
+      "g-generative-ai",
+      "g-hallucination",
+      "g-responsible-ai",
+      "g-code-accountability"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q01",
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d1-risks",
+    "title": "生成AIのリスク管理（知財・バイアス・非決定性）",
+    "slug": "generative-ai-risks-governance",
+    "domainId": "d1",
+    "objectiveIds": [
+      "d1o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "LLMの訓練データに起因するAIバイアス、知的財産権（著作権・OSSライセンス侵害）のリスク、同一入力でも出力が変わりうる非決定性を理解し、組織的なガードレールを整備します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "生成AIを活用する開発組織が直面する3大リスク（知的財産・ライセンス侵害、バイアスと公平性、モデルの非決定性）のメカニズムと、その軽減策を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 知財・バイアス・非決定性",
+        "content": "・知的財産リスク: 学習データに含まれる公開OSSのコードと酷似したコードが提案されるリスク。GPL等のCopyleftライセンス汚染や著作権侵害を防ぐため、Public Code Matching機能の有効化が必須となります。\n・AIバイアス: 過去のコードベースの偏り（特定属性の軽視やレガシーな慣習）が提案に反映されるリスク。\n・非決定性: 同一のプロンプトを入力してもサンプリング温度により毎回異なるコードが出力される性質。テストの自動化と再現性の確保が重要です。"
+      },
+      {
+        "heading": "3. How It Works: リスク軽減の多層防御",
+        "content": "GitHub Copilotでは、プロキシ層でのフィルタリング（Public Code Matching、セーフティチェック）と、組織ポリシー（Organization Policies）による機能制限、そしてCI/CDパイプラインでの自動スキャンを組み合わせることで、知財侵害や脆弱性混入を未然に防止します。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】商用プロプライエタリ製品を開発している企業において、他者のオープンソースコードが意図せず混入することを防ぎたい場合。組織管理者は「Suggestions matching public code」ポリシーを「Block」に設定し、150文字以上の公開コード一致を未然に遮断します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・AIの出力は決定論的ではないため、「以前うまくいったプロンプト」が常に同一コードを返すとは限りません。\n・透明性（Explainability）を保つため、チャット機能で参照されたファイルやコンテキストの根拠を確認する習慣が推奨されます。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 公開リポジトリのコードと一致する提案を遮断する組織機能は何か？ → Public Code Matching（Block設定）。\nQ2: 同一プロンプトで常に全く同じコードが返ってくると期待してよいか？ → No。モデルの非決定性（Nondeterminism）があるため検証が必要です。"
+      }
+    ],
+    "keyPoints": [
+      "公開コードとの一致を防ぐにはPublic Code MatchingポリシーをBlockに設定する。",
+      "LLMは確率的推論を行うため、非決定性（Nondeterminism）を前提としたテスト運用が必要。",
+      "知財保護のためCopilot Copyright Commitmentの条件と設定を理解する。"
+    ],
+    "commonMistakes": [
+      "AIが生成したコードには著作権やライセンスの問題は一切存在しないと思い込むこと。",
+      "一度テストが通ったからといって、再生成されたコードの再テストを怠ること。"
+    ],
+    "examTips": [
+      "ライセンス汚染防止には「Public Code MatchingのBlock設定」が正解キーワードです。",
+      "非決定性があるため、CIでの決定論的な回帰テストが不可欠とされます。"
+    ],
+    "glossaryIds": [
+      "g-ai-bias",
+      "g-ip-copyright",
+      "g-nondeterminism",
+      "g-transparency",
+      "g-public-code-matching"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d1-validation",
+    "title": "AI出力コードの検証と妥当性確認手法",
+    "slug": "ai-code-validation-methods",
+    "domainId": "d1",
+    "objectiveIds": [
+      "d1o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "自動化バイアス（AIへの過度の信頼）を排除し、静的コード解析、コンパイル、単体テスト、エッジケース検証を組み合わせた多層的な妥当性確認（V&V）を実践します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "AIが生成したコードに対して、人間の開発者が実施すべき具体的かつ体系的な検証プロセス（Verification & Validation）と、認知的落とし穴である自動化バイアスの克服法を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 自動化バイアスと批判的評価",
+        "content": "開発者が最も陥りやすい罠が「自動化バイアス（Automation Bias）」です。AIのコードが整然とインデントされ、型アノテーションが付いていると、脳が批判的思考を停止して盲目的に受け入れてしまいます。開発者は常に「このコードは本当に境界値で破綻しないか」「未処理の例外はないか」と批判的評価（Critical Evaluation）を行う必要があります。"
+      },
+      {
+        "heading": "3. How It Works: 4段階の検証パイプライン",
+        "content": "1. 目視による構文とロジックの確認（ゴーストテキスト受入れ時）\n2. リンターおよびコンパイラによる静的検証（型エラーや構文違反の即時検知）\n3. ユニットテストおよび境界値テストの実行（論理的正確性の動的確認）\n4. CI環境でのビルドと統合テストの通過確認。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】Copilotが作成した複雑なソート・フィルタリング関数を採用する際、画面上でエラー表示が出ていないことを理由にそのままコミットしようとしている同僚へのアドバイス。「空配列、null、極端に大きな入力値を含む単体テストを実行し、意図通りの境界値動作をするか検証する」ことが正解となります。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・IDEのエディタ上で赤波線が出ていないこと（型チェック通過）は、ビジネスロジックの正しさを意味しません。\n・AI自身にテストを作らせた場合、そのテスト自体の期待値（アサーション）がハルシネーションを起こしていないか確認が必要です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: AIの提案が整然としているために無批判に採用してしまう心理傾向は？ → 自動化バイアス（Over-reliance / Automation Bias）。\nQ2: コードの正確性を確認するための最も確実な動的検証手法は？ → 境界値やエッジケースを含めた単体テストの実行。"
+      }
+    ],
+    "keyPoints": [
+      "型エラーがないこととロジックの正当性は別物である。",
+      "自動化バイアスを排し、単体テストの実行による動的検証を必ず行う。",
+      "AI生成テスト自体の期待値（アサーション）も人間が精査する。"
+    ],
+    "commonMistakes": [
+      "コンパイルが通ったことだけで検証を完了したとみなすこと。",
+      "AIが「これで安全です」とチャットで答えたことを鵜呑みにすること。"
+    ],
+    "examTips": [
+      "「テストを実行して検証する」「エッジケースを確認する」が正答の王道パターンです。",
+      "自動化バイアス（過度の信頼）の危険性を指摘する選択肢を重視しましょう。"
+    ],
+    "glossaryIds": [
+      "g-verification-validation",
+      "g-automation-bias",
+      "g-critical-evaluation",
+      "g-code-correctness"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q01",
+      "q02"
+    ],
+    "sourceIds": [
+      "responsible",
+      "tests",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d1-security-review",
+    "title": "AI生成コードに対するセキュリティ監査とピアレビュー",
+    "slug": "ai-code-security-and-peer-review",
+    "domainId": "d1",
+    "objectiveIds": [
+      "d1o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "AI生成コードを特別扱いせず、CodeQL等のSASTスキャンや人間による厳格なPull Requestピアレビューを義務付けることで、セキュリティ脆弱性の混入を防ぎます。",
+    "estimatedMinutes": 7,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "AI生成コードに潜むセキュリティリスク（SQLインジェクション、XSS、シークレット漏洩など）の検出方法と、チーム開発におけるピアレビュー（相互査読）プロセスの確立を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: AI生成コードのセキュリティ特性",
+        "content": "LLMは過去のオープンソースコードから学習しているため、古いフレームワークの安全でない記法（パラメータ化されていないSQL構築、サニタイズされていないHTML出力など）を平然と提案することがあります。AIが生成したからといってセキュリティが担保されているわけではなく、GitHub Advanced Security (CodeQL) などの静的セキュリティスキャンが必須です。"
+      },
+      {
+        "heading": "3. How It Works: チーム開発でのピアレビュー規律",
+        "content": "開発者がCopilotを活用して作成したブランチであっても、Pull Requestにおける他のエンジニアによるピアレビューを免除してはなりません。Copilot Code Reviewによる初動の機械的指摘と、人間のレビュアーによる設計妥当性・業務要件チェックを組み合わせるのが最善のプラクティスです。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】チーム内で「Copilotを導入したことでコード品質が上がったため、2人以上のPR承認ルールを廃止したい」という提案が出た場合の適切な判断。「AI生成コードであっても人間によるピアレビューとCIでのセキュリティスキャンを継続し、品質と安全性のガバナンスを維持する」ことが正解です。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・AIツールはシークレット（APIキーやパスワード）をダミーとして埋め込む際、誤って本物のキーに近い形式を生成することがあります。Secret Scanningの有効化が不可欠です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: AI生成コードは安全なのでセキュリティスキャンを省略できるか？ → No。既知の脆弱性パターンをAIが提案するリスクがあります。\nQ2: チーム開発におけるPRレビューはAI利用時どうすべきか？ → 人間による厳格なピアレビューを通常通り義務付けます。"
+      }
+    ],
+    "keyPoints": [
+      "AI生成コードにはSAST（CodeQL等）による自動脆弱性検査が必須。",
+      "Copilotを使っても人間によるPull Requestピアレビューを免除してはならない。",
+      "シークレットや認証情報のハードコードをSecret Scanningで防止する。"
+    ],
+    "commonMistakes": [
+      "AIが提案したコードだからセキュリティチェックをスキップできるという誤解。",
+      "AIコードレビュー機能だけで人間の承認プロセスを全廃できると考えること。"
+    ],
+    "examTips": [
+      "「GitHub Advanced Security (GHAS) や CodeQL と連携して検査する」が頻出パターンです。",
+      "ピアレビューの廃止・緩和を促す選択肢は常に誤りです。"
+    ],
+    "glossaryIds": [
+      "g-security-vulnerability-scan",
+      "g-peer-review-ai",
+      "g-secret-leak-prevention"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "responsible",
+      "code-review",
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-inline-suggestions",
+    "title": "IDEでのインライン提案とゴーストテキストの操作",
+    "slug": "ide-inline-suggestions-ghost-text",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "エディタ上でのリアルタイムなゴーストテキストの受入れ（Tab）、単語単位受入れ、破棄（Esc）、複数候補の順送り（Alt+]）、提案パネル（Ctrl+Enter）のキーバインドと操作仕様を習得します。",
+    "estimatedMinutes": 6,
+    "difficulty": "beginner",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "VS Code等のIDEにおいて、コーディングを中断することなくインライン提案（Ghost Text）を自在に操作・比較・確定・部分採用するテクニックを学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: インライン提案の操作体系",
+        "content": "・全体受入れ: `Tab` キーを押すと提案全体がファイルに確定挿入されます。\n・破棄 / 無視: `Esc` キーを押すか、そのまま独自のタイピングを継続するとゴーストテキストは消去されます。\n・単語単位の部分受入れ: Windowsでは `Ctrl + RightArrow`、macOSでは `Cmd + RightArrow` で次の単語だけを部分採用できます。\n・候補の切り替え: 複数候補が存在する場合、`Alt + ]` (macOS: `Option + ]`) で次の提案、`Alt + [` で前の提案を表示できます。"
+      },
+      {
+        "heading": "3. How It Works: 提案パネル (Completions Panel)",
+        "content": "`Ctrl + Enter` (macOS: `Cmd + Enter`) を押すと、現在のカーソル位置に対して最大10件の異なるコード提案が別タブのパネルに合成表示されます。異なるアルゴリズムやアプローチを一度に俯瞰して比較したい場合に最適です。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】提案された関数のうち、シグネチャと最初の数行だけは採用したいが、ループ処理の内部は自前で書きたい場合。全体をTabで受けてから消すのではなく、「単語単位の部分受入れ（Ctrl/Cmd + RightArrow）」を活用して必要な箇所のみをスムーズに採用します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・Content Exclusionによって除外されたファイルではゴーストテキストは一切表示されず、ステータスバーアイコンに斜線が入ります。\n・エディタのキーバインド競合（Emmetや他の補完拡張）がある場合、Tabキーの挙動が優先順位設定に左右されることがあります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: インライン提案全体を採用するキーは？ → `Tab`。\nQ2: 複数提案を一覧比較するパネルを開くショートカットは？ → `Ctrl + Enter` (Cmd + Enter)。\nQ3: 次の提案候補へ切り替えるショートカットは？ → `Alt + ]` (Option + ])。"
+      }
+    ],
+    "keyPoints": [
+      "Tabで全体確定、Escで破棄、Ctrl/Cmd+Rightで単語単位の部分確定が可能。",
+      "Alt+] / Option+] で候補を順送りできる。",
+      "Ctrl+Enter / Cmd+Enter で最大10件の提案をCompletions Panelで一覧比較できる。"
+    ],
+    "commonMistakes": [
+      "提案を受け入れるには必ずマウスでクリックしなければならないという思い込み。",
+      "不要な提案を消すためにBackspaceで1文字ずつ消そうとすること（Escで即座に消去可能）。"
+    ],
+    "examTips": [
+      "ショートカットキー（Tab, Esc, Alt+], Ctrl+Enter）は試験の頻出出題ポイントです。",
+      "部分受入れ（Word-by-word accept）ができる点も出題されます。"
+    ],
+    "glossaryIds": [
+      "g-inline-suggestions",
+      "g-ghost-text",
+      "g-completions-panel",
+      "g-status-menu"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "questionIds": [
+      "q03"
+    ],
+    "sourceIds": [
+      "responsible",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-chat-essentials",
+    "title": "Copilot Chatの活用（Participants・Commands・Variables）",
+    "slug": "copilot-chat-participants-commands-variables",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "IDE内でのCopilot Chat、Inline Chat (Ctrl+I)、Chat Participants (@workspace, @vscode, @terminal)、Slash Commands (/explain, /fix, /tests)、Chat Variables (#file, #selection) を自在に駆使してコンテキストを精緻に制御します。",
+    "estimatedMinutes": 9,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilot Chatの3大構成構文（`@` 参加者、`/` コマンド、`#` 変数）の役割と文法を習得し、プロンプトの意図とスコープを100%正確にモデルに伝える方法を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 3大構文の体系",
+        "content": "・Chat Participants (`@`): 専門領域を持つエージェントを指定。`@workspace`（プロジェクト全体のコードベース探索）、`@vscode`（エディタ機能・設定）、`@terminal`（ターミナルバッファ・コマンド）。\n・Slash Commands (`/`): 定型アクションを直接指定。`/explain`（解説）、`/fix`（問題修正）、`/tests`（テスト生成）、`/doc`（ドキュメント生成）、`/clear`（履歴リセット）。\n・Chat Variables (`#`): 参照すべきコンテキストを明示。`#file:path`（特定ファイル）、`#selection`（選択範囲）、`#editor`（可視コード）、`#terminalLastCommand`（直前実行コマンド）。"
+      },
+      {
+        "heading": "3. How It Works: Inline Chat (Ctrl+I) の対話フロー",
+        "content": "エディタ内でコードを選択して `Ctrl + I` (macOS: `Cmd + I`) を押すと、その場でインライン入力欄が開きます。プロンプトを入力すると、変更前後のDiffがインラインで表示され、「Accept (適用)」または「Discard (破棄)」を選択できます。サイドバーを開く必要がありません。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】プロジェクト内の複数ファイルにまたがって定義されている特定の型定義や関数の参照関係を調査したい場合。単に「この型はどこで使われていますか？」と尋ねるのではなく、`@workspace この型定義の全参照箇所を特定して` と `@workspace` を明示してチャットします。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・`@workspace` はローカルリポジトリのインデックスを参照するため、巨大すぎるモノレポやインデックス未作成時は初動に時間がかかることがあります。\n・チャット履歴が長くなるとコンテキストトークンを消費するため、トピックが変わったら `/clear` を実行するのが鉄則です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: プロジェクト全体のコードを検索・参照するチャット参加者は？ → `@workspace`。\nQ2: エディタ内で直接Diffプレビュー付きでコード修正を依頼するショートカットは？ → `Ctrl + I` (Cmd + I)。\nQ3: 特定のファイル全体をコンテキストに含める変数は？ → `#file:ファイルパス`。"
+      }
+    ],
+    "keyPoints": [
+      "`@` は参加者（エージェント）、`/` はコマンド（操作）、`#` は変数（コンテキスト）。",
+      "`Ctrl+I` / `Cmd+I` のInline Chatで差分（Diff）を確認しながら即時修正できる。",
+      "`@workspace` を付けることでプロジェクト横断のコード検索・参照が可能になる。"
+    ],
+    "commonMistakes": [
+      "`#file` 変数を使わずに手動で数百行のコードをチャット欄にコピペしてしまうこと。",
+      "単なるチャット（サイドバー）とDiff適用ができるInline Chatの使い分けができていないこと。"
+    ],
+    "examTips": [
+      "`@workspace`, `@vscode`, `@terminal` の役割の違いは確実に問われます。",
+      "`/fix`（バグ修正）と `/tests`（テスト作成）のコマンド名は基本問題として頻出です。"
+    ],
+    "glossaryIds": [
+      "g-copilot-chat",
+      "g-inline-chat",
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-chat-variables"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline",
+      "cmp-agent-vs-chat",
+      "cmp-spaces-vs-chat"
+    ],
+    "questionIds": [
+      "q04",
+      "q05"
+    ],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-cli",
+    "title": "GitHub Copilot in the CLIのコマンド操作とセーフガード",
+    "slug": "github-copilot-cli-usage-safeguards",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "GitHub CLI拡張機能としてのCopilot CLIにおいて、`gh copilot explain` と `gh copilot suggest` の使い分け、シェルエイリアス設定、実行前の確認セーフガード、およびContent Exclusion非適用の制約を理解します。",
+    "estimatedMinutes": 7,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "ターミナル環境で動作する `gh copilot` コマンドの2大サブコマンド（`explain` と `suggest`）の操作法、安全対策（Human-in-the-loop）、およびCLI環境固有の重大な制限事項を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: explain と suggest の使い分け",
+        "content": "・`gh copilot explain \"<コマンド>\"`: 既存の難解なコマンドラインやパイプラインの意味を自然言語で解説させる。実行は行わない。\n・`gh copilot suggest \"<やりたいこと>\"`: 達成したい目的から適切なコマンド（generic shell / gh / git）を生成させる。対話型でオプションを選択可能。"
+      },
+      {
+        "heading": "3. How It Works: 実行確認セーフガードとエイリアス",
+        "content": "提案されたコマンドは自動実行されず、「Copy to clipboard」「Execute command」「Revise command」「Exit」のメニューが表示されます。また、`gh copilot alias -- bash` でシェルエイリアス（`ghcs` = suggest, `ghce` = explain）を設定して素早く起動できます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】サーバー管理者から渡されたシェルスクリプト内に `find . -type f -mtime +30 -exec rm -f {} +` というコマンドがあり、実行前に正確な挙動を確認したい場合。`gh copilot explain` を実行して各フラグの動作を自然言語で分解解説させます。"
+      },
+      {
+        "heading": "5. Limitations & Considerations (最重要)",
+        "content": "【試験最頻出の制約】GitHub Copilot in the CLIは、OrganizationやRepositoryで設定された「Content Exclusion（コンテンツ除外）」をサポートしていません。除外設定された機密ファイル名やパスをCLIコマンドの引数に渡すと、その内容がプロンプトとして処理される危険があるため注意が必要です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 既存の複雑なコマンドの意味を解説させるCLIコマンドは？ → `gh copilot explain`。\nQ2: やりたい作業からコマンドを生成させるCLIコマンドは？ → `gh copilot suggest`。\nQ3: CLI版CopilotはContent Exclusionをサポートしているか？ → No（サポート対象外）。"
+      }
+    ],
+    "keyPoints": [
+      "`gh copilot explain` はコマンドの解説、`gh copilot suggest` はやりたいことからのコマンド生成。",
+      "提案されたコマンドは自動実行されず、ユーザーの承認（Execute command選択）を待つ安全設計。",
+      "CLI版CopilotではContent Exclusionが適用されない（重大な制約）。"
+    ],
+    "commonMistakes": [
+      "`explain` と `suggest` の目的を逆にしてしまうこと。",
+      "CLIでもエディタと同様にContent Exclusionが自動的に効いていると過信すること。"
+    ],
+    "examTips": [
+      "「Content ExclusionはCLIではサポートされていない」はGH-300の定番トラップ問題です。",
+      "シェルエイリアス（`ghcs` = suggest, `ghce` = explain）の名称対応も確認しておきましょう。"
+    ],
+    "glossaryIds": [
+      "g-copilot-cli",
+      "g-gh-copilot-explain",
+      "g-gh-copilot-suggest",
+      "g-cli-shell-aliases",
+      "g-cli-execution-confirm",
+      "g-cli-context-limits",
+      "g-exclusion-limitations"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "cli",
+      "exclusion",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-agent-edits",
+    "title": "Agent ModeとCopilot Editsの使い分けと自律タスク遂行",
+    "slug": "agent-mode-vs-copilot-edits",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "2026年シラバスの最重要トピック。複数ファイルのDiff提案を行うCopilot Editsと、ターミナルコマンド実行やエラー自己修正ループを自律的に繰り返すAgent Modeの明確な境界線と活用基準をマスターします。",
+    "estimatedMinutes": 10,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "VS Codeで利用可能なマルチファイル編集（Copilot Edits）と自律エージェント（Agent Mode）の違い、Agent Sessions、Sub-Agentsの役割分担を深く理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: Edits vs Agent Mode の決定的相違",
+        "content": "・Copilot Edits: ワーキングセット（Working Set）に指定した複数ファイルに対して、指示に基づく変更差分（Diff）を一括で提案する機能。ターミナルコマンドの実行やビルド結果に基づく自律修正ループは行いません。\n・Agent Mode: 複数ファイルの作成・編集に加え、ターミナルコマンドの実行（テスト実行、ビルド、パッケージインストール等）、実行結果のエラーログ解析、およびエラー解消のための再編集をタスク完了まで自律的に繰り返す高度なモードです。"
+      },
+      {
+        "heading": "3. How It Works: Agent Modeの自律ループとセーフティ",
+        "content": "1. 計画立案（タスクの分解）→ 2. ツール/ファイル操作（ファイル編集・コマンド実行）→ 3. 検証（テストやビルドの成否確認）→ 4. 修正ループ（失敗時はエラーを解析して再試行）→ 5. ユーザーへの最終Diff提示。破壊的コマンドの実行前にはユーザーの確認ダイアログが介在します。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオA】既存のインターフェース変更に合わせて、呼び出し元の3つのファイルの引数を修正したいだけ（テスト実行やコマンド実行は不要）→「Copilot Edits」が最適。\n【シナリオB】新機能のAPIエンドポイントを追加し、依存パッケージをインストールして単体テストを実行し、テストが全件パスするまで自動でバグ修正してほしい →「Agent Mode」が最適。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・Agent Modeは自律的にコマンドを実行するため、無限ループや不要なファイル生成を防ぐためAgent Sessions単位でログを監視・ロールバックできるように設計されています。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: ターミナルコマンドを実行してエラーが出たら自律的に再修正を試みるのは？ → Agent Mode。\nQ2: 指定した複数ファイルのコードDiffだけを一括提案するのは？ → Copilot Edits。\nQ3: Agent Modeの提案コードは人間の承認なしに直接Gitコミットされるか？ → No。最終適用はユーザーがレビューして決定します。"
+      }
+    ],
+    "keyPoints": [
+      "Copilot Editsは複数ファイルのDiff提案に特化し、コマンド実行は行わない。",
+      "Agent Modeはファイル編集＋ターミナルコマンド実行＋自律的エラー修正ループを行う。",
+      "どちらのモードでも最終的なコード差分の採用・コミットの決定権は人間にある。"
+    ],
+    "commonMistakes": [
+      "Copilot Editsでもターミナルのテストコマンドが自動実行されると誤解すること。",
+      "Agent Modeは人間が一切介在しない完全自律Autopilotであると誤解すること。"
+    ],
+    "examTips": [
+      "「ターミナルでテストを実行しながら自律修正」という文脈があれば正解は確実に「Agent Mode」です。",
+      "「複数ファイルの一括編集」だけでコマンド実行を伴わない場合は「Copilot Edits」が正解です。"
+    ],
+    "glossaryIds": [
+      "g-agent-mode",
+      "g-copilot-edits",
+      "g-agent-sessions",
+      "g-sub-agents",
+      "g-code-accountability"
+    ],
+    "comparisonIds": [
+      "cmp-agent-vs-edits",
+      "cmp-agent-vs-chat",
+      "cmp-sessions-vs-subagents"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "agent-mode",
+      "chat",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-mcp",
+    "title": "Model Context Protocol (MCP) による外部ツール・データ連携",
+    "slug": "model-context-protocol-mcp-integration",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "AIモデルと外部リソース（データベース、社内API、課題追跡等）を標準化して接続するModel Context Protocol (MCP) のアーキテクチャ（Client、Server、Tools、Resources）とCopilot Extensionsとの違いを学びます。",
+    "estimatedMinutes": 9,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "2026年シラバスの最先端トピックであるMCPの概念、MCP ServerとClientの役割分担、およびCopilot Agent Modeが外部世界と相互作用する仕組みを理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: MCPの基本構造",
+        "content": "Model Context Protocol (MCP) は、AIモデルが外部ツールやデータソースと標準化された仕様で対話するためのオープンプロトコルです。\n・MCP Client: IDE（VS Code Copilot）。ユーザー指示を解釈し、必要なツールをサーバーに要求する。\n・MCP Server: 外部データやAPIをホストし、Tools（実行可能関数）やResources（読み取り専用データ）を提供する軽量プログラム。\n・Tools: DBクエリ実行やファイル書き込みなど、副作用を伴う実行アクション（承認が必要）。\n・Resources: API仕様書やログなど、コンテキストとして読み込まれる静的データ。"
+      },
+      {
+        "heading": "3. How It Works: Agent ModeとMCPの連携フロー",
+        "content": "ユーザーが「社内PostgreSQLデータベースの顧客テーブル定義を調べて、対応するTypeScriptモデルを作成して」と指示すると、Agent Modeは接続されたPostgreSQL MCP Serverの `get_schema` ツールを呼び出し、スキーマ定義を取得してコンテキストに組み込み、正確なモデルコードを生成します。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】リポジトリ内に存在しない外部の社内APIやプライベートなデータベースの情報をCopilotに安全に参照させ、コード生成や不具合調査に活用したい場合。適切な選択肢は「MCP Serverを構築または接続し、Copilotから標準化されたプロトコルで安全にアクセスさせる」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・MCP Toolsの実行にはセキュリティ上のリスクが伴うため、副作用のあるツール実行時にはユーザーの明示的な承認ダイアログが挟まれます。\n・Copilot Extensions（GitHub Marketplace経由の統合）とは異なり、MCPは任意のローカル/リモート環境で動かせるオープン規格です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: AIモデルと外部データソース・ツールを標準化して接続するオープンプロトコルは？ → MCP (Model Context Protocol)。\nQ2: データベース問い合わせなどの実行アクションを提供するMCPの要素は？ → Tools。\nQ3: ドキュメントなどの参照用データを提供するMCPの要素は？ → Resources。"
+      }
+    ],
+    "keyPoints": [
+      "MCPはAIモデルと外部リソースを接続するオープン標準プロトコル。",
+      "Client（VS Code）とServer（DBやAPI連携プログラム）の分離アーキテクチャ。",
+      "Agent ModeからMCP Toolsを呼び出すことで自律的な外部連携が可能になる。"
+    ],
+    "commonMistakes": [
+      "MCPは単なるチャットUIのプラグインであるという誤解（プロトコル標準である）。",
+      "MCP Toolsはユーザーの承認なしにPC内のすべての操作を無制限に実行できるという誤解。"
+    ],
+    "examTips": [
+      "「外部データベースや社内ツールとCopilotを接続する仕組み」としてMCPが出題されます。",
+      "Tools（アクション）とResources（データ）の区別を押さえましょう。"
+    ],
+    "glossaryIds": [
+      "g-mcp",
+      "g-mcp-server",
+      "g-mcp-client",
+      "g-mcp-tools",
+      "g-copilot-extensions",
+      "g-agent-mode"
+    ],
+    "comparisonIds": [
+      "cmp-mcp-vs-extensions"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp",
+      "agent-mode",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-instructions-prompts",
+    "title": "Custom InstructionsとPrompt Filesによるチーム標準化",
+    "slug": "custom-instructions-and-prompt-files",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "リポジトリ全体に自動適用される `copilot-instructions.md`、ディレクトリ別のScoped Instructions、およびオンデマンドで再利用可能な `.prompt.md` ファイルの役割の違いと設計手法を習得します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "チーム開発において、個々の開発者のプロンプト入力スキルに依存せず、組織のコーディング規約や設計方針を一貫してCopilotに守らせる設定手法を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 3大カスタム指示の使い分け",
+        "content": "・Custom Instructions (`.github/copilot-instructions.md`): リポジトリルートに配置。すべてのCopilot Chatや補完に自動的かつ常時注入されるプロジェクト共通ルール（例:「TypeScript必須」「Vitest使用」）。\n・Scoped Instructions (`.github/instructions/*.md`): モノレポ等で、特定パス（例: `frontend/**`）にのみ適用されるディレクトリ限定の指示。\n・Prompt Files (`.github/prompts/*.prompt.md`): 定型的なタスク（例:「APIアクセシビリティ監査」）をファイル化し、チャット欄からスラッシュコマンドのように手動で呼び出して再利用するテンプレート。"
+      },
+      {
+        "heading": "3. How It Works: プロンプトへの自動注入メカニズム",
+        "content": "開発者がチャットや補完をトリガーすると、IDE拡張機能はバックグラウンドで `.github/copilot-instructions.md` の内容を読み出し、システムプロンプトの一部として合成してからモデルに送信します。開発者が毎回手動で指示文を入力する必要がありません。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオA】チーム全員がCopilotを使う際、毎回「React 19とTailwind CSSを使用して」と指示しなくても自動で遵守させたい → `.github/copilot-instructions.md` を作成する。\n【シナリオB】月に数回行うセキュリティ監査やリリースノート作成の定型プロンプトをGitで管理してチーム共有したい → `.github/prompts/security-audit.prompt.md` を作成する。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・`copilot-instructions.md` に大量の文章を書きすぎると、コンテキストウィンドウの貴重なトークンを圧迫し、コード本体の参照枠が狭まるため、簡潔かつ要約された箇条書きが推奨されます。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: リポジトリ内のすべてのCopilot対話に自動適用される指示ファイルのパスは？ → `.github/copilot-instructions.md`。\nQ2: 必要に応じて手動で呼び出す定型プロンプトテンプレートの拡張子は？ → `.prompt.md`。\nQ3: 特定のサブディレクトリにのみ適用する指示の置き場所は？ → `.github/instructions/*.md`。"
+      }
+    ],
+    "keyPoints": [
+      "`.github/copilot-instructions.md` はリポジトリ全体に常時自動適用される。",
+      "`.github/prompts/*.prompt.md` はオンデマンドで呼び出す再利用可能プロンプト。",
+      "インストラクションは簡潔に保ち、トークンの過剰消費（コンテキスト圧迫）を防ぐ。"
+    ],
+    "commonMistakes": [
+      "Prompt Files（手動呼び出し）とCustom Instructions（常時自動適用）の混同。",
+      "インストラクションに仕様書全文を貼り付けてトークン制限に引っかかること。"
+    ],
+    "examTips": [
+      "ファイルパス `.github/copilot-instructions.md` はスペルも含めて頻出です。",
+      "「チームでコーディング規約を自動適用する」問の正解はCustom Instructionsです。"
+    ],
+    "glossaryIds": [
+      "g-custom-instructions",
+      "g-scoped-instructions",
+      "g-prompt-files",
+      "g-system-prompt"
+    ],
+    "comparisonIds": [
+      "cmp-instructions-vs-prompts"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "instructions",
+      "prompt-files",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-pr-code-review",
+    "title": "Pull Request SummariesとCopilot Code Reviewの連携",
+    "slug": "pr-summaries-and-copilot-code-review",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "GitHub.com上で動作するPR要約（PR Summaries）と自動コードレビュー（Copilot Code Review）の機能の違い、設定方法、および人間のレビュアーとの協調運用を学びます。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Pull Requestの作成からマージまでのサイクルにおいて、AIによる「変更要約（Summaries）」と「品質指摘（Code Review）」をどのように使い分け、レビュー効率を最大化するかを理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: PR Summaries vs Copilot Code Review",
+        "content": "・Pull Request Summaries: PRに含まれるコミット群やDiffを分析し、変更点・影響範囲を箇条書きやウォークスルー形式でPR本文に自動ドラフトする機能。レビュアーの全体像把握を支援する。\n・Copilot Code Review: PRの差分行に対して、潜在バグ、セキュリティ懸念、可読性の改善案をインラインコメントとして自動投稿する機能。自動実行または手動リクエストで動作する。"
+      },
+      {
+        "heading": "3. How It Works: コードレビューの自動ポリシー運用",
+        "content": "組織管理者は、Settings > Copilot > Policies で新規PR作成時に自動でCopilot Code Reviewを実行するよう構成できます。レビューコメントには修正提案（Suggested changes）が含まれ、開発者はワンクリックで修正コミットを作成できます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】大規模なPRを作成した際、レビュアーが「変更ファイルが多すぎて何を確認すべきか分からない」と困っている場合。PR作成者は「PR Summaries機能」を実行して構造化された概要と変更リストをPR説明欄に展開します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・Copilot Code Reviewは有用な指摘を行いますが、ビジネスロジックの要件適合性までは判断できません。最終承認（Approve）は人間のレビュアーが担当します。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: PRの説明文に変更内容の概要を自動生成する機能は？ → Pull Request Summaries。\nQ2: PRの差分行に対して改善コメントを投稿する機能は？ → Copilot Code Review。\nQ3: Copilot Code ReviewがApproveを出せば人間レビューなしでマージしてよいか？ → No。"
+      }
+    ],
+    "keyPoints": [
+      "PR Summariesは変更内容の要約文作成、Code Reviewは品質・バグの指摘コメント投稿。",
+      "組織設定で新規PRに対する自動Code Reviewのトリガーポリシーを設定可能。",
+      "AIレビューは人間レビュアーの負担軽減ツールであり、最終承認は人間が行う。"
+    ],
+    "commonMistakes": [
+      "PR SummariesとCode Reviewの機能差を混同すること。",
+      "AIによるレビューコメントが100%正しいと過信し、無検証で適用すること。"
+    ],
+    "examTips": [
+      "「変更内容の要約」ならPR Summaries、「コード差分への改善指摘」ならCode Reviewです。",
+      "組織レベルのポリシー設定で自動トリガーできる点が出題されます。"
+    ],
+    "glossaryIds": [
+      "g-copilot-code-review",
+      "g-pr-summaries",
+      "g-peer-review-ai",
+      "g-code-review-policies"
+    ],
+    "comparisonIds": [
+      "cmp-review-vs-summary"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "code-review",
+      "policies",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d2-org-governance",
+    "title": "組織・エンタープライズポリシーとシート・監査ログ管理",
+    "slug": "organization-enterprise-governance-audit-logs",
+    "domainId": "d2",
+    "objectiveIds": [
+      "d2o4"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "GitHub EnterpriseからOrganizationへのポリシー継承ルール、シートの付与・回収管理、Audit Logによる操作追跡、およびREST APIを用いた利用状況メトリクス分析の運用プラクティスを網羅します。",
+    "estimatedMinutes": 9,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "企業や組織の管理者がCopilotを安全かつコスト効率よく統制・運用するための設定（ポリシー階層、ライセンス割当、監査証跡、API連携）を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: ポリシー継承の絶対ルール",
+        "content": "Enterpriseレベルで「Enforced（強制）」または「Blocked（禁止）」に設定されたポリシーは、傘下のOrganizationやRepositoryで上書き・緩和することはできません。Enterprise側が「No policy (組織に委任)」としている場合のみ、各Organizationの管理者が独自に設定を決定できます。"
+      },
+      {
+        "heading": "3. How It Works: シート管理と監査ログ",
+        "content": "・シート管理: 個人またはチーム単位でCopilotシートを割り当て。シートを持つユーザーのみがIDE認証可能。\n・監査ログ (Audit Logs): シートの付与/剥奪、ポリシー変更などの管理イベントが追跡可能（プロンプト本文は記録されずプライバシー保護）。\n・REST API: `GET /orgs/{org}/copilot/usage` で日別のアクティブシート数や提案採用率（Acceptance rate）を集計取得可能。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】Organization管理者が「Public Code Matching」を有効化しようとしたが設定画面がグレーアウトして変更できない場合の原因。「Enterprise管理者がEnterpriseレベルでポリシーを一括強制（Enforce）しているため」が正解です。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・REST APIや監査ログで確認できるのは利用率や設定イベントなどの集計データであり、開発者が入力したプロンプトやコード全文はプライバシー保護のため取得できません。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: Enterpriseで強制されたポリシーをOrganizationで無効化できるか？ → No（上位設定が優先）。\nQ2: 組織全体のCopilot受入率やアクティブ数を自動取得する手段は？ → Copilot Metrics REST API。\nQ3: 監査ログに開発者のプロンプト全文は記録されるか？ → No（管理操作イベントのみ記録）。"
+      }
+    ],
+    "keyPoints": [
+      "ポリシーはEnterprise → Organization → Repositoryの順で継承され、上位設定は下位で解除不能。",
+      "シートは個人またはチーム単位で付与・管理される。",
+      "Audit Logで設定変更履歴を追跡し、REST APIで利用状況・受入率を分析可能。"
+    ],
+    "commonMistakes": [
+      "Organization管理者がEnterpriseの制限を解除できると思い込むこと。",
+      "REST APIで特定個人のプロンプト内容を監視できると誤認すること。"
+    ],
+    "examTips": [
+      "ポリシーの階層構造（Enterprise Enforce時はOrg変更不可）は超頻出です。",
+      "監査ログとREST APIの目的（ガバナンスとメトリクス集計）を明確に区別しましょう。"
+    ],
+    "glossaryIds": [
+      "g-org-policies",
+      "g-enterprise-policies",
+      "g-seat-management",
+      "g-subscription-plans",
+      "g-audit-logs",
+      "g-usage-metrics-api",
+      "g-policy-inheritance"
+    ],
+    "comparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "audit-log",
+      "rest-api",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d3-data-flow",
+    "title": "Copilotのデータフローとプロキシ・ゲートウェイ",
+    "slug": "copilot-data-flow-proxy-gateway",
+    "domainId": "d3",
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "エディタからGitHub Proxy、LLM推論基盤、そして後処理フィルタを経て提案が返るエンドツーエンドの安全なデータ通信経路とゲートウェイの役割を理解します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "開発者がコードを入力した瞬間に裏側でどのような通信が発生し、どのコンポーネントがセキュリティや除外判定を担っているのか、アーキテクチャの全体像を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 通信経路と各レイヤーの責務",
+        "content": "1. クライアント（IDE拡張）: ローカルコンテキスト（前後コード、開いているタブ）を収集し、HTTPS/TLS経由で送信。\n2. GitHub Copilot Proxy: 認証・認可の検証、Content Exclusion対象ファイルの判定、組織ポリシーの適用。\n3. LLM基盤（Azure OpenAI）: プロンプトを受け取り、推論してトークン列を出力。\n4. 後処理パイプライン: 有害コンテンツの遮断、Public Code Matching（公開コード一致判定）、フォーマット整形。\n5. クライアント（IDE）: ゴーストテキストを描画。"
+      },
+      {
+        "heading": "3. How It Works: なぜProxyが不可欠なのか",
+        "content": "エディタが直接OpenAIのエンドポイントに通信するのではなく、GitHub Proxyが介在することで、悪意あるプロンプトの遮断、企業のContent Exclusion設定の強制、および利用状況テレメトリの正確な収集が可能になります。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】企業のセキュリティ担当者から「IDEが直接サードパーティのサーバーにコードを平文で送信しているのではないか」と懸念された場合。「すべての通信はTLS 1.2/1.3で暗号化され、GitHubの管理するセキュアプロキシを経由して隔離されたモデル基盤で処理される」と回答します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・プロキシ層での判定により、Content Exclusion対象ファイルであると判断されたリクエストは、LLMに到達する前に即時遮断されます。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: クライアントとLLMの間でContent Exclusionの判定を行う中間コンポーネントは？ → GitHub Copilot Proxy。\nQ2: 通信は平文で行われるか？ → No（TLSで暗号化）。\nQ3: Public Code Matchingはどの段階で実行されるか？ → LLM出力後の後処理パイプライン。"
+      }
+    ],
+    "keyPoints": [
+      "通信はすべてHTTPS/TLSで暗号化される。",
+      "GitHub Proxyが認証、Content Exclusionの評価、ポリシー適用を行う。",
+      "LLM出力後に後処理フィルタとPublic Code Matchingが適用される。"
+    ],
+    "commonMistakes": [
+      "IDEが直接LLMの公開APIに通信しているという誤解。",
+      "Content ExclusionがIDEローカルだけで判定されているという誤解（Proxyでも厳格に検証）。"
+    ],
+    "examTips": [
+      "「GitHub Proxyが中間でセキュリティ・除外判定を行う」点が頻出です。",
+      "データフローの順序（クライアント → Proxy → LLM → 後処理 → クライアント）を把握しましょう。"
+    ],
+    "glossaryIds": [
+      "g-data-flow",
+      "g-copilot-proxy",
+      "g-post-processing",
+      "g-transit-encryption"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d3-prompt-pipeline",
+    "title": "コンテキスト収集アルゴリズムとプロンプト構築パイプライン",
+    "slug": "context-gathering-and-prompt-pipeline",
+    "domainId": "d3",
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "カーソル周辺コード（Prefix/Suffix）、隣接タブ（Neighboring tabs）、インポートモジュールから最適な情報を抽出し、トークン予算内でプロンプトを合成する内部アルゴリズムを解説します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilotが「今書いているコード」にぴったり合った提案を出せる理由であるコンテキスト収集の仕組みと、トークン制限下での優先順位付けを理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: コンテキスト収集の優先要素",
+        "content": "IDE拡張機能は以下の要素から情報を集めます。\n1. カーソル直前コード (Prefix): 最も高い重み付けがされる。\n2. カーソル直後コード (Suffix): 関数の閉じ括弧や後続ロジックとの整合性を担保。\n3. 開いている隣接タブ (Neighboring tabs): 同じプロジェクト内で直近に開かれた関連ファイル。\n4. インポート文と型定義: 参照されている外部パッケージやインターフェース。"
+      },
+      {
+        "heading": "3. How It Works: プロンプト合成とトークン化 (Tokenization)",
+        "content": "収集されたコードスニペットは、言語に応じたコメントプレフィックスやファイルパスタグが付与され、1つのプロンプトに組み立てられます。モデルのトークン上限（Token budget）に収まるよう、優先度の低い遠くのコードは自動的に切り捨て（トランケーション）されます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】新しく作成しているコンポーネントで、別ファイルに定義された共通型（`UserProps`）をCopilotに認識させたい場合。最も簡単で推奨される方法は「`UserProps` が定義されているファイルをIDEの別タブで開いておく（Neighboring tabs）」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・リポジトリ全体の全ファイルを網羅的に見ているわけではありません。無関係な巨大ファイルを何十個も開いておくと、重要な情報がトークン枠から押し出されるリスク（コンテキスト汚染）があります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: コンテキスト収集で最も重要視されるコード領域は？ → カーソル直前コード（Prefix）。\nQ2: 関連する型定義をCopilotに認識させる手軽な方法は？ → 関連ファイルを別タブで開いておく（Neighboring tabs）。\nQ3: トークン上限を超えた場合はどうなるか？ → 優先度の低い文脈が切り捨てられる。"
+      }
+    ],
+    "keyPoints": [
+      "カーソルのPrefix/Suffixと開いている隣接タブがコンテキストの主たる情報源。",
+      "収集された情報はトークン予算内で取捨選択・合成される。",
+      "関係のないファイルを大量に開かないことが提案精度維持のベストプラクティス。"
+    ],
+    "commonMistakes": [
+      "Copilotはリポジトリの全ファイルを常に自動で完璧に読み込んでいるという誤解。",
+      "ファイルを開くだけでは意味がないと思い込むこと（隣接タブは極めて強力）。"
+    ],
+    "examTips": [
+      "「関連ファイルを開いておく（Neighboring tabs）」はプロンプト向上の頻出選択肢です。",
+      "Prefix（前）とSuffix（後）の両方を考慮して補完する点も問われます。"
+    ],
+    "glossaryIds": [
+      "g-context-gathering",
+      "g-prompt-construction",
+      "g-tokenization",
+      "g-telemetry-data"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q06"
+    ],
+    "sourceIds": [
+      "architecture",
+      "prompt",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d3-retention-privacy",
+    "title": "コードスニペットの非保持規約（Zero Retention）と信頼性",
+    "slug": "code-retention-policy-zero-retention",
+    "domainId": "d3",
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "Copilot BusinessおよびEnterpriseにおける「コードスニペット非保持（Zero Retention）」の確約、モデル学習への不使用、および利用状況テレメトリデータとの明確な分離を学習します。",
+    "estimatedMinutes": 7,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "企業がCopilotを導入する際に最も厳格にチェックされるデータ保護基準（コードが保持・学習されない保証）の技術的および規約的根拠を理解します。"
+      },
+      {
+        "heading": "2. Core Concepts: ゼロデータ保持 (Zero Retention)",
+        "content": "Copilot BusinessおよびCopilot Enterprise契約において、GitHubおよび基盤ホスト（Azure OpenAI）は、送信されたコードスニペット、コンテキスト、および生成された提案をディスクに永続化（保存）しません。推論処理が完了した瞬間にメモリから即座に破棄されます。"
+      },
+      {
+        "heading": "3. How It Works: モデル再学習の完全否定",
+        "content": "「自社のコードがCopilotの学習データとして使われ、競合他社に提案として出力されてしまうのではないか」という懸念に対し、Business/Enterpriseでは顧客コードをモデルのファインチューニングや再学習に利用しないことが契約上明記されています。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】金融機関の開発部門がCopilot Businessを導入するにあたり、自社の機密ロジックがAIの学習データに転用されないか法務から問われた場合。「Copilot Businessではコードスニペットは推論後に即時破棄（ゼロ保持）され、他社向けのAIモデル学習には一切利用されない」と説明するのが正解です。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・個人向けプラン（Copilot Individual/Pro）では、ユーザーが明示的に設定でオプトアウトしない限り学習利用が許可されている場合があるため、組織プラン（Business/Enterprise）との違いを明確に認識する必要があります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: Copilot Businessで顧客コードはモデル学習に使われるか？ → No（一切使われない）。\nQ2: 推論完了後のコードスニペットの扱いは？ → 即座に破棄される（Zero Retention）。\nQ3: テレメトリデータに顧客のソースコードは含まれるか？ → No（利用メトリクスのみ）。"
+      }
+    ],
+    "keyPoints": [
+      "Copilot Business / Enterpriseではコードスニペットの非保持（Zero Retention）が標準。",
+      "顧客コードが基礎モデルのトレーニングや再学習に使われることはない。",
+      "テレメトリデータ（受入率や遅延時間などの集計値）とコード内容は明確に分離される。"
+    ],
+    "commonMistakes": [
+      "個人向けプランとEnterprise向けプランでデータ保持ポリシーが同一であるという誤認。",
+      "クラウドに送信されたコードが永久にサーバー上に保存されるという誤解。"
+    ],
+    "examTips": [
+      "「Business/Enterprise契約ではコードスニペットは学習に利用されない」は満場一致の正答基準です。",
+      "Zero Retentionというキーワードを確実に覚えておきましょう。"
+    ],
+    "glossaryIds": [
+      "g-code-retention-policy",
+      "g-enterprise-data-privacy",
+      "g-subscription-plans",
+      "g-telemetry-data"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d3-lifecycle-limits",
+    "title": "コード提案のライフサイクルとLLMの制約・スコープ限界",
+    "slug": "suggestion-lifecycle-and-llm-limitations",
+    "domainId": "d3",
+    "objectiveIds": [
+      "d3o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "ミリ秒単位の提案ライフサイクル、レイテンシと品質のトレードオフ、モデルの知識期限（Knowledge Cutoff）、およびローカルワークスペース外に及ばないスコープ限界を体系化します。",
+    "estimatedMinutes": 9,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "AIモデルの物理的な制約（コンテキストウィンドウ、知識期限、ローカルスコープ）を理解し、提案が出ない場合や古い書き方が提案される場合の技術的理由を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: LLMの3大物理制約",
+        "content": "・Context Window制限: モデルが一度に処理できるトークン量には物理的上限がある。\n・Knowledge Cutoff: モデルが事前学習された日時以降の最新ライブラリ仕様や破壊的変更は内部知識に存在しない。\n・Scope制限: IDEのCopilotは現在開いているワークスペース内のコードしか見られず、外部リポジトリや非公開クラウドリソースはスコープ外となる。"
+      },
+      {
+        "heading": "3. How It Works: レイテンシ vs 品質のトレードオフ",
+        "content": "インライン提案（Ghost Text）はタイピング速度に追従するため、数百ミリ秒という超低遅延が必須であり、最適化された高速モデルが使用されます。一方、チャットやAgent Modeでは数秒〜数十秒の時間をかけて巨大モデルによる深い推論が行われます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】先月リリースされたばかりの新フレームワークの最新構文をCopilotに書かせようとしたが、古い非推奨な書き方ばかりが提案される場合。原因はモデルの「Knowledge Cutoff（知識期限）」であり、解決策は「最新の公式仕様やコード例をプロンプト内に明示的に与える、またはMCP経由でドキュメントを参照させる」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・ローカルに存在しない外部リポジトリや社内DBを参照させるには、Copilot SpacesやMCPサーバーを明示的に導入する必要があります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: リリースされたばかりの最新ライブラリ記法をモデルが知らない理由は？ → Knowledge Cutoff（知識期限）。\nQ2: インライン提案で最も重視される性能特性は？ → 低レイテンシ（高速応答性）。\nQ3: ローカルワークスペース外の外部リポジトリを参照したい場合の手段は？ → Copilot Spaces や MCP の活用。"
+      }
+    ],
+    "keyPoints": [
+      "モデルには事前学習の期限（Knowledge Cutoff）があり、最新仕様には明示的コンテキストが必要。",
+      "インライン補完は超低レイテンシ優先、チャット/エージェントは推論品質優先で設計されている。",
+      "ローカルスコープ外の情報を参照させるにはMCPやSpacesなどの拡張機構を用いる。"
+    ],
+    "commonMistakes": [
+      "AIは世界中の最新情報をリアルタイムに毎秒学習し続けているという誤認。",
+      "インライン補完でもチャットと全く同じ深さの推論が瞬時に行われているという誤解。"
+    ],
+    "examTips": [
+      "「最新ライブラリの書き方を指示する際は、プロンプトに具体例や定義を渡す」が正解パターンです。",
+      "スコープ制限の克服手段としてMCPやSpacesを答える問題が出題されます。"
+    ],
+    "glossaryIds": [
+      "g-suggestion-lifecycle",
+      "g-context-window",
+      "g-latency-tradeoff",
+      "g-temperature-determinism",
+      "g-knowledge-cutoff",
+      "g-context-scope-limits"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "architecture",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d4-crafting",
+    "title": "効果的なプロンプトの構成要素（Goal・Context・Constraints・Examples）",
+    "slug": "effective-prompt-crafting-anatomy",
+    "domainId": "d4",
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "プロンプトの品質を決定づける4大要素（目標・文脈・制約・具体例）の黄金律と、隣接タブ（Neighboring tabs）によるコンテキストプライミングを体系的に学びます。",
+    "estimatedMinutes": 8,
+    "difficulty": "beginner",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilotから一発で高品質なコードを引き出すための標準フレームワーク「Prompt Anatomy（プロンプトの解剖学）」を習得します。"
+      },
+      {
+        "heading": "2. Core Concepts: プロンプトの4大要素",
+        "content": "1. Goal（目標）: 何を達成したいのか（例:「ユーザー認証のAPIエンドポイントを作成」）\n2. Context（文脈）: 前提条件や環境（例:「Next.js App RouterとPrismaを使用」）\n3. Constraints（制約）: 守るべきルールや禁止事項（例:「外部ライブラリを使わずWeb Crypto APIを使用」）\n4. Examples（具体例）: 期待する入出力やスキーマ（例:「成功時は `{ status: 200, user: ... }` を返す」）"
+      },
+      {
+        "heading": "3. How It Works: コンテキストプライミング",
+        "content": "プロンプトにすべてを文章で書かなくても、エディタ上で関連する型定義ファイル（`.d.ts`）や設定ファイルを開いておく（Context Priming via Neighboring tabs）ことで、モデルは文脈を暗黙的に理解し、正確な型安全コードを提案します。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】開発者が「ユーザー登録の関数を書いて」とだけチャットに入力したところ、期待と異なる言語やライブラリを使ったコードが生成された。改善策は「Goal（目的）に加え、使用フレームワーク（Context）、使用禁止パッケージ（Constraints）、期待する戻り値の型（Examples）を構造化して指示する」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・プロンプトが具体的であればあるほどハルシネーションは激減します。曖昧な指示はモデルのランダム性を高める最大の原因です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 効果的なプロンプトの4大構成要素は？ → Goal, Context, Constraints, Examples。\nQ2: やってはいけないルールや禁止事項を指定する要素は？ → Constraints（制約）。\nQ3: 開いているタブでAIに事前文脈を与える技術は？ → コンテキストプライミング（Context Priming）。"
+      }
+    ],
+    "keyPoints": [
+      "Goal（目標）、Context（文脈）、Constraints（制約）、Examples（具体例）の4要素を意識する。",
+      "制約条件（Constraints）を明示することで不要な依存関係やバグを未然に防止できる。",
+      "関連ファイルを開いておくことで自然なコンテキストプライミングが働く。"
+    ],
+    "commonMistakes": [
+      "「Goal」だけを指定してAIに意図を察してもらおうとする曖昧なプロンプティング。",
+      "長文であれば良いと思い込み、要点と制約が整理されていない冗長な文章を書くこと。"
+    ],
+    "examTips": [
+      "「Goal, Context, Constraints, Examples」の組み合わせは公式ガイドの中核です。",
+      "具体的かつ制約が明示されているプロンプトを選択する問題が高頻度で出題されます。"
+    ],
+    "glossaryIds": [
+      "g-prompt-engineering",
+      "g-prompt-anatomy",
+      "g-system-prompt",
+      "g-context-priming"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q07",
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d4-zero-few-shot",
+    "title": "Zero-shotとFew-shotプロンプティングの実践的使い分け",
+    "slug": "zero-shot-vs-few-shot-prompting",
+    "domainId": "d4",
+    "objectiveIds": [
+      "d4o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "具体例を示さず迅速に指示するZero-shotと、1〜数件の入出力例を提示してフォーマットやパターンを厳密に制御するFew-shotの使い分け判断基準を極めます。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "どのようなタスクでZero-shotを選び、どのような場面でFew-shotに切り替えるべきかの明確な境界線と判断軸を習得します。"
+      },
+      {
+        "heading": "2. Core Concepts: Zero-shot vs Few-shot",
+        "content": "・Zero-shot Prompting: 入出力の具体例を提示せず、指示のみを与える。「この関数を解説して」「フィボナッチ数列の関数を書いて」など、一般的・標準的なタスクに最適。\n・Few-shot Prompting: 入力と期待される出力の具体例を1〜数件提示する。「独自の日付形式（2026/08/07）を和暦文字列（令和8年8月7日）に変換して」など、独自の形式、トーン、ドメイン固有パターンを模倣させたい場合に絶大な威力を発揮。"
+      },
+      {
+        "heading": "3. How It Works: パターン認識の誘導",
+        "content": "LLMは提示されたExampleから暗黙のルール（区切り文字、命名規則、大文字小文字、エラー時の戻り値構造など）を瞬時に抽出して新規入力に適用します。長文の指示文を書くよりも、2〜3個の入出力例を見せる方が確実に意図が伝わります。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】社内独自の特殊なログフォーマット（`[LEVEL][TIMESTAMP][SERVICE_ID] Message`）に文字列をパースする正規表現と関数を作らせたいが、一般的な正規表現ばかり提案される場合。適切なアプローチは「実際のログ行とパース後の期待オブジェクトの例を2〜3件プロンプトに提示する（Few-shot）」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・Few-shotで提示する具体例自体に誤りがあると、AIはその誤ったパターンを忠実に学習・模倣してしまうため、提示する例の正確性が極めて重要です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 例を提示せず指示だけでコードを生成させる手法は？ → Zero-shot Prompting。\nQ2: 入出力の具体例を提示してパターンを模倣させる手法は？ → Few-shot Prompting。\nQ3: 出力フォーマットを厳密に制御したい場合に優れているのは？ → Few-shot Prompting。"
+      }
+    ],
+    "keyPoints": [
+      "Zero-shotは迅速で標準的なタスク向け、Few-shotは独自形式やパターン制御向け。",
+      "Few-shotでは提示する例の正確性がそのまま出力品質を決定づける。",
+      "複雑な指示文を重ねるよりも、良質な具体例を2〜3件提示する方が効果的。"
+    ],
+    "commonMistakes": [
+      "単純な関数作成で毎回過剰なFew-shot例を書いてトークンを浪費すること。",
+      "独自フォーマットの指示なのにZero-shotで済ませようとして失敗を繰り返すこと。"
+    ],
+    "examTips": [
+      "「出力形式を厳密に統一したい」「独自パターンに従わせたい」という問題の正解は「Few-shot」です。",
+      "「Zero-shot vs Few-shot」の比較表は確実に頭に入れておきましょう。"
+    ],
+    "glossaryIds": [
+      "g-zero-shot",
+      "g-few-shot",
+      "g-role-prompting",
+      "g-step-by-step"
+    ],
+    "comparisonIds": [
+      "cmp-zero-vs-few-shot"
+    ],
+    "questionIds": [
+      "q07"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d4-refinement",
+    "title": "反復的改善とチャット履歴管理（/clearの重要性）",
+    "slug": "iterative-prompt-refinement-and-chat-history",
+    "domainId": "d4",
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "対話を通じた段階的なコード改善プロセスと、古い文脈によるコンテキスト汚染をリセットする `/clear` コマンドおよびスレッド管理の重要性を学びます。",
+    "estimatedMinutes": 7,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilot Chatとの対話が噛み合わなくなる原因（コンテキスト汚染）の解消法と、反復的プロンプト改善（Iterative Refinement）の正しいサイクルを習得します。"
+      },
+      {
+        "heading": "2. Core Concepts: 対話型改善サイクル",
+        "content": "プロンプトエンジニアリングは一発勝負ではありません。初動の提案に対して「良いが、エラー処理をカスタム例外に差し替えて」「外部ライブラリを使わずネイティブAPIで書き直して」と、会話履歴を活かして段階的に肉付けしていくのが最も自然で生産的です。"
+      },
+      {
+        "heading": "3. How It Works: なぜ `/clear` が不可欠なのか",
+        "content": "チャットスレッドが長くなると、過去のすべての発言やコード案がコンテキストウィンドウに累積されます。過去にモデルが提示した誤ったコードや古い話題にAI自身が引きずられ、ハルシネーションを繰り返す「コンテキスト汚染（Context Dilution）」が発生します。話題が変わった時や回答がループし始めた時は、`/clear` で履歴を白紙に戻す必要があります。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】フロントエンドのコンポーネントを30分チャットで対話改善した後、同じチャットウィンドウでバックエンドのDBクエリについて質問したところ、先ほどのフロントエンドのコードが混入した回答が返ってきた。正しい対処法は「`/clear` コマンドを実行するか新しいチャットセッションを開始して、トピックごとに文脈を独立させる」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・チャット欄に出力形式（「Markdown形式の表で出力して」「コードブロックのみ返して」）を指定することで、後処理のコピペ摩擦を大幅に低減できます。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: チャットセッションを白紙化して過去の履歴を消去するコマンドは？ → `/clear`。\nQ2: 1回目の出力が不十分な場合のベストなアプローチは？ → 制約や改善要望を追加して対話型で改善する。\nQ3: 長いスレッドを放置すると発生する問題は？ → トークン圧迫と過去の誤りによるコンテキスト汚染。"
+      }
+    ],
+    "keyPoints": [
+      "プロンプトは一発で完璧を目指すより対話型（反復的）に洗練させるのが効率的。",
+      "話題が変わる際や回答が乱れた際は `/clear` でスレッドをリセットする。",
+      "出力形式（Output specification）を明確にすることで手戻りを防ぐ。"
+    ],
+    "commonMistakes": [
+      "何日も同じ単一チャットスレッドを使い続け、過去のゴミ文脈で精度を落とすこと。",
+      "最初の出力に軽微なミスがあっただけで諦めて手動で全部書き直すこと。"
+    ],
+    "examTips": [
+      "「チャット履歴が長くなり混乱した時の対処」＝「`/clear` または新スレッド開始」です。",
+      "「反復的（Iterative）に対話して洗練する」姿勢を肯定する選択肢を選びましょう。"
+    ],
+    "glossaryIds": [
+      "g-iterative-refinement",
+      "g-thread-reset",
+      "g-output-specification",
+      "g-copilot-chat"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "chat",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d4-decomposition-pruning",
+    "title": "タスク分解とコンテキストプルーニング（希釈回避）",
+    "slug": "task-decomposition-and-context-pruning",
+    "domainId": "d4",
+    "objectiveIds": [
+      "d4o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "大規模で複雑な要件を小さな自己完結ステップに分解するTask Decompositionと、無関係な情報を削ぎ落としてAIの注意力を保つContext Pruningの高度な設計技法を解説します。",
+    "estimatedMinutes": 8,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "巨大なタスクや巨大なコードベースを扱う際に、LLMのトークン限界と注意機構（Attention）を最適化して最高の回答精度を引き出す高度なテクニックを学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: タスク分解 (Task Decomposition)",
+        "content": "「巨大なマイクロサービスの決済基盤全体を作って」という指示は失敗します。LLMが確実に高品質なコードを出すのは「小さく、自己完結し、入力と出力が明確なタスク」です。「1. カート計算」「2. クーポン割引適用」「3. 決済APIペイロード構築」のように分解して順次依頼し、ステップごとにテストを通過させます。"
+      },
+      {
+        "heading": "3. How It Works: コンテキストプルーニング (Context Pruning)",
+        "content": "過剰な情報（無関係なファイル、巨大なログ、冗長なコメント）をAIに与えると、最も重要な指示や境界条件が見落とされる「コンテキスト希釈（Context Dilution）」が起きます。関連性の低いエディタタブを閉じ、`#selection` や `#file` で必要な範囲のみを厳選して渡す（プルーニング）ことで、モデルの注意を集中させます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】1000行あるモノリシックなファイル内の特定のバリデーション関数（20行）だけをリファクタリングしたい場合。ファイル全体を渡すのではなく、「該当する20行を選択した上で `#selection` を使い、制約条件（Negative Prompting）を指定してチャットで修正を依頼する」のが最適なプラクティスです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・「何をしてはならないか（Negative Prompting）」を明示することもプルーニングの一環です（例:「外部ライブラリを新規追加しないこと」）。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 複雑なタスクを成功させるための基本方針は？ → タスクを小さく管理可能なステップに分解する（Task Decomposition）。\nQ2: 不要な情報を削ぎ落として注意力を集中させる技術は？ → コンテキストプルーニング（Context Pruning）。\nQ3: 無関係な情報を過剰に与えると発生する弊害は？ → コンテキスト希釈（重要指示の見落とし）。"
+      }
+    ],
+    "keyPoints": [
+      "大きな問題は小さな自己完結したサブタスクに分解して段階的に解決する。",
+      "無関係なタブを閉じ、`#selection` 等でコンテキストをプルーニング（剪定）する。",
+      "情報の過剰供給はコンテキスト希釈を招き、ハルシネーションの原因となる。"
+    ],
+    "commonMistakes": [
+      "全仕様書を一度にチャットに投げ込み、1回のプロンプトで全システムを作らせようとすること。",
+      "情報が多ければ多いほどAIの精度が上がると勘違いすること。"
+    ],
+    "examTips": [
+      "「タスクを小さなステップに分割する」「範囲を絞り込んでコンテキストを渡す」が正解です。",
+      "コンテキスト希釈（Context Dilution）の概念は高度な問題で問われます。"
+    ],
+    "glossaryIds": [
+      "g-task-decomposition",
+      "g-context-pruning",
+      "g-negative-prompting",
+      "g-context-window"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q08"
+    ],
+    "sourceIds": [
+      "prompt",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d5-generation-refactoring",
+    "title": "AI支援によるコード生成と安全なリファクタリング",
+    "slug": "ai-code-generation-and-safe-refactoring",
+    "domainId": "d5",
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "ボイラープレート削減、関数の責務分割、計算量最適化、および既存テストによる外部動作の保証を伴う安全なコードリファクタリング手法を学びます。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilotを用いてゼロからコードを生成する際のベストプラクティスと、既存コードの振る舞いを壊さずに品質・可読性・性能を高めるリファクタリング手順を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 安全なリファクタリングの原則",
+        "content": "リファクタリングとは「外部から見た振る舞いを変えずに、内部構造を改善すること」です。AIにリファクタリングを依頼する際は、必ず事前に単体テストが存在しパスしていることを確認します。リファクタリング実行後、同一のテストスイートがパスすることを確認して初めてリファクタリング完了と判断します。"
+      },
+      {
+        "heading": "3. How It Works: コード生成と最適化の指示",
+        "content": "複雑な多重ループに対して「この関数の時間計算量を O(N^2) から O(N) に改善して」「メモリ消費を削減するためストリーム処理に書き直して」と計算量（Big-O）を指定して最適化案を得ることができます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】1つの関数が200行を超え、認知複雑度が高くなっているレガシーな関数を改善したい場合。安全な手順は「1. 既存の振る舞いを検証する単体テストを作成・実行する → 2. Copilotに責務ごとの小関数への分割を依頼する → 3. テストを再実行して外部動作が維持されていることを確認する」です。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・AIがリファクタリング中に勝手に引数の型や戻り値の仕様を変更してしまうことがあるため、インターフェースの互換性を厳重にチェックします。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: リファクタリングを行う前後に必ず実行すべきものは？ → 単体テスト（動作保証）。\nQ2: リファクタリングの定義は？ → 外部の振る舞いを変えずに内部構造を改善すること。\nQ3: AIが定型的なゲッター/セッターやDTO変換を素早く生成する恩恵は？ → ボイラープレート削減。"
+      }
+    ],
+    "keyPoints": [
+      "リファクタリングは外部仕様を変更しないことが大前提。",
+      "リファクタリングの前後で単体テストを実行し、デグレード（先祖返り）がないことを確認する。",
+      "計算量やメモリ効率を明示して最適化を指示できる。"
+    ],
+    "commonMistakes": [
+      "テストがない状態でいきなりAIに大規模なリファクタリングを行わせること。",
+      "リファクタリングと新機能追加を同時にAIに指示して仕様を混乱させること。"
+    ],
+    "examTips": [
+      "「リファクタリング前にテストを準備する」「テストが通ることを確認する」が鉄則の正解です。",
+      "ボイラープレート削減による開発者の認知的負荷低減も重要な観点です。"
+    ],
+    "glossaryIds": [
+      "g-code-generation",
+      "g-code-refactoring",
+      "g-algorithm-optimization",
+      "g-boilerplate-reduction",
+      "g-unit-test-generation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d5-legacy-modernization",
+    "title": "レガシーコードのモダナイゼーションと解説・翻訳",
+    "slug": "legacy-code-modernization-explanation-translation",
+    "domainId": "d5",
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "古い言語バージョンや非推奨APIで書かれたレガシーコードの解説（/explain）、JSDocドキュメント生成（/doc）、言語間コード翻訳（Python→Go等）、および最新構文への安全な刷新手法を習得します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "技術的負債となったレガシーシステムの解読、ドキュメント作成、他言語への移植、および最新フレームワークへのモダナイゼーションをCopilotで安全に加速する手法を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 解読からモダン化へのステップ",
+        "content": "1. 解説 (`/explain`): 難解なビジネスロジックやレガシーAPIの意図を把握。\n2. ドキュメント生成 (`/doc`): JSDocやDocstringsで仕様をコード内に明文化。\n3. テスト作成 (`/tests`): 既存の動作を保護する防壁を構築。\n4. モダン化 / 翻訳: 最新構文（ES5→TypeScript、Python2→3、同期処理→async/await）へ書き換え。"
+      },
+      {
+        "heading": "3. How It Works: 言語間コード翻訳 (Code Translation)",
+        "content": "Pythonで書かれたプロトタイプを高性能なGoやRustに移植する際、単なる単語の置き換えではなく、言語固有のイディオム（エラーハンドリング、並行処理goroutine、型システム）を考慮した等価なコードをCopilotに生成させます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】10年前に書かれたコメントのないJavaScriptコードをTypeScriptに移行するプロジェクトを任された場合。推奨される手順は「まず `/explain` で関数の仕様を把握し、`/doc` で型とパラメータを文書化し、テストを作成してからTypeScriptの厳格な型定義を付与する」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・言語間で数値の丸め誤差や非同期の実行順序が微妙に異なる場合があるため、移行後の総合テストが必須です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 見慣れないコードの動作原理を自然言語で説明させるコマンドは？ → `/explain`。\nQ2: 標準的なドキュメントコメント（JSDoc等）を自動生成するコマンドは？ → `/doc`。\nQ3: レガシーコードを書き換える前に最優先で作成すべきものは？ → 既存動作を保証するテスト。"
+      }
+    ],
+    "keyPoints": [
+      "`/explain` によるコード理解と `/doc` による仕様ドキュメント化。",
+      "レガシー移行では「解説 → テスト作成 → モダン化書き換え」の順序を守る。",
+      "言語間コード翻訳では言語イディオムやエラーハンドリングの違いに注意する。"
+    ],
+    "commonMistakes": [
+      "ドキュメントもテストもない状態で一括して他言語へ自動変換し本番投入すること。",
+      "`/explain` の回答を盲信し、コード内の潜在バグまで仕様と誤認すること。"
+    ],
+    "examTips": [
+      "`/explain` と `/doc` のコマンド用途は基本問題として確実に問われます。",
+      "モダン化における「テスト先行」の重要性を説く選択肢を選びましょう。"
+    ],
+    "glossaryIds": [
+      "g-legacy-modernization",
+      "g-code-translation",
+      "g-code-explanation",
+      "g-doc-generation",
+      "g-slash-commands"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "chat",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d5-testing",
+    "title": "単体テスト・結合テスト自動生成とエッジケース洗い出し",
+    "slug": "testing-unit-integration-edge-cases",
+    "domainId": "d5",
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "`/tests` コマンドを活用した単体テスト・統合テストの自動作成、見落としがちな境界値・エッジケースの発見、およびモック・アサーションの品質担保を徹底します。",
+    "estimatedMinutes": 9,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "テスト自動化におけるCopilotの最大活用法（単体テスト、統合テスト、モック生成、エッジケース探索）と、AI生成テスト特有の注意点を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: エッジケースの能動的洗い出し",
+        "content": "開発者が「正常系（Happy Path）」のテストだけをAIに作らせて満足してしまうのはアンチパターンです。プロンプトで「null、未定義、空文字、負数、極端に大きな数値、不正なフォーマットなどのエッジケースや境界値を洗い出し、それらを網羅するテストを書いてください」と指示することで、本番障害を未然に防ぐ堅牢なテストスイートを構築できます。"
+      },
+      {
+        "heading": "3. How It Works: `/tests` コマンドとモック生成",
+        "content": "エディタ内で対象コードを選択して `/tests` を実行すると、使用しているテストフレームワーク（Jest, Vitest, pytest, JUnit等）を自動認識してテストコードを出力します。外部APIやデータベースへのアクセスがある場合は、`jest.mock` などのモックオブジェクトも併せて生成されます。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】決済処理関数のテストカバレッジを向上させたい場合。適切なプロンプトは「この関数の単体テストを作成し、特に通貨計算の丸め誤差、ゼロ除算、ネットワークタイムアウト時の例外処理に関するエッジケーステストを含めてください」と境界条件を具体的に指定することです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations (最重要)",
+        "content": "【試験最頻出の落とし穴】AIが生成したテストコードの「アサーション（期待値）」自体がハルシネーションを起こしている可能性があります。テストを実行してパスしたとしても、AIがバグのある実装に合わせて誤った期待値を設定していた場合、バグを見逃すことになります。期待値の妥当性は人間が必ず確認します。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 単体テストを生成するスラッシュコマンドは？ → `/tests`。\nQ2: 正常系だけでなく何を意識してテストを生成させるべきか？ → エッジケース（境界値、異常系）。\nQ3: AI生成テストで最も注意して人間が検証すべき箇所は？ → アサーションの期待値（ハルシネーションの有無）。"
+      }
+    ],
+    "keyPoints": [
+      "`/tests` でフレームワークに沿った単体テスト骨格とモックを一括生成できる。",
+      "エッジケース（境界値、異常系、null等）のテスト生成を明示的に指示する。",
+      "テストのアサーション（期待値）が実装のバグを肯定していないか人間が検証する。"
+    ],
+    "commonMistakes": [
+      "AI生成テストがグリーン（成功）になったからロジックが正しいと盲信すること。",
+      "正常系のテストだけを作ってカバレッジ数値だけで満足すること。"
+    ],
+    "examTips": [
+      "「エッジケースや境界値を指示してテストを生成する」が頻出正解パターンです。",
+      "「テストの期待値自体を人間が検証する」点も必ず問われます。"
+    ],
+    "glossaryIds": [
+      "g-unit-test-generation",
+      "g-integration-test-generation",
+      "g-edge-case-discovery",
+      "g-test-assertions-mocking",
+      "g-slash-commands"
+    ],
+    "comparisonIds": [
+      "cmp-unit-vs-integration-tests"
+    ],
+    "questionIds": [
+      "q09",
+      "q10"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d5-security-remediation",
+    "title": "セキュリティ脆弱性の修正（/fix）と静的解析ツールの統合",
+    "slug": "security-vulnerability-remediation-fix-static-analysis",
+    "domainId": "d5",
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "CodeQL等の静的解析やシークレットスキャンで検知されたセキュリティ脆弱性（SQLi、XSS等）を `/fix` コマンドで安全に修正し、再スキャンで検証するサイクルを学びます。",
+    "estimatedMinutes": 8,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "脆弱性を「見つける（静的解析）」から「AIで安全に直す（`/fix`）」、そして「修正を確認する（再スキャン）」という一連のセキュア開発ライフサイクルを習得します。"
+      },
+      {
+        "heading": "2. Core Concepts: `/fix` コマンドによる脆弱性修正",
+        "content": "エディタのエラー一覧（Problemsパネル）でセキュリティ警告が出ている箇所や、CodeQLが指摘したコードを選択し、`/fix` を実行するかチャットに指摘内容を引用して指示します。Copilotは脆弱性の原因を説明し、安全な代替実装（例: 生のSQL連結をプリペアドステートメントへ置換）を提案します。"
+      },
+      {
+        "heading": "3. How It Works: シークレット漏洩の防止",
+        "content": "AIコード生成時、APIキーや接続文字列がハードコードされそうになる場合があります。開発者は環境変数（`.env`）から読み込む構造に修正し、GitHub Secret ScanningとPush Protectionを有効にして、万が一の漏洩コミットを即座にブロックします。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】CIのCodeQLスキャンで「CWE-89: SQL Injection」のアラートが検出された場合。適切な対応は「該当コードを選択して `/fix` を実行し、パラメータ化されたクエリに修正させた上で、単体テストとセキュリティスキャンを再実行してアラートが解消されたことを確認する」ことです。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・AIの修正案によって別の脆弱性や仕様破壊が起きていないか、静的解析ツールの再実行による客観的検証が不可欠です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: コードのエラーや脆弱性の修正提案を依頼するスラッシュコマンドは？ → `/fix`。\nQ2: SQLインジェクションを防ぐための標準的な修正パターンは？ → パラメータ化クエリ（プリペアドステートメント）。\nQ3: AI修正後に実施すべきことは？ → 単体テストとセキュリティスキャンの再実行。"
+      }
+    ],
+    "keyPoints": [
+      "`/fix` コマンドで静的解析エラーや脆弱性の安全な代替コードを生成できる。",
+      "シークレットは環境変数で管理し、Secret ScanningとPush Protectionで防護する。",
+      "修正後は必ず静的解析ツールを再実行して脆弱性が完全に解消されたか確認する。"
+    ],
+    "commonMistakes": [
+      "`/fix` で修正したからといって再スキャンを行わずに安心してしまうこと。",
+      "APIキーなどの認証情報を「テスト用だから」とコード内に平文でハードコードすること。"
+    ],
+    "examTips": [
+      "「`/fix` で修正し、再度静的解析スキャンで確認する」という一連のサイクルが問われます。",
+      "シークレット保護（Secret leak prevention）のベストプラクティスも頻出です。"
+    ],
+    "glossaryIds": [
+      "g-vulnerability-remediation",
+      "g-static-analysis-copilot",
+      "g-perf-bottlenecks",
+      "g-secret-leak-prevention",
+      "g-slash-commands"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "tests",
+      "chat",
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d6-content-exclusion-setup",
+    "title": "Content Exclusionの基本概念とリポジトリ・組織設定",
+    "slug": "content-exclusion-setup-and-syntax",
+    "domainId": "d6",
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "機密ファイルや特定ディレクトリをCopilotの補完・参照対象から遮断するContent Exclusionの動作原理、組織・リポジトリでの設定構文、ワイルドカード規則を体系化します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "企業の知財や機密データを保護する最重要機能「Content Exclusion（コンテンツ除外）」の設定レベル、パス構文、および継承ルールを学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: Content Exclusionとは",
+        "content": "指定したファイルパスやリポジトリをCopilotの処理対象から除外する機能です。除外対象に指定されたファイルを開いている間は、エディタ上でのインライン補完（Ghost Text）が無効化され、Copilot Chatで明示的に参照しようとしてもアクセスが拒否されます。"
+      },
+      {
+        "heading": "3. How It Works: 組織レベル vs リポジトリレベル",
+        "content": "・組織設定 (Organization-level): `Settings > Copilot > Content exclusion` で設定。傘下のリポジトリすべて、または特定リポジトリ群に対して一括適用可能。\n・リポジトリ設定 (Repository-level): 個別リポジトリの `Settings > Copilot > Content exclusion` で設定。組織設定をリポジトリ側で解除することはできません（上位優先の原則）。\n・構文規則: `*`（同一階層マッチ）、`**`（複数階層の再帰的マッチ、例: `**/secrets/**`）。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】組織内の全リポジトリにおいて、環境変数設定ファイル（`.env` や `.env.production`）をCopilotの補完対象から除外したい場合。組織管理者は組織設定のContent exclusionに `**/.env*` というパターンを登録して一括強制します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・除外パスの指定において大文字小文字や先頭のスラッシュの扱いに誤りがあると意図通り除外されないため、正確な構文検証が必要です。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 機密ファイルをCopilotの参照から遮断する機能は？ → Content Exclusion。\nQ2: リポジトリ管理者は組織レベルで設定された除外ルールを解除できるか？ → No（継承の原則）。\nQ3: ディレクトリ階層を越えて再帰的にマッチさせるワイルドカードは？ → `**`。"
+      }
+    ],
+    "keyPoints": [
+      "Content Exclusionは指定パスのファイルに対する補完とチャット参照を遮断する。",
+      "組織レベルで一括設定でき、下位のリポジトリで組織の除外ルールを解除することはできない。",
+      "ワイルドカード `**` を用いてサブディレクトリを含めた再帰的除外が可能。"
+    ],
+    "commonMistakes": [
+      "リポジトリ管理者が組織の除外設定を勝手に解除できると思い込むこと。",
+      "`.gitignore` に書いておけば自動でContent Exclusionも有効になると勘違いすること（別機能）。"
+    ],
+    "examTips": [
+      "「自社の機密コードをCopilotに送信させない」機能はContent Exclusionです。",
+      "階層継承（Orgで設定した除外はRepoで解除不能）が頻出します。"
+    ],
+    "glossaryIds": [
+      "g-content-exclusion",
+      "g-repo-content-exclusion",
+      "g-org-content-exclusion",
+      "g-exclusion-syntax",
+      "g-policy-inheritance"
+    ],
+    "comparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "questionIds": [
+      "q11"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "policies",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d6-ownership-privacy",
+    "title": "コード出力の所有権とエンタープライズデータ保護保証",
+    "slug": "code-output-ownership-and-enterprise-privacy",
+    "domainId": "d6",
+    "objectiveIds": [
+      "d6o1"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "GitHub Copilotが生成したコードの所有権・知的財産権が顧客に帰属すること（GitHubは権利主張しない）、およびSOC 2・ISO等のエンタープライズコンプライアンス保証を解説します。",
+    "estimatedMinutes": 7,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "Copilotが生成したコードの権利帰属（Output Ownership）と、企業の法務・コンプライアンス基準を満たすプライバシー保護保証体系を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 生成コードの所有権帰属",
+        "content": "GitHubの利用規約（Terms of Service）において、GitHub Copilotが生成したコードの所有権および知的財産権は、すべて利用顧客に帰属することが明記されています。GitHubが生成コードの著作権を主張したり、ライセンス使用料を請求することは一切ありません。"
+      },
+      {
+        "heading": "3. How It Works: エンタープライズプライバシーの柱",
+        "content": "1. ゼロデータ保持 (Zero Retention): 推論後の即時メモリ破棄。\n2. モデル学習不使用: 顧客のコードスニペットを基礎モデルの再学習に使用しない。\n3. セキュリティ認証: SOC 2 Type 2、ISO/IEC 27001などの国際的な第三者認証を取得。\n4. 知財保護 (Copyright Commitment): 一定の利用条件を満たす商用顧客に対し、著作権侵害訴訟が発生した際の法的防御・補償を提供。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】企業の法務部門から「Copilotで生成したコードを自社の商用プロプライエタリ製品に組み込んだ場合、GitHubに著作権を主張されたりオープンソース化を義務付けられることはないか」と質問された場合。「GitHubは生成コードに対する所有権を主張せず、権利はすべて顧客に帰属するため商用利用可能である」と回答します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・権利は顧客に帰属しますが、生成されたコードが既存の第三者の権利を侵害していないか検証する最終責任も顧客側が負います。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: Copilotが生成したコードの所有権・著作権は誰に帰属するか？ → 顧客（ユーザー・企業）。\nQ2: GitHubは生成コードに対してライセンス料や所有権を主張するか？ → No。\nQ3: 生成コードが他者の権利を侵害していないか確認する責任は誰にあるか？ → 顧客（利用者）。"
+      }
+    ],
+    "keyPoints": [
+      "GitHubは生成コードに対する所有権や著作権を一切主張しない（顧客に帰属）。",
+      "商用利用可能であり、自社のプロプライエタリ製品に組み込むことができる。",
+      "コードの合法性と第三者知財非侵害の確認責任は利用者が負う。"
+    ],
+    "commonMistakes": [
+      "Copilotのコードを使うと自動的にGPLライセンスになってしまうという誤解。",
+      "GitHubが生成コードの共同著作権者になるという誤解。"
+    ],
+    "examTips": [
+      "「Output Ownershipは顧客に帰属する」は法務関連問題の基本正解です。",
+      "責任と権利の所在（権利は顧客、検証責任も顧客）を押さえましょう。"
+    ],
+    "glossaryIds": [
+      "g-output-ownership",
+      "g-enterprise-data-privacy",
+      "g-ip-copyright",
+      "g-code-retention-policy"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d6-public-code-matching",
+    "title": "Public Code Matching / Filtering の仕組みとログ追跡",
+    "slug": "public-code-matching-and-reference-log",
+    "domainId": "d6",
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "公開リポジトリのコードと約150文字以上一致する提案を検出するPublic Code Matchingの動作、Block/Allowポリシーの選定、および一致ログ（Reference Log）によるライセンス追跡を習得します。",
+    "estimatedMinutes": 8,
+    "difficulty": "intermediate",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "オープンソースコードとの一致を検知してライセンス汚染を防ぐ「Public Code Matching（公開コードフィルタリング）」の判定基準、ポリシー設定、およびContent Exclusionとの明確な違いを学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 約150文字の一致判定",
+        "content": "GitHub Copilotが生成したコード提案が、GitHub上の公開リポジトリに存在するコードと約150文字（tokens）以上一致するかどうかを後処理パイプラインで自動照合します。\n・Block（推奨・安全）: 一致が検知された提案をエディタに表示せず即時遮断する。\n・Allow: 一致する提案の表示を許可するが、参照ログ（Reference Log）に一致元のリポジトリURLやライセンス情報を出力する。"
+      },
+      {
+        "heading": "3. How It Works: Content Exclusionとの決定的な相違",
+        "content": "・Content Exclusion: 「自社の機密コードをCopilotに読ませない・送信させない」ための内から外への防護壁。\n・Public Code Matching: 「外部の公開OSSコードを自社コードベースに混入させない」ための外から内への防護壁。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】企業でOSSライセンス（GPL等）の混入によるソースコード開示義務リスクをゼロにしたい場合。組織管理者は組織ポリシーで「Suggestions matching public code」を「Block」に設定します。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・Block設定にした場合、一般的なアルゴリズムや定型的なボイラープレートであっても、公開コードと一致すると提案が出なくなるため、提案頻度がわずかに下がるトレードオフがあります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: 公開コード一致判定の基準となる文字数はおよそ何文字？ → 約150文字（tokens）。\nQ2: ライセンス混入を完全に防ぐためのポリシー設定値は？ → Block。\nQ3: 自社ファイルをAIに送らない機能はContent Exclusion、公開コードの流入を防ぐ機能は？ → Public Code Matching。"
+      }
+    ],
+    "keyPoints": [
+      "約150文字以上の公開コード一致をリアルタイム照合する。",
+      "Block設定で提案を遮断、Allow設定で一致元ライセンス等の参照情報を提示。",
+      "Content Exclusion（自社コードの送信防止）とPublic Code Matching（他者コードの流入防止）の違いを区別する。"
+    ],
+    "commonMistakes": [
+      "Content ExclusionとPublic Code Matchingの役割を逆に覚えてしまうこと。",
+      "短すぎる数文字の変数名や構文までPublic Code Matchで弾かれると思い込むこと。"
+    ],
+    "examTips": [
+      "「約150文字」「Blockポリシー」「ライセンス混入防止」がキーワードです。",
+      "両機能の方向性の違い（送信防止 vs 流入防止）は試験頻出です。"
+    ],
+    "glossaryIds": [
+      "g-public-code-matching",
+      "g-public-code-log",
+      "g-content-exclusion",
+      "g-org-policies",
+      "g-compliance-auditability"
+    ],
+    "comparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "policies",
+      "privacy",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "lesson-d6-troubleshooting-limits",
+    "title": "Content Exclusionの反映遅延トラブルシューティングと非対応機能",
+    "slug": "content-exclusion-troubleshooting-limitations",
+    "domainId": "d6",
+    "objectiveIds": [
+      "d6o2"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "summary": "Content Exclusion設定変更時の最大30分の伝播遅延トラブルシューティング手順（IDE再読み込み・ステータスバー確認）と、CLIや一部Agent機能における非対応制限を徹底解説します。",
+    "estimatedMinutes": 9,
+    "difficulty": "advanced",
+    "sections": [
+      {
+        "heading": "1. このLessonで分かること",
+        "content": "除外設定が反映されない場合のトラブルシューティング公式手順と、試験で最も狙われる「Content Exclusionが効かない環境」の盲点を学びます。"
+      },
+      {
+        "heading": "2. Core Concepts: 最大30分の伝播遅延と対処法",
+        "content": "GitHub.comの管理画面でContent Exclusionのパスルールを保存しても、各開発者のIDEクライアントに設定が反映されるまで最大30分程度の遅延が発生することがあります。\n公式トラブルシューティング手順:\n1. 最大30分待機する。\n2. VS Codeで `Developer: Reload Window` を実行し、IDEウィンドウを再読み込みする。\n3. ステータスバーのCopilotアイコンに対角線（斜線）が入り、ホバーで無効化メッセージが出ることを確認する。"
+      },
+      {
+        "heading": "3. How It Works: 【重大制約】Content Exclusionが効かない機能",
+        "content": "公式ドキュメントに明記されている重大な制限事項:\n・GitHub Copilot in the CLI: Content Exclusionは一切サポートされていません。\n・Cloud agent および IDE Chatの一部自律Agentモード: 除外が適用されない場合があります。\nWeb上のPRやIDEの通常のインライン補完・基本チャットでは除外が適用されますが、CLI環境等では除外されないため、多層防御の運用規律が必要です。"
+      },
+      {
+        "heading": "4. When to Use & 試験向けシナリオ",
+        "content": "【シナリオ】管理者が `secrets/*` をContent Exclusionに設定した直後に、開発者から「まだ `secrets/config.json` で補完が出てしまう」と報告があった場合の初動対応。「設定反映に最大30分かかる場合があるため、VS Codeのウィンドウを再読み込み（Reload Window）してステータスバーアイコンの変化を確認するよう指示する」が正解です。"
+      },
+      {
+        "heading": "5. Limitations & Considerations",
+        "content": "・「Content Exclusionを設定したからどんな開発環境・ツールでも完全に安心」と思い込むのは危険です。CLI版の利用ポリシー制限などを併用する必要があります。"
+      },
+      {
+        "heading": "6. 30秒チェック（Mini Review）",
+        "content": "Q1: Content Exclusion設定変更後、IDEに反映されるまでの最大遅延時間は？ → 約30分。\nQ2: 反映を即座に確認・更新するためのIDE操作は？ → ウィンドウの再読み込み（Reload Window）。\nQ3: Content Exclusionがサポートされていない代表的なツールは？ → GitHub Copilot in the CLI。"
+      }
+    ],
+    "keyPoints": [
+      "設定変更からクライアントへの反映には最大30分の遅延が発生しうる。",
+      "即時反映の確認にはIDEの再読み込み（Reload Window）とステータスバー確認が有効。",
+      "GitHub Copilot in the CLIはContent Exclusionをサポートしていない（最重要制約）。"
+    ],
+    "commonMistakes": [
+      "設定保存の瞬間に全世界のIDEで即時反映されると思い込み、設定失敗と早とちりすること。",
+      "CLI環境でもファイル除外が自動で効いていると過信すること。"
+    ],
+    "examTips": [
+      "「最大30分の反映遅延」「Reload Window」はトラブルシューティング問題の定番です。",
+      "「CLIはContent Exclusion非対応」はシラバスの最重要注意点です。"
+    ],
+    "glossaryIds": [
+      "g-exclusion-propagation",
+      "g-client-exclusion-check",
+      "g-exclusion-limitations",
+      "g-status-menu",
+      "g-content-exclusion",
+      "g-copilot-cli"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q11",
+      "q12"
+    ],
+    "sourceIds": [
+      "exclusion",
+      "cli",
+      "guide"
+    ],
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  }
+]
