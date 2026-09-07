@@ -196,8 +196,11 @@ export default function App() {
   const activeMock = !!session && !session.completed;
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    document.querySelector<HTMLElement>('#main h1')?.focus({ preventScroll: true });
-  }, [tab, q?.id, practiceSummary?.id]);
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+    document.querySelector<HTMLElement>('#main h1, #main h2')?.focus({ preventScroll: true });
+  }, [tab, q?.id, practiceSummary?.id, lessonId, glossaryTermId, comparisonId, studyTab]);
   const answered = attempts.length,
     correct = attempts.filter((a) => a.correct).length;
   const weak = objectives
@@ -1434,7 +1437,10 @@ export default function App() {
                                 <article className="panel glossary-detail">
                                   <button
                                     className="textbutton"
-                                    onClick={() => setGlossaryTermId(null)}
+                                    onClick={() => {
+                                      setGlossaryTermId(null);
+                                      window.scrollTo({ top: 0, behavior: 'instant' });
+                                    }}
                                   >
                                     ← 用語一覧
                                   </button>
@@ -1493,7 +1499,10 @@ export default function App() {
                                             <button
                                               className="related-link"
                                               key={rid}
-                                              onClick={() => setGlossaryTermId(rid)}
+                                              onClick={() => {
+                                                setGlossaryTermId(rid);
+                                                window.scrollTo({ top: 0, behavior: 'instant' });
+                                              }}
                                             >
                                               <Library size={14} />
                                               {rt.term}
@@ -1625,7 +1634,10 @@ export default function App() {
                                   <button
                                     className="glossary-card"
                                     key={g.id}
-                                    onClick={() => setGlossaryTermId(g.id)}
+                                    onClick={() => {
+                                      setGlossaryTermId(g.id);
+                                      window.scrollTo({ top: 0, behavior: 'instant' });
+                                    }}
                                   >
                                     <div className="term-header">
                                       <h3>{g.term}</h3>
@@ -1654,7 +1666,10 @@ export default function App() {
                                 <article className="panel comparison-detail">
                                   <button
                                     className="textbutton"
-                                    onClick={() => setComparisonId(null)}
+                                    onClick={() => {
+                                      setComparisonId(null);
+                                      window.scrollTo({ top: 0, behavior: 'instant' });
+                                    }}
                                   >
                                     ← 比較一覧
                                   </button>
@@ -1780,7 +1795,10 @@ export default function App() {
                                   <button
                                     className="comparison-card"
                                     key={c.id}
-                                    onClick={() => setComparisonId(c.id)}
+                                    onClick={() => {
+                                      setComparisonId(c.id);
+                                      window.scrollTo({ top: 0, behavior: 'instant' });
+                                    }}
                                   >
                                     <span className="vs-badge">
                                       <GitCompareArrows size={15} /> COMPARISON
