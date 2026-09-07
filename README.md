@@ -34,21 +34,41 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 - **公式出典台帳 19件**:
   - Microsoft LearnおよびGitHub Docsの公式ドキュメントURL、確認日、関連Objectiveを一元管理。
 
-### 3. 多彩な学習・演習モード
+### 3. 多彩な学習・演習モード & 3段階難易度モデル
 
+初期Verified問題集**200問**を、公式シラバスおよび出題意図に基づき明確な3段階難易度で体系化：
+
+- **3段階難易度モデル（Difficulty Architecture）**:
+  - **Difficulty 1: Foundation（約20% / 44問）**: 用語・基本概念の確認。1つの知識を直接問う単一機能識別。
+  - **Difficulty 2: Applied（約40% / 79問）**: 2〜3文シナリオ。類似機能の使い分け・実務場面からの適切な機能選択。
+  - **Difficulty 3: Exam（約40% / 77問）**: 2〜5文の実務シナリオ。複数要件・制約からの条件抽出。BEST/MOST判断、もっともらしいdistractor設計。
+- **10組の Scenario Sets（共通実務シナリオ問題）**:
+  - 1つの包括的な実務ケースから複数角度で出題する共通シナリオ問題群。スマートフォンでも読み返しやすいアコーディオンパネルを装備。
+- **Key Clues Highlighting（回答後の判断材料表示）**:
+  - 本番シナリオ問題において、問題文のどの要件・制約が正解を決定づけたかの着眼点を回答後解説にハイライト表示。
 - **Dashboard（AI学習コックピット）**:
   - **Exam Readiness ヒーローカード**: 合格目標ライン（700点 / 70%）への到達度を示す知的なテクニカルリングプログレス。
+  - **Recommended Practice**: Exam Readinessの習熟度に応じて「基礎10問」「バランス10問」「本番レベル20問」を動的レコメンド。
   - **Domain Mastery**: 6分野の出題重み比率と習熟度バーを即座に可視化。
-  - **Weak Point Focus**: 苦手なObjectiveをシャープにサジェスト。
 - **Practice（問題演習）**:
-  - 出題数: 5 / 10 / 25 / 50問から選択（CountPicker）。
+  - 出題数: 5 / 10 / 20 / 30 / 50問から選択（CountPicker）。
   - 出題モード: ランダム出題 / シラバス重み準拠 / 苦手分野集中（Weak Points）。
-  - **AI INSIGHT 解説**: 「Why this is correct（正解の根拠）」「選択肢ごとの詳細分析」を構造化して表示。
+  - **難易度バランス選択**: バランス（標準） / 基礎中心 / 本番レベル。
+  - **AI INSIGHT 解説**: 「Why this is correct（正解の根拠）」「選択肢ごとの詳細分析」「Key Clues」を構造化して表示。
+  - **Difficulty Analytics**: セッション終了時にFoundation / Applied / Examごとの難易度別正答率を表示。
 - **Mock（模擬試験）**:
-  - 50問（または5/10/25問）の本番想定模試。
+  - 50問（または5/10/20/30問）の本番想定模試。
+  - Verified固定、Syllabus Weighted、**Difficulty 2 / 3（Exam中心）**の本格的試験負荷を再現。
   - 試験時間カウントダウンタイマー（問題数×90秒）、中断保存・再開、終了後の総合レポート。
 - **Study（教材・用語・比較）**:
   - レッスン、用語集、比較ガイドの3大サブタブと、全体を横断検索できる**Global Search**を搭載。
+  - **Lesson Navigation UX Upgrade（連続学習ナビゲーション）**:
+    - **Lesson Footer Navigation**: 教材末尾から1タップで次の教材へ進めるナビゲーション。最初の教材では「前へ」、最後の教材では「次へ」を自動非表示。
+    - **シラバス準拠の順序保証**: `Domain order` → `Objective order` → `Lesson order` に基づき整然と前進。Domain境界では「次のDomain」バッジを表示。
+    - **Progress Context**: 現在のDomain内進捗（`Lesson 1 / 4`）と全シラバス進捗（`全 1 / 28 教材`）を常時表示。
+    - **Completion Tracking**: 末尾スクロール到達、「次の教材」押下、または完了トグルで読了状態をDexie DBに永続保存。
+    - **Resume Learning（続きから学習）**: DashboardおよびStudy一覧画面上部に「続きから学習」カードを常設。直前に完了した教材の次の未完了教材へ1タップで復帰。
+    - **アクセシビリティ & キーボード**: `Alt + →` で次の教材、`Alt + ←` で前の教材へ移動可能。
 - **Review（復習ノート）**:
   - 過去の回答履歴、ブックマークした問題、要復習項目の確認。
 
@@ -96,6 +116,8 @@ app/
   components/
     practice-setup.tsx           問題数ピッカー（CountPicker）と出題設定
     practice-result.tsx          演習結果サマリー、改善Objective分析、AI Insight
+    lesson-footer-nav.tsx        教材末尾ナビゲーション（前後移動、進捗文脈、読了トグル）
+    resume-learning-card.tsx     続きから学習（Resume Learning）ダッシュボードカード
   api/
     tutor/route.ts               AIチューター用サーバーエンドポイント
 content/gh300/2026-08-07/
@@ -114,8 +136,9 @@ lib/
   knowledge.ts                   Knowledge Baseの整合性検証（双方向リンク監査等）
   learning.ts                    採点ロジック、Readiness計算、Streak計測
   selection.ts                   DB非依存のQuestion Selection Engine
+  lesson-nav.ts                  教材順序正規化、ナビゲーション文脈、レジューム判定
   practice-session.ts            セッション管理とObjective改善集計
-  db.ts                          Dexie (IndexedDB) ローカルファースト永続化
+  db.ts                          Dexie (IndexedDB) ローカルファースト永続化（読了状態含む）
 public/
   manifest.webmanifest           PWAマニフェスト
   sw.js                          Service Worker（オフラインキャッシュ対応）

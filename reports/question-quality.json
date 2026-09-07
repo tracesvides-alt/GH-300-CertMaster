@@ -1,0 +1,715 @@
+{
+  "rubricVersion": 1,
+  "total": 200,
+  "groups": {
+    "beginner": {
+      "total": 44,
+      "single": {
+        "questions": 44,
+        "counts": [
+          11,
+          11,
+          11,
+          11
+        ],
+        "percentages": [
+          25,
+          25,
+          25,
+          25
+        ]
+      },
+      "multiple": {
+        "questions": 0,
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "percentages": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "byDomain": {
+        "d1": {
+          "single": {
+            "questions": 6,
+            "counts": [
+              2,
+              1,
+              1,
+              2
+            ],
+            "percentages": [
+              33.33333333333333,
+              16.666666666666664,
+              16.666666666666664,
+              33.33333333333333
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d2": {
+          "single": {
+            "questions": 12,
+            "counts": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "percentages": [
+              25,
+              25,
+              25,
+              25
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d3": {
+          "single": {
+            "questions": 7,
+            "counts": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "percentages": [
+              14.285714285714285,
+              28.57142857142857,
+              28.57142857142857,
+              28.57142857142857
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d4": {
+          "single": {
+            "questions": 6,
+            "counts": [
+              1,
+              2,
+              2,
+              1
+            ],
+            "percentages": [
+              16.666666666666664,
+              33.33333333333333,
+              33.33333333333333,
+              16.666666666666664
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d5": {
+          "single": {
+            "questions": 6,
+            "counts": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "percentages": [
+              33.33333333333333,
+              16.666666666666664,
+              33.33333333333333,
+              16.666666666666664
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d6": {
+          "single": {
+            "questions": 7,
+            "counts": [
+              2,
+              2,
+              1,
+              2
+            ],
+            "percentages": [
+              28.57142857142857,
+              28.57142857142857,
+              14.285714285714285,
+              28.57142857142857
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "weakDistractorQuestions": 0,
+      "potentialMultipleAnswer": 0,
+      "choiceLengthBias": 0,
+      "questionsWithTwoStrongDistractors": 0,
+      "twoStrongDistractorPercentage": 0,
+      "missingOrStaleReviews": 0
+    },
+    "intermediate": {
+      "total": 79,
+      "single": {
+        "questions": 79,
+        "counts": [
+          20,
+          19,
+          20,
+          20
+        ],
+        "percentages": [
+          25.31645569620253,
+          24.050632911392405,
+          25.31645569620253,
+          25.31645569620253
+        ]
+      },
+      "multiple": {
+        "questions": 0,
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "percentages": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "byDomain": {
+        "d1": {
+          "single": {
+            "questions": 11,
+            "counts": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "percentages": [
+              18.181818181818183,
+              27.27272727272727,
+              27.27272727272727,
+              27.27272727272727
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d2": {
+          "single": {
+            "questions": 23,
+            "counts": [
+              6,
+              6,
+              5,
+              6
+            ],
+            "percentages": [
+              26.08695652173913,
+              26.08695652173913,
+              21.73913043478261,
+              26.08695652173913
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d3": {
+          "single": {
+            "questions": 11,
+            "counts": [
+              3,
+              2,
+              3,
+              3
+            ],
+            "percentages": [
+              27.27272727272727,
+              18.181818181818183,
+              27.27272727272727,
+              27.27272727272727
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d4": {
+          "single": {
+            "questions": 12,
+            "counts": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "percentages": [
+              25,
+              25,
+              25,
+              25
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d5": {
+          "single": {
+            "questions": 12,
+            "counts": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "percentages": [
+              25,
+              25,
+              25,
+              25
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d6": {
+          "single": {
+            "questions": 10,
+            "counts": [
+              3,
+              2,
+              3,
+              2
+            ],
+            "percentages": [
+              30,
+              20,
+              30,
+              20
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "weakDistractorQuestions": 0,
+      "potentialMultipleAnswer": 0,
+      "choiceLengthBias": 0,
+      "questionsWithTwoStrongDistractors": 79,
+      "twoStrongDistractorPercentage": 100,
+      "missingOrStaleReviews": 0
+    },
+    "advanced": {
+      "total": 77,
+      "single": {
+        "questions": 77,
+        "counts": [
+          19,
+          19,
+          20,
+          19
+        ],
+        "percentages": [
+          24.675324675324674,
+          24.675324675324674,
+          25.97402597402597,
+          24.675324675324674
+        ]
+      },
+      "multiple": {
+        "questions": 0,
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "percentages": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "byDomain": {
+        "d1": {
+          "single": {
+            "questions": 13,
+            "counts": [
+              4,
+              3,
+              3,
+              3
+            ],
+            "percentages": [
+              30.76923076923077,
+              23.076923076923077,
+              23.076923076923077,
+              23.076923076923077
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d2": {
+          "single": {
+            "questions": 27,
+            "counts": [
+              6,
+              7,
+              7,
+              7
+            ],
+            "percentages": [
+              22.22222222222222,
+              25.925925925925924,
+              25.925925925925924,
+              25.925925925925924
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d3": {
+          "single": {
+            "questions": 8,
+            "counts": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "percentages": [
+              25,
+              25,
+              25,
+              25
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d4": {
+          "single": {
+            "questions": 8,
+            "counts": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "percentages": [
+              25,
+              25,
+              25,
+              25
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d5": {
+          "single": {
+            "questions": 10,
+            "counts": [
+              2,
+              2,
+              3,
+              3
+            ],
+            "percentages": [
+              20,
+              20,
+              30,
+              30
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d6": {
+          "single": {
+            "questions": 11,
+            "counts": [
+              3,
+              3,
+              3,
+              2
+            ],
+            "percentages": [
+              27.27272727272727,
+              27.27272727272727,
+              27.27272727272727,
+              18.181818181818183
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "weakDistractorQuestions": 0,
+      "potentialMultipleAnswer": 0,
+      "choiceLengthBias": 0,
+      "questionsWithTwoStrongDistractors": 77,
+      "twoStrongDistractorPercentage": 100,
+      "missingOrStaleReviews": 0
+    }
+  },
+  "issues": [
+    {
+      "id": "advanced/d1",
+      "severity": "warning",
+      "rule": "answer-distribution",
+      "detail": "A: 30.8% (4/13)"
+    }
+  ],
+  "passed": true,
+  "note": "Plausibility is an editorial score, not measured learner difficulty. Multiple-select is reported separately with correct occurrences as denominator."
+}

@@ -47,7 +47,12 @@ import {
   type GlossaryFilter,
   type SearchResult,
 } from '@/lib/content';
-import { db, saveGenerated } from '@/lib/db';
+import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted } from '@/lib/db';
+import { getLessonNav } from '@/lib/lesson-nav';
+import { LessonFooterNav } from './components/lesson-footer-nav';
+import { ResumeLearningCard } from './components/resume-learning-card';
+import { choiceLabel, answerLabels } from '@/lib/choice-labels';
+import { withTimeout } from '@/lib/with-timeout';
 import { mastery, score, streak, type Attempt } from '@/lib/learning';
 import PracticeSetup, { CountPicker } from './components/practice-setup';
 import PracticeResult from './components/practice-result';
@@ -115,8 +120,7 @@ export default function App() {
     useLiveQuery(() => db.practiceRuns.filter((r) => r.completedAt !== null).toArray(), []) ?? [];
   useEffect(() => {
     let mounted = true;
-    db.settings
-      .get('practice')
+    withTimeout(db.settings.get('practice'))
       .then((saved) => {
         if (!mounted) return;
         const result = selectionOptionsSchema.safeParse(saved?.value ?? {});
@@ -140,6 +144,52 @@ export default function App() {
   const bookmarks = useLiveQuery(() => db.bookmarks.toArray(), []) ?? [];
   const generated = useLiveQuery(() => db.generated.toArray(), []) ?? [];
   const sessions = useLiveQuery(() => db.sessions.toArray(), []) ?? [];
+  const lessonCompletions = useLiveQuery(() => db.lessonCompletions.toArray(), []) ?? [];
+  const completedLessonIds = lessonCompletions.map((c) => c.id);
+
+  const footerNavRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!lessonId || !footerNavRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          void markLessonCompleted(lessonId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(footerNavRef.current);
+    return () => observer.disconnect();
+  }, [lessonId]);
+
+  useEffect(() => {
+    if (!lessonId) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
+        return;
+      }
+      if (e.altKey && e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nav = getLessonNav(lessonId);
+        if (nav?.next) {
+          void markLessonCompleted(lessonId);
+          setLessonId(nav.next.id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } else if (e.altKey && e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const nav = getLessonNav(lessonId);
+        if (nav?.prev) {
+          setLessonId(nav.prev.id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lessonId]);
+
   const m = mastery(attempts),
     bank = [...questions, ...generated],
     q = session && !session.completed ? session.questions[session.index] : queue[index];
@@ -243,10 +293,11 @@ export default function App() {
     if (lock.current) return;
     lock.current = true;
     setBusy(true);
+    setNotice('');
     try {
-      const history = await db.attempts.toArray(),
-        saved = await db.generated.toArray(),
-        marks = await db.bookmarks.toArray();
+      const [history, saved, marks] = await withTimeout(Promise.all([
+        db.attempts.toArray(), db.generated.toArray(), db.bookmarks.toArray(),
+      ]));
       const result = selectQuestions([...questions, ...saved], options, {
         attempts: history,
         bookmarkIds: marks.map((b) => b.id),
@@ -257,8 +308,10 @@ export default function App() {
           ? result.notices.join(' ')
           : '指定した条件に合う問題がありません。復習対象やDomainの絞り込みを変更してください。',
       );
-    } catch {
-      setNotice('問題を読み込めませんでした。ストレージ設定を確認してください。');
+    } catch (error) {
+      setNotice(error instanceof Error && error.message.includes('時間')
+        ? error.message
+        : '問題を読み込めませんでした。再試行してください。続く場合はアプリを再読み込みしてください。');
     } finally {
       lock.current = false;
       setBusy(false);
@@ -328,8 +381,10 @@ export default function App() {
     }
   }
   function readLesson(d: string) {
-    setLessonId(`lesson-${d}`);
+    const target = lessons.find((l) => l.domainId === d) ?? lessons.find((l) => l.id === `lesson-${d}`);
+    setLessonId(target?.id ?? `lesson-${d}`);
     setTab('Study');
+    setStudyTab('Learn');
     setQueue([]);
     setSession(null);
   }
@@ -553,7 +608,7 @@ export default function App() {
               2026.08.07 シラバス
             </span>
           </div>
-          {notice && (
+          {notice && !(tab === 'Practice' && !q && !practiceSummary) && (
             <div className="notice" role="status">
               {notice}
             </div>
@@ -645,7 +700,7 @@ export default function App() {
                           )
                         }
                       />
-                      <span className="choice-letter">{c.id}</span>
+                      <span className="choice-letter">{choiceLabel(q!, c.id)}</span>
                       <span>{c.text}</span>
                       {revealed && q!.answer.includes(c.id) && <Check size={20} />}
                     </label>
@@ -694,12 +749,12 @@ export default function App() {
                       <div className="answer-comparison">
                         <div>
                           <span className="sublabel">正解</span>
-                          <strong className="green">{q!.answer.join(', ')}</strong>
+                          <strong className="green">{answerLabels(q!, q!.answer)}</strong>
                         </div>
                         <div>
                           <span className="sublabel">あなたの回答</span>
                           <strong className={score(q!, selected) ? 'green' : 'amber'}>
-                            {selected.length ? selected.join(', ') : '未選択'}
+                            {selected.length ? answerLabels(q!, selected) : '未選択'}
                           </strong>
                         </div>
                       </div>
@@ -731,7 +786,7 @@ export default function App() {
                             key={c.id}
                             className={`choice-analysis ${q!.answer.includes(c.id) ? 'is-correct' : 'is-wrong'}`}
                           >
-                            <span className="choice-pill">{c.id}</span>
+                            <span className="choice-pill">{choiceLabel(q!, c.id)}</span>
                             <p>
                               <strong>{c.text}</strong> — {q!.choiceExplanations[c.id]}
                             </p>
@@ -805,6 +860,16 @@ export default function App() {
             <>
               {tab === 'Home' && (
                 <>
+                  <ResumeLearningCard
+                    completedLessonIds={completedLessonIds}
+                    onSelectLesson={(lid) => {
+                      setTab('Study');
+                      setStudyTab('Learn');
+                      setLessonId(lid);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="mb-5"
+                  />
                   <section className="dashboard-top">
                     <article className="panel readiness">
                       <div>
@@ -1207,17 +1272,62 @@ export default function App() {
                               <p className="caption">
                                 確認日 {lesson.lastVerifiedAt} · 初期教材は分野の一部を扱います。
                               </p>
-                              <button
-                                className="primary"
-                                onClick={() =>
-                                  start(questions.filter((q) => q.domainId === lesson.domainId))
-                                }
-                              >
-                                この分野を演習する <ArrowRight size={17} />
-                              </button>
+                              <div className="flex flex-wrap gap-3 my-4">
+                                <button
+                                  className="primary"
+                                  onClick={() =>
+                                    start(questions.filter((q) => q.domainId === lesson.domainId))
+                                  }
+                                >
+                                  この分野を演習する <ArrowRight size={17} />
+                                </button>
+                              </div>
+
+                              {/* Lesson Navigation Footer */}
+                              <div ref={footerNavRef} id="lesson-footer-nav-container">
+                                <LessonFooterNav
+                                  currentLessonId={lesson.id}
+                                  isCompleted={completedLessonIds.includes(lesson.id)}
+                                  onToggleCompleted={() => void toggleLessonCompleted(lesson.id)}
+                                  onSelectLesson={(nextId) => {
+                                    void markLessonCompleted(lesson.id);
+                                    setLessonId(nextId);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                  }}
+                                  onNavigateNext={() => {
+                                    const nav = getLessonNav(lesson.id);
+                                    if (nav?.next) {
+                                      void markLessonCompleted(lesson.id);
+                                      setLessonId(nav.next.id);
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+                                  }}
+                                  onNavigatePrev={() => {
+                                    const nav = getLessonNav(lesson.id);
+                                    if (nav?.prev) {
+                                      setLessonId(nav.prev.id);
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+                                  }}
+                                  onStartPractice={() => {
+                                    void markLessonCompleted(lesson.id);
+                                    setTab('Practice');
+                                    setLessonId(null);
+                                    window.scrollTo({ top: 0, behavior: 'instant' });
+                                  }}
+                                />
+                              </div>
                             </article>
                           ) : (
                             <>
+                              <ResumeLearningCard
+                                completedLessonIds={completedLessonIds}
+                                onSelectLesson={(lid) => {
+                                  setLessonId(lid);
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className="mb-5"
+                              />
                               <div className="filterline">
                                 <label>
                                   Domain
@@ -1256,17 +1366,29 @@ export default function App() {
                                           <h3>{o.title}</h3>
                                           {lessons
                                             .filter((l) => l.relatedObjectives.includes(o.id))
-                                            .map((l) => (
-                                              <button
-                                                className="lesson-link"
-                                                key={l.id}
-                                                onClick={() => setLessonId(l.id)}
-                                              >
-                                                <BookOpen size={16} />
-                                                {l.title}
-                                                <ChevronRight size={16} />
-                                              </button>
-                                            ))}
+                                            .map((l) => {
+                                              const isDone = completedLessonIds.includes(l.id);
+                                              return (
+                                                <button
+                                                  className={`lesson-link ${isDone ? 'is-completed' : ''}`}
+                                                  key={l.id}
+                                                  onClick={() => setLessonId(l.id)}
+                                                >
+                                                  {isDone ? (
+                                                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                                                  ) : (
+                                                    <BookOpen size={16} className="shrink-0" />
+                                                  )}
+                                                  <span className="flex-1 text-left">{l.title}</span>
+                                                  {isDone && (
+                                                    <span className="text-[10px] bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 px-1.5 py-0.5 rounded-full font-medium shrink-0 mr-1">
+                                                      読了
+                                                    </span>
+                                                  )}
+                                                  <ChevronRight size={16} className="shrink-0 opacity-50" />
+                                                </button>
+                                              );
+                                            })}
                                           {!lessons.some((l) =>
                                             l.relatedObjectives.includes(o.id),
                                           ) && (
@@ -1706,6 +1828,8 @@ export default function App() {
                     onChange={changePracticeOptions}
                     onStart={() => practice()}
                     ready={settingsReady && !busy}
+                    loading={busy ? '演習を準備しています…' : !settingsReady ? '設定を読み込んでいます…' : undefined}
+                    notice={notice}
                     verifiedCount={questions.length}
                   />
                   <button

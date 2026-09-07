@@ -31,7 +31,7 @@ describe('content integrity', () => {
     expect(questionSchema.safeParse({ ...q, ...patch }).success).toBe(false),
   );
   it('supports multiple select and exact-set scoring', () => {
-    const multi = questionSchema.parse({ ...q, type: 'multiple-select', answer: ['A', 'B'] });
+    const multi = questionSchema.parse({ ...q, choiceQuality: undefined, type: 'multiple-select', answer: ['A', 'B'] });
     expect(score(multi, ['B', 'A'])).toBe(true);
     expect(score(multi, ['A'])).toBe(false);
     expect(score(multi, ['A', 'A'])).toBe(false);
@@ -129,6 +129,12 @@ describe('AI provenance', () => {
       {
         complete: async (system, input) => {
           expect(input).toContain('trustedSourceFacts');
+          if (system.includes('第2段階')) return JSON.stringify({
+            multipleAnswerRisk: false, answerWithoutReading: false,
+            difficultyConsistent: true, requirementCoverage: true,
+            rationale: '月末の期待値を独立に検証する条件があり、他の案では月末の正否を確認できない。',
+            choiceScores: { A: 3, B: 2, C: 2, D: 2 },
+          });
           expect(system).toContain('ai-generated');
           return JSON.stringify({ question: generated });
         },

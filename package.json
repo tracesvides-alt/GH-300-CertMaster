@@ -9,7 +9,9 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "check": "tsc --noEmit",
-    "syllabus:check": "node scripts/check-syllabus.mjs"
+    "syllabus:check": "node scripts/check-syllabus.mjs",
+    "quality:audit": "node scripts/audit-questions.mjs",
+    "quality:check": "node scripts/audit-questions.mjs --check"
   },
   "dependencies": {
     "dexie": "^4.0.0",

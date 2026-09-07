@@ -8,12 +8,20 @@
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d1o1", "d1o2",
-      "d2o1", "d2o2", "d2o3", "d2o4",
-      "d3o1", "d3o2",
-      "d4o1", "d4o2",
-      "d5o1", "d5o2",
-      "d6o1", "d6o2"
+      "d1o1",
+      "d1o2",
+      "d2o1",
+      "d2o2",
+      "d2o3",
+      "d2o4",
+      "d3o1",
+      "d3o2",
+      "d4o1",
+      "d4o2",
+      "d5o1",
+      "d5o2",
+      "d6o1",
+      "d6o2"
     ]
   },
   {
@@ -24,7 +32,13 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d1o1", "d1o2", "d6o1", "d6o2", "d2o1"]
+    "relatedObjectiveIds": [
+      "d1o1",
+      "d1o2",
+      "d6o1",
+      "d6o2",
+      "d2o1"
+    ]
   },
   {
     "id": "chat",
@@ -34,7 +48,14 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o1", "d2o2", "d2o3", "d2o4", "d3o1", "d3o2"]
+    "relatedObjectiveIds": [
+      "d2o1",
+      "d2o2",
+      "d2o3",
+      "d2o4",
+      "d3o1",
+      "d3o2"
+    ]
   },
   {
     "id": "prompt",
@@ -44,7 +65,10 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d4o1", "d4o2"]
+    "relatedObjectiveIds": [
+      "d4o1",
+      "d4o2"
+    ]
   },
   {
     "id": "tests",
@@ -54,7 +78,10 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d5o1", "d5o2"]
+    "relatedObjectiveIds": [
+      "d5o1",
+      "d5o2"
+    ]
   },
   {
     "id": "exclusion",
@@ -64,7 +91,10 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d6o1", "d6o2"]
+    "relatedObjectiveIds": [
+      "d6o1",
+      "d6o2"
+    ]
   },
   {
     "id": "cli",
@@ -74,7 +104,9 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o2"]
+    "relatedObjectiveIds": [
+      "d2o2"
+    ]
   },
   {
     "id": "agent-mode",
@@ -84,47 +116,61 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o1", "d2o3"]
+    "relatedObjectiveIds": [
+      "d2o1",
+      "d2o3"
+    ]
   },
   {
     "id": "mcp",
     "title": "Using Model Context Protocol with GitHub Copilot",
-    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-model-context-protocol",
+    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
     "publisher": "GitHub Docs",
     "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3"]
+    "relatedObjectiveIds": [
+      "d2o3"
+    ]
   },
   {
     "id": "instructions",
     "title": "Adding custom instructions for GitHub Copilot",
-    "url": "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
     "publisher": "GitHub Docs",
     "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3", "d4o1"]
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d4o1"
+    ]
   },
   {
     "id": "prompt-files",
     "title": "Creating reusable prompt files for Copilot",
-    "url": "https://docs.github.com/en/copilot/customizing-copilot/creating-prompt-files-for-copilot",
+    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
     "publisher": "GitHub Docs",
     "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3", "d4o1", "d4o2"]
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d4o1",
+      "d4o2"
+    ]
   },
   {
     "id": "spaces",
     "title": "About GitHub Copilot Spaces",
-    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-spaces",
+    "url": "https://docs.github.com/en/copilot/how-tos/provide-context/use-copilot-spaces/use-copilot-spaces",
     "publisher": "GitHub Docs",
     "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3"]
+    "relatedObjectiveIds": [
+      "d2o3"
+    ]
   },
   {
     "id": "spark",
@@ -134,7 +180,9 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3"]
+    "relatedObjectiveIds": [
+      "d2o3"
+    ]
   },
   {
     "id": "code-review",
@@ -144,7 +192,11 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o3", "d2o4", "d5o1"]
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d2o4",
+      "d5o1"
+    ]
   },
   {
     "id": "policies",
@@ -154,7 +206,11 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o4", "d6o1", "d6o2"]
+    "relatedObjectiveIds": [
+      "d2o4",
+      "d6o1",
+      "d6o2"
+    ]
   },
   {
     "id": "audit-log",
@@ -164,7 +220,9 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o4"]
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
   },
   {
     "id": "rest-api",
@@ -174,17 +232,24 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d2o4"]
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
   },
   {
     "id": "privacy",
     "title": "GitHub Copilot Trust Center & Privacy Statement",
-    "url": "https://resources.github.com/copilot-trust-center/",
+    "url": "https://docs.github.com/en/enterprise-cloud%40latest/copilot/reference/ai-models/model-hosting",
     "publisher": "GitHub Trust Center",
     "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d3o1", "d3o2", "d6o1", "d6o2"]
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d3o2",
+      "d6o1",
+      "d6o2"
+    ]
   },
   {
     "id": "architecture",
@@ -194,6 +259,189 @@
     "sourceType": "official-docs",
     "lastCheckedAt": "2026-09-06",
     "syllabusVersion": "2026-08-07",
-    "relatedObjectiveIds": ["d3o1", "d3o2"]
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d3o2"
+    ]
+  },
+  {
+    "id": "mcp-config",
+    "title": "MCP configuration reference",
+    "url": "https://code.visualstudio.com/docs/agents/reference/mcp-configuration",
+    "publisher": "VS Code Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d2o1"
+    ]
+  },
+  {
+    "id": "mcp-spec",
+    "title": "MCP server tools specification",
+    "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+    "publisher": "Model Context Protocol",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d6o1"
+    ]
+  },
+  {
+    "id": "inline-usage",
+    "title": "Getting code suggestions in your IDE",
+    "url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/get-ide-code-suggestions",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o1",
+      "d3o1"
+    ]
+  },
+  {
+    "id": "cli-current",
+    "title": "Use GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o1"
+    ]
+  },
+  {
+    "id": "network",
+    "title": "Troubleshooting network errors for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o2"
+    ]
+  },
+  {
+    "id": "exclusion-concept",
+    "title": "Content exclusion: supported surfaces and limitations",
+    "url": "https://docs.github.com/en/copilot/concepts/context/content-exclusion",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o2",
+      "d6o1",
+      "d6o2",
+      "d1o1"
+    ]
+  },
+  {
+    "id": "public-code",
+    "title": "GitHub Copilot code referencing",
+    "url": "https://docs.github.com/en/copilot/concepts/completions/code-referencing",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d6o1",
+      "d1o1"
+    ]
+  },
+  {
+    "id": "workspace-context",
+    "title": "Workspace context in VS Code",
+    "url": "https://code.visualstudio.com/docs/agents/reference/workspace-context",
+    "publisher": "VS Code Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d4o2",
+      "d3o1",
+      "d3o2"
+    ]
+  },
+  {
+    "id": "streaming",
+    "title": "Server-sent events",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+    "publisher": "MDN",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o2"
+    ]
+  },
+  {
+    "id": "timer-testing",
+    "title": "Vitest fake timers",
+    "url": "https://vitest.dev/guide/mocking/timers",
+    "publisher": "Vitest",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o1"
+    ]
+  },
+  {
+    "id": "property-testing",
+    "title": "fast-check property based testing",
+    "url": "https://fast-check.dev/docs/introduction/",
+    "publisher": "fast-check",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o1"
+    ]
+  },
+  {
+    "id": "secret-scanning",
+    "title": "About push protection",
+    "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d6o1",
+      "d6o2",
+      "d5o2"
+    ]
+  },
+  {
+    "id": "codeql",
+    "title": "About code scanning with CodeQL",
+    "url": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql",
+    "publisher": "GitHub Docs",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ]
+  },
+  {
+    "id": "space-framework",
+    "title": "Measuring enterprise developer productivity",
+    "url": "https://github.blog/enterprise-software/devops/measuring-enterprise-developer-productivity/",
+    "publisher": "GitHub Blog",
+    "sourceType": "official-docs",
+    "lastCheckedAt": "2026-09-07",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o1",
+      "d1o1"
+    ]
   }
 ]

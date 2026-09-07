@@ -37,3 +37,17 @@ test('narrow screens retain all setup controls without horizontal overflow', asy
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
   await page.screenshot({ path: 'test-results/practice-narrow.png', fullPage: true });
 });
+test('empty review filter explains the failed start beside the button and can recover', async ({ page }) => {
+  await page.goto('/');
+  const nav = page.viewportSize()!.width < 640 ? 'モバイルナビゲーション' : 'メインナビゲーション';
+  await page.getByRole('navigation', { name: nav, exact: true }).getByRole('button', { name: /Practice/ }).click();
+  await page.getByText('Domain・Objective・復習対象を絞る', { exact: true }).click();
+  await page.getByLabel('復習対象', { exact: true }).selectOption('bookmarked');
+  await page.getByRole('button', { name: '演習を開始する' }).click();
+  await expect(page.locator('.practice-setup [role="status"]')).toContainText('条件に合う問題がありません');
+  await expect(page.getByRole('button', { name: '演習を開始する' })).toBeEnabled();
+  await page.getByLabel('復習対象', { exact: true }).selectOption('all');
+  await page.getByRole('button', { name: '演習を開始する' }).click();
+  await expect(page.locator('.question')).toBeVisible();
+  await expect(page.locator('.choice-letter')).toHaveText(['A', 'B', 'C', 'D']);
+});

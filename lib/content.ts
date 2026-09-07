@@ -208,6 +208,18 @@ export const questionSchema = z
     examLike: z.boolean().optional(),
     scenarioSetId: z.string().nullable().optional(),
     clues: z.array(nonempty).optional(),
+    contentRevision: nonempty.optional(),
+    choiceQuality: z.record(z.string(), z.object({
+      plausibility: z.number().int().min(0).max(3),
+      distractorType: z.enum(['correct', 'partial-match', 'wrong-scope', 'wrong-mechanism', 'common-confusion', 'wrong-use-case']),
+      sourceIds: z.array(nonempty).min(1),
+      rationale: nonempty,
+    })).optional(),
+    requirementMapping: z.array(z.object({
+      requirement: nonempty,
+      correctReason: nonempty,
+      distractorFailures: z.record(z.string(), nonempty),
+    })).optional(),
   })
   .superRefine((q, c) => {
     const fail = (message: string) => c.addIssue({ code: 'custom', message });
@@ -227,6 +239,11 @@ export const questionSchema = z
     if (q.choices.some((x) => !q.choiceExplanations[x.id])) fail('Every choice needs explanation');
     if (q.sourceIds.some((id) => !sources.some((s) => s.id === id))) fail('Unknown source');
     if (q.status === 'verified' && !q.lastVerifiedAt) fail('Verification date required');
+    if (q.choiceQuality && q.choices.some(choice => {
+      const metadata = q.choiceQuality?.[choice.id];
+      return !metadata || metadata.sourceIds.some(id => !q.sourceIds.includes(id)) ||
+        (metadata.distractorType === 'correct') !== q.answer.includes(choice.id);
+    })) fail('Choice quality metadata must match answers and sources');
   });
 export type Question = z.infer<typeof questionSchema>;
 export const questions = seeds.map((q) => questionSchema.parse(q));

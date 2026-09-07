@@ -45,12 +45,16 @@ export default function PracticeSetup({
   onStart,
   ready,
   verifiedCount,
+  loading,
+  notice,
 }: {
   options: SelectionOptions;
   onChange: (options: SelectionOptions) => void;
   onStart: () => void;
   ready: boolean;
   verifiedCount: number;
+  loading?: string;
+  notice?: string;
 }) {
   const patch = (value: Partial<SelectionOptions>) => onChange({ ...options, ...value });
   return (
@@ -226,9 +230,10 @@ export default function PracticeSetup({
           </label>
         </div>
       </details>
-      <button className="primary answerbutton" onClick={onStart} disabled={!ready}>
-        演習を開始する <ArrowRight size={18} />
+      <button type="button" className="primary answerbutton" onClick={onStart} disabled={!ready} aria-busy={!!loading}>
+        {loading ?? '演習を開始する'} <ArrowRight size={18} />
       </button>
+      {notice && <p className="notice" role="status">{notice}</p>}
       <p className="caption setup-note">
         問題不足時は出題数を調整して開始します。同じセッションで同じ問題は出題しません。
       </p>
