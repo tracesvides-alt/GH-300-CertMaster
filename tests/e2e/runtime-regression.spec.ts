@@ -42,11 +42,11 @@ test('empty review filter explains the failed start beside the button and can re
   const nav = page.viewportSize()!.width < 640 ? 'モバイルナビゲーション' : 'メインナビゲーション';
   await page.getByRole('navigation', { name: nav, exact: true }).getByRole('button', { name: /Practice/ }).click();
   await page.getByText('Domain・Objective・復習対象を絞る', { exact: true }).click();
-  await page.getByLabel('復習対象', { exact: true }).selectOption('bookmarked');
+  await page.getByRole('combobox', { name: '復習対象' }).selectOption('bookmarked');
   await page.getByRole('button', { name: '演習を開始する' }).click();
   await expect(page.locator('.practice-setup [role="status"]')).toContainText('条件に合う問題がありません');
   await expect(page.getByRole('button', { name: '演習を開始する' })).toBeEnabled();
-  await page.getByLabel('復習対象', { exact: true }).selectOption('all');
+  await page.getByRole('combobox', { name: '復習対象' }).selectOption('all');
   await page.getByRole('button', { name: '演習を開始する' }).click();
   await expect(page.locator('.question')).toBeVisible();
   await expect(page.locator('.choice-letter')).toHaveText(['A', 'B', 'C', 'D']);

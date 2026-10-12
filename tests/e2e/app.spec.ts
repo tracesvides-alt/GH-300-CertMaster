@@ -18,6 +18,7 @@ test('dashboard → practice → answer → explanation persists', async ({ page
     .getByRole('navigation', { name: nav, exact: true })
     .getByRole('button', { name: /Review/ })
     .click();
+  await page.getByRole('button', { name: /回答履歴/ }).click();
   await expect(page.getByRole('button', { name: 'ブックマークを解く (1)' })).toBeVisible();
   await expect(page.getByRole('button', { name: '回答と解説を見る' })).toBeVisible();
 });

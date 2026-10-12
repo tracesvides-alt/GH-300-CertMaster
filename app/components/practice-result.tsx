@@ -1,11 +1,15 @@
 'use client';
-import { ArrowRight, Target, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Target, Sparkles, CheckCircle2, RotateCcw, BookOpen, GitCompareArrows, Clock } from 'lucide-react';
 import { objectives } from '@/lib/content';
 import type { Attempt } from '@/lib/learning';
 import { practiceResult, improvedObjectives, type PracticeRun } from '@/lib/practice-session';
+import type { RecommendedAction } from '@/lib/adaptive-learning';
+
 export default function PracticeResult({
   run,
   attempts,
+  nextActions,
+  onExecuteAction,
   onRetry,
   onWeak,
   onWrong,
@@ -14,6 +18,8 @@ export default function PracticeResult({
 }: {
   run: PracticeRun;
   attempts: Attempt[];
+  nextActions?: { primary: RecommendedAction; secondary: RecommendedAction[] } | null;
+  onExecuteAction?: (action: RecommendedAction) => void;
   onRetry: () => void;
   onWeak: () => void;
   onWrong: () => void;
@@ -40,6 +46,52 @@ export default function PracticeResult({
         {run.options.mode} · 指定{run.options.count}問 / 実施{result.total}問
         {run.options.count === 50 ? ' · 本番想定のPractice（即時解説）' : ''}
       </p>
+
+      {/* Recommended Next Action (要件6) */}
+      {nextActions && (
+        <div className="recommended-next-action-card">
+          <div className="r-action-header">
+            <span className="eyebrow">RECOMMENDED NEXT ACTION</span>
+            <span className="r-badge-primary">推奨アクション</span>
+          </div>
+          <div className="primary-action-box">
+            <h4>{nextActions.primary.title}</h4>
+            <p>{nextActions.primary.description}</p>
+            <button
+              className="primary r-action-btn"
+              onClick={() => onExecuteAction && onExecuteAction(nextActions.primary)}
+            >
+              {nextActions.primary.type === 'review_due' && <Clock size={16} />}
+              {nextActions.primary.type === 'review_confusion' && <RotateCcw size={16} />}
+              {nextActions.primary.type === 'read_comparison' && <GitCompareArrows size={16} />}
+              {nextActions.primary.type === 'read_lesson' && <BookOpen size={16} />}
+              {nextActions.primary.type === 'strengthen_weakness' && <Target size={16} />}
+              <span>{nextActions.primary.badge ? `${nextActions.primary.badge}: 開始` : 'このアクションを実行'}</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+
+          {nextActions.secondary.length > 0 && (
+            <div className="secondary-actions-list">
+              <span className="sublabel">その他の推奨候補</span>
+              {nextActions.secondary.map((sec) => (
+                <button
+                  key={sec.id}
+                  className="secondary-action-item"
+                  onClick={() => onExecuteAction && onExecuteAction(sec)}
+                >
+                  <div className="sec-text">
+                    <strong>{sec.title}</strong>
+                    <small>{sec.description}</small>
+                  </div>
+                  <ArrowRight size={15} />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       <h3>難易度別結果 (Difficulty Analytics)</h3>
       <div className="difficulty-results-grid">
         {result.byDifficulty.map((d) => (

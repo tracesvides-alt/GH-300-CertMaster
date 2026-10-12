@@ -1,5 +1,5 @@
 'use client';
-import { ArrowRight, Shuffle, Target, Scale, Layers, BookOpen, Flame } from 'lucide-react';
+import { ArrowRight, Shuffle, Target, Scale, Layers, BookOpen, Flame, RotateCcw } from 'lucide-react';
 import { domains, objectives } from '@/lib/content';
 import { questionCounts, type SelectionOptions } from '@/lib/selection';
 export function CountPicker({
@@ -87,6 +87,12 @@ export default function PracticeSetup({
             title: '苦手分野',
             text: '回答履歴から、Masteryの低いObjectiveを優先。',
             icon: Target,
+          },
+          {
+            id: 'Due for Review',
+            title: '復習期限',
+            text: '忘却対策として、今復習すべき問題を出題。',
+            icon: RotateCcw,
           },
         ].map(({ id, title, text, icon: Icon }) => (
           <label className={`selection-mode ${options.mode === id ? 'chosen' : ''}`} key={id}>

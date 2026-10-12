@@ -7,7 +7,9 @@ export const selectionOptionsSchema = z
     count: z
       .union([z.literal(5), z.literal(10), z.literal(20), z.literal(30), z.literal(50)])
       .default(10),
-    mode: z.enum(['Random', 'Syllabus Weighted', 'Weak Points']).default('Random'),
+    mode: z
+      .enum(['Random', 'Syllabus Weighted', 'Weak Points', 'Due for Review'])
+      .default('Random'),
     preferUnanswered: z.boolean().default(true),
     avoidRecent: z.boolean().default(true),
     verifiedOnly: z.boolean().default(true),
@@ -42,13 +44,16 @@ export type SelectionContext = {
   bookmarkIds?: string[];
   now?: number;
   rng?: () => number;
+  reviewStates?: Record<string, { nextReviewAt: number; lapseCount?: number }>;
+  confusionQuestionIds?: string[];
+  recoveredQuestionIds?: string[];
 };
 export type SelectionResult = {
   questions: Question[];
   requestedCount: number;
   actualCount: number;
   counts: number[];
-  method: 'random' | 'weighted-random' | 'integer' | 'weak-points';
+  method: 'random' | 'weighted-random' | 'integer' | 'weak-points' | 'due-review';
   meetsRanges: boolean;
   notices: string[];
 };
@@ -183,10 +188,29 @@ export function calculateQuestionWeights(
       const base = q.status === 'verified' ? 1 : 0.25;
       const repetition = 1 / Math.sqrt(1 + count * 0.15);
       const diffWeight = difficultyMultipliers[q.difficulty] ?? 1.0;
+
+      // Adaptive Learning adjustments
+      const reviewState = context.reviewStates?.[q.id];
+      const isDue = reviewState ? now >= reviewState.nextReviewAt : false;
+      const dueBonus = isDue ? (options.mode === 'Due for Review' ? 15.0 : 3.0) : 1.0;
+      const inConfusion = Array.isArray(context.confusionQuestionIds)
+        ? context.confusionQuestionIds.includes(q.id)
+        : (context.confusionQuestionIds as Set<string> | undefined)?.has?.(q.id) ?? false;
+      const confusionBonus = inConfusion ? 2.0 : 1.0;
+      const recentlyWrongBonus = h && !h.latestCorrect ? 1.8 : 1.0;
+      const inRecovered = Array.isArray(context.recoveredQuestionIds)
+        ? context.recoveredQuestionIds.includes(q.id)
+        : (context.recoveredQuestionIds as Set<string> | undefined)?.has?.(q.id) ?? false;
+      const recoveredPenalty = inRecovered ? 0.6 : 1.0;
+
       return [
         q.id,
         (base *
           diffWeight *
+          dueBonus *
+          confusionBonus *
+          recentlyWrongBonus *
+          recoveredPenalty *
           applyUnansweredBonus(count, options.preferUnanswered) *
           applyRecentQuestionPenalty(h?.lastAnsweredAt, now, options.avoidRecent) *
           repetition *
@@ -351,6 +375,35 @@ export function selectWeakPointQuestions(
     context.rng ?? Math.random,
   );
 }
+function selectDueForReviewQuestions(
+  bank: Question[],
+  options: SelectionOptions,
+  context: SelectionContext,
+): Question[] {
+  const now = context.now ?? Date.now();
+  const weights = calculateQuestionWeights(bank, options, context);
+
+  // Separate questions that are due vs not due
+  const dueList = bank.filter((q) => {
+    const rev = context.reviewStates?.[q.id];
+    return rev ? now >= rev.nextReviewAt : false;
+  });
+
+  // Sort due questions by priority / weight descending
+  dueList.sort((a, b) => (weights.get(b.id) ?? 0) - (weights.get(a.id) ?? 0));
+
+  if (dueList.length >= options.count) {
+    return dueList.slice(0, options.count);
+  }
+
+  // If we need more questions, fill with other review/weak questions
+  const dueSet = new Set(dueList.map((q) => q.id));
+  const remaining = bank.filter((q) => !dueSet.has(q.id));
+  remaining.sort((a, b) => (weights.get(b.id) ?? 0) - (weights.get(a.id) ?? 0));
+
+  return [...dueList, ...remaining.slice(0, options.count - dueList.length)];
+}
+
 export function selectQuestions(
   bank: Question[],
   rawOptions: SelectionOptions,
@@ -368,23 +421,39 @@ export function selectQuestions(
       ([id, s]) => eligible.some((q) => q.objectiveId === id) && s.attempts >= 3,
     ).length >= 2;
   let method: SelectionResult['method'] =
-    options.mode === 'Syllabus Weighted'
-      ? options.count <= 10
-        ? 'weighted-random'
-        : 'integer'
-      : options.mode === 'Weak Points'
-        ? 'weak-points'
-        : 'random';
+    options.mode === 'Due for Review'
+      ? 'due-review'
+      : options.mode === 'Syllabus Weighted'
+        ? options.count <= 10
+          ? 'weighted-random'
+          : 'integer'
+        : options.mode === 'Weak Points'
+          ? 'weak-points'
+          : 'random';
   if (method === 'weak-points' && !enoughHistory) {
     method = 'random';
     notices.push('弱点を判断する回答履歴がまだ少ないため、ランダムで出題します。');
   }
   const selected =
-    method === 'random'
-      ? selectRandomQuestions(eligible, options, context)
-      : method === 'weak-points'
-        ? selectWeakPointQuestions(eligible, options, context)
-        : selectSyllabusWeightedQuestions(eligible, options, context);
+    method === 'due-review'
+      ? selectDueForReviewQuestions(eligible, options, context)
+      : method === 'random'
+        ? selectRandomQuestions(eligible, options, context)
+        : method === 'weak-points'
+          ? selectWeakPointQuestions(eligible, options, context)
+          : selectSyllabusWeightedQuestions(eligible, options, context);
+  if (method === 'due-review') {
+    const now = context.now ?? Date.now();
+    const dueCount = eligible.filter((q) => {
+      const review = context.reviewStates?.[q.id];
+      return review && review.nextReviewAt <= now;
+    }).length;
+    if (dueCount < selected.length) {
+      notices.push(dueCount === 0
+        ? '復習期限の問題がないため、通常の問題から出題します。'
+        : `復習期限の問題は${dueCount}問です。不足分は通常の問題で補います。`);
+    }
+  }
   const counts = domains.map((d) => selected.filter((q) => q.domainId === d.id).length);
   const meetsRanges =
     selected.length > 0 &&

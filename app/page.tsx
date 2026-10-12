@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import {
   ArrowRight,
@@ -47,7 +47,7 @@ import {
   type GlossaryFilter,
   type SearchResult,
 } from '@/lib/content';
-import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted } from '@/lib/db';
+import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive } from '@/lib/db';
 import { getLessonNav } from '@/lib/lesson-nav';
 import { LessonFooterNav } from './components/lesson-footer-nav';
 import { ResumeLearningCard } from './components/resume-learning-card';
@@ -56,6 +56,9 @@ import { withTimeout } from '@/lib/with-timeout';
 import { mastery, score, streak, type Attempt } from '@/lib/learning';
 import PracticeSetup, { CountPicker } from './components/practice-setup';
 import PracticeResult from './components/practice-result';
+import WrongAnswerNotebook from './components/wrong-answer-notebook';
+import ConceptConfusionMap from './components/concept-confusion-map';
+import SpacedRepetitionCard from './components/spaced-repetition-card';
 import {
   defaultSelectionOptions,
   selectionOptionsSchema,
@@ -64,6 +67,15 @@ import {
   calculateObjectiveStats,
   type SelectionOptions,
 } from '@/lib/selection';
+import {
+  getQuestionsForLesson,
+  getQuestionsForComparison,
+  getQuestionsForGlossary,
+  getQuestionsForConfusionPair,
+  getRecommendedNextAction,
+  analyzeMistake,
+} from '@/lib/adaptive-learning';
+import { isDueForReview } from '@/lib/spaced-repetition';
 import type { PracticeRun } from '@/lib/practice-session';
 type Tab = 'Home' | 'Study' | 'Practice' | 'Mock' | 'Review';
 const nav = [
@@ -89,6 +101,20 @@ type Session = {
   notices?: string[];
 };
 export default function App() {
+  function scrollToTop() {
+    if (typeof window === 'undefined') return;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+    });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 40);
+  }
   const [tab, setTab] = useState<Tab>('Home'),
     [domain, setDomain] = useState('all'),
     [objective, setObjective] = useState('all');
@@ -146,6 +172,12 @@ export default function App() {
   const sessions = useLiveQuery(() => db.sessions.toArray(), []) ?? [];
   const lessonCompletions = useLiveQuery(() => db.lessonCompletions.toArray(), []) ?? [];
   const completedLessonIds = lessonCompletions.map((c) => c.id);
+
+  // Adaptive Learning live queries & state
+  const wrongAnswers = useLiveQuery(() => db.wrongAnswers.toArray(), []) ?? [];
+  const questionReviews = useLiveQuery(() => db.questionReviews.toArray(), []) ?? [];
+  const confusionPairs = useLiveQuery(() => db.confusionPairs.toArray(), []) ?? [];
+  const [reviewSubTab, setReviewSubTab] = useState<'notebook' | 'confusion' | 'history'>('notebook');
 
   const footerNavRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -206,6 +238,55 @@ export default function App() {
   const weak = objectives
     .filter((o) => m.byObjective[o.id] < 60)
     .sort((a, b) => m.byObjective[a.id] - m.byObjective[b.id]);
+
+  // 復習期日が到来している問題 (Spaced Repetition)
+  const dueQuestions = useMemo(() => {
+    const questionById = new Map(questions.map((item) => [item.id, item]));
+    return questionReviews
+      .filter((state) => isDueForReview(state, now))
+      .sort((a, b) => a.nextReviewAt - b.nextReviewAt)
+      .flatMap((state) => {
+        const item = questionById.get(state.questionId);
+        return item ? [item] : [];
+      });
+  }, [questions, questionReviews, now]);
+
+  // Practice完了時の Recommended Next Action (要件6)
+  const practiceNextActions = useMemo(() => {
+    if (!practiceSummary) return null;
+    return getRecommendedNextAction(practiceSummary.answers, confusionPairs, dueQuestions.length);
+  }, [practiceSummary, attempts, confusionPairs, questionReviews, now]);
+
+  // 復習期限問題の出題ハンドラ
+  function startDueReview(requestedCount: 5 | 10 | 20 = 5) {
+    let list = dueQuestions;
+    if (list.length === 0) {
+      const reviewedQIds = questionReviews
+        .filter((r) => r.totalIncorrect > 0 || r.lapseCount > 0)
+        .sort((a, b) => b.reviewPriority - a.reviewPriority)
+        .map((r) => r.questionId);
+      list = questions.filter((item) => reviewedQIds.includes(item.id));
+    }
+    if (list.length === 0) {
+      list = questions.slice(0, requestedCount);
+    }
+    const chosen = list.slice(0, requestedCount);
+    start(chosen);
+    setTab('Practice');
+    scrollToTop();
+  }
+
+  // 教材末尾の「理解度チェック3問」ハンドラ
+  function startCheckQuestions(checkQuestions: Question[]) {
+    if (!checkQuestions || checkQuestions.length === 0) {
+      setNotice('出題可能な確認問題が見つかりませんでした。');
+      return;
+    }
+    start(checkQuestions);
+    setTab('Practice');
+    scrollToTop();
+  }
+
   const lock = useRef(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -298,12 +379,20 @@ export default function App() {
     setBusy(true);
     setNotice('');
     try {
-      const [history, saved, marks] = await withTimeout(Promise.all([
+      const [history, saved, marks, reviews, pairs] = await withTimeout(Promise.all([
         db.attempts.toArray(), db.generated.toArray(), db.bookmarks.toArray(),
+        db.questionReviews.toArray(), db.confusionPairs.toArray(),
       ]));
       const result = selectQuestions([...questions, ...saved], options, {
         attempts: history,
         bookmarkIds: marks.map((b) => b.id),
+        reviewStates: Object.fromEntries(reviews.map((review) => [review.questionId, review])),
+        confusionQuestionIds: pairs
+          .filter((pair) => pair.status !== 'Recovered')
+          .flatMap((pair) => pair.relatedQuestionIds),
+        recoveredQuestionIds: pairs
+          .filter((pair) => pair.status === 'Recovered')
+          .flatMap((pair) => pair.relatedQuestionIds),
       });
       start(result.questions, options, history);
       setNotice(
@@ -348,24 +437,27 @@ export default function App() {
     lock.current = true;
     setBusy(true);
     try {
+      const isCorrect = score(q, selected);
+      const nowTimestamp = Date.now();
       const response: Attempt = {
         id: crypto.randomUUID(),
         questionId: q.id,
         domainId: q.domainId,
         objectiveId: q.objectiveId,
         answer: selected,
-        correct: score(q, selected),
-        at: Date.now(),
+        correct: isCorrect,
+        at: nowTimestamp,
         status: q.status,
         sessionId: practiceRun?.id,
       };
       const updated = practiceRun
         ? { ...practiceRun, answers: [...practiceRun.answers, response] }
         : null;
-      await db.transaction('rw', db.attempts, db.practiceRuns, async () => {
-        await db.attempts.add(response);
-        if (updated) await db.practiceRuns.put(updated);
-      });
+
+      // Adaptive Learning (Spaced Repetition, Wrong Notebook, Confusion Map)
+      await recordAttemptAdaptive(q, selected, isCorrect, practiceRun?.id, nowTimestamp);
+      if (updated) await db.practiceRuns.put(updated);
+
       setPracticeRun(updated);
       setRevealed(true);
     } catch {
@@ -446,22 +538,13 @@ export default function App() {
       const answers = { ...current.answers };
       if (q) answers[q.id] = selected;
       const s = { ...current, answers, completed: true };
-      await db.transaction('rw', db.sessions, db.attempts, async () => {
-        await db.sessions.put(s);
-        await db.attempts.bulkPut(
-          s.questions.map((question) => ({
-            id: `${s.id}:${question.id}`,
-            sessionId: s.id,
-            questionId: question.id,
-            domainId: question.domainId,
-            objectiveId: question.objectiveId,
-            answer: answers[question.id] ?? [],
-            correct: score(question, answers[question.id] ?? []),
-            at: Date.now(),
-            status: question.status,
-          })),
-        );
-      });
+      const nowTimestamp = Date.now();
+      await db.sessions.put(s);
+      for (const question of s.questions) {
+        const userAns = answers[question.id] ?? [];
+        const isCorrect = score(question, userAns);
+        await recordAttemptAdaptive(question, userAns, isCorrect, s.id, nowTimestamp);
+      }
       setSession(s);
       setQueue([]);
       setSelected([]);
@@ -805,6 +888,124 @@ export default function App() {
                       </div>
                       <h4>Official Source</h4>
                       {sourceLinks(q!.sourceIds)}
+
+                      {/* 双方向リンク: 関連教材ショートカット & 誤答時Primary Action (要件4) */}
+                      {(() => {
+                        const isWrong = !score(q!, selected);
+                        const mistakeAnalysis = isWrong ? analyzeMistake(q!, selected) : null;
+                        const relLesson =
+                          lessons.find((l) => l.domainId === q!.domainId || l.relatedObjectives.includes(q!.objectiveId));
+                        const relComparisons = comparisonGuides.filter((c) =>
+                          c.objectiveIds.includes(q!.objectiveId) ||
+                          c.lessonIds?.includes(relLesson?.id ?? '') ||
+                          (mistakeAnalysis?.confusionPairIds &&
+                            mistakeAnalysis.confusionPairIds.some((cpid: string) => {
+                              const pair = confusionPairs.find((p) => p.id === cpid);
+                              return pair && (c.comparedTermIds.includes(pair.conceptAId) || c.comparedTermIds.includes(pair.conceptBId));
+                            }))
+                        );
+                        const relGlossaries = glossaryTerms.filter(
+                          (g) =>
+                            g.lessonIds?.includes(relLesson?.id ?? '') ||
+                            (q!.testedConcepts && q!.testedConcepts.includes(g.id)),
+                        );
+
+                        return (
+                          <div className="bidirectional-learning-box">
+                            {isWrong && (
+                              <div className="wrong-review-primary-card">
+                                <div className="r-head">
+                                  <span className="ai-insight-badge">
+                                    <Sparkles size={13} /> ADAPTIVE RECOMMENDATION
+                                  </span>
+                                  <h4>この内容を復習（理解の抜け漏れを解消）</h4>
+                                </div>
+                                <p className="caption">
+                                  {mistakeAnalysis && mistakeAnalysis.confusionPairIds.length > 0
+                                    ? '概念の混同が検出されました。違いを比較ガイドで整理することをお勧めします。'
+                                    : '解説を確認後、関連教材で基礎要件とスコープを再確認しましょう。'}
+                                </p>
+                                <div className="primary-actions-row">
+                                  {mistakeAnalysis &&
+                                  mistakeAnalysis.confusionPairIds.length > 0 &&
+                                  relComparisons.length > 0 ? (
+                                    <button
+                                      className="primary review-now-btn"
+                                      onClick={() => {
+                                        setTab('Study');
+                                        setStudyTab('Compare');
+                                        setComparisonId(relComparisons[0].id);
+                                        scrollToTop();
+                                      }}
+                                    >
+                                      <GitCompareArrows size={16} />
+                                      この内容を復習: 比較ガイドを見る
+                                    </button>
+                                  ) : relLesson ? (
+                                    <button
+                                      className="primary review-now-btn"
+                                      onClick={() => {
+                                        setTab('Study');
+                                        setStudyTab('Learn');
+                                        setLessonId(relLesson.id);
+                                        scrollToTop();
+                                      }}
+                                    >
+                                      <BookOpen size={16} />
+                                      この内容を復習: 教材を読む
+                                    </button>
+                                  ) : null}
+                                </div>
+                              </div>
+                            )}
+
+                            <div className="related-study-chips">
+                              <span className="chips-label">関連教材リンク:</span>
+                              {relLesson && (
+                                <button
+                                  className="study-chip"
+                                  onClick={() => {
+                                    setTab('Study');
+                                    setStudyTab('Learn');
+                                    setLessonId(relLesson.id);
+                                    scrollToTop();
+                                  }}
+                                >
+                                  <BookOpen size={13} /> {relLesson.title}
+                                </button>
+                              )}
+                              {relComparisons.slice(0, 2).map((c) => (
+                                <button
+                                  key={c.id}
+                                  className="study-chip compare"
+                                  onClick={() => {
+                                    setTab('Study');
+                                    setStudyTab('Compare');
+                                    setComparisonId(c.id);
+                                    scrollToTop();
+                                  }}
+                                >
+                                  <GitCompareArrows size={13} /> {c.title}
+                                </button>
+                              ))}
+                              {relGlossaries.slice(0, 2).map((g) => (
+                                <button
+                                  key={g.id}
+                                  className="study-chip glossary"
+                                  onClick={() => {
+                                    setTab('Study');
+                                    setStudyTab('Glossary');
+                                    setGlossaryTermId(g.id);
+                                    scrollToTop();
+                                  }}
+                                >
+                                  <Library size={13} /> {g.term}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })()}
                     </div>
                     <div className="actions">
                       <button
@@ -871,6 +1072,12 @@ export default function App() {
                       setLessonId(lid);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
+                    className="mb-5"
+                  />
+                  <SpacedRepetitionCard
+                    dueCount={dueQuestions.length}
+                    totalTracked={questionReviews.length}
+                    onStartDueReview={startDueReview}
                     className="mb-5"
                   />
                   <section className="dashboard-top">
@@ -1276,14 +1483,36 @@ export default function App() {
                                 確認日 {lesson.lastVerifiedAt} · 初期教材は分野の一部を扱います。
                               </p>
                               <div className="flex flex-wrap gap-3 my-4">
-                                <button
-                                  className="primary"
-                                  onClick={() =>
-                                    start(questions.filter((q) => q.domainId === lesson.domainId))
-                                  }
-                                >
-                                  この分野を演習する <ArrowRight size={17} />
-                                </button>
+                                {/* 双方向リンク: 理解度チェック 3問 (要件4) */}
+                               <div className="bidirectional-check-card my-4">
+                                 <div className="b-check-header">
+                                   <Sparkles size={16} />
+                                   <h4>教材の理解度チェック</h4>
+                                 </div>
+                                 <p className="caption">
+                                   このLessonで扱った概念・用語に関する問題（未回答・要復習優先）で定着度を確認できます。
+                                 </p>
+                                 <div className="flex flex-wrap gap-3 mt-3">
+                                   <button
+                                     className="primary"
+                                     onClick={() => {
+                                       const checkQuestions = getQuestionsForLesson(lesson.id, 3, attempts.map((a) => a.questionId));
+                                       startCheckQuestions(checkQuestions);
+                                     }}
+                                   >
+                                     <ListChecks size={16} />
+                                     理解度チェック 3問 <ArrowRight size={16} />
+                                   </button>
+                                   <button
+                                     className="secondary"
+                                     onClick={() =>
+                                       start(questions.filter((q) => q.domainId === lesson.domainId))
+                                     }
+                                   >
+                                     この分野全体を演習
+                                   </button>
+                                 </div>
+                               </div>
                               </div>
 
                               {/* Lesson Navigation Footer */}
@@ -1566,6 +1795,18 @@ export default function App() {
                                       {sourceLinks(term.sourceIds)}
                                     </div>
                                   )}
+                                  {/* 双方向リンク: 用語の関連問題3問 (要件4) */}
+                                  <div className="glossary-check-box mt-4">
+                                    <button
+                                      className="primary"
+                                      onClick={() => {
+                                        const checkQuestions = getQuestionsForGlossary(term.id, 3, attempts.map((a) => a.questionId));
+                                        startCheckQuestions(checkQuestions);
+                                      }}
+                                    >
+                                      <ListChecks size={16} /> この用語の関連問題を3問解く <ArrowRight size={16} />
+                                    </button>
+                                  </div>
                                 </article>
                               );
                             })()
@@ -1781,6 +2022,18 @@ export default function App() {
                                   )}
                                   <h3>Official Sources</h3>
                                   {sourceLinks(cmp.sourceIds)}
+                                  {/* 双方向リンク: 比較の関連問題3問 (要件4) */}
+                                  <div className="comparison-check-box mt-4">
+                                    <button
+                                      className="primary"
+                                      onClick={() => {
+                                        const checkQuestions = getQuestionsForComparison(cmp.id, 3, attempts.map((a) => a.questionId));
+                                        startCheckQuestions(checkQuestions);
+                                      }}
+                                    >
+                                      <ListChecks size={16} /> この違いを3問で確認 <ArrowRight size={16} />
+                                    </button>
+                                  </div>
                                 </article>
                               );
                             })()
@@ -1824,6 +2077,34 @@ export default function App() {
                 <PracticeResult
                   run={practiceSummary}
                   attempts={attempts}
+                  nextActions={practiceNextActions}
+                  onExecuteAction={(action) => {
+                    if (action.type === 'review_due') {
+                      startDueReview(5);
+                    } else if (action.type === 'read_comparison' && action.targetId) {
+                      setTab('Study');
+                      setStudyTab('Compare');
+                      setComparisonId(action.targetId);
+                      scrollToTop();
+                    } else if (action.type === 'read_lesson' && action.targetId) {
+                      setTab('Study');
+                      setStudyTab('Learn');
+                      setLessonId(action.targetId);
+                      scrollToTop();
+                    } else if (action.type === 'review_confusion' && action.targetId) {
+                      const pair = confusionPairs.find((p) => p.id === action.targetId);
+                      if (pair) {
+                        const pairQs = getQuestionsForConfusionPair(pair, 5, attempts.map((a) => a.questionId));
+                        start(pairQs);
+                        setTab('Practice');
+                        scrollToTop();
+                      } else {
+                        startDueReview(5);
+                      }
+                    } else if (action.type === 'strengthen_weakness') {
+                      quickWeak();
+                    }
+                  }}
                   onRetry={() => practice(practiceSummary.options)}
                   onWeak={quickWeak}
                   onWrong={() => {
@@ -2011,112 +2292,186 @@ export default function App() {
               )}
               {tab === 'Review' && (
                 <>
-                  {completedPractice.length > 0 && (
-                    <article className="panel">
-                      <h2>Practiceの結果</h2>
-                      {[...completedPractice]
-                        .sort((a, b) => (b.completedAt ?? 0) - (a.completedAt ?? 0))
-                        .slice(0, 10)
-                        .map((run) => (
-                          <button
-                            key={run.id}
-                            className="resume"
-                            onClick={() => {
-                              navigate('Practice');
-                              setPracticeSummary(run);
-                            }}
-                          >
-                            {new Date(run.startedAt).toLocaleString('ja-JP')} ·{' '}
-                            {run.answers.filter((a) => a.correct).length}/{run.questions.length}{' '}
-                            正解
-                            <ArrowRight size={16} />
-                          </button>
-                        ))}
-                    </article>
-                  )}
-                  <div className="section-title">
-                    <h2>学びを、定着させる。</h2>
+                  <div className="review-subnav-bar">
                     <button
-                      className="textbutton"
-                      onClick={() => {
-                        setAiOpen(true);
-                        setAiMode('weakness');
+                      className={`subnav-tab-btn ${reviewSubTab === 'notebook' ? 'active' : ''}`}
+                      onClick={() => setReviewSubTab('notebook')}
+                    >
+                      <RotateCcw size={16} /> 間違いノート (Notebook)
+                    </button>
+                    <button
+                      className={`subnav-tab-btn ${reviewSubTab === 'confusion' ? 'active' : ''}`}
+                      onClick={() => setReviewSubTab('confusion')}
+                    >
+                      <GitCompareArrows size={16} /> 概念混同マップ (Confusion Map)
+                    </button>
+                    <button
+                      className={`subnav-tab-btn ${reviewSubTab === 'history' ? 'active' : ''}`}
+                      onClick={() => setReviewSubTab('history')}
+                    >
+                      <ListChecks size={16} /> 回答履歴 ({attempts.length})
+                    </button>
+                  </div>
+
+                  {reviewSubTab === 'notebook' && (
+                    <WrongAnswerNotebook
+                      wrongAnswers={wrongAnswers}
+                      confusionPairs={confusionPairs}
+                      allQuestions={questions}
+                      attempts={attempts}
+                      onStartQuickReview={(qs) => {
+                        start(qs);
+                        setTab('Practice');
+                        scrollToTop();
                       }}
-                    >
-                      <Sparkles size={17} />
-                      AIで間違い傾向を振り返る
-                    </button>
-                  </div>
-                  <div className="actions">
-                    <button
-                      onClick={() =>
-                        start(
-                          questions.filter(
-                            (q) => attempts.find((a) => a.questionId === q.id)?.correct === false,
-                          ),
-                        )
-                      }
-                    >
-                      間違えた問題を解く
-                    </button>
-                    <button
-                      onClick={() =>
-                        start(bank.filter((q) => bookmarks.some((b) => b.id === q.id)))
-                      }
-                    >
-                      ブックマークを解く ({bookmarks.length})
-                    </button>
-                  </div>
-                  <article className="panel review-list">
-                    {attempts.length ? (
-                      attempts.map((a) => (
-                        <div className="review-row" key={a.id}>
-                          <div className="row">
-                            <span className={a.correct ? 'green' : 'amber'}>
-                              {a.correct ? '✓ 正解' : '↻ 要復習'} ·{' '}
-                              {a.status === 'verified' ? 'Verified' : 'AI生成'}
-                            </span>
-                            <span className="caption">
-                              {new Date(a.at).toLocaleString('ja-JP')}
-                            </span>
-                          </div>
-                          <p>{bank.find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
-                          <button
-                            className="textbutton"
-                            onClick={() => {
-                              const item = bank.find((q) => q.id === a.questionId);
-                              if (item) {
-                                start([item]);
-                                setSelected(a.answer);
-                                setRevealed(true);
-                              }
-                            }}
-                          >
-                            回答と解説を見る <ArrowRight size={15} />
-                          </button>
-                        </div>
-                      ))
-                    ) : (
-                      <div className="empty">
-                        <BookOpen />
-                        <h3>まだ回答履歴がありません</h3>
-                        <p>演習をはじめると、正解も間違いも学びの記録になります。</p>
-                        <button className="primary" onClick={() => navigate('Practice')}>
-                          問題を解く
+                      onSelectQuestion={(question, answer) => {
+                        start([question]);
+                        setSelected(answer);
+                        setRevealed(true);
+                        setTab('Practice');
+                        scrollToTop();
+                      }}
+                      onNavigateToStudy={(type, id) => {
+                        setTab('Study');
+                        setStudyTab(type);
+                        if (type === 'Learn') setLessonId(id);
+                        if (type === 'Glossary') setGlossaryTermId(id);
+                        if (type === 'Compare') setComparisonId(id);
+                        scrollToTop();
+                      }}
+                    />
+                  )}
+
+                  {reviewSubTab === 'confusion' && (
+                    <ConceptConfusionMap
+                      confusionPairs={confusionPairs}
+                      allQuestions={questions}
+                      onStartQuickReview={(qs) => {
+                        start(qs);
+                        setTab('Practice');
+                        scrollToTop();
+                      }}
+                      onNavigateToStudy={(type, id) => {
+                        setTab('Study');
+                        setStudyTab(type);
+                        if (type === 'Learn') setLessonId(id);
+                        if (type === 'Glossary') setGlossaryTermId(id);
+                        if (type === 'Compare') setComparisonId(id);
+                        scrollToTop();
+                      }}
+                    />
+                  )}
+
+                  {reviewSubTab === 'history' && (
+                    <>
+                      {completedPractice.length > 0 && (
+                        <article className="panel">
+                          <h2>Practiceの結果</h2>
+                          {[...completedPractice]
+                            .sort((a, b) => (b.completedAt ?? 0) - (a.completedAt ?? 0))
+                            .slice(0, 10)
+                            .map((run) => (
+                              <button
+                                key={run.id}
+                                className="resume"
+                                onClick={() => {
+                                  navigate('Practice');
+                                  setPracticeSummary(run);
+                                }}
+                              >
+                                {new Date(run.startedAt).toLocaleString('ja-JP')} ·{' '}
+                                {run.answers.filter((a) => a.correct).length}/{run.questions.length}{' '}
+                                正解
+                                <ArrowRight size={16} />
+                              </button>
+                            ))}
+                        </article>
+                      )}
+                      <div className="section-title">
+                        <h2>学びを、定着させる。</h2>
+                        <button
+                          className="textbutton"
+                          onClick={() => {
+                            setAiOpen(true);
+                            setAiMode('weakness');
+                          }}
+                        >
+                          <Sparkles size={17} />
+                          AIで間違い傾向を振り返る
                         </button>
                       </div>
-                    )}
-                  </article>
-                  {generated.length > 0 && (
-                    <article className="panel">
-                      <h2>保存済みのAI生成問題 · 未検証</h2>
-                      {generated.map((q) => (
-                        <button className="resume" key={q.id} onClick={() => start([q])}>
-                          {q.question}
-                          <ArrowRight size={16} />
+                      <div className="actions">
+                        <button
+                          onClick={() =>
+                            start(
+                              questions.filter(
+                                (q) => attempts.find((a) => a.questionId === q.id)?.correct === false,
+                              ),
+                            )
+                          }
+                        >
+                          間違えた問題を解く
                         </button>
-                      ))}
-                    </article>
+                        <button
+                          onClick={() =>
+                            start(bank.filter((q) => bookmarks.some((b) => b.id === q.id)))
+                          }
+                        >
+                          ブックマークを解く ({bookmarks.length})
+                        </button>
+                      </div>
+                      <article className="panel review-list">
+                        {attempts.length ? (
+                          attempts.map((a) => (
+                            <div className="review-row" key={a.id}>
+                              <div className="row">
+                                <span className={a.correct ? 'green' : 'amber'}>
+                                  {a.correct ? '✓ 正解' : '↻ 要復習'} ·{' '}
+                                  {a.status === 'verified' ? 'Verified' : 'AI生成'}
+                                </span>
+                                <span className="caption">
+                                  {new Date(a.at).toLocaleString('ja-JP')}
+                                </span>
+                              </div>
+                              <p>{bank.find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
+                              <button
+                                className="textbutton"
+                                onClick={() => {
+                                  const item = bank.find((q) => q.id === a.questionId);
+                                  if (item) {
+                                    start([item]);
+                                    setSelected(a.answer);
+                                    setRevealed(true);
+                                  }
+                                }}
+                              >
+                                回答と解説を見る <ArrowRight size={15} />
+                              </button>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="empty">
+                            <BookOpen />
+                            <h3>まだ回答履歴がありません</h3>
+                            <p>演習をはじめると、正解も間違いも学びの記録になります。</p>
+                            <button className="primary" onClick={() => navigate('Practice')}>
+                              問題を解く
+                            </button>
+                          </div>
+                        )}
+                      </article>
+                      {generated.length > 0 && (
+                        <article className="panel">
+                          <h2>保存済みのAI生成問題 · 未検証</h2>
+                          {generated.map((q) => (
+                            <button className="resume" key={q.id} onClick={() => start([q])}>
+                              {q.question}
+                              <ArrowRight size={16} />
+                            </button>
+                          ))}
+                        </article>
+                      )}
+                    </>
                   )}
                 </>
               )}

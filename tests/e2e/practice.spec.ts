@@ -70,6 +70,7 @@ test('five-question result and one-tap weak retry with recent fallback', async (
   await expect(page.getByRole('button', { name: '回答を確認する' })).toBeVisible();
   await page.reload();
   await navigate(page, 'Review');
+  await page.getByRole('button', { name: /回答履歴/ }).click();
   await expect(page.getByRole('heading', { name: 'Practiceの結果', exact: true })).toBeVisible();
   await page.getByRole('button', { name: /4\/5 正解/ }).click();
   await expect(page.getByRole('heading', { name: '今回の学習結果' })).toBeVisible();
