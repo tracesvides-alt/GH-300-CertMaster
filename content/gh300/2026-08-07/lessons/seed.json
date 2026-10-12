@@ -8,7 +8,7 @@
       "d1o1"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "GitHub Copilotは副操縦士（Copilot）であり自律操縦士（Autopilot）ではありません。流暢なコード提案であってもハルシネーションの可能性を常に考慮し、人間が最終的な説明責任と検証義務を負います。",
+    "summary": "Copilotには自律的に作業するモードもありますが、生成結果の正確性・安全性と採用の判断は開発者が検証します。流暢な提案にもハルシネーションの可能性があります。",
     "estimatedMinutes": 8,
     "difficulty": "beginner",
     "sections": [
@@ -65,7 +65,7 @@
       "responsible",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -426,7 +426,7 @@
       "d2o2"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "現行のGitHub Copilot CLIは `copilot` で始める対話型のターミナル向けエージェントです。コマンド実行やファイル変更の権限、Content Exclusionの非対応を確認します。",
+    "summary": "現行Copilot CLIは `copilot` で起動するターミナル向けエージェントです。コードベースの調査やファイル編集も行えるため、ツール権限と変更結果を確認します。Content ExclusionのCLI適用範囲は公式資料間に矛盾があり要確認です。",
     "estimatedMinutes": 7,
     "difficulty": "intermediate",
     "sections": [
@@ -448,21 +448,21 @@
       },
       {
         "heading": "5. Content Exclusionの制限",
-        "content": "GitHub Docsは、GitHub Copilot CLIとIDE ChatのAgent modeがContent Exclusionをサポートしないと明記しています。除外設定だけに機密保護を依存しないでください。"
+        "content": "GitHub Docsの除外設定ページはCopilot CLIを非対応と説明しますが、CLIのEnterprise管理ページは除外ポリシーがCLIに適用されると説明しています。現時点では適用可否を断定せず、管理設定、使用面、対象ファイルでの動作を確認してください。IDE ChatのAgent modeについても個別に確認が必要です。"
       },
       {
         "heading": "6. 30秒チェック",
-        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: 非対話で質問するには？ → `copilot -p \"質問\"`。\nQ3: CLIでContent Exclusionは適用されるか？ → 現行GitHub Docsでは非対応。"
+        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: CLIはリポジトリ内のファイルを調査できるか？ → 権限の範囲内で可能。\nQ3: CLIに対するContent Exclusionの適用可否は？ → 公式資料間に矛盾があるため管理設定と実際の適用範囲を確認する。"
       }
     ],
     "keyPoints": [
-      "現行GitHub Copilot CLIは `copilot` で起動する。",
-      "ファイル変更・ツール実行の権限を確認する。",
-      "CLIにContent Exclusionは適用されない。"
+      "現行Copilot CLIは `copilot` で起動し、コードベースを調査できる。",
+      "変更を伴うツールの権限と実行結果を確認する。",
+      "CLIへのContent Exclusion適用範囲は公式資料間で食い違うため要確認。"
     ],
     "commonMistakes": [
       "旧 `gh copilot` 拡張のコマンドを現行CLIの標準操作として教えること。",
-      "CLIにもIDEと同じContent Exclusionが適用されると考えること。"
+      "権限を広く許可した後も、各変更で必ず個別確認があると考えること。"
     ],
     "examTips": [
       "試験問題が旧拡張と現行CLIを混同していないか、製品名とコマンドを確認する。"
@@ -482,10 +482,12 @@
       "cli",
       "cli-current",
       "exclusion",
-      "guide"
+      "guide",
+      "cli-tool-permissions",
+      "cli-exclusion-admin"
     ],
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d2-agent-edits",
@@ -557,7 +559,7 @@
       "guide"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d2-mcp",
@@ -568,7 +570,7 @@
       "d2o3"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "AIモデルと外部リソース（データベース、社内API、課題追跡等）を標準化して接続するModel Context Protocol (MCP) のアーキテクチャ（Client、Server、Tools、Resources）とCopilot Extensionsとの違いを学びます。",
+    "summary": "Model Context Protocol (MCP) のClient、Server、Tools、ResourcesとCopilotでの利用を学びます。旧GitHub App型Copilot Extensionsは終了しており、現行の導入候補ではありません。",
     "estimatedMinutes": 9,
     "difficulty": "advanced",
     "sections": [
@@ -590,7 +592,7 @@
       },
       {
         "heading": "5. Limitations & Considerations",
-        "content": "・MCP Toolsの実行にはセキュリティ上のリスクが伴うため、副作用のあるツール実行時にはユーザーの明示的な承認ダイアログが挟まれます。\n・Copilot Extensions（GitHub Marketplace経由の統合）とは異なり、MCPは任意のローカル/リモート環境で動かせるオープン規格です。"
+        "content": "MCPツールの利用権限と実行結果を確認してください。GitHub App型Copilot Extensionsは2025年11月に終了しました。新規の外部ツール連携ではMCPの対応状況を確認します。"
       },
       {
         "heading": "6. 30秒チェック（Mini Review）",
@@ -625,10 +627,11 @@
     "sourceIds": [
       "mcp",
       "agent-mode",
-      "guide"
+      "guide",
+      "extensions-sunset"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d2-instructions-prompts",
@@ -868,7 +871,7 @@
       },
       {
         "heading": "4. 管理上の注意",
-        "content": "Content Exclusionは機能ごとに対応状況が異なり、Copilot CLIおよびIDE ChatのAgent modeではサポートされません。送信範囲を管理するときは製品ごとの仕様を確認します。"
+        "content": "Content Exclusionは機能ごとに対応状況が異なります。CLIへの適用はGitHub公式資料間で説明が食い違うため、送信範囲を管理するときは利用面ごとの仕様と動作を確認します。"
       },
       {
         "heading": "5. 人間による確認",
@@ -904,10 +907,11 @@
       "responsible",
       "model-hosting",
       "exclusion-concept",
-      "guide"
+      "guide",
+      "cli-exclusion-admin"
     ],
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d3-prompt-pipeline",
@@ -976,7 +980,7 @@
       "guide"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d3-retention-privacy",
@@ -1108,7 +1112,7 @@
       "guide"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d4-crafting",
@@ -1880,7 +1884,7 @@
       "d6o2"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "Content Exclusion設定変更時の最大30分の伝播遅延トラブルシューティング手順（IDE再読み込み・ステータスバー確認）と、CLIや一部Agent機能における非対応制限を徹底解説します。",
+    "summary": "Content Exclusionの設定反映と対応範囲を確認する。CLIへの適用についてGitHub公式資料間に食い違いがあるため、CLIを含む各利用面は設定・資料・動作を個別に確認する。",
     "estimatedMinutes": 9,
     "difficulty": "advanced",
     "sections": [
@@ -1894,7 +1898,7 @@
       },
       {
         "heading": "3. How It Works: 【重大制約】Content Exclusionが効かない機能",
-        "content": "公式ドキュメントに明記されている重大な制限事項:\n・GitHub Copilot in the CLI: Content Exclusionは一切サポートされていません。\n・IDE ChatのAgent mode: Content Exclusionはサポートされていません。GitHub.comやCopilot code reviewの適用範囲は別途公式表で確認します。\nWeb上のPRやIDEの通常のインライン補完・基本チャットでは除外が適用されますが、CLI環境等では除外されないため、多層防御の運用規律が必要です。"
+        "content": "IDE ChatのAgent modeなど、Content Exclusionの対応範囲は利用面で異なります。CLIについてはGitHub Docsの除外設定ページとCLI Enterprise管理ページの説明が矛盾しているため、非対応とも完全対応とも断定できません。公式の最新資料と組織設定、対象ファイルでの動作を確認してください。"
       },
       {
         "heading": "4. When to Use & 試験向けシナリオ",
@@ -1906,13 +1910,13 @@
       },
       {
         "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: Content Exclusion設定変更後、IDEに反映されるまでの最大遅延時間は？ → 約30分。\nQ2: 反映を即座に確認・更新するためのIDE操作は？ → ウィンドウの再読み込み（Reload Window）。\nQ3: Content Exclusionがサポートされていない代表的なツールは？ → GitHub Copilot in the CLI。"
+        "content": "Q1: 除外設定変更後の確認方法は？ → 反映時間を考慮しIDEを再読み込みして対象ファイルで確認。\nQ2: CLIへの適用可否は？ → 公式資料が食い違うため要レビュー。"
       }
     ],
     "keyPoints": [
       "設定変更からクライアントへの反映には最大30分の遅延が発生しうる。",
       "即時反映の確認にはIDEの再読み込み（Reload Window）とステータスバー確認が有効。",
-      "GitHub Copilot in the CLIはContent Exclusionをサポートしていない（最重要制約）。"
+      "CLIへのContent Exclusion適用について公式資料間に矛盾があり、要レビュー。"
     ],
     "commonMistakes": [
       "設定保存の瞬間に全世界のIDEで即時反映されると思い込み、設定失敗と早とちりすること。",
@@ -1920,7 +1924,7 @@
     ],
     "examTips": [
       "「最大30分の反映遅延」「Reload Window」はトラブルシューティング問題の定番です。",
-      "「CLIはContent Exclusion非対応」はシラバスの最重要注意点です。"
+      "CLIの除外範囲は公式資料が食い違うため、断定した試験対策は避ける。"
     ],
     "glossaryIds": [
       "g-exclusion-propagation",
@@ -1938,9 +1942,10 @@
     "sourceIds": [
       "exclusion",
       "cli",
-      "guide"
+      "guide",
+      "cli-exclusion-admin"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   }
 ]

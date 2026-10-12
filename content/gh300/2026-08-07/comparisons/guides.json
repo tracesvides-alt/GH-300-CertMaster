@@ -217,7 +217,7 @@
     "id": "cmp-mcp-vs-extensions",
     "title": "Model Context Protocol (MCP) vs Copilot Extensions",
     "slug": "mcp-vs-copilot-extensions",
-    "summary": "オープンスタンダードとしてローカル/リモートのツールやDBとAIを接続するMCPと、GitHub Marketplace経由でサードパーティサービスをChatに統合するCopilot Extensionsの違い。",
+    "summary": "MCPは現行の外部ツール連携方式。GitHub App型Copilot Extensionsは2025年11月に終了しており、現在の導入候補として比較しない。",
     "comparedTermIds": [
       "g-mcp",
       "g-copilot-extensions"
@@ -240,26 +240,26 @@
         "axis": "接続先とホスティング",
         "values": [
           "MCP: 自社内DB、ローカルスクリプト、プライベートAPIなど自由に接続可能",
-          "Extensions: Marketplaceで公開されたSaaSプラットフォーム（Azure, Docker, Sentry等）"
+          "Extensions: GitHub App型の旧Marketplace連携。2025年11月に終了"
         ]
       },
       {
         "axis": "連携先機能",
         "values": [
           "MCP: 主にAgent ModeからTools/Resourcesとして呼び出し",
-          "Extensions: チャット参加者（`@docker` 等）として対話UIから呼び出し"
+          "Extensions: 旧チャット参加者連携。現在は利用不可"
         ]
       }
     ],
     "decisionGuide": [
       "社内のPostgreSQLデータベースや独自リソースとCopilotを接続したい → MCP Serverを構築",
-      "GitHub.comやIDEのチャットから直接SaaS（AzureやDocker）のログやリソースを操作したい → Copilot Extensionsを導入"
+      "外部SaaSと現行Copilotを連携したい → 対応するMCPサーバーを確認"
     ],
     "commonTraps": [
       "社内非公開システムを接続するのにMarketplaceのExtensionsが必要と思い込む誤り（MCPなら独自ホスト可能）"
     ],
     "examTips": [
-      "「オープンプロトコルによる外部ツール接続」はMCP、「Marketplaceのチャット参加者連携」はExtensionsです。"
+      "GitHub App型Copilot Extensionsは終了済み。現行の外部ツール連携ではMCPを確認する。"
     ],
     "lessonIds": [
       "lesson-d2-mcp"
@@ -268,11 +268,12 @@
     "sourceIds": [
       "mcp",
       "chat",
-      "guide"
+      "guide",
+      "extensions-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "cmp-instructions-vs-prompts",
@@ -557,7 +558,7 @@
       {
         "axis": "CLIでの対応状況",
         "values": [
-          "Content Exclusion: CLIでは非対応（サポート対象外）",
+          "Content Exclusion: CLIへの適用は公式資料間に矛盾があり要確認",
           "Public Code Matching: バックエンドプロキシで判定適用"
         ]
       }
@@ -572,7 +573,7 @@
     ],
     "examTips": [
       "「機密コードの送信遮断」＝ Content Exclusion、「公開コード一致のブロック」＝ Public Code Matching です。",
-      "CLIでContent Exclusionが効かない点もセットで出題されます。"
+      "CLIへのContent Exclusion適用は公式資料間に矛盾があるため、断定を避ける。"
     ],
     "lessonIds": [
       "lesson-d6-content-exclusion-setup",
@@ -585,11 +586,12 @@
       "exclusion",
       "policies",
       "privacy",
-      "guide"
+      "guide",
+      "cli-exclusion-admin"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "cmp-zero-vs-few-shot",

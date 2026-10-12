@@ -1252,7 +1252,7 @@
     "examPoints": [
       "現行CLIは copilot で起動する",
       "コマンドとファイル変更の許可を確認する",
-      "Content ExclusionはCopilot CLIでサポートされない"
+      "CLIへのContent Exclusion適用は公式資料間で説明が食い違う"
     ],
     "commonConfusions": [
       "IDE内ターミナルの `@terminal` と、スタンドアロンの `gh copilot` コマンドの混同"
@@ -1271,11 +1271,12 @@
     "sourceIds": [
       "cli",
       "guide",
-      "cli-current"
+      "cli-current",
+      "cli-exclusion-admin"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-gh-copilot-explain",
@@ -1427,8 +1428,8 @@
       "実行確認",
       "コマンド実行保護"
     ],
-    "shortDefinition": "Copilot CLIが提案したコマンドをユーザーが内容を確認・承認するまで自動実行しない安全保護機構。",
-    "detailedDefinition": "`gh copilot suggest` はコマンド生成後、直ちにシェルで実行するのではなく、「Copy to clipboard」「Execute command」「Revise command」「Exit」の選択肢を提示する。危険なコマンド（rm -rfなど）による誤動作を防止する。",
+    "shortDefinition": "Copilot CLIの変更系ツールには許可設定があり、事前に広い権限を与えた場合は毎回の確認なしに実行されることもある。",
+    "detailedDefinition": "現行の `copilot` CLIでは読み取り系操作と変更系操作で権限の扱いが異なる。変更系ツールは通常承認を求めるが、保存した許可や `--allow-all`、autopilotモードなどの設定によって個別確認を省略できる。旧 `gh copilot suggest` の「Execute command」メニューは現行CLIの標準操作ではない。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -1439,13 +1440,12 @@
     ],
     "whyItMatters": "Responsible AI原則（Human-in-the-loop）がCLI製品においてどう実装されているかを示す好例。",
     "useCases": [
-      "破壊的なファイル削除やGit操作前の確認",
-      "修正が必要な場合の「Revise command」によるプロンプト調整"
+      "ファイル変更やシェルコマンドに付与する権限を確認する",
+      "広い権限を許可したセッションの変更差分を検査する"
     ],
     "examPoints": [
-      "提案されたコマンドはデフォルトで自動実行されない",
-      "ユーザーが明示的に「Execute command」を選択して実行する",
-      "実行前にコマンドの修正やコピーが可能"
+      "CLIは権限に基づきファイル編集やコマンド実行を行える",
+      "承認の頻度は事前許可と実行モードによって変わる"
     ],
     "commonConfusions": [
       "CLIは危険なので実行機能自体が存在しないという誤解（確認付きで実行可能）"
@@ -1462,10 +1462,11 @@
     "questionIds": [],
     "sourceIds": [
       "cli",
-      "responsible"
+      "responsible",
+      "cli-tool-permissions"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1475,8 +1476,8 @@
     "aliases": [
       "CLIコンテキスト制限"
     ],
-    "shortDefinition": "Copilot CLIが参照できるコンテキストは入力されたプロンプトやコマンド文字列に限られ、IDEのようにリポジトリ全体を自動解析しない制約。",
-    "detailedDefinition": "IDE統合版のCopilotと異なり、CLI版は現在開いている複数ファイルのタブやワークスペースのコードベースインデックスを自動参照しない。必要な文脈（OS環境、エラーメッセージ、ファイルパス）はプロンプト内で明示的に渡す必要がある。",
+    "shortDefinition": "Copilot CLIは権限内でリポジトリのファイルを読み調査できる。利用できる外部データやツールは権限と設定に依存する。",
+    "detailedDefinition": "現行Copilot CLIはコードベースの検索、ファイル読み取り・編集、コマンド実行などのツールを使える。コンテキストが入力プロンプトだけに限定されるという旧CLI前提は誤り。アクセスできる範囲は実行場所、権限、設定したツールによって変わる。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -1491,12 +1492,11 @@
       "エラーメッセージをプロンプトに引用して原因調査"
     ],
     "examPoints": [
-      "CLIはリポジトリの全ファイルを自動インデックスしない",
-      "コンテキストはプロンプトの記述内容に大きく依存する",
-      "Content ExclusionはCLIでは適用対象外である"
+      "現行CLIは権限内のリポジトリを調査できる",
+      "Content ExclusionのCLI適用について公式資料間に矛盾がある"
     ],
     "commonConfusions": [
-      "IDEの `@workspace` と同じようにCLIがプロジェクト構造を把握しているという誤解"
+      "旧 `gh copilot` 拡張の制限を現行 `copilot` CLIに当てはめること"
     ],
     "relatedTermIds": [
       "g-copilot-cli",
@@ -1509,11 +1509,13 @@
     "questionIds": [],
     "sourceIds": [
       "cli",
-      "exclusion"
+      "exclusion",
+      "cli-tool-permissions",
+      "cli-exclusion-admin"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-agent-mode",
@@ -1649,7 +1651,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "2026年シラバスで追加されたエコシステムの目玉概念。Copilot Extensionsとの違いも問われる。",
+    "whyItMatters": "GH-300シラバスの外部ツール連携に関わる概念。旧GitHub App型Extensionsは終了したため、現行の連携方式として区別する。",
     "useCases": [
       "社内データベースのスキーマ情報をリアルタイム取得してクエリ生成",
       "GitHub IssueやPRの情報を直接読み取ってコード修正",
@@ -1661,8 +1663,8 @@
       "クライアント（IDE/Copilot）とサーバー（MCP Server）の分離構造"
     ],
     "commonConfusions": [
-      "Copilot Extensionsとの違い",
-      "単なるREST API呼び出しとの違い（プロトコル標準化とエージェント対話）"
+      "終了したGitHub App型Copilot Extensionsを現行の連携候補と考えること",
+      "単なるREST API呼び出しとの違い"
     ],
     "relatedTermIds": [
       "g-mcp-server",
@@ -1683,7 +1685,8 @@
     "sourceIds": [
       "mcp",
       "agent-mode",
-      "guide"
+      "guide",
+      "extensions-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
@@ -2324,8 +2327,8 @@
       "Copilot 拡張機能",
       "Copilot エクステンション"
     ],
-    "shortDefinition": "サードパーティの開発ツールやクラウドプラットフォーム（Docker, Azure, Datadog等）の機能をCopilot Chat内から直接操作・連携できる拡張機構。",
-    "detailedDefinition": "GitHub Marketplaceで提供される連携アプリ。チャット内で `@docker` や `@azure` などの参加者を呼び出し、外部サービスのログ確認、リソースのデプロイ、エラー調査などをCopilotの対話UIを離れずに行える。",
+    "shortDefinition": "GitHub App型Copilot Extensionsは2025年11月に終了した旧連携方式。現在の外部ツール連携はMCPを確認する。",
+    "detailedDefinition": "GitHubはGitHub App型Copilot Extensionsを2025年11月10日に全面停止した。過去にはMarketplaceアプリをチャット参加者として呼び出せたが、現在の導入手段として案内しない。VS Codeのクライアント側拡張機能や通常のGitHub Appsはこの終了対象に含まれない。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -2334,18 +2337,17 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "MCPとの違いや、組織で利用可能なサードパーティ連携の管理方法を理解するために重要。",
+    "whyItMatters": "旧教材や旧問題が、終了したGitHub App型Extensionsを現行機能として勧めないよう区別する。",
     "useCases": [
-      "`@azure` でクラウド環境のリソース障害をチャットから調査",
-      "`@docker` でDockerfileの最適化とコンテナ診断を実行"
+      "旧資料に記載されたCopilot Extensionsを歴史的な方式として識別する",
+      "新規のツール連携ではMCPの対応状況を確認する"
     ],
     "examPoints": [
-      "GitHub Marketplaceから組織またはアカウントにインストールして利用",
-      "チャット参加者として呼び出す",
-      "組織管理者は拡張機能のインストール・利用をポリシーで制御可能"
+      "GitHub App型Copilot Extensionsは2025年11月10日に終了",
+      "VS Codeのクライアント側拡張機能と通常のGitHub Appsは別物"
     ],
     "commonConfusions": [
-      "MCP（オープンプロトコル規格）とCopilot Extensions（GitHub Marketplaceのエコシステム）の対比"
+      "終了したGitHub App型Extensionsを現行のMCP代替手段として選ぶこと"
     ],
     "relatedTermIds": [
       "g-mcp",
@@ -2363,11 +2365,12 @@
     "questionIds": [],
     "sourceIds": [
       "chat",
-      "guide"
+      "guide",
+      "extensions-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-org-policies",
@@ -3562,7 +3565,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-prompt-engineering",
@@ -5136,7 +5139,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-repo-content-exclusion",
@@ -5605,8 +5608,8 @@
       "CLIでの非対応",
       "Exclusion Limitations"
     ],
-    "shortDefinition": "Content Exclusionは機能ごとに対応範囲が異なり、Copilot CLIとIDE ChatのAgent modeではサポートされない。",
-    "detailedDefinition": "現行GitHub Docsは、Copilot CLIとIDE ChatのAgent modeがContent Exclusion非対応と明記している。GitHub.comやCopilot code reviewには対応範囲があるため、Cloud agent等を一括して非対応と断言せず、利用面の表を確認する。",
+    "shortDefinition": "Content Exclusionは利用面ごとに対応範囲が異なる。CLIへの適用はGitHub公式資料間で説明が食い違うため要確認。",
+    "detailedDefinition": "GitHub DocsのContent Exclusion設定ページはCLIを非対応とする一方、Copilot CLIのEnterprise管理ページは除外ポリシーがCLIに適用されると説明する。現時点ではCLIの適用可否を断定せず、管理ポリシーと対象ファイルでの動作を確認する。IDE ChatのAgent modeも利用面別に確認する。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5621,9 +5624,8 @@
       "Agent Mode利用時の機密ファイルアクセス制限"
     ],
     "examPoints": [
-      "Copilot CLIとIDE ChatのAgent modeは非対応",
-      "他の製品面は最新の対応表で確認する",
-      "除外設定だけを万能なセキュリティ境界としない"
+      "Content Exclusionの対応範囲は利用面ごとに異なる",
+      "CLI適用に関する公式資料間の矛盾は要レビュー"
     ],
     "commonConfusions": [
       "Content Exclusionを設定すればCLIでも自動的にファイルが保護されるという危険な思い込み"
@@ -5646,11 +5648,12 @@
       "exclusion",
       "cli",
       "guide",
-      "exclusion-concept"
+      "exclusion-concept",
+      "cli-exclusion-admin"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-compliance-auditability",

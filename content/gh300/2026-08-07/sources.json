@@ -1619,5 +1619,95 @@
     "relatedDomainIds": [
       "d6"
     ]
+  },
+  {
+    "id": "extensions-sunset",
+    "title": "Sunset notice: GitHub App-based Copilot Extensions",
+    "url": "https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/",
+    "publisher": "GitHub Blog",
+    "sourceType": "reference",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-mcp"
+    ],
+    "relatedGlossaryIds": [
+      "g-mcp",
+      "g-copilot-extensions"
+    ],
+    "relatedComparisonIds": [
+      "cmp-mcp-vs-extensions"
+    ],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "cli-tool-permissions",
+    "title": "Allowing and denying tool use",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [
+      "g-cli-execution-confirm",
+      "g-cli-context-limits"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "cli-exclusion-admin",
+    "title": "Administering GitHub Copilot CLI for your enterprise",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2",
+      "d3o1",
+      "d6o2",
+      "d6o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli",
+      "lesson-d3-data-flow",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-cli",
+      "g-cli-context-limits",
+      "g-exclusion-limitations"
+    ],
+    "relatedComparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2",
+      "d3",
+      "d6"
+    ]
   }
 ]

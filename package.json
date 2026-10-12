@@ -11,6 +11,7 @@
     "check": "tsc --noEmit",
     "syllabus:check": "node scripts/check-syllabus.mjs",
     "sources:check": "node scripts/check-official-sources.mjs",
+    "content:audit": "node scripts/audit-learning-content.mjs",
     "quality:audit": "node scripts/audit-questions.mjs",
     "quality:check": "node scripts/audit-questions.mjs --check"
   },

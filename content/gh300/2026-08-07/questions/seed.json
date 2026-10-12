@@ -724,7 +724,7 @@
     "objectiveId": "d6o1",
     "difficulty": "beginner",
     "type": "single-select",
-    "status": "verified",
+    "status": "needs-review",
     "question": "Content exclusionについて正しいのは？",
     "choices": [
       {

@@ -28,7 +28,7 @@ function rng(seed = 1) {
 // Algorithm fixtures only: these synthetic IDs never enter the production Question Bank.
 const largeBank: Question[] = domains.flatMap((d) =>
   Array.from({ length: 40 }, (_, i) => ({
-    ...questions.find((q) => q.domainId === d.id)!,
+    ...questions.find((q) => q.domainId === d.id && q.status === 'verified')!,
     id: `fixture-${d.id}-${i}`,
     objectiveId: d.objectives[i % d.objectives.length].id,
   })),
@@ -186,7 +186,7 @@ describe('history and question weighting', () => {
     expect(Math.min(...counts)).toBeGreaterThanOrEqual(5);
   });
   it('continues with entirely recent small banks, reports actual count, never reuses an ID', () => {
-    const smallBank = questions.slice(0, 12);
+    const smallBank = questions.filter((q) => q.status === 'verified').slice(0, 12);
     const result = selectQuestions(smallBank, options({ count: 50 }), {
       attempts: smallBank.map((q) => answer(q)),
       now,
