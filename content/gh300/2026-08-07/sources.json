@@ -1235,7 +1235,8 @@
     "relatedQuestionIds": [
       "q-d2-a12",
       "q-d2-a13",
-      "q-d3-a02"
+      "q-d3-a02",
+      "q-d3-f02"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1888,7 +1889,9 @@
       "g-fill-in-the-middle"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d3-f01"
+    ],
     "relatedDomainIds": [
       "d3"
     ]
@@ -2071,6 +2074,37 @@
     "relatedQuestionIds": [],
     "relatedDomainIds": [
       "d5"
+    ]
+  },
+  {
+    "id": "cli-extension-sunset",
+    "title": "Upcoming deprecation of gh-copilot CLI extension",
+    "url": "https://github.blog/changelog/2025-09-25-upcoming-deprecation-of-gh-copilot-cli-extension/",
+    "publisher": "GitHub Blog",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [
+      "g-gh-copilot-explain",
+      "g-gh-copilot-suggest",
+      "g-cli-shell-aliases"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g05",
+      "q-d2-g06",
+      "q-d2-g07"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   }
 ]

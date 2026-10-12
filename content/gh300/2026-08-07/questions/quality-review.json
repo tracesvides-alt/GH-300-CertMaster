@@ -2,7 +2,7 @@
   "rubricVersion": 1,
   "reviewedAt": "2026-10-12",
   "reviewer": "Codex editorial second pass",
-  "method": "全200問の本文・選択肢を再読し難易度を再分類。改稿90問を別パスで再読し追加修正。単一編集者の評価であり、独立した受験者実測ではない。",
+  "method": "基礎154問を本文・全選択肢・解説・用語との対応で全件再読。生成時の自動PASSとは別の編集監査。受験者実測ではない。",
   "questions": {
     "q01": {
       "fingerprint": "a385e3056d10dc3817bbe72f7f3203fa503cfe11d04cc40ef5bc7fa8f74a6bb1",
@@ -18,7 +18,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "説明と編集の用途識別が中心であり、Appliedから基礎へ戻す。 選択肢単独でなく本文の対象・契約・観測に照合する。説明と実行結果を照合し、元のコードを変更しない条件を満たす。"
+      "rationale": "本文で必要な判断: 説明と実行結果を照合し、元のコードを変更しない条件を満たす。 比較した誤答: 関数の既存テストを読み、入出力例とテスト名から目的を推定する → 既存契約の手掛かりにはなるが関数の説明を直接得て照合するわけではない。 / コードレビューで挙動の説明を求め、変更提案は適用せず読む → 説明は得られるが入力例の実行照合が欠ける。 / Inline Chatで可読性を改善し、変更後のコードから意図を読む → 可読性改善には使えるが、説明を得る前にコードを変更する。"
     },
     "q07": {
       "fingerprint": "0f7ad3c4ba8a42ef383ef4276445d1a5701f58ff5050b69efc4e147d3835f35b",
@@ -69,20 +69,20 @@
       "rationale": "MD5の提案を、一般ハッシュや暗号化ではなくパスワード保存向け方式へ修正する。 選択肢単独でなく本文の対象・契約・観測に照合する。パスワード保存向けの計算コストを持つ方式と検証まで指定する。"
     },
     "q-d1-a05": {
-      "fingerprint": "40c2fd18ea604f39a36deb9795ff72a8cfc73d3463f41d1826c279c845cb5d35",
+      "fingerprint": "942b717b1ebf6d36372fd950de7bc071d29ba5d1bf61d56af8e573921aeb6f64",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "出所と利用条件を確認する一般原則のみ。具体的な通知や契約の比較がなく基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。参照情報は出所確認の助けとなるが、条件の適合判断は別途必要である。"
+      "rationale": "本文で必要な判断: 今回の断片の条件を製品用途と照合する必要がある。 比較した誤答: 依存パッケージ一覧とそのライセンス条件 → 依存一覧だけでは生成断片の出所を判断できない。 / CodeQLの検査結果と指摘された脆弱性 → 安全性の検査はライセンス適合を証明しない。 / 今後の公開コード一致設定と適用対象 → 将来の提案制御は採用済み断片の条件を示さない。"
     },
     "q-d1-a06": {
-      "fingerprint": "363de8b9cb8d90f69a222e99853424a19b925f3fb41234cfcef21febd5968ae2",
+      "fingerprint": "a1e16bc97ab118bddfa60e5eceb1de1e31ef30f90dd99f8ac418ad543db36ec2",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "人間のレビュー観点を挙げる一般原則。実際の差分の判断はないため基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。機械的検査だけでは見落としやすい意味上の問題を確認する。"
+      "rationale": "本文で必要な判断: 権限境界という業務上の意味を人が照合する。 比較した誤答: 引数型の宣言とコンパイラ設定の対応 → 型の対応であり認可条件そのものではない。 / 処理時間の分布と応答目標の対応 → 性能の対応であり利用資格の確認ではない。 / 参照元のライセンスと利用条件の対応 → 知財の対応であり拒否動作の確認ではない。"
     },
     "q-d1-a07": {
       "fingerprint": "4818a5efb8342924ac9c71a77da11d86f8ea6735772d445625d33a5f6b130ccb",
@@ -186,7 +186,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Inline Chatを用途から選ぶだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
+      "rationale": "本文で必要な判断: 選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較した誤答: 対象にコメントを書いてインライン補完を呼び、候補の続きを採用する → 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。 / Askで修正案を出し、返されたコードから必要行だけ手動適用する → 部分利用はできるがエディタ上のインライン確認ではない。 / Agentに対象関数の修正とテストを任せ、変更完了後に差分を確認する → 修正はできるが編集中の関数でインライン差分を部分適用する条件とは異なる。"
     },
     "q-d2-a02": {
       "fingerprint": "0be858b9d13801950718d9eab8bc1764aaf8985aa372230929967a51ba582499",
@@ -218,7 +218,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Agentの特徴の説明にとどまるため基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。問われているのは検索や説明に加えて編集・実行を繰り返す能力である。"
+      "rationale": "本文で必要な判断: 問われているのは検索や説明に加えて編集・実行を繰り返す能力である。 比較した誤答: Agentに編集を依頼し、テストは開発者が実行して結果を確認する → Agent利用でもテスト結果を次の操作に使う条件が欠ける。 / Inline Chatで失敗箇所を修正し、開発者がテストを再実行する → 局所修正には使えるが一連のツール実行は自動化しない。 / Askで修正案を出し、開発者がテスト結果を貼って次の案を求める → ログを渡して相談できるが編集・実行の反復は手動になる。"
     },
     "q-d2-a06": {
       "fingerprint": "f1ca7e76edea5fa76a5aebed1416864ce2a428a965bf13a8ed504791f1db022a",
@@ -226,7 +226,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "実行結果を次の操作に使うAgentの仕組みの再認。診断ではなく基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。"
+      "rationale": "本文で必要な判断: 実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 比較した誤答: ビルド設定を変更し、エラーの原因箇所は元のままにする → 設定変更だけではログに示された実装修正を確認できない。 / エラー行だけを修正し、ビルドの再実行は開発者へ任せる → ログは使うが修正後の検証を反復しない。 / ビルド前の変更を再生成し、同じビルドを再実行する → 失敗ログを修正判断へ取り込んでいない。"
     },
     "q-d2-a07": {
       "fingerprint": "250e326649d759dd1a1b883e788972049736f115f47d9d7e347bf530ec64da0c",
@@ -237,12 +237,12 @@
       "rationale": "スキーマの現在値という用途へ、操作範囲と利用者認可を備えた連携を適用する。 選択肢単独でなく本文の対象・契約・観測に照合する。現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。"
     },
     "q-d2-a08": {
-      "fingerprint": "589da217c589eb70b49e4bd6f9903accd2df9743e52c2f0e7b4f70e244be779c",
+      "fingerprint": "62450fe2e553e205d9e2879e79ab735a9039a0138ad7107277123c410dcb1c60",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "設定キーserversの記憶問題。文面が技術的でも応用ではなく基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。VS Codeの.vscode/mcp.jsonではサーバー定義をserversに配置する。 他のMCPクライアントで使われる形式で、ここで指定したVS Code設定とは異なる。"
+      "rationale": "本文で必要な判断: サーバーと接続して機能を利用するクライアント。 比較した誤答: MCP Server → 機能を公開して要求に応答する提供側。 / MCP Resource → 参照可能な情報そのものを表す。 / MCP Tool → 呼び出せる操作そのものを表す。"
     },
     "q-d2-a09": {
       "fingerprint": "4d8b534b64b6702bbfeabb3cc26254de0a5e0632ccb89daa7ec7c82663c871af",
@@ -250,7 +250,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "共通指示の標準配置先を選ぶ知識なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。"
+      "rationale": "本文で必要な判断: 対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 比較した誤答: 個人のCopilot指示に同じ規約を配布し、各人が更新する → 常時参照できてもGit上の一元管理にならない。 / .github/prompts/team.prompt.mdに規約を保存し、各対話で呼び出す → Git共有できるが毎回の呼び出しが必要で自動適用ではない。 / Copilot Spacesに規約を共有し、参照したい対話で選ぶ → 共有資料には使えるが毎回の自動適用を満たさない。"
     },
     "q-d2-a10": {
       "fingerprint": "f93871b86d0715f37c8a89b34c123f2b0177299b31cc6510982b96778f309701",
@@ -266,7 +266,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "PR要約機能の役割説明にとどまるため基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。レビュアー向けに今回の変更を要約する目的へ直接対応する。"
+      "rationale": "本文で必要な判断: レビュアー向けに今回の変更を要約する目的へ直接対応する。 比較した誤答: Copilot code reviewで変更のリスクを抽出し、PR説明を作成者が書く → リスク調査に使えるがサマリーの自動下書きではない。 / コミットメッセージ生成を使い、各コミットの説明をPRへ集める → 差分の一部の説明は得られるがPR全体の要約ではない。 / 関数のドキュメント生成を使い、変更箇所の仕様をPRへ書く → APIの説明は得られるがPR変更の概要ではない。"
     },
     "q-d2-a12": {
       "fingerprint": "eac08d262bd6624d0f534dca78ba7d0292ba56d56a265da48bdffee91650e974",
@@ -274,7 +274,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "TabとEscの標準キー操作の記憶なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。候補全体の採用と候補の却下という二つの操作に合う。 Windowsでの一語採用は部分採用であり今回は全体採用が必要である。"
+      "rationale": "本文で必要な判断: 候補全体の採用と候補の却下という二つの操作に合う。 Windowsでの一語採用は部分採用であり今回は全体採用が必要である。 比較した誤答: 一語をCtrl+右矢印で採用し、不要な候補をEscで閉じる → Windowsでの一語採用は部分採用であり今回は全体採用が必要である。 / Inline Chatを開いて採用し、不要な候補を新規Chatで閉じる → 補完の採用・却下と対話編集の起動を混同している。 / 全体をTabで採用し、不要な候補を候補切替で別案にする → 別案への切替は候補を閉じることとは異なる。"
     },
     "q-d2-a13": {
       "fingerprint": "0cfa258a6442eae6dcf830f49d3af1a05fb286b3a109d95ce42992bf6f0b227d",
@@ -282,7 +282,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "部分採用のショートカットの記憶なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。部分採用なので残りの提案を取り込まずに編集を続けられる。 全体採用では不要な残りの部分まで取り込む。"
+      "rationale": "本文で必要な判断: 部分採用なので残りの提案を取り込まずに編集を続けられる。 全体採用では不要な残りの部分まで取り込む。 比較した誤答: 候補切替で別の補完案へ移動する → 別案の表示は現在の先頭単語の部分採用ではない。 / Tabで候補全体を採用する → 全体採用では不要な残りの部分まで取り込む。 / Escで候補全体を閉じる → 却下では必要な単語も取り込めない。"
     },
     "q-d2-a14": {
       "fingerprint": "1490e2421004020f16f8b1db98b4a352ae633bcec21a15a834677f92c4d865f0",
@@ -290,7 +290,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "説明機能を選ぶ用途識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。現状の意味を理解する段階なので説明依頼が適する。 修正の提案は意図を理解した後の段階である。"
+      "rationale": "本文で必要な判断: 現状の意味を理解する段階なので説明依頼が適する。 修正の提案は意図を理解した後の段階である。 比較した誤答: 選択コードについてInline Chatで修正を依頼する → 修正の提案は意図を理解した後の段階である。 / Agentに正規表現の置換とテスト実行を依頼する → 自律的な置換は書き換え前の理解という条件に合わない。 / コードレビューで正規表現の改善指摘を依頼する → 改善点の把握には有用だが現状のマッチ条件を説明する依頼とは違う。"
     },
     "q-d2-a15": {
       "fingerprint": "8044e97d9e607c98d680e0e7ad048212c14b8d4dfb4b497d0bf35c7adf384b39",
@@ -314,7 +314,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "ResourceとToolの定義の組合せ。実装の診断はなく基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。読み取りコンテキストと実行要求を区別している。読み取りをToolで提供する実装もあり得る。 読み取りToolは可能だがResourceは副作用のある操作を表す設計ではない。"
+      "rationale": "本文で必要な判断: 読み取りコンテキストと実行要求を区別している。読み取りをToolで提供する実装もあり得る。 読み取りToolは可能だがResourceは副作用のある操作を表す設計ではない。 比較した誤答: 文書はPrompt、チケット作成もPromptとして提供する → Promptは対話のテンプレートであり操作実行そのものではない。 / 文書はTool、チケット作成はResourceとして提供する → 読み取りToolは可能だがResourceは副作用のある操作を表す設計ではない。 / 文書はResource、チケット作成はCustom Instructionsに記載する → 指示を記述してもチケット作成の実行機構を提供したことにはならない。"
     },
     "q-d2-a18": {
       "fingerprint": "02251a3ecb54ed0c254ac73acad07d0087e9059ad3e6b80bce59155a6fb362a7",
@@ -325,12 +325,12 @@
       "rationale": "一般論の選択を具体的な失敗への適用へ改稿。認可後にも残る不要データの送信をサーバーで減らす。 選択肢単独でなく本文の対象・契約・観測に照合する。用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。"
     },
     "q-d2-a19": {
-      "fingerprint": "7143bf364ca048e37564cf78074471694b68d25f13db5ce43be978c3997a4de5",
+      "fingerprint": "2d1ff89f9ad82582e6477878376fadf7c99e59c4b9ca6bfe4afdb506709c7d4e",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "簡潔で具体的な指示という一般原則なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。必要な規約を明確で実行可能な指示として伝える。"
+      "rationale": "本文の対象を確認する必要がある: チームのCopilot共通指示で、既存のloggerを利用する方針を短く伝えたい。対象APIがappLogger.errorと決まっている場合、最も具体的な一文は？ 正答: モデルが使うAPI名を明示している。 他の選択肢はそれぞれ別の検証・管理対象: 共通ロガーの名前が未指定。 / チーム固有APIではなく一般的なAPIに解釈され得る。 / どの既存方式かが未指定。"
     },
     "q-d2-a20": {
       "fingerprint": "a7a84d667e10a66c56ac12b1c996bcfc13104768c52700b42821d13e25953d1e",
@@ -346,7 +346,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "ファイルを添付する操作知識だけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。対象がファイルとして特定されているので直接の参照が適する。"
+      "rationale": "本文で必要な判断: 対象がファイルとして特定されているので直接の参照が適する。 比較した誤答: 対象関数を選択してChatへ渡し、同じファイルの残りは検索させる → 選択部分は明示できるがファイル全体を確実に含めない。 / 現在のファイルのターミナル出力を添付し、残りを推定させる → 実装内容の明示参照にならない。 / ワークスペース検索でファイル名を指定し、取得結果を使う → 検索結果の抜粋は得られるがファイル内容全体の明示添付ではない。"
     },
     "q-d2-a22": {
       "fingerprint": "fd66b3c4fd34492e4d240be411ffb233f5ef5d8366c77ff25077bb1b461b9898",
@@ -378,7 +378,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "オンデマンドの定型依頼からPrompt Fileを識別するだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。"
+      "rationale": "本文で必要な判断: 必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 比較した誤答: 個人指示にテンプレートを保存し、各自が範囲を書き換える → 個人別の管理でリポジトリ上の定型タスク共有にならない。 / Copilot Spacesに過去ノートを集め、指定範囲を毎回Chatで説明する → 資料は共有できるが手順と引数の再利用ができない。 / Custom Instructionsにノート形式を置き、コミット範囲は毎回Chatへ入力する → 形式は共有できてもタスクを必要時だけ引数付きで呼ぶ構成ではない。"
     },
     "q-d2-e04": {
       "fingerprint": "ff9b4b3f4154a186e32fc13fac2cf88f4203c59f84414eae737d6eaddddffb6d",
@@ -386,7 +386,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "資料共有からSpacesを識別するだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。共通の資料を集めた文脈の共有という目的に合う。"
+      "rationale": "本文で必要な判断: 共通の資料を集めた文脈の共有という目的に合う。 比較した誤答: Repository Custom Instructionsに設計文書の一覧と要点を記す → 共通規約としては使えても選択した資料をまとめて共有する用途と異なる。 / MCPのResourceとして各設計文書を公開し、利用者ごとに接続する → 参照は可能でもチームで選んだ資料をまとめる共有空間の要件と異なる。 / Prompt Fileへ資料名と要約の手順を書き、各自が資料を添付する → 作業手順は共有できるが資料集合そのものの共有ではない。"
     },
     "q-d2-e05": {
       "fingerprint": "509e41e5f0b312b33db624b560447891fde9d8b472d96ff8852dc51501c237c9",
@@ -394,7 +394,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "インライン差分からInline Chatを識別するだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
+      "rationale": "本文で必要な判断: 選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較した誤答: インライン補完で新しい処理を足し、後からGit差分を確認する → 追記には適しても選択済みコードの対話的な差分修正ではない。 / Agentで対象関数を編集し、作業完了後の差分を一括確認する → 編集は可能だが一行ずつのインライン差分確認という条件を外す。 / Askで選択コードの改善案を出し、手動で対象行を置換する → 案は得られるが対象コード上の差分プレビューを直接適用できない。"
     },
     "q-d2-e06": {
       "fingerprint": "1c87825bb1e5bc395dcf146c6d8c5cf2622a4209c9bace88b764e612fdc753d2",
@@ -450,7 +450,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "再利用タスクからPrompt Fileを識別するだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。"
+      "rationale": "本文で必要な判断: 必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 比較した誤答: Copilot Spacesに仕様書を置き、生成手順は各回のChatで入力する → 資料は共有できるが生成手順を書き直す必要が残る。 / リポジトリ指示に生成規約を置き、仕様書は毎回添付する → 規約は共有できるがタスクを引数付きで呼ぶ構成ではない。 / 個人指示に仕様書のパスと出力規約を置き、各人で維持する → リポジトリで共有するオンデマンドタスクとは異なる。"
     },
     "q-d2-e13": {
       "fingerprint": "cba7da6e689bb1b222aa7a51ebc41714fb088029a348189c1421f08e92c47f28",
@@ -458,7 +458,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "端末での提案・説明というCLIの基本用途なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。端末で利用でき、構文の確認と実行判断を分けられる。"
+      "rationale": "本文で必要な判断: 端末で利用でき、構文の確認と実行判断を分けられる。 比較した誤答: CLIで類似コマンドを検索し、各候補を試して比較する → 提案を理解する前に実行してしまう。 / CLIで実行して得た出力から構文を確認する → 実行前の構文確認という条件を満たさない。 / CLIへコマンドの説明を求めず、過去の実行履歴から選ぶ → 今回の提案の構文と影響を確認しない。"
     },
     "q-d2-e14": {
       "fingerprint": "d3de8d7d888fb4ad913d1ffd364756298481df89d8dfba095af2277981af0286",
@@ -490,7 +490,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "診断箇所でInline Chatを選ぶ操作識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
+      "rationale": "本文で必要な判断: 選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較した誤答: Askへエラー箇所と診断文を手動で貼り、コードをコピーして適用する → 解決案は得られるが診断情報からの素早いインライン適用ではない。 / AgentにProblems全体の修正を任せ、まとめて差分を確認する → 広い問題には向くが特定箇所を直接直す条件より過大である。 / 対象にコメントを書いてインライン補完を呼び、候補の続きを採用する → 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。"
     },
     "q-d2-e18": {
       "fingerprint": "7d79a5231ecf24e3f1de2a90b58c6158769b1c968599c0e33e06f5e1373b0b70",
@@ -498,7 +498,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Agentという機能名を要件から選ぶだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。"
+      "rationale": "本文で必要な判断: 複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較した誤答: Askで実装案を組み立て、ファイル追加と実行は担当者が行う → 相談には使えても複数ファイル・依存追加・実行が手動になる。 / Copilot code reviewで既存のUI差分を確認し、必要ファイルを手で追加する → 既存差分の検査であり新規作成の継続作業ではない。 / Inline Chatで各ファイルを作り、パッケージ導入とテストは手動で行う → 一か所の編集には向くがツール操作の反復が自動にならない。"
     },
     "q-d2-e19": {
       "fingerprint": "aea345163ccdee4cd52716fdbfe291e322880902e98735cfcf83433415c61382",
@@ -738,7 +738,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "無関係な次タスクで新規Chatを選ぶ基本操作なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。新しい課題に不要な履歴を減らし、現在の文脈を明示する。"
+      "rationale": "本文で必要な判断: 新しい課題に不要な履歴を減らし、現在の文脈を明示する。 比較した誤答: 新Chatを開くが、認証ログも再添付して商品実装を依頼する → 会話は切れても無関係なログを再投入する。 / 同じChatに現在の商品ファイルを添付し、認証の履歴を維持する → 新資料は加わるが無関係な調査履歴が残る。 / 同じChatで認証の履歴を要約し、商品要件を追記する → 旧履歴は整理できても混入を避けられない。"
     },
     "q-d4-e03": {
       "fingerprint": "dbe381293d87d7d61d1a8886a27beccd67fce2d114cc20992b626bb2da724bff",
@@ -906,7 +906,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Blockの作用を説明する定義問題なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。公開コード一致のBlockは該当提案の提示を制御する。全知財リスクの解消を保証しない。 参照情報を見て判断する利用と提案のBlockを混同している。"
+      "rationale": "本文で必要な判断: 公開コード一致のBlockは該当提案の提示を制御する。全知財リスクの解消を保証しない。 参照情報を見て判断する利用と提案のBlockを混同している。 比較した誤答: 一致が検出された提案に参照先を付け、そのまま提示する → 参照情報を見て判断する利用と提案のBlockを混同している。 / リポジトリにPushされる秘密情報を検知して停止する → Push Protectionの役割であり提案の公開コード一致とは異なる。 / リポジトリの指定ファイルをChatの入力文脈から除外する → Content Exclusionの役割でありこの設定の対象ではない。"
     },
     "q-d6-a03": {
       "fingerprint": "f7badd024c5c9bbb822eb0f0e4e72c1a6d63325bd9cc98a92592f6cba5351092",
@@ -922,23 +922,23 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Code Referencingの役割を説明するだけなので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。出所の確認を助ける情報を提供する。ただし適合性はその情報をもとに別途判断する。"
+      "rationale": "本文で必要な判断: 出所の確認を助ける情報を提供する。ただし適合性はその情報をもとに別途判断する。 比較した誤答: Code Referencingで参照先を調べ、ライセンス条件は依存一覧から推定する → 参照元の条件を直接確認していない。 / CodeQLを実行し、指摘がなければライセンス条件の確認を終える → セキュリティ解析はライセンス条件の判断を代替しない。 / 公開コード一致をBlockにし、採用済みコードの出所は参照通知で確認する → Blockは今後の提案制御であり既に採用したコードの参照根拠ではない。"
     },
     "q-d6-a05": {
-      "fingerprint": "705e41f26caf17998e393e89f7e8cbf89127c0315f621f1b9a712bc7c07ae222",
+      "fingerprint": "e92afc1b11e25bf9704e389d96b75f305833994b68fa14d4fa070e502df6ccb4",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "シート解除の基本的な管理操作なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。割り当て管理が利用資格と請求の管理に対応する。反映時点や残るアクセスは別途確認する。"
+      "rationale": "本文の対象を確認する必要がある: 対象者だけのCopilot利用資格を組織で回収し、他メンバーの利用は続けたい。直接変更する管理対象は？ 正答: 個人への利用資格の割当を解除する。 他の選択肢はそれぞれ別の検証・管理対象: 組織全体への機能設定で対象者だけの回収ではない。 / ファイル参照範囲の設定で利用資格を解除しない。 / リポジトリの権限とCopilotの座席は別。"
     },
     "q-d6-a06": {
-      "fingerprint": "9e9749acd9243e74896145e45a50432636ddb439d3404603c2bec5bc96416fdc",
+      "fingerprint": "598a06e86e24746b1341bf82c536144132557fde3262c3b9d7f3b3a07dcaebd1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "上位強制ポリシーの優先関係という原則知識なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。Enterpriseが組織に判断を委ねる設定と、強制した設定を区別する。"
+      "rationale": "本文の対象を確認する必要がある: Enterpriseが対応するCopilotポリシーを強制Blockにした。Organization側の設定表示がAllowでも、実効値の判断に使う設定は？ 正答: 上位で強制されたBlockは下位で緩和できない。 他の選択肢はそれぞれ別の検証・管理対象: 上位の強制を上書きできない。 / 個人の許可は上位の強制を緩和しない。 / 指示文は管理ポリシーを上書きしない。"
     },
     "q-d6-a07": {
       "fingerprint": "eda05737defbc12cbeb5b39bb7d6b1c3678bfa641312cb1461391ee930483263",
@@ -1018,7 +1018,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "事例名があってもContent Exclusionの名称識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。"
+      "rationale": "本文で必要な判断: 対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。 比較した誤答: .gitignoreへ機密パスを指定し、通常補完の動作を検証する → Git追跡設定はCopilotの文脈除外を保証しない。 / 公開コード一致をBlockにし、Chatでの参照は手動で避ける → 出力側の制御で入力側の文脈を除外できない。 / Secret Scanningで機密パスを検査し、Copilotの設定は変えない → 秘密情報検出はファイル内容の文脈利用を止めない。"
     },
     "q-sc01-2": {
       "fingerprint": "de0fd29ad16f652f99c5ab16a9dee97f3d369c8d4281a4facac47b3daa79e6ce",
@@ -1090,7 +1090,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "事例名があってもAgentの用途識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。"
+      "rationale": "本文で必要な判断: 複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較した誤答: Agentで変更案だけを作り、テストの実行権限は与えない → 複数ファイルは扱えるが失敗結果を使う反復ができない。 / Inline Chatで各差分を適用し、テストは担当者が実行する → 局所編集には合うが反復は手動になる。 / Askで変更案を相談し、テスト失敗後の再編集は担当者が行う → 相談はできるが手動切替を減らせない。"
     },
     "q-sc04-2": {
       "fingerprint": "675d7c09f405addb2c449b3c8fe677e936e835f82b97bb045eda66cdb09fabcd",
@@ -1098,7 +1098,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "事例名があってもPR要約の機能識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。レビュアー向けに今回の変更を要約する目的へ直接対応する。"
+      "rationale": "本文で必要な判断: レビュアー向けに今回の変更を要約する目的へ直接対応する。 比較した誤答: 公開関数のドキュメントを生成し、PR本文に必要箇所を転記する → 仕様の説明でありPRの影響範囲の要約ではない。 / 各コミットのメッセージを生成し、変更概要は後で手で組み立てる → コミット単位の説明は得られるがPR全体を要約しない。 / コードレビューで改善指摘を生成し、その内容を説明欄へまとめる → 改善点は得られるがPR差分の変更概要を下書きする機能ではない。"
     },
     "q-sc04-3": {
       "fingerprint": "1e4b1b5813b8c5bd10b1e2a9aab5067ec485d4324d842266587bc79cc5e4f69b",
@@ -1138,7 +1138,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "共通指示の配置先の知識問題なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。"
+      "rationale": "本文で必要な判断: 対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 比較した誤答: Copilot Spacesへ規約を共有し、参照する対話を選ぶ → 資料共有には合うが共通規約の自動適用と異なる。 / Prompt Fileに共通規約を保存し、毎回必要な対話で呼び出す → 共有できても自動適用ではない。 / 個人指示へ規約を配布し、各開発者がGit外で更新する → 常時適用できてもリポジトリでの一元管理ではない。"
     },
     "q-sc06-2": {
       "fingerprint": "074ca215caf006d73e67aed7ab298d0575cfbbdfb381966e33835ecabab6c097",
@@ -1173,12 +1173,12 @@
       "rationale": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。検索経路と直接取得経路の認可を比較する → 接続承認と文書単位の認可を区別する 選択肢単独でなく本文の対象・契約・観測に照合する。検索で絞るだけでは直接取得の経路を守れない。取得時にも対象文書の認可を行う必要がある。"
     },
     "q-sc07-3": {
-      "fingerprint": "8fc2af123b5b6f988b43989cbca8902441568210fef7542947ca30640c2abdb8",
+      "fingerprint": "d5197b7fa4d04cbff4567b2bc3f6cede5f9d8646d455730694a2da243d5df052",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "管理操作の操作者を監査ログで調べる機能識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。管理ポリシーの変更を追跡するための機能である。記録項目は対応イベントを確認する。"
+      "rationale": "本文の対象を確認する必要がある: 【CyberShield Systems事例】組織のCopilotポリシー変更について、操作したアカウントと時刻を調べたい。参照する記録は？ 正答: 管理操作の実行者・時刻を監査イベントで追跡する。 他の選択肢はそれぞれ別の検証・管理対象: 利用量の集計で管理設定の操作記録ではない。 / コード変更の履歴でCopilot管理設定の変更とは別。 / 料金の記録で管理操作の実行者の追跡とは別。"
     },
     "q-sc08-1": {
       "fingerprint": "7eec7a31e7629d35f60eea7a904add5d427ecc3fc4be17bb783ee0b552447c83",
@@ -1186,7 +1186,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "検索して文脈へ追加する仕組みと再学習を区別する概念知識なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。検索による関連情報の取得と、モデル重みの学習を区別している。"
+      "rationale": "本文で必要な判断: 検索による関連情報の取得と、モデル重みの学習を区別している。 比較した誤答: 過去のChat応答を文脈へ加え、現在の実装の検索は省く → 過去の説明は更新済みコードの根拠にならない。 / 共通指示にコード全体を要約し、更新時は手で指示を書き換える → 現在の関連実装を質問ごとに取得する方法ではない。 / リポジトリ全文を各回の入力へ渡し、関連箇所をモデルに選ばせる → 検索による選択を行わず入力容量を圧迫する。"
     },
     "q-sc08-2": {
       "fingerprint": "1c24f80ff696fae4ed7b128a45b84d70976937c9692de9ed0f3a92988888f581",
@@ -1213,12 +1213,12 @@
       "rationale": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。人数とPR数を分母にして二つの指標を比較する → 観測できる変化と因果の断定を区別する 選択肢単独でなく本文の対象・契約・観測に照合する。1人当たりPRは4→3、PR当たり手戻りは20%→30%。量だけで改善とは言えず、案件差や満足度なども評価する必要がある。"
     },
     "q-sc09-2": {
-      "fingerprint": "5ce23ec3f1afcb50d7255c6e5c7777380b2c3dfb7d5a3b45f28cfa82293ddaac",
+      "fingerprint": "b9471b111047065da6186e95a6fd024125817e0c7c288f0b071405946e7ca865",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "利用状況集計のAPIの用途識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。対象APIの提供項目と期間を確認して利用傾向を調べる。成果や能力を直接示すものではない。"
+      "rationale": "本文の対象を確認する必要がある: 【Nexis Games事例】Copilotの受容率や言語別利用を継続集計したい。調べるAPIの種類は？ 正答: 利用状況の集計を提供する。提供項目と期間を確認する。 他の選択肢はそれぞれ別の検証・管理対象: 利用資格の割当管理で採用率の集計ではない。 / 管理操作の履歴で言語別の利用量ではない。 / 請求情報で提案受容率の集計ではない。"
     },
     "q-sc09-3": {
       "fingerprint": "788f5a98e6ac3fda280aa6100ea74f15f0d097fbc473a81e3828738a9ebedb3c",
@@ -1234,7 +1234,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "入力除外と公開一致Blockの機能識別なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。出力一致を抑えつつ社内の入力文脈を維持する二条件を満たす。"
+      "rationale": "本文で必要な判断: 出力一致を抑えつつ社内の入力文脈を維持する二条件を満たす。 比較した誤答: 公開コード一致をAllowにし、参照情報を確認して採用を判断する → 出所確認はできるが一致した提案の抑制条件を満たさない。 / リポジトリでSecret Scanningを有効にし、秘密情報を検査する → 秘密情報の検査であり公開コードに一致した提案の抑制ではない。 / 公開コード一致をBlockにし、社内ファイルもContent Exclusionへ入れる → 一致は抑えられるが社内コードの文脈利用を続けられない。"
     },
     "q-sc10-2": {
       "fingerprint": "963e5d624b538fe0875c4f5449988c437eb71d09c0b15af7cdfb46e49f7e8897",
@@ -1242,7 +1242,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "現在の出所確認にCode Referencingを対応付ける基本知識なので基礎へ変更。 選択肢単独でなく本文の対象・契約・観測に照合する。今回通知されたスニペットの出所と条件の確認に直接対応する。 将来の抑制には有用だが採用済みスニペットの根拠を示さない。"
+      "rationale": "本文で必要な判断: 今回通知されたスニペットの出所と条件の確認に直接対応する。 将来の抑制には有用だが採用済みスニペットの根拠を示さない。 比較した誤答: 依存関係のライセンス一覧を出し、利用パッケージの条件を確認する → 依存パッケージと今回の生成スニペットの出所は同じとは限らない。 / CodeQLを実行し、採用コードのセキュリティ上の問題を確認する → セキュリティ解析はライセンスの参照情報を確認する手段ではない。 / 公開コード一致をBlockへ変更し、同じコードの次の提案を抑制する → 将来の抑制には有用だが採用済みスニペットの根拠を示さない。"
     },
     "q-sc10-3": {
       "fingerprint": "fcc46252c5e9a910edaf70d76b201a88de5828bbfffa3ddef9849f564bd853f8",
@@ -1253,20 +1253,20 @@
       "rationale": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。追加されたデータの送信先を元の承認範囲と比較する → 学習不使用と第三者の保存・権限制御を区別する 選択肢単独でなく本文の対象・契約・観測に照合する。新たな送信先は元の審査範囲外。GitHubの学習利用方針から第三者サーバーの取扱いまでは導けない。"
     },
     "q02": {
-      "fingerprint": "6e30c938092eb247cae4ae57e9754905a9a56942afe95625c550539535967af0",
+      "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "独立した期待値で検証する基本原則の識別。具体的な丸め結果の推論までは求めない。 選択肢単独でなく本文の対象・契約・観測に照合する。問題になっている境界条件の期待値を独立に確認できる。"
+      "rationale": "本文で必要な判断: 値の仕様適合を直接比較する。 比較した誤答: 型検査の結果とリンターの警告一覧 → 型・構文の根拠であり業務上の期待値を証明しない。 / 入力件数別の実行時間とメモリ使用量 → 性能の根拠であり丸め規則の正しさを証明しない。 / コード参照先と依存ライブラリのライセンス → 知財の根拠であり計算仕様とは別。"
     },
     "q03": {
-      "fingerprint": "dedf76154abc273264e2ec692032b5e076abe79d26c9c73258a870af3be4f129",
+      "fingerprint": "10b30e2ea1ac4b406027094a94d758839ad88c3886b70e9a608690c47c7d9119",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "表示された提案の基本的な採否操作。導入段階の確認として維持。 選択肢単独でなく本文の対象・契約・観測に照合する。提案内容を確認してから採否を決める基本的な操作に合う。"
+      "rationale": "本文で必要な判断: タイピング位置への未確定補完を表示する機能。 比較した誤答: Inline Chat → 選択箇所に会話で編集を依頼する機能。 / Copilot Code Review → 既存差分へのレビュー指摘を生成する機能。 / Copilot Chat → 質問や説明を会話形式で依頼する機能。"
     },
     "q05": {
       "fingerprint": "acc0d4454090543c83cd1d0ee3d8aec507e5dbf66923b035ebf50b5f8db0738c",
@@ -1274,15 +1274,15 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "質問・添付・履歴が入力になることの理解。入力経路の基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。明示した質問と提供したコードの文脈が回答に利用される。"
+      "rationale": "本文で必要な判断: 明示した質問と提供したコードの文脈が回答に利用される。 比較した誤答: 質問文とリポジトリのすべてのファイル全文 → リポジトリ全体の全文が自動的に常に入力されるわけではない。 / 添付ファイルの内容だけで質問文は使わない → ファイルだけでは何を説明してほしいかという要求を落とす。 / 質問文とモデルの学習済み情報だけ → モデルの知識も働くが、添付した現行コードを除外してしまう。"
     },
     "q06": {
-      "fingerprint": "f5ed6a3de9be03e8573d702b3d81aeb5058474a683f94db3ac159d23421afb04",
+      "fingerprint": "efb39995102906e3280539de37ab307f06f59337a24fa728483b3d63413220a8",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "APIを公式契約とテストで確かめる基本原則。複数の証拠からの診断ではない。 選択肢単独でなく本文の対象・契約・観測に照合する。公式契約と実行結果の両面から採用判断を行える。"
+      "rationale": "本文の対象を確認する必要がある: Copilotが新しいSDKメソッドを提案した。ライブラリの対象バージョンで、その名前と引数が実在するかを最初に照合する資料は？ 正答: APIの名称と契約を対象バージョンの公式資料で確認する。 他の選択肢はそれぞれ別の検証・管理対象: 性能記録はAPIの存在証明ではない。 / コードの出所はSDKの契約を保証しない。 / 利用量はこのAPIの存在を示さない。"
     },
     "q08": {
       "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb",
@@ -1290,7 +1290,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "無関係なタスクで会話を区切る基本操作。現行の添付まで古い場合は別問題で扱う。 選択肢単独でなく本文の対象・契約・観測に照合する。無関係な履歴を切り、現在の要件だけを提供できる。"
+      "rationale": "本文で必要な判断: 無関係な履歴を切り、現在の要件だけを提供できる。 比較した誤答: 共通指示へ商品一覧の要件を追加して続ける → 常時指示を変えても既存会話の文脈は残る。 / 同じ会話で旧タスクの要約を作ってから続ける → 要約は旧履歴を整理できるが新しいタスクへの混入を防げない。 / 同じ会話で商品一覧のファイルを添付して続ける → 新しい資料は加わるが旧タスクの履歴も残る。"
     },
     "q09": {
       "fingerprint": "43a062d837f11fefd8a9f6e7acd4a7d388af49eb4fb54d371141e368af92c7c6",
@@ -1298,15 +1298,15 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "未確認の境界をテストに含める原則。期待値の計算はしない。 選択肢単独でなく本文の対象・契約・観測に照合する。不足している境界と異常系を直接テストできる。"
+      "rationale": "本文で必要な判断: 不足している境界と異常系を直接テストできる。 比較した誤答: テスト名とコメントの表記規則を統一する → 保守性には役立つが月末や不正入力の期待結果を指定しない。 / 通常の日付のサンプルをさらに増やす → 通常系の回帰には有用だが未確認の条件が残る。 / 大きな入力集合で平均実行時間を測る → 性能には役立つが日付の正否を調べる依頼ではない。"
     },
     "q11": {
-      "fingerprint": "53e1c0acd7b7783ade86ab244cb0ac3c6dfd2e0d811f3d83b643db0dffe85b1c",
+      "fingerprint": "aab6e83427fcc8a0d651ec4bd123fcf5c5144ea6ecbdc10fd0db42d86e6df257",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "AgentにContent Exclusionが対応するかという単一の制約の理解。 選択肢単独でなく本文の対象・契約・観測に照合する。Agentモードの非対応という公式の制約を踏まえて追加の境界を設ける。"
+      "rationale": "本文で必要な判断: 条件が一致していても、そのモードで除外が機能するかの確認が必要。 比較した誤答: パターン内の大文字と小文字の一致規則 → パスの一致は確認済みである。 / 設定の保存からIDEへ反映される待ち時間 → 反映は確認済みである。 / 対象リポジトリに付与された除外パターン → 対象リポジトリとパターンは確認済みである。"
     },
     "q12": {
       "fingerprint": "591175ec6efd4fb58e59cf09b03b4bd0813e848d2f84d55d309296e53bff1bfd",
@@ -1314,7 +1314,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "古いセッションへの設定反映という単純な運用知識の確認。 選択肢単独でなく本文の対象・契約・観測に照合する。クライアントの古い状態を切り分け、実際の除外表示と動作を確かめる。"
+      "rationale": "本文で必要な判断: クライアントの古い状態を切り分け、実際の除外表示と動作を確かめる。 比較した誤答: 公開コード一致の参照通知を調べる → 出力の参照情報は入力側の除外状態を示さない。 / 組織のポリシー変更履歴だけを調べる → 管理設定の調査には役立つが一人だけ古いセッションという条件を確認しない。 / リポジトリの.gitignoreとファイルツリーの表示を調べる → Gitの追跡状態は補完除外のクライアント反映を直接示さない。"
     },
     "q-d1-f01": {
       "fingerprint": "d7f35f0dfdd4156a170cae8ea65f922c5421e3f9628524b069ba445793ac07e7",
@@ -1322,7 +1322,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "採用コードへの開発者の責任という基本原則の識別。 選択肢単独でなく本文の対象・契約・観測に照合する。生成結果を確認して製品へ取り込む判断は開発チームが行う。"
+      "rationale": "本文で必要な判断: 生成結果を確認して製品へ取り込む判断は開発チームが行う。 比較した誤答: 学習データを提供した公開リポジトリの所有者 → 公開コードの出所確認は必要だが採用判断の主体にはならない。 / 採用を自動化したCIサービスの提供者 → CIは検証を支援するが仕様適合の責任を引き受けない。 / 推論を実行したモデルの提供者 → モデル提供者の説明と開発チームの採用責任は別である。"
     },
     "q-d1-f02": {
       "fingerprint": "d42a0176e0ae9d62a19feb949a0406650a3789c257c735ff3102bf3237676246",
@@ -1330,23 +1330,23 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "存在しないAPIの生成をハルシネーションと呼ぶ用語識別。 選択肢単独でなく本文の対象・契約・観測に照合する。実在しないAPIをもっともらしく生成する例である。"
+      "rationale": "本文で必要な判断: 実在しないAPIをもっともらしく生成する例である。 比較した誤答: プロンプトインジェクション（外部入力による指示の乗っ取り） → 悪意ある外部指示を取り込んだという条件は示されていない。 / バイアス（訓練データ由来の偏り） → バイアスは偏った結果の問題で、APIの実在性とは異なる。 / コンテキストドリフト（会話の前提からの逸脱） → 会話履歴の前提が変化したという条件は示されていない。"
     },
     "q-d1-f03": {
-      "fingerprint": "1b5ba01449b9c6bf129372d957c8c3d193d9f5b1c0eaf175aca3db3c6b125836",
+      "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "不足権限の経路をテストする基礎原則。複合診断ではない。 選択肢単独でなく本文の対象・契約・観測に照合する。未確認の権限境界を実行で検証し、コード上の判断も確かめる。"
+      "rationale": "本文の対象を確認する必要がある: 認可処理の正常ログインはテスト済み。権限のない利用者の拒否を確認するため、追加するテスト入力は？ 正答: 認証と権限の境界を分け、対象操作の拒否を検証する。 他の選択肢はそれぞれ別の検証・管理対象: 既に確認済みの成功側に当たる。 / 認証の境界を調べる入力であり認証済みの認可不足とは異なる。 / 別操作の成功では対象操作の拒否を確認しない。"
     },
     "q-d1-f04": {
-      "fingerprint": "e65780c216e9755efe0d18064bc6d024cd68ec538de5ac612a423bc47bf7f492",
+      "fingerprint": "6015f406d685253afd1a68e8b83053021648cfe338b7b8df4316b7edd45a73b7",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "特定地域に偏る結果とデータの偏りを結び付ける基本概念。 選択肢単独でなく本文の対象・契約・観測に照合する。代表性のない例やデータから偏った処理が生まれ得る。"
+      "rationale": "本文で必要な判断: 特定集団への系統的な誤りと代表性不足を示す。 比較した誤答: Hallucination → 架空の事実生成ではなく地域ごとの偏りが焦点。 / Nondeterminism → 毎回出力が変わる観測はない。 / Context Drift → 会話の前提が変わる観測はない。"
     },
     "q-d1-f05": {
       "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca",
@@ -1354,7 +1354,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "パスワード保存に適する方式を選ぶセキュリティの基礎確認。 選択肢単独でなく本文の対象・契約・観測に照合する。MD5はパスワード保存用の方式ではないため、保存処理そのものを直す。"
+      "rationale": "本文で必要な判断: MD5はパスワード保存用の方式ではないため、保存処理そのものを直す。 比較した誤答: ログインAPIの試行回数を制限し、検証する → 総当たり対策には有効だが保存方式の弱さは残る。 / 通信経路をTLSにし、証明書を検証する → 通信保護は必要でも保存済みハッシュの方式とは別である。 / 保存先DBへのアクセス権を絞り、検証する → 権限制御は重要だが漏えい時のMD5の弱さを解消しない。"
     },
     "q-d2-f01": {
       "fingerprint": "3c78eb8c6c3ef6f1efc6229be42e7777f0346272265b096b605f95216df1433b",
@@ -1362,7 +1362,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "選択範囲の差分編集にInline Chatを対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。選択範囲の編集提案をその場で確認する用途に合う。"
+      "rationale": "本文で必要な判断: 選択範囲の編集提案をその場で確認する用途に合う。 比較した誤答: インライン補完でカーソル位置の続きを提案させる → 続きの補完には適するが選択コードの対話的な修正ではない。 / Askで関数の設計について相談する → 設計相談には合うが選択箇所の差分適用を主目的としない。 / Agentに複数ファイルの編集とテストを依頼する → 広い作業には適するが今回は局所編集だけが対象である。"
     },
     "q-d2-f02": {
       "fingerprint": "ddf3c12d3654beb66ae19688081a0f4b3f1105504a069be0076b162899e2d398",
@@ -1370,7 +1370,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "選択範囲を参照する変数の知識。名称を覚える基礎問題。 選択肢単独でなく本文の対象・契約・観測に照合する。選択中のコードを明示して参照できる。"
+      "rationale": "本文で必要な判断: 選択中のコードを明示して参照できる。 比較した誤答: #codebase → ワークスペース検索・参照の範囲が広すぎる。 / #file → ファイル全体の参照であり選択範囲だけとは粒度が異なる。 / #terminalLastCommand → 直近のコマンドを参照する文脈でコード選択ではない。"
     },
     "q-d2-f03": {
       "fingerprint": "72458cd1e6984f72a1c2e41306896e236fe0ae0106af0e7a43fe14f2081a2b7f",
@@ -1378,7 +1378,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "テスト生成コマンドの名称を識別する基礎問題。 選択肢単独でなく本文の対象・契約・観測に照合する。選択したコードのテスト生成を依頼するコマンドである。"
+      "rationale": "本文で必要な判断: 選択したコードのテスト生成を依頼するコマンドである。 比較した誤答: /doc → ドキュメントコメントの生成を求める用途である。 / /fix → 診断されたコードの修正案を依頼する用途である。 / /explain → 既存コードの意味の説明を求める用途である。"
     },
     "q-d2-f04": {
       "fingerprint": "3103326149d6318a7846909aee593a7e10673de4bb1f0df0c8c47adfd8f6de7a",
@@ -1386,15 +1386,15 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "複数ファイルと実行反復をAgentに対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。横断的な編集と実行結果を使った継続作業に対応する。"
+      "rationale": "本文で必要な判断: 横断的な編集と実行結果を使った継続作業に対応する。 比較した誤答: Inline Chatで一か所ずつ編集し、テストは手で行う → 局所編集はできるが三ファイルとテストの反復は手作業になる。 / コードレビューに既存差分を渡し、指摘を読む → 既存差分の評価はできるが変更の実行ループではない。 / Askに変更方針を相談し、編集と実行は手で行う → 相談には適するが手動切替を減らす条件に合わない。"
     },
     "q-d2-f05": {
-      "fingerprint": "a9ed42e5f579f919c15cc1c65c69db2e1fe5be8d5cdb63c05414a0a3aa12d552",
+      "fingerprint": "e170d076cb75213ec145d2f8748bc9f247a7a325da77a2e85b157db65a83266d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "承認前に影響を確かめる基本操作。具体的な削除対象の追跡は不要。 選択肢単独でなく本文の対象・契約・観測に照合する。実行前に対象と影響を確認し、必要なら拒否・指示し直す。"
+      "rationale": "本文の対象を確認する必要がある: Agentによる削除コマンドを、実行される前に許可または拒否する制御は？ 正答: ツール実行の可否を操作前に管理する。 他の選択肢はそれぞれ別の検証・管理対象: Gitのブランチへの変更管理でありローカル削除の承認ではない。 / 出力コードの一致判定であり実行許可ではない。 / 参照範囲の設定であり削除コマンドの承認ではない。"
     },
     "q-d2-f06": {
       "fingerprint": "198d660b6de71d860bc512cd5b6dc4c3a47c89b31ad849a3a4118adebd898a9e",
@@ -1402,7 +1402,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "外部ツール連携方式としてMCPを識別する基礎概念。 選択肢単独でなく本文の対象・契約・観測に照合する。外部システムとの標準化されたデータ・ツール連携を提供する。"
+      "rationale": "本文で必要な判断: 外部システムとの標準化されたデータ・ツール連携を提供する。 比較した誤答: Copilot Spacesに仕様書と過去のチケットを集める → 文脈共有には役立つが現在の外部状態への操作接続ではない。 / Custom Instructionsにチケット操作の規約を記載する → 利用規約を伝えられるが外部ツールの実装にはならない。 / Prompt Filesに問い合わせの文章を保存して共有する → 依頼文の再利用には役立つが実行機構を追加しない。"
     },
     "q-d2-f07": {
       "fingerprint": "031f7ece06dbad4387fa308fc38c3042c7f52ab86a5e0815245e3c71f5ebc6f5",
@@ -1410,7 +1410,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "MCP Toolsの役割の識別。Resourceとの違いを知る段階。 選択肢単独でなく本文の対象・契約・観測に照合する。モデルが引数を付けて呼び出す操作を公開する区分である。"
+      "rationale": "本文で必要な判断: モデルが引数を付けて呼び出す操作を公開する区分である。 比較した誤答: Prompts → 対話テンプレートの提供には適するが副作用のある操作ではない。 / Resources → 参照するデータの提供には適するが操作呼び出しの区分ではない。 / Sampling → サーバーからモデル生成を依頼する仕組みで、チケット作成ツールではない。"
     },
     "q-d2-f08": {
       "fingerprint": "9a21a5e7f6a5b745f70cd46061e195a95a18ea40e24ca8a7ed1b77ac323d680b",
@@ -1418,7 +1418,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "リポジトリ共通指示の配置先の知識。 選択肢単独でなく本文の対象・契約・観測に照合する。リポジトリ全体向けのCopilotカスタム指示の標準ファイルである。"
+      "rationale": "本文で必要な判断: リポジトリ全体向けのCopilotカスタム指示の標準ファイルである。 比較した誤答: AGENTS.md → Agent向けの指示に使えるが問いはCopilotの共通指示の標準配置である。 / .github/prompts/style.prompt.md → 必要時に呼ぶタスク向けで常時適用の指示ではない。 / .github/instructions/style.instructions.md → パス別の指示には使えるが今回の単一の全体規約とは役割が異なる。"
     },
     "q-d2-f09": {
       "fingerprint": "e56537c169e2d012f2b6d0bddc641ffadd34e82d7935c1849e59d698b89d9ba4",
@@ -1426,7 +1426,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "任意に呼ぶプロンプトの保存先の知識。 選択肢単独でなく本文の対象・契約・観測に照合する。再利用可能なPrompt Fileとして保存する配置と拡張子である。"
+      "rationale": "本文で必要な判断: 再利用可能なPrompt Fileとして保存する配置と拡張子である。 比較した誤答: AGENTS.md → Agent指示のファイルでプロンプトファイルとは役割が異なる。 / .github/instructions/review.instructions.md → 対象パスに応じる指示用でオンデマンドのプロンプトではない。 / .github/copilot-instructions.md → 全体へ自動適用する規約用で必要時のタスク呼び出しと異なる。"
     },
     "q-d2-f10": {
       "fingerprint": "119b253e7b41ebf03d1b1d910acb4c683a7c8a533ac76bc9533248cc784bc073",
@@ -1434,7 +1434,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "共有文脈をSpacesに対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。選んだ資料を整理して共有し、質問の文脈として利用できる。"
+      "rationale": "本文で必要な判断: 選んだ資料を整理して共有し、質問の文脈として利用できる。 比較した誤答: Copilot custom instructions → 常時の規約には適するが資料集合の共有という目的とは異なる。 / GitHub MCP server tools → 外部ツールへのアクセスには適するが資料をまとめた共有空間とは異なる。 / Copilot prompt files → 定型タスクの呼び出しには適するが資料集合の共有ではない。"
     },
     "q-d2-f11": {
       "fingerprint": "b86e6a166bc05f5615689a2ab01383dee84913b9fcb9f5f7fc40fcdecb8f6dc3",
@@ -1442,23 +1442,23 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "GUIなしの相談をCLIに対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。端末で自然言語の相談とツール利用を行う現行のCopilot CLIである。"
+      "rationale": "本文で必要な判断: 端末で自然言語の相談とツール利用を行う現行のCopilot CLIである。 比較した誤答: Copilot Spaces → 共有文脈の整理に使う機能で端末操作のCLIではない。 / GitHub MCP server → 外部ツール連携のサーバーで、単独の端末対話ツールではない。 / Copilot ChatのIDE拡張 → IDE内のChatには適するがGUIのない端末では使えない。"
     },
     "q-d3-f01": {
-      "fingerprint": "dfdb842dee116191f592841d387c54aad315d5870b2cb12e187af4fb2f76174a",
+      "fingerprint": "a07e7bbfd51135b0209c1723092ed1bd2f4605033232a53f75bb5a8c82bec388",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "前後を使う補完とFIMという名称を対応付ける基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。カーソル前後のコードを手掛かりに中間部分を生成する。"
+      "rationale": "本文で必要な判断: カーソル前後のコードを手掛かりに中間部分を生成する。 比較した誤答: Chat history summarization → 会話の要約は長い対話の整理に使うが中間補完の方式ではない。 / Repository retrieval → 関連ファイルを探す仕組みで関数内部の前後補完とは異なる。 / Prefix-only completion → カーソル前の続きだけを重視し、後続の実装を条件にしない。"
     },
     "q-d3-f02": {
-      "fingerprint": "3d4ea588b7bb7e2fd54e8eec60610426767eb0992af3598c5f6e0831bf9032bf",
+      "fingerprint": "49bc918e7eae3788480274d5606dc9511d74fbf5a9958785c9a138fbb3a3f137",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "開いている別タブが文脈になり得る仕組みの名称識別。 選択肢単独でなく本文の対象・契約・観測に照合する。開いている関連タブの内容を補完の文脈として利用する説明に合う。"
+      "rationale": "本文で必要な判断: 開いている関連タブの内容を補完の文脈として利用する説明に合う。 比較した誤答: Custom instructions → 規約は渡せても現在開いた型定義の自動参照ではない。 / Chat history → 会話の過去情報であり別タブの型定義そのものではない。 / Repository code search index → リポジトリ検索の文脈と、開いているタブの文脈は区別する。"
     },
     "q-d3-f03": {
       "fingerprint": "f1ff1c7e4bff4a82207941102ab2343de8d74c30cab4e242477c8f565d231e72",
@@ -1466,7 +1466,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "外向きHTTPSという通信の基本方向・方式の識別。 選択肢単独でなく本文の対象・契約・観測に照合する。CopilotサービスへのHTTPSのアウトバウンド通信を確認する。"
+      "rationale": "本文で必要な判断: CopilotサービスへのHTTPSのアウトバウンド通信を確認する。 比較した誤答: GitサーバーへSSHで送る通信だけ → Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。 / 開発PCへインバウンドHTTPSを受ける通信 → クライアント側へ入る通信は一般的な接続要件と向きが逆である。 / ローカルDBへ平文HTTPで送る通信 → ローカルDBへの通信はCopilotサービスへの接続ではない。"
     },
     "q-d3-f04": {
       "fingerprint": "21367c0eff310eac7c9bdcdd3138fddcf8ac17db419a15498591ba3ad91599ba",
@@ -1474,7 +1474,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Web閲覧とCopilot固有接続先を区別する基本知識。 選択肢単独でなく本文の対象・契約・観測に照合する。Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。"
+      "rationale": "本文で必要な判断: Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。 比較した誤答: GitのSSH接続先だけを許すルール → Gitの転送経路はCopilotの通信要件と同一ではない。 / 社内プロキシの管理画面だけを許すルール → 管理画面へのアクセスはCopilotサービスへの到達性を示さない。 / github.comのWeb表示だけを許すルール → Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。"
     },
     "q-d3-f05": {
       "fingerprint": "5797c9f9b3316a61a1a027ec565d4dc932453e46d69c8dbced1e9d518739ce15",
@@ -1482,7 +1482,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "トークンという文脈長の単位の記憶。 選択肢単独でなく本文の対象・契約・観測に照合する。入力と出力の容量を管理する基本単位である。"
+      "rationale": "本文で必要な判断: 入力と出力の容量を管理する基本単位である。 比較した誤答: ソースコードの行 → 行数は目安になるがモデルの文脈上限の単位ではない。 / 画面に表示する文字 → 文字数とトークン数は一致しない。 / ファイルのバイト → ファイルサイズは保存量であり入力トークン数とは異なる。"
     },
     "q-d4-f01": {
       "fingerprint": "7cc20d5895eb716bc1d21d7f12fb8a53d34e0c49f524ec9531f05d41ac948650",
@@ -1490,7 +1490,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "具体的な目的と条件を示すプロンプトの基本構成。 選択肢単独でなく本文の対象・契約・観測に照合する。目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。"
+      "rationale": "本文で必要な判断: 目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。 比較した誤答: 役割名を指定し、入出力条件と周辺コードはモデルに推測させる → 役割指定は補助になるが何を満たすべきかが曖昧なままである。 / 関連ファイルをすべて添付し、作業目的は簡潔に「修正」と書く → 大量の資料があっても依頼の目的と条件が不足する。 / 禁止語を網羅し、望む代替案や周辺コードは示さない → 禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。"
     },
     "q-d4-f02": {
       "fingerprint": "41d01ab27e3e89b75f401a0ea83cc9f2c0966410c09def47bbc40860904014dd",
@@ -1498,7 +1498,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "入出力例を示すfew-shotの名称識別。 選択肢単独でなく本文の対象・契約・観測に照合する。少数の具体例を入力に含めて出力を誘導する。"
+      "rationale": "本文で必要な判断: 少数の具体例を入力に含めて出力を誘導する。 比較した誤答: Retrieval-augmented prompting → 外部資料の取得を文脈へ加える方法で例示数とは別である。 / Zero-shot prompting → 例を示さず指示する方式であり二組の例という条件と異なる。 / Role prompting → 役割の指定はあり得るが入力・出力例を示すこと自体の名称ではない。"
     },
     "q-d4-f03": {
       "fingerprint": "ff7f93ea894b5e79f50b88d040cb6ade17efe53389ad5d127f63dfeebdabf1b9",
@@ -1506,7 +1506,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "無関係な次タスクで新規Chatに移る基本操作。 選択肢単独でなく本文の対象・契約・観測に照合する。旧タスクの文脈を切り、現在の情報で始められる。"
+      "rationale": "本文で必要な判断: 旧タスクの文脈を切り、現在の情報で始められる。 比較した誤答: 同じChatに画面ファイルを加え、旧履歴も維持する → 資料は増えるが旧APIの履歴は残る。 / 同じChatでモデルだけ替え、旧履歴も維持する → モデル変更だけでは旧履歴の混入を解消しない。 / 共通指示へ画面要件を書き、旧履歴も維持する → 常時指示を増やしても会話の古い前提は残る。"
     },
     "q-d4-f04": {
       "fingerprint": "fbd726d5e58b3abf273b2bc83788e2df77e415957cb13ad0548836e181faa031",
@@ -1514,7 +1514,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "条件を順に確認する依頼と手法名の対応付け。 選択肢単独でなく本文の対象・契約・観測に照合する。判断の段階を明示して説明を求める手法に当たる。"
+      "rationale": "本文で必要な判断: 判断の段階を明示して説明を求める手法に当たる。 比較した誤答: Role prompting → 役割を与える手法で、検討順序の指定とは異なる。 / Output schema specification → 結果の形式を定める手法で、考慮順序そのものではない。 / Few-shot examples → 少数の見本を示す手法で、段階的な検討の依頼とは異なる。"
     },
     "q-d4-f05": {
       "fingerprint": "dc6bf9b7cc453206f25dbb2b237beae86e944d9fef9f7d67d28282f161aa0f50",
@@ -1522,7 +1522,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "古い前提の混入を文脈ドリフトと呼ぶ基礎用語。 選択肢単独でなく本文の対象・契約・観測に照合する。会話の蓄積によって扱う前提がずれていく状況である。"
+      "rationale": "本文で必要な判断: 会話の蓄積によって扱う前提がずれていく状況である。 比較した誤答: 公開コード一致 → 生成コードが公開コードに似るかの問題で会話履歴の変化ではない。 / ハルシネーション → もっともらしい誤情報の生成を指し、履歴の混入だけとは区別する。 / プロンプトインジェクション → 外部入力から指示が乗っ取られる条件は示されていない。"
     },
     "q-d5-f01": {
       "fingerprint": "312bf8959eec9221bfc4bd24a396e11c77348b074ce5c884e184eef332816537",
@@ -1530,7 +1530,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "ドキュメント生成コマンドの名称を選ぶ基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。選択コードのドキュメントコメントを生成する。"
+      "rationale": "本文で必要な判断: 選択コードのドキュメントコメントを生成する。 比較した誤答: /explain → 処理の意味を説明するがコメント生成は主目的ではない。 / /tests → テスト生成を依頼する。 / /fix → 不具合修正案を依頼する。"
     },
     "q-d5-f02": {
       "fingerprint": "2baac103a8ed106e513b8cd2e6f43a60a271c065604568f7d3106e6a7d27abdc",
@@ -1538,7 +1538,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "境界・異常系の期待値を示す基本方針。具体的なテストの設計判断はない。 選択肢単独でなく本文の対象・契約・観測に照合する。未確認の境界・異常系と期待結果を直接指定できる。"
+      "rationale": "本文で必要な判断: 未確認の境界・異常系と期待結果を直接指定できる。 比較した誤答: テスト対象をモックに置き換え、成功値を固定する → 対象処理の境界動作を検証できなくなる。 / 正常入力の組合せを追加し、既存結果を再確認する → 正常系の補強にはなるが指定された未確認条件は残る。 / テストの実行時間だけを測り、遅いケースを除く → 性能調査であり例外と境界の正しさを検証しない。"
     },
     "q-d5-f02-b": {
       "fingerprint": "ab3e7a3e6f1723293401aa3d5cd6c8bcb34bc667153c121a2a7a1798af01cf07",
@@ -1546,7 +1546,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "コミット文生成の操作を識別する基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。ステージ済み差分に基づくコミットメッセージ提案の操作である。"
+      "rationale": "本文で必要な判断: ステージ済み差分に基づくコミットメッセージ提案の操作である。 比較した誤答: Copilot code reviewで差分の問題点を探す → コード品質のレビューが目的でコミット文生成ではない。 / Copilot Chatで差分の説明を求めて手で入力する → 内容の相談はできるが問いのビュー上の専用操作ではない。 / GitHub.comでPull Requestの概要を生成する → PR本文の概要を作る機能でコミット入力欄とは異なる。"
     },
     "q-d5-f04": {
       "fingerprint": "e2e386d19eed1f58e5c112fbeafc04c48dfe67d8849b2872e8988f67aa21161f",
@@ -1554,15 +1554,15 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "PRの要約とレビューを用途で識別する基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。PRの変更内容から概要の下書きを生成する。"
+      "rationale": "本文で必要な判断: PRの変更内容から概要の下書きを生成する。 比較した誤答: Copilot issue summarization → Issueの議論をまとめる用途でPR差分の概要ではない。 / Generate Commit Message → 一つのコミット文を提案する用途でPR概要とは異なる。 / Copilot code review → PRの改善点をレビューする機能で概要の下書きとは目的が異なる。"
     },
     "q-d5-f05": {
-      "fingerprint": "5c2a1e97dd3f90b9f3df354f56ac2b35a2f4dff73d127e5d7fb69184c7a591f4",
+      "fingerprint": "4f57ee0d3485ba2567d4fa19178216949b980c668b8dbab9d044baf5fe30ad5b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "通信の代替物としてモック・スタブを識別する基礎。 選択肢単独でなく本文の対象・契約・観測に照合する。外部依存を置換し、応答を制御する。"
+      "rationale": "本文で必要な判断: 外部依存の置換と呼出し引数の検証の二役を満たす。 比較した誤答: フィクスチャを用意し、通信時間を計測する → 入力準備や時間計測だけでは宛先と本文を確かめない。 / タイマーを置換し、保存回数をアサートする → 時間依存のテストであり通信の引数検証とは異なる。 / スナップショットを保存し、表示を比較する → 表示比較であり外部通信の検証対象とは異なる。"
     },
     "q-d6-f01": {
       "fingerprint": "4bb46e36115f226af21f2db482ce8c9066d90475b7b0386148bef107d4d3026b",
@@ -1570,7 +1570,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "提案側の公開コード一致という設定の識別。 選択肢単独でなく本文の対象・契約・観測に照合する。公開コード一致の提案を許可・ブロックする設定である。"
+      "rationale": "本文で必要な判断: 公開コード一致の提案を許可・ブロックする設定である。 比較した誤答: リポジトリの秘密情報検出 → リポジトリ内の秘密情報の検出で生成提案の一致制御ではない。 / 入力コンテンツの除外設定 → 入力として使うリポジトリ内容の除外であり提案の一致判定とは異なる。 / 公開コードの参照情報表示 → 一致した提案の参照情報を扱う機能でブロック方針の設定名ではない。"
     },
     "q-d6-f02": {
       "fingerprint": "e48b9bfa6c983cb2c7c331dc06e0110ed6fc42030fd74f1afe49f49d96826710",
@@ -1578,7 +1578,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "入力側のContent Exclusionという設定の識別。 選択肢単独でなく本文の対象・契約・観測に照合する。指定したリポジトリやパスの内容を対応機能の文脈から除外する。"
+      "rationale": "本文で必要な判断: 指定したリポジトリやパスの内容を対応機能の文脈から除外する。 比較した誤答: Suggestions matching public code → 生成提案の公開コード一致を扱う出力側の制御である。 / Repository custom instructions → 応答の方針を伝えるがファイルへのアクセス制御ではない。 / Code referencing → 提案の参照表示に関する機能で入力ファイルを制限しない。"
     },
     "q-d6-f03": {
       "fingerprint": "7fbe5ab2c4b21ef4af893eaff2968dcd895ae313e18c04cdd43c2159906d07fe",
@@ -1586,7 +1586,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "Business/Enterpriseの学習不使用という方針知識。 選択肢単独でなく本文の対象・契約・観測に照合する。Business/Enterpriseの顧客データについて示された方針である。"
+      "rationale": "本文で必要な判断: Business/Enterpriseの顧客データについて示された方針である。 比較した誤答: 保持期間の終了後に匿名化して基盤モデルの学習へ使用する → 保持期間と基盤モデルの再学習は別の論点である。 / 組織管理者が許可した場合にのみ基盤モデルの学習へ使用する → このプランの方針を管理者の許可制に置き換えた説明ではない。 / 公開リポジトリ由来の入力だけを基盤モデルの学習へ使用する → 入力元の公開・非公開でこの方針を分ける説明ではない。"
     },
     "q-d6-f04": {
       "fingerprint": "9dd557322de72fdcbb8a04fd929e389a5f2db5890177093fad2ff8201a8ffe7a",
@@ -1594,7 +1594,7 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "管理操作の記録を監査ログへ対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。管理操作のイベントと実行者・時刻の追跡に使う。"
+      "rationale": "本文で必要な判断: 管理操作のイベントと実行者・時刻の追跡に使う。 比較した誤答: Copilot seat management API → 現在の割当の確認や操作には使えるが変更イベントの監査記録とは異なる。 / リポジトリのGit履歴 → コード変更の履歴で組織設定の操作は記録しない。 / Copilot Metrics API → 利用統計を集計するが管理操作の履歴ではない。"
     },
     "q-d6-f05": {
       "fingerprint": "fd03f610f4291d77eca62236eba58787ac71cf2404ca82436859961e64906fc7",
@@ -1602,7 +1602,599 @@
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "利用集計をAPIへ対応付ける機能識別。 選択肢単独でなく本文の対象・契約・観測に照合する。利用指標の集計をAPIで取得する。"
+      "rationale": "本文で必要な判断: 利用指標の集計をAPIで取得する。 比較した誤答: Copilot seat management API → 割当状況の管理・取得で受容率などの指標とは異なる。 / Billing API → 費用の確認で補完の受容率や言語別利用の集計ではない。 / Audit Log API → 管理イベントの追跡で利用指標の集計ではない。"
+    },
+    "q-d1-g01": {
+      "fingerprint": "86ff307268b73cb11410aef3cc5b3198df4d2f832834ca032f68ac9056dc5a27",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: プロンプトや文脈を入力に、コードや文章など新しい内容を生成する技術が生成AIである。 比較した誤答: 静的コード解析（Static Code Analysis） → 既存コードを規則で検査する技術で、新しい提案を作り出す仕組みではない。 / ルールベース補完（Rule-based Code Completion） → 固定の候補を列挙するだけで、文脈から新しい内容を自律生成しない。 / セマンティックコード検索（Semantic Code Search） → 既存のリポジトリから類似コードを検索する技術であり、新しいコードを生成するものではない。"
+    },
+    "q-d1-g02": {
+      "fingerprint": "39c4246084be16a8ba881d548559cae151f70a2edae33b17f324020156328157",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: AI出力の評価と検証を行い、最終責任を人が負う原則と実践がResponsible AIである。 比較した誤答: Prompt Engineering（プロンプトエンジニアリング） → よい出力を引き出す指示の工夫であり、出力の評価や責任の所在を扱う原則ではない。 / Content Exclusion（コンテンツ除外） → 機密ファイルを参照させない設定で、提案の採用判断や責任の原則とは別の機能である。 / Code Referencing（コード参照通知） → ライセンス確認の一助にはなるが、評価と最終責任という原則全体を指す語ではない。"
+    },
+    "q-d1-g03": {
+      "fingerprint": "2e10bb56c954bda1ae01f50e14234bd5a0d585c852673758755ca2b08c4160a5",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: どの文脈を使い、なぜその出力になったかを理解・説明できる性質が透明性と説明可能性である。 比較した誤答: 再現性と決定性（Reproducibility and Determinism） → 同一入力に対して同じ出力を再現する性質であり、参照した文脈を明示できることとは異なる。 / 堅牢性と安全性（Reliability and Safety） → 過酷な入力や障害時にも安全に動作する品質であり、出力の根拠を説明できることとは別である。 / 機密性と完全性（Confidentiality and Integrity） → 情報セキュリティの保護特性であり、AI出力の判断根拠を把握する性質ではない。"
+    },
+    "q-d1-g04": {
+      "fingerprint": "8783898a45f74e351db2202512e6ce1fcfeb626c104dca7109942de8af10c893",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。 比較した誤答: ハルシネーション（Hallucination） → 内容が事実に反する生成を行う現象で、同じ入力で出力が変わる性質そのものではない。 / コンテキストドリフト（Context Drift） → 会話が長くなり前提がずれる現象で、同一入力での出力のばらつきを指す語ではない。 / モデルの過学習（Overfitting） → 訓練データに過剰適合する現象であり、利用時の確率的出力のばらつきとは異なる。"
+    },
+    "q-d1-g05": {
+      "fingerprint": "1e9d551c0cb65a67a992a6ebea04a4b4cd4290491c9e90e64b8e5e2edde16c07",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: AIの出力が洗練されているために批判的な確認を怠る傾向が、自動化バイアス（過度の依存）である。 比較した誤答: 確証バイアス（Confirmation Bias） → 自分の思い込みに沿う情報ばかりを信用する傾向であり、AI出力を盲信する傾向とは異なる。 / 正常性バイアス（Normalcy Bias） → 異常事態を正常の範囲内と過小評価する心理であり、AI提案への過信を指す語ではない。 / アンカー効果（Anchoring Effect） → 最初に提示された数値や情報に判断が引きずられる心理効果であり、AI出力を精査しない傾向とは別である。"
+    },
+    "q-d1-g06": {
+      "fingerprint": "2c33782d05c3b99a51fd7d982a7b00d47744df512b4e9612946acc7f00e2e5f1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 要件への適合や副作用を自分で分析し、必要なら別の解を求める姿勢が提案の批判的評価である。 比較した誤答: 静的コード解析（Static Code Analysis） → 構文や静的ルールをツールで機械的にチェックする手法であり、要件適合や副作用を人間が精査する姿勢とは異なる。 / テスト駆動開発（Test-Driven Development） → 実装前に自動テストを作成する開発手法であり、提示されたAIコードの妥当性を比較評価する姿勢そのものではない。 / ピアコードレビュー（Peer Review） → チームの他の開発者にコードを検査してもらう協同作業であり、開発者自身がAI提案の採否を判断する批判的評価とは異なる。"
+    },
+    "q-d2-g01": {
+      "fingerprint": "f9710ad21939be24518e840d1fc3f88f43f8c8c50c3fa0a578bc982321a38a9a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: エディタ内に薄い灰色文字で提案される未確定の補完表示がGhost Textである。 比較した誤答: インテリセンスポップアップ（IntelliSense Widget） → ドロップダウンリストとして表示される補完候補であり、インラインの薄い灰色テキストとは異なる。 / インラインチャット差分（Inline Diff Overlay） → Inline Chatによる編集差分表示であり、タイピング中に現れる未確定の自動補完表示ではない。 / スニペットプレースホルダー（Snippet Placeholder） → Tabキーで移動するスニペットの入力枠であり、Copilotが動的に生成する薄い灰色テキストとは異なる。"
+    },
+    "q-d2-g02": {
+      "fingerprint": "35d09731c36caf207734d6e924aff7abd3e0cbd87c1fcdd7d112360c2a4969d2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。 比較した誤答: Copilot チャットビュー（Chat View） → 会話形式で質問や編集を指示するサイドバーパネルであり、補完候補を10件一覧比較するタブではない。 / クイックフィックスメニュー（Quick Fix Menu） → 警告やエラーに対して修正候補をドロップダウン表示するエディタ機能である。 / ソース管理ビュー（Source Control View） → Gitのステージングやコミットを管理するパネルであり、コード補完の候補一覧を表示する機能ではない。"
+    },
+    "q-d2-g03": {
+      "fingerprint": "6a81cf193e6f603e318885e968d49f11307ab2b42f63be8c6945ce96bad2c8e7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: `@` で指定し特定のドメインやツールに質問を割り振る仕組みがChat Participantsである。 比較した誤答: チャット変数（Chat Variables） → `#file` や `#selection` のように `#` 記号で特定の文脈データを参照する仕組みである。 / スラッシュコマンド（Slash Commands） → `/explain` や `/fix` のように `/` 記号で特定の操作や意図を指定するコマンドである。 / プロンプトファイル（Prompt Files） → `.prompt.md` ファイルとして定義する再利用可能な指示文であり、`@` で呼び出す参加者ではない。"
+    },
+    "q-d2-g04": {
+      "fingerprint": "99b6cd5d495e833e8fd6421d988e2cc0624092a2cd53daef7fa1b61bd6e1677d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: ステータスバー上のCopilotアイコンから全体または言語単位の有効・無効を切り替えるのがステータスメニューである。 比較した誤答: Command Palette → エディタ全体のコマンドを検索・実行する汎用ダイアログ（Ctrl+Shift+P）である。 / Notifications → 右下に一時的に表示されるシステムメッセージであり、常駐の設定メニューではない。 / Explorer → ファイルツリーを表示する領域であり、Copilotの状態確認やトグルを行うメニューではない。"
+    },
+    "q-d2-g05": {
+      "fingerprint": "66fce926b94a784d8588ff69ce5e6e1f74f9c5582795cedc082887074c766178",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 旧拡張でコマンド説明を依頼した名称。現行はcopilot CLIで質問する。 比較した誤答: gh copilot suggest → 旧拡張のコマンド提案機能であり説明とは異なる。 / gh copilot config → 旧拡張の設定用であり説明要求ではない。 / gh copilot alias → 旧拡張のシェルエイリアス設定用。"
+    },
+    "q-d2-g06": {
+      "fingerprint": "5a5eadc6aceeb499976a2f8c027a581645d1ac1597fc968f690167bc0ebe8307",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 旧suggestは候補生成用。現行のcopilotとは起動形式が異なる。 比較した誤答: gh copilot explain → 旧explainは既存コマンドの意味を説明する。 / gh copilot config → 旧configは設定用。 / gh copilot alias → 旧aliasはシェルエイリアスの設定用。"
+    },
+    "q-d2-g07": {
+      "fingerprint": "8bccf8cf521e809068ccbf1a3417c6e05310e8ef709cead7eef84fad4db05b38",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 旧短縮名を現行の必須設定と混同しない。 比較した誤答: 旧拡張用の短縮名で、現行もghcsで起動する → ghcsは現行CLIの標準起動コマンドではない。 / 現行CLIの標準名で、旧拡張もcopilotで起動した → ghcs/ghceは旧拡張用で現行標準ではない。 / 現行CLIの標準名で、旧拡張もghceで起動した → 世代と起動コマンドの関係を取り違えている。"
+    },
+    "q-d2-g08": {
+      "fingerprint": "1a11a4cf37c9dedd027cb86c03724543337a0a0642b9d8241c8910614fb49f1c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 保存済み許可や広い事前許可によって個別確認の扱いが変わる。 比較した誤答: 会話のコンテキスト圧縮 → 圧縮は文脈量を管理するものでツール権限を与えない。 / 出力の公開コード一致設定 → 生成内容の一致制御はコマンド実行許可とは別。 / モデルの入力トークン上限 → 入力上限は実行権限の設定ではない。"
+    },
+    "q-d2-g09": {
+      "fingerprint": "2e0b1519c6cca9e6d80fe86066927931b15aa0c350ebeb62d39cb743551229ea",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 実際の参照元へのアクセス範囲を決める。 比較した誤答: 選択モデルの入力・出力トークン上限 → 一度に使える情報量の上限でありアクセス権そのものではない。 / 会話に残された以前の依頼と回答 → 参照済みの文脈は含むが、新規ファイルのアクセス権を決めない。 / 質問文に指定した回答形式と例示 → 出力形式を誘導するが、参照元への権限を付与しない。"
+    },
+    "q-d2-g10": {
+      "fingerprint": "5adab5a93c52330e4c8b40123336aef31b4f84b288e7e3fc5c841f5d55201fdf",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。 比較した誤答: Inline Chat → 現在のエディタ内の単一ファイル・選択範囲に対して会話形式で編集を行う機能である。 / Copilot Completions Panel → 現在のカーソル位置に対する単一ファイルのコード補完候補を10個表示するパネルである。 / Quick Fix → 構文エラー等に対する単一箇所の修正を適用する標準エディタ機能である。"
+    },
+    "q-d2-g11": {
+      "fingerprint": "7660303f5e5063f0e7d250df51bc54ab16554695417f33a4914b431d122b4711",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: ツールやリソースを定義してクライアントに機能を提供する側がMCP Serverである。 比較した誤答: MCP クライアント（MCP Client） → サーバーに接続してツールやリソースを消費する側（VS CodeやClaude Desktop等）である。 / MCP ホストエージェント（MCP Host Agent） → MCP仕様上の標準コンポーネント名ではなく、クライアントとサーバーの関係で定義される。 / MCP リバースプロキシ（MCP Reverse Proxy） → 標準プロトコル仕様のコア概念ではなく、中核となる提供側コンポーネントはサーバーである。"
+    },
+    "q-d2-g12": {
+      "fingerprint": "a03fe5b1d1d735df2d46f11b566c4c0b6c568c3a10168754c8ff7327d6029ffc",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: エージェントが実行したタスクやツール履歴、作業文脈を保持する単位がAgent Sessionである。 比較した誤答: Git ワーキングツリー（Git Working Tree） → Git管理下のローカルファイル群であり、エージェントの推論や会話・ツール履歴を管理する単位ではない。 / ワークスペース設定（Workspace Settings） → エディタ環境の設定構成であり、動的なエージェント作業履歴の保持空間ではない。 / スクラッチバッファ（Scratch Buffer） → 一時的なテキストメモ用のバッファであり、エージェントの会話・実行コンテキスト単位ではない。"
+    },
+    "q-d2-g13": {
+      "fingerprint": "b6109b3f365aff3b938596f061999c2889bb2710671cff79fa66b2220170937c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 主セッションとは分離された独立コンテキストで下位タスクを実行し、結果を報告する下位エージェントがSub-Agentsである。 比較した誤答: バックグラウンドスレッド（Background Threads） → OSやランタイムの並列処理単位であり、プロンプトと独立コンテキストを持つAIエージェントの委譲とは異なる。 / デーモンプロセス（Daemon Processes） → OS常駐型のバックグラウンドサービスであり、タスクを分担するAIエージェントの仕組みではない。 / スクリプトフック（Script Hooks） → イベントに応じて実行される外部スクリプトであり、自律的に下位タスクを処理するエージェントではない。"
+    },
+    "q-d2-g14": {
+      "fingerprint": "d1322521571846d372be57a41a4c17f130d37a9f18ed43341c25863f13b86306",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。 比較した誤答: Copilot Pull Request Summaries → PRの説明欄に箇条書きで変更要約を下書きする機能であり、インラインのレビュー指摘を行う機能ではない。 / Dependabot Alerts → 依存関係の既知の脆弱性を検知して通知する機能であり、PR差分の汎用コードレビューではない。 / GitHub Secret Scanning → コミット内のAPIキーやパスワード等の漏えいを検知するセキュリティ機能である。"
+    },
+    "q-d2-g15": {
+      "fingerprint": "9fe5ff62d6b2f9fe45a306dd4b70b5667a2030fad99a63fc6788ddf338d9fc55",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。 比較した誤答: リポジトリルールセット（Repository Rulesets） → ブランチ保護やタグ付け規則を強制するGitHubのガバナンス機能であり、Copilot用の指示ファイルではない。 / プロンプトファイル（Prompt Files） → 特定のタスクを呼び出す再利用可能なテンプレート（`.prompt.md`）であり、ディレクトリ単位の自動適用指示とは異なる。 / ワークスペースプロファイル（Workspace Profiles） → VS Codeの拡張機能やUI構成を切り替える機能であり、Copilotの指示ファイルの適用機能ではない。"
+    },
+    "q-d2-g16": {
+      "fingerprint": "e61169718c17cff016966e49d9116a0aed4e82cc09342e58ab06c0276afb29b8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: アイデアから自然言語でマイクロアプリを生成するツールで、2026年8月に新規作成受付が終了したのがGitHub Sparkである。 比較した誤答: GitHub Copilot Spaces → リポジトリやIssueを束ねて共有コンテキストを作る現行のコラボレーション機能である。 / GitHub Codespaces → クラウド上にホストされた完全な開発環境（コンテナ）を提供するサービスである。 / GitHub Copilot Workspace → Issueから仕様策定・コード変更・PR作成までを支援する開発者環境である。"
+    },
+    "q-d2-g17": {
+      "fingerprint": "961ccda60fa6946337b12f904dc5adefb954c658f8e78fa107a6e56c100c72d1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: サードパーティ統合として提供され2025年11月に終了した旧機能がGitHub App型Copilot Extensionsである。 比較した誤答: VS Code 拡張機能（VS Code Extensions） → エディタ上で動作する現行のクライアント側プラグインであり、終了したGitHub App型Extensionsとは異なる。 / GitHub Actions ワークフロー（GitHub Actions） → CI/CDパイプラインを自動化する現行のGitHub標準機能である。 / GitHub Webhooks → リポジトリイベントを外部サーバーへHTTP通知する標準API機能である。"
+    },
+    "q-d2-g18": {
+      "fingerprint": "5a9af2dc47600390a6ae139ab9e6f3f8e3cc535d084ea7f0ac435b2d92a623ca",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 組織内のメンバーへの機能管理という範囲。 比較した誤答: Enterprise Policies → Enterprise層の統制であり組織管理者の範囲ではない。 / Repository Instructions → 依頼内容を補助する指示であり管理ポリシーの強制ではない。 / Personal Settings → 個人の利用設定であり組織階層全体の強制ではない。"
+    },
+    "q-d2-g19": {
+      "fingerprint": "5fbd19711c62241cd1869a8776af4746c8523da568ed02feaf091643ad9d8dff",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 傘下の組織へ強制するEnterpriseの範囲。 比較した誤答: Organization Policies → 組織層ではEnterpriseの強制を緩和できない。 / Repository Instructions → 依頼内容を補助する指示であり管理ポリシーの強制ではない。 / Personal Settings → 個人の利用設定であり組織階層全体の強制ではない。"
+    },
+    "q-d2-g20": {
+      "fingerprint": "f845769a619e2cab0023c24ca6d1f9b44eaa1d718da78507119c64a4432f6200",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。 比較した誤答: Seat Assignment → 購入したライセンスを特定のユーザーに割り当てる運用操作であり、プラン体系そのものではない。 / Billing Roles → 支払い情報の閲覧や請求書管理を行う権限ロールであり、Copilotの機能・規約プラン体系ではない。 / Enterprise Managed Users → IdPと連携してユーザーIDを一元管理するアカウント構成であり、Copilotのサブスクリプションプランではない。"
+    },
+    "q-d2-g21": {
+      "fingerprint": "c29cbdd8d57076432461967992582372ff5345341eae96281ceed5f44b1c07de",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: レビューの利用可否・自動動作を管理する。 比較した誤答: PR Summary Policies → 変更要約の機能管理でありレビュー指摘とは別。 / Content Exclusion Policies → 入力側の参照対象を管理する。 / Public Code Matching Policies → 生成物と公開コードの一致を管理する。"
+    },
+    "q-d2-g22": {
+      "fingerprint": "e48d46a7df53c3f5e1382b913557ccb98d3e837f4e5d622990655d1e5fbd23a1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 2025-11-01終了。現在の共有コンテキストはSpaces。 比較した誤答: Knowledge Basesは現行で、Spacesはその別名である → 現行機能の別名ではなく終了した旧機能。 / Knowledge Basesは現行で、SpacesはIDE補完専用である → SpacesはIDE補完専用という機能ではない。 / Knowledge Basesは終了し、Prompt Filesへ置き換わった → Prompt Filesは依頼文の再利用で役割が異なる。"
+    },
+    "q-d3-g01": {
+      "fingerprint": "378c17ebb4620693f69695754e95b98b69bf048625a8ea2bc42d5184ba50b59c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: IDEからプロキシ、LLM、後処理を経てエディタに戻る一連の通信・データ処理の流れをCopilot Data Flowと呼ぶ。 比較した誤答: プロンプト構築パイプライン（Prompt Construction Pipeline） → IDE側で周辺コードやタブ情報を収集してプロンプトを組み立てる前処理の仕組みである。 / コードサジェスチョンライフサイクル（Code Suggestion Lifecycle） → タイピング休止からゴーストテキスト提示・確定・破棄に至るクライアント側の状態遷移である。 / コンテキストウィンドウ（Context Window） → LLMが一度に処理できる最大トークン容量の境界枠であり、エンドツーエンドの通信経路ではない。"
+    },
+    "q-d3-g02": {
+      "fingerprint": "137805438da65df26217cccc6f776b3956f33f051242386239bc4ac327ec72e0",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 周辺コードや開いているファイルを収集し、トークン枠に合わせて合成・整形する内部機構がPrompt Construction Pipelineである。 比較した誤答: Copilot プロキシ（Copilot Proxy & Gateway） → IDEとLLMの間で認証やコンテンツ除外、通信制御を担うサーバー側の中継基盤である。 / ポストプロセッシング（Post-processing & Content Filtering） → LLMから返却された生成テキストに対して公開コード一致や安全性検査を行う後処理段階である。 / リポジトリインデックス（Repository Indexing） → プロジェクト全体のセマンティック検索やシンボル解析用に作成されるインデックス構造である。"
+    },
+    "q-d3-g03": {
+      "fingerprint": "c9ad04fb14c658bb79317ffde40e9e9870fb11e641f4fdb84231143ded1051cf",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: サービス間の通信を中継するGitHub側の基盤。 比較した誤答: MCP Server → 外部のツールやデータを提供する接続先。 / Language Server → エディターへ言語解析機能を提供する。 / Repository Index → 関連コード検索用の索引であり通信中継ではない。"
+    },
+    "q-d3-g04": {
+      "fingerprint": "4769dea78fbb89a7d512e39de5c4b5548287f870607d06c8c883b7ffce7b9bc0",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。 比較した誤答: Prompt Content → 補完やチャット提案を生成するためにエディタから一時送信されるコードそのものである。 / Audit Events → Enterprise管理者がポリシー変更やシート割り当て履歴などを追跡するためのセキュリティ管理ログである。 / Training Dataset → 基盤LLMの言語モデル自体を事前学習・調整するために用いられる大規模コーパスである。"
+    },
+    "q-d3-g05": {
+      "fingerprint": "0d97da061c181f77544f7553606e7e1853e802964a393b2e7dc6009949f2ad4d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 保持期間・条件はモデルや機能別に確認する。全機能の即時破棄とは断定しない。 比較した誤答: Model Training Policy → 学習利用可否は保持条件と異なる判断。 / Content Exclusion Policy → 指定ソースの参照対象を制御する。 / Public Code Matching Policy → 生成物と公開コードの一致を制御する。"
+    },
+    "q-d3-g06": {
+      "fingerprint": "ef61b9e24b7833f4fb53bcff76af75182d618c1ee7846fc408a6c2ed253f4b7c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: LLMが出力した直後に介在し、公開コード一致検査や安全フィルタリングを適用して最終出力を決定する段階がPost-processingである。 比較した誤答: トークン化および前処理（Tokenization） → モデルに入力する前のテキストをトークンID列へ分割・変換する入力段階である。 / 温度制御サンプリング（Temperature Sampling） → LLMが次のトークンを確率分布から選出してテキストを生成する推論段階そのものである。 / プロンプト拡張（Prompt Augmentation） → ユーザーの入力に関連ファイルやシステム指示を合成してプロンプトを充実させる入力前処理である。"
+    },
+    "q-d3-g07": {
+      "fingerprint": "adc53e8ed4e6e7f66ca74965a2eaf9bfb725843cb7fa948d366551b322510a58",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 転送中の通信をTLS等で保護する。 比較した誤答: Encryption at Rest → 保存されたデータの保護であり転送中の保護とは別。 / Secret Scanning → 資格情報の混入を検出する。 / Content Exclusion → 参照対象の範囲を決める。"
+    },
+    "q-d3-g08": {
+      "fingerprint": "2247c08f0b34439a2b7e4886f683d2f16b7c151ec9c3bb93a40a888979f38abd",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。 比較した誤答: コンテキストウィンドウライフサイクル（Context Window Lifecycle） → 会話セッションの長期化に伴い古いトークンが枠外へ順次追い出される履歴の変遷である。 / リクエストレートリミット（Request Rate Limiting） → 一定時間内のAPI呼び出し回数を制限し、サーバーやモデルの過負荷を防ぐスロットリング制御である。 / モデル推論ストリーミング（Model Inference Streaming） → 生成されたトークンが逐次リアルタイムにエディタへ順次配信される通信・描画方式である。"
+    },
+    "q-d3-g09": {
+      "fingerprint": "a158e93ed119608834d757fb3c3f8ec549ea9861e1a5174203b5f122c7eac238",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。 比較した誤答: ナレッジカットオフ（Knowledge Cutoff） → モデルが事前学習を完了した日時の境界であり、それ以降の最新出来事を知らない制限である。 / 推論レイテンシ（Inference Latency） → リクエストを送信してから最初のトークンまたは提案が返却されるまでの所要時間である。 / サンプリング温度（Sampling Temperature） → 次のトークンを選択する際の確率分布の平坦度合いを調整するハイパーパラメータである。"
+    },
+    "q-d3-g10": {
+      "fingerprint": "f55240c2e7be7e60f380484c2d3840f7f31208f42a0f7072ad70bf2ea27838e1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 応答時間と推論品質の設計上の両立を扱う。 比較した誤答: Determinism vs Diversity → 出力の再現性とばらつきの比較。 / Local vs Remote → 推論やデータ参照の場所の比較。 / Input vs Output Budget → 処理可能な入出力量の割当の比較。"
+    },
+    "q-d3-g11": {
+      "fingerprint": "ac382682fda5b90b2f58279c7839184128af5d7541c277730617d40bddf33e97",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 温度は候補選択の分布へ影響する。低くても無誤りや完全再現を保証しない。 比較した誤答: Max Output Tokens → 出力長を制限する。 / Frequency Penalty → 繰り返された語の選択へ影響するが温度そのものではない。 / Context Window → 処理可能な情報量の上限を表す。"
+    },
+    "q-d3-g12": {
+      "fingerprint": "e6a7b1b3ab0128c78cc52f55c55106447571eb03815533d40ee5a640c08f67e9",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。 比較した誤答: コンテキストウィンドウ上限（Context Window Limit） → 会話セッションが長くなりすぎて過去の指示やコードがトークン枠から溢れる現象である。 / ハルシネーション（Hallucination） → モデルが事実に基づかない架空の仕様や関数をあたかも実在するかのように出力する現象である。 / モデルドリフト（Model Drift） → 実運用のデータ分布が学習時と変化することで、AIの予測精度が時間経過とともに劣化する現象である。"
+    },
+    "q-d3-g13": {
+      "fingerprint": "092bed4f6b43a2144fefa15abff9545e0947af63e9dd8bf4c92645a771d205da",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 参照元へのアクセス範囲を表す。常にローカルだけとは限らない。 比較した誤答: Context Window Limit → 同時に処理できる量であり参照元の権限ではない。 / Knowledge Cutoff → 学習済み情報の時点の制約。 / Data Retention Policy → 収集後の保持条件の制約。"
+    },
+    "q-d3-g14": {
+      "fingerprint": "3b21307f83bf55dae374cee7baa70feaa25833473078ee7fe71f858c5e3812a6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。 比較した誤答: パブリックコード一致フィルター（Public Code Matching Filter） → GitHub上の公開コードと150文字以上一致する提案を検知・抑止する知的財産保護フィルターである。 / コンテンツ除外ゲートウェイ（Content Exclusion Gateway） → 機密ファイルや除外対象パスのコードがプロンプトとして送信されるのを未然に遮断する機能である。 / シークレットスキャニング（Secret Scanning） → コードやコミット内にハードコードされたAPIキーや認証トークンを検知・警告する機能である。"
+    },
+    "q-d4-g01": {
+      "fingerprint": "bf4ab6c3368b28ef1dccbea060bc3ad070a9c9e02ca3690711636a24be9fa929",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 目的、文脈、制約、具体例を体系的に整理し、LLMから最適な出力を引き出す指示設計技術がPrompt Engineeringである。 比較した誤答: ファインチューニング（Model Fine-Tuning） → 追加の学習データを用いて基盤モデル自体のパラメータを更新・最適化する機械学習手法である。 / 検索拡張生成（Retrieval-Augmented Generation） → プロンプト生成時に外部ドキュメントやリポジトリ検索結果を動的に注入するアーキテクチャである。 / コンテキストウィンドウ最適化（Context Window Optimization） → トークン消費量を節約するためにコンテキストの取捨選択を行う管理手法である。"
+    },
+    "q-d4-g02": {
+      "fingerprint": "76cd3e73a3dd2cd60a91c0877961288b7ac0d4a8608e37005be6f92d5df3efe2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。 比較した誤答: フューショットプロンプティング（Few-shot Prompting） → プロンプト内に期待する入力と出力の具体例を2〜3組提示して形式や解法を誘導する手法である。 / 思考の連鎖プロンプティング（Chain-of-Thought Prompting） → 結論に至る中間的な推論ステップや思考プロセスを順を追って出力させる手法である。 / ロールプロンプティング（Role Prompting） → AIに特定の役割や専門家の立場を付与して回答の観点やトーンを制御する手法である。"
+    },
+    "q-d4-g03": {
+      "fingerprint": "3d4b7c3049b2b637738a2b0ea3ff24b952008cfe6d0b6b7ef7b630ab511a95f8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: ユーザーの対話入力に先立ち、モデルの基本挙動や役割・ルールを規定する上位指示文がSystem Promptである。 比較した誤答: ユーザープロンプト（User Prompt） → 開発者がチャット入力欄やインライン画面で直接入力する個別の質問や指示である。 / プロンプト変数（Prompt Variables） → `#file` や `#selection` のようにプロンプト内に文脈データを動的参照するための変数である。 / スラッシュコマンド（Slash Commands） → `/explain` や `/fix` のように特定の事前定義アクションを呼び出すためのプレフィックスである。"
+    },
+    "q-d4-g04": {
+      "fingerprint": "efe3aa9d5abe1f770c209b07ea1ed9902d6d17c289fbaf49efcfb7e61424ad04",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: AIに専門家のペルソナや立場を指定し、より高度で専門的な観点から回答を引き出す手法がRole Promptingである。 比較した誤答: ゼロショットプロンプティング（Zero-shot Prompting） → 具体例を与えずに指示文だけでタスクを実行させるプロンプティング手法である。 / コンテキストプルーニング（Context Pruning） → 不要なファイルや履歴をコンテキストから排除してトークン枠と指示の集中度を保つ手法である。 / ステップバイステップ指示（Step-by-Step Prompting） → タスクの実行手順を1段階ずつ順序立てて進めるよう求めるプロンプト技法である。"
+    },
+    "q-d4-g05": {
+      "fingerprint": "c1f9032031aef78791439e8a19ee81c34d3452a4cb7bd54ca7ba2931eaf5f900",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 初回の出力結果を踏まえ、追加の指示や制約を与えながら段階的にコードを完成させる手法がIterative Refinementである。 比較した誤答: タスク分解手法（Task Decomposition） → 大規模な開発要件を実装前に小さな独立したサブタスクへと分割するアプローチである。 / チャットリセット（Chat Session Reset） → 過去の会話履歴を完全に破棄して初期状態から新しい会話を開始する操作である。 / フューショット手法（Few-shot Prompting） → プロンプト内に入出力の正解サンプルをあらかじめ複数組含めておく手法である。"
+    },
+    "q-d4-g06": {
+      "fingerprint": "4490736f87391766f97c9f983c89d29e1c2dcd87ed56a266585d35011fa58d27",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。 比較した誤答: コンテキスト希釈（Context Dilution） → 無関係な情報が混入することでAIが重要な指示を見失ってしまう現象である。 / プロンプト連鎖（Prompt Chaining） → あるプロンプトの出力を次のプロンプトの入力として自動的につなぎ合わせる仕組みである。 / ネガティブ指示（Negative Prompting） → 生成時に使用してはならないライブラリや非推奨構文を禁止事項として指定する手法である。"
+    },
+    "q-d4-g07": {
+      "fingerprint": "9a3f8c5541484bdd9b7bebd45cf37213673d8eaa4c79fcecc906455aca2bd188",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 無関係なファイルや過去ログを切り捨て、重要な指示への集中度と精度を高める手法がContext Pruningである。 比較した誤答: トークン超過エラー（Token Overflow） → コンテキストウィンドウの最大容量を超過してリクエストが物理的に失敗する状態である。 / コンテキストドリフト（Context Drift） → 会話が長引くにつれてAIの回答が初期の前提要件から徐々にズレていく現象である。 / リポジトリインデックス（Repository Indexing） → コード全体の高速な検索やシンボル解決のために作成されるインデックス構造である。"
+    },
+    "q-d4-g08": {
+      "fingerprint": "a7797c2cf9c42e77143858cd8e9814c520fd6a8f78784ff0f33b0bfb3dc1f9ae",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: やってはいけない禁止事項や制約を明示的に指定して不要な出力を抑止する手法がNegative Promptingである。 比較した誤答: 出力フォーマット指定（Output Specification） → 回答をJSONやMarkdown表などの特定の構文形式に限定する指示手法である。 / フューショットプロンプティング（Few-shot） → 期待する入出力の正解サンプルを複数組提示して形式を誘導する手法である。 / ロールプロンプティング（Role Prompting） → AIに特定の役割や専門家の立場を付与してトーンや観点を制御する手法である。"
+    },
+    "q-d4-g09": {
+      "fingerprint": "5442a7d4ba9c93dd69bf19fbfcadf8c87c27a687084b24b2593a2135db04863f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 出力の構文構造やデータフォーマットを明示的に制限し、後処理の手間を省く指示手法がOutput Format Specificationである。 比較した誤答: 思考プロセス指定（Chain-of-Thought Specification） → 結論を導く前の途中経過や推論理由を段階的に出力するよう求める手法である。 / ネガティブプロンプティング（Negative Prompting） → 生成してはならない非推奨コードや禁止事項をプロンプトで明示する手法である。 / タスク分解アプローチ（Task Decomposition Approach） → 大きな実装タスクを設計・実装・テストなどの段階的な小タスクに分割する手法である。"
+    },
+    "q-d5-g01": {
+      "fingerprint": "43100203a9afa74c999d916a47db15d85c56bd9bd5dbeb902f050a8d6c03c632",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。 比較した誤答: コードリファクタリング（Code Refactoring） → 外部の振る舞いを変えずに内部構造を整理する作業であり、ゼロから新しい機能を生成するものではない。 / コードトランスレーション（Code Translation） → 既存の別言語コードを目的言語へと書き換える移植作業である。 / 静的コード解析（Static Code Analysis） → 既存コードの規則違反や構文エラーを自動検査する仕組みである。"
+    },
+    "q-d5-g02": {
+      "fingerprint": "740fc5e68239fa57b235d73a4131b609723d0053caf75fddb1d988c64a11ada6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 外部仕様や振る舞いを維持したまま、コードの可読性や構造を改善する作業がCode Refactoringである。 比較した誤答: コードトランスレーション（Code Translation） → 異なるプログラミング言語間でのコード移植・変換作業である。 / レガシーコード近代化（Legacy Modernization） → 旧式フレームワークや非推奨APIで書かれたシステム全体を最新基盤へ刷新する作業である。 / コード自動生成（AI-Assisted Code Generation） → 自然言語の指示から新しい関数やロジックを作り出す生成作業である。"
+    },
+    "q-d5-g03": {
+      "fingerprint": "a5621ced4faec8ce39df8124b0f94d9f788da19587d01adad6bf802047030cd8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 旧式環境や非推奨APIのコードをテストで保証しつつ、現代的な構文や最新スタックへ移行する作業がLegacy Modernizationである。 比較した誤答: アルゴリズム最適化（Algorithm Optimization） → 計算量やメモリ消費を改善して実行速度を引き上げる作業である。 / コードリファクタリング（Code Refactoring） → 単一モジュールや局所的なコードの可読性・構造改善を指す一般的な概念である。 / コードトランスレーション（Code Translation） → 言語間のコード変換そのものを指し、レガシー刷新という包括的移行作業とは異なる。"
+    },
+    "q-d5-g04": {
+      "fingerprint": "f6c3c387e4841d82d6b74182c28f231f8871f8f8b095178fd685ffbf9eaadc08",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: ある言語で書かれたコードを別のプログラミング言語へ移植・翻訳する作業がCode Translationである。 比較した誤答: コードリファクタリング（Code Refactoring） → 同一言語内で外部の振る舞いを変えずに構造を改善する作業である。 / レガシーコード近代化（Legacy Modernization） → 古いアーキテクチャ全体を最新の基盤や規約へ刷新する包括的な作業である。 / ボイラープレート削減（Boilerplate Reduction） → 定型的な繰り返しコードの記述量を減らす省力化の工夫である。"
+    },
+    "q-d5-g05": {
+      "fingerprint": "0edce774b124d1e230790e22a4621c4088769c9acfecb2fd812224a2b3c80b48",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。 比較した誤答: ボイラープレート削減（Boilerplate Reduction） → 定型コードの入力を自動化する作業であり、計算量の改善とは目的が異なる。 / 例外安全ハンドリング（Safe Exception Handling） → エラー発生時にシステムを安全に維持・回復させる防御的実装である。 / 入力バリデーション（Input Validation） → 受け取った引数や外部データが妥当かを検証する境界チェックである。"
+    },
+    "q-d5-g06": {
+      "fingerprint": "a2dbccc8c7f963e43d634e67da6a02a2dce83d1b0ec1da8d1a80eef9ecd66ff6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 構文上不可欠だが定型的なコード記述を自動化し、本質的なロジックに集中させる効果がBoilerplate Reductionである。 比較した誤答: アルゴリズム最適化（Algorithm Optimization） → 計算量を改善して実行速度を高める手法であり、記述量の削減とは異なる。 / レガシーコード近代化（Legacy Modernization） → 旧式システム全体を新技術スタックへ刷新する移行タスクである。 / プロジェクト設計文書化（Project Documentation） → システムの要件や設計を外部文書としてまとめるタスクである。"
+    },
+    "q-d5-g07": {
+      "fingerprint": "cf6559ce8e1501ed5c4ef4d85a3e8f26390537b008abef8d8f6f2e49f2b4a5ee",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 複数コンポーネントや外部リソースとの連携が正常に機能するかを検証するテスト生成がIntegration Test Generationである。 比較した誤答: 単体テストコード生成（Unit Test Generation） → 単一の関数やメソッドを外部依存から隔離して検証するテスト生成である。 / プロパティベーステスト生成（Property-Based Test） → ランダムに大量の入力を与えて不変条件が保たれるかを検証するテスト生成である。 / エンドツーエンドテスト生成（E2E Test Generation） → ユーザー操作画面からバックエンドまでの全経路を検証する最上位テスト生成である。"
+    },
+    "q-d5-g08": {
+      "fingerprint": "b601ee941627fc51c9b0213cbb6130f3ce06f0a77dc356d646977b5ae6fb8aa7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: セキュリティ上の欠陥やリスクに対し、`/fix` 等を活用して安全なコードへ修正・治療するタスクがVulnerability Remediationである。 比較した誤答: 秘密情報漏洩防止（Secret Leak Prevention） → APIキーやパスワードの平文コミットを防ぐ対策である。 / 静的解析ツール統合（Static Analysis Integration） → 脆弱性やバグを検出するための解析ツールとCopilotを連携させる仕組みである。 / パフォーマンス診断（Performance Profiling） → 実行遅延やメモリ消費の課題を特定する作業である。"
+    },
+    "q-d5-g09": {
+      "fingerprint": "c7810de947ab9fde957963ab432861920c16e6655ff9bfedc1401942f255fb55",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。 比較した誤答: 脆弱性修正・治療（Vulnerability Remediation） → 脆弱性を取り除く修正行為そのものを指す概念である。 / テストエクスプローラー連携（Test Explorer Integration） → テストの検出・実行GUIとエディタを接続する仕組みである。 / 例外安全ハンドリング（Safe Exception Handling） → 実行時エラーを安全に処理する防御的コーディング手法である。"
+    },
+    "q-d5-g10": {
+      "fingerprint": "f5742dc9d0aa1bc349506c750f917226d0b75d7c14d67c4cddd212add486d6af",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 時間・負荷・資源の観測から遅延原因を特定する。 比較した誤答: Security Scanning → 脆弱性の検出であり時間計測が主目的ではない。 / Input Validation → 入力の事前条件を検査する。 / Regression Testing → 既存動作が壊れていないか期待値を検証する。"
+    },
+    "q-d5-g11": {
+      "fingerprint": "bdc919bdd76bacc07ca2c7431a88dcfec950f1e275559adc167263300c0f45a6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 認証トークンやパスワードのハードコードを禁止し、環境変数やSecret Scanningで漏洩を防ぐ原則がSecret Leak Preventionである。 比較した誤答: 脆弱性修正・治療（Vulnerability Remediation） → 発見されたコードの脆弱性を安全に書き換える修復タスクである。 / 入力バリデーション（Input Validation） → 関数の入力データが許容範囲内かを検証する防御実装である。 / 例外安全ハンドリング（Safe Exception Handling） → 実行時エラーでスタックトレース等の機密が露出しないよう制御する実装である。"
+    },
+    "q-d5-g12": {
+      "fingerprint": "bb7feb01fac3c81d7a8e5b60f7970b9a3d095b696e539ef539a70fcec2376dd5",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: エディタ内のテストを自動発見し、GUIから実行・デバッグ・結果確認を一元管理する機能がTest Explorerである。 比較した誤答: ソース管理ビュー（Source Control View） → Gitの変更差分確認やコミット操作を行うパネルである。 / 実行とデバッグビュー（Run and Debug View） → ブレークポイントや変数を監視して汎用プログラムを実行デバッグするビューである。 / 出力パネルビュー（Output Panel View） → 各種ツールの標準出力やログメッセージをテキスト表示するパネルである。"
+    },
+    "q-d5-g13": {
+      "fingerprint": "4d6e421c5d139603dd2d09237702e9e047974136de52b96727523dc1a6da31e4",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 準備・対象操作・期待値確認というテスト内の構造。 比較した誤答: Red–Green–Refactor → 失敗するテスト→実装→改善という開発反復。 / Setup–Teardown → テスト前後のライフサイクル処理。 / Build–Run–Debug → ビルドと実行・調査という実行作業。"
+    },
+    "q-d5-g14": {
+      "fingerprint": "a935a5ea6dce910359192678049e2d27dd7449a8cc209e77ff9f64ac3d6a6d31",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 信頼性・保守性・安全性・性能・可読性などソフトウェアの非機能的価値を規定する指標群がCode Quality Attributesである。 比較した誤答: Software Reliability → 品質特性のうち、障害なく正しく動作し続ける能力に特化した単一の属性である。 / Maintainability Index → 循環的複雑度や行数などからコードの変更しやすさを数値化した指標である。 / Test Coverage → コードの何パーセントがテストで実行されたかを示す網羅率指標である。"
+    },
+    "q-d5-g15": {
+      "fingerprint": "8cc97fc5b799e4ad25c6aa2306cb4e1d10416b6785b230b2c5d253e3a4e66ae6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 規定の条件下で機能が障害なく継続的に正しく動作し続ける品質属性がReliability（信頼性）である。 比較した誤答: 保守性（Software Maintainability） → 不具合修正や機能拡張を容易に行える度合いを表す品質属性である。 / 移植性（Software Portability） → 異なる環境やプラットフォームへ容易に移行できる度合いを表す品質属性である。 / 可用性（High Availability） → システムが必要な時にいつでも利用可能な状態に維持されている割合を表す指標である。"
+    },
+    "q-d5-g16": {
+      "fingerprint": "d8c110539c4a2692704238bfae54357ed7ed84df45c927040b57f63b0ef5ceda",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 例外の握り潰しや機密スタックトレース漏洩を避け、具象例外を適切に捕捉して安全に対処する実装がSafe Exception Handlingである。 比較した誤答: 入力バリデーション（Input Validation） → 関数に入る前の境界で引数が正常値かを事前に検証する防御策である。 / アサーション検証（Test Assertion Logic） → テスト実行中に戻り値が期待値と合致しているかを確認する論理である。 / フェイルセーフシャットダウン（Fail-Safe Mode） → 致命的な障害発生時に安全にシステム全体を停止または隔離する制御である。"
+    },
+    "q-d5-g17": {
+      "fingerprint": "953a79b75c3ced375ebfd29c627de0030fe95329a93f5ec5b327da9b71d0fc72",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。 比較した誤答: アサーション検証（Test Assertion Logic） → テストコード内で実行結果が期待値と一致しているかを比較する論理である。 / 例外安全ハンドリング（Safe Exception Handling） → 実行時に発生したエラーを適切に処理・回復する仕組みである。 / データサニタイゼーション（Data Sanitization） → 入力データから危険な文字列やタグを無害化・エスケープする処理である。"
+    },
+    "q-d5-g18": {
+      "fingerprint": "6a441db503496aec319213c2d17d7fe62464f8e86d258775c17209a61ce77f0d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: システムの目的、要件、アーキテクチャ、手順などを全体視点で包括的にまとめた文書がProject Documentationである。 比較した誤答: コードインライン注釈（Code Comments & JSDoc） → 個々の関数や変数の役割をソースコード内に局所的に説明する注釈である。 / APIリファレンス仕様書（API Reference Spec） → 個別のエンドポイントの入出力パラメータ一覧に特化した技術仕様書である。 / コミットメッセージ履歴（Git Commit Log History） → 変更の履歴や理由を時系列で記録したバージョン管理のログである。"
+    },
+    "q-d6-g01": {
+      "fingerprint": "242a3b1f5bb3e2a687a0662b6b7de5b4d7b57b826d1031b2d62d5b0af0ffb998",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 複数リポジトリへの組織単位の除外設定。 比較した誤答: Repository Content Exclusion → 対象を一つのリポジトリに限定する。 / Personal Copilot Settings → 個人の利用設定であり組織の除外設定ではない。 / Repository Instructions → 生成指示であり除外ポリシーを強制しない。"
+    },
+    "q-d6-g02": {
+      "fingerprint": "62b92d0ccfbff020a2c2594c4838933a5df65d2d7e9aec65a3ccfbe02e58d94e",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: **は下位の複数階層を含む指定に使う。 比較した誤答: secrets/* → *だけでは任意の下位階層を包括しない。 / secrets/*.key → 直下の特定拡張子に限定する。 / secrets/key.txt → 単一ファイルを指定する。"
+    },
+    "q-d6-g03": {
+      "fingerprint": "d3d83828fb81e1ecb50f0ecb2abb134b012eba90eb77488a81eddc8e60f87d2d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 生成物についての所有権・権利関係を扱う。第三者の権利や利用条件は別途確認する。 比較した誤答: IP Indemnification → 契約上の補償条件であり所有権そのものを決める概念ではない。 / Public Code Matching → 公開コードとの類似性の確認であり権利を自動付与しない。 / Data Retention → 保持期間・処理条件であり生成物の所有権ではない。"
+    },
+    "q-d6-g04": {
+      "fingerprint": "4b2e47f261055ef431e8a1cdc0629bf45b8ce4b521313d04bd13c348037e98bc",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。 比較した誤答: トークンリクエスト遅延（Inference Request Latency） → プロンプトを送信してからモデルの応答トークンが返却されるまでの通信所要時間である。 / キャッシュ無効化タイムアウト（Cache Invalidation Timeout） → クライアントのローカルキャッシュの有効期限切れを待機する一般的なキャッシュ制御時間である。 / レートリミットスロットリング（Rate Limiting Throttling） → 短時間に多数のリクエストが集中した際に一時的にアクセスを制限する通信制御である。"
+    },
+    "q-d6-g05": {
+      "fingerprint": "e529f4f2c3a6ed0f8629e61183ea3438a0a762758e662eb2c80b0db0f5dd7d2c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文で必要な判断: 監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。 比較した誤答: Access Control → 役割に応じて権限やアクセス範囲を制限・統制するセキュリティモデルである。 / Policy Inheritance → EnterpriseからOrganization、リポジトリへと上位の設定が引き継がれる仕組みである。 / IP Indemnification → 第三者からの知財クレームに対してベンダー側が防護・補償を提供する契約条項である。"
     }
   },
   "choiceAudit": {

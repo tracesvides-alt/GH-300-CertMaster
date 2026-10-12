@@ -1,0 +1,757 @@
+{
+  "description": "Phase 4 (D2): 用語集のD2用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、実在するCopilot機能名・コマンド名・設定名同士を対比させる。",
+  "questions": [
+    {
+      "id": "q-d2-g01",
+      "termId": "g-ghost-text",
+      "objectiveId": "d2o1",
+      "question": "エディタ内でコードを入力中に、カーソルの直後に薄い灰色でインライン表示される未確定の補完候補テキストを表す用語は？",
+      "correct": {
+        "text": "ゴーストテキスト（Ghost Text）",
+        "explanation": "エディタ内に薄い灰色文字で提案される未確定の補完表示がGhost Textである。"
+      },
+      "distractors": [
+        {
+          "text": "インテリセンスポップアップ（IntelliSense Widget）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ドロップダウンリストとして表示される補完候補であり、インラインの薄い灰色テキストとは異なる。"
+        },
+        {
+          "text": "インラインチャット差分（Inline Diff Overlay）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "Inline Chatによる編集差分表示であり、タイピング中に現れる未確定の自動補完表示ではない。"
+        },
+        {
+          "text": "スニペットプレースホルダー（Snippet Placeholder）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "Tabキーで移動するスニペットの入力枠であり、Copilotが動的に生成する薄い灰色テキストとは異なる。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "inline-usage"
+      ]
+    },
+    {
+      "id": "q-d2-g02",
+      "termId": "g-completions-panel",
+      "objectiveId": "d2o1",
+      "question": "VS Codeで通常のインライン候補に加えて、別タブを開いて最大10個の追加補完候補をまとめて生成・比較検討できる機能は？",
+      "correct": {
+        "text": "Copilot 補完パネル（Completions Panel）",
+        "explanation": "別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。"
+      },
+      "distractors": [
+        {
+          "text": "Copilot チャットビュー（Chat View）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "会話形式で質問や編集を指示するサイドバーパネルであり、補完候補を10件一覧比較するタブではない。"
+        },
+        {
+          "text": "クイックフィックスメニュー（Quick Fix Menu）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "警告やエラーに対して修正候補をドロップダウン表示するエディタ機能である。"
+        },
+        {
+          "text": "ソース管理ビュー（Source Control View）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "Gitのステージングやコミットを管理するパネルであり、コード補完の候補一覧を表示する機能ではない。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "inline-usage"
+      ]
+    },
+    {
+      "id": "q-d2-g03",
+      "termId": "g-chat-participants",
+      "objectiveId": "d2o1",
+      "question": "Copilot Chatで `@workspace` や `@vscode` のように `@` 記号を付けて指定し、特定のコンテキストや機能へ質問をルーティングする仕組みは？",
+      "correct": {
+        "text": "チャット参加者（Chat Participants）",
+        "explanation": "`@` で指定し特定のドメインやツールに質問を割り振る仕組みがChat Participantsである。"
+      },
+      "distractors": [
+        {
+          "text": "チャット変数（Chat Variables）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "`#file` や `#selection` のように `#` 記号で特定の文脈データを参照する仕組みである。"
+        },
+        {
+          "text": "スラッシュコマンド（Slash Commands）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "`/explain` や `/fix` のように `/` 記号で特定の操作や意図を指定するコマンドである。"
+        },
+        {
+          "text": "プロンプトファイル（Prompt Files）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "`.prompt.md` ファイルとして定義する再利用可能な指示文であり、`@` で呼び出す参加者ではない。"
+        }
+      ],
+      "sourceIds": [
+        "chat",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g04",
+      "termId": "g-status-menu",
+      "objectiveId": "d2o1",
+      "question": "VS Codeのステータスバーに常駐し、Copilotの全体的な有効化/無効化や、現在の言語に対する補完設定の切り替え、ログ確認ができるUI要素は？",
+      "correct": {
+        "text": "Copilot Status Menu",
+        "explanation": "ステータスバー上のCopilotアイコンから全体または言語単位の有効・無効を切り替えるのがステータスメニューである。"
+      },
+      "distractors": [
+        {
+          "text": "Command Palette",
+          "explanation": "エディタ全体のコマンドを検索・実行する汎用ダイアログ（Ctrl+Shift+P）である。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Notifications",
+          "explanation": "右下に一時的に表示されるシステムメッセージであり、常駐の設定メニューではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Explorer",
+          "explanation": "ファイルツリーを表示する領域であり、Copilotの状態確認やトグルを行うメニューではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g05",
+      "termId": "g-gh-copilot-explain",
+      "objectiveId": "d2o2",
+      "question": "2025年10月に終了した旧gh-copilot拡張の資料を確認している。既存シェルコマンドの意味を説明する旧サブコマンドは？",
+      "correct": {
+        "text": "gh copilot explain",
+        "explanation": "旧拡張でコマンド説明を依頼した名称。現行はcopilot CLIで質問する。"
+      },
+      "distractors": [
+        {
+          "text": "gh copilot suggest",
+          "explanation": "旧拡張のコマンド提案機能であり説明とは異なる。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "gh copilot config",
+          "explanation": "旧拡張の設定用であり説明要求ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "gh copilot alias",
+          "explanation": "旧拡張のシェルエイリアス設定用。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "cli-extension-sunset",
+        "cli",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g06",
+      "termId": "g-gh-copilot-suggest",
+      "objectiveId": "d2o2",
+      "question": "旧gh-copilot拡張の履歴資料で、自然言語からGitやシェルのコマンド候補を提案する操作を調べている。該当する旧サブコマンドは？",
+      "correct": {
+        "text": "gh copilot suggest",
+        "explanation": "旧suggestは候補生成用。現行のcopilotとは起動形式が異なる。"
+      },
+      "distractors": [
+        {
+          "text": "gh copilot explain",
+          "explanation": "旧explainは既存コマンドの意味を説明する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "gh copilot config",
+          "explanation": "旧configは設定用。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "gh copilot alias",
+          "explanation": "旧aliasはシェルエイリアスの設定用。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "cli-extension-sunset",
+        "cli",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g07",
+      "termId": "g-cli-shell-aliases",
+      "objectiveId": "d2o2",
+      "question": "旧gh-copilot資料にghcs / ghceというシェルエイリアスがある。現行Copilot CLIへの移行説明として正しいものは？",
+      "correct": {
+        "text": "旧拡張用の短縮名で、現行はcopilotで起動する",
+        "explanation": "旧短縮名を現行の必須設定と混同しない。"
+      },
+      "distractors": [
+        {
+          "text": "旧拡張用の短縮名で、現行もghcsで起動する",
+          "explanation": "ghcsは現行CLIの標準起動コマンドではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "現行CLIの標準名で、旧拡張もcopilotで起動した",
+          "explanation": "ghcs/ghceは旧拡張用で現行標準ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "現行CLIの標準名で、旧拡張もghceで起動した",
+          "explanation": "世代と起動コマンドの関係を取り違えている。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "cli-extension-sunset",
+        "cli",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g08",
+      "termId": "g-cli-execution-confirm",
+      "objectiveId": "d2o2",
+      "question": "現行Copilot CLIの変更系ツールで、個別の実行確認を省略できる場合がある。承認頻度に直接影響する仕組みは？",
+      "correct": {
+        "text": "ツールの許可・拒否設定",
+        "explanation": "保存済み許可や広い事前許可によって個別確認の扱いが変わる。"
+      },
+      "distractors": [
+        {
+          "text": "会話のコンテキスト圧縮",
+          "explanation": "圧縮は文脈量を管理するものでツール権限を与えない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "出力の公開コード一致設定",
+          "explanation": "生成内容の一致制御はコマンド実行許可とは別。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "モデルの入力トークン上限",
+          "explanation": "入力上限は実行権限の設定ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "cli-tool-permissions",
+        "cli-current",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g09",
+      "termId": "g-cli-context-limits",
+      "objectiveId": "d2o2",
+      "question": "現行Copilot CLIで、手元のプロジェクトファイルを調べて回答の文脈に加えたい。取得できる情報範囲に直接関係する条件は？",
+      "correct": {
+        "text": "実行場所とファイル・ツールの許可",
+        "explanation": "実際の参照元へのアクセス範囲を決める。"
+      },
+      "distractors": [
+        {
+          "text": "選択モデルの入力・出力トークン上限",
+          "explanation": "一度に使える情報量の上限でありアクセス権そのものではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "会話に残された以前の依頼と回答",
+          "explanation": "参照済みの文脈は含むが、新規ファイルのアクセス権を決めない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "質問文に指定した回答形式と例示",
+          "explanation": "出力形式を誘導するが、参照元への権限を付与しない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "cli-current",
+        "cli-tool-permissions",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g10",
+      "termId": "g-copilot-edits",
+      "objectiveId": "d2o1",
+      "question": "VS Codeにおいて、作業対象（Working Set）に指定した複数ファイルに対して、セッション内で同時にコード修正を生成・差分プレビューできる機能は？",
+      "correct": {
+        "text": "Copilot Edits",
+        "explanation": "作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。"
+      },
+      "distractors": [
+        {
+          "text": "Inline Chat",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "現在のエディタ内の単一ファイル・選択範囲に対して会話形式で編集を行う機能である。"
+        },
+        {
+          "text": "Copilot Completions Panel",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "現在のカーソル位置に対する単一ファイルのコード補完候補を10個表示するパネルである。"
+        },
+        {
+          "text": "Quick Fix",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "構文エラー等に対する単一箇所の修正を適用する標準エディタ機能である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "workspace-context"
+      ]
+    },
+    {
+      "id": "q-d2-g11",
+      "termId": "g-mcp-server",
+      "objectiveId": "d2o3",
+      "question": "Model Context Protocol（MCP）において、社内DBやAPIツール、リソースなどの外部データと操作を公開し、Copilotからの呼び出しに応答する構成要素は？",
+      "correct": {
+        "text": "MCP サーバー（MCP Server）",
+        "explanation": "ツールやリソースを定義してクライアントに機能を提供する側がMCP Serverである。"
+      },
+      "distractors": [
+        {
+          "text": "MCP クライアント（MCP Client）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "サーバーに接続してツールやリソースを消費する側（VS CodeやClaude Desktop等）である。"
+        },
+        {
+          "text": "MCP ホストエージェント（MCP Host Agent）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "MCP仕様上の標準コンポーネント名ではなく、クライアントとサーバーの関係で定義される。"
+        },
+        {
+          "text": "MCP リバースプロキシ（MCP Reverse Proxy）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "標準プロトコル仕様のコア概念ではなく、中核となる提供側コンポーネントはサーバーである。"
+        }
+      ],
+      "sourceIds": [
+        "mcp",
+        "mcp-spec"
+      ]
+    },
+    {
+      "id": "q-d2-g12",
+      "termId": "g-agent-sessions",
+      "objectiveId": "d2o2",
+      "question": "Agent Modeにおいて、一連のタスク指示、ツールの実行履歴、コード編集、作業コンテキストをひとまとめに保持し、中断や再開の単位となる作業空間は？",
+      "correct": {
+        "text": "エージェントセッション（Agent Sessions）",
+        "explanation": "エージェントが実行したタスクやツール履歴、作業文脈を保持する単位がAgent Sessionである。"
+      },
+      "distractors": [
+        {
+          "text": "Git ワーキングツリー（Git Working Tree）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "Git管理下のローカルファイル群であり、エージェントの推論や会話・ツール履歴を管理する単位ではない。"
+        },
+        {
+          "text": "ワークスペース設定（Workspace Settings）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "エディタ環境の設定構成であり、動的なエージェント作業履歴の保持空間ではない。"
+        },
+        {
+          "text": "スクラッチバッファ（Scratch Buffer）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "一時的なテキストメモ用のバッファであり、エージェントの会話・実行コンテキスト単位ではない。"
+        }
+      ],
+      "sourceIds": [
+        "agent-mode",
+        "cli-sessions"
+      ]
+    },
+    {
+      "id": "q-d2-g13",
+      "termId": "g-sub-agents",
+      "objectiveId": "d2o3",
+      "question": "メインのエージェントが大規模なタスクを実行する際、独立したコンテキストで下位タスク（調査やサブコンポーネント作成など）を並行して引き受け、結果をメインへ返す仕組みは？",
+      "correct": {
+        "text": "サブエージェント（Sub-Agents）",
+        "explanation": "主セッションとは分離された独立コンテキストで下位タスクを実行し、結果を報告する下位エージェントがSub-Agentsである。"
+      },
+      "distractors": [
+        {
+          "text": "バックグラウンドスレッド（Background Threads）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "OSやランタイムの並列処理単位であり、プロンプトと独立コンテキストを持つAIエージェントの委譲とは異なる。"
+        },
+        {
+          "text": "デーモンプロセス（Daemon Processes）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "OS常駐型のバックグラウンドサービスであり、タスクを分担するAIエージェントの仕組みではない。"
+        },
+        {
+          "text": "スクリプトフック（Script Hooks）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "イベントに応じて実行される外部スクリプトであり、自律的に下位タスクを処理するエージェントではない。"
+        }
+      ],
+      "sourceIds": [
+        "agent-mode",
+        "ide-subagents"
+      ]
+    },
+    {
+      "id": "q-d2-g14",
+      "termId": "g-copilot-code-review",
+      "objectiveId": "d2o3",
+      "question": "GitHubのプルリクエストにおいて、変更差分をAIが自動分析し、潜在的なバグ・セキュリティ上の懸念・改善提案をインラインコメントとして投稿する機能は？",
+      "correct": {
+        "text": "Copilot Code Review",
+        "explanation": "PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。"
+      },
+      "distractors": [
+        {
+          "text": "Copilot Pull Request Summaries",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "PRの説明欄に箇条書きで変更要約を下書きする機能であり、インラインのレビュー指摘を行う機能ではない。"
+        },
+        {
+          "text": "Dependabot Alerts",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "依存関係の既知の脆弱性を検知して通知する機能であり、PR差分の汎用コードレビューではない。"
+        },
+        {
+          "text": "GitHub Secret Scanning",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "コミット内のAPIキーやパスワード等の漏えいを検知するセキュリティ機能である。"
+        }
+      ],
+      "sourceIds": [
+        "code-review",
+        "policies"
+      ]
+    },
+    {
+      "id": "q-d2-g15",
+      "termId": "g-scoped-instructions",
+      "objectiveId": "d2o3",
+      "question": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法は？",
+      "correct": {
+        "text": "スコープ付きインストラクション（Scoped Instructions）",
+        "explanation": "特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。"
+      },
+      "distractors": [
+        {
+          "text": "リポジトリルールセット（Repository Rulesets）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ブランチ保護やタグ付け規則を強制するGitHubのガバナンス機能であり、Copilot用の指示ファイルではない。"
+        },
+        {
+          "text": "プロンプトファイル（Prompt Files）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "特定のタスクを呼び出す再利用可能なテンプレート（`.prompt.md`）であり、ディレクトリ単位の自動適用指示とは異なる。"
+        },
+        {
+          "text": "ワークスペースプロファイル（Workspace Profiles）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "VS Codeの拡張機能やUI構成を切り替える機能であり、Copilotの指示ファイルの適用機能ではない。"
+        }
+      ],
+      "sourceIds": [
+        "instructions"
+      ]
+    },
+    {
+      "id": "q-d2-g16",
+      "termId": "g-spark",
+      "objectiveId": "d2o3",
+      "question": "自然言語の指示から直接マイクロWebアプリケーションを構築・反復改善する実験的ツールとして公開され、github.com上で2026年8月に新規作成が終了したサービスは？",
+      "correct": {
+        "text": "GitHub Spark",
+        "explanation": "アイデアから自然言語でマイクロアプリを生成するツールで、2026年8月に新規作成受付が終了したのがGitHub Sparkである。"
+      },
+      "distractors": [
+        {
+          "text": "GitHub Copilot Spaces",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "リポジトリやIssueを束ねて共有コンテキストを作る現行のコラボレーション機能である。"
+        },
+        {
+          "text": "GitHub Codespaces",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "クラウド上にホストされた完全な開発環境（コンテナ）を提供するサービスである。"
+        },
+        {
+          "text": "GitHub Copilot Workspace",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "Issueから仕様策定・コード変更・PR作成までを支援する開発者環境である。"
+        }
+      ],
+      "sourceIds": [
+        "spark",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g17",
+      "termId": "g-copilot-extensions",
+      "objectiveId": "d2o3",
+      "question": "サードパーティのSaaSや社内サービスと連携してCopilot Chatを拡張する仕組みとして提供され、2025年11月に終了して現行のMCP等へ移行した旧連携方式は？",
+      "correct": {
+        "text": "GitHub App型 Copilot Extensions",
+        "explanation": "サードパーティ統合として提供され2025年11月に終了した旧機能がGitHub App型Copilot Extensionsである。"
+      },
+      "distractors": [
+        {
+          "text": "VS Code 拡張機能（VS Code Extensions）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "エディタ上で動作する現行のクライアント側プラグインであり、終了したGitHub App型Extensionsとは異なる。"
+        },
+        {
+          "text": "GitHub Actions ワークフロー（GitHub Actions）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "CI/CDパイプラインを自動化する現行のGitHub標準機能である。"
+        },
+        {
+          "text": "GitHub Webhooks",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "リポジトリイベントを外部サーバーへHTTP通知する標準API機能である。"
+        }
+      ],
+      "sourceIds": [
+        "chat",
+        "extensions-sunset"
+      ]
+    },
+    {
+      "id": "q-d2-g18",
+      "termId": "g-org-policies",
+      "objectiveId": "d2o4",
+      "question": "GitHub Organizationの管理者が、所属メンバーに対して「公開コード一致提案のブロック」や「特定機能の有効化」を一括適用する管理設定は？",
+      "correct": {
+        "text": "Organization Policies",
+        "explanation": "組織内のメンバーへの機能管理という範囲。"
+      },
+      "distractors": [
+        {
+          "text": "Enterprise Policies",
+          "explanation": "Enterprise層の統制であり組織管理者の範囲ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Repository Instructions",
+          "explanation": "依頼内容を補助する指示であり管理ポリシーの強制ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Personal Settings",
+          "explanation": "個人の利用設定であり組織階層全体の強制ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "policies",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d2-g19",
+      "termId": "g-enterprise-policies",
+      "objectiveId": "d2o4",
+      "question": "GitHub Enterprise管理者が設定し、傘下のすべてのOrganizationに対して強制（Enforce）され、下位組織での緩和や無効化ができない最上位のポリシーは？",
+      "correct": {
+        "text": "Enterprise Policies",
+        "explanation": "傘下の組織へ強制するEnterpriseの範囲。"
+      },
+      "distractors": [
+        {
+          "text": "Organization Policies",
+          "explanation": "組織層ではEnterpriseの強制を緩和できない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Repository Instructions",
+          "explanation": "依頼内容を補助する指示であり管理ポリシーの強制ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Personal Settings",
+          "explanation": "個人の利用設定であり組織階層全体の強制ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "policies"
+      ]
+    },
+    {
+      "id": "q-d2-g20",
+      "termId": "g-subscription-plans",
+      "objectiveId": "d2o4",
+      "question": "個人向けのFree・Pro、組織向けのBusiness・Enterpriseなど、利用可能な機能や顧客コードのプライバシーポリシー（モデル学習利用の有無）を規定する体系は？",
+      "correct": {
+        "text": "Subscription Plans",
+        "explanation": "利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。"
+      },
+      "distractors": [
+        {
+          "text": "Seat Assignment",
+          "explanation": "購入したライセンスを特定のユーザーに割り当てる運用操作であり、プラン体系そのものではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Billing Roles",
+          "explanation": "支払い情報の閲覧や請求書管理を行う権限ロールであり、Copilotの機能・規約プラン体系ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Enterprise Managed Users",
+          "explanation": "IdPと連携してユーザーIDを一元管理するアカウント構成であり、Copilotのサブスクリプションプランではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "policies",
+        "privacy",
+        "plans"
+      ]
+    },
+    {
+      "id": "q-d2-g21",
+      "termId": "g-code-review-policies",
+      "objectiveId": "d2o4",
+      "question": "組織の管理者が、Pull RequestにおけるCopilotによる自動コードレビューの動作（自動トリガーの有無や利用可否）を制御する管理ポリシーは？",
+      "correct": {
+        "text": "Code Review Policies",
+        "explanation": "レビューの利用可否・自動動作を管理する。"
+      },
+      "distractors": [
+        {
+          "text": "PR Summary Policies",
+          "explanation": "変更要約の機能管理でありレビュー指摘とは別。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Content Exclusion Policies",
+          "explanation": "入力側の参照対象を管理する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Public Code Matching Policies",
+          "explanation": "生成物と公開コードの一致を管理する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "code-review",
+        "policies"
+      ]
+    },
+    {
+      "id": "q-d2-g22",
+      "termId": "g-legacy-knowledge-bases",
+      "objectiveId": "d2o3",
+      "question": "旧教材にCopilot Knowledge Basesの設定手順がある。現在の共有コンテキスト機能との関係は？",
+      "correct": {
+        "text": "Knowledge Basesは終了し、Spacesへ置き換わった",
+        "explanation": "2025-11-01終了。現在の共有コンテキストはSpaces。"
+      },
+      "distractors": [
+        {
+          "text": "Knowledge Basesは現行で、Spacesはその別名である",
+          "explanation": "現行機能の別名ではなく終了した旧機能。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Knowledge Basesは現行で、SpacesはIDE補完専用である",
+          "explanation": "SpacesはIDE補完専用という機能ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Knowledge Basesは終了し、Prompt Filesへ置き換わった",
+          "explanation": "Prompt Filesは依頼文の再利用で役割が異なる。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "knowledge-bases-sunset",
+        "spaces",
+        "guide"
+      ]
+    }
+  ]
+}

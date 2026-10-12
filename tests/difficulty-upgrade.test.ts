@@ -14,7 +14,8 @@ import { createHash } from 'node:crypto';
 describe('Question Bank Difficulty Distribution', () => {
   it('classifies every question using a current editorial review rather than a target ratio', () => {
     expect(questions.length).toBeGreaterThanOrEqual(195);
-    expect(questions.length).toBeLessThanOrEqual(205);
+    // Glossary coverage adds one Foundation question per term that lacked one (see scripts/glossary-question-drafts).
+    expect(questions.length).toBeLessThanOrEqual(330);
 
     const counts = {
       beginner: questions.filter((q) => q.difficulty === 'beginner').length,

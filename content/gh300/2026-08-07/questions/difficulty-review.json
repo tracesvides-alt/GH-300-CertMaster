@@ -18,27 +18,27 @@
       "evidence": []
     },
     "q02": {
-      "fingerprint": "6e30c938092eb247cae4ae57e9754905a9a56942afe95625c550539535967af0",
+      "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "独立した期待値で検証する基本原則の識別。具体的な丸め結果の推論までは求めない。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "独立した期待値で検証する基本原則の識別。具体的な丸め結果の推論までは求めない。"
+        "値の仕様適合を直接比較する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q03": {
-      "fingerprint": "dedf76154abc273264e2ec692032b5e076abe79d26c9c73258a870af3be4f129",
+      "fingerprint": "10b30e2ea1ac4b406027094a94d758839ad88c3886b70e9a608690c47c7d9119",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "表示された提案の基本的な採否操作。導入段階の確認として維持。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "表示された提案の基本的な採否操作。導入段階の確認として維持。"
+        "タイピング位置への未確定補完を表示する機能。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -49,9 +49,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "説明と編集の用途識別が中心であり、Appliedから基礎へ戻す。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "説明と編集の用途識別が中心であり、Appliedから基礎へ戻す。"
+        "説明と実行結果を照合し、元のコードを変更しない条件を満たす。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -62,22 +62,22 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "質問・添付・履歴が入力になることの理解。入力経路の基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "質問・添付・履歴が入力になることの理解。入力経路の基礎。"
+        "明示した質問と提供したコードの文脈が回答に利用される。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q06": {
-      "fingerprint": "f5ed6a3de9be03e8573d702b3d81aeb5058474a683f94db3ac159d23421afb04",
+      "fingerprint": "efb39995102906e3280539de37ab307f06f59337a24fa728483b3d63413220a8",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "APIを公式契約とテストで確かめる基本原則。複数の証拠からの診断ではない。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "APIを公式契約とテストで確かめる基本原則。複数の証拠からの診断ではない。"
+        "APIの名称と契約を対象バージョンの公式資料で確認する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -101,9 +101,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "無関係なタスクで会話を区切る基本操作。現行の添付まで古い場合は別問題で扱う。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "無関係なタスクで会話を区切る基本操作。現行の添付まで古い場合は別問題で扱う。"
+        "無関係な履歴を切り、現在の要件だけを提供できる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -114,9 +114,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "未確認の境界をテストに含める原則。期待値の計算はしない。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "未確認の境界をテストに含める原則。期待値の計算はしない。"
+        "不足している境界と異常系を直接テストできる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -135,14 +135,14 @@
       "evidence": []
     },
     "q11": {
-      "fingerprint": "53e1c0acd7b7783ade86ab244cb0ac3c6dfd2e0d811f3d83b643db0dffe85b1c",
+      "fingerprint": "aab6e83427fcc8a0d651ec4bd123fcf5c5144ea6ecbdc10fd0db42d86e6df257",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "AgentにContent Exclusionが対応するかという単一の制約の理解。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "AgentにContent Exclusionが対応するかという単一の制約の理解。"
+        "条件が一致していても、そのモードで除外が機能するかの確認が必要。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -153,9 +153,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "古いセッションへの設定反映という単純な運用知識の確認。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "古いセッションへの設定反映という単純な運用知識の確認。"
+        "クライアントの古い状態を切り分け、実際の除外表示と動作を確かめる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -166,9 +166,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "採用コードへの開発者の責任という基本原則の識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "採用コードへの開発者の責任という基本原則の識別。"
+        "生成結果を確認して製品へ取り込む判断は開発チームが行う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -179,35 +179,35 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "存在しないAPIの生成をハルシネーションと呼ぶ用語識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "存在しないAPIの生成をハルシネーションと呼ぶ用語識別。"
+        "実在しないAPIをもっともらしく生成する例である。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d1-f03": {
-      "fingerprint": "1b5ba01449b9c6bf129372d957c8c3d193d9f5b1c0eaf175aca3db3c6b125836",
+      "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "不足権限の経路をテストする基礎原則。複合診断ではない。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "不足権限の経路をテストする基礎原則。複合診断ではない。"
+        "認証と権限の境界を分け、対象操作の拒否を検証する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d1-f04": {
-      "fingerprint": "e65780c216e9755efe0d18064bc6d024cd68ec538de5ac612a423bc47bf7f492",
+      "fingerprint": "6015f406d685253afd1a68e8b83053021648cfe338b7b8df4316b7edd45a73b7",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "特定地域に偏る結果とデータの偏りを結び付ける基本概念。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "特定地域に偏る結果とデータの偏りを結び付ける基本概念。"
+        "特定集団への系統的な誤りと代表性不足を示す。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -218,9 +218,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "パスワード保存に適する方式を選ぶセキュリティの基礎確認。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "パスワード保存に適する方式を選ぶセキュリティの基礎確認。"
+        "MD5はパスワード保存用の方式ではないため、保存処理そのものを直す。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -278,27 +278,27 @@
       "evidence": []
     },
     "q-d1-a05": {
-      "fingerprint": "40c2fd18ea604f39a36deb9795ff72a8cfc73d3463f41d1826c279c845cb5d35",
+      "fingerprint": "942b717b1ebf6d36372fd950de7bc071d29ba5d1bf61d56af8e573921aeb6f64",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "出所と利用条件を確認する一般原則のみ。具体的な通知や契約の比較がなく基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "出所と利用条件を確認する一般原則のみ。具体的な通知や契約の比較がなく基礎へ変更。"
+        "今回の断片の条件を製品用途と照合する必要がある。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d1-a06": {
-      "fingerprint": "363de8b9cb8d90f69a222e99853424a19b925f3fb41234cfcef21febd5968ae2",
+      "fingerprint": "a1e16bc97ab118bddfa60e5eceb1de1e31ef30f90dd99f8ac418ad543db36ec2",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "人間のレビュー観点を挙げる一般原則。実際の差分の判断はないため基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "人間のレビュー観点を挙げる一般原則。実際の差分の判断はないため基礎へ変更。"
+        "権限境界という業務上の意味を人が照合する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -483,9 +483,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "選択範囲の差分編集にInline Chatを対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "選択範囲の差分編集にInline Chatを対応付ける機能識別。"
+        "選択範囲の編集提案をその場で確認する用途に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -496,9 +496,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "選択範囲を参照する変数の知識。名称を覚える基礎問題。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "選択範囲を参照する変数の知識。名称を覚える基礎問題。"
+        "選択中のコードを明示して参照できる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -509,9 +509,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "テスト生成コマンドの名称を識別する基礎問題。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "テスト生成コマンドの名称を識別する基礎問題。"
+        "選択したコードのテスト生成を依頼するコマンドである。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -522,22 +522,22 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "複数ファイルと実行反復をAgentに対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "複数ファイルと実行反復をAgentに対応付ける機能識別。"
+        "横断的な編集と実行結果を使った継続作業に対応する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d2-f05": {
-      "fingerprint": "a9ed42e5f579f919c15cc1c65c69db2e1fe5be8d5cdb63c05414a0a3aa12d552",
+      "fingerprint": "e170d076cb75213ec145d2f8748bc9f247a7a325da77a2e85b157db65a83266d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "承認前に影響を確かめる基本操作。具体的な削除対象の追跡は不要。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "承認前に影響を確かめる基本操作。具体的な削除対象の追跡は不要。"
+        "ツール実行の可否を操作前に管理する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -548,9 +548,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "外部ツール連携方式としてMCPを識別する基礎概念。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "外部ツール連携方式としてMCPを識別する基礎概念。"
+        "外部システムとの標準化されたデータ・ツール連携を提供する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -561,9 +561,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "MCP Toolsの役割の識別。Resourceとの違いを知る段階。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "MCP Toolsの役割の識別。Resourceとの違いを知る段階。"
+        "モデルが引数を付けて呼び出す操作を公開する区分である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -574,9 +574,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "リポジトリ共通指示の配置先の知識。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "リポジトリ共通指示の配置先の知識。"
+        "リポジトリ全体向けのCopilotカスタム指示の標準ファイルである。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -587,9 +587,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "任意に呼ぶプロンプトの保存先の知識。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "任意に呼ぶプロンプトの保存先の知識。"
+        "再利用可能なPrompt Fileとして保存する配置と拡張子である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -600,9 +600,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "共有文脈をSpacesに対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "共有文脈をSpacesに対応付ける機能識別。"
+        "選んだ資料を整理して共有し、質問の文脈として利用できる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -613,9 +613,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "GUIなしの相談をCLIに対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "GUIなしの相談をCLIに対応付ける機能識別。"
+        "端末で自然言語の相談とツール利用を行う現行のCopilot CLIである。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -626,9 +626,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Inline Chatを用途から選ぶだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Inline Chatを用途から選ぶだけなので基礎へ変更。"
+        "選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -678,9 +678,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Agentの特徴の説明にとどまるため基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Agentの特徴の説明にとどまるため基礎へ変更。"
+        "問われているのは検索や説明に加えて編集・実行を繰り返す能力である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -691,9 +691,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "実行結果を次の操作に使うAgentの仕組みの再認。診断ではなく基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "実行結果を次の操作に使うAgentの仕組みの再認。診断ではなく基礎へ変更。"
+        "実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -712,14 +712,14 @@
       "evidence": []
     },
     "q-d2-a08": {
-      "fingerprint": "589da217c589eb70b49e4bd6f9903accd2df9743e52c2f0e7b4f70e244be779c",
+      "fingerprint": "62450fe2e553e205d9e2879e79ab735a9039a0138ad7107277123c410dcb1c60",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "設定キーserversの記憶問題。文面が技術的でも応用ではなく基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "設定キーserversの記憶問題。文面が技術的でも応用ではなく基礎へ変更。"
+        "サーバーと接続して機能を利用するクライアント。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -730,9 +730,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "共通指示の標準配置先を選ぶ知識なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "共通指示の標準配置先を選ぶ知識なので基礎へ変更。"
+        "対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -756,9 +756,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "PR要約機能の役割説明にとどまるため基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "PR要約機能の役割説明にとどまるため基礎へ変更。"
+        "レビュアー向けに今回の変更を要約する目的へ直接対応する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -769,9 +769,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "TabとEscの標準キー操作の記憶なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "TabとEscの標準キー操作の記憶なので基礎へ変更。"
+        "候補全体の採用と候補の却下という二つの操作に合う。 Windowsでの一語採用は部分採用であり今回は全体採用が必要である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -782,9 +782,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "部分採用のショートカットの記憶なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "部分採用のショートカットの記憶なので基礎へ変更。"
+        "部分採用なので残りの提案を取り込まずに編集を続けられる。 全体採用では不要な残りの部分まで取り込む。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -795,9 +795,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "説明機能を選ぶ用途識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "説明機能を選ぶ用途識別なので基礎へ変更。"
+        "現状の意味を理解する段階なので説明依頼が適する。 修正の提案は意図を理解した後の段階である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -834,9 +834,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "ResourceとToolの定義の組合せ。実装の診断はなく基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "ResourceとToolの定義の組合せ。実装の診断はなく基礎へ変更。"
+        "読み取りコンテキストと実行要求を区別している。読み取りをToolで提供する実装もあり得る。 読み取りToolは可能だがResourceは副作用のある操作を表す設計ではない。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -855,14 +855,14 @@
       "evidence": []
     },
     "q-d2-a19": {
-      "fingerprint": "7143bf364ca048e37564cf78074471694b68d25f13db5ce43be978c3997a4de5",
+      "fingerprint": "2d1ff89f9ad82582e6477878376fadf7c99e59c4b9ca6bfe4afdb506709c7d4e",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "簡潔で具体的な指示という一般原則なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "簡潔で具体的な指示という一般原則なので基礎へ変更。"
+        "モデルが使うAPI名を明示している。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -886,9 +886,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "ファイルを添付する操作知識だけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "ファイルを添付する操作知識だけなので基礎へ変更。"
+        "対象がファイルとして特定されているので直接の参照が適する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -944,9 +944,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "オンデマンドの定型依頼からPrompt Fileを識別するだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "オンデマンドの定型依頼からPrompt Fileを識別するだけなので基礎へ変更。"
+        "必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -957,9 +957,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "資料共有からSpacesを識別するだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "資料共有からSpacesを識別するだけなので基礎へ変更。"
+        "共通の資料を集めた文脈の共有という目的に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -970,9 +970,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "インライン差分からInline Chatを識別するだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "インライン差分からInline Chatを識別するだけなので基礎へ変更。"
+        "選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1073,9 +1073,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "再利用タスクからPrompt Fileを識別するだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "再利用タスクからPrompt Fileを識別するだけなので基礎へ変更。"
+        "必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1086,9 +1086,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "端末での提案・説明というCLIの基本用途なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "端末での提案・説明というCLIの基本用途なので基礎へ変更。"
+        "端末で利用でき、構文の確認と実行判断を分けられる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1138,9 +1138,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "診断箇所でInline Chatを選ぶ操作識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "診断箇所でInline Chatを選ぶ操作識別なので基礎へ変更。"
+        "選択箇所の直接編集と適用前の差分確認という操作要件に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1151,9 +1151,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Agentという機能名を要件から選ぶだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Agentという機能名を要件から選ぶだけなので基礎へ変更。"
+        "複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1175,27 +1175,27 @@
       ]
     },
     "q-d3-f01": {
-      "fingerprint": "dfdb842dee116191f592841d387c54aad315d5870b2cb12e187af4fb2f76174a",
+      "fingerprint": "a07e7bbfd51135b0209c1723092ed1bd2f4605033232a53f75bb5a8c82bec388",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "前後を使う補完とFIMという名称を対応付ける基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "前後を使う補完とFIMという名称を対応付ける基礎。"
+        "カーソル前後のコードを手掛かりに中間部分を生成する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d3-f02": {
-      "fingerprint": "3d4ea588b7bb7e2fd54e8eec60610426767eb0992af3598c5f6e0831bf9032bf",
+      "fingerprint": "49bc918e7eae3788480274d5606dc9511d74fbf5a9958785c9a138fbb3a3f137",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "開いている別タブが文脈になり得る仕組みの名称識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "開いている別タブが文脈になり得る仕組みの名称識別。"
+        "開いている関連タブの内容を補完の文脈として利用する説明に合う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1206,9 +1206,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "外向きHTTPSという通信の基本方向・方式の識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "外向きHTTPSという通信の基本方向・方式の識別。"
+        "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1219,9 +1219,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "Web閲覧とCopilot固有接続先を区別する基本知識。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Web閲覧とCopilot固有接続先を区別する基本知識。"
+        "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1232,9 +1232,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "トークンという文脈長の単位の記憶。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "トークンという文脈長の単位の記憶。"
+        "入力と出力の容量を管理する基本単位である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1465,9 +1465,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "具体的な目的と条件を示すプロンプトの基本構成。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "具体的な目的と条件を示すプロンプトの基本構成。"
+        "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1478,9 +1478,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "入出力例を示すfew-shotの名称識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "入出力例を示すfew-shotの名称識別。"
+        "少数の具体例を入力に含めて出力を誘導する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1491,9 +1491,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "無関係な次タスクで新規Chatに移る基本操作。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "無関係な次タスクで新規Chatに移る基本操作。"
+        "旧タスクの文脈を切り、現在の情報で始められる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1504,9 +1504,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "条件を順に確認する依頼と手法名の対応付け。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "条件を順に確認する依頼と手法名の対応付け。"
+        "判断の段階を明示して説明を求める手法に当たる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1517,9 +1517,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "古い前提の混入を文脈ドリフトと呼ぶ基礎用語。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "古い前提の混入を文脈ドリフトと呼ぶ基礎用語。"
+        "会話の蓄積によって扱う前提がずれていく状況である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1689,9 +1689,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "無関係な次タスクで新規Chatを選ぶ基本操作なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "無関係な次タスクで新規Chatを選ぶ基本操作なので基礎へ変更。"
+        "新しい課題に不要な履歴を減らし、現在の文脈を明示する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1750,9 +1750,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "ドキュメント生成コマンドの名称を選ぶ基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "ドキュメント生成コマンドの名称を選ぶ基礎。"
+        "選択コードのドキュメントコメントを生成する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1763,9 +1763,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "境界・異常系の期待値を示す基本方針。具体的なテストの設計判断はない。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "境界・異常系の期待値を示す基本方針。具体的なテストの設計判断はない。"
+        "未確認の境界・異常系と期待結果を直接指定できる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1776,9 +1776,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "コミット文生成の操作を識別する基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "コミット文生成の操作を識別する基礎。"
+        "ステージ済み差分に基づくコミットメッセージ提案の操作である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -1789,22 +1789,22 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "PRの要約とレビューを用途で識別する基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "PRの要約とレビューを用途で識別する基礎。"
+        "PRの変更内容から概要の下書きを生成する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d5-f05": {
-      "fingerprint": "5c2a1e97dd3f90b9f3df354f56ac2b35a2f4dff73d127e5d7fb69184c7a591f4",
+      "fingerprint": "4f57ee0d3485ba2567d4fa19178216949b980c668b8dbab9d044baf5fe30ad5b",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "通信の代替物としてモック・スタブを識別する基礎。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "通信の代替物としてモック・スタブを識別する基礎。"
+        "外部依存の置換と呼出し引数の検証の二役を満たす。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2038,9 +2038,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "提案側の公開コード一致という設定の識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "提案側の公開コード一致という設定の識別。"
+        "公開コード一致の提案を許可・ブロックする設定である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2051,9 +2051,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "入力側のContent Exclusionという設定の識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "入力側のContent Exclusionという設定の識別。"
+        "指定したリポジトリやパスの内容を対応機能の文脈から除外する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2064,9 +2064,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "Business/Enterpriseの学習不使用という方針知識。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Business/Enterpriseの学習不使用という方針知識。"
+        "Business/Enterpriseの顧客データについて示された方針である。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2077,9 +2077,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "管理操作の記録を監査ログへ対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "管理操作の記録を監査ログへ対応付ける機能識別。"
+        "管理操作のイベントと実行者・時刻の追跡に使う。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2090,9 +2090,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "利用集計をAPIへ対応付ける機能識別。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "利用集計をAPIへ対応付ける機能識別。"
+        "利用指標の集計をAPIで取得する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2116,9 +2116,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Blockの作用を説明する定義問題なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Blockの作用を説明する定義問題なので基礎へ変更。"
+        "公開コード一致のBlockは該当提案の提示を制御する。全知財リスクの解消を保証しない。 参照情報を見て判断する利用と提案のBlockを混同している。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2142,35 +2142,35 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Code Referencingの役割を説明するだけなので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "Code Referencingの役割を説明するだけなので基礎へ変更。"
+        "出所の確認を助ける情報を提供する。ただし適合性はその情報をもとに別途判断する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d6-a05": {
-      "fingerprint": "705e41f26caf17998e393e89f7e8cbf89127c0315f621f1b9a712bc7c07ae222",
+      "fingerprint": "e92afc1b11e25bf9704e389d96b75f305833994b68fa14d4fa070e502df6ccb4",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "シート解除の基本的な管理操作なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "シート解除の基本的な管理操作なので基礎へ変更。"
+        "個人への利用資格の割当を解除する。"
       ],
       "counterfactual": null,
       "evidence": []
     },
     "q-d6-a06": {
-      "fingerprint": "9e9749acd9243e74896145e45a50432636ddb439d3404603c2bec5bc96416fdc",
+      "fingerprint": "598a06e86e24746b1341bf82c536144132557fde3262c3b9d7f3b3a07dcaebd1",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "上位強制ポリシーの優先関係という原則知識なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "上位強制ポリシーの優先関係という原則知識なので基礎へ変更。"
+        "上位で強制されたBlockは下位で緩和できない。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2313,9 +2313,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "事例名があってもContent Exclusionの名称識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "事例名があってもContent Exclusionの名称識別なので基礎へ変更。"
+        "対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2445,9 +2445,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "事例名があってもAgentの用途識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "事例名があってもAgentの用途識別なので基礎へ変更。"
+        "複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2458,9 +2458,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "事例名があってもPR要約の機能識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "事例名があってもPR要約の機能識別なので基礎へ変更。"
+        "レビュアー向けに今回の変更を要約する目的へ直接対応する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2523,9 +2523,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "共通指示の配置先の知識問題なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "共通指示の配置先の知識問題なので基礎へ変更。"
+        "対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2589,14 +2589,14 @@
       ]
     },
     "q-sc07-3": {
-      "fingerprint": "8fc2af123b5b6f988b43989cbca8902441568210fef7542947ca30640c2abdb8",
+      "fingerprint": "d5197b7fa4d04cbff4567b2bc3f6cede5f9d8646d455730694a2da243d5df052",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "管理操作の操作者を監査ログで調べる機能識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "管理操作の操作者を監査ログで調べる機能識別なので基礎へ変更。"
+        "管理操作の実行者・時刻を監査イベントで追跡する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2607,9 +2607,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "検索して文脈へ追加する仕組みと再学習を区別する概念知識なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "検索して文脈へ追加する仕組みと再学習を区別する概念知識なので基礎へ変更。"
+        "検索による関連情報の取得と、モデル重みの学習を区別している。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2660,14 +2660,14 @@
       ]
     },
     "q-sc09-2": {
-      "fingerprint": "5ce23ec3f1afcb50d7255c6e5c7777380b2c3dfb7d5a3b45f28cfa82293ddaac",
+      "fingerprint": "b9471b111047065da6186e95a6fd024125817e0c7c288f0b071405946e7ca865",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "利用状況集計のAPIの用途識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "利用状況集計のAPIの用途識別なので基礎へ変更。"
+        "利用状況の集計を提供する。提供項目と期間を確認する。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2694,9 +2694,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "入力除外と公開一致Blockの機能識別なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "入力除外と公開一致Blockの機能識別なので基礎へ変更。"
+        "出力一致を抑えつつ社内の入力文脈を維持する二条件を満たす。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2707,9 +2707,9 @@
       "difficulty": "beginner",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "現在の出所確認にCode Referencingを対応付ける基本知識なので基礎へ変更。",
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
-        "現在の出所確認にCode Referencingを対応付ける基本知識なので基礎へ変更。"
+        "今回通知されたスニペットの出所と条件の確認に直接対応する。 将来の抑制には有用だが採用済みスニペットの根拠を示さない。"
       ],
       "counterfactual": null,
       "evidence": []
@@ -2729,6 +2729,968 @@
       "evidence": [
         "【SecureBank Online事例】承認申請はBusinessのIDE Chatだけを対象にしています。"
       ]
+    },
+    "q-d1-g01": {
+      "fingerprint": "86ff307268b73cb11410aef3cc5b3198df4d2f832834ca032f68ac9056dc5a27",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "プロンプトや文脈を入力に、コードや文章など新しい内容を生成する技術が生成AIである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-g02": {
+      "fingerprint": "39c4246084be16a8ba881d548559cae151f70a2edae33b17f324020156328157",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "AI出力の評価と検証を行い、最終責任を人が負う原則と実践がResponsible AIである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-g03": {
+      "fingerprint": "2e10bb56c954bda1ae01f50e14234bd5a0d585c852673758755ca2b08c4160a5",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "どの文脈を使い、なぜその出力になったかを理解・説明できる性質が透明性と説明可能性である。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-g04": {
+      "fingerprint": "8783898a45f74e351db2202512e6ce1fcfeb626c104dca7109942de8af10c893",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-g05": {
+      "fingerprint": "1e9d551c0cb65a67a992a6ebea04a4b4cd4290491c9e90e64b8e5e2edde16c07",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "AIの出力が洗練されているために批判的な確認を怠る傾向が、自動化バイアス（過度の依存）である。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-g06": {
+      "fingerprint": "2c33782d05c3b99a51fd7d982a7b00d47744df512b4e9612946acc7f00e2e5f1",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "要件への適合や副作用を自分で分析し、必要なら別の解を求める姿勢が提案の批判的評価である。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g01": {
+      "fingerprint": "f9710ad21939be24518e840d1fc3f88f43f8c8c50c3fa0a578bc982321a38a9a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "エディタ内に薄い灰色文字で提案される未確定の補完表示がGhost Textである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g02": {
+      "fingerprint": "35d09731c36caf207734d6e924aff7abd3e0cbd87c1fcdd7d112360c2a4969d2",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g03": {
+      "fingerprint": "6a81cf193e6f603e318885e968d49f11307ab2b42f63be8c6945ce96bad2c8e7",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "`@` で指定し特定のドメインやツールに質問を割り振る仕組みがChat Participantsである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g04": {
+      "fingerprint": "99b6cd5d495e833e8fd6421d988e2cc0624092a2cd53daef7fa1b61bd6e1677d",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "ステータスバー上のCopilotアイコンから全体または言語単位の有効・無効を切り替えるのがステータスメニューである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g05": {
+      "fingerprint": "66fce926b94a784d8588ff69ce5e6e1f74f9c5582795cedc082887074c766178",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "旧拡張でコマンド説明を依頼した名称。現行はcopilot CLIで質問する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g06": {
+      "fingerprint": "5a5eadc6aceeb499976a2f8c027a581645d1ac1597fc968f690167bc0ebe8307",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "旧suggestは候補生成用。現行のcopilotとは起動形式が異なる。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g07": {
+      "fingerprint": "8bccf8cf521e809068ccbf1a3417c6e05310e8ef709cead7eef84fad4db05b38",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "旧短縮名を現行の必須設定と混同しない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g08": {
+      "fingerprint": "1a11a4cf37c9dedd027cb86c03724543337a0a0642b9d8241c8910614fb49f1c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "保存済み許可や広い事前許可によって個別確認の扱いが変わる。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g09": {
+      "fingerprint": "2e0b1519c6cca9e6d80fe86066927931b15aa0c350ebeb62d39cb743551229ea",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "実際の参照元へのアクセス範囲を決める。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g10": {
+      "fingerprint": "5adab5a93c52330e4c8b40123336aef31b4f84b288e7e3fc5c841f5d55201fdf",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g11": {
+      "fingerprint": "7660303f5e5063f0e7d250df51bc54ab16554695417f33a4914b431d122b4711",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "ツールやリソースを定義してクライアントに機能を提供する側がMCP Serverである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g12": {
+      "fingerprint": "a03fe5b1d1d735df2d46f11b566c4c0b6c568c3a10168754c8ff7327d6029ffc",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "エージェントが実行したタスクやツール履歴、作業文脈を保持する単位がAgent Sessionである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g13": {
+      "fingerprint": "b6109b3f365aff3b938596f061999c2889bb2710671cff79fa66b2220170937c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "主セッションとは分離された独立コンテキストで下位タスクを実行し、結果を報告する下位エージェントがSub-Agentsである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g14": {
+      "fingerprint": "d1322521571846d372be57a41a4c17f130d37a9f18ed43341c25863f13b86306",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g15": {
+      "fingerprint": "9fe5ff62d6b2f9fe45a306dd4b70b5667a2030fad99a63fc6788ddf338d9fc55",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g16": {
+      "fingerprint": "e61169718c17cff016966e49d9116a0aed4e82cc09342e58ab06c0276afb29b8",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "アイデアから自然言語でマイクロアプリを生成するツールで、2026年8月に新規作成受付が終了したのがGitHub Sparkである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g17": {
+      "fingerprint": "961ccda60fa6946337b12f904dc5adefb954c658f8e78fa107a6e56c100c72d1",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "サードパーティ統合として提供され2025年11月に終了した旧機能がGitHub App型Copilot Extensionsである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g18": {
+      "fingerprint": "5a9af2dc47600390a6ae139ab9e6f3f8e3cc535d084ea7f0ac435b2d92a623ca",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "組織内のメンバーへの機能管理という範囲。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g19": {
+      "fingerprint": "5fbd19711c62241cd1869a8776af4746c8523da568ed02feaf091643ad9d8dff",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "傘下の組織へ強制するEnterpriseの範囲。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g20": {
+      "fingerprint": "f845769a619e2cab0023c24ca6d1f9b44eaa1d718da78507119c64a4432f6200",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g21": {
+      "fingerprint": "c29cbdd8d57076432461967992582372ff5345341eae96281ceed5f44b1c07de",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "レビューの利用可否・自動動作を管理する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-g22": {
+      "fingerprint": "e48d46a7df53c3f5e1382b913557ccb98d3e837f4e5d622990655d1e5fbd23a1",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "2025-11-01終了。現在の共有コンテキストはSpaces。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g01": {
+      "fingerprint": "378c17ebb4620693f69695754e95b98b69bf048625a8ea2bc42d5184ba50b59c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "IDEからプロキシ、LLM、後処理を経てエディタに戻る一連の通信・データ処理の流れをCopilot Data Flowと呼ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g02": {
+      "fingerprint": "137805438da65df26217cccc6f776b3956f33f051242386239bc4ac327ec72e0",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "周辺コードや開いているファイルを収集し、トークン枠に合わせて合成・整形する内部機構がPrompt Construction Pipelineである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g03": {
+      "fingerprint": "c9ad04fb14c658bb79317ffde40e9e9870fb11e641f4fdb84231143ded1051cf",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "サービス間の通信を中継するGitHub側の基盤。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g04": {
+      "fingerprint": "4769dea78fbb89a7d512e39de5c4b5548287f870607d06c8c883b7ffce7b9bc0",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g05": {
+      "fingerprint": "0d97da061c181f77544f7553606e7e1853e802964a393b2e7dc6009949f2ad4d",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "保持期間・条件はモデルや機能別に確認する。全機能の即時破棄とは断定しない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g06": {
+      "fingerprint": "ef61b9e24b7833f4fb53bcff76af75182d618c1ee7846fc408a6c2ed253f4b7c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "LLMが出力した直後に介在し、公開コード一致検査や安全フィルタリングを適用して最終出力を決定する段階がPost-processingである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g07": {
+      "fingerprint": "adc53e8ed4e6e7f66ca74965a2eaf9bfb725843cb7fa948d366551b322510a58",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "転送中の通信をTLS等で保護する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g08": {
+      "fingerprint": "2247c08f0b34439a2b7e4886f683d2f16b7c151ec9c3bb93a40a888979f38abd",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g09": {
+      "fingerprint": "a158e93ed119608834d757fb3c3f8ec549ea9861e1a5174203b5f122c7eac238",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g10": {
+      "fingerprint": "f55240c2e7be7e60f380484c2d3840f7f31208f42a0f7072ad70bf2ea27838e1",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "応答時間と推論品質の設計上の両立を扱う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g11": {
+      "fingerprint": "ac382682fda5b90b2f58279c7839184128af5d7541c277730617d40bddf33e97",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "温度は候補選択の分布へ影響する。低くても無誤りや完全再現を保証しない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g12": {
+      "fingerprint": "e6a7b1b3ab0128c78cc52f55c55106447571eb03815533d40ee5a640c08f67e9",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g13": {
+      "fingerprint": "092bed4f6b43a2144fefa15abff9545e0947af63e9dd8bf4c92645a771d205da",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "参照元へのアクセス範囲を表す。常にローカルだけとは限らない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-g14": {
+      "fingerprint": "3b21307f83bf55dae374cee7baa70feaa25833473078ee7fe71f858c5e3812a6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g01": {
+      "fingerprint": "bf4ab6c3368b28ef1dccbea060bc3ad070a9c9e02ca3690711636a24be9fa929",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "目的、文脈、制約、具体例を体系的に整理し、LLMから最適な出力を引き出す指示設計技術がPrompt Engineeringである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g02": {
+      "fingerprint": "76cd3e73a3dd2cd60a91c0877961288b7ac0d4a8608e37005be6f92d5df3efe2",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g03": {
+      "fingerprint": "3d4b7c3049b2b637738a2b0ea3ff24b952008cfe6d0b6b7ef7b630ab511a95f8",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "ユーザーの対話入力に先立ち、モデルの基本挙動や役割・ルールを規定する上位指示文がSystem Promptである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g04": {
+      "fingerprint": "efe3aa9d5abe1f770c209b07ea1ed9902d6d17c289fbaf49efcfb7e61424ad04",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "AIに専門家のペルソナや立場を指定し、より高度で専門的な観点から回答を引き出す手法がRole Promptingである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g05": {
+      "fingerprint": "c1f9032031aef78791439e8a19ee81c34d3452a4cb7bd54ca7ba2931eaf5f900",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "初回の出力結果を踏まえ、追加の指示や制約を与えながら段階的にコードを完成させる手法がIterative Refinementである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g06": {
+      "fingerprint": "4490736f87391766f97c9f983c89d29e1c2dcd87ed56a266585d35011fa58d27",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g07": {
+      "fingerprint": "9a3f8c5541484bdd9b7bebd45cf37213673d8eaa4c79fcecc906455aca2bd188",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "無関係なファイルや過去ログを切り捨て、重要な指示への集中度と精度を高める手法がContext Pruningである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g08": {
+      "fingerprint": "a7797c2cf9c42e77143858cd8e9814c520fd6a8f78784ff0f33b0bfb3dc1f9ae",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "やってはいけない禁止事項や制約を明示的に指定して不要な出力を抑止する手法がNegative Promptingである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-g09": {
+      "fingerprint": "5442a7d4ba9c93dd69bf19fbfcadf8c87c27a687084b24b2593a2135db04863f",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "出力の構文構造やデータフォーマットを明示的に制限し、後処理の手間を省く指示手法がOutput Format Specificationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g01": {
+      "fingerprint": "43100203a9afa74c999d916a47db15d85c56bd9bd5dbeb902f050a8d6c03c632",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g02": {
+      "fingerprint": "740fc5e68239fa57b235d73a4131b609723d0053caf75fddb1d988c64a11ada6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "外部仕様や振る舞いを維持したまま、コードの可読性や構造を改善する作業がCode Refactoringである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g03": {
+      "fingerprint": "a5621ced4faec8ce39df8124b0f94d9f788da19587d01adad6bf802047030cd8",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "旧式環境や非推奨APIのコードをテストで保証しつつ、現代的な構文や最新スタックへ移行する作業がLegacy Modernizationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g04": {
+      "fingerprint": "f6c3c387e4841d82d6b74182c28f231f8871f8f8b095178fd685ffbf9eaadc08",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "ある言語で書かれたコードを別のプログラミング言語へ移植・翻訳する作業がCode Translationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g05": {
+      "fingerprint": "0edce774b124d1e230790e22a4621c4088769c9acfecb2fd812224a2b3c80b48",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g06": {
+      "fingerprint": "a2dbccc8c7f963e43d634e67da6a02a2dce83d1b0ec1da8d1a80eef9ecd66ff6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "構文上不可欠だが定型的なコード記述を自動化し、本質的なロジックに集中させる効果がBoilerplate Reductionである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g07": {
+      "fingerprint": "cf6559ce8e1501ed5c4ef4d85a3e8f26390537b008abef8d8f6f2e49f2b4a5ee",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "複数コンポーネントや外部リソースとの連携が正常に機能するかを検証するテスト生成がIntegration Test Generationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g08": {
+      "fingerprint": "b601ee941627fc51c9b0213cbb6130f3ce06f0a77dc356d646977b5ae6fb8aa7",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "セキュリティ上の欠陥やリスクに対し、`/fix` 等を活用して安全なコードへ修正・治療するタスクがVulnerability Remediationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g09": {
+      "fingerprint": "c7810de947ab9fde957963ab432861920c16e6655ff9bfedc1401942f255fb55",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g10": {
+      "fingerprint": "f5742dc9d0aa1bc349506c750f917226d0b75d7c14d67c4cddd212add486d6af",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "時間・負荷・資源の観測から遅延原因を特定する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g11": {
+      "fingerprint": "bdc919bdd76bacc07ca2c7431a88dcfec950f1e275559adc167263300c0f45a6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "認証トークンやパスワードのハードコードを禁止し、環境変数やSecret Scanningで漏洩を防ぐ原則がSecret Leak Preventionである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g12": {
+      "fingerprint": "bb7feb01fac3c81d7a8e5b60f7970b9a3d095b696e539ef539a70fcec2376dd5",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "エディタ内のテストを自動発見し、GUIから実行・デバッグ・結果確認を一元管理する機能がTest Explorerである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g13": {
+      "fingerprint": "4d6e421c5d139603dd2d09237702e9e047974136de52b96727523dc1a6da31e4",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "準備・対象操作・期待値確認というテスト内の構造。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g14": {
+      "fingerprint": "a935a5ea6dce910359192678049e2d27dd7449a8cc209e77ff9f64ac3d6a6d31",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "信頼性・保守性・安全性・性能・可読性などソフトウェアの非機能的価値を規定する指標群がCode Quality Attributesである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g15": {
+      "fingerprint": "8cc97fc5b799e4ad25c6aa2306cb4e1d10416b6785b230b2c5d253e3a4e66ae6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "規定の条件下で機能が障害なく継続的に正しく動作し続ける品質属性がReliability（信頼性）である。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g16": {
+      "fingerprint": "d8c110539c4a2692704238bfae54357ed7ed84df45c927040b57f63b0ef5ceda",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "例外の握り潰しや機密スタックトレース漏洩を避け、具象例外を適切に捕捉して安全に対処する実装がSafe Exception Handlingである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g17": {
+      "fingerprint": "953a79b75c3ced375ebfd29c627de0030fe95329a93f5ec5b327da9b71d0fc72",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-g18": {
+      "fingerprint": "6a441db503496aec319213c2d17d7fe62464f8e86d258775c17209a61ce77f0d",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "システムの目的、要件、アーキテクチャ、手順などを全体視点で包括的にまとめた文書がProject Documentationである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-g01": {
+      "fingerprint": "242a3b1f5bb3e2a687a0662b6b7de5b4d7b57b826d1031b2d62d5b0af0ffb998",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "複数リポジトリへの組織単位の除外設定。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-g02": {
+      "fingerprint": "62b92d0ccfbff020a2c2594c4838933a5df65d2d7e9aec65a3ccfbe02e58d94e",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "**は下位の複数階層を含む指定に使う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-g03": {
+      "fingerprint": "d3d83828fb81e1ecb50f0ecb2abb134b012eba90eb77488a81eddc8e60f87d2d",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "生成物についての所有権・権利関係を扱う。第三者の権利や利用条件は別途確認する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-g04": {
+      "fingerprint": "4b2e47f261055ef431e8a1cdc0629bf45b8ce4b521313d04bd13c348037e98bc",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-g05": {
+      "fingerprint": "e529f4f2c3a6ed0f8629e61183ea3438a0a762758e662eb2c80b0db0f5dd7d2c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
+      "reasoningSteps": [
+        "監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。"
+      ],
+      "counterfactual": null,
+      "evidence": []
     }
   },
   "secondPass": "改稿90問の全文・全選択肢を別パスで再読。残る文言照合問題、通信対策のカテゴリ差、単位の誤記、指標の分母を修正。独立した別人によるレビューではない。"

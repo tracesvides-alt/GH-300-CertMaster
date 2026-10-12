@@ -111,6 +111,8 @@ export const glossaryTermSchema = z.object({
   lessonIds: z.array(nonempty).default([]),
   comparisonIds: z.array(nonempty).default([]),
   questionIds: z.array(nonempty).default([]),
+  // The Foundation (beginner) question that directly tests this term; see scripts/audit-glossary-coverage.mjs.
+  basicQuestionId: nonempty.optional(),
   sourceIds: z.array(nonempty).min(1),
   syllabusVersion: syllabusVersionLiteral,
   lastVerifiedAt: nonempty,
@@ -280,6 +282,11 @@ export function validateKnowledgeBase(kb: KnowledgeBase): ValidationError[] {
     checkRefs('GlossaryTerm', g.id, 'lessonIds', g.lessonIds, ids.lessons, 'Lesson');
     checkRefs('GlossaryTerm', g.id, 'comparisonIds', g.comparisonIds, ids.comparisons, 'ComparisonGuide');
     checkRefs('GlossaryTerm', g.id, 'questionIds', g.questionIds, ids.questions, 'Question');
+    if (g.basicQuestionId) {
+      checkRefs('GlossaryTerm', g.id, 'basicQuestionId', [g.basicQuestionId], ids.questions, 'Question');
+      if (!g.questionIds.includes(g.basicQuestionId))
+        errors.push({ entity: 'GlossaryTerm', id: g.id, field: 'basicQuestionId', message: `Question "${g.basicQuestionId}" must also be listed in questionIds` });
+    }
     checkRefs('GlossaryTerm', g.id, 'sourceIds', g.sourceIds, ids.sources, 'Source');
     if (g.syllabusVersion !== kb.version) {
       errors.push({ entity: 'GlossaryTerm', id: g.id, field: 'syllabusVersion', message: `Expected "${kb.version}", got "${g.syllabusVersion}"` });

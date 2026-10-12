@@ -1,0 +1,311 @@
+{
+  "description": "Phase 4 (D4): 用語集のD4用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、実在するプロンプティング手法・コンテキスト管理用語同士を対比させる。",
+  "questions": [
+    {
+      "id": "q-d4-g01",
+      "termId": "g-prompt-engineering",
+      "objectiveId": "d4o1",
+      "question": "LLMから期待する品質のコードや回答を引き出すために、目的・文脈・制約条件・出力形式などを体系的に設計・反復改善する技術体系は？",
+      "correct": {
+        "text": "プロンプトエンジニアリング（Prompt Engineering）",
+        "explanation": "目的、文脈、制約、具体例を体系的に整理し、LLMから最適な出力を引き出す指示設計技術がPrompt Engineeringである。"
+      },
+      "distractors": [
+        {
+          "text": "ファインチューニング（Model Fine-Tuning）",
+          "type": "wrong-mechanism",
+          "plausibility": 3,
+          "explanation": "追加の学習データを用いて基盤モデル自体のパラメータを更新・最適化する機械学習手法である。"
+        },
+        {
+          "text": "検索拡張生成（Retrieval-Augmented Generation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "プロンプト生成時に外部ドキュメントやリポジトリ検索結果を動的に注入するアーキテクチャである。"
+        },
+        {
+          "text": "コンテキストウィンドウ最適化（Context Window Optimization）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "トークン消費量を節約するためにコンテキストの取捨選択を行う管理手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d4-g02",
+      "termId": "g-zero-shot",
+      "objectiveId": "d4o1",
+      "question": "プロンプト内に入出力の具体例（Examples）を事前に提示せず、指示文や要件のみを直接与えてタスクの実行やコード生成を依頼するプロンプティング手法は？",
+      "correct": {
+        "text": "ゼロショットプロンプティング（Zero-shot Prompting）",
+        "explanation": "具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。"
+      },
+      "distractors": [
+        {
+          "text": "フューショットプロンプティング（Few-shot Prompting）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "プロンプト内に期待する入力と出力の具体例を2〜3組提示して形式や解法を誘導する手法である。"
+        },
+        {
+          "text": "思考の連鎖プロンプティング（Chain-of-Thought Prompting）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "結論に至る中間的な推論ステップや思考プロセスを順を追って出力させる手法である。"
+        },
+        {
+          "text": "ロールプロンプティング（Role Prompting）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "AIに特定の役割や専門家の立場を付与して回答の観点やトーンを制御する手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d4-g03",
+      "termId": "g-system-prompt",
+      "objectiveId": "d4o1",
+      "question": "チャット画面のユーザー入力よりも前段でモデルに注入され、AI全体の役割定義やコーディング規約、安全基準などの大前提の振る舞いを拘束する指示コンテキストは？",
+      "correct": {
+        "text": "システムプロンプト（System Prompt）",
+        "explanation": "ユーザーの対話入力に先立ち、モデルの基本挙動や役割・ルールを規定する上位指示文がSystem Promptである。"
+      },
+      "distractors": [
+        {
+          "text": "ユーザープロンプト（User Prompt）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "開発者がチャット入力欄やインライン画面で直接入力する個別の質問や指示である。"
+        },
+        {
+          "text": "プロンプト変数（Prompt Variables）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "`#file` や `#selection` のようにプロンプト内に文脈データを動的参照するための変数である。"
+        },
+        {
+          "text": "スラッシュコマンド（Slash Commands）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "`/explain` や `/fix` のように特定の事前定義アクションを呼び出すためのプレフィックスである。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "instructions"
+      ]
+    },
+    {
+      "id": "q-d4-g04",
+      "termId": "g-role-prompting",
+      "objectiveId": "d4o1",
+      "question": "『あなたは経験豊富なセキュリティアーキテクトです』のように、AIに特定の役割や専門家のペルソナを指定することで、回答の視点や評価基準を専門領域へ方向付ける手法は？",
+      "correct": {
+        "text": "ロールプロンプティング（Role Prompting）",
+        "explanation": "AIに専門家のペルソナや立場を指定し、より高度で専門的な観点から回答を引き出す手法がRole Promptingである。"
+      },
+      "distractors": [
+        {
+          "text": "ゼロショットプロンプティング（Zero-shot Prompting）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "具体例を与えずに指示文だけでタスクを実行させるプロンプティング手法である。"
+        },
+        {
+          "text": "コンテキストプルーニング（Context Pruning）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "不要なファイルや履歴をコンテキストから排除してトークン枠と指示の集中度を保つ手法である。"
+        },
+        {
+          "text": "ステップバイステップ指示（Step-by-Step Prompting）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "タスクの実行手順を1段階ずつ順序立てて進めるよう求めるプロンプト技法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d4-g05",
+      "termId": "g-iterative-refinement",
+      "objectiveId": "d4o2",
+      "question": "Copilotから返された初回の提案に対し、一度に完璧を求めるのではなく、対話を継続しながら不足した要件や修正点を追加指示して段階的に品質を高めていくアプローチは？",
+      "correct": {
+        "text": "反復的プロンプト改善（Iterative Refinement）",
+        "explanation": "初回の出力結果を踏まえ、追加の指示や制約を与えながら段階的にコードを完成させる手法がIterative Refinementである。"
+      },
+      "distractors": [
+        {
+          "text": "タスク分解手法（Task Decomposition）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "大規模な開発要件を実装前に小さな独立したサブタスクへと分割するアプローチである。"
+        },
+        {
+          "text": "チャットリセット（Chat Session Reset）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "過去の会話履歴を完全に破棄して初期状態から新しい会話を開始する操作である。"
+        },
+        {
+          "text": "フューショット手法（Few-shot Prompting）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "プロンプト内に入出力の正解サンプルをあらかじめ複数組含めておく手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "chat"
+      ]
+    },
+    {
+      "id": "q-d4-g06",
+      "termId": "g-task-decomposition",
+      "objectiveId": "d4o2",
+      "question": "複雑で巨大な開発要件を一度のプロンプトで依頼するのではなく、設計、実装、テストなど管理可能な小さな単位に切り分けて順次AIに指示する手法は？",
+      "correct": {
+        "text": "タスク分解（Task Decomposition）",
+        "explanation": "大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。"
+      },
+      "distractors": [
+        {
+          "text": "コンテキスト希釈（Context Dilution）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "無関係な情報が混入することでAIが重要な指示を見失ってしまう現象である。"
+        },
+        {
+          "text": "プロンプト連鎖（Prompt Chaining）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "あるプロンプトの出力を次のプロンプトの入力として自動的につなぎ合わせる仕組みである。"
+        },
+        {
+          "text": "ネガティブ指示（Negative Prompting）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "生成時に使用してはならないライブラリや非推奨構文を禁止事項として指定する手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d4-g07",
+      "termId": "g-context-pruning",
+      "objectiveId": "d4o2",
+      "question": "不要なファイルや過去の古い会話ログが混入して重要な指示が埋もれる現象（コンテキスト希釈）を防ぐため、プロンプトに含める文脈を必要最小限に絞り込む最適化手法は？",
+      "correct": {
+        "text": "コンテキストプルーニング（Context Pruning）",
+        "explanation": "無関係なファイルや過去ログを切り捨て、重要な指示への集中度と精度を高める手法がContext Pruningである。"
+      },
+      "distractors": [
+        {
+          "text": "トークン超過エラー（Token Overflow）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "コンテキストウィンドウの最大容量を超過してリクエストが物理的に失敗する状態である。"
+        },
+        {
+          "text": "コンテキストドリフト（Context Drift）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "会話が長引くにつれてAIの回答が初期の前提要件から徐々にズレていく現象である。"
+        },
+        {
+          "text": "リポジトリインデックス（Repository Indexing）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "コード全体の高速な検索やシンボル解決のために作成されるインデックス構造である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "chat"
+      ]
+    },
+    {
+      "id": "q-d4-g08",
+      "termId": "g-negative-prompting",
+      "objectiveId": "d4o2",
+      "question": "『新規の外部ライブラリを追加しない』『非推奨のAPIを使用しない』のように、AIに対して禁止事項や制約条件を明示的に指定して出力を制御するプロンプティング手法は？",
+      "correct": {
+        "text": "ネガティブプロンプティング（Negative Prompting）",
+        "explanation": "やってはいけない禁止事項や制約を明示的に指定して不要な出力を抑止する手法がNegative Promptingである。"
+      },
+      "distractors": [
+        {
+          "text": "出力フォーマット指定（Output Specification）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "回答をJSONやMarkdown表などの特定の構文形式に限定する指示手法である。"
+        },
+        {
+          "text": "フューショットプロンプティング（Few-shot）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "期待する入出力の正解サンプルを複数組提示して形式を誘導する手法である。"
+        },
+        {
+          "text": "ロールプロンプティング（Role Prompting）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "AIに特定の役割や専門家の立場を付与してトーンや観点を制御する手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d4-g09",
+      "termId": "g-output-specification",
+      "objectiveId": "d4o2",
+      "question": "AIの回答に前置きや余計な会話文を含めず、『TypeScriptの型定義のみを出力する』や『指定のJSONスキーマに従う』のように、返却形式を厳格に制限する指示手法は？",
+      "correct": {
+        "text": "出力フォーマット指定（Output Format Specification）",
+        "explanation": "出力の構文構造やデータフォーマットを明示的に制限し、後処理の手間を省く指示手法がOutput Format Specificationである。"
+      },
+      "distractors": [
+        {
+          "text": "思考プロセス指定（Chain-of-Thought Specification）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "結論を導く前の途中経過や推論理由を段階的に出力するよう求める手法である。"
+        },
+        {
+          "text": "ネガティブプロンプティング（Negative Prompting）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "生成してはならない非推奨コードや禁止事項をプロンプトで明示する手法である。"
+        },
+        {
+          "text": "タスク分解アプローチ（Task Decomposition Approach）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "大きな実装タスクを設計・実装・テストなどの段階的な小タスクに分割する手法である。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ]
+    }
+  ]
+}

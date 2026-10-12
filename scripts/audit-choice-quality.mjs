@@ -98,7 +98,7 @@ const inventory = bank.map(q => {
     choiceExplanations: q.choiceExplanations, testedConcepts: q.testedConcepts ?? [],
     answer, sourceIds: q.sourceIds, status: q.status,
     modified: changed.has(q.id), optionOnly: 'PASS',
-    optionOnlyReason: changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id],
+    optionOnlyReason: changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id] ?? (contentBaseline.questions[q.id]?.added ? '用語問題として新規追加。誤答は同じ領域の隣接概念で、設問の定義文で区別する。' : undefined),
     multipleAnswerRisk: false, lengthBias, missingExplanation, score,
     scoreBreakdown: { relevance, plausibility, uniqueness, symmetry, scenario, explanations },
     requirementMapping: q.requirementMapping ?? [],
@@ -126,7 +126,7 @@ const summarize = group => {
 const byDifficulty = Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, summarize(inventory.filter(q => q.difficulty === d))]));
 const warnings = inventory.filter(q => q.lengthBias || q.missingExplanation || q.options.filter(o => !o.correct && o.plausibility >= 2).length < 2).map(q => q.questionId);
 const report = {
-  version: 2, generatedAt: '2026-10-12', methodology: '全200問の編集レビュー。難易度の再評価後の分類・文面で再集計。スコアは編集判断であり、学習者の実測難易度ではない。',
+  version: 2, generatedAt: '2026-10-12', methodology: `全${bank.length}問の編集レビュー。難易度の再評価後の分類・文面で再集計。スコアは編集判断であり、学習者の実測難易度ではない。`,
   baseline: baseline.summary, after: byDifficulty, modifiedQuestionIds: [...changed], distractorsReplaced, unchangedReasons,
   warnings, inventoryByDifficulty: Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, inventory.filter(q => q.difficulty === d)])),
 };
@@ -136,7 +136,7 @@ const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam
 const lines = [
   '# GH-300 選択肢品質の全件監査', '',
   '## 判定方法', '',
-  '全200問を編集レビューし、難易度再評価後の分類・本文で再集計した。変更件数は初回の選択肢監査前からの累積で、表示順の変更も含む。今回の難易度監査による実質改稿90問・再分類54問はquestion-difficulty-audit.mdに別記する。受験者の正答率を実測したものではない。', '',
+  `全${bank.length}問の記録された編集レビューを基に、分類・本文で再集計した。変更件数は初回の選択肢監査前からの累積で、表示順の変更も含む。基礎154問の今回の全件再レビューと改稿41問はfoundation-glossary-quality-review.mdに別記する。受験者の正答率を実測したものではない。`, '',
   'Foundationの機能名称問題では、名称が正答をそのまま言い換える選択肢を実際のCopilot機能・操作の対比へ改めた。Applied/Examでは、他の3択が一律に無関係または危険な行動となる構図を避け、同じ作業の一部は満たすが設問の条件を満たさない選択肢へ変更した。', '',
   '## Before', '',
   '| 難易度 | 全問 | もっともらしい誤答の平均 | 無関係な誤答 | 本文なし正解の疑い | 未判定 |',
@@ -148,7 +148,7 @@ const lines = [
   '- Applied/Examに、正答だけ複数の望ましい対策を組み合わせ、誤答が明白な手抜きや危険行為という構図があった。',
   '- 旧Knowledge Basesと旧CLI拡張を現行機能として扱う設問が残っていた。', '',
   '## Improvements', '',
-  `- 全200問をレビューし、${changed.size}問の本文・選択肢・解説または表示順が固定ベースラインから変更された。誤答の文面は${distractorsReplaced}件を変更した。`,
+  `- 全${bank.length}問のレビュー記録を確認し、${changed.size}問の本文・選択肢・解説または表示順が固定ベースラインから変更された。誤答の文面は${distractorsReplaced}件を変更した。`,
   '- 正答IDとObjectiveは維持し、条件を一つ落とした部分解、適用範囲の違い、混同しやすいCopilot機能を優先した。',
   '- 全選択肢の解説と出典を再確認し、改稿後の内容に結び付くレビュー指紋を更新した。', '',
   '## After', '',

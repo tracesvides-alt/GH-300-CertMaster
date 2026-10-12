@@ -16,7 +16,6 @@ export type QualityReview = {
 };
 export type QualityIssue = { id: string; severity: 'warning' | 'failure'; rule: string; detail: string };
 export function questionIssues(q: AuditableQuestion, review?: QualityReview): QualityIssue[] {
-  if (q.difficulty === 'beginner') return [];
   const issues: QualityIssue[] = [];
   const fail = (rule: string, detail: string) => issues.push({ id: q.id, severity: 'failure', rule, detail });
   const wrong = q.choices.filter(c => !q.answer.includes(c.id));
@@ -29,11 +28,11 @@ export function questionIssues(q: AuditableQuestion, review?: QualityReview): Qu
     const v = q.choiceQuality?.[c.id];
     return v && v.plausibility >= 2 && ['partial-match', 'wrong-scope', 'wrong-mechanism', 'common-confusion', 'wrong-use-case'].includes(v.distractorType);
   }).length;
-  if (strong < (q.difficulty === 'advanced' ? 2 : 1)) fail('distractors', '条件を見落とすと選ぶ不正解が不足しています。');
+  if (strong < (q.difficulty === 'intermediate' ? 1 : 2)) fail('distractors', '条件を見落とすと選ぶ不正解が不足しています。');
   if (q.difficulty === 'advanced' && (!q.requirementMapping?.length || q.requirementMapping.some(m =>
     !m.requirement?.trim() || !m.correctReason?.trim() || wrong.some(c => !m.distractorFailures[c.id]?.trim()))))
     fail('requirements', '要件・正解理由・各不正解の失敗理由の対応が必要です。');
-  if (!['apply', 'analyze'].includes(q.cognitiveLevel ?? '')) fail('difficulty', 'Applied/Examには適用・分析が必要です。');
+  if (q.difficulty !== 'beginner' && !['apply', 'analyze'].includes(q.cognitiveLevel ?? '')) fail('difficulty', 'Applied/Examには適用・分析が必要です。');
   if (q.difficulty === 'advanced' && q.cognitiveLevel !== 'analyze') fail('exam-analysis', 'Examには証拠比較などの分析が必要です。');
   const lengths = wrong.map(c => c.text.length).sort((a, b) => a - b);
   const median = lengths[Math.floor(lengths.length / 2)] ?? 1;

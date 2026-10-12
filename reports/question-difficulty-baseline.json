@@ -6601,6 +6601,2448 @@
         "C": "出力一致と通信保護は学習方針の根拠ではない。",
         "D": "保存条件から基盤モデルの学習方針は導けない。"
       }
+    },
+    {
+      "id": "q-d1-g01",
+      "difficulty": "beginner",
+      "question": "Copilotは、プロンプトや周辺コードの文脈から、これまで存在しなかった提案を作り出します。この種のAI技術の総称は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "生成AI（Generative AI）"
+        },
+        {
+          "id": "B",
+          "text": "静的コード解析（Static Code Analysis）"
+        },
+        {
+          "id": "C",
+          "text": "ルールベース補完（Rule-based Code Completion）"
+        },
+        {
+          "id": "D",
+          "text": "セマンティックコード検索（Semantic Code Search）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "プロンプトや文脈を入力に、コードや文章など新しい内容を生成する技術が生成AIである。",
+      "choiceExplanations": {
+        "A": "プロンプトや文脈を入力に、コードや文章など新しい内容を生成する技術が生成AIである。",
+        "B": "既存コードを規則で検査する技術で、新しい提案を作り出す仕組みではない。",
+        "C": "固定の候補を列挙するだけで、文脈から新しい内容を自律生成しない。",
+        "D": "既存のリポジトリから類似コードを検索する技術であり、新しいコードを生成するものではない。"
+      }
+    },
+    {
+      "id": "q-d1-g02",
+      "difficulty": "beginner",
+      "question": "AIの提案を採用する前に、正確性・セキュリティ・ライセンス・偏りを評価し、最終責任は開発者が負う。この原則と実践の名称は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Prompt Engineering（プロンプトエンジニアリング）"
+        },
+        {
+          "id": "B",
+          "text": "Responsible AI（責任あるAIの利用）"
+        },
+        {
+          "id": "C",
+          "text": "Content Exclusion（コンテンツ除外）"
+        },
+        {
+          "id": "D",
+          "text": "Code Referencing（コード参照通知）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "AI出力の評価と検証を行い、最終責任を人が負う原則と実践がResponsible AIである。",
+      "choiceExplanations": {
+        "A": "よい出力を引き出す指示の工夫であり、出力の評価や責任の所在を扱う原則ではない。",
+        "B": "AI出力の評価と検証を行い、最終責任を人が負う原則と実践がResponsible AIである。",
+        "C": "機密ファイルを参照させない設定で、提案の採用判断や責任の原則とは別の機能である。",
+        "D": "ライセンス確認の一助にはなるが、評価と最終責任という原則全体を指す語ではない。"
+      }
+    },
+    {
+      "id": "q-d1-g03",
+      "difficulty": "beginner",
+      "question": "Copilot Chatが回答でどのファイルや文脈を参照したかを確認し、提案の妥当性を判断できるようにする性質は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "再現性と決定性（Reproducibility and Determinism）"
+        },
+        {
+          "id": "B",
+          "text": "堅牢性と安全性（Reliability and Safety）"
+        },
+        {
+          "id": "C",
+          "text": "透明性と説明可能性（Transparency and Explainability）"
+        },
+        {
+          "id": "D",
+          "text": "機密性と完全性（Confidentiality and Integrity）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "どの文脈を使い、なぜその出力になったかを理解・説明できる性質が透明性と説明可能性である。",
+      "choiceExplanations": {
+        "A": "同一入力に対して同じ出力を再現する性質であり、参照した文脈を明示できることとは異なる。",
+        "B": "過酷な入力や障害時にも安全に動作する品質であり、出力の根拠を説明できることとは別である。",
+        "C": "どの文脈を使い、なぜその出力になったかを理解・説明できる性質が透明性と説明可能性である。",
+        "D": "情報セキュリティの保護特性であり、AI出力の判断根拠を把握する性質ではない。"
+      }
+    },
+    {
+      "id": "q-d1-g04",
+      "difficulty": "beginner",
+      "question": "同じプロンプトと同じコードを渡しても、Copilotの提案が毎回少しずつ異なることがあります。この性質を表す用語は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ハルシネーション（Hallucination）"
+        },
+        {
+          "id": "B",
+          "text": "コンテキストドリフト（Context Drift）"
+        },
+        {
+          "id": "C",
+          "text": "モデルの過学習（Overfitting）"
+        },
+        {
+          "id": "D",
+          "text": "LLMの非決定性（Nondeterminism）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。",
+      "choiceExplanations": {
+        "A": "内容が事実に反する生成を行う現象で、同じ入力で出力が変わる性質そのものではない。",
+        "B": "会話が長くなり前提がずれる現象で、同一入力での出力のばらつきを指す語ではない。",
+        "C": "訓練データに過剰適合する現象であり、利用時の確率的出力のばらつきとは異なる。",
+        "D": "LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。"
+      }
+    },
+    {
+      "id": "q-d1-g05",
+      "difficulty": "beginner",
+      "question": "Copilotの提案が整って見えるため、内容を確かめずにTabキーで受け入れ続けてしまう。この心理的な傾向を何と呼びますか？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "自動化バイアス（Automation Bias）"
+        },
+        {
+          "id": "B",
+          "text": "確証バイアス（Confirmation Bias）"
+        },
+        {
+          "id": "C",
+          "text": "正常性バイアス（Normalcy Bias）"
+        },
+        {
+          "id": "D",
+          "text": "アンカー効果（Anchoring Effect）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "AIの出力が洗練されているために批判的な確認を怠る傾向が、自動化バイアス（過度の依存）である。",
+      "choiceExplanations": {
+        "A": "AIの出力が洗練されているために批判的な確認を怠る傾向が、自動化バイアス（過度の依存）である。",
+        "B": "自分の思い込みに沿う情報ばかりを信用する傾向であり、AI出力を盲信する傾向とは異なる。",
+        "C": "異常事態を正常の範囲内と過小評価する心理であり、AI提案への過信を指す語ではない。",
+        "D": "最初に提示された数値や情報に判断が引きずられる心理効果であり、AI出力を精査しない傾向とは別である。"
+      }
+    },
+    {
+      "id": "q-d1-g06",
+      "difficulty": "beginner",
+      "question": "Copilotの最初の候補をそのまま使わず、要件への適合・副作用・エラー処理を自分で点検しながら比べる姿勢は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "静的コード解析（Static Code Analysis）"
+        },
+        {
+          "id": "B",
+          "text": "提案の批判的評価（Critical Evaluation）"
+        },
+        {
+          "id": "C",
+          "text": "テスト駆動開発（Test-Driven Development）"
+        },
+        {
+          "id": "D",
+          "text": "ピアコードレビュー（Peer Review）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "要件への適合や副作用を自分で分析し、必要なら別の解を求める姿勢が提案の批判的評価である。",
+      "choiceExplanations": {
+        "A": "構文や静的ルールをツールで機械的にチェックする手法であり、要件適合や副作用を人間が精査する姿勢とは異なる。",
+        "B": "要件への適合や副作用を自分で分析し、必要なら別の解を求める姿勢が提案の批判的評価である。",
+        "C": "実装前に自動テストを作成する開発手法であり、提示されたAIコードの妥当性を比較評価する姿勢そのものではない。",
+        "D": "チームの他の開発者にコードを検査してもらう協同作業であり、開発者自身がAI提案の採否を判断する批判的評価とは異なる。"
+      }
+    },
+    {
+      "id": "q-d2-g01",
+      "difficulty": "beginner",
+      "question": "エディタ内でコードを入力中に、カーソルの直後に薄い灰色でインライン表示される未確定の補完候補テキストを表す用語は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "インテリセンスポップアップ（IntelliSense Widget）"
+        },
+        {
+          "id": "B",
+          "text": "インラインチャット差分（Inline Diff Overlay）"
+        },
+        {
+          "id": "C",
+          "text": "ゴーストテキスト（Ghost Text）"
+        },
+        {
+          "id": "D",
+          "text": "スニペットプレースホルダー（Snippet Placeholder）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "エディタ内に薄い灰色文字で提案される未確定の補完表示がGhost Textである。",
+      "choiceExplanations": {
+        "A": "ドロップダウンリストとして表示される補完候補であり、インラインの薄い灰色テキストとは異なる。",
+        "B": "Inline Chatによる編集差分表示であり、タイピング中に現れる未確定の自動補完表示ではない。",
+        "C": "エディタ内に薄い灰色文字で提案される未確定の補完表示がGhost Textである。",
+        "D": "Tabキーで移動するスニペットの入力枠であり、Copilotが動的に生成する薄い灰色テキストとは異なる。"
+      }
+    },
+    {
+      "id": "q-d2-g02",
+      "difficulty": "beginner",
+      "question": "VS Codeで通常のインライン候補に加えて、別タブを開いて最大10個の追加補完候補をまとめて生成・比較検討できる機能は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Copilot チャットビュー（Chat View）"
+        },
+        {
+          "id": "B",
+          "text": "クイックフィックスメニュー（Quick Fix Menu）"
+        },
+        {
+          "id": "C",
+          "text": "ソース管理ビュー（Source Control View）"
+        },
+        {
+          "id": "D",
+          "text": "Copilot 補完パネル（Completions Panel）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。",
+      "choiceExplanations": {
+        "A": "会話形式で質問や編集を指示するサイドバーパネルであり、補完候補を10件一覧比較するタブではない。",
+        "B": "警告やエラーに対して修正候補をドロップダウン表示するエディタ機能である。",
+        "C": "Gitのステージングやコミットを管理するパネルであり、コード補完の候補一覧を表示する機能ではない。",
+        "D": "別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。"
+      }
+    },
+    {
+      "id": "q-d2-g03",
+      "difficulty": "beginner",
+      "question": "Copilot Chatで `@workspace` や `@vscode` のように `@` 記号を付けて指定し、特定のコンテキストや機能へ質問をルーティングする仕組みは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "チャット参加者（Chat Participants）"
+        },
+        {
+          "id": "B",
+          "text": "チャット変数（Chat Variables）"
+        },
+        {
+          "id": "C",
+          "text": "スラッシュコマンド（Slash Commands）"
+        },
+        {
+          "id": "D",
+          "text": "プロンプトファイル（Prompt Files）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "`@` で指定し特定のドメインやツールに質問を割り振る仕組みがChat Participantsである。",
+      "choiceExplanations": {
+        "A": "`@` で指定し特定のドメインやツールに質問を割り振る仕組みがChat Participantsである。",
+        "B": "`#file` や `#selection` のように `#` 記号で特定の文脈データを参照する仕組みである。",
+        "C": "`/explain` や `/fix` のように `/` 記号で特定の操作や意図を指定するコマンドである。",
+        "D": "`.prompt.md` ファイルとして定義する再利用可能な指示文であり、`@` で呼び出す参加者ではない。"
+      }
+    },
+    {
+      "id": "q-d2-g04",
+      "difficulty": "beginner",
+      "question": "VS Codeのステータスバーに常駐し、Copilotの全体的な有効化/無効化や、現在の言語に対する補完設定の切り替え、ログ確認ができるUI要素は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コマンドパレット（Command Palette）"
+        },
+        {
+          "id": "B",
+          "text": "Copilot ステータスメニュー（Status Menu & Icon）"
+        },
+        {
+          "id": "C",
+          "text": "通知トースト（Notification Toast）"
+        },
+        {
+          "id": "D",
+          "text": "エクスプローラーサイドバー（Explorer View）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "ステータスバー上のCopilotアイコンから全体または言語単位の有効・無効を切り替えるのがステータスメニューである。",
+      "choiceExplanations": {
+        "A": "エディタ全体のコマンドを検索・実行する汎用ダイアログ（Ctrl+Shift+P）である。",
+        "B": "ステータスバー上のCopilotアイコンから全体または言語単位の有効・無効を切り替えるのがステータスメニューである。",
+        "C": "右下に一時的に表示されるシステムメッセージであり、常駐の設定メニューではない。",
+        "D": "ファイルツリーを表示する領域であり、Copilotの状態確認やトグルを行うメニューではない。"
+      }
+    },
+    {
+      "id": "q-d2-g05",
+      "difficulty": "beginner",
+      "question": "GitHub CLI環境において、難解なシェルコマンドやスクリプトの意味・動作を自然言語で分かりやすく解説させる公式サブコマンドは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "gh copilot suggest"
+        },
+        {
+          "id": "B",
+          "text": "gh copilot config"
+        },
+        {
+          "id": "C",
+          "text": "gh copilot explain"
+        },
+        {
+          "id": "D",
+          "text": "gh copilot alias"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "コマンドの意味や各フラグの動作を自然言語で説明させるのが `gh copilot explain` である。",
+      "choiceExplanations": {
+        "A": "自然言語の要件からコマンドを新しく生成・提案させるサブコマンドである。",
+        "B": "CLIの設定（使用エディタやデフォルトシェルなど）を管理するコマンドである。",
+        "C": "コマンドの意味や各フラグの動作を自然言語で説明させるのが `gh copilot explain` である。",
+        "D": "シェルエイリアスの設定コードを出力するコマンドであり、コマンドの説明を行う機能ではない。"
+      }
+    },
+    {
+      "id": "q-d2-g06",
+      "difficulty": "beginner",
+      "question": "GitHub CLI環境において、「直近のコミットを取り消す」のような自然言語の依頼から適切なGitやシェルのコマンドを生成させる公式サブコマンドは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "gh copilot explain"
+        },
+        {
+          "id": "B",
+          "text": "gh copilot run"
+        },
+        {
+          "id": "C",
+          "text": "gh copilot prompt"
+        },
+        {
+          "id": "D",
+          "text": "gh copilot suggest"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "自然言語からシェルやGitのコマンドを提案させるのが `gh copilot suggest` である。",
+      "choiceExplanations": {
+        "A": "既存のコマンドの内容やオプションの意味を解説させるサブコマンドである。",
+        "B": "実在しないサブコマンドであり、提案コマンドの実行はsuggest内で行われる。",
+        "C": "実在しないサブコマンドであり、対話的指示の受付はsuggestで行う。",
+        "D": "自然言語からシェルやGitのコマンドを提案させるのが `gh copilot suggest` である。"
+      }
+    },
+    {
+      "id": "q-d2-g07",
+      "difficulty": "beginner",
+      "question": "Copilot CLIの `gh copilot suggest` と `gh copilot explain` をターミナルから素早く呼び出すために推奨されている公式シェルエイリアス名は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ghcs および ghce"
+        },
+        {
+          "id": "B",
+          "text": "copilot-s および copilot-e"
+        },
+        {
+          "id": "C",
+          "text": "gh-suggest および gh-explain"
+        },
+        {
+          "id": "D",
+          "text": "gcs および gce"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "suggestに `ghcs`、explainに `ghce` を割り当てるシェルエイリアスが公式に提供されている。",
+      "choiceExplanations": {
+        "A": "suggestに `ghcs`、explainに `ghce` を割り当てるシェルエイリアスが公式に提供されている。",
+        "B": "公式の推奨エイリアスではなく、`ghcs` / `ghce` が標準である。",
+        "C": "冗長であり、公式が生成する短いエイリアス名は `ghcs` と `ghce` である。",
+        "D": "Google Cloud等の既存CLIと衝突しやすく、公式エイリアスは `ghcs` と `ghce` である。"
+      }
+    },
+    {
+      "id": "q-d2-g08",
+      "difficulty": "beginner",
+      "question": "Copilot CLIがターミナルコマンドを提案した後、意図しない破壊的変更を防ぐために実行前に行われる対話的な安全保護の仕組みは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "バックグラウンドでの自動バックアップ作成"
+        },
+        {
+          "id": "B",
+          "text": "提案コマンドのレビューと明示的な実行承認"
+        },
+        {
+          "id": "C",
+          "text": "コマンド構文の静的検査と自動サイレント実行"
+        },
+        {
+          "id": "D",
+          "text": "ターミナルプロセスの強制サンドボックス隔離"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Copilot CLIはコマンドを自動実行せず、開発者が確認して「Execute command」を選択する明示承認を要求する。",
+      "choiceExplanations": {
+        "A": "CLIがファイルシステム全体のバックアップを自動取得する仕組みは存在しない。",
+        "B": "Copilot CLIはコマンドを自動実行せず、開発者が確認して「Execute command」を選択する明示承認を要求する。",
+        "C": "人間の確認なしにコマンドがサイレント実行されることはない。",
+        "D": "OSレベルのサンドボックスを自動構築するのではなく、人間の目視承認によって安全を担保する。"
+      }
+    },
+    {
+      "id": "q-d2-g09",
+      "difficulty": "beginner",
+      "question": "GitHub Copilot in the CLIを利用する際、IDEの拡張機能と比較したコンテキスト上の制約として正しいものは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "外部ネットワークへのHTTPSアウトバウンド通信を行えない"
+        },
+        {
+          "id": "B",
+          "text": "利用可能なシェルがPOSIX互換のbashのみに限定される"
+        },
+        {
+          "id": "C",
+          "text": "ワークスペース内の複数ファイルやGit差分を自動参照する文脈を持たない"
+        },
+        {
+          "id": "D",
+          "text": "一回のコマンド生成につき最大1トークンしか出力できない"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "CLIは入力されたプロンプトを処理し、IDEのようにリポジトリの複数ファイルやエディタ状態を自動収集しない。",
+      "choiceExplanations": {
+        "A": "モデルとの通信のため通常のHTTPS通信（ポート443）が必要である。",
+        "B": "PowerShellやzsh、cmdなど複数のシェル環境に対応している。",
+        "C": "CLIは入力されたプロンプトを処理し、IDEのようにリポジトリの複数ファイルやエディタ状態を自動収集しない。",
+        "D": "トークン数の極端な制限ではなく、完全なコマンド行や説明が出力される。"
+      }
+    },
+    {
+      "id": "q-d2-g10",
+      "difficulty": "beginner",
+      "question": "VS Codeにおいて、作業対象（Working Set）に指定した複数ファイルに対して、セッション内で同時にコード修正を生成・差分プレビューできる機能は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Inline Chat"
+        },
+        {
+          "id": "B",
+          "text": "Copilot Completions Panel"
+        },
+        {
+          "id": "C",
+          "text": "Quick Fix"
+        },
+        {
+          "id": "D",
+          "text": "Copilot Edits"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。",
+      "choiceExplanations": {
+        "A": "現在のエディタ内の単一ファイル・選択範囲に対して会話形式で編集を行う機能である。",
+        "B": "現在のカーソル位置に対する単一ファイルのコード補完候補を10個表示するパネルである。",
+        "C": "構文エラー等に対する単一箇所の修正を適用する標準エディタ機能である。",
+        "D": "作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。"
+      }
+    },
+    {
+      "id": "q-d2-g11",
+      "difficulty": "beginner",
+      "question": "Model Context Protocol（MCP）において、社内DBやAPIツール、リソースなどの外部データと操作を公開し、Copilotからの呼び出しに応答する構成要素は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "MCP サーバー（MCP Server）"
+        },
+        {
+          "id": "B",
+          "text": "MCP クライアント（MCP Client）"
+        },
+        {
+          "id": "C",
+          "text": "MCP ホストエージェント（MCP Host Agent）"
+        },
+        {
+          "id": "D",
+          "text": "MCP リバースプロキシ（MCP Reverse Proxy）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "ツールやリソースを定義してクライアントに機能を提供する側がMCP Serverである。",
+      "choiceExplanations": {
+        "A": "ツールやリソースを定義してクライアントに機能を提供する側がMCP Serverである。",
+        "B": "サーバーに接続してツールやリソースを消費する側（VS CodeやClaude Desktop等）である。",
+        "C": "MCP仕様上の標準コンポーネント名ではなく、クライアントとサーバーの関係で定義される。",
+        "D": "標準プロトコル仕様のコア概念ではなく、中核となる提供側コンポーネントはサーバーである。"
+      }
+    },
+    {
+      "id": "q-d2-g12",
+      "difficulty": "beginner",
+      "question": "Agent Modeにおいて、一連のタスク指示、ツールの実行履歴、コード編集、作業コンテキストをひとまとめに保持し、中断や再開の単位となる作業空間は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Git ワーキングツリー（Git Working Tree）"
+        },
+        {
+          "id": "B",
+          "text": "エージェントセッション（Agent Sessions）"
+        },
+        {
+          "id": "C",
+          "text": "ワークスペース設定（Workspace Settings）"
+        },
+        {
+          "id": "D",
+          "text": "スクラッチバッファ（Scratch Buffer）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "エージェントが実行したタスクやツール履歴、作業文脈を保持する単位がAgent Sessionである。",
+      "choiceExplanations": {
+        "A": "Git管理下のローカルファイル群であり、エージェントの推論や会話・ツール履歴を管理する単位ではない。",
+        "B": "エージェントが実行したタスクやツール履歴、作業文脈を保持する単位がAgent Sessionである。",
+        "C": "エディタ環境の設定構成であり、動的なエージェント作業履歴の保持空間ではない。",
+        "D": "一時的なテキストメモ用のバッファであり、エージェントの会話・実行コンテキスト単位ではない。"
+      }
+    },
+    {
+      "id": "q-d2-g13",
+      "difficulty": "beginner",
+      "question": "メインのエージェントが大規模なタスクを実行する際、独立したコンテキストで下位タスク（調査やサブコンポーネント作成など）を並行して引き受け、結果をメインへ返す仕組みは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "バックグラウンドスレッド（Background Threads）"
+        },
+        {
+          "id": "B",
+          "text": "デーモンプロセス（Daemon Processes）"
+        },
+        {
+          "id": "C",
+          "text": "サブエージェント（Sub-Agents）"
+        },
+        {
+          "id": "D",
+          "text": "スクリプトフック（Script Hooks）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "主セッションとは分離された独立コンテキストで下位タスクを実行し、結果を報告する下位エージェントがSub-Agentsである。",
+      "choiceExplanations": {
+        "A": "OSやランタイムの並列処理単位であり、プロンプトと独立コンテキストを持つAIエージェントの委譲とは異なる。",
+        "B": "OS常駐型のバックグラウンドサービスであり、タスクを分担するAIエージェントの仕組みではない。",
+        "C": "主セッションとは分離された独立コンテキストで下位タスクを実行し、結果を報告する下位エージェントがSub-Agentsである。",
+        "D": "イベントに応じて実行される外部スクリプトであり、自律的に下位タスクを処理するエージェントではない。"
+      }
+    },
+    {
+      "id": "q-d2-g14",
+      "difficulty": "beginner",
+      "question": "GitHubのプルリクエストにおいて、変更差分をAIが自動分析し、潜在的なバグ・セキュリティ上の懸念・改善提案をインラインコメントとして投稿する機能は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Copilot Pull Request Summaries"
+        },
+        {
+          "id": "B",
+          "text": "Dependabot Alerts"
+        },
+        {
+          "id": "C",
+          "text": "GitHub Secret Scanning"
+        },
+        {
+          "id": "D",
+          "text": "Copilot Code Review"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。",
+      "choiceExplanations": {
+        "A": "PRの説明欄に箇条書きで変更要約を下書きする機能であり、インラインのレビュー指摘を行う機能ではない。",
+        "B": "依存関係の既知の脆弱性を検知して通知する機能であり、PR差分の汎用コードレビューではない。",
+        "C": "コミット内のAPIキーやパスワード等の漏えいを検知するセキュリティ機能である。",
+        "D": "PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。"
+      }
+    },
+    {
+      "id": "q-d2-g15",
+      "difficulty": "beginner",
+      "question": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "スコープ付きインストラクション（Scoped Instructions）"
+        },
+        {
+          "id": "B",
+          "text": "リポジトリルールセット（Repository Rulesets）"
+        },
+        {
+          "id": "C",
+          "text": "プロンプトファイル（Prompt Files）"
+        },
+        {
+          "id": "D",
+          "text": "ワークスペースプロファイル（Workspace Profiles）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。",
+      "choiceExplanations": {
+        "A": "特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。",
+        "B": "ブランチ保護やタグ付け規則を強制するGitHubのガバナンス機能であり、Copilot用の指示ファイルではない。",
+        "C": "特定のタスクを呼び出す再利用可能なテンプレート（`.prompt.md`）であり、ディレクトリ単位の自動適用指示とは異なる。",
+        "D": "VS Codeの拡張機能やUI構成を切り替える機能であり、Copilotの指示ファイルの適用機能ではない。"
+      }
+    },
+    {
+      "id": "q-d2-g16",
+      "difficulty": "beginner",
+      "question": "自然言語の指示から直接マイクロWebアプリケーションを構築・反復改善する実験的ツールとして公開され、github.com上で2026年8月に新規作成が終了したサービスは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "GitHub Copilot Spaces"
+        },
+        {
+          "id": "B",
+          "text": "GitHub Spark"
+        },
+        {
+          "id": "C",
+          "text": "GitHub Codespaces"
+        },
+        {
+          "id": "D",
+          "text": "GitHub Copilot Workspace"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "アイデアから自然言語でマイクロアプリを生成するツールで、2026年8月に新規作成受付が終了したのがGitHub Sparkである。",
+      "choiceExplanations": {
+        "A": "リポジトリやIssueを束ねて共有コンテキストを作る現行のコラボレーション機能である。",
+        "B": "アイデアから自然言語でマイクロアプリを生成するツールで、2026年8月に新規作成受付が終了したのがGitHub Sparkである。",
+        "C": "クラウド上にホストされた完全な開発環境（コンテナ）を提供するサービスである。",
+        "D": "Issueから仕様策定・コード変更・PR作成までを支援する開発者環境である。"
+      }
+    },
+    {
+      "id": "q-d2-g17",
+      "difficulty": "beginner",
+      "question": "サードパーティのSaaSや社内サービスと連携してCopilot Chatを拡張する仕組みとして提供され、2025年11月に終了して現行のMCP等へ移行した旧連携方式は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "VS Code 拡張機能（VS Code Extensions）"
+        },
+        {
+          "id": "B",
+          "text": "GitHub Actions ワークフロー（GitHub Actions）"
+        },
+        {
+          "id": "C",
+          "text": "GitHub App型 Copilot Extensions"
+        },
+        {
+          "id": "D",
+          "text": "GitHub Webhooks"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "サードパーティ統合として提供され2025年11月に終了した旧機能がGitHub App型Copilot Extensionsである。",
+      "choiceExplanations": {
+        "A": "エディタ上で動作する現行のクライアント側プラグインであり、終了したGitHub App型Extensionsとは異なる。",
+        "B": "CI/CDパイプラインを自動化する現行のGitHub標準機能である。",
+        "C": "サードパーティ統合として提供され2025年11月に終了した旧機能がGitHub App型Copilot Extensionsである。",
+        "D": "リポジトリイベントを外部サーバーへHTTP通知する標準API機能である。"
+      }
+    },
+    {
+      "id": "q-d2-g18",
+      "difficulty": "beginner",
+      "question": "GitHub Organizationの管理者が、所属メンバーに対して「公開コード一致提案のブロック」や「特定機能の有効化」を一括適用する管理設定は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ブランチ保護ルール（Branch Protection Rules）"
+        },
+        {
+          "id": "B",
+          "text": "Organization セキュリティアドバイザリ（Security Advisories）"
+        },
+        {
+          "id": "C",
+          "text": "個人ユーザー設定（Personal Settings）"
+        },
+        {
+          "id": "D",
+          "text": "Organization レベルのCopilotポリシー（Organization Policies）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "Organization管理者が所属メンバーのCopilot機能や公開コード一致のブロックを一括管理するのがOrganizationポリシーである。",
+      "choiceExplanations": {
+        "A": "PRのマージ条件やレビュー必須化を定めるGitリポジトリ設定である。",
+        "B": "リポジトリの脆弱性を公開・管理する仕組みであり、Copilot機能の統制設定ではない。",
+        "C": "開発者個人の好みを設定する項目であり、組織全体へのポリシー強制設定ではない。",
+        "D": "Organization管理者が所属メンバーのCopilot機能や公開コード一致のブロックを一括管理するのがOrganizationポリシーである。"
+      }
+    },
+    {
+      "id": "q-d2-g19",
+      "difficulty": "beginner",
+      "question": "GitHub Enterprise管理者が設定し、傘下のすべてのOrganizationに対して強制（Enforce）され、下位組織での緩和や無効化ができない最上位のポリシーは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Enterprise レベルのCopilotポリシー（Enterprise Policies）"
+        },
+        {
+          "id": "B",
+          "text": "Organization レベルのCopilotポリシー（Organization Policies）"
+        },
+        {
+          "id": "C",
+          "text": "リポジトリ単位のポリシー（Repository Policies）"
+        },
+        {
+          "id": "D",
+          "text": "チームアクセス権限（Team Permissions）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Enterprise層で強制（Enforce）されたポリシーは下位Organizationで緩和できない最上位統制設定である。",
+      "choiceExplanations": {
+        "A": "Enterprise層で強制（Enforce）されたポリシーは下位Organizationで緩和できない最上位統制設定である。",
+        "B": "単一のOrganization単位で設定されるポリシーであり、Enterprise全体を統制する最上位設定ではない。",
+        "C": "個別のリポジトリレベルの設定であり、全社的な統制機能ではない。",
+        "D": "リポジトリへの読み書き権限をグループ管理する機能であり、Copilot機能の最上位ポリシーではない。"
+      }
+    },
+    {
+      "id": "q-d2-g20",
+      "difficulty": "beginner",
+      "question": "個人向けのFree・Pro、組織向けのBusiness・Enterpriseなど、利用可能な機能や顧客コードのプライバシーポリシー（モデル学習利用の有無）を規定する体系は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Copilot シート割り当て管理（Seat Assignment）"
+        },
+        {
+          "id": "B",
+          "text": "Copilot サブスクリプションプラン体系（Subscription Plans）"
+        },
+        {
+          "id": "C",
+          "text": "GitHub 課金ロール（Billing Roles）"
+        },
+        {
+          "id": "D",
+          "text": "Enterprise Managed Users（EMU）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。",
+      "choiceExplanations": {
+        "A": "購入したライセンスを特定のユーザーに割り当てる運用操作であり、プラン体系そのものではない。",
+        "B": "利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。",
+        "C": "支払い情報の閲覧や請求書管理を行う権限ロールであり、Copilotの機能・規約プラン体系ではない。",
+        "D": "IdPと連携してユーザーIDを一元管理するアカウント構成であり、Copilotのサブスクリプションプランではない。"
+      }
+    },
+    {
+      "id": "q-d2-g21",
+      "difficulty": "beginner",
+      "question": "組織の管理者が、Pull RequestにおけるCopilotによる自動コードレビューの動作（自動トリガーの有無や利用可否）を制御する管理ポリシーは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コミット署名ポリシー（Commit Signing Policies）"
+        },
+        {
+          "id": "B",
+          "text": "シークレットスキャンポリシー（Secret Scanning Policies）"
+        },
+        {
+          "id": "C",
+          "text": "Copilot コードレビューポリシー（Code Review Policies）"
+        },
+        {
+          "id": "D",
+          "text": "プルリクエスト要約ポリシー（PR Summary Policies）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "PRに対するCopilotの自動コードレビュー機能の有効化や自動実行を制御するのがCode Review Policiesである。",
+      "choiceExplanations": {
+        "A": "コミットにGPG/SSH署名を義務付けるセキュリティポリシーであり、AIレビューの制御ではない。",
+        "B": "コミット内の機密情報検出を管理する設定であり、AIによるPRレビューの制御ではない。",
+        "C": "PRに対するCopilotの自動コードレビュー機能の有効化や自動実行を制御するのがCode Review Policiesである。",
+        "D": "実在する独立ポリシーではなく、PRレビューの動作自体はCode Review Policiesで管理される。"
+      }
+    },
+    {
+      "id": "q-d2-g22",
+      "difficulty": "beginner",
+      "question": "チーム共有のドキュメントやリポジトリをチャットのコンテキストとして登録する機能として提供され、2025年11月に終了して現行のCopilot Spacesへ移行した旧機能は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "GitHub Wiki"
+        },
+        {
+          "id": "B",
+          "text": "GitHub Discussions"
+        },
+        {
+          "id": "C",
+          "text": "Copilot Custom Instructions"
+        },
+        {
+          "id": "D",
+          "text": "Copilot Knowledge Bases（旧機能）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "複数リポジトリや資料を束ねる共有コンテキストとして提供され、2025年11月に終了しSpacesへ移行したのがKnowledge Basesである。",
+      "choiceExplanations": {
+        "A": "リポジトリに付属する現行のドキュメント機能であり、終了したCopilotチャット共有コンテキスト機能ではない。",
+        "B": "コミュニティフォーラム機能であり、Copilot Chatの共有コンテキスト機能ではない。",
+        "C": "プロンプト規約をGit管理する現行のマークダウンファイルであり、終了したKnowledge Basesとは異なる。",
+        "D": "複数リポジトリや資料を束ねる共有コンテキストとして提供され、2025年11月に終了しSpacesへ移行したのがKnowledge Basesである。"
+      }
+    },
+    {
+      "id": "q-d3-g01",
+      "difficulty": "beginner",
+      "question": "開発者のIDEから送信されたプロンプトやコンテキストが、GitHubのプロキシ基盤を経由してLLMに到達し、生成結果が後処理を経てエディタへ返却されるまでの一連のエンドツーエンドの通信・処理経路を表す概念は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Copilot データフロー（Copilot Data Flow）"
+        },
+        {
+          "id": "B",
+          "text": "プロンプト構築パイプライン（Prompt Construction Pipeline）"
+        },
+        {
+          "id": "C",
+          "text": "コードサジェスチョンライフサイクル（Code Suggestion Lifecycle）"
+        },
+        {
+          "id": "D",
+          "text": "コンテキストウィンドウ（Context Window）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "IDEからプロキシ、LLM、後処理を経てエディタに戻る一連の通信・データ処理の流れをCopilot Data Flowと呼ぶ。",
+      "choiceExplanations": {
+        "A": "IDEからプロキシ、LLM、後処理を経てエディタに戻る一連の通信・データ処理の流れをCopilot Data Flowと呼ぶ。",
+        "B": "IDE側で周辺コードやタブ情報を収集してプロンプトを組み立てる前処理の仕組みである。",
+        "C": "タイピング休止からゴーストテキスト提示・確定・破棄に至るクライアント側の状態遷移である。",
+        "D": "LLMが一度に処理できる最大トークン容量の境界枠であり、エンドツーエンドの通信経路ではない。"
+      }
+    },
+    {
+      "id": "q-d3-g02",
+      "difficulty": "beginner",
+      "question": "エディタ上でカーソル前後のコード、開いているタブ、隣接ファイルの関連スニペットなどを収集・優先度付けし、LLMに送信可能な形式へと合成・整形する内部処理の仕組みは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Copilot プロキシ（Copilot Proxy & Gateway）"
+        },
+        {
+          "id": "B",
+          "text": "プロンプト構築パイプライン（Prompt Construction Pipeline）"
+        },
+        {
+          "id": "C",
+          "text": "ポストプロセッシング（Post-processing & Content Filtering）"
+        },
+        {
+          "id": "D",
+          "text": "リポジトリインデックス（Repository Indexing）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "周辺コードや開いているファイルを収集し、トークン枠に合わせて合成・整形する内部機構がPrompt Construction Pipelineである。",
+      "choiceExplanations": {
+        "A": "IDEとLLMの間で認証やコンテンツ除外、通信制御を担うサーバー側の中継基盤である。",
+        "B": "周辺コードや開いているファイルを収集し、トークン枠に合わせて合成・整形する内部機構がPrompt Construction Pipelineである。",
+        "C": "LLMから返却された生成テキストに対して公開コード一致や安全性検査を行う後処理段階である。",
+        "D": "プロジェクト全体のセマンティック検索やシンボル解析用に作成されるインデックス構造である。"
+      }
+    },
+    {
+      "id": "q-d3-g03",
+      "difficulty": "beginner",
+      "question": "IDEと基盤LLMの間に位置し、ユーザー認証の検証、Content Exclusion（コンテンツ除外）ポリシーの強制、有害コンテンツの遮断や安全なルーティングを一括して担うGitHubのサーバー層は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "言語サーバープロトコル（Language Server Protocol / LSP）"
+        },
+        {
+          "id": "B",
+          "text": "モデルコンテキストプロトコル（Model Context Protocol / MCP）"
+        },
+        {
+          "id": "C",
+          "text": "Copilot プロキシ（Copilot Proxy & Gateway）"
+        },
+        {
+          "id": "D",
+          "text": "ローカルキャッシュレイヤー（Local Cache Layer）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "クライアントとLLMの間に介在し、認証・ポリシー適用・安全検査を一元管理する中継基盤がCopilot Proxyである。",
+      "choiceExplanations": {
+        "A": "エディタ内部で構文解析やシンボル定義ジャンプなどを提供する標準通信規格である。",
+        "B": "外部ツールや独自データソースをLLMエージェントと標準接続するためのオープン規格である。",
+        "C": "クライアントとLLMの間に介在し、認証・ポリシー適用・安全検査を一元管理する中継基盤がCopilot Proxyである。",
+        "D": "同一プロンプトへの提案を高速再利用するためにクライアント側のメモリに保持する仕組みである。"
+      }
+    },
+    {
+      "id": "q-d3-g04",
+      "difficulty": "beginner",
+      "question": "Copilotの利用において、ソースコードそのもの（Code Snippets）とは厳格に区別され、提案の受入・却下イベント、レイテンシ、エラーログなどサービスの監視・改善目的で収集される利用統計データは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "プロンプトコンテキストスニペット（Prompt Context Snippets）"
+        },
+        {
+          "id": "B",
+          "text": "GitHub 監査ログ（GitHub Audit Log Events）"
+        },
+        {
+          "id": "C",
+          "text": "モデル事前学習データセット（Model Training Dataset）"
+        },
+        {
+          "id": "D",
+          "text": "エンゲージメントおよびテレメトリデータ（Engagement and Telemetry Data）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。",
+      "choiceExplanations": {
+        "A": "補完やチャット提案を生成するためにエディタから一時送信されるコードそのものである。",
+        "B": "Enterprise管理者がポリシー変更やシート割り当て履歴などを追跡するためのセキュリティ管理ログである。",
+        "C": "基盤LLMの言語モデル自体を事前学習・調整するために用いられる大規模コーパスである。",
+        "D": "顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。"
+      }
+    },
+    {
+      "id": "q-d3-g05",
+      "difficulty": "beginner",
+      "question": "GitHub Copilot BusinessおよびEnterpriseにおいて、補完やチャットの応答生成に使用されたプロンプトやコードスニペットが、処理完了後にサーバー上に永続保持されず直ちに破棄されるデータ保護原則は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コード保持ポリシーのゼロリテンション（Zero Data Retention Policy）"
+        },
+        {
+          "id": "B",
+          "text": "コンテンツ除外ポリシー（Content Exclusion Policy）"
+        },
+        {
+          "id": "C",
+          "text": "公開コードマッチングポリシー（Public Code Matching Policy）"
+        },
+        {
+          "id": "D",
+          "text": "ロールベースアクセス制御（Role-Based Access Control / RBAC）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "応答生成に使用されたプロンプトやスニペットをサーバー上に一切保存せず即座に破棄する原則がZero Retentionである。",
+      "choiceExplanations": {
+        "A": "応答生成に使用されたプロンプトやスニペットをサーバー上に一切保存せず即座に破棄する原則がZero Retentionである。",
+        "B": "特定のリポジトリやファイルパスをCopilotの読み込み対象から遮断・除外する設定である。",
+        "C": "GitHub上の公開コードと150文字以上一致する提案を検知・ブロックするポリシーである。",
+        "D": "組織内でシート割り当てや管理設定の権限を役職に応じて制限するセキュリティ機構である。"
+      }
+    },
+    {
+      "id": "q-d3-g06",
+      "difficulty": "beginner",
+      "question": "LLMが生成した出力結果がエディタに表示される直前に実行され、公開コードとの一致検知（Public Code Matching）や有害コンテンツの検出・遮断を行う処理ステージは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "トークン化および前処理（Tokenization）"
+        },
+        {
+          "id": "B",
+          "text": "ポストプロセッシング（Post-processing）"
+        },
+        {
+          "id": "C",
+          "text": "温度制御サンプリング（Temperature Sampling）"
+        },
+        {
+          "id": "D",
+          "text": "プロンプト拡張（Prompt Augmentation）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "LLMが出力した直後に介在し、公開コード一致検査や安全フィルタリングを適用して最終出力を決定する段階がPost-processingである。",
+      "choiceExplanations": {
+        "A": "モデルに入力する前のテキストをトークンID列へ分割・変換する入力段階である。",
+        "B": "LLMが出力した直後に介在し、公開コード一致検査や安全フィルタリングを適用して最終出力を決定する段階がPost-processingである。",
+        "C": "LLMが次のトークンを確率分布から選出してテキストを生成する推論段階そのものである。",
+        "D": "ユーザーの入力に関連ファイルやシステム指示を合成してプロンプトを充実させる入力前処理である。"
+      }
+    },
+    {
+      "id": "q-d3-g07",
+      "difficulty": "beginner",
+      "question": "開発者のIDEからGitHub Copilot Proxy、およびバックエンドのモデルインフラに至るすべてのネットワーク通信において、盗聴や改ざんを防ぐために適用されているエンドツーエンドの暗号化方式は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "保存時データの暗号化（Encryption at Rest via AES-256）"
+        },
+        {
+          "id": "B",
+          "text": "クライアント側シークレットスキャン（Client-side Secret Scanning）"
+        },
+        {
+          "id": "C",
+          "text": "転送中データの暗号化（Encryption in Transit via TLS）"
+        },
+        {
+          "id": "D",
+          "text": "秘密分散共有暗号化（Threshold Secret Sharing）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "IDEとプロキシ、プロキシとLLM間の通信経路全体をHTTPS/TLSで保護する仕組みがEncryption in Transitである。",
+      "choiceExplanations": {
+        "A": "データベースやディスクストレージに保存されている永続化ブロックを保護する暗号化である。",
+        "B": "コード内のAPIキーや秘密鍵をエディタやプッシュ時に正規表現等で検知するセキュリティ機能である。",
+        "C": "IDEとプロキシ、プロキシとLLM間の通信経路全体をHTTPS/TLSで保護する仕組みがEncryption in Transitである。",
+        "D": "暗号鍵を複数の断片に分割して異なるサーバー群で管理する分散暗号化方式である。"
+      }
+    },
+    {
+      "id": "q-d3-g08",
+      "difficulty": "beginner",
+      "question": "開発者のタイピング休止（デバウンス）によるトリガーから、周辺文脈の送信、ゴーストテキストの提示、そしてTabキーによる採択や追加入力による破棄・再計算に至る一連の状態遷移を表す概念は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキストウィンドウライフサイクル（Context Window Lifecycle）"
+        },
+        {
+          "id": "B",
+          "text": "リクエストレートリミット（Request Rate Limiting）"
+        },
+        {
+          "id": "C",
+          "text": "モデル推論ストリーミング（Model Inference Streaming）"
+        },
+        {
+          "id": "D",
+          "text": "コードサジェスチョンライフサイクル（Code Suggestion Lifecycle）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。",
+      "choiceExplanations": {
+        "A": "会話セッションの長期化に伴い古いトークンが枠外へ順次追い出される履歴の変遷である。",
+        "B": "一定時間内のAPI呼び出し回数を制限し、サーバーやモデルの過負荷を防ぐスロットリング制御である。",
+        "C": "生成されたトークンが逐次リアルタイムにエディタへ順次配信される通信・描画方式である。",
+        "D": "打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。"
+      }
+    },
+    {
+      "id": "q-d3-g09",
+      "difficulty": "beginner",
+      "question": "LLMが1回のプロンプトと応答で同時に保持・処理できる情報量（トークン数）の物理的な上限枠であり、超過時には優先度の低い文脈が切り捨てられる境界を表す用語は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキストウィンドウ（Context Window）"
+        },
+        {
+          "id": "B",
+          "text": "ナレッジカットオフ（Knowledge Cutoff）"
+        },
+        {
+          "id": "C",
+          "text": "推論レイテンシ（Inference Latency）"
+        },
+        {
+          "id": "D",
+          "text": "サンプリング温度（Sampling Temperature）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。",
+      "choiceExplanations": {
+        "A": "モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。",
+        "B": "モデルが事前学習を完了した日時の境界であり、それ以降の最新出来事を知らない制限である。",
+        "C": "リクエストを送信してから最初のトークンまたは提案が返却されるまでの所要時間である。",
+        "D": "次のトークンを選択する際の確率分布の平坦度合いを調整するハイパーパラメータである。"
+      }
+    },
+    {
+      "id": "q-d3-g10",
+      "difficulty": "beginner",
+      "question": "タイピングの快適さを保つインライン補完では超低遅延（レスポンス速度）が最優先される一方、チャットやエージェントでは推論の正確性や深い文脈理解が重視される、AI機能設計上の設計選択は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "決定性と創造性のトレードオフ（Determinism vs Creativity Tradeoff）"
+        },
+        {
+          "id": "B",
+          "text": "レイテンシと品質のトレードオフ（Latency vs Quality Tradeoff）"
+        },
+        {
+          "id": "C",
+          "text": "ローカル推論とクラウド推論のトレードオフ（Local vs Cloud Inference Tradeoff）"
+        },
+        {
+          "id": "D",
+          "text": "事前学習と事後調整のトレードオフ（Pre-training vs Fine-tuning Tradeoff）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "タイピング速度を損なわないインラインの極低遅延と、チャットにおける深い推論品質を両立させるためのモデル選択・設計上のトレードオフである。",
+      "choiceExplanations": {
+        "A": "温度パラメータを調整して出力の安定性を取るか多様性を取るかの選択である。",
+        "B": "タイピング速度を損なわないインラインの極低遅延と、チャットにおける深い推論品質を両立させるためのモデル選択・設計上のトレードオフである。",
+        "C": "端末内のローカルGPUで動かすか、クラウドの大規模クラスタで実行するかの構成選択である。",
+        "D": "基礎的なコードコーパスの学習量と特定ドメインへの追加微調整の配分に関する選択である。"
+      }
+    },
+    {
+      "id": "q-d3-g11",
+      "difficulty": "beginner",
+      "question": "LLMが次のトークンを選択する際の確率分布の平坦さを制御し、値を低く設定するほど出力が固定的・決定的（構文エラーが生じにくい）になり、高くするほど多様で創造的な出力になるハイパーパラメータは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "トップPサンプリング（Top-p / Nucleus Sampling）"
+        },
+        {
+          "id": "B",
+          "text": "頻度ペナルティ（Frequency Penalty）"
+        },
+        {
+          "id": "C",
+          "text": "温度パラメータと決定性（Temperature & LLM Determinism）"
+        },
+        {
+          "id": "D",
+          "text": "最大出力トークン数リミット（Max Output Tokens Limit）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "確率分布の鋭さを制御し、低いほど最も確率の高いトークンを選んで安定的・決定的な出力にする設定値がTemperatureである。",
+      "choiceExplanations": {
+        "A": "累積確率が一定の閾値に達するまでの上位候補トークンのみを動的に選択対象とする制御である。",
+        "B": "すでに出現した単語の再出現確率を引き下げ、同一表現の繰り返しループを抑制するパラメータである。",
+        "C": "確率分布の鋭さを制御し、低いほど最も確率の高いトークンを選んで安定的・決定的な出力にする設定値がTemperatureである。",
+        "D": "モデルが1回のリクエストで出力可能なトークン数の絶対上限を制限する設定である。"
+      }
+    },
+    {
+      "id": "q-d3-g12",
+      "difficulty": "beginner",
+      "question": "基盤LLMが事前学習を完了した特定の日付境界であり、それ以降にリリースされた最新のフレームワークの仕様変更や新機能について、外部コンテキストを与えない限りモデルが知らないという制約は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキストウィンドウ上限（Context Window Limit）"
+        },
+        {
+          "id": "B",
+          "text": "ハルシネーション（Hallucination）"
+        },
+        {
+          "id": "C",
+          "text": "モデルドリフト（Model Drift）"
+        },
+        {
+          "id": "D",
+          "text": "ナレッジカットオフ（Knowledge Cutoff）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。",
+      "choiceExplanations": {
+        "A": "会話セッションが長くなりすぎて過去の指示やコードがトークン枠から溢れる現象である。",
+        "B": "モデルが事実に基づかない架空の仕様や関数をあたかも実在するかのように出力する現象である。",
+        "C": "実運用のデータ分布が学習時と変化することで、AIの予測精度が時間経過とともに劣化する現象である。",
+        "D": "モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。"
+      }
+    },
+    {
+      "id": "q-d3-g13",
+      "difficulty": "beginner",
+      "question": "IDE上のCopilotが自動参照できる情報範囲は原則として手元のローカルワークスペース内に限定され、組織全体のプライベートリポジトリや社内DBを参照するには明示的な拡張設定が必要であるという境界制約は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキストスコープの境界制限（Context Scope Limitations: Local vs Remote）"
+        },
+        {
+          "id": "B",
+          "text": "コンテンツ除外のスコープ制限（Content Exclusion Scope Rules）"
+        },
+        {
+          "id": "C",
+          "text": "ゼロリテンションの適用境界（Zero Data Retention Boundary）"
+        },
+        {
+          "id": "D",
+          "text": "ネットワークファイアウォール境界（Network Firewall Perimeter）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "通常のエディタCopilotは手元のローカル環境に閉じた文脈のみを参照し、外部や全社リポジトリの参照には明示的なツール・設定を要する境界がContext Scope Limitsである。",
+      "choiceExplanations": {
+        "A": "通常のエディタCopilotは手元のローカル環境に閉じた文脈のみを参照し、外部や全社リポジトリの参照には明示的なツール・設定を要する境界がContext Scope Limitsである。",
+        "B": "組織またはリポジトリ管理者によって特定ファイルの読み込みを強制遮断するルールである。",
+        "C": "処理完了後にデータがサーバーから即座に破棄されるセキュリティ上の対象領域の区分である。",
+        "D": "社内イントラネットと外部インターネットを通信ポートやIPで分離するネットワーク防御境界である。"
+      }
+    },
+    {
+      "id": "q-d3-g14",
+      "difficulty": "beginner",
+      "question": "Public Code Matching（公開コード一致）やContent Exclusion（参照除外）とは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "パブリックコード一致フィルター（Public Code Matching Filter）"
+        },
+        {
+          "id": "B",
+          "text": "有害コンテンツフィルタリング（Harmful Output Filtering）"
+        },
+        {
+          "id": "C",
+          "text": "コンテンツ除外ゲートウェイ（Content Exclusion Gateway）"
+        },
+        {
+          "id": "D",
+          "text": "シークレットスキャニング（Secret Scanning）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。",
+      "choiceExplanations": {
+        "A": "GitHub上の公開コードと150文字以上一致する提案を検知・抑止する知的財産保護フィルターである。",
+        "B": "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。",
+        "C": "機密ファイルや除外対象パスのコードがプロンプトとして送信されるのを未然に遮断する機能である。",
+        "D": "コードやコミット内にハードコードされたAPIキーや認証トークンを検知・警告する機能である。"
+      }
+    },
+    {
+      "id": "q-d4-g01",
+      "difficulty": "beginner",
+      "question": "LLMから期待する品質のコードや回答を引き出すために、目的・文脈・制約条件・出力形式などを体系的に設計・反復改善する技術体系は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ファインチューニング（Model Fine-Tuning）"
+        },
+        {
+          "id": "B",
+          "text": "検索拡張生成（Retrieval-Augmented Generation）"
+        },
+        {
+          "id": "C",
+          "text": "プロンプトエンジニアリング（Prompt Engineering）"
+        },
+        {
+          "id": "D",
+          "text": "コンテキストウィンドウ最適化（Context Window Optimization）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "目的、文脈、制約、具体例を体系的に整理し、LLMから最適な出力を引き出す指示設計技術がPrompt Engineeringである。",
+      "choiceExplanations": {
+        "A": "追加の学習データを用いて基盤モデル自体のパラメータを更新・最適化する機械学習手法である。",
+        "B": "プロンプト生成時に外部ドキュメントやリポジトリ検索結果を動的に注入するアーキテクチャである。",
+        "C": "目的、文脈、制約、具体例を体系的に整理し、LLMから最適な出力を引き出す指示設計技術がPrompt Engineeringである。",
+        "D": "トークン消費量を節約するためにコンテキストの取捨選択を行う管理手法である。"
+      }
+    },
+    {
+      "id": "q-d4-g02",
+      "difficulty": "beginner",
+      "question": "プロンプト内に入出力の具体例（Examples）を事前に提示せず、指示文や要件のみを直接与えてタスクの実行やコード生成を依頼するプロンプティング手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "フューショットプロンプティング（Few-shot Prompting）"
+        },
+        {
+          "id": "B",
+          "text": "思考の連鎖プロンプティング（Chain-of-Thought Prompting）"
+        },
+        {
+          "id": "C",
+          "text": "ロールプロンプティング（Role Prompting）"
+        },
+        {
+          "id": "D",
+          "text": "ゼロショットプロンプティング（Zero-shot Prompting）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。",
+      "choiceExplanations": {
+        "A": "プロンプト内に期待する入力と出力の具体例を2〜3組提示して形式や解法を誘導する手法である。",
+        "B": "結論に至る中間的な推論ステップや思考プロセスを順を追って出力させる手法である。",
+        "C": "AIに特定の役割や専門家の立場を付与して回答の観点やトーンを制御する手法である。",
+        "D": "具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。"
+      }
+    },
+    {
+      "id": "q-d4-g03",
+      "difficulty": "beginner",
+      "question": "チャット画面のユーザー入力よりも前段でモデルに注入され、AI全体の役割定義やコーディング規約、安全基準などの大前提の振る舞いを拘束する指示コンテキストは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "システムプロンプト（System Prompt）"
+        },
+        {
+          "id": "B",
+          "text": "ユーザープロンプト（User Prompt）"
+        },
+        {
+          "id": "C",
+          "text": "プロンプト変数（Prompt Variables）"
+        },
+        {
+          "id": "D",
+          "text": "スラッシュコマンド（Slash Commands）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "ユーザーの対話入力に先立ち、モデルの基本挙動や役割・ルールを規定する上位指示文がSystem Promptである。",
+      "choiceExplanations": {
+        "A": "ユーザーの対話入力に先立ち、モデルの基本挙動や役割・ルールを規定する上位指示文がSystem Promptである。",
+        "B": "開発者がチャット入力欄やインライン画面で直接入力する個別の質問や指示である。",
+        "C": "`#file` や `#selection` のようにプロンプト内に文脈データを動的参照するための変数である。",
+        "D": "`/explain` や `/fix` のように特定の事前定義アクションを呼び出すためのプレフィックスである。"
+      }
+    },
+    {
+      "id": "q-d4-g04",
+      "difficulty": "beginner",
+      "question": "『あなたは経験豊富なセキュリティアーキテクトです』のように、AIに特定の役割や専門家のペルソナを指定することで、回答の視点や評価基準を専門領域へ方向付ける手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ゼロショットプロンプティング（Zero-shot Prompting）"
+        },
+        {
+          "id": "B",
+          "text": "ロールプロンプティング（Role Prompting）"
+        },
+        {
+          "id": "C",
+          "text": "コンテキストプルーニング（Context Pruning）"
+        },
+        {
+          "id": "D",
+          "text": "ステップバイステップ指示（Step-by-Step Prompting）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "AIに専門家のペルソナや立場を指定し、より高度で専門的な観点から回答を引き出す手法がRole Promptingである。",
+      "choiceExplanations": {
+        "A": "具体例を与えずに指示文だけでタスクを実行させるプロンプティング手法である。",
+        "B": "AIに専門家のペルソナや立場を指定し、より高度で専門的な観点から回答を引き出す手法がRole Promptingである。",
+        "C": "不要なファイルや履歴をコンテキストから排除してトークン枠と指示の集中度を保つ手法である。",
+        "D": "タスクの実行手順を1段階ずつ順序立てて進めるよう求めるプロンプト技法である。"
+      }
+    },
+    {
+      "id": "q-d4-g05",
+      "difficulty": "beginner",
+      "question": "Copilotから返された初回の提案に対し、一度に完璧を求めるのではなく、対話を継続しながら不足した要件や修正点を追加指示して段階的に品質を高めていくアプローチは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "タスク分解手法（Task Decomposition）"
+        },
+        {
+          "id": "B",
+          "text": "チャットリセット（Chat Session Reset）"
+        },
+        {
+          "id": "C",
+          "text": "反復的プロンプト改善（Iterative Refinement）"
+        },
+        {
+          "id": "D",
+          "text": "フューショット手法（Few-shot Prompting）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "初回の出力結果を踏まえ、追加の指示や制約を与えながら段階的にコードを完成させる手法がIterative Refinementである。",
+      "choiceExplanations": {
+        "A": "大規模な開発要件を実装前に小さな独立したサブタスクへと分割するアプローチである。",
+        "B": "過去の会話履歴を完全に破棄して初期状態から新しい会話を開始する操作である。",
+        "C": "初回の出力結果を踏まえ、追加の指示や制約を与えながら段階的にコードを完成させる手法がIterative Refinementである。",
+        "D": "プロンプト内に入出力の正解サンプルをあらかじめ複数組含めておく手法である。"
+      }
+    },
+    {
+      "id": "q-d4-g06",
+      "difficulty": "beginner",
+      "question": "複雑で巨大な開発要件を一度のプロンプトで依頼するのではなく、設計、実装、テストなど管理可能な小さな単位に切り分けて順次AIに指示する手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキスト希釈（Context Dilution）"
+        },
+        {
+          "id": "B",
+          "text": "プロンプト連鎖（Prompt Chaining）"
+        },
+        {
+          "id": "C",
+          "text": "ネガティブ指示（Negative Prompting）"
+        },
+        {
+          "id": "D",
+          "text": "タスク分解（Task Decomposition）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。",
+      "choiceExplanations": {
+        "A": "無関係な情報が混入することでAIが重要な指示を見失ってしまう現象である。",
+        "B": "あるプロンプトの出力を次のプロンプトの入力として自動的につなぎ合わせる仕組みである。",
+        "C": "生成時に使用してはならないライブラリや非推奨構文を禁止事項として指定する手法である。",
+        "D": "大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。"
+      }
+    },
+    {
+      "id": "q-d4-g07",
+      "difficulty": "beginner",
+      "question": "不要なファイルや過去の古い会話ログが混入して重要な指示が埋もれる現象（コンテキスト希釈）を防ぐため、プロンプトに含める文脈を必要最小限に絞り込む最適化手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテキストプルーニング（Context Pruning）"
+        },
+        {
+          "id": "B",
+          "text": "トークン超過エラー（Token Overflow）"
+        },
+        {
+          "id": "C",
+          "text": "コンテキストドリフト（Context Drift）"
+        },
+        {
+          "id": "D",
+          "text": "リポジトリインデックス（Repository Indexing）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "無関係なファイルや過去ログを切り捨て、重要な指示への集中度と精度を高める手法がContext Pruningである。",
+      "choiceExplanations": {
+        "A": "無関係なファイルや過去ログを切り捨て、重要な指示への集中度と精度を高める手法がContext Pruningである。",
+        "B": "コンテキストウィンドウの最大容量を超過してリクエストが物理的に失敗する状態である。",
+        "C": "会話が長引くにつれてAIの回答が初期の前提要件から徐々にズレていく現象である。",
+        "D": "コード全体の高速な検索やシンボル解決のために作成されるインデックス構造である。"
+      }
+    },
+    {
+      "id": "q-d4-g08",
+      "difficulty": "beginner",
+      "question": "『新規の外部ライブラリを追加しない』『非推奨のAPIを使用しない』のように、AIに対して禁止事項や制約条件を明示的に指定して出力を制御するプロンプティング手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "出力フォーマット指定（Output Specification）"
+        },
+        {
+          "id": "B",
+          "text": "ネガティブプロンプティング（Negative Prompting）"
+        },
+        {
+          "id": "C",
+          "text": "フューショットプロンプティング（Few-shot）"
+        },
+        {
+          "id": "D",
+          "text": "ロールプロンプティング（Role Prompting）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "やってはいけない禁止事項や制約を明示的に指定して不要な出力を抑止する手法がNegative Promptingである。",
+      "choiceExplanations": {
+        "A": "回答をJSONやMarkdown表などの特定の構文形式に限定する指示手法である。",
+        "B": "やってはいけない禁止事項や制約を明示的に指定して不要な出力を抑止する手法がNegative Promptingである。",
+        "C": "期待する入出力の正解サンプルを複数組提示して形式を誘導する手法である。",
+        "D": "AIに特定の役割や専門家の立場を付与してトーンや観点を制御する手法である。"
+      }
+    },
+    {
+      "id": "q-d4-g09",
+      "difficulty": "beginner",
+      "question": "AIの回答に前置きや余計な会話文を含めず、『TypeScriptの型定義のみを出力する』や『指定のJSONスキーマに従う』のように、返却形式を厳格に制限する指示手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "思考プロセス指定（Chain-of-Thought Specification）"
+        },
+        {
+          "id": "B",
+          "text": "ネガティブプロンプティング（Negative Prompting）"
+        },
+        {
+          "id": "C",
+          "text": "出力フォーマット指定（Output Format Specification）"
+        },
+        {
+          "id": "D",
+          "text": "タスク分解アプローチ（Task Decomposition Approach）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "出力の構文構造やデータフォーマットを明示的に制限し、後処理の手間を省く指示手法がOutput Format Specificationである。",
+      "choiceExplanations": {
+        "A": "結論を導く前の途中経過や推論理由を段階的に出力するよう求める手法である。",
+        "B": "生成してはならない非推奨コードや禁止事項をプロンプトで明示する手法である。",
+        "C": "出力の構文構造やデータフォーマットを明示的に制限し、後処理の手間を省く指示手法がOutput Format Specificationである。",
+        "D": "大きな実装タスクを設計・実装・テストなどの段階的な小タスクに分割する手法である。"
+      }
+    },
+    {
+      "id": "q-d5-g01",
+      "difficulty": "beginner",
+      "question": "自然言語による仕様コメントや関数の型定義を入力として、Copilotが動作可能な関数本体や新しいコードブロックを自動生成する機能・プロセスは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コードリファクタリング（Code Refactoring）"
+        },
+        {
+          "id": "B",
+          "text": "コードトランスレーション（Code Translation）"
+        },
+        {
+          "id": "C",
+          "text": "静的コード解析（Static Code Analysis）"
+        },
+        {
+          "id": "D",
+          "text": "コード自動生成（AI-Assisted Code Generation）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。",
+      "choiceExplanations": {
+        "A": "外部の振る舞いを変えずに内部構造を整理する作業であり、ゼロから新しい機能を生成するものではない。",
+        "B": "既存の別言語コードを目的言語へと書き換える移植作業である。",
+        "C": "既存コードの規則違反や構文エラーを自動検査する仕組みである。",
+        "D": "仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。"
+      }
+    },
+    {
+      "id": "q-d5-g02",
+      "difficulty": "beginner",
+      "question": "プログラムの外部的な振る舞いや仕様を変更することなく、内部構造を整理して可読性・保守性・拡張性を向上させる作業をCopilotで支援するプラクティスは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コードリファクタリング（Code Refactoring）"
+        },
+        {
+          "id": "B",
+          "text": "コードトランスレーション（Code Translation）"
+        },
+        {
+          "id": "C",
+          "text": "レガシーコード近代化（Legacy Modernization）"
+        },
+        {
+          "id": "D",
+          "text": "コード自動生成（AI-Assisted Code Generation）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "外部仕様や振る舞いを維持したまま、コードの可読性や構造を改善する作業がCode Refactoringである。",
+      "choiceExplanations": {
+        "A": "外部仕様や振る舞いを維持したまま、コードの可読性や構造を改善する作業がCode Refactoringである。",
+        "B": "異なるプログラミング言語間でのコード移植・変換作業である。",
+        "C": "旧式フレームワークや非推奨APIで書かれたシステム全体を最新基盤へ刷新する作業である。",
+        "D": "自然言語の指示から新しい関数やロジックを作り出す生成作業である。"
+      }
+    },
+    {
+      "id": "q-d5-g03",
+      "difficulty": "beginner",
+      "question": "古いフレームワークや旧言語バージョンで書かれた既存コードを、テストによる動作保証を維持しながら、現行の標準仕様や最新アーキテクチャへと段階的に刷新する作業は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "アルゴリズム最適化（Algorithm Optimization）"
+        },
+        {
+          "id": "B",
+          "text": "レガシーコード近代化（Legacy Modernization）"
+        },
+        {
+          "id": "C",
+          "text": "コードリファクタリング（Code Refactoring）"
+        },
+        {
+          "id": "D",
+          "text": "コードトランスレーション（Code Translation）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "旧式環境や非推奨APIのコードをテストで保証しつつ、現代的な構文や最新スタックへ移行する作業がLegacy Modernizationである。",
+      "choiceExplanations": {
+        "A": "計算量やメモリ消費を改善して実行速度を引き上げる作業である。",
+        "B": "旧式環境や非推奨APIのコードをテストで保証しつつ、現代的な構文や最新スタックへ移行する作業がLegacy Modernizationである。",
+        "C": "単一モジュールや局所的なコードの可読性・構造改善を指す一般的な概念である。",
+        "D": "言語間のコード変換そのものを指し、レガシー刷新という包括的移行作業とは異なる。"
+      }
+    },
+    {
+      "id": "q-d5-g04",
+      "difficulty": "beginner",
+      "question": "Pythonで記述された既存の関数やクラスを、目的の言語の慣習や型システムに適合させながらTypeScriptやGoなどの別言語へ移植・変換する作業は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コードリファクタリング（Code Refactoring）"
+        },
+        {
+          "id": "B",
+          "text": "レガシーコード近代化（Legacy Modernization）"
+        },
+        {
+          "id": "C",
+          "text": "コードトランスレーション（Code Translation）"
+        },
+        {
+          "id": "D",
+          "text": "ボイラープレート削減（Boilerplate Reduction）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "ある言語で書かれたコードを別のプログラミング言語へ移植・翻訳する作業がCode Translationである。",
+      "choiceExplanations": {
+        "A": "同一言語内で外部の振る舞いを変えずに構造を改善する作業である。",
+        "B": "古いアーキテクチャ全体を最新の基盤や規約へ刷新する包括的な作業である。",
+        "C": "ある言語で書かれたコードを別のプログラミング言語へ移植・翻訳する作業がCode Translationである。",
+        "D": "定型的な繰り返しコードの記述量を減らす省力化の工夫である。"
+      }
+    },
+    {
+      "id": "q-d5-g05",
+      "difficulty": "beginner",
+      "question": "時間計算量や空間計算量（Big-O）を改善するために、二重ループの解消や適切なデータ構造の選択を行い、処理効率を引き上げる実装改善手法は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ボイラープレート削減（Boilerplate Reduction）"
+        },
+        {
+          "id": "B",
+          "text": "例外安全ハンドリング（Safe Exception Handling）"
+        },
+        {
+          "id": "C",
+          "text": "入力バリデーション（Input Validation）"
+        },
+        {
+          "id": "D",
+          "text": "アルゴリズム最適化（Algorithm Optimization）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。",
+      "choiceExplanations": {
+        "A": "定型コードの入力を自動化する作業であり、計算量の改善とは目的が異なる。",
+        "B": "エラー発生時にシステムを安全に維持・回復させる防御的実装である。",
+        "C": "受け取った引数や外部データが妥当かを検証する境界チェックである。",
+        "D": "計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。"
+      }
+    },
+    {
+      "id": "q-d5-g06",
+      "difficulty": "beginner",
+      "question": "データモデルの定義、CRUD操作、シリアライズ処理など、構文上記述が必要な反復的・定型的なコードの入力負担をCopilotで自動補完・短縮する効果は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ボイラープレート削減（Boilerplate Reduction）"
+        },
+        {
+          "id": "B",
+          "text": "アルゴリズム最適化（Algorithm Optimization）"
+        },
+        {
+          "id": "C",
+          "text": "レガシーコード近代化（Legacy Modernization）"
+        },
+        {
+          "id": "D",
+          "text": "プロジェクト設計文書化（Project Documentation）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "構文上不可欠だが定型的なコード記述を自動化し、本質的なロジックに集中させる効果がBoilerplate Reductionである。",
+      "choiceExplanations": {
+        "A": "構文上不可欠だが定型的なコード記述を自動化し、本質的なロジックに集中させる効果がBoilerplate Reductionである。",
+        "B": "計算量を改善して実行速度を高める手法であり、記述量の削減とは異なる。",
+        "C": "旧式システム全体を新技術スタックへ刷新する移行タスクである。",
+        "D": "システムの要件や設計を外部文書としてまとめるタスクである。"
+      }
+    },
+    {
+      "id": "q-d5-g07",
+      "difficulty": "beginner",
+      "question": "関数単体の独立した論理を検証する単体テストとは異なり、APIとデータベース、または複数モジュール間の連携動作を検証するテストコードを生成するタスクは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "単体テストコード生成（Unit Test Generation）"
+        },
+        {
+          "id": "B",
+          "text": "統合テストコード生成（Integration Test Generation）"
+        },
+        {
+          "id": "C",
+          "text": "プロパティベーステスト生成（Property-Based Test）"
+        },
+        {
+          "id": "D",
+          "text": "エンドツーエンドテスト生成（E2E Test Generation）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "複数コンポーネントや外部リソースとの連携が正常に機能するかを検証するテスト生成がIntegration Test Generationである。",
+      "choiceExplanations": {
+        "A": "単一の関数やメソッドを外部依存から隔離して検証するテスト生成である。",
+        "B": "複数コンポーネントや外部リソースとの連携が正常に機能するかを検証するテスト生成がIntegration Test Generationである。",
+        "C": "ランダムに大量の入力を与えて不変条件が保たれるかを検証するテスト生成である。",
+        "D": "ユーザー操作画面からバックエンドまでの全経路を検証する最上位テスト生成である。"
+      }
+    },
+    {
+      "id": "q-d5-g08",
+      "difficulty": "beginner",
+      "question": "静的解析やCodeQLで検出されたSQLインジェクションや安全でない依存関係などの脆弱性に対し、安全な実装パターンへ修正・治療するセキュリティタスクは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "秘密情報漏洩防止（Secret Leak Prevention）"
+        },
+        {
+          "id": "B",
+          "text": "静的解析ツール統合（Static Analysis Integration）"
+        },
+        {
+          "id": "C",
+          "text": "脆弱性修正・治療（Vulnerability Remediation）"
+        },
+        {
+          "id": "D",
+          "text": "パフォーマンス診断（Performance Profiling）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "セキュリティ上の欠陥やリスクに対し、`/fix` 等を活用して安全なコードへ修正・治療するタスクがVulnerability Remediationである。",
+      "choiceExplanations": {
+        "A": "APIキーやパスワードの平文コミットを防ぐ対策である。",
+        "B": "脆弱性やバグを検出するための解析ツールとCopilotを連携させる仕組みである。",
+        "C": "セキュリティ上の欠陥やリスクに対し、`/fix` 等を活用して安全なコードへ修正・治療するタスクがVulnerability Remediationである。",
+        "D": "実行遅延やメモリ消費の課題を特定する作業である。"
+      }
+    },
+    {
+      "id": "q-d5-g09",
+      "difficulty": "beginner",
+      "question": "CodeQLやリンターなどの決定的な静的解析ツールの警告メッセージをCopilotに入力として渡し、規格に準拠した的確な修正コードを提案させる連携プラクティスは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "脆弱性修正・治療（Vulnerability Remediation）"
+        },
+        {
+          "id": "B",
+          "text": "テストエクスプローラー連携（Test Explorer Integration）"
+        },
+        {
+          "id": "C",
+          "text": "例外安全ハンドリング（Safe Exception Handling）"
+        },
+        {
+          "id": "D",
+          "text": "静的解析とAIの連携（Static Analysis Integration）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。",
+      "choiceExplanations": {
+        "A": "脆弱性を取り除く修正行為そのものを指す概念である。",
+        "B": "テストの検出・実行GUIとエディタを接続する仕組みである。",
+        "C": "実行時エラーを安全に処理する防御的コーディング手法である。",
+        "D": "決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。"
+      }
+    },
+    {
+      "id": "q-d5-g10",
+      "difficulty": "beginner",
+      "question": "プロファイリング結果や負荷条件を提示し、メモリリーク、不要な同期I/O、非効率な反復処理などシステムの性能低下を引き起こしている原因箇所を特定する作業は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "性能ボトルネック特定（Performance Bottleneck）"
+        },
+        {
+          "id": "B",
+          "text": "脆弱性修正・治療（Vulnerability Remediation）"
+        },
+        {
+          "id": "C",
+          "text": "入力バリデーション（Input Validation）"
+        },
+        {
+          "id": "D",
+          "text": "秘密情報漏洩防止（Secret Leak Prevention）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "システムの応答遅延やリソース枯渇の原因となっているボトルネック箇所を特定する作業がPerformance Bottleneck Identificationである。",
+      "choiceExplanations": {
+        "A": "システムの応答遅延やリソース枯渇の原因となっているボトルネック箇所を特定する作業がPerformance Bottleneck Identificationである。",
+        "B": "セキュリティ上の欠陥を修正するタスクである。",
+        "C": "入力値が仕様通りかを検証する境界チェックである。",
+        "D": "認証資格情報が誤ってコードやプロンプトに混入するのを防ぐ対策である。"
+      }
+    },
+    {
+      "id": "q-d5-g11",
+      "difficulty": "beginner",
+      "question": "APIキーやDBパスワード、アクセストークンなどの機密資格情報をプロンプトやコードに直接記述せず、環境変数や安全な保管庫で管理して流出を防ぐセキュリティ原則は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "脆弱性修正・治療（Vulnerability Remediation）"
+        },
+        {
+          "id": "B",
+          "text": "秘密情報漏洩防止（Secret Leak Prevention）"
+        },
+        {
+          "id": "C",
+          "text": "入力バリデーション（Input Validation）"
+        },
+        {
+          "id": "D",
+          "text": "例外安全ハンドリング（Safe Exception Handling）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "認証トークンやパスワードのハードコードを禁止し、環境変数やSecret Scanningで漏洩を防ぐ原則がSecret Leak Preventionである。",
+      "choiceExplanations": {
+        "A": "発見されたコードの脆弱性を安全に書き換える修復タスクである。",
+        "B": "認証トークンやパスワードのハードコードを禁止し、環境変数やSecret Scanningで漏洩を防ぐ原則がSecret Leak Preventionである。",
+        "C": "関数の入力データが許容範囲内かを検証する防御実装である。",
+        "D": "実行時エラーでスタックトレース等の機密が露出しないよう制御する実装である。"
+      }
+    },
+    {
+      "id": "q-d5-g12",
+      "difficulty": "beginner",
+      "question": "Copilotが生成した単体テストや統合テストをVS Code内で自動検出し、GUI上で個別に実行・デバッグ・合否ステータスを確認できる公式エディタUI機能は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ソース管理ビュー（Source Control View）"
+        },
+        {
+          "id": "B",
+          "text": "実行とデバッグビュー（Run and Debug View）"
+        },
+        {
+          "id": "C",
+          "text": "テストエクスプローラー（VS Code Test Explorer）"
+        },
+        {
+          "id": "D",
+          "text": "出力パネルビュー（Output Panel View）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "エディタ内のテストを自動発見し、GUIから実行・デバッグ・結果確認を一元管理する機能がTest Explorerである。",
+      "choiceExplanations": {
+        "A": "Gitの変更差分確認やコミット操作を行うパネルである。",
+        "B": "ブレークポイントや変数を監視して汎用プログラムを実行デバッグするビューである。",
+        "C": "エディタ内のテストを自動発見し、GUIから実行・デバッグ・結果確認を一元管理する機能がTest Explorerである。",
+        "D": "各種ツールの標準出力やログメッセージをテキスト表示するパネルである。"
+      }
+    },
+    {
+      "id": "q-d5-g13",
+      "difficulty": "beginner",
+      "question": "単体テストのコード構造を『事前準備（Arrange）』『処理実行（Act）』『結果検証（Assert）』の3つの明確なフェーズに整理して記述する標準的なテスト設計パターンは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Given-When-Thenパターン（GWT Pattern）"
+        },
+        {
+          "id": "B",
+          "text": "Red-Green-Refactorサイクル（TDD Cycle）"
+        },
+        {
+          "id": "C",
+          "text": "Setup-Teardownフック（Test Lifecycle Hook）"
+        },
+        {
+          "id": "D",
+          "text": "AAAパターン（Arrange-Act-Assert Pattern）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "テストコードを準備（Arrange）、実行（Act）、検証（Assert）に明確に分割する標準設計がAAAパターンである。",
+      "choiceExplanations": {
+        "A": "振る舞い駆動開発（BDD）で用いられる前提・契機・結果の記述パターンである。",
+        "B": "テスト駆動開発におけるテスト失敗・実装成功・改善の開発サイクルである。",
+        "C": "テスト実行の前後にテストフィクスチャの構築と破棄を行うフレームワーク機能である。",
+        "D": "テストコードを準備（Arrange）、実行（Act）、検証（Assert）に明確に分割する標準設計がAAAパターンである。"
+      }
+    },
+    {
+      "id": "q-d5-g14",
+      "difficulty": "beginner",
+      "question": "単に動作するだけでなく、信頼性、保守性、セキュリティ、処理効率、可読性など、ソフトウェアの価値を多面的に評価する非機能・品質特性の総称は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コード品質特性（Code Quality Attributes）"
+        },
+        {
+          "id": "B",
+          "text": "ソフトウェア信頼性（Software Reliability）"
+        },
+        {
+          "id": "C",
+          "text": "コード保守性指標（Maintainability Index）"
+        },
+        {
+          "id": "D",
+          "text": "テストカバレッジ基準（Test Coverage Criteria）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "信頼性・保守性・安全性・性能・可読性などソフトウェアの非機能的価値を規定する指標群がCode Quality Attributesである。",
+      "choiceExplanations": {
+        "A": "信頼性・保守性・安全性・性能・可読性などソフトウェアの非機能的価値を規定する指標群がCode Quality Attributesである。",
+        "B": "品質特性のうち、障害なく正しく動作し続ける能力に特化した単一の属性である。",
+        "C": "循環的複雑度や行数などからコードの変更しやすさを数値化した指標である。",
+        "D": "コードの何パーセントがテストで実行されたかを示す網羅率指標である。"
+      }
+    },
+    {
+      "id": "q-d5-g15",
+      "difficulty": "beginner",
+      "question": "システムや関数が、想定される運用環境と指定された時間枠において、障害や異常停止を起こさず継続的に正しく動作し続ける能力を表す品質特性は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "保守性（Software Maintainability）"
+        },
+        {
+          "id": "B",
+          "text": "信頼性（Software Reliability）"
+        },
+        {
+          "id": "C",
+          "text": "移植性（Software Portability）"
+        },
+        {
+          "id": "D",
+          "text": "可用性（High Availability）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "規定の条件下で機能が障害なく継続的に正しく動作し続ける品質属性がReliability（信頼性）である。",
+      "choiceExplanations": {
+        "A": "不具合修正や機能拡張を容易に行える度合いを表す品質属性である。",
+        "B": "規定の条件下で機能が障害なく継続的に正しく動作し続ける品質属性がReliability（信頼性）である。",
+        "C": "異なる環境やプラットフォームへ容易に移行できる度合いを表す品質属性である。",
+        "D": "システムが必要な時にいつでも利用可能な状態に維持されている割合を表す指標である。"
+      }
+    },
+    {
+      "id": "q-d5-g16",
+      "difficulty": "beginner",
+      "question": "例外を包括的に握り潰したり内部スタックトレースを露出させたりせず、具体的な例外型を捕捉して安全に回復・フォールバックさせる実装パターンは？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "入力バリデーション（Input Validation）"
+        },
+        {
+          "id": "B",
+          "text": "アサーション検証（Test Assertion Logic）"
+        },
+        {
+          "id": "C",
+          "text": "例外安全ハンドリング（Safe Exception Handling）"
+        },
+        {
+          "id": "D",
+          "text": "フェイルセーフシャットダウン（Fail-Safe Mode）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "例外の握り潰しや機密スタックトレース漏洩を避け、具象例外を適切に捕捉して安全に対処する実装がSafe Exception Handlingである。",
+      "choiceExplanations": {
+        "A": "関数に入る前の境界で引数が正常値かを事前に検証する防御策である。",
+        "B": "テスト実行中に戻り値が期待値と合致しているかを確認する論理である。",
+        "C": "例外の握り潰しや機密スタックトレース漏洩を避け、具象例外を適切に捕捉して安全に対処する実装がSafe Exception Handlingである。",
+        "D": "致命的な障害発生時に安全にシステム全体を停止または隔離する制御である。"
+      }
+    },
+    {
+      "id": "q-d5-g17",
+      "difficulty": "beginner",
+      "question": "テストの期待値検証（Assertion）とは異なり、関数やAPIの境界で引数や外部データが前提条件（型・範囲・フォーマット）を満たしているかを検証する本番コードの実装は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "アサーション検証（Test Assertion Logic）"
+        },
+        {
+          "id": "B",
+          "text": "例外安全ハンドリング（Safe Exception Handling）"
+        },
+        {
+          "id": "C",
+          "text": "データサニタイゼーション（Data Sanitization）"
+        },
+        {
+          "id": "D",
+          "text": "入力バリデーション（Input Validation）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。",
+      "choiceExplanations": {
+        "A": "テストコード内で実行結果が期待値と一致しているかを比較する論理である。",
+        "B": "実行時に発生したエラーを適切に処理・回復する仕組みである。",
+        "C": "入力データから危険な文字列やタグを無害化・エスケープする処理である。",
+        "D": "関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。"
+      }
+    },
+    {
+      "id": "q-d5-g18",
+      "difficulty": "beginner",
+      "question": "コードコメントや関数のJSDocとは異なり、システム全体の目的、アーキテクチャ設計、前提要件、セットアップ手順などを開発者向けに体系化した設計文書群は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "プロジェクト設計文書（Project Documentation）"
+        },
+        {
+          "id": "B",
+          "text": "コードインライン注釈（Code Comments & JSDoc）"
+        },
+        {
+          "id": "C",
+          "text": "APIリファレンス仕様書（API Reference Spec）"
+        },
+        {
+          "id": "D",
+          "text": "コミットメッセージ履歴（Git Commit Log History）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "システムの目的、要件、アーキテクチャ、手順などを全体視点で包括的にまとめた文書がProject Documentationである。",
+      "choiceExplanations": {
+        "A": "システムの目的、要件、アーキテクチャ、手順などを全体視点で包括的にまとめた文書がProject Documentationである。",
+        "B": "個々の関数や変数の役割をソースコード内に局所的に説明する注釈である。",
+        "C": "個別のエンドポイントの入出力パラメータ一覧に特化した技術仕様書である。",
+        "D": "変更の履歴や理由を時系列で記録したバージョン管理のログである。"
+      }
+    },
+    {
+      "id": "q-d6-g01",
+      "difficulty": "beginner",
+      "question": "個々のリポジトリ管理者に設定を委ねず、OrganizationまたはEnterpriseの管理者が一括して定義し、傘下のリポジトリ管理者が解除・上書きできないよう強制適用するコンテンツ除外は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "リポジトリレベルのコンテンツ除外（Repository Content Exclusion）"
+        },
+        {
+          "id": "B",
+          "text": "組織レベルのコンテンツ除外（Organization Content Exclusion）"
+        },
+        {
+          "id": "C",
+          "text": "クライアント側のローカル除外（Client-side Path Exclusion）"
+        },
+        {
+          "id": "D",
+          "text": "ロールベースアクセス制御ポリシー（RBAC Security Policy）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "OrganizationまたはEnterpriseの管理者が傘下全体に一元定義し、個別リポジトリでの解除を許容しない除外設定がOrganization-Level Content Exclusionである。",
+      "choiceExplanations": {
+        "A": "各リポジトリの管理者が個別のリポジトリ設定画面から適用する除外設定である。",
+        "B": "OrganizationまたはEnterpriseの管理者が傘下全体に一元定義し、個別リポジトリでの解除を許容しない除外設定がOrganization-Level Content Exclusionである。",
+        "C": "開発者個人のエディタ設定やファイル単位で補完を無効化するローカル設定である。",
+        "D": "シート割り当てや管理者権限のスコープを役職に応じて制限するセキュリティ機構である。"
+      }
+    },
+    {
+      "id": "q-d6-g02",
+      "difficulty": "beginner",
+      "question": "Content Exclusionにおいて、複数階層にまたがるディレクトリ再帰（`**`）や特定ファイル拡張子（`*.key`）を正確に指定して除外対象を絞り込むための記述構文規則は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "GitIgnoreファイル構文（.gitignore Pattern Rules）"
+        },
+        {
+          "id": "B",
+          "text": "正規表現マッチングルール（Regex Pattern Matching）"
+        },
+        {
+          "id": "C",
+          "text": "コンテンツ除外パターン構文（Content Exclusion Syntax）"
+        },
+        {
+          "id": "D",
+          "text": "Globシェル展開構文（Glob Shell Expansion Syntax）"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "リポジトリURLやディレクトリ階層（`**`）、ワイルドカード（`*`）を組み合わせて除外対象パスを定義する規則がContent Exclusion Syntaxである。",
+      "choiceExplanations": {
+        "A": "Gitのバージョン管理対象からファイルを除外するための構文であり、Copilot除外とは指定規則に微妙な差異がある。",
+        "B": "高度な文字列パターン検索規則であり、CopilotのContent Exclusionで用いられるパス記述規則とは異なる。",
+        "C": "リポジトリURLやディレクトリ階層（`**`）、ワイルドカード（`*`）を組み合わせて除外対象パスを定義する規則がContent Exclusion Syntaxである。",
+        "D": "Unixシェルやコマンドラインでファイル名一覧を展開するための汎用ワイルドカード規則である。"
+      }
+    },
+    {
+      "id": "q-d6-g03",
+      "difficulty": "beginner",
+      "question": "GitHub Copilotが生成したコードについて、GitHub側は著作権や所有権を一切主張せず、生成物の権利および適法性の確認責任はすべて利用者に帰属するという知的財産の原則は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "知的財産侵害補償条項（IP Indemnification Clause）"
+        },
+        {
+          "id": "B",
+          "text": "公開コード再利用ライセンス（Public Code Permissive License）"
+        },
+        {
+          "id": "C",
+          "text": "データ保持ゼロポリシー（Zero Data Retention Policy）"
+        },
+        {
+          "id": "D",
+          "text": "コード出力の所有権原則（Output Ownership Principle）"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "GitHubは生成されたコードの所有権や著作権を主張せず、生成物の権利と利用責任は顧客に帰属するという原則がOutput Ownershipである。",
+      "choiceExplanations": {
+        "A": "著作権侵害訴訟を起こされた際にGitHub側が法的に防護・補償する制度的条項である。",
+        "B": "MITやApacheなどオープンソースで広く配布されるコードの利用許諾ライセンスである。",
+        "C": "生成処理完了後に送信されたプロンプトやコードをサーバー上に保持しないプライバシー原則である。",
+        "D": "GitHubは生成されたコードの所有権や著作権を主張せず、生成物の権利と利用責任は顧客に帰属するという原則がOutput Ownershipである。"
+      }
+    },
+    {
+      "id": "q-d6-g04",
+      "difficulty": "beginner",
+      "question": "管理者がGitHub上でContent Exclusionのパス設定を変更してから、各開発者のIDEクライアントへ設定が完全に同期・反映されるまでに最大30分程度要することがある時間的遅延は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "コンテンツ除外の反映遅延（Exclusion Propagation Delay）"
+        },
+        {
+          "id": "B",
+          "text": "トークンリクエスト遅延（Inference Request Latency）"
+        },
+        {
+          "id": "C",
+          "text": "キャッシュ無効化タイムアウト（Cache Invalidation Timeout）"
+        },
+        {
+          "id": "D",
+          "text": "レートリミットスロットリング（Rate Limiting Throttling）"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。",
+      "choiceExplanations": {
+        "A": "サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。",
+        "B": "プロンプトを送信してからモデルの応答トークンが返却されるまでの通信所要時間である。",
+        "C": "クライアントのローカルキャッシュの有効期限切れを待機する一般的なキャッシュ制御時間である。",
+        "D": "短時間に多数のリクエストが集中した際に一時的にアクセスを制限する通信制御である。"
+      }
+    },
+    {
+      "id": "q-d6-g05",
+      "difficulty": "beginner",
+      "question": "Enterprise管理者がGitHub Audit Log（監査ログ）の追跡やポリシー強制を通じて、Copilotの利用実態やセキュリティ設定が企業コンプライアンスに適合していることを証明・監査可能にする性質は？",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ロールベースアクセス制御（Role-Based Access Control）"
+        },
+        {
+          "id": "B",
+          "text": "コンプライアンスと監査可能性（Compliance and Auditability）"
+        },
+        {
+          "id": "C",
+          "text": "ポリシー継承メカニズム（Policy Inheritance Framework）"
+        },
+        {
+          "id": "D",
+          "text": "知的財産侵害補償条項（IP Indemnification Clause）"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。",
+      "choiceExplanations": {
+        "A": "役割に応じて権限やアクセス範囲を制限・統制するセキュリティモデルである。",
+        "B": "監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。",
+        "C": "EnterpriseからOrganization、リポジトリへと上位の設定が引き継がれる仕組みである。",
+        "D": "第三者からの知財クレームに対してベンダー側が防護・補償を提供する契約条項である。"
+      }
     }
   ]
 }

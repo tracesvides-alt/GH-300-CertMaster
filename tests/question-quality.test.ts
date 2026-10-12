@@ -8,6 +8,13 @@ import { runTutor } from '../lib/ai';
 const exam = questions.find(q => q.difficulty === 'advanced')!;
 afterEach(() => vi.useRealTimers());
 describe('quality gates', () => {
+  it('also rejects option-only clues and weak distractors in Foundation questions', () => {
+    const q = structuredClone(questions.find(q => q.difficulty === 'beginner')!);
+    q.choices.filter(c => !q.answer.includes(c.id)).forEach(c => q.choiceQuality![c.id].plausibility = 0);
+    const issues = questionIssues(q, { multipleAnswerRisk: false, answerWithoutReading: true,
+      difficultyConsistent: true, requirementCoverage: true, rationale: '正答だけ安全な文面だった' });
+    expect(issues.map(i => i.rule)).toEqual(expect.arrayContaining(['distractors', 'obvious-answer']));
+  });
   it('audits every Applied/Exam question and difficulty position independently', () => {
     expect(questions.flatMap(q => questionIssues(q))).toEqual([]);
     expect(distributionIssues(questions).filter(i => i.severity === 'failure')).toEqual([]);

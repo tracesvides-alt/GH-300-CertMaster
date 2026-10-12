@@ -1,0 +1,618 @@
+{
+  "description": "Phase 4 (D5): 用語集のD5用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、実在する開発タスク・品質特性・テスト技法・セキュリティ用語同士を対比させる。",
+  "questions": [
+    {
+      "id": "q-d5-g01",
+      "termId": "g-code-generation",
+      "objectiveId": "d5o1",
+      "question": "自然言語による仕様コメントや関数の型定義を入力として、Copilotが動作可能な関数本体や新しいコードブロックを自動生成する機能・プロセスは？",
+      "correct": {
+        "text": "コード自動生成（AI-Assisted Code Generation）",
+        "explanation": "仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。"
+      },
+      "distractors": [
+        {
+          "text": "コードリファクタリング（Code Refactoring）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "外部の振る舞いを変えずに内部構造を整理する作業であり、ゼロから新しい機能を生成するものではない。"
+        },
+        {
+          "text": "コードトランスレーション（Code Translation）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "既存の別言語コードを目的言語へと書き換える移植作業である。"
+        },
+        {
+          "text": "静的コード解析（Static Code Analysis）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "既存コードの規則違反や構文エラーを自動検査する仕組みである。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "responsible"
+      ]
+    },
+    {
+      "id": "q-d5-g02",
+      "termId": "g-code-refactoring",
+      "objectiveId": "d5o1",
+      "question": "プログラムの外部的な振る舞いや仕様を変更することなく、内部構造を整理して可読性・保守性・拡張性を向上させる作業をCopilotで支援するプラクティスは？",
+      "correct": {
+        "text": "コードリファクタリング（Code Refactoring）",
+        "explanation": "外部仕様や振る舞いを維持したまま、コードの可読性や構造を改善する作業がCode Refactoringである。"
+      },
+      "distractors": [
+        {
+          "text": "コードトランスレーション（Code Translation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "異なるプログラミング言語間でのコード移植・変換作業である。"
+        },
+        {
+          "text": "レガシーコード近代化（Legacy Modernization）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "旧式フレームワークや非推奨APIで書かれたシステム全体を最新基盤へ刷新する作業である。"
+        },
+        {
+          "text": "コード自動生成（AI-Assisted Code Generation）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "自然言語の指示から新しい関数やロジックを作り出す生成作業である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d5-g03",
+      "termId": "g-legacy-modernization",
+      "objectiveId": "d5o1",
+      "question": "古いフレームワークや旧言語バージョンで書かれた既存コードを、テストによる動作保証を維持しながら、現行の標準仕様や最新アーキテクチャへと段階的に刷新する作業は？",
+      "correct": {
+        "text": "レガシーコード近代化（Legacy Modernization）",
+        "explanation": "旧式環境や非推奨APIのコードをテストで保証しつつ、現代的な構文や最新スタックへ移行する作業がLegacy Modernizationである。"
+      },
+      "distractors": [
+        {
+          "text": "アルゴリズム最適化（Algorithm Optimization）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "計算量やメモリ消費を改善して実行速度を引き上げる作業である。"
+        },
+        {
+          "text": "コードリファクタリング（Code Refactoring）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "単一モジュールや局所的なコードの可読性・構造改善を指す一般的な概念である。"
+        },
+        {
+          "text": "コードトランスレーション（Code Translation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "言語間のコード変換そのものを指し、レガシー刷新という包括的移行作業とは異なる。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "tests"
+      ]
+    },
+    {
+      "id": "q-d5-g04",
+      "termId": "g-code-translation",
+      "objectiveId": "d5o1",
+      "question": "Pythonで記述された既存の関数やクラスを、目的の言語の慣習や型システムに適合させながらTypeScriptやGoなどの別言語へ移植・変換する作業は？",
+      "correct": {
+        "text": "コードトランスレーション（Code Translation）",
+        "explanation": "ある言語で書かれたコードを別のプログラミング言語へ移植・翻訳する作業がCode Translationである。"
+      },
+      "distractors": [
+        {
+          "text": "コードリファクタリング（Code Refactoring）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "同一言語内で外部の振る舞いを変えずに構造を改善する作業である。"
+        },
+        {
+          "text": "レガシーコード近代化（Legacy Modernization）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "古いアーキテクチャ全体を最新の基盤や規約へ刷新する包括的な作業である。"
+        },
+        {
+          "text": "ボイラープレート削減（Boilerplate Reduction）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "定型的な繰り返しコードの記述量を減らす省力化の工夫である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d5-g05",
+      "termId": "g-algorithm-optimization",
+      "objectiveId": "d5o1",
+      "question": "時間計算量や空間計算量（Big-O）を改善するために、二重ループの解消や適切なデータ構造の選択を行い、処理効率を引き上げる実装改善手法は？",
+      "correct": {
+        "text": "アルゴリズム最適化（Algorithm Optimization）",
+        "explanation": "計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。"
+      },
+      "distractors": [
+        {
+          "text": "ボイラープレート削減（Boilerplate Reduction）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "定型コードの入力を自動化する作業であり、計算量の改善とは目的が異なる。"
+        },
+        {
+          "text": "例外安全ハンドリング（Safe Exception Handling）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "エラー発生時にシステムを安全に維持・回復させる防御的実装である。"
+        },
+        {
+          "text": "入力バリデーション（Input Validation）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "受け取った引数や外部データが妥当かを検証する境界チェックである。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d5-g06",
+      "termId": "g-boilerplate-reduction",
+      "objectiveId": "d5o1",
+      "question": "データモデルの定義、CRUD操作、シリアライズ処理など、構文上記述が必要な反復的・定型的なコードの入力負担をCopilotで自動補完・短縮する効果は？",
+      "correct": {
+        "text": "ボイラープレート削減（Boilerplate Reduction）",
+        "explanation": "構文上不可欠だが定型的なコード記述を自動化し、本質的なロジックに集中させる効果がBoilerplate Reductionである。"
+      },
+      "distractors": [
+        {
+          "text": "アルゴリズム最適化（Algorithm Optimization）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "計算量を改善して実行速度を高める手法であり、記述量の削減とは異なる。"
+        },
+        {
+          "text": "レガシーコード近代化（Legacy Modernization）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "旧式システム全体を新技術スタックへ刷新する移行タスクである。"
+        },
+        {
+          "text": "プロジェクト設計文書化（Project Documentation）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "システムの要件や設計を外部文書としてまとめるタスクである。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "inline-usage"
+      ]
+    },
+    {
+      "id": "q-d5-g07",
+      "termId": "g-integration-test-generation",
+      "objectiveId": "d5o2",
+      "question": "関数単体の独立した論理を検証する単体テストとは異なり、APIとデータベース、または複数モジュール間の連携動作を検証するテストコードを生成するタスクは？",
+      "correct": {
+        "text": "統合テストコード生成（Integration Test Generation）",
+        "explanation": "複数コンポーネントや外部リソースとの連携が正常に機能するかを検証するテスト生成がIntegration Test Generationである。"
+      },
+      "distractors": [
+        {
+          "text": "単体テストコード生成（Unit Test Generation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "単一の関数やメソッドを外部依存から隔離して検証するテスト生成である。"
+        },
+        {
+          "text": "プロパティベーステスト生成（Property-Based Test）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "ランダムに大量の入力を与えて不変条件が保たれるかを検証するテスト生成である。"
+        },
+        {
+          "text": "エンドツーエンドテスト生成（E2E Test Generation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ユーザー操作画面からバックエンドまでの全経路を検証する最上位テスト生成である。"
+        }
+      ],
+      "sourceIds": [
+        "tests",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d5-g08",
+      "termId": "g-vulnerability-remediation",
+      "objectiveId": "d5o2",
+      "question": "静的解析やCodeQLで検出されたSQLインジェクションや安全でない依存関係などの脆弱性に対し、安全な実装パターンへ修正・治療するセキュリティタスクは？",
+      "correct": {
+        "text": "脆弱性修正・治療（Vulnerability Remediation）",
+        "explanation": "セキュリティ上の欠陥やリスクに対し、`/fix` 等を活用して安全なコードへ修正・治療するタスクがVulnerability Remediationである。"
+      },
+      "distractors": [
+        {
+          "text": "秘密情報漏洩防止（Secret Leak Prevention）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "APIキーやパスワードの平文コミットを防ぐ対策である。"
+        },
+        {
+          "text": "静的解析ツール統合（Static Analysis Integration）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "脆弱性やバグを検出するための解析ツールとCopilotを連携させる仕組みである。"
+        },
+        {
+          "text": "パフォーマンス診断（Performance Profiling）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "実行遅延やメモリ消費の課題を特定する作業である。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d5-g09",
+      "termId": "g-static-analysis-copilot",
+      "objectiveId": "d5o2",
+      "question": "CodeQLやリンターなどの決定的な静的解析ツールの警告メッセージをCopilotに入力として渡し、規格に準拠した的確な修正コードを提案させる連携プラクティスは？",
+      "correct": {
+        "text": "静的解析とAIの連携（Static Analysis Integration）",
+        "explanation": "決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。"
+      },
+      "distractors": [
+        {
+          "text": "脆弱性修正・治療（Vulnerability Remediation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "脆弱性を取り除く修正行為そのものを指す概念である。"
+        },
+        {
+          "text": "テストエクスプローラー連携（Test Explorer Integration）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "テストの検出・実行GUIとエディタを接続する仕組みである。"
+        },
+        {
+          "text": "例外安全ハンドリング（Safe Exception Handling）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "実行時エラーを安全に処理する防御的コーディング手法である。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "codeql"
+      ]
+    },
+    {
+      "id": "q-d5-g10",
+      "termId": "g-perf-bottlenecks",
+      "objectiveId": "d5o2",
+      "question": "プロファイリング結果や負荷条件を提示し、メモリリーク、不要な同期I/O、非効率な反復処理などシステムの性能低下を引き起こしている原因箇所を特定する作業は？",
+      "correct": {
+        "text": "Performance Profiling",
+        "explanation": "時間・負荷・資源の観測から遅延原因を特定する。"
+      },
+      "distractors": [
+        {
+          "text": "Security Scanning",
+          "explanation": "脆弱性の検出であり時間計測が主目的ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Input Validation",
+          "explanation": "入力の事前条件を検査する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Regression Testing",
+          "explanation": "既存動作が壊れていないか期待値を検証する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d5-g11",
+      "termId": "g-secret-leak-prevention",
+      "objectiveId": "d5o2",
+      "question": "APIキーやDBパスワード、アクセストークンなどの機密資格情報をプロンプトやコードに直接記述せず、環境変数や安全な保管庫で管理して流出を防ぐセキュリティ原則は？",
+      "correct": {
+        "text": "秘密情報漏洩防止（Secret Leak Prevention）",
+        "explanation": "認証トークンやパスワードのハードコードを禁止し、環境変数やSecret Scanningで漏洩を防ぐ原則がSecret Leak Preventionである。"
+      },
+      "distractors": [
+        {
+          "text": "脆弱性修正・治療（Vulnerability Remediation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "発見されたコードの脆弱性を安全に書き換える修復タスクである。"
+        },
+        {
+          "text": "入力バリデーション（Input Validation）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "関数の入力データが許容範囲内かを検証する防御実装である。"
+        },
+        {
+          "text": "例外安全ハンドリング（Safe Exception Handling）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "実行時エラーでスタックトレース等の機密が露出しないよう制御する実装である。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "secret-scanning"
+      ]
+    },
+    {
+      "id": "q-d5-g12",
+      "termId": "g-test-explorer",
+      "objectiveId": "d5o2",
+      "question": "Copilotが生成した単体テストや統合テストをVS Code内で自動検出し、GUI上で個別に実行・デバッグ・合否ステータスを確認できる公式エディタUI機能は？",
+      "correct": {
+        "text": "テストエクスプローラー（VS Code Test Explorer）",
+        "explanation": "エディタ内のテストを自動発見し、GUIから実行・デバッグ・結果確認を一元管理する機能がTest Explorerである。"
+      },
+      "distractors": [
+        {
+          "text": "ソース管理ビュー（Source Control View）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "Gitの変更差分確認やコミット操作を行うパネルである。"
+        },
+        {
+          "text": "実行とデバッグビュー（Run and Debug View）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ブレークポイントや変数を監視して汎用プログラムを実行デバッグするビューである。"
+        },
+        {
+          "text": "出力パネルビュー（Output Panel View）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "各種ツールの標準出力やログメッセージをテキスト表示するパネルである。"
+        }
+      ],
+      "sourceIds": [
+        "vscode-testing",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d5-g13",
+      "termId": "g-arrange-act-assert",
+      "objectiveId": "d5o2",
+      "question": "生成テストの入力とモックを用意し、対象関数を呼び、その戻り値を期待値と比較している。コードをこの三段階に整理するパターンは？",
+      "correct": {
+        "text": "Arrange–Act–Assert",
+        "explanation": "準備・対象操作・期待値確認というテスト内の構造。"
+      },
+      "distractors": [
+        {
+          "text": "Red–Green–Refactor",
+          "explanation": "失敗するテスト→実装→改善という開発反復。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Setup–Teardown",
+          "explanation": "テスト前後のライフサイクル処理。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Build–Run–Debug",
+          "explanation": "ビルドと実行・調査という実行作業。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "unit-test-aaa",
+        "tests",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d5-g14",
+      "termId": "g-code-quality-attributes",
+      "objectiveId": "d5o1",
+      "question": "単に動作するだけでなく、信頼性、保守性、セキュリティ、処理効率、可読性など、ソフトウェアの価値を多面的に評価する非機能・品質特性の総称は？",
+      "correct": {
+        "text": "Code Quality Attributes",
+        "explanation": "信頼性・保守性・安全性・性能・可読性などソフトウェアの非機能的価値を規定する指標群がCode Quality Attributesである。"
+      },
+      "distractors": [
+        {
+          "text": "Software Reliability",
+          "explanation": "品質特性のうち、障害なく正しく動作し続ける能力に特化した単一の属性である。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Maintainability Index",
+          "explanation": "循環的複雑度や行数などからコードの変更しやすさを数値化した指標である。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Test Coverage",
+          "explanation": "コードの何パーセントがテストで実行されたかを示す網羅率指標である。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "responsible"
+      ]
+    },
+    {
+      "id": "q-d5-g15",
+      "termId": "g-reliability",
+      "objectiveId": "d5o1",
+      "question": "システムや関数が、想定される運用環境と指定された時間枠において、障害や異常停止を起こさず継続的に正しく動作し続ける能力を表す品質特性は？",
+      "correct": {
+        "text": "信頼性（Software Reliability）",
+        "explanation": "規定の条件下で機能が障害なく継続的に正しく動作し続ける品質属性がReliability（信頼性）である。"
+      },
+      "distractors": [
+        {
+          "text": "保守性（Software Maintainability）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "不具合修正や機能拡張を容易に行える度合いを表す品質属性である。"
+        },
+        {
+          "text": "移植性（Software Portability）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "異なる環境やプラットフォームへ容易に移行できる度合いを表す品質属性である。"
+        },
+        {
+          "text": "可用性（High Availability）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "システムが必要な時にいつでも利用可能な状態に維持されている割合を表す指標である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "tests"
+      ]
+    },
+    {
+      "id": "q-d5-g16",
+      "termId": "g-safe-exception-handling",
+      "objectiveId": "d5o2",
+      "question": "例外を包括的に握り潰したり内部スタックトレースを露出させたりせず、具体的な例外型を捕捉して安全に回復・フォールバックさせる実装パターンは？",
+      "correct": {
+        "text": "例外安全ハンドリング（Safe Exception Handling）",
+        "explanation": "例外の握り潰しや機密スタックトレース漏洩を避け、具象例外を適切に捕捉して安全に対処する実装がSafe Exception Handlingである。"
+      },
+      "distractors": [
+        {
+          "text": "入力バリデーション（Input Validation）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "関数に入る前の境界で引数が正常値かを事前に検証する防御策である。"
+        },
+        {
+          "text": "アサーション検証（Test Assertion Logic）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "テスト実行中に戻り値が期待値と合致しているかを確認する論理である。"
+        },
+        {
+          "text": "フェイルセーフシャットダウン（Fail-Safe Mode）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "致命的な障害発生時に安全にシステム全体を停止または隔離する制御である。"
+        }
+      ],
+      "sourceIds": [
+        "exception-best-practices",
+        "exception-sensitive"
+      ]
+    },
+    {
+      "id": "q-d5-g17",
+      "termId": "g-input-validation",
+      "objectiveId": "d5o2",
+      "question": "テストの期待値検証（Assertion）とは異なり、関数やAPIの境界で引数や外部データが前提条件（型・範囲・フォーマット）を満たしているかを検証する本番コードの実装は？",
+      "correct": {
+        "text": "入力バリデーション（Input Validation）",
+        "explanation": "関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。"
+      },
+      "distractors": [
+        {
+          "text": "アサーション検証（Test Assertion Logic）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "テストコード内で実行結果が期待値と一致しているかを比較する論理である。"
+        },
+        {
+          "text": "例外安全ハンドリング（Safe Exception Handling）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "実行時に発生したエラーを適切に処理・回復する仕組みである。"
+        },
+        {
+          "text": "データサニタイゼーション（Data Sanitization）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "入力データから危険な文字列やタグを無害化・エスケープする処理である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "responsible"
+      ]
+    },
+    {
+      "id": "q-d5-g18",
+      "termId": "g-project-documentation",
+      "objectiveId": "d5o1",
+      "question": "コードコメントや関数のJSDocとは異なり、システム全体の目的、アーキテクチャ設計、前提要件、セットアップ手順などを開発者向けに体系化した設計文書群は？",
+      "correct": {
+        "text": "プロジェクト設計文書（Project Documentation）",
+        "explanation": "システムの目的、要件、アーキテクチャ、手順などを全体視点で包括的にまとめた文書がProject Documentationである。"
+      },
+      "distractors": [
+        {
+          "text": "コードインライン注釈（Code Comments & JSDoc）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "個々の関数や変数の役割をソースコード内に局所的に説明する注釈である。"
+        },
+        {
+          "text": "APIリファレンス仕様書（API Reference Spec）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "個別のエンドポイントの入出力パラメータ一覧に特化した技術仕様書である。"
+        },
+        {
+          "text": "コミットメッセージ履歴（Git Commit Log History）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "変更の履歴や理由を時系列で記録したバージョン管理のログである。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "prompt"
+      ]
+    }
+  ]
+}

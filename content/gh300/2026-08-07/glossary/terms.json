@@ -43,7 +43,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q01"
+      "q01",
+      "q-d1-g01"
     ],
     "sourceIds": [
       "responsible",
@@ -51,7 +52,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g01"
   },
   {
     "id": "g-hallucination",
@@ -100,7 +102,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q01"
+      "q01",
+      "q-d1-f02"
     ],
     "sourceIds": [
       "responsible",
@@ -108,7 +111,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-f02"
   },
   {
     "id": "g-responsible-ai",
@@ -157,7 +161,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q02"
+      "q02",
+      "q-d1-g02"
     ],
     "sourceIds": [
       "responsible",
@@ -165,7 +170,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g02"
   },
   {
     "id": "g-ai-bias",
@@ -207,13 +213,16 @@
       "lesson-d1-principles"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-f04"
+    ],
     "sourceIds": [
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-f04"
   },
   {
     "id": "g-ip-copyright",
@@ -261,14 +270,17 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a05"
+    ],
     "sourceIds": [
       "privacy",
       "exclusion"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-a05"
   },
   {
     "id": "g-transparency",
@@ -314,14 +326,17 @@
       "lesson-d3-prompt-pipeline"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-g03"
+    ],
     "sourceIds": [
       "responsible",
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g03"
   },
   {
     "id": "g-code-accountability",
@@ -370,7 +385,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q02"
+      "q02",
+      "q-d1-f01"
     ],
     "sourceIds": [
       "responsible",
@@ -378,7 +394,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-f01"
   },
   {
     "id": "g-nondeterminism",
@@ -422,13 +439,16 @@
       "lesson-d3-lifecycle-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-g04"
+    ],
     "sourceIds": [
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g04"
   },
   {
     "id": "g-verification-validation",
@@ -486,7 +506,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q02"
   },
   {
     "id": "g-automation-bias",
@@ -528,14 +549,16 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q02"
+      "q02",
+      "q-d1-g05"
     ],
     "sourceIds": [
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g05"
   },
   {
     "id": "g-critical-evaluation",
@@ -576,13 +599,16 @@
       "lesson-d1-security-review"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-g06"
+    ],
     "sourceIds": [
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-g06"
   },
   {
     "id": "g-code-correctness",
@@ -627,13 +653,16 @@
       "lesson-d5-legacy-modernization"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q06"
+    ],
     "sourceIds": [
       "tests"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q06"
   },
   {
     "id": "g-security-vulnerability-scan",
@@ -680,14 +709,17 @@
       "lesson-d5-security-remediation"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-f05"
+    ],
     "sourceIds": [
       "responsible",
       "privacy"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-f05"
   },
   {
     "id": "g-peer-review-ai",
@@ -732,14 +764,17 @@
       "lesson-d5-generation-refactoring"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a06"
+    ],
     "sourceIds": [
       "responsible",
       "code-review"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d1-a06"
   },
   {
     "id": "g-inline-suggestions",
@@ -795,7 +830,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q03"
   },
   {
     "id": "g-ghost-text",
@@ -835,13 +871,16 @@
       "lesson-d2-chat-essentials"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g01"
+    ],
     "sourceIds": [
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g01"
   },
   {
     "id": "g-completions-panel",
@@ -884,14 +923,17 @@
       "lesson-d2-chat-essentials"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g02"
+    ],
     "sourceIds": [
       "responsible",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g02"
   },
   {
     "id": "g-copilot-chat",
@@ -955,7 +997,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q04"
   },
   {
     "id": "g-inline-chat",
@@ -998,13 +1041,16 @@
       "lesson-d2-inline-suggestions"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f01"
+    ],
     "sourceIds": [
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f01"
   },
   {
     "id": "g-chat-participants",
@@ -1053,7 +1099,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q05"
+      "q05",
+      "q-d2-g03"
     ],
     "sourceIds": [
       "chat",
@@ -1061,7 +1108,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g03"
   },
   {
     "id": "g-slash-commands",
@@ -1110,7 +1158,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q05"
+      "q05",
+      "q-d2-f03"
     ],
     "sourceIds": [
       "chat",
@@ -1118,7 +1167,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f03"
   },
   {
     "id": "g-chat-variables",
@@ -1165,13 +1215,16 @@
       "lesson-d4-zero-few-shot"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f02"
+    ],
     "sourceIds": [
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f02"
   },
   {
     "id": "g-status-menu",
@@ -1216,14 +1269,17 @@
       "lesson-d6-public-code-matching"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g04"
+    ],
     "sourceIds": [
       "exclusion",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g04"
   },
   {
     "id": "g-copilot-cli",
@@ -1267,7 +1323,9 @@
       "lesson-d6-troubleshooting-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f11"
+    ],
     "sourceIds": [
       "cli",
       "guide",
@@ -1276,7 +1334,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-f11"
   },
   {
     "id": "g-gh-copilot-explain",
@@ -1316,13 +1375,17 @@
       "lesson-d2-cli"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g05"
+    ],
     "sourceIds": [
-      "cli"
+      "cli",
+      "cli-extension-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-g05"
   },
   {
     "id": "g-gh-copilot-suggest",
@@ -1364,13 +1427,17 @@
       "lesson-d2-cli"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g06"
+    ],
     "sourceIds": [
-      "cli"
+      "cli",
+      "cli-extension-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-g06"
   },
   {
     "id": "g-cli-shell-aliases",
@@ -1412,13 +1479,17 @@
       "lesson-d2-cli"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g07"
+    ],
     "sourceIds": [
-      "cli"
+      "cli",
+      "cli-extension-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-g07"
   },
   {
     "id": "g-cli-execution-confirm",
@@ -1459,7 +1530,9 @@
       "lesson-d2-cli"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g08"
+    ],
     "sourceIds": [
       "cli",
       "responsible",
@@ -1467,7 +1540,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g08"
   },
   {
     "id": "g-cli-context-limits",
@@ -1506,7 +1580,9 @@
       "lesson-d2-cli"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g09"
+    ],
     "sourceIds": [
       "cli",
       "exclusion",
@@ -1515,7 +1591,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-g09"
   },
   {
     "id": "g-agent-mode",
@@ -1569,7 +1646,9 @@
       "cmp-agent-vs-chat",
       "cmp-mcp-vs-agent-mode"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f04"
+    ],
     "sourceIds": [
       "agent-mode",
       "chat",
@@ -1577,7 +1656,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f04"
   },
   {
     "id": "g-copilot-edits",
@@ -1625,14 +1705,17 @@
     "comparisonIds": [
       "cmp-agent-vs-edits"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g10"
+    ],
     "sourceIds": [
       "agent-mode",
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g10"
   },
   {
     "id": "g-mcp",
@@ -1683,7 +1766,9 @@
       "cmp-mcp-vs-extensions",
       "cmp-mcp-vs-agent-mode"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f06"
+    ],
     "sourceIds": [
       "mcp",
       "agent-mode",
@@ -1692,7 +1777,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f06"
   },
   {
     "id": "g-mcp-server",
@@ -1736,13 +1822,16 @@
       "lesson-d2-pr-code-review"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g11"
+    ],
     "sourceIds": [
       "mcp"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g11"
   },
   {
     "id": "g-mcp-client",
@@ -1784,13 +1873,16 @@
       "lesson-d2-pr-code-review"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-a08"
+    ],
     "sourceIds": [
       "mcp"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-a08"
   },
   {
     "id": "g-mcp-tools",
@@ -1833,13 +1925,16 @@
       "lesson-d2-pr-code-review"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f07"
+    ],
     "sourceIds": [
       "mcp"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f07"
   },
   {
     "id": "g-agent-sessions",
@@ -1883,14 +1978,17 @@
     "comparisonIds": [
       "cmp-sessions-vs-subagents"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g12"
+    ],
     "sourceIds": [
       "agent-mode",
       "cli-sessions"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g12"
   },
   {
     "id": "g-sub-agents",
@@ -1932,14 +2030,17 @@
     "comparisonIds": [
       "cmp-sessions-vs-subagents"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g13"
+    ],
     "sourceIds": [
       "agent-mode",
       "ide-subagents"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g13"
   },
   {
     "id": "g-copilot-code-review",
@@ -1989,7 +2090,9 @@
     "comparisonIds": [
       "cmp-review-vs-summary"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g14"
+    ],
     "sourceIds": [
       "code-review",
       "policies",
@@ -1997,7 +2100,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g14"
   },
   {
     "id": "g-pr-summaries",
@@ -2044,14 +2148,17 @@
     "comparisonIds": [
       "cmp-review-vs-summary"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-f04"
+    ],
     "sourceIds": [
       "code-review",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-f04"
   },
   {
     "id": "g-custom-instructions",
@@ -2101,7 +2208,9 @@
     "comparisonIds": [
       "cmp-instructions-vs-prompts"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f08"
+    ],
     "sourceIds": [
       "instructions",
       "prompt",
@@ -2109,7 +2218,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f08"
   },
   {
     "id": "g-scoped-instructions",
@@ -2154,13 +2264,16 @@
       "lesson-d2-pr-code-review"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g15"
+    ],
     "sourceIds": [
       "instructions"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g15"
   },
   {
     "id": "g-prompt-files",
@@ -2208,14 +2321,17 @@
     "comparisonIds": [
       "cmp-instructions-vs-prompts"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f09"
+    ],
     "sourceIds": [
       "prompt-files",
       "instructions"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f09"
   },
   {
     "id": "g-spaces",
@@ -2261,7 +2377,9 @@
     "comparisonIds": [
       "cmp-spaces-vs-chat"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-f10"
+    ],
     "sourceIds": [
       "spaces",
       "guide",
@@ -2269,7 +2387,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-f10"
   },
   {
     "id": "g-spark",
@@ -2309,14 +2428,17 @@
       "lesson-d2-agent-edits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g16"
+    ],
     "sourceIds": [
       "spark",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g16"
   },
   {
     "id": "g-copilot-extensions",
@@ -2361,7 +2483,9 @@
     "comparisonIds": [
       "cmp-mcp-vs-extensions"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g17"
+    ],
     "sourceIds": [
       "chat",
       "guide",
@@ -2369,7 +2493,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d2-g17"
   },
   {
     "id": "g-org-policies",
@@ -2419,7 +2544,8 @@
       "cmp-org-vs-enterprise-policies"
     ],
     "questionIds": [
-      "q11"
+      "q11",
+      "q-d2-g18"
     ],
     "sourceIds": [
       "policies",
@@ -2427,7 +2553,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g18"
   },
   {
     "id": "g-enterprise-policies",
@@ -2473,13 +2600,16 @@
     "comparisonIds": [
       "cmp-org-vs-enterprise-policies"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g19"
+    ],
     "sourceIds": [
       "policies"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g19"
   },
   {
     "id": "g-seat-management",
@@ -2520,14 +2650,17 @@
       "lesson-d2-org-governance"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-a05"
+    ],
     "sourceIds": [
       "policies",
       "rest-api"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-a05"
   },
   {
     "id": "g-subscription-plans",
@@ -2574,7 +2707,9 @@
       "lesson-d6-ownership-privacy"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g20"
+    ],
     "sourceIds": [
       "policies",
       "privacy",
@@ -2584,7 +2719,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g20"
   },
   {
     "id": "g-audit-logs",
@@ -2625,14 +2761,17 @@
       "lesson-d2-org-governance"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-f04"
+    ],
     "sourceIds": [
       "audit-log",
       "policies"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-f04"
   },
   {
     "id": "g-usage-metrics-api",
@@ -2673,14 +2812,17 @@
       "lesson-d2-org-governance"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-f05"
+    ],
     "sourceIds": [
       "rest-api",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-f05"
   },
   {
     "id": "g-code-review-policies",
@@ -2721,14 +2863,17 @@
       "lesson-d2-org-governance"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g21"
+    ],
     "sourceIds": [
       "code-review",
       "policies"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g21"
   },
   {
     "id": "g-policy-inheritance",
@@ -2773,14 +2918,17 @@
       "lesson-d6-ownership-privacy"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-a06"
+    ],
     "sourceIds": [
       "policies",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-a06"
   },
   {
     "id": "g-data-flow",
@@ -2825,7 +2973,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-g01"
     ],
     "sourceIds": [
       "architecture",
@@ -2836,7 +2985,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d3-g01"
   },
   {
     "id": "g-context-gathering",
@@ -2884,7 +3034,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q05"
     ],
     "sourceIds": [
       "architecture",
@@ -2892,7 +3043,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q05"
   },
   {
     "id": "g-prompt-construction",
@@ -2936,7 +3088,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-g02"
     ],
     "sourceIds": [
       "architecture",
@@ -2944,7 +3097,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g02"
   },
   {
     "id": "g-copilot-proxy",
@@ -2992,7 +3146,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-g03"
     ],
     "sourceIds": [
       "architecture",
@@ -3003,7 +3158,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d3-g03"
   },
   {
     "id": "g-telemetry-data",
@@ -3049,14 +3205,17 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g04"
+    ],
     "sourceIds": [
       "privacy",
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g04"
   },
   {
     "id": "g-code-retention-policy",
@@ -3103,7 +3262,9 @@
       "lesson-d3-prompt-pipeline"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g05"
+    ],
     "sourceIds": [
       "privacy",
       "guide",
@@ -3112,7 +3273,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d3-g05"
   },
   {
     "id": "g-tokenization",
@@ -3154,13 +3316,16 @@
       "lesson-d3-retention-privacy"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-f05"
+    ],
     "sourceIds": [
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-f05"
   },
   {
     "id": "g-post-processing",
@@ -3208,7 +3373,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-g06"
     ],
     "sourceIds": [
       "architecture",
@@ -3216,7 +3382,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g06"
   },
   {
     "id": "g-transit-encryption",
@@ -3261,14 +3428,17 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g07"
+    ],
     "sourceIds": [
       "privacy",
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g07"
   },
   {
     "id": "g-suggestion-lifecycle",
@@ -3310,14 +3480,17 @@
       "lesson-d3-lifecycle-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g08"
+    ],
     "sourceIds": [
       "architecture",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g08"
   },
   {
     "id": "g-context-window",
@@ -3365,14 +3538,17 @@
       "lesson-d4-zero-few-shot"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g09"
+    ],
     "sourceIds": [
       "architecture",
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g09"
   },
   {
     "id": "g-latency-tradeoff",
@@ -3413,13 +3589,16 @@
       "lesson-d3-lifecycle-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g10"
+    ],
     "sourceIds": [
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g10"
   },
   {
     "id": "g-temperature-determinism",
@@ -3430,7 +3609,7 @@
       "サンプリング温度"
     ],
     "shortDefinition": "LLMが出力を生成する際のランダム性（創造性）を制御する数値パラメータ。",
-    "detailedDefinition": "温度（Temperature）が0に近いほど、モデルは確率が最も高い決定論的なトークンを予測し、再現性の高い安定したコードを出力する。温度を上げると多様で創造的な提案が出るが、ハルシネーションの確率も上昇する。Copilotではタスクに応じて適切な温度が事前設定されている。",
+    "detailedDefinition": "Temperatureは候補トークンの確率分布を調整し、出力の多様性へ影響する。低い値はばらつきを抑える傾向があるが、完全な再現性、正確性、安全性を保証しない。Copilotの全機能で利用者がこの値を直接設定できるとは限らない。",
     "category": "アーキテクチャ",
     "importance": "important",
     "domainIds": [
@@ -3459,13 +3638,16 @@
       "lesson-d3-lifecycle-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g11"
+    ],
     "sourceIds": [
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g11"
   },
   {
     "id": "g-knowledge-cutoff",
@@ -3510,14 +3692,17 @@
       "lesson-d4-zero-few-shot"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g12"
+    ],
     "sourceIds": [
       "architecture",
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g12"
   },
   {
     "id": "g-context-scope-limits",
@@ -3527,8 +3712,8 @@
       "スコープ制限",
       "参照範囲の限界"
     ],
-    "shortDefinition": "Copilotが参照できる情報が、現在ローカルマシンで開いているファイルやワークスペースに限定され、外部リポジトリや非公開クラウドリソースを自動参照できない制約。",
-    "detailedDefinition": "特にIDEインライン補完や基本チャットでは、ローカルのワークスペース外にある別リポジトリや社内Wiki、プライベートなCIログなどはスコープ外となる。これらにアクセスするには、Copilot Spaces、MCPサーバー、あるいはCopilot Extensionsなどの専用機構が必要となる。",
+    "shortDefinition": "Copilotが参照できる資料の範囲は利用する機能、接続先、明示した資料と権限に依存する。",
+    "detailedDefinition": "インライン補完の周辺コード、Chatの添付資料やリポジトリ索引、SpacesやMCP経由の外部文脈は異なる。すべてのIDE機能をローカル限定とも、全社資料を自動参照とも断定しない。",
     "category": "アーキテクチャ",
     "importance": "essential",
     "domainIds": [
@@ -3558,14 +3743,17 @@
       "lesson-d3-lifecycle-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g13"
+    ],
     "sourceIds": [
       "architecture",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d3-g13"
   },
   {
     "id": "g-prompt-engineering",
@@ -3615,7 +3803,8 @@
     "comparisonIds": [],
     "questionIds": [
       "q07",
-      "q08"
+      "q08",
+      "q-d4-g01"
     ],
     "sourceIds": [
       "prompt",
@@ -3623,7 +3812,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g01"
   },
   {
     "id": "g-zero-shot",
@@ -3668,14 +3858,17 @@
     "comparisonIds": [
       "cmp-zero-vs-few-shot"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g02"
+    ],
     "sourceIds": [
       "prompt",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g02"
   },
   {
     "id": "g-few-shot",
@@ -3723,7 +3916,8 @@
       "cmp-zero-vs-few-shot"
     ],
     "questionIds": [
-      "q07"
+      "q07",
+      "q-d4-f02"
     ],
     "sourceIds": [
       "prompt",
@@ -3731,7 +3925,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-f02"
   },
   {
     "id": "g-system-prompt",
@@ -3773,14 +3968,17 @@
       "lesson-d4-zero-few-shot"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g03"
+    ],
     "sourceIds": [
       "prompt",
       "instructions"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g03"
   },
   {
     "id": "g-prompt-anatomy",
@@ -3825,7 +4023,8 @@
     "comparisonIds": [],
     "questionIds": [
       "q07",
-      "q08"
+      "q08",
+      "q-d4-f01"
     ],
     "sourceIds": [
       "prompt",
@@ -3833,7 +4032,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-f01"
   },
   {
     "id": "g-role-prompting",
@@ -3874,13 +4074,16 @@
       "lesson-d4-crafting"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g04"
+    ],
     "sourceIds": [
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g04"
   },
   {
     "id": "g-step-by-step",
@@ -3923,13 +4126,16 @@
       "lesson-d4-crafting"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-f04"
+    ],
     "sourceIds": [
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-f04"
   },
   {
     "id": "g-context-priming",
@@ -3970,7 +4176,9 @@
       "lesson-d4-zero-few-shot"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-f02"
+    ],
     "sourceIds": [
       "prompt",
       "architecture",
@@ -3978,7 +4186,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-f02"
   },
   {
     "id": "g-iterative-refinement",
@@ -4020,7 +4229,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q08"
+      "q08",
+      "q-d4-g05"
     ],
     "sourceIds": [
       "prompt",
@@ -4028,7 +4238,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g05"
   },
   {
     "id": "g-thread-reset",
@@ -4082,7 +4293,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q08"
   },
   {
     "id": "g-task-decomposition",
@@ -4126,7 +4338,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q08"
+      "q08",
+      "q-d4-g06"
     ],
     "sourceIds": [
       "prompt",
@@ -4134,7 +4347,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g06"
   },
   {
     "id": "g-context-pruning",
@@ -4176,14 +4390,17 @@
       "lesson-d4-refinement"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g07"
+    ],
     "sourceIds": [
       "prompt",
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g07"
   },
   {
     "id": "g-negative-prompting",
@@ -4225,13 +4442,16 @@
       "lesson-d4-refinement"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g08"
+    ],
     "sourceIds": [
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g08"
   },
   {
     "id": "g-output-specification",
@@ -4272,13 +4492,16 @@
       "lesson-d4-decomposition-pruning"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-g09"
+    ],
     "sourceIds": [
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d4-g09"
   },
   {
     "id": "g-code-generation",
@@ -4320,14 +4543,17 @@
       "lesson-d5-legacy-modernization"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g01"
+    ],
     "sourceIds": [
       "guide",
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g01"
   },
   {
     "id": "g-code-refactoring",
@@ -4369,14 +4595,17 @@
       "lesson-d5-legacy-modernization"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g02"
+    ],
     "sourceIds": [
       "chat",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g02"
   },
   {
     "id": "g-doc-generation",
@@ -4419,14 +4648,17 @@
       "lesson-d5-generation-refactoring"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-f01"
+    ],
     "sourceIds": [
       "chat",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-f01"
   },
   {
     "id": "g-legacy-modernization",
@@ -4468,14 +4700,17 @@
       "lesson-d5-generation-refactoring"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g03"
+    ],
     "sourceIds": [
       "chat",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g03"
   },
   {
     "id": "g-code-translation",
@@ -4516,13 +4751,16 @@
       "lesson-d5-generation-refactoring"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g04"
+    ],
     "sourceIds": [
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g04"
   },
   {
     "id": "g-code-explanation",
@@ -4565,14 +4803,17 @@
       "lesson-d5-generation-refactoring"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-a14"
+    ],
     "sourceIds": [
       "chat",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-a14"
   },
   {
     "id": "g-algorithm-optimization",
@@ -4613,13 +4854,16 @@
       "lesson-d5-legacy-modernization"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g05"
+    ],
     "sourceIds": [
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g05"
   },
   {
     "id": "g-boilerplate-reduction",
@@ -4660,13 +4904,16 @@
       "lesson-d5-legacy-modernization"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g06"
+    ],
     "sourceIds": [
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g06"
   },
   {
     "id": "g-unit-test-generation",
@@ -4725,7 +4972,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q09"
   },
   {
     "id": "g-integration-test-generation",
@@ -4768,13 +5016,16 @@
     "comparisonIds": [
       "cmp-unit-vs-integration-tests"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g07"
+    ],
     "sourceIds": [
       "tests"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g07"
   },
   {
     "id": "g-edge-case-discovery",
@@ -4817,7 +5068,8 @@
     "comparisonIds": [],
     "questionIds": [
       "q09",
-      "q10"
+      "q10",
+      "q-d5-f02"
     ],
     "sourceIds": [
       "tests",
@@ -4825,7 +5077,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-f02"
   },
   {
     "id": "g-test-assertions-mocking",
@@ -4870,14 +5123,16 @@
       "cmp-input-validation-vs-assertion"
     ],
     "questionIds": [
-      "q09"
+      "q09",
+      "q-d5-f05"
     ],
     "sourceIds": [
       "tests"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-f05"
   },
   {
     "id": "g-vulnerability-remediation",
@@ -4920,7 +5175,9 @@
       "lesson-d5-testing"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g08"
+    ],
     "sourceIds": [
       "chat",
       "tests",
@@ -4928,7 +5185,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g08"
   },
   {
     "id": "g-static-analysis-copilot",
@@ -4970,14 +5228,17 @@
       "lesson-d5-testing"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g09"
+    ],
     "sourceIds": [
       "tests",
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g09"
   },
   {
     "id": "g-perf-bottlenecks",
@@ -5018,13 +5279,16 @@
       "lesson-d5-testing"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g10"
+    ],
     "sourceIds": [
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g10"
   },
   {
     "id": "g-secret-leak-prevention",
@@ -5071,14 +5335,17 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g11"
+    ],
     "sourceIds": [
       "privacy",
       "exclusion"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g11"
   },
   {
     "id": "g-content-exclusion",
@@ -5134,7 +5401,8 @@
     ],
     "questionIds": [
       "q11",
-      "q12"
+      "q12",
+      "q-d6-f02"
     ],
     "sourceIds": [
       "exclusion",
@@ -5143,7 +5411,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d6-f02"
   },
   {
     "id": "g-repo-content-exclusion",
@@ -5185,7 +5454,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q11"
+      "q11",
+      "q-sc01-1"
     ],
     "sourceIds": [
       "exclusion",
@@ -5193,7 +5463,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-sc01-1"
   },
   {
     "id": "g-org-content-exclusion",
@@ -5236,7 +5507,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q11"
+      "q11",
+      "q-d6-g01"
     ],
     "sourceIds": [
       "exclusion",
@@ -5244,7 +5516,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-g01"
   },
   {
     "id": "g-exclusion-syntax",
@@ -5287,13 +5560,16 @@
       "lesson-d6-ownership-privacy"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-g02"
+    ],
     "sourceIds": [
       "exclusion"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-g02"
   },
   {
     "id": "g-output-ownership",
@@ -5335,14 +5611,17 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-g03"
+    ],
     "sourceIds": [
       "privacy",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-g03"
   },
   {
     "id": "g-enterprise-data-privacy",
@@ -5386,7 +5665,9 @@
       "lesson-d6-content-exclusion-setup"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-f03"
+    ],
     "sourceIds": [
       "privacy",
       "guide",
@@ -5395,7 +5676,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q-d6-f03"
   },
   {
     "id": "g-public-code-matching",
@@ -5442,7 +5724,9 @@
       "cmp-exclusion-vs-publicmatch",
       "cmp-safety-filter-types"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-f01"
+    ],
     "sourceIds": [
       "policies",
       "privacy",
@@ -5451,7 +5735,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-f01"
   },
   {
     "id": "g-public-code-log",
@@ -5493,14 +5778,17 @@
       "lesson-d6-troubleshooting-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-a04"
+    ],
     "sourceIds": [
       "policies",
       "privacy"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-a04"
   },
   {
     "id": "g-exclusion-propagation",
@@ -5544,7 +5832,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q12"
+      "q12",
+      "q-d6-g04"
     ],
     "sourceIds": [
       "exclusion",
@@ -5552,7 +5841,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-g04"
   },
   {
     "id": "g-client-exclusion-check",
@@ -5602,7 +5892,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q12"
   },
   {
     "id": "g-exclusion-limitations",
@@ -5658,7 +5949,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "needs-review"
+    "status": "needs-review",
+    "basicQuestionId": "q11"
   },
   {
     "id": "g-compliance-auditability",
@@ -5700,7 +5992,9 @@
       "lesson-d6-troubleshooting-limits"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-g05"
+    ],
     "sourceIds": [
       "privacy",
       "policies",
@@ -5708,7 +6002,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d6-g05"
   },
   {
     "id": "g-fill-in-the-middle",
@@ -5760,7 +6055,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-f01"
   },
   {
     "id": "g-test-explorer",
@@ -5796,14 +6092,17 @@
     "comparisonIds": [
       "cmp-test-generation-vs-explorer"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g12"
+    ],
     "sourceIds": [
       "vscode-testing",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g12"
   },
   {
     "id": "g-arrange-act-assert",
@@ -5840,7 +6139,9 @@
       "lesson-d5-testing"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g13"
+    ],
     "sourceIds": [
       "tests",
       "vscode-testing",
@@ -5849,7 +6150,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g13"
   },
   {
     "id": "g-code-quality-attributes",
@@ -5887,14 +6189,17 @@
     "comparisonIds": [
       "cmp-quality-attributes"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g14"
+    ],
     "sourceIds": [
       "guide",
       "responsible"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g14"
   },
   {
     "id": "g-reliability",
@@ -5934,7 +6239,9 @@
     "comparisonIds": [
       "cmp-quality-attributes"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g15"
+    ],
     "sourceIds": [
       "guide",
       "responsible",
@@ -5942,7 +6249,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g15"
   },
   {
     "id": "g-safe-exception-handling",
@@ -5977,7 +6285,9 @@
       "lesson-d5-security-remediation"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d5-g16"
+    ],
     "sourceIds": [
       "guide",
       "responsible",
@@ -5987,7 +6297,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g16"
   },
   {
     "id": "g-input-validation",
@@ -6027,7 +6338,8 @@
     ],
     "questionIds": [
       "q09",
-      "q-d4-a05"
+      "q-d4-a05",
+      "q-d5-g17"
     ],
     "sourceIds": [
       "tests",
@@ -6035,7 +6347,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g17"
   },
   {
     "id": "g-project-documentation",
@@ -6070,7 +6383,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d5-a11"
+      "q-d5-a11",
+      "q-d5-g18"
     ],
     "sourceIds": [
       "guide",
@@ -6078,7 +6392,8 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d5-g18"
   },
   {
     "id": "g-safety-filtering",
@@ -6118,14 +6433,17 @@
     "comparisonIds": [
       "cmp-safety-filter-types"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-g14"
+    ],
     "sourceIds": [
       "model-hosting",
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d3-g14"
   },
   {
     "id": "g-legacy-knowledge-bases",
@@ -6162,7 +6480,9 @@
       "lesson-d2-chat-essentials"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-g22"
+    ],
     "sourceIds": [
       "knowledge-bases-sunset",
       "spaces",
@@ -6170,6 +6490,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
-    "status": "verified"
+    "status": "verified",
+    "basicQuestionId": "q-d2-g22"
   }
 ]

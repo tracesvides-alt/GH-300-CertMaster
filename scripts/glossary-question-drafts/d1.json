@@ -1,0 +1,206 @@
+{
+  "description": "Phase 3 (D1): 用語集の用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、括弧内の直接的ヒントを排し、実在する専門用語同士を比較させる。",
+  "questions": [
+    {
+      "id": "q-d1-g01",
+      "termId": "g-generative-ai",
+      "objectiveId": "d1o1",
+      "question": "Copilotは、プロンプトや周辺コードの文脈から、これまで存在しなかった提案を作り出します。この種のAI技術の総称は？",
+      "correct": {
+        "text": "生成AI（Generative AI）",
+        "explanation": "プロンプトや文脈を入力に、コードや文章など新しい内容を生成する技術が生成AIである。"
+      },
+      "distractors": [
+        {
+          "text": "静的コード解析（Static Code Analysis）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "既存コードを規則で検査する技術で、新しい提案を作り出す仕組みではない。"
+        },
+        {
+          "text": "ルールベース補完（Rule-based Code Completion）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "固定の候補を列挙するだけで、文脈から新しい内容を自律生成しない。"
+        },
+        {
+          "text": "セマンティックコード検索（Semantic Code Search）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "既存のリポジトリから類似コードを検索する技術であり、新しいコードを生成するものではない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d1-g02",
+      "termId": "g-responsible-ai",
+      "objectiveId": "d1o1",
+      "question": "AIの提案を採用する前に、正確性・セキュリティ・ライセンス・偏りを評価し、最終責任は開発者が負う。この原則と実践の名称は？",
+      "correct": {
+        "text": "Responsible AI（責任あるAIの利用）",
+        "explanation": "AI出力の評価と検証を行い、最終責任を人が負う原則と実践がResponsible AIである。"
+      },
+      "distractors": [
+        {
+          "text": "Prompt Engineering（プロンプトエンジニアリング）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "よい出力を引き出す指示の工夫であり、出力の評価や責任の所在を扱う原則ではない。"
+        },
+        {
+          "text": "Content Exclusion（コンテンツ除外）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "機密ファイルを参照させない設定で、提案の採用判断や責任の原則とは別の機能である。"
+        },
+        {
+          "text": "Code Referencing（コード参照通知）",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "ライセンス確認の一助にはなるが、評価と最終責任という原則全体を指す語ではない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d1-g03",
+      "termId": "g-transparency",
+      "objectiveId": "d1o1",
+      "question": "Copilot Chatが回答でどのファイルや文脈を参照したかを確認し、提案の妥当性を判断できるようにする性質は？",
+      "correct": {
+        "text": "透明性と説明可能性（Transparency and Explainability）",
+        "explanation": "どの文脈を使い、なぜその出力になったかを理解・説明できる性質が透明性と説明可能性である。"
+      },
+      "distractors": [
+        {
+          "text": "再現性と決定性（Reproducibility and Determinism）",
+          "type": "wrong-mechanism",
+          "plausibility": 3,
+          "explanation": "同一入力に対して同じ出力を再現する性質であり、参照した文脈を明示できることとは異なる。"
+        },
+        {
+          "text": "堅牢性と安全性（Reliability and Safety）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "過酷な入力や障害時にも安全に動作する品質であり、出力の根拠を説明できることとは別である。"
+        },
+        {
+          "text": "機密性と完全性（Confidentiality and Integrity）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "情報セキュリティの保護特性であり、AI出力の判断根拠を把握する性質ではない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "architecture"
+      ]
+    },
+    {
+      "id": "q-d1-g04",
+      "termId": "g-nondeterminism",
+      "objectiveId": "d1o1",
+      "question": "同じプロンプトと同じコードを渡しても、Copilotの提案が毎回少しずつ異なることがあります。この性質を表す用語は？",
+      "correct": {
+        "text": "LLMの非決定性（Nondeterminism）",
+        "explanation": "LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。"
+      },
+      "distractors": [
+        {
+          "text": "ハルシネーション（Hallucination）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "内容が事実に反する生成を行う現象で、同じ入力で出力が変わる性質そのものではない。"
+        },
+        {
+          "text": "コンテキストドリフト（Context Drift）",
+          "type": "partial-match",
+          "plausibility": 2,
+          "explanation": "会話が長くなり前提がずれる現象で、同一入力での出力のばらつきを指す語ではない。"
+        },
+        {
+          "text": "モデルの過学習（Overfitting）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "訓練データに過剰適合する現象であり、利用時の確率的出力のばらつきとは異なる。"
+        }
+      ],
+      "sourceIds": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "q-d1-g05",
+      "termId": "g-automation-bias",
+      "objectiveId": "d1o2",
+      "question": "Copilotの提案が整って見えるため、内容を確かめずにTabキーで受け入れ続けてしまう。この心理的な傾向を何と呼びますか？",
+      "correct": {
+        "text": "自動化バイアス（Automation Bias）",
+        "explanation": "AIの出力が洗練されているために批判的な確認を怠る傾向が、自動化バイアス（過度の依存）である。"
+      },
+      "distractors": [
+        {
+          "text": "確証バイアス（Confirmation Bias）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "自分の思い込みに沿う情報ばかりを信用する傾向であり、AI出力を盲信する傾向とは異なる。"
+        },
+        {
+          "text": "正常性バイアス（Normalcy Bias）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "異常事態を正常の範囲内と過小評価する心理であり、AI提案への過信を指す語ではない。"
+        },
+        {
+          "text": "アンカー効果（Anchoring Effect）",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "最初に提示された数値や情報に判断が引きずられる心理効果であり、AI出力を精査しない傾向とは別である。"
+        }
+      ],
+      "sourceIds": [
+        "responsible"
+      ]
+    },
+    {
+      "id": "q-d1-g06",
+      "termId": "g-critical-evaluation",
+      "objectiveId": "d1o2",
+      "question": "Copilotの最初の候補をそのまま使わず、要件への適合・副作用・エラー処理を自分で点検しながら比べる姿勢は？",
+      "correct": {
+        "text": "提案の批判的評価（Critical Evaluation）",
+        "explanation": "要件への適合や副作用を自分で分析し、必要なら別の解を求める姿勢が提案の批判的評価である。"
+      },
+      "distractors": [
+        {
+          "text": "静的コード解析（Static Code Analysis）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "構文や静的ルールをツールで機械的にチェックする手法であり、要件適合や副作用を人間が精査する姿勢とは異なる。"
+        },
+        {
+          "text": "テスト駆動開発（Test-Driven Development）",
+          "type": "wrong-use-case",
+          "plausibility": 2,
+          "explanation": "実装前に自動テストを作成する開発手法であり、提示されたAIコードの妥当性を比較評価する姿勢そのものではない。"
+        },
+        {
+          "text": "ピアコードレビュー（Peer Review）",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "チームの他の開発者にコードを検査してもらう協同作業であり、開発者自身がAI提案の採否を判断する批判的評価とは異なる。"
+        }
+      ],
+      "sourceIds": [
+        "responsible"
+      ]
+    }
+  ]
+}

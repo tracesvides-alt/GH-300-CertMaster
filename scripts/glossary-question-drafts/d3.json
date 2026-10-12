@@ -1,0 +1,486 @@
+{
+  "description": "Phase 4 (D3): 用語集のD3用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、実在するCopilotアーキテクチャ・通信・セキュリティ・LLM特性用語同士を対比させる。",
+  "questions": [
+    {
+      "id": "q-d3-g01",
+      "termId": "g-data-flow",
+      "objectiveId": "d3o1",
+      "question": "開発者のIDEから送信されたプロンプトやコンテキストが、GitHubのプロキシ基盤を経由してLLMに到達し、生成結果が後処理を経てエディタへ返却されるまでの一連のエンドツーエンドの通信・処理経路を表す概念は？",
+      "correct": {
+        "text": "Copilot データフロー（Copilot Data Flow）",
+        "explanation": "IDEからプロキシ、LLM、後処理を経てエディタに戻る一連の通信・データ処理の流れをCopilot Data Flowと呼ぶ。"
+      },
+      "distractors": [
+        {
+          "text": "プロンプト構築パイプライン（Prompt Construction Pipeline）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "IDE側で周辺コードやタブ情報を収集してプロンプトを組み立てる前処理の仕組みである。"
+        },
+        {
+          "text": "コードサジェスチョンライフサイクル（Code Suggestion Lifecycle）",
+          "type": "wrong-mechanism",
+          "plausibility": 3,
+          "explanation": "タイピング休止からゴーストテキスト提示・確定・破棄に至るクライアント側の状態遷移である。"
+        },
+        {
+          "text": "コンテキストウィンドウ（Context Window）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "LLMが一度に処理できる最大トークン容量の境界枠であり、エンドツーエンドの通信経路ではない。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g02",
+      "termId": "g-prompt-construction",
+      "objectiveId": "d3o1",
+      "question": "エディタ上でカーソル前後のコード、開いているタブ、隣接ファイルの関連スニペットなどを収集・優先度付けし、LLMに送信可能な形式へと合成・整形する内部処理の仕組みは？",
+      "correct": {
+        "text": "プロンプト構築パイプライン（Prompt Construction Pipeline）",
+        "explanation": "周辺コードや開いているファイルを収集し、トークン枠に合わせて合成・整形する内部機構がPrompt Construction Pipelineである。"
+      },
+      "distractors": [
+        {
+          "text": "Copilot プロキシ（Copilot Proxy & Gateway）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "IDEとLLMの間で認証やコンテンツ除外、通信制御を担うサーバー側の中継基盤である。"
+        },
+        {
+          "text": "ポストプロセッシング（Post-processing & Content Filtering）",
+          "type": "wrong-mechanism",
+          "plausibility": 3,
+          "explanation": "LLMから返却された生成テキストに対して公開コード一致や安全性検査を行う後処理段階である。"
+        },
+        {
+          "text": "リポジトリインデックス（Repository Indexing）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "プロジェクト全体のセマンティック検索やシンボル解析用に作成されるインデックス構造である。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g03",
+      "termId": "g-copilot-proxy",
+      "objectiveId": "d3o1",
+      "question": "Copilotの通信で、IDEとモデル提供側の間にあるGitHub側の中継基盤を指す用語は？",
+      "correct": {
+        "text": "Copilot Proxy / Gateway",
+        "explanation": "サービス間の通信を中継するGitHub側の基盤。"
+      },
+      "distractors": [
+        {
+          "text": "MCP Server",
+          "explanation": "外部のツールやデータを提供する接続先。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Language Server",
+          "explanation": "エディターへ言語解析機能を提供する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Repository Index",
+          "explanation": "関連コード検索用の索引であり通信中継ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "model-hosting",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g04",
+      "termId": "g-telemetry-data",
+      "objectiveId": "d3o1",
+      "question": "Copilotの利用において、ソースコードそのもの（Code Snippets）とは厳格に区別され、提案の受入・却下イベント、レイテンシ、エラーログなどサービスの監視・改善目的で収集される利用統計データは？",
+      "correct": {
+        "text": "Engagement / Telemetry",
+        "explanation": "顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。"
+      },
+      "distractors": [
+        {
+          "text": "Prompt Content",
+          "explanation": "補完やチャット提案を生成するためにエディタから一時送信されるコードそのものである。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Audit Events",
+          "explanation": "Enterprise管理者がポリシー変更やシート割り当て履歴などを追跡するためのセキュリティ管理ログである。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Training Dataset",
+          "explanation": "基盤LLMの言語モデル自体を事前学習・調整するために用いられる大規模コーパスである。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "privacy",
+        "architecture"
+      ]
+    },
+    {
+      "id": "q-d3-g05",
+      "termId": "g-code-retention-policy",
+      "objectiveId": "d3o1",
+      "question": "Business/Enterpriseの「モデル学習に使わない」と「入力・出力をどれだけ保持するか」を確認している。後者を調べる概念は？",
+      "correct": {
+        "text": "Data Retention Policy",
+        "explanation": "保持期間・条件はモデルや機能別に確認する。全機能の即時破棄とは断定しない。"
+      },
+      "distractors": [
+        {
+          "text": "Model Training Policy",
+          "explanation": "学習利用可否は保持条件と異なる判断。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Content Exclusion Policy",
+          "explanation": "指定ソースの参照対象を制御する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Public Code Matching Policy",
+          "explanation": "生成物と公開コードの一致を制御する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "model-hosting",
+        "privacy",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g06",
+      "termId": "g-post-processing",
+      "objectiveId": "d3o1",
+      "question": "LLMが生成した出力結果がエディタに表示される直前に実行され、公開コードとの一致検知（Public Code Matching）や有害コンテンツの検出・遮断を行う処理ステージは？",
+      "correct": {
+        "text": "ポストプロセッシング（Post-processing）",
+        "explanation": "LLMが出力した直後に介在し、公開コード一致検査や安全フィルタリングを適用して最終出力を決定する段階がPost-processingである。"
+      },
+      "distractors": [
+        {
+          "text": "トークン化および前処理（Tokenization）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "モデルに入力する前のテキストをトークンID列へ分割・変換する入力段階である。"
+        },
+        {
+          "text": "温度制御サンプリング（Temperature Sampling）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "LLMが次のトークンを確率分布から選出してテキストを生成する推論段階そのものである。"
+        },
+        {
+          "text": "プロンプト拡張（Prompt Augmentation）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "ユーザーの入力に関連ファイルやシステム指示を合成してプロンプトを充実させる入力前処理である。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "responsible"
+      ]
+    },
+    {
+      "id": "q-d3-g07",
+      "termId": "g-transit-encryption",
+      "objectiveId": "d3o1",
+      "question": "コードがIDEからサービスへ送信される際、通信中の盗聴・改ざんを防ぐ保護を分類したい。該当するものは？",
+      "correct": {
+        "text": "Encryption in Transit",
+        "explanation": "転送中の通信をTLS等で保護する。"
+      },
+      "distractors": [
+        {
+          "text": "Encryption at Rest",
+          "explanation": "保存されたデータの保護であり転送中の保護とは別。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Secret Scanning",
+          "explanation": "資格情報の混入を検出する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Content Exclusion",
+          "explanation": "参照対象の範囲を決める。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "network",
+        "architecture"
+      ]
+    },
+    {
+      "id": "q-d3-g08",
+      "termId": "g-suggestion-lifecycle",
+      "objectiveId": "d3o2",
+      "question": "開発者のタイピング休止（デバウンス）によるトリガーから、周辺文脈の送信、ゴーストテキストの提示、そしてTabキーによる採択や追加入力による破棄・再計算に至る一連の状態遷移を表す概念は？",
+      "correct": {
+        "text": "コードサジェスチョンライフサイクル（Code Suggestion Lifecycle）",
+        "explanation": "打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。"
+      },
+      "distractors": [
+        {
+          "text": "コンテキストウィンドウライフサイクル（Context Window Lifecycle）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "会話セッションの長期化に伴い古いトークンが枠外へ順次追い出される履歴の変遷である。"
+        },
+        {
+          "text": "リクエストレートリミット（Request Rate Limiting）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "一定時間内のAPI呼び出し回数を制限し、サーバーやモデルの過負荷を防ぐスロットリング制御である。"
+        },
+        {
+          "text": "モデル推論ストリーミング（Model Inference Streaming）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "生成されたトークンが逐次リアルタイムにエディタへ順次配信される通信・描画方式である。"
+        }
+      ],
+      "sourceIds": [
+        "guide",
+        "inline-usage"
+      ]
+    },
+    {
+      "id": "q-d3-g09",
+      "termId": "g-context-window",
+      "objectiveId": "d3o2",
+      "question": "LLMが1回のプロンプトと応答で同時に保持・処理できる情報量（トークン数）の物理的な上限枠であり、超過時には優先度の低い文脈が切り捨てられる境界を表す用語は？",
+      "correct": {
+        "text": "コンテキストウィンドウ（Context Window）",
+        "explanation": "モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。"
+      },
+      "distractors": [
+        {
+          "text": "ナレッジカットオフ（Knowledge Cutoff）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "モデルが事前学習を完了した日時の境界であり、それ以降の最新出来事を知らない制限である。"
+        },
+        {
+          "text": "推論レイテンシ（Inference Latency）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "リクエストを送信してから最初のトークンまたは提案が返却されるまでの所要時間である。"
+        },
+        {
+          "text": "サンプリング温度（Sampling Temperature）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "次のトークンを選択する際の確率分布の平坦度合いを調整するハイパーパラメータである。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d3-g10",
+      "termId": "g-latency-tradeoff",
+      "objectiveId": "d3o2",
+      "question": "タイピングの快適さを保つインライン補完では超低遅延（レスポンス速度）が最優先される一方、チャットやエージェントでは推論の正確性や深い文脈理解が重視される、AI機能設計上の設計選択は？",
+      "correct": {
+        "text": "Latency vs Quality",
+        "explanation": "応答時間と推論品質の設計上の両立を扱う。"
+      },
+      "distractors": [
+        {
+          "text": "Determinism vs Diversity",
+          "explanation": "出力の再現性とばらつきの比較。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Local vs Remote",
+          "explanation": "推論やデータ参照の場所の比較。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Input vs Output Budget",
+          "explanation": "処理可能な入出力量の割当の比較。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g11",
+      "termId": "g-temperature-determinism",
+      "objectiveId": "d3o2",
+      "question": "LLMの候補トークンの確率分布を変え、出力のばらつきへ影響する設定は？低い値でも正確性や完全な再現性は保証されない。",
+      "correct": {
+        "text": "Temperature",
+        "explanation": "温度は候補選択の分布へ影響する。低くても無誤りや完全再現を保証しない。"
+      },
+      "distractors": [
+        {
+          "text": "Max Output Tokens",
+          "explanation": "出力長を制限する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Frequency Penalty",
+          "explanation": "繰り返された語の選択へ影響するが温度そのものではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Context Window",
+          "explanation": "処理可能な情報量の上限を表す。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "prompt"
+      ]
+    },
+    {
+      "id": "q-d3-g12",
+      "termId": "g-knowledge-cutoff",
+      "objectiveId": "d3o2",
+      "question": "基盤LLMが事前学習を完了した特定の日付境界であり、それ以降にリリースされた最新のフレームワークの仕様変更や新機能について、外部コンテキストを与えない限りモデルが知らないという制約は？",
+      "correct": {
+        "text": "ナレッジカットオフ（Knowledge Cutoff）",
+        "explanation": "モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。"
+      },
+      "distractors": [
+        {
+          "text": "コンテキストウィンドウ上限（Context Window Limit）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "会話セッションが長くなりすぎて過去の指示やコードがトークン枠から溢れる現象である。"
+        },
+        {
+          "text": "ハルシネーション（Hallucination）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "モデルが事実に基づかない架空の仕様や関数をあたかも実在するかのように出力する現象である。"
+        },
+        {
+          "text": "モデルドリフト（Model Drift）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "実運用のデータ分布が学習時と変化することで、AIの予測精度が時間経過とともに劣化する現象である。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g13",
+      "termId": "g-context-scope-limits",
+      "objectiveId": "d3o2",
+      "question": "Copilotが利用できる文脈は製品面、添付資料、接続ツールと権限により異なる。この「何を参照できるか」という制約は？",
+      "correct": {
+        "text": "Context Scope Limitations",
+        "explanation": "参照元へのアクセス範囲を表す。常にローカルだけとは限らない。"
+      },
+      "distractors": [
+        {
+          "text": "Context Window Limit",
+          "explanation": "同時に処理できる量であり参照元の権限ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Knowledge Cutoff",
+          "explanation": "学習済み情報の時点の制約。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Data Retention Policy",
+          "explanation": "収集後の保持条件の制約。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "workspace-context",
+        "spaces",
+        "mcp",
+        "repository-indexing",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d3-g14",
+      "termId": "g-safety-filtering",
+      "objectiveId": "d3o1",
+      "question": "Public Code Matching（公開コード一致）やContent Exclusion（参照除外）とは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードは？",
+      "correct": {
+        "text": "有害コンテンツフィルタリング（Harmful Output Filtering）",
+        "explanation": "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。"
+      },
+      "distractors": [
+        {
+          "text": "パブリックコード一致フィルター（Public Code Matching Filter）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "GitHub上の公開コードと150文字以上一致する提案を検知・抑止する知的財産保護フィルターである。"
+        },
+        {
+          "text": "コンテンツ除外ゲートウェイ（Content Exclusion Gateway）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "機密ファイルや除外対象パスのコードがプロンプトとして送信されるのを未然に遮断する機能である。"
+        },
+        {
+          "text": "シークレットスキャニング（Secret Scanning）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "コードやコミット内にハードコードされたAPIキーや認証トークンを検知・警告する機能である。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "architecture"
+      ]
+    }
+  ]
+}

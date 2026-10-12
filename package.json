@@ -17,7 +17,11 @@
     "choice:audit": "node scripts/audit-choice-quality.mjs",
     "difficulty:audit": "node scripts/audit-question-difficulty.mjs",
     "difficulty:check": "node scripts/audit-question-difficulty.mjs --check",
-    "practice:coverage": "node scripts/audit-official-practice-coverage.mjs"
+    "practice:coverage": "node scripts/audit-official-practice-coverage.mjs",
+    "glossary:coverage": "node scripts/audit-glossary-coverage.mjs",
+    "glossary:coverage:strict": "node scripts/audit-glossary-coverage.mjs --strict",
+    "glossary:sync": "node scripts/sync-glossary-basic-questions.mjs",
+    "foundation:audit": "node scripts/audit-foundation-glossary.mjs"
   },
   "dependencies": {
     "dexie": "^4.0.0",

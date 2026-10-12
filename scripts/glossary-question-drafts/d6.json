@@ -1,0 +1,175 @@
+{
+  "description": "Phase 4 (D6): 用語集のD6用語を直接問うFoundation問題の下書き。選択肢単独での推測を排除するため、実在する組織管理・ガバナンス・除外構文・知財法務用語同士を対比させる。",
+  "questions": [
+    {
+      "id": "q-d6-g01",
+      "termId": "g-org-content-exclusion",
+      "objectiveId": "d6o1",
+      "question": "個々のリポジトリ管理者に設定を委ねず、OrganizationまたはEnterpriseの管理者が一括して定義し、傘下のリポジトリ管理者が解除・上書きできないよう強制適用するコンテンツ除外は？",
+      "correct": {
+        "text": "Organization Content Exclusion",
+        "explanation": "複数リポジトリへの組織単位の除外設定。"
+      },
+      "distractors": [
+        {
+          "text": "Repository Content Exclusion",
+          "explanation": "対象を一つのリポジトリに限定する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Personal Copilot Settings",
+          "explanation": "個人の利用設定であり組織の除外設定ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Repository Instructions",
+          "explanation": "生成指示であり除外ポリシーを強制しない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "policies"
+      ]
+    },
+    {
+      "id": "q-d6-g02",
+      "termId": "g-exclusion-syntax",
+      "objectiveId": "d6o1",
+      "question": "対応するContent Exclusion設定で、secretsの下の任意の階層にあるファイルを対象にする。再帰的なパス指定の例は？",
+      "correct": {
+        "text": "secrets/**",
+        "explanation": "**は下位の複数階層を含む指定に使う。"
+      },
+      "distractors": [
+        {
+          "text": "secrets/*",
+          "explanation": "*だけでは任意の下位階層を包括しない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "secrets/*.key",
+          "explanation": "直下の特定拡張子に限定する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "secrets/key.txt",
+          "explanation": "単一ファイルを指定する。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d6-g03",
+      "termId": "g-output-ownership",
+      "objectiveId": "d6o1",
+      "question": "生成コードについてGitHubは所有権を主張しないが、他者の権利を侵害しないことが自動保証されるわけではない。この確認で扱う論点は？",
+      "correct": {
+        "text": "Output Ownership",
+        "explanation": "生成物についての所有権・権利関係を扱う。第三者の権利や利用条件は別途確認する。"
+      },
+      "distractors": [
+        {
+          "text": "IP Indemnification",
+          "explanation": "契約上の補償条件であり所有権そのものを決める概念ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Public Code Matching",
+          "explanation": "公開コードとの類似性の確認であり権利を自動付与しない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Data Retention",
+          "explanation": "保持期間・処理条件であり生成物の所有権ではない。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "policies"
+      ]
+    },
+    {
+      "id": "q-d6-g04",
+      "termId": "g-exclusion-propagation",
+      "objectiveId": "d6o2",
+      "question": "管理者がGitHub上でContent Exclusionのパス設定を変更してから、各開発者のIDEクライアントへ設定が完全に同期・反映されるまでに最大30分程度要することがある時間的遅延は？",
+      "correct": {
+        "text": "コンテンツ除外の反映遅延（Exclusion Propagation Delay）",
+        "explanation": "サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。"
+      },
+      "distractors": [
+        {
+          "text": "トークンリクエスト遅延（Inference Request Latency）",
+          "type": "wrong-mechanism",
+          "plausibility": 2,
+          "explanation": "プロンプトを送信してからモデルの応答トークンが返却されるまでの通信所要時間である。"
+        },
+        {
+          "text": "キャッシュ無効化タイムアウト（Cache Invalidation Timeout）",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "クライアントのローカルキャッシュの有効期限切れを待機する一般的なキャッシュ制御時間である。"
+        },
+        {
+          "text": "レートリミットスロットリング（Rate Limiting Throttling）",
+          "type": "wrong-scope",
+          "plausibility": 2,
+          "explanation": "短時間に多数のリクエストが集中した際に一時的にアクセスを制限する通信制御である。"
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "guide"
+      ]
+    },
+    {
+      "id": "q-d6-g05",
+      "termId": "g-compliance-auditability",
+      "objectiveId": "d6o2",
+      "question": "Enterprise管理者がGitHub Audit Log（監査ログ）の追跡やポリシー強制を通じて、Copilotの利用実態やセキュリティ設定が企業コンプライアンスに適合していることを証明・監査可能にする性質は？",
+      "correct": {
+        "text": "Compliance / Auditability",
+        "explanation": "監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。"
+      },
+      "distractors": [
+        {
+          "text": "Access Control",
+          "explanation": "役割に応じて権限やアクセス範囲を制限・統制するセキュリティモデルである。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "Policy Inheritance",
+          "explanation": "EnterpriseからOrganization、リポジトリへと上位の設定が引き継がれる仕組みである。",
+          "type": "common-confusion",
+          "plausibility": 3
+        },
+        {
+          "text": "IP Indemnification",
+          "explanation": "第三者からの知財クレームに対してベンダー側が防護・補償を提供する契約条項である。",
+          "type": "common-confusion",
+          "plausibility": 3
+        }
+      ],
+      "sourceIds": [
+        "policies",
+        "audit-log"
+      ]
+    }
+  ]
+}
