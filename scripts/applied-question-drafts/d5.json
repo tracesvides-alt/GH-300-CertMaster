@@ -1,0 +1,161 @@
+{
+  "description": "Phase 5 (D5): 開発生産性と品質・テストの応用問題（Applied: intermediate）。TDDサイクル、レガシー回帰テスト先行、安全な例外ハンドリング、入力バリデーション境界防護を問う。",
+  "questions": [
+    {
+      "id": "q-d5-a12",
+      "objectiveId": "d5o2",
+      "question": "CopilotとTDDで割引処理を作る。承認済み仕様は価格100以上で20%引き、100未満は割引なし。初回テストは100→80で失敗した。90と100の契約を保つGreen段階の実装条件は？",
+      "correct": {
+        "text": "価格>=100で0.8倍、それ以外は元の価格",
+        "explanation": "境界の100を含め、90には割引しない実装で失敗テストと契約を満たす。追加の境界テストでも確認する。"
+      },
+      "distractors": [
+        {
+          "text": "価格>100で0.8倍、それ以外は元の価格",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "100を割引せず、最初のテストを通らない。"
+        },
+        {
+          "text": "全価格を0.8倍、入力条件は設けない",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "100は通るが100未満にも割引し契約を破る。"
+        },
+        {
+          "text": "価格<=100で0.8倍、それ以外は元の価格",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "100未満にも割引し、100超には割引しない。"
+        }
+      ],
+      "sourceIds": [
+        "tests",
+        "unit-test-aaa"
+      ],
+      "assessment": "改稿。境界の100を含め、90には割引しない実装で失敗テストと契約を満たす。追加の境界テストでも確認する。",
+      "counterfactual": "契約が100を超える価格だけ割引なら、>100を使用する。",
+      "reasoningSteps": [
+        "判断条件を特定する：CopilotとTDDで割引処理を作る。承認済み仕様は価格100以上で20%引き、100未満は割引なし。初回テストは100→80で失敗した。90と100の契約を保つGreen段階の実装条件は？",
+        "境界の100を含め、90には割引しない実装で失敗テストと契約を満たす。追加の境界テストでも確認する。"
+      ]
+    },
+    {
+      "id": "q-d5-a13",
+      "objectiveId": "d5o1",
+      "question": "税計算をCopilotで近代化する。税額は価格の10%を四捨五入して整数にし、価格へ足す承認済み仕様。変更前に価格101の回帰テストへ固定する期待値は？",
+      "correct": {
+        "text": "101 → 111",
+        "explanation": "101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。"
+      },
+      "distractors": [
+        {
+          "text": "101 → 110",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "この入力では110にはならない。例えば価格100の税10を加えた合計と取り違えている。"
+        },
+        {
+          "text": "101 → 111.1",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "税額の整数丸めを適用していない。"
+        },
+        {
+          "text": "101 → 101",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "税を加算していない。"
+        }
+      ],
+      "sourceIds": [
+        "tests",
+        "guide"
+      ],
+      "assessment": "改稿。101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。",
+      "counterfactual": "税額を整数へ丸めない契約なら111.1になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：税計算をCopilotで近代化する。税額は価格の10%を四捨五入して整数にし、価格へ足す承認済み仕様。変更前に価格101の回帰テストへ固定する期待値は？",
+        "101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。"
+      ]
+    },
+    {
+      "id": "q-d5-a14",
+      "objectiveId": "d5o2",
+      "question": "Copilotの決済処理案はすべての失敗をnullへ変える。APIはPaymentDeclined（課金なし確定）とTimeout（結果不明）を返す。二重課金を避ける修正は？",
+      "correct": {
+        "text": "Declinedは拒否を返し、Timeoutは状態照会する",
+        "explanation": "確定した失敗と結果不明を区別し、Timeoutで再課金を急がない。"
+      },
+      "distractors": [
+        {
+          "text": "両方をDeclinedへ変え、同じ拒否を返す",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "Timeoutを未課金と誤って断定する。"
+        },
+        {
+          "text": "両方をTimeoutへ変え、同じ再課金を行う",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "Declinedとの区別もなく再課金している。"
+        },
+        {
+          "text": "Declinedを再課金し、Timeoutを成功扱いする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "確定失敗と不明結果の扱いを取り違える。"
+        }
+      ],
+      "sourceIds": [
+        "exception-best-practices",
+        "exception-sensitive"
+      ],
+      "assessment": "改稿。確定した失敗と結果不明を区別し、Timeoutで再課金を急がない。",
+      "counterfactual": "Timeout時も未課金が保証される契約なら、再試行の判断条件が変わる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの決済処理案はすべての失敗をnullへ変える。APIはPaymentDeclined（課金なし確定）とTimeout（結果不明）を返す。二重課金を避ける修正は？",
+        "確定した失敗と結果不明を区別し、Timeoutで再課金を急がない。"
+      ]
+    },
+    {
+      "id": "q-d5-a15",
+      "objectiveId": "d5o2",
+      "question": "Copilotの登録APIは型キャストだけでageをDBへ渡す。契約は整数18以上で、17や文字列はDBへ渡さず拒否。境界検証と追加テストの組合せは？",
+      "correct": {
+        "text": "整数・18以上を検査し、17と文字列のDB未呼出しを検証",
+        "explanation": "本番の型・範囲を検査し、拒否時の副作用も確かめる。"
+      },
+      "distractors": [
+        {
+          "text": "整数だけを検査し、17の登録成功を検証",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "範囲条件を落としている。"
+        },
+        {
+          "text": "18以上だけを検査し、文字列を数値化して登録",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "文字列を拒否する契約を変えている。"
+        },
+        {
+          "text": "テスト内で型を変え、本番のキャストは維持",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "テストだけの型変更は本番入力を検証しない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ],
+      "assessment": "改稿。本番の型・範囲を検査し、拒否時の副作用も確かめる。",
+      "counterfactual": "文字列の数値化が許容仕様なら、数値化後の範囲検査も候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの登録APIは型キャストだけでageをDBへ渡す。契約は整数18以上で、17や文字列はDBへ渡さず拒否。境界検証と追加テストの組合せは？",
+        "本番の型・範囲を検査し、拒否時の副作用も確かめる。"
+      ]
+    }
+  ]
+}

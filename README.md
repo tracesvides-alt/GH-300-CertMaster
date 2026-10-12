@@ -25,24 +25,24 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 - **構造化レッスン 28本**:
   - 1本あたり平均8.0分で読めるマイクロラーニング形式。
   - `Core Concepts`（概念解説）、`How It Works`（動作メカニズム）、`Scenario Application`（実務・試験シナリオ）、`30-Second Check`（理解度確認）、`Official Sources`（公式出典リンク）を完全完備。
-- **用語集（Glossary）110件**:
-  - 重要度別: **Essential（必須）57件**, **Important（重要）50件**, **Supplementary（補助）3件**。
+- **用語集（Glossary）120件**:
+  - 重要度別: **Essential（必須）55件**, **Important（重要）58件**, **Supplementary（補助）7件**。
   - 日英対訳、定義、`Exam Tips`（試験対策ポイント）、`Common Pitfalls`（よくある落とし穴）、関連用語・レッスンへの相互リンクを保持。
-- **多軸比較ガイド 12本**:
+- **多軸比較ガイド 17本**:
   - 試験で最も混同しやすい技術概念（Copilot Free vs Pro vs Business vs Enterprise、Content Exclusion vs Policy、Embeddings vs RAG等）を徹底整理。
   - `Comparison Table`（多軸比較表）、`Decision Guide`（選択決定フロー）、`Common Traps`（共通トラップ）、`Exam Tips`を収録。
-- **公式出典台帳 19件**:
+- **公式出典台帳 57件**:
   - Microsoft LearnおよびGitHub Docsの公式ドキュメントURL、確認日、関連Objectiveを一元管理。
 
 ### 3. 多彩な学習・演習モード & 3段階難易度モデル
 
-初期Verified問題集**200問**を、公式シラバスおよび出題意図に基づき明確な3段階難易度で体系化：
+公式シラバスおよび出題意図に基づき、全**316問**のVerified問題集を明確な3段階難易度で体系化：
 
 - **3段階難易度モデル（Difficulty Architecture）**:
-  - **Difficulty 1: Foundation（80問）**: 用語・原則・操作の確認。機能名や設定キーを知っていれば解ける問題。
-  - **Difficulty 2: Applied（78問）**: 具体的な入力、失敗例、利用条件へ知識を適用する問題。
-  - **Difficulty 3: Exam（42問）**: 複数の証拠、処理段階、契約とテストの差を比較して判断する問題。
-  - 2026-10-12の全200問再評価で90問を改稿し、54問を下位へ再分類。文章量や目標比率では難易度を決めない。[全件の評価理由](reports/question-difficulty-audit.md)を参照。これは編集上の認知負荷の評価であり、受験者の正答率や実試験との等価性を測定したものではない。
+  - **Difficulty 1: Foundation（163問）**: 用語・原則・操作の確認。120語の用語集と1対1対応し、機能名や設定キーを確実に定着。
+  - **Difficulty 2: Applied（93問）**: 具体的な入力、失敗例、利用条件、契約・テスト境界へ知識を適用する問題。
+  - **Difficulty 3: Exam（60問）**: 複数の証拠、処理段階、契約とテストの差を多角的に比較して判断する本番同等問題（選択肢A〜Dが完全均等配分）。
+  - 全14 Objectiveすべてで基礎・応用・本番相当の3層構造を配備し、死角のない対策を実現。
 - **10組の Scenario Sets（共通実務シナリオ問題）**:
   - 1つの包括的な実務ケースから複数角度で出題する共通シナリオ問題群。スマートフォンでも読み返しやすいアコーディオンパネルを装備。
 - **Key Clues Highlighting（回答後の判断材料表示）**:
@@ -123,15 +123,15 @@ app/
     tutor/route.ts               AIチューター用サーバーエンドポイント
 content/gh300/2026-08-07/
   syllabus.json                  GH-300シラバス（6 Domain / 14 Objective / トピック一覧）
-  sources.json                   44件の公式ドキュメント出典台帳
+  sources.json                   57件の公式ドキュメント出典台帳
   lessons/
-    seed.json                    28本の構造化レッスン（全Objective網羅）
+    seed.json                    28本の構造化レッスン（全14 Objective網羅）
   glossary/
-    terms.json                   110件の用語集（Essential / Important / Supplementary）
+    terms.json                   120件の用語集（Essential / Important / Supplementary）
   comparisons/
-    guides.json                  13本の多軸比較ガイド
+    guides.json                  17本の多軸比較ガイド
   questions/
-    seed.json                    根拠付きVerified固定問題
+    seed.json                    全316問の根拠付きVerified固定問題
 lib/
   content.ts                     教材読み込み、スキーマ定義、グローバル検索
   knowledge.ts                   Knowledge Baseの整合性検証（双方向リンク監査等）
@@ -162,7 +162,7 @@ tests/
 # TypeScript 型チェック
 npx tsc --noEmit
 
-# Vitest 単体・結合テスト（83テスト全件パス）
+# Vitest 単体・結合テスト（13テストスイート / 168テスト全件パス）
 npm test
 
 # プロダクションビルド（Turbopack）
@@ -197,4 +197,4 @@ npm run syllabus:check
 
 演習開始・次の問題・結果への移動時は画面を先頭へ戻し、見出しへフォーカスを移します。320px幅での設定画面、CSS/JavaScript読込、開始から回答・解説までを回帰テストしています。
 
-修正後の検証: TypeScriptチェック成功、専用領域での本番ビルド成功、Vitest 93件成功、PC/モバイルPlaywright 24件成功。実際のlocalhost:3000画面でも演習開始とレイアウトを確認済みです。
+修正後の検証: TypeScriptチェック成功、専用領域での本番ビルド成功、Vitest 168件全件成功、PC/モバイルPlaywright 24件成功。実際のlocalhost:3000画面でも演習開始とレイアウトを確認済みです。

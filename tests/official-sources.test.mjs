@@ -45,6 +45,17 @@ describe('GitHub official source registry', () => {
 });
 
 describe('official source checker', () => {
+  it('checks contract document headings behind a shared browser title', async () => {
+    const source = { id: 'terms', title: 'GitHub Generative AI Services Terms', publisher: 'GitHub Terms', url: 'https://github.com/customer-terms/github-generative-ai-services-terms' };
+    const html = heading => `<title>Customer agreements · GitHub</title><h1><span>${heading}</span></h1>`;
+    const matching = await inspectSource(source, async () => response(html(source.title)));
+    expect(matching.errors).toEqual([]);
+    const wrong = await inspectSource(source, async () => response(html('Different document')));
+    expect(wrong.errors.some(e => e.includes('expected topic'))).toBe(true);
+    const wrongHost = await inspectSource({ ...source, url: 'https://docs.github.com/en/copilot' }, async () => response(html(source.title)));
+    expect(wrongHost.errors.some(e => e.includes('publisher domain mismatch'))).toBe(true);
+  });
+
   it('reads title, canonical, and fragment ids', () => {
     const metadata = getMetadata(page('MCP', '<link href="https://docs.github.com/en/copilot/mcp" rel="canonical">'));
     expect(metadata.title).toContain('MCP');

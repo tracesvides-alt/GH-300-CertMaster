@@ -13,7 +13,9 @@ export function getMetadata(html) {
   const canonicalTag = links.find((tag) => /\brel\s*=\s*["']?canonical\b/i.test(tag));
   const canonical = canonicalTag?.match(/\bhref\s*=\s*["']([^"']+)["']/i)?.[1] ?? '';
   const anchors = new Set([...html.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)].map((m) => m[1]));
-  return { title, canonical, anchors };
+  const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)]
+    .map(m => m[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim());
+  return { title, canonical, anchors, headings };
 }
 
 export async function inspectSource(source, fetcher = fetch) {
@@ -30,7 +32,8 @@ export async function inspectSource(source, fetcher = fetch) {
       return result;
     }
     if ((source.publisher === 'GitHub Docs' && current.hostname !== 'docs.github.com') ||
-        (source.publisher === 'GitHub Blog' && current.hostname !== 'github.blog')) {
+        (source.publisher === 'GitHub Blog' && current.hostname !== 'github.blog') ||
+        (source.publisher === 'GitHub Terms' && current.hostname !== 'github.com')) {
       result.errors.push(`publisher domain mismatch: ${source.publisher} / ${current.hostname}`);
       return result;
     }
@@ -72,7 +75,7 @@ export async function inspectSource(source, fetcher = fetch) {
           result.errors.push(`HTTP ${response.status}`);
           return result;
         }
-        const { title, canonical, anchors } = getMetadata(await response.text());
+        const { title, canonical, anchors, headings } = getMetadata(await response.text());
         result.title = title;
         result.canonicalUrl = canonical ? new URL(canonical, current).href : current.href;
         result.canonicalEvidence = canonical ? 'html-link' : 'final-200-url';
@@ -87,7 +90,12 @@ export async function inspectSource(source, fetcher = fetch) {
         }
         if (!title) result.warnings.push('missing page title');
         const displayedTitle = title.replace(/ - GitHub(?: Enterprise Cloud)? Docs$/, '');
-        if (source.title && !displayedTitle.toLowerCase().includes(source.title.toLowerCase()))
+        // Contract pages share the generic browser title "Customer agreements".
+        // Accept the exact document H1 only for GitHub's customer-terms pages.
+        const contractHeadingMatches = source.publisher === 'GitHub Terms' &&
+          current.hostname === 'github.com' && current.pathname.startsWith('/customer-terms/') &&
+          headings.some(heading => heading.toLowerCase() === source.title?.toLowerCase());
+        if (source.title && !displayedTitle.toLowerCase().includes(source.title.toLowerCase()) && !contractHeadingMatches)
           result.errors.push(`page title differs from expected topic: ${source.title}`);
         return result;
       }

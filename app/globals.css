@@ -3683,3 +3683,1038 @@ summary {
   color: var(--text-muted);
 }
 
+/* ────────────────────────────────────────────
+   Lesson Reading Progress Bar & Table of Contents (TOC)
+   ──────────────────────────────────────────── */
+.lesson-sticky-companion {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 40;
+  background: rgba(11, 15, 20, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: -45px;
+}
+
+.lesson-sticky-companion.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  margin-bottom: 16px;
+}
+
+.reading-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4e6, #38bdf8, #818cf8);
+  box-shadow: 0 0 10px rgba(0, 212, 230, 0.6);
+  transition: width 0.15s ease-out;
+}
+
+.sticky-companion-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 12px;
+}
+
+.sticky-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.reading-pct-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(0, 212, 230, 0.08);
+  border: 1px solid rgba(0, 212, 230, 0.25);
+  border-radius: 9999px;
+  padding: 2px 8px;
+  color: #38e1f2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  shrink: 0;
+}
+
+.current-section-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+@media (max-width: 640px) {
+  .current-section-title {
+    max-width: 160px;
+    font-size: 12px;
+  }
+}
+
+.sticky-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  shrink: 0;
+}
+
+.toc-quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toc-quick-btn:hover,
+.toc-quick-btn.is-active {
+  background: rgba(0, 212, 230, 0.12);
+  border-color: rgba(0, 212, 230, 0.4);
+  color: #00d4e6;
+}
+
+.scroll-top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* TOC Dropdown Menu */
+.toc-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 14px;
+  width: 360px;
+  max-width: calc(100vw - 28px);
+  max-height: 440px;
+  overflow-y: auto;
+  background: #131922;
+  border: 1px solid rgba(0, 212, 230, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 212, 230, 0.1);
+  padding: 8px;
+  z-index: 50;
+  animation: tocFadeIn 0.15s ease-out;
+}
+
+@keyframes tocFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toc-dropdown-header {
+  padding: 8px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 6px;
+}
+
+.toc-dropdown-header .eyebrow {
+  display: block;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.toc-lesson-name {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.toc-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toc-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #cbd5e1;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  width: 100%;
+}
+
+.toc-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.toc-dropdown-item.is-active {
+  background: rgba(0, 212, 230, 0.08);
+  border-color: rgba(0, 212, 230, 0.25);
+  color: #38e1f2;
+}
+
+.toc-item-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #64748b;
+  min-width: 18px;
+}
+
+.toc-dropdown-item.is-active .toc-item-num {
+  color: #00d4e6;
+}
+
+.toc-item-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toc-item-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  color: #94a3b8;
+}
+
+.toc-active-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00d4e6;
+  box-shadow: 0 0 6px #00d4e6;
+  shrink: 0;
+}
+
+/* ─── In-Article Inline TOC Card ─── */
+.lesson-inline-toc-card {
+  margin: 18px 0 24px;
+  background: rgba(19, 25, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.lesson-inline-toc-card:hover {
+  border-color: rgba(0, 212, 230, 0.2);
+}
+
+.inline-toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.inline-toc-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.inline-toc-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inline-toc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 212, 230, 0.08);
+  border: 1px solid rgba(0, 212, 230, 0.2);
+  border-radius: 8px;
+  color: #00d4e6;
+}
+
+.inline-toc-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.inline-toc-meta {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.inline-toc-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+
+.inline-toc-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.inline-toc-body {
+  padding: 8px 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.inline-toc-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px;
+}
+
+.inline-toc-item-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.inline-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inline-toc-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.inline-toc-link.is-active {
+  background: rgba(0, 212, 230, 0.08);
+  border-color: rgba(0, 212, 230, 0.3);
+  color: #38e1f2;
+}
+
+.inline-toc-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #64748b;
+  min-width: 18px;
+}
+
+.inline-toc-link.is-active .inline-toc-num {
+  color: #00d4e6;
+  font-weight: 600;
+}
+
+.inline-toc-link-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inline-toc-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  color: #94a3b8;
+  shrink: 0;
+}
+
+.inline-toc-link.is-active .inline-toc-badge {
+  background: rgba(0, 212, 230, 0.15);
+  color: #38e1f2;
+}
+
+/* スムーズスクロール用オフセット設定 */
+.lesson-section,
+.lesson > section,
+.lesson-glossary-links,
+.bidirectional-check-card {
+  scroll-margin-top: 80px;
+}
+
+/* ────────────────────────────────────────────
+   Glossary Detail Premium Styling
+   ──────────────────────────────────────────── */
+.glossary-detail {
+  padding: 32px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+}
+
+.glossary-detail .term-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.glossary-detail .term-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.glossary-detail .full-name {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+
+/* Detail Section Card Base */
+.detail-section {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-left-width: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.detail-section:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+}
+
+/* Section Header (Badge style with icon) */
+.detail-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.detail-section-header h3 {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.detail-section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Section Content Paragraph */
+.detail-section > p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #e2e8f0;
+}
+
+/* Section List & Items */
+.detail-section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-section-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #e2e8f0;
+}
+
+.detail-section-item .item-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.detail-section-item .item-text {
+  flex: 1;
+}
+
+/* ────────────────────────────────────────────
+   Theme Variants per Section Type
+   ──────────────────────────────────────────── */
+
+/* 1. 定義 (Definition) - Cool Cyan */
+.detail-section--definition {
+  border-left-color: #00d4e6;
+  background: linear-gradient(135deg, rgba(0, 212, 230, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--definition .detail-section-header h3 {
+  color: #38e1f2;
+}
+.detail-section--definition .detail-section-icon {
+  background: rgba(0, 212, 230, 0.15);
+  color: #00d4e6;
+}
+
+/* 2. GH-300で重要な理由 (Why It Matters) - Vivid Emerald */
+.detail-section--why {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--why .detail-section-header h3 {
+  color: #34d399;
+}
+.detail-section--why .detail-section-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+/* 3. 利用場面 (Use Cases) - Sky Blue */
+.detail-section--usecases {
+  border-left-color: #38bdf8;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--usecases .detail-section-header h3 {
+  color: #7dd3fc;
+}
+.detail-section--usecases .detail-section-icon {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+.detail-section--usecases .item-bullet {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+/* 4. 試験ポイント (Exam Points) - Amber / Gold */
+.detail-section--exampoints {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--exampoints .detail-section-header h3 {
+  color: #fbbf24;
+}
+.detail-section--exampoints .detail-section-icon {
+  background: rgba(245, 158, 11, 0.18);
+  color: #f59e0b;
+}
+.detail-section--exampoints .item-bullet {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+}
+
+/* 5. 混同しやすい用語 (Common Confusions) - Rose / Coral */
+.detail-section--confusions {
+  border-left-color: #f43f5e;
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--confusions .detail-section-header h3 {
+  color: #fb7185;
+}
+.detail-section--confusions .detail-section-icon {
+  background: rgba(244, 63, 94, 0.18);
+  color: #f43f5e;
+}
+.detail-section--confusions .item-bullet {
+  background: rgba(244, 63, 94, 0.16);
+  color: #fb7185;
+}
+
+/* 6. 関連リンク (Related Terms / Lessons / Guides / Sources) */
+.detail-section--related {
+  border-left-color: #818cf8;
+  background: rgba(255, 255, 255, 0.015);
+}
+.detail-section--related .detail-section-header h3 {
+  color: #a5b4fc;
+}
+.detail-section--related .detail-section-icon {
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.related-link:hover {
+  background: rgba(0, 212, 230, 0.1);
+  border-color: rgba(0, 212, 230, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ────────────────────────────────────────────
+   Comparison Detail Premium Styling
+   ──────────────────────────────────────────── */
+.comparison-detail {
+  padding: 32px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+}
+
+.comparison-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 8px 0 16px 0;
+}
+
+.comparison-summary {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid #818cf8;
+  border-radius: 10px;
+}
+
+/* 比較表 (Table Section) */
+.detail-section--table {
+  border-left-color: #38bdf8;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  padding: 22px 24px;
+}
+.detail-section--table .detail-section-header h3 {
+  color: #7dd3fc;
+}
+.detail-section--table .detail-section-icon {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(11, 15, 20, 0.6);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.comparison-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-medium);
+  white-space: nowrap;
+}
+
+.comparison-table td {
+  padding: 14px 18px;
+  color: #cbd5e1;
+  border-bottom: 1px solid var(--border-subtle);
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table td.axis-label {
+  color: #38e1f2;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(0, 212, 230, 0.03);
+  border-right: 1px solid var(--border-subtle);
+  min-width: 120px;
+}
+
+/* 判断ガイド (Decision Guide) */
+.detail-section--decision {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--decision .detail-section-header h3 {
+  color: #34d399;
+}
+.detail-section--decision .detail-section-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.decision-guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.decision-guide-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #f1f5f9;
+  transition: all 0.15s ease;
+}
+
+.decision-guide-item:hover {
+  background: rgba(16, 185, 129, 0.09);
+  border-color: rgba(16, 185, 129, 0.35);
+  transform: translateX(2px);
+}
+
+.decision-guide-item .item-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.decision-guide-item .item-text {
+  flex: 1;
+}
+
+/* 比較ガイドの3問確認アクションボタン */
+.comparison-check-box {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ────────────────────────────────────────────
+   Learn Tab / Lesson Detail Premium Styling
+   ──────────────────────────────────────────── */
+.lesson-summary {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid #00d4e6;
+  border-radius: 10px;
+}
+
+/* 教材解説セクション */
+.detail-section--learn-section {
+  border-left-color: #38bdf8;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%);
+  margin-bottom: 20px;
+}
+.detail-section--learn-section .detail-section-header h3 {
+  color: #7dd3fc;
+  font-size: 15px;
+  text-transform: none;
+}
+.detail-section--learn-section .detail-section-icon {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+/* 重要ポイント (Key Points) */
+.detail-section--keypoints {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+.detail-section--keypoints .detail-section-header h3 {
+  color: #34d399;
+}
+.detail-section--keypoints .detail-section-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+.detail-section--keypoints .item-bullet {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+/* 関連Objectiveリスト */
+.objective-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.objective-item .item-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.objective-item .item-text {
+  flex: 1;
+}
+
+/* ────────────────────────────────────────────
+   Mobile Usability Enhancements
+   ──────────────────────────────────────────── */
+
+/* フローティング「トップへ戻る」ボタン */
+.scroll-to-top-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 76px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(19, 25, 34, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 230, 0.4);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 212, 230, 0.2);
+  z-index: 35;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-to-top-btn:hover {
+  background: rgba(0, 212, 230, 0.15);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 212, 230, 0.35);
+}
+
+.scroll-to-top-btn:active {
+  transform: scale(0.92);
+}
+
+/* ナビゲーションフッター内の「一覧へ戻る」ボタン */
+.lesson-back-to-list-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.lesson-back-to-list-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #f1f5f9;
+}
+
+.lesson-back-to-list-btn:active {
+  transform: scale(0.96);
+}
+
+/* 詳細画面上部のモダンな「一覧に戻る」ピルボタン */
+.study-detail-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: all 0.18s ease;
+  min-height: 40px;
+}
+
+.study-detail-back-btn:hover {
+  background: rgba(0, 212, 230, 0.08);
+  border-color: rgba(0, 212, 230, 0.35);
+  color: var(--accent);
+}
+
+.study-detail-back-btn:active {
+  transform: scale(0.96);
+}
+
+/* モバイル表示時の詳細画面最適化 */
+@media (max-width: 640px) {
+  /* 詳細画面表示中は上部の大見出しを隠して本文のファーストビューを最大化 */
+  .study-detail-active .pageheading {
+    display: none;
+  }
+
+  /* 上部余白を調整 */
+  .study-detail-active main {
+    padding-top: 12px;
+  }
+
+  /* 下部ナビゲーションと重ならないようセーフエリア余白を確保 */
+  .glossary-detail,
+  .comparison-detail,
+  .lesson-layout {
+    padding-bottom: 32px;
+  }
+
+  /* スマホでのスクロールトップボタンの位置微調整 */
+  .scroll-to-top-btn {
+    right: 14px;
+    bottom: 74px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+

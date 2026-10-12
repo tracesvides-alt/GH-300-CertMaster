@@ -1,0 +1,163 @@
+{
+  "description": "Phase 5 (D6): プライバシーと保護の応用問題（Applied: intermediate）。実務での除外構文トラブル、伝播遅延対応、知財補償要件、組織ポリシー継承を問う。",
+  "questions": [
+    {
+      "id": "q-d6-a11",
+      "objectiveId": "d6o1",
+      "question": "対応するContent Exclusionでsecrets配下の全階層の.keyだけを除外し、secrets/readme.mdは文脈に残したい。例示するパターンは？",
+      "correct": {
+        "text": "secrets/**/*.key",
+        "explanation": "階層をまたぐ.keyの条件を両立する。"
+      },
+      "distractors": [
+        {
+          "text": "secrets/*.key",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "深い階層の.keyを含めない。"
+        },
+        {
+          "text": "secrets/**",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "readme.mdも除外する。"
+        },
+        {
+          "text": "**/*.key",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "secrets以外の.keyまで対象にする。"
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "guide"
+      ],
+      "assessment": "改稿。階層をまたぐ.keyの条件を両立する。",
+      "counterfactual": "secretsの全文書を除外するならsecrets/**が候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：対応するContent Exclusionでsecrets配下の全階層の.keyだけを除外し、secrets/readme.mdは文脈に残したい。例示するパターンは？",
+        "階層をまたぐ.keyの条件を両立する。"
+      ]
+    },
+    {
+      "id": "q-d6-a12",
+      "objectiveId": "d6o2",
+      "question": "除外設定を変更後、同じ通常補完モードで再読込した利用者AにはContent excludedと出る。利用者Bは旧セッションのまま。両者の適用先とパスは一致する。次の切り分けは？",
+      "correct": {
+        "text": "Bも再読込し、除外表示と候補を確認",
+        "explanation": "差があるクライアント状態をそろえて比較する。"
+      },
+      "distractors": [
+        {
+          "text": "Aの座席を解除し、Bの候補を確認",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "Aの座席はBのクライアント状態を更新しない。"
+        },
+        {
+          "text": "公開コード一致をBlockにし、両者を比較",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "出力一致の設定は今回の入力除外表示と別。"
+        },
+        {
+          "text": "Bのリポジトリ名を変え、同じ設定を使う",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "設定の適用先を変えて比較条件を崩す。"
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "guide"
+      ],
+      "assessment": "改稿。差があるクライアント状態をそろえて比較する。",
+      "counterfactual": "再読込後もBだけパスが異なるなら、除外パターンとの対応を調べる。",
+      "reasoningSteps": [
+        "判断条件を特定する：除外設定を変更後、同じ通常補完モードで再読込した利用者AにはContent excludedと出る。利用者Bは旧セッションのまま。両者の適用先とパスは一致する。次の切り分けは？",
+        "差があるクライアント状態をそろえて比較する。"
+      ]
+    },
+    {
+      "id": "q-d6-a13",
+      "objectiveId": "d6o1",
+      "question": "Copilotの補償審査で、今回使う機能とテナントに適用される契約・Required Mitigationsの確認が必要。資料Pは旧契約時のBlock画面、Qは現行だが別機能、Rは現行の対象機能・同じテナント、Sは別テナントの現行資料。照合の基準にする資料は？",
+      "correct": {
+        "text": "Rの適用契約と対象機能の軽減策",
+        "explanation": "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。"
+      },
+      "distractors": [
+        {
+          "text": "Pの旧契約とBlockの保存画面",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "旧設定の証跡だけでは現行の適用条件を確認できない。"
+        },
+        {
+          "text": "Qの現行契約と別機能の軽減策",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "時点は合うが、対象機能の条件ではない。"
+        },
+        {
+          "text": "Sの別テナントの契約と軽減策",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "他テナントの契約条件をそのまま自分の適用条件とみなさない。"
+        }
+      ],
+      "sourceIds": [
+        "generative-ai-terms",
+        "copilot-contract-updates",
+        "public-code",
+        "guide"
+      ],
+      "assessment": "改稿。時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。",
+      "counterfactual": "対象機能がQに示した機能へ変わり、契約対象も一致するならQを照合する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの補償審査で、今回使う機能とテナントに適用される契約・Required Mitigationsの確認が必要。資料Pは旧契約時のBlock画面、Qは現行だが別機能、Rは現行の対象機能・同じテナント、Sは別テナントの現行資料。照合の基準にする資料は？",
+        "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。"
+      ]
+    },
+    {
+      "id": "q-d6-a14",
+      "objectiveId": "d6o2",
+      "question": "repo-Rの除外一覧はOrganization由来のconfig/**と、Repository由来のtmp/**。configだけを文脈へ戻す変更は組織で承認済み。どの設定を管理者へ変更依頼する？",
+      "correct": {
+        "text": "Organization由来のconfig/**",
+        "explanation": "configを除外している設定元を変更する。"
+      },
+      "distractors": [
+        {
+          "text": "Repository由来のtmp/**",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "別パスの設定を変えてもconfigは除外されたまま。"
+        },
+        {
+          "text": "個人の公開コード一致設定",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "出力の一致設定はconfigの入力除外とは別。"
+        },
+        {
+          "text": "repo-RのPrivate設定",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "公開範囲の設定は除外一覧の設定元ではない。"
+        }
+      ],
+      "sourceIds": [
+        "exclusion",
+        "policies"
+      ],
+      "assessment": "改稿。configを除外している設定元を変更する。",
+      "counterfactual": "config/**がRepository由来なら、そのリポジトリの設定を変更する。",
+      "reasoningSteps": [
+        "判断条件を特定する：repo-Rの除外一覧はOrganization由来のconfig/**と、Repository由来のtmp/**。configだけを文脈へ戻す変更は組織で承認済み。どの設定を管理者へ変更依頼する？",
+        "configを除外している設定元を変更する。"
+      ]
+    }
+  ]
+}

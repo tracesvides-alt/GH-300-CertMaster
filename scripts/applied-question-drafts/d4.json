@@ -1,0 +1,161 @@
+{
+  "description": "Phase 5 (D4): プロンプトとコンテキストの応用問題（Applied: intermediate）。Few-shotのエッジケース設計、否定指示の肯定的言い換え、タスク分解の対話フロー、コンテキストプルーニング（#file指定）を問う。",
+  "questions": [
+    {
+      "id": "q-d4-a12",
+      "objectiveId": "d4o1",
+      "question": "Copilotへ電話番号の正規化を依頼し、市外局番4桁の例だけが誤る。契約は入力に含めた承認済み対応表の区切りを使うこと。今回の失敗を直すFew-shot例は？",
+      "correct": {
+        "text": "4桁市外局番の入力と、対応表による期待出力",
+        "explanation": "未確認の形式を承認済みの契約に沿って示す。"
+      },
+      "distractors": [
+        {
+          "text": "携帯番号の正常例と、同じ形式の期待出力",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "既に成功する形式の例である。"
+        },
+        {
+          "text": "市外局番を省いた入力と、推定した期待出力",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "必要な区切り情報を欠いている。"
+        },
+        {
+          "text": "同じ入力に二種類の区切りを許す出力例",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "出力契約を曖昧にしている。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ],
+      "assessment": "改稿。未確認の形式を承認済みの契約に沿って示す。",
+      "counterfactual": "失敗が携帯番号なら、携帯の入出力例を優先する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ電話番号の正規化を依頼し、市外局番4桁の例だけが誤る。契約は入力に含めた承認済み対応表の区切りを使うこと。今回の失敗を直すFew-shot例は？",
+        "未確認の形式を承認済みの契約に沿って示す。"
+      ]
+    },
+    {
+      "id": "q-d4-a13",
+      "objectiveId": "d4o2",
+      "question": "Copilotの非同期関数案はcallbackへ値を渡す。利用側はawaitで戻り値を受け、Node-style callbackの採用は今回禁止。修正依頼の最小例は？",
+      "correct": {
+        "text": "Promiseを返し、awaitした値を使う入出力例",
+        "explanation": "許容方式と呼出し側の受取契約を具体化する。"
+      },
+      "distractors": [
+        {
+          "text": "callbackへ値を渡し、呼出し側で表示する例",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "禁止した呼出し形式を維持する。"
+        },
+        {
+          "text": "同期戻り値を返し、awaitを使わない例",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "非同期という前提を失う。"
+        },
+        {
+          "text": "戻り値をvoidにし、内部で結果を表示する例",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "利用側が結果を受け取れない。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ],
+      "assessment": "改稿。許容方式と呼出し側の受取契約を具体化する。",
+      "counterfactual": "利用側がcallback契約なら、callbackの例が候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの非同期関数案はcallbackへ値を渡す。利用側はawaitで戻り値を受け、Node-style callbackの採用は今回禁止。修正依頼の最小例は？",
+        "許容方式と呼出し側の受取契約を具体化する。"
+      ]
+    },
+    {
+      "id": "q-d4-a14",
+      "objectiveId": "d4o2",
+      "question": "Copilotに決済処理を分割実装させた。DB更新関数、API呼出関数、通知関数の単体テストは成功。契約は「決済失敗時はpaidへ更新せず通知しない」。次に必要な結合テストは？",
+      "correct": {
+        "text": "API失敗を再現し、DB状態と通知呼出しを確認",
+        "explanation": "未検証の失敗時連携と二つの副作用を確認する。"
+      },
+      "distractors": [
+        {
+          "text": "API成功を再現し、成功戻り値だけを確認",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "失敗時の契約を通らない。"
+        },
+        {
+          "text": "通知成功を再現し、メール本文だけを確認",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "決済失敗とDB状態を確認しない。"
+        },
+        {
+          "text": "DB更新を固定値に置換し、API引数だけを確認",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "本来確認すべきDB判断をモックで固定している。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ],
+      "assessment": "改稿。未検証の失敗時連携と二つの副作用を確認する。",
+      "counterfactual": "未確認契約が成功通知の本文だけなら通知の本文検証が候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotに決済処理を分割実装させた。DB更新関数、API呼出関数、通知関数の単体テストは成功。契約は「決済失敗時はpaidへ更新せず通知しない」。次に必要な結合テストは？",
+        "未検証の失敗時連携と二つの副作用を確認する。"
+      ]
+    },
+    {
+      "id": "q-d4-a15",
+      "objectiveId": "d4o2",
+      "question": "Copilotの回答は別製品の類似関数を根拠にしている。修正対象はorders/refund.tsとそのMoney型に確定。今回の依頼文脈として最も直接的なのは？",
+      "correct": {
+        "text": "refund.tsとMoneyの定義を添付して質問する",
+        "explanation": "既知の対象と必要な依存定義を直接渡す。"
+      },
+      "distractors": [
+        {
+          "text": "類似関数がある全製品を横断検索して質問する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "誤参照された別製品のノイズを増やす。"
+        },
+        {
+          "text": "refund.tsのパスだけを共通規約へ記載する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "パスの記載だけでは対象内容を渡さない。"
+        },
+        {
+          "text": "Money型だけ添付し、refundの実装は推測させる",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "対象処理の実装が欠ける。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "chat"
+      ],
+      "assessment": "改稿。既知の対象と必要な依存定義を直接渡す。",
+      "counterfactual": "対象ファイルが未特定なら、参照関係を含めた検索から始める。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの回答は別製品の類似関数を根拠にしている。修正対象はorders/refund.tsとそのMoney型に確定。今回の依頼文脈として最も直接的なのは？",
+        "既知の対象と必要な依存定義を直接渡す。"
+      ]
+    }
+  ]
+}

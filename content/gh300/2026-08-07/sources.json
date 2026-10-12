@@ -153,7 +153,17 @@
       "q-d5-f02",
       "q-d5-f02-b",
       "q-d5-f04",
-      "q-d5-f05"
+      "q-d5-f05",
+      "q-d1-e09",
+      "q-d2-e20",
+      "q-d2-e21",
+      "q-d2-e24",
+      "q-d3-e08",
+      "q-d4-e07",
+      "q-d4-e08",
+      "q-d5-e06",
+      "q-d5-e08",
+      "q-d6-e07"
     ],
     "relatedDomainIds": [
       "d1",
@@ -236,34 +246,36 @@
       "q-d1-a06",
       "q-d1-a07",
       "q-d1-a10",
-      "q-d1-e01",
-      "q-d1-e02",
-      "q-d1-e03",
       "q-d1-e04",
-      "q-d1-e05",
       "q-d1-e06",
-      "q-d1-e07",
-      "q-d1-e08",
       "q-d2-a11",
       "q-d2-e14",
-      "q-d3-e03",
       "q-d4-f04",
       "q-d5-a02",
       "q-d5-a03",
       "q-d5-a05",
       "q-d5-a10",
       "q-d5-a11",
-      "q-d5-e02",
-      "q-d5-e04",
       "q-d6-a04",
-      "q-d6-e03",
-      "q-sc02-1",
-      "q-sc02-2",
       "q-sc04-2",
       "q-sc05-1",
       "q-sc05-2",
       "q-sc05-3",
-      "q-sc09-3"
+      "q-d1-e01",
+      "q-d1-e02",
+      "q-d1-e03",
+      "q-d1-e05",
+      "q-d1-e07",
+      "q-d1-e08",
+      "q-d3-e03",
+      "q-d5-e02",
+      "q-d5-e04",
+      "q-d6-e03",
+      "q-sc02-1",
+      "q-sc02-2",
+      "q-sc09-3",
+      "q-d1-e09",
+      "q-d5-e06"
     ],
     "relatedDomainIds": [
       "d1",
@@ -329,7 +341,6 @@
       "q04",
       "q05",
       "q06",
-      "q-d1-e01",
       "q-d2-f01",
       "q-d2-f02",
       "q-d2-f03",
@@ -341,7 +352,10 @@
       "q-d4-f05",
       "q-d4-a10",
       "q-d5-f01",
-      "q-sc05-1"
+      "q-sc05-1",
+      "q-d1-e01",
+      "q-d4-e06",
+      "q-d4-e09"
     ],
     "relatedDomainIds": [
       "d2",
@@ -410,7 +424,6 @@
       "q-d3-a07",
       "q-d3-a08",
       "q-d3-a10",
-      "q-d3-e01",
       "q-d3-e05",
       "q-d4-f01",
       "q-d4-f02",
@@ -427,15 +440,19 @@
       "q-d4-a09",
       "q-d4-a10",
       "q-d4-a11",
-      "q-d4-e01",
       "q-d4-e02",
+      "q-d5-a04",
+      "q-d5-a07",
+      "q-sc08-3",
+      "q-d3-e01",
+      "q-d4-e01",
       "q-d4-e03",
       "q-d4-e04",
       "q-d4-e05",
-      "q-d5-a04",
-      "q-d5-a07",
       "q-sc02-3",
-      "q-sc08-3"
+      "q-d4-e06",
+      "q-d4-e07",
+      "q-d4-e09"
     ],
     "relatedDomainIds": [
       "d4"
@@ -492,18 +509,10 @@
       "q-d1-a08",
       "q-d1-a09",
       "q-d1-a10",
-      "q-d1-e02",
-      "q-d1-e03",
-      "q-d1-e05",
-      "q-d1-e07",
       "q-d2-f03",
       "q-d2-a06",
       "q-d2-a16",
-      "q-d2-e01",
-      "q-d2-e10",
       "q-d4-a07",
-      "q-d4-e01",
-      "q-d4-e05",
       "q-d5-f02",
       "q-d5-f05",
       "q-d5-a01",
@@ -514,13 +523,22 @@
       "q-d5-a08",
       "q-d5-a09",
       "q-d5-a10",
+      "q-sc05-2",
+      "q-d1-e02",
+      "q-d1-e03",
+      "q-d1-e05",
+      "q-d1-e07",
+      "q-d2-e01",
+      "q-d2-e10",
+      "q-d4-e01",
+      "q-d4-e05",
       "q-d5-e01",
       "q-d5-e03",
       "q-d5-e04",
       "q-d5-e05",
       "q-sc02-1",
       "q-sc02-2",
-      "q-sc05-2"
+      "q-d5-e07"
     ],
     "relatedDomainIds": [
       "d5"
@@ -649,11 +667,12 @@
       "q-d2-a15",
       "q-d2-a16",
       "q-d2-e05",
-      "q-d2-e10",
       "q-d2-e14",
       "q-d2-e17",
       "q-d2-e18",
-      "q-sc04-1"
+      "q-sc04-1",
+      "q-d2-e10",
+      "q-d2-e20"
     ],
     "relatedDomainIds": [
       "d2",
@@ -696,16 +715,18 @@
       "q-d2-a07",
       "q-d2-a18",
       "q-d2-a20",
-      "q-d2-e02",
       "q-d2-e04",
-      "q-d2-e07",
-      "q-d2-e11",
       "q-sc03-1",
-      "q-sc03-2",
       "q-sc03-3",
       "q-sc07-1",
+      "q-d2-e02",
+      "q-d2-e07",
+      "q-d2-e11",
+      "q-sc03-2",
       "q-sc07-2",
-      "q-sc10-3"
+      "q-sc10-3",
+      "q-d2-e24",
+      "q-d6-e07"
     ],
     "relatedDomainIds": [
       "d2"
@@ -748,10 +769,12 @@
       "q-d2-e08",
       "q-d2-e12",
       "q-d2-e16",
-      "q-d4-e03",
       "q-sc06-1",
+      "q-sc06-3",
+      "q-d4-e03",
       "q-sc06-2",
-      "q-sc06-3"
+      "q-d2-e23",
+      "q-d4-e08"
     ],
     "relatedDomainIds": [
       "d2",
@@ -794,8 +817,9 @@
       "q-d2-e12",
       "q-d2-e16",
       "q-sc06-1",
+      "q-sc06-3",
       "q-sc06-2",
-      "q-sc06-3"
+      "q-d2-e23"
     ],
     "relatedDomainIds": [
       "d2",
@@ -840,7 +864,8 @@
       "q-d2-e04",
       "q-d2-e12",
       "q-sc06-1",
-      "q-sc07-1"
+      "q-sc07-1",
+      "q-d2-e21"
     ],
     "relatedDomainIds": [
       "d2",
@@ -908,10 +933,11 @@
       "q-d5-f04",
       "q-d5-a03",
       "q-d5-a09",
-      "q-d5-e02",
       "q-sc04-1",
       "q-sc04-2",
-      "q-sc04-3"
+      "q-sc04-3",
+      "q-d5-e02",
+      "q-d2-e20"
     ],
     "relatedDomainIds": [
       "d2",
@@ -969,7 +995,9 @@
       "q-d6-f04",
       "q-d6-a05",
       "q-d6-a06",
-      "q-sc01-3"
+      "q-sc01-3",
+      "q-d2-e24",
+      "q-d6-e06"
     ],
     "relatedDomainIds": [
       "d2",
@@ -999,8 +1027,8 @@
     "relatedQuestionIds": [
       "q-d6-f04",
       "q-d6-f05",
-      "q-d6-e02",
-      "q-sc07-3"
+      "q-sc07-3",
+      "q-d6-e02"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1030,10 +1058,10 @@
       "q-d6-f05",
       "q-d6-a05",
       "q-d6-a09",
-      "q-d6-e02",
-      "q-d6-e05",
       "q-sc07-3",
-      "q-sc09-2"
+      "q-sc09-2",
+      "q-d6-e02",
+      "q-d6-e05"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1145,10 +1173,11 @@
       "q-d3-f05",
       "q-d3-a01",
       "q-d3-a08",
+      "q-sc03-3",
       "q-d3-e01",
       "q-d3-e03",
-      "q-sc03-3",
-      "q-sc08-2"
+      "q-sc08-2",
+      "q-d3-e07"
     ],
     "relatedDomainIds": [
       "d3"
@@ -1196,13 +1225,13 @@
       "q-d2-a07",
       "q-d2-a17",
       "q-d2-a18",
+      "q-d2-e15",
+      "q-sc03-1",
+      "q-sc07-1",
       "q-d2-e02",
       "q-d2-e07",
       "q-d2-e11",
-      "q-d2-e15",
       "q-d2-e19",
-      "q-sc03-1",
-      "q-sc07-1",
       "q-sc07-2"
     ],
     "relatedDomainIds": [
@@ -1236,7 +1265,8 @@
       "q-d2-a12",
       "q-d2-a13",
       "q-d3-a02",
-      "q-d3-f02"
+      "q-d3-f02",
+      "q-d3-e08"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1266,8 +1296,8 @@
     "relatedQuestionIds": [
       "q-d2-f11",
       "q-d2-a22",
-      "q-d2-e01",
-      "q-d2-e13"
+      "q-d2-e13",
+      "q-d2-e01"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1292,7 +1322,8 @@
       "q-d3-a03",
       "q-d3-a05",
       "q-d3-a09",
-      "q-d3-e02"
+      "q-d3-e02",
+      "q-d3-e06"
     ],
     "relatedDomainIds": [
       "d3"
@@ -1325,14 +1356,15 @@
       "cmp-safety-filter-types"
     ],
     "relatedQuestionIds": [
-      "q-d3-e04",
       "q-d6-a02",
       "q-d6-a04",
-      "q-d6-e01",
       "q-sc01-1",
       "q-sc01-2",
       "q-sc05-3",
-      "q-sc10-1"
+      "q-sc10-1",
+      "q-d3-e04",
+      "q-d6-e01",
+      "q-d6-e07"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1368,10 +1400,11 @@
       "q-d6-f01",
       "q-d6-a02",
       "q-d6-a04",
-      "q-d6-e03",
       "q-sc01-1",
       "q-sc10-1",
-      "q-sc10-2"
+      "q-sc10-2",
+      "q-d6-e03",
+      "q-d6-e06"
     ],
     "relatedDomainIds": [
       "d6",
@@ -1398,9 +1431,10 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d4-a06",
-      "q-d4-e04",
       "q-sc08-1",
-      "q-sc08-2"
+      "q-d4-e04",
+      "q-sc08-2",
+      "q-d3-e07"
     ],
     "relatedDomainIds": [
       "d4",
@@ -1520,7 +1554,8 @@
     "relatedQuestionIds": [
       "q-d1-a09",
       "q-sc04-3",
-      "q-sc10-2"
+      "q-sc10-2",
+      "q-d5-e06"
     ],
     "relatedDomainIds": [
       "d5"
@@ -1543,10 +1578,11 @@
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d1-e08",
       "q-d6-a09",
+      "q-d1-e08",
       "q-sc09-1",
-      "q-sc09-3"
+      "q-sc09-3",
+      "q-d5-e08"
     ],
     "relatedDomainIds": [
       "d5",
@@ -1702,7 +1738,9 @@
     "relatedComparisonIds": [
       "cmp-mcp-vs-extensions"
     ],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-e24"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -1729,7 +1767,8 @@
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d2-e06"
+      "q-d2-e06",
+      "q-d2-e22"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1737,7 +1776,7 @@
   },
   {
     "id": "cli-exclusion-admin",
-    "title": "Administering GitHub Copilot CLI for your enterprise",
+    "title": "Administering Copilot CLI for your enterprise",
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
@@ -1764,7 +1803,9 @@
     "relatedComparisonIds": [
       "cmp-exclusion-vs-publicmatch"
     ],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d6-e07"
+    ],
     "relatedDomainIds": [
       "d2",
       "d3",
@@ -1839,7 +1880,9 @@
       "g-agent-sessions"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-e22"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -1890,7 +1933,8 @@
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d3-f01"
+      "q-d3-f01",
+      "q-d3-e08"
     ],
     "relatedDomainIds": [
       "d3"
@@ -1996,7 +2040,9 @@
       "g-copilot-proxy"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d3-e06"
+    ],
     "relatedDomainIds": [
       "d3"
     ]
@@ -2021,7 +2067,9 @@
       "g-arrange-act-assert"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d5-e07"
+    ],
     "relatedDomainIds": [
       "d5"
     ]
@@ -2106,5 +2154,143 @@
     "relatedDomainIds": [
       "d2"
     ]
+  },
+  {
+    "id": "rest-best-practices",
+    "title": "Best practices for using the REST API",
+    "url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d3o2"
+    ],
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedQuestionIds": [
+      "q-d3-a13"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "copilot-contract-updates",
+    "title": "Updates to Customer Terms",
+    "url": "https://github.com/customer-terms/updates",
+    "publisher": "GitHub Terms",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d6o1"
+    ],
+    "relatedDomainIds": [
+      "d6"
+    ],
+    "relatedQuestionIds": [
+      "q-d6-a13"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "personal-instructions",
+    "title": "Adding personal custom instructions for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-personal-instructions",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedQuestionIds": [
+      "q-sc06-3"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "generative-ai-terms",
+    "title": "GitHub Generative AI Services Terms",
+    "url": "https://github.com/customer-terms/github-generative-ai-services-terms",
+    "publisher": "GitHub Terms",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d6o1"
+    ],
+    "relatedDomainIds": [
+      "d6"
+    ],
+    "relatedQuestionIds": [
+      "q-d6-a13"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "ml-fairness",
+    "title": "Machine learning fairness",
+    "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-fairness-ml?view=azureml-api-2",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d1o1"
+    ],
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-e09"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "autofix-triage",
+    "title": "Triaging code scanning alerts in pull requests",
+    "url": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/triage-alerts-in-pull-requests",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "relatedDomainIds": [
+      "d5"
+    ],
+    "relatedQuestionIds": [
+      "q-d5-e06"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
   }
 ]

@@ -1,0 +1,161 @@
+{
+  "description": "Phase 5 (D2): Copilotの機能を使いこなすの応用問題（Applied: intermediate）。MCP接続エラー、Prompt Files運用設計、CLI破壊的コマンド安全管理、Agent Modeスコープ制御を問う。",
+  "questions": [
+    {
+      "id": "q-d2-a23",
+      "objectiveId": "d2o3",
+      "question": "CopilotのMCP接続ログはhttp://127.0.0.1:8765/mcpへのconnection refused。HTTPサーバーの起動ログは8770で待受中、8765のプロセスはない。最初の修正候補は？",
+      "correct": {
+        "text": "MCP接続URLのポートを8770へ合わせる",
+        "explanation": "接続先と実際の待受ポートの不一致が観測されている。"
+      },
+      "distractors": [
+        {
+          "text": "接続URLのパスだけ/mcp/v2へ変える",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "パス変更では待受がないポートへの接続は直らない。"
+        },
+        {
+          "text": "サーバーのAPI認証トークンを再発行する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "認証段階へ到達していない。"
+        },
+        {
+          "text": "MCPツールの入力スキーマを変更する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ツール引数の処理前の接続で失敗している。"
+        }
+      ],
+      "sourceIds": [
+        "mcp",
+        "mcp-config"
+      ],
+      "assessment": "改稿。接続先と実際の待受ポートの不一致が観測されている。",
+      "counterfactual": "接続は成功し401を返すなら、API認証条件の確認が候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：CopilotのMCP接続ログはhttp://127.0.0.1:8765/mcpへのconnection refused。HTTPサーバーの起動ログは8770で待受中、8765のプロセスはない。最初の修正候補は？",
+        "接続先と実際の待受ポートの不一致が観測されている。"
+      ]
+    },
+    {
+      "id": "q-d2-a24",
+      "objectiveId": "d2o1",
+      "question": "Copilotへ共通規約とリリースノート手順を渡したら、日常の修正回答にもノートが生成される。規約は常時、ノート手順は必要時だけ使いたい。移す内容と配置は？",
+      "correct": {
+        "text": "ノート手順だけをPrompt Fileへ移す",
+        "explanation": "常時の規約を残し、タスク手順をオンデマンド化する。"
+      },
+      "distractors": [
+        {
+          "text": "共通規約だけをPrompt Fileへ移す",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "ノート手順が常時の指示に残る。"
+        },
+        {
+          "text": "両方を同じ共通指示へ短縮して残す",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "短縮しても適用頻度は変わらない。"
+        },
+        {
+          "text": "両方を個人の共通指示へ移す",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "共有と適用頻度の問題を解決しない。"
+        }
+      ],
+      "sourceIds": [
+        "instructions",
+        "prompt-files"
+      ],
+      "assessment": "改稿。常時の規約を残し、タスク手順をオンデマンド化する。",
+      "counterfactual": "ノート形式も全対話で必要なら、共通指示に残す設計が候補になる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ共通規約とリリースノート手順を渡したら、日常の修正回答にもノートが生成される。規約は常時、ノート手順は必要時だけ使いたい。移す内容と配置は？",
+        "常時の規約を残し、タスク手順をオンデマンド化する。"
+      ]
+    },
+    {
+      "id": "q-d2-a25",
+      "objectiveId": "d2o2",
+      "question": "Copilot CLIの削除案をdry-runすると、消してよいrun-cacheに加え保存対象run-fixturesも一覧に出た。まだ実行していない。許可範囲の検証を完了する次の操作は？",
+      "correct": {
+        "text": "対象をrun-cacheへ絞り、dry-runで一覧を再確認",
+        "explanation": "許可外を除く変更を行い、変更後の実対象を再検証する。"
+      },
+      "distractors": [
+        {
+          "text": "現在の一覧を保存し、同じ削除案を実行",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "許可外の対象が残る。"
+        },
+        {
+          "text": "run-fixturesを先に消し、同じdry-runを再実行",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "保持対象を先に破壊している。"
+        },
+        {
+          "text": "削除対象を/tmp全体へ広げ、一覧を再確認",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "対象をさらに広げている。"
+        }
+      ],
+      "sourceIds": [
+        "cli",
+        "cli-usage"
+      ],
+      "assessment": "改稿。許可外を除く変更を行い、変更後の実対象を再検証する。",
+      "counterfactual": "変更後の一覧がrun-cacheだけと確認できれば、承認された範囲で実行判断へ進める。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot CLIの削除案をdry-runすると、消してよいrun-cacheに加え保存対象run-fixturesも一覧に出た。まだ実行していない。許可範囲の検証を完了する次の操作は？",
+        "許可外を除く変更を行い、変更後の実対象を再検証する。"
+      ]
+    },
+    {
+      "id": "q-d2-a26",
+      "objectiveId": "d2o1",
+      "question": "Agentへの依頼はsrc/parser.tsの修正だけ。差分ではparser.tsの修正に加えpackage.jsonの依存更新もあり、更新理由は未確認。依頼範囲を保つ次の指示は？",
+      "correct": {
+        "text": "依存更新を分け、parser修正を既存依存で検証する",
+        "explanation": "依頼外変更を独立させ、対象修正が元環境で成立するか確認する。"
+      },
+      "distractors": [
+        {
+          "text": "依存更新も採用し、parser修正だけを説明する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "未確認の依頼外更新を混ぜている。"
+        },
+        {
+          "text": "parser修正を戻し、依存更新だけを検証する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "依頼された修正を外している。"
+        },
+        {
+          "text": "両差分を採用し、回帰テストは依存更新後に作る",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "採用後に検証を遅らせている。"
+        }
+      ],
+      "sourceIds": [
+        "agent-mode",
+        "guide"
+      ],
+      "assessment": "改稿。依頼外変更を独立させ、対象修正が元環境で成立するか確認する。",
+      "counterfactual": "依存更新が修正の承認済み前提なら、更新込みで回帰検証する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Agentへの依頼はsrc/parser.tsの修正だけ。差分ではparser.tsの修正に加えpackage.jsonの依存更新もあり、更新理由は未確認。依頼範囲を保つ次の指示は？",
+        "依頼外変更を独立させ、対象修正が元環境で成立するか確認する。"
+      ]
+    }
+  ]
+}

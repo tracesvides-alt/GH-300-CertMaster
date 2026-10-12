@@ -1,0 +1,100 @@
+{
+  "description": "Phase 6 (D6): ガバナンスとプライバシー保護の本番相当問題（Exam: advanced）。3階層ポリシー継承とEnforce優先順位、Content ExclusionとCopilot CLIの動作境界を問う。",
+  "questions": [
+    {
+      "id": "q-d6-e06",
+      "objectiveId": "d6o2",
+      "scenarioType": "enterprise",
+      "question": "公開コード一致ポリシーの確認演習。Enterpriseの実効設定は強制Blockで、Org-Aの保存値はAllow、Org-BはBlock。反映は確認済み。強制された場合は個人設定で解除できない。さらに社内例外承認はAだけAllowだが、Enterprise設定の変更承認はまだない。現在の実効状態は？",
+      "clues": [
+        "強制Block",
+        "Org-Aの保存値はAllow",
+        "反映は確認済み",
+        "Enterprise設定の変更承認はまだない"
+      ],
+      "correct": {
+        "text": "AはBlock、BはBlock",
+        "explanation": "技術的な強制設定と社内の例外承認を区別する。強制変更または対応する委任なしには下位Allowが有効にならない。"
+      },
+      "distractors": [
+        {
+          "text": "AはAllow、BはBlock",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "下位の保存値で上位強制を上書きしている。"
+        },
+        {
+          "text": "AはAllow、BはAllow",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "下位より上位を優先する点は合うが、強制値をAllowと取り違える。"
+        },
+        {
+          "text": "AはBlock、BはAllow",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "下位の保存値も上位の強制値も取り違えている。"
+        }
+      ],
+      "sourceIds": [
+        "policies",
+        "public-code"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。保存値、上位の実効設定、社内承認を別に読む。 → 強制Blockと反映確認済みという条件を各Orgへ適用する。 → 現時点では両方Blockとし、例外の技術反映は別手続きにする。",
+      "reasoningSteps": [
+        "保存値、上位の実効設定、社内承認を別に読む。",
+        "強制Blockと反映確認済みという条件を各Orgへ適用する。",
+        "現時点では両方Blockとし、例外の技術反映は別手続きにする。"
+      ],
+      "counterfactual": "「Enterpriseの実効設定は強制Blockで」→「EnterpriseはNo policyでOrgに委任し」なら表示A。上位の強制がなくなり、AのAllowとBのBlockがそれぞれ実効になる。"
+    },
+    {
+      "id": "q-d6-e07",
+      "objectiveId": "d6o1",
+      "scenarioType": "enterprise",
+      "question": "対象版Copilot CLIの管理Docsは内容除外の適用を示す。通常のファイル取得ではcrypto.tsにexcludedが出て本文は取得されない。一方、外部MCPのログ応答には同じ暗号鍵があり、利用者はそれをChatへ投入しようとしている。入力経路をまたぐ保護として足りない対策は？",
+      "clues": [
+        "対象版Copilot CLIの管理Docs",
+        "excludedが出て本文は取得されない",
+        "外部MCPのログ応答には同じ暗号鍵"
+      ],
+      "correct": {
+        "text": "CLIの除外を保ち、MCPの返却前に暗号鍵を除去",
+        "explanation": "除外が効いたファイル取得と、秘密を含む別の返却経路を分けて保護する。CLI全体が内容除外を常に無視するという説明も一律適用の保証も避ける。"
+      },
+      "distractors": [
+        {
+          "text": "MCP返却を保ち、正しい適用先へcrypto.tsの除外を登録",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "機能しているファイル取得の設定を重複させてもMCP応答を直さない。"
+        },
+        {
+          "text": "MCP返却を保ち、公開コード一致をBlockにする",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "出力一致の制御はMCPから入る暗号鍵を除去しない。"
+        },
+        {
+          "text": "MCP返却を保ち、crypto.tsのGit追跡を外す",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "Gitの追跡状態はMCPの返却項目を変えない。"
+        }
+      ],
+      "sourceIds": [
+        "cli-exclusion-admin",
+        "exclusion-concept",
+        "mcp",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。対象版の管理Docsと実際のexcluded表示でファイル取得の動作を確かめる。 → 同じ秘密がMCP応答で入る別経路と照合する。 → 既存除外を保ったままMCPの返却前で秘密を除去する。",
+      "reasoningSteps": [
+        "対象版の管理Docsと実際のexcluded表示でファイル取得の動作を確かめる。",
+        "同じ秘密がMCP応答で入る別経路と照合する。",
+        "既存除外を保ったままMCPの返却前で秘密を除去する。"
+      ],
+      "counterfactual": "「通常のファイル取得ではcrypto.tsにexcludedが出て本文は取得されない。一方、外部MCPのログ応答には同じ暗号鍵があり」→「通常のファイル取得では適用先を誤登録したためcrypto.ts本文を取得する。一方、外部MCPのログ応答には暗号鍵がなく」なら表示A。漏れる経路がCLIのファイル取得へ移り、正しい適用先へのパス登録が対象になる。"
+    }
+  ]
+}

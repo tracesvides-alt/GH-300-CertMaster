@@ -1461,7 +1461,8 @@
           "d2o2"
         ],
         "sourceIds": [
-          "cli"
+          "cli",
+          "cli-extension-sunset"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -1480,7 +1481,8 @@
           "d2o2"
         ],
         "sourceIds": [
-          "cli"
+          "cli",
+          "cli-extension-sunset"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -1499,7 +1501,8 @@
           "d2o2"
         ],
         "sourceIds": [
-          "cli"
+          "cli",
+          "cli-extension-sunset"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4716,6 +4719,86 @@
         "lastCheckedAt": "2026-10-12",
         "lastVerifiedAt": "2026-10-12",
         "status": "verified"
+      },
+      {
+        "id": "cli-extension-sunset",
+        "title": "Upcoming deprecation of gh-copilot CLI extension",
+        "url": "https://github.blog/changelog/2025-09-25-upcoming-deprecation-of-gh-copilot-cli-extension/",
+        "publisher": "GitHub Blog",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "rest-best-practices",
+        "title": "Best practices for using the REST API",
+        "url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "copilot-contract-updates",
+        "title": "Updates to Customer Terms",
+        "url": "https://github.com/customer-terms/updates",
+        "publisher": "GitHub Terms",
+        "domainIds": [
+          "d6"
+        ],
+        "objectiveIds": [
+          "d6o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "personal-instructions",
+        "title": "Adding personal custom instructions for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-personal-instructions",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o3"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "generative-ai-terms",
+        "title": "GitHub Generative AI Services Terms",
+        "url": "https://github.com/customer-terms/github-generative-ai-services-terms",
+        "publisher": "GitHub Terms",
+        "domainIds": [
+          "d6"
+        ],
+        "objectiveIds": [
+          "d6o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
       }
     ]
   },
@@ -4749,8 +4832,6 @@
   "verifiedWithoutOfficialSource": [],
   "activeVersionMismatch": [],
   "questionImpact": [
-    "q11",
-    "q-d3-f01",
-    "q-d3-f02"
+    "q11"
   ]
 }

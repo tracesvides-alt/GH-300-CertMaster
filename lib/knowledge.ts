@@ -15,7 +15,7 @@ export type ImportanceLevel = z.infer<typeof importanceLevel>;
 export const difficulty = z.enum(['beginner', 'intermediate', 'advanced']);
 export type Difficulty = z.infer<typeof difficulty>;
 
-export const publisherEnum = z.enum(['Microsoft Learn', 'GitHub Docs', 'GitHub Blog', 'VS Code Docs', 'Model Context Protocol', 'MDN', 'Vitest', 'fast-check']);
+export const publisherEnum = z.enum(['Microsoft Learn', 'GitHub Docs', 'GitHub Blog', 'GitHub Terms', 'VS Code Docs', 'Model Context Protocol', 'MDN', 'Vitest', 'fast-check']);
 
 // ────────────────────────────────────────────
 // Domain

@@ -1,0 +1,243 @@
+{
+  "description": "Phase 6 (D2): Copilotの機能を使いこなすの本番相当問題（Exam: advanced）。Agent×MCP複合インシデント、Web機能とContent Exclusion、CLI CIサンドボックス権限、Prompt FileとInstructions競合解決、Enterprise Extensionsポリシー継承を問う。",
+  "questions": [
+    {
+      "id": "q-d2-e20",
+      "objectiveId": "d2o3",
+      "scenarioType": "team",
+      "question": "AgentのMCP再試行中に.envとparser.tsが変更された。開始前の保存差分はparser.tsだけで、変更後もその差分は同一。.envの変更はAgentの実行記録と一致し、承認はない。セッションは停止済み。元のユーザー作業を保ち、未承認の復旧変更だけを戻す対象は？",
+      "clues": [
+        "開始前の保存差分はparser.tsだけ",
+        "その差分は同一",
+        ".envの変更はAgentの実行記録と一致",
+        "セッションは停止済み"
+      ],
+      "correct": {
+        "text": ".envだけを開始前の状態へ戻し、parser差分を保持",
+        "explanation": "開始前の差分と実行記録で変更の帰属を分け、Agentの未承認分だけ戻す。将来のファイルアクセスは対応する権限・隔離で制限する。"
+      },
+      "distractors": [
+        {
+          "text": "parserだけを開始前の状態へ戻し、.env差分を保持",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "ユーザーの既存変更を戻し、Agentの未承認変更を残している。"
+        },
+        {
+          "text": "両ファイルをHEADへ戻し、開始前差分も除去",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "ユーザーの開始前作業まで消す。"
+        },
+        {
+          "text": "両差分を保持し、MCPの再試行回数だけ減らす",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "変更帰属を確認できても未承認差分を残す。"
+        }
+      ],
+      "sourceIds": [
+        "agent-mode",
+        "code-review",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。開始前の保存差分とAgentの記録を分ける。 → .envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。 → .envだけを戻し、既存作業を保った状態で復旧を検証する。",
+      "reasoningSteps": [
+        "開始前の保存差分とAgentの記録を分ける。",
+        ".envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。",
+        ".envだけを戻し、既存作業を保った状態で復旧を検証する。"
+      ],
+      "counterfactual": "「開始前の保存差分はparser.tsだけで、変更後もその差分は同一。.envの変更はAgentの実行記録と一致」→「開始前の保存差分は.envだけで、変更後もその差分は同一。parser.tsの変更はAgentの実行記録と一致」なら表示B。変更の帰属が逆になり、戻すのはparserだけになる。"
+    },
+    {
+      "id": "q-d2-e21",
+      "objectiveId": "d2o1",
+      "scenarioType": "team",
+      "question": "Copilot Spaceにはrepo-Rとアップロード資料Uがある。Aは全て閲覧可。BはSpaceとUを閲覧でき、Rを直接開くと403で回答にもRがない。CはSpaceが403だがRを直接閲覧できる。全員同じSpaceリンクを使用し、403は対象への閲覧拒否とログで確認済み。B/Cの修正対象を分けると？",
+      "clues": [
+        "BはSpaceとUを閲覧でき",
+        "Rを直接開くと403",
+        "CはSpaceが403だがRを直接閲覧できる",
+        "403は対象への閲覧拒否とログで確認済み"
+      ],
+      "correct": {
+        "text": "Bはrepo-Rの閲覧権限、CはSpaceの共有権限",
+        "explanation": "BのU閲覧でSpace利用は確認でき、Rの境界が不足。CはRを読めてもSpaceへ入れないので、共有と参照元を分ける。"
+      },
+      "distractors": [
+        {
+          "text": "BはSpaceの共有権限、Cはrepo-Rの閲覧権限",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "成功済みの境界へ修正を逆に割り当てている。"
+        },
+        {
+          "text": "Bはrepo-Rの閲覧権限、Cもrepo-Rの閲覧権限",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "CのSpace拒否をrepo権限の修正では解消しない。"
+        },
+        {
+          "text": "BはSpaceの共有権限、CもSpaceの共有権限",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "BのSpaceは利用でき、参照repoの拒否が残る。"
+        }
+      ],
+      "sourceIds": [
+        "spaces",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。 → BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。 → Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。",
+      "reasoningSteps": [
+        "B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。",
+        "BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。",
+        "Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。"
+      ],
+      "counterfactual": "「CはSpaceが403だがRを直接閲覧できる」→「CもSpaceとUを閲覧できるが、Rを直接開くと403」なら表示C。Cの拒否も参照repoへ移り、両者のR閲覧権限が対象になる。元のCのSpace共有修正は成功済みの境界を扱ってしまう。"
+    },
+    {
+      "id": "q-d2-e22",
+      "objectiveId": "d2o2",
+      "scenarioType": "team",
+      "question": "外部PRをCopilot CLIで分析するCIを設計する。必要なのは修正案の回収で、生成コードの実行と機密変数の読取は不要。承認済み入力は読取専用マウント、機密変数は全案で除去済み。今回の成果物は/tmp/patchへ保存し、その場所だけ書込可。条件を満たす案は？",
+      "clues": [
+        "修正案の回収",
+        "生成コードの実行と機密変数の読取は不要",
+        "機密変数は全案で除去済み",
+        "/tmp/patchへ保存"
+      ],
+      "correct": {
+        "text": "入力は読取専用、/tmp/patchのみ書込可能、コード実行不可",
+        "explanation": "成果物の書込先だけを許可し、分析入力と実行の境界を保つ。隔離は複数の対策の一つであり指示文だけで安全を保証しない。"
+      },
+      "distractors": [
+        {
+          "text": "入力と出力を全て読取専用にし、コード実行不可",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "パッチ出力に必要な書込まで禁止する。"
+        },
+        {
+          "text": "入力も書込可能、出力は/tmp/patch、コード実行不可",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "読取専用の入力を変更できるようにする。"
+        },
+        {
+          "text": "入力は読取専用、/tmp/patchのみ書込可能、コード実行可",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "出力範囲は合うが、不要なコード実行まで許す。"
+        }
+      ],
+      "sourceIds": [
+        "cli-tool-permissions",
+        "cli-sessions"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。必要な副作用をパッチ出力だけと整理する。 → 各案の入力書込・出力書込・コード実行を承認範囲へ照合する。 → /tmp/patchだけ書ける隔離で出力と保護を両立する。",
+      "reasoningSteps": [
+        "必要な副作用をパッチ出力だけと整理する。",
+        "各案の入力書込・出力書込・コード実行を承認範囲へ照合する。",
+        "/tmp/patchだけ書ける隔離で出力と保護を両立する。"
+      ],
+      "counterfactual": "「今回の成果物は/tmp/patchへ保存し、その場所だけ書込可」→「今回の成果物は標準出力で回収し、全ファイルへの書込を禁止する」なら表示A。ファイル出力の必要がなくなり、全マウント読取専用が条件を満たす。"
+    },
+    {
+      "id": "q-d2-e23",
+      "objectiveId": "d2o1",
+      "scenarioType": "team",
+      "question": "共通指示はany禁止。承認済み例外はprototype/**かつ内部専用の試作だけ。Prompt Fileはprototype/a.tsとb.tsへanyの例を生成した。両方の型検査は成功したが、aは公開API、bは内部専用で、両方prototype配下。適合した例を保ち、必要な例だけ直す構成は？",
+      "clues": [
+        "prototype/**かつ内部専用",
+        "両方の型検査は成功",
+        "aは公開API、bは内部専用",
+        "必要な例だけ直す"
+      ],
+      "correct": {
+        "text": "aを型付きへ直し、bのany例を保つ",
+        "explanation": "型検査成功とは別に、パスと用途の二条件を照合する。aだけが例外外であり、bの承認済み例は維持する。"
+      },
+      "distractors": [
+        {
+          "text": "aとbのany例を両方保つ",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "aは公開APIで、prototype配下だけでは例外に入らない。"
+        },
+        {
+          "text": "aとbを両方型付きへ直す",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "規約には合うが適合済みのbまで変更し、必要な例だけ直す条件を満たさない。"
+        },
+        {
+          "text": "aのany例を保ち、bを型付きへ直す",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "例外外のaを残し、適合したbを変えている。"
+        }
+      ],
+      "sourceIds": [
+        "instructions",
+        "prompt-files"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。型検査の成功が社内のany例外条件を確認したわけではないと分ける。 → a/bそれぞれへprototypeパスと内部専用の両条件を照合する。 → aだけを型付きへ直し、例外内のbを保持して出力を再検証する。",
+      "reasoningSteps": [
+        "型検査の成功が社内のany例外条件を確認したわけではないと分ける。",
+        "a/bそれぞれへprototypeパスと内部専用の両条件を照合する。",
+        "aだけを型付きへ直し、例外内のbを保持して出力を再検証する。"
+      ],
+      "counterfactual": "「aは公開API、bは内部専用」→「aもbも内部専用」なら表示A。両方が承認済み例外へ入り、追加修正なしでany例を保てる。元のa改稿は必要な例だけの修正ではなくなる。"
+    },
+    {
+      "id": "q-d2-e24",
+      "objectiveId": "d2o4",
+      "scenarioType": "team",
+      "question": "GitHub App型の社内Copilot Extensionが2025年11月10日の廃止後に停止した。同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない。代替は認可付きMCP検索を準備済みだが接続承認は未完了。今回のログに対応する復旧・再開の対象は？",
+      "clues": [
+        "GitHub App型",
+        "2025年11月10日の廃止後",
+        "Issue連携は動作する",
+        "接続承認は未完了"
+      ],
+      "correct": {
+        "text": "MCPの接続承認と検索認可を検証してChat経路を置換",
+        "explanation": "廃止対象のCopilot機能と存続する通常Appを分け、準備したMCPを承認・検証する。"
+      },
+      "distractors": [
+        {
+          "text": "通常GitHub AppのIssue用資格情報を更新して検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "Issue連携は動作し、認証失敗の証拠がない。"
+        },
+        {
+          "text": "MCPの検索引数スキーマを修正し、入出力契約を検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "未承認の接続前であり、引数エラーの証拠はない。"
+        },
+        {
+          "text": "CLIのシート割当と利用許可を確認し、端末の接続を検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "今回停止した経路はGitHub App型Chat連携で、端末の座席・CLI許可ではない。"
+        }
+      ],
+      "sourceIds": [
+        "extensions-sunset",
+        "mcp",
+        "policies",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。Issue連携の成功とChat廃止ログから停止対象を分ける。 → GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。 → MCPの接続承認と検索認可を検証してChat経路を置換する。",
+      "reasoningSteps": [
+        "Issue連携の成功とChat廃止ログから停止対象を分ける。",
+        "GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。",
+        "MCPの接続承認と検索認可を検証してChat経路を置換する。"
+      ],
+      "counterfactual": "「同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない」→「今回停止したのは存続するGitHub AppのIssue連携で、接続ログはIssue用資格情報の失効だけを示す」なら表示B。歴史上のCopilot機能廃止はそのままだが、今回復旧すべき対象は通常AppのIssue認証へ変わる。"
+    }
+  ]
+}

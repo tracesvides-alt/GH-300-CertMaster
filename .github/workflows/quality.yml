@@ -12,5 +12,7 @@ jobs:
       - run: npm ci
       - run: npm run quality:check
       - run: npm run difficulty:check
+      - run: npm run applied:check
+      - run: npm run exam:check
       - run: npm run check
       - run: npm test

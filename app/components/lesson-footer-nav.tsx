@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowLeft, ArrowRight, CheckCircle2, Circle, BookOpen, Layers, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Circle, BookOpen, Layers, Sparkles, LayoutList } from 'lucide-react';
 import { getLessonNav, type LessonNavInfo } from '@/lib/lesson-nav';
 
 interface LessonFooterNavProps {
@@ -12,6 +12,7 @@ interface LessonFooterNavProps {
   onNavigateNext?: () => void;
   onNavigatePrev?: () => void;
   onStartPractice?: () => void;
+  onBackToList?: () => void;
 }
 
 export function LessonFooterNav({
@@ -22,6 +23,7 @@ export function LessonFooterNav({
   onNavigateNext,
   onNavigatePrev,
   onStartPractice,
+  onBackToList,
 }: LessonFooterNavProps) {
   const nav = React.useMemo<LessonNavInfo | null>(() => {
     return getLessonNav(currentLessonId);
@@ -66,28 +68,45 @@ export function LessonFooterNav({
           </span>
         </div>
 
-        {/* Completion Toggle Button */}
-        {onToggleCompleted && (
-          <button
-            type="button"
-            onClick={onToggleCompleted}
-            className={`lesson-completion-toggle ${isCompleted ? 'is-completed' : ''}`}
-            aria-label={isCompleted ? '読了済み（クリックで解除）' : '読了にする'}
-            aria-pressed={isCompleted}
-          >
-            {isCompleted ? (
-              <>
-                <CheckCircle2 size={16} className="text-emerald-400" />
-                <span className="text-emerald-300 font-medium">読了済み</span>
-              </>
-            ) : (
-              <>
-                <Circle size={16} className="text-slate-400" />
-                <span className="text-slate-300">読了にする</span>
-              </>
-            )}
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          {onBackToList && (
+            <button
+              type="button"
+              onClick={() => {
+                onBackToList();
+                window.scrollTo({ top: 0, behavior: 'instant' });
+              }}
+              className="lesson-back-to-list-btn"
+              aria-label="教材一覧へ戻る"
+            >
+              <LayoutList size={14} />
+              <span>一覧へ戻る</span>
+            </button>
+          )}
+
+          {/* Completion Toggle Button */}
+          {onToggleCompleted && (
+            <button
+              type="button"
+              onClick={onToggleCompleted}
+              className={`lesson-completion-toggle ${isCompleted ? 'is-completed' : ''}`}
+              aria-label={isCompleted ? '読了済み（クリックで解除）' : '読了にする'}
+              aria-pressed={isCompleted}
+            >
+              {isCompleted ? (
+                <>
+                  <CheckCircle2 size={16} className="text-emerald-400" />
+                  <span className="text-emerald-300 font-medium">読了済み</span>
+                </>
+              ) : (
+                <>
+                  <Circle size={16} className="text-slate-400" />
+                  <span className="text-slate-300">読了にする</span>
+                </>
+              )}
+            </button>
+          )}
+        </div>
       </div>
 
       {/* 2. Navigation Actions */}

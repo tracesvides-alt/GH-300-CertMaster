@@ -178,7 +178,7 @@ export function calculateQuestionWeights(
   const difficultyMultipliers = {
     balanced: { beginner: 1.0, intermediate: 1.0, advanced: 1.0 },
     foundation: { beginner: 3.5, intermediate: 1.0, advanced: 0.15 },
-    exam: { beginner: 0.05, intermediate: 0.8, advanced: 2.5 },
+    exam: { beginner: 0.05, intermediate: 0.6, advanced: 3.0 },
   }[options.difficultyMode ?? 'balanced'];
 
   return new Map(

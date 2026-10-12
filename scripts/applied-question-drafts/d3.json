@@ -1,0 +1,161 @@
+{
+  "description": "Phase 5 (D3): データとアーキテクチャの応用問題（Applied: intermediate）。デバウンスとリクエストキャンセル、レートリミット指数バックオフ、トークン予算配分と切り捨て、LLM非決定性とサンプリングを問う。",
+  "questions": [
+    {
+      "id": "q-d3-a12",
+      "objectiveId": "d3o2",
+      "question": "補完クライアントの待機仕様は「最後の入力から100ms後に送信」。入力は0msと40ms、80ms時点では未送信。Copilot関連の診断で、この仕様なら次の送信予定時刻は？",
+      "correct": {
+        "text": "140ms",
+        "explanation": "最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。"
+      },
+      "distractors": [
+        {
+          "text": "100ms",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "最初の入力を基準にしている。"
+        },
+        {
+          "text": "80ms",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "まだ100ms経っていない。"
+        },
+        {
+          "text": "240ms",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "待機時間を二重に足している。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "inline-usage"
+      ],
+      "assessment": "改稿。最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。",
+      "counterfactual": "最後の入力が0msだけなら100msになる。",
+      "reasoningSteps": [
+        "判断条件を特定する：補完クライアントの待機仕様は「最後の入力から100ms後に送信」。入力は0msと40ms、80ms時点では未送信。Copilot関連の診断で、この仕様なら次の送信予定時刻は？",
+        "最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。"
+      ]
+    },
+    {
+      "id": "q-d3-a13",
+      "objectiveId": "d3o2",
+      "question": "Copilot利用集計を取るGitHub REST APIが429とRetry-After: 8を返した。今回の応答では8秒の待機が指示され、同じ処理の再試行はまだ1回目。採用する再試行案は？",
+      "correct": {
+        "text": "8秒以上待って再試行し、同時実行数を抑える",
+        "explanation": "サーバーの待機指示を守り集中を抑える。"
+      },
+      "distractors": [
+        {
+          "text": "2秒待って再試行し、同時実行数を抑える",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "指定された待機時間より短い。"
+        },
+        {
+          "text": "8秒待って再試行し、同時実行数を倍にする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "待機してもさらに同時負荷を増やしている。"
+        },
+        {
+          "text": "即時再試行し、成功後に8秒待つ",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "待機を再試行後へ移している。"
+        }
+      ],
+      "sourceIds": [
+        "rest-best-practices",
+        "guide"
+      ],
+      "assessment": "改稿。サーバーの待機指示を守り集中を抑える。",
+      "counterfactual": "待機指示が2秒なら、2秒以上を下限にする。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot利用集計を取るGitHub REST APIが429とRetry-After: 8を返した。今回の応答では8秒の待機が指示され、同じ処理の再試行はまだ1回目。採用する再試行案は？",
+        "サーバーの待機指示を守り集中を抑える。"
+      ]
+    },
+    {
+      "id": "q-d3-a14",
+      "objectiveId": "d3o1",
+      "question": "Copilotへ渡す文脈の予算は4096トークン。現在は無関係な資料3000と対象コード1000がある。調査に必須の型定義500を足すため、必要な情報を保つ整理は？",
+      "correct": {
+        "text": "無関係な資料を減らし、対象1000と型500を残す",
+        "explanation": "必須の対象・型を残した1500は予算内に収まる。"
+      },
+      "distractors": [
+        {
+          "text": "型定義を足し、対象コード1000を削る",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "調査対象そのものを失う。"
+        },
+        {
+          "text": "対象と資料を保ち、型定義は名前だけ残す",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "設問で必須とした型の内容を失う。"
+        },
+        {
+          "text": "全4500トークンを送り、予算はそのままにする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "予算を超えている。内部の固定順位計算は断定しない。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "workspace-context"
+      ],
+      "assessment": "改稿。必須の対象・型を残した1500は予算内に収まる。",
+      "counterfactual": "型定義が不要で対象コードだけを調べるなら、型の追加を省ける。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ渡す文脈の予算は4096トークン。現在は無関係な資料3000と対象コード1000がある。調査に必須の型定義500を足すため、必要な情報を保つ整理は？",
+        "必須の対象・型を残した1500は予算内に収まる。"
+      ]
+    },
+    {
+      "id": "q-d3-a15",
+      "objectiveId": "d3o2",
+      "question": "同一の保存済みプロンプト・モデルでCopilot提案を20回比較した。文面は違うが契約テストは全件成功した。再現性と正しさの評価は？",
+      "correct": {
+        "text": "文面の再現性はないが、確認した契約には適合する",
+        "explanation": "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。"
+      },
+      "distractors": [
+        {
+          "text": "文面が異なるので、契約にも全件違反している",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "文面差だけから契約違反は導けない。"
+        },
+        {
+          "text": "テストが成功したので、文面も完全に再現している",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "実行結果と文面一致は別である。"
+        },
+        {
+          "text": "モデルが同じなので、入力が必ず違っていたと断定する",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "同一入力で出力が異なる可能性を除外できない。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ],
+      "assessment": "改稿。観測された文面差と検証した契約を分ける。未検証条件の保証はしない。",
+      "counterfactual": "同じ契約テストが一部失敗したなら、適合という結論を変更する。",
+      "reasoningSteps": [
+        "判断条件を特定する：同一の保存済みプロンプト・モデルでCopilot提案を20回比較した。文面は違うが契約テストは全件成功した。再現性と正しさの評価は？",
+        "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。"
+      ]
+    }
+  ]
+}

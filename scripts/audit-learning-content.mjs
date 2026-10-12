@@ -63,7 +63,7 @@ export function buildLearningAudit(asOf = '2026-10-12') {
     for (const [target, field] of [['lesson', 'relatedLessonIds'], ['glossary', 'relatedGlossaryIds'], ['comparison', 'relatedComparisonIds'], ['question', 'relatedQuestionIds'], ['objective', 'relatedObjectiveIds']]) check(entry.id, target, entry[field]);
   }
   const items = [...lessons, ...glossary, ...comparisons];
-  const officialPublishers = new Set(['Microsoft Learn', 'GitHub Docs', 'GitHub Blog', 'VS Code Docs']);
+  const officialPublishers = new Set(['Microsoft Learn', 'GitHub Docs', 'GitHub Blog', 'GitHub Terms', 'VS Code Docs']);
   const sourcesById = new Map(sources.map((entry) => [entry.id, entry]));
   const verifiedWithoutOfficialSource = items.filter((entry) => entry.status === 'verified' && !entry.sourceIds.some((id) => officialPublishers.has(sourcesById.get(id)?.publisher))).map((entry) => entry.id);
   const activeVersionMismatch = items.filter((entry) => entry.syllabusVersion !== syllabus.version).map((entry) => entry.id);

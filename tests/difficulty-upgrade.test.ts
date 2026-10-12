@@ -176,29 +176,23 @@ describe('Practice Difficulty Mode Selection', () => {
 
 describe('Mock Exam Difficulty Distribution', () => {
   it('ensures Mock Exam focuses on Difficulty 2 & 3 with verified-only questions', () => {
-    const res = selectMockQuestions(questions, 50, {
-      attempts: [],
-      rng: () => 0.5,
-    });
-
-    expect(res.questions.length).toBe(50);
-    // Verified only
-    expect(res.questions.every((q) => q.status === 'verified')).toBe(true);
-
-    const counts = {
-      beginner: res.questions.filter((q) => q.difficulty === 'beginner').length,
-      intermediate: res.questions.filter((q) => q.difficulty === 'intermediate').length,
-      advanced: res.questions.filter((q) => q.difficulty === 'advanced').length,
-    };
-
-    // Foundation should be minimal (<= 5 questions / <= 10%)
-    expect(counts.beginner).toBeLessThanOrEqual(5);
-
-    // Intermediate + Advanced should be >= 90% (>= 45 questions)
-    expect(counts.intermediate + counts.advanced).toBeGreaterThanOrEqual(45);
-
-    // Advanced should be prominent (>= 25 questions)
-    expect(counts.advanced).toBeGreaterThanOrEqual(25);
+    // Selection uses weights, not hard difficulty quotas. A constant random
+    // value repeatedly picks the same percentile and is not a distribution test.
+    const runs = 100;
+    const totals = { beginner: 0, intermediate: 0, advanced: 0 };
+    for (let seed = 1; seed <= runs; seed++) {
+      let state = seed;
+      const rng = () => { state = (Math.imul(state, 1664525) + 1013904223) >>> 0; return state / 4294967296; };
+      const res = selectMockQuestions(questions, 50, { attempts: [], rng });
+      expect(res.questions).toHaveLength(50);
+      expect(new Set(res.questions.map(q => q.id)).size).toBe(50);
+      expect(res.questions.every(q => q.status === 'verified')).toBe(true);
+      expect(res.meetsRanges).toBe(true);
+      for (const q of res.questions) totals[q.difficulty]++;
+    }
+    expect(totals.beginner / runs).toBeLessThanOrEqual(5);
+    expect((totals.intermediate + totals.advanced) / runs).toBeGreaterThanOrEqual(45);
+    expect(totals.advanced / runs).toBeGreaterThanOrEqual(25);
   });
 });
 

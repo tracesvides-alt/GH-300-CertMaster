@@ -1,0 +1,146 @@
+{
+  "description": "Phase 6 (D3): データとアーキテクチャの本番相当問題（Exam: advanced）。SSL Inspectionプロキシと証明書チェーン解決、Neighboring TabsとSemantic Searchの競合、FIM中間挿入とSuffix境界不整合を問う。",
+  "questions": [
+    {
+      "id": "q-d3-e06",
+      "objectiveId": "d3o1",
+      "scenarioType": "team",
+      "question": "同じ社内CAをOSへ登録したPC-AとBを比較する。AのIDE要求は成功。Bの診断はCONNECT成功後にissuerエラー。BではNodeプロセスが追加CA設定を読まず、同じプロセスへCAファイルを渡す一変数実験だけで成功した。検証を保つ最小の恒久対策は？",
+      "clues": [
+        "CONNECT成功後にissuerエラー",
+        "同じプロセスへCAファイルを渡す一変数実験だけで成功",
+        "検証を保つ"
+      ],
+      "correct": {
+        "text": "Bの対象プロセスへCAファイル設定を適用し、再起動して確認",
+        "explanation": "失敗段階と一変数実験を照合し、対象ランタイムの信頼設定を持続させる。OSストアを必ず使わないという一律の仕様は断定しない。"
+      },
+      "distractors": [
+        {
+          "text": "Bのプロキシ認証情報を更新し、CONNECTを再確認",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "CONNECT後のTLS失敗であり、認証更新の証拠がない。"
+        },
+        {
+          "text": "BのOS信頼ストアへ社内CAを再登録し、IDE通信を再確認",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "OS CAは登録済みで、対象プロセスがその設定を使わない実験結果を直さない。"
+        },
+        {
+          "text": "BのDNS解決先とプロキシURLを変更し、到達性を再確認",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "到達とCONNECTは成功済みであり、CA設定だけが改善した観測へ対応しない。"
+        }
+      ],
+      "sourceIds": [
+        "network",
+        "network-settings"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。CONNECT成功とissuerエラーからTLS検証段階へ絞る。 → 対象プロセスへCAを渡す実験だけが改善した事実を比較する。 → Bの該当プロセスのCA設定を恒久化して同条件で再検証する。",
+      "reasoningSteps": [
+        "CONNECT成功とissuerエラーからTLS検証段階へ絞る。",
+        "対象プロセスへCAを渡す実験だけが改善した事実を比較する。",
+        "Bの該当プロセスのCA設定を恒久化して同条件で再検証する。"
+      ],
+      "counterfactual": "「Bの診断はCONNECT成功後にissuerエラー。BではNodeプロセスが追加CA設定を読まず、同じプロセスへCAファイルを渡す一変数実験だけで成功した」→「Bの診断はCONNECT時に407。BのCA設定はAと同一で、同じプロセスのプロキシ資格情報を更新する一変数実験だけで成功した」なら表示A。停止段階と改善実験がプロキシ認証へ移る。"
+    },
+    {
+      "id": "q-d3-e07",
+      "objectiveId": "d3o1",
+      "scenarioType": "team",
+      "question": "決済APIの提案を比較した。M1＋引用v1は旧API、M1＋明示添付v2は新API、M2＋引用v1は旧APIだった。作業版はv2。モデル・コード・指示を固定して取得文脈の影響を次に確かめたい。対照と変更群の組合せは？",
+      "clues": [
+        "M1＋引用v1は旧API",
+        "M1＋明示添付v2は新API",
+        "M2＋引用v1は旧API",
+        "モデル・コード・指示を固定"
+      ],
+      "correct": {
+        "text": "M1＋引用v1を対照、M1＋同じ版v2の参照を変更群",
+        "explanation": "文脈の版だけを変える。観測から内部の固定優先順位を断定せず、同じモデルの取得条件を比較する。"
+      },
+      "distractors": [
+        {
+          "text": "M1＋引用v1を対照、M2＋引用v1を変更群",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "モデル差を変える実験であり文脈の版は同じ。"
+        },
+        {
+          "text": "M1＋引用v1を対照、M2＋添付v2を変更群",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "モデルと文脈が同時に変わり原因を分離しない。"
+        },
+        {
+          "text": "M1＋引用v1を対照、旧コードv1と別指示を変更群",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "コードと指示も変わり比較対象が異なる。"
+        }
+      ],
+      "sourceIds": [
+        "architecture",
+        "workspace-context"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。各結果をモデルと参照版の二軸へ整理する。 → 固定したい条件と、変えたい文脈の版を照合する。 → M1のままv1対v2を比較し、取得の影響に結論を限定する。",
+      "reasoningSteps": [
+        "各結果をモデルと参照版の二軸へ整理する。",
+        "固定したい条件と、変えたい文脈の版を照合する。",
+        "M1のままv1対v2を比較し、取得の影響に結論を限定する。"
+      ],
+      "counterfactual": "「モデル・コード・指示を固定して取得文脈の影響を次に確かめたい」→「文脈の版・コード・指示を固定してモデル差の影響を次に確かめたい」なら表示A。文脈固定でM1とM2だけを変える実験へ切り替わる。"
+    },
+    {
+      "id": "q-d3-e08",
+      "objectiveId": "d3o2",
+      "scenarioType": "team",
+      "question": "中間補完の前半は取得値xを保持し、後半はx*rateを返す。rateは110。生成案は中間でxを110倍し、さらにreturn xを追加した。入力2の出力は220で契約と一致するが、rate=120の契約240には不一致。挿入範囲に限って修正し後半を維持する案は？",
+      "clues": [
+        "中間でxを110倍",
+        "さらにreturn xを追加",
+        "rate=120の契約240には不一致",
+        "後半を維持"
+      ],
+      "correct": {
+        "text": "xの変換と中間returnを外し、後半のx*rateを使う",
+        "explanation": "一致した一入力だけで採用せず、値の単位と早期returnで後半を飛ばす経路を直す。複数returnがあるだけで構文エラーとは限らない。"
+      },
+      "distractors": [
+        {
+          "text": "xの110倍を保ち、中間returnだけを外す",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "後半でもrate倍されるため二重変換になる。"
+        },
+        {
+          "text": "中間returnを保ち、後半のrateだけ120へ固定",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "後半の変更が中間returnで実行されず、固定値は可変rate契約も失う。"
+        },
+        {
+          "text": "中間の110倍だけを外し、return xは保つ",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "変換は外れても早期returnでrate計算を飛ばす。"
+        }
+      ],
+      "sourceIds": [
+        "inline-usage",
+        "fim-context",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。220一致が110の固定変換でも生じることを確認する。 → rate変更時の不一致と中間returnによる後半の未実行を照合する。 → 中間の余分な変換とreturnを外し、可変rateの後半を検証する。",
+      "reasoningSteps": [
+        "220一致が110の固定変換でも生じることを確認する。",
+        "rate変更時の不一致と中間returnによる後半の未実行を照合する。",
+        "中間の余分な変換とreturnを外し、可変rateの後半を検証する。"
+      ],
+      "counterfactual": "「後半はx*rateを返す。rateは110。生成案は中間でxを110倍し、さらにreturn xを追加した。入力2の出力は220で契約と一致するが、rate=120の契約240には不一致」→「後半はそのままxを返す。承認済み契約は固定110倍。生成案は中間でxを110倍し、さらにreturn xを追加した。入力2の出力220は契約に一致するが、後半の監査処理を早期returnで飛ばす」なら表示A。計算契約を固定110倍へ変更すると変換は中間に一度必要で、早期returnだけを外す案が後半を保つ。"
+    }
+  ]
+}

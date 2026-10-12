@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-10-12",
+  "reviewedAt": "2026-10-13",
   "status": "reviewed",
   "method": "全件の編集評価。実測正答率・識別力・実試験との等価性は未測定。",
   "questions": {
@@ -10,12 +10,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。翌月末という仕様を報告された失敗入力へ適用する。",
+      "assessment": "維持。存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。",
       "reasoningSteps": [
-        "翌月末という仕様を報告された失敗入力へ適用する。"
+        "判断条件を特定する：翌月末の仕様、1月31日、2025年",
+        "存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "2024年の同じ入力なら2月29日を期待する。",
+      "evidence": [
+        "responsible",
+        "tests"
+      ]
     },
     "q02": {
       "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84",
@@ -88,12 +92,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。日と月の順序を具体的な入出力例に適用する。",
+      "assessment": "維持。DD/MMを曖昧な入力と日が12を超える入力へ適用し、年とISO出力も具体化する。",
       "reasoningSteps": [
-        "日と月の順序を具体的な入出力例に適用する。"
+        "判断条件を特定する：DD/MM契約、03/04と13/04",
+        "DD/MMを曖昧な入力と日が12を超える入力へ適用し、年とISO出力も具体化する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "MM/DD契約なら03/04は3月4日、13/04は無効になる。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q08": {
       "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb",
@@ -127,12 +134,15 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "通信を止めるだけのスタブと、宛先・本文を観測するモックを条件に適用する。",
+      "assessment": "維持。外部通信を隔離し、要求されている宛先と本文を直接検証する。 成功分岐は検証できるが、呼び出し引数の誤りを検出できない。",
       "reasoningSteps": [
-        "通信を止めるだけのスタブと、宛先・本文を観測するモックを条件に適用する。"
+        "判断条件を特定する：外部通信なし、宛先と本文の検証",
+        "外部通信を隔離し、要求されている宛先と本文を直接検証する。 成功分岐は検証できるが、呼び出し引数の誤りを検出できない。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "実際の配送確認が目的なら実環境での受信検証が必要になる。",
+      "evidence": [
+        "tests"
+      ]
     },
     "q11": {
       "fingerprint": "aab6e83427fcc8a0d651ec4bd123fcf5c5144ea6ecbdc10fd0db42d86e6df257",
@@ -231,12 +241,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。資源取得後の例外という失敗経路へテストを選ぶ。",
+      "assessment": "維持。リソースを取得した後の例外経路を通し、解放という副作用を検証する。",
       "reasoningSteps": [
-        "資源取得後の例外という失敗経路へテストを選ぶ。"
+        "判断条件を特定する：open成功後のparse例外、closeの欠落",
+        "リソースを取得した後の例外経路を通し、解放という副作用を検証する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "open自体の失敗なら、取得済みリソースの解放テストとは異なる。",
+      "evidence": [
+        "tests",
+        "responsible"
+      ]
     },
     "q-d1-a02": {
       "fingerprint": "5aea644068eef5481dc83971da966a5d26066a4d2211e5fe9dec28f573efec3a",
@@ -244,25 +258,32 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "文字列連結による提案へパラメータ化を適用し、周辺の防御策と区別する。",
+      "assessment": "維持。ユーザー入力をSQL構文として解釈させない修正である。",
       "reasoningSteps": [
-        "文字列連結による提案へパラメータ化を適用し、周辺の防御策と区別する。"
+        "判断条件を特定する：外部入力、SQL文字列連結",
+        "ユーザー入力をSQL構文として解釈させない修正である。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "数値演算の誤りだけならクエリのパラメータ化では修正できない。",
+      "evidence": [
+        "responsible",
+        "tests"
+      ]
     },
     "q-d1-a03": {
-      "fingerprint": "7ddb04231363be00d4cea72cf0de9febc673ef95cb54103475050f82b139753c",
+      "fingerprint": "2618a0cd15523a804a8892f9aa7178993677167f63c3b6105c4f4db19b97e5e9",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "レビューの仕様違反という実際の課題へ、操作訓練ではなく判断訓練を選ぶ。",
+      "assessment": "改稿。仕様で拒否するviewerを生成条件が許可してしまうことを再現する。",
       "reasoningSteps": [
-        "レビューの仕様違反という実際の課題へ、操作訓練ではなく判断訓練を選ぶ。"
+        "判断条件を特定する：採用速度は改善、仕様違反が残る",
+        "仕様で拒否するviewerを生成条件が許可してしまうことを再現する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "承認済み仕様がviewerの更新も許可するなら、viewerの拒否テストは契約に合わなくなる。",
+      "evidence": [
+        "responsible"
+      ]
     },
     "q-d1-a04": {
       "fingerprint": "dfeceae7eeecbeb49603c5eaf75b9687842efed70240c15c8758022caba93f46",
@@ -270,12 +291,16 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "MD5の提案を、一般ハッシュや暗号化ではなくパスワード保存向け方式へ修正する。",
+      "assessment": "維持。パスワード保存向けの計算コストを持つ方式と検証まで指定する。",
       "reasoningSteps": [
-        "MD5の提案を、一般ハッシュや暗号化ではなくパスワード保存向け方式へ修正する。"
+        "判断条件を特定する：パスワード保存、MD5案",
+        "パスワード保存向けの計算コストを持つ方式と検証まで指定する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "ファイル破損の検知が目的ならパスワード保存向けの方式指定とは異なる。",
+      "evidence": [
+        "responsible",
+        "tests"
+      ]
     },
     "q-d1-a05": {
       "fingerprint": "942b717b1ebf6d36372fd950de7bc071d29ba5d1bf61d56af8e573921aeb6f64",
@@ -304,30 +329,37 @@
       "evidence": []
     },
     "q-d1-a07": {
-      "fingerprint": "4818a5efb8342924ac9c71a77da11d86f8ea6735772d445625d33a5f6b130ccb",
+      "fingerprint": "b2d0546885b163a44fa7d24939391c016ea07ea116105f5b33e0f66badb22e37",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。通知と強制される承認条件の差を運用へ適用する。",
+      "assessment": "改稿。承認完了をマージのゲートにする。",
       "reasoningSteps": [
-        "通知と強制される承認条件の差を運用へ適用する。"
+        "判断条件を特定する：Copilot指示には担当者承認後にマージとあるが、テスト成功後は未承認でもマージ可能だった。テスト結果を保ち、承認を実効条件にする変更は？",
+        "承認完了をマージのゲートにする。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "目的がレビュー依頼の見落とし通知だけなら通知先追加が候補になる。",
+      "evidence": [
+        "responsible",
+        "code-review"
+      ]
     },
     "q-d1-a08": {
-      "fingerprint": "954a63fb8414652f65996a7d0ebcfbfbb0117cbbbf78eb30b050ae6122935499",
+      "fingerprint": "6193a5c11440470b89f55f6716bd22e1198b67d1c385b59a7421aa35b2014205",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "エラー処理を消しても通る観測から、行到達ではなく有効なアサーションを確認する。",
+      "assessment": "改稿。既知の欠陥に対して検査が落ちることを確かめる。",
       "reasoningSteps": [
-        "エラー処理を消しても通る観測から、行到達ではなく有効なアサーションを確認する。"
+        "判断条件を特定する：Copilot生成テストはexpectを含むが、エラー処理を削っても成功する。行カバレッジは増えた。テストが失敗を検出するか確かめる次の観測は？",
+        "既知の欠陥に対して検査が落ちることを確かめる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "問題が命名規約への適合だけなら、テスト名の確認で足りる。",
+      "evidence": [
+        "tests"
+      ]
     },
     "q-d1-a09": {
       "fingerprint": "6746a138355c2d9149f3133309d1d6c132bc499641b88984b01b22896e440423",
@@ -335,72 +367,89 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。既存検査の対象外である業務契約に必要な検証を選ぶ。",
+      "assessment": "維持。型や秘密情報検出では業務上の数値契約は確認できない。独立した期待金額を実行検証する。",
       "reasoningSteps": [
-        "既存検査の対象外である業務契約に必要な検証を選ぶ。"
+        "判断条件を特定する：型・秘密検査は既存、金額契約の維持",
+        "型や秘密情報検出では業務上の数値契約は確認できない。独立した期待金額を実行検証する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "不足する要件が秘密の混入検出なら秘密情報検査を補う。",
+      "evidence": [
+        "tests",
+        "codeql"
+      ]
     },
     "q-d1-a10": {
-      "fingerprint": "a826ddacca995517a01c6926c52a28a880881fc86e38685377634ebdc4fe7314",
+      "fingerprint": "09411c639b3dbeac231f8a031f537d9b5312878559c060697acb7efe0377b788",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。性能改善案を互換性条件に照合して採否を判断する。",
+      "assessment": "改稿。Qは20msかつ[]で二条件を満たす。",
       "reasoningSteps": [
-        "性能改善案を互換性条件に照合して採否を判断する。"
+        "判断条件を特定する：Copilotの案Pは15msで空入力null、案Qは20msで[]を返す。契約は空入力[]、応答時間25ms以下。今ある測定で両条件を満たす案は？",
+        "Qは20msかつ[]で二条件を満たす。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "空入力nullが許容契約なら、Pも採用候補になる。",
+      "evidence": [
+        "responsible",
+        "tests"
+      ]
     },
     "q-d1-e01": {
-      "fingerprint": "4297869bbbb51520334fff78c56c6bc086db8584a3a666a5980ec1146d38cbd5",
+      "fingerprint": "f9333a022b5ac66e952097436726999755cd402f0abd3a04ce5117430eb78078",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。候補ごとに出所と機能の証拠を分類する → 一方の成功で他方の未確認を補えないと判断する",
+      "assessment": "三段階の分析・照合・結論を要求する。候補ごとに出所と機能の証拠を分類する → 一方の成功で他方の未確認を補えないと判断する → Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。",
       "reasoningSteps": [
         "候補ごとに出所と機能の証拠を分類する",
-        "一方の成功で他方の未確認を補えないと判断する"
+        "一方の成功で他方の未確認を補えないと判断する",
+        "Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。"
       ],
-      "counterfactual": "Pの発行元も確認済みならPは採用可能となり、Qだけが機能確認待ちになる。",
+      "counterfactual": "「公開は昨日で発行元未確認」→「公開は昨日で、発行元と署名は承認基準で確認済み」なら表示C。Pは出所・機能の両方を満たし、Qだけが機能待ちになる。元のP保留は現在の証拠に対して不要。",
       "evidence": [
-        "Copilotが画像処理の依存PとQを提案しました。"
+        "発行元未確認",
+        "指定の色変換テストに失敗",
+        "出所確認と必要な機能の両方"
       ]
     },
     "q-d1-e02": {
-      "fingerprint": "5af36cee672b328efd284120cf7237de1675334d5593ee2619798ec9f6aa8f1c",
+      "fingerprint": "e224c5411458d0eed85b25d18d5082e1d11b3dfddb28231070f39674ccf7d570",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。各証跡の対象コミットを照合する → Yの公開契約変更に対する未検証・未承認を判定する",
+      "assessment": "三段階の分析・照合・結論を要求する。XとYで公開契約が変わり、型検査だけでは同じ証跡にならないと分析する。 → 各証跡の対象を運用基準の現行変更へ照合する。 → Yに欠けた契約テストと変更承認を両方補う。",
       "reasoningSteps": [
-        "各証跡の対象コミットを照合する",
-        "Yの公開契約変更に対する未検証・未承認を判定する"
+        "XとYで公開契約が変わり、型検査だけでは同じ証跡にならないと分析する。",
+        "各証跡の対象を運用基準の現行変更へ照合する。",
+        "Yに欠けた契約テストと変更承認を両方補う。"
       ],
-      "counterfactual": "Yが差分のない再実行でXと同一内容なら、同じ内容の証跡を再利用できる場合がある。",
+      "counterfactual": "「担当者の承認対象はXだけ」→「担当者はYのAPI変更も既に承認済みで、その証跡がある」なら表示D。承認済み証跡は再利用し、足りないYの契約テストだけを追加する。再承認まで要求する元の回答は最小の補足ではない。",
       "evidence": [
-        "AgentのPRで、コミットXの契約テストが成功し、担当者もXを承認しました。"
+        "公開APIを変えたY",
+        "Yは型検査だけ成功",
+        "承認対象はXだけ",
+        "不足する証跡だけ"
       ]
     },
     "q-d1-e03": {
-      "fingerprint": "8168c74daabaa5cd40da952d2ef0cbe49e304dd452e3bf215ad58455204bb0c9",
+      "fingerprint": "f7474498e9eb7b0285835ea67ab569a42db17196723c5171c4547abf61067db0",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。PとQの保持・待機関係から循環を導く → 一般的な反復試験と再現すべき順序を区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。PとQの保持・待機関係から循環を導く → 一般的な反復試験と再現すべき順序を区別する → 記録は相互待ちを示す。個々の取得の説明では足りず、取得順の整合と問題の交差順序の再現が必要。",
       "reasoningSteps": [
         "PとQの保持・待機関係から循環を導く",
-        "一般的な反復試験と再現すべき順序を区別する"
+        "一般的な反復試験と再現すべき順序を区別する",
+        "記録は相互待ちを示す。個々の取得の説明では足りず、取得順の整合と問題の交差順序の再現が必要。"
       ],
-      "counterfactual": "記録が循環待ちではなく処理の進行を示すなら、処理時間や負荷の測定が次の候補になる。",
+      "counterfactual": "「処理PがロックLを保持してMを待ち、処理QがMを保持してLを待っています」→「処理PとQのロックは解放済みで、キュー満杯による受付拒否だけがあり、容量増で拒否が解消しています」なら表示A。循環待ちがなく、容量が制約という実験結果になる。ロック順の変更はその拒否に対応しない。",
       "evidence": [
-        "Copilotが書いたキューのテストは1万回成功しました。"
+        "処理PがロックLを保持してMを待ち",
+        "処理QがMを保持してLを待っています"
       ]
     },
     "q-d1-e04": {
@@ -409,27 +458,33 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。診断に必要な構造を残す匿名化の方法を選ぶ。",
+      "assessment": "維持。必要な相関構造を一貫した仮IDで残し、認証秘密を除く。仮ID化だけで全ての再識別リスクが消える保証ではない。",
       "reasoningSteps": [
-        "診断に必要な構造を残す匿名化の方法を選ぶ。"
+        "判断条件を特定する：人物間相関が必要、トークンは不要",
+        "必要な相関構造を一貫した仮IDで残し、認証秘密を除く。仮ID化だけで全ての再識別リスクが消える保証ではない。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "同じ人物を追う必要がなければ、一貫した仮IDを保持する必要性が変わる。",
+      "evidence": [
+        "responsible",
+        "privacy"
+      ]
     },
     "q-d1-e05": {
-      "fingerprint": "bea6f52fc1d759786414b9e17d4b4754a81807d6c5f384d21dfbb2259f04ab0e",
+      "fingerprint": "bc68af68736fd9ac2021d7382c4836665af81b1163b6216674ff33fd85e540b0",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。成功した操作を不具合から除外する → フォーカスと状態通知の二つの観測を対策へ結び付ける",
+      "assessment": "三段階の分析・照合・結論を要求する。成功した操作を不具合から除外する → フォーカスと状態通知の二つの観測を対策へ結び付ける → 開く操作と項目名は確認済み。閉じた後の位置と、視覚状態に追従しない通知が未解決なので、その二点を操作・読み上げで再検証する。",
       "reasoningSteps": [
         "成功した操作を不具合から除外する",
-        "フォーカスと状態通知の二つの観測を対策へ結び付ける"
+        "フォーカスと状態通知の二つの観測を対策へ結び付ける",
+        "開く操作と項目名は確認済み。閉じた後の位置と、視覚状態に追従しない通知が未解決なので、その二点を操作・読み上げで再検証する。"
       ],
-      "counterfactual": "ボタンに到達できず項目名も読めない場合は、Tab順序とラベルが優先になる。",
+      "counterfactual": "「Tabで開閉ボタンへ移動でき、Enterで開けます。Escapeで閉じるとフォーカスがページ先頭へ飛びます。読み上げでは項目名は分かりますが、開閉後も「折りたたみ」と聞こえます」→「Tabで移動できてもEnterで開けません。Escape後のフォーカス復帰と開閉状態の通知は正常ですが、項目名が読み上げられません」なら表示A。未達条件が開くキー操作と項目名へ変わる。元の復帰先・状態通知の修正は確認済みの経路を対象にしてしまう。",
       "evidence": [
-        "Copilotで作ったドロップダウンを検査しました。"
+        "Escapeで閉じるとフォーカスがページ先頭へ飛びます",
+        "開閉後も「折りたたみ」と聞こえます"
       ]
     },
     "q-d1-e06": {
@@ -438,43 +493,53 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "Blockの限界を採用審査の運用へ適用する一段階の判断。ExamからAppliedへ変更。",
+      "assessment": "維持。一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。",
       "reasoningSteps": [
-        "Blockの限界を採用審査の運用へ適用する一段階の判断。ExamからAppliedへ変更。"
+        "判断条件を特定する：Blockの利用、個別審査の省略案",
+        "一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "今回の目的が将来の一致提案の抑制だけならBlock設定の確認が中心になる。",
+      "evidence": [
+        "responsible",
+        "policies"
+      ]
     },
     "q-d1-e07": {
-      "fingerprint": "287de7e42b682fcd6d0dc0f24497a7c5c2e7f684fa1d14eee412ad6c7ad5c4ea",
+      "fingerprint": "49268f191105384c5b4c40f555c3ca6e27817fc872470816931c495e7e78c666",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。三試験の測定値を二つの受入条件と照合する → 障害時だけ未達の整合性へ検証を絞る",
+      "assessment": "三段階の分析・照合・結論を要求する。三試験の測定値を二つの受入条件と照合する → 障害時だけ未達の整合性へ検証を絞る → 遅延目標は三条件とも達成済みだが、停止時だけ欠落がある。受付と保存・再処理の境界を調べることが未達条件の検証に直結する。",
       "reasoningSteps": [
         "三試験の測定値を二つの受入条件と照合する",
-        "障害時だけ未達の整合性へ検証を絞る"
+        "障害時だけ未達の整合性へ検証を絞る",
+        "遅延目標は三条件とも達成済みだが、停止時だけ欠落がある。受付と保存・再処理の境界を調べることが未達条件の検証に直結する。"
       ],
-      "counterfactual": "欠落が0でピークのp95だけ250msなら、負荷・ワーカー数の分析が優先。",
+      "counterfactual": "「通常負荷は90ms・欠落0、ピーク負荷は170ms・欠落0、ピーク中のノード停止は180ms・欠落3件」→「通常負荷は90ms・欠落0、ピーク負荷は250ms・欠落0でワーカーが飽和、ピーク中のノード停止も欠落0件」なら表示C。未達は欠落でなくピーク遅延になり、飽和したワーカーと負荷を調べる。欠落の再現を続ける元の回答は未達条件を扱わない。",
       "evidence": [
-        "Copilotのキュー変更を試験しました。"
+        "p95遅延200ms以下",
+        "受付済み注文の欠落0件",
+        "ノード停止は180ms・欠落3件"
       ]
     },
     "q-d1-e08": {
-      "fingerprint": "600b328147ded40d1f646c534513a6d0719cdf2d66f5560fee91d7a5871ac996",
+      "fingerprint": "467006240a76f743e306dd2a607691a82ee8e12168ab8d80587076cd38af6d8e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。利用の増加と成果改善を区別する → 案件構成の交絡を抑えて未測定の成果を追う",
+      "assessment": "三段階の分析・照合・結論を要求する。採用率の増加と成果の改善を分け、案件難易度の変化を交絡として読む。 → 目的の品質・負担と各比較の指標を照合する。 → 同種案件で品質とレビュー時間を測り、結論の範囲を限定する。",
       "reasoningSteps": [
-        "利用の増加と成果改善を区別する",
-        "案件構成の交絡を抑えて未測定の成果を追う"
+        "採用率の増加と成果の改善を分け、案件難易度の変化を交絡として読む。",
+        "目的の品質・負担と各比較の指標を照合する。",
+        "同種案件で品質とレビュー時間を測り、結論の範囲を限定する。"
       ],
-      "counterfactual": "目的が利用定着の確認だけなら、採用率や参加者数の追跡も目的に合う。",
+      "counterfactual": "「品質とレビュー負担への研修効果」→「提案採用と研修参加の定着」なら表示A。測定目的が採用・参加へ変わり、その二指標が直接の比較になる。元の品質・時間比較は新しい目的を直接測らない。",
       "evidence": [
-        "Copilot研修を試行したチームで、採用率は30%から50%へ上がりました。"
+        "案件難易度は低下",
+        "レビュー時間は不変",
+        "品質とレビュー負担への研修効果"
       ]
     },
     "q-d2-f01": {
@@ -639,38 +704,47 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。誤提案の原因となった型の前提を現行定義で補う。",
+      "assessment": "維持。現行の省略可能性と利用箇所を明示し、その条件に合う修正を依頼する。",
       "reasoningSteps": [
-        "誤提案の原因となった型の前提を現行定義で補う。"
+        "判断条件を特定する：現行emailは省略可能、生成案は必須",
+        "現行の省略可能性と利用箇所を明示し、その条件に合う修正を依頼する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "現行型が必須へ正式変更済みなら必須扱いを検証する。",
+      "evidence": [
+        "chat",
+        "prompt"
+      ]
     },
     "q-d2-a03": {
-      "fingerprint": "5983a622b253419ce538935fbea11087c20062f2706a5628d883cee22e4b8141",
+      "fingerprint": "cf41c87872909594ff97eb77857714be7ef5ba68325e36d9612f4895c267b661",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": false,
-      "reclassified": false,
-      "assessment": "設計相談と局所編集という二つの作業段階へAskとInline Chatを割り当てる。",
+      "reclassified": true,
+      "assessment": "相談と局所編集の機能の使い分けで、具体的な修正案の適合判定がない。",
       "reasoningSteps": [
-        "設計相談と局所編集という二つの作業段階へAskとInline Chatを割り当てる。"
+        "相談と局所編集の機能の使い分けで、具体的な修正案の適合判定がない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "agent-mode"
+      ]
     },
     "q-d2-a04": {
-      "fingerprint": "e0f9438648c997c0f3779e765fa01214ab88e7010789adae2d667e0843717264",
+      "fingerprint": "e7e9452e9f2b78d313deec05d474fdd4cd10d4c6d663eab917cbced1f27e07b0",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。承認前にコマンドの実対象と復旧可能範囲を確認する。",
+      "assessment": "改稿。保持対象を外し、不要なキャッシュに限定する。",
       "reasoningSteps": [
-        "承認前にコマンドの実対象と復旧可能範囲を確認する。"
+        "判断条件を特定する：Copilotの削除案は作業/tmp/job-*。実対象はjob-cacheとjob-fixturesで、保持対象はjob-fixtures。許可した変更範囲を保つ修正版の対象は？",
+        "保持対象を外し、不要なキャッシュに限定する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "両方が不要データとして承認済みならjob-*全体が候補になる。",
+      "evidence": [
+        "agent-mode"
+      ]
     },
     "q-d2-a05": {
       "fingerprint": "d6a187e1ba87690dc33db59d073d95ec3ea740eac77aadb5d6257133a5742ffd",
@@ -704,12 +778,16 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "スキーマの現在値という用途へ、操作範囲と利用者認可を備えた連携を適用する。",
+      "assessment": "維持。現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。",
       "reasoningSteps": [
-        "スキーマの現在値という用途へ、操作範囲と利用者認可を備えた連携を適用する。"
+        "判断条件を特定する：現在のスキーマ、担当別認可、変更禁止",
+        "現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "朝時点の共有資料だけでよいならアップロードした静的資料も候補になる。",
+      "evidence": [
+        "mcp",
+        "mcp-spec"
+      ]
     },
     "q-d2-a08": {
       "fingerprint": "62450fe2e553e205d9e2879e79ab735a9039a0138ad7107277123c410dcb1c60",
@@ -738,17 +816,21 @@
       "evidence": []
     },
     "q-d2-a10": {
-      "fingerprint": "f93871b86d0715f37c8a89b34c123f2b0177299b31cc6510982b96778f309701",
+      "fingerprint": "3d26cdf8e1cfd9cf6bb8ff56936a926fa58dcb0cbf8f56d2d4d25f73c3e6fa6b",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": false,
-      "reclassified": false,
-      "assessment": "常時適用する規約と随時呼ぶタスクを二つの保存方式へ振り分ける。",
+      "reclassified": true,
+      "assessment": "常時の規約と必要時の手順を、機能の定義へ対応付ける識別問題。",
       "reasoningSteps": [
-        "常時適用する規約と随時呼ぶタスクを二つの保存方式へ振り分ける。"
+        "常時の規約と必要時の手順を、機能の定義へ対応付ける識別問題。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "instructions",
+        "prompt-files",
+        "spaces"
+      ]
     },
     "q-d2-a11": {
       "fingerprint": "720cdc65b6ef74204fa795c75d6ac6231bdcac10ce529f4621ab280750e0e809",
@@ -803,30 +885,38 @@
       "evidence": []
     },
     "q-d2-a15": {
-      "fingerprint": "8044e97d9e607c98d680e0e7ad048212c14b8d4dfb4b497d0bf35c7adf384b39",
-      "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
-      "textRewritten": false,
-      "reclassified": false,
-      "assessment": "変更対象が未確定という状況で、検索結果を参照関係で絞ってから編集する。",
-      "reasoningSteps": [
-        "変更対象が未確定という状況で、検索結果を参照関係で絞ってから編集する。"
-      ],
-      "counterfactual": null,
-      "evidence": []
-    },
-    "q-d2-a16": {
-      "fingerprint": "f0e16862c5195376139a488c8083b858a16f527bf09970e5b963d33a8e9c76bf",
+      "fingerprint": "721ce16ed69c6923d9f56fddc77fec44483d9cf63ab974f17dd30bfc38ce81cd",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。検証可能な境界からエージェントの変更範囲を段階化する。",
+      "assessment": "改稿。現在の呼出し経路へ参照関係を適用する。",
       "reasoningSteps": [
-        "検証可能な境界からエージェントの変更範囲を段階化する。"
+        "判断条件を特定する：Agentの検索で同名の認証関数がold/auth.tsとsrc/auth.tsに見つかった。現在のrouter.tsはsrc/auth.tsをimportしている。今回の現行経路の修正対象は？",
+        "現在の呼出し経路へ参照関係を適用する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "routerがold/auth.tsをimportしていれば、old側が対象になる。",
+      "evidence": [
+        "prompt",
+        "agent-mode"
+      ]
+    },
+    "q-d2-a16": {
+      "fingerprint": "99a3c706a69711b2e22a9f7a5df307f7d68f12454382aeba7d0ea5390c8cdc87",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。事前の契約で検証可能な単位から進む。",
+      "reasoningSteps": [
+        "判断条件を特定する：Agentが認証APIと請求APIを変更したい。認証には旧契約テストがあり、請求にはない。今回の最初の作業は「既存の動作を確かめられる単位で変更する」。合う進め方は？",
+        "事前の契約で検証可能な単位から進む。"
+      ],
+      "counterfactual": "請求にも独立した既存契約テストがあれば、請求から始める選択肢もある。",
+      "evidence": [
+        "agent-mode",
+        "tests"
+      ]
     },
     "q-d2-a17": {
       "fingerprint": "2eeacf4f213882b50451227d701269e324917c5fda73f3579117c11e2864b457",
@@ -847,12 +937,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。認可後にも残る不要データの送信をサーバーで減らす。",
+      "assessment": "維持。用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。",
       "reasoningSteps": [
-        "認可後にも残る不要データの送信をサーバーで減らす。"
+        "判断条件を特定する：認可済み、返却に不要なトークン",
+        "用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "認可自体が未実装なら返却最小化に加えて閲覧境界の検証も必要になる。",
+      "evidence": [
+        "mcp",
+        "mcp-spec"
+      ]
     },
     "q-d2-a19": {
       "fingerprint": "2d1ff89f9ad82582e6477878376fadf7c99e59c4b9ca6bfe4afdb506709c7d4e",
@@ -868,17 +962,21 @@
       "evidence": []
     },
     "q-d2-a20": {
-      "fingerprint": "a7a84d667e10a66c56ac12b1c996bcfc13104768c52700b42821d13e25953d1e",
+      "fingerprint": "3fa3952028145f4dc79b3cb88d2c7819b9d4c0122f4f8af494b6036bbae1b241",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。静的な添付と現在のAPI照会の差を利用目的へ適用する。",
+      "assessment": "改稿。現在のデータ源と担当者の閲覧範囲を両立する。",
       "reasoningSteps": [
-        "静的な添付と現在のAPI照会の差を利用目的へ適用する。"
+        "判断条件を特定する：Spacesへアップロードした朝の注文CSVと、担当者認可付きの注文APIがある。午後の注文キャンセルを含む現在値だけを照会したい。利用するデータ経路は？",
+        "現在のデータ源と担当者の閲覧範囲を両立する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "確認したいのが朝時点の保存記録ならCSVのSpaceを選べる。",
+      "evidence": [
+        "spaces",
+        "mcp"
+      ]
     },
     "q-d2-a21": {
       "fingerprint": "772f8c667b77981e2356f7cfca6a9d99e6215f4d27971593f81e3fb7907d2aeb",
@@ -894,48 +992,57 @@
       "evidence": []
     },
     "q-d2-a22": {
-      "fingerprint": "fd66b3c4fd34492e4d240be411ffb233f5ef5d8366c77ff25077bb1b461b9898",
+      "fingerprint": "3929124fd8cb95896054c73ef1ae9d731b0ebaa1e58e6f32a528c3972d80413b",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
-      "textRewritten": false,
-      "reclassified": false,
-      "assessment": "CLIの提案と実行を分け、理解前には実行しない利用手順を状況へ適用する。",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "CLIの説明・提案の用途識別であり、具体的な実行結果や契約の判断までは求めていない。",
       "reasoningSteps": [
-        "CLIの提案と実行を分け、理解前には実行しない利用手順を状況へ適用する。"
+        "CLIの説明・提案の用途識別であり、具体的な実行結果や契約の判断までは求めていない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "cli-current"
+      ]
     },
     "q-d2-e01": {
-      "fingerprint": "2093c663bf506aaf399f16d97ac4fdc1c5d931ee0f7f6324ba6c7585f42964a7",
+      "fingerprint": "fb4c28fda65e66054b13e2fbcefbd319438138a9e12525a14c7b0ffb160a0b08",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。CLIの要約ではなく実行コマンドを読む → モック境界と変更範囲の差から不足テストを導く",
+      "assessment": "三段階の分析・照合・結論を要求する。CLIの要約ではなく実行コマンドを読む → モック境界と変更範囲の差から不足テストを導く → CLIの実行ログとテストの境界を照合すると、変更したルートの実動作は未検証。必要な承認の下で契約を実行する。",
       "reasoningSteps": [
         "CLIの要約ではなく実行コマンドを読む",
-        "モック境界と変更範囲の差から不足テストを導く"
+        "モック境界と変更範囲の差から不足テストを導く",
+        "CLIの実行ログとテストの境界を照合すると、変更したルートの実動作は未検証。必要な承認の下で契約を実行する。"
       ],
-      "counterfactual": "統合テストが既に現行差分で成功し依存解決だけ不安定なら、固定版の確認が優先。",
+      "counterfactual": "「ログの実行コマンドはnpm run test:unitで、package.jsonではルート契約の検証がtest:integrationに分離されています。単体テストはルートをモック化しています」→「現行差分のunitとintegrationは両方成功し、実ルートの契約も検証済みです。再実行では依存の解決版だけが変わり、固定版とロックファイルが不一致です」なら表示D。未検証の実ルートではなく依存版の固定が次の対象になる。既に成功した統合テストだけでは版の不一致を直せない。",
       "evidence": [
-        "Copilot CLIで依存ライブラリを移行中です。"
+        "npm run test:unit",
+        "test:integrationに分離",
+        "ルートをモック化"
       ]
     },
     "q-d2-e02": {
-      "fingerprint": "dbc9029fed3ff394323a3ed7e464d0574fbd8b2dc5accd3e3fc3ee273b8f1a3a",
+      "fingerprint": "8b66683be2a8c26043fc0b022419dcea3ac81ad24f71821a929949da21ef88fa",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。元APIとMCPの結果差からキャッシュ経路へ絞る → 利用者分離だけでなく権限変更と鮮度を扱う",
+      "assessment": "三段階の分析・照合・結論を要求する。元APIの正しさと再利用結果の差から、キャッシュの境界へ絞る。 → 担当変更の即時反映と25msの両制約を各方式へ照合する。 → 権限・更新版を確認でき、時間内のPを選ぶ。",
       "reasoningSteps": [
-        "元APIとMCPの結果差からキャッシュ経路へ絞る",
-        "利用者分離だけでなく権限変更と鮮度を扱う"
+        "元APIの正しさと再利用結果の差から、キャッシュの境界へ絞る。",
+        "担当変更の即時反映と25msの両制約を各方式へ照合する。",
+        "権限・更新版を確認でき、時間内のPを選ぶ。"
       ],
-      "counterfactual": "データが公開で認可差がなく鮮度だけが問題なら、期限の短縮が対策候補になる。",
+      "counterfactual": "「契約は担当変更を直ちに反映し、再利用判定は25ms以下」→「契約は公開された全員同一のデータで担当差はなく、鮮度は5分以内、再利用判定は3ms以下」なら表示B。Rの5分と2msが条件を満たす。Pは20msで時間上限を、Sは1時間で鮮度を満たさない。",
       "evidence": [
-        "残高照会MCPは利用者の認可を呼出しごとに検証しています。"
+        "担当変更を直ちに反映",
+        "再利用判定は25ms以下",
+        "Pは現在の権限と更新版を照合し20ms",
+        "Qは利用者別キーだけ"
       ]
     },
     "q-d2-e03": {
@@ -978,93 +1085,114 @@
       "evidence": []
     },
     "q-d2-e06": {
-      "fingerprint": "1c87825bb1e5bc395dcf146c6d8c5cf2622a4209c9bace88b764e612fdc753d2",
+      "fingerprint": "868891844e023f770a471cf2984de5147ff15a13569e4abf11af1958e89ee637",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める",
+      "assessment": "三段階の分析・照合・結論を要求する。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める → PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。",
       "reasoningSteps": [
         "利用可能ツールと実行許可という二層を分ける",
-        "PとQそれぞれの有効範囲を求める"
+        "PとQそれぞれの有効範囲を求める",
+        "PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。"
       ],
-      "counterfactual": "Qにshellを利用可能として追加すれば、QのGit許可が働きcommitとpushの両方が可能になる。",
+      "counterfactual": "「Qは利用可能ツールを読取系だけに制限し」→「Qはshellツールも利用可能にし、個別拒否はなく」なら表示A。QにもGit許可を実行できるshellがあり、commit/pushとも可能。元のQ両方不可は成立しない。",
       "evidence": [
-        "Copilot CLIの権限演習です。"
+        "git pushだけ拒否",
+        "利用可能ツールを読取系だけに制限",
+        "denyはallowより優先",
+        "許可指定は利用可能ツールを増やさない"
       ]
     },
     "q-d2-e07": {
-      "fingerprint": "6b134535d68a417d3e30e529fc3507fe992e0b7ec1e868729643f90c949b4af3",
+      "fingerprint": "8465caaf8e204c2f6d5e72ec2661707dc1e0485a0e9efb159c247a281ab14157",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。公開ツール数と実際の実行権限を区別する → 認証済みでも残る引数からシェルへの経路を特定する",
+      "assessment": "三段階の分析・照合・結論を要求する。公開ツール数と実際の実行権限を区別する → 認証済みでも残る引数からシェルへの経路を特定する → 認証済みでも引数がシェル構文として解釈される経路を閉じる。",
       "reasoningSteps": [
         "公開ツール数と実際の実行権限を区別する",
-        "認証済みでも残る引数からシェルへの経路を特定する"
+        "認証済みでも残る引数からシェルへの経路を特定する",
+        "認証済みでも引数がシェル構文として解釈される経路を閉じる。"
       ],
-      "counterfactual": "引数が安全で問題が大量ログだけなら、返却行数の制限が直接の対策になる。",
+      "counterfactual": "「受け取ったcontainer値を文字列連結でシェルへ渡しています」→「containerは許可IDへ検証済みでシェル解釈なしに呼び出しますが、返却ログの件数が無制限で応答サイズを超過しています」なら表示D。実行引数の境界は解決済みとなり、残る返却量の上限が修正対象になる。",
       "evidence": [
-        "Docker状態確認用MCPはstatusとlogsだけを公開しています。"
+        "container値を文字列連結でシェルへ渡",
+        "認証とコンテナごとの閲覧認可は既にあります"
       ]
     },
     "q-d2-e08": {
-      "fingerprint": "95a57b9d2a5b45e3437a8f0bc52fe73c4391d1324527be4c736db6452f50b846",
-      "beforeDifficulty": "advanced",
-      "difficulty": "intermediate",
-      "textRewritten": false,
-      "reclassified": true,
-      "assessment": "当該リポジトリだけの競合を修正し、他案件の方針を維持する範囲判断。Appliedへ変更。",
-      "reasoningSteps": [
-        "当該リポジトリだけの競合を修正し、他案件の方針を維持する範囲判断。Appliedへ変更。"
-      ],
-      "counterfactual": null,
-      "evidence": []
-    },
-    "q-d2-e09": {
-      "fingerprint": "0e2e42d1d543545e95ba8c4c2076741e30672eeb347edb311bad165c05c8f206",
+      "fingerprint": "1b805f6d1f63ffdf7ac8127e9cdc626441a047214c362329b87d1d9add33032b",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。不具合の依存先を追加して文脈の不足を補う。",
+      "assessment": "改稿。パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。",
       "reasoningSteps": [
-        "不具合の依存先を追加して文脈の不足を補う。"
+        "判断条件を特定する：VS Codeで全階層の*.test.tsだけにAAA形式の指示を適用したい。共通指示へ置いたら通常実装にも混ざった。共有を保ち、テストだけに限定する配置は？",
+        "パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "ルート直下のテストだけが対象なら、*.test.tsの指定が候補になる。",
+      "evidence": [
+        "instructions",
+        "prompt-files"
+      ]
+    },
+    "q-d2-e09": {
+      "fingerprint": "eecb84f355740745f290edbdf95085a9dcfad3d71526029ba1dd938f3f626e34",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "改稿。現行部品が受ける値へ入力を合わせる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ渡した画面はButtonにsize=\"small\"を渡すが、共通Buttonの契約はsize=\"sm\"。Chatはlargeへ変更する案を返した。契約へ合わせる最小修正は？",
+        "現行部品が受ける値へ入力を合わせる。"
+      ],
+      "counterfactual": "契約がsmallを受ける新版ならその値を維持できる。",
+      "evidence": [
+        "prompt",
+        "chat"
+      ]
     },
     "q-d2-e10": {
-      "fingerprint": "26373fa3873f6e9a07728fdc45dfd5b0d5f346ed8016ecd0490392079a288163",
+      "fingerprint": "446a134c49b62f97366341197cc74e6f53257a39969aceb064676ad7525dca17",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。契約の以上とコードの大なりを照合する → テスト成功が期待値の改変で生じたことを見抜く",
+      "assessment": "三段階の分析・照合・結論を要求する。契約の以上とコードの大なりを照合する → テスト成功が期待値の改変で生じたことを見抜く → 100を含む契約に対し、実装と期待値の双方が境界を除外している。合格結果ではなく合意した契約を基準に戻す。",
       "reasoningSteps": [
         "契約の以上とコードの大なりを照合する",
-        "テスト成功が期待値の改変で生じたことを見抜く"
+        "テスト成功が期待値の改変で生じたことを見抜く",
+        "100を含む契約に対し、実装と期待値の双方が境界を除外している。合格結果ではなく合意した契約を基準に戻す。"
       ],
-      "counterfactual": "承認された契約が100超なら、100→100は正しく101側の検証が適切。",
+      "counterfactual": "「小計100以上で10%引き」→「小計100を超えると10%引き、100は割引しない」なら表示C。100→100と>100が承認契約へ適合するため、それを保ち101側を検証する。>=100へ戻す元の回答は新契約を破る。",
       "evidence": [
-        "Agentにカートの割引実装を依頼しました。"
+        "小計100以上で10%引き",
+        "比較を>100",
+        "100の期待値を90から100へ変えた"
       ]
     },
     "q-d2-e11": {
-      "fingerprint": "3c3e95bc1d0f2a127ac8e18a901bffa66edf3668b789ace8faeb2fdbd7dd96c6",
+      "fingerprint": "14d752028e18b8b56c72442cc13f0e1b868f6514dd4aa9c88d71b98b6a6f2dbe",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。本文拒否とメタデータ返却を別経路として追う → 認可済み集合を件数・候補にも適用する",
+      "assessment": "三段階の分析・照合・結論を要求する。本文拒否とメタデータ返却を別経路として追う → 認可済み集合を件数・候補にも適用する → 本文拒否だけでは件数と候補から文書の存在が漏れる。",
       "reasoningSteps": [
         "本文拒否とメタデータ返却を別経路として追う",
-        "認可済み集合を件数・候補にも適用する"
+        "認可済み集合を件数・候補にも適用する",
+        "本文拒否だけでは件数と候補から文書の存在が漏れる。"
       ],
-      "counterfactual": "全7文書の存在とタイトルが公開情報という明示方針なら、本文の認可だけで足りる場合がある。",
+      "counterfactual": "「一般社員の検索結果には閲覧可能な2文書だけ表示されますが、totalCountは7、候補タイトルには人事文書名が含まれています。本文アクセスは拒否されます」→「件数もタイトルも閲覧可能な2文書だけですが、本文取得では人事文書のアクセスも許可され本文が返ります」なら表示C。漏れる経路が本文取得へ変わる。メタデータの修正だけではその本文漏れを止めない。",
       "evidence": [
-        "社内検索MCPで、本文は閲覧権限を確認して返しています。"
+        "閲覧可能な2文書だけ",
+        "totalCountは7",
+        "候補タイトルには人事文書名",
+        "本文アクセスは拒否"
       ]
     },
     "q-d2-e12": {
@@ -1094,17 +1222,21 @@
       "evidence": []
     },
     "q-d2-e14": {
-      "fingerprint": "d3de8d7d888fb4ad913d1ffd364756298481df89d8dfba095af2277981af0286",
+      "fingerprint": "fd1ffb23ed46b61fcd133d54a694119be572f65bdd9eb532fbf7efca9cb2aec0",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "resetの実行を保持すべきデータの条件に照合する一段階の承認判断。Appliedへ変更。",
+      "assessment": "改稿。保持条件を満たす変更方法を評価する。",
       "reasoningSteps": [
-        "resetの実行を保持すべきデータの条件に照合する一段階の承認判断。Appliedへ変更。"
+        "判断条件を特定する：Agentがmigrate resetを提案した。今回の目的は新しい列の追加だけで、ローカルDBの検証データを保持する必要がある。先に確認する変更案は？",
+        "保持条件を満たす変更方法を評価する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "検証データが不要で初期化が承認済みならresetも候補になる。",
+      "evidence": [
+        "agent-mode",
+        "responsible"
+      ]
     },
     "q-d2-e15": {
       "fingerprint": "392d8681ab0df4786401fa6df119e8d8d22b1bc2c5dfc80c5e661a3e37065493",
@@ -1112,25 +1244,34 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "入力容量を超える全文取得へ検索・抜粋を適用する設計判断。複数ログの診断はなくAppliedへ変更。",
+      "assessment": "維持。必要な情報を選択して取得することで入力の肥大化を抑える。",
       "reasoningSteps": [
-        "入力容量を超える全文取得へ検索・抜粋を適用する設計判断。複数ログの診断はなくAppliedへ変更。"
+        "判断条件を特定する：数千文書、全件入力が容量超過",
+        "必要な情報を選択して取得することで入力の肥大化を抑える。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "少数の固定資料が予算内なら直接文脈を渡す方法も候補になる。",
+      "evidence": [
+        "mcp-spec",
+        "prompt"
+      ]
     },
     "q-d2-e16": {
-      "fingerprint": "8f439f872fa4372864d5503b2e3fbdbcd960f37bcc053ca278c4309d171db5ec",
+      "fingerprint": "34e0ffec9a6345cc358593533a0d6809ac83beb28f99c55c46a4e16abdcff1a8",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "長い禁止事項の問題へ短い推奨規約を適用する修正。比較実験はなくAppliedへ変更。",
+      "assessment": "改稿。共通と対象別の規約をスコープで整理する。",
       "reasoningSteps": [
-        "長い禁止事項の問題へ短い推奨規約を適用する修正。比較実験はなくAppliedへ変更。"
+        "判断条件を特定する：共通指示は100行。対象はPython、Node、現在のTypeScript案件の三領域が混在している。今回のTypeScript修正で指示の対象を絞り、共有を維持する整理は？",
+        "共通と対象別の規約をスコープで整理する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "三領域すべてが毎回必要なら共通規約として必要項目を残す。",
+      "evidence": [
+        "instructions",
+        "prompt-files",
+        "prompt"
+      ]
     },
     "q-d2-e17": {
       "fingerprint": "c1b5e56bce44469225ff19df418c5aaac0c2ccf48b59c0a5f16047a6ff4ae821",
@@ -1159,19 +1300,22 @@
       "evidence": []
     },
     "q-d2-e19": {
-      "fingerprint": "aea345163ccdee4cd52716fdbfe291e322880902e98735cfcf83433415c61382",
+      "fingerprint": "13a6da7887cc7639baa2eb24f2a515d87b5845eabd968186aa424d081d1518f0",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。呼出し解決の失敗と実行後の失敗を切り分ける → 修正に使える診断を適切な返却経路へ載せる",
+      "assessment": "三段階の分析・照合・結論を要求する。呼出し解決の失敗と実行後の失敗を切り分ける → 修正に使える診断を適切な返却経路へ載せる → ①は存在するツールの実行失敗なので修正可能な情報をisErrorで返す。②はツールを解決できないプロトコル側の失敗。",
       "reasoningSteps": [
         "呼出し解決の失敗と実行後の失敗を切り分ける",
-        "修正に使える診断を適切な返却経路へ載せる"
+        "修正に使える診断を適切な返却経路へ載せる",
+        "①は存在するツールの実行失敗なので修正可能な情報をisErrorで返す。②はツールを解決できないプロトコル側の失敗。"
       ],
-      "counterfactual": "①も未登録のツール名なら、①②の両方をプロトコルエラーとして扱う。",
+      "counterfactual": "「②未登録のquery_v2というツールへの呼出し」→「②登録済みquery_v2への形式上有効な呼出しでDB実行エラー」なら表示C。両方が解決済みツールの実行失敗となり、isErrorの結果経路へ変わる。②をプロトコルエラーとする元の回答は段階を取り違える。",
       "evidence": [
-        "MCPサーバーで二つの失敗がありました。"
+        "登録済みqueryツールへの形式上有効な呼出し",
+        "未登録のquery_v2",
+        "SQLを修正して再試行"
       ]
     },
     "q-d3-f01": {
@@ -1240,30 +1384,36 @@
       "evidence": []
     },
     "q-d3-a01": {
-      "fingerprint": "480dac27b23dd00f1404ac22e6ade26615082b34c83ac18b550b6f2563cccb91",
+      "fingerprint": "11de28e5e95443164c1a5aea3fd825ccb3b91767f89bf6c22d0fd393a7182a93",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。誤提案に関係する旧タブを現行の文脈へ替える。",
+      "assessment": "改稿。関連する型文脈だけを変え、他条件をそろえる。",
       "reasoningSteps": [
-        "誤提案に関係する旧タブを現行の文脈へ替える。"
+        "判断条件を特定する：Copilot補完はuser.nameを返す。開いている旧型はname、現行型はdisplayName。依存版やモデルを変えず、文脈の影響だけを比べる実験は？",
+        "関連する型文脈だけを変え、他条件をそろえる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "モデル差を調べる目的なら同じ型文脈でモデルを変える。",
+      "evidence": [
+        "architecture"
+      ]
     },
     "q-d3-a02": {
-      "fingerprint": "b00c425fe8de904c9b6700d60cea39905239beb5a6dcd3fe57d64d5fb5c90342",
+      "fingerprint": "8bc522466d31f84374e920e5d84f0701ef0ef8f9269bb8f5ff0070993b8df686",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": false,
-      "reclassified": false,
-      "assessment": "中間を編集する場面で前後の契約を文脈として残す操作を選ぶ。",
+      "reclassified": true,
+      "assessment": "前後のコードを活かす中間挿入の操作識別であり、生成案の具体的な整合性を判定していない。",
       "reasoningSteps": [
-        "中間を編集する場面で前後の契約を文脈として残す操作を選ぶ。"
+        "前後のコードを活かす中間挿入の操作識別であり、生成案の具体的な整合性を判定していない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "inline-usage",
+        "prompt"
+      ]
     },
     "q-d3-a03": {
       "fingerprint": "2962bd6098e7f1564bf624dd2284d2f07e551ad7541e4f688c2409623ed24fe9",
@@ -1271,38 +1421,46 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。TLSエラーの種類に合うネットワーク設定を選ぶ",
+      "assessment": "維持。証明書チェーンの検証に失敗しているため、対応する信頼設定を確認する。",
       "reasoningSteps": [
-        "TLSエラーの種類に合うネットワーク設定を選ぶ"
+        "判断条件を特定する：プロキシのみ、証明書チェーン検証失敗",
+        "証明書チェーンの検証に失敗しているため、対応する信頼設定を確認する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "TLS以前に到達不能なら宛先や通信経路を先に調べる。",
+      "evidence": [
+        "network"
+      ]
     },
     "q-d3-a04": {
-      "fingerprint": "346ae226ea3144a9ffe906547bb5caee65b4f938dc7ec0367352d419ece97a95",
+      "fingerprint": "c5f126be0c88c170434181c33259e255b65c9a2c2e8fb0d2b0185099e4ef3444",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": false,
-      "reclassified": false,
-      "assessment": "旧APIが混ざる場面で現行定義を明示する比較を選び、非公開の順位計算を断定しない。",
+      "reclassified": true,
+      "assessment": "有用な文脈を足しノイズを減らす原則の識別で、具体的なAPI契約や観測の切り分けがない。",
       "reasoningSteps": [
-        "旧APIが混ざる場面で現行定義を明示する比較を選び、非公開の順位計算を断定しない。"
+        "有用な文脈を足しノイズを減らす原則の識別で、具体的なAPI契約や観測の切り分けがない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d3-a05": {
-      "fingerprint": "ecfa8316956ae43693b341121dc0400fd639cd6860c779272e3f31f0c7361b0d",
+      "fingerprint": "6fdd3f407fe454bdbd59e51681fe317a296cdfc8e70bb93b56fb47f8efff510f",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "経路差は判明し原因は未特定という段階に、設定変更前の診断を適用する。",
+      "assessment": "改稿。失敗経路の到達性とTLS検証を直接比較する。",
       "reasoningSteps": [
-        "経路差は判明し原因は未特定という段階に、設定変更前の診断を適用する。"
+        "判断条件を特定する：Copilotは直結で成功し社内プロキシで失敗する。許可先のブロックか証明書検証かは未特定。二つを切り分ける最初の証拠は？",
+        "失敗経路の到達性とTLS検証を直接比較する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "認証エラーで座席未付与が観測されたなら座席の確認が優先される。",
+      "evidence": [
+        "network"
+      ]
     },
     "q-d3-a06": {
       "fingerprint": "a4700dcba80186512df6b54c6b7f9698a1215ba9716229e55c82e9ba5f14f467",
@@ -1310,12 +1468,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。会話要約で失効した条件と現在の条件を分離する。",
+      "assessment": "維持。失効した指示を有効な制約として残さず、現在の作業に必要な契約と文脈を保つ。",
       "reasoningSteps": [
-        "会話要約で失効した条件と現在の条件を分離する。"
+        "判断条件を特定する：同期指示は失効、非同期が現行",
+        "失効した指示を有効な制約として残さず、現在の作業に必要な契約と文脈を保つ。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "同期契約が現行なら非同期へ書き換えた要約は不適切になる。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d3-a07": {
       "fingerprint": "8dbb016546afc5d87faaf1e452c628b0ed77709f824570bc3d04374529ba821e",
@@ -1323,51 +1484,65 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "巨大入力だけ遅い観測に、依存を残した入力削減という比較実験を適用する。",
+      "assessment": "維持。必要な意味を保ちながら入力容量の影響を直接比較できる。",
       "reasoningSteps": [
-        "巨大入力だけ遅い観測に、依存を残した入力削減という比較実験を適用する。"
+        "判断条件を特定する：巨大入力だけ遅い、関連情報は必要",
+        "必要な意味を保ちながら入力容量の影響を直接比較できる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "小さい入力でも同じ遅延なら入力量以外の比較を進める。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d3-a08": {
-      "fingerprint": "f7747a6fa0611b9c5a02d955dcc645048cd542d702cd3778910182354c1e321b",
+      "fingerprint": "02803f24a9c1a6f9e8c3dcd125fc99d71f51bf487ac57577c05787f913fd07a8",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。容量削減時にも対象の直接依存を保つ。",
+      "assessment": "維持。対象を絞りつつ、その契約を決める依存情報を維持する。",
       "reasoningSteps": [
-        "容量削減時にも対象の直接依存を保つ。"
+        "判断条件を特定する：refundが対象、MoneyとvalidateRefundに依存",
+        "対象を絞りつつ、その契約を決める依存情報を維持する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "chargeが対象なら必要な関数と依存の選別を変更する。",
+      "evidence": [
+        "architecture",
+        "prompt"
+      ]
     },
     "q-d3-a09": {
-      "fingerprint": "34c52a83265f040a3f2770bbfa74c59720acde2c2022d72193e5ff1c64fd09b4",
+      "fingerprint": "1e87159bcb516eaa215ee266d834686c6fb02013accb1ea722c93b615ee7e41e",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。宛先・通信方向を診断ログから許可ルールへ対応させる。",
+      "assessment": "改稿。観測された宛先と通信方向へ許可を限定する。",
       "reasoningSteps": [
-        "宛先・通信方向を診断ログから許可ルールへ対応させる。"
+        "判断条件を特定する：接続診断はgithub.comへのHTTPS成功、公式のChat接続先へのアウトバウンドHTTPS遮断。最小の許可変更は？",
+        "観測された宛先と通信方向へ許可を限定する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "遮断がGitのSSH先なら、SSHの許可が候補になる。",
+      "evidence": [
+        "network"
+      ]
     },
     "q-d3-a10": {
-      "fingerprint": "00ffd9755ccd7d7c20409aa05546beffd954294324aeff7c5f47292af169c482",
+      "fingerprint": "365d7ee869b45e61a52176a7735d42801960b4a5bd844f5ee0cc5a1f46e5fa6e",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。引用元の版の誤りに対して入力資料を更新する。",
+      "assessment": "改稿。疑わしい資料の版だけを変えられる。",
       "reasoningSteps": [
-        "引用元の版の誤りに対して入力資料を更新する。"
+        "判断条件を特定する：Chatの回答が旧sdk-v1.mdを引用した。現行はv2だが、添付はv1のまま。資料の版だけの影響を比較したい。次の実験は？",
+        "疑わしい資料の版だけを変えられる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "確認したいのがモデル差なら、資料を固定してモデルを変える。",
+      "evidence": [
+        "prompt",
+        "chat"
+      ]
     },
     "q-d3-a11": {
       "fingerprint": "54589184478ea1d5c5b2cf052558105d78db557b6eb4b6b55186a7575e470573",
@@ -1375,89 +1550,109 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。時刻の観測から表示開始と全体完了を区別する。",
+      "assessment": "維持。受信途中の内容を表示する効果と、生成自体の完了時間を区別する。",
       "reasoningSteps": [
-        "時刻の観測から表示開始と全体完了を区別する。"
+        "判断条件を特定する：最初の表示2秒、完了10秒",
+        "受信途中の内容を表示する効果と、生成自体の完了時間を区別する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "完了も2秒になれば全体処理時間も改善したといえる。",
+      "evidence": [
+        "streaming"
+      ]
     },
     "q-d3-e01": {
-      "fingerprint": "a1048f12aa72f1d3a5a842661b87aa2315afab3794f75c038f615bbdd6cba2db",
+      "fingerprint": "a1f16232537ddbcf6c9e6ef96f6b103cf00ceb410143e5be41754dced8c08741",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。警告と回答の欠落位置から二つの制約を区別する → 各制約に対応する独立した改善を選ぶ",
+      "assessment": "三段階の分析・照合・結論を要求する。警告と回答の欠落位置から二つの制約を区別する → 各制約に対応する独立した改善を選ぶ → Pは出力側の打切り、Qは入力容量の不足をまず疑う観測。入力と出力の制約を分けて変更し、改善を比較する。",
       "reasoningSteps": [
         "警告と回答の欠落位置から二つの制約を区別する",
-        "各制約に対応する独立した改善を選ぶ"
+        "各制約に対応する独立した改善を選ぶ",
+        "Pは出力側の打切り、Qは入力容量の不足をまず疑う観測。入力と出力の制約を分けて変更し、改善を比較する。"
       ],
-      "counterfactual": "Pにも入力超過があれば、Pでも入力範囲を先に見直す。",
+      "counterfactual": "「依頼Qは入力超過の警告があり、後半の関数名自体が回答に登場しません」→「依頼Qも入力上限内で全関数名を認識していますが、最後の出力コードが途中で終了します」なら表示C。両依頼とも出力打切りを疑う観測になる。Qだけ入力を削る元の分岐では同じ出力問題を直接扱わない。",
       "evidence": [
-        "同じモデルへの二つの依頼を比較しました。"
+        "入力上限内",
+        "最後のコードブロックが途中で終了",
+        "入力超過の警告",
+        "後半の関数名自体が回答に登場しません"
       ]
     },
     "q-d3-e02": {
-      "fingerprint": "fa933c8754f4bbf711001916b12424475eb618ce2f8404aa8154ec861fe9fec4",
+      "fingerprint": "625d7054a7443649c5e68d57c646ea7eaac8c7670e974efe82934edfa4574a3e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。各PCが到達した通信段階をログから追う → TLSの信頼とプロキシ認証を別の修復対象へ割り当てる",
+      "assessment": "三段階の分析・照合・結論を要求する。各PCが到達した通信段階をログから追う → TLSの信頼とプロキシ認証を別の修復対象へ割り当てる → Pは接続後の証明書検証、Qはトンネル確立前の認証で止まっている。停止段階の違いで対処を分ける。",
       "reasoningSteps": [
         "各PCが到達した通信段階をログから追う",
-        "TLSの信頼とプロキシ認証を別の修復対象へ割り当てる"
+        "TLSの信頼とプロキシ認証を別の修復対象へ割り当てる",
+        "Pは接続後の証明書検証、Qはトンネル確立前の認証で止まっている。停止段階の違いで対処を分ける。"
       ],
-      "counterfactual": "QもCONNECT成功後のissuerエラーなら、両方でCA信頼設定を調べる案が合う。",
+      "counterfactual": "「QはCONNECTに対し407 Proxy Authentication Requiredとなり、接続先の証明書はまだ受け取っていません」→「QもCONNECT成功後に社内CAのissuer certificateエラーとなっています」なら表示B。両者がTLS信頼の段階で止まり、CA設定の確認を共通にする。Qの認証情報だけを直す元の回答では足りない。",
       "evidence": [
-        "同じアカウント・同じ社内プロキシを使うPCを比較しました。"
+        "PはHTTP CONNECT成功後にissuer certificateエラー",
+        "QはCONNECTに対し407",
+        "証明書はまだ受け取っていません"
       ]
     },
     "q-d3-e03": {
-      "fingerprint": "d4eee1c47271bc4e36d47c3f7b843f7d22146389b89b0f921e1a59b1b1b9e4a4",
+      "fingerprint": "2926ed99c8b6d9e14199c3c03b43c872e839f74ec306646a9774ca39f6466538",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。前半・中間・後半の単位変換を追跡する → 前後の契約を残して二重変換だけを除く",
+      "assessment": "三段階の分析・照合・結論を要求する。前半・中間・後半の単位変換を追跡する → 前後の契約を残して二重変換だけを除く → 入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。",
       "reasoningSteps": [
         "前半・中間・後半の単位変換を追跡する",
-        "前後の契約を残して二重変換だけを除く"
+        "前後の契約を残して二重変換だけを除く",
+        "入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。"
       ],
-      "counterfactual": "後半に変換がなく中間が円を返す契約なら、中間の除算を残す必要がある。",
+      "counterfactual": "「既存の前後処理を維持する」→「前半と生成された中間は変更できず、後半だけを変更して入出力のドル契約を満たす」なら表示A。変更可能な境界が後半だけになり、二重変換の後半を外す。中間を直す元の回答は変更範囲を破る。",
       "evidence": [
-        "金額計算の中間部分をCopilotで補完しました。"
+        "前半でドルをセントへ変換",
+        "後半で100で割ってドルを返します",
+        "中間でも100で割",
+        "既存の前後処理を維持"
       ]
     },
     "q-d3-e04": {
-      "fingerprint": "e45e8714336b3dc8c52a8a1afd13e71e855962a0f3ea125cd11b25c79c9a3a00",
+      "fingerprint": "529e4713ce6b518d236785702fada208d86a6a8b5ecd0edf1ca2a211e160dea3",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く",
+      "assessment": "三段階の分析・照合・結論を要求する。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く → 設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。",
       "reasoningSteps": [
         "同一パスで異なる二経路の結果を比較する",
-        "ルールの修正ではなくアクセス境界の変更を導く"
+        "ルールの修正ではなくアクセス境界の変更を導く",
+        "設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。"
       ],
-      "counterfactual": "対応モードで古いセッションだけ失敗するなら、反映確認や再読込が先になる。",
+      "counterfactual": "「同じ機密パスにContent Exclusionを設定しました。通常補完では除外表示が出て提案が止まりますが、IDEのAgentではファイル読取ツールが成功します。パス一致と反映は確認済みで、この環境のAgentは除外非対応です」→「別の機密パスにだけContent Exclusionを設定しました。そのパスでは除外表示が出ますが、今回の通常補完は未登録のパスを取得しています。使用モードは対応しており、設定に今回の実パスがありません」なら表示C。非対応モードでなくパス適用先の不足となり、適切な登録が最小の修正になる。環境分離を増やす元の回答は原因の最小修正ではない。",
       "evidence": [
-        "同じ機密パスにContent Exclusionを設定しました。"
+        "通常補完では除外表示",
+        "Agentではファイル読取ツールが成功",
+        "パス一致と反映は確認済み",
+        "この環境のAgentは除外非対応"
       ]
     },
     "q-d3-e05": {
-      "fingerprint": "51f7fb262e72eb17b4b390b40c1b9d887cfe89e52de5d704a4358ce01655cab6",
+      "fingerprint": "42953a05da0baa0afc2fc30991c8243e71cc80784ecda9b98a13b5fcaab0dc7e",
       "beforeDifficulty": "advanced",
-      "difficulty": "intermediate",
-      "textRewritten": false,
+      "difficulty": "beginner",
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "無関係なタブの混入に文脈整理を適用する単一の対処。ExamからAppliedへ変更。",
+      "assessment": "長い事例だが必要なタブを残し不要なタブを閉じる原則の識別にとどまる。",
       "reasoningSteps": [
-        "無関係なタブの混入に文脈整理を適用する単一の対処。ExamからAppliedへ変更。"
+        "長い事例だが必要なタブを残し不要なタブを閉じる原則の識別にとどまる。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-f01": {
       "fingerprint": "7cc20d5895eb716bc1d21d7f12fb8a53d34e0c49f524ec9531f05d41ac948650",
@@ -1530,12 +1725,15 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "生成案と期待する技術・エラー動作の差を、具体的な追記へ変換する。",
+      "assessment": "維持。誤っていた技術選択と業務契約を直接具体化する。",
       "reasoningSteps": [
-        "生成案と期待する技術・エラー動作の差を、具体的な追記へ変換する。"
+        "判断条件を特定する：TypeScript・Prisma、重複メールはエラー",
+        "誤っていた技術選択と業務契約を直接具体化する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "重複が許容契約なら拒否例を足す依頼は契約違反になる。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a02": {
       "fingerprint": "c63898c3f82f55f534cb321539a2a1f7324b3f30b37f8846944d218caa016ad1",
@@ -1543,12 +1741,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。禁止指示の不足を望む代替例で補う。",
+      "assessment": "維持。望む代替を現行コードの例で具体化する。",
       "reasoningSteps": [
-        "禁止指示の不足を望む代替例で補う。"
+        "判断条件を特定する：禁止指示だけでは別実装、既存appLoggerを使用",
+        "望む代替を現行コードの例で具体化する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "既存ロガーがなく新設が承認済みならAPIの設計から行う。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a03": {
       "fingerprint": "151d8402e714426a8b8e17c7e4866e365c886bedfe7a177c6b6e919bfddf8173",
@@ -1556,12 +1757,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。観測された形式と型の誤りを出力契約へ反映する。",
+      "assessment": "維持。形式と型の失敗を出力契約へ反映する。受信後も検証する。",
       "reasoningSteps": [
-        "観測された形式と型の誤りを出力契約へ反映する。"
+        "判断条件を特定する：JSON全体をパース、countは数値",
+        "形式と型の失敗を出力契約へ反映する。受信後も検証する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "文字列countが契約なら数値化の要求は不要になる。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a04": {
       "fingerprint": "cc6a2f836bb38838e21be6873c2c039fe2345162413ea4b59600a2d457d0f331",
@@ -1569,12 +1773,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。新規Chatだけでは直らない旧添付の原因を切り分ける。",
+      "assessment": "維持。履歴を切っても旧添付を持ち込めば原因が残るため、資料の版を修正する。",
       "reasoningSteps": [
-        "新規Chatだけでは直らない旧添付の原因を切り分ける。"
+        "判断条件を特定する：新規Chatにも旧helperを添付",
+        "履歴を切っても旧添付を持ち込めば原因が残るため、資料の版を修正する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "添付が現行なら資料の差替えだけでは根拠にならず他条件を調べる。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a05": {
       "fingerprint": "5b3e7339c75c74499f29931fd9c7bd14704edc3bc8732038f3294cc96543a200",
@@ -1582,25 +1789,31 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。正常なゼロと異常入力の差を補完用の契約へ表す。",
+      "assessment": "維持。正常なゼロと不正な文字列を対比して契約を具体化する。",
       "reasoningSteps": [
-        "正常なゼロと異常入力の差を補完用の契約へ表す。"
+        "判断条件を特定する：不正形式は例外、文字列0は有効",
+        "正常なゼロと不正な文字列を対比して契約を具体化する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "不正形式を0へ変える承認済み仕様なら例外要求を変える。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a06": {
-      "fingerprint": "7a5c274d5362cdc3659305e4f814c99e6571e88905175fbcab3bae1947be21a6",
+      "fingerprint": "169bdef1f4051146fdee991c1abc0b35a53f121a25aabcad0f52186bffd3150a",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "生成物の検索ノイズに検索除外を適用し、必要ソースの到達性を確認する。",
+      "assessment": "改稿。不要な生成物を外し、必要なソースを残す。",
       "reasoningSteps": [
-        "生成物の検索ノイズに検索除外を適用し、必要ソースの到達性を確認する。"
+        "判断条件を特定する：Copilotの検索結果にsrcの実装とdistの古い生成物が混ざる。調査対象はsrcで、distだけを検索対象から外したい。指定は？",
+        "不要な生成物を外し、必要なソースを残す。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "調査がdistの生成結果なら、distを除外せず対象を逆に見直す。",
+      "evidence": [
+        "workspace-context"
+      ]
     },
     "q-d4-a07": {
       "fingerprint": "bbfa191de32e1d896f4df2c5786aba94c234690e4564a4971abc22705399db05",
@@ -1608,25 +1821,31 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。正例だけで見えない過剰受理を負例で指定する。",
+      "assessment": "維持。前後に余分な文字がある負例で、全体一致の条件を示す。",
       "reasoningSteps": [
-        "正例だけで見えない過剰受理を負例で指定する。"
+        "判断条件を特定する：文字列全体一致、前後の余分な文字",
+        "前後に余分な文字がある負例で、全体一致の条件を示す。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "部分一致を許す契約ならxAB-123yを拒否する例は不適切になる。",
+      "evidence": [
+        "prompt",
+        "tests"
+      ]
     },
     "q-d4-a08": {
-      "fingerprint": "89bf2e380199bb437e916909265b2855004f1c0714b1a36b3096398728b41faf",
+      "fingerprint": "7cea6f7785b10311beaed7e12fa0e5ccee5fdbf8e275fa48c041733240b29e18",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": false,
-      "reclassified": false,
-      "assessment": "対象未確定の探索と対象確定後の編集で、検索と明示添付を使い分ける。",
+      "reclassified": true,
+      "assessment": "未知対象の検索と既知対象の添付という基本操作の用途識別。",
       "reasoningSteps": [
-        "対象未確定の探索と対象確定後の編集で、検索と明示添付を使い分ける。"
+        "未知対象の検索と既知対象の添付という基本操作の用途識別。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a09": {
       "fingerprint": "73c856b3e47829313061b70e0b18bd09c983103c84dfa3879ccd9cfb28750bd0",
@@ -1634,12 +1853,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。抽象的な品質要求を具体的な変更シナリオへ変換する。",
+      "assessment": "維持。変更容易性を具体的な変更が波及する範囲として評価させる。",
       "reasoningSteps": [
-        "抽象的な品質要求を具体的な変更シナリオへ変換する。"
+        "判断条件を特定する：命名でなく税率変更の波及範囲",
+        "変更容易性を具体的な変更が波及する範囲として評価させる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "命名統一が目的なら命名への指摘が適合する。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-a10": {
       "fingerprint": "98fc0361a0fdfbbb1e60567cb7076b9ddcaf4360f8e3444b7dcfbfef02e4e50c",
@@ -1647,40 +1869,50 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。失敗した実行条件をエラーログとともに文脈へ加える。",
+      "assessment": "維持。失敗する環境の実行条件をモジュール解決の設定と結び付ける。",
       "reasoningSteps": [
-        "失敗した実行条件をエラーログとともに文脈へ加える。"
+        "判断条件を特定する：CIだけ失敗、作業パスとモジュール解決",
+        "失敗する環境の実行条件をモジュール解決の設定と結び付ける。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "型エラーなら対象の型定義と診断結果を優先する。",
+      "evidence": [
+        "chat",
+        "prompt"
+      ]
     },
     "q-d4-a11": {
-      "fingerprint": "674916ec43218ef89b4ac33444cfac026c29e2dc35afa512126289ee17d0de8b",
+      "fingerprint": "921dc593ec0df7032e09788a82e89c87016db9f1bbde71f32476748bf5c766b6",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。動作を決める制約と不要な背景を区別する。",
+      "assessment": "改稿。三つの現行契約を保って失効した背景を除く。",
       "reasoningSteps": [
-        "動作を決める制約と不要な背景を区別する。"
+        "判断条件を特定する：Copilotへの依頼を短くする。現行仕様は上限100件、空入力[]、認証失敗で例外。背景には、廃止済みCSV出力の経緯がある。現行仕様を維持する要約は？",
+        "三つの現行契約を保って失効した背景を除く。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "CSVが現行の受入条件なら、その記述を削れない。",
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-d4-e01": {
-      "fingerprint": "b069fb70d31e6b486790416fe75b22bf2e24d83183979f72b39820b23a597494",
+      "fingerprint": "aa101ac2f0b78cb0ec3a66552ec673ecef568ab695e7e86c880ae69b4de5e33e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。単体テストが覆う範囲と各段階の出力を追う → 段階間で失われた判定を接続契約として補う",
+      "assessment": "三段階の分析・照合・結論を要求する。単体テストが覆う範囲と各段階の出力を追う → 段階間で失われた判定を接続契約として補う → 各単体は定めた動作をしているが、検証結果を接続側が選別していない。単体成功では覆えない段階間の契約を定める。",
       "reasoningSteps": [
         "単体テストが覆う範囲と各段階の出力を追う",
-        "段階間で失われた判定を接続契約として補う"
+        "段階間で失われた判定を接続契約として補う",
+        "各単体は定めた動作をしているが、検証結果を接続側が選別していない。単体成功では覆えない段階間の契約を定める。"
       ],
-      "counterfactual": "不正行は止まり通信失敗だけが起きるなら、再試行契約の検証が候補になる。",
+      "counterfactual": "「検証器は不正行を{ok:false,row}として返します。送信器は受け取った要素のrowを全て送ります」→「検証器は不正行を誤って{ok:true,row}として返します。接続側はok:trueだけを送信器へ渡しています」なら表示A。接続の選別は既にあり、検証器の誤判定を修正する。元の接続フィルター追加ではok:trueの不正行が残る。",
       "evidence": [
-        "CSV取込をCopilotと段階実装しました。"
+        "不正行を{ok:false,row}",
+        "rowを全て送ります",
+        "ok:trueだけを渡して成功"
       ]
     },
     "q-d4-e02": {
@@ -1697,51 +1929,60 @@
       "evidence": []
     },
     "q-d4-e03": {
-      "fingerprint": "dbe381293d87d7d61d1a8886a27beccd67fce2d114cc20992b626bb2da724bff",
+      "fingerprint": "ea11ddfd759b6fc047322bfbf275e0a090f26ddbc48c9dc939f19c035616f450",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二実験で改善した点と残った点を分ける → 残る問題への変更を一変数にして効果を比較する",
+      "assessment": "三段階の分析・照合・結論を要求する。loggerの改善と残った同期IOを別の観測へ分ける。 → 測定したい具体例と、維持するBの成果を照合する。 → 非同期API例だけを足し、同じモデル・条件で比較する。",
       "reasoningSteps": [
-        "二実験で改善した点と残った点を分ける",
-        "残る問題への変更を一変数にして効果を比較する"
+        "loggerの改善と残った同期IOを別の観測へ分ける。",
+        "測定したい具体例と、維持するBの成果を照合する。",
+        "非同期API例だけを足し、同じモデル・条件で比較する。"
       ],
-      "counterfactual": "API例を追加済みで効果がなくモデル差を調べるなら、例を固定してモデルだけを変える。",
+      "counterfactual": "「具体例追加の効果だけ」→「モデル差の効果だけ」なら表示C。例示を固定しモデルだけを変える。元の例追加実験ではモデル差を分離できない。",
       "evidence": [
-        "生成コードの規約違反を比較しました。"
+        "Bはloggerのimport例を足して解消",
+        "同期IOは両方で残る",
+        "具体例追加の効果だけ"
       ]
     },
     "q-d4-e04": {
-      "fingerprint": "66488264d3ff1db7dd869e8d24fe538f0ea56449e3c27921c58422b8e237557c",
+      "fingerprint": "74886231374746e6584792c51dbad5019d8a156090ae8e40c50e2bbd529c64ee",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。コードの供給元と利用先を依存関係から選ぶ → 変更する拒否条件と変えない返却契約を同時に指定する",
+      "assessment": "三段階の分析・照合・結論を要求する。コードの供給元と利用先を依存関係から選ぶ → 変更する拒否条件と変えない返却契約を同時に指定する → 設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。",
       "reasoningSteps": [
         "コードの供給元と利用先を依存関係から選ぶ",
-        "変更する拒否条件と変えない返却契約を同時に指定する"
+        "変更する拒否条件と変えない返却契約を同時に指定する",
+        "設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。"
       ],
-      "counterfactual": "作業対象がモバイル版なら、その実装と実際の依存先を選び直す。",
+      "counterfactual": "「refresh.tsが検証結果を利用します。Chatの検索結果は同名のモバイル実装でした。今回の変更はissuer違反を拒否することで、refreshの戻り値契約は維持します」→「refresh.tsは未使用の旧資料で依存しません。Chatの検索結果は同名のモバイル実装でした。今回の変更はjwt内のissuer拒否だけで、参照する外部依存はconfigだけです」なら表示D。必要な依存がconfigのみになり、対象とconfigだけが最小十分になる。元の回答は不要な旧資料を含める。",
       "evidence": [
-        "モノレポのjwt.tsはissuer設定をconfig.tsから読み、refresh.tsが検証結果を利用します。"
+        "issuer設定をconfig.tsから読み",
+        "refresh.tsが検証結果を利用",
+        "refreshの戻り値契約は維持"
       ]
     },
     "q-d4-e05": {
-      "fingerprint": "e0be7917a93392b80ec8097a580a43f157413a2f370155f66ceb5aed5af19d20",
+      "fingerprint": "e85d09fecc30dddf6427ed3afac74d4c104a3ecc15d993e5d9b84ea99a1fc034",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。状態とイベントの組を許可表に照合する → 一般的な異常例から今回の欠陥を通る例を選ぶ",
+      "assessment": "三段階の分析・照合・結論を要求する。状態とイベントの組を許可表に照合する → 一般的な異常例から今回の欠陥を通る例を選ぶ → 観測された二つの誤受理を直接通る例。許可表の確認と、その外の拒否例をプロンプトへ加える。",
       "reasoningSteps": [
         "状態とイベントの組を許可表に照合する",
-        "一般的な異常例から今回の欠陥を通る例を選ぶ"
+        "一般的な異常例から今回の欠陥を通る例を選ぶ",
+        "観測された二つの誤受理を直接通る例。許可表の確認と、その外の拒否例をプロンプトへ加える。"
       ],
-      "counterfactual": "不具合が終端状態からの再実行だけなら、Refunded・Failedからの拒否例が優先。",
+      "counterfactual": "「提案はCapturedからの再Captureと、PendingからのRefundも受け付けます」→「提案はRefundedからのCaptureと、FailedからのRefundも受け付けます」なら表示A。観測された誤受理の対が変わり、その二経路を直接通る例へ変更する。元の二例だけでは今回の欠陥を通らない。",
       "evidence": [
-        "Copilotへ決済の状態遷移を依頼します。"
+        "現行テストは正常経路だけ",
+        "Capturedからの再Capture",
+        "PendingからのRefund"
       ]
     },
     "q-d5-f01": {
@@ -1815,38 +2056,49 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。依存だけを置換し対象の失敗時の振る舞いを検証する。",
+      "assessment": "維持。外部依存で失敗を再現し、対象が行う注文状態の判断を検証する。",
       "reasoningSteps": [
-        "依存だけを置換し対象の失敗時の振る舞いを検証する。"
+        "判断条件を特定する：成功だけモック、残高不足でunpaid",
+        "外部依存で失敗を再現し、対象が行う注文状態の判断を検証する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "契約が成功時のpaidだけなら成功応答の状態検証が直接の対象になる。",
+      "evidence": [
+        "tests"
+      ]
     },
     "q-d5-a02": {
-      "fingerprint": "88d64b3a3a522eee2ee68c35c1c2c89a0a7a4c8471e0a7ccee66018b009e8d22",
+      "fingerprint": "eb7bef1ac8115a9eac30bd6461989958207a8d1b712938b3d0d9414bfd3fa84f",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。構造変更で失われた副作用の契約を修復する。",
+      "assessment": "改稿。全経路で実行され、重複もしない構造。",
       "reasoningSteps": [
-        "構造変更で失われた副作用の契約を修復する。"
+        "判断条件を特定する：Copilotの早期return案は失敗時に監査記録を飛ばす。契約は成功・失敗の両方で1回記録。条件を満たす配置は？",
+        "全経路で実行され、重複もしない構造。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "契約が成功時のみなら成功return直前の記録も候補になる。",
+      "evidence": [
+        "tests",
+        "responsible"
+      ]
     },
     "q-d5-a03": {
-      "fingerprint": "ced1ac06b33324de6556acb0c231b73d83cd79758e45f2bce5b2cda387a34415",
+      "fingerprint": "11988aab2a062818842110b42cf64ab497ed81700d2a17128394f80bf473c968",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。生成要約を公開契約の差分と照合する。",
+      "assessment": "改稿。実際の互換性影響と利用者の対応を説明する。",
       "reasoningSteps": [
-        "生成要約を公開契約の差分と照合する。"
+        "判断条件を特定する：CopilotのPR要約は「互換性変更なし」。差分は公開関数の引数削除で、削除は承認済み。利用側には呼出しの修正が必要。説明へ補う内容は？",
+        "実際の互換性影響と利用者の対応を説明する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "公開契約が変わらず性能だけ変わるPRなら、計測結果が主要な補足になる。",
+      "evidence": [
+        "code-review",
+        "responsible"
+      ]
     },
     "q-d5-a04": {
       "fingerprint": "de610c3925469987d14a8db0bbd3991c4fec9a53859e2980edfa8c3af86b085f",
@@ -1854,12 +2106,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。失敗条件を最小の入力・期待値・対象コードとして提示する。",
+      "assessment": "維持。問題が起きる入力と期待結果をクエリへ結び付けることで、欠落の原因を調べられる。",
       "reasoningSteps": [
-        "失敗条件を最小の入力・期待値・対象コードとして提示する。"
+        "判断条件を特定する：注文0件の顧客が欠落、含める契約",
+        "問題が起きる入力と期待結果をクエリへ結び付けることで、欠落の原因を調べられる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "注文がある顧客だけ返す契約なら欠落はその契約に適合する。",
+      "evidence": [
+        "tests",
+        "prompt"
+      ]
     },
     "q-d5-a05": {
       "fingerprint": "ae0a94d85d7e4acff0c9877a8d5665a48ddad81a5c830f7db3c15e2261af479b",
@@ -1867,12 +2123,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。生成文の種別を差分の目的へ適用する。",
+      "assessment": "維持。差分の主目的は既存の誤動作の修正なので、それを種別と説明へ表す。",
       "reasoningSteps": [
-        "生成文の種別を差分の目的へ適用する。"
+        "判断条件を特定する：税込丸めの誤動作修正",
+        "差分の主目的は既存の誤動作の修正なので、それを種別と説明へ表す。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "ドキュメントの例だけの変更ならdocs種別を選ぶ。",
+      "evidence": [
+        "responsible"
+      ]
     },
     "q-d5-a06": {
       "fingerprint": "0f8b0ecae5d462840cd2cda498a600c395e798458f6d31885d5df6f340b249a3",
@@ -1880,12 +2139,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。診断性と実行単位に合わせて生成テストを分割する。",
+      "assessment": "維持。診断性と個別実行の両方を改善し、必要な検証を保持する。",
       "reasoningSteps": [
-        "診断性と実行単位に合わせて生成テストを分割する。"
+        "判断条件を特定する：一つのテストに三動作、個別実行が必要",
+        "診断性と個別実行の両方を改善し、必要な検証を保持する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "一連の連携だけを確認したいなら結合テストを残す理由もある。",
+      "evidence": [
+        "tests"
+      ]
     },
     "q-d5-a07": {
       "fingerprint": "db3e9a34246beb3853757ffecb564b4efb2e22ab66b3841a6308c3c8e3315d00",
@@ -1893,25 +2155,32 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。移行ガイドの実行時変更を互換性テストへ反映する。",
+      "assessment": "維持。型に現れない既定動作の変更を、利用者の入出力契約で確認する。",
       "reasoningSteps": [
-        "移行ガイドの実行時変更を互換性テストへ反映する。"
+        "判断条件を特定する：型は通る、既定タイムゾーン変更",
+        "型に現れない既定動作の変更を、利用者の入出力契約で確認する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "型契約自体が変わったなら型の移行も検証する。",
+      "evidence": [
+        "tests",
+        "prompt"
+      ]
     },
     "q-d5-a08": {
-      "fingerprint": "9386694ea6bfc7c2990440f3648789fe2f144fa86b3ecd6d99551025de9d24ac",
+      "fingerprint": "ebee9aff744a6ae87539f05723fe75af7779a990e7bbf6fe73f058c72ee74b80",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。テスト用代替物の互換性の境界を扱う。",
+      "assessment": "改稿。代替DBの範囲と固有動作を分けて確認する。",
       "reasoningSteps": [
-        "テスト用代替物の互換性の境界を扱う。"
+        "判断条件を特定する：単純CRUDはSQLiteで通るが、本番DB固有JSON演算子のテストはSQLiteで構文エラー。検索仕様を変更せず必要な確認を保つ構成は？",
+        "代替DBの範囲と固有動作を分けて確認する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "本番でもSQLite構文へ移行する承認があれば、仕様とテストを一緒に変更できる。",
+      "evidence": [
+        "tests"
+      ]
     },
     "q-d5-a09": {
       "fingerprint": "081991672b7dc43815dbb06fa520954d94bd87e3c6c39d1133fd020db7ed7ad5",
@@ -1919,117 +2188,145 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。AIレビューの前提を実データの例外へ照合する。",
+      "assessment": "維持。宣言型だけでは覆えない実データの前提に指摘を照合する必要がある。",
       "reasoningSteps": [
-        "AIレビューの前提を実データの例外へ照合する。"
+        "判断条件を特定する：型はUser、既知データにnull",
+        "宣言型だけでは覆えない実データの前提に指摘を照合する必要がある。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "境界でnullを拒否しデータも移行済みなら前提に照らして削除を再評価する。",
+      "evidence": [
+        "code-review",
+        "tests"
+      ]
     },
     "q-d5-a10": {
-      "fingerprint": "f3eb42a32a58e560cda6194fb96c5e671538e5a970f9f593c0bdb53f03fdad02",
+      "fingerprint": "0dcfc31c1285bc42c54b4553bca84d5a09bc8ff491ca79393da53168675183a1",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。入力規模と条件をそろえて最適化案を評価する。",
+      "assessment": "改稿。入力規模をそろえ、互換性と性能を同時に調べる。",
       "reasoningSteps": [
-        "入力規模と条件をそろえて最適化案を評価する。"
+        "判断条件を特定する：Copilotの最適化案は100件で5ms、旧版は100件で8ms。本番は10万件が中心。出力互換を保ち、本番規模で採否を判断する比較は？",
+        "入力規模をそろえ、互換性と性能を同時に調べる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "本番の規模が100件だけなら100件で同条件比較する。",
+      "evidence": [
+        "tests",
+        "responsible"
+      ]
     },
     "q-d5-a11": {
-      "fingerprint": "0e2b1b6197c3e47b5e28b5be6ae9cddd6c7a37770ecbf96dbe455b731701b8a1",
+      "fingerprint": "541014c869462b6b91a3d1c8b01f593e0cb55f9dde632545df2d382063261947",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。初回利用の再現結果を生成ドキュメントへ反映する。",
+      "assessment": "改稿。成功環境との差である必須前提を埋める。",
       "reasoningSteps": [
-        "初回利用の再現結果を生成ドキュメントへ反映する。"
+        "判断条件を特定する：CopilotのREADMEをクリーン環境で実行するとAPP_MODE未設定で止まる。既存開発者の端末はAPP_MODE=testで成功。最初に補う導入手順は？",
+        "成功環境との差である必須前提を埋める。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "失敗原因が公開APIの契約ならAPI資料の補足が候補になる。",
+      "evidence": [
+        "responsible"
+      ]
     },
     "q-d5-e01": {
-      "fingerprint": "38e5f34c98f4988282016541782bfedd536c2c2a02196b3103f63a6e6183f622",
+      "fingerprint": "03a6fa47a82aa07891953eeb461f364f9d6c55eb4693cd33e0778a6b1329dc3e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。最終入力時刻から発火境界を計算する → 境界前後と保存引数を組み合わせて不具合を検出する",
+      "assessment": "三段階の分析・照合・結論を要求する。最終入力時刻から発火境界を計算する → 境界前後と保存引数を組み合わせて不具合を検出する → 最後の入力Bは200msなので境界は500ms。直前の0回と境界でのBの1回を確認し、早期実行や古い値の保存も区別する。",
       "reasoningSteps": [
         "最終入力時刻から発火境界を計算する",
-        "境界前後と保存引数を組み合わせて不具合を検出する"
+        "境界前後と保存引数を組み合わせて不具合を検出する",
+        "最後の入力Bは200msなので境界は500ms。直前の0回と境界でのBの1回を確認し、早期実行や古い値の保存も区別する。"
       ],
-      "counterfactual": "入力がAだけなら、299msで0回・300msでAの1回が適切。",
+      "counterfactual": "「t=0で入力A、t=200で入力Bを与えました」→「t=0で入力Aだけを与え、t=200には入力しませんでした」なら表示A。最後の入力がAの0msになり、299/300msのA保存を検証する。元の499ms時点0回は既に保存済みの契約へ反する。",
       "evidence": [
-        "Copilotが生成したdebounceのテストを見直します。"
+        "最後の入力から300ms後に1回",
+        "t=0で入力A、t=200で入力B",
+        "非同期更新完了も待つ"
       ]
     },
     "q-d5-e02": {
-      "fingerprint": "45aa36960dc9e92f341615b956f0938ae0a3d6762667ba2f79b639bcf5effd64",
+      "fingerprint": "029aef6535407037547c422f41028f35fd5fb7b57f248f4a963a9dcd9149ece7",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。要約と実際の契約変更を照合する → 説明の修正と採用コード・公開情報の審査を分ける",
+      "assessment": "三段階の分析・照合・結論を要求する。型検査で覆われない応答の意味とログの公開を分ける。 → 承認証跡の有無と公開サンプル規則へ照合する。 → 応答承認を確認し、サンプルと要約を差分へ整合させる。",
       "reasoningSteps": [
-        "要約と実際の契約変更を照合する",
-        "説明の修正と採用コード・公開情報の審査を分ける"
+        "型検査で覆われない応答の意味とログの公開を分ける。",
+        "承認証跡の有無と公開サンプル規則へ照合する。",
+        "応答承認を確認し、サンプルと要約を差分へ整合させる。"
       ],
-      "counterfactual": "差分が実際に内部整理だけでサンプルも合成情報なら、要約の互換性説明を維持できる。",
+      "counterfactual": "「現在の証跡は型検査成功だけで、応答変更の承認はない」→「現行の応答契約200への変更は審査済みで、承認証跡もある」なら表示B。承認証跡は再利用し、残る識別子と要約を直す。承認を再確認する元の回答は不足作業だけの補足ではない。",
       "evidence": [
-        "CopilotのPR要約には「認証の内部整理、API互換性変更なし」とあります。"
+        "未認証時401→200",
+        "応答変更の承認はない",
+        "顧客識別子を公開サンプルへ載せない"
       ]
     },
     "q-d5-e03": {
-      "fingerprint": "57c0f0c0415f99f383fc0307b6d81cb0f9ef93897bbb37474c799ead97c5cddc",
+      "fingerprint": "957c3d31ce1f73192fc44f20299aa717887e94edb2ad5fa844d346b413980b63",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。生成器の到達範囲と期待値の独立性を別々に評価する → 状態を持つ操作列と仕様由来の不変条件を組み合わせる",
+      "assessment": "三段階の分析・照合・結論を要求する。生成器の到達範囲と期待値の独立性を別々に評価する → 状態を持つ操作列と仕様由来の不変条件を組み合わせる → 入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。",
       "reasoningSteps": [
         "生成器の到達範囲と期待値の独立性を別々に評価する",
-        "状態を持つ操作列と仕様由来の不変条件を組み合わせる"
+        "状態を持つ操作列と仕様由来の不変条件を組み合わせる",
+        "入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。"
       ],
-      "counterfactual": "仕様が常に残高内の単発送金だけなら不足残高の列は不要だが、期待値の独立性は依然必要。",
+      "counterfactual": "「仕様は残高を負にせず、手数料なしで総額を保存することです」→「今回追加する検査は残高内の単発送金で非負だけを独立検証することです。送金列・総額保存・残高不足は別の実装独立テストで確認済みです」なら表示A。新たに必要な検査が非負だけへ限定され、単発送金の非負検査が直接対応する。元の広い検査追加は確認済み範囲を重複させる。",
       "evidence": [
-        "Copilotに口座間送金のプロパティテストを作らせました。"
+        "残高を負にせず",
+        "手数料なしで総額を保存",
+        "残高内の単発送金だけ",
+        "期待値は対象実装の戻り値をコピー"
       ]
     },
     "q-d5-e04": {
-      "fingerprint": "f5ab4bd902cb3a4ffb952ba11137f84b67093473aa9f199381a51b6f55022102",
+      "fingerprint": "079e7cbc42d69c321c7af5ad2997b7c9f4011ab59db9fd2c54239931e9657ad8",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。版ごとの契約と四つの成果物を照合する → 誤記だけを直して現行互換性を維持する",
+      "assessment": "三段階の分析・照合・結論を要求する。版ごとの契約と四つの成果物を照合する → 誤記だけを直して現行互換性を維持する → 現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。",
       "reasoningSteps": [
         "版ごとの契約と四つの成果物を照合する",
-        "誤記だけを直して現行互換性を維持する"
+        "誤記だけを直して現行互換性を維持する",
+        "現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。"
       ],
-      "counterfactual": "承認済みv2仕様とテストが例外方式なら、nullを返す実装の修正が必要。",
+      "counterfactual": "「承認済みv2仕様と契約テストは「未発見ならnull」です」→「承認済みv2仕様は「未発見ならUserNotFoundError」ですが、契約テストは誤ってnullを期待しています」なら表示D。承認契約の根拠が例外へ変わり、実装・テストの多数一致を優先せず両方を直す。文書だけnullへ直す元の回答は承認契約に反する。",
       "evidence": [
-        "公開関数findUserの承認済みv2仕様と契約テストは「未発見ならnull」です。"
+        "承認済みv2仕様",
+        "未発見ならnull",
+        "JSDocはUserNotFoundError",
+        "v1が例外方式"
       ]
     },
     "q-d5-e05": {
-      "fingerprint": "5e34ca4cbc1b243fd2c5cd3d2a8fb4542b4fdb6a2e1e9e336744fedf3e6e81a5",
+      "fingerprint": "a2f53023f6db4c2ac473ebe27610abe8b2290d4d14351dd168f92c024d0a9416",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。各差分を承認済み仕様へ対応させる → 期待値更新と回帰修正を別々に判断する",
+      "assessment": "三段階の分析・照合・結論を要求する。各差分を承認済み仕様へ対応させる → 期待値更新と回帰修正を別々に判断する → 仕様上の意図した差分と回帰を分ける。①は期待値変更、②は実装修正であり、一括更新は回帰を正当化する。",
       "reasoningSteps": [
         "各差分を承認済み仕様へ対応させる",
-        "期待値更新と回帰修正を別々に判断する"
+        "期待値更新と回帰修正を別々に判断する",
+        "仕様上の意図した差分と回帰を分ける。①は期待値変更、②は実装修正であり、一括更新は回帰を正当化する。"
       ],
-      "counterfactual": "②も承認済みの仕様変更なら、動作確認の上で新期待値へ更新できる。",
+      "counterfactual": "「①承認済みのボタン文言変更」→「①も未承認のボタン文言変更」なら表示D。両方が未承認の回帰になり、双方の実装を元へ戻す。①の期待値を更新する元の回答は未承認変更を基準化する。",
       "evidence": [
-        "CopilotがUIのスナップショット一括更新を提案しました。"
+        "①承認済みのボタン文言変更",
+        "②仕様にない削除確認ダイアログの消失",
+        "画面でも両方を再現"
       ]
     },
     "q-d6-f01": {
@@ -2103,12 +2400,15 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。リポジトリのコピーと除外設定の適用範囲を区別する。",
+      "assessment": "維持。除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。",
       "reasoningSteps": [
-        "リポジトリのコピーと除外設定の適用範囲を区別する。"
+        "判断条件を特定する：Aのみ設定、同じパスのBで補完",
+        "除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "Bも設定対象ならパス・モード・クライアント反映を切り分ける。",
+      "evidence": [
+        "exclusion"
+      ]
     },
     "q-d6-a02": {
       "fingerprint": "07dc4b777b6be805f495a9a04f9bfcd2261e7ab444d0451a470b03eb3a1b7045",
@@ -2129,12 +2429,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。Gitと手動Chat入力の保護境界を区別する。",
+      "assessment": "維持。Gitとは別の入力経路なので、貼り付ける前に秘密を除く。",
       "reasoningSteps": [
-        "Gitと手動Chat入力の保護境界を区別する。"
+        "判断条件を特定する：Git Pushは停止、次はChat貼り付け",
+        "Gitとは別の入力経路なので、貼り付ける前に秘密を除く。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "送信がGit PushだけならPush Protectionの対象経路になる。",
+      "evidence": [
+        "secret-scanning",
+        "privacy"
+      ]
     },
     "q-d6-a04": {
       "fingerprint": "c8242cbe8d45453d931f2fb0c75490c8930926119a65960f64aa5cdb6daff4da",
@@ -2176,30 +2480,36 @@
       "evidence": []
     },
     "q-d6-a07": {
-      "fingerprint": "eda05737defbc12cbeb5b39bb7d6b1c3678bfa641312cb1461391ee930483263",
+      "fingerprint": "f5de2c6c82d8d225e52e871c8dadf5b4010973579b9b38d3d1122352add5a892",
       "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
+      "difficulty": "beginner",
       "textRewritten": true,
-      "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。学習不使用から保持期間を推論する誤りを修正する。",
+      "reclassified": true,
+      "assessment": "学習利用とデータ保持を区別する基本概念の確認で、機能別の保持条件を実際に照合していない。",
       "reasoningSteps": [
-        "学習不使用から保持期間を推論する誤りを修正する。"
+        "学習利用とデータ保持を区別する基本概念の確認で、機能別の保持条件を実際に照合していない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "model-hosting",
+        "privacy"
+      ]
     },
     "q-d6-a08": {
-      "fingerprint": "eccbd72ba36778687ef65bfdc1c615ae9cee07a437b031871f9b4969f20fb3ec",
+      "fingerprint": "5b907bbee0dcd784da4ec4ee1e4d9edddbef9b5409d1ba19a8f72eef5d93650a",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。ステータスと他ファイルの動作から補完停止の原因を特定する。",
+      "assessment": "改稿。対象固有の表示と他ファイル成功の両方に合う。",
       "reasoningSteps": [
-        "ステータスと他ファイルの動作から補完停止の原因を特定する。"
+        "判断条件を特定する：Copilotの補完はsrc/a.tsで出るがsrc/b.tsでは出ない。接続診断は成功、b.tsの表示はContent excluded。今の証拠が支持する原因は？",
+        "対象固有の表示と他ファイル成功の両方に合う。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "全ファイルで接続失敗なら、ネットワークの診断へ焦点を変える。",
+      "evidence": [
+        "exclusion"
+      ]
     },
     "q-d6-a09": {
       "fingerprint": "8949a23117cf28532ceab429314fe04aa045d218be8db751a5d6421f4d2965e8",
@@ -2207,104 +2517,132 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。利用量評価の分母と期間をそろえる。",
+      "assessment": "維持。人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。",
       "reasoningSteps": [
-        "利用量評価の分母と期間をそろえる。"
+        "判断条件を特定する：活動者増加と割当倍増、一人当たりが目的",
+        "人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "組織全体の利用者総数が目的なら総数が直接の指標になる。",
+      "evidence": [
+        "rest-api",
+        "space-framework"
+      ]
     },
     "q-d6-a10": {
-      "fingerprint": "54fa573768d454d367ff13ec93e697543faf75dd68b35da30e268b1dca026dba",
+      "fingerprint": "b129faecd33abdc9d4e089737f4c4763bb831f9eaa20ebddefd1a909d429aeda",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。Privateの閲覧制限とCopilotの入力除外を区別する。",
+      "assessment": "改稿。公開範囲とCopilot文脈の除外は別で、適用先Nが必要。",
       "reasoningSteps": [
-        "Privateの閲覧制限とCopilotの入力除外を区別する。"
+        "判断条件を特定する：repo-NはPrivate、Copilot除外一覧にはrepo-Oだけがある。通常補完でrepo-Nのsecret.keyが参照される。repo-Nの指定パスを外す最小変更は？",
+        "公開範囲とCopilot文脈の除外は別で、適用先Nが必要。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "除外一覧にNが既にあるなら、パス・モード・反映を切り分ける。",
+      "evidence": [
+        "exclusion"
+      ]
     },
     "q-d6-e01": {
-      "fingerprint": "a9ab53997b812401e245e0c6036661c9842d5e5b8b887406ec260e845f71e790",
+      "fingerprint": "8d456540d2cf00f5e06bc8142f97b65b5bec478fd15472c4f77058adbedcc986",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。三経路の観測を比較して設定漏れを除外する → リンクとモードの独立した限界を判断する",
+      "assessment": "三段階の分析・照合・結論を要求する。①の成功から通常補完の設定そのものを除外する。 → ②のリンクと③のモードを別の適用境界へ照合する。 → パス追加では補えない二経路を、権限・環境などで別に制限する。",
       "reasoningSteps": [
-        "三経路の観測を比較して設定漏れを除外する",
-        "リンクとモードの独立した限界を判断する"
+        "①の成功から通常補完の設定そのものを除外する。",
+        "②のリンクと③のモードを別の適用境界へ照合する。",
+        "パス追加では補えない二経路を、権限・環境などで別に制限する。"
       ],
-      "counterfactual": "②③が対応する実ファイル・通常補完なら、パスや伝播の診断を優先する。",
+      "counterfactual": "「②は別workspaceのシンボリックリンク経由で読取あり、③はこの環境で除外非対応のIDE Agentで読取あり。設定の実パス一致と反映は確認済み」→「②③は対応する通常補完で実ファイルを参照し、設定更新直後の旧セッションでは読取あり、再読込後は両方に除外表示が出た」なら表示C。経路限界でなく、再読込により解消する伝播・セッション差になる。元のリンク／非対応モードの説明は新観測と一致しない。",
       "evidence": [
-        "機密リポジトリの通常補完で除外が機能しています。"
+        "シンボリックリンク経由",
+        "この環境で除外非対応のIDE Agent",
+        "実パス一致と反映は確認済み"
       ]
     },
     "q-d6-e02": {
-      "fingerprint": "c0d745dbf0d512a6325ec8b43c923aadf17f9d2e3ed2e6393e01d817d881ab10",
+      "fingerprint": "48878325c38ce30aca79659f4ab57d6e521c5a25bfec24db03d506b7cfc19ee4",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。記録の時間関係を読み取る → 管理操作の証跡と利用変化の因果を区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。UTCをJSTへ換算しE1=13:50、E2=14:10と並べる。 → 14:00以前と対象Aという必要条件を各イベントへ照合する。 → E1だけを候補とし、監査イベントだけで原因とは断定しない。",
       "reasoningSteps": [
-        "記録の時間関係を読み取る",
-        "管理操作の証跡と利用変化の因果を区別する"
+        "UTCをJSTへ換算しE1=13:50、E2=14:10と並べる。",
+        "14:00以前と対象Aという必要条件を各イベントへ照合する。",
+        "E1だけを候補とし、監査イベントだけで原因とは断定しない。"
       ],
-      "counterfactual": "特定変更の対象・反映時刻・再現試験まで一致すれば、原因仮説を強く支持できる。",
+      "counterfactual": "「E1は04:50 UTC」→「E1は05:20 UTC」なら表示D。E1も14:20となり、二イベントとも減少後になる。元のE1候補は時系列の必要条件を満たさない。",
       "evidence": [
-        "Copilotの利用が14時から減りました。"
+        "14:00 JST",
+        "04:50 UTC",
+        "対象A",
+        "05:10 UTC",
+        "対象B",
+        "JSTはUTC+9"
       ]
     },
     "q-d6-e03": {
-      "fingerprint": "be1e29651e7d945bfc76872770502a9ab0925b6ef3f3aa2bc0715397fdf16474",
+      "fingerprint": "472417d70126fdaea96ef104d92f4ac1d5d792b2527511e011615d53877fd326",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。採用時点と設定変更時点を分ける → 検出通知と個別採用審査の証拠能力を判断する",
+      "assessment": "三段階の分析・照合・結論を要求する。Pの通知版7aと現HEAD、Qの通知なしを別の証拠へ分ける。 → 架空の採用基準へ通知版の条件と未確認状態を照合する。 → 両方をそれぞれ異なる理由で保留し、個別審査を進める。",
       "reasoningSteps": [
-        "採用時点と設定変更時点を分ける",
-        "検出通知と個別採用審査の証拠能力を判断する"
+        "Pの通知版7aと現HEAD、Qの通知なしを別の証拠へ分ける。",
+        "架空の採用基準へ通知版の条件と未確認状態を照合する。",
+        "両方をそれぞれ異なる理由で保留し、個別審査を進める。"
       ],
-      "counterfactual": "問題が今後の提案表示だけなら、Blockの設定と動作確認でその目的を検証できる。",
+      "counterfactual": "「Pの参照通知はcommit 7aのGPLを示し、現HEADだけMITへ変わった」→「Pの参照通知は審査済みMITのcommit 7aを示し、その版の利用条件も確認済み」なら表示A。Pは基準に適合し、Qだけが出所待ちとなる。Pまで保留する元の回答は現証拠に対して不要。",
       "evidence": [
-        "公開コード一致のBlockを有効にする前に採用した断片Pには参照通知があり、採用後の断片Qには通知がありません。"
+        "commit 7aのGPL",
+        "現HEADだけMIT",
+        "通知がなく出所未確認",
+        "審査済みMITだけ採用"
       ]
     },
     "q-d6-e04": {
-      "fingerprint": "4b6eadddda24cee8f883f045bb1ccad14d38fd10bc11aa9abfabad5ba4fc0e74",
+      "fingerprint": "2b5616c6ac6a223b4c06d06de2b508978341f18a52c1a5f6d550d81246714003",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同じデータでも学習・保持・入力許可を別軸に分ける → 証拠のある欄だけを維持して未確認欄を戻す",
+      "assessment": "三段階の分析・照合・結論を要求する。S1/S2/S3の対象軸とS2の版を分ける。 → 現行保持条件と社内入力の前処理をそれぞれ照合する。 → 非学習・30日・識別子除去の三欄を独立した根拠で記録する。",
       "reasoningSteps": [
-        "同じデータでも学習・保持・入力許可を別軸に分ける",
-        "証拠のある欄だけを維持して未確認欄を戻す"
+        "S1/S2/S3の対象軸とS2の版を分ける。",
+        "現行保持条件と社内入力の前処理をそれぞれ照合する。",
+        "非学習・30日・識別子除去の三欄を独立した根拠で記録する。"
       ],
-      "counterfactual": "②③も別資料で確認済みなら、①だけを根拠とした説明を各資料への参照に直す。",
+      "counterfactual": "「現行契約S2（架空）は保持30日、古い版は即時削除」→「現行契約S2（架空）は即時削除へ更新され、その変更は確認済み」なら表示C。保持だけ即時削除へ変わり、非学習と社内の識別子除去条件は変わらない。元の30日が不適合になる。",
       "evidence": [
-        "Businessの導入審査で、表には①基盤モデル学習への利用、②各機能の保持条件、③顧客ログを入力する社内許可の三欄があります。"
+        "現行契約S2（架空）は保持30日",
+        "古い版は即時削除",
+        "識別子除去後だけ入力可"
       ]
     },
     "q-d6-e05": {
-      "fingerprint": "7c9c57359ad935c678c2882671c31c6bc072715a80b79247b2a94d3a893acf1e",
+      "fingerprint": "e91856809e95d90899e406c9a9d47c4b43d90ba03e739f4bc49d0189062de212",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二つの日付条件を各利用者へ適用する → 不明値を無活動へ変換せず別の処理へ分ける",
+      "assessment": "三段階の分析・照合・結論を要求する。二つの日付条件を各利用者へ適用する → 不明値を無活動へ変換せず別の処理へ分ける → 二つの日付条件を満たすのはA。nullを古い時刻へ変換せずBとDを別確認に回す。候補化は自動解除の承認ではない。",
       "reasoningSteps": [
         "二つの日付条件を各利用者へ適用する",
-        "不明値を無活動へ変換せず別の処理へ分ける"
+        "不明値を無活動へ変換せず別の処理へ分ける",
+        "二つの日付条件を満たすのはA。nullを古い時刻へ変換せずBとDを別確認に回す。候補化は自動解除の承認ではない。"
       ],
-      "counterfactual": "不明値を追加調査してDの最終活動が45日前と判明すれば、Dも候補になる。",
+      "counterfactual": "「Dは割当90日前・活動null」→「Dは割当90日前・活動45日前」なら表示C。Dにも確定した古い活動があり候補に加わる。BのnullとCの最近活動は変わらず、元のD別確認は不要になる。",
       "evidence": [
-        "Copilotシート回収の社内基準は「割当から30日超、確認できる最終活動から30日超の人を候補にする。"
+        "割当から30日超",
+        "最終活動から30日超",
+        "nullは別確認",
+        "Aは割当60日前・活動45日前",
+        "Dは割当90日前・活動null"
       ]
     },
     "q-sc01-1": {
@@ -2321,109 +2659,134 @@
       "evidence": []
     },
     "q-sc01-2": {
-      "fingerprint": "de0fd29ad16f652f99c5ab16a9dee97f3d369c8d4281a4facac47b3daa79e6ce",
+      "fingerprint": "7837d46bc5bbee62a18d8ca6a8ae41e565f2a69a5bf0248124e45a01559b3719",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "設定直後という状況に対象と反映の確認手順を適用する。Appliedへ変更。",
+      "assessment": "改稿。残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。",
       "reasoningSteps": [
-        "設定直後という状況に対象と反映の確認手順を適用する。Appliedへ変更。"
+        "判断条件を特定する：【AnyCompany Tech事例】通常補完でsecret.keyは除外されたまま。Repositoryのsecret.keyルールは削除済みで、Organizationの**/*.keyが同じファイルに一致する。機密解除は承認済み。次に見直す設定元は？",
+        "残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "組織側の一致ルールがなく削除直後なら、クライアントの再読込と反映を調べる。",
+      "evidence": [
+        "exclusion",
+        "exclusion-concept"
+      ]
     },
     "q-sc01-3": {
-      "fingerprint": "68de0345e9ffcd5048272544214730ea5aaee737e9124ee4ec5a288732e26a6b",
+      "fingerprint": "6c6365ec33fe8213d5e41762fd559638780ed00503817f54af289364db71e0ca",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。PとQそれぞれの強制・委任を判定する → 申請の一部だけを満たす最小変更を選ぶ",
+      "assessment": "三段階の分析・照合・結論を要求する。PとQそれぞれの強制・委任を判定する → 申請の一部だけを満たす最小変更を選ぶ → Pは上位で強制したまま、委任済みのQだけ組織で変えれば要件を満たす。",
       "reasoningSteps": [
         "PとQそれぞれの強制・委任を判定する",
-        "申請の一部だけを満たす最小変更を選ぶ"
+        "申請の一部だけを満たす最小変更を選ぶ",
+        "Pは上位で強制したまま、委任済みのQだけ組織で変えれば要件を満たす。"
       ],
-      "counterfactual": "Pも全社判断から委任へ変える承認があれば、組織側でPを設定する余地が生まれる。",
+      "counterfactual": "「Pの全社禁止は維持し、Qだけ例外を認めます」→「全社でPの委任へ変更する承認があり、組織AにはPとQの両方を許可します」なら表示D。上位Pの委任変更が承認され、上位委任と下位許可の二段階が必要になる。P禁止を保つ元の案は新しい例外範囲を満たさない。",
       "evidence": [
-        "【AnyCompany Tech事例】対応ポリシーPをEnterpriseで強制禁止、QをOrganizationへ委任しています。"
+        "PをEnterpriseで強制禁止",
+        "QをOrganizationへ委任",
+        "Pの全社禁止は維持",
+        "Qだけ例外"
       ]
     },
     "q-sc02-1": {
-      "fingerprint": "96c92e4b1afd66807f039664582392a100fd450c8e92eb050dcbbc1e0814ae28",
+      "fingerprint": "6722d02987ef7e3ef3aabc3fa9f963e3e6857d35c91834676fa7dd5db5dd04c2",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。旧観測と承認契約の一致を確認する → 新案を期待値の根拠にする循環を避けて回帰を検出する",
+      "assessment": "三段階の分析・照合・結論を要求する。旧観測と承認契約の一致、新案と同時生成テストの一致を区別する。 → どちらが独立した期待値の根拠になるか承認範囲へ照合する。 → 0拒否を先に固定して新案の回帰を直す。",
       "reasoningSteps": [
-        "旧観測と承認契約の一致を確認する",
-        "新案を期待値の根拠にする循環を避けて回帰を検出する"
+        "旧観測と承認契約の一致、新案と同時生成テストの一致を区別する。",
+        "どちらが独立した期待値の根拠になるか承認範囲へ照合する。",
+        "0拒否を先に固定して新案の回帰を直す。"
       ],
-      "counterfactual": "0の受理へ契約を変更する承認があれば、旧挙動の維持ではなく変更後のテストを作る。",
+      "counterfactual": "「承認済み契約は「0を拒否、1を受理」」→「承認済みv2契約は「0も1も受理」へ変更済み」なら表示B。新案は承認済みの変更契約へ適合する。旧版の拒否を維持する元の案ではなく、移行差として記録する。",
       "evidence": [
-        "【Apex Financial事例】既存モジュールの観測結果は入力0→エラー、1→正常です。"
+        "0を拒否、1を受理",
+        "同時生成テストは新案を期待値"
       ]
     },
     "q-sc02-2": {
-      "fingerprint": "d1b764c0b32c2f6669c72849867549d9dbb3cdd7f70122e6c03da0a12cb2c986",
+      "fingerprint": "9232a513f8237b6496e86f3f64dcdb77d0b5b10586b04bead9f5dde4ddeea346",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。偶数丸めを二つの境界へ適用する → 実装と同時生成テストの一致を独立検証から区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。偶数丸めを二つの境界へ適用する → 実装と同時生成テストの一致を独立検証から区別する → 偶数丸めでは2.5は2へ、3.5は4へ進む。同時生成された実装とテストが同じ誤解を共有しており、契約を独立した基準にする。",
       "reasoningSteps": [
         "偶数丸めを二つの境界へ適用する",
-        "実装と同時生成テストの一致を独立検証から区別する"
+        "実装と同時生成テストの一致を独立検証から区別する",
+        "偶数丸めでは2.5は2へ、3.5は4へ進む。同時生成された実装とテストが同じ誤解を共有しており、契約を独立した基準にする。"
       ],
-      "counterfactual": "承認済み契約が正数の四捨五入なら2.5→3が正しく、旧期待値を見直す。",
+      "counterfactual": "「正数の金額を整数へ偶数丸めする契約」→「新たに承認された正数の金額を四捨五入する契約」なら表示C。正数の四捨五入なら2.5→3、3.5→4が正しく、旧版との差を記録する。元の2.5→2への修正は新契約に反する。",
       "evidence": [
-        "【Apex Financial事例】正数の金額を整数へ偶数丸めする契約です。"
+        "整数へ偶数丸め",
+        "2.5→2、3.5→4",
+        "案と同時生成テストは2.5→3、3.5→4",
+        "2.4→2はどちらも通ります"
       ]
     },
     "q-sc02-3": {
-      "fingerprint": "4c0afa00bfc490106cee5a5ce420810bb9d0a1f2783447365fc7c287b4e7f8e3",
+      "fingerprint": "9cd8b4a1876e0cadc119d53eecd9431b26035405d89c029e0166dcdd0e9ec3dc",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。既存例が候補方式を識別できないと判断する → 中間点と上下両向きの例で方式を識別する",
+      "assessment": "三段階の分析・照合・結論を要求する。既存例が候補方式を識別できないと判断する → 中間点と上下両向きの例で方式を識別する → 既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。",
       "reasoningSteps": [
         "既存例が候補方式を識別できないと判断する",
-        "中間点と上下両向きの例で方式を識別する"
+        "中間点と上下両向きの例で方式を識別する",
+        "既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。"
       ],
-      "counterfactual": "契約が正数の四捨五入なら2.5→3を含む例が適切になる。",
+      "counterfactual": "「採用契約は偶数丸め」→「採用契約は正数の四捨五入」なら表示B。中間点2.5は3になるため、四捨五入の例へ変わる。元の2.5→2は採用契約に適合しない。",
       "evidence": [
-        "【Apex Financial事例】「正数を整数へ丸める」プロンプトに、2.4→2と2.6→3を示しました。"
+        "2.4→2と2.6→3",
+        "四捨五入でも偶数丸めでもこの例に合う",
+        "採用契約は偶数丸め"
       ]
     },
     "q-sc03-1": {
-      "fingerprint": "247bcd2586cb4dcdecb569d1b1e2db89120e9c57793d5da54a1607232bbd7c3a",
+      "fingerprint": "55ca4ca758b17577223158db43154a01b159311ebd8743de1156ee30f9dda52d",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "Issueの権限とメトリクスの読取という用途に連携設計を適用する。Appliedへ変更。",
+      "assessment": "改稿。閲覧範囲と現在値・読取制限を両立する。",
       "reasoningSteps": [
-        "Issueの権限とメトリクスの読取という用途に連携設計を適用する。Appliedへ変更。"
+        "判断条件を特定する：【Horizon Cloud事例】Issue検索は利用者の担当チーム内、本番メトリクスは現在値の読取のみ。Copilotへ公開するMCPの認可・操作範囲の組合せは？",
+        "閲覧範囲と現在値・読取制限を両立する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "全員の閲覧範囲が同一なら、担当別認可の必要条件が変わる。",
+      "evidence": [
+        "mcp",
+        "mcp-spec"
+      ]
     },
     "q-sc03-2": {
-      "fingerprint": "d75c178e4b43cf83799edd0b02df4bd44ba5b03d63aaa679cc08e758147c530c",
+      "fingerprint": "d8fa37792b6929374953348483daf7160dcca4bc83d3abc4d384bdb4216b31e7",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同じ条件と利用者ごとの差を分ける → 401と空の入力値から認証設定へ絞る",
+      "assessment": "三段階の分析・照合・結論を要求する。401と403、空の入力と本人認証成功を段階別に分類する。 → Bは本人認証、Cは対象DB認可という差を共有条件へ照合する。 → Bのローカル資格情報とCの担当範囲を別に確認する。",
       "reasoningSteps": [
-        "同じ条件と利用者ごとの差を分ける",
-        "401と空の入力値から認証設定へ絞る"
+        "401と403、空の入力と本人認証成功を段階別に分類する。",
+        "Bは本人認証、Cは対象DB認可という差を共有条件へ照合する。",
+        "Bのローカル資格情報とCの担当範囲を別に確認する。"
       ],
-      "counterfactual": "両者で起動自体に失敗しserversの構造エラーが出るなら、共有設定を直す。",
+      "counterfactual": "「Cは本人認証成功だが担当外DBを照会して403」→「Cも入力変数が空で401となり、照会先DBの担当認可は両者とも確認済み」なら表示B。両方が認証段階で止まり、本人資格情報の入力設定が対象になる。元のCの認可確認は既に確認済みの境界を追加調査する。",
       "evidence": [
-        "【Horizon Cloud事例】共有する.vscode/mcp.jsonはserversで接続先を定義し、envの値を入力変数から渡しています。"
+        "Bは入力変数が空で401",
+        "Cは本人認証成功",
+        "担当外DBを照会して403",
+        "URLとサーバー起動は全員同じ"
       ]
     },
     "q-sc03-3": {
@@ -2432,12 +2795,16 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。既知の障害条件をサーバー側の取得範囲に反映する。",
+      "assessment": "維持。既知の時刻と相関IDを使って関連する情報を保ちつつ量を減らす。",
       "reasoningSteps": [
-        "既知の障害条件をサーバー側の取得範囲に反映する。"
+        "判断条件を特定する：14:02、相関ID R17、応答容量超過",
+        "既知の時刻と相関IDを使って関連する情報を保ちつつ量を減らす。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "時刻も相関IDも不明なら別の検索条件から絞り込む。",
+      "evidence": [
+        "mcp",
+        "architecture"
+      ]
     },
     "q-sc04-1": {
       "fingerprint": "8d7f9a948ed24e72c6294f47336f41bf301cec407e2e9a6494e35af6a706af00",
@@ -2471,51 +2838,69 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "AIの指摘と決められたCI検査を補完的な運用へ組み合わせる。Appliedへ変更。",
+      "assessment": "維持。AIによる助言と再現可能な専用の静的検査を補完させる。",
       "reasoningSteps": [
-        "AIの指摘と決められたCI検査を補完的な運用へ組み合わせる。Appliedへ変更。"
+        "判断条件を特定する：AIの助言と毎回の静的検査の両方",
+        "AIによる助言と再現可能な専用の静的検査を補完させる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "任意の助言だけが目的なら必須CI検査の追加とは別になる。",
+      "evidence": [
+        "code-review",
+        "codeql",
+        "secret-scanning"
+      ]
     },
     "q-sc05-1": {
-      "fingerprint": "c955b7e8b5b2d9932a4ea8e3a71a62dd13dca0b437ad1240c7cb3f4f000b6d7e",
+      "fingerprint": "579c07fc12ebd4f88bfb286dc804625909ce06364d1a11220c6855b193b2b462",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。社内APIの実在性を利用中の実装・契約で確認する。",
+      "assessment": "改稿。利用する版の実体と承認契約へ合わせる。",
       "reasoningSteps": [
-        "社内APIの実在性を利用中の実装・契約で確認する。"
+        "判断条件を特定する：【Vanguard Health事例】Copilotが内部SDKのfetchPatientV2を呼ぶ案を返す。対象版の型はgetPatient(id)だけで、社内契約もその名前を指定。今回の修正候補は？",
+        "利用する版の実体と承認契約へ合わせる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "対象版の実体と契約がfetchPatientV2なら、その呼出しを検証する。",
+      "evidence": [
+        "responsible",
+        "chat"
+      ]
     },
     "q-sc05-2": {
-      "fingerprint": "c192c8d96da5e79f036109c5ee7be62c5dd7463e9991169f96d853d3d3a49eaa",
+      "fingerprint": "9efd7f56efc590b361e808026d9ae4c187e9b81049c92208c89c00c35d99154e",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。過剰なモックで隠れた外部契約の不整合を検証する。",
+      "assessment": "改稿。モックが隠すAPI契約を実体へ照合する。",
       "reasoningSteps": [
-        "過剰なモックで隠れた外部契約の不整合を検証する。"
+        "判断条件を特定する：【Vanguard Health事例】SDKの実APIはgetPatientだけだが、自由なモックでは生成案fetchPatientV2も成功する。採用前にこの不整合を検出する検査は？",
+        "モックが隠すAPI契約を実体へ照合する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "不整合が入力境界だけなら、正式APIで境界入力のテストを追加する。",
+      "evidence": [
+        "tests",
+        "responsible"
+      ]
     },
     "q-sc05-3": {
-      "fingerprint": "3f6ce3e53e4bdf399ae401e71d8d8ed9e3ea854fe0f914a34b2849d12a7d6ceb",
+      "fingerprint": "efa062daffeb223948cb2dc5ae5f05d639fc1e1c8892e398cb838f2771f224ea",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "患者データのChat入力とGitの秘密送信を別経路へ割り当てる運用判断。Appliedへ変更。",
+      "assessment": "改稿。患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。",
       "reasoningSteps": [
-        "患者データのChat入力とGitの秘密送信を別経路へ割り当てる運用判断。Appliedへ変更。"
+        "判断条件を特定する：患者のChat入力と秘密のGit Pushの二経路",
+        "患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "Gitで既存のトークン検出だけを求めるなら、Push Protectionの追加要件は別になる。",
+      "evidence": [
+        "responsible",
+        "secret-scanning",
+        "exclusion-concept"
+      ]
     },
     "q-sc06-1": {
       "fingerprint": "d01d374425bb26ef8dcccf944096315bd72e863258e34da434b6e9215cb67d78",
@@ -2531,33 +2916,41 @@
       "evidence": []
     },
     "q-sc06-2": {
-      "fingerprint": "074ca215caf006d73e67aed7ab298d0575cfbbdfb381966e33835ecabab6c097",
+      "fingerprint": "9adafa81381d52bdaae8307c2e458caa71537796064ee6fc8648b60f1d423bde",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二つの誤出力を規約競合と固定参照へ分ける → 共通の不変条件とタスクごとの入力を分離する",
+      "assessment": "三段階の分析・照合・結論を要求する。throwとBパスを規約競合・固定参照という別の原因へ分ける。 → 合意規約とA/B両方への再利用条件を各編集へ照合する。 → 例をResultへ合わせ、参照先だけ入力化する。",
       "reasoningSteps": [
-        "二つの誤出力を規約競合と固定参照へ分ける",
-        "共通の不変条件とタスクごとの入力を分離する"
+        "throwとBパスを規約競合・固定参照という別の原因へ分ける。",
+        "合意規約とA/B両方への再利用条件を各編集へ照合する。",
+        "例をResultへ合わせ、参照先だけ入力化する。"
       ],
-      "counterfactual": "throwが正式な共通契約へ変更済みなら、共通規約側の更新を先に整合させる。",
+      "counterfactual": "「今回もAとBの両サービスで同じタスクを再利用する」→「今回からservice-B専用の固定タスクとして使い、他サービスへの再利用は廃止する」なら表示D。Bの固定参照は正しくなり、Resultへの修正だけが必要。参照入力の追加は最小編集ではない。",
       "evidence": [
-        "【Global Logistics事例】API作成用Prompt Fileを二つのサービスで使っています。"
+        "共通InstructionsはResult型",
+        "throwの例とservice-Bの固定参照",
+        "AとBの両サービス"
       ]
     },
     "q-sc06-3": {
-      "fingerprint": "5c54e1827c5f000fd4fd478f19f5e72bb08b02ff0d1ba2e7218dc41810b00e8a",
+      "fingerprint": "4fb26cf90798421d527836a8af22118f5bc6c20941f5cb9e93490f1073a6fb71",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "競合する個人指示だけを当該リポジトリで調整する範囲判断。Appliedへ変更。",
+      "assessment": "改稿。グローバルな競合を外し、プロジェクトごとの方針を保持する。",
       "reasoningSteps": [
-        "競合する個人指示だけを当該リポジトリで調整する範囲判断。Appliedへ変更。"
+        "判断条件を特定する：【Global Logistics事例】GitHub.comの個人指示は全関数JSDoc、repo-Rは公開APIだけ、repo-Sは全関数を要求する。各repoの方針を保ち、競合を避ける整理は？",
+        "グローバルな競合を外し、プロジェクトごとの方針を保持する。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "RとSの方針が同じなら、同じ規約を個人指示に置く選択肢もある。",
+      "evidence": [
+        "personal-instructions",
+        "instructions",
+        "guide"
+      ]
     },
     "q-sc07-1": {
       "fingerprint": "3350ecc2fb55e47218ded590724b47d06b71dcb6440b9faf18e009dc947ae115",
@@ -2565,27 +2958,35 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": true,
-      "assessment": "担当製品の現在値と更新禁止という用途へ権限を絞った照会を適用する。Appliedへ変更。",
+      "assessment": "維持。現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。",
       "reasoningSteps": [
-        "担当製品の現在値と更新禁止という用途へ権限を絞った照会を適用する。Appliedへ変更。"
+        "判断条件を特定する：最新の脆弱性、担当製品のみ、更新禁止",
+        "現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。"
       ],
-      "counterfactual": null,
-      "evidence": []
+      "counterfactual": "スナップショットを全員で共有する目的なら静的資料も候補になる。",
+      "evidence": [
+        "mcp",
+        "mcp-spec",
+        "spaces"
+      ]
     },
     "q-sc07-2": {
-      "fingerprint": "168ffada3e01e226a4c904939b0dfc808cc1291f0ec7947d8f8538af37fd5ed1",
+      "fingerprint": "5ba3d5301159afc476616a8195634ad47bd04adb876f4abf71f947fc96b85766",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。検索経路と直接取得経路の認可を比較する → 接続承認と文書単位の認可を区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。検索経路と直接取得経路の認可を比較する → 接続承認と文書単位の認可を区別する → 検索で絞るだけでは直接取得の経路を守れない。取得時にも対象文書の認可を行う必要がある。",
       "reasoningSteps": [
         "検索経路と直接取得経路の認可を比較する",
-        "接続承認と文書単位の認可を区別する"
+        "接続承認と文書単位の認可を区別する",
+        "検索で絞るだけでは直接取得の経路を守れない。取得時にも対象文書の認可を行う必要がある。"
       ],
-      "counterfactual": "直接取得にも正しい認可があり検索だけ漏れるなら、検索結果の絞込みを直す。",
+      "counterfactual": "「検索は利用者のACLで絞られますが、getDocument(id)は接続トークンだけを検証します。一般社員が既知の人事文書IDを渡すと本文が返りました」→「検索はACLで絞られず一般社員に人事文書が出ますが、getDocument(id)は対象文書の閲覧認可で本文を正しく拒否します」なら表示D。取得側は保護済みとなり、検索ACLの修正へ変わる。元の直接取得への認可追加では検索メタデータの漏れが残る。",
       "evidence": [
-        "【CyberShield Systems事例】承認済みMCPだけへ接続を許しています。"
+        "検索は利用者のACLで絞られます",
+        "getDocument(id)は接続トークンだけ",
+        "既知の人事文書IDを渡すと本文が返"
       ]
     },
     "q-sc07-3": {
@@ -2615,48 +3016,58 @@
       "evidence": []
     },
     "q-sc08-2": {
-      "fingerprint": "1c24f80ff696fae4ed7b128a45b84d70976937c9692de9ed0f3a92988888f581",
+      "fingerprint": "baef1422dc6177bcd48885f6484c6b2171e5d5fa9cdde9592b3e8441e50485eb",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。モデルを固定した二つの文脈の結果を比較する → 証拠が支持する取得元の版の差に診断を限定する",
+      "assessment": "三段階の分析・照合・結論を要求する。モデルを固定した二つの文脈の結果を比較する → 証拠が支持する取得元の版の差に診断を限定する → Xの引用と明示したYの成功から、取得版の差がまず支持される。",
       "reasoningSteps": [
         "モデルを固定した二つの文脈の結果を比較する",
-        "証拠が支持する取得元の版の差に診断を限定する"
+        "証拠が支持する取得元の版の差に診断を限定する",
+        "Xの引用と明示したYの成功から、取得版の差がまず支持される。"
       ],
-      "counterfactual": "Yを明示しても誤りが続くなら、指示の曖昧さやYの契約の検証へ調査を広げる。",
+      "counterfactual": "「引用先はmainのコミットX、作業ブランチは新しいコミットYです。Yのファイルを明示添付するとparseNewで回答します」→「引用先も作業版もコミットYですが、Yを明示添付してもparseOldで回答します。共通指示だけにparseOldを使う記述がありました」なら表示C。取得版がそろっても残る旧API指定が観測され、指示の比較実験へ移る。元の検索版の差という診断は証拠に合わない。",
       "evidence": [
-        "【DataFlow Analytics事例】検索で得た説明は旧版のparseOldを引用します。"
+        "引用先はmainのコミットX",
+        "作業ブランチは新しいコミットY",
+        "Yのファイルを明示添付するとparseNew",
+        "同じモデルで比較済み"
       ]
     },
     "q-sc08-3": {
-      "fingerprint": "cde28a75ccccb3bff8ec61b9e4593d71b6669c83c0e838d4d8d55bad71e61fd5",
+      "fingerprint": "d92b125c3de14e43ac50738bd6434d72b1a5525eeaf5951636d57be4610bea1f",
       "beforeDifficulty": "advanced",
-      "difficulty": "intermediate",
-      "textRewritten": false,
+      "difficulty": "beginner",
+      "textRewritten": true,
       "reclassified": true,
-      "assessment": "調査対象が確定した場面で必要な二ファイルを添付する文脈選択。Appliedへ変更。",
+      "assessment": "参照先が明記された二ファイルの添付操作の識別であり、対象選別を推論する必要がない。",
       "reasoningSteps": [
-        "調査対象が確定した場面で必要な二ファイルを添付する文脈選択。Appliedへ変更。"
+        "参照先が明記された二ファイルの添付操作の識別であり、対象選別を推論する必要がない。"
       ],
       "counterfactual": null,
-      "evidence": []
+      "evidence": [
+        "prompt"
+      ]
     },
     "q-sc09-1": {
-      "fingerprint": "81bc3a7c8634dbc18ec069ca8c81586ee29cc250673d5e9aa57a600916ed4396",
+      "fingerprint": "61a4fd3d5d009198bbf44bbd9dbd542bdc6662584f631c8677cdcda28661f1aa",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。人数とPR数を分母にして二つの指標を比較する → 観測できる変化と因果の断定を区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。人数とPR数を分母にして二つの指標を比較する → 観測できる変化と因果の断定を区別する → PR/人数と手戻りPR/総PRを別に計算する。総数増加から個人の生産性や因果は断定しない。",
       "reasoningSteps": [
         "人数とPR数を分母にして二つの指標を比較する",
-        "観測できる変化と因果の断定を区別する"
+        "観測できる変化と因果の断定を区別する",
+        "PR/人数と手戻りPR/総PRを別に計算する。総数増加から個人の生産性や因果は断定しない。"
       ],
-      "counterfactual": "人数が不変で手戻り率も低下していれば、観測上の改善という報告を支持する。",
+      "counterfactual": "「チーム人数が5→10」→「チーム人数が5→5」なら表示B。人数が一定なら20/5=4、30/5=6となり、手戻り率だけ20→30%のまま。元の4→3は不適合になる。",
       "evidence": [
-        "【Nexis Games事例】Copilot導入前後でPR数が20→30、手戻りが発生したPR数が4→9、チーム人数が5→10でした。"
+        "PR数が20→30",
+        "手戻りが発生したPR数が4→9",
+        "チーム人数が5→10",
+        "同程度の期間勤務"
       ]
     },
     "q-sc09-2": {
@@ -2673,19 +3084,22 @@
       "evidence": []
     },
     "q-sc09-3": {
-      "fingerprint": "788f5a98e6ac3fda280aa6100ea74f15f0d097fbc473a81e3828738a9ebedb3c",
+      "fingerprint": "5c634907ac437093f4f2eb15935fbe29d90034145e4d306b835fdb58232a315c",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。質問回数だけの成功判定を他の二指標で見直す → 原因を仮説にとどめて検証できる研修を選ぶ",
+      "assessment": "三段階の分析・照合・結論を要求する。質問回数だけの成功判定を他の二指標で見直す → 原因を仮説にとどめて検証できる研修を選ぶ → 質問の減少と理解・手戻りの悪化が同時に起きている。因果を断定せず、提案を自力で説明・検証できるか確かめる施策がこの仮説に合う。",
       "reasoningSteps": [
         "質問回数だけの成功判定を他の二指標で見直す",
-        "原因を仮説にとどめて検証できる研修を選ぶ"
+        "原因を仮説にとどめて検証できる研修を選ぶ",
+        "質問の減少と理解・手戻りの悪化が同時に起きている。因果を断定せず、提案を自力で説明・検証できるか確かめる施策がこの仮説に合う。"
       ],
-      "counterfactual": "理解が維持され手戻りも減った場合、質問減少を同じ問題の証拠にはできない。",
+      "counterfactual": "「設計の説明課題は80点から55点、レビューでの手戻りは週2件から6件です」→「説明課題は80点を維持し手戻りは週2件から1件ですが、観察では候補切替操作に編集時間の半分を使っています」なら表示D。理解悪化の証拠はなく、操作時間が観測された課題となり、ショートカット練習と編集時間で調べる。元の理解不足の仮説を優先する根拠が弱くなる。",
       "evidence": [
-        "【Nexis Games事例】新人研修で、Chat利用は週10回から40回、先輩への質問は週8回から2回になりました。"
+        "設計の説明課題は80点から55点",
+        "手戻りは週2件から6件",
+        "先輩への質問は週8回から2回"
       ]
     },
     "q-sc10-1": {
@@ -2715,19 +3129,22 @@
       "evidence": []
     },
     "q-sc10-3": {
-      "fingerprint": "fcc46252c5e9a910edaf70d76b201a88de5828bbfffa3ddef9849f564bd853f8",
+      "fingerprint": "551d04e855ed0035f6dc951387742d0bb2847c1b9ba7131e6d39eb97a6c1d05b",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。追加されたデータの送信先を元の承認範囲と比較する → 学習不使用と第三者の保存・権限制御を区別する",
+      "assessment": "三段階の分析・照合・結論を要求する。追加されたデータの送信先を元の承認範囲と比較する → 学習不使用と第三者の保存・権限制御を区別する → 元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。",
       "reasoningSteps": [
         "追加されたデータの送信先を元の承認範囲と比較する",
-        "学習不使用と第三者の保存・権限制御を区別する"
+        "学習不使用と第三者の保存・権限制御を区別する",
+        "元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。"
       ],
-      "counterfactual": "同じ承認済み送信先で条件も変更されていなければ、既存審査を参照できる。",
+      "counterfactual": "「承認申請はBusinessのIDE Chatだけを対象にしています。後から外部MCPを追加し、顧客データをそのサーバーへ返す設計になりました」→「承認申請は同じ外部MCPへの送信・保存・権限まで審査済みで、取扱い条件は変わりません。今回追加したのは接続手順だけです」なら表示C。同じ取扱いの承認証跡を使い、未確認の接続手順だけを見る。元の取扱いの再審査は最小の追加確認ではない。",
       "evidence": [
-        "【SecureBank Online事例】承認申請はBusinessのIDE Chatだけを対象にしています。"
+        "BusinessのIDE Chatだけを対象",
+        "後から外部MCPを追加",
+        "外部MCPの保存も承認済み"
       ]
     },
     "q-d1-g01": {
@@ -3691,7 +4108,774 @@
       ],
       "counterfactual": null,
       "evidence": []
+    },
+    "q-d1-a11": {
+      "fingerprint": "fa05e7e23f7a7b7c28576469d5dc4f92da4032f6fdfce47111984acae6db8111",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。通知された断片の版とその利用条件を結び付ける。実際の利用判断は別途必要。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの断片Pの参照通知はcommit 7aを示す。参照先の現在のHEADはMIT表示だが、7aではGPL表示だった。今回の一致断片の審査で優先して照合する版は？",
+        "通知された断片の版とその利用条件を結び付ける。実際の利用判断は別途必要。"
+      ],
+      "counterfactual": "通知対象が現在のHEADであれば、その版のコードと条件を照合する。",
+      "evidence": [
+        "public-code",
+        "responsible"
+      ]
+    },
+    "q-d1-a12": {
+      "fingerprint": "53e670117c5c0326d796d8451556573ef11829e9abea194da9deb55bdbea0d46",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。仕様で影響させない地域だけを変えて差を検証する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの採点案は同じ業務上の属性でも地域Rだけ点数が低い。仕様では地域を使わない。修正後、その偏りが残っていないか確かめるテストは？",
+        "仕様で影響させない地域だけを変えて差を検証する。"
+      ],
+      "counterfactual": "仕様で比較したい対象が業務属性の影響なら、地域を固定して業務属性を変える。",
+      "evidence": [
+        "responsible",
+        "guide"
+      ]
+    },
+    "q-d1-a13": {
+      "fingerprint": "75f0ef2ad676d23fd23b4e8258c556307879ff273947f2eefef2146ad370fcf4",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。落ちた動作契約を実行確認し、人の採用判断をマージ条件にする。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot案で権限不足時の拒否が消えたPRが、成功系テストとレビュー通知だけでマージされた。拒否仕様は承認済み。再発をマージ前に止める追加条件は？",
+        "落ちた動作契約を実行確認し、人の採用判断をマージ条件にする。"
+      ],
+      "counterfactual": "原因が型契約の破損だけであれば、対応する型検査を直接の検査条件にする。",
+      "evidence": [
+        "responsible",
+        "guide"
+      ]
+    },
+    "q-d1-a14": {
+      "fingerprint": "0cb449f0d5c5c8a74481c30197c2bfb374a4d6e72f6af2ae3b325db9468fb28d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。動作確認と承認済みの基準を両立する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotが通信設定Xを提案した。検証テストはXとYの両方で成功し、承認済み技術基準はYを指定している。今回は基準を変更しない。採用案は？",
+        "動作確認と承認済みの基準を両立する。"
+      ],
+      "counterfactual": "承認済み基準がXへ変更済みなら、Xを照合・記録して採用できる。",
+      "evidence": [
+        "responsible",
+        "guide"
+      ]
+    },
+    "q-d2-a23": {
+      "fingerprint": "76e80279686ecff33ff99e378e82aa47828631efc664aa6f32273fcb87556ee9",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。接続先と実際の待受ポートの不一致が観測されている。",
+      "reasoningSteps": [
+        "判断条件を特定する：CopilotのMCP接続ログはhttp://127.0.0.1:8765/mcpへのconnection refused。HTTPサーバーの起動ログは8770で待受中、8765のプロセスはない。最初の修正候補は？",
+        "接続先と実際の待受ポートの不一致が観測されている。"
+      ],
+      "counterfactual": "接続は成功し401を返すなら、API認証条件の確認が候補になる。",
+      "evidence": [
+        "mcp",
+        "mcp-config"
+      ]
+    },
+    "q-d2-a24": {
+      "fingerprint": "138887ac1e13283b54da1a8c0800efa8c949ec78d94bca34cb7e5010f80bc116",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。常時の規約を残し、タスク手順をオンデマンド化する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ共通規約とリリースノート手順を渡したら、日常の修正回答にもノートが生成される。規約は常時、ノート手順は必要時だけ使いたい。移す内容と配置は？",
+        "常時の規約を残し、タスク手順をオンデマンド化する。"
+      ],
+      "counterfactual": "ノート形式も全対話で必要なら、共通指示に残す設計が候補になる。",
+      "evidence": [
+        "instructions",
+        "prompt-files"
+      ]
+    },
+    "q-d2-a25": {
+      "fingerprint": "930295b0a7d74b18fb56bfb5497118c86bca1d1d12297e77bc544f52245dc676",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。許可外を除く変更を行い、変更後の実対象を再検証する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot CLIの削除案をdry-runすると、消してよいrun-cacheに加え保存対象run-fixturesも一覧に出た。まだ実行していない。許可範囲の検証を完了する次の操作は？",
+        "許可外を除く変更を行い、変更後の実対象を再検証する。"
+      ],
+      "counterfactual": "変更後の一覧がrun-cacheだけと確認できれば、承認された範囲で実行判断へ進める。",
+      "evidence": [
+        "cli",
+        "cli-usage"
+      ]
+    },
+    "q-d2-a26": {
+      "fingerprint": "51cc5a7f969c87709549c8472bea71985ceb905209a93f9fdc33fc41b8228b61",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。依頼外変更を独立させ、対象修正が元環境で成立するか確認する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Agentへの依頼はsrc/parser.tsの修正だけ。差分ではparser.tsの修正に加えpackage.jsonの依存更新もあり、更新理由は未確認。依頼範囲を保つ次の指示は？",
+        "依頼外変更を独立させ、対象修正が元環境で成立するか確認する。"
+      ],
+      "counterfactual": "依存更新が修正の承認済み前提なら、更新込みで回帰検証する。",
+      "evidence": [
+        "agent-mode",
+        "guide"
+      ]
+    },
+    "q-d3-a12": {
+      "fingerprint": "6f42479042b2e8a180e1e2c49f611a5f43917e31ec35dc74d883b433e8bcfa29",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。",
+      "reasoningSteps": [
+        "判断条件を特定する：補完クライアントの待機仕様は「最後の入力から100ms後に送信」。入力は0msと40ms、80ms時点では未送信。Copilot関連の診断で、この仕様なら次の送信予定時刻は？",
+        "最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。"
+      ],
+      "counterfactual": "最後の入力が0msだけなら100msになる。",
+      "evidence": [
+        "architecture",
+        "inline-usage"
+      ]
+    },
+    "q-d3-a13": {
+      "fingerprint": "10ac1faad4a9288b252ab64c7b7ce36d4f4f744e330250c0d3f1253d3d8591de",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。サーバーの待機指示を守り集中を抑える。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot利用集計を取るGitHub REST APIが429とRetry-After: 8を返した。今回の応答では8秒の待機が指示され、同じ処理の再試行はまだ1回目。採用する再試行案は？",
+        "サーバーの待機指示を守り集中を抑える。"
+      ],
+      "counterfactual": "待機指示が2秒なら、2秒以上を下限にする。",
+      "evidence": [
+        "rest-best-practices",
+        "guide"
+      ]
+    },
+    "q-d3-a14": {
+      "fingerprint": "41c75c57f450b4b65da9d025931a891237dfd2b6b57b09eea7561685e8da8bd3",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。必須の対象・型を残した1500は予算内に収まる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ渡す文脈の予算は4096トークン。現在は無関係な資料3000と対象コード1000がある。調査に必須の型定義500を足すため、必要な情報を保つ整理は？",
+        "必須の対象・型を残した1500は予算内に収まる。"
+      ],
+      "counterfactual": "型定義が不要で対象コードだけを調べるなら、型の追加を省ける。",
+      "evidence": [
+        "architecture",
+        "workspace-context"
+      ]
+    },
+    "q-d3-a15": {
+      "fingerprint": "bada1e75ec0a9c07908e00fe91ebfc423425955768d8711ba6a93ae6d0028a11",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。観測された文面差と検証した契約を分ける。未検証条件の保証はしない。",
+      "reasoningSteps": [
+        "判断条件を特定する：同一の保存済みプロンプト・モデルでCopilot提案を20回比較した。文面は違うが契約テストは全件成功した。再現性と正しさの評価は？",
+        "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。"
+      ],
+      "counterfactual": "同じ契約テストが一部失敗したなら、適合という結論を変更する。",
+      "evidence": [
+        "architecture",
+        "guide"
+      ]
+    },
+    "q-d4-a12": {
+      "fingerprint": "78888b1ea812e3202f3add0071a193123ab31339ba4348919b604358501aef84",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。未確認の形式を承認済みの契約に沿って示す。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotへ電話番号の正規化を依頼し、市外局番4桁の例だけが誤る。契約は入力に含めた承認済み対応表の区切りを使うこと。今回の失敗を直すFew-shot例は？",
+        "未確認の形式を承認済みの契約に沿って示す。"
+      ],
+      "counterfactual": "失敗が携帯番号なら、携帯の入出力例を優先する。",
+      "evidence": [
+        "prompt",
+        "guide"
+      ]
+    },
+    "q-d4-a13": {
+      "fingerprint": "a5f1e1ad7dc70cce367e967ab97611b898165cd58dec9fb5713fc79e72fe8d53",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。許容方式と呼出し側の受取契約を具体化する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの非同期関数案はcallbackへ値を渡す。利用側はawaitで戻り値を受け、Node-style callbackの採用は今回禁止。修正依頼の最小例は？",
+        "許容方式と呼出し側の受取契約を具体化する。"
+      ],
+      "counterfactual": "利用側がcallback契約なら、callbackの例が候補になる。",
+      "evidence": [
+        "prompt",
+        "guide"
+      ]
+    },
+    "q-d4-a14": {
+      "fingerprint": "f4839f4e04fcb41c118789b7606de318075e055d72bfe0ec9ec40262ee2cf3ee",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。未検証の失敗時連携と二つの副作用を確認する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotに決済処理を分割実装させた。DB更新関数、API呼出関数、通知関数の単体テストは成功。契約は「決済失敗時はpaidへ更新せず通知しない」。次に必要な結合テストは？",
+        "未検証の失敗時連携と二つの副作用を確認する。"
+      ],
+      "counterfactual": "未確認契約が成功通知の本文だけなら通知の本文検証が候補になる。",
+      "evidence": [
+        "prompt",
+        "guide"
+      ]
+    },
+    "q-d4-a15": {
+      "fingerprint": "30eacf9441ab891f2658569dc4b389a27af6c774f324feae7b13af1642f4d42f",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。既知の対象と必要な依存定義を直接渡す。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの回答は別製品の類似関数を根拠にしている。修正対象はorders/refund.tsとそのMoney型に確定。今回の依頼文脈として最も直接的なのは？",
+        "既知の対象と必要な依存定義を直接渡す。"
+      ],
+      "counterfactual": "対象ファイルが未特定なら、参照関係を含めた検索から始める。",
+      "evidence": [
+        "prompt",
+        "chat"
+      ]
+    },
+    "q-d5-a12": {
+      "fingerprint": "36214e95ca607d9a7f84651ba8572cb99fbe43c9b6273cbb867f2af6c0c1eb12",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。境界の100を含め、90には割引しない実装で失敗テストと契約を満たす。追加の境界テストでも確認する。",
+      "reasoningSteps": [
+        "判断条件を特定する：CopilotとTDDで割引処理を作る。承認済み仕様は価格100以上で20%引き、100未満は割引なし。初回テストは100→80で失敗した。90と100の契約を保つGreen段階の実装条件は？",
+        "境界の100を含め、90には割引しない実装で失敗テストと契約を満たす。追加の境界テストでも確認する。"
+      ],
+      "counterfactual": "契約が100を超える価格だけ割引なら、>100を使用する。",
+      "evidence": [
+        "tests",
+        "unit-test-aaa"
+      ]
+    },
+    "q-d5-a13": {
+      "fingerprint": "a4adee93a0039bf35b332967e02afba460c59d720d4728ea7d1f5f01fb0e492c",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。",
+      "reasoningSteps": [
+        "判断条件を特定する：税計算をCopilotで近代化する。税額は価格の10%を四捨五入して整数にし、価格へ足す承認済み仕様。変更前に価格101の回帰テストへ固定する期待値は？",
+        "101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。"
+      ],
+      "counterfactual": "税額を整数へ丸めない契約なら111.1になる。",
+      "evidence": [
+        "tests",
+        "guide"
+      ]
+    },
+    "q-d5-a14": {
+      "fingerprint": "9c2c05f1ee5f737994a67f7225357bdacca27b2e0c58d21e402cc0ba7a974742",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。確定した失敗と結果不明を区別し、Timeoutで再課金を急がない。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの決済処理案はすべての失敗をnullへ変える。APIはPaymentDeclined（課金なし確定）とTimeout（結果不明）を返す。二重課金を避ける修正は？",
+        "確定した失敗と結果不明を区別し、Timeoutで再課金を急がない。"
+      ],
+      "counterfactual": "Timeout時も未課金が保証される契約なら、再試行の判断条件が変わる。",
+      "evidence": [
+        "exception-best-practices",
+        "exception-sensitive"
+      ]
+    },
+    "q-d5-a15": {
+      "fingerprint": "3564890bbc3a885d6e42b481b319d47cf47beab6c638c5c97a87470e75b6ce2d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。本番の型・範囲を検査し、拒否時の副作用も確かめる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの登録APIは型キャストだけでageをDBへ渡す。契約は整数18以上で、17や文字列はDBへ渡さず拒否。境界検証と追加テストの組合せは？",
+        "本番の型・範囲を検査し、拒否時の副作用も確かめる。"
+      ],
+      "counterfactual": "文字列の数値化が許容仕様なら、数値化後の範囲検査も候補になる。",
+      "evidence": [
+        "responsible",
+        "guide"
+      ]
+    },
+    "q-d6-a11": {
+      "fingerprint": "faf7ce6d130816e60ad19cc6e16822eff87b288cbcb046601ec0b5f31e8a5e4e",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。階層をまたぐ.keyの条件を両立する。",
+      "reasoningSteps": [
+        "判断条件を特定する：対応するContent Exclusionでsecrets配下の全階層の.keyだけを除外し、secrets/readme.mdは文脈に残したい。例示するパターンは？",
+        "階層をまたぐ.keyの条件を両立する。"
+      ],
+      "counterfactual": "secretsの全文書を除外するならsecrets/**が候補になる。",
+      "evidence": [
+        "exclusion",
+        "guide"
+      ]
+    },
+    "q-d6-a12": {
+      "fingerprint": "16d4385c0b4706f74640162415f21231356f92932a6eaf5594922cc1458b99b2",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。差があるクライアント状態をそろえて比較する。",
+      "reasoningSteps": [
+        "判断条件を特定する：除外設定を変更後、同じ通常補完モードで再読込した利用者AにはContent excludedと出る。利用者Bは旧セッションのまま。両者の適用先とパスは一致する。次の切り分けは？",
+        "差があるクライアント状態をそろえて比較する。"
+      ],
+      "counterfactual": "再読込後もBだけパスが異なるなら、除外パターンとの対応を調べる。",
+      "evidence": [
+        "exclusion",
+        "guide"
+      ]
+    },
+    "q-d6-a13": {
+      "fingerprint": "19579e21c270a988d7c72d19e31b18a08541f18427fcea88bdc352603f80bc1d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの補償審査で、今回使う機能とテナントに適用される契約・Required Mitigationsの確認が必要。資料Pは旧契約時のBlock画面、Qは現行だが別機能、Rは現行の対象機能・同じテナント、Sは別テナントの現行資料。照合の基準にする資料は？",
+        "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。"
+      ],
+      "counterfactual": "対象機能がQに示した機能へ変わり、契約対象も一致するならQを照合する。",
+      "evidence": [
+        "generative-ai-terms",
+        "copilot-contract-updates",
+        "public-code",
+        "guide"
+      ]
+    },
+    "q-d6-a14": {
+      "fingerprint": "a71fdeba1a572e2dd6bab1890eb262698f2e37bafaaa596e84f0197940d4e501",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "改稿。configを除外している設定元を変更する。",
+      "reasoningSteps": [
+        "判断条件を特定する：repo-Rの除外一覧はOrganization由来のconfig/**と、Repository由来のtmp/**。configだけを文脈へ戻す変更は組織で承認済み。どの設定を管理者へ変更依頼する？",
+        "configを除外している設定元を変更する。"
+      ],
+      "counterfactual": "config/**がRepository由来なら、そのリポジトリの設定を変更する。",
+      "evidence": [
+        "exclusion",
+        "policies"
+      ]
+    },
+    "q-d1-e09": {
+      "fingerprint": "a17935abee295d735bbc78587d7b79a265809385df2acc81221084fdba71bf0a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。業務属性を固定した比較で郵便番号の影響と、除去実験の差を読む。 → 地域不使用と正答率維持の二条件へ、両候補の結果を照合する。 → 郵便番号なし案を候補にし、未使用の標本で再検証する。",
+      "reasoningSteps": [
+        "業務属性を固定した比較で郵便番号の影響と、除去実験の差を読む。",
+        "地域不使用と正答率維持の二条件へ、両候補の結果を照合する。",
+        "郵便番号なし案を候補にし、未使用の標本で再検証する。"
+      ],
+      "counterfactual": "「基準は「地域を判定に使わず、正答率も維持」」→「今回の基準は「地域利用は承認済み、郵便番号あり案を採用候補に決定済みで精度も合格、残る未検証条件はその処理時間だけ」」なら表示A。採用候補が郵便番号あり案と承認済みであり、その処理時間だけを確かめる。元の郵便番号なし案への変更は決定された候補の確認にならない。",
+      "evidence": [
+        "業務属性をそろえて郵便番号だけ変える",
+        "郵便番号を除く実験では両群80%",
+        "地域を判定に使わず、正答率も維持"
+      ]
+    },
+    "q-d2-e20": {
+      "fingerprint": "473a93c04b752f955fe0b969081aa2eb6e81bcb10ee4a3c2fe3f63373c8cb577",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。開始前の保存差分とAgentの記録を分ける。 → .envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。 → .envだけを戻し、既存作業を保った状態で復旧を検証する。",
+      "reasoningSteps": [
+        "開始前の保存差分とAgentの記録を分ける。",
+        ".envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。",
+        ".envだけを戻し、既存作業を保った状態で復旧を検証する。"
+      ],
+      "counterfactual": "「開始前の保存差分はparser.tsだけで、変更後もその差分は同一。.envの変更はAgentの実行記録と一致」→「開始前の保存差分は.envだけで、変更後もその差分は同一。parser.tsの変更はAgentの実行記録と一致」なら表示B。変更の帰属が逆になり、戻すのはparserだけになる。",
+      "evidence": [
+        "開始前の保存差分はparser.tsだけ",
+        "その差分は同一",
+        ".envの変更はAgentの実行記録と一致",
+        "セッションは停止済み"
+      ]
+    },
+    "q-d2-e21": {
+      "fingerprint": "2b02ea8b189f8cd83248f85ce7b29e9f7e76267bb31e67aebd5f8b945ef1d91c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。 → BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。 → Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。",
+      "reasoningSteps": [
+        "B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。",
+        "BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。",
+        "Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。"
+      ],
+      "counterfactual": "「CはSpaceが403だがRを直接閲覧できる」→「CもSpaceとUを閲覧できるが、Rを直接開くと403」なら表示C。Cの拒否も参照repoへ移り、両者のR閲覧権限が対象になる。元のCのSpace共有修正は成功済みの境界を扱ってしまう。",
+      "evidence": [
+        "BはSpaceとUを閲覧でき",
+        "Rを直接開くと403",
+        "CはSpaceが403だがRを直接閲覧できる",
+        "403は対象への閲覧拒否とログで確認済み"
+      ]
+    },
+    "q-d2-e22": {
+      "fingerprint": "0b4e9f424da3be9a7573acccd90562abb466411a069c14a9fc74e5b312087a4e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。必要な副作用をパッチ出力だけと整理する。 → 各案の入力書込・出力書込・コード実行を承認範囲へ照合する。 → /tmp/patchだけ書ける隔離で出力と保護を両立する。",
+      "reasoningSteps": [
+        "必要な副作用をパッチ出力だけと整理する。",
+        "各案の入力書込・出力書込・コード実行を承認範囲へ照合する。",
+        "/tmp/patchだけ書ける隔離で出力と保護を両立する。"
+      ],
+      "counterfactual": "「今回の成果物は/tmp/patchへ保存し、その場所だけ書込可」→「今回の成果物は標準出力で回収し、全ファイルへの書込を禁止する」なら表示A。ファイル出力の必要がなくなり、全マウント読取専用が条件を満たす。",
+      "evidence": [
+        "修正案の回収",
+        "生成コードの実行と機密変数の読取は不要",
+        "機密変数は全案で除去済み",
+        "/tmp/patchへ保存"
+      ]
+    },
+    "q-d2-e23": {
+      "fingerprint": "01446de578b779773e5a101c2b337e82041df2cca5b2d5e5f72af3e43a060693",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。型検査の成功が社内のany例外条件を確認したわけではないと分ける。 → a/bそれぞれへprototypeパスと内部専用の両条件を照合する。 → aだけを型付きへ直し、例外内のbを保持して出力を再検証する。",
+      "reasoningSteps": [
+        "型検査の成功が社内のany例外条件を確認したわけではないと分ける。",
+        "a/bそれぞれへprototypeパスと内部専用の両条件を照合する。",
+        "aだけを型付きへ直し、例外内のbを保持して出力を再検証する。"
+      ],
+      "counterfactual": "「aは公開API、bは内部専用」→「aもbも内部専用」なら表示A。両方が承認済み例外へ入り、追加修正なしでany例を保てる。元のa改稿は必要な例だけの修正ではなくなる。",
+      "evidence": [
+        "prototype/**かつ内部専用",
+        "両方の型検査は成功",
+        "aは公開API、bは内部専用",
+        "必要な例だけ直す"
+      ]
+    },
+    "q-d2-e24": {
+      "fingerprint": "93a1a39365adf0656d5c2378311698f4c03aade99e1d13d2513f8f15c2d83a3f",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。Issue連携の成功とChat廃止ログから停止対象を分ける。 → GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。 → MCPの接続承認と検索認可を検証してChat経路を置換する。",
+      "reasoningSteps": [
+        "Issue連携の成功とChat廃止ログから停止対象を分ける。",
+        "GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。",
+        "MCPの接続承認と検索認可を検証してChat経路を置換する。"
+      ],
+      "counterfactual": "「同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない」→「今回停止したのは存続するGitHub AppのIssue連携で、接続ログはIssue用資格情報の失効だけを示す」なら表示B。歴史上のCopilot機能廃止はそのままだが、今回復旧すべき対象は通常AppのIssue認証へ変わる。",
+      "evidence": [
+        "GitHub App型",
+        "2025年11月10日の廃止後",
+        "Issue連携は動作する",
+        "接続承認は未完了"
+      ]
+    },
+    "q-d3-e06": {
+      "fingerprint": "9984b2f14ce6f147067783d0c25a501fade64e0ba65dd73e0c19fce6f4a241fb",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。CONNECT成功とissuerエラーからTLS検証段階へ絞る。 → 対象プロセスへCAを渡す実験だけが改善した事実を比較する。 → Bの該当プロセスのCA設定を恒久化して同条件で再検証する。",
+      "reasoningSteps": [
+        "CONNECT成功とissuerエラーからTLS検証段階へ絞る。",
+        "対象プロセスへCAを渡す実験だけが改善した事実を比較する。",
+        "Bの該当プロセスのCA設定を恒久化して同条件で再検証する。"
+      ],
+      "counterfactual": "「Bの診断はCONNECT成功後にissuerエラー。BではNodeプロセスが追加CA設定を読まず、同じプロセスへCAファイルを渡す一変数実験だけで成功した」→「Bの診断はCONNECT時に407。BのCA設定はAと同一で、同じプロセスのプロキシ資格情報を更新する一変数実験だけで成功した」なら表示A。停止段階と改善実験がプロキシ認証へ移る。",
+      "evidence": [
+        "CONNECT成功後にissuerエラー",
+        "同じプロセスへCAファイルを渡す一変数実験だけで成功",
+        "検証を保つ"
+      ]
+    },
+    "q-d3-e07": {
+      "fingerprint": "c1ae903f868f8c21ce3841e5154db58369b0dac5acb638dffea1f4076a5b8500",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。各結果をモデルと参照版の二軸へ整理する。 → 固定したい条件と、変えたい文脈の版を照合する。 → M1のままv1対v2を比較し、取得の影響に結論を限定する。",
+      "reasoningSteps": [
+        "各結果をモデルと参照版の二軸へ整理する。",
+        "固定したい条件と、変えたい文脈の版を照合する。",
+        "M1のままv1対v2を比較し、取得の影響に結論を限定する。"
+      ],
+      "counterfactual": "「モデル・コード・指示を固定して取得文脈の影響を次に確かめたい」→「文脈の版・コード・指示を固定してモデル差の影響を次に確かめたい」なら表示A。文脈固定でM1とM2だけを変える実験へ切り替わる。",
+      "evidence": [
+        "M1＋引用v1は旧API",
+        "M1＋明示添付v2は新API",
+        "M2＋引用v1は旧API",
+        "モデル・コード・指示を固定"
+      ]
+    },
+    "q-d3-e08": {
+      "fingerprint": "785f8218deac7b7c65a4abcc4a19776e9ee0901fbdb8b2581d086e3c1883e201",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。220一致が110の固定変換でも生じることを確認する。 → rate変更時の不一致と中間returnによる後半の未実行を照合する。 → 中間の余分な変換とreturnを外し、可変rateの後半を検証する。",
+      "reasoningSteps": [
+        "220一致が110の固定変換でも生じることを確認する。",
+        "rate変更時の不一致と中間returnによる後半の未実行を照合する。",
+        "中間の余分な変換とreturnを外し、可変rateの後半を検証する。"
+      ],
+      "counterfactual": "「後半はx*rateを返す。rateは110。生成案は中間でxを110倍し、さらにreturn xを追加した。入力2の出力は220で契約と一致するが、rate=120の契約240には不一致」→「後半はそのままxを返す。承認済み契約は固定110倍。生成案は中間でxを110倍し、さらにreturn xを追加した。入力2の出力220は契約に一致するが、後半の監査処理を早期returnで飛ばす」なら表示A。計算契約を固定110倍へ変更すると変換は中間に一度必要で、早期returnだけを外す案が後半を保つ。",
+      "evidence": [
+        "中間でxを110倍",
+        "さらにreturn xを追加",
+        "rate=120の契約240には不一致",
+        "後半を維持"
+      ]
+    },
+    "q-d4-e06": {
+      "fingerprint": "64f1bf59294fcaff4099ca64a736c4eb3a6de48829543567ab662decde173ae1",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。会話長と添付版を別の変数として結果表を読む。 → 新規会話でも旧設定が失敗し、現行設定で成功した差を照合する。 → 資料を現行へ替え、モデルとコードを固定して再比較する。",
+      "reasoningSteps": [
+        "会話長と添付版を別の変数として結果表を読む。",
+        "新規会話でも旧設定が失敗し、現行設定で成功した差を照合する。",
+        "資料を現行へ替え、モデルとコードを固定して再比較する。"
+      ],
+      "counterfactual": "「新規会話＋同じ旧設定も失敗、新規会話＋現行設定は成功した」→「新規会話＋同じ旧設定は成功し、長い会話＋現行設定は失敗した」なら表示A。文脈の版より会話状態の影響が支持され、新規会話での再比較が候補になる。",
+      "evidence": [
+        "新規会話＋同じ旧設定も失敗",
+        "新規会話＋現行設定は成功",
+        "旧設定には固定鍵の例"
+      ]
+    },
+    "q-d4-e07": {
+      "fingerprint": "9b1775abb01cf294185e2b7b83e44296a1190530628cf3c8570e0bcb87c553af",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。A/Bが指示形式だけでなくモデルも異なると分析する。 → 測定目的と固定すべきモデル・入力条件を照合する。 → 同一モデル・入力で形式だけを変え、結論を観測範囲へ限定する。",
+      "reasoningSteps": [
+        "A/Bが指示形式だけでなくモデルも異なると分析する。",
+        "測定目的と固定すべきモデル・入力条件を照合する。",
+        "同一モデル・入力で形式だけを変え、結論を観測範囲へ限定する。"
+      ],
+      "counterfactual": "「次は「指示形式だけの効果」を測りたい」→「次は「モデル差だけの効果」を測りたい」なら表示B。指示と入力を固定しM1/M2を変える実験が目的へ適合する。",
+      "evidence": [
+        "AはモデルM1＋禁止指示",
+        "BはM2＋公開スキーマ",
+        "新しい入力群は未検証",
+        "指示形式だけの効果"
+      ]
+    },
+    "q-d4-e08": {
+      "fingerprint": "cee59d49be64ef48f3ffcb79f7fec01d7e4e813ffbccaf39c015ba2d7822031d",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。repo/組織の指示競合とruntimeの不足を独立した問題へ分ける。 → 承認規約・polyfillの試験結果・更新禁止を照合する。 → 指示をfetchへ整え、Pで現runtimeの互換を検証する。",
+      "reasoningSteps": [
+        "repo/組織の指示競合とruntimeの不足を独立した問題へ分ける。",
+        "承認規約・polyfillの試験結果・更新禁止を照合する。",
+        "指示をfetchへ整え、Pで現runtimeの互換を検証する。"
+      ],
+      "counterfactual": "「runtime更新は今期禁止」→「承認済みの新版runtimeへ更新することが必須で、その版ではfetchが利用できpolyfill追加は禁止」なら表示A。互換を提供する承認済み経路がPからruntime更新へ変わる。",
+      "evidence": [
+        "社内の承認済み規約はfetchへ統一",
+        "承認済みpolyfill Pなら動作テスト成功",
+        "runtime更新は今期禁止"
+      ]
+    },
+    "q-d4-e09": {
+      "fingerprint": "09edbae5f56f4d2d4eb030ef142bb6bca5109354b4e4b72337b518ac194bad24",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。予算・旧名・識別例の三軸でP/Qを分ける。 → 注文0件を含める左外結合契約へ各例の識別力を照合する。 → Pの旧名だけを直し、識別例を保つ最小変更を選ぶ。",
+      "reasoningSteps": [
+        "予算・旧名・識別例の三軸でP/Qを分ける。",
+        "注文0件を含める左外結合契約へ各例の識別力を照合する。",
+        "Pの旧名だけを直し、識別例を保つ最小変更を選ぶ。"
+      ],
+      "counterfactual": "「必要なのは左外結合の契約で、旧名も使わないこと」→「今回の依頼は正常例の形式確認だけで、結合方式の識別は不要、旧名を含めないことが必要」なら表示A。識別例が不要なら旧名のないQをそのまま使える。",
+      "evidence": [
+        "入力予算1000トークン",
+        "Pは900",
+        "旧テーブル名を含む",
+        "Qは600",
+        "両方が同じ正常例を通る"
+      ]
+    },
+    "q-d5-e06": {
+      "fingerprint": "7935e366f903fe2c494f45fbb12a93defe84d566eac280852a17d842b0383239",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。WHERE成功とORDER BY失敗を別の構文要素へ分類する。 → DBの束縛規則と許可列の契約を照合する。 → 値束縛を残し識別子を許可集合へ写像して機能と保護を再検証する。",
+      "reasoningSteps": [
+        "WHERE成功とORDER BY失敗を別の構文要素へ分類する。",
+        "DBの束縛規則と許可列の契約を照合する。",
+        "値束縛を残し識別子を許可集合へ写像して機能と保護を再検証する。"
+      ],
+      "counterfactual": "「列指定はcreated_atかamountだけを許す契約」→「列指定は廃止され、常にcreated_atを使い入力sortを無視する承認済み契約」なら表示C。固定列の案が承認済み機能へ適合し、動的列の写像は不要になる。",
+      "evidence": [
+        "値の束縛は成功するが列名は束縛不可",
+        "sort=created_atで構文エラー",
+        "created_atかamountだけを許す"
+      ]
+    },
+    "q-d5-e07": {
+      "fingerprint": "268db5600777d6506902ad59450707edee4b7d2c428b728b0219520362c30825",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。100%の対象と置換された内部処理を分ける。 → 保存応答と本番のparse失敗が一致することを照合する。 → HTTPだけを隔離し、実内部処理で再現できるテストにする。",
+      "reasoningSteps": [
+        "100%の対象と置換された内部処理を分ける。",
+        "保存応答と本番のparse失敗が一致することを照合する。",
+        "HTTPだけを隔離し、実内部処理で再現できるテストにする。"
+      ],
+      "counterfactual": "「外部課金をせず、この内部処理の欠落を検出する境界」→「実カード課金を承認済みの隔離口座で行い、実APIとの接続と注文更新を確認する境界」なら表示D。目的が本番相当の通信・課金を含む接続検証へ変わり、実APIの経路を通す。HTTPをスタブにする元の案ではその接続を確認できない。",
+      "evidence": [
+        "parse/validateを成功値へ置換",
+        "注文更新のカバレッジ100%",
+        "公式スキーマに合うが、実parseは失敗",
+        "外部課金をせず"
+      ]
+    },
+    "q-d5-e08": {
+      "fingerprint": "1e7ca932c19fb7968e48f6a1ac6a2d93d14a064a28da931dc6051b047bcc4066",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。手戻り/PRとレビュー分/PRを計算し、総数と一件当たりを分ける。 → P=10%/30分/4.1、Q=15%/20分/4.3、R=5%/35分/4.2、S=5%/25分/3.5を三基準へ照合する。 → 全基準を満たすPだけを候補にし、PR総数だけで選ばず次の試行で再検証する。",
+      "reasoningSteps": [
+        "手戻り/PRとレビュー分/PRを計算し、総数と一件当たりを分ける。",
+        "P=10%/30分/4.1、Q=15%/20分/4.3、R=5%/35分/4.2、S=5%/25分/3.5を三基準へ照合する。",
+        "全基準を満たすPだけを候補にし、PR総数だけで選ばず次の試行で再検証する。"
+      ],
+      "counterfactual": "「手戻りPR率10%以下」→「手戻りPR率20%以下」なら表示A。Qも三基準に合格し、PよりPR数が多い40なのでQになる。Rの負担とSの集中は依然不合格で、元のPは合格でも最多条件を満たさなくなる。",
+      "evidence": [
+        "同種案件・同人数・同期間",
+        "手戻りPR率10%以下",
+        "レビュー時間/PR30分以下",
+        "集中実感4以上",
+        "全基準合格のうちPR数最多"
+      ]
+    },
+    "q-d6-e06": {
+      "fingerprint": "d90f3dabb07930ff51bcad2fc6908cf10fb0c9b9ed1557e6bee0b7dc61ffd341",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。保存値、上位の実効設定、社内承認を別に読む。 → 強制Blockと反映確認済みという条件を各Orgへ適用する。 → 現時点では両方Blockとし、例外の技術反映は別手続きにする。",
+      "reasoningSteps": [
+        "保存値、上位の実効設定、社内承認を別に読む。",
+        "強制Blockと反映確認済みという条件を各Orgへ適用する。",
+        "現時点では両方Blockとし、例外の技術反映は別手続きにする。"
+      ],
+      "counterfactual": "「Enterpriseの実効設定は強制Blockで」→「EnterpriseはNo policyでOrgに委任し」なら表示A。上位の強制がなくなり、AのAllowとBのBlockがそれぞれ実効になる。",
+      "evidence": [
+        "強制Block",
+        "Org-Aの保存値はAllow",
+        "反映は確認済み",
+        "Enterprise設定の変更承認はまだない"
+      ]
+    },
+    "q-d6-e07": {
+      "fingerprint": "ba1d60ab37e8be6b03020587fc8c4bc8e39e986adcd8d1a17f8cde0e49a9245a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "三段階の分析・照合・結論を要求する。対象版の管理Docsと実際のexcluded表示でファイル取得の動作を確かめる。 → 同じ秘密がMCP応答で入る別経路と照合する。 → 既存除外を保ったままMCPの返却前で秘密を除去する。",
+      "reasoningSteps": [
+        "対象版の管理Docsと実際のexcluded表示でファイル取得の動作を確かめる。",
+        "同じ秘密がMCP応答で入る別経路と照合する。",
+        "既存除外を保ったままMCPの返却前で秘密を除去する。"
+      ],
+      "counterfactual": "「通常のファイル取得ではcrypto.tsにexcludedが出て本文は取得されない。一方、外部MCPのログ応答には同じ暗号鍵があり」→「通常のファイル取得では適用先を誤登録したためcrypto.ts本文を取得する。一方、外部MCPのログ応答には暗号鍵がなく」なら表示A。漏れる経路がCLIのファイル取得へ移り、正しい適用先へのパス登録が対象になる。",
+      "evidence": [
+        "対象版Copilot CLIの管理Docs",
+        "excludedが出て本文は取得されない",
+        "外部MCPのログ応答には同じ暗号鍵"
+      ]
     }
   },
-  "secondPass": "改稿90問の全文・全選択肢を別パスで再読。残る文言照合問題、通信対策のカテゴリ差、単位の誤記、指標の分母を修正。独立した別人によるレビューではない。"
+  "secondPass": "従来の改稿90問の再読、基礎154問の再評価に続き、応用102問を全件再評価。適用条件・全選択肢の差・条件を変えた場合の判断を記録。同じ編集者の再読であり、独立した別人のレビューではない。 本番相当60問の本文・全選択肢・変更後の反実仮想を全件再読。",
+  "lastUpdated": "2026-10-13"
 }

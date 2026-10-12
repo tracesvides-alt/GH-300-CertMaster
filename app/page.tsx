@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import {
+  ArrowLeft,
   ArrowRight,
   BookOpen,
   Check,
@@ -16,6 +17,7 @@ import {
   Library,
   Lightbulb,
   ListChecks,
+  AlertTriangle,
   RotateCcw,
   Search,
   ShieldCheck,
@@ -50,6 +52,10 @@ import {
 import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive } from '@/lib/db';
 import { getLessonNav } from '@/lib/lesson-nav';
 import { LessonFooterNav } from './components/lesson-footer-nav';
+import { StudyItemNav } from './components/study-item-nav';
+import { ScrollToTopBtn } from './components/scroll-to-top-btn';
+import { LessonReadingCompanion } from './components/lesson-reading-companion';
+import { ItemReadingCompanion } from './components/item-reading-companion';
 import { ResumeLearningCard } from './components/resume-learning-card';
 import { choiceLabel, answerLabels } from '@/lib/choice-labels';
 import { withTimeout } from '@/lib/with-timeout';
@@ -180,6 +186,9 @@ export default function App() {
   const [reviewSubTab, setReviewSubTab] = useState<'notebook' | 'confusion' | 'history'>('notebook');
 
   const footerNavRef = useRef<HTMLDivElement>(null);
+  const lessonArticleRef = useRef<HTMLElement>(null);
+  const glossaryArticleRef = useRef<HTMLElement>(null);
+  const comparisonArticleRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!lessonId || !footerNavRef.current) return;
     const observer = new IntersectionObserver(
@@ -226,6 +235,26 @@ export default function App() {
     bank = [...questions, ...generated],
     q = session && !session.completed ? session.questions[session.index] : queue[index];
   const activeMock = !!session && !session.completed;
+  const isStudyDetail = tab === 'Study' && (lessonId !== null || glossaryTermId !== null || comparisonId !== null);
+
+  // Escキーで詳細から一覧に戻る
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName || '')) {
+        return;
+      }
+      if (e.key === 'Escape' && isStudyDetail) {
+        e.preventDefault();
+        setLessonId(null);
+        setGlossaryTermId(null);
+        setComparisonId(null);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isStudyDetail]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     requestAnimationFrame(() => {
@@ -660,12 +689,20 @@ export default function App() {
           <span className="statusdot" />
         </div>
       </aside>
-      <div className="workspace">
+      <div className={`workspace ${isStudyDetail ? 'study-detail-active' : ''}`}>
         <header className="topbar">
           <div>
             <span className="muted">Workspace</span>
             <ChevronRight size={14} />
             <span>{tab}</span>
+            {isStudyDetail && (
+              <>
+                <ChevronRight size={14} />
+                <span className="text-cyan-400 font-medium">
+                  {studyTab === 'Learn' ? '教材詳細' : studyTab === 'Glossary' ? '用語詳細' : '比較詳細'}
+                </span>
+              </>
+            )}
           </div>
           <span className="connection">
             <span className={online ? 'statusdot' : 'statusdot offline'} />
@@ -1297,16 +1334,18 @@ export default function App() {
               )}
               {tab === 'Study' && (
                 <>
-                  {/* Global Search */}
-                  <div className="global-search">
-                    <Search size={18} className="search-icon" />
-                    <input
-                      type="search"
-                      placeholder="教材・用語・比較ガイドを検索…"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </div>
+                  {/* Global Search (詳細表示中ではない時のみ表示) */}
+                  {!isStudyDetail && (
+                    <div className="global-search">
+                      <Search size={18} className="search-icon" />
+                      <input
+                        type="search"
+                        placeholder="教材・用語・比較ガイドを検索…"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  )}
                   {searchQuery.trim() &&
                     (() => {
                       const results = globalSearch(kb, searchQuery);
@@ -1350,37 +1389,46 @@ export default function App() {
                   {/* Study Sub-Tabs */}
                   {!searchQuery.trim() && (
                     <>
-                      <div className="study-subtabs">
-                        {(
-                          [
-                            ['Learn', BookOpen, 'Learn'],
-                            ['Glossary', Library, '用語集'],
-                            ['Compare', GitCompareArrows, '比較'],
-                          ] as const
-                        ).map(([id, Icon, label]) => (
-                          <button
-                            key={id}
-                            className={studyTab === id ? 'active' : ''}
-                            onClick={() => {
-                              setStudyTab(id as StudyTab);
-                              setLessonId(null);
-                              setGlossaryTermId(null);
-                              setComparisonId(null);
-                            }}
-                          >
-                            <Icon size={17} />
-                            {label}
-                          </button>
-                        ))}
-                      </div>
+                      {!isStudyDetail && (
+                        <div className="study-subtabs">
+                          {(
+                            [
+                              ['Learn', BookOpen, 'Learn'],
+                              ['Glossary', Library, '用語集'],
+                              ['Compare', GitCompareArrows, '比較'],
+                            ] as const
+                          ).map(([id, Icon, label]) => (
+                            <button
+                              key={id}
+                              className={studyTab === id ? 'active' : ''}
+                              onClick={() => {
+                                setStudyTab(id as StudyTab);
+                                setLessonId(null);
+                                setGlossaryTermId(null);
+                                setComparisonId(null);
+                              }}
+                            >
+                              <Icon size={17} />
+                              {label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
 
                       {/* ─── Learn Tab ─── */}
                       {studyTab === 'Learn' && (
                         <>
                           {lesson ? (
-                            <article className="panel lesson">
-                              <button className="textbutton" onClick={() => setLessonId(null)}>
-                                ← 教材一覧
+                            <article className="panel lesson" ref={lessonArticleRef}>
+                              <button
+                                className="study-detail-back-btn"
+                                onClick={() => {
+                                  setLessonId(null);
+                                  window.scrollTo({ top: 0, behavior: 'instant' });
+                                }}
+                              >
+                                <ArrowLeft size={16} />
+                                <span>教材一覧へ戻る</span>
                               </button>
                               <div className="eyebrow">
                                 FOUNDATION LESSON · {lesson.syllabusVersion}
@@ -1400,34 +1448,80 @@ export default function App() {
                                 )}
                                 {lesson.status && <span className="tag">{lesson.status}</span>}
                               </div>
-                              <p>{lesson.summary}</p>
+                              <p className="lesson-summary">{lesson.summary}</p>
+                              {/* 読了プログレスバー & 目次 (TOC) */}
+                              <LessonReadingCompanion lesson={lesson} containerRef={lessonArticleRef} />
                               {lesson.sections && lesson.sections.length > 0 && (
                                 <div className="lesson-sections">
                                   {lesson.sections.map((s, i) => (
-                                    <div className="lesson-section" key={i}>
-                                      <h3>{s.heading}</h3>
+                                    <div className="detail-section detail-section--learn-section lesson-section" key={i} id={`lesson-sec-${i}`}>
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><BookOpen size={15} /></span>
+                                        <h3>{s.heading}</h3>
+                                      </div>
                                       <p>{s.content}</p>
                                     </div>
                                   ))}
                                 </div>
                               )}
-                              {[
-                                ['重要ポイント', lesson.keyPoints],
-                                ['よくある間違い', lesson.commonMistakes],
-                                ['試験対策のヒント', lesson.examTips],
-                              ].map(([title, items]) => (
-                                <section key={title as string}>
-                                  <h3>{title as string}</h3>
-                                  <ul>
-                                    {(items as string[]).map((text) => (
-                                      <li key={text}>{text}</li>
+
+                              {lesson.keyPoints.length > 0 && (
+                                <section className="detail-section detail-section--keypoints" id="lesson-key-points">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><CheckCircle2 size={15} /></span>
+                                    <h3>重要ポイント</h3>
+                                  </div>
+                                  <ul className="detail-section-list">
+                                    {lesson.keyPoints.map((text) => (
+                                      <li key={text} className="detail-section-item">
+                                        <span className="item-bullet"><Check size={13} /></span>
+                                        <span className="item-text">{text}</span>
+                                      </li>
                                     ))}
                                   </ul>
                                 </section>
-                              ))}
+                              )}
+
+                              {lesson.commonMistakes.length > 0 && (
+                                <section className="detail-section detail-section--confusions" id="lesson-common-mistakes">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><AlertTriangle size={15} /></span>
+                                    <h3>よくある間違い・落とし穴</h3>
+                                  </div>
+                                  <ul className="detail-section-list">
+                                    {lesson.commonMistakes.map((text) => (
+                                      <li key={text} className="detail-section-item">
+                                        <span className="item-bullet"><AlertTriangle size={13} /></span>
+                                        <span className="item-text">{text}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </section>
+                              )}
+
+                              {lesson.examTips.length > 0 && (
+                                <section className="detail-section detail-section--exampoints" id="lesson-exam-tips">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><Lightbulb size={15} /></span>
+                                    <h3>試験対策のヒント</h3>
+                                  </div>
+                                  <ul className="detail-section-list">
+                                    {lesson.examTips.map((text) => (
+                                      <li key={text} className="detail-section-item">
+                                        <span className="item-bullet"><Sparkles size={13} /></span>
+                                        <span className="item-text">{text}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </section>
+                              )}
+
                               {lesson.glossaryIds && lesson.glossaryIds.length > 0 && (
-                                <div className="lesson-glossary-links">
-                                  <h3>関連用語</h3>
+                                <div className="detail-section detail-section--related lesson-glossary-links" id="lesson-related-glossary">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><Library size={15} /></span>
+                                    <h3>関連用語</h3>
+                                  </div>
                                   <div className="related-links">
                                     {lesson.glossaryIds.map((gid) => {
                                       const term = glossaryTerms.find((g) => g.id === gid);
@@ -1449,9 +1543,13 @@ export default function App() {
                                   </div>
                                 </div>
                               )}
+
                               {lesson.comparisonIds && lesson.comparisonIds.length > 0 && (
-                                <div className="lesson-glossary-links">
-                                  <h3>関連比較ガイド</h3>
+                                <div className="detail-section detail-section--related lesson-glossary-links" id="lesson-related-comparisons">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><GitCompareArrows size={15} /></span>
+                                    <h3>関連比較ガイド</h3>
+                                  </div>
                                   <div className="related-links">
                                     {lesson.comparisonIds.map((cid) => {
                                       const cmp = comparisonGuides.find((c) => c.id === cid);
@@ -1473,18 +1571,37 @@ export default function App() {
                                   </div>
                                 </div>
                               )}
-                              <h3>関連Objective</h3>
-                              {lesson.relatedObjectives.map((id) => (
-                                <p key={id}>{objectives.find((o) => o.id === id)?.title}</p>
-                              ))}
-                              <h3>Official Sources</h3>
-                              {sourceLinks(lesson.officialSources)}
+
+                              {lesson.relatedObjectives && lesson.relatedObjectives.length > 0 && (
+                                <div className="detail-section detail-section--related" id="lesson-related-objectives">
+                                  <div className="detail-section-header">
+                                    <span className="detail-section-icon"><Target size={15} /></span>
+                                    <h3>関連Objective</h3>
+                                  </div>
+                                  <div className="objective-list">
+                                    {lesson.relatedObjectives.map((id) => (
+                                      <div className="objective-item" key={id}>
+                                        <span className="item-bullet"><Check size={13} /></span>
+                                        <span className="item-text">{objectives.find((o) => o.id === id)?.title}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              <div className="detail-section detail-section--related" id="lesson-official-sources">
+                                <div className="detail-section-header">
+                                  <span className="detail-section-icon"><FileText size={15} /></span>
+                                  <h3>Official Sources</h3>
+                                </div>
+                                {sourceLinks(lesson.officialSources)}
+                              </div>
                               <p className="caption">
                                 確認日 {lesson.lastVerifiedAt} · 初期教材は分野の一部を扱います。
                               </p>
                               <div className="flex flex-wrap gap-3 my-4">
                                 {/* 双方向リンク: 理解度チェック 3問 (要件4) */}
-                               <div className="bidirectional-check-card my-4">
+                               <div className="bidirectional-check-card my-4" id="lesson-comprehension-check">
                                  <div className="b-check-header">
                                    <Sparkles size={16} />
                                    <h4>教材の理解度チェック</h4>
@@ -1521,6 +1638,10 @@ export default function App() {
                                   currentLessonId={lesson.id}
                                   isCompleted={completedLessonIds.includes(lesson.id)}
                                   onToggleCompleted={() => void toggleLessonCompleted(lesson.id)}
+                                  onBackToList={() => {
+                                    setLessonId(null);
+                                    window.scrollTo({ top: 0, behavior: 'instant' });
+                                  }}
                                   onSelectLesson={(nextId) => {
                                     void markLessonCompleted(lesson.id);
                                     setLessonId(nextId);
@@ -1577,7 +1698,7 @@ export default function App() {
                                 </label>
                                 <span className="muted">
                                   {lessons.length}教材 / {objectives.length} Objectives ·
-                                  収録範囲を順次拡充
+                                  全目標完全網羅
                                 </span>
                               </div>
                               <div className="study-grid">
@@ -1662,16 +1783,29 @@ export default function App() {
                             (() => {
                               const term = glossaryTerms.find((g) => g.id === glossaryTermId);
                               if (!term) return null;
+                              const glossaryTocItems = [
+                                { id: 'glossary-sec-definition', title: '定義' },
+                                { id: 'glossary-sec-why', title: 'GH-300で重要な理由' },
+                                ...(term.useCases.length > 0 ? [{ id: 'glossary-sec-usecases', title: '利用場面' }] : []),
+                                ...(term.examPoints.length > 0 ? [{ id: 'glossary-sec-exampoints', title: '試験ポイント' }] : []),
+                                ...(term.commonConfusions.length > 0 ? [{ id: 'glossary-sec-confusions', title: '混同しやすい用語' }] : []),
+                                ...(term.relatedTermIds.length > 0 ? [{ id: 'glossary-sec-related', title: '関連用語' }] : []),
+                                ...(term.lessonIds.length > 0 ? [{ id: 'glossary-sec-lessons', title: '関連教材' }] : []),
+                                ...(term.comparisonIds.length > 0 ? [{ id: 'glossary-sec-comparisons', title: '関連比較ガイド' }] : []),
+                                ...(term.sourceIds.length > 0 ? [{ id: 'glossary-sec-sources', title: 'Official Sources' }] : []),
+                                { id: 'glossary-sec-check', title: '確認問題 3問' },
+                              ];
                               return (
-                                <article className="panel glossary-detail">
+                                <article className="panel glossary-detail" ref={glossaryArticleRef}>
                                   <button
-                                    className="textbutton"
+                                    className="study-detail-back-btn"
                                     onClick={() => {
                                       setGlossaryTermId(null);
                                       window.scrollTo({ top: 0, behavior: 'instant' });
                                     }}
                                   >
-                                    ← 用語一覧
+                                    <ArrowLeft size={16} />
+                                    <span>用語一覧へ戻る</span>
                                   </button>
                                   <div className="term-header" style={{ marginBottom: '8px' }}>
                                     <h2>{term.term}</h2>
@@ -1680,47 +1814,82 @@ export default function App() {
                                     </span>
                                   </div>
                                   <div className="full-name">{term.fullName}</div>
-                                  <div className="detail-section">
-                                    <h3>定義</h3>
+
+                                  {/* 読了プログレスバー ＆ [目次] ＆ [↑] ボタン */}
+                                  <ItemReadingCompanion
+                                    title={term.term}
+                                    items={glossaryTocItems}
+                                    containerRef={glossaryArticleRef}
+                                  />
+
+                                  <div className="detail-section detail-section--definition" id="glossary-sec-definition">
+                                    <div className="detail-section-header">
+                                      <span className="detail-section-icon"><BookOpen size={15} /></span>
+                                      <h3>定義</h3>
+                                    </div>
                                     <p>{term.detailedDefinition}</p>
                                   </div>
-                                  <div className="detail-section">
-                                    <h3>GH-300で重要な理由</h3>
+                                  <div className="detail-section detail-section--why" id="glossary-sec-why">
+                                    <div className="detail-section-header">
+                                      <span className="detail-section-icon"><ShieldCheck size={15} /></span>
+                                      <h3>GH-300で重要な理由</h3>
+                                    </div>
                                     <p>{term.whyItMatters}</p>
                                   </div>
                                   {term.useCases.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>利用場面</h3>
-                                      <ul>
+                                    <div className="detail-section detail-section--usecases" id="glossary-sec-usecases">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><Target size={15} /></span>
+                                        <h3>利用場面</h3>
+                                      </div>
+                                      <ul className="detail-section-list">
                                         {term.useCases.map((u) => (
-                                          <li key={u}>{u}</li>
+                                          <li key={u} className="detail-section-item">
+                                            <span className="item-bullet"><ArrowRight size={13} /></span>
+                                            <span className="item-text">{u}</span>
+                                          </li>
                                         ))}
                                       </ul>
                                     </div>
                                   )}
                                   {term.examPoints.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>試験ポイント</h3>
-                                      <ul>
+                                    <div className="detail-section detail-section--exampoints" id="glossary-sec-exampoints">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><Lightbulb size={15} /></span>
+                                        <h3>試験ポイント</h3>
+                                      </div>
+                                      <ul className="detail-section-list">
                                         {term.examPoints.map((e) => (
-                                          <li key={e}>{e}</li>
+                                          <li key={e} className="detail-section-item">
+                                            <span className="item-bullet"><Check size={13} /></span>
+                                            <span className="item-text">{e}</span>
+                                          </li>
                                         ))}
                                       </ul>
                                     </div>
                                   )}
                                   {term.commonConfusions.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>混同しやすい用語</h3>
-                                      <ul>
+                                    <div className="detail-section detail-section--confusions" id="glossary-sec-confusions">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><AlertTriangle size={15} /></span>
+                                        <h3>混同しやすい用語・注意点</h3>
+                                      </div>
+                                      <ul className="detail-section-list">
                                         {term.commonConfusions.map((c) => (
-                                          <li key={c}>{c}</li>
+                                          <li key={c} className="detail-section-item">
+                                            <span className="item-bullet"><AlertTriangle size={13} /></span>
+                                            <span className="item-text">{c}</span>
+                                          </li>
                                         ))}
                                       </ul>
                                     </div>
                                   )}
                                   {term.relatedTermIds.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>関連用語</h3>
+                                    <div className="detail-section detail-section--related" id="glossary-sec-related">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><Library size={15} /></span>
+                                        <h3>関連用語</h3>
+                                      </div>
                                       <div className="related-links">
                                         {term.relatedTermIds.map((rid) => {
                                           const rt = glossaryTerms.find((g) => g.id === rid);
@@ -1742,8 +1911,11 @@ export default function App() {
                                     </div>
                                   )}
                                   {term.lessonIds.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>関連教材</h3>
+                                    <div className="detail-section detail-section--related" id="glossary-sec-lessons">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><BookOpen size={15} /></span>
+                                        <h3>関連教材</h3>
+                                      </div>
                                       <div className="related-links">
                                         {term.lessonIds.map((lid) => {
                                           const l = lessons.find((les) => les.id === lid);
@@ -1766,8 +1938,11 @@ export default function App() {
                                     </div>
                                   )}
                                   {term.comparisonIds.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>関連比較ガイド</h3>
+                                    <div className="detail-section detail-section--related" id="glossary-sec-comparisons">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><GitCompareArrows size={15} /></span>
+                                        <h3>関連比較ガイド</h3>
+                                      </div>
                                       <div className="related-links">
                                         {term.comparisonIds.map((cid) => {
                                           const c = comparisonGuides.find((cmp) => cmp.id === cid);
@@ -1790,13 +1965,16 @@ export default function App() {
                                     </div>
                                   )}
                                   {term.sourceIds.length > 0 && (
-                                    <div className="detail-section">
-                                      <h3>Official Sources</h3>
+                                    <div className="detail-section detail-section--related" id="glossary-sec-sources">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><FileText size={15} /></span>
+                                        <h3>Official Sources</h3>
+                                      </div>
                                       {sourceLinks(term.sourceIds)}
                                     </div>
                                   )}
                                   {/* 双方向リンク: 用語の関連問題3問 (要件4) */}
-                                  <div className="glossary-check-box mt-4">
+                                  <div className="glossary-check-box mt-4" id="glossary-sec-check">
                                     <button
                                       className="primary"
                                       onClick={() => {
@@ -1807,6 +1985,31 @@ export default function App() {
                                       <ListChecks size={16} /> この用語の関連問題を3問解く <ArrowRight size={16} />
                                     </button>
                                   </div>
+
+                                  {/* 用語集の前後の項目ナビゲーション */}
+                                  {(() => {
+                                    const termIndex = glossaryTerms.findIndex((g) => g.id === term.id);
+                                    const prevTerm = termIndex > 0 ? glossaryTerms[termIndex - 1] : null;
+                                    const nextTerm = termIndex >= 0 && termIndex < glossaryTerms.length - 1 ? glossaryTerms[termIndex + 1] : null;
+                                    return (
+                                      <StudyItemNav
+                                        itemTypeLabel="用語"
+                                        currentIndex={termIndex + 1}
+                                        totalCount={glossaryTerms.length}
+                                        badgeLabel={term.category}
+                                        prev={prevTerm ? { id: prevTerm.id, title: prevTerm.term } : null}
+                                        next={nextTerm ? { id: nextTerm.id, title: nextTerm.term } : null}
+                                        onSelect={(id) => {
+                                          setGlossaryTermId(id);
+                                          window.scrollTo({ top: 0, behavior: 'instant' });
+                                        }}
+                                        onBackToList={() => {
+                                          setGlossaryTermId(null);
+                                          window.scrollTo({ top: 0, behavior: 'instant' });
+                                        }}
+                                      />
+                                    );
+                                  })()}
                                 </article>
                               );
                             })()
@@ -1903,78 +2106,132 @@ export default function App() {
                             (() => {
                               const cmp = comparisonGuides.find((c) => c.id === comparisonId);
                               if (!cmp) return null;
+                              const cmpTocItems = [
+                                { id: 'compare-sec-summary', title: '比較概要' },
+                                { id: 'compare-sec-table', title: '比較表' },
+                                ...(cmp.decisionGuide && cmp.decisionGuide.length > 0 ? [{ id: 'compare-sec-decision', title: '判断ガイド' }] : []),
+                                ...(cmp.examTips.length > 0 ? [{ id: 'compare-sec-tips', title: '試験対策ヒント' }] : []),
+                                ...(cmp.comparedTermIds.length > 0 ? [{ id: 'compare-sec-terms', title: '関連用語' }] : []),
+                                ...(cmp.lessonIds.length > 0 ? [{ id: 'compare-sec-lessons', title: '関連教材' }] : []),
+                                ...(cmp.sourceIds.length > 0 ? [{ id: 'compare-sec-sources', title: 'Official Sources' }] : []),
+                                { id: 'compare-sec-check', title: '確認問題 3問' },
+                              ];
                               return (
-                                <article className="panel comparison-detail">
+                                <article className="panel comparison-detail" ref={comparisonArticleRef}>
                                   <button
-                                    className="textbutton"
+                                    className="study-detail-back-btn"
                                     onClick={() => {
                                       setComparisonId(null);
                                       window.scrollTo({ top: 0, behavior: 'instant' });
                                     }}
                                   >
-                                    ← 比較一覧
+                                    <ArrowLeft size={16} />
+                                    <span>比較ガイド一覧へ戻る</span>
                                   </button>
                                   <div className="eyebrow">COMPARISON GUIDE</div>
-                                  <h2>{cmp.title}</h2>
-                                  <p>{cmp.summary}</p>
-                                  <h3>比較表</h3>
-                                  <table className="comparison-table">
-                                    <thead>
-                                      <tr>
-                                        <th>観点</th>
-                                        {cmp.comparedTermIds.map((tid) => {
-                                          const t = glossaryTerms.find((g) => g.id === tid);
-                                          return <th key={tid}>{t?.term ?? tid}</th>;
-                                        })}
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      {cmp.comparisonAxes.map((axis) => (
-                                        <tr key={axis.axis}>
-                                          <td style={{ fontWeight: 600, color: 'var(--text)' }}>
-                                            {axis.axis}
-                                          </td>
-                                          {axis.values.map((v, i) => {
-                                            const parts = v.split(': ');
-                                            return (
-                                              <td key={i}>
-                                                {parts.length > 1 ? parts.slice(1).join(': ') : v}
-                                              </td>
-                                            );
-                                          })}
-                                        </tr>
-                                      ))}
-                                    </tbody>
-                                  </table>
-                                  <h3>判断ガイド</h3>
-                                  {cmp.decisionGuide.map((d) => (
-                                    <div className="decision-guide-item" key={d}>
-                                      {d}
+                                  <h2 className="comparison-title">{cmp.title}</h2>
+
+                                  {/* 読了プログレスバー ＆ [目次] ＆ [↑] ボタン */}
+                                  <ItemReadingCompanion
+                                    title={cmp.title}
+                                    items={cmpTocItems}
+                                    containerRef={comparisonArticleRef}
+                                  />
+
+                                  <p className="comparison-summary" id="compare-sec-summary">{cmp.summary}</p>
+
+                                  <div className="detail-section detail-section--table" id="compare-sec-table">
+                                    <div className="detail-section-header">
+                                      <span className="detail-section-icon"><GitCompareArrows size={15} /></span>
+                                      <h3>比較表</h3>
                                     </div>
-                                  ))}
+                                    <div className="comparison-table-wrapper">
+                                      <table className="comparison-table">
+                                        <thead>
+                                          <tr>
+                                            <th>観点</th>
+                                            {cmp.comparedTermIds.map((tid) => {
+                                              const t = glossaryTerms.find((g) => g.id === tid);
+                                              return <th key={tid}>{t?.term ?? tid}</th>;
+                                            })}
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          {cmp.comparisonAxes.map((axis) => (
+                                            <tr key={axis.axis}>
+                                              <td className="axis-label">
+                                                {axis.axis}
+                                              </td>
+                                              {axis.values.map((v, i) => {
+                                                const parts = v.split(': ');
+                                                return (
+                                                  <td key={i}>
+                                                    {parts.length > 1 ? parts.slice(1).join(': ') : v}
+                                                  </td>
+                                                );
+                                              })}
+                                            </tr>
+                                          ))}
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+
+                                  <div className="detail-section detail-section--decision" id="compare-sec-decision">
+                                    <div className="detail-section-header">
+                                      <span className="detail-section-icon"><CheckCircle2 size={15} /></span>
+                                      <h3>判断ガイド（どちらを選ぶべきか）</h3>
+                                    </div>
+                                    <div className="decision-guide-list">
+                                      {cmp.decisionGuide.map((d) => (
+                                        <div className="decision-guide-item" key={d}>
+                                          <span className="item-bullet"><Check size={13} /></span>
+                                          <span className="item-text">{d}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+
                                   {cmp.commonTraps.length > 0 && (
-                                    <>
-                                      <h3>よくある落とし穴</h3>
-                                      <ul>
+                                    <div className="detail-section detail-section--confusions">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><AlertTriangle size={15} /></span>
+                                        <h3>よくある落とし穴・混同の罠</h3>
+                                      </div>
+                                      <ul className="detail-section-list">
                                         {cmp.commonTraps.map((t) => (
-                                          <li key={t}>{t}</li>
+                                          <li key={t} className="detail-section-item">
+                                            <span className="item-bullet"><AlertTriangle size={13} /></span>
+                                            <span className="item-text">{t}</span>
+                                          </li>
                                         ))}
                                       </ul>
-                                    </>
+                                    </div>
                                   )}
+
                                   {cmp.examTips.length > 0 && (
-                                    <>
-                                      <h3>試験対策のヒント</h3>
-                                      <ul>
+                                    <div className="detail-section detail-section--exampoints" id="compare-sec-tips">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><Lightbulb size={15} /></span>
+                                        <h3>試験対策のヒント</h3>
+                                      </div>
+                                      <ul className="detail-section-list">
                                         {cmp.examTips.map((t) => (
-                                          <li key={t}>{t}</li>
+                                          <li key={t} className="detail-section-item">
+                                            <span className="item-bullet"><Sparkles size={13} /></span>
+                                            <span className="item-text">{t}</span>
+                                          </li>
                                         ))}
                                       </ul>
-                                    </>
+                                    </div>
                                   )}
+
                                   {cmp.comparedTermIds.length > 0 && (
-                                    <div style={{ marginTop: '16px' }}>
-                                      <h3>関連用語</h3>
+                                    <div className="detail-section detail-section--related" id="compare-sec-terms">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><Library size={15} /></span>
+                                        <h3>関連用語</h3>
+                                      </div>
                                       <div className="related-links">
                                         {cmp.comparedTermIds.map((tid) => {
                                           const t = glossaryTerms.find((g) => g.id === tid);
@@ -1996,9 +2253,13 @@ export default function App() {
                                       </div>
                                     </div>
                                   )}
+
                                   {cmp.lessonIds.length > 0 && (
-                                    <div style={{ marginTop: '16px' }}>
-                                      <h3>関連教材</h3>
+                                    <div className="detail-section detail-section--related" id="compare-sec-lessons">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><BookOpen size={15} /></span>
+                                        <h3>関連教材</h3>
+                                      </div>
                                       <div className="related-links">
                                         {cmp.lessonIds.map((lid) => {
                                           const l = lessons.find((les) => les.id === lid);
@@ -2020,10 +2281,18 @@ export default function App() {
                                       </div>
                                     </div>
                                   )}
-                                  <h3>Official Sources</h3>
-                                  {sourceLinks(cmp.sourceIds)}
+
+                                  {cmp.sourceIds.length > 0 && (
+                                    <div className="detail-section detail-section--related" id="compare-sec-sources">
+                                      <div className="detail-section-header">
+                                        <span className="detail-section-icon"><FileText size={15} /></span>
+                                        <h3>Official Sources</h3>
+                                      </div>
+                                      {sourceLinks(cmp.sourceIds)}
+                                    </div>
+                                  )}
                                   {/* 双方向リンク: 比較の関連問題3問 (要件4) */}
-                                  <div className="comparison-check-box mt-4">
+                                  <div className="comparison-check-box mt-4" id="compare-sec-check">
                                     <button
                                       className="primary"
                                       onClick={() => {
@@ -2034,6 +2303,31 @@ export default function App() {
                                       <ListChecks size={16} /> この違いを3問で確認 <ArrowRight size={16} />
                                     </button>
                                   </div>
+
+                                  {/* 比較ガイドの前後の項目ナビゲーション */}
+                                  {(() => {
+                                    const cmpIndex = comparisonGuides.findIndex((c) => c.id === cmp.id);
+                                    const prevCmp = cmpIndex > 0 ? comparisonGuides[cmpIndex - 1] : null;
+                                    const nextCmp = cmpIndex >= 0 && cmpIndex < comparisonGuides.length - 1 ? comparisonGuides[cmpIndex + 1] : null;
+                                    return (
+                                      <StudyItemNav
+                                        itemTypeLabel="比較ガイド"
+                                        currentIndex={cmpIndex + 1}
+                                        totalCount={comparisonGuides.length}
+                                        badgeLabel="比較ガイド"
+                                        prev={prevCmp ? { id: prevCmp.id, title: prevCmp.title } : null}
+                                        next={nextCmp ? { id: nextCmp.id, title: nextCmp.title } : null}
+                                        onSelect={(id) => {
+                                          setComparisonId(id);
+                                          window.scrollTo({ top: 0, behavior: 'instant' });
+                                        }}
+                                        onBackToList={() => {
+                                          setComparisonId(null);
+                                          window.scrollTo({ top: 0, behavior: 'instant' });
+                                        }}
+                                      />
+                                    );
+                                  })()}
                                 </article>
                               );
                             })()
@@ -2268,7 +2562,7 @@ export default function App() {
                             ? '5・10問は比率を重みにしたランダム出題'
                             : '20・30・50問は、開始時にレンジ内の整数配分を抽選'}
                         </p>
-                        {Number.isInteger(count) && count > 0 && count <= 200 && (
+                        {Number.isInteger(count) && count > 0 && count <= questions.length && (
                           <>
                             {domains.map((d, i) => (
                               <div className="allocation" key={d.id}>
@@ -2485,6 +2779,7 @@ export default function App() {
             <span>非公式の学習アプリ · GitHub / Microsoftとは無関係です</span>
           </footer>
         </main>
+        <ScrollToTopBtn />
       </div>
       <nav className="bottomnav" aria-label="モバイルナビゲーション">
         {nav.map(({ id, icon: Icon }) => (

@@ -29,8 +29,7 @@
       "人間の意思決定の支援ツールとして機能する"
     ],
     "commonConfusions": [
-      "従来の静的コード解析やルールベースの自動補完との混同",
-      "AIが論理を『理解』しているという誤解"
+      "AIがプログラムの動作論理や仕様を真に「理解」していると過信し、確率的なトークン予測である限界を軽視する誤解"
     ],
     "relatedTermIds": [
       "g-hallucination",
@@ -86,8 +85,7 @@
       "コードの動作確認とテストが必須の対策となる"
     ],
     "commonConfusions": [
-      "流暢な回答は正確という誤解",
-      "AIのバグ（実装エラー）とハルシネーションの混同"
+      "文法的に正しく流暢なコードであっても、存在しない架空のAPIやライブラリを捏造している可能性がある点を見落とす誤解"
     ],
     "relatedTermIds": [
       "g-generative-ai",
@@ -302,7 +300,7 @@
       "d1o1",
       "d3o1"
     ],
-    "whyItMatters": "ブラックボックスとして扱わず、根拠を確認する姿勢を受験者に求めるため。",
+    "whyItMatters": "AIの提案理由やコードの挙動をブラックボックス化せず、開発者が根拠を理解・説明できる状態を維持するResponsible AI原則の1つ。",
     "useCases": [
       "Chatで参照されたファイルリストの確認",
       "提案されたコードの根拠説明の要求",
@@ -636,8 +634,8 @@
       "異常系パラメータ入力時の動作確認"
     ],
     "examPoints": [
-      "型安全であってもビジネスロジックの正当性は保証されない",
-      "ユニットテストとの併用が必須"
+      "見た目の完成度（構文上の正しさ）に騙されず、ユニットテストや実行確認を併用して真の正しさを検証する",
+      "静的解析ツールと組み合わせた重層的な品質チェックが不可欠"
     ],
     "commonConfusions": [
       "文法チェックの通過とロジックの正当性の混同"
@@ -806,8 +804,7 @@
       "開いているファイル（隣接タブ）のコンテキストが利用される"
     ],
     "commonConfusions": [
-      "Copilot Chatとの操作性の違い",
-      "提案が強制適用されるという誤解"
+      "インライン提案はエディタ上に一時表示される候補であり、Tabキーで受託するまでファイルには一切書き込まれない点の見落とし"
     ],
     "relatedTermIds": [
       "g-ghost-text",
@@ -851,7 +848,7 @@
     "objectiveIds": [
       "d2o1"
     ],
-    "whyItMatters": "IDE統合UIの基本仕様であり、エディタとの親和性の理解に寄与する。",
+    "whyItMatters": "インライン提案がエディタ上でグレーアウト表示される基本UIであり、Tabキーでの受諾やEscでの却下など日常操作の前提知識となる。",
     "useCases": [
       "タイピング中のリアルタイム補完プレビュー",
       "提案の一部のみの採用（単語単位採用: Ctrl+Right / Cmd+Right）"
@@ -861,7 +858,7 @@
       "エディタの通常の文字入力と衝突しない非侵襲的なUI"
     ],
     "commonConfusions": [
-      "すでに挿入された実際のコードとの混同"
+      "エディタ上でグレーアウト表示されている未確定のGhost Textと、すでに確定挿入された実際のソースコードの混同"
     ],
     "relatedTermIds": [
       "g-inline-suggestions"
@@ -1079,9 +1076,8 @@
       "`@terminal` で直前のコマンド実行エラーの原因を質問"
     ],
     "examPoints": [
-      "`@` 記号で呼び出す",
-      "参加者ごとにアクセス可能な情報と実行権限が異なる",
-      "`@workspace` はリポジトリインデックスを参照する"
+      "`@workspace` や `@vscode` などのチャット参加者は `@` 記号で呼び出し、プロンプトのコンテキスト探索スコープを絞り込む",
+      "適切な参加者を指定することで、無駄なコンテキスト消費（Dilution）を防止できる"
     ],
     "commonConfusions": [
       "Slash Commands（/）とParticipants（@）の役割の違い"
@@ -1142,8 +1138,7 @@
       "長いプロンプトを書かずに意図を正確に伝達できる"
     ],
     "commonConfusions": [
-      "Chat Variables（#）との混同",
-      "CLIコマンドとの混同"
+      "IDE内のCopilot Chatで呼び出すスラッシュコマンド（/fix, /tests等）と、ターミナルで実行するGitHub CLI（gh copilot）の役割混同"
     ],
     "relatedTermIds": [
       "g-chat-participants",
@@ -1299,7 +1294,7 @@
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "Domain 2の独立したObjective (d2o2) であり、試験で必ず出題される機能群。",
+    "whyItMatters": "ターミナルやコマンドライン上での自然言語によるコマンド提案・解説や実行前確認の安全策など、CLI環境特有のAI支援シナリオで頻出。",
     "useCases": [
       "複雑なfindやawk、sedコマンドの作成",
       "難解なgit rebaseやcherry-pickコマンドの解説",
@@ -1355,7 +1350,7 @@
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "旧拡張と現行CLIの混同を避けるために残す用語。",
+    "whyItMatters": "シェルコマンドやエラー出力の意味を自然言語で解説させる機能であり、コマンド生成（suggest）との目的の違いを問う問題で重要。",
     "useCases": [
       "`gh copilot explain \"iptables -L -n -v\"` でファイアウォール設定の意味を理解",
       "`git log --graph --oneline --all` のフラグ確認"
@@ -1405,7 +1400,7 @@
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "旧拡張と現行CLIの混同を避けるために残す用語。",
+    "whyItMatters": "シェルコマンドの検索・提案を受ける機能であり、ターゲット環境（bash, PowerShell, gh）の選択や実行前確認の安全策とセットで出題される。",
     "useCases": [
       "`gh copilot suggest \"Undo the last git commit without losing changes\"`",
       "`gh copilot suggest \"Find all .log files older than 30 days and delete them\"`"
@@ -1415,8 +1410,7 @@
       "旧 gh copilot 拡張の仕様は現行CLIへそのまま適用しない"
     ],
     "commonConfusions": [
-      "`explain` との混同",
-      "提案されたコマンドが自動的に即時実行されるという誤解"
+      "コマンドの意味や挙動を自然言語で解説する「gh copilot explain」と、目的のシェルコマンドを検索・生成する「gh copilot suggest」の取り違え"
     ],
     "relatedTermIds": [
       "g-copilot-cli",
@@ -1458,7 +1452,7 @@
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "古いCLI教材と現行手順を見分けるための歴史的な用語。",
+    "whyItMatters": "CLI環境でCopilotを素早く呼び出すエイリアス設定であり、シェル環境の初期セットアップやコマンドライン操作効率化の選択肢として登場する。",
     "useCases": [
       "`ghcs \"tar extract to specific directory\"`",
       "`ghce \"kill -9 $(lsof -t -i:8080)\"`"
@@ -1613,21 +1607,18 @@
       "d2o1",
       "d2o3"
     ],
-    "whyItMatters": "2026年シラバスの最重要新規トピック。従来のChatやEditsとの決定的な違いが問われる。",
+    "whyItMatters": "自律的な複数ファイル編集やターミナルコマンド実行、検証ループを自動で行うため、通常のChatやEditsとの能力差・使い分けが頻出。",
     "useCases": [
       "複数ファイルにまたがるAPI仕様変更のリファクタリング",
       "新機能のスキャフォールドとユニットテストの追加・全件パス",
       "ビルドエラーの原因特定と自律修正"
     ],
     "examPoints": [
-      "複数ファイルの作成・編集が可能",
-      "ターミナルコマンドを実行して結果をフィードバックできる",
-      "エラーが発生した場合に自律的に再試行・修正する",
-      "MCPサーバーと連携して外部ツールを利用可能"
+      "複数ファイルの新規作成・編集やターミナルコマンド実行、自律的な検証・エラー修正ループの実行が可能",
+      "従来のチャットと異なり、作業完了までツール実行を自律反復する"
     ],
     "commonConfusions": [
-      "Copilot Editsとの違い（Editsはコマンド実行や自律ループを行わない）",
-      "単なるチャットとの違い"
+      "質問へのテキスト回答にとどまる通常のCopilot ChatやCopilot Editsと、自律的にツール群を連鎖実行するAgent Modeの機能差の混同"
     ],
     "relatedTermIds": [
       "g-copilot-edits",
@@ -1735,7 +1726,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "GH-300シラバスの外部ツール連携に関わる概念。旧GitHub App型Extensionsは終了したため、現行の連携方式として区別する。",
+    "whyItMatters": "Copilotが外部ツールやデータソースと標準プロトコルで安全に対話する仕組みであり、外部拡張機能との連携方式として出題される。",
     "useCases": [
       "社内データベースのスキーマ情報をリアルタイム取得してクエリ生成",
       "GitHub IssueやPRの情報を直接読み取ってコード修正",
@@ -1747,8 +1738,7 @@
       "クライアント（IDE/Copilot）とサーバー（MCP Server）の分離構造"
     ],
     "commonConfusions": [
-      "終了したGitHub App型Copilot Extensionsを現行の連携候補と考えること",
-      "単なるREST API呼び出しとの違い"
+      "都度エンドポイントを個別に叩く従来型REST APIと、ツール一覧やリソースを共通仕様でLLMに自律検出・実行させるMCPプロトコルの違い"
     ],
     "relatedTermIds": [
       "g-mcp-server",
@@ -1850,7 +1840,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "MCPアーキテクチャの役割分担を理解するために必要。",
+    "whyItMatters": "VS Codeなどのホスト環境がMCPクライアントとして外部サーバーと通信し、利用可能なツールやリソースをCopilotに橋渡しする仕組みを理解するために重要。",
     "useCases": [
       "VS Code Copilotが利用可能なMCPツールを検知して一覧化",
       "Agent Modeがツールの実行許可をユーザーにプロンプト表示"
@@ -1860,7 +1850,7 @@
       "ツールの実行判断とユーザーへの確認ダイアログの表示を行う"
     ],
     "commonConfusions": [
-      "MCP Serverとの役割の逆転"
+      "外部ツールやデータを提供する「MCP Server」と、それを読み込んでLLMに渡すホスト側の「MCP Client（VS Code等）」の役割の逆転"
     ],
     "relatedTermIds": [
       "g-mcp",
@@ -2014,8 +2004,8 @@
       "依存関係ツリーの事前解析"
     ],
     "examPoints": [
-      "主セッションと別のコンテキストで下位タスクを進める",
-      "結果を主セッションに返す"
+      "複雑な作業を専門的なサブエージェントに分割委任し、結果を主セッションに集約する",
+      "メインコンテキストの汚染（Context Pollution）を防ぎ、トークン消費効率を最大化する"
     ],
     "commonConfusions": [
       "会話履歴を保存するSessionと、実際に仕事を委譲するSub-Agentの混同"
@@ -2063,7 +2053,7 @@
       "d2o4",
       "d5o1"
     ],
-    "whyItMatters": "開発フローの自動化と品質向上の中核。ポリシー設定（d2o4）と生産性（d5o1）の架け橋。",
+    "whyItMatters": "Pull Requestに対する自動レビューや組織ポリシーによる品質ゲート管理など、チーム開発におけるガバナンスと開発生産性の両面で出題される重要機能。",
     "useCases": [
       "PR作成時の初回自動レビューによる見落とし防止",
       "レビュアーの負荷軽減とレビューサイクルの短縮"
@@ -2295,7 +2285,7 @@
       "d2o3",
       "d4o1"
     ],
-    "whyItMatters": "プロンプトエンジニアリングのチーム共有・標準化手法として2026年シラバスで重要度が増した機能。",
+    "whyItMatters": "チームやプロジェクトで再利用可能なプロンプトテンプレートをコード管理し、組織全体で指示品質とプロンプト規約を標準化する手法として頻出。",
     "useCases": [
       "「アクセシビリティ監査用プロンプト」の共有",
       "「DBマイグレーションスクリプト作成プロンプト」の標準化"
@@ -2353,7 +2343,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "複数リポジトリ構成（マイクロサービス）でのCopilot活用における新機軸。",
+    "whyItMatters": "複数リポジトリやドキュメントを横断して一元的なコンテキストを構築・共有する機能であり、マイクロサービスや大規模チームでのナレッジ統合シナリオで出題される。",
     "useCases": [
       "マイクロサービス間を横断するデータ連携の設計検討",
       "リポジトリと仕様書ドキュメントを組み合わせたオンボーディング"
@@ -2408,7 +2398,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "2026年8月版シラバスにはSparkが残るが、製品の現行提供状況と区別して学ぶ必要がある。",
+    "whyItMatters": "自然言語でマイクロアプリを試作・反復開発するツールであり、迅速なプロトタイピングや他のCopilot機能との守備範囲の違いを理解するために問われる。",
     "useCases": [
       "過去のSpark機能と廃止時期を理解する",
       "既存のデプロイ済みSparkアプリの継続動作を説明する"
@@ -2418,7 +2408,7 @@
       "既存デプロイ済みアプリは引き続き動作する"
     ],
     "commonConfusions": [
-      "IDE用コード補完プラグインとの混同"
+      "IDE内のコーディング補完支援と、自然言語の対話でマイクロアプリ全体を試作・反復構築するGitHub Sparkツールの守備範囲の混同"
     ],
     "relatedTermIds": [
       "g-generative-ai",
@@ -2458,7 +2448,7 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "旧教材や旧問題が、終了したGitHub App型Extensionsを現行機能として勧めないよう区別する。",
+    "whyItMatters": "サードパーティ製ツールや独自APIとCopilotを連携する仕組みであり、現在はMCP（Model Context Protocol）ベースのツール連携へと発展した経緯を含めて理解することが重要。",
     "useCases": [
       "旧資料に記載されたCopilot Extensionsを歴史的な方式として識別する",
       "新規のツール連携ではMCPの対応状況を確認する"
@@ -2682,7 +2672,7 @@
       "d2o4",
       "d6o1"
     ],
-    "whyItMatters": "プランによる機能と管理機能の違いを、現行表で確認する必要がある。",
+    "whyItMatters": "Business、Enterprise、Pro各プランにおける機能差（管理ポリシー、Content Exclusion、監査ログ、CLI・エージェント利用可否など）を問うシナリオ問題の必須知識。",
     "useCases": [
       "企業導入時のプラン選定",
       "コンプライアンス要件に応じたBusiness以上の選択"
@@ -2791,7 +2781,7 @@
     "objectiveIds": [
       "d2o4"
     ],
-    "whyItMatters": "組織の管理者向けAPI機能（d2o4）としてシラバスに明記されている。",
+    "whyItMatters": "組織内におけるCopilotの採用率、提案受諾率、アクティブユーザー数などを定量分析し、投資対効果（ROI）測定やライセンス最適化を行う管理者シナリオで出題される。",
     "useCases": [
       "社内BIダッシュボードでのCopilot受入率の可視化",
       "言語別のCopilot活用度合いの分析と教育施策の立案"
@@ -2842,7 +2832,7 @@
     "objectiveIds": [
       "d2o4"
     ],
-    "whyItMatters": "シラバスのTopicに含まれる具体的な管理ポリシー項目。",
+    "whyItMatters": "自動コードレビューのトリガー条件（全PRか特定ラベルか）や適用範囲をOrganization/Enterprise単位で統制するガバナンス設定として問われる。",
     "useCases": [
       "すべての新規Pull Requestに対する初動AIレビューの自動義務化",
       "ドラフトPRに対するレビューの除外設定"
@@ -3304,7 +3294,7 @@
       "コード内の記号や空白もトークンを消費する"
     ],
     "commonConfusions": [
-      "1文字＝1トークンであるという誤解"
+      "文字数や単語数とトークン数を同一視する誤解（特に日本語や特殊記号は1文字で複数トークンを消費することがある）"
     ],
     "relatedTermIds": [
       "g-context-window",
@@ -3458,7 +3448,7 @@
     "objectiveIds": [
       "d3o2"
     ],
-    "whyItMatters": "シラバスのTopic名（Code suggestion lifecycle）にそのまま指定されている超重要概念。",
+    "whyItMatters": "コード入力からコンテキスト抽出、プロンプト生成、モデル推論、後処理フィルタリング、エディタへの提案表示までの一連の流れを問うアーキテクチャ頻出問題。",
     "useCases": [
       "タイピング中のレイテンシ発生原因の特定",
       "どのようなタイミングで補完が発火するか（トリガー条件）の理解"
@@ -3900,8 +3890,7 @@
       "例自体の品質や正確性がAIの出力に決定的な影響を与える"
     ],
     "commonConfusions": [
-      "Zero-shotとの混同",
-      "例を何十件も過剰に与えてコンテキストを圧迫する誤った運用"
+      "入出力の具体例を提示せず直接指示するZero-shotと、1つ以上の入出力例（Example）を与えて期待フォーマットを誘導するFew-shotの混同"
     ],
     "relatedTermIds": [
       "g-zero-shot",
@@ -4730,7 +4719,7 @@
     "objectiveIds": [
       "d5o1"
     ],
-    "whyItMatters": "システム移行やマルチプラットフォーム開発においてシラバスで言及される機能。",
+    "whyItMatters": "レガシー言語から最新言語へのマイグレーションや異言語間のAPIポーティングなど、言語仕様の違いやライブラリの差異を意識したAIコード変換シナリオで出題される。",
     "useCases": [
       "Pythonで検証したプロトタイプアルゴリズムのGo言語への高速化移植",
       "シェルスクリプトのクロスプラットフォームなNode.jsスクリプト化"
@@ -4934,7 +4923,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "Domain 5の最重要テーマ（d5o2）。コード品質と安全性を担保する中核技術。",
+    "whyItMatters": "開発生産性向上の中核テーマ。単体テストの自動作成、境界値の網羅、モック作成など、コード品質と安全性を担保する実践能力が問われる。",
     "useCases": [
       "`/tests` による単体テスト骨格の一括生成",
       "カバレッジ不足箇所の追加テストケース生成",
@@ -5045,7 +5034,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "堅牢なソフトウェアを構築するためのシラバス特記項目（Edge cases）。試験頻出。",
+    "whyItMatters": "境界値・異常値・極端な入力パターンなど、開発者が見落としがちなエッジケースの発見をAIに促し、堅牢なソフトウェアを構築するシナリオで頻出。",
     "useCases": [
       "決済ロジックにおけるマイナス金額や通貨丸め誤差の検証",
       "文字列処理におけるUnicodeサロゲートペアや特殊文字のテスト"
@@ -5258,7 +5247,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "シラバスの明確なTopic（Performance optimization）に対応する実践知識。",
+    "whyItMatters": "アルゴリズムの計算量改善、不要なI/Oやメモリ確保の削減など、Copilotを活用してボトルネックを特定しパフォーマンスを最適化する実践知識。",
     "useCases": [
       "Reactコンポーネントでの不要な再レンダリングの診断",
       "大量ファイル読み込み時のストリーム処理への書き換え提案"
@@ -5437,8 +5426,8 @@
       "特定リポジトリの `credentials.json` や `certs/*` の除外設定"
     ],
     "examPoints": [
-      "リポジトリの管理者権限が必要",
-      "Organizationで設定された除外ルールをリポジトリ側で解除することはできない（継承の原則）"
+      "リポジトリレベルの除外設定にはリポジトリ管理者（Admin）権限が必要",
+      "Organizationレベルで設定された除外ルールをリポジトリ側で上書き解除することはできない"
     ],
     "commonConfusions": [
       "リポジトリ設定でOrganizationの除外ルールを上書き無効化できるという誤解"
@@ -5757,7 +5746,7 @@
     "objectiveIds": [
       "d6o2"
     ],
-    "whyItMatters": "OSSコンプライアンス管理における実務上のトレース手段。",
+    "whyItMatters": "公開コード一致フィルターが検知・ブロックした参照元リポジトリやライセンス情報を追跡・確認し、知財リスクの監査証跡を残す実務手段として問われる。",
     "useCases": [
       "提案コードを採用する際のライセンス確認（MITかGPLか等）",
       "OSS属性表記（Attribution）の作成"
@@ -5809,7 +5798,7 @@
     "objectiveIds": [
       "d6o2"
     ],
-    "whyItMatters": "シラバスの明記Topic（Troubleshooting content exclusions）。試験のシナリオ問題の定番。",
+    "whyItMatters": "Content Exclusionの設定変更がクライアント環境に反映されるまでのタイムラグ（最大約30分）や、エディタ再起動などのトラブルシューティング手順を問う定番シナリオ問題。",
     "useCases": [
       "「除外設定したのにエディタで補完が出てしまう」という問い合わせのトラブルシューティング",
       "IDEの強制再接続による即時反映"
@@ -5862,7 +5851,7 @@
     "objectiveIds": [
       "d6o2"
     ],
-    "whyItMatters": "開発者が「現在保護されているか」を目視確認するための実務知識。",
+    "whyItMatters": "ステータスバーのアイコン変化やエディタの通知を通じて、対象ファイルでCopilotが無効化されていることを確認する実務シナリオで出題される。",
     "useCases": [
       "機密ファイルを開いた際のCopilot無効化状態の確認",
       "除外設定が正しく効いているかの検証"
@@ -6023,7 +6012,7 @@
     "objectiveIds": [
       "d3o1"
     ],
-    "whyItMatters": "Q22の判断核。prefix/suffixの両方を条件にする点を左から右の生成と区別する。",
+    "whyItMatters": "カーソルの前（prefix）と後（suffix）の両方を文脈として考慮し、コードの途中挿入補完を行う仕組みを理解する上で不可欠。",
     "useCases": [
       "関数の前半と後半を残して途中だけ補完する"
     ],
@@ -6032,8 +6021,8 @@
       "モデルの再訓練やファイル丸ごとの処理ではない"
     ],
     "commonConfusions": [
-      "左から右の補完との混同",
-      "suffixが常に必ず使われるとの断定"
+      "カーソル以前のコードだけを参照する従来型の左から右への単方向補完との混同",
+      "suffix（後続コード）が存在しても常に利用されるとは限らず、モデルや文脈に応じて適用される点の見落とし"
     ],
     "relatedTermIds": [
       "g-context-gathering",
@@ -6073,7 +6062,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "Q39のTest ExplorerとCopilot生成を区別する。",
+    "whyItMatters": "テストの発見・実行・デバッグを行うIDE組み込み機能であり、Copilotによるテストコード自動生成機能そのものと役割を区別して理解する。",
     "useCases": [
       "生成した単体テストを発見・実行・デバッグする"
     ],
@@ -6121,7 +6110,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "Q40の三段階を実例で識別する。",
+    "whyItMatters": "単体テストの3段階（準備・実行・検証）を整理し、Copilotが生成したテストの構造や期待値の妥当性をレビューする基礎となる。",
     "useCases": [
       "生成された単体テストの構造と期待値をレビューする"
     ],
@@ -6129,7 +6118,7 @@
       "Arrange＝準備、Act＝実行、Assert＝検証"
     ],
     "commonConfusions": [
-      "Assertを入力検証の実装と混同する"
+      "テストコード内で期待結果を検証するAssert（検証フェーズ）と、本番コード内で不正な引数を弾くInput Validation（事前条件チェック）の混同"
     ],
     "relatedTermIds": [
       "g-test-assertions-mocking",
@@ -6168,7 +6157,7 @@
     "objectiveIds": [
       "d5o1"
     ],
-    "whyItMatters": "Q44の品質属性を、単なる量的指標と区別する。",
+    "whyItMatters": "コード行数や開発人数などの量的指標にとらわれず、信頼性・保守性・安全性・性能などの品質属性に基づいて生成コードを多角的に評価する。",
     "useCases": [
       "複数案の採用理由を品質属性ごとに記録する"
     ],
@@ -6176,7 +6165,7 @@
       "信頼性・保守性・安全性・性能・使いやすさを区別"
     ],
     "commonConfusions": [
-      "コード量や人数だけで品質を測る"
+      "コード行数や開発人数などの量的メトリクスと、信頼性・保守性・セキュリティ・性能などの質的品質属性（Quality Attributes）の混同"
     ],
     "relatedTermIds": [
       "g-reliability",
@@ -6216,16 +6205,16 @@
     "objectiveIds": [
       "d5o1"
     ],
-    "whyItMatters": "Q45–46で性能や正確性と分けて判断する。",
+    "whyItMatters": "単一の入力に対する正確性（Correctness）や処理速度（Performance）と区別し、所定の条件下で継続して正しく動作し続ける能力を評価する。",
     "useCases": [
       "Copilot生成コードの異常系・長期運用をレビューする"
     ],
     "examPoints": [
-      "特定条件下で継続的に正しく動作すること",
-      "欠陥予防は信頼性を高める"
+      "指定された運用環境・条件下で、例外や異常系を含め継続的に正しく動作し続ける能力",
+      "網羅的なテストと欠陥予防（エラーハンドリング）が信頼性を支える"
     ],
     "commonConfusions": [
-      "速いコードなら信頼性も高いという推論"
+      "処理速度やスループットを指す「性能（Performance）」と、例外や長期運用でも破綻なく動作し続ける「信頼性（Reliability）」の混同"
     ],
     "relatedTermIds": [
       "g-code-quality-attributes",
@@ -6267,7 +6256,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "Q48の具体的捕捉、ログ、再送出の判断に必要。",
+    "whyItMatters": "広すぎる例外捕捉によるエラーの握り潰しやログへの機密情報出力を防ぎ、具体的な例外型に応じた安全なエラーハンドリングを評価する。",
     "useCases": [
       "生成されたAPIの例外経路をレビューする"
     ],
@@ -6315,7 +6304,7 @@
     "objectiveIds": [
       "d5o2"
     ],
-    "whyItMatters": "Q43の用語混同を防ぎ、Copilotのテストと実装を正しく評価する。",
+    "whyItMatters": "本番コードによる入力値の事前検証（事前条件チェック）と、テストコード内のアサーション（期待値比較）の役割を混同せず正しく評価する。",
     "useCases": [
       "不正入力の拒否とテスト期待値を別々に確認する"
     ],
@@ -6365,7 +6354,7 @@
     "objectiveIds": [
       "d5o1"
     ],
-    "whyItMatters": "Q35のプロジェクト文書とインライン文書の役割差を学ぶ。",
+    "whyItMatters": "READMEや設計書などのプロジェクト全体を説明する文書と、コード内のインラインコメント（JSDoc等）の対象読者や役割の違いを区別する。",
     "useCases": [
       "新規メンバー向けREADMEと設計資料を作成・レビューする"
     ],
@@ -6410,7 +6399,7 @@
     "objectiveIds": [
       "d3o1"
     ],
-    "whyItMatters": "Q49–50で有害性と公開コード照合、入力側の除外を区別する。",
+    "whyItMatters": "生成AIの有害出力フィルター、公開コード一致（Public Code Matching）、入力側の参照遮断（Content Exclusion）のそれぞれの保護対象と動作段階を正しく区別する。",
     "useCases": [
       "生成結果の安全確認とデータ参照範囲の統制を分ける"
     ],
@@ -6463,12 +6452,13 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "Q6をPRACTICE_OUTDATEDと判定し、古い名称を現行機能と混同しないため。",
+    "whyItMatters": "2025年11月に終了した旧機能であり、現行の共有ナレッジ機能であるCopilot Spacesとの違いや、過去のドキュメントの記述に惑わされないための知識として重要。",
     "useCases": [
       "旧教材から現行Spacesへ読み替える"
     ],
     "examPoints": [
-      "現行機能はCopilot Spaces"
+      "Knowledge Basesは2025年11月に廃止済みであり、現行の共有ナレッジ機能はCopilot Spacesであることを試験で識別する",
+      "過去の資料や設問に残る旧名称を現行機能と取り違えない"
     ],
     "commonConfusions": [
       "旧Knowledge Basesを現行の製品機能として説明する"

@@ -1,0 +1,148 @@
+{
+  "description": "Phase 6 (D5): 開発生産性と品質・テストの本番相当問題（Exam: advanced）。Copilot Autofix承認と副作用検証、過度なモック化（Mocking Hell）とテスト有効性、SPACEフレームワークと開発生産性メトリクスを問う。",
+  "questions": [
+    {
+      "id": "q-d5-e06",
+      "objectiveId": "d5o2",
+      "scenarioType": "team",
+      "question": "Copilot Autofix案はWHEREの値とORDER BYの列名を両方プレースホルダーへ変えた。対象DBでは値の束縛は成功するが列名は束縛不可。テストではWHEREの注入は拒否、sort=created_atで構文エラー。列指定はcreated_atかamountだけを許す契約。要求を変えない最小の修正・再検証は？",
+      "clues": [
+        "値の束縛は成功するが列名は束縛不可",
+        "sort=created_atで構文エラー",
+        "created_atかamountだけを許す"
+      ],
+      "correct": {
+        "text": "値の束縛を保ち、sortを許可列へ写像して両経路を検証",
+        "explanation": "値と識別子のSQL構文上の役割を分け、二つの有効列と未知列の拒否、WHEREの束縛を検証する。"
+      },
+      "distractors": [
+        {
+          "text": "WHEREもsortも全て値の束縛で保ち、同じテストを増やす",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "対象DBの列名束縛不可の条件を直さない。"
+        },
+        {
+          "text": "値も列も連結へ戻し、許可した列名だけを検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "列の制限だけではWHERE値の連結による注入を防がない。"
+        },
+        {
+          "text": "sortをcreated_atへ固定し、amountの指定を無視して検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "安全でも許可されたamount指定の機能契約を失う。"
+        }
+      ],
+      "sourceIds": [
+        "autofix-triage",
+        "codeql",
+        "responsible",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。WHERE成功とORDER BY失敗を別の構文要素へ分類する。 → DBの束縛規則と許可列の契約を照合する。 → 値束縛を残し識別子を許可集合へ写像して機能と保護を再検証する。",
+      "reasoningSteps": [
+        "WHERE成功とORDER BY失敗を別の構文要素へ分類する。",
+        "DBの束縛規則と許可列の契約を照合する。",
+        "値束縛を残し識別子を許可集合へ写像して機能と保護を再検証する。"
+      ],
+      "counterfactual": "「列指定はcreated_atかamountだけを許す契約」→「列指定は廃止され、常にcreated_atを使い入力sortを無視する承認済み契約」なら表示C。固定列の案が承認済み機能へ適合し、動的列の写像は不要になる。"
+    },
+    {
+      "id": "q-d5-e07",
+      "objectiveId": "d5o2",
+      "scenarioType": "team",
+      "question": "決済クライアントはHTTP受信→parse→validate→注文更新の順。生成テストはparse/validateを成功値へ置換し、注文更新のカバレッジ100%。保存した実API応答は公式スキーマに合うが、実parseは失敗し本番も同じ。外部課金をせず、この内部処理の欠落を検出する境界は？",
+      "clues": [
+        "parse/validateを成功値へ置換",
+        "注文更新のカバレッジ100%",
+        "公式スキーマに合うが、実parseは失敗",
+        "外部課金をせず"
+      ],
+      "correct": {
+        "text": "HTTP応答をスタブ化し、parse・検証・注文更新を通す",
+        "explanation": "実APIの保存応答を外部境界で再現し、失敗した内部処理を実行する。カバレッジの対象は置換された内部の正しさを示さない。"
+      },
+      "distractors": [
+        {
+          "text": "parse/validateを成功スタブのまま、注文更新だけ通す",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "不具合を隠した境界を維持する。"
+        },
+        {
+          "text": "HTTP応答スキーマだけ検証し、注文更新は固定する",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "公式スキーマには合うため、その検査だけでは内部parseの誤りを検出しない。"
+        },
+        {
+          "text": "本番の決済APIへ接続し、実カードで注文更新を確認",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "外部課金なしの条件を破る。"
+        }
+      ],
+      "sourceIds": [
+        "tests",
+        "unit-test-aaa"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。100%の対象と置換された内部処理を分ける。 → 保存応答と本番のparse失敗が一致することを照合する。 → HTTPだけを隔離し、実内部処理で再現できるテストにする。",
+      "reasoningSteps": [
+        "100%の対象と置換された内部処理を分ける。",
+        "保存応答と本番のparse失敗が一致することを照合する。",
+        "HTTPだけを隔離し、実内部処理で再現できるテストにする。"
+      ],
+      "counterfactual": "「外部課金をせず、この内部処理の欠落を検出する境界」→「実カード課金を承認済みの隔離口座で行い、実APIとの接続と注文更新を確認する境界」なら表示D。目的が本番相当の通信・課金を含む接続検証へ変わり、実APIの経路を通す。HTTPをスタブにする元の案ではその接続を確認できない。"
+    },
+    {
+      "id": "q-d5-e08",
+      "objectiveId": "d5o1",
+      "scenarioType": "enterprise",
+      "question": "同種案件・同人数・同期間のCopilot試行を比較。架空の社内基準は手戻りPR率10%以下、レビュー時間/PR30分以下、集中実感4以上。PはPR20・手戻り2・レビュー600分・集中4.1、Qは40・6・800・4.3、Rは20・1・700・4.2、Sは40・2・1000・3.5。全基準合格のうちPR数最多を次の展開候補にする。選択は？",
+      "clues": [
+        "同種案件・同人数・同期間",
+        "手戻りPR率10%以下",
+        "レビュー時間/PR30分以下",
+        "集中実感4以上",
+        "全基準合格のうちPR数最多"
+      ],
+      "correct": {
+        "text": "Pを展開候補にし、次の試行で再検証",
+        "explanation": "Pは手戻り10%・30分/PR・集中4.1で全基準合格。Qは15%で品質、Rは35分で負担、Sは3.5で集中が不合格。架空の社内基準でありSPACE公式の数値基準ではない。"
+      },
+      "distractors": [
+        {
+          "text": "Qを展開候補にし、次の試行で再検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "PR数と効率は良いが手戻り率6/40=15%が上限を超える。"
+        },
+        {
+          "text": "Rを展開候補にし、次の試行で再検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "品質と集中は良いが700/20=35分でレビュー負担が上限を超える。"
+        },
+        {
+          "text": "Sを展開候補にし、次の試行で再検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "品質と効率は良いが集中3.5が下限を満たさない。"
+        }
+      ],
+      "sourceIds": [
+        "space-framework",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。手戻り/PRとレビュー分/PRを計算し、総数と一件当たりを分ける。 → P=10%/30分/4.1、Q=15%/20分/4.3、R=5%/35分/4.2、S=5%/25分/3.5を三基準へ照合する。 → 全基準を満たすPだけを候補にし、PR総数だけで選ばず次の試行で再検証する。",
+      "reasoningSteps": [
+        "手戻り/PRとレビュー分/PRを計算し、総数と一件当たりを分ける。",
+        "P=10%/30分/4.1、Q=15%/20分/4.3、R=5%/35分/4.2、S=5%/25分/3.5を三基準へ照合する。",
+        "全基準を満たすPだけを候補にし、PR総数だけで選ばず次の試行で再検証する。"
+      ],
+      "counterfactual": "「手戻りPR率10%以下」→「手戻りPR率20%以下」なら表示A。Qも三基準に合格し、PよりPR数が多い40なのでQになる。Rの負担とSの集中は依然不合格で、元のPは合格でも最多条件を満たさなくなる。"
+    }
+  ]
+}

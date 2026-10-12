@@ -1,0 +1,161 @@
+{
+  "description": "Phase 5 (D1): 責任あるAIの利用の応用問題（Applied: intermediate）。Public Code一致通知対応、バイアス審査、自動化バイアス防止、説明責任と規格照合を問う。",
+  "questions": [
+    {
+      "id": "q-d1-a11",
+      "objectiveId": "d1o1",
+      "question": "Copilotの断片Pの参照通知はcommit 7aを示す。参照先の現在のHEADはMIT表示だが、7aではGPL表示だった。今回の一致断片の審査で優先して照合する版は？",
+      "correct": {
+        "text": "通知が示す7aのコードとライセンス条件",
+        "explanation": "通知された断片の版とその利用条件を結び付ける。実際の利用判断は別途必要。"
+      },
+      "distractors": [
+        {
+          "text": "現在のHEADのコードとMIT表示だけ",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "現在表示だけで通知された過去の版の条件を置き換えない。"
+        },
+        {
+          "text": "自社の依存一覧にある別パッケージの版",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "別パッケージの版では今回の断片を調べられない。"
+        },
+        {
+          "text": "将来の提案をBlockにした時点の設定",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "未来の提示設定は過去の通知の出所を変更しない。"
+        }
+      ],
+      "sourceIds": [
+        "public-code",
+        "responsible"
+      ],
+      "assessment": "改稿。通知された断片の版とその利用条件を結び付ける。実際の利用判断は別途必要。",
+      "counterfactual": "通知対象が現在のHEADであれば、その版のコードと条件を照合する。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの断片Pの参照通知はcommit 7aを示す。参照先の現在のHEADはMIT表示だが、7aではGPL表示だった。今回の一致断片の審査で優先して照合する版は？",
+        "通知された断片の版とその利用条件を結び付ける。実際の利用判断は別途必要。"
+      ]
+    },
+    {
+      "id": "q-d1-a12",
+      "objectiveId": "d1o1",
+      "question": "Copilotの採点案は同じ業務上の属性でも地域Rだけ点数が低い。仕様では地域を使わない。修正後、その偏りが残っていないか確かめるテストは？",
+      "correct": {
+        "text": "業務属性を固定し、地域だけ変えた入力の点数を比較",
+        "explanation": "仕様で影響させない地域だけを変えて差を検証する。"
+      },
+      "distractors": [
+        {
+          "text": "地域を固定し、業務属性を変えた入力の点数を比較",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "業務属性による正当な変化と地域の影響を切り分けない。"
+        },
+        {
+          "text": "地域ごとに業務属性も変えた平均点を比較",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "入力母集団も変わるため地域だけの影響を特定できない。"
+        },
+        {
+          "text": "業務属性と地域を固定し、処理時間を比較",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "性能の比較であり採点の偏りを検証しない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ],
+      "assessment": "改稿。仕様で影響させない地域だけを変えて差を検証する。",
+      "counterfactual": "仕様で比較したい対象が業務属性の影響なら、地域を固定して業務属性を変える。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotの採点案は同じ業務上の属性でも地域Rだけ点数が低い。仕様では地域を使わない。修正後、その偏りが残っていないか確かめるテストは？",
+        "仕様で影響させない地域だけを変えて差を検証する。"
+      ]
+    },
+    {
+      "id": "q-d1-a13",
+      "objectiveId": "d1o2",
+      "question": "Copilot案で権限不足時の拒否が消えたPRが、成功系テストとレビュー通知だけでマージされた。拒否仕様は承認済み。再発をマージ前に止める追加条件は？",
+      "correct": {
+        "text": "拒否の回帰テスト成功と担当者承認を必須にする",
+        "explanation": "落ちた動作契約を実行確認し、人の採用判断をマージ条件にする。"
+      },
+      "distractors": [
+        {
+          "text": "成功系の件数増加とレビュー通知送信を必須にする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "拒否側と承認完了を担保しない。"
+        },
+        {
+          "text": "カバレッジ上昇とPR要約生成を必須にする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "期待値の正しさや人の承認は保証しない。"
+        },
+        {
+          "text": "型検査成功と担当者への再通知を必須にする",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "型と通知は拒否動作と承認完了を確認しない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ],
+      "assessment": "改稿。落ちた動作契約を実行確認し、人の採用判断をマージ条件にする。",
+      "counterfactual": "原因が型契約の破損だけであれば、対応する型検査を直接の検査条件にする。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilot案で権限不足時の拒否が消えたPRが、成功系テストとレビュー通知だけでマージされた。拒否仕様は承認済み。再発をマージ前に止める追加条件は？",
+        "落ちた動作契約を実行確認し、人の採用判断をマージ条件にする。"
+      ]
+    },
+    {
+      "id": "q-d1-a14",
+      "objectiveId": "d1o2",
+      "question": "Copilotが通信設定Xを提案した。検証テストはXとYの両方で成功し、承認済み技術基準はYを指定している。今回は基準を変更しない。採用案は？",
+      "correct": {
+        "text": "Yへ直し、再テストして基準との照合を記録",
+        "explanation": "動作確認と承認済みの基準を両立する。"
+      },
+      "distractors": [
+        {
+          "text": "Xのテスト結果を記録し、そのまま採用",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "テスト成功だけでは指定された基準を満たさない。"
+        },
+        {
+          "text": "XとYを平均した値へ直し、テストして採用",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "基準にない中間値を採用している。"
+        },
+        {
+          "text": "Xを使い、基準の記録だけYへ更新",
+          "type": "common-confusion",
+          "plausibility": 3,
+          "explanation": "実装と説明記録が一致しない。"
+        }
+      ],
+      "sourceIds": [
+        "responsible",
+        "guide"
+      ],
+      "assessment": "改稿。動作確認と承認済みの基準を両立する。",
+      "counterfactual": "承認済み基準がXへ変更済みなら、Xを照合・記録して採用できる。",
+      "reasoningSteps": [
+        "判断条件を特定する：Copilotが通信設定Xを提案した。検証テストはXとYの両方で成功し、承認済み技術基準はYを指定している。今回は基準を変更しない。採用案は？",
+        "動作確認と承認済みの基準を両立する。"
+      ]
+    }
+  ]
+}

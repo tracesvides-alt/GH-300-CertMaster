@@ -1,0 +1,192 @@
+{
+  "description": "Phase 6 (D4): プロンプトとコンテキストの本番相当問題（Exam: advanced）。Multi-turnコンテキストドリフト、否定指示vs肯定的スキーマ比較実験、Instructions階層衝突解決、Few-shotコンテキスト密度最適化を問う。",
+  "questions": [
+    {
+      "id": "q-d4-e06",
+      "objectiveId": "d4o1",
+      "scenarioType": "team",
+      "question": "同じモデル・対象コードで鍵ローテーションの指示を検証した。長い会話＋旧設定は失敗、新規会話＋同じ旧設定も失敗、新規会話＋現行設定は成功した。旧設定には固定鍵の例がある。会話長を原因と断定せず、今回まず更新する文脈は？",
+      "clues": [
+        "新規会話＋同じ旧設定も失敗",
+        "新規会話＋現行設定は成功",
+        "旧設定には固定鍵の例"
+      ],
+      "correct": {
+        "text": "旧設定の添付を現行へ替え、同じ新規会話で再比較",
+        "explanation": "新規会話でも旧資料では失敗し、添付版の変更で改善した証拠へ対応する。"
+      },
+      "distractors": [
+        {
+          "text": "旧設定を残し、会話だけ再度新規へ替えて比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "既に新規会話だけの変更で失敗を観測している。"
+        },
+        {
+          "text": "現行設定を残し、別モデルと別コードで比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "モデルとコードを同時に変え、添付の影響を分離しない。"
+        },
+        {
+          "text": "旧設定を残し、禁止表現の回数だけ増やして比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "観測された旧設定の根拠を残している。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "chat"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。会話長と添付版を別の変数として結果表を読む。 → 新規会話でも旧設定が失敗し、現行設定で成功した差を照合する。 → 資料を現行へ替え、モデルとコードを固定して再比較する。",
+      "reasoningSteps": [
+        "会話長と添付版を別の変数として結果表を読む。",
+        "新規会話でも旧設定が失敗し、現行設定で成功した差を照合する。",
+        "資料を現行へ替え、モデルとコードを固定して再比較する。"
+      ],
+      "counterfactual": "「新規会話＋同じ旧設定も失敗、新規会話＋現行設定は成功した」→「新規会話＋同じ旧設定は成功し、長い会話＋現行設定は失敗した」なら表示A。文脈の版より会話状態の影響が支持され、新規会話での再比較が候補になる。"
+    },
+    {
+      "id": "q-d4-e07",
+      "objectiveId": "d4o1",
+      "scenarioType": "team",
+      "question": "エラーJSONの漏洩を比較した。AはモデルM1＋禁止指示、BはM2＋公開スキーマで、各100回の漏洩はAが4件、Bが0件。新しい入力群は未検証。次は「指示形式だけの効果」を測りたい。モデルの内部機構や全入力での安全を断定しない実験は？",
+      "clues": [
+        "AはモデルM1＋禁止指示",
+        "BはM2＋公開スキーマ",
+        "新しい入力群は未検証",
+        "指示形式だけの効果"
+      ],
+      "correct": {
+        "text": "同じM1・同じ入力群で禁止指示と公開スキーマを比較",
+        "explanation": "モデル差の交絡を除いて指示形式だけを変える。0/100は全入力での保証でも注意機構の証明でもない。"
+      },
+      "distractors": [
+        {
+          "text": "同じ指示・同じ入力群でM1とM2を比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "モデル差を測るため今回の指示形式の効果と異なる。"
+        },
+        {
+          "text": "同じM2＋公開スキーマを同じ入力で再実行し再現性を比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "再現性は測れるが指示形式間の差を比較しない。"
+        },
+        {
+          "text": "同じM2＋公開スキーマで新しい入力群への汎化を比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "汎化は測れるが同じ入力で指示形式の効果を分離しない。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。A/Bが指示形式だけでなくモデルも異なると分析する。 → 測定目的と固定すべきモデル・入力条件を照合する。 → 同一モデル・入力で形式だけを変え、結論を観測範囲へ限定する。",
+      "reasoningSteps": [
+        "A/Bが指示形式だけでなくモデルも異なると分析する。",
+        "測定目的と固定すべきモデル・入力条件を照合する。",
+        "同一モデル・入力で形式だけを変え、結論を観測範囲へ限定する。"
+      ],
+      "counterfactual": "「次は「指示形式だけの効果」を測りたい」→「次は「モデル差だけの効果」を測りたい」なら表示B。指示と入力を固定しM1/M2を変える実験が目的へ適合する。"
+    },
+    {
+      "id": "q-d4-e08",
+      "objectiveId": "d4o2",
+      "scenarioType": "team",
+      "question": "GitHub.comの組織指示はfetch、repo指示はaxiosだが、社内の承認済み規約はfetchへ統一する。対象runtimeではfetchがなく、承認済みpolyfill Pなら動作テスト成功。runtime更新は今期禁止。生成指示の競合と実行互換を両方解消する案は？",
+      "clues": [
+        "社内の承認済み規約はfetchへ統一",
+        "承認済みpolyfill Pなら動作テスト成功",
+        "runtime更新は今期禁止"
+      ],
+      "correct": {
+        "text": "repo指示をfetchへ合わせ、Pを使って現runtimeで検証",
+        "explanation": "生成規約の整合と、実行時に必要な機能の供給を分けて満たす。組織指示を技術的な強制ポリシーと同一視しない。"
+      },
+      "distractors": [
+        {
+          "text": "repo指示をfetchへ合わせ、runtimeを更新して検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "今回は禁止されたruntime更新を含む。"
+        },
+        {
+          "text": "repo指示をaxiosのままにし、Pだけ追加して検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "出力方式の競合が残る。"
+        },
+        {
+          "text": "repo指示をfetchへ合わせ、追加実装なしで現runtimeを検証",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "指示は整うが、現runtimeにないfetchを供給しない。"
+        }
+      ],
+      "sourceIds": [
+        "instructions",
+        "guide"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。repo/組織の指示競合とruntimeの不足を独立した問題へ分ける。 → 承認規約・polyfillの試験結果・更新禁止を照合する。 → 指示をfetchへ整え、Pで現runtimeの互換を検証する。",
+      "reasoningSteps": [
+        "repo/組織の指示競合とruntimeの不足を独立した問題へ分ける。",
+        "承認規約・polyfillの試験結果・更新禁止を照合する。",
+        "指示をfetchへ整え、Pで現runtimeの互換を検証する。"
+      ],
+      "counterfactual": "「runtime更新は今期禁止」→「承認済みの新版runtimeへ更新することが必須で、その版ではfetchが利用できpolyfill追加は禁止」なら表示A。互換を提供する承認済み経路がPからruntime更新へ変わる。"
+    },
+    {
+      "id": "q-d4-e09",
+      "objectiveId": "d4o2",
+      "scenarioType": "team",
+      "question": "SQL用の例集合P/Qを比較した。入力予算1000トークン。Pは900で「注文0件も含む」の境界を識別できるが旧テーブル名を含む。Qは600で旧名がないが、内結合と外結合の両方が同じ正常例を通る。必要なのは左外結合の契約で、旧名も使わないこと。最小修正の候補は？",
+      "clues": [
+        "入力予算1000トークン",
+        "Pは900",
+        "旧テーブル名を含む",
+        "Qは600",
+        "両方が同じ正常例を通る"
+      ],
+      "correct": {
+        "text": "Pの旧名を現行名へ直し、注文0件の例を維持",
+        "explanation": "Pは既に予算内で識別例を持ち、残る旧名だけを直せる。例数を一律2〜3へ固定する公式要件ではない。"
+      },
+      "distractors": [
+        {
+          "text": "Qの正常例をそのまま使い、追加編集せず依頼",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "予算は満たすが二方式を区別する例がない。"
+        },
+        {
+          "text": "Pをそのまま使い、回答側で旧名だけ推定置換",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "プロンプトに旧名が残り、推定置換へ依存する。"
+        },
+        {
+          "text": "PとQを全て添付し、1500の入力で比較",
+          "type": "partial-match",
+          "plausibility": 3,
+          "explanation": "今回の予算を超える。"
+        }
+      ],
+      "sourceIds": [
+        "prompt",
+        "chat"
+      ],
+      "assessment": "Examとして維持。三段階の分析・照合・結論を要求する。予算・旧名・識別例の三軸でP/Qを分ける。 → 注文0件を含める左外結合契約へ各例の識別力を照合する。 → Pの旧名だけを直し、識別例を保つ最小変更を選ぶ。",
+      "reasoningSteps": [
+        "予算・旧名・識別例の三軸でP/Qを分ける。",
+        "注文0件を含める左外結合契約へ各例の識別力を照合する。",
+        "Pの旧名だけを直し、識別例を保つ最小変更を選ぶ。"
+      ],
+      "counterfactual": "「必要なのは左外結合の契約で、旧名も使わないこと」→「今回の依頼は正常例の形式確認だけで、結合方式の識別は不要、旧名を含めないことが必要」なら表示A。識別例が不要なら旧名のないQをそのまま使える。"
+    }
+  ]
+}
