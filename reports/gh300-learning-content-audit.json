@@ -8,11 +8,11 @@
     "domainCount": 6,
     "objectivesWithLessons": 14,
     "objectivesWithGlossary": 14,
-    "objectivesWithComparisons": 8,
+    "objectivesWithComparisons": 10,
     "objectiveCount": 14,
     "lessonsVerified": 20,
-    "glossaryVerified": 97,
-    "comparisonsVerified": 10,
+    "glossaryVerified": 107,
+    "comparisonsVerified": 15,
     "needsReview": 23,
     "staleContent": 0
   },
@@ -56,7 +56,9 @@
         "g-security-vulnerability-scan",
         "g-peer-review-ai"
       ],
-      "comparisonIds": []
+      "comparisonIds": [
+        "cmp-quality-attributes"
+      ]
     },
     {
       "domainId": "d2",
@@ -98,7 +100,8 @@
         "g-gh-copilot-suggest",
         "g-cli-shell-aliases",
         "g-cli-execution-confirm",
-        "g-cli-context-limits"
+        "g-cli-context-limits",
+        "g-agent-sessions"
       ],
       "comparisonIds": []
     },
@@ -107,6 +110,7 @@
       "objectiveId": "d2o3",
       "title": "Use GitHub Copilot features and capabilities",
       "lessonIds": [
+        "lesson-d2-chat-essentials",
         "lesson-d2-agent-edits",
         "lesson-d2-mcp",
         "lesson-d2-instructions-prompts",
@@ -131,11 +135,13 @@
         "g-prompt-files",
         "g-spaces",
         "g-spark",
-        "g-copilot-extensions"
+        "g-copilot-extensions",
+        "g-legacy-knowledge-bases"
       ],
       "comparisonIds": [
         "cmp-agent-vs-edits",
         "cmp-agent-vs-chat",
+        "cmp-mcp-vs-agent-mode",
         "cmp-mcp-vs-extensions",
         "cmp-instructions-vs-prompts",
         "cmp-spaces-vs-chat",
@@ -184,9 +190,13 @@
         "g-code-retention-policy",
         "g-tokenization",
         "g-post-processing",
-        "g-transit-encryption"
+        "g-transit-encryption",
+        "g-fill-in-the-middle",
+        "g-safety-filtering"
       ],
-      "comparisonIds": []
+      "comparisonIds": [
+        "cmp-safety-filter-types"
+      ]
     },
     {
       "domainId": "d3",
@@ -276,10 +286,14 @@
         "g-code-translation",
         "g-code-explanation",
         "g-algorithm-optimization",
-        "g-boilerplate-reduction"
+        "g-boilerplate-reduction",
+        "g-code-quality-attributes",
+        "g-reliability",
+        "g-project-documentation"
       ],
       "comparisonIds": [
-        "cmp-review-vs-summary"
+        "cmp-review-vs-summary",
+        "cmp-quality-attributes"
       ]
     },
     {
@@ -300,10 +314,16 @@
         "g-vulnerability-remediation",
         "g-static-analysis-copilot",
         "g-perf-bottlenecks",
-        "g-secret-leak-prevention"
+        "g-secret-leak-prevention",
+        "g-test-explorer",
+        "g-arrange-act-assert",
+        "g-safe-exception-handling",
+        "g-input-validation"
       ],
       "comparisonIds": [
-        "cmp-unit-vs-integration-tests"
+        "cmp-unit-vs-integration-tests",
+        "cmp-test-generation-vs-explorer",
+        "cmp-input-validation-vs-assertion"
       ]
     },
     {
@@ -334,7 +354,8 @@
       ],
       "comparisonIds": [
         "cmp-exclusion-vs-publicmatch",
-        "cmp-org-vs-enterprise-policies"
+        "cmp-org-vs-enterprise-policies",
+        "cmp-safety-filter-types"
       ]
     },
     {
@@ -357,7 +378,8 @@
         "g-compliance-auditability"
       ],
       "comparisonIds": [
-        "cmp-exclusion-vs-publicmatch"
+        "cmp-exclusion-vs-publicmatch",
+        "cmp-safety-filter-types"
       ]
     }
   ],
@@ -414,7 +436,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -448,11 +470,12 @@
         ],
         "sourceIds": [
           "responsible",
-          "guide"
+          "guide",
+          "feature-matrix"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -462,15 +485,19 @@
         "title": "Copilot Chatの活用（Participants・Commands・Variables）",
         "domainId": "d2",
         "objectiveIds": [
-          "d2o1"
+          "d2o1",
+          "d2o3"
         ],
         "sourceIds": [
           "chat",
-          "guide"
+          "guide",
+          "spaces",
+          "workspace-context",
+          "knowledge-bases-sunset"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -488,7 +515,10 @@
           "exclusion",
           "guide",
           "cli-tool-permissions",
-          "cli-exclusion-admin"
+          "cli-exclusion-admin",
+          "cli-install",
+          "cli-usage",
+          "cli-sessions"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -507,11 +537,14 @@
         "sourceIds": [
           "agent-mode",
           "chat",
-          "guide"
+          "guide",
+          "ide-subagents",
+          "cli-sessions",
+          "spark"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "needs-review",
         "classification": "NEEDS_REVIEW",
         "staleCandidate": false
@@ -585,11 +618,15 @@
           "policies",
           "audit-log",
           "rest-api",
-          "guide"
+          "guide",
+          "plans",
+          "feature-matrix",
+          "repository-indexing",
+          "spaces"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -606,7 +643,10 @@
           "model-hosting",
           "exclusion-concept",
           "guide",
-          "cli-exclusion-admin"
+          "cli-exclusion-admin",
+          "inline-usage",
+          "public-code",
+          "network-settings"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -625,11 +665,16 @@
         "sourceIds": [
           "architecture",
           "prompt",
-          "guide"
+          "guide",
+          "fim-context",
+          "inline-usage",
+          "responsible",
+          "model-hosting",
+          "repository-indexing"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "needs-review",
         "classification": "NEEDS_REVIEW",
         "staleCandidate": false
@@ -702,7 +747,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -753,11 +798,12 @@
         ],
         "sourceIds": [
           "chat",
-          "guide"
+          "guide",
+          "tests"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -789,11 +835,13 @@
         ],
         "sourceIds": [
           "tests",
-          "guide"
+          "guide",
+          "vscode-testing",
+          "unit-test-aaa"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -809,11 +857,14 @@
           "tests",
           "chat",
           "privacy",
-          "guide"
+          "guide",
+          "responsible",
+          "exception-best-practices",
+          "exception-sensitive"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -867,7 +918,9 @@
         "sourceIds": [
           "public-code",
           "policies",
-          "guide"
+          "guide",
+          "model-hosting",
+          "exclusion-concept"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -1286,7 +1339,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -1627,14 +1680,16 @@
           "d2"
         ],
         "objectiveIds": [
+          "d2o2",
           "d2o3"
         ],
         "sourceIds": [
-          "agent-mode"
+          "agent-mode",
+          "cli-sessions"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -1649,11 +1704,12 @@
           "d2o3"
         ],
         "sourceIds": [
-          "agent-mode"
+          "agent-mode",
+          "ide-subagents"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -1781,11 +1837,12 @@
         ],
         "sourceIds": [
           "spaces",
-          "guide"
+          "guide",
+          "knowledge-bases-sunset"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -2081,7 +2138,8 @@
           "architecture",
           "privacy",
           "responsible",
-          "model-hosting"
+          "model-hosting",
+          "network-settings"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -2172,7 +2230,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -2377,7 +2435,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -2830,7 +2888,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -3164,6 +3222,214 @@
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
+      },
+      {
+        "id": "g-fill-in-the-middle",
+        "title": "Fill-in-the-Middle (FIM)",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "sourceIds": [
+          "fim-context",
+          "inline-usage",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-test-explorer",
+        "title": "VS Code Test Explorer",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "vscode-testing",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-arrange-act-assert",
+        "title": "Arrange–Act–Assert (AAA)",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "tests",
+          "vscode-testing",
+          "guide",
+          "unit-test-aaa"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-code-quality-attributes",
+        "title": "Code Quality Attributes",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o1"
+        ],
+        "sourceIds": [
+          "guide",
+          "responsible"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-reliability",
+        "title": "Reliability",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o1"
+        ],
+        "sourceIds": [
+          "guide",
+          "responsible",
+          "tests"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-safe-exception-handling",
+        "title": "Safe Exception Handling",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "guide",
+          "responsible",
+          "tests",
+          "exception-best-practices",
+          "exception-sensitive"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-input-validation",
+        "title": "Input Validation",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "tests",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-project-documentation",
+        "title": "Project Documentation",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o1"
+        ],
+        "sourceIds": [
+          "guide",
+          "chat"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-safety-filtering",
+        "title": "Harmful Output Filtering",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "sourceIds": [
+          "model-hosting",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "g-legacy-knowledge-bases",
+        "title": "Copilot Knowledge Bases (retired)",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o3"
+        ],
+        "sourceIds": [
+          "knowledge-bases-sunset",
+          "spaces",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
       }
     ],
     "comparisons": [
@@ -3233,6 +3499,27 @@
         "staleCandidate": false
       },
       {
+        "id": "cmp-mcp-vs-agent-mode",
+        "title": "MCP vs Agent Mode",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o3"
+        ],
+        "sourceIds": [
+          "mcp",
+          "agent-mode",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
         "id": "cmp-mcp-vs-extensions",
         "title": "Model Context Protocol (MCP) vs Copilot Extensions",
         "domainIds": [
@@ -3293,7 +3580,7 @@
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
@@ -3425,6 +3712,95 @@
         "status": "verified",
         "classification": "CURRENT",
         "staleCandidate": false
+      },
+      {
+        "id": "cmp-test-generation-vs-explorer",
+        "title": "Copilot Test Generation vs VS Code Test Explorer",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "vscode-testing",
+          "tests",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "cmp-quality-attributes",
+        "title": "Reliability vs Performance vs Maintainability",
+        "domainIds": [
+          "d1",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d1o2",
+          "d5o1"
+        ],
+        "sourceIds": [
+          "guide",
+          "responsible",
+          "tests"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "cmp-input-validation-vs-assertion",
+        "title": "Input Validation vs Test Assertion",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "sourceIds": [
+          "tests",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
+      },
+      {
+        "id": "cmp-safety-filter-types",
+        "title": "Harmful Output Filtering vs Public Code Matching vs Content Exclusion",
+        "domainIds": [
+          "d3",
+          "d6"
+        ],
+        "objectiveIds": [
+          "d3o1",
+          "d6o1",
+          "d6o2"
+        ],
+        "sourceIds": [
+          "model-hosting",
+          "public-code",
+          "exclusion-concept",
+          "guide"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "classification": "CURRENT",
+        "staleCandidate": false
       }
     ],
     "sources": [
@@ -3445,8 +3821,8 @@
           "d1o1",
           "d1o2",
           "d2o1",
-          "d2o2",
           "d2o3",
+          "d2o2",
           "d2o4",
           "d3o1",
           "d3o2",
@@ -3577,11 +3953,14 @@
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d1"
         ],
         "objectiveIds": [
+          "d2o3",
           "d2o1",
-          "d2o3"
+          "d1o1",
+          "d2o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3597,7 +3976,9 @@
           "d2"
         ],
         "objectiveIds": [
-          "d2o3"
+          "d2o3",
+          "d2o4",
+          "d2o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3647,10 +4028,16 @@
         "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d4"
         ],
         "objectiveIds": [
-          "d2o3"
+          "d2o1",
+          "d2o3",
+          "d2o4",
+          "d4o1",
+          "d4o2",
+          "d2o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3816,12 +4203,12 @@
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/get-ide-code-suggestions",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2",
-          "d3"
+          "d3",
+          "d2"
         ],
         "objectiveIds": [
-          "d2o1",
-          "d3o1"
+          "d3o1",
+          "d2o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4134,6 +4521,201 @@
         "lastCheckedAt": "2026-10-12",
         "lastVerifiedAt": "2026-10-12",
         "status": "verified"
+      },
+      {
+        "id": "cli-install",
+        "title": "Installing GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "cli-usage",
+        "title": "Using GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "cli-sessions",
+        "title": "Working with multiple GitHub Copilot CLI sessions",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2",
+          "d2o3"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "ide-subagents",
+        "title": "Using subagents in your IDE",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-subagents",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o3"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "fim-context",
+        "title": "How GitHub Copilot is getting better at understanding your code",
+        "url": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/",
+        "publisher": "GitHub Blog",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "vscode-testing",
+        "title": "Testing",
+        "url": "https://code.visualstudio.com/docs/debugtest/testing",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "knowledge-bases-sunset",
+        "title": "Sunset notice: Copilot knowledge bases",
+        "url": "https://github.blog/changelog/2025-08-20-sunset-notice-copilot-knowledge-bases/",
+        "publisher": "GitHub Blog",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o3"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "repository-indexing",
+        "title": "Indexing repositories for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2",
+          "d3"
+        ],
+        "objectiveIds": [
+          "d2o4",
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "network-settings",
+        "title": "Network settings for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "unit-test-aaa",
+        "title": "Best practices for writing unit tests",
+        "url": "https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "exception-best-practices",
+        "title": "Best practices for exceptions",
+        "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "exception-sensitive",
+        "title": "Creating and Throwing Exceptions",
+        "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/creating-and-throwing-exceptions",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
       }
     ]
   },
@@ -4168,7 +4750,6 @@
   "activeVersionMismatch": [],
   "questionImpact": [
     "q11",
-    "q-d2-f11",
     "q-d3-f01",
     "q-d3-f02"
   ]

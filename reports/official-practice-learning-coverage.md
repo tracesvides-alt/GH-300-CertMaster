@@ -6,6 +6,8 @@
 
 ## 結果
 
+> **2026-10-12 再分類:** 初回の「UNCERTAIN 4問」は教材監査時点の分類です。現行公式資料と照合後、Q1・Q6を `PRACTICE_OUTDATED`、Q3を `PRACTICE_INCORRECT`、Q14を `NEEDS_REVIEW` に変更しました。Q6の旧Knowledge Bases/ドキュメントセットは現行機能ではありません。更新後の教材カバレッジは [改善レポート](official-practice-remediation.md) を参照してください。
+
 - **COVERED 30問 / PARTIAL 10問 / MISSING 6問 / UNCERTAIN 4問。**
 - 完全対応率は **60%**（COVEREDのみを数える）。
 - 編集上の対応度スコア平均は **74.4/100**。これは教材の記述深度と選択肢を判断できる程度の主観的評価で、受験者の正答確率ではありません。
@@ -18,12 +20,12 @@
 
 | No. / 原本 | Domain / Objective | 主題・正解 | 判定 | 点 | 不足・留保 |
 | --- | --- | --- | --- | ---: | --- |
-| 01 / Sheet1!A568, Sheet1!I1 | d2 / d2o4 | Copilotの料金と利用資格 / 位置2 | UNCERTAIN | 50 | SOURCE-PLANS |
+| 01 / Sheet1!A568, Sheet1!I1 | d2 / d2o4 | Copilotの料金と利用資格 / 位置2 | PRACTICE_OUTDATED | 50 | SOURCE-PLANS |
 | 02 / Sheet1!A585, Sheet1!I1 | d2 / d2o1 | 対応IDEの選別 / 位置3 | PARTIAL | 65 | G-IDE |
-| 03 / Sheet1!A601, Sheet1!I1 | d2 / d2o4 | BusinessとEnterpriseの違い / 位置3 | UNCERTAIN | 45 | SOURCE-TRAINING |
+| 03 / Sheet1!A601, Sheet1!I1 | d2 / d2o4 | BusinessとEnterpriseの違い / 位置3 | PRACTICE_INCORRECT | 45 | SOURCE-TRAINING |
 | 04 / Sheet1!A619, Sheet1!I21 | d2 / d2o4 | 組織へのCopilot有効化 / 位置2 | PARTIAL | 60 | G-ORG-STEPS |
 | 05 / Sheet1!A636, Sheet1!I21 | d2 / d2o3 | PR要約の役割 / 位置2 | COVERED | 95 | - |
-| 06 / Sheet1!A653, Sheet1!I21 | d2 / d2o3 | 旧ドキュメントセットと共有コンテキスト / 位置1 | UNCERTAIN | 40 | SOURCE-KB |
+| 06 / Sheet1!A653, Sheet1!I21 | d2 / d2o3 | 旧ドキュメントセットと共有コンテキスト / 位置1 | PRACTICE_OUTDATED | 40 | SOURCE-KB |
 | 07 / Sheet1!A670, Sheet1!I42 | d5 / d5o1 | Chatによるモジュール性改善 / 位置1 | COVERED | 90 | - |
 | 08 / Sheet1!A687, Sheet1!I42 | d2 / d2o1 | Chat参加者・コマンド・変数 / 位置3 | COVERED | 95 | - |
 | 09 / Sheet1!A703, Sheet1!I42 | d5 / d5o1 | 未知コードの自然言語説明 / 位置2 | COVERED | 90 | - |
@@ -31,7 +33,7 @@
 | 11 / Sheet1!A737, Sheet1!I62 | d2 / d2o1 | コメントとコード行からの補完 / 位置2 | COVERED | 90 | - |
 | 12 / Sheet1!A753, Sheet1!I62 | d2 / d2o1 | Slash Commandsの用途 / 位置3 | COVERED | 95 | - |
 | 13 / Sheet1!A770, Sheet1!I81 | d2 / d2o1 | Inline Chatの暗黙文脈 / 位置2 | PARTIAL | 65 | G-IMPLICIT |
-| 14 / Sheet1!A789, Sheet1!I81 | d3 / d3o1 | プロキシと証明書の対応 / 位置1 | UNCERTAIN | 40 | SOURCE-PROXY |
+| 14 / Sheet1!A789, Sheet1!I81 | d3 / d3o1 | プロキシと証明書の対応 / 位置1 | NEEDS_REVIEW | 40 | SOURCE-PROXY |
 | 15 / Sheet1!A806, Sheet1!I81 | d2 / d2o1 | 提案の受け入れ操作 / 位置1 | COVERED | 95 | - |
 | 16 / Sheet1!A822, Sheet1!I99 | d2 / d2o1 | Copilotの基本定義 / 位置1 | COVERED | 95 | - |
 | 17 / Sheet1!A1, Sheet1!I99 | d3 / d3o1 | 補完に使うエディタ文脈 / 位置1 | COVERED | 90 | - |
@@ -79,7 +81,7 @@
 - 解説要旨: 学生向けの無料利用と一般向けの月額料金を対比している。現行プランとの相違は別途確認が必要。
 - 知識分解: Terms = Copilot Free、Copilot Pro、Student。Concepts = 無料枠と有料枠、利用資格。Feature/Behavior = 各プランの条件。Decision = 「学生だけ無料・一般は月額10ドル」という添付解答と現行Freeを区別。
 - 対応: Lesson `lesson-d2-org-governance`、Glossary `g-subscription-plans`、Comparison `-`。
-- **UNCERTAIN (50/100)**: 用語集には現行Freeがあるが、添付の正解は一般向け無料プランを否定する。教材だけで添付解答を再現すると現在の事実と衝突する。
+- **PRACTICE_OUTDATED（現行評価から除外）**: 用語集には現行Freeがあるが、添付の正解は一般向け無料プランを否定する。教材だけで添付解答を再現すると現在の事実と衝突する。
 
 ### 02. 対応IDEの選別
 
@@ -95,7 +97,7 @@
 - 解説要旨: Enterpriseでは組織コードベースによるパーソナライズを強調する。モデル訓練という表現は現行資料と照合が必要。
 - 知識分解: Terms = Copilot Business、Copilot Enterprise、コードベース。Concepts = プラン差、リポジトリ索引とモデル学習の違い。Feature/Behavior = 組織向けプランとコンテキスト。Decision = 「組織コードでモデルを訓練する」という添付正解を現行の索引・Spacesと区別。
 - 対応: Lesson `lesson-d2-org-governance;lesson-d2-chat-essentials`、Glossary `g-subscription-plans;g-spaces`、Comparison `cmp-spaces-vs-chat`。
-- **UNCERTAIN (45/100)**: 現在の教材はプラン表の変動を注意するが、添付解答の「訓練」を支持しない。現行GitHubはリポジトリ索引を説明し、モデル学習とは分ける。
+- **PRACTICE_INCORRECT（現行評価から除外）**: 現在の教材はプラン表の変動を注意するが、添付解答の「訓練」を支持しない。現行GitHubはリポジトリ索引を説明し、モデル学習とは分ける。
 
 ### 04. 組織へのCopilot有効化
 
@@ -119,7 +121,7 @@
 - 解説要旨: ドキュメントセットに内部コード・文書を集めて関連する提案に使うと説明する。
 - 知識分解: Terms = ドキュメントセット、Copilot Spaces。Concepts = 共有資料による回答の根拠付け、廃止機能。Feature/Behavior = 旧Knowledge Baseと現行Spaces。Decision = 古い設問の資料集合を現行Spacesへ対応付け、モデル訓練と混同しない。
 - 対応: Lesson `lesson-d2-chat-essentials`、Glossary `g-spaces`、Comparison `cmp-spaces-vs-chat`。
-- **UNCERTAIN (40/100)**: 現行教材のSpacesは強いが、添付のドキュメントセットという旧用語への対応がなく、GitHubは旧Knowledge Baseの廃止を公表している。
+- **PRACTICE_OUTDATED（現行評価から除外）**: 現行教材のSpacesは強いが、添付のドキュメントセットという旧用語への対応がなく、GitHubは旧Knowledge Baseの廃止を公表している。
 
 ### 07. Chatによるモジュール性改善
 
@@ -183,7 +185,7 @@
 - 解説要旨: 自己署名証明書を使うVPNプロキシをBusiness向けと説明する。現行資料との整合確認が必要。
 - 知識分解: Terms = Individuals、VPNプロキシ、自己署名証明書。Concepts = ネットワーク設定とプラン境界。Feature/Behavior = HTTPプロキシとカスタム証明書。Decision = 「個人プランでは非対応」という添付正解と現在の一般設定を区別。
 - 対応: Lesson `lesson-d3-data-flow`、Glossary `g-copilot-proxy;g-transit-encryption`、Comparison `-`。
-- **UNCERTAIN (40/100)**: 現行GitHub Docsはプラン限定を付けずプロキシとカスタム証明書を説明する。添付正解の限定は要確認。
+- **NEEDS_REVIEW（現行評価から除外）**: 現行GitHub Docsはプラン限定を付けずプロキシとカスタム証明書を説明する。添付正解の限定は要確認。
 
 ### 15. 提案の受け入れ操作
 
@@ -665,7 +667,7 @@
 | 比較 | 現状 | 対応が必要な理由 |
 | --- | --- | --- |
 | Copilot Free / Pro / Business / Enterprise、学生資格 | 要更新・添付解答と矛盾 | Q1, Q3: 時点付きの公式プラン表で確認し、モデル学習とコード索引を分離する。 |
-| 旧Knowledge Base / 現行Spaces / 通常のChat | 一部対応 | Q6, Q18: 旧語から現行機能への移行、権限と利用場面を判断できる表が必要。 |
+| 旧Knowledge Base / 現行Spaces / 通常のChat | 現行Spaces中心 | Q6はPRACTICE_OUTDATED。旧語は歴史注記のみとし、Knowledge Bases vs Spacesの新比較は作らない。 |
 | Zero/One/Few-shot / モデル再訓練 | 一部対応 | Q20: プロンプト中の例示を恒久学習と誤解しやすい。 |
 | 文脈収集 / FIM / モデル生成 / 後処理 | 一部対応 | Q21–23: パイプラインのどの段階に属するかを示す。 |
 | Copilotによるテスト生成 / VS Code Test Explorer / AAA | 不足 | Q38–42: 生成、テスト構造、実行・デバッグを分ける。 |
@@ -712,7 +714,7 @@ Chatの説明・修正支援（Q7–12）、プロンプトの構成と焦点化
 
 - **Q1**: 添付は一般利用者に無料プランがない前提で月額10ドルを正解にしています。現行公式の[Copilot plans](https://docs.github.com/en/copilot/get-started/plans)はCopilot Freeを掲載しています。`g-subscription-plans` も現行Freeを扱うため、添付正解をそのまま教材に移さないでください。
 - **Q3**: 添付はEnterpriseが組織コードベースを用いてCopilotを「訓練」すると読めます。現行の[repository indexing](https://docs.github.com/en/enterprise-cloud%40latest/copilot/concepts/context/repository-indexing)は索引をモデル訓練と分けています。パーソナライズの現行機能は[Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)とも照合が必要です。
-- **Q6**: 添付の「ドキュメントセット」は旧Knowledge Baseを指す可能性が高いです。[GitHubのsunset告知](https://github.blog/changelog/2025-08-20-sunset-notice-copilot-knowledge-bases/)では2025-11-01にKnowledge Basesを終了しSpacesへ移行すると記されています。これは語の対応に関する推論であり、設問原本の作成時期は不明です。
+- **Q6**: 添付の「ドキュメントセット」は旧Knowledge Baseを指す可能性が高いです。[GitHubのsunset告知](https://github.blog/changelog/2025-08-20-sunset-notice-copilot-knowledge-bases/)では2025-11-01にKnowledge Basesを終了しSpacesへ移行すると記されています。Q6はPRACTICE_OUTDATEDとし、教材は現行Spacesの説明を維持します。
 - **Q14**: 添付は自己署名証明書を伴うVPNプロキシをBusiness専用と断定します。[現行Network settings](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings)はプロキシとカスタム証明書を説明しますが、添付と同じプラン制限を確認できませんでした。版・クライアント条件を追加確認するまでUNCERTAINです。
 - **Q43**: 添付解説はアサーションが「有効なデータのみを保証」と記します。テストのアサーションと本番コードの入力検証は役割が異なるため、追加教材ではその違いを明示すべきです。
 

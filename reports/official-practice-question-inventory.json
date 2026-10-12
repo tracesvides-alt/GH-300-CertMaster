@@ -53,12 +53,17 @@
       "g-subscription-plans"
     ],
     "comparisonIds": [],
-    "coverage": "UNCERTAIN",
-    "coverageScore": 50,
+    "coverage": "PRACTICE_OUTDATED",
+    "coverageScore": null,
     "gapId": "SOURCE-PLANS",
     "coverageReason": "用語集には現行Freeがあるが、添付の正解は一般向け無料プランを否定する。教材だけで添付解答を再現すると現在の事実と衝突する。",
     "officialExplanationSummary": "学生向けの無料利用と一般向けの月額料金を対比している。現行プランとの相違は別途確認が必要。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "UNCERTAIN",
+    "baselineCoverageScore": 50,
+    "practiceStatus": "PRACTICE_OUTDATED",
+    "practiceStatusReason": "現行のGitHub Copilot Freeが存在するため、無料枠なしという添付解答は旧仕様。",
+    "currentCoverageReason": "現行知識のCoverage集計から除外。教材は現行公式仕様を優先する。"
   },
   {
     "practiceQuestionId": "PRACTICE-002",
@@ -114,12 +119,17 @@
       "g-inline-suggestions"
     ],
     "comparisonIds": [],
-    "coverage": "PARTIAL",
-    "coverageScore": 65,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-IDE",
     "coverageReason": "インライン補完は説明するが、4製品の対応一覧と機能ごとの差を教材から判定しにくい。",
     "officialExplanationSummary": "VS Code、Visual Studio、Neovim、JetBrainsを対応IDEとして挙げる。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 65,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-003",
@@ -179,12 +189,17 @@
     "comparisonIds": [
       "cmp-spaces-vs-chat"
     ],
-    "coverage": "UNCERTAIN",
-    "coverageScore": 45,
+    "coverage": "PRACTICE_INCORRECT",
+    "coverageScore": null,
     "gapId": "SOURCE-TRAINING",
     "coverageReason": "現在の教材はプラン表の変動を注意するが、添付解答の「訓練」を支持しない。現行GitHubはリポジトリ索引を説明し、モデル学習とは分ける。",
     "officialExplanationSummary": "Enterpriseでは組織コードベースによるパーソナライズを強調する。モデル訓練という表現は現行資料と照合が必要。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "UNCERTAIN",
+    "baselineCoverageScore": 45,
+    "practiceStatus": "PRACTICE_INCORRECT",
+    "practiceStatusReason": "組織リポジトリの索引・参照とモデルの再訓練を混同しており、現行GitHub Docsと矛盾。",
+    "currentCoverageReason": "現行知識のCoverage集計から除外。教材は現行公式仕様を優先する。"
   },
   {
     "practiceQuestionId": "PRACTICE-004",
@@ -243,12 +258,17 @@
     "comparisonIds": [
       "cmp-org-vs-enterprise-policies"
     ],
-    "coverage": "PARTIAL",
-    "coverageScore": 60,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-ORG-STEPS",
     "coverageReason": "ポリシーとシートの概念はあるが、添付が問う画面遷移と現在の設定経路は教材にない。",
     "officialExplanationSummary": "プロフィールのドロップダウンから「Your organizations」へ進み、Businessを有効にする。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 60,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-005",
@@ -310,7 +330,12 @@
     "gapId": null,
     "coverageReason": "Lessonと比較ガイドに要約とコードレビューの目的・境界・誤解がある。",
     "officialExplanationSummary": "PRのコード変更を短く要約し、レビュアーの理解を助ける。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-006",
@@ -367,12 +392,17 @@
     "comparisonIds": [
       "cmp-spaces-vs-chat"
     ],
-    "coverage": "UNCERTAIN",
-    "coverageScore": 40,
+    "coverage": "PRACTICE_OUTDATED",
+    "coverageScore": null,
     "gapId": "SOURCE-KB",
     "coverageReason": "現行教材のSpacesは強いが、添付のドキュメントセットという旧用語への対応がなく、GitHubは旧Knowledge Baseの廃止を公表している。",
     "officialExplanationSummary": "ドキュメントセットに内部コード・文書を集めて関連する提案に使うと説明する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "UNCERTAIN",
+    "baselineCoverageScore": 40,
+    "practiceStatus": "PRACTICE_OUTDATED",
+    "practiceStatusReason": "旧Knowledge Bases/ドキュメントセットは2025-11-01にretired。現行機能はCopilot Spaces。",
+    "currentCoverageReason": "現行知識のCoverage集計から除外。教材は現行公式仕様を優先する。"
   },
   {
     "practiceQuestionId": "PRACTICE-007",
@@ -434,7 +464,12 @@
     "gapId": null,
     "coverageReason": "リファクタリングの目的と人間による検証を学べる。",
     "officialExplanationSummary": "Chatでモジュール性を改善するリファクタリング案を得る。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-008",
@@ -496,7 +531,12 @@
     "gapId": null,
     "coverageReason": "Lessonが3種類の役割を分けて説明し、用途を示す。",
     "officialExplanationSummary": "参加者・コマンド・変数が質問の文脈と意図を明確にする。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-009",
@@ -558,7 +598,12 @@
     "gapId": null,
     "coverageReason": "Chatの説明用途と、生成説明を検証する注意点がある。",
     "officialExplanationSummary": "Chatがコードの機能や目的を自然言語で説明する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-010",
@@ -620,7 +665,12 @@
     "gapId": null,
     "coverageReason": "Chatと修正支援の範囲、開発者の確認責任を学べる。",
     "officialExplanationSummary": "Chatがエラーの理由を説明し、修正を考える支援をする。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-011",
@@ -682,7 +732,12 @@
     "gapId": null,
     "coverageReason": "コードとコメントの文脈を補完に使う説明がある。",
     "officialExplanationSummary": "コメントと既存コード行が補完候補の文脈になる。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-012",
@@ -742,7 +797,12 @@
     "gapId": null,
     "coverageReason": "コマンドの役割と具体的な利用例が揃う。",
     "officialExplanationSummary": "スラッシュコマンドは一般的な開発タスクへのショートカットである。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-013",
@@ -800,12 +860,17 @@
     "comparisonIds": [
       "cmp-chat-vs-inline"
     ],
-    "coverage": "PARTIAL",
-    "coverageScore": 65,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-IMPLICIT",
     "coverageReason": "Inline Chatとコマンドはあるが、添付の「暗黙的プロンプト」という語と、選択文脈が何を補うかの対比が弱い。",
     "officialExplanationSummary": "暗黙の文脈とコマンドにより長い説明なしに意図を伝えられる。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 65,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-014",
@@ -861,12 +926,17 @@
       "g-transit-encryption"
     ],
     "comparisonIds": [],
-    "coverage": "UNCERTAIN",
-    "coverageScore": 40,
+    "coverage": "NEEDS_REVIEW",
+    "coverageScore": null,
     "gapId": "SOURCE-PROXY",
     "coverageReason": "現行GitHub Docsはプラン限定を付けずプロキシとカスタム証明書を説明する。添付正解の限定は要確認。",
     "officialExplanationSummary": "自己署名証明書を使うVPNプロキシをBusiness向けと説明する。現行資料との整合確認が必要。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "UNCERTAIN",
+    "baselineCoverageScore": 40,
+    "practiceStatus": "NEEDS_REVIEW",
+    "practiceStatusReason": "現行資料はHTTPプロキシとカスタム証明書を説明するが、添付のBusiness専用条件を確認できない。",
+    "currentCoverageReason": "現行知識のCoverage集計から除外。教材は現行公式仕様を優先する。"
   },
   {
     "practiceQuestionId": "PRACTICE-015",
@@ -926,7 +996,12 @@
     "gapId": null,
     "coverageReason": "インライン提案の採用フローでTabの操作を確認できる。",
     "officialExplanationSummary": "表示されたインライン候補をTabキーで受け入れる。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-016",
@@ -988,7 +1063,12 @@
     "gapId": null,
     "coverageReason": "基礎Lessonと用語集で役割を学べる。",
     "officialExplanationSummary": "Copilotは開発者のコード作成を支援するAIツールである。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-017",
@@ -1049,7 +1129,12 @@
     "gapId": null,
     "coverageReason": "周辺コードと開いているファイルの影響が説明される。",
     "officialExplanationSummary": "エディター内の周辺コードやコメントを基に補完を提案する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-018",
@@ -1108,12 +1193,17 @@
     "comparisonIds": [
       "cmp-spaces-vs-chat"
     ],
-    "coverage": "PARTIAL",
-    "coverageScore": 70,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-ORG-CONTEXT",
     "coverageReason": "Spacesの用途はあるが、組織コードの索引・権限・共有資料がどの画面で効くかをまとめて判断する教材が薄い。",
     "officialExplanationSummary": "組織コードや内部知識を参照して関連性の高い支援を行う。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 70,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-019",
@@ -1173,7 +1263,12 @@
     "gapId": null,
     "coverageReason": "入力から提案に至る流れを説明している。",
     "officialExplanationSummary": "自然言語の入力やコード文脈から提案を生成する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-020",
@@ -1232,12 +1327,17 @@
     "comparisonIds": [
       "cmp-zero-vs-few-shot"
     ],
-    "coverage": "PARTIAL",
-    "coverageScore": 65,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-INCONTEXT",
     "coverageReason": "手法の使い分けはあるが、添付の「プロンプトから学習」という表現をモデル学習と区別する明示的な説明が弱い。",
     "officialExplanationSummary": "ゼロ・ワン・少数ショットの例示に応じて出力を調整する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 65,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-021",
@@ -1291,15 +1391,23 @@
     ],
     "glossaryIds": [
       "g-prompt-construction",
-      "g-post-processing"
+      "g-post-processing",
+      "g-safety-filtering"
     ],
-    "comparisonIds": [],
-    "coverage": "PARTIAL",
-    "coverageScore": 70,
+    "comparisonIds": [
+      "cmp-safety-filter-types"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-PIPELINE",
     "coverageReason": "文脈収集とフィルタリングはあるが、設問の選択肢と各段階を対比した図がなく、統計的推論との位置付けが曖昧。",
     "officialExplanationSummary": "文脈収集、生成、安全性の確認という流れから除外される要素を問う。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 70,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-022",
@@ -1351,15 +1459,21 @@
     ],
     "glossaryIds": [
       "g-context-gathering",
-      "g-inline-suggestions"
+      "g-inline-suggestions",
+      "g-fill-in-the-middle"
     ],
     "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 25,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-FIM",
     "coverageReason": "周辺文脈はあるがFIMの名称、前後の入力構造、誤答との差を説明する教材がない。",
     "officialExplanationSummary": "カーソル前後のコードを使うFill-in-the-Middleの仕組みを問う。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 25,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-023",
@@ -1420,7 +1534,12 @@
     "gapId": null,
     "coverageReason": "提案ライフサイクルと人間による採用を学べる。",
     "officialExplanationSummary": "提案は統合前に表示され、開発者が確認・採用する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-024",
@@ -1480,7 +1599,12 @@
     "gapId": null,
     "coverageReason": "候補パネルと採用操作を説明している。",
     "officialExplanationSummary": "複数の補完候補を切り替え、適切な案を手動で選ぶ。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-025",
@@ -1541,7 +1665,12 @@
     "gapId": null,
     "coverageReason": "生成物の検証責任とレビュー対象を扱う。",
     "officialExplanationSummary": "生成された説明や文書の正確性・完全性を人が検証する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-026",
@@ -1601,7 +1730,12 @@
     "gapId": null,
     "coverageReason": "プロンプトの要素と入力としての位置付けがある。",
     "officialExplanationSummary": "プロンプトはモデルへ与える入力・指示である。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-027",
@@ -1661,7 +1795,12 @@
     "gapId": null,
     "coverageReason": "Goal・Context・Constraintsを教材で実践できる。",
     "officialExplanationSummary": "明確に構成されたプロンプトほど関連する提案を得やすい。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-028",
@@ -1722,7 +1861,12 @@
     "gapId": null,
     "coverageReason": "LLMと入力処理の役割が説明される。",
     "officialExplanationSummary": "LLMは与えられたプロンプトと文脈に応じた応答を生成する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-029",
@@ -1783,7 +1927,12 @@
     "gapId": null,
     "coverageReason": "Goal・Contextの判断基準と例がある。",
     "officialExplanationSummary": "文脈と意図を示すと適切な提案に近づく。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-030",
@@ -1844,7 +1993,12 @@
     "gapId": null,
     "coverageReason": "タスク分解と文脈整理のシナリオがある。",
     "officialExplanationSummary": "具体的なコーディング課題に絞った質問が回答を改善する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-031",
@@ -1906,7 +2060,12 @@
     "gapId": null,
     "coverageReason": "文脈プライミングと具体的な書き方を説明する。",
     "officialExplanationSummary": "意味のある名称、コメント、関連ファイルが有用な文脈を与える。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-032",
@@ -1969,7 +2128,12 @@
     "gapId": null,
     "coverageReason": "3種の機能と具体的依頼を連結できる。",
     "officialExplanationSummary": "Chat参加者・コマンド・変数と具体的なプロンプトを活用する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-033",
@@ -2030,7 +2194,12 @@
     "gapId": null,
     "coverageReason": "具体性と文脈整理の教材から冗長さを退けられる。",
     "officialExplanationSummary": "過度な冗長さを避け、簡潔で明瞭な指示にする。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-034",
@@ -2089,7 +2258,12 @@
     "gapId": null,
     "coverageReason": "定義・適用例・外部動作維持の注意がある。",
     "officialExplanationSummary": "外部から見える動作を保ちながら内部構造を改善する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-035",
@@ -2140,15 +2314,21 @@
       "lesson-d5-generation-refactoring"
     ],
     "glossaryIds": [
-      "g-doc-generation"
+      "g-doc-generation",
+      "g-project-documentation"
     ],
     "comparisonIds": [],
-    "coverage": "PARTIAL",
-    "coverageScore": 60,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-DOC-TYPES",
     "coverageReason": "文書生成は扱うが、プロジェクト文書が範囲・目的・要件を伝える役割と他文書との差が弱い。",
     "officialExplanationSummary": "プロジェクト文書は範囲・目的・要件を示して理解を助ける。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 60,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-036",
@@ -2207,7 +2387,12 @@
     "gapId": null,
     "coverageReason": "Docstring・コメント生成と保守性の目的を学べる。",
     "officialExplanationSummary": "インライン文書はコードの可読性と保守性を高める。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-037",
@@ -2267,7 +2452,12 @@
     "gapId": null,
     "coverageReason": "言語変換の用途と検証を説明している。",
     "officialExplanationSummary": "コードを別の言語へ変換する用途を示す。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-038",
@@ -2331,7 +2521,12 @@
     "gapId": null,
     "coverageReason": "テスト生成、異常系、期待値の検証まで説明される。",
     "officialExplanationSummary": "テストコード、入力・期待値・アサーション、境界例の提案を支援する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 95,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-039",
@@ -2382,15 +2577,23 @@
       "lesson-d5-testing"
     ],
     "glossaryIds": [
-      "g-unit-test-generation"
+      "g-unit-test-generation",
+      "g-test-explorer"
     ],
-    "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 20,
+    "comparisonIds": [
+      "cmp-test-generation-vs-explorer"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-TEST-EXPLORER",
     "coverageReason": "教材はCopilotによるテスト生成を扱うが、Test Explorerの実行・デバッグ・管理用途がない。",
     "officialExplanationSummary": "VS CodeのTest Explorerはテストの実行・デバッグ・管理に使う。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 20,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-040",
@@ -2442,15 +2645,21 @@
       "lesson-d5-testing"
     ],
     "glossaryIds": [
-      "g-test-assertions-mocking"
+      "g-test-assertions-mocking",
+      "g-arrange-act-assert"
     ],
     "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 25,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-AAA",
     "coverageReason": "アサーション品質は扱うが、Arrange-Act-Assertの段階と例がない。",
     "officialExplanationSummary": "単体テストをArrange、Act、Assertの三段階に分ける。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 25,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-041",
@@ -2510,7 +2719,12 @@
     "gapId": null,
     "coverageReason": "生成と実行の責任分界、条件指定を説明できる。",
     "officialExplanationSummary": "コードの文脈に沿ったテスト候補を生成する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-042",
@@ -2570,7 +2784,12 @@
     "gapId": null,
     "coverageReason": "効率と人間による期待値検証の両面を扱う。",
     "officialExplanationSummary": "関連する単体テストの提案により作成時間を短縮する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-043",
@@ -2622,15 +2841,23 @@
     ],
     "glossaryIds": [
       "g-test-assertions-mocking",
-      "g-edge-case-discovery"
+      "g-edge-case-discovery",
+      "g-input-validation"
     ],
-    "comparisonIds": [],
-    "coverage": "PARTIAL",
-    "coverageScore": 60,
+    "comparisonIds": [
+      "cmp-input-validation-vs-assertion"
+    ],
+    "coverage": "NEEDS_REVIEW",
+    "coverageScore": null,
     "gapId": "G-INPUT-ASSERT",
     "coverageReason": "アサーション一般と境界条件はあるが、無効入力を扱う検証例と出力アサーションとの差が明示されない。",
     "officialExplanationSummary": "有効な入力だけを処理する検証を目的と説明する。アサーションとの関係は要注意。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 60,
+    "practiceStatus": "NEEDS_REVIEW",
+    "practiceStatusReason": "添付解説はテストのassertionと本番コードの入力検証を混同しやすく、設問意図の確認が必要。",
+    "currentCoverageReason": "現行知識のCoverage集計から除外。教材は現行公式仕様を優先する。"
   },
   {
     "practiceQuestionId": "PRACTICE-044",
@@ -2685,15 +2912,23 @@
     ],
     "glossaryIds": [
       "g-critical-evaluation",
-      "g-code-correctness"
+      "g-code-correctness",
+      "g-code-quality-attributes"
     ],
-    "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 25,
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-QUALITY-ATTR",
     "coverageReason": "用語集に効率・保守性・安全性は点在するが、選択肢の品質属性を体系として学べない。",
     "officialExplanationSummary": "信頼性・保守性などの特性でコード品質を評価する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 25,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-045",
@@ -2741,18 +2976,27 @@
     "featureOrBehavior": "品質属性",
     "decisionKnowledge": "信頼性を性能・効率・処理量と区別",
     "lessonIds": [
-      "lesson-d1-validation"
+      "lesson-d1-validation",
+      "lesson-d5-generation-refactoring"
     ],
     "glossaryIds": [
-      "g-code-correctness"
+      "g-code-correctness",
+      "g-reliability"
     ],
-    "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 25,
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-RELIABILITY",
     "coverageReason": "現行教材に信頼性を期間と条件で定義し、効率性と対比する説明がない。",
     "officialExplanationSummary": "指定条件下で長期に正しく機能することを信頼性と説明する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 25,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-046",
@@ -2805,15 +3049,23 @@
     ],
     "glossaryIds": [
       "g-critical-evaluation",
-      "g-static-analysis-copilot"
+      "g-static-analysis-copilot",
+      "g-reliability"
     ],
-    "comparisonIds": [],
-    "coverage": "PARTIAL",
-    "coverageScore": 60,
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-RELIABILITY",
     "coverageReason": "欠陥発見は扱うが信頼性と性能・速度の明確な比較がない。",
     "officialExplanationSummary": "潜在する欠陥を見つけてバグ・エラーを防ぐ。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 60,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-047",
@@ -2874,7 +3126,12 @@
     "gapId": null,
     "coverageReason": "既存コードのパターンと補完の関係を学べる。",
     "officialExplanationSummary": "既存の良いコードパターンに沿った提案を得やすくなる。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-048",
@@ -2929,15 +3186,21 @@
     ],
     "glossaryIds": [
       "g-code-correctness",
-      "g-security-vulnerability-scan"
+      "g-security-vulnerability-scan",
+      "g-safe-exception-handling"
     ],
     "comparisonIds": [],
-    "coverage": "MISSING",
-    "coverageScore": 25,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-EXCEPTION",
     "coverageReason": "検証・脆弱性の一般論はあるが、例外粒度、ログへの機密流出、再送出の使い分けを学べない。",
     "officialExplanationSummary": "具体的な例外を捕捉し、機密を漏らさず、例外を握り潰さない。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "MISSING",
+    "baselineCoverageScore": 25,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   },
   {
     "practiceQuestionId": "PRACTICE-049",
@@ -2990,15 +3253,23 @@
     ],
     "glossaryIds": [
       "g-post-processing",
-      "g-knowledge-cutoff"
+      "g-knowledge-cutoff",
+      "g-safety-filtering"
     ],
-    "comparisonIds": [],
+    "comparisonIds": [
+      "cmp-safety-filter-types"
+    ],
     "coverage": "COVERED",
     "coverageScore": 90,
     "gapId": null,
     "coverageReason": "後処理と有害性チェック、最新性限界の別を学べる。",
     "officialExplanationSummary": "悪意ある、または有害なコードの生成を抑える。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "COVERED",
+    "baselineCoverageScore": 90,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "既存教材の判断根拠を維持。"
   },
   {
     "practiceQuestionId": "PRACTICE-050",
@@ -3047,20 +3318,28 @@
     "decisionKnowledge": "有害性の除外を著作権照合や構文検査と区別",
     "lessonIds": [
       "lesson-d3-prompt-pipeline",
-      "lesson-d6-public-code-matching"
+      "lesson-d6-public-code-matching",
+      "lesson-d3-data-flow"
     ],
     "glossaryIds": [
       "g-post-processing",
-      "g-public-code-matching"
+      "g-public-code-matching",
+      "g-safety-filtering"
     ],
     "comparisonIds": [
-      "cmp-exclusion-vs-publicmatch"
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-safety-filter-types"
     ],
-    "coverage": "PARTIAL",
-    "coverageScore": 65,
+    "coverage": "COVERED",
+    "coverageScore": 90,
     "gapId": "G-FILTER-TYPES",
     "coverageReason": "用語はあるが、有害性・公開コード一致・内容除外を一つの判断表で比較する教材がない。",
     "officialExplanationSummary": "有害または不快な提案内容を除外する。",
-    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。",
+    "baselineCoverage": "PARTIAL",
+    "baselineCoverageScore": 65,
+    "practiceStatus": "CURRENT_PRACTICE",
+    "practiceStatusReason": "現行仕様と明確な矛盾を確認していない。",
+    "currentCoverageReason": "追加・拡張したLesson、Glossary、Comparisonで設問と誤答の判断を説明できる。"
   }
 ]

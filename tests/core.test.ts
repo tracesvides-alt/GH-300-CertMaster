@@ -226,12 +226,11 @@ describe('Knowledge Base schemas', () => {
     }
   });
 
-  it('has at least 25 lessons, 100 glossary terms, and 10-15 comparison guides (Phase 4 targets)', () => {
+  it('has the curriculum and comparison guides needed for current practice coverage', () => {
     expect(lessons.length).toBeGreaterThanOrEqual(25);
     expect(lessons.length).toBeLessThanOrEqual(35);
     expect(glossaryTerms.length).toBeGreaterThanOrEqual(100);
-    expect(comparisonGuides.length).toBeGreaterThanOrEqual(10);
-    expect(comparisonGuides.length).toBeLessThanOrEqual(15);
+    expect(comparisonGuides.length).toBeGreaterThanOrEqual(17);
   });
 
   it('ensures each comparison guide has comprehensive axes, decision guide, and exam tips', () => {

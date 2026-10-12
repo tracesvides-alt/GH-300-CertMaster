@@ -346,6 +346,11 @@ describe('Adaptive Learning Upgrade - Comprehensive Test Suite', () => {
   });
 
   describe('4. Bidirectional Learning Links & 3-Question Extraction', () => {
+    it('keeps the three-question check available after the new lesson sections', () => {
+      for (const lessonId of ['lesson-d3-prompt-pipeline', 'lesson-d5-testing', 'lesson-d5-security-remediation']) {
+        expect(getQuestionsForLesson(lessonId, 3)).toHaveLength(3);
+      }
+    });
     it('extracts 3 relevant questions for a Lesson with unattempted priority', () => {
       const lesson = lessons[0];
       const checkQs = getQuestionsForLesson(lesson.id, 3);

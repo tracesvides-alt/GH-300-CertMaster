@@ -966,7 +966,7 @@
       "インライン対話"
     ],
     "shortDefinition": "エディタ内のコード選択箇所で直接入力欄を開き、その場でコード修正や生成を指示できる機能。",
-    "detailedDefinition": "サイドバーを開くことなく、作業中のコード上でCtrl+I (Cmd+I)を押して起動する。指示された変更がインラインDiff（差分表示）としてプレビューされ、AcceptまたはDiscardを選択できるため、集中を途切れさせずにリファクタリングできる。",
+    "detailedDefinition": "サイドバーを開くことなく、作業中のコード上でCtrl+I (Cmd+I)を押して起動する。指示された変更がインラインDiff（差分表示）としてプレビューされ、AcceptまたはDiscardを選択できるため、集中を途切れさせずにリファクタリングできる。 選択コードや現在のファイルが暗黙文脈になる。別資料が必要なら明示して参照する。",
     "category": "Copilot機能",
     "importance": "essential",
     "domainIds": [
@@ -1003,7 +1003,7 @@
       "chat"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -2228,7 +2228,7 @@
       "スペース"
     ],
     "shortDefinition": "リポジトリや資料をまとめてCopilot Chatの根拠として再利用・共有できるSpace。",
-    "detailedDefinition": "GitHub Copilot Spacesにはリポジトリ、コード、PR、Issue、メモ、画像、アップロード資料などを集められる。GitHub上の資料は変更に追随し、共有範囲は所有者と権限設定によって変わる。GitHub上のChatで利用し、IDEではGitHub MCPサーバー経由で参照できる。全チャット履歴を自動共有する機能ではない。",
+    "detailedDefinition": "GitHub Copilot Spacesにはリポジトリ、コード、PR、Issue、メモ、画像、アップロード資料などを集められる。GitHub上の資料は変更に追随し、共有範囲は所有者と権限設定によって変わる。GitHub上のChatで利用し、IDEではGitHub MCPサーバー経由で参照できる。全チャット履歴を自動共有する機能ではない。 旧Copilot Knowledge Basesは2025年11月1日に終了しており、現在の共有コンテキストはSpacesを使う。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -2251,10 +2251,12 @@
     ],
     "relatedTermIds": [
       "g-copilot-chat",
-      "g-custom-instructions"
+      "g-custom-instructions",
+      "g-legacy-knowledge-bases"
     ],
     "lessonIds": [
-      "lesson-d2-chat-essentials"
+      "lesson-d2-chat-essentials",
+      "lesson-d2-org-governance"
     ],
     "comparisonIds": [
       "cmp-spaces-vs-chat"
@@ -2262,7 +2264,8 @@
     "questionIds": [],
     "sourceIds": [
       "spaces",
-      "guide"
+      "guide",
+      "knowledge-bases-sunset"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-10-12",
@@ -2535,7 +2538,7 @@
       "Business vs Enterprise"
     ],
     "shortDefinition": "個人向けFree・Student・Pro・Pro+・Maxと、組織向けBusiness・Enterpriseなど、GitHub Copilotの利用条件と管理機能を定めるプラン。",
-    "detailedDefinition": "利用可能な機能、AIクレジット、モデル、組織ポリシーはプランで異なり、管理者設定や利用面によっても変わります。現行プラン表と機能マトリクスを確認し、特定機能がEnterprise専用などと固定的に断言しないでください。",
+    "detailedDefinition": "利用可能な機能、AIクレジット、モデル、組織ポリシーはプランで異なり、管理者設定や利用面によっても変わります。現行プラン表と機能マトリクスを確認し、特定機能がEnterprise専用などと固定的に断言しないでください。 Copilot Freeは現行の個人向けプランとして存在する。古い練習問題の「一般利用者に無料なし」は現行仕様ではない。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2995,7 +2998,8 @@
       "architecture",
       "privacy",
       "responsible",
-      "model-hosting"
+      "model-hosting",
+      "network-settings"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
@@ -3167,7 +3171,7 @@
       "Output filtering"
     ],
     "shortDefinition": "LLMが生成した生のテキスト出力を検査し、有害性チェック、書式整形、公開コードとの照合を行ってからユーザーに届ける処理。",
-    "detailedDefinition": "AIモデルが回答を出力した直後にGitHub Proxy上で実行される。有害・不適切な内容を遮断するセーフティフィルタ、不要な重複トークンのトリミング、そして組織設定に応じたPublic Code Matching（公開コードと一致した提案のブロック）がここで行われる。",
+    "detailedDefinition": "AIモデルが回答を出力した直後にGitHub Proxy上で実行される。有害・不適切な内容を遮断するセーフティフィルタ、不要な重複トークンのトリミング、そして組織設定に応じたPublic Code Matching（公開コードと一致した提案のブロック）がここで行われる。 有害性フィルター、公開コード一致、Content Exclusionは守る対象と段階が異なる。",
     "category": "アーキテクチャ",
     "importance": "essential",
     "domainIds": [
@@ -3211,7 +3215,7 @@
       "privacy"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -3682,7 +3686,7 @@
       "Few-shot"
     ],
     "shortDefinition": "入力と期待される出力の具体例を1〜数件プロンプト内に提示してから、新しい入力に対する出力をAIに生成させる手法。",
-    "detailedDefinition": "例:「入力: 2026-08-07 → 出力: 令和8年8月7日」といった模範例をプロンプトに含めることで、AIにデータ構造、ネーミング規則、例外処理のスタイルなどのパターンを即座に模倣させ、意図通りの形式で正確に出力させる。",
+    "detailedDefinition": "例:「入力: 2026-08-07 → 出力: 令和8年8月7日」といった模範例をプロンプトに含めることで、AIにデータ構造、ネーミング規則、例外処理のスタイルなどのパターンを即座に模倣させ、意図通りの形式で正確に出力させる。 ここでの「学習」は今回のプロンプト内の例示による適応であり、モデルの重みを恒久的に再訓練する意味ではない。",
     "category": "プロンプト技法",
     "importance": "essential",
     "domainIds": [
@@ -3726,7 +3730,7 @@
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -4708,7 +4712,8 @@
       "lesson-d5-security-remediation"
     ],
     "comparisonIds": [
-      "cmp-unit-vs-integration-tests"
+      "cmp-unit-vs-integration-tests",
+      "cmp-test-generation-vs-explorer"
     ],
     "questionIds": [
       "q09",
@@ -4832,7 +4837,7 @@
       "Mocking"
     ],
     "shortDefinition": "外部依存（データベース、ネットワークAPI、ファイルI/O）を模倣するモックオブジェクトやスタブ、厳密な検証アサーションを自動生成すること。",
-    "detailedDefinition": "Jestの `jest.fn()` や `jest.mock()`、Goのgomockなど、記述に手間のかかるモックのセットアップやスパイ関数呼び出しの検証コードをCopilotに作成させ、純粋なロジック検証に集中させる。",
+    "detailedDefinition": "Jestの `jest.fn()` や `jest.mock()`、Goのgomockなど、記述に手間のかかるモックのセットアップやスパイ関数呼び出しの検証コードをCopilotに作成させ、純粋なロジック検証に集中させる。 テストのassertionは結果と期待値の比較であり、本番コードの入力検証そのものではない。",
     "category": "開発生産性",
     "importance": "important",
     "domainIds": [
@@ -4861,7 +4866,9 @@
       "lesson-d5-testing",
       "lesson-d5-security-remediation"
     ],
-    "comparisonIds": [],
+    "comparisonIds": [
+      "cmp-input-validation-vs-assertion"
+    ],
     "questionIds": [
       "q09"
     ],
@@ -4869,7 +4876,7 @@
       "tests"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -5122,7 +5129,8 @@
       "lesson-d6-ownership-privacy"
     ],
     "comparisonIds": [
-      "cmp-exclusion-vs-publicmatch"
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-safety-filter-types"
     ],
     "questionIds": [
       "q11",
@@ -5431,7 +5439,8 @@
       "lesson-d6-troubleshooting-limits"
     ],
     "comparisonIds": [
-      "cmp-exclusion-vs-publicmatch"
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-safety-filter-types"
     ],
     "questionIds": [],
     "sourceIds": [
@@ -5699,6 +5708,468 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
+    "status": "verified"
+  },
+  {
+    "id": "g-fill-in-the-middle",
+    "term": "Fill-in-the-Middle (FIM)",
+    "fullName": "Fill-in-the-Middle (FIM)",
+    "aliases": [
+      "FIM",
+      "中間補完"
+    ],
+    "shortDefinition": "カーソル前のprefixと後のsuffixを条件に、その間のコードを補完する考え方。",
+    "detailedDefinition": "従来の左から右への補完が主にカーソル前だけを条件にするのに対し、FIMは後続の戻り値や閉じ括弧にも整合する中間部分を提案する。使える文脈は製品面・設定・モデルで変わるため、常に全ファイルを読んでいるとは考えない。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "whyItMatters": "Q22の判断核。prefix/suffixの両方を条件にする点を左から右の生成と区別する。",
+    "useCases": [
+      "関数の前半と後半を残して途中だけ補完する"
+    ],
+    "examPoints": [
+      "prefixはカーソル前、suffixはカーソル後",
+      "モデルの再訓練やファイル丸ごとの処理ではない"
+    ],
+    "commonConfusions": [
+      "左から右の補完との混同",
+      "suffixが常に必ず使われるとの断定"
+    ],
+    "relatedTermIds": [
+      "g-context-gathering",
+      "g-inline-suggestions"
+    ],
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q-d3-f01",
+      "q-d3-a02",
+      "q-d3-e03"
+    ],
+    "sourceIds": [
+      "fim-context",
+      "inline-usage",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-test-explorer",
+    "term": "VS Code Test Explorer",
+    "fullName": "VS Code Test Explorer",
+    "aliases": [],
+    "shortDefinition": "VS Codeで発見されたテストを一覧し、実行・デバッグ・結果確認を行うTestingビュー。",
+    "detailedDefinition": "テスト拡張機能が検出したテストをツリーで表示し、個別または一括で実行・デバッグできる。失敗箇所と結果を確認する場所であり、Copilotによるテストコード生成そのものではない。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "Q39のTest ExplorerとCopilot生成を区別する。",
+    "useCases": [
+      "生成した単体テストを発見・実行・デバッグする"
+    ],
+    "examPoints": [
+      "生成はCopilot、発見・実行・デバッグ・結果確認はTest Explorer"
+    ],
+    "commonConfusions": [
+      "Test Explorerを生成AI機能そのものと考える"
+    ],
+    "relatedTermIds": [
+      "g-unit-test-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "comparisonIds": [
+      "cmp-test-generation-vs-explorer"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "vscode-testing",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-arrange-act-assert",
+    "term": "Arrange–Act–Assert (AAA)",
+    "fullName": "Arrange–Act–Assert (AAA)",
+    "aliases": [
+      "AAA"
+    ],
+    "shortDefinition": "テストを準備、対象操作、期待結果の検証に分ける読み方・書き方。",
+    "detailedDefinition": "Arrangeで入力・モック・初期状態を用意し、Actで対象関数を一度実行し、Assertで戻り値や副作用を期待値と比べる。Copilot生成テストでも各段階を追うと、誤った期待値や不足した準備を見つけやすい。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "Q40の三段階を実例で識別する。",
+    "useCases": [
+      "生成された単体テストの構造と期待値をレビューする"
+    ],
+    "examPoints": [
+      "Arrange＝準備、Act＝実行、Assert＝検証"
+    ],
+    "commonConfusions": [
+      "Assertを入力検証の実装と混同する"
+    ],
+    "relatedTermIds": [
+      "g-test-assertions-mocking",
+      "g-unit-test-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "tests",
+      "vscode-testing",
+      "guide",
+      "unit-test-aaa"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-code-quality-attributes",
+    "term": "Code Quality Attributes",
+    "fullName": "Code Quality Attributes",
+    "aliases": [],
+    "shortDefinition": "生成コードを信頼性、保守性、安全性、性能・効率、使いやすさなどで評価する観点。",
+    "detailedDefinition": "コード行数や開発時間だけで品質を決めない。Copilot案では仕様どおり動くか、変更しやすいか、秘密を漏らさないか、負荷に耐えるか、利用者の操作に適するかを分けて確認する。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "Q44の品質属性を、単なる量的指標と区別する。",
+    "useCases": [
+      "複数案の採用理由を品質属性ごとに記録する"
+    ],
+    "examPoints": [
+      "信頼性・保守性・安全性・性能・使いやすさを区別"
+    ],
+    "commonConfusions": [
+      "コード量や人数だけで品質を測る"
+    ],
+    "relatedTermIds": [
+      "g-reliability",
+      "g-code-correctness"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "guide",
+      "responsible"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-reliability",
+    "term": "Reliability",
+    "fullName": "Reliability",
+    "aliases": [],
+    "shortDefinition": "定めた条件下で、一定期間、意図した機能を継続して正しく提供できる性質。",
+    "detailedDefinition": "Correctnessは個々の入力で仕様どおりの結果か、Performanceは速度や資源使用量かを問う。Reliabilityは故障を起こしにくく継続して動くかを問う。潜在的欠陥の検出、異常系テスト、失敗時の安全な処理が改善につながる。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "Q45–46で性能や正確性と分けて判断する。",
+    "useCases": [
+      "Copilot生成コードの異常系・長期運用をレビューする"
+    ],
+    "examPoints": [
+      "特定条件下で継続的に正しく動作すること",
+      "欠陥予防は信頼性を高める"
+    ],
+    "commonConfusions": [
+      "速いコードなら信頼性も高いという推論"
+    ],
+    "relatedTermIds": [
+      "g-code-quality-attributes",
+      "g-code-correctness"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "guide",
+      "responsible",
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-safe-exception-handling",
+    "term": "Safe Exception Handling",
+    "fullName": "Safe Exception Handling",
+    "aliases": [],
+    "shortDefinition": "具体的な例外を捕捉し、機密を漏らさず、エラーを握り潰さずに処理すること。",
+    "detailedDefinition": "Copilot案では広すぎるcatchで失敗を隠していないか、ログにトークン・個人情報・内部スタックを残していないかを確認する。復旧できない場合は適切な境界まで再送出し、利用者には内部情報を含まないメッセージを返す。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "Q48の具体的捕捉、ログ、再送出の判断に必要。",
+    "useCases": [
+      "生成されたAPIの例外経路をレビューする"
+    ],
+    "examPoints": [
+      "specific catch、機密の非開示、例外を握り潰さない"
+    ],
+    "commonConfusions": [
+      "すべてcatchして空結果を返せば安全という誤解"
+    ],
+    "relatedTermIds": [
+      "g-reliability",
+      "g-secret-leak-prevention"
+    ],
+    "lessonIds": [
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "guide",
+      "responsible",
+      "tests",
+      "exception-best-practices",
+      "exception-sensitive"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-input-validation",
+    "term": "Input Validation",
+    "fullName": "Input Validation",
+    "aliases": [],
+    "shortDefinition": "外部入力が長さ・型・形式・許容範囲などの事前条件を満たすか確認すること。",
+    "detailedDefinition": "本番コードの入力検証は無効な値を拒否または安全に扱う。テストのアサーションは実際の結果が期待結果に合うか確認する。テスト内で「無効入力が拒否された」をアサートすることはできるが、そのアサート自体が本番入力を防ぐわけではない。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "whyItMatters": "Q43の用語混同を防ぎ、Copilotのテストと実装を正しく評価する。",
+    "useCases": [
+      "不正入力の拒否とテスト期待値を別々に確認する"
+    ],
+    "examPoints": [
+      "入力検証は実装の事前条件、assertionはテストの期待値比較"
+    ],
+    "commonConfusions": [
+      "テストのassertionだけで本番の不正入力が拒否されるという誤解"
+    ],
+    "relatedTermIds": [
+      "g-test-assertions-mocking",
+      "g-arrange-act-assert"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "comparisonIds": [
+      "cmp-input-validation-vs-assertion"
+    ],
+    "questionIds": [
+      "q09",
+      "q-d4-a05"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-project-documentation",
+    "term": "Project Documentation",
+    "fullName": "Project Documentation",
+    "aliases": [],
+    "shortDefinition": "プロジェクトの範囲、目的、要件、構成、運用方法をチームへ伝える文書。",
+    "detailedDefinition": "READMEは導入・実行の入口、要件文書は期待する機能と制約、設計文書は構成と判断理由、コード内コメントやdocstringは局所的な意図・契約を扱う。Copilotが生成した文書は現行の仕様やクリーン環境で検証する。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o1"
+    ],
+    "whyItMatters": "Q35のプロジェクト文書とインライン文書の役割差を学ぶ。",
+    "useCases": [
+      "新規メンバー向けREADMEと設計資料を作成・レビューする"
+    ],
+    "examPoints": [
+      "scope/purpose/requirements/architectureがプロジェクト文書の核"
+    ],
+    "commonConfusions": [
+      "README、要件、コードコメントを同じ粒度の文書とみなす"
+    ],
+    "relatedTermIds": [
+      "g-doc-generation"
+    ],
+    "lessonIds": [
+      "lesson-d5-generation-refactoring"
+    ],
+    "comparisonIds": [],
+    "questionIds": [
+      "q-d5-a11"
+    ],
+    "sourceIds": [
+      "guide",
+      "chat"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-safety-filtering",
+    "term": "Harmful Output Filtering",
+    "fullName": "Harmful Output Filtering",
+    "aliases": [],
+    "shortDefinition": "生成された有害または不快な内容の検知・抑制を目的とする安全フィルター。",
+    "detailedDefinition": "公開コード一致は提案と公開リポジトリの類似性、Content Exclusionは指定ソースをCopilotの参照対象から外す設定で、対象と段階が異なる。安全フィルターだけで脆弱性のないコードを保証するものではない。",
+    "category": "GH-300補完",
+    "importance": "important",
+    "domainIds": [
+      "d3"
+    ],
+    "objectiveIds": [
+      "d3o1"
+    ],
+    "whyItMatters": "Q49–50で有害性と公開コード照合、入力側の除外を区別する。",
+    "useCases": [
+      "生成結果の安全確認とデータ参照範囲の統制を分ける"
+    ],
+    "examPoints": [
+      "有害性は出力内容、公開コード一致は類似性、内容除外は参照元"
+    ],
+    "commonConfusions": [
+      "すべてを同じcontent filterとして扱う"
+    ],
+    "relatedTermIds": [
+      "g-post-processing",
+      "g-public-code-matching",
+      "g-content-exclusion"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d6-public-code-matching",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "comparisonIds": [
+      "cmp-safety-filter-types"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "model-hosting",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "g-legacy-knowledge-bases",
+    "term": "Copilot Knowledge Bases (retired)",
+    "fullName": "Copilot Knowledge Bases (retired)",
+    "aliases": [
+      "Knowledge Bases",
+      "ドキュメントセット"
+    ],
+    "shortDefinition": "2025年11月1日に終了した旧共有コンテキスト機能。現在はCopilot Spacesを使用する。",
+    "detailedDefinition": "旧練習問題の「Knowledge Bases」「ドキュメントセット」は歴史的表現としてのみ読む。現行の共有資料の整理・再利用にはCopilot Spacesを使う。旧機能の設定画面や操作を現行の手順として学ばない。",
+    "category": "旧機能 / deprecated / retired / legacy",
+    "importance": "supplementary",
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "whyItMatters": "Q6をPRACTICE_OUTDATEDと判定し、古い名称を現行機能と混同しないため。",
+    "useCases": [
+      "旧教材から現行Spacesへ読み替える"
+    ],
+    "examPoints": [
+      "現行機能はCopilot Spaces"
+    ],
+    "commonConfusions": [
+      "旧Knowledge Basesを現行の製品機能として説明する"
+    ],
+    "relatedTermIds": [
+      "g-spaces"
+    ],
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "comparisonIds": [],
+    "questionIds": [],
+    "sourceIds": [
+      "knowledge-bases-sunset",
+      "spaces",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   }
 ]

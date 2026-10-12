@@ -104,7 +104,17 @@
       "g-public-code-matching",
       "g-exclusion-propagation",
       "g-exclusion-limitations",
-      "g-compliance-auditability"
+      "g-compliance-auditability",
+      "g-arrange-act-assert",
+      "g-code-quality-attributes",
+      "g-fill-in-the-middle",
+      "g-input-validation",
+      "g-legacy-knowledge-bases",
+      "g-project-documentation",
+      "g-reliability",
+      "g-safe-exception-handling",
+      "g-safety-filtering",
+      "g-test-explorer"
     ],
     "relatedComparisonIds": [
       "cmp-chat-vs-inline",
@@ -119,7 +129,11 @@
       "cmp-zero-vs-few-shot",
       "cmp-unit-vs-integration-tests",
       "cmp-org-vs-enterprise-policies",
-      "cmp-mcp-vs-agent-mode"
+      "cmp-mcp-vs-agent-mode",
+      "cmp-input-validation-vs-assertion",
+      "cmp-quality-attributes",
+      "cmp-safety-filter-types",
+      "cmp-test-generation-vs-explorer"
     ],
     "relatedQuestionIds": [
       "q-d1-f01",
@@ -173,7 +187,9 @@
       "lesson-d1-validation",
       "lesson-d1-security-review",
       "lesson-d2-inline-suggestions",
-      "lesson-d3-data-flow"
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d5-security-remediation"
     ],
     "relatedGlossaryIds": [
       "g-generative-ai",
@@ -194,10 +210,14 @@
       "g-data-flow",
       "g-copilot-proxy",
       "g-code-generation",
-      "g-static-analysis-copilot"
+      "g-static-analysis-copilot",
+      "g-code-quality-attributes",
+      "g-reliability",
+      "g-safe-exception-handling"
     ],
     "relatedComparisonIds": [
-      "cmp-chat-vs-inline"
+      "cmp-chat-vs-inline",
+      "cmp-quality-attributes"
     ],
     "relatedQuestionIds": [
       "q01",
@@ -295,7 +315,8 @@
       "g-code-explanation",
       "g-algorithm-optimization",
       "g-vulnerability-remediation",
-      "g-perf-bottlenecks"
+      "g-perf-bottlenecks",
+      "g-project-documentation"
     ],
     "relatedComparisonIds": [
       "cmp-chat-vs-inline",
@@ -437,7 +458,8 @@
     "relatedLessonIds": [
       "lesson-d1-validation",
       "lesson-d5-testing",
-      "lesson-d5-security-remediation"
+      "lesson-d5-security-remediation",
+      "lesson-d5-generation-refactoring"
     ],
     "relatedGlossaryIds": [
       "g-verification-validation",
@@ -447,10 +469,17 @@
       "g-edge-case-discovery",
       "g-test-assertions-mocking",
       "g-vulnerability-remediation",
-      "g-static-analysis-copilot"
+      "g-static-analysis-copilot",
+      "g-arrange-act-assert",
+      "g-input-validation",
+      "g-reliability",
+      "g-safe-exception-handling"
     ],
     "relatedComparisonIds": [
-      "cmp-unit-vs-integration-tests"
+      "cmp-unit-vs-integration-tests",
+      "cmp-input-validation-vs-assertion",
+      "cmp-quality-attributes",
+      "cmp-test-generation-vs-explorer"
     ],
     "relatedQuestionIds": [
       "q01",
@@ -792,10 +821,12 @@
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
     "relatedLessonIds": [
-      "lesson-d2-chat-essentials"
+      "lesson-d2-chat-essentials",
+      "lesson-d2-org-governance"
     ],
     "relatedGlossaryIds": [
-      "g-spaces"
+      "g-spaces",
+      "g-legacy-knowledge-bases"
     ],
     "relatedComparisonIds": [
       "cmp-spaces-vs-chat"
@@ -1194,9 +1225,12 @@
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
     "relatedLessonIds": [
-      "lesson-d3-data-flow"
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline"
     ],
-    "relatedGlossaryIds": [],
+    "relatedGlossaryIds": [
+      "g-fill-in-the-middle"
+    ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d2-a12",
@@ -1280,12 +1314,15 @@
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
     "relatedLessonIds": [
-      "lesson-d3-data-flow"
+      "lesson-d3-data-flow",
+      "lesson-d6-public-code-matching"
     ],
     "relatedGlossaryIds": [
       "g-exclusion-limitations"
     ],
-    "relatedComparisonIds": [],
+    "relatedComparisonIds": [
+      "cmp-safety-filter-types"
+    ],
     "relatedQuestionIds": [
       "q-d3-e04",
       "q-d6-a02",
@@ -1317,12 +1354,15 @@
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
     "relatedLessonIds": [
-      "lesson-d6-public-code-matching"
+      "lesson-d6-public-code-matching",
+      "lesson-d3-data-flow"
     ],
     "relatedGlossaryIds": [
       "g-public-code-matching"
     ],
-    "relatedComparisonIds": [],
+    "relatedComparisonIds": [
+      "cmp-safety-filter-types"
+    ],
     "relatedQuestionIds": [
       "q-d6-f01",
       "q-d6-a02",
@@ -1350,7 +1390,9 @@
       "d3o1",
       "d3o2"
     ],
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
@@ -1525,7 +1567,9 @@
       "d6o1"
     ],
     "status": "verified",
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
     "relatedGlossaryIds": [
       "g-subscription-plans"
     ],
@@ -1551,7 +1595,10 @@
       "d2o4"
     ],
     "status": "verified",
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-org-governance"
+    ],
     "relatedGlossaryIds": [
       "g-subscription-plans"
     ],
@@ -1579,15 +1626,20 @@
     "relatedLessonIds": [
       "lesson-d3-data-flow",
       "lesson-d3-retention-privacy",
-      "lesson-d6-ownership-privacy"
+      "lesson-d6-ownership-privacy",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d6-public-code-matching"
     ],
     "relatedGlossaryIds": [
       "g-data-flow",
       "g-copilot-proxy",
       "g-code-retention-policy",
-      "g-enterprise-data-privacy"
+      "g-enterprise-data-privacy",
+      "g-safety-filtering"
     ],
-    "relatedComparisonIds": [],
+    "relatedComparisonIds": [
+      "cmp-safety-filter-types"
+    ],
     "relatedQuestionIds": [
       "q-d6-a07",
       "q-d6-e04",
@@ -1814,6 +1866,211 @@
     "relatedQuestionIds": [],
     "relatedDomainIds": [
       "d2"
+    ]
+  },
+  {
+    "id": "fim-context",
+    "title": "How GitHub Copilot is getting better at understanding your code",
+    "url": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/",
+    "publisher": "GitHub Blog",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d3-prompt-pipeline"
+    ],
+    "relatedGlossaryIds": [
+      "g-fill-in-the-middle"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d3"
+    ]
+  },
+  {
+    "id": "vscode-testing",
+    "title": "Testing",
+    "url": "https://code.visualstudio.com/docs/debugtest/testing",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d5-testing"
+    ],
+    "relatedGlossaryIds": [
+      "g-test-explorer",
+      "g-arrange-act-assert"
+    ],
+    "relatedComparisonIds": [
+      "cmp-test-generation-vs-explorer"
+    ],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d5"
+    ]
+  },
+  {
+    "id": "knowledge-bases-sunset",
+    "title": "Sunset notice: Copilot knowledge bases",
+    "url": "https://github.blog/changelog/2025-08-20-sunset-notice-copilot-knowledge-bases/",
+    "publisher": "GitHub Blog",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "relatedGlossaryIds": [
+      "g-spaces",
+      "g-legacy-knowledge-bases"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "repository-indexing",
+    "title": "Indexing repositories for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o4",
+      "d3o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2",
+      "d3"
+    ]
+  },
+  {
+    "id": "network-settings",
+    "title": "Network settings for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d3-data-flow"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-proxy"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d3"
+    ]
+  },
+  {
+    "id": "unit-test-aaa",
+    "title": "Best practices for writing unit tests",
+    "url": "https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d5-testing"
+    ],
+    "relatedGlossaryIds": [
+      "g-arrange-act-assert"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d5"
+    ]
+  },
+  {
+    "id": "exception-best-practices",
+    "title": "Best practices for exceptions",
+    "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d5-security-remediation"
+    ],
+    "relatedGlossaryIds": [
+      "g-safe-exception-handling"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d5"
+    ]
+  },
+  {
+    "id": "exception-sensitive",
+    "title": "Creating and Throwing Exceptions",
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/creating-and-throwing-exceptions",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d5-security-remediation"
+    ],
+    "relatedGlossaryIds": [
+      "g-safe-exception-handling"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d5"
     ]
   }
 ]

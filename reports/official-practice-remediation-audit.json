@@ -1,0 +1,32 @@
+{
+  "auditedAt": "2026-10-12",
+  "source": "GH300問題.xlsx; reports/official-practice-question-inventory.json",
+  "baseline": {
+    "COVERED": 30,
+    "PARTIAL": 10,
+    "MISSING": 6,
+    "UNCERTAIN": 4
+  },
+  "practiceIssues": {
+    "PRACTICE_OUTDATED": [
+      "PRACTICE-001",
+      "PRACTICE-006"
+    ],
+    "PRACTICE_INCORRECT": [
+      "PRACTICE-003"
+    ],
+    "NEEDS_REVIEW": [
+      "PRACTICE-014",
+      "PRACTICE-043"
+    ]
+  },
+  "currentPracticeCount": 45,
+  "currentCoverage": {
+    "COVERED": 45,
+    "PARTIAL": 0,
+    "MISSING": 0
+  },
+  "currentOfficialKnowledgeCoveragePercent": 100,
+  "currentAverageEditorialScore": 91.3,
+  "errors": []
+}

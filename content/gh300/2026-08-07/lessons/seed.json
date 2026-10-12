@@ -170,6 +170,10 @@
         "content": "・IDEのエディタ上で赤波線が出ていないこと（型チェック通過）は、ビジネスロジックの正しさを意味しません。\n・AI自身にテストを作らせた場合、そのテスト自体の期待値（アサーション）がハルシネーションを起こしていないか確認が必要です。"
       },
       {
+        "heading": "Copilot生成コードの品質属性",
+        "content": "【定義・理由】Reliabilityは条件下で継続的に正しく動くこと、Correctnessは個々の結果の仕様適合、Performance/Efficiencyは時間・資源、Maintainabilityは変更容易性、Securityは秘密と攻撃耐性、Usabilityは利用者の操作適合を見ます。【例】高速な関数でも異常入力で停止するなら性能は良くても信頼性は不足します。【方法】生成案の採用前に各属性のリスクを列挙し、テスト・静的解析・レビューで根拠を確かめます。【試験焦点】行数や開発人数を品質属性と取り違えません。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: AIの提案が整然としているために無批判に採用してしまう心理傾向は？ → 自動化バイアス（Over-reliance / Automation Bias）。\nQ2: コードの正確性を確認するための最も確実な動的検証手法は？ → 境界値やエッジケースを含めた単体テストの実行。"
       }
@@ -177,7 +181,8 @@
     "keyPoints": [
       "型エラーがないこととロジックの正当性は別物である。",
       "自動化バイアスを排し、単体テストの実行による動的検証を必ず行う。",
-      "AI生成テスト自体の期待値（アサーション）も人間が精査する。"
+      "AI生成テスト自体の期待値（アサーション）も人間が精査する。",
+      "信頼性、正確性、性能、保守性、安全性、使いやすさを別々に評価する。"
     ],
     "commonMistakes": [
       "コンパイルが通ったことだけで検証を完了したとみなすこと。",
@@ -191,9 +196,13 @@
       "g-verification-validation",
       "g-automation-bias",
       "g-critical-evaluation",
-      "g-code-correctness"
+      "g-code-correctness",
+      "g-code-quality-attributes",
+      "g-reliability"
     ],
-    "comparisonIds": [],
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
     "questionIds": [
       "q01",
       "q02"
@@ -203,7 +212,7 @@
       "tests",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -307,6 +316,10 @@
         "content": "・Content Exclusionによって除外されたファイルではゴーストテキストは一切表示されず、ステータスバーアイコンに斜線が入ります。\n・エディタのキーバインド競合（Emmetや他の補完拡張）がある場合、Tabキーの挙動が優先順位設定に左右されることがあります。"
       },
       {
+        "heading": "対応IDEと機能差を確認する",
+        "content": "【定義・理由】Copilotのコード補完はVS Code、Visual Studio、JetBrains IDE、Eclipse、Xcode、NeoVimなど複数のエディターで利用できます。ただしChat、Agent Mode、MCPなどの対応状況は同一ではありません。【方法・例】NeoVimで補完を使う場合でもChatが使えるとは推測せず、試す機能・IDE・拡張バージョンをGitHubのFeature Matrixで照合します。【誤解と試験焦点】「Copilot対応IDE」＝「全機能が使える」ではありません。固定リストの暗記より、機能単位で確認する判断が重要です。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: インライン提案全体を採用するキーは？ → `Tab`。\nQ2: 複数提案を一覧比較するパネルを開くショートカットは？ → `Ctrl + Enter` (Cmd + Enter)。\nQ3: 次の提案候補へ切り替えるショートカットは？ → `Alt + ]` (Option + ])。"
       }
@@ -314,7 +327,8 @@
     "keyPoints": [
       "Tabで全体確定、Escで破棄、Ctrl/Cmd+Rightで単語単位の部分確定が可能。",
       "Alt+] / Option+] で候補を順送りできる。",
-      "Ctrl+Enter / Cmd+Enter で最大10件の提案をCompletions Panelで一覧比較できる。"
+      "Ctrl+Enter / Cmd+Enter で最大10件の提案をCompletions Panelで一覧比較できる。",
+      "対応IDEでも機能・バージョンごとの対応は異なるためFeature Matrixを確認する。"
     ],
     "commonMistakes": [
       "提案を受け入れるには必ずマウスでクリックしなければならないという思い込み。",
@@ -322,13 +336,15 @@
     ],
     "examTips": [
       "ショートカットキー（Tab, Esc, Alt+], Ctrl+Enter）は試験の頻出出題ポイントです。",
-      "部分受入れ（Word-by-word accept）ができる点も出題されます。"
+      "部分受入れ（Word-by-word accept）ができる点も出題されます。",
+      "IDE名を問う古い選択肢は、現行Feature Matrixの機能別列と突き合わせる。"
     ],
     "glossaryIds": [
       "g-inline-suggestions",
       "g-ghost-text",
       "g-completions-panel",
-      "g-status-menu"
+      "g-status-menu",
+      "g-inline-chat"
     ],
     "comparisonIds": [
       "cmp-chat-vs-inline"
@@ -338,9 +354,10 @@
     ],
     "sourceIds": [
       "responsible",
-      "guide"
+      "guide",
+      "feature-matrix"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -382,6 +399,14 @@
         "content": "Copilot Spacesにはリポジトリ、ファイル、Pull Request、Issue、メモ、アップロードした資料などを集め、質問の根拠にできます。GitHub上の資料は変更に追随し、Spaceを共有すればチームで同じ資料を使えます。【例】複数リポジトリと設計メモを新メンバーに共有して質問に答えるならSpaces、現在のコードについてその場で質問するなら通常のChatを選びます。SpacesはGitHub上のCopilot Chatで使い、IDEからはGitHub MCPサーバー経由で参照できます。閲覧者は権限のあるソースだけを見られます。共有されるのは整理したコンテキストであり、全チャット履歴が自動共有されるという意味ではありません。"
       },
       {
+        "heading": "選択コードと現在ファイルの暗黙文脈",
+        "content": "【定義・理由】Inline Chatでは選択範囲や現在開いているファイルが依頼の文脈になります。短く「この関数の例外処理を直して」と言えるのは、対象をエディター側が渡せるためです。【方法・例】選択した関数だけを直すならその範囲を選択し、別ファイルの契約も必要なら明示的に添付・参照します。スラッシュコマンドは作業種別のショートカットで、欠けた前提条件を自動で保証しません。【誤解と試験焦点】暗黙文脈があるからリポジトリのすべてを理解している、と考えないでください。"
+      },
+      {
+        "heading": "旧Knowledge Basesから現在のSpacesへ",
+        "content": "【歴史的注記】GitHub Copilot Knowledge Basesは2025年11月1日にretiredとなり、Copilot Spacesへ置き換えられました。旧練習問題の「ドキュメントセット」を現行機能と考えず、現在はSpacesにリポジトリ、文書、Issue等を集めて共有コンテキストとして使います。旧機能の設定操作は学習対象にしません。"
+      },
+      {
         "heading": "7. 30秒チェック（Mini Review）",
         "content": "Q1: プロジェクト全体のコードを検索・参照するチャット参加者は？ → `@workspace`。\nQ2: エディタ内で直接Diffプレビュー付きでコード修正を依頼するショートカットは？ → `Ctrl + I` (Cmd + I)。\nQ3: 特定のファイル全体をコンテキストに含める変数は？ → `#file:ファイルパス`。"
       }
@@ -390,12 +415,14 @@
       "`@` は参加者（エージェント）、`/` はコマンド（操作）、`#` は変数（コンテキスト）。",
       "`Ctrl+I` / `Cmd+I` のInline Chatで差分（Diff）を確認しながら即時修正できる。",
       "`@workspace` を付けることでプロジェクト横断のコード検索・参照が可能になる。",
-      "Spacesは資料をまとめて共有・再利用するコンテキストで、通常のChatの一時的な依頼文とは用途が異なる。"
+      "Spacesは資料をまとめて共有・再利用するコンテキストで、通常のChatの一時的な依頼文とは用途が異なる。",
+      "選択コードと現在ファイルは暗黙文脈となるが、必要な別資料は明示する。"
     ],
     "commonMistakes": [
       "`#file` 変数を使わずに手動で数百行のコードをチャット欄にコピペしてしまうこと。",
       "単なるチャット（サイドバー）とDiff適用ができるInline Chatの使い分けができていないこと。",
-      "Spacesが共有する資料と、個人の全チャット履歴を混同すること。"
+      "Spacesが共有する資料と、個人の全チャット履歴を混同すること。",
+      "旧Knowledge Basesを現行の共有コンテキスト機能として教えること。"
     ],
     "examTips": [
       "`@workspace`, `@vscode`, `@terminal` の役割の違いは確実に問われます。",
@@ -407,7 +434,8 @@
       "g-chat-participants",
       "g-slash-commands",
       "g-chat-variables",
-      "g-spaces"
+      "g-spaces",
+      "g-legacy-knowledge-bases"
     ],
     "comparisonIds": [
       "cmp-chat-vs-inline",
@@ -421,7 +449,9 @@
     "sourceIds": [
       "chat",
       "guide",
-      "spaces"
+      "spaces",
+      "workspace-context",
+      "knowledge-bases-sunset"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "verified"
@@ -836,6 +866,14 @@
         "content": "・REST APIや監査ログで確認できるのは利用率や設定イベントなどの集計データであり、開発者が入力したプロンプトやコード全文はプライバシー保護のため取得できません。"
       },
       {
+        "heading": "プラン・シート・ポリシー・有効化の順序",
+        "content": "【定義・理由】Copilot Freeは現行の個人向けプランです。組織ではBusiness/Enterpriseの契約、利用者へのseat/accessの付与、組織・Enterpriseのfeature policy、対象機能の有効化を別の判断として扱います。【方法・例】「メンバーが利用できない」場合、契約の有無→seat付与→上位・組織ポリシー→IDEやGitHub上の機能対応を順に確認します。画面のドロップダウン位置は変わるため、旧問題のUI手順を丸暗記しません。【誤解と試験焦点】ポリシーで許可してもseatや対応環境がなければ利用できません。"
+      },
+      {
+        "heading": "組織コードの索引とモデル訓練を区別する",
+        "content": "【定義・例】Copilot Chatは権限のあるリポジトリを索引化して質問の文脈に使えます。これは組織コードで基盤モデルを再訓練することと異なります。共有資料を整理する現行機能はCopilot Spacesです。【誤解と試験焦点】旧練習問題の「Enterpriseが組織コードで訓練する」を現行仕様として覚えず、索引・共有コンテキスト・モデル学習を分けます。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: Enterpriseで強制されたポリシーをOrganizationで無効化できるか？ → No（上位設定が優先）。\nQ2: 組織全体のCopilot受入率やアクティブ数を自動取得する手段は？ → Copilot Metrics REST API。\nQ3: 監査ログに開発者のプロンプト全文は記録されるか？ → No（管理操作イベントのみ記録）。"
       }
@@ -843,7 +881,8 @@
     "keyPoints": [
       "ポリシーはEnterprise → Organization → Repositoryの順で継承され、上位設定は下位で解除不能。",
       "シートは個人またはチーム単位で付与・管理される。",
-      "Audit Logで設定変更履歴を追跡し、REST APIで利用状況・受入率を分析可能。"
+      "Audit Logで設定変更履歴を追跡し、REST APIで利用状況・受入率を分析可能。",
+      "Copilot Freeの現行存在と、組織の契約・seat・policy・有効化の違いを押さえる。"
     ],
     "commonMistakes": [
       "Organization管理者がEnterpriseの制限を解除できると思い込むこと。",
@@ -860,7 +899,8 @@
       "g-subscription-plans",
       "g-audit-logs",
       "g-usage-metrics-api",
-      "g-policy-inheritance"
+      "g-policy-inheritance",
+      "g-spaces"
     ],
     "comparisonIds": [
       "cmp-org-vs-enterprise-policies"
@@ -870,9 +910,13 @@
       "policies",
       "audit-log",
       "rest-api",
-      "guide"
+      "guide",
+      "plans",
+      "feature-matrix",
+      "repository-indexing",
+      "spaces"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -913,6 +957,14 @@
         "content": "【例】IDEで関数の途中にカーソルを置くと、利用可能なファイル文脈から補完用の入力が組み立てられます。適用可能な除外設定を確認したうえでモデルへ送られ、候補が返ります。公開コード一致ポリシーなど対応する処理を経た提案を開発者が確認します。Chat、CLI、Agent Modeでは参照できる情報や使用ツールが異なるため、インライン補完の流れを全製品面へそのまま一般化しません。"
       },
       {
+        "heading": "補完の処理フローとフィルターの位置",
+        "content": "【流れ】利用可能なコードのContext Gathering → Prompt Construction → Modelによる候補生成 → Post-processing → 適用可能な安全性・公開コード一致の確認 → Suggestion表示 → Developer Reviewと採用。実装経路は機能やモデルで変わるため、この図は判断用の概念モデルです。【例】有害内容の検知は出力内容、公開コード一致は公開リポジトリとの類似性、Content Exclusionは指定ソースの参照範囲を主に扱います。【誤解と試験焦点】どれも同じ「フィルター」でも、守る対象と処理段階は異なります。"
+      },
+      {
+        "heading": "ネットワーク設定とプランの留保",
+        "content": "GitHub DocsはHTTPプロキシとカスタム証明書の設定を説明しています。自己署名証明書を伴うVPNプロキシが特定プラン専用という旧練習問題の条件は、現行資料だけでは確定できません。プラン、クライアント、証明書の信頼設定を分けて確認します。"
+      },
+      {
         "heading": "7. 30秒チェック",
         "content": "Q1: インライン提案に使われる文脈は？ → カーソル周辺や利用可能なタブ。\nQ2: すべて同じモデルホストか？ → いいえ。\nQ3: 内容除外は全機能に適用されるか？ → いいえ。"
       }
@@ -920,11 +972,13 @@
     "keyPoints": [
       "文脈を組み立ててモデルに送り、出力をフィルタして提案を表示する。",
       "モデルホストと保持条件は機能・モデルごとに確認する。",
-      "提案は人間が検証する。"
+      "提案は人間が検証する。",
+      "有害性・公開コード一致・内容除外は目的と対象が異なる。"
     ],
     "commonMistakes": [
       "全Copilot機能が同じモデル・同じ保持条件だと思い込むこと。",
-      "インライン補完の文脈収集を、CLIやAgent Modeでも同じと決めつけること。"
+      "インライン補完の文脈収集を、CLIやAgent Modeでも同じと決めつけること。",
+      "HTTPプロキシとカスタム証明書を、根拠なくBusiness専用と断定すること。"
     ],
     "examTips": [
       "製品面を特定してからデータフローの説明を選ぶ。"
@@ -933,9 +987,12 @@
       "g-data-flow",
       "g-copilot-proxy",
       "g-post-processing",
-      "g-transit-encryption"
+      "g-transit-encryption",
+      "g-safety-filtering"
     ],
-    "comparisonIds": [],
+    "comparisonIds": [
+      "cmp-safety-filter-types"
+    ],
     "questionIds": [
       "q06"
     ],
@@ -945,7 +1002,9 @@
       "exclusion-concept",
       "guide",
       "cli-exclusion-admin",
-      "inline-usage"
+      "inline-usage",
+      "public-code",
+      "network-settings"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
@@ -984,6 +1043,14 @@
         "content": "・リポジトリ全体の全ファイルを網羅的に見ているわけではありません。無関係な巨大ファイルを何十個も開いておくと、重要な情報がトークン枠から押し出されるリスク（コンテキスト汚染）があります。"
       },
       {
+        "heading": "Fill-in-the-Middle (FIM)の判断",
+        "content": "【定義・仕組み】カーソル前をprefix、後をsuffixとし、間に入るコードを補完する考え方がFIMです。前だけから左→右に続ける生成と違い、後方の戻り値や閉じ括弧にも整合する案を作れます。【例】`const total =` と後ろの `return total;` を残し、その間に計算を挿入する場面です。【誤解と試験焦点】FIMは追加訓練の名称でもファイル全体の自動読取保証でもありません。採用前に仕様・単位・境界条件を確認します。"
+      },
+      {
+        "heading": "生成段階と後処理の判断",
+        "content": "文脈収集→プロンプト構築→モデル生成→後処理・安全性確認→候補表示→開発者レビューの順に整理します。統計的パターンに基づく推論はモデルの性質であり、開発者が操作する独立したUI段階とは限りません。問題の選択肢を評価するときは、入力、生成、出力側のどこを述べているか特定します。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: コンテキスト収集で最も重要視されるコード領域は？ → カーソル直前コード（Prefix）。\nQ2: 関連する型定義をCopilotに認識させる手軽な方法は？ → 関連ファイルを別タブで開いておく（Neighboring tabs）。\nQ3: トークン上限を超えた場合はどうなるか？ → 優先度の低い文脈が切り捨てられる。"
       }
@@ -991,7 +1058,8 @@
     "keyPoints": [
       "カーソルのPrefix/Suffixと開いている隣接タブがコンテキストの主たる情報源。",
       "収集された情報はトークン予算内で取捨選択・合成される。",
-      "関係のないファイルを大量に開かないことが提案精度維持のベストプラクティス。"
+      "関係のないファイルを大量に開かないことが提案精度維持のベストプラクティス。",
+      "FIMはprefixとsuffixの間を補完し、前方のみの生成と区別する。"
     ],
     "commonMistakes": [
       "Copilotはリポジトリの全ファイルを常に自動で完璧に読み込んでいるという誤解。",
@@ -1005,18 +1073,29 @@
       "g-context-gathering",
       "g-prompt-construction",
       "g-tokenization",
-      "g-telemetry-data"
+      "g-telemetry-data",
+      "g-fill-in-the-middle",
+      "g-post-processing",
+      "g-safety-filtering"
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-f01",
+      "q-d3-a02",
+      "q-d3-e03"
     ],
     "sourceIds": [
       "architecture",
       "prompt",
-      "guide"
+      "guide",
+      "fim-context",
+      "inline-usage",
+      "responsible",
+      "model-hosting",
+      "repository-indexing"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
   },
   {
@@ -1076,7 +1155,8 @@
       "g-code-retention-policy",
       "g-enterprise-data-privacy",
       "g-subscription-plans",
-      "g-telemetry-data"
+      "g-telemetry-data",
+      "g-post-processing"
     ],
     "comparisonIds": [],
     "questionIds": [],
@@ -1211,7 +1291,8 @@
       "g-prompt-engineering",
       "g-prompt-anatomy",
       "g-system-prompt",
-      "g-context-priming"
+      "g-context-priming",
+      "g-few-shot"
     ],
     "comparisonIds": [],
     "questionIds": [
@@ -1259,6 +1340,10 @@
         "content": "・Few-shotで提示する具体例自体に誤りがあると、AIはその誤ったパターンを忠実に学習・模倣してしまうため、提示する例の正確性が極めて重要です。"
       },
       {
+        "heading": "例示による適応とモデル訓練の区別",
+        "content": "One-shotは1例、Few-shotは少数の入力・出力例を今回のプロンプトに置き、形式や判断パターンを誘導します。これは会話中の文脈内適応であり、基盤モデルの重みを恒久的に再訓練する操作ではありません。【例】社内日付形式を2例示して同形式で返させます。【誤解と試験焦点】古い問題の「プロンプトから学習」は、将来の全ユーザー向けモデルが学習する意味と混同しません。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: 例を提示せず指示だけでコードを生成させる手法は？ → Zero-shot Prompting。\nQ2: 入出力の具体例を提示してパターンを模倣させる手法は？ → Few-shot Prompting。\nQ3: 出力フォーマットを厳密に制御したい場合に優れているのは？ → Few-shot Prompting。"
       }
@@ -1270,7 +1355,8 @@
     ],
     "commonMistakes": [
       "単純な関数作成で毎回過剰なFew-shot例を書いてトークンを浪費すること。",
-      "独自フォーマットの指示なのにZero-shotで済ませようとして失敗を繰り返すこと。"
+      "独自フォーマットの指示なのにZero-shotで済ませようとして失敗を繰り返すこと。",
+      "Few-shotの例を与えることを基盤モデルの恒久的な訓練と同一視すること。"
     ],
     "examTips": [
       "「出力形式を厳密に統一したい」「独自パターンに従わせたい」という問題の正解は「Few-shot」です。",
@@ -1292,7 +1378,7 @@
       "prompt",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1466,6 +1552,14 @@
         "content": "・AIがリファクタリング中に勝手に引数の型や戻り値の仕様を変更してしまうことがあるため、インターフェースの互換性を厳重にチェックします。"
       },
       {
+        "heading": "プロジェクト文書とインライン文書",
+        "content": "【定義・理由】Project Documentationは製品・プロジェクトのscope、purpose、requirements、architectureを共有します。READMEは導入と実行手順、要件文書は期待動作、設計文書は構成と意思決定、コメント・docstringは局所的なコードの意図と契約です。【例】新規メンバーの環境構築が失敗したらREADMEの前提条件を修正し、関数の引数だけが曖昧ならdocstringを直します。【誤解と試験焦点】Copilotが生成した文書も実際のコード・クリーン環境で検証します。"
+      },
+      {
+        "heading": "信頼性と性能のトレードオフ",
+        "content": "Copilotの高速化案が例外時の監査記録や境界値処理を落とすなら、速度だけで採用しません。Reliabilityは継続して意図した機能を提供するか、Performanceは負荷時の速度・資源、Maintainabilityは将来の変更容易性です。実測、異常系テスト、差分レビューを組み合わせます。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: リファクタリングを行う前後に必ず実行すべきものは？ → 単体テスト（動作保証）。\nQ2: リファクタリングの定義は？ → 外部の振る舞いを変えずに内部構造を改善すること。\nQ3: AIが定型的なゲッター/セッターやDTO変換を素早く生成する恩恵は？ → ボイラープレート削減。"
       }
@@ -1473,7 +1567,8 @@
     "keyPoints": [
       "リファクタリングは外部仕様を変更しないことが大前提。",
       "リファクタリングの前後で単体テストを実行し、デグレード（先祖返り）がないことを確認する。",
-      "計算量やメモリ効率を明示して最適化を指示できる。"
+      "計算量やメモリ効率を明示して最適化を指示できる。",
+      "Project Documentationとインライン文書は伝える範囲が異なる。"
     ],
     "commonMistakes": [
       "テストがない状態でいきなりAIに大規模なリファクタリングを行わせること。",
@@ -1488,15 +1583,24 @@
       "g-code-refactoring",
       "g-algorithm-optimization",
       "g-boilerplate-reduction",
-      "g-unit-test-generation"
+      "g-unit-test-generation",
+      "g-project-documentation",
+      "g-doc-generation",
+      "g-code-quality-attributes",
+      "g-reliability"
     ],
-    "comparisonIds": [],
-    "questionIds": [],
+    "comparisonIds": [
+      "cmp-quality-attributes"
+    ],
+    "questionIds": [
+      "q-d5-a11"
+    ],
     "sourceIds": [
       "chat",
-      "guide"
+      "guide",
+      "tests"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1600,6 +1704,18 @@
         "content": "【試験最頻出の落とし穴】AIが生成したテストコードの「アサーション（期待値）」自体がハルシネーションを起こしている可能性があります。テストを実行してパスしたとしても、AIがバグのある実装に合わせて誤った期待値を設定していた場合、バグを見逃すことになります。期待値の妥当性は人間が必ず確認します。"
       },
       {
+        "heading": "VS Code Test ExplorerとCopilot生成の役割差",
+        "content": "【定義・仕組み】Copilotはテストコードやケースを提案します。VS Code Test Explorerはテスト拡張機能が発見したテストを一覧し、実行、デバッグ、失敗箇所と結果の確認を行います。【例】Copilotに不正入力のテスト案を作らせ、ファイルに保存した後、Test Explorerで実行して失敗を調べます。【誤解と試験焦点】Test Explorer自体がテストを自動生成するわけではありません。"
+      },
+      {
+        "heading": "Arrange–Act–Assertを生成テストで読む",
+        "content": "【定義・例】`Arrange: const price = 100; const tax = 0.1;` で入力を用意し、`Act: const actual = total(price, tax);` で対象を実行し、`Assert: expect(actual).toBe(110);` で契約上の期待値を確認します。Copilot案が`expect(actual).toBe(100)`ならテストが動いても仕様に反します。【誤解と試験焦点】AAAはテストの読み方であり、コンパイル・デバッグ操作の名前ではありません。"
+      },
+      {
+        "heading": "入力検証とテストのAssertion",
+        "content": "【定義・例】本番関数`parseAge(raw)`は文字列が数値か、年齢範囲内かを入力検証し、不正値を拒否します。テストでは`expect(() => parseAge(\"bad\")).toThrow()`とアサートして拒否を確かめます。【判断】本番の入力検証を省いたままテストのassertionだけ追加しても、不正入力の処理は安全になりません。【試験焦点】Q43の解説表現はこの二つを混同しやすいため、役割を分けて覚えます。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: 単体テストを生成するスラッシュコマンドは？ → `/tests`。\nQ2: 正常系だけでなく何を意識してテストを生成させるべきか？ → エッジケース（境界値、異常系）。\nQ3: AI生成テストで最も注意して人間が検証すべき箇所は？ → アサーションの期待値（ハルシネーションの有無）。"
       }
@@ -1607,11 +1723,14 @@
     "keyPoints": [
       "`/tests` でフレームワークに沿った単体テスト骨格とモックを一括生成できる。",
       "エッジケース（境界値、異常系、null等）のテスト生成を明示的に指示する。",
-      "テストのアサーション（期待値）が実装のバグを肯定していないか人間が検証する。"
+      "テストのアサーション（期待値）が実装のバグを肯定していないか人間が検証する。",
+      "テスト生成はCopilot、発見・実行・デバッグ・結果確認はTest Explorer。",
+      "Arrangeは準備、Actは実行、Assertは期待結果の検証。"
     ],
     "commonMistakes": [
       "AI生成テストがグリーン（成功）になったからロジックが正しいと盲信すること。",
-      "正常系のテストだけを作ってカバレッジ数値だけで満足すること。"
+      "正常系のテストだけを作ってカバレッジ数値だけで満足すること。",
+      "テストのassertionが本番コードの入力検証を代替すると考えること。"
     ],
     "examTips": [
       "「エッジケースや境界値を指示してテストを生成する」が頻出正解パターンです。",
@@ -1622,10 +1741,15 @@
       "g-integration-test-generation",
       "g-edge-case-discovery",
       "g-test-assertions-mocking",
-      "g-slash-commands"
+      "g-slash-commands",
+      "g-test-explorer",
+      "g-arrange-act-assert",
+      "g-input-validation"
     ],
     "comparisonIds": [
-      "cmp-unit-vs-integration-tests"
+      "cmp-unit-vs-integration-tests",
+      "cmp-test-generation-vs-explorer",
+      "cmp-input-validation-vs-assertion"
     ],
     "questionIds": [
       "q09",
@@ -1633,9 +1757,11 @@
     ],
     "sourceIds": [
       "tests",
-      "guide"
+      "guide",
+      "vscode-testing",
+      "unit-test-aaa"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1672,6 +1798,10 @@
         "content": "・AIの修正案によって別の脆弱性や仕様破壊が起きていないか、静的解析ツールの再実行による客観的検証が不可欠です。"
       },
       {
+        "heading": "生成コードの安全な例外処理",
+        "content": "【定義・理由】Copilot案の例外経路は「動く」だけで合格とせず、信頼性と情報漏えいを評価します。【方法・例】`except ValueError`のように予想する例外を狭く捕捉し、利用者には一般化したエラーを返します。ログにはエラー種別と追跡IDを残し、トークン・個人情報・内部スタックを出しません。復旧できない場合は適切な境界へ再送出します。【誤解と試験焦点】全例外を空catchで握り潰す、機密を含む例外全文を利用者に見せる、という案は退けます。"
+      },
+      {
         "heading": "6. 30秒チェック（Mini Review）",
         "content": "Q1: コードのエラーや脆弱性の修正提案を依頼するスラッシュコマンドは？ → `/fix`。\nQ2: SQLインジェクションを防ぐための標準的な修正パターンは？ → パラメータ化クエリ（プリペアドステートメント）。\nQ3: AI修正後に実施すべきことは？ → 単体テストとセキュリティスキャンの再実行。"
       }
@@ -1679,7 +1809,8 @@
     "keyPoints": [
       "`/fix` コマンドで静的解析エラーや脆弱性の安全な代替コードを生成できる。",
       "シークレットは環境変数で管理し、Secret ScanningとPush Protectionで防護する。",
-      "修正後は必ず静的解析ツールを再実行して脆弱性が完全に解消されたか確認する。"
+      "修正後は必ず静的解析ツールを再実行して脆弱性が完全に解消されたか確認する。",
+      "具体的な例外を捕捉し、機密を漏らさず、握り潰さずに適切に処理する。"
     ],
     "commonMistakes": [
       "`/fix` で修正したからといって再スキャンを行わずに安心してしまうこと。",
@@ -1694,7 +1825,11 @@
       "g-static-analysis-copilot",
       "g-perf-bottlenecks",
       "g-secret-leak-prevention",
-      "g-slash-commands"
+      "g-slash-commands",
+      "g-safe-exception-handling",
+      "g-reliability",
+      "g-input-validation",
+      "g-test-assertions-mocking"
     ],
     "comparisonIds": [],
     "questionIds": [],
@@ -1702,9 +1837,12 @@
       "tests",
       "chat",
       "privacy",
-      "guide"
+      "guide",
+      "responsible",
+      "exception-best-practices",
+      "exception-sensitive"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1763,7 +1901,8 @@
       "g-repo-content-exclusion",
       "g-org-content-exclusion",
       "g-exclusion-syntax",
-      "g-policy-inheritance"
+      "g-policy-inheritance",
+      "g-subscription-plans"
     ],
     "comparisonIds": [
       "cmp-exclusion-vs-publicmatch"
@@ -1834,7 +1973,8 @@
       "g-output-ownership",
       "g-enterprise-data-privacy",
       "g-ip-copyright",
-      "g-code-retention-policy"
+      "g-code-retention-policy",
+      "g-subscription-plans"
     ],
     "comparisonIds": [],
     "questionIds": [],
@@ -1881,6 +2021,10 @@
         "content": "インデックスは継続的に更新されますが、すべての公開コードを即時に網羅するものではありません。短い定型コードの扱いや製品ごとのBlock対応状況も異なります。"
       },
       {
+        "heading": "公開コード一致と有害性フィルターは別",
+        "content": "【判断】公開コード一致は提案と公開リポジトリの一致・参照情報を扱います。有害性フィルターは出力内容の有害・不快さを検知します。Content Exclusionは指定したソースをCopilotが参照しないようにする設定です。【例】社内秘密ファイルを入力文脈から外すならContent Exclusion、公開コードとの一致提案を抑えるなら一致ポリシーを選びます。どちらも安全なコードを保証しません。"
+      },
+      {
         "heading": "6. 30秒チェック",
         "content": "Q1: 約150文字は何を指す？ → 照合に使う提案とその周辺コード。\nQ2: Blockで保証されることは？ → 対応製品で検出された一致提案を表示しないこと。\nQ3: Content Exclusionと同じ機能か？ → いいえ。"
       }
@@ -1903,16 +2047,21 @@
       "g-public-code-log",
       "g-content-exclusion",
       "g-org-policies",
-      "g-compliance-auditability"
+      "g-compliance-auditability",
+      "g-safety-filtering",
+      "g-post-processing"
     ],
     "comparisonIds": [
-      "cmp-exclusion-vs-publicmatch"
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-safety-filter-types"
     ],
     "questionIds": [],
     "sourceIds": [
       "public-code",
       "policies",
-      "guide"
+      "guide",
+      "model-hosting",
+      "exclusion-concept"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "verified"

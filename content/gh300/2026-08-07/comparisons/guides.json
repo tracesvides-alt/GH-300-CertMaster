@@ -845,5 +845,247 @@
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
     "status": "verified"
+  },
+  {
+    "id": "cmp-test-generation-vs-explorer",
+    "title": "Copilot Test Generation vs VS Code Test Explorer",
+    "slug": "test-generation-vs-explorer",
+    "summary": "Copilotはテスト案を生成し、Test Explorerは発見・実行・デバッグ・結果確認を行う。",
+    "comparedTermIds": [
+      "g-unit-test-generation",
+      "g-test-explorer"
+    ],
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "目的",
+        "values": [
+          "Copilot: ケースとテストコードの提案",
+          "Test Explorer: 保存されたテストの発見と運用"
+        ]
+      },
+      {
+        "axis": "結果の検証",
+        "values": [
+          "Copilot: 期待値を提案するが正しさは保証しない",
+          "Test Explorer: 実行結果を見せるが期待値の妥当性は人が確認"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "テストの骨格がない → Copilotに案を依頼",
+      "既存テストを走らせ失敗を調べる → Test Explorer"
+    ],
+    "commonTraps": [
+      "Test Explorerがテストコードを生成すると考える",
+      "生成されたテストを実行せず正しいと見なす"
+    ],
+    "examTips": [
+      "Q39はCopilot機能ではなくVS CodeのテストUIを問う。"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "questionIds": [
+      "q09"
+    ],
+    "sourceIds": [
+      "vscode-testing",
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-quality-attributes",
+    "title": "Reliability vs Performance vs Maintainability",
+    "slug": "quality-attributes",
+    "summary": "生成コードの信頼性、速度、変更容易性を別の品質特性として比較する。",
+    "comparedTermIds": [
+      "g-reliability",
+      "g-code-quality-attributes"
+    ],
+    "domainIds": [
+      "d1",
+      "d5"
+    ],
+    "objectiveIds": [
+      "d1o2",
+      "d5o1"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "問うこと",
+        "values": [
+          "Reliability: 条件下で継続して正しく動くか",
+          "Performance: 時間・資源をどれだけ使うか",
+          "Maintainability: 将来どれだけ変更しやすいか"
+        ]
+      },
+      {
+        "axis": "測り方",
+        "values": [
+          "Reliability: 異常系・長期運用・欠陥の検証",
+          "Performance: 負荷試験・時間計測",
+          "Maintainability: 変更影響・複雑度・レビュー"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "速いが異常入力で落ちる → Reliability不足",
+      "正しく動くが高負荷で遅い → Performance不足",
+      "仕様変更が広範囲に波及 → Maintainability不足"
+    ],
+    "commonTraps": [
+      "正しい単発結果だけで長期信頼性を保証する",
+      "速度改善で例外処理を削っても品質向上と考える"
+    ],
+    "examTips": [
+      "Q44–46の選択肢は行数や人数と品質属性を区別する。"
+    ],
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d5-generation-refactoring"
+    ],
+    "questionIds": [
+      "q-d5-a10"
+    ],
+    "sourceIds": [
+      "guide",
+      "responsible",
+      "tests"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-input-validation-vs-assertion",
+    "title": "Input Validation vs Test Assertion",
+    "slug": "input-validation-vs-assertion",
+    "summary": "本番入力の事前条件を守る処理と、テストで期待結果を確認する処理を区別する。",
+    "comparedTermIds": [
+      "g-input-validation",
+      "g-test-assertions-mocking"
+    ],
+    "domainIds": [
+      "d5"
+    ],
+    "objectiveIds": [
+      "d5o2"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "実行場所",
+        "values": [
+          "Input Validation: 本番関数の入口など",
+          "Test Assertion: テストコード"
+        ]
+      },
+      {
+        "axis": "目的",
+        "values": [
+          "Input Validation: 無効な値を拒否・安全に扱う",
+          "Test Assertion: 実際の振る舞いが期待値に合うか確認"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "不正入力を本番で拒否したい → Input Validationを実装",
+      "拒否されることを証明したい → 無効値のテストとAssertion"
+    ],
+    "commonTraps": [
+      "Assertionを書いただけで本番コードが入力を拒否すると考える"
+    ],
+    "examTips": [
+      "Q43の解説表現は混同しやすい。実装とテストを分けて判断する。"
+    ],
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "questionIds": [
+      "q09"
+    ],
+    "sourceIds": [
+      "tests",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
+    "id": "cmp-safety-filter-types",
+    "title": "Harmful Output Filtering vs Public Code Matching vs Content Exclusion",
+    "slug": "safety-filter-types",
+    "summary": "有害内容、公開コード類似、参照元の除外という三つの異なる制御を比較する。",
+    "comparedTermIds": [
+      "g-safety-filtering",
+      "g-public-code-matching",
+      "g-content-exclusion"
+    ],
+    "domainIds": [
+      "d3",
+      "d6"
+    ],
+    "objectiveIds": [
+      "d3o1",
+      "d6o1",
+      "d6o2"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "対象",
+        "values": [
+          "Harmful output filtering: 生成内容の有害・不快さ",
+          "Public Code Matching: 公開コードとの類似性",
+          "Content Exclusion: 指定したファイル等の参照範囲"
+        ]
+      },
+      {
+        "axis": "主な位置",
+        "values": [
+          "Harmful: 出力側の安全性確認",
+          "Public match: 提案の一致判定とポリシー",
+          "Exclusion: 入力・参照側の範囲設定（機能ごとに限界あり）"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "不快・有害な生成内容を抑える → Harmful filter",
+      "公開コードと一致する提案を制御 → Public Code Matching",
+      "秘密ファイルを文脈から外す → Content Exclusion"
+    ],
+    "commonTraps": [
+      "内容除外だけで有害な出力すべてを防げると考える",
+      "公開コード一致判定を脆弱性検査と取り違える"
+    ],
+    "examTips": [
+      "Q49–50は「何を守るか」を決め手にする。"
+    ],
+    "lessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d6-public-code-matching"
+    ],
+    "questionIds": [
+      "q-d1-e06",
+      "q-d6-e03"
+    ],
+    "sourceIds": [
+      "model-hosting",
+      "public-code",
+      "exclusion-concept",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
   }
 ]

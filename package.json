@@ -16,7 +16,8 @@
     "quality:check": "node scripts/audit-questions.mjs --check",
     "choice:audit": "node scripts/audit-choice-quality.mjs",
     "difficulty:audit": "node scripts/audit-question-difficulty.mjs",
-    "difficulty:check": "node scripts/audit-question-difficulty.mjs --check"
+    "difficulty:check": "node scripts/audit-question-difficulty.mjs --check",
+    "practice:coverage": "node scripts/audit-official-practice-coverage.mjs"
   },
   "dependencies": {
     "dexie": "^4.0.0",
