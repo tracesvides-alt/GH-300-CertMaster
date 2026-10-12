@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
@@ -8,8 +7,7 @@ const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
 const bank = read(bankPath);
 const editorial = read('content/gh300/2026-08-07/questions/quality-review.json');
 const baseline = read('reports/question-choice-baseline.json');
-const previous = JSON.parse(execFileSync('git', ['show', `HEAD:${bankPath}`], { encoding: 'utf8' }));
-const previousById = new Map(previous.map(q => [q.id, q]));
+const contentBaseline = read('reports/question-choice-content-baseline.json');
 const unchangedReasons = {
   q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',
   'q-d2-a08': '四つの設定キーはいずれもMCP関連の語で、VS Code設定という条件が必要。',
@@ -49,16 +47,18 @@ const category = {
 };
 const avg = values => values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
 const pct = (a, b) => b ? +(a * 100 / b).toFixed(1) : 0;
+const hash = value => createHash('sha256').update(value).digest('hex');
 const editorialContent = q => JSON.stringify({ question: q.question, choices: q.choices, explanation: q.explanation, choiceExplanations: q.choiceExplanations });
-const changed = new Set(bank.filter(q => editorialContent(q) !== editorialContent(previousById.get(q.id))).map(q => q.id));
+if (Object.keys(contentBaseline.questions).length !== bank.length) throw Error('The fixed baseline does not cover the full question bank.');
+const changed = new Set(bank.filter(q => hash(editorialContent(q)) !== contentBaseline.questions[q.id]?.contentHash).map(q => q.id));
 const distractorsReplaced = bank.reduce((total, q) => {
-  const original = previousById.get(q.id);
-  return total + q.choices.filter(c => !q.answer.includes(c.id) && c.text !== original.choices.find(old => old.id === c.id)?.text).length;
+  const original = contentBaseline.questions[q.id];
+  return total + q.choices.filter(c => !q.answer.includes(c.id) && hash(c.text) !== original?.distractorHashes[c.id]).length;
 }, 0);
 
 const inventory = bank.map(q => {
   const review = editorial.questions[q.id];
-  if (!review || review.fingerprint !== createHash('sha256').update(JSON.stringify(q)).digest('hex')) throw Error(`Stage 2 review is absent or stale: ${q.id}`);
+  if (!review || review.fingerprint !== hash(JSON.stringify(q))) throw Error(`Stage 2 review is absent or stale: ${q.id}`);
   if (review.answerWithoutReading || review.multipleAnswerRisk) throw Error(`Unresolved semantic review: ${q.id}`);
   const answer = q.answer[0];
   const options = q.choices.map(c => {

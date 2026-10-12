@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
+import { createHash } from 'node:crypto';
 import seed from '../content/gh300/2026-08-07/questions/seed.json';
 import sources from '../content/gh300/2026-08-07/sources.json';
 import audit from '../reports/question-choice-quality-audit.json';
+import baseline from '../reports/question-choice-content-baseline.json';
 
 describe('choice-quality inventory', () => {
   it('tracks every question and option without dropping or relabeling an answer', () => {
@@ -42,6 +44,22 @@ describe('choice-quality inventory', () => {
       }
       expect(row.requirementMapping[0].correctReason).toBeTruthy();
       expect(Object.keys(row.requirementMapping[0].distractorFailures)).toHaveLength(3);
+    }
+  });
+
+  it('keeps the change count anchored to the fixed pre-review question snapshot', () => {
+    expect(Object.keys(baseline.questions)).toHaveLength(seed.length);
+    for (const q of seed) {
+      const content = JSON.stringify({
+        question: q.question,
+        choices: q.choices,
+        explanation: q.explanation,
+        choiceExplanations: q.choiceExplanations,
+      });
+      const current = createHash('sha256').update(content).digest('hex');
+      expect(audit.modifiedQuestionIds.includes(q.id)).toBe(
+        current !== baseline.questions[q.id as keyof typeof baseline.questions].contentHash,
+      );
     }
   });
 });
