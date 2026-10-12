@@ -11,5 +11,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run quality:check
+      - run: npm run difficulty:check
       - run: npm run check
       - run: npm test

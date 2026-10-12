@@ -1,0 +1,2735 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-12",
+  "status": "reviewed",
+  "method": "全件の編集評価。実測正答率・識別力・実試験との等価性は未測定。",
+  "questions": {
+    "q01": {
+      "fingerprint": "a385e3056d10dc3817bbe72f7f3203fa503cfe11d04cc40ef5bc7fa8f74a6bb1",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。翌月末という仕様を報告された失敗入力へ適用する。",
+      "reasoningSteps": [
+        "翌月末という仕様を報告された失敗入力へ適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q02": {
+      "fingerprint": "6e30c938092eb247cae4ae57e9754905a9a56942afe95625c550539535967af0",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "独立した期待値で検証する基本原則の識別。具体的な丸め結果の推論までは求めない。",
+      "reasoningSteps": [
+        "独立した期待値で検証する基本原則の識別。具体的な丸め結果の推論までは求めない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q03": {
+      "fingerprint": "dedf76154abc273264e2ec692032b5e076abe79d26c9c73258a870af3be4f129",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "表示された提案の基本的な採否操作。導入段階の確認として維持。",
+      "reasoningSteps": [
+        "表示された提案の基本的な採否操作。導入段階の確認として維持。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q04": {
+      "fingerprint": "050088c3525776679b7d6dfa2b9ed9e35f17d59f73a8d009647f862c75478853",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "説明と編集の用途識別が中心であり、Appliedから基礎へ戻す。",
+      "reasoningSteps": [
+        "説明と編集の用途識別が中心であり、Appliedから基礎へ戻す。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q05": {
+      "fingerprint": "acc0d4454090543c83cd1d0ee3d8aec507e5dbf66923b035ebf50b5f8db0738c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "質問・添付・履歴が入力になることの理解。入力経路の基礎。",
+      "reasoningSteps": [
+        "質問・添付・履歴が入力になることの理解。入力経路の基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q06": {
+      "fingerprint": "f5ed6a3de9be03e8573d702b3d81aeb5058474a683f94db3ac159d23421afb04",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "APIを公式契約とテストで確かめる基本原則。複数の証拠からの診断ではない。",
+      "reasoningSteps": [
+        "APIを公式契約とテストで確かめる基本原則。複数の証拠からの診断ではない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q07": {
+      "fingerprint": "0f7ad3c4ba8a42ef383ef4276445d1a5701f58ff5050b69efc4e147d3835f35b",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。日と月の順序を具体的な入出力例に適用する。",
+      "reasoningSteps": [
+        "日と月の順序を具体的な入出力例に適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q08": {
+      "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "無関係なタスクで会話を区切る基本操作。現行の添付まで古い場合は別問題で扱う。",
+      "reasoningSteps": [
+        "無関係なタスクで会話を区切る基本操作。現行の添付まで古い場合は別問題で扱う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q09": {
+      "fingerprint": "43a062d837f11fefd8a9f6e7acd4a7d388af49eb4fb54d371141e368af92c7c6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "未確認の境界をテストに含める原則。期待値の計算はしない。",
+      "reasoningSteps": [
+        "未確認の境界をテストに含める原則。期待値の計算はしない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q10": {
+      "fingerprint": "3e09b44260c387aa3bd0e85cfc72298291ea1441210f540ca5daacc711039d7f",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "通信を止めるだけのスタブと、宛先・本文を観測するモックを条件に適用する。",
+      "reasoningSteps": [
+        "通信を止めるだけのスタブと、宛先・本文を観測するモックを条件に適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q11": {
+      "fingerprint": "53e1c0acd7b7783ade86ab244cb0ac3c6dfd2e0d811f3d83b643db0dffe85b1c",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "AgentにContent Exclusionが対応するかという単一の制約の理解。",
+      "reasoningSteps": [
+        "AgentにContent Exclusionが対応するかという単一の制約の理解。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q12": {
+      "fingerprint": "591175ec6efd4fb58e59cf09b03b4bd0813e848d2f84d55d309296e53bff1bfd",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "古いセッションへの設定反映という単純な運用知識の確認。",
+      "reasoningSteps": [
+        "古いセッションへの設定反映という単純な運用知識の確認。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-f01": {
+      "fingerprint": "d7f35f0dfdd4156a170cae8ea65f922c5421e3f9628524b069ba445793ac07e7",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "採用コードへの開発者の責任という基本原則の識別。",
+      "reasoningSteps": [
+        "採用コードへの開発者の責任という基本原則の識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-f02": {
+      "fingerprint": "d42a0176e0ae9d62a19feb949a0406650a3789c257c735ff3102bf3237676246",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "存在しないAPIの生成をハルシネーションと呼ぶ用語識別。",
+      "reasoningSteps": [
+        "存在しないAPIの生成をハルシネーションと呼ぶ用語識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-f03": {
+      "fingerprint": "1b5ba01449b9c6bf129372d957c8c3d193d9f5b1c0eaf175aca3db3c6b125836",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "不足権限の経路をテストする基礎原則。複合診断ではない。",
+      "reasoningSteps": [
+        "不足権限の経路をテストする基礎原則。複合診断ではない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-f04": {
+      "fingerprint": "e65780c216e9755efe0d18064bc6d024cd68ec538de5ac612a423bc47bf7f492",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "特定地域に偏る結果とデータの偏りを結び付ける基本概念。",
+      "reasoningSteps": [
+        "特定地域に偏る結果とデータの偏りを結び付ける基本概念。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-f05": {
+      "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "パスワード保存に適する方式を選ぶセキュリティの基礎確認。",
+      "reasoningSteps": [
+        "パスワード保存に適する方式を選ぶセキュリティの基礎確認。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a01": {
+      "fingerprint": "c8773d69342e282c776dcf1c85c1ccca52e00d0c12ec3f4bd9e951df3e3dec70",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。資源取得後の例外という失敗経路へテストを選ぶ。",
+      "reasoningSteps": [
+        "資源取得後の例外という失敗経路へテストを選ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a02": {
+      "fingerprint": "5aea644068eef5481dc83971da966a5d26066a4d2211e5fe9dec28f573efec3a",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "文字列連結による提案へパラメータ化を適用し、周辺の防御策と区別する。",
+      "reasoningSteps": [
+        "文字列連結による提案へパラメータ化を適用し、周辺の防御策と区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a03": {
+      "fingerprint": "7ddb04231363be00d4cea72cf0de9febc673ef95cb54103475050f82b139753c",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "レビューの仕様違反という実際の課題へ、操作訓練ではなく判断訓練を選ぶ。",
+      "reasoningSteps": [
+        "レビューの仕様違反という実際の課題へ、操作訓練ではなく判断訓練を選ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a04": {
+      "fingerprint": "dfeceae7eeecbeb49603c5eaf75b9687842efed70240c15c8758022caba93f46",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "MD5の提案を、一般ハッシュや暗号化ではなくパスワード保存向け方式へ修正する。",
+      "reasoningSteps": [
+        "MD5の提案を、一般ハッシュや暗号化ではなくパスワード保存向け方式へ修正する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a05": {
+      "fingerprint": "40c2fd18ea604f39a36deb9795ff72a8cfc73d3463f41d1826c279c845cb5d35",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "出所と利用条件を確認する一般原則のみ。具体的な通知や契約の比較がなく基礎へ変更。",
+      "reasoningSteps": [
+        "出所と利用条件を確認する一般原則のみ。具体的な通知や契約の比較がなく基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a06": {
+      "fingerprint": "363de8b9cb8d90f69a222e99853424a19b925f3fb41234cfcef21febd5968ae2",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "人間のレビュー観点を挙げる一般原則。実際の差分の判断はないため基礎へ変更。",
+      "reasoningSteps": [
+        "人間のレビュー観点を挙げる一般原則。実際の差分の判断はないため基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a07": {
+      "fingerprint": "4818a5efb8342924ac9c71a77da11d86f8ea6735772d445625d33a5f6b130ccb",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。通知と強制される承認条件の差を運用へ適用する。",
+      "reasoningSteps": [
+        "通知と強制される承認条件の差を運用へ適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a08": {
+      "fingerprint": "954a63fb8414652f65996a7d0ebcfbfbb0117cbbbf78eb30b050ae6122935499",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "エラー処理を消しても通る観測から、行到達ではなく有効なアサーションを確認する。",
+      "reasoningSteps": [
+        "エラー処理を消しても通る観測から、行到達ではなく有効なアサーションを確認する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a09": {
+      "fingerprint": "6746a138355c2d9149f3133309d1d6c132bc499641b88984b01b22896e440423",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。既存検査の対象外である業務契約に必要な検証を選ぶ。",
+      "reasoningSteps": [
+        "既存検査の対象外である業務契約に必要な検証を選ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-a10": {
+      "fingerprint": "a826ddacca995517a01c6926c52a28a880881fc86e38685377634ebdc4fe7314",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。性能改善案を互換性条件に照合して採否を判断する。",
+      "reasoningSteps": [
+        "性能改善案を互換性条件に照合して採否を判断する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-e01": {
+      "fingerprint": "4297869bbbb51520334fff78c56c6bc086db8584a3a666a5980ec1146d38cbd5",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。候補ごとに出所と機能の証拠を分類する → 一方の成功で他方の未確認を補えないと判断する",
+      "reasoningSteps": [
+        "候補ごとに出所と機能の証拠を分類する",
+        "一方の成功で他方の未確認を補えないと判断する"
+      ],
+      "counterfactual": "Pの発行元も確認済みならPは採用可能となり、Qだけが機能確認待ちになる。",
+      "evidence": [
+        "Copilotが画像処理の依存PとQを提案しました。"
+      ]
+    },
+    "q-d1-e02": {
+      "fingerprint": "5af36cee672b328efd284120cf7237de1675334d5593ee2619798ec9f6aa8f1c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。各証跡の対象コミットを照合する → Yの公開契約変更に対する未検証・未承認を判定する",
+      "reasoningSteps": [
+        "各証跡の対象コミットを照合する",
+        "Yの公開契約変更に対する未検証・未承認を判定する"
+      ],
+      "counterfactual": "Yが差分のない再実行でXと同一内容なら、同じ内容の証跡を再利用できる場合がある。",
+      "evidence": [
+        "AgentのPRで、コミットXの契約テストが成功し、担当者もXを承認しました。"
+      ]
+    },
+    "q-d1-e03": {
+      "fingerprint": "8168c74daabaa5cd40da952d2ef0cbe49e304dd452e3bf215ad58455204bb0c9",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。PとQの保持・待機関係から循環を導く → 一般的な反復試験と再現すべき順序を区別する",
+      "reasoningSteps": [
+        "PとQの保持・待機関係から循環を導く",
+        "一般的な反復試験と再現すべき順序を区別する"
+      ],
+      "counterfactual": "記録が循環待ちではなく処理の進行を示すなら、処理時間や負荷の測定が次の候補になる。",
+      "evidence": [
+        "Copilotが書いたキューのテストは1万回成功しました。"
+      ]
+    },
+    "q-d1-e04": {
+      "fingerprint": "955e9d041f46a1969ea7db12c28a060157dc3e3fd689fc138f8e250b9256d896",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。診断に必要な構造を残す匿名化の方法を選ぶ。",
+      "reasoningSteps": [
+        "診断に必要な構造を残す匿名化の方法を選ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-e05": {
+      "fingerprint": "bea6f52fc1d759786414b9e17d4b4754a81807d6c5f384d21dfbb2259f04ab0e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。成功した操作を不具合から除外する → フォーカスと状態通知の二つの観測を対策へ結び付ける",
+      "reasoningSteps": [
+        "成功した操作を不具合から除外する",
+        "フォーカスと状態通知の二つの観測を対策へ結び付ける"
+      ],
+      "counterfactual": "ボタンに到達できず項目名も読めない場合は、Tab順序とラベルが優先になる。",
+      "evidence": [
+        "Copilotで作ったドロップダウンを検査しました。"
+      ]
+    },
+    "q-d1-e06": {
+      "fingerprint": "bf951ecc22d27e9b8ca01bf60bdd4da2eff0b051a271544a41fe396a67765218",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Blockの限界を採用審査の運用へ適用する一段階の判断。ExamからAppliedへ変更。",
+      "reasoningSteps": [
+        "Blockの限界を採用審査の運用へ適用する一段階の判断。ExamからAppliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d1-e07": {
+      "fingerprint": "287de7e42b682fcd6d0dc0f24497a7c5c2e7f684fa1d14eee412ad6c7ad5c4ea",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。三試験の測定値を二つの受入条件と照合する → 障害時だけ未達の整合性へ検証を絞る",
+      "reasoningSteps": [
+        "三試験の測定値を二つの受入条件と照合する",
+        "障害時だけ未達の整合性へ検証を絞る"
+      ],
+      "counterfactual": "欠落が0でピークのp95だけ250msなら、負荷・ワーカー数の分析が優先。",
+      "evidence": [
+        "Copilotのキュー変更を試験しました。"
+      ]
+    },
+    "q-d1-e08": {
+      "fingerprint": "600b328147ded40d1f646c534513a6d0719cdf2d66f5560fee91d7a5871ac996",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。利用の増加と成果改善を区別する → 案件構成の交絡を抑えて未測定の成果を追う",
+      "reasoningSteps": [
+        "利用の増加と成果改善を区別する",
+        "案件構成の交絡を抑えて未測定の成果を追う"
+      ],
+      "counterfactual": "目的が利用定着の確認だけなら、採用率や参加者数の追跡も目的に合う。",
+      "evidence": [
+        "Copilot研修を試行したチームで、採用率は30%から50%へ上がりました。"
+      ]
+    },
+    "q-d2-f01": {
+      "fingerprint": "3c78eb8c6c3ef6f1efc6229be42e7777f0346272265b096b605f95216df1433b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "選択範囲の差分編集にInline Chatを対応付ける機能識別。",
+      "reasoningSteps": [
+        "選択範囲の差分編集にInline Chatを対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f02": {
+      "fingerprint": "ddf3c12d3654beb66ae19688081a0f4b3f1105504a069be0076b162899e2d398",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "選択範囲を参照する変数の知識。名称を覚える基礎問題。",
+      "reasoningSteps": [
+        "選択範囲を参照する変数の知識。名称を覚える基礎問題。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f03": {
+      "fingerprint": "72458cd1e6984f72a1c2e41306896e236fe0ae0106af0e7a43fe14f2081a2b7f",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "テスト生成コマンドの名称を識別する基礎問題。",
+      "reasoningSteps": [
+        "テスト生成コマンドの名称を識別する基礎問題。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f04": {
+      "fingerprint": "3103326149d6318a7846909aee593a7e10673de4bb1f0df0c8c47adfd8f6de7a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "複数ファイルと実行反復をAgentに対応付ける機能識別。",
+      "reasoningSteps": [
+        "複数ファイルと実行反復をAgentに対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f05": {
+      "fingerprint": "a9ed42e5f579f919c15cc1c65c69db2e1fe5be8d5cdb63c05414a0a3aa12d552",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "承認前に影響を確かめる基本操作。具体的な削除対象の追跡は不要。",
+      "reasoningSteps": [
+        "承認前に影響を確かめる基本操作。具体的な削除対象の追跡は不要。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f06": {
+      "fingerprint": "198d660b6de71d860bc512cd5b6dc4c3a47c89b31ad849a3a4118adebd898a9e",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "外部ツール連携方式としてMCPを識別する基礎概念。",
+      "reasoningSteps": [
+        "外部ツール連携方式としてMCPを識別する基礎概念。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f07": {
+      "fingerprint": "031f7ece06dbad4387fa308fc38c3042c7f52ab86a5e0815245e3c71f5ebc6f5",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "MCP Toolsの役割の識別。Resourceとの違いを知る段階。",
+      "reasoningSteps": [
+        "MCP Toolsの役割の識別。Resourceとの違いを知る段階。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f08": {
+      "fingerprint": "9a21a5e7f6a5b745f70cd46061e195a95a18ea40e24ca8a7ed1b77ac323d680b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "リポジトリ共通指示の配置先の知識。",
+      "reasoningSteps": [
+        "リポジトリ共通指示の配置先の知識。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f09": {
+      "fingerprint": "e56537c169e2d012f2b6d0bddc641ffadd34e82d7935c1849e59d698b89d9ba4",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "任意に呼ぶプロンプトの保存先の知識。",
+      "reasoningSteps": [
+        "任意に呼ぶプロンプトの保存先の知識。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f10": {
+      "fingerprint": "119b253e7b41ebf03d1b1d910acb4c683a7c8a533ac76bc9533248cc784bc073",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "共有文脈をSpacesに対応付ける機能識別。",
+      "reasoningSteps": [
+        "共有文脈をSpacesに対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-f11": {
+      "fingerprint": "b86e6a166bc05f5615689a2ab01383dee84913b9fcb9f5f7fc40fcdecb8f6dc3",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "GUIなしの相談をCLIに対応付ける機能識別。",
+      "reasoningSteps": [
+        "GUIなしの相談をCLIに対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a01": {
+      "fingerprint": "bcaf18c68d429df1c9d90f9b1c83ef17c5b469dd4079683b3f8d20f490c93751",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Inline Chatを用途から選ぶだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "Inline Chatを用途から選ぶだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a02": {
+      "fingerprint": "0be858b9d13801950718d9eab8bc1764aaf8985aa372230929967a51ba582499",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。誤提案の原因となった型の前提を現行定義で補う。",
+      "reasoningSteps": [
+        "誤提案の原因となった型の前提を現行定義で補う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a03": {
+      "fingerprint": "5983a622b253419ce538935fbea11087c20062f2706a5628d883cee22e4b8141",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "設計相談と局所編集という二つの作業段階へAskとInline Chatを割り当てる。",
+      "reasoningSteps": [
+        "設計相談と局所編集という二つの作業段階へAskとInline Chatを割り当てる。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a04": {
+      "fingerprint": "e0f9438648c997c0f3779e765fa01214ab88e7010789adae2d667e0843717264",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。承認前にコマンドの実対象と復旧可能範囲を確認する。",
+      "reasoningSteps": [
+        "承認前にコマンドの実対象と復旧可能範囲を確認する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a05": {
+      "fingerprint": "d6a187e1ba87690dc33db59d073d95ec3ea740eac77aadb5d6257133a5742ffd",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Agentの特徴の説明にとどまるため基礎へ変更。",
+      "reasoningSteps": [
+        "Agentの特徴の説明にとどまるため基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a06": {
+      "fingerprint": "f1ca7e76edea5fa76a5aebed1416864ce2a428a965bf13a8ed504791f1db022a",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "実行結果を次の操作に使うAgentの仕組みの再認。診断ではなく基礎へ変更。",
+      "reasoningSteps": [
+        "実行結果を次の操作に使うAgentの仕組みの再認。診断ではなく基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a07": {
+      "fingerprint": "250e326649d759dd1a1b883e788972049736f115f47d9d7e347bf530ec64da0c",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "スキーマの現在値という用途へ、操作範囲と利用者認可を備えた連携を適用する。",
+      "reasoningSteps": [
+        "スキーマの現在値という用途へ、操作範囲と利用者認可を備えた連携を適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a08": {
+      "fingerprint": "589da217c589eb70b49e4bd6f9903accd2df9743e52c2f0e7b4f70e244be779c",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "設定キーserversの記憶問題。文面が技術的でも応用ではなく基礎へ変更。",
+      "reasoningSteps": [
+        "設定キーserversの記憶問題。文面が技術的でも応用ではなく基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a09": {
+      "fingerprint": "4d8b534b64b6702bbfeabb3cc26254de0a5e0632ccb89daa7ec7c82663c871af",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "共通指示の標準配置先を選ぶ知識なので基礎へ変更。",
+      "reasoningSteps": [
+        "共通指示の標準配置先を選ぶ知識なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a10": {
+      "fingerprint": "f93871b86d0715f37c8a89b34c123f2b0177299b31cc6510982b96778f309701",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "常時適用する規約と随時呼ぶタスクを二つの保存方式へ振り分ける。",
+      "reasoningSteps": [
+        "常時適用する規約と随時呼ぶタスクを二つの保存方式へ振り分ける。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a11": {
+      "fingerprint": "720cdc65b6ef74204fa795c75d6ac6231bdcac10ce529f4621ab280750e0e809",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "PR要約機能の役割説明にとどまるため基礎へ変更。",
+      "reasoningSteps": [
+        "PR要約機能の役割説明にとどまるため基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a12": {
+      "fingerprint": "eac08d262bd6624d0f534dca78ba7d0292ba56d56a265da48bdffee91650e974",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "TabとEscの標準キー操作の記憶なので基礎へ変更。",
+      "reasoningSteps": [
+        "TabとEscの標準キー操作の記憶なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a13": {
+      "fingerprint": "0cfa258a6442eae6dcf830f49d3af1a05fb286b3a109d95ce42992bf6f0b227d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "部分採用のショートカットの記憶なので基礎へ変更。",
+      "reasoningSteps": [
+        "部分採用のショートカットの記憶なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a14": {
+      "fingerprint": "1490e2421004020f16f8b1db98b4a352ae633bcec21a15a834677f92c4d865f0",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "説明機能を選ぶ用途識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "説明機能を選ぶ用途識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a15": {
+      "fingerprint": "8044e97d9e607c98d680e0e7ad048212c14b8d4dfb4b497d0bf35c7adf384b39",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "変更対象が未確定という状況で、検索結果を参照関係で絞ってから編集する。",
+      "reasoningSteps": [
+        "変更対象が未確定という状況で、検索結果を参照関係で絞ってから編集する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a16": {
+      "fingerprint": "f0e16862c5195376139a488c8083b858a16f527bf09970e5b963d33a8e9c76bf",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。検証可能な境界からエージェントの変更範囲を段階化する。",
+      "reasoningSteps": [
+        "検証可能な境界からエージェントの変更範囲を段階化する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a17": {
+      "fingerprint": "2eeacf4f213882b50451227d701269e324917c5fda73f3579117c11e2864b457",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "ResourceとToolの定義の組合せ。実装の診断はなく基礎へ変更。",
+      "reasoningSteps": [
+        "ResourceとToolの定義の組合せ。実装の診断はなく基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a18": {
+      "fingerprint": "02251a3ecb54ed0c254ac73acad07d0087e9059ad3e6b80bce59155a6fb362a7",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。認可後にも残る不要データの送信をサーバーで減らす。",
+      "reasoningSteps": [
+        "認可後にも残る不要データの送信をサーバーで減らす。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a19": {
+      "fingerprint": "7143bf364ca048e37564cf78074471694b68d25f13db5ce43be978c3997a4de5",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "簡潔で具体的な指示という一般原則なので基礎へ変更。",
+      "reasoningSteps": [
+        "簡潔で具体的な指示という一般原則なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a20": {
+      "fingerprint": "a7a84d667e10a66c56ac12b1c996bcfc13104768c52700b42821d13e25953d1e",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。静的な添付と現在のAPI照会の差を利用目的へ適用する。",
+      "reasoningSteps": [
+        "静的な添付と現在のAPI照会の差を利用目的へ適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a21": {
+      "fingerprint": "772f8c667b77981e2356f7cfca6a9d99e6215f4d27971593f81e3fb7907d2aeb",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "ファイルを添付する操作知識だけなので基礎へ変更。",
+      "reasoningSteps": [
+        "ファイルを添付する操作知識だけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-a22": {
+      "fingerprint": "fd66b3c4fd34492e4d240be411ffb233f5ef5d8366c77ff25077bb1b461b9898",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "CLIの提案と実行を分け、理解前には実行しない利用手順を状況へ適用する。",
+      "reasoningSteps": [
+        "CLIの提案と実行を分け、理解前には実行しない利用手順を状況へ適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e01": {
+      "fingerprint": "2093c663bf506aaf399f16d97ac4fdc1c5d931ee0f7f6324ba6c7585f42964a7",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。CLIの要約ではなく実行コマンドを読む → モック境界と変更範囲の差から不足テストを導く",
+      "reasoningSteps": [
+        "CLIの要約ではなく実行コマンドを読む",
+        "モック境界と変更範囲の差から不足テストを導く"
+      ],
+      "counterfactual": "統合テストが既に現行差分で成功し依存解決だけ不安定なら、固定版の確認が優先。",
+      "evidence": [
+        "Copilot CLIで依存ライブラリを移行中です。"
+      ]
+    },
+    "q-d2-e02": {
+      "fingerprint": "dbc9029fed3ff394323a3ed7e464d0574fbd8b2dc5accd3e3fc3ee273b8f1a3a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。元APIとMCPの結果差からキャッシュ経路へ絞る → 利用者分離だけでなく権限変更と鮮度を扱う",
+      "reasoningSteps": [
+        "元APIとMCPの結果差からキャッシュ経路へ絞る",
+        "利用者分離だけでなく権限変更と鮮度を扱う"
+      ],
+      "counterfactual": "データが公開で認可差がなく鮮度だけが問題なら、期限の短縮が対策候補になる。",
+      "evidence": [
+        "残高照会MCPは利用者の認可を呼出しごとに検証しています。"
+      ]
+    },
+    "q-d2-e03": {
+      "fingerprint": "4bfa62b698083ac5210c629f571800dcbba9917a9fe0eb6c26ae5fa711b4663e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "オンデマンドの定型依頼からPrompt Fileを識別するだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "オンデマンドの定型依頼からPrompt Fileを識別するだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e04": {
+      "fingerprint": "ff9b4b3f4154a186e32fc13fac2cf88f4203c59f84414eae737d6eaddddffb6d",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "資料共有からSpacesを識別するだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "資料共有からSpacesを識別するだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e05": {
+      "fingerprint": "509e41e5f0b312b33db624b560447891fde9d8b472d96ff8852dc51501c237c9",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "インライン差分からInline Chatを識別するだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "インライン差分からInline Chatを識別するだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e06": {
+      "fingerprint": "1c87825bb1e5bc395dcf146c6d8c5cf2622a4209c9bace88b764e612fdc753d2",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める",
+      "reasoningSteps": [
+        "利用可能ツールと実行許可という二層を分ける",
+        "PとQそれぞれの有効範囲を求める"
+      ],
+      "counterfactual": "Qにshellを利用可能として追加すれば、QのGit許可が働きcommitとpushの両方が可能になる。",
+      "evidence": [
+        "Copilot CLIの権限演習です。"
+      ]
+    },
+    "q-d2-e07": {
+      "fingerprint": "6b134535d68a417d3e30e529fc3507fe992e0b7ec1e868729643f90c949b4af3",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。公開ツール数と実際の実行権限を区別する → 認証済みでも残る引数からシェルへの経路を特定する",
+      "reasoningSteps": [
+        "公開ツール数と実際の実行権限を区別する",
+        "認証済みでも残る引数からシェルへの経路を特定する"
+      ],
+      "counterfactual": "引数が安全で問題が大量ログだけなら、返却行数の制限が直接の対策になる。",
+      "evidence": [
+        "Docker状態確認用MCPはstatusとlogsだけを公開しています。"
+      ]
+    },
+    "q-d2-e08": {
+      "fingerprint": "95a57b9d2a5b45e3437a8f0bc52fe73c4391d1324527be4c736db6452f50b846",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "当該リポジトリだけの競合を修正し、他案件の方針を維持する範囲判断。Appliedへ変更。",
+      "reasoningSteps": [
+        "当該リポジトリだけの競合を修正し、他案件の方針を維持する範囲判断。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e09": {
+      "fingerprint": "0e2e42d1d543545e95ba8c4c2076741e30672eeb347edb311bad165c05c8f206",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。不具合の依存先を追加して文脈の不足を補う。",
+      "reasoningSteps": [
+        "不具合の依存先を追加して文脈の不足を補う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e10": {
+      "fingerprint": "26373fa3873f6e9a07728fdc45dfd5b0d5f346ed8016ecd0490392079a288163",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。契約の以上とコードの大なりを照合する → テスト成功が期待値の改変で生じたことを見抜く",
+      "reasoningSteps": [
+        "契約の以上とコードの大なりを照合する",
+        "テスト成功が期待値の改変で生じたことを見抜く"
+      ],
+      "counterfactual": "承認された契約が100超なら、100→100は正しく101側の検証が適切。",
+      "evidence": [
+        "Agentにカートの割引実装を依頼しました。"
+      ]
+    },
+    "q-d2-e11": {
+      "fingerprint": "3c3e95bc1d0f2a127ac8e18a901bffa66edf3668b789ace8faeb2fdbd7dd96c6",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。本文拒否とメタデータ返却を別経路として追う → 認可済み集合を件数・候補にも適用する",
+      "reasoningSteps": [
+        "本文拒否とメタデータ返却を別経路として追う",
+        "認可済み集合を件数・候補にも適用する"
+      ],
+      "counterfactual": "全7文書の存在とタイトルが公開情報という明示方針なら、本文の認可だけで足りる場合がある。",
+      "evidence": [
+        "社内検索MCPで、本文は閲覧権限を確認して返しています。"
+      ]
+    },
+    "q-d2-e12": {
+      "fingerprint": "e5aa9d81e10833d01087e24ac34f20128738e34e8cbab0202eb0895f47381c7c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "再利用タスクからPrompt Fileを識別するだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "再利用タスクからPrompt Fileを識別するだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e13": {
+      "fingerprint": "cba7da6e689bb1b222aa7a51ebc41714fb088029a348189c1421f08e92c47f28",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "端末での提案・説明というCLIの基本用途なので基礎へ変更。",
+      "reasoningSteps": [
+        "端末での提案・説明というCLIの基本用途なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e14": {
+      "fingerprint": "d3de8d7d888fb4ad913d1ffd364756298481df89d8dfba095af2277981af0286",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "resetの実行を保持すべきデータの条件に照合する一段階の承認判断。Appliedへ変更。",
+      "reasoningSteps": [
+        "resetの実行を保持すべきデータの条件に照合する一段階の承認判断。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e15": {
+      "fingerprint": "392d8681ab0df4786401fa6df119e8d8d22b1bc2c5dfc80c5e661a3e37065493",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "入力容量を超える全文取得へ検索・抜粋を適用する設計判断。複数ログの診断はなくAppliedへ変更。",
+      "reasoningSteps": [
+        "入力容量を超える全文取得へ検索・抜粋を適用する設計判断。複数ログの診断はなくAppliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e16": {
+      "fingerprint": "8f439f872fa4372864d5503b2e3fbdbcd960f37bcc053ca278c4309d171db5ec",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "長い禁止事項の問題へ短い推奨規約を適用する修正。比較実験はなくAppliedへ変更。",
+      "reasoningSteps": [
+        "長い禁止事項の問題へ短い推奨規約を適用する修正。比較実験はなくAppliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e17": {
+      "fingerprint": "c1b5e56bce44469225ff19df418c5aaac0c2ccf48b59c0a5f16047a6ff4ae821",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "診断箇所でInline Chatを選ぶ操作識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "診断箇所でInline Chatを選ぶ操作識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e18": {
+      "fingerprint": "7d79a5231ecf24e3f1de2a90b58c6158769b1c968599c0e33e06f5e1373b0b70",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Agentという機能名を要件から選ぶだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "Agentという機能名を要件から選ぶだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d2-e19": {
+      "fingerprint": "aea345163ccdee4cd52716fdbfe291e322880902e98735cfcf83433415c61382",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。呼出し解決の失敗と実行後の失敗を切り分ける → 修正に使える診断を適切な返却経路へ載せる",
+      "reasoningSteps": [
+        "呼出し解決の失敗と実行後の失敗を切り分ける",
+        "修正に使える診断を適切な返却経路へ載せる"
+      ],
+      "counterfactual": "①も未登録のツール名なら、①②の両方をプロトコルエラーとして扱う。",
+      "evidence": [
+        "MCPサーバーで二つの失敗がありました。"
+      ]
+    },
+    "q-d3-f01": {
+      "fingerprint": "dfdb842dee116191f592841d387c54aad315d5870b2cb12e187af4fb2f76174a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "前後を使う補完とFIMという名称を対応付ける基礎。",
+      "reasoningSteps": [
+        "前後を使う補完とFIMという名称を対応付ける基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-f02": {
+      "fingerprint": "3d4ea588b7bb7e2fd54e8eec60610426767eb0992af3598c5f6e0831bf9032bf",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "開いている別タブが文脈になり得る仕組みの名称識別。",
+      "reasoningSteps": [
+        "開いている別タブが文脈になり得る仕組みの名称識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-f03": {
+      "fingerprint": "f1ff1c7e4bff4a82207941102ab2343de8d74c30cab4e242477c8f565d231e72",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "外向きHTTPSという通信の基本方向・方式の識別。",
+      "reasoningSteps": [
+        "外向きHTTPSという通信の基本方向・方式の識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-f04": {
+      "fingerprint": "21367c0eff310eac7c9bdcdd3138fddcf8ac17db419a15498591ba3ad91599ba",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "Web閲覧とCopilot固有接続先を区別する基本知識。",
+      "reasoningSteps": [
+        "Web閲覧とCopilot固有接続先を区別する基本知識。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-f05": {
+      "fingerprint": "5797c9f9b3316a61a1a027ec565d4dc932453e46d69c8dbced1e9d518739ce15",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "トークンという文脈長の単位の記憶。",
+      "reasoningSteps": [
+        "トークンという文脈長の単位の記憶。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a01": {
+      "fingerprint": "480dac27b23dd00f1404ac22e6ade26615082b34c83ac18b550b6f2563cccb91",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。誤提案に関係する旧タブを現行の文脈へ替える。",
+      "reasoningSteps": [
+        "誤提案に関係する旧タブを現行の文脈へ替える。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a02": {
+      "fingerprint": "b00c425fe8de904c9b6700d60cea39905239beb5a6dcd3fe57d64d5fb5c90342",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "中間を編集する場面で前後の契約を文脈として残す操作を選ぶ。",
+      "reasoningSteps": [
+        "中間を編集する場面で前後の契約を文脈として残す操作を選ぶ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a03": {
+      "fingerprint": "2962bd6098e7f1564bf624dd2284d2f07e551ad7541e4f688c2409623ed24fe9",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。TLSエラーの種類に合うネットワーク設定を選ぶ",
+      "reasoningSteps": [
+        "TLSエラーの種類に合うネットワーク設定を選ぶ"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a04": {
+      "fingerprint": "346ae226ea3144a9ffe906547bb5caee65b4f938dc7ec0367352d419ece97a95",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "旧APIが混ざる場面で現行定義を明示する比較を選び、非公開の順位計算を断定しない。",
+      "reasoningSteps": [
+        "旧APIが混ざる場面で現行定義を明示する比較を選び、非公開の順位計算を断定しない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a05": {
+      "fingerprint": "ecfa8316956ae43693b341121dc0400fd639cd6860c779272e3f31f0c7361b0d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "経路差は判明し原因は未特定という段階に、設定変更前の診断を適用する。",
+      "reasoningSteps": [
+        "経路差は判明し原因は未特定という段階に、設定変更前の診断を適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a06": {
+      "fingerprint": "a4700dcba80186512df6b54c6b7f9698a1215ba9716229e55c82e9ba5f14f467",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。会話要約で失効した条件と現在の条件を分離する。",
+      "reasoningSteps": [
+        "会話要約で失効した条件と現在の条件を分離する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a07": {
+      "fingerprint": "8dbb016546afc5d87faaf1e452c628b0ed77709f824570bc3d04374529ba821e",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "巨大入力だけ遅い観測に、依存を残した入力削減という比較実験を適用する。",
+      "reasoningSteps": [
+        "巨大入力だけ遅い観測に、依存を残した入力削減という比較実験を適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a08": {
+      "fingerprint": "f7747a6fa0611b9c5a02d955dcc645048cd542d702cd3778910182354c1e321b",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。容量削減時にも対象の直接依存を保つ。",
+      "reasoningSteps": [
+        "容量削減時にも対象の直接依存を保つ。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a09": {
+      "fingerprint": "34c52a83265f040a3f2770bbfa74c59720acde2c2022d72193e5ff1c64fd09b4",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。宛先・通信方向を診断ログから許可ルールへ対応させる。",
+      "reasoningSteps": [
+        "宛先・通信方向を診断ログから許可ルールへ対応させる。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a10": {
+      "fingerprint": "00ffd9755ccd7d7c20409aa05546beffd954294324aeff7c5f47292af169c482",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。引用元の版の誤りに対して入力資料を更新する。",
+      "reasoningSteps": [
+        "引用元の版の誤りに対して入力資料を更新する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-a11": {
+      "fingerprint": "54589184478ea1d5c5b2cf052558105d78db557b6eb4b6b55186a7575e470573",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。時刻の観測から表示開始と全体完了を区別する。",
+      "reasoningSteps": [
+        "時刻の観測から表示開始と全体完了を区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d3-e01": {
+      "fingerprint": "a1048f12aa72f1d3a5a842661b87aa2315afab3794f75c038f615bbdd6cba2db",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。警告と回答の欠落位置から二つの制約を区別する → 各制約に対応する独立した改善を選ぶ",
+      "reasoningSteps": [
+        "警告と回答の欠落位置から二つの制約を区別する",
+        "各制約に対応する独立した改善を選ぶ"
+      ],
+      "counterfactual": "Pにも入力超過があれば、Pでも入力範囲を先に見直す。",
+      "evidence": [
+        "同じモデルへの二つの依頼を比較しました。"
+      ]
+    },
+    "q-d3-e02": {
+      "fingerprint": "fa933c8754f4bbf711001916b12424475eb618ce2f8404aa8154ec861fe9fec4",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。各PCが到達した通信段階をログから追う → TLSの信頼とプロキシ認証を別の修復対象へ割り当てる",
+      "reasoningSteps": [
+        "各PCが到達した通信段階をログから追う",
+        "TLSの信頼とプロキシ認証を別の修復対象へ割り当てる"
+      ],
+      "counterfactual": "QもCONNECT成功後のissuerエラーなら、両方でCA信頼設定を調べる案が合う。",
+      "evidence": [
+        "同じアカウント・同じ社内プロキシを使うPCを比較しました。"
+      ]
+    },
+    "q-d3-e03": {
+      "fingerprint": "d4eee1c47271bc4e36d47c3f7b843f7d22146389b89b0f921e1a59b1b1b9e4a4",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。前半・中間・後半の単位変換を追跡する → 前後の契約を残して二重変換だけを除く",
+      "reasoningSteps": [
+        "前半・中間・後半の単位変換を追跡する",
+        "前後の契約を残して二重変換だけを除く"
+      ],
+      "counterfactual": "後半に変換がなく中間が円を返す契約なら、中間の除算を残す必要がある。",
+      "evidence": [
+        "金額計算の中間部分をCopilotで補完しました。"
+      ]
+    },
+    "q-d3-e04": {
+      "fingerprint": "e45e8714336b3dc8c52a8a1afd13e71e855962a0f3ea125cd11b25c79c9a3a00",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く",
+      "reasoningSteps": [
+        "同一パスで異なる二経路の結果を比較する",
+        "ルールの修正ではなくアクセス境界の変更を導く"
+      ],
+      "counterfactual": "対応モードで古いセッションだけ失敗するなら、反映確認や再読込が先になる。",
+      "evidence": [
+        "同じ機密パスにContent Exclusionを設定しました。"
+      ]
+    },
+    "q-d3-e05": {
+      "fingerprint": "51f7fb262e72eb17b4b390b40c1b9d887cfe89e52de5d704a4358ce01655cab6",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "無関係なタブの混入に文脈整理を適用する単一の対処。ExamからAppliedへ変更。",
+      "reasoningSteps": [
+        "無関係なタブの混入に文脈整理を適用する単一の対処。ExamからAppliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-f01": {
+      "fingerprint": "7cc20d5895eb716bc1d21d7f12fb8a53d34e0c49f524ec9531f05d41ac948650",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "具体的な目的と条件を示すプロンプトの基本構成。",
+      "reasoningSteps": [
+        "具体的な目的と条件を示すプロンプトの基本構成。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-f02": {
+      "fingerprint": "41d01ab27e3e89b75f401a0ea83cc9f2c0966410c09def47bbc40860904014dd",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "入出力例を示すfew-shotの名称識別。",
+      "reasoningSteps": [
+        "入出力例を示すfew-shotの名称識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-f03": {
+      "fingerprint": "ff7f93ea894b5e79f50b88d040cb6ade17efe53389ad5d127f63dfeebdabf1b9",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "無関係な次タスクで新規Chatに移る基本操作。",
+      "reasoningSteps": [
+        "無関係な次タスクで新規Chatに移る基本操作。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-f04": {
+      "fingerprint": "fbd726d5e58b3abf273b2bc83788e2df77e415957cb13ad0548836e181faa031",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "条件を順に確認する依頼と手法名の対応付け。",
+      "reasoningSteps": [
+        "条件を順に確認する依頼と手法名の対応付け。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-f05": {
+      "fingerprint": "dc6bf9b7cc453206f25dbb2b237beae86e944d9fef9f7d67d28282f161aa0f50",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "古い前提の混入を文脈ドリフトと呼ぶ基礎用語。",
+      "reasoningSteps": [
+        "古い前提の混入を文脈ドリフトと呼ぶ基礎用語。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a01": {
+      "fingerprint": "479ae5a2ca8d208e3ac6fbf08cb6206f21cd1d1cbc532c103fc16623618c5628",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "生成案と期待する技術・エラー動作の差を、具体的な追記へ変換する。",
+      "reasoningSteps": [
+        "生成案と期待する技術・エラー動作の差を、具体的な追記へ変換する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a02": {
+      "fingerprint": "c63898c3f82f55f534cb321539a2a1f7324b3f30b37f8846944d218caa016ad1",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。禁止指示の不足を望む代替例で補う。",
+      "reasoningSteps": [
+        "禁止指示の不足を望む代替例で補う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a03": {
+      "fingerprint": "151d8402e714426a8b8e17c7e4866e365c886bedfe7a177c6b6e919bfddf8173",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。観測された形式と型の誤りを出力契約へ反映する。",
+      "reasoningSteps": [
+        "観測された形式と型の誤りを出力契約へ反映する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a04": {
+      "fingerprint": "cc6a2f836bb38838e21be6873c2c039fe2345162413ea4b59600a2d457d0f331",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。新規Chatだけでは直らない旧添付の原因を切り分ける。",
+      "reasoningSteps": [
+        "新規Chatだけでは直らない旧添付の原因を切り分ける。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a05": {
+      "fingerprint": "5b3e7339c75c74499f29931fd9c7bd14704edc3bc8732038f3294cc96543a200",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。正常なゼロと異常入力の差を補完用の契約へ表す。",
+      "reasoningSteps": [
+        "正常なゼロと異常入力の差を補完用の契約へ表す。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a06": {
+      "fingerprint": "7a5c274d5362cdc3659305e4f814c99e6571e88905175fbcab3bae1947be21a6",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "生成物の検索ノイズに検索除外を適用し、必要ソースの到達性を確認する。",
+      "reasoningSteps": [
+        "生成物の検索ノイズに検索除外を適用し、必要ソースの到達性を確認する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a07": {
+      "fingerprint": "bbfa191de32e1d896f4df2c5786aba94c234690e4564a4971abc22705399db05",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。正例だけで見えない過剰受理を負例で指定する。",
+      "reasoningSteps": [
+        "正例だけで見えない過剰受理を負例で指定する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a08": {
+      "fingerprint": "89bf2e380199bb437e916909265b2855004f1c0714b1a36b3096398728b41faf",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "対象未確定の探索と対象確定後の編集で、検索と明示添付を使い分ける。",
+      "reasoningSteps": [
+        "対象未確定の探索と対象確定後の編集で、検索と明示添付を使い分ける。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a09": {
+      "fingerprint": "73c856b3e47829313061b70e0b18bd09c983103c84dfa3879ccd9cfb28750bd0",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。抽象的な品質要求を具体的な変更シナリオへ変換する。",
+      "reasoningSteps": [
+        "抽象的な品質要求を具体的な変更シナリオへ変換する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a10": {
+      "fingerprint": "98fc0361a0fdfbbb1e60567cb7076b9ddcaf4360f8e3444b7dcfbfef02e4e50c",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。失敗した実行条件をエラーログとともに文脈へ加える。",
+      "reasoningSteps": [
+        "失敗した実行条件をエラーログとともに文脈へ加える。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-a11": {
+      "fingerprint": "674916ec43218ef89b4ac33444cfac026c29e2dc35afa512126289ee17d0de8b",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。動作を決める制約と不要な背景を区別する。",
+      "reasoningSteps": [
+        "動作を決める制約と不要な背景を区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-e01": {
+      "fingerprint": "b069fb70d31e6b486790416fe75b22bf2e24d83183979f72b39820b23a597494",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "別パスの再読で、文言の照合や明らかに無関係な誤答を避けて追加修正。単体テストが覆う範囲と各段階の出力を追う → 段階間で失われた判定を接続契約として補う",
+      "reasoningSteps": [
+        "単体テストが覆う範囲と各段階の出力を追う",
+        "段階間で失われた判定を接続契約として補う"
+      ],
+      "counterfactual": "不正行は止まり通信失敗だけが起きるなら、再試行契約の検証が候補になる。",
+      "evidence": [
+        "CSV取込をCopilotと段階実装しました。"
+      ]
+    },
+    "q-d4-e02": {
+      "fingerprint": "0dd39d3c3469617b5d2c6ae403a2f55871f3df48539474b3b25214d2c1db8a83",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "無関係な次タスクで新規Chatを選ぶ基本操作なので基礎へ変更。",
+      "reasoningSteps": [
+        "無関係な次タスクで新規Chatを選ぶ基本操作なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d4-e03": {
+      "fingerprint": "dbe381293d87d7d61d1a8886a27beccd67fce2d114cc20992b626bb2da724bff",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二実験で改善した点と残った点を分ける → 残る問題への変更を一変数にして効果を比較する",
+      "reasoningSteps": [
+        "二実験で改善した点と残った点を分ける",
+        "残る問題への変更を一変数にして効果を比較する"
+      ],
+      "counterfactual": "API例を追加済みで効果がなくモデル差を調べるなら、例を固定してモデルだけを変える。",
+      "evidence": [
+        "生成コードの規約違反を比較しました。"
+      ]
+    },
+    "q-d4-e04": {
+      "fingerprint": "66488264d3ff1db7dd869e8d24fe538f0ea56449e3c27921c58422b8e237557c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。コードの供給元と利用先を依存関係から選ぶ → 変更する拒否条件と変えない返却契約を同時に指定する",
+      "reasoningSteps": [
+        "コードの供給元と利用先を依存関係から選ぶ",
+        "変更する拒否条件と変えない返却契約を同時に指定する"
+      ],
+      "counterfactual": "作業対象がモバイル版なら、その実装と実際の依存先を選び直す。",
+      "evidence": [
+        "モノレポのjwt.tsはissuer設定をconfig.tsから読み、refresh.tsが検証結果を利用します。"
+      ]
+    },
+    "q-d4-e05": {
+      "fingerprint": "e0be7917a93392b80ec8097a580a43f157413a2f370155f66ceb5aed5af19d20",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。状態とイベントの組を許可表に照合する → 一般的な異常例から今回の欠陥を通る例を選ぶ",
+      "reasoningSteps": [
+        "状態とイベントの組を許可表に照合する",
+        "一般的な異常例から今回の欠陥を通る例を選ぶ"
+      ],
+      "counterfactual": "不具合が終端状態からの再実行だけなら、Refunded・Failedからの拒否例が優先。",
+      "evidence": [
+        "Copilotへ決済の状態遷移を依頼します。"
+      ]
+    },
+    "q-d5-f01": {
+      "fingerprint": "312bf8959eec9221bfc4bd24a396e11c77348b074ce5c884e184eef332816537",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "ドキュメント生成コマンドの名称を選ぶ基礎。",
+      "reasoningSteps": [
+        "ドキュメント生成コマンドの名称を選ぶ基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-f02": {
+      "fingerprint": "2baac103a8ed106e513b8cd2e6f43a60a271c065604568f7d3106e6a7d27abdc",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "境界・異常系の期待値を示す基本方針。具体的なテストの設計判断はない。",
+      "reasoningSteps": [
+        "境界・異常系の期待値を示す基本方針。具体的なテストの設計判断はない。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-f02-b": {
+      "fingerprint": "ab3e7a3e6f1723293401aa3d5cd6c8bcb34bc667153c121a2a7a1798af01cf07",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "コミット文生成の操作を識別する基礎。",
+      "reasoningSteps": [
+        "コミット文生成の操作を識別する基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-f04": {
+      "fingerprint": "e2e386d19eed1f58e5c112fbeafc04c48dfe67d8849b2872e8988f67aa21161f",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "PRの要約とレビューを用途で識別する基礎。",
+      "reasoningSteps": [
+        "PRの要約とレビューを用途で識別する基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-f05": {
+      "fingerprint": "5c2a1e97dd3f90b9f3df354f56ac2b35a2f4dff73d127e5d7fb69184c7a591f4",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "通信の代替物としてモック・スタブを識別する基礎。",
+      "reasoningSteps": [
+        "通信の代替物としてモック・スタブを識別する基礎。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a01": {
+      "fingerprint": "40e0af57773ee90fb59507de05207297dba4e1188a698a62c1c4218be0992d41",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。依存だけを置換し対象の失敗時の振る舞いを検証する。",
+      "reasoningSteps": [
+        "依存だけを置換し対象の失敗時の振る舞いを検証する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a02": {
+      "fingerprint": "88d64b3a3a522eee2ee68c35c1c2c89a0a7a4c8471e0a7ccee66018b009e8d22",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。構造変更で失われた副作用の契約を修復する。",
+      "reasoningSteps": [
+        "構造変更で失われた副作用の契約を修復する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a03": {
+      "fingerprint": "ced1ac06b33324de6556acb0c231b73d83cd79758e45f2bce5b2cda387a34415",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。生成要約を公開契約の差分と照合する。",
+      "reasoningSteps": [
+        "生成要約を公開契約の差分と照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a04": {
+      "fingerprint": "de610c3925469987d14a8db0bbd3991c4fec9a53859e2980edfa8c3af86b085f",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。失敗条件を最小の入力・期待値・対象コードとして提示する。",
+      "reasoningSteps": [
+        "失敗条件を最小の入力・期待値・対象コードとして提示する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a05": {
+      "fingerprint": "ae0a94d85d7e4acff0c9877a8d5665a48ddad81a5c830f7db3c15e2261af479b",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。生成文の種別を差分の目的へ適用する。",
+      "reasoningSteps": [
+        "生成文の種別を差分の目的へ適用する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a06": {
+      "fingerprint": "0f8b0ecae5d462840cd2cda498a600c395e798458f6d31885d5df6f340b249a3",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。診断性と実行単位に合わせて生成テストを分割する。",
+      "reasoningSteps": [
+        "診断性と実行単位に合わせて生成テストを分割する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a07": {
+      "fingerprint": "db3e9a34246beb3853757ffecb564b4efb2e22ab66b3841a6308c3c8e3315d00",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。移行ガイドの実行時変更を互換性テストへ反映する。",
+      "reasoningSteps": [
+        "移行ガイドの実行時変更を互換性テストへ反映する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a08": {
+      "fingerprint": "9386694ea6bfc7c2990440f3648789fe2f144fa86b3ecd6d99551025de9d24ac",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。テスト用代替物の互換性の境界を扱う。",
+      "reasoningSteps": [
+        "テスト用代替物の互換性の境界を扱う。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a09": {
+      "fingerprint": "081991672b7dc43815dbb06fa520954d94bd87e3c6c39d1133fd020db7ed7ad5",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。AIレビューの前提を実データの例外へ照合する。",
+      "reasoningSteps": [
+        "AIレビューの前提を実データの例外へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a10": {
+      "fingerprint": "f3eb42a32a58e560cda6194fb96c5e671538e5a970f9f593c0bdb53f03fdad02",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。入力規模と条件をそろえて最適化案を評価する。",
+      "reasoningSteps": [
+        "入力規模と条件をそろえて最適化案を評価する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-a11": {
+      "fingerprint": "0e2b1b6197c3e47b5e28b5be6ae9cddd6c7a37770ecbf96dbe455b731701b8a1",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。初回利用の再現結果を生成ドキュメントへ反映する。",
+      "reasoningSteps": [
+        "初回利用の再現結果を生成ドキュメントへ反映する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d5-e01": {
+      "fingerprint": "38e5f34c98f4988282016541782bfedd536c2c2a02196b3103f63a6e6183f622",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。最終入力時刻から発火境界を計算する → 境界前後と保存引数を組み合わせて不具合を検出する",
+      "reasoningSteps": [
+        "最終入力時刻から発火境界を計算する",
+        "境界前後と保存引数を組み合わせて不具合を検出する"
+      ],
+      "counterfactual": "入力がAだけなら、299msで0回・300msでAの1回が適切。",
+      "evidence": [
+        "Copilotが生成したdebounceのテストを見直します。"
+      ]
+    },
+    "q-d5-e02": {
+      "fingerprint": "45aa36960dc9e92f341615b956f0938ae0a3d6762667ba2f79b639bcf5effd64",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。要約と実際の契約変更を照合する → 説明の修正と採用コード・公開情報の審査を分ける",
+      "reasoningSteps": [
+        "要約と実際の契約変更を照合する",
+        "説明の修正と採用コード・公開情報の審査を分ける"
+      ],
+      "counterfactual": "差分が実際に内部整理だけでサンプルも合成情報なら、要約の互換性説明を維持できる。",
+      "evidence": [
+        "CopilotのPR要約には「認証の内部整理、API互換性変更なし」とあります。"
+      ]
+    },
+    "q-d5-e03": {
+      "fingerprint": "57c0f0c0415f99f383fc0307b6d81cb0f9ef93897bbb37474c799ead97c5cddc",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。生成器の到達範囲と期待値の独立性を別々に評価する → 状態を持つ操作列と仕様由来の不変条件を組み合わせる",
+      "reasoningSteps": [
+        "生成器の到達範囲と期待値の独立性を別々に評価する",
+        "状態を持つ操作列と仕様由来の不変条件を組み合わせる"
+      ],
+      "counterfactual": "仕様が常に残高内の単発送金だけなら不足残高の列は不要だが、期待値の独立性は依然必要。",
+      "evidence": [
+        "Copilotに口座間送金のプロパティテストを作らせました。"
+      ]
+    },
+    "q-d5-e04": {
+      "fingerprint": "f5ab4bd902cb3a4ffb952ba11137f84b67093473aa9f199381a51b6f55022102",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。版ごとの契約と四つの成果物を照合する → 誤記だけを直して現行互換性を維持する",
+      "reasoningSteps": [
+        "版ごとの契約と四つの成果物を照合する",
+        "誤記だけを直して現行互換性を維持する"
+      ],
+      "counterfactual": "承認済みv2仕様とテストが例外方式なら、nullを返す実装の修正が必要。",
+      "evidence": [
+        "公開関数findUserの承認済みv2仕様と契約テストは「未発見ならnull」です。"
+      ]
+    },
+    "q-d5-e05": {
+      "fingerprint": "5e34ca4cbc1b243fd2c5cd3d2a8fb4542b4fdb6a2e1e9e336744fedf3e6e81a5",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。各差分を承認済み仕様へ対応させる → 期待値更新と回帰修正を別々に判断する",
+      "reasoningSteps": [
+        "各差分を承認済み仕様へ対応させる",
+        "期待値更新と回帰修正を別々に判断する"
+      ],
+      "counterfactual": "②も承認済みの仕様変更なら、動作確認の上で新期待値へ更新できる。",
+      "evidence": [
+        "CopilotがUIのスナップショット一括更新を提案しました。"
+      ]
+    },
+    "q-d6-f01": {
+      "fingerprint": "4bb46e36115f226af21f2db482ce8c9066d90475b7b0386148bef107d4d3026b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "提案側の公開コード一致という設定の識別。",
+      "reasoningSteps": [
+        "提案側の公開コード一致という設定の識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-f02": {
+      "fingerprint": "e48b9bfa6c983cb2c7c331dc06e0110ed6fc42030fd74f1afe49f49d96826710",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "入力側のContent Exclusionという設定の識別。",
+      "reasoningSteps": [
+        "入力側のContent Exclusionという設定の識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-f03": {
+      "fingerprint": "7fbe5ab2c4b21ef4af893eaff2968dcd895ae313e18c04cdd43c2159906d07fe",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "Business/Enterpriseの学習不使用という方針知識。",
+      "reasoningSteps": [
+        "Business/Enterpriseの学習不使用という方針知識。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-f04": {
+      "fingerprint": "9dd557322de72fdcbb8a04fd929e389a5f2db5890177093fad2ff8201a8ffe7a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "管理操作の記録を監査ログへ対応付ける機能識別。",
+      "reasoningSteps": [
+        "管理操作の記録を監査ログへ対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-f05": {
+      "fingerprint": "fd03f610f4291d77eca62236eba58787ac71cf2404ca82436859961e64906fc7",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "利用集計をAPIへ対応付ける機能識別。",
+      "reasoningSteps": [
+        "利用集計をAPIへ対応付ける機能識別。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a01": {
+      "fingerprint": "44b6b17acd3e2f0b1135a91c59330cb0bb0952a51b93b1c8f80d7a3f1689b8af",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。リポジトリのコピーと除外設定の適用範囲を区別する。",
+      "reasoningSteps": [
+        "リポジトリのコピーと除外設定の適用範囲を区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a02": {
+      "fingerprint": "07dc4b777b6be805f495a9a04f9bfcd2261e7ab444d0451a470b03eb3a1b7045",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Blockの作用を説明する定義問題なので基礎へ変更。",
+      "reasoningSteps": [
+        "Blockの作用を説明する定義問題なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a03": {
+      "fingerprint": "f7badd024c5c9bbb822eb0f0e4e72c1a6d63325bd9cc98a92592f6cba5351092",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。Gitと手動Chat入力の保護境界を区別する。",
+      "reasoningSteps": [
+        "Gitと手動Chat入力の保護境界を区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a04": {
+      "fingerprint": "c8242cbe8d45453d931f2fb0c75490c8930926119a65960f64aa5cdb6daff4da",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Code Referencingの役割を説明するだけなので基礎へ変更。",
+      "reasoningSteps": [
+        "Code Referencingの役割を説明するだけなので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a05": {
+      "fingerprint": "705e41f26caf17998e393e89f7e8cbf89127c0315f621f1b9a712bc7c07ae222",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "シート解除の基本的な管理操作なので基礎へ変更。",
+      "reasoningSteps": [
+        "シート解除の基本的な管理操作なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a06": {
+      "fingerprint": "9e9749acd9243e74896145e45a50432636ddb439d3404603c2bec5bc96416fdc",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "上位強制ポリシーの優先関係という原則知識なので基礎へ変更。",
+      "reasoningSteps": [
+        "上位強制ポリシーの優先関係という原則知識なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a07": {
+      "fingerprint": "eda05737defbc12cbeb5b39bb7d6b1c3678bfa641312cb1461391ee930483263",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。学習不使用から保持期間を推論する誤りを修正する。",
+      "reasoningSteps": [
+        "学習不使用から保持期間を推論する誤りを修正する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a08": {
+      "fingerprint": "eccbd72ba36778687ef65bfdc1c615ae9cee07a437b031871f9b4969f20fb3ec",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。ステータスと他ファイルの動作から補完停止の原因を特定する。",
+      "reasoningSteps": [
+        "ステータスと他ファイルの動作から補完停止の原因を特定する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a09": {
+      "fingerprint": "8949a23117cf28532ceab429314fe04aa045d218be8db751a5d6421f4d2965e8",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。利用量評価の分母と期間をそろえる。",
+      "reasoningSteps": [
+        "利用量評価の分母と期間をそろえる。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-a10": {
+      "fingerprint": "54fa573768d454d367ff13ec93e697543faf75dd68b35da30e268b1dca026dba",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。Privateの閲覧制限とCopilotの入力除外を区別する。",
+      "reasoningSteps": [
+        "Privateの閲覧制限とCopilotの入力除外を区別する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-d6-e01": {
+      "fingerprint": "a9ab53997b812401e245e0c6036661c9842d5e5b8b887406ec260e845f71e790",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。三経路の観測を比較して設定漏れを除外する → リンクとモードの独立した限界を判断する",
+      "reasoningSteps": [
+        "三経路の観測を比較して設定漏れを除外する",
+        "リンクとモードの独立した限界を判断する"
+      ],
+      "counterfactual": "②③が対応する実ファイル・通常補完なら、パスや伝播の診断を優先する。",
+      "evidence": [
+        "機密リポジトリの通常補完で除外が機能しています。"
+      ]
+    },
+    "q-d6-e02": {
+      "fingerprint": "c0d745dbf0d512a6325ec8b43c923aadf17f9d2e3ed2e6393e01d817d881ab10",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。記録の時間関係を読み取る → 管理操作の証跡と利用変化の因果を区別する",
+      "reasoningSteps": [
+        "記録の時間関係を読み取る",
+        "管理操作の証跡と利用変化の因果を区別する"
+      ],
+      "counterfactual": "特定変更の対象・反映時刻・再現試験まで一致すれば、原因仮説を強く支持できる。",
+      "evidence": [
+        "Copilotの利用が14時から減りました。"
+      ]
+    },
+    "q-d6-e03": {
+      "fingerprint": "be1e29651e7d945bfc76872770502a9ab0925b6ef3f3aa2bc0715397fdf16474",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。採用時点と設定変更時点を分ける → 検出通知と個別採用審査の証拠能力を判断する",
+      "reasoningSteps": [
+        "採用時点と設定変更時点を分ける",
+        "検出通知と個別採用審査の証拠能力を判断する"
+      ],
+      "counterfactual": "問題が今後の提案表示だけなら、Blockの設定と動作確認でその目的を検証できる。",
+      "evidence": [
+        "公開コード一致のBlockを有効にする前に採用した断片Pには参照通知があり、採用後の断片Qには通知がありません。"
+      ]
+    },
+    "q-d6-e04": {
+      "fingerprint": "4b6eadddda24cee8f883f045bb1ccad14d38fd10bc11aa9abfabad5ba4fc0e74",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同じデータでも学習・保持・入力許可を別軸に分ける → 証拠のある欄だけを維持して未確認欄を戻す",
+      "reasoningSteps": [
+        "同じデータでも学習・保持・入力許可を別軸に分ける",
+        "証拠のある欄だけを維持して未確認欄を戻す"
+      ],
+      "counterfactual": "②③も別資料で確認済みなら、①だけを根拠とした説明を各資料への参照に直す。",
+      "evidence": [
+        "Businessの導入審査で、表には①基盤モデル学習への利用、②各機能の保持条件、③顧客ログを入力する社内許可の三欄があります。"
+      ]
+    },
+    "q-d6-e05": {
+      "fingerprint": "7c9c57359ad935c678c2882671c31c6bc072715a80b79247b2a94d3a893acf1e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二つの日付条件を各利用者へ適用する → 不明値を無活動へ変換せず別の処理へ分ける",
+      "reasoningSteps": [
+        "二つの日付条件を各利用者へ適用する",
+        "不明値を無活動へ変換せず別の処理へ分ける"
+      ],
+      "counterfactual": "不明値を追加調査してDの最終活動が45日前と判明すれば、Dも候補になる。",
+      "evidence": [
+        "Copilotシート回収の社内基準は「割当から30日超、確認できる最終活動から30日超の人を候補にする。"
+      ]
+    },
+    "q-sc01-1": {
+      "fingerprint": "0e952bbbf17ccebbdf48e3507989694d92296f86b5500035ad31758e10534b8d",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "事例名があってもContent Exclusionの名称識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "事例名があってもContent Exclusionの名称識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc01-2": {
+      "fingerprint": "de0fd29ad16f652f99c5ab16a9dee97f3d369c8d4281a4facac47b3daa79e6ce",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "設定直後という状況に対象と反映の確認手順を適用する。Appliedへ変更。",
+      "reasoningSteps": [
+        "設定直後という状況に対象と反映の確認手順を適用する。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc01-3": {
+      "fingerprint": "68de0345e9ffcd5048272544214730ea5aaee737e9124ee4ec5a288732e26a6b",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。PとQそれぞれの強制・委任を判定する → 申請の一部だけを満たす最小変更を選ぶ",
+      "reasoningSteps": [
+        "PとQそれぞれの強制・委任を判定する",
+        "申請の一部だけを満たす最小変更を選ぶ"
+      ],
+      "counterfactual": "Pも全社判断から委任へ変える承認があれば、組織側でPを設定する余地が生まれる。",
+      "evidence": [
+        "【AnyCompany Tech事例】対応ポリシーPをEnterpriseで強制禁止、QをOrganizationへ委任しています。"
+      ]
+    },
+    "q-sc02-1": {
+      "fingerprint": "96c92e4b1afd66807f039664582392a100fd450c8e92eb050dcbbc1e0814ae28",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。旧観測と承認契約の一致を確認する → 新案を期待値の根拠にする循環を避けて回帰を検出する",
+      "reasoningSteps": [
+        "旧観測と承認契約の一致を確認する",
+        "新案を期待値の根拠にする循環を避けて回帰を検出する"
+      ],
+      "counterfactual": "0の受理へ契約を変更する承認があれば、旧挙動の維持ではなく変更後のテストを作る。",
+      "evidence": [
+        "【Apex Financial事例】既存モジュールの観測結果は入力0→エラー、1→正常です。"
+      ]
+    },
+    "q-sc02-2": {
+      "fingerprint": "d1b764c0b32c2f6669c72849867549d9dbb3cdd7f70122e6c03da0a12cb2c986",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。偶数丸めを二つの境界へ適用する → 実装と同時生成テストの一致を独立検証から区別する",
+      "reasoningSteps": [
+        "偶数丸めを二つの境界へ適用する",
+        "実装と同時生成テストの一致を独立検証から区別する"
+      ],
+      "counterfactual": "承認済み契約が正数の四捨五入なら2.5→3が正しく、旧期待値を見直す。",
+      "evidence": [
+        "【Apex Financial事例】正数の金額を整数へ偶数丸めする契約です。"
+      ]
+    },
+    "q-sc02-3": {
+      "fingerprint": "4c0afa00bfc490106cee5a5ce420810bb9d0a1f2783447365fc7c287b4e7f8e3",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。既存例が候補方式を識別できないと判断する → 中間点と上下両向きの例で方式を識別する",
+      "reasoningSteps": [
+        "既存例が候補方式を識別できないと判断する",
+        "中間点と上下両向きの例で方式を識別する"
+      ],
+      "counterfactual": "契約が正数の四捨五入なら2.5→3を含む例が適切になる。",
+      "evidence": [
+        "【Apex Financial事例】「正数を整数へ丸める」プロンプトに、2.4→2と2.6→3を示しました。"
+      ]
+    },
+    "q-sc03-1": {
+      "fingerprint": "247bcd2586cb4dcdecb569d1b1e2db89120e9c57793d5da54a1607232bbd7c3a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "Issueの権限とメトリクスの読取という用途に連携設計を適用する。Appliedへ変更。",
+      "reasoningSteps": [
+        "Issueの権限とメトリクスの読取という用途に連携設計を適用する。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc03-2": {
+      "fingerprint": "d75c178e4b43cf83799edd0b02df4bd44ba5b03d63aaa679cc08e758147c530c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。同じ条件と利用者ごとの差を分ける → 401と空の入力値から認証設定へ絞る",
+      "reasoningSteps": [
+        "同じ条件と利用者ごとの差を分ける",
+        "401と空の入力値から認証設定へ絞る"
+      ],
+      "counterfactual": "両者で起動自体に失敗しserversの構造エラーが出るなら、共有設定を直す。",
+      "evidence": [
+        "【Horizon Cloud事例】共有する.vscode/mcp.jsonはserversで接続先を定義し、envの値を入力変数から渡しています。"
+      ]
+    },
+    "q-sc03-3": {
+      "fingerprint": "28bf0b81a68f6096783411cc40642362fa8ca954a2a47f72a243e3f158a8a729",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。既知の障害条件をサーバー側の取得範囲に反映する。",
+      "reasoningSteps": [
+        "既知の障害条件をサーバー側の取得範囲に反映する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc04-1": {
+      "fingerprint": "8d7f9a948ed24e72c6294f47336f41bf301cec407e2e9a6494e35af6a706af00",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "事例名があってもAgentの用途識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "事例名があってもAgentの用途識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc04-2": {
+      "fingerprint": "675d7c09f405addb2c449b3c8fe677e936e835f82b97bb045eda66cdb09fabcd",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "事例名があってもPR要約の機能識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "事例名があってもPR要約の機能識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc04-3": {
+      "fingerprint": "1e4b1b5813b8c5bd10b1e2a9aab5067ec485d4324d842266587bc79cc5e4f69b",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "AIの指摘と決められたCI検査を補完的な運用へ組み合わせる。Appliedへ変更。",
+      "reasoningSteps": [
+        "AIの指摘と決められたCI検査を補完的な運用へ組み合わせる。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc05-1": {
+      "fingerprint": "c955b7e8b5b2d9932a4ea8e3a71a62dd13dca0b437ad1240c7cb3f4f000b6d7e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。社内APIの実在性を利用中の実装・契約で確認する。",
+      "reasoningSteps": [
+        "社内APIの実在性を利用中の実装・契約で確認する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc05-2": {
+      "fingerprint": "c192c8d96da5e79f036109c5ee7be62c5dd7463e9991169f96d853d3d3a49eaa",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": true,
+      "assessment": "一般論の選択を具体的な失敗への適用へ改稿。過剰なモックで隠れた外部契約の不整合を検証する。",
+      "reasoningSteps": [
+        "過剰なモックで隠れた外部契約の不整合を検証する。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc05-3": {
+      "fingerprint": "3f6ce3e53e4bdf399ae401e71d8d8ed9e3ea854fe0f914a34b2849d12a7d6ceb",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "患者データのChat入力とGitの秘密送信を別経路へ割り当てる運用判断。Appliedへ変更。",
+      "reasoningSteps": [
+        "患者データのChat入力とGitの秘密送信を別経路へ割り当てる運用判断。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc06-1": {
+      "fingerprint": "d01d374425bb26ef8dcccf944096315bd72e863258e34da434b6e9215cb67d78",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "共通指示の配置先の知識問題なので基礎へ変更。",
+      "reasoningSteps": [
+        "共通指示の配置先の知識問題なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc06-2": {
+      "fingerprint": "074ca215caf006d73e67aed7ab298d0575cfbbdfb381966e33835ecabab6c097",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。二つの誤出力を規約競合と固定参照へ分ける → 共通の不変条件とタスクごとの入力を分離する",
+      "reasoningSteps": [
+        "二つの誤出力を規約競合と固定参照へ分ける",
+        "共通の不変条件とタスクごとの入力を分離する"
+      ],
+      "counterfactual": "throwが正式な共通契約へ変更済みなら、共通規約側の更新を先に整合させる。",
+      "evidence": [
+        "【Global Logistics事例】API作成用Prompt Fileを二つのサービスで使っています。"
+      ]
+    },
+    "q-sc06-3": {
+      "fingerprint": "5c54e1827c5f000fd4fd478f19f5e72bb08b02ff0d1ba2e7218dc41810b00e8a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "競合する個人指示だけを当該リポジトリで調整する範囲判断。Appliedへ変更。",
+      "reasoningSteps": [
+        "競合する個人指示だけを当該リポジトリで調整する範囲判断。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc07-1": {
+      "fingerprint": "3350ecc2fb55e47218ded590724b47d06b71dcb6440b9faf18e009dc947ae115",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "担当製品の現在値と更新禁止という用途へ権限を絞った照会を適用する。Appliedへ変更。",
+      "reasoningSteps": [
+        "担当製品の現在値と更新禁止という用途へ権限を絞った照会を適用する。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc07-2": {
+      "fingerprint": "168ffada3e01e226a4c904939b0dfc808cc1291f0ec7947d8f8538af37fd5ed1",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。検索経路と直接取得経路の認可を比較する → 接続承認と文書単位の認可を区別する",
+      "reasoningSteps": [
+        "検索経路と直接取得経路の認可を比較する",
+        "接続承認と文書単位の認可を区別する"
+      ],
+      "counterfactual": "直接取得にも正しい認可があり検索だけ漏れるなら、検索結果の絞込みを直す。",
+      "evidence": [
+        "【CyberShield Systems事例】承認済みMCPだけへ接続を許しています。"
+      ]
+    },
+    "q-sc07-3": {
+      "fingerprint": "8fc2af123b5b6f988b43989cbca8902441568210fef7542947ca30640c2abdb8",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "管理操作の操作者を監査ログで調べる機能識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "管理操作の操作者を監査ログで調べる機能識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc08-1": {
+      "fingerprint": "7eec7a31e7629d35f60eea7a904add5d427ecc3fc4be17bb783ee0b552447c83",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "検索して文脈へ追加する仕組みと再学習を区別する概念知識なので基礎へ変更。",
+      "reasoningSteps": [
+        "検索して文脈へ追加する仕組みと再学習を区別する概念知識なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc08-2": {
+      "fingerprint": "1c24f80ff696fae4ed7b128a45b84d70976937c9692de9ed0f3a92988888f581",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。モデルを固定した二つの文脈の結果を比較する → 証拠が支持する取得元の版の差に診断を限定する",
+      "reasoningSteps": [
+        "モデルを固定した二つの文脈の結果を比較する",
+        "証拠が支持する取得元の版の差に診断を限定する"
+      ],
+      "counterfactual": "Yを明示しても誤りが続くなら、指示の曖昧さやYの契約の検証へ調査を広げる。",
+      "evidence": [
+        "【DataFlow Analytics事例】検索で得た説明は旧版のparseOldを引用します。"
+      ]
+    },
+    "q-sc08-3": {
+      "fingerprint": "cde28a75ccccb3bff8ec61b9e4593d71b6669c83c0e838d4d8d55bad71e61fd5",
+      "beforeDifficulty": "advanced",
+      "difficulty": "intermediate",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "調査対象が確定した場面で必要な二ファイルを添付する文脈選択。Appliedへ変更。",
+      "reasoningSteps": [
+        "調査対象が確定した場面で必要な二ファイルを添付する文脈選択。Appliedへ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc09-1": {
+      "fingerprint": "81bc3a7c8634dbc18ec069ca8c81586ee29cc250673d5e9aa57a600916ed4396",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。人数とPR数を分母にして二つの指標を比較する → 観測できる変化と因果の断定を区別する",
+      "reasoningSteps": [
+        "人数とPR数を分母にして二つの指標を比較する",
+        "観測できる変化と因果の断定を区別する"
+      ],
+      "counterfactual": "人数が不変で手戻り率も低下していれば、観測上の改善という報告を支持する。",
+      "evidence": [
+        "【Nexis Games事例】Copilot導入前後でPR数が20→30、手戻りが発生したPR数が4→9、チーム人数が5→10でした。"
+      ]
+    },
+    "q-sc09-2": {
+      "fingerprint": "5ce23ec3f1afcb50d7255c6e5c7777380b2c3dfb7d5a3b45f28cfa82293ddaac",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "利用状況集計のAPIの用途識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "利用状況集計のAPIの用途識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc09-3": {
+      "fingerprint": "788f5a98e6ac3fda280aa6100ea74f15f0d097fbc473a81e3828738a9ebedb3c",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。質問回数だけの成功判定を他の二指標で見直す → 原因を仮説にとどめて検証できる研修を選ぶ",
+      "reasoningSteps": [
+        "質問回数だけの成功判定を他の二指標で見直す",
+        "原因を仮説にとどめて検証できる研修を選ぶ"
+      ],
+      "counterfactual": "理解が維持され手戻りも減った場合、質問減少を同じ問題の証拠にはできない。",
+      "evidence": [
+        "【Nexis Games事例】新人研修で、Chat利用は週10回から40回、先輩への質問は週8回から2回になりました。"
+      ]
+    },
+    "q-sc10-1": {
+      "fingerprint": "54a9a16368d64e3d6df020a51c7d2060ada6c3fa6d81d2f22d01ca49f3840bb5",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "入力除外と公開一致Blockの機能識別なので基礎へ変更。",
+      "reasoningSteps": [
+        "入力除外と公開一致Blockの機能識別なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc10-2": {
+      "fingerprint": "963e5d624b538fe0875c4f5449988c437eb71d09c0b15af7cdfb46e49f7e8897",
+      "beforeDifficulty": "advanced",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": true,
+      "assessment": "現在の出所確認にCode Referencingを対応付ける基本知識なので基礎へ変更。",
+      "reasoningSteps": [
+        "現在の出所確認にCode Referencingを対応付ける基本知識なので基礎へ変更。"
+      ],
+      "counterfactual": null,
+      "evidence": []
+    },
+    "q-sc10-3": {
+      "fingerprint": "fcc46252c5e9a910edaf70d76b201a88de5828bbfffa3ddef9849f564bd853f8",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "単純な機能選択・条件の言い換えでは足りない証拠比較へ改稿。追加されたデータの送信先を元の承認範囲と比較する → 学習不使用と第三者の保存・権限制御を区別する",
+      "reasoningSteps": [
+        "追加されたデータの送信先を元の承認範囲と比較する",
+        "学習不使用と第三者の保存・権限制御を区別する"
+      ],
+      "counterfactual": "同じ承認済み送信先で条件も変更されていなければ、既存審査を参照できる。",
+      "evidence": [
+        "【SecureBank Online事例】承認申請はBusinessのIDE Chatだけを対象にしています。"
+      ]
+    }
+  },
+  "secondPass": "改稿90問の全文・全選択肢を別パスで再読。残る文言照合問題、通信対策のカテゴリ差、単位の誤記、指標の分母を修正。独立した別人によるレビューではない。"
+}

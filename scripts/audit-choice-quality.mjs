@@ -19,10 +19,18 @@ const unchangedReasons = {
   'q-sc09-1': '満足度・デリバリー・受容・座席の指標はそれぞれ有用で、測りたい側面が必要。',
   'q-sc10-2': '参照先・依存ライセンス・CodeQL・今後のBlockは目的が異なり、今回の通知が必要。',
 };
-const samples = {
-  intermediate: 'q01 q-d1-a02 q-d1-a09 q-d2-a07 q-d2-a20 q-d3-a05 q-d3-a10 q-d4-a07 q-d5-a01 q-d6-a03'.split(' '),
-  advanced: 'q-d1-e01 q-d1-e03 q-d1-e05 q-d1-e07 q-d1-e08 q-sc03-1 q-sc07-1 q-d2-e02 q-d2-e07 q-d2-e04 q-d2-e06 q-d2-e11 q-d3-e04 q-d4-e01 q-d4-e04 q-d5-e01 q-d5-e03 q-d6-e01 q-sc09-1 q-sc10-2'.split(' '),
+const difficultyReview = read('content/gh300/2026-08-07/questions/difficulty-review.json');
+const chooseSamples = (level, count) => {
+  const groups = ['d1','d2','d3','d4','d5','d6'].map(d => bank.filter(q => q.difficulty === level && q.domainId === d));
+  const result = [];
+  for (let i = 0; result.length < count; i++) {
+    let added = false;
+    for (const group of groups) if (group[i] && result.length < count) { result.push(group[i].id); added = true; }
+    if (!added) break;
+  }
+  return result;
 };
+const samples = { intermediate: chooseSamples('intermediate', 10), advanced: chooseSamples('advanced', 20) };
 const sampleClues = {
   q01: '月末だけ失敗', 'q-d1-a02': 'SQL文字列の連結', 'q-d1-a09': '型・業務回帰・セキュリティの三領域',
   'q-d2-a07': '現在のスキーマ、利用者別権限、任意SQL禁止', 'q-d2-a20': '最新、利用者権限、更新不要',
@@ -118,7 +126,7 @@ const summarize = group => {
 const byDifficulty = Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, summarize(inventory.filter(q => q.difficulty === d))]));
 const warnings = inventory.filter(q => q.lengthBias || q.missingExplanation || q.options.filter(o => !o.correct && o.plausibility >= 2).length < 2).map(q => q.questionId);
 const report = {
-  version: 2, generatedAt: '2026-10-12', methodology: '全200問を選択肢のみの観点から編集レビューし、191問を個別改稿。スコアは編集者のルーブリック評価で、受験者の実測正答率ではない。',
+  version: 2, generatedAt: '2026-10-12', methodology: '全200問の編集レビュー。難易度の再評価後の分類・文面で再集計。スコアは編集判断であり、学習者の実測難易度ではない。',
   baseline: baseline.summary, after: byDifficulty, modifiedQuestionIds: [...changed], distractorsReplaced, unchangedReasons,
   warnings, inventoryByDifficulty: Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, inventory.filter(q => q.difficulty === d)])),
 };
@@ -128,7 +136,7 @@ const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam
 const lines = [
   '# GH-300 選択肢品質の全件監査', '',
   '## 判定方法', '',
-  '全200問について問題文を伏せた4択、問題文を戻した唯一正解性、選択肢別解説と出典を編集レビューした。191問の選択肢・解説を個別に改稿し、残る9問も本文なしでは対象条件を特定できないことを確認した。受験者の正答率を実測したものではない。', '',
+  '全200問を編集レビューし、難易度再評価後の分類・本文で再集計した。変更件数は初回の選択肢監査前からの累積で、表示順の変更も含む。今回の難易度監査による実質改稿90問・再分類54問はquestion-difficulty-audit.mdに別記する。受験者の正答率を実測したものではない。', '',
   'Foundationの機能名称問題では、名称が正答をそのまま言い換える選択肢を実際のCopilot機能・操作の対比へ改めた。Applied/Examでは、他の3択が一律に無関係または危険な行動となる構図を避け、同じ作業の一部は満たすが設問の条件を満たさない選択肢へ変更した。', '',
   '## Before', '',
   '| 難易度 | 全問 | もっともらしい誤答の平均 | 無関係な誤答 | 本文なし正解の疑い | 未判定 |',
@@ -140,7 +148,7 @@ const lines = [
   '- Applied/Examに、正答だけ複数の望ましい対策を組み合わせ、誤答が明白な手抜きや危険行為という構図があった。',
   '- 旧Knowledge Basesと旧CLI拡張を現行機能として扱う設問が残っていた。', '',
   '## Improvements', '',
-  `- 全200問をレビューし、191問の本文・選択肢・解説を改稿した。誤答の文面は${distractorsReplaced}件を変更した。`,
+  `- 全200問をレビューし、${changed.size}問の本文・選択肢・解説または表示順が固定ベースラインから変更された。誤答の文面は${distractorsReplaced}件を変更した。`,
   '- 正答IDとObjectiveは維持し、条件を一つ落とした部分解、適用範囲の違い、混同しやすいCopilot機能を優先した。',
   '- 全選択肢の解説と出典を再確認し、改稿後の内容に結び付くレビュー指紋を更新した。', '',
   '## After', '',
@@ -152,7 +160,7 @@ const lines = [
   ...Object.entries(byDifficulty).map(([d, s]) => `| ${names[d]} | ${s.averagePlausibleDistractors} | ${s.strongDistractorRate}% | ${s.unrelatedDistractorRate}% |`), '',
   '今回の全件判定は編集上の判断であり、学習者に問題文を隠して解かせた実測結果ではない。前後の編集スコアは判定範囲が異なるため、成績の改善幅として直接比較しない。', '',
   '100点の内訳は選択肢の関連性25、誤答のもっともらしさ25、唯一正解性20、長さの対称性10、本文依存10、解説10。各選択肢の根拠と点数はJSONに収録した。', '',
-  '## 改稿しなかった9問', '',
+  '## 初回監査で文面を維持した問題（今回の累積差分とは別）', '',
   ...Object.entries(unchangedReasons).map(([id, reason]) => `- ${id}: ${reason}`), '',
   '## 代表レビュー（Applied 10問、Exam 20問）', '',
 ];
@@ -162,7 +170,7 @@ for (const [difficulty, ids] of Object.entries(samples)) {
     const q = inventory.find(item => item.questionId === id);
     const correct = q.options.find(o => o.correct);
     const strong = q.options.filter(o => !o.correct).sort((a, b) => b.plausibility - a.plausibility)[0];
-    lines.push(`- ${id}（${q.score}点）: 正答${correct.id}「${correct.text}」。強い誤答${strong.id}「${strong.text}」は${strong.explanation} 決め手は「${sampleClues[id]}」。`);
+    lines.push(`- ${id}（${q.score}点）: 正答${correct.id}「${correct.text}」。強い誤答${strong.id}「${strong.text}」は${strong.explanation} 決め手は「${difficultyReview.questions[id]?.reasoningSteps.join(" → ") ?? sampleClues[id]}」。`);
   }
   lines.push('');
 }

@@ -8,6 +8,7 @@ const open = path => new URL(path, root);
 const read = path => JSON.parse(fs.readFileSync(open(path), 'utf8'));
 const bank = read('questions/seed.json');
 const review = read('questions/quality-review.json');
+if (fs.existsSync(open('questions/difficulty-review.json'))) throw Error('Historical migration: the later difficulty review must not be overwritten.');
 const sources = read('sources.json');
 const revised = new Set();
 const reviewedOnly = new Set();

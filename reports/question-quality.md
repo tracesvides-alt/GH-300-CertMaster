@@ -8,14 +8,14 @@ Total: 200. Stage 2: separate editorial rubric review, content-fingerprint bound
 
 ## Foundation Questions
 
-Total: 44
+Total: 80
 
 | Position | Count | Share |
 | --- | ---: | ---: |
-| A | 11 | 25.0% |
-| B | 11 | 25.0% |
-| C | 11 | 25.0% |
-| D | 11 | 25.0% |
+| A | 20 | 25.0% |
+| B | 20 | 25.0% |
+| C | 20 | 25.0% |
+| D | 20 | 25.0% |
 
 Multiple-select questions: 0
 
@@ -25,29 +25,29 @@ Potential Multiple Answer: 0
 
 Choice Length Bias: 0
 
-Questions with >= 2 strong distractors: 0.0%
+Questions with >= 2 strong distractors: 100.0%
 
 Missing/stale Stage 2 review: 0
 
 | Domain | Single-select N | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| d1 | 6 | 2 | 1 | 1 | 2 |
-| d2 | 12 | 3 | 3 | 3 | 3 |
-| d3 | 7 | 1 | 2 | 2 | 2 |
-| d4 | 6 | 1 | 2 | 2 | 1 |
-| d5 | 6 | 2 | 1 | 2 | 1 |
-| d6 | 7 | 2 | 2 | 1 | 2 |
+| d1 | 9 | 2 | 2 | 2 | 3 |
+| d2 | 34 | 9 | 9 | 8 | 8 |
+| d3 | 8 | 2 | 2 | 2 | 2 |
+| d4 | 8 | 2 | 2 | 2 | 2 |
+| d5 | 8 | 2 | 2 | 2 | 2 |
+| d6 | 13 | 3 | 3 | 4 | 3 |
 
 ## Applied Questions
 
-Total: 79
+Total: 78
 
 | Position | Count | Share |
 | --- | ---: | ---: |
-| A | 20 | 25.3% |
-| B | 19 | 24.1% |
-| C | 20 | 25.3% |
-| D | 20 | 25.3% |
+| A | 19 | 24.4% |
+| B | 20 | 25.6% |
+| C | 19 | 24.4% |
+| D | 20 | 25.6% |
 
 Multiple-select questions: 0
 
@@ -63,23 +63,23 @@ Missing/stale Stage 2 review: 0
 
 | Domain | Single-select N | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| d1 | 11 | 2 | 3 | 3 | 3 |
-| d2 | 23 | 6 | 6 | 5 | 6 |
-| d3 | 11 | 3 | 2 | 3 | 3 |
+| d1 | 13 | 3 | 4 | 3 | 3 |
+| d2 | 19 | 5 | 4 | 5 | 5 |
+| d3 | 13 | 3 | 3 | 3 | 4 |
 | d4 | 12 | 3 | 3 | 3 | 3 |
-| d5 | 12 | 3 | 3 | 3 | 3 |
-| d6 | 10 | 3 | 2 | 3 | 2 |
+| d5 | 13 | 3 | 4 | 3 | 3 |
+| d6 | 8 | 2 | 2 | 2 | 2 |
 
 ## Exam Questions
 
-Total: 77
+Total: 42
 
 | Position | Count | Share |
 | --- | ---: | ---: |
-| A | 19 | 24.7% |
-| B | 19 | 24.7% |
-| C | 20 | 26.0% |
-| D | 19 | 24.7% |
+| A | 11 | 26.2% |
+| B | 11 | 26.2% |
+| C | 10 | 23.8% |
+| D | 10 | 23.8% |
 
 Multiple-select questions: 0
 
@@ -95,16 +95,21 @@ Missing/stale Stage 2 review: 0
 
 | Domain | Single-select N | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| d1 | 13 | 4 | 3 | 3 | 3 |
-| d2 | 27 | 6 | 7 | 7 | 7 |
-| d3 | 8 | 2 | 2 | 2 | 2 |
-| d4 | 8 | 2 | 2 | 2 | 2 |
-| d5 | 10 | 2 | 2 | 3 | 3 |
-| d6 | 11 | 3 | 3 | 3 | 2 |
+| d1 | 8 | 2 | 2 | 2 | 2 |
+| d2 | 9 | 2 | 2 | 2 | 3 |
+| d3 | 5 | 2 | 1 | 1 | 1 |
+| d4 | 6 | 1 | 2 | 2 | 1 |
+| d5 | 7 | 2 | 2 | 2 | 1 |
+| d6 | 7 | 2 | 2 | 1 | 2 |
 
 ## Findings
 
-- WARNING advanced/d1: answer-distribution — A: 30.8% (4/13)
+- WARNING beginner/d1: answer-distribution — D: 33.3% (3/9)
+- WARNING beginner/d6: answer-distribution — C: 30.8% (4/13)
+- WARNING intermediate/d1: answer-distribution — B: 30.8% (4/13)
+- WARNING intermediate/d5: answer-distribution — B: 30.8% (4/13)
+- WARNING intermediate/d3: answer-distribution — D: 30.8% (4/13)
+- WARNING advanced/d2: answer-distribution — D: 33.3% (3/9)
 
 Domain × Difficultyは単一選択8問以上でしきい値を適用。13問を4位置に分けた4/13 = 30.8%は整数制約によるWarningとして残します。
 

@@ -42,6 +42,9 @@ describe('quality gates', () => {
     q.choices.find(c => q.answer.includes(c.id))!.text = '具体的な長い正解'.repeat(50);
     expect(questionIssues(q).some(i => i.rule === 'length-bias')).toBe(true);
   });
+  it('rejects an Exam label attached to an application-only question', () => {
+    expect(questionIssues({ ...exam, cognitiveLevel: 'apply' }).some(i => i.rule === 'exam-analysis')).toBe(true);
+  });
   it('rejects metadata detached from its answer or official references', () => {
     const q = structuredClone(exam);
     q.choiceQuality![q.answer[0]].distractorType = 'wrong-scope';

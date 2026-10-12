@@ -14,7 +14,9 @@
     "content:audit": "node scripts/audit-learning-content.mjs",
     "quality:audit": "node scripts/audit-questions.mjs",
     "quality:check": "node scripts/audit-questions.mjs --check",
-    "choice:audit": "node scripts/audit-choice-quality.mjs"
+    "choice:audit": "node scripts/audit-choice-quality.mjs",
+    "difficulty:audit": "node scripts/audit-question-difficulty.mjs",
+    "difficulty:check": "node scripts/audit-question-difficulty.mjs --check"
   },
   "dependencies": {
     "dexie": "^4.0.0",

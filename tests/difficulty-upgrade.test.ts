@@ -7,9 +7,12 @@ import {
 } from '../lib/selection';
 import { mastery, type Attempt } from '../lib/learning';
 import { practiceResult } from '../lib/practice-session';
+import difficultyReview from '../content/gh300/2026-08-07/questions/difficulty-review.json';
+import rawQuestions from '../content/gh300/2026-08-07/questions/seed.json';
+import { createHash } from 'node:crypto';
 
 describe('Question Bank Difficulty Distribution', () => {
-  it('has approximately 200 questions and matches difficulty targets', () => {
+  it('classifies every question using a current editorial review rather than a target ratio', () => {
     expect(questions.length).toBeGreaterThanOrEqual(195);
     expect(questions.length).toBeLessThanOrEqual(205);
 
@@ -19,18 +22,23 @@ describe('Question Bank Difficulty Distribution', () => {
       advanced: questions.filter((q) => q.difficulty === 'advanced').length,
     };
 
-    const total = questions.length;
-    const pBeginner = (counts.beginner / total) * 100;
-    const pIntermediate = (counts.intermediate / total) * 100;
-    const pAdvanced = (counts.advanced / total) * 100;
-
-    // Targets: Foundation ~20% (15-25%), Applied ~40% (35-45%), Exam ~40% (35-45%)
-    expect(pBeginner).toBeGreaterThanOrEqual(18);
-    expect(pBeginner).toBeLessThanOrEqual(25);
-    expect(pIntermediate).toBeGreaterThanOrEqual(35);
-    expect(pIntermediate).toBeLessThanOrEqual(45);
-    expect(pAdvanced).toBeGreaterThanOrEqual(35);
-    expect(pAdvanced).toBeLessThanOrEqual(45);
+    // Difficulty follows cognitive demand. Quotas must not promote recall items.
+    expect(counts.advanced).toBeGreaterThanOrEqual(25); // Capacity for a 50-question mock.
+    expect(counts.intermediate + counts.advanced).toBeGreaterThanOrEqual(50);
+    expect(difficultyReview.status).toBe('reviewed');
+    expect(Object.keys(difficultyReview.questions)).toHaveLength(questions.length);
+    for (const q of questions) {
+      const row = difficultyReview.questions[q.id as keyof typeof difficultyReview.questions];
+      expect(row.difficulty).toBe(q.difficulty);
+      expect(row.assessment.trim()).toBeTruthy();
+      const raw = rawQuestions.find(raw => raw.id === q.id)!;
+      expect(row.fingerprint).toBe(createHash('sha256').update(JSON.stringify(raw)).digest('hex'));
+      if (q.difficulty === 'advanced') {
+        expect(q.cognitiveLevel).toBe('analyze');
+        expect(row.reasoningSteps.length).toBeGreaterThanOrEqual(2);
+        expect(row.counterfactual?.trim()).toBeTruthy();
+      }
+    }
   });
 
   it('covers all 6 domains with Exam-level (advanced) questions', () => {
@@ -79,8 +87,9 @@ describe('Scenario Sets Integration', () => {
         const found = questions.find((q) => q.id === qId);
         expect(found).toBeDefined();
         expect(found?.scenarioSetId).toBe(set.id);
-        expect(found?.difficulty).toBe('advanced');
-        expect(found?.examLike).toBe(true);
+        // A shared scenario does not by itself make a question Exam difficulty.
+        expect(found?.examLike).toBe(found?.difficulty === 'advanced');
+        expect(set.objectiveIds).toContain(found?.objectiveId);
       }
     }
   });
@@ -89,11 +98,10 @@ describe('Scenario Sets Integration', () => {
 describe('Exam Question Quality and Metadata Validation', () => {
   it('ensures all examLike questions have cognitiveLevel, sources, full choice explanations, and clues', () => {
     const examQuestions = questions.filter((q) => q.examLike || q.difficulty === 'advanced');
-    expect(examQuestions.length).toBeGreaterThanOrEqual(75);
+    expect(examQuestions.length).toBeGreaterThanOrEqual(25);
 
     for (const q of examQuestions) {
-      // Must be apply or analyze
-      expect(['apply', 'analyze']).toContain(q.cognitiveLevel);
+      expect(q.cognitiveLevel).toBe('analyze');
 
       // Must have valid sources
       expect(q.sourceIds.length).toBeGreaterThanOrEqual(1);
@@ -112,6 +120,7 @@ describe('Exam Question Quality and Metadata Validation', () => {
       // If exam-level, clues should exist for post-answer highlighting
       expect(q.clues).toBeDefined();
       expect(q.clues!.length).toBeGreaterThanOrEqual(1);
+      expect(q.clues!.every(clue => q.question.includes(clue))).toBe(true);
     }
   });
 });

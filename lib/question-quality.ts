@@ -34,6 +34,7 @@ export function questionIssues(q: AuditableQuestion, review?: QualityReview): Qu
     !m.requirement?.trim() || !m.correctReason?.trim() || wrong.some(c => !m.distractorFailures[c.id]?.trim()))))
     fail('requirements', '要件・正解理由・各不正解の失敗理由の対応が必要です。');
   if (!['apply', 'analyze'].includes(q.cognitiveLevel ?? '')) fail('difficulty', 'Applied/Examには適用・分析が必要です。');
+  if (q.difficulty === 'advanced' && q.cognitiveLevel !== 'analyze') fail('exam-analysis', 'Examには証拠比較などの分析が必要です。');
   const lengths = wrong.map(c => c.text.length).sort((a, b) => a - b);
   const median = lengths[Math.floor(lengths.length / 2)] ?? 1;
   if (q.choices.some(c => q.answer.includes(c.id) && c.text.length > Math.max(30, median * 1.5)))

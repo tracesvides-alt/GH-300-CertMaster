@@ -116,19 +116,19 @@ export default function PracticeSetup({
           {
             id: 'balanced',
             title: 'バランス（標準）',
-            text: '基礎20% · 応用40% · 本番40%。知識定着と実戦力を両立。',
+            text: '3段階から出題。対象範囲や学習履歴に応じて配分します。',
             icon: Layers,
           },
           {
             id: 'foundation',
             title: '基礎中心',
-            text: '基礎60% · 応用35% · 本番5%。教材学習直後の用語・概念確認。',
+            text: 'Foundationを優先。用語・基本概念・操作を確認します。',
             icon: BookOpen,
           },
           {
             id: 'exam',
             title: '本番レベル',
-            text: '本番シナリオ70〜80% · 応用20〜30%。試験直前の高負荷演習。',
+            text: 'Examを優先。証拠の比較や複数条件の判断を練習します。',
             icon: Flame,
           },
         ].map(({ id, title, text, icon: Icon }) => (

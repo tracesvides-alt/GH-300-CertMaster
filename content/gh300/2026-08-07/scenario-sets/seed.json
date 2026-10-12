@@ -10,7 +10,7 @@
     "objectiveIds": [
       "d6o1",
       "d6o2",
-      "d2o2"
+      "d2o4"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -19,12 +19,14 @@
       "q-sc01-3"
     ],
     "sourceIds": [
+      "exclusion-concept",
+      "secret-scanning",
+      "public-code",
       "exclusion",
-      "policies",
-      "privacy"
+      "policies"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -32,14 +34,14 @@
     "title": "Apex Financial: ミッションクリティカルな金融APIのレガシー刷新とテスト自動化",
     "scenario": "大手金融システムのApex Financialでは、20年以上稼働しているレガシーな口座振替処理モジュール（Java製、単体テストカバレッジ20%未満）を最新のマイクロサービスアーキテクチャへリファクタリングするプロジェクトが進行中です。チームリーダーは、安全にリファクタリングを進めるために既存処理の振る舞いを維持する網羅的なテストケースをCopilotで作成し、エッジケースや例外処理を検出したいと考えています。同時に、機密性の高いトランザクションロジックがAIによって無批判に改変されるリスクを警戒しています。",
     "domainIds": [
-      "d4",
       "d5",
-      "d1"
+      "d1",
+      "d4"
     ],
     "objectiveIds": [
-      "d4o2",
       "d5o1",
-      "d1o2"
+      "d1o2",
+      "d4o2"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -53,7 +55,7 @@
       "prompt"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -65,8 +67,8 @@
       "d3"
     ],
     "objectiveIds": [
+      "d2o3",
       "d2o1",
-      "d2o2",
       "d3o2"
     ],
     "difficulty": "advanced",
@@ -77,11 +79,12 @@
     ],
     "sourceIds": [
       "mcp",
-      "chat",
+      "mcp-spec",
+      "mcp-config",
       "architecture"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -97,7 +100,7 @@
       "d5o1",
       "d5o2"
     ],
-    "difficulty": "advanced",
+    "difficulty": "intermediate",
     "questionIds": [
       "q-sc04-1",
       "q-sc04-2",
@@ -106,10 +109,12 @@
     "sourceIds": [
       "agent-mode",
       "code-review",
-      "tests"
+      "responsible",
+      "codeql",
+      "secret-scanning"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -125,7 +130,7 @@
       "d1o2",
       "d6o2"
     ],
-    "difficulty": "advanced",
+    "difficulty": "intermediate",
     "questionIds": [
       "q-sc05-1",
       "q-sc05-2",
@@ -133,11 +138,13 @@
     ],
     "sourceIds": [
       "responsible",
-      "privacy",
-      "policies"
+      "chat",
+      "tests",
+      "secret-scanning",
+      "exclusion-concept"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -151,7 +158,7 @@
     "objectiveIds": [
       "d4o1",
       "d4o2",
-      "d2o2"
+      "d2o3"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -162,10 +169,10 @@
     "sourceIds": [
       "instructions",
       "prompt-files",
-      "prompt"
+      "spaces"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -178,7 +185,8 @@
     ],
     "objectiveIds": [
       "d2o2",
-      "d6o1"
+      "d6o1",
+      "d2o4"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -188,11 +196,13 @@
     ],
     "sourceIds": [
       "mcp",
-      "policies",
-      "audit-log"
+      "mcp-spec",
+      "spaces",
+      "audit-log",
+      "rest-api"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -215,12 +225,12 @@
       "q-sc08-3"
     ],
     "sourceIds": [
+      "workspace-context",
       "architecture",
-      "chat",
-      "privacy"
+      "prompt"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -243,12 +253,12 @@
       "q-sc09-3"
     ],
     "sourceIds": [
+      "space-framework",
       "rest-api",
-      "tests",
-      "code-review"
+      "responsible"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -256,12 +266,13 @@
     "title": "SecureBank Online: 公開コード一致フィルター（Duplication Detection）と知的財産保護",
     "scenario": "インターネット専業銀行のSecureBank Onlineの法務・知財コンプライアンス部門は、Copilotが提案するコードの中に、GitHub上の公開リポジトリに存在する特定のオープンソースコード（GPL等のコピーレフトライセンスを含む）と完全に一致するスニペットが含まれ、知財紛争に巻き込まれるリスクを懸念しています。管理者は、Organization全体で公開コードと一致するコード提案を自動的にブロック（Match public code: Block）するポリシーの強制適用を決定しました。",
     "domainIds": [
-      "d1",
-      "d6"
+      "d6",
+      "d1"
     ],
     "objectiveIds": [
+      "d6o1",
       "d1o1",
-      "d6o1"
+      "d6o2"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -270,12 +281,16 @@
       "q-sc10-3"
     ],
     "sourceIds": [
-      "policies",
-      "responsible",
+      "public-code",
+      "exclusion-concept",
+      "secret-scanning",
+      "codeql",
+      "model-hosting",
+      "mcp",
       "privacy"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-07",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   }
 ]
