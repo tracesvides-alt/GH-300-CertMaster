@@ -11,8 +11,8 @@
       "d1o1",
       "d1o2",
       "d2o1",
-      "d2o2",
       "d2o3",
+      "d2o2",
       "d2o4",
       "d3o1",
       "d3o2",
@@ -118,7 +118,8 @@
       "cmp-exclusion-vs-publicmatch",
       "cmp-zero-vs-few-shot",
       "cmp-unit-vs-integration-tests",
-      "cmp-org-vs-enterprise-policies"
+      "cmp-org-vs-enterprise-policies",
+      "cmp-mcp-vs-agent-mode"
     ],
     "relatedQuestionIds": [
       "q-d1-f01",
@@ -601,8 +602,10 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d2o3",
       "d2o1",
-      "d2o3"
+      "d1o1",
+      "d2o2"
     ],
     "relatedLessonIds": [
       "lesson-d2-agent-edits",
@@ -618,7 +621,8 @@
     "relatedComparisonIds": [
       "cmp-agent-vs-edits",
       "cmp-agent-vs-chat",
-      "cmp-sessions-vs-subagents"
+      "cmp-sessions-vs-subagents",
+      "cmp-mcp-vs-agent-mode"
     ],
     "relatedQuestionIds": [
       "q-d1-a07",
@@ -644,7 +648,8 @@
       "q-sc04-1"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d1"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "verified"
@@ -658,7 +663,9 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o3"
+      "d2o3",
+      "d2o4",
+      "d2o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -672,7 +679,8 @@
       "g-mcp-tools"
     ],
     "relatedComparisonIds": [
-      "cmp-mcp-vs-extensions"
+      "cmp-mcp-vs-extensions",
+      "cmp-mcp-vs-agent-mode"
     ],
     "relatedQuestionIds": [
       "q-d2-f06",
@@ -802,11 +810,18 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o3"
+      "d2o1",
+      "d2o3",
+      "d2o4",
+      "d4o1",
+      "d4o2",
+      "d2o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
     "relatedGlossaryIds": [
       "g-spaces"
     ],
@@ -830,7 +845,8 @@
       "q-sc07-1"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d4"
     ]
   },
   {
@@ -846,7 +862,9 @@
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-agent-edits"
+    ],
     "relatedGlossaryIds": [
       "g-spark"
     ],
@@ -1191,12 +1209,14 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o1",
-      "d3o1"
+      "d3o1",
+      "d2o1"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d3-data-flow"
+    ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
@@ -1205,8 +1225,8 @@
       "q-d3-a02"
     ],
     "relatedDomainIds": [
-      "d2",
-      "d3"
+      "d3",
+      "d2"
     ]
   },
   {
@@ -1708,6 +1728,104 @@
       "d2",
       "d3",
       "d6"
+    ]
+  },
+  {
+    "id": "cli-install",
+    "title": "Installing GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "cli-usage",
+    "title": "Using GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "cli-sessions",
+    "title": "Working with multiple GitHub Copilot CLI sessions",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o2",
+      "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli",
+      "lesson-d2-agent-edits"
+    ],
+    "relatedGlossaryIds": [
+      "g-agent-sessions"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "ide-subagents",
+    "title": "Using subagents in your IDE",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-subagents",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-agent-edits"
+    ],
+    "relatedGlossaryIds": [
+      "g-sub-agents"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
     ]
   }
 ]

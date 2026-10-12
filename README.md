@@ -122,13 +122,13 @@ app/
     tutor/route.ts               AIチューター用サーバーエンドポイント
 content/gh300/2026-08-07/
   syllabus.json                  GH-300シラバス（6 Domain / 14 Objective / トピック一覧）
-  sources.json                   19件の公式ドキュメント出典台帳
+  sources.json                   44件の公式ドキュメント出典台帳
   lessons/
     seed.json                    28本の構造化レッスン（全Objective網羅）
   glossary/
     terms.json                   110件の用語集（Essential / Important / Supplementary）
   comparisons/
-    guides.json                  12本の多軸比較ガイド
+    guides.json                  13本の多軸比較ガイド
   questions/
     seed.json                    根拠付きVerified固定問題
 lib/

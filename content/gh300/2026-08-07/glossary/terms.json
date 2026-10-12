@@ -1566,7 +1566,8 @@
     ],
     "comparisonIds": [
       "cmp-agent-vs-edits",
-      "cmp-agent-vs-chat"
+      "cmp-agent-vs-chat",
+      "cmp-mcp-vs-agent-mode"
     ],
     "questionIds": [],
     "sourceIds": [
@@ -1679,7 +1680,8 @@
       "lesson-d2-pr-code-review"
     ],
     "comparisonIds": [
-      "cmp-mcp-vs-extensions"
+      "cmp-mcp-vs-extensions",
+      "cmp-mcp-vs-agent-mode"
     ],
     "questionIds": [],
     "sourceIds": [
@@ -1847,47 +1849,47 @@
       "Agent Session",
       "エージェント対話セッション"
     ],
-    "shortDefinition": "Agent Modeが1つのタスクを遂行する一連の対話履歴、作業ログ、試行錯誤のステップをカプセル化した実行単位。",
-    "detailedDefinition": "Agent Mode実行時に作成され、計画→実行→検証→修正のループ全体を記録する。セッションごとに過去のツール実行結果やDiffがコンテキストとして保持され、タスク完了時にまとめてコミットや破棄が行える。",
+    "shortDefinition": "一連の依頼、応答、作業文脈、ツール実行を保持するエージェントの作業単位。再開や切替の方法は製品面で異なる。",
+    "detailedDefinition": "Copilot CLIではセッションがプロンプト、応答、会話文脈、ツール活動、作業ディレクトリや権限などの状態を含み、複数のセッションを切り替えたり再開したりできる。IDEのAgent Modeにも作業セッションがあるが、CLIと同じコマンドや自動コミット機能があると一般化しない。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
       "d2"
     ],
     "objectiveIds": [
+      "d2o2",
       "d2o3"
     ],
-    "whyItMatters": "長時間動作する自律エージェントの作業管理・監査単位を理解するため。",
+    "whyItMatters": "長い作業をどの文脈で続けるか、下位タスクを別のエージェントに任せるかを判断するため。",
     "useCases": [
       "途中でタスクを中断・再開する際のセッション管理",
       "試行錯誤のステップ履歴を確認して不要な変更をロールバック"
     ],
     "examPoints": [
-      "セッション単位で作業状態やツール実行履歴が管理される",
-      "タスク単位で独立したスレッドとして機能する"
+      "Sessionは会話と作業状態の単位",
+      "Sub-AgentはSession内で委譲された別コンテキストの下位タスク"
     ],
     "commonConfusions": [
-      "通常の単発チャット履歴との混同"
+      "セッションを再開することとSub-Agentを起動することの混同"
     ],
     "relatedTermIds": [
       "g-agent-mode",
       "g-sub-agents"
     ],
     "lessonIds": [
-      "lesson-d2-agent-edits",
-      "lesson-d2-mcp",
-      "lesson-d2-instructions-prompts",
-      "lesson-d2-pr-code-review"
+      "lesson-d2-cli",
+      "lesson-d2-agent-edits"
     ],
     "comparisonIds": [
       "cmp-sessions-vs-subagents"
     ],
     "questionIds": [],
     "sourceIds": [
-      "agent-mode"
+      "agent-mode",
+      "cli-sessions"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1898,8 +1900,8 @@
       "子エージェント",
       "Sub-Agent"
     ],
-    "shortDefinition": "メインエージェントから特定の下位タスク（調査、テスト作成、ファイル探索など）を委譲されて並行または階層的に動作する特殊エージェント。",
-    "detailedDefinition": "複雑な開発タスクにおいて、メインのコンテキストウィンドウを汚染せずに独立して調査や試行を行い、要約した結果のみを親エージェントに返すことで、大規模な問題解決を可能にする仕組み。",
+    "shortDefinition": "主エージェントから独立した下位タスクを引き受け、別のコンテキストで作業して結果を主セッションへ返すエージェント。",
+    "detailedDefinition": "IDEのCopilotでは、調査や分析など自己完結した下位タスクをSub-Agentに委譲できる。Sub-Agentは独立したコンテキストを使い、完了結果を主チャットへ返す。対応するIDEや有効化方法は製品面によって異なる。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -1914,31 +1916,29 @@
       "依存関係ツリーの事前解析"
     ],
     "examPoints": [
-      "親エージェントから独立したタスクを引き受ける",
-      "コンテキストウィンドウの過消費を防ぐ役割を果たす"
+      "主セッションと別のコンテキストで下位タスクを進める",
+      "結果を主セッションに返す"
     ],
     "commonConfusions": [
-      "単一のLLMプロンプト連鎖との混同"
+      "会話履歴を保存するSessionと、実際に仕事を委譲するSub-Agentの混同"
     ],
     "relatedTermIds": [
       "g-agent-mode",
       "g-agent-sessions"
     ],
     "lessonIds": [
-      "lesson-d2-agent-edits",
-      "lesson-d2-mcp",
-      "lesson-d2-instructions-prompts",
-      "lesson-d2-pr-code-review"
+      "lesson-d2-agent-edits"
     ],
     "comparisonIds": [
       "cmp-sessions-vs-subagents"
     ],
     "questionIds": [],
     "sourceIds": [
-      "agent-mode"
+      "agent-mode",
+      "ide-subagents"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -2223,10 +2223,12 @@
     "fullName": "GitHub Copilot Spaces",
     "aliases": [
       "Copilot Spaces",
-      "コラボレーションスペース"
+      "コラボレーションスペース",
+      "共有コンテキスト",
+      "スペース"
     ],
-    "shortDefinition": "複数のリポジトリ、ドキュメント、課題、メモをまとめて単一の共有AIコンテキストとして保持・対話できるWebベースの作業空間。",
-    "detailedDefinition": "GitHub.com上で提供される機能。特定のリポジトリ単体を超えて、複数サービスにまたがるシステムや外部ドキュメントを1つのSpaceにまとめ、チーム全体で同じコンテキストを共有しながら横断的なブレインストーミングや仕様調査を行える。",
+    "shortDefinition": "リポジトリや資料をまとめてCopilot Chatの根拠として再利用・共有できるSpace。",
+    "detailedDefinition": "GitHub Copilot Spacesにはリポジトリ、コード、PR、Issue、メモ、画像、アップロード資料などを集められる。GitHub上の資料は変更に追随し、共有範囲は所有者と権限設定によって変わる。GitHub上のChatで利用し、IDEではGitHub MCPサーバー経由で参照できる。全チャット履歴を自動共有する機能ではない。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -2241,21 +2243,18 @@
       "リポジトリと仕様書ドキュメントを組み合わせたオンボーディング"
     ],
     "examPoints": [
-      "複数リポジトリやドキュメントを単一のコンテキスト空間に束ねられる",
-      "チームメンバー間でコンテキストとチャットを共有可能"
+      "複数の資料を再利用できる共有コンテキストにする",
+      "閲覧者にはアクセス権のあるソースだけが見える"
     ],
     "commonConfusions": [
-      "単一リポジトリを対象とするIDEサイドバーChatとのスコープの違い"
+      "通常Chatでその場の資料を参照することと、Spaceを作って資料を共有・再利用することの混同"
     ],
     "relatedTermIds": [
       "g-copilot-chat",
-      "g-spaces"
+      "g-custom-instructions"
     ],
     "lessonIds": [
-      "lesson-d2-agent-edits",
-      "lesson-d2-mcp",
-      "lesson-d2-instructions-prompts",
-      "lesson-d2-pr-code-review"
+      "lesson-d2-chat-essentials"
     ],
     "comparisonIds": [
       "cmp-spaces-vs-chat"
@@ -2266,7 +2265,7 @@
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -2304,10 +2303,7 @@
       "g-copilot-chat"
     ],
     "lessonIds": [
-      "lesson-d2-agent-edits",
-      "lesson-d2-mcp",
-      "lesson-d2-instructions-prompts",
-      "lesson-d2-pr-code-review"
+      "lesson-d2-agent-edits"
     ],
     "comparisonIds": [],
     "questionIds": [],

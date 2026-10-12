@@ -214,6 +214,70 @@
     "status": "verified"
   },
   {
+    "id": "cmp-mcp-vs-agent-mode",
+    "title": "MCP vs Agent Mode",
+    "slug": "mcp-vs-agent-mode",
+    "summary": "MCPは外部ツールやデータとの接続規格、Agent Modeは依頼を分解してツールを使いながら作業する実行モード。Agent ModeがMCPのツールを利用する場合もある。",
+    "comparedTermIds": [
+      "g-mcp",
+      "g-agent-mode"
+    ],
+    "domainIds": [
+      "d2"
+    ],
+    "objectiveIds": [
+      "d2o3"
+    ],
+    "comparisonAxes": [
+      {
+        "axis": "役割",
+        "values": [
+          "MCP: AIアプリと外部システムをつなぐ標準プロトコル",
+          "Agent Mode: ファイル編集やツール実行を反復する作業モード"
+        ]
+      },
+      {
+        "axis": "提供するもの",
+        "values": [
+          "MCP: サーバー経由のツールやデータ",
+          "Agent Mode: タスク遂行の手順とツール利用"
+        ]
+      },
+      {
+        "axis": "関係",
+        "values": [
+          "MCP: Agent Modeから利用できるツール接続の一つ",
+          "Agent Mode: 必要ならMCPサーバーのツールを呼び出せる"
+        ]
+      }
+    ],
+    "decisionGuide": [
+      "社内Issue APIをCopilotに接続したい → MCPサーバーを検討",
+      "コード修正、テスト、失敗時の再修正を一連で依頼したい → Agent Mode",
+      "社内APIを調べながら修正したい → Agent ModeとMCPを組み合わせる"
+    ],
+    "commonTraps": [
+      "MCPをAgent Modeの別名と考えること",
+      "MCPサーバーを追加するだけでAgent Modeの反復作業が始まると考えること"
+    ],
+    "examTips": [
+      "外部システムへの接続手段が必要か、作業を進めるモードが必要かを先に判断する。"
+    ],
+    "lessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp"
+    ],
+    "questionIds": [],
+    "sourceIds": [
+      "mcp",
+      "agent-mode",
+      "guide"
+    ],
+    "syllabusVersion": "2026-08-07",
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
+  },
+  {
     "id": "cmp-mcp-vs-extensions",
     "title": "Model Context Protocol (MCP) vs Copilot Extensions",
     "slug": "mcp-vs-copilot-extensions",
@@ -344,7 +408,7 @@
     "id": "cmp-spaces-vs-chat",
     "title": "GitHub Copilot Spaces vs 通常のChat Context",
     "slug": "spaces-vs-normal-chat-context",
-    "summary": "単一リポジトリやローカルエディタに閉じた通常のChat Contextと、複数リポジトリやドキュメントを横断して単一のAI作業空間に束ねるCopilot Spacesの違い。",
+    "summary": "Copilot Spacesは資料を整理して共有・再利用するChatのコンテキスト。通常のChatはその場の質問に応じて文脈を使う。どちらも製品面により複数のファイルやリポジトリを参照できるため、ローカル単一リポジトリだけで区別しない。",
     "comparedTermIds": [
       "g-spaces",
       "g-copilot-chat"
@@ -357,36 +421,37 @@
     ],
     "comparisonAxes": [
       {
-        "axis": "リポジトリのスコープ",
+        "axis": "文脈の準備",
         "values": [
-          "Spaces: 複数のリポジトリ、ドキュメント、メモを横断バインド",
-          "通常のChat: 現在開いている単一のローカルワークスペースが基本"
+          "Spaces: リポジトリ、PR、Issue、文書やメモをSpaceに整理",
+          "通常のChat: 質問時に利用可能な文脈や添付資料を使う"
         ]
       },
       {
-        "axis": "プラットフォーム",
+        "axis": "共有と再利用",
         "values": [
-          "Spaces: GitHub.com上のコラボレーション空間",
-          "通常のChat: VS Code等のIDEサイドバー"
+          "Spaces: 権限に従い整理した資料を共有し、後の質問でも再利用",
+          "通常のChat: その場の対話を中心に進める"
         ]
       },
       {
-        "axis": "コラボレーション",
+        "axis": "利用面",
         "values": [
-          "Spaces: チームメンバー間でコンテキストとチャットスレッドを永続共有",
-          "通常のChat: 開発者個人のローカルセッション"
+          "Spaces: GitHub上のChat、IDEではGitHub MCPサーバー経由",
+          "通常のChat: GitHub.comや対応IDEなどのChat画面"
         ]
       }
     ],
     "decisionGuide": [
-      "マイクロサービス構成で、フロントエンドとバックエンドの2つのリポジトリを跨いで設計相談したい → Copilot Spaces",
-      "手元のエディタで今開いている1つのリポジトリのコードを素早く修正したい → 通常のCopilot Chat"
+      "複数リポジトリと設計メモをチームの共通資料として継続利用したい → Spaces",
+      "現在の作業について質問・解説を受けたい → 通常のCopilot Chat"
     ],
     "commonTraps": [
-      "IDEの通常チャットで別リポジトリのコードが自動的に読み込まれると思い込むこと"
+      "Spacesを全チャット履歴の自動共有と考えること",
+      "通常のChatは常に単一のローカルリポジトリしか参照できないと決めつけること"
     ],
     "examTips": [
-      "「複数リポジトリを横断したコンテキスト共有」というキーワードが出たら「Copilot Spaces」です。"
+      "判断軸は資料の整理・共有・再利用か、その場の対話か。"
     ],
     "lessonIds": [
       "lesson-d2-chat-essentials"
@@ -398,7 +463,7 @@
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {

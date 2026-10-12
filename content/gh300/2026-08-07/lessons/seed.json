@@ -349,11 +349,12 @@
     "slug": "copilot-chat-participants-commands-variables",
     "domainId": "d2",
     "objectiveIds": [
-      "d2o1"
+      "d2o1",
+      "d2o3"
     ],
     "syllabusVersion": "2026-08-07",
     "summary": "IDE内でのCopilot Chat、Inline Chat (Ctrl+I)、Chat Participants (@workspace, @vscode, @terminal)、Slash Commands (/explain, /fix, /tests)、Chat Variables (#file, #selection) を自在に駆使してコンテキストを精緻に制御します。",
-    "estimatedMinutes": 9,
+    "estimatedMinutes": 10,
     "difficulty": "intermediate",
     "sections": [
       {
@@ -377,18 +378,24 @@
         "content": "・`@workspace` はローカルリポジトリのインデックスを参照するため、巨大すぎるモノレポやインデックス未作成時は初動に時間がかかることがあります。\n・チャット履歴が長くなるとコンテキストトークンを消費するため、トピックが変わったら `/clear` を実行するのが鉄則です。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
+        "heading": "6. Copilot Spacesで共有コンテキストを再利用する",
+        "content": "Copilot Spacesにはリポジトリ、ファイル、Pull Request、Issue、メモ、アップロードした資料などを集め、質問の根拠にできます。GitHub上の資料は変更に追随し、Spaceを共有すればチームで同じ資料を使えます。【例】複数リポジトリと設計メモを新メンバーに共有して質問に答えるならSpaces、現在のコードについてその場で質問するなら通常のChatを選びます。SpacesはGitHub上のCopilot Chatで使い、IDEからはGitHub MCPサーバー経由で参照できます。閲覧者は権限のあるソースだけを見られます。共有されるのは整理したコンテキストであり、全チャット履歴が自動共有されるという意味ではありません。"
+      },
+      {
+        "heading": "7. 30秒チェック（Mini Review）",
         "content": "Q1: プロジェクト全体のコードを検索・参照するチャット参加者は？ → `@workspace`。\nQ2: エディタ内で直接Diffプレビュー付きでコード修正を依頼するショートカットは？ → `Ctrl + I` (Cmd + I)。\nQ3: 特定のファイル全体をコンテキストに含める変数は？ → `#file:ファイルパス`。"
       }
     ],
     "keyPoints": [
       "`@` は参加者（エージェント）、`/` はコマンド（操作）、`#` は変数（コンテキスト）。",
       "`Ctrl+I` / `Cmd+I` のInline Chatで差分（Diff）を確認しながら即時修正できる。",
-      "`@workspace` を付けることでプロジェクト横断のコード検索・参照が可能になる。"
+      "`@workspace` を付けることでプロジェクト横断のコード検索・参照が可能になる。",
+      "Spacesは資料をまとめて共有・再利用するコンテキストで、通常のChatの一時的な依頼文とは用途が異なる。"
     ],
     "commonMistakes": [
       "`#file` 変数を使わずに手動で数百行のコードをチャット欄にコピペしてしまうこと。",
-      "単なるチャット（サイドバー）とDiff適用ができるInline Chatの使い分けができていないこと。"
+      "単なるチャット（サイドバー）とDiff適用ができるInline Chatの使い分けができていないこと。",
+      "Spacesが共有する資料と、個人の全チャット履歴を混同すること。"
     ],
     "examTips": [
       "`@workspace`, `@vscode`, `@terminal` の役割の違いは確実に問われます。",
@@ -399,7 +406,8 @@
       "g-inline-chat",
       "g-chat-participants",
       "g-slash-commands",
-      "g-chat-variables"
+      "g-chat-variables",
+      "g-spaces"
     ],
     "comparisonIds": [
       "cmp-chat-vs-inline",
@@ -412,9 +420,10 @@
     ],
     "sourceIds": [
       "chat",
-      "guide"
+      "guide",
+      "spaces"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -427,7 +436,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "summary": "現行Copilot CLIは `copilot` で起動するターミナル向けエージェントです。コードベースの調査やファイル編集も行えるため、ツール権限と変更結果を確認します。Content ExclusionのCLI適用範囲は公式資料間に矛盾があり要確認です。",
-    "estimatedMinutes": 7,
+    "estimatedMinutes": 10,
     "difficulty": "intermediate",
     "sections": [
       {
@@ -436,7 +445,7 @@
       },
       {
         "heading": "2. 起動と利用",
-        "content": "Node.js 22以降なら `npm install -g @github/copilot` で導入し、プロジェクトで `copilot` を起動します。初回は `/login` で認証し、作業ディレクトリへの信頼を確認します。`copilot -p \"質問\"` で非対話実行も可能です。"
+        "content": "Copilot CLIは全Copilotプランで利用でき、組織配布のライセンスではCLIポリシーの有効化が必要です。npm導入ではNode.js 22以降で `npm install -g @github/copilot` を実行します（WindowsではWinGetも選択可能）。対象コードのフォルダーで `copilot` を起動し、初回は作業場所への信頼と `/login` による認証を確認します。旧 `gh copilot explain/suggest` 拡張と現行CLIを区別します。"
       },
       {
         "heading": "3. 権限と安全",
@@ -451,18 +460,24 @@
         "content": "GitHub Docsの除外設定ページはCopilot CLIを非対応と説明しますが、CLIのEnterprise管理ページは除外ポリシーがCLIに適用されると説明しています。現時点では適用可否を断定せず、管理設定、使用面、対象ファイルでの動作を確認してください。IDE ChatのAgent modeについても個別に確認が必要です。"
       },
       {
-        "heading": "6. 30秒チェック",
-        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: CLIはリポジトリ内のファイルを調査できるか？ → 権限の範囲内で可能。\nQ3: CLIに対するContent Exclusionの適用可否は？ → 公式資料間に矛盾があるため管理設定と実際の適用範囲を確認する。"
+        "heading": "6. ファイル作業・セッション・スクリプト",
+        "content": "【例】「@src/auth.ts の認証失敗を調べ、修正案を示して」と依頼すると、CLIは権限の範囲でファイルを読み、必要に応じて変更やコマンドを提案できます。`copilot -p \"質問\"` のような非対話実行も可能です。対話を中断した後は `/resume`、`copilot --continue` などでセッションを再開でき、別タスクは新しいセッションに分けられます。セッションはプロンプト、応答、ツール実行、作業ディレクトリや権限などの状態を持ちます。スクリプト生成やファイル変更の結果は必ず差分と実行結果で検証します。"
+      },
+      {
+        "heading": "7. 30秒チェック",
+        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: CLIはリポジトリ内のファイルを調査できるか？ → 権限の範囲内で可能。\nQ3: CLIに対するContent Exclusionの適用可否は？ → 公式資料間に矛盾があるため管理設定と実際の適用範囲を確認する。\nQ4: 作業を再開する方法は？ → `/resume` または `copilot --continue`。"
       }
     ],
     "keyPoints": [
       "現行Copilot CLIは `copilot` で起動し、コードベースを調査できる。",
       "変更を伴うツールの権限と実行結果を確認する。",
-      "CLIへのContent Exclusion適用範囲は公式資料間で食い違うため要確認。"
+      "CLIへのContent Exclusion適用範囲は公式資料間で食い違うため要確認。",
+      "CLIは権限内でファイルを調査・変更でき、セッションを再開できる。"
     ],
     "commonMistakes": [
       "旧 `gh copilot` 拡張のコマンドを現行CLIの標準操作として教えること。",
-      "権限を広く許可した後も、各変更で必ず個別確認があると考えること。"
+      "権限を広く許可した後も、各変更で必ず個別確認があると考えること。",
+      "CLIを単発のコマンド提案器とみなし、ファイル操作やセッション継続を見落とすこと。"
     ],
     "examTips": [
       "試験問題が旧拡張と現行CLIを混同していないか、製品名とコマンドを確認する。"
@@ -474,7 +489,8 @@
       "g-cli-shell-aliases",
       "g-cli-execution-confirm",
       "g-cli-context-limits",
-      "g-exclusion-limitations"
+      "g-exclusion-limitations",
+      "g-agent-sessions"
     ],
     "comparisonIds": [],
     "questionIds": [],
@@ -484,7 +500,10 @@
       "exclusion",
       "guide",
       "cli-tool-permissions",
-      "cli-exclusion-admin"
+      "cli-exclusion-admin",
+      "cli-install",
+      "cli-usage",
+      "cli-sessions"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
@@ -499,7 +518,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "summary": "2026年シラバスの最重要トピック。複数ファイルのDiff提案を行うCopilot Editsと、ターミナルコマンド実行やエラー自己修正ループを自律的に繰り返すAgent Modeの明確な境界線と活用基準をマスターします。",
-    "estimatedMinutes": 10,
+    "estimatedMinutes": 12,
     "difficulty": "advanced",
     "sections": [
       {
@@ -519,22 +538,28 @@
         "content": "【シナリオA】既存のインターフェース変更に合わせて、呼び出し元の3つのファイルの引数を修正したいだけ（テスト実行やコマンド実行は不要）→「Copilot Edits」が最適。\n【シナリオB】新機能のAPIエンドポイントを追加し、依存パッケージをインストールして単体テストを実行し、テストが全件パスするまで自動でバグ修正してほしい →「Agent Mode」が最適。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・Agent Modeは自律的にコマンドを実行するため、無限ループや不要なファイル生成を防ぐためAgent Sessions単位でログを監視・ロールバックできるように設計されています。"
+        "heading": "5. Agent SessionsとSub-Agents",
+        "content": "Agent Sessionは一連の依頼と応答、使ったツール、作業文脈を扱う作業単位です。長い仕事はセッションの状態と差分を確認しながら進めます。Sub-Agentは主エージェントから独立した調査などを引き受け、別のコンテキストで作業して結果を主セッションへ返します。【例】主エージェントが認証機能を実装中に、既存の認可ルールの調査をSub-Agentへ委譲する。単に会話を続けるのはSessionの継続であり、Sub-Agentへの委譲とは異なります。利用できるIDEと設定は製品ごとに確認します。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
+        "heading": "6. Limitations & Considerations",
+        "content": "・Agent Modeのコマンド承認は設定で変わり、事前に許可したコマンドは毎回の確認なしに実行される場合があります。差分と実行結果を人間が確認します。\n・GitHub Sparkは自然言語からアプリを作る別の旧サービスです。現行Study Guideには残りますが、github.comでの新規利用・新規アプリ作成は2026年8月に停止しました。新規作業の選択肢として勧めません。"
+      },
+      {
+        "heading": "7. 30秒チェック（Mini Review）",
         "content": "Q1: ターミナルコマンドを実行してエラーが出たら自律的に再修正を試みるのは？ → Agent Mode。\nQ2: 指定した複数ファイルのコードDiffだけを一括提案するのは？ → Copilot Edits。\nQ3: Agent Modeの提案コードは人間の承認なしに直接Gitコミットされるか？ → No。最終適用はユーザーがレビューして決定します。"
       }
     ],
     "keyPoints": [
       "Copilot Editsは複数ファイルのDiff提案に特化し、コマンド実行は行わない。",
       "Agent Modeはファイル編集＋ターミナルコマンド実行＋自律的エラー修正ループを行う。",
-      "どちらのモードでも最終的なコード差分の採用・コミットの決定権は人間にある。"
+      "どちらのモードでも最終的なコード差分の採用・コミットの決定権は人間にある。",
+      "Sessionは作業の文脈、Sub-Agentは主セッションから委譲された別コンテキストの下位タスク。"
     ],
     "commonMistakes": [
       "Copilot Editsでもターミナルのテストコマンドが自動実行されると誤解すること。",
-      "Agent Modeは人間が一切介在しない完全自律Autopilotであると誤解すること。"
+      "Agent Modeは人間が一切介在しない完全自律Autopilotであると誤解すること。",
+      "Sessionを増やすこととSub-Agentへ下位タスクを委譲することを同一視すること。"
     ],
     "examTips": [
       "「ターミナルでテストを実行しながら自律修正」という文脈があれば正解は確実に「Agent Mode」です。",
@@ -545,20 +570,25 @@
       "g-copilot-edits",
       "g-agent-sessions",
       "g-sub-agents",
-      "g-code-accountability"
+      "g-code-accountability",
+      "g-spark"
     ],
     "comparisonIds": [
       "cmp-agent-vs-edits",
       "cmp-agent-vs-chat",
-      "cmp-sessions-vs-subagents"
+      "cmp-sessions-vs-subagents",
+      "cmp-mcp-vs-agent-mode"
     ],
     "questionIds": [],
     "sourceIds": [
       "agent-mode",
       "chat",
-      "guide"
+      "guide",
+      "ide-subagents",
+      "cli-sessions",
+      "spark"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
   },
   {
@@ -621,7 +651,8 @@
       "g-agent-mode"
     ],
     "comparisonIds": [
-      "cmp-mcp-vs-extensions"
+      "cmp-mcp-vs-extensions",
+      "cmp-mcp-vs-agent-mode"
     ],
     "questionIds": [],
     "sourceIds": [
@@ -854,7 +885,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "summary": "Copilotがクライアントの文脈からリクエストを構成し、モデル推論と安全性フィルタを経て提案を返す流れを、機能・モデルごとの違いに注意しながら理解します。",
-    "estimatedMinutes": 8,
+    "estimatedMinutes": 9,
     "difficulty": "intermediate",
     "sections": [
       {
@@ -878,7 +909,11 @@
         "content": "提案はユーザーが明示的に採用するまではコードへ適用されません。出力が安全・正確であるかはテストとレビューで判断します。"
       },
       {
-        "heading": "6. 30秒チェック",
+        "heading": "6. 具体例: 入力から提案まで",
+        "content": "【例】IDEで関数の途中にカーソルを置くと、利用可能なファイル文脈から補完用の入力が組み立てられます。適用可能な除外設定を確認したうえでモデルへ送られ、候補が返ります。公開コード一致ポリシーなど対応する処理を経た提案を開発者が確認します。Chat、CLI、Agent Modeでは参照できる情報や使用ツールが異なるため、インライン補完の流れを全製品面へそのまま一般化しません。"
+      },
+      {
+        "heading": "7. 30秒チェック",
         "content": "Q1: インライン提案に使われる文脈は？ → カーソル周辺や利用可能なタブ。\nQ2: すべて同じモデルホストか？ → いいえ。\nQ3: 内容除外は全機能に適用されるか？ → いいえ。"
       }
     ],
@@ -888,7 +923,8 @@
       "提案は人間が検証する。"
     ],
     "commonMistakes": [
-      "全Copilot機能が同じモデル・同じ保持条件だと思い込むこと。"
+      "全Copilot機能が同じモデル・同じ保持条件だと思い込むこと。",
+      "インライン補完の文脈収集を、CLIやAgent Modeでも同じと決めつけること。"
     ],
     "examTips": [
       "製品面を特定してからデータフローの説明を選ぶ。"
@@ -908,7 +944,8 @@
       "model-hosting",
       "exclusion-concept",
       "guide",
-      "cli-exclusion-admin"
+      "cli-exclusion-admin",
+      "inline-usage"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
@@ -992,7 +1029,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "summary": "Business/Enterpriseのモデル学習不使用と、機能・モデルごとに異なる入力・出力の保持条件を区別します。",
-    "estimatedMinutes": 7,
+    "estimatedMinutes": 8,
     "difficulty": "intermediate",
     "sections": [
       {
@@ -1016,7 +1053,11 @@
         "content": "Business/Enterpriseで学習に使われないことを根拠に、全入力が即時削除されると断定しないでください。"
       },
       {
-        "heading": "6. 30秒チェック",
+        "heading": "6. 利用場面: データ取扱いの確認",
+        "content": "【例】企業の機密コードを含む作業で「Business契約だから何も保持されない」と判断せず、まず利用プラン、製品面、使用モデル、管理ポリシーを特定します。次にモデル学習への利用と、リクエスト・応答の保持条件を別々に公式資料で確認します。条件が確認できないときは保存なしと断定せず、管理者に契約・設定を確認します。"
+      },
+      {
+        "heading": "7. 30秒チェック",
         "content": "Q1: 学習不使用と保持期間は同義か？ → いいえ。\nQ2: 保持条件は何で変わるか？ → 機能・モデル・契約条件。"
       }
     ],
@@ -1025,7 +1066,8 @@
       "保持条件は利用する機能・モデルの資料で別途確認する。"
     ],
     "commonMistakes": [
-      "学習不使用から一律の即時削除を推論すること。"
+      "学習不使用から一律の即時削除を推論すること。",
+      "モデル学習に使われないことを、ログやリクエストの保存が一切ないことと同義にすること。"
     ],
     "examTips": [
       "「学習」「保持」「モデル提供者」を区別する。"
