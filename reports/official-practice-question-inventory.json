@@ -1,0 +1,3066 @@
+[
+  {
+    "practiceQuestionId": "PRACTICE-001",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotは無料ですか?",
+    "choicesOcr": [
+      "はい、どなたでも無料でご利用いただけます。",
+      "いいえ、それは学生が無料で利用できるサービスですが、 現在は月額10ドルかかります。",
+      "学生や教師であっても、無料ではありません。",
+      "最初の1ヶ月は無料ですが、その後は購読が必要です。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 35,
+    "answerImageNumber": 52,
+    "questionAnchor": "Sheet1!A568",
+    "answerAnchor": "Sheet1!I1",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o4",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotは無料ですか?",
+    "choices": [
+      "はい、どなたでも無料でご利用いただけます。",
+      "いいえ、それは学生が無料で利用できるサービスですが、 現在は月額10ドルかかります。",
+      "学生や教師であっても、無料ではありません。",
+      "最初の1ヶ月は無料ですが、その後は購読が必要です。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "いいえ、それは学生が無料で利用できるサービスですが、 現在は月額10ドルかかります。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "学生向けの無料利用と一般向けの月額料金を対比している。現行プランとの相違は別途確認が必要。",
+      "sourceAnchor": "Sheet1!I1"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Manage organization-wide settings and policies",
+    "terms": [
+      "Copilot Free",
+      "Copilot Pro",
+      "Student"
+    ],
+    "concepts": [
+      "無料枠と有料枠",
+      "利用資格"
+    ],
+    "featureOrBehavior": "各プランの条件",
+    "decisionKnowledge": "「学生だけ無料・一般は月額10ドル」という添付解答と現行Freeを区別",
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "glossaryIds": [
+      "g-subscription-plans"
+    ],
+    "comparisonIds": [],
+    "coverage": "UNCERTAIN",
+    "coverageScore": 50,
+    "gapId": "SOURCE-PLANS",
+    "coverageReason": "用語集には現行Freeがあるが、添付の正解は一般向け無料プランを否定する。教材だけで添付解答を再現すると現在の事実と衝突する。",
+    "officialExplanationSummary": "学生向けの無料利用と一般向けの月額料金を対比している。現行プランとの相違は別途確認が必要。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-002",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotでサポートされている統合開発環境拡張機能は何ですか?",
+    "choicesOcr": [
+      "Visual Studio Code とVisual Studio。",
+      "GitHub.com、Visual Studio Code、Visual Studio、Neovim、およびJetBrains。",
+      "Visual Studio Code、Visual Studio、Neavim、およでPJetBrains。",
+      "Visual Studio Codeのみ。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 36,
+    "answerImageNumber": 52,
+    "questionAnchor": "Sheet1!A585",
+    "answerAnchor": "Sheet1!I1",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotでサポートされている統合開発環境拡張機能は何ですか?",
+    "choices": [
+      "Visual Studio Code とVisual Studio。",
+      "GitHub.com、Visual Studio Code、Visual Studio、Neovim、およびJetBrains。",
+      "Visual Studio Code、Visual Studio、Neavim、およでPJetBrains。",
+      "Visual Studio Codeのみ。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "Visual Studio Code、Visual Studio、Neavim、およでPJetBrains。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "VS Code、Visual Studio、Neovim、JetBrainsを対応IDEとして挙げる。",
+      "sourceAnchor": "Sheet1!I1"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "VS Code",
+      "Visual Studio",
+      "Neovim",
+      "JetBrains"
+    ],
+    "concepts": [
+      "エディター別機能対応"
+    ],
+    "featureOrBehavior": "IDE拡張と機能マトリクス",
+    "decisionKnowledge": "対応製品と未対応製品を区別し、機能ごとの差も確認",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "glossaryIds": [
+      "g-inline-suggestions"
+    ],
+    "comparisonIds": [],
+    "coverage": "PARTIAL",
+    "coverageScore": 65,
+    "gapId": "G-IDE",
+    "coverageReason": "インライン補完は説明するが、4製品の対応一覧と機能ごとの差を教材から判定しにくい。",
+    "officialExplanationSummary": "VS Code、Visual Studio、Neovim、JetBrainsを対応IDEとして挙げる。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-003",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot BusinessとGitHub Copilot Enterpriseの違いは何ですか?",
+    "choicesOcr": [
+      "GitHub Copilot Enterprissにはコード補完機能がありますが、GitHub Copilot Businessにはありません。",
+      "GitHub Copilot EnterprissにはIDEとモバイルでのチャット機能がありますが、GitHub Copilot Businessにはありません。",
+      "GitHub Copilot Enterprissには、組織が独自のコードベースを使用してGitHub Copilotをトレーニングできるという、さらなるパーソナライズ機能が備わっています。",
+      "GitHub Copilot Enterpriseは、知的財産権の補憶、エンタダープライズグレードのセギキュリティ、安全性、プライバシーなど、追加のセキュリティ層を備えています。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 37,
+    "answerImageNumber": 52,
+    "questionAnchor": "Sheet1!A601",
+    "answerAnchor": "Sheet1!I1",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o4",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot BusinessとGitHub Copilot Enterpriseの違いは何ですか?",
+    "choices": [
+      "GitHub Copilot Enterprissにはコード補完機能がありますが、GitHub Copilot Businessにはありません。",
+      "GitHub Copilot EnterprissにはIDEとモバイルでのチャット機能がありますが、GitHub Copilot Businessにはありません。",
+      "GitHub Copilot Enterprissには、組織が独自のコードベースを使用してGitHub Copilotをトレーニングできるという、さらなるパーソナライズ機能が備わっています。",
+      "GitHub Copilot Enterpriseは、知的財産権の補憶、エンタダープライズグレードのセギキュリティ、安全性、プライバシーなど、追加のセキュリティ層を備えています。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "GitHub Copilot Enterprissには、組織が独自のコードベースを使用してGitHub Copilotをトレーニングできるという、さらなるパーソナライズ機能が備わっています。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Enterpriseでは組織コードベースによるパーソナライズを強調する。モデル訓練という表現は現行資料と照合が必要。",
+      "sourceAnchor": "Sheet1!I1"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Manage organization-wide settings and policies",
+    "terms": [
+      "Copilot Business",
+      "Copilot Enterprise",
+      "コードベース"
+    ],
+    "concepts": [
+      "プラン差",
+      "リポジトリ索引とモデル学習の違い"
+    ],
+    "featureOrBehavior": "組織向けプランとコンテキスト",
+    "decisionKnowledge": "「組織コードでモデルを訓練する」という添付正解を現行の索引・Spacesと区別",
+    "lessonIds": [
+      "lesson-d2-org-governance",
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-subscription-plans",
+      "g-spaces"
+    ],
+    "comparisonIds": [
+      "cmp-spaces-vs-chat"
+    ],
+    "coverage": "UNCERTAIN",
+    "coverageScore": 45,
+    "gapId": "SOURCE-TRAINING",
+    "coverageReason": "現在の教材はプラン表の変動を注意するが、添付解答の「訓練」を支持しない。現行GitHubはリポジトリ索引を説明し、モデル学習とは分ける。",
+    "officialExplanationSummary": "Enterpriseでは組織コードベースによるパーソナライズを強調する。モデル訓練という表現は現行資料と照合が必要。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-004",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot for Business ポリシーを適用した後、現在および将来のすべてのユーザーに対して Copilot far Business を有効にするには、まずどビビこにアクセスすればよいでしょうか?",
+    "choicesOcr": [
+      "ポリシー",
+      "プロフィールドロップダウンメニューの所属組織",
+      "プロフィールのドロップダウンメニューの設定",
+      "選択されたチーム/ユーザー"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 38,
+    "answerImageNumber": 53,
+    "questionAnchor": "Sheet1!A619",
+    "answerAnchor": "Sheet1!I21",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o4",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot for Business ポリシーを適用した後、現在および将来のすべてのユーザーに対して Copilot far Business を有効にするには、まずどビビこにアクセスすればよいでしょうか?",
+    "choices": [
+      "ポリシー",
+      "プロフィールドロップダウンメニューの所属組織",
+      "プロフィールのドロップダウンメニューの設定",
+      "選択されたチーム/ユーザー"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "プロフィールドロップダウンメニューの所属組織"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "プロフィールのドロップダウンから「Your organizations」へ進み、Businessを有効にする。",
+      "sourceAnchor": "Sheet1!I21"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Manage organization-wide settings and policies",
+    "terms": [
+      "Business",
+      "Organization",
+      "ポリシー",
+      "シート"
+    ],
+    "concepts": [
+      "ポリシーと利用権限の別"
+    ],
+    "featureOrBehavior": "組織設定と席割当",
+    "decisionKnowledge": "管理画面でポリシー設定後にどこで組織向け有効化を行うか",
+    "lessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "glossaryIds": [
+      "g-org-policies",
+      "g-seat-management"
+    ],
+    "comparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "coverage": "PARTIAL",
+    "coverageScore": 60,
+    "gapId": "G-ORG-STEPS",
+    "coverageReason": "ポリシーとシートの概念はあるが、添付が問う画面遷移と現在の設定経路は教材にない。",
+    "officialExplanationSummary": "プロフィールのドロップダウンから「Your organizations」へ進み、Businessを有効にする。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-005",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot EnterpriseにおけるCopilotのプルリクエストサマリーの目的と利点について説明してください。",
+    "choicesOcr": [
+      "彼らの目的は、プルリクエストにおけるコード変更の話細な必歴を提供することです。",
+      "これらは、コード変更に基づいてプルリクエストの簡潔な概要を自動的に生成するのに役立ち、理解を深め、レビュープロセスを加速させます。",
+      "彼らはプルリクエスト内での開発者の活動を追跡する。",
+      "それらは人間の介入なしにプルリクエストを自動的にマージします。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 40,
+    "answerImageNumber": 53,
+    "questionAnchor": "Sheet1!A636",
+    "answerAnchor": "Sheet1!I21",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o3",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot EnterpriseにおけるCopilotのプルリクエストサマリーの目的と利点について説明してください。",
+    "choices": [
+      "彼らの目的は、プルリクエストにおけるコード変更の話細な必歴を提供することです。",
+      "これらは、コード変更に基づいてプルリクエストの簡潔な概要を自動的に生成するのに役立ち、理解を深め、レビュープロセスを加速させます。",
+      "彼らはプルリクエスト内での開発者の活動を追跡する。",
+      "それらは人間の介入なしにプルリクエストを自動的にマージします。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "これらは、コード変更に基づいてプルリクエストの簡潔な概要を自動的に生成するのに役立ち、理解を深め、レビュープロセスを加速させます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "PRのコード変更を短く要約し、レビュアーの理解を助ける。",
+      "sourceAnchor": "Sheet1!I21"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot features and capabilities",
+    "terms": [
+      "Pull Request Summaries",
+      "Copilot Code Review"
+    ],
+    "concepts": [
+      "要約とレビューの用途差"
+    ],
+    "featureOrBehavior": "PR変更の簡潔な要約",
+    "decisionKnowledge": "変更の要約を選び、自動マージや活動監視を退ける",
+    "lessonIds": [
+      "lesson-d2-pr-code-review"
+    ],
+    "glossaryIds": [
+      "g-pr-summaries",
+      "g-copilot-code-review"
+    ],
+    "comparisonIds": [
+      "cmp-review-vs-summary"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "Lessonと比較ガイドに要約とコードレビューの目的・境界・誤解がある。",
+    "officialExplanationSummary": "PRのコード変更を短く要約し、レビュアーの理解を助ける。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-006",
+    "questionType": "single-select",
+    "questionTextOcr": "組織は、Copilot Enterprises内でドキュメントセットをどのように管理・活用して、コードの提案をカスタマイズし、開発ワークフローを改善できるのでしょうか2?",
+    "choicesOcr": [
+      "ドキュメントセットを使用して、内部コードとドキュメントのカスタムコレクションを作成します。",
+      "ドキュメントセットを使用してコードスニペットを自動生成します。",
+      "ドキュメントセットを使用して、プロジェクト内での開発者の活動を追跡します。",
+      "ドキュメントセットを使用してコーディング標準を強制する。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 41,
+    "answerImageNumber": 53,
+    "questionAnchor": "Sheet1!A653",
+    "answerAnchor": "Sheet1!I21",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o3",
+    "domainId": "d2",
+    "questionText": "組織は、Copilot Enterprises内でドキュメントセットをどのように管理・活用して、コードの提案をカスタマイズし、開発ワークフローを改善できるのでしょうか2?",
+    "choices": [
+      "ドキュメントセットを使用して、内部コードとドキュメントのカスタムコレクションを作成します。",
+      "ドキュメントセットを使用してコードスニペットを自動生成します。",
+      "ドキュメントセットを使用して、プロジェクト内での開発者の活動を追跡します。",
+      "ドキュメントセットを使用してコーディング標準を強制する。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "ドキュメントセットを使用して、内部コードとドキュメントのカスタムコレクションを作成します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "ドキュメントセットに内部コード・文書を集めて関連する提案に使うと説明する。",
+      "sourceAnchor": "Sheet1!I21"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot features and capabilities",
+    "terms": [
+      "ドキュメントセット",
+      "Copilot Spaces"
+    ],
+    "concepts": [
+      "共有資料による回答の根拠付け",
+      "廃止機能"
+    ],
+    "featureOrBehavior": "旧Knowledge Baseと現行Spaces",
+    "decisionKnowledge": "古い設問の資料集合を現行Spacesへ対応付け、モデル訓練と混同しない",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-spaces"
+    ],
+    "comparisonIds": [
+      "cmp-spaces-vs-chat"
+    ],
+    "coverage": "UNCERTAIN",
+    "coverageScore": 40,
+    "gapId": "SOURCE-KB",
+    "coverageReason": "現行教材のSpacesは強いが、添付のドキュメントセットという旧用語への対応がなく、GitHubは旧Knowledge Baseの廃止を公表している。",
+    "officialExplanationSummary": "ドキュメントセットに内部コード・文書を集めて関連する提案に使うと説明する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-007",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatは、クラスのモジュール性を向上させる上でどのように役立ちますか ?",
+    "choicesOcr": [
+      "コードベペースの状況に基づいて、潜在的なリファクタリングの更新案を提案します。",
+      "クラスの依存関係を和詳細に分析することによって。",
+      "クラス全体を自動的に書き換えることによって。",
+      "クラス内の各メゾッドに対して単体テストを生成することによって。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 42,
+    "answerImageNumber": 54,
+    "questionAnchor": "Sheet1!A670",
+    "answerAnchor": "Sheet1!I42",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "GitHub Copilot Chatは、クラスのモジュール性を向上させる上でどのように役立ちますか ?",
+    "choices": [
+      "コードベペースの状況に基づいて、潜在的なリファクタリングの更新案を提案します。",
+      "クラスの依存関係を和詳細に分析することによって。",
+      "クラス全体を自動的に書き換えることによって。",
+      "クラス内の各メゾッドに対して単体テストを生成することによって。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "コードベペースの状況に基づいて、潜在的なリファクタリングの更新案を提案します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Chatでモジュール性を改善するリファクタリング案を得る。",
+      "sourceAnchor": "Sheet1!I42"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Copilot Chat",
+      "リファクタリング"
+    ],
+    "concepts": [
+      "既存コードの構造改善"
+    ],
+    "featureOrBehavior": "改善案の提案",
+    "decisionKnowledge": "依存関係の観察から改善案を選び、全自動書き換えを退ける",
+    "lessonIds": [
+      "lesson-d5-generation-refactoring"
+    ],
+    "glossaryIds": [
+      "g-code-refactoring",
+      "g-copilot-chat"
+    ],
+    "comparisonIds": [
+      "cmp-agent-vs-chat"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "リファクタリングの目的と人間による検証を学べる。",
+    "officialExplanationSummary": "Chatでモジュール性を改善するリファクタリング案を得る。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-008",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatでチャット参加者、スラッシュコマンド、チャット変数を使用する目的は何ですか ?",
+    "choicesOcr": [
+      "これらはAIの応答範囲を制限する。",
+      "それらはチャットインターフェースを複雑にする。",
+      "これらは、GitHub Copilot Chatが質問の文脈と意図を理解するのに役立ちます。",
+      "ユーザーはチャットインタダーフェーズの外観をカスタマイズできる。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 43,
+    "answerImageNumber": 54,
+    "questionAnchor": "Sheet1!A687",
+    "answerAnchor": "Sheet1!I42",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot Chatでチャット参加者、スラッシュコマンド、チャット変数を使用する目的は何ですか ?",
+    "choices": [
+      "これらはAIの応答範囲を制限する。",
+      "それらはチャットインターフェースを複雑にする。",
+      "これらは、GitHub Copilot Chatが質問の文脈と意図を理解するのに役立ちます。",
+      "ユーザーはチャットインタダーフェーズの外観をカスタマイズできる。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "これらは、GitHub Copilot Chatが質問の文脈と意図を理解するのに役立ちます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "参加者・コマンド・変数が質問の文脈と意図を明確にする。",
+      "sourceAnchor": "Sheet1!I42"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Chat Participants",
+      "Slash Commands",
+      "Chat Variables"
+    ],
+    "concepts": [
+      "質問の文脈と意図"
+    ],
+    "featureOrBehavior": "Chat入力の補助機能",
+    "decisionKnowledge": "回答の文脈指定をUI装飾や応答制限と区別",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-chat-variables"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "Lessonが3種類の役割を分けて説明し、用途を示す。",
+    "officialExplanationSummary": "参加者・コマンド・変数が質問の文脈と意図を明確にする。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-009",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatは、馴染みのないコードの説明を生成するのにどのように役立ちますか?",
+    "choicesOcr": [
+      "コードをよりシンプルな言語で書き直すことによって。",
+      "コードの機能と目的を自然言語で記述することによって実現します。",
+      "コードの不要な部分を削除することによって。",
+      "類似のコード構造に関する外部ドキュメントへのリンクを提供することによって。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 44,
+    "answerImageNumber": 54,
+    "questionAnchor": "Sheet1!A703",
+    "answerAnchor": "Sheet1!I42",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "GitHub Copilot Chatは、馴染みのないコードの説明を生成するのにどのように役立ちますか?",
+    "choices": [
+      "コードをよりシンプルな言語で書き直すことによって。",
+      "コードの機能と目的を自然言語で記述することによって実現します。",
+      "コードの不要な部分を削除することによって。",
+      "類似のコード構造に関する外部ドキュメントへのリンクを提供することによって。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コードの機能と目的を自然言語で記述することによって実現します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Chatがコードの機能や目的を自然言語で説明する。",
+      "sourceAnchor": "Sheet1!I42"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Copilot Chat",
+      "Code Explanation"
+    ],
+    "concepts": [
+      "コード理解と要約"
+    ],
+    "featureOrBehavior": "コード説明",
+    "decisionKnowledge": "自然言語による目的説明を、書換え・削除と区別",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-code-explanation",
+      "g-copilot-chat"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "Chatの説明用途と、生成説明を検証する注意点がある。",
+    "officialExplanationSummary": "Chatがコードの機能や目的を自然言語で説明する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-010",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatは、コードにエラーが発生した場合にどのように役立ちますか?",
+    "choicesOcr": [
+      "エラーの原因を説明し、修正方法を提察することができます。",
+      "それによって、そもそもエラーが発生するのを防ぐことができる。",
+      "ユーザーの操作なしに、エラーを自動的に修正できます。",
+      "エラーを特定するたぬめに、  ー連の 自動テス ト を実行で さき ます。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 45,
+    "answerImageNumber": 55,
+    "questionAnchor": "Sheet1!A720",
+    "answerAnchor": "Sheet1!I62",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o3",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot Chatは、コードにエラーが発生した場合にどのように役立ちますか?",
+    "choices": [
+      "エラーの原因を説明し、修正方法を提察することができます。",
+      "それによって、そもそもエラーが発生するのを防ぐことができる。",
+      "ユーザーの操作なしに、エラーを自動的に修正できます。",
+      "エラーを特定するたぬめに、  ー連の 自動テス ト を実行で さき ます。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "エラーの原因を説明し、修正方法を提察することができます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Chatがエラーの理由を説明し、修正を考える支援をする。",
+      "sourceAnchor": "Sheet1!I62"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot features and capabilities",
+    "terms": [
+      "Copilot Chat",
+      "Slash Commands"
+    ],
+    "concepts": [
+      "診断と提案",
+      "自動修正の限界"
+    ],
+    "featureOrBehavior": "Chatの修正支援",
+    "decisionKnowledge": "原因説明を選び、無条件の自動修正・自動テスト実行を退ける",
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d5-security-remediation"
+    ],
+    "glossaryIds": [
+      "g-copilot-chat",
+      "g-slash-commands"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "Chatと修正支援の範囲、開発者の確認責任を学べる。",
+    "officialExplanationSummary": "Chatがエラーの理由を説明し、修正を考える支援をする。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-011",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotを使用してコード行補完を生成する2つの方法は何ですか ?",
+    "choicesOcr": [
+      "コード行とコードファイルからコード補完候補を生成します。",
+      "コメントとコード行の両方から補完候補を生成する。",
+      "コメントとプロンプトから補完候補を生成する。",
+      "関数名と変数名から補完候補を生成します。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 46,
+    "answerImageNumber": 55,
+    "questionAnchor": "Sheet1!A737",
+    "answerAnchor": "Sheet1!I62",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotを使用してコード行補完を生成する2つの方法は何ですか ?",
+    "choices": [
+      "コード行とコードファイルからコード補完候補を生成します。",
+      "コメントとコード行の両方から補完候補を生成する。",
+      "コメントとプロンプトから補完候補を生成する。",
+      "関数名と変数名から補完候補を生成します。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コメントとコード行の両方から補完候補を生成する。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "コメントと既存コード行が補完候補の文脈になる。",
+      "sourceAnchor": "Sheet1!I62"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Inline Suggestions",
+      "コードコメント"
+    ],
+    "concepts": [
+      "入力文脈と補完"
+    ],
+    "featureOrBehavior": "インライン提案",
+    "decisionKnowledge": "自然言語コメントまたは部分コードが補完の手掛かりになる",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "glossaryIds": [
+      "g-inline-suggestions",
+      "g-context-gathering"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "コードとコメントの文脈を補完に使う説明がある。",
+    "officialExplanationSummary": "コメントと既存コード行が補完候補の文脈になる。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-012",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotでは、スラッシュコマンドは何に使用されますか ?",
+    "choicesOcr": [
+      "スラッシュコマンドは、ベストプラクティスに従ってコードベースをフォーマットするために使用されます。",
+      "スラッシュコマンドは、コードのデパッグやプロジェクト内のセキュリティ脆弱性の検出に使用されます。",
+      "ズラッシュコマン ドは、チャット内またはインラインペイン内で一盤的な開発タスクを素早く解決するためのショートカットです。",
+      "スラッシュコマンドは、異なるプログラミング言語を切り替えるために使用されます。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 47,
+    "answerImageNumber": 55,
+    "questionAnchor": "Sheet1!A753",
+    "answerAnchor": "Sheet1!I62",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotでは、スラッシュコマンドは何に使用されますか ?",
+    "choices": [
+      "スラッシュコマンドは、ベストプラクティスに従ってコードベースをフォーマットするために使用されます。",
+      "スラッシュコマンドは、コードのデパッグやプロジェクト内のセキュリティ脆弱性の検出に使用されます。",
+      "ズラッシュコマン ドは、チャット内またはインラインペイン内で一盤的な開発タスクを素早く解決するためのショートカットです。",
+      "スラッシュコマンドは、異なるプログラミング言語を切り替えるために使用されます。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "ズラッシュコマン ドは、チャット内またはインラインペイン内で一盤的な開発タスクを素早く解決するためのショートカットです。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "スラッシュコマンドは一般的な開発タスクへのショートカットである。",
+      "sourceAnchor": "Sheet1!I62"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Slash Commands",
+      "Inline Chat"
+    ],
+    "concepts": [
+      "一般的作業のショートカット"
+    ],
+    "featureOrBehavior": "Chatコマンド",
+    "decisionKnowledge": "タスク呼出しを、言語切替や万能フォーマッタと区別",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-slash-commands",
+      "g-inline-chat"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "コマンドの役割と具体的な利用例が揃う。",
+    "officialExplanationSummary": "スラッシュコマンドは一般的な開発タスクへのショートカットである。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-013",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot でコードの問題を修正する際に、インラインチャットでスラッシュコマンドを使った暗黙的なプロンプトを使用するメリットは何ですか ?",
+    "choicesOcr": [
+      "暗黙的なプロンプトは、Vyisual Studio Code プロジェクト内でベストプラクティスに基づいた一貫した命名規則と構文を強制し、可読性を向上させるのに役立ちます。",
+      "暗黙的なプロンプトを使用すると、長いプロンプトを記述することなくGitHub Copilotからより良い応答を得ることがで寺き、コードの問題点の修正や操作が容易になります。",
+      "暗黙的なプロンプトは、yisual Studio Code プロジェクト内のセキュリティ 農弱性や潜在的な悪意のある活動を模出するのに役立ち、安全性を向上させます。",
+      "暗黙的なプロンプトは、デザインパターンに従うようにコードを自動的にリファクタリングします。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 48,
+    "answerImageNumber": 56,
+    "questionAnchor": "Sheet1!A770",
+    "answerAnchor": "Sheet1!I81",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilot でコードの問題を修正する際に、インラインチャットでスラッシュコマンドを使った暗黙的なプロンプトを使用するメリットは何ですか ?",
+    "choices": [
+      "暗黙的なプロンプトは、Vyisual Studio Code プロジェクト内でベストプラクティスに基づいた一貫した命名規則と構文を強制し、可読性を向上させるのに役立ちます。",
+      "暗黙的なプロンプトを使用すると、長いプロンプトを記述することなくGitHub Copilotからより良い応答を得ることがで寺き、コードの問題点の修正や操作が容易になります。",
+      "暗黙的なプロンプトは、yisual Studio Code プロジェクト内のセキュリティ 農弱性や潜在的な悪意のある活動を模出するのに役立ち、安全性を向上させます。",
+      "暗黙的なプロンプトは、デザインパターンに従うようにコードを自動的にリファクタリングします。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "暗黙的なプロンプトを使用すると、長いプロンプトを記述することなくGitHub Copilotからより良い応答を得ることがで寺き、コードの問題点の修正や操作が容易になります。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "暗黙の文脈とコマンドにより長い説明なしに意図を伝えられる。",
+      "sourceAnchor": "Sheet1!I81"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Inline Chat",
+      "Slash Commands"
+    ],
+    "concepts": [
+      "選択コード・現在ファイルの文脈",
+      "短い依頼"
+    ],
+    "featureOrBehavior": "Inline Chatとコマンド",
+    "decisionKnowledge": "長文依頼なしの修正支援を、命名強制・脆弱性自動検出と区別",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-inline-chat",
+      "g-slash-commands"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "coverage": "PARTIAL",
+    "coverageScore": 65,
+    "gapId": "G-IMPLICIT",
+    "coverageReason": "Inline Chatとコマンドはあるが、添付の「暗黙的プロンプト」という語と、選択文脈が何を補うかの対比が弱い。",
+    "officialExplanationSummary": "暗黙の文脈とコマンドにより長い説明なしに意図を伝えられる。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-014",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot for Individualsでは、どのような機能がサポートされていませんか ?",
+    "choicesOcr": [
+      "自己署名証明書によるVPNプロキシのサポート",
+      "複数行の機能候補を提示します",
+      "エディター統合",
+      "公開コードに一致するプロック候補"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 49,
+    "answerImageNumber": 56,
+    "questionAnchor": "Sheet1!A789",
+    "answerAnchor": "Sheet1!I81",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilot for Individualsでは、どのような機能がサポートされていませんか ?",
+    "choices": [
+      "自己署名証明書によるVPNプロキシのサポート",
+      "複数行の機能候補を提示します",
+      "エディター統合",
+      "公開コードに一致するプロック候補"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "自己署名証明書によるVPNプロキシのサポート"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "自己署名証明書を使うVPNプロキシをBusiness向けと説明する。現行資料との整合確認が必要。",
+      "sourceAnchor": "Sheet1!I81"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Individuals",
+      "VPNプロキシ",
+      "自己署名証明書"
+    ],
+    "concepts": [
+      "ネットワーク設定とプラン境界"
+    ],
+    "featureOrBehavior": "HTTPプロキシとカスタム証明書",
+    "decisionKnowledge": "「個人プランでは非対応」という添付正解と現在の一般設定を区別",
+    "lessonIds": [
+      "lesson-d3-data-flow"
+    ],
+    "glossaryIds": [
+      "g-copilot-proxy",
+      "g-transit-encryption"
+    ],
+    "comparisonIds": [],
+    "coverage": "UNCERTAIN",
+    "coverageScore": 40,
+    "gapId": "SOURCE-PROXY",
+    "coverageReason": "現行GitHub Docsはプラン限定を付けずプロキシとカスタム証明書を説明する。添付正解の限定は要確認。",
+    "officialExplanationSummary": "自己署名証明書を使うVPNプロキシをBusiness向けと説明する。現行資料との整合確認が必要。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-015",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotの提察を受け入れるにはどうすればよいですか?",
+    "choicesOcr": [
+      "<kbd>Tab<kbd>キーを押してください。",
+      "<kbd>F1<kbd>キーを押してください。",
+      "<kbd>F4<kbd>キーを押してください。",
+      "<kbd>Enter</khd>キーを押してください。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 50,
+    "answerImageNumber": 56,
+    "questionAnchor": "Sheet1!A806",
+    "answerAnchor": "Sheet1!I81",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotの提察を受け入れるにはどうすればよいですか?",
+    "choices": [
+      "<kbd>Tab<kbd>キーを押してください。",
+      "<kbd>F1<kbd>キーを押してください。",
+      "<kbd>F4<kbd>キーを押してください。",
+      "<kbd>Enter</khd>キーを押してください。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "<kbd>Tab<kbd>キーを押してください。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "表示されたインライン候補をTabキーで受け入れる。",
+      "sourceAnchor": "Sheet1!I81"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Tab",
+      "Inline Suggestions"
+    ],
+    "concepts": [
+      "提案の表示と採用"
+    ],
+    "featureOrBehavior": "IDEのキーボード操作",
+    "decisionKnowledge": "提案表示と受け入れのキーを区別",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "glossaryIds": [
+      "g-inline-suggestions",
+      "g-ghost-text"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "インライン提案の採用フローでTabの操作を確認できる。",
+    "officialExplanationSummary": "表示されたインライン候補をTabキーで受け入れる。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-016",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotとは何ですか?",
+    "choicesOcr": [
+      "GitHub Copilotは、コードの提案を受けるために使用できるAlパアプログラミングツールです。",
+      "GitHub Copilotは、OpenAlが開発した新しいAlシステムであるOpenAI Codexです。",
+      "GitHub CopilotはJavaScriptの公開リポジトリであり、最もサポートされている言語の1つです。",
+      "GitHub Copilotは、パバグを自動的にチェックするコードレビューツールです。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 51,
+    "answerImageNumber": 57,
+    "questionAnchor": "Sheet1!A822",
+    "answerAnchor": "Sheet1!I99",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotとは何ですか?",
+    "choices": [
+      "GitHub Copilotは、コードの提案を受けるために使用できるAlパアプログラミングツールです。",
+      "GitHub Copilotは、OpenAlが開発した新しいAlシステムであるOpenAI Codexです。",
+      "GitHub CopilotはJavaScriptの公開リポジトリであり、最もサポートされている言語の1つです。",
+      "GitHub Copilotは、パバグを自動的にチェックするコードレビューツールです。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "GitHub Copilotは、コードの提案を受けるために使用できるAlパアプログラミングツールです。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Copilotは開発者のコード作成を支援するAIツールである。",
+      "sourceAnchor": "Sheet1!I99"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "GitHub Copilot",
+      "AIコーディング支援"
+    ],
+    "concepts": [
+      "提案生成と人間による採用"
+    ],
+    "featureOrBehavior": "コード支援",
+    "decisionKnowledge": "提案ツールをコードレビュー専用製品やリポジトリと区別",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "glossaryIds": [
+      "g-generative-ai",
+      "g-inline-suggestions"
+    ],
+    "comparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "基礎Lessonと用語集で役割を学べる。",
+    "officialExplanationSummary": "Copilotは開発者のコード作成を支援するAIツールである。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-017",
+    "questionType": "single-select",
+    "questionTextOcr": "GilHub Copilot1は、提供するコード補完保補をどのように淡定するのですか?",
+    "choicesOcr": [
+      "エディタ内のコードのコンテキストに基づいています。",
+      "使用されているプログラミング言語に基づきます。",
+      "記述されたコードの長さに基づきます。",
+      "人気のあるコーディングパターンをランダムに選択して作成しました。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 1,
+    "answerImageNumber": 57,
+    "questionAnchor": "Sheet1!A1",
+    "answerAnchor": "Sheet1!I99",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GilHub Copilot1は、提供するコード補完保補をどのように淡定するのですか?",
+    "choices": [
+      "エディタ内のコードのコンテキストに基づいています。",
+      "使用されているプログラミング言語に基づきます。",
+      "記述されたコードの長さに基づきます。",
+      "人気のあるコーディングパターンをランダムに選択して作成しました。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "エディタ内のコードのコンテキストに基づいています。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "エディター内の周辺コードやコメントを基に補完を提案する。",
+      "sourceAnchor": "Sheet1!I99"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Inline Suggestions",
+      "Context"
+    ],
+    "concepts": [
+      "周辺コードの収集"
+    ],
+    "featureOrBehavior": "補完コンテキスト",
+    "decisionKnowledge": "周辺コードから提案を作ることをランダム選択と区別",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "glossaryIds": [
+      "g-context-gathering",
+      "g-inline-suggestions"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "周辺コードと開いているファイルの影響が説明される。",
+    "officialExplanationSummary": "エディター内の周辺コードやコメントを基に補完を提案する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-018",
+    "questionType": "single-select",
+    "questionTextOcr": "Copilotは、組織のコードベースと内部知識をどのように活用して、生産性とコラボレーションを向上させるのでしょうか?",
+    "choicesOcr": [
+      "オープンゾースライブラリのみに基づいたコード提寄を行うことにより",
+      "コーディング支援をカスタマイズし、質問に答え、組織の標準とベストプラクティスに沿ったコードを提案することで",
+      "プロジェクトのコンテキストを考慮せずにコードを提案することで",
+      "ランダムにコードスニペットを生成することで"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 2,
+    "answerImageNumber": 57,
+    "questionAnchor": "Sheet1!A17",
+    "answerAnchor": "Sheet1!I99",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o3",
+    "domainId": "d2",
+    "questionText": "Copilotは、組織のコードベースと内部知識をどのように活用して、生産性とコラボレーションを向上させるのでしょうか?",
+    "choices": [
+      "オープンゾースライブラリのみに基づいたコード提寄を行うことにより",
+      "コーディング支援をカスタマイズし、質問に答え、組織の標準とベストプラクティスに沿ったコードを提案することで",
+      "プロジェクトのコンテキストを考慮せずにコードを提案することで",
+      "ランダムにコードスニペットを生成することで"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コーディング支援をカスタマイズし、質問に答え、組織の標準とベストプラクティスに沿ったコードを提案することで"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "組織コードや内部知識を参照して関連性の高い支援を行う。",
+      "sourceAnchor": "Sheet1!I99"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot features and capabilities",
+    "terms": [
+      "組織コードベース",
+      "Copilot Spaces",
+      "内部知識"
+    ],
+    "concepts": [
+      "権限に従った資料参照",
+      "共有コンテキスト"
+    ],
+    "featureOrBehavior": "Spacesとリポジトリ文脈",
+    "decisionKnowledge": "組織資料に基づく回答を、無関係な公開コードやランダム生成と区別",
+    "lessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "glossaryIds": [
+      "g-spaces",
+      "g-context-scope-limits"
+    ],
+    "comparisonIds": [
+      "cmp-spaces-vs-chat"
+    ],
+    "coverage": "PARTIAL",
+    "coverageScore": 70,
+    "gapId": "G-ORG-CONTEXT",
+    "coverageReason": "Spacesの用途はあるが、組織コードの索引・権限・共有資料がどの画面で効くかをまとめて判断する教材が薄い。",
+    "officialExplanationSummary": "組織コードや内部知識を参照して関連性の高い支援を行う。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-019",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotはどのように機能しますか?",
+    "choicesOcr": [
+      "GitHub Copilotは、ユーザーが入力したプロンプトと自然言語テキストを使用して、コーディングの提察を行います。",
+      "GitHub Copilotは、ユーザーが入力した文字をライトとして利用し、入力内容に基づいて候補を表示します。",
+      "GitHub Copilotは、ユーザーが入力するラジオポタン形式の言語を使用し、入力内容に基づいて候補を表示します。",
+      "GitHub Copilotは、バイナリコードを入力としてサジェストを生成します。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 3,
+    "answerImageNumber": 58,
+    "questionAnchor": "Sheet1!A33",
+    "answerAnchor": "Sheet1!I118",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilotはどのように機能しますか?",
+    "choices": [
+      "GitHub Copilotは、ユーザーが入力したプロンプトと自然言語テキストを使用して、コーディングの提察を行います。",
+      "GitHub Copilotは、ユーザーが入力した文字をライトとして利用し、入力内容に基づいて候補を表示します。",
+      "GitHub Copilotは、ユーザーが入力するラジオポタン形式の言語を使用し、入力内容に基づいて候補を表示します。",
+      "GitHub Copilotは、バイナリコードを入力としてサジェストを生成します。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "GitHub Copilotは、ユーザーが入力したプロンプトと自然言語テキストを使用して、コーディングの提察を行います。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "自然言語の入力やコード文脈から提案を生成する。",
+      "sourceAnchor": "Sheet1!I118"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Prompt",
+      "Copilot"
+    ],
+    "concepts": [
+      "入力文脈と生成"
+    ],
+    "featureOrBehavior": "コード提案",
+    "decisionKnowledge": "自然言語とコード文脈を、バイナリ入力などと区別",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline"
+    ],
+    "glossaryIds": [
+      "g-generative-ai",
+      "g-prompt-construction"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "入力から提案に至る流れを説明している。",
+    "officialExplanationSummary": "自然言語の入力やコード文脈から提案を生成する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-020",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotは、ユーザーのプロンプトからどのように学習するのですか?",
+    "choicesOcr": [
+      "これは、茎存の串練データのみに依存している。",
+      "ゼロショット学習、ワンショット学習、少数ショット学習など、さまざまな手法を活用しています。",
+      "特定の作業に関する広範な実地副練が必要となる。",
+      "ユーザーとのやり取りに基づいて学習したり適店したりすることはできない。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 4,
+    "answerImageNumber": 58,
+    "questionAnchor": "Sheet1!A49",
+    "answerAnchor": "Sheet1!I118",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "GitHub Copilotは、ユーザーのプロンプトからどのように学習するのですか?",
+    "choices": [
+      "これは、茎存の串練データのみに依存している。",
+      "ゼロショット学習、ワンショット学習、少数ショット学習など、さまざまな手法を活用しています。",
+      "特定の作業に関する広範な実地副練が必要となる。",
+      "ユーザーとのやり取りに基づいて学習したり適店したりすることはできない。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "ゼロショット学習、ワンショット学習、少数ショット学習など、さまざまな手法を活用しています。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "ゼロ・ワン・少数ショットの例示に応じて出力を調整する。",
+      "sourceAnchor": "Sheet1!I118"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "Zero-shot",
+      "One-shot",
+      "Few-shot"
+    ],
+    "concepts": [
+      "例示による文脈内適応",
+      "恒久的な学習との差"
+    ],
+    "featureOrBehavior": "例示プロンプト",
+    "decisionKnowledge": "例を加える手法を、学習済みモデル自体の再訓練と混同しない",
+    "lessonIds": [
+      "lesson-d4-zero-few-shot"
+    ],
+    "glossaryIds": [
+      "g-zero-shot",
+      "g-few-shot"
+    ],
+    "comparisonIds": [
+      "cmp-zero-vs-few-shot"
+    ],
+    "coverage": "PARTIAL",
+    "coverageScore": 65,
+    "gapId": "G-INCONTEXT",
+    "coverageReason": "手法の使い分けはあるが、添付の「プロンプトから学習」という表現をモデル学習と区別する明示的な説明が弱い。",
+    "officialExplanationSummary": "ゼロ・ワン・少数ショットの例示に応じて出力を調整する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-021",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotがユーザーのプロンプトをコード候補に変換するプロセスにおいて、次のうち手順に含まれないものはどれですか ?",
+    "choicesOcr": [
+      "統計分析とパターン認識",
+      "安全な迅速な送信と状況把握",
+      "安全性とセキュリティを確保するためのコンテンツフィルタリング",
+      "ユーザーの意図を理解するためのコンテキスト分析"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 5,
+    "answerImageNumber": 58,
+    "questionAnchor": "Sheet1!A65",
+    "answerAnchor": "Sheet1!I118",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilotがユーザーのプロンプトをコード候補に変換するプロセスにおいて、次のうち手順に含まれないものはどれですか ?",
+    "choices": [
+      "統計分析とパターン認識",
+      "安全な迅速な送信と状況把握",
+      "安全性とセキュリティを確保するためのコンテンツフィルタリング",
+      "ユーザーの意図を理解するためのコンテキスト分析"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "統計分析とパターン認識"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "文脈収集、生成、安全性の確認という流れから除外される要素を問う。",
+      "sourceAnchor": "Sheet1!I118"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Context",
+      "安全性フィルター",
+      "統計分析"
+    ],
+    "concepts": [
+      "入力処理と出力検査の段階"
+    ],
+    "featureOrBehavior": "文脈収集・モデル・後処理",
+    "decisionKnowledge": "通常の処理段階と、設問が除外する「統計分析とパターン認識」を比較",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow"
+    ],
+    "glossaryIds": [
+      "g-prompt-construction",
+      "g-post-processing"
+    ],
+    "comparisonIds": [],
+    "coverage": "PARTIAL",
+    "coverageScore": 70,
+    "gapId": "G-PIPELINE",
+    "coverageReason": "文脈収集とフィルタリングはあるが、設問の選択肢と各段階を対比した図がなく、統計的推論との位置付けが曖昧。",
+    "officialExplanationSummary": "文脈収集、生成、安全性の確認という流れから除外される要素を問う。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-022",
+    "questionType": "single-select",
+    "questionTextOcr": "フィル・イン・ザ・ミドル (FIM) テクニックは、GitHub Copilotのコード提案をどのように強化するのでしょうか?",
+    "choicesOcr": [
+      "Copilotがより大きなコードファイルをより効率的に如理できるようにすることで",
+      "Copilotにより多くのトレーニングデータへのアクセスを提供することにより",
+      "Copilotがカーソル位置を取り巻くコードのより広いコンテキストを考應できるようにすることで",
+      "Copilotの自然言語プロンプトを理解する能力を向上させることで"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 6,
+    "answerImageNumber": 59,
+    "questionAnchor": "Sheet1!A81",
+    "answerAnchor": "Sheet1!I137",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "フィル・イン・ザ・ミドル (FIM) テクニックは、GitHub Copilotのコード提案をどのように強化するのでしょうか?",
+    "choices": [
+      "Copilotがより大きなコードファイルをより効率的に如理できるようにすることで",
+      "Copilotにより多くのトレーニングデータへのアクセスを提供することにより",
+      "Copilotがカーソル位置を取り巻くコードのより広いコンテキストを考應できるようにすることで",
+      "Copilotの自然言語プロンプトを理解する能力を向上させることで"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "Copilotがカーソル位置を取り巻くコードのより広いコンテキストを考應できるようにすることで"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "カーソル前後のコードを使うFill-in-the-Middleの仕組みを問う。",
+      "sourceAnchor": "Sheet1!I137"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "FIM",
+      "カーソル前後のコード"
+    ],
+    "concepts": [
+      "前方と後方を使う補完"
+    ],
+    "featureOrBehavior": "FIM型の補完",
+    "decisionKnowledge": "カーソル後方も参照することを、大きなファイル処理や追加訓練と区別",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline"
+    ],
+    "glossaryIds": [
+      "g-context-gathering",
+      "g-inline-suggestions"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 25,
+    "gapId": "G-FIM",
+    "coverageReason": "周辺文脈はあるがFIMの名称、前後の入力構造、誤答との差を説明する教材がない。",
+    "officialExplanationSummary": "カーソル前後のコードを使うFill-in-the-Middleの仕組みを問う。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-023",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot のアウトバパウンドフローにおいて、コード候補が生成された後、次のうちどの動作が発生する可能性がありますか?",
+    "choicesOcr": [
+      "その提案はユーザーのコードに即座に統合されます。",
+      "提案はユーザーに提示され、確認と承認が行われます。",
+      "提察は評価のために第三者のサーバーに送信されます。",
+      "ユーザーのプライバシー保護のため、提案は自動的に削除されます。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 7,
+    "answerImageNumber": 59,
+    "questionAnchor": "Sheet1!A97",
+    "answerAnchor": "Sheet1!I137",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilot のアウトバパウンドフローにおいて、コード候補が生成された後、次のうちどの動作が発生する可能性がありますか?",
+    "choices": [
+      "その提案はユーザーのコードに即座に統合されます。",
+      "提案はユーザーに提示され、確認と承認が行われます。",
+      "提察は評価のために第三者のサーバーに送信されます。",
+      "ユーザーのプライバシー保護のため、提案は自動的に削除されます。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "提案はユーザーに提示され、確認と承認が行われます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "提案は統合前に表示され、開発者が確認・採用する。",
+      "sourceAnchor": "Sheet1!I137"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Outbound Flow",
+      "Inline Suggestions"
+    ],
+    "concepts": [
+      "後処理とユーザー承認"
+    ],
+    "featureOrBehavior": "補完結果の提示",
+    "decisionKnowledge": "提案を表示・採用する過程を、自動統合や第三者送信と区別",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d3-data-flow"
+    ],
+    "glossaryIds": [
+      "g-post-processing",
+      "g-suggestion-lifecycle"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "提案ライフサイクルと人間による採用を学べる。",
+    "officialExplanationSummary": "提案は統合前に表示され、開発者が確認・採用する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-024",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotが複数のコード和補完候補を生成した場合、どうなりますか?",
+    "choicesOcr": [
+      "それは、提察されたすべての項目をコードに追加します。",
+      "最も関連性の高い提察を自動的に選択します。",
+      "開発者は、左右の矢印を選択することで、それぞれの提案内容を確認できます。",
+      "それは最初の提察以外全てを却下する。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 8,
+    "answerImageNumber": 59,
+    "questionAnchor": "Sheet1!A114",
+    "answerAnchor": "Sheet1!I137",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "GitHub Copilotが複数のコード和補完候補を生成した場合、どうなりますか?",
+    "choices": [
+      "それは、提察されたすべての項目をコードに追加します。",
+      "最も関連性の高い提察を自動的に選択します。",
+      "開発者は、左右の矢印を選択することで、それぞれの提案内容を確認できます。",
+      "それは最初の提察以外全てを却下する。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "開発者は、左右の矢印を選択することで、それぞれの提案内容を確認できます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "複数の補完候補を切り替え、適切な案を手動で選ぶ。",
+      "sourceAnchor": "Sheet1!I137"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Completions Panel",
+      "Inline Suggestions"
+    ],
+    "concepts": [
+      "候補比較と手動選択"
+    ],
+    "featureOrBehavior": "代替補完候補",
+    "decisionKnowledge": "左右操作で候補を見ることを自動全採用と区別",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "glossaryIds": [
+      "g-completions-panel",
+      "g-inline-suggestions"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "候補パネルと採用操作を説明している。",
+    "officialExplanationSummary": "複数の補完候補を切り替え、適切な案を手動で選ぶ。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-025",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatによって生成された出力をレビューおよび修正する目的は何ですか?",
+    "choicesOcr": [
+      "Alが正しく学習していることを確認するため。",
+      "生成される説明文および文書の正確性と完全性を確保するため。",
+      "Alの今後の改善のためにフィードバックを提供する。",
+      "Alのパフォーマンスを長期的に追跡するため。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 9,
+    "answerImageNumber": 60,
+    "questionAnchor": "Sheet1!A131",
+    "answerAnchor": "Sheet1!I157",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d1o2",
+    "domainId": "d1",
+    "questionText": "GitHub Copilot Chatによって生成された出力をレビューおよび修正する目的は何ですか?",
+    "choices": [
+      "Alが正しく学習していることを確認するため。",
+      "生成される説明文および文書の正確性と完全性を確保するため。",
+      "Alの今後の改善のためにフィードバックを提供する。",
+      "Alのパフォーマンスを長期的に追跡するため。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "生成される説明文および文書の正確性と完全性を確保するため。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "生成された説明や文書の正確性・完全性を人が検証する。",
+      "sourceAnchor": "Sheet1!I157"
+    },
+    "inferredDomain": "責任あるAIの利用",
+    "inferredObjective": "Validate and operate AI tools",
+    "terms": [
+      "Copilot Chat",
+      "Verification"
+    ],
+    "concepts": [
+      "出力の正確性・完全性"
+    ],
+    "featureOrBehavior": "生成物の検証",
+    "decisionKnowledge": "説明文を検証する理由を、モデルへの学習フィードバックと区別",
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d1-principles"
+    ],
+    "glossaryIds": [
+      "g-verification-validation",
+      "g-critical-evaluation"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "生成物の検証責任とレビュー対象を扱う。",
+    "officialExplanationSummary": "生成された説明や文書の正確性・完全性を人が検証する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-026",
+    "questionType": "single-select",
+    "questionTextOcr": "どの配述が正しいかを判断し、正しい答えを選択してください。",
+    "choicesOcr": [
+      "プロンプト (つまり、私たちの出力) は、副操縦士に何を生成すべきかを指示する楽曲の集合体です。",
+      "プロンプト 入力) とは、副操縦士に何を生成するかを指示する一連の指示やガイドラインのことです。",
+      "プロンプト (つまDり、私たちのドキュメント) は、コパイロットに何を生成するかを指示するラップトップの集合体で",
+      "プロンプトとは、Copilotの動作を制御する一連のパイナリコマンドのことです。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 10,
+    "answerImageNumber": 60,
+    "questionAnchor": "Sheet1!A148",
+    "answerAnchor": "Sheet1!I157",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "どの配述が正しいかを判断し、正しい答えを選択してください。",
+    "choices": [
+      "プロンプト (つまり、私たちの出力) は、副操縦士に何を生成すべきかを指示する楽曲の集合体です。",
+      "プロンプト 入力) とは、副操縦士に何を生成するかを指示する一連の指示やガイドラインのことです。",
+      "プロンプト (つまDり、私たちのドキュメント) は、コパイロットに何を生成するかを指示するラップトップの集合体で",
+      "プロンプトとは、Copilotの動作を制御する一連のパイナリコマンドのことです。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "プロンプト 入力) とは、副操縦士に何を生成するかを指示する一連の指示やガイドラインのことです。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "プロンプトはモデルへ与える入力・指示である。",
+      "sourceAnchor": "Sheet1!I157"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "Prompt",
+      "Instructions"
+    ],
+    "concepts": [
+      "入力と生成指示"
+    ],
+    "featureOrBehavior": "プロンプト",
+    "decisionKnowledge": "人間の依頼文を、出力やバイナリ命令と区別",
+    "lessonIds": [
+      "lesson-d4-crafting"
+    ],
+    "glossaryIds": [
+      "g-prompt-engineering",
+      "g-prompt-anatomy"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "プロンプトの要素と入力としての位置付けがある。",
+    "officialExplanationSummary": "プロンプトはモデルへ与える入力・指示である。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-027",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotの出力品質は、何に依存するのでしょうか?",
+    "choicesOcr": [
+      "あなたのコードエディタ。",
+      "増築工事の仕上がり具合はどうでしたか。",
+      "プロンプトの作成が素晴らしかった。",
+      "あなたがコーディングをしている時間帯。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 11,
+    "answerImageNumber": 60,
+    "questionAnchor": "Sheet1!A165",
+    "answerAnchor": "Sheet1!I157",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "GitHub Copilotの出力品質は、何に依存するのでしょうか?",
+    "choices": [
+      "あなたのコードエディタ。",
+      "増築工事の仕上がり具合はどうでしたか。",
+      "プロンプトの作成が素晴らしかった。",
+      "あなたがコーディングをしている時間帯。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "プロンプトの作成が素晴らしかった。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "明確に構成されたプロンプトほど関連する提案を得やすい。",
+      "sourceAnchor": "Sheet1!I157"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "Prompt",
+      "Output Quality"
+    ],
+    "concepts": [
+      "目的・文脈の明確さ"
+    ],
+    "featureOrBehavior": "プロンプト作成",
+    "decisionKnowledge": "提案品質に関わる指示の明瞭さを、時間帯やIDE名と区別",
+    "lessonIds": [
+      "lesson-d4-crafting"
+    ],
+    "glossaryIds": [
+      "g-prompt-engineering",
+      "g-prompt-anatomy"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "Goal・Context・Constraintsを教材で実践できる。",
+    "officialExplanationSummary": "明確に構成されたプロンプトほど関連する提案を得やすい。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-028",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotにおける大規模言語モデル (LLM) の役割は何ですか?",
+    "choicesOcr": [
+      "ユーザーアカウントと請求情報を管理する",
+      "ユーザーのコード構造を理解し分析するため",
+      "状況に応じたコード候補を生成し、プロンプトに応答する",
+      "IDE内で生成されたコードをコンバイルして実行する"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 12,
+    "answerImageNumber": 61,
+    "questionAnchor": "Sheet1!A182",
+    "answerAnchor": "Sheet1!I176",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilotにおける大規模言語モデル (LLM) の役割は何ですか?",
+    "choices": [
+      "ユーザーアカウントと請求情報を管理する",
+      "ユーザーのコード構造を理解し分析するため",
+      "状況に応じたコード候補を生成し、プロンプトに応答する",
+      "IDE内で生成されたコードをコンバイルして実行する"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "状況に応じたコード候補を生成し、プロンプトに応答する"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "LLMは与えられたプロンプトと文脈に応じた応答を生成する。",
+      "sourceAnchor": "Sheet1!I176"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "LLM",
+      "Prompt",
+      "Context"
+    ],
+    "concepts": [
+      "文脈に応じた生成"
+    ],
+    "featureOrBehavior": "モデルによる応答",
+    "decisionKnowledge": "生成を請求処理やIDE内コンパイルと区別",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline"
+    ],
+    "glossaryIds": [
+      "g-generative-ai",
+      "g-tokenization"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "LLMと入力処理の役割が説明される。",
+    "officialExplanationSummary": "LLMは与えられたプロンプトと文脈に応じた応答を生成する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-029",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatのプロンプトを作成する際に、コンテキストと意図はどのような重要性を持つのでしょうか?",
+    "choicesOcr": [
+      "これらは、GitHub Copilot Chatで使用される配色を決定します。",
+      "これらはGitHub Copilot Chatからの音声出力の音量を制御します。",
+      "これらは、GitHub Copilotが届査すべき範囲と達成すべき目標を具体的に定めたものです。",
+      "それらは、コード提案に使用されるプログラミング舎語に影響を与える。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 13,
+    "answerImageNumber": 61,
+    "questionAnchor": "Sheet1!A199",
+    "answerAnchor": "Sheet1!I176",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "GitHub Copilot Chatのプロンプトを作成する際に、コンテキストと意図はどのような重要性を持つのでしょうか?",
+    "choices": [
+      "これらは、GitHub Copilot Chatで使用される配色を決定します。",
+      "これらはGitHub Copilot Chatからの音声出力の音量を制御します。",
+      "これらは、GitHub Copilotが届査すべき範囲と達成すべき目標を具体的に定めたものです。",
+      "それらは、コード提案に使用されるプログラミング舎語に影響を与える。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "これらは、GitHub Copilotが届査すべき範囲と達成すべき目標を具体的に定めたものです。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "文脈と意図を示すと適切な提案に近づく。",
+      "sourceAnchor": "Sheet1!I176"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "Context",
+      "Intent",
+      "Prompt"
+    ],
+    "concepts": [
+      "対象範囲と達成目標"
+    ],
+    "featureOrBehavior": "Chatのプロンプト",
+    "decisionKnowledge": "範囲と目標を伝えることを配色や音声設定と区別",
+    "lessonIds": [
+      "lesson-d4-crafting"
+    ],
+    "glossaryIds": [
+      "g-prompt-anatomy",
+      "g-context-priming"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "Goal・Contextの判断基準と例がある。",
+    "officialExplanationSummary": "文脈と意図を示すと適切な提案に近づく。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-030",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatのパブォーマンスを向上させるための推奨される方法は何ですか?",
+    "choicesOcr": [
+      "モデルの出力品質を向上させるため、プロンプトをコーディングに関する質問またはタスクに限定する。",
+      "大間のプログラミングの代替として、Copilot Chatを使用する。",
+      "安全なコーディングとコードレビューの実践を無視する。",
+      "Copilot Chatに何の指示もなしにアプリケーション全体を生成させる。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 14,
+    "answerImageNumber": 61,
+    "questionAnchor": "Sheet1!A216",
+    "answerAnchor": "Sheet1!I176",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o2",
+    "domainId": "d4",
+    "questionText": "GitHub Copilot Chatのパブォーマンスを向上させるための推奨される方法は何ですか?",
+    "choices": [
+      "モデルの出力品質を向上させるため、プロンプトをコーディングに関する質問またはタスクに限定する。",
+      "大間のプログラミングの代替として、Copilot Chatを使用する。",
+      "安全なコーディングとコードレビューの実践を無視する。",
+      "Copilot Chatに何の指示もなしにアプリケーション全体を生成させる。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "モデルの出力品質を向上させるため、プロンプトをコーディングに関する質問またはタスクに限定する。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "具体的なコーディング課題に絞った質問が回答を改善する。",
+      "sourceAnchor": "Sheet1!I176"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Engineer prompts for performance",
+    "terms": [
+      "Task Scope",
+      "Prompt"
+    ],
+    "concepts": [
+      "対象の限定と結果確認"
+    ],
+    "featureOrBehavior": "Chatの使い方",
+    "decisionKnowledge": "具体的なタスクに絞ることを丸投げや安全確認省略と区別",
+    "lessonIds": [
+      "lesson-d4-decomposition-pruning",
+      "lesson-d4-refinement"
+    ],
+    "glossaryIds": [
+      "g-task-decomposition",
+      "g-context-pruning"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "タスク分解と文脈整理のシナリオがある。",
+    "officialExplanationSummary": "具体的なコーディング課題に絞った質問が回答を改善する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-031",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotに適切なコード提案を行うための最適なコンテキスト提供方法は何ですか?",
+    "choicesOcr": [
+      "エディタで全てのファイルを閉じたままにしておくことで。",
+      "複雑な関数名を使用することによって。",
+      "意味のある関数名、具体的な関数コメント、そして関連ファイルをエディタで開いておくことによって実現します。",
+      "コメントやドキュメントを一切書かずにコードを書くことによって。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 15,
+    "answerImageNumber": 62,
+    "questionAnchor": "Sheet1!A233",
+    "answerAnchor": "Sheet1!I196",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "GitHub Copilotに適切なコード提案を行うための最適なコンテキスト提供方法は何ですか?",
+    "choices": [
+      "エディタで全てのファイルを閉じたままにしておくことで。",
+      "複雑な関数名を使用することによって。",
+      "意味のある関数名、具体的な関数コメント、そして関連ファイルをエディタで開いておくことによって実現します。",
+      "コメントやドキュメントを一切書かずにコードを書くことによって。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "意味のある関数名、具体的な関数コメント、そして関連ファイルをエディタで開いておくことによって実現します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "意味のある名称、コメント、関連ファイルが有用な文脈を与える。",
+      "sourceAnchor": "Sheet1!I196"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "関数名",
+      "コメント",
+      "関連ファイル"
+    ],
+    "concepts": [
+      "文脈提示"
+    ],
+    "featureOrBehavior": "隣接ファイルとプロンプト",
+    "decisionKnowledge": "命名・コメント・開いたファイルを閉じる選択肢と比較",
+    "lessonIds": [
+      "lesson-d4-crafting",
+      "lesson-d3-prompt-pipeline"
+    ],
+    "glossaryIds": [
+      "g-context-priming",
+      "g-context-gathering"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "文脈プライミングと具体的な書き方を説明する。",
+    "officialExplanationSummary": "意味のある名称、コメント、関連ファイルが有用な文脈を与える。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-032",
+    "questionType": "single-select",
+    "questionTextOcr": "開発者は、チャットを通じてGitHub Copilotとやり取りする際に、どのようにすればエクスペリエンスを最適化できるでしょうか ?",
+    "choicesOcr": [
+      "入力、出力、APl、または使用したいフレームワークについて曖昧にすることで。",
+      "チャット参加者、スラッシュコマンド、チャット変数を使用し、プロンプトを具体的にすることで。",
+      "Copilotに一度に大きなタスクを実行させることで。",
+      "プロンプト内でコードスニペットを使用しないようにすることで。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 16,
+    "answerImageNumber": 62,
+    "questionAnchor": "Sheet1!A250",
+    "answerAnchor": "Sheet1!I196",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d2o1",
+    "domainId": "d2",
+    "questionText": "開発者は、チャットを通じてGitHub Copilotとやり取りする際に、どのようにすればエクスペリエンスを最適化できるでしょうか ?",
+    "choices": [
+      "入力、出力、APl、または使用したいフレームワークについて曖昧にすることで。",
+      "チャット参加者、スラッシュコマンド、チャット変数を使用し、プロンプトを具体的にすることで。",
+      "Copilotに一度に大きなタスクを実行させることで。",
+      "プロンプト内でコードスニペットを使用しないようにすることで。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "チャット参加者、スラッシュコマンド、チャット変数を使用し、プロンプトを具体的にすることで。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "Chat参加者・コマンド・変数と具体的なプロンプトを活用する。",
+      "sourceAnchor": "Sheet1!I196"
+    },
+    "inferredDomain": "Copilotの機能を使いこなす",
+    "inferredObjective": "Use GitHub Copilot in the IDE",
+    "terms": [
+      "Chat Participants",
+      "Slash Commands",
+      "Chat Variables"
+    ],
+    "concepts": [
+      "文脈指定と依頼の具体性"
+    ],
+    "featureOrBehavior": "Chat支援機能",
+    "decisionKnowledge": "補助機能と具体的指示を選び、曖昧さや大規模丸投げを退ける",
+    "lessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d4-crafting"
+    ],
+    "glossaryIds": [
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-chat-variables"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "3種の機能と具体的依頼を連結できる。",
+    "officialExplanationSummary": "Chat参加者・コマンド・変数と具体的なプロンプトを活用する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-033",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot の効果的なプロンプト エンジニアリングの原則として、次のうちどれが当てはまらないでしょうか?",
+    "choicesOcr": [
+      "明確さ 一 明確に定義された単一のみタスクに集中する。",
+      "冗長性 - 広範かつ詳細な説明を提供してください。",
+      "具体性 一 明確かつ具体的な指示を使用してください。",
+      "周辺環境 - 分かりやすいファイル名を使用し、関連ファイルを開いたままにしておく。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 17,
+    "answerImageNumber": 62,
+    "questionAnchor": "Sheet1!A268",
+    "answerAnchor": "Sheet1!I196",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d4o1",
+    "domainId": "d4",
+    "questionText": "GitHub Copilot の効果的なプロンプト エンジニアリングの原則として、次のうちどれが当てはまらないでしょうか?",
+    "choices": [
+      "明確さ 一 明確に定義された単一のみタスクに集中する。",
+      "冗長性 - 広範かつ詳細な説明を提供してください。",
+      "具体性 一 明確かつ具体的な指示を使用してください。",
+      "周辺環境 - 分かりやすいファイル名を使用し、関連ファイルを開いたままにしておく。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "冗長性 - 広範かつ詳細な説明を提供してください。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "過度な冗長さを避け、簡潔で明瞭な指示にする。",
+      "sourceAnchor": "Sheet1!I196"
+    },
+    "inferredDomain": "プロンプトとコンテキスト",
+    "inferredObjective": "Craft effective prompts",
+    "terms": [
+      "Prompt",
+      "Context"
+    ],
+    "concepts": [
+      "明確な依頼と不要な長文の差"
+    ],
+    "featureOrBehavior": "効果的なプロンプト",
+    "decisionKnowledge": "「冗長で詳細ほどよい」を避け、必要十分な文脈を選ぶ",
+    "lessonIds": [
+      "lesson-d4-crafting",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "glossaryIds": [
+      "g-prompt-anatomy",
+      "g-context-pruning"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "具体性と文脈整理の教材から冗長さを退けられる。",
+    "officialExplanationSummary": "過度な冗長さを避け、簡潔で明瞭な指示にする。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-034",
+    "questionType": "single-select",
+    "questionTextOcr": "コードリファクタリングの目的は何ですか ?",
+    "choicesOcr": [
+      "コードの外部動作または機能を変更するため。",
+      "コードの内部構造を、外部の動作や機能を変更することなく改善する。",
+      ") コードに新機能や機能強化を追加するため。",
+      "パフォーマンス向上のためにコードを最適化する。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 31,
+    "answerImageNumber": 63,
+    "questionAnchor": "Sheet1!A502",
+    "answerAnchor": "Sheet1!I216",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "コードリファクタリングの目的は何ですか ?",
+    "choices": [
+      "コードの外部動作または機能を変更するため。",
+      "コードの内部構造を、外部の動作や機能を変更することなく改善する。",
+      ") コードに新機能や機能強化を追加するため。",
+      "パフォーマンス向上のためにコードを最適化する。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コードの内部構造を、外部の動作や機能を変更することなく改善する。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "外部から見える動作を保ちながら内部構造を改善する。",
+      "sourceAnchor": "Sheet1!I216"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Refactoring",
+      "外部動作"
+    ],
+    "concepts": [
+      "内部構造の改善と回帰検証"
+    ],
+    "featureOrBehavior": "コードのリファクタリング",
+    "decisionKnowledge": "振る舞い保持を、機能追加や仕様変更と区別",
+    "lessonIds": [
+      "lesson-d5-generation-refactoring"
+    ],
+    "glossaryIds": [
+      "g-code-refactoring"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "定義・適用例・外部動作維持の注意がある。",
+    "officialExplanationSummary": "外部から見える動作を保ちながら内部構造を改善する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-035",
+    "questionType": "single-select",
+    "questionTextOcr": "ソフトウェア開発におけるプロジェクトドキュメントの主な目的は何ですか ?",
+    "choicesOcr": [
+      "開発者が利用できる詳細なコードベースを提供する。",
+      "ソフトウェアのエンドユーザー向けに、概要を分かりやすく説明する。",
+      "プロジェクトの範囲と目的を理解するために必要な情報を提供する。",
+      "プロジェクトの開発必歴を時系列でまとめる。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 32,
+    "answerImageNumber": 63,
+    "questionAnchor": "Sheet1!A518",
+    "answerAnchor": "Sheet1!I216",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "ソフトウェア開発におけるプロジェクトドキュメントの主な目的は何ですか ?",
+    "choices": [
+      "開発者が利用できる詳細なコードベースを提供する。",
+      "ソフトウェアのエンドユーザー向けに、概要を分かりやすく説明する。",
+      "プロジェクトの範囲と目的を理解するために必要な情報を提供する。",
+      "プロジェクトの開発必歴を時系列でまとめる。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "プロジェクトの範囲と目的を理解するために必要な情報を提供する。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "プロジェクト文書は範囲・目的・要件を示して理解を助ける。",
+      "sourceAnchor": "Sheet1!I216"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Project Documentation",
+      "Requirements"
+    ],
+    "concepts": [
+      "範囲・目的・要件の共有"
+    ],
+    "featureOrBehavior": "プロジェクト文書",
+    "decisionKnowledge": "プロジェクト文書をエンドユーザー向け概要や変更履歴と区別",
+    "lessonIds": [
+      "lesson-d5-generation-refactoring"
+    ],
+    "glossaryIds": [
+      "g-doc-generation"
+    ],
+    "comparisonIds": [],
+    "coverage": "PARTIAL",
+    "coverageScore": 60,
+    "gapId": "G-DOC-TYPES",
+    "coverageReason": "文書生成は扱うが、プロジェクト文書が範囲・目的・要件を伝える役割と他文書との差が弱い。",
+    "officialExplanationSummary": "プロジェクト文書は範囲・目的・要件を示して理解を助ける。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-036",
+    "questionType": "single-select",
+    "questionTextOcr": "ソフトウェア開発において、インラインコードドキュメントを生成する目的は何ですか ?",
+    "choicesOcr": [
+      "他の開発者にとって、コードをより複雑でやりがいのあるものにするため。",
+      "他の開発者が理解しやすく、扱いやすい、より読みやすく保守しやすいコードベーズスを作成するため。",
+      "コードベペースの規模を拡大するため。",
+      "開発者のコーディングスキルを披露するため。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 33,
+    "answerImageNumber": 63,
+    "questionAnchor": "Sheet1!A535",
+    "answerAnchor": "Sheet1!I216",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "ソフトウェア開発において、インラインコードドキュメントを生成する目的は何ですか ?",
+    "choices": [
+      "他の開発者にとって、コードをより複雑でやりがいのあるものにするため。",
+      "他の開発者が理解しやすく、扱いやすい、より読みやすく保守しやすいコードベーズスを作成するため。",
+      "コードベペースの規模を拡大するため。",
+      "開発者のコーディングスキルを披露するため。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "他の開発者が理解しやすく、扱いやすい、より読みやすく保守しやすいコードベーズスを作成するため。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "インライン文書はコードの可読性と保守性を高める。",
+      "sourceAnchor": "Sheet1!I216"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Inline Documentation",
+      "Comments"
+    ],
+    "concepts": [
+      "理解しやすさ・保守性"
+    ],
+    "featureOrBehavior": "コード内ドキュメント",
+    "decisionKnowledge": "可読性と保守性の改善を、規模拡大や技能誇示と区別",
+    "lessonIds": [
+      "lesson-d5-generation-refactoring"
+    ],
+    "glossaryIds": [
+      "g-doc-generation"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "Docstring・コメント生成と保守性の目的を学べる。",
+    "officialExplanationSummary": "インライン文書はコードの可読性と保守性を高める。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-037",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot を使用すると、どのような種類のコード変換を実行できますか?",
+    "choicesOcr": [
+      "コードファイル全体、団数、またはコードスニペットを画像に変換します。",
+      "コードファイル全体、関数、またはコードスニペットを別のプログラミング言語に変換します。",
+      "プログラミング言語を人間が理解できる言語に変換する。",
+      "コンパイル済みのコードをゾースコードに戻す"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 34,
+    "answerImageNumber": 64,
+    "questionAnchor": "Sheet1!A551",
+    "answerAnchor": "Sheet1!I236",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "GitHub Copilot を使用すると、どのような種類のコード変換を実行できますか?",
+    "choices": [
+      "コードファイル全体、団数、またはコードスニペットを画像に変換します。",
+      "コードファイル全体、関数、またはコードスニペットを別のプログラミング言語に変換します。",
+      "プログラミング言語を人間が理解できる言語に変換する。",
+      "コンパイル済みのコードをゾースコードに戻す"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コードファイル全体、関数、またはコードスニペットを別のプログラミング言語に変換します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "コードを別の言語へ変換する用途を示す。",
+      "sourceAnchor": "Sheet1!I236"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Code Translation",
+      "Legacy Modernization"
+    ],
+    "concepts": [
+      "言語間移植と挙動保持"
+    ],
+    "featureOrBehavior": "コード変換",
+    "decisionKnowledge": "別言語への変換を、画像化や逆コンパイルと区別",
+    "lessonIds": [
+      "lesson-d5-legacy-modernization"
+    ],
+    "glossaryIds": [
+      "g-code-translation",
+      "g-legacy-modernization"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "言語変換の用途と検証を説明している。",
+    "officialExplanationSummary": "コードを別の言語へ変換する用途を示す。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-038",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilot Chatは、単体テストケースズの生成においてどのような役割を果たしますか ?",
+    "choicesOcr": [
+      "ユーザーのためにすべてのテストケースを手動で作成します。",
+      "これは、入力可能なパラメータと予想される出力値を提示するだけです。",
+      "ユーザーが指定したコードに基づいてテストケーズ用のコードスニペットを生成し、考えられる入力パラメータ、期待される出力値、アサーションを提案し、エッジケースや境界打件の特定にも役立ちます。",
+      "自動的にすべての単体テストを実行し、結果を報告します。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 18,
+    "answerImageNumber": 64,
+    "questionAnchor": "Sheet1!A285",
+    "answerAnchor": "Sheet1!I236",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "GitHub Copilot Chatは、単体テストケースズの生成においてどのような役割を果たしますか ?",
+    "choices": [
+      "ユーザーのためにすべてのテストケースを手動で作成します。",
+      "これは、入力可能なパラメータと予想される出力値を提示するだけです。",
+      "ユーザーが指定したコードに基づいてテストケーズ用のコードスニペットを生成し、考えられる入力パラメータ、期待される出力値、アサーションを提案し、エッジケースや境界打件の特定にも役立ちます。",
+      "自動的にすべての単体テストを実行し、結果を報告します。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "ユーザーが指定したコードに基づいてテストケーズ用のコードスニペットを生成し、考えられる入力パラメータ、期待される出力値、アサーションを提案し、エッジケースや境界打件の特定にも役立ちます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "テストコード、入力・期待値・アサーション、境界例の提案を支援する。",
+      "sourceAnchor": "Sheet1!I236"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Unit Test",
+      "Edge Case",
+      "Assertions"
+    ],
+    "concepts": [
+      "入力・期待値・境界条件"
+    ],
+    "featureOrBehavior": "Chatによるテスト提案",
+    "decisionKnowledge": "コード片と条件の提案を、自動実行や完全網羅保証と区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-unit-test-generation",
+      "g-edge-case-discovery",
+      "g-test-assertions-mocking"
+    ],
+    "comparisonIds": [
+      "cmp-unit-vs-integration-tests"
+    ],
+    "coverage": "COVERED",
+    "coverageScore": 95,
+    "gapId": null,
+    "coverageReason": "テスト生成、異常系、期待値の検証まで説明される。",
+    "officialExplanationSummary": "テストコード、入力・期待値・アサーション、境界例の提案を支援する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-039",
+    "questionType": "single-select",
+    "questionTextOcr": "Visual Studio Codeみテストエクスプローラーの目的は何ですか ?",
+    "choicesOcr": [
+      "単体テスト用の新しいコードスニペットを作成する。",
+      "単体テストの実行とデパッグ、テスト実行結果の表示、ワークスペース内でのテストケーズの管理を行います。",
+      "コードのコンテキストに基づいてテストケースを生成する。",
+      "失敗したテストを自動的に修正する。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 19,
+    "answerImageNumber": 64,
+    "questionAnchor": "Sheet1!A302",
+    "answerAnchor": "Sheet1!I236",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "Visual Studio Codeみテストエクスプローラーの目的は何ですか ?",
+    "choices": [
+      "単体テスト用の新しいコードスニペットを作成する。",
+      "単体テストの実行とデパッグ、テスト実行結果の表示、ワークスペース内でのテストケーズの管理を行います。",
+      "コードのコンテキストに基づいてテストケースを生成する。",
+      "失敗したテストを自動的に修正する。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "単体テストの実行とデパッグ、テスト実行結果の表示、ワークスペース内でのテストケーズの管理を行います。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "VS CodeのTest Explorerはテストの実行・デバッグ・管理に使う。",
+      "sourceAnchor": "Sheet1!I236"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Test Explorer",
+      "VS Code"
+    ],
+    "concepts": [
+      "テストの実行・デバッグ・結果管理"
+    ],
+    "featureOrBehavior": "IDEのテストUI",
+    "decisionKnowledge": "テスト管理UIを、テスト生成や自動修正機能と区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-unit-test-generation"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 20,
+    "gapId": "G-TEST-EXPLORER",
+    "coverageReason": "教材はCopilotによるテスト生成を扱うが、Test Explorerの実行・デバッグ・管理用途がない。",
+    "officialExplanationSummary": "VS CodeのTest Explorerはテストの実行・デバッグ・管理に使う。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-040",
+    "questionType": "single-select",
+    "questionTextOcr": "単体テストにおける「準備」「実行」「検証」の各セクションの意義は何ですか ?",
+    "choicesOcr": [
+      "これらは、メインアプリケーションのコードを整理するために使用されます。",
+      "これらは、単体テストをセットアップ (Arrange)、実行 (Acb、検証 (Assert) の各フェーズに構造化するために使用されます。",
+      "これらは単体テストのコンパイルと実行に使用されます。",
+      "これらはテストのドキュメントを作成するために使用されます。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 20,
+    "answerImageNumber": 65,
+    "questionAnchor": "Sheet1!A319",
+    "answerAnchor": "Sheet1!I255",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "単体テストにおける「準備」「実行」「検証」の各セクションの意義は何ですか ?",
+    "choices": [
+      "これらは、メインアプリケーションのコードを整理するために使用されます。",
+      "これらは、単体テストをセットアップ (Arrange)、実行 (Acb、検証 (Assert) の各フェーズに構造化するために使用されます。",
+      "これらは単体テストのコンパイルと実行に使用されます。",
+      "これらはテストのドキュメントを作成するために使用されます。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "これらは、単体テストをセットアップ (Arrange)、実行 (Acb、検証 (Assert) の各フェーズに構造化するために使用されます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "単体テストをArrange、Act、Assertの三段階に分ける。",
+      "sourceAnchor": "Sheet1!I255"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Arrange",
+      "Act",
+      "Assert"
+    ],
+    "concepts": [
+      "単体テストの三段階構造"
+    ],
+    "featureOrBehavior": "テスト設計パターン",
+    "decisionKnowledge": "準備・実行・検証を、コンパイルや文書作成と区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-test-assertions-mocking"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 25,
+    "gapId": "G-AAA",
+    "coverageReason": "アサーション品質は扱うが、Arrange-Act-Assertの段階と例がない。",
+    "officialExplanationSummary": "単体テストをArrange、Act、Assertの三段階に分ける。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-041",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotは、特定の条件に対する単体テストを作成する際に、どのような機能を提供しますか?",
+    "choicesOcr": [
+      "これは、テストを手動で札述するためのユーザーインターフェースを提供する。",
+      "テストを自動的に実行し、結果を提供します。",
+      "コードのコンテキストに基づいて、補完候補を提示し、テストを生成します。",
+      "ユーザーの入力なしに、完全なテストスイートを作成します。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 21,
+    "answerImageNumber": 65,
+    "questionAnchor": "Sheet1!A336",
+    "answerAnchor": "Sheet1!I255",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "GitHub Copilotは、特定の条件に対する単体テストを作成する際に、どのような機能を提供しますか?",
+    "choices": [
+      "これは、テストを手動で札述するためのユーザーインターフェースを提供する。",
+      "テストを自動的に実行し、結果を提供します。",
+      "コードのコンテキストに基づいて、補完候補を提示し、テストを生成します。",
+      "ユーザーの入力なしに、完全なテストスイートを作成します。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "コードのコンテキストに基づいて、補完候補を提示し、テストを生成します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "コードの文脈に沿ったテスト候補を生成する。",
+      "sourceAnchor": "Sheet1!I255"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Unit Test",
+      "Code Context"
+    ],
+    "concepts": [
+      "コードからのテスト候補"
+    ],
+    "featureOrBehavior": "Copilotによるテスト作成",
+    "decisionKnowledge": "文脈依存の生成を、自動実行や無指示の完全スイートと区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-unit-test-generation",
+      "g-edge-case-discovery"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "生成と実行の責任分界、条件指定を説明できる。",
+    "officialExplanationSummary": "コードの文脈に沿ったテスト候補を生成する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-042",
+    "questionType": "single-select",
+    "questionTextOcr": "ユニットテスト生成にGitHub Copilotを使用するメリットは何ですか ?",
+    "choicesOcr": [
+      "これにより、手動テストの必要性が軽減されます。",
+      "コードのコンテキストに基づいてさまざまな単体テストを提案できるため、開発時間を節約できます。",
+      "コードのパグを自動的に修正します。",
+      "1009%6のコードカパレッジを保証します。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 22,
+    "answerImageNumber": 65,
+    "questionAnchor": "Sheet1!A352",
+    "answerAnchor": "Sheet1!I255",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "ユニットテスト生成にGitHub Copilotを使用するメリットは何ですか ?",
+    "choices": [
+      "これにより、手動テストの必要性が軽減されます。",
+      "コードのコンテキストに基づいてさまざまな単体テストを提案できるため、開発時間を節約できます。",
+      "コードのパグを自動的に修正します。",
+      "1009%6のコードカパレッジを保証します。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コードのコンテキストに基づいてさまざまな単体テストを提案できるため、開発時間を節約できます。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "関連する単体テストの提案により作成時間を短縮する。",
+      "sourceAnchor": "Sheet1!I255"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Unit Test",
+      "Productivity"
+    ],
+    "concepts": [
+      "テスト案の作成支援と限界"
+    ],
+    "featureOrBehavior": "複数テストの提案",
+    "decisionKnowledge": "効率化を100%網羅やバグ自動修正の保証と区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-unit-test-generation",
+      "g-verification-validation"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "効率と人間による期待値検証の両面を扱う。",
+    "officialExplanationSummary": "関連する単体テストの提案により作成時間を短縮する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-043",
+    "questionType": "single-select",
+    "questionTextOcr": "関数の入力パラメータが有効であることを保証するためにアサーションを生成する目的は何ですか？",
+    "choicesOcr": [
+      "機能のパフォーマンスを向上させるため。",
+      "関数が無効なデータを処理することを防ぐため。",
+      "関数が期待される出力を返すかどうかを確認する。",
+      "関数の想定される入力値を文書化する。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 23,
+    "answerImageNumber": 66,
+    "questionAnchor": "Sheet1!A369",
+    "answerAnchor": "Sheet1!I274",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "関数の入力パラメータが有効であることを保証するためにアサーションを生成する目的は何ですか？",
+    "choices": [
+      "機能のパフォーマンスを向上させるため。",
+      "関数が無効なデータを処理することを防ぐため。",
+      "関数が期待される出力を返すかどうかを確認する。",
+      "関数の想定される入力値を文書化する。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "関数が無効なデータを処理することを防ぐため。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "有効な入力だけを処理する検証を目的と説明する。アサーションとの関係は要注意。",
+      "sourceAnchor": "Sheet1!I274"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Assertion",
+      "Input Validation"
+    ],
+    "concepts": [
+      "不正入力の検査と期待出力の確認の差"
+    ],
+    "featureOrBehavior": "単体テストの検証",
+    "decisionKnowledge": "無効値を拒否する条件を、単なる出力確認や性能改善と区別",
+    "lessonIds": [
+      "lesson-d5-testing"
+    ],
+    "glossaryIds": [
+      "g-test-assertions-mocking",
+      "g-edge-case-discovery"
+    ],
+    "comparisonIds": [],
+    "coverage": "PARTIAL",
+    "coverageScore": 60,
+    "gapId": "G-INPUT-ASSERT",
+    "coverageReason": "アサーション一般と境界条件はあるが、無効入力を扱う検証例と出力アサーションとの差が明示されない。",
+    "officialExplanationSummary": "有効な入力だけを処理する検証を目的と説明する。アサーションとの関係は要注意。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-044",
+    "questionType": "single-select",
+    "questionTextOcr": "コード品質の向上に取り組む際に考慮すべき要素は何ですか ?",
+    "choicesOcr": [
+      "プログラム内のコード行数。",
+      "コー ドを書く のに必要な時間。",
+      "ビリティ、 ユーザビリティ 、 移植性。",
+      "プロジェクトに携わっている開発者の数。"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 24,
+    "answerImageNumber": 66,
+    "questionAnchor": "Sheet1!A385",
+    "answerAnchor": "Sheet1!I274",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "コード品質の向上に取り組む際に考慮すべき要素は何ですか ?",
+    "choices": [
+      "プログラム内のコード行数。",
+      "コー ドを書く のに必要な時間。",
+      "ビリティ、 ユーザビリティ 、 移植性。",
+      "プロジェクトに携わっている開発者の数。"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "ビリティ、 ユーザビリティ 、 移植性。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "信頼性・保守性などの特性でコード品質を評価する。",
+      "sourceAnchor": "Sheet1!I274"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Reliability",
+      "Maintainability",
+      "Security",
+      "Usability"
+    ],
+    "concepts": [
+      "複数の品質特性"
+    ],
+    "featureOrBehavior": "品質評価",
+    "decisionKnowledge": "品質属性の集合を、行数・作業時間・人数と区別",
+    "lessonIds": [
+      "lesson-d5-generation-refactoring",
+      "lesson-d1-validation"
+    ],
+    "glossaryIds": [
+      "g-critical-evaluation",
+      "g-code-correctness"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 25,
+    "gapId": "G-QUALITY-ATTR",
+    "coverageReason": "用語集に効率・保守性・安全性は点在するが、選択肢の品質属性を体系として学べない。",
+    "officialExplanationSummary": "信頼性・保守性などの特性でコード品質を評価する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-045",
+    "questionType": "single-select",
+    "questionTextOcr": "ソフトウェア開発におけるコードの信頼性とは何を指すのでしょうか ?",
+    "choicesOcr": [
+      "タスクを並列化し、I/O操作を非同期的に実行することで、最新のCPUアーキテクチャを活用する。",
+      "特定の条件下で、一定期間にわたってソフトウェアが正しく動作する可能性。",
+      "プログラムまたはアプリケーションの効率性。",
+      "コードが大星のデータを如理できる能力。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 25,
+    "answerImageNumber": 66,
+    "questionAnchor": "Sheet1!A402",
+    "answerAnchor": "Sheet1!I274",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "ソフトウェア開発におけるコードの信頼性とは何を指すのでしょうか ?",
+    "choices": [
+      "タスクを並列化し、I/O操作を非同期的に実行することで、最新のCPUアーキテクチャを活用する。",
+      "特定の条件下で、一定期間にわたってソフトウェアが正しく動作する可能性。",
+      "プログラムまたはアプリケーションの効率性。",
+      "コードが大星のデータを如理できる能力。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "特定の条件下で、一定期間にわたってソフトウェアが正しく動作する可能性。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "指定条件下で長期に正しく機能することを信頼性と説明する。",
+      "sourceAnchor": "Sheet1!I274"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Reliability",
+      "Correctness"
+    ],
+    "concepts": [
+      "条件と期間に対する正しい動作"
+    ],
+    "featureOrBehavior": "品質属性",
+    "decisionKnowledge": "信頼性を性能・効率・処理量と区別",
+    "lessonIds": [
+      "lesson-d1-validation"
+    ],
+    "glossaryIds": [
+      "g-code-correctness"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 25,
+    "gapId": "G-RELIABILITY",
+    "coverageReason": "現行教材に信頼性を期間と条件で定義し、効率性と対比する説明がない。",
+    "officialExplanationSummary": "指定条件下で長期に正しく機能することを信頼性と説明する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-046",
+    "questionType": "single-select",
+    "questionTextOcr": "コードの信頼性を向上させる方法のーつは何ですか ?",
+    "choicesOcr": [
+      "目の前のタスクに合わせてアルゴリズムとデータタ構造を最適化することによって。",
+      "コード内の潜在的な問題を特定することで、パグやエラーの発生を防ぐ。",
+      "ディスクおよびネットワークIL/O操作を最小限に抑えるか、それらを非同期的に実行することによって実現します。",
+      "最新のプログラミング言語の機能と構文を使用することによって。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 26,
+    "answerImageNumber": 67,
+    "questionAnchor": "Sheet1!A418",
+    "answerAnchor": "Sheet1!I294",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "コードの信頼性を向上させる方法のーつは何ですか ?",
+    "choices": [
+      "目の前のタスクに合わせてアルゴリズムとデータタ構造を最適化することによって。",
+      "コード内の潜在的な問題を特定することで、パグやエラーの発生を防ぐ。",
+      "ディスクおよびネットワークIL/O操作を最小限に抑えるか、それらを非同期的に実行することによって実現します。",
+      "最新のプログラミング言語の機能と構文を使用することによって。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "コード内の潜在的な問題を特定することで、パグやエラーの発生を防ぐ。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "潜在する欠陥を見つけてバグ・エラーを防ぐ。",
+      "sourceAnchor": "Sheet1!I294"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Static Analysis",
+      "Reliability"
+    ],
+    "concepts": [
+      "欠陥予防と性能最適化の差"
+    ],
+    "featureOrBehavior": "コードレビュー・解析",
+    "decisionKnowledge": "バグの発見を、I/O最適化や新構文採用と区別",
+    "lessonIds": [
+      "lesson-d1-validation",
+      "lesson-d5-security-remediation"
+    ],
+    "glossaryIds": [
+      "g-critical-evaluation",
+      "g-static-analysis-copilot"
+    ],
+    "comparisonIds": [],
+    "coverage": "PARTIAL",
+    "coverageScore": 60,
+    "gapId": "G-RELIABILITY",
+    "coverageReason": "欠陥発見は扱うが信頼性と性能・速度の明確な比較がない。",
+    "officialExplanationSummary": "潜在する欠陥を見つけてバグ・エラーを防ぐ。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-047",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotを使用する際に、コードの品質基準を高く維持することにはどのような効果がありますか?",
+    "choicesOcr": [
+      "Copilotはあなたのコードに着目し、既存のパターンに沿った提案を生成します。",
+      "これはCopilotを混乱させ、無関係な提案につながります。",
+      "それは提寄プロセスを遅らせる。",
+      "これにより、Copilotは既存のコード構造を無視するようになります。"
+    ],
+    "correctAnswerPosition": 1,
+    "questionImageNumber": 27,
+    "answerImageNumber": 67,
+    "questionAnchor": "Sheet1!A434",
+    "answerAnchor": "Sheet1!I294",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o1",
+    "domainId": "d5",
+    "questionText": "GitHub Copilotを使用する際に、コードの品質基準を高く維持することにはどのような効果がありますか?",
+    "choices": [
+      "Copilotはあなたのコードに着目し、既存のパターンに沿った提案を生成します。",
+      "これはCopilotを混乱させ、無関係な提案につながります。",
+      "それは提寄プロセスを遅らせる。",
+      "これにより、Copilotは既存のコード構造を無視するようになります。"
+    ],
+    "correctAnswer": {
+      "position": 1,
+      "choiceTextOcr": "Copilotはあなたのコードに着目し、既存のパターンに沿った提案を生成します。"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "既存の良いコードパターンに沿った提案を得やすくなる。",
+      "sourceAnchor": "Sheet1!I294"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Enhance productivity and code quality",
+    "terms": [
+      "Inline Suggestions",
+      "Code Quality"
+    ],
+    "concepts": [
+      "既存パターンの影響"
+    ],
+    "featureOrBehavior": "文脈に沿うコード補完",
+    "decisionKnowledge": "品質基準の維持が一貫した提案につながることを選ぶ",
+    "lessonIds": [
+      "lesson-d2-inline-suggestions",
+      "lesson-d5-generation-refactoring"
+    ],
+    "glossaryIds": [
+      "g-context-gathering",
+      "g-code-refactoring"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "既存コードのパターンと補完の関係を学べる。",
+    "officialExplanationSummary": "既存の良いコードパターンに沿った提案を得やすくなる。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-048",
+    "questionType": "single-select",
+    "questionTextOcr": "コードの例外処理を改善して、より安全なものにするには、どのような方法がありますか?",
+    "choicesOcr": [
+      "例外処理で機密情報を開示する、一般的な例外のみを捕捉する、例外を無視する。",
+      "可能な限り具体的な例外を捕捉し、例外処理で機密情報を漏らさないようにし、倒外処理を無視しないようにしてくださ",
+      "話細なエラー情報を公開し、特定の例外のみを捕捉し、例外を再スローしない。",
+      "コードのすべての行にty-catchブロックを使用し、すべての例外を公開サーパーにログ配録する。"
+    ],
+    "correctAnswerPosition": 2,
+    "questionImageNumber": 28,
+    "answerImageNumber": 67,
+    "questionAnchor": "Sheet1!A451",
+    "answerAnchor": "Sheet1!I294",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d5o2",
+    "domainId": "d5",
+    "questionText": "コードの例外処理を改善して、より安全なものにするには、どのような方法がありますか?",
+    "choices": [
+      "例外処理で機密情報を開示する、一般的な例外のみを捕捉する、例外を無視する。",
+      "可能な限り具体的な例外を捕捉し、例外処理で機密情報を漏らさないようにし、倒外処理を無視しないようにしてくださ",
+      "話細なエラー情報を公開し、特定の例外のみを捕捉し、例外を再スローしない。",
+      "コードのすべての行にty-catchブロックを使用し、すべての例外を公開サーパーにログ配録する。"
+    ],
+    "correctAnswer": {
+      "position": 2,
+      "choiceTextOcr": "可能な限り具体的な例外を捕捉し、例外処理で機密情報を漏らさないようにし、倒外処理を無視しないようにしてくださ"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "具体的な例外を捕捉し、機密を漏らさず、例外を握り潰さない。",
+      "sourceAnchor": "Sheet1!I294"
+    },
+    "inferredDomain": "開発生産性を高める",
+    "inferredObjective": "Support testing and security",
+    "terms": [
+      "Exception Handling",
+      "Sensitive Data"
+    ],
+    "concepts": [
+      "具体的な例外捕捉",
+      "秘密の非開示",
+      "握り潰し回避"
+    ],
+    "featureOrBehavior": "生成コードの安全性",
+    "decisionKnowledge": "具体的捕捉を選び、機密露出や全例外の握り潰しを退ける",
+    "lessonIds": [
+      "lesson-d5-security-remediation",
+      "lesson-d1-validation"
+    ],
+    "glossaryIds": [
+      "g-code-correctness",
+      "g-security-vulnerability-scan"
+    ],
+    "comparisonIds": [],
+    "coverage": "MISSING",
+    "coverageScore": 25,
+    "gapId": "G-EXCEPTION",
+    "coverageReason": "検証・脆弱性の一般論はあるが、例外粒度、ログへの機密流出、再送出の使い分けを学べない。",
+    "officialExplanationSummary": "具体的な例外を捕捉し、機密を漏らさず、例外を握り潰さない。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-049",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotにおけるコンテンツブフィルタリングの主な目的は何ですか?",
+    "choicesOcr": [
+      "コード生成の速度と効率を優先する",
+      "最新のコーディングトレンドに治ったコードを提察する",
+      "不要な情報や古い情報を排除するため",
+      "悪意のあるコードや有害なコードの生成を防ぐため"
+    ],
+    "correctAnswerPosition": 4,
+    "questionImageNumber": 29,
+    "answerImageNumber": 68,
+    "questionAnchor": "Sheet1!A468",
+    "answerAnchor": "Sheet1!I314",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilotにおけるコンテンツブフィルタリングの主な目的は何ですか?",
+    "choices": [
+      "コード生成の速度と効率を優先する",
+      "最新のコーディングトレンドに治ったコードを提察する",
+      "不要な情報や古い情報を排除するため",
+      "悪意のあるコードや有害なコードの生成を防ぐため"
+    ],
+    "correctAnswer": {
+      "position": 4,
+      "choiceTextOcr": "悪意のあるコードや有害なコードの生成を防ぐため"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "悪意ある、または有害なコードの生成を抑える。",
+      "sourceAnchor": "Sheet1!I314"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Content Filtering",
+      "Post-processing"
+    ],
+    "concepts": [
+      "有害コードの抑制と生成後検査"
+    ],
+    "featureOrBehavior": "出力フィルタリング",
+    "decisionKnowledge": "有害コード対策を、最新性や生成速度の改善と区別",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow"
+    ],
+    "glossaryIds": [
+      "g-post-processing",
+      "g-knowledge-cutoff"
+    ],
+    "comparisonIds": [],
+    "coverage": "COVERED",
+    "coverageScore": 90,
+    "gapId": null,
+    "coverageReason": "後処理と有害性チェック、最新性限界の別を学べる。",
+    "officialExplanationSummary": "悪意ある、または有害なコードの生成を抑える。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  },
+  {
+    "practiceQuestionId": "PRACTICE-050",
+    "questionType": "single-select",
+    "questionTextOcr": "GitHub Copilotにおける有害性フィルターの主な目的は何ですか?",
+    "choicesOcr": [
+      "コードの提案が構文的に正しいことを確認するため",
+      "知的財産権を侵害するコードの生成を防止するため",
+      "コード候補から有害または不快なコンテンツを削除する",
+      "特定のコーディング標準に準拠したコードを提案する"
+    ],
+    "correctAnswerPosition": 3,
+    "questionImageNumber": 30,
+    "answerImageNumber": 68,
+    "questionAnchor": "Sheet1!A485",
+    "answerAnchor": "Sheet1!I314",
+    "ocrChoiceCount": 4,
+    "objectiveId": "d3o1",
+    "domainId": "d3",
+    "questionText": "GitHub Copilotにおける有害性フィルターの主な目的は何ですか?",
+    "choices": [
+      "コードの提案が構文的に正しいことを確認するため",
+      "知的財産権を侵害するコードの生成を防止するため",
+      "コード候補から有害または不快なコンテンツを削除する",
+      "特定のコーディング標準に準拠したコードを提案する"
+    ],
+    "correctAnswer": {
+      "position": 3,
+      "choiceTextOcr": "コード候補から有害または不快なコンテンツを削除する"
+    },
+    "officialExplanation": {
+      "kind": "reviewed-paraphrase",
+      "text": "有害または不快な提案内容を除外する。",
+      "sourceAnchor": "Sheet1!I314"
+    },
+    "inferredDomain": "データとアーキテクチャ",
+    "inferredObjective": "Describe data handling and flow",
+    "terms": [
+      "Toxicity Filter",
+      "Public Code Matching"
+    ],
+    "concepts": [
+      "有害・不快な内容と公開コード類似の別"
+    ],
+    "featureOrBehavior": "出力安全フィルター",
+    "decisionKnowledge": "有害性の除外を著作権照合や構文検査と区別",
+    "lessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d6-public-code-matching"
+    ],
+    "glossaryIds": [
+      "g-post-processing",
+      "g-public-code-matching"
+    ],
+    "comparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "coverage": "PARTIAL",
+    "coverageScore": 65,
+    "gapId": "G-FILTER-TYPES",
+    "coverageReason": "用語はあるが、有害性・公開コード一致・内容除外を一つの判断表で比較する教材がない。",
+    "officialExplanationSummary": "有害または不快な提案内容を除外する。",
+    "transcriptionNote": "問題文・選択肢は画像OCRの暫定転記。正解位置は解答画像で確認。解説要旨は画像に基づく要約で逐語転記ではない。"
+  }
+]
