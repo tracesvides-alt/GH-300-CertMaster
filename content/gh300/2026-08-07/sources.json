@@ -4,8 +4,8 @@
     "title": "GH-300 Study Guide",
     "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
     "publisher": "Microsoft Learn",
-    "sourceType": "official-guide",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "study-guide",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -22,15 +22,143 @@
       "d5o2",
       "d6o1",
       "d6o2"
-    ]
+    ],
+    "relatedLessonIds": [
+      "lesson-d1-principles",
+      "lesson-d1-risks",
+      "lesson-d1-validation",
+      "lesson-d1-security-review",
+      "lesson-d2-inline-suggestions",
+      "lesson-d2-chat-essentials",
+      "lesson-d2-cli",
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp",
+      "lesson-d2-instructions-prompts",
+      "lesson-d2-pr-code-review",
+      "lesson-d2-org-governance",
+      "lesson-d3-data-flow",
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-retention-privacy",
+      "lesson-d3-lifecycle-limits",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning",
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-ownership-privacy",
+      "lesson-d6-public-code-matching",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "relatedGlossaryIds": [
+      "g-generative-ai",
+      "g-responsible-ai",
+      "g-code-accountability",
+      "g-inline-suggestions",
+      "g-completions-panel",
+      "g-copilot-chat",
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-status-menu",
+      "g-copilot-cli",
+      "g-agent-mode",
+      "g-mcp",
+      "g-copilot-code-review",
+      "g-pr-summaries",
+      "g-custom-instructions",
+      "g-spaces",
+      "g-spark",
+      "g-copilot-extensions",
+      "g-org-policies",
+      "g-subscription-plans",
+      "g-usage-metrics-api",
+      "g-policy-inheritance",
+      "g-data-flow",
+      "g-prompt-construction",
+      "g-code-retention-policy",
+      "g-suggestion-lifecycle",
+      "g-context-scope-limits",
+      "g-prompt-engineering",
+      "g-zero-shot",
+      "g-few-shot",
+      "g-prompt-anatomy",
+      "g-context-priming",
+      "g-iterative-refinement",
+      "g-thread-reset",
+      "g-task-decomposition",
+      "g-code-generation",
+      "g-code-refactoring",
+      "g-doc-generation",
+      "g-legacy-modernization",
+      "g-code-explanation",
+      "g-boilerplate-reduction",
+      "g-unit-test-generation",
+      "g-edge-case-discovery",
+      "g-vulnerability-remediation",
+      "g-content-exclusion",
+      "g-output-ownership",
+      "g-enterprise-data-privacy",
+      "g-public-code-matching",
+      "g-exclusion-propagation",
+      "g-exclusion-limitations",
+      "g-compliance-auditability"
+    ],
+    "relatedComparisonIds": [
+      "cmp-chat-vs-inline",
+      "cmp-agent-vs-edits",
+      "cmp-agent-vs-chat",
+      "cmp-mcp-vs-extensions",
+      "cmp-instructions-vs-prompts",
+      "cmp-spaces-vs-chat",
+      "cmp-sessions-vs-subagents",
+      "cmp-review-vs-summary",
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-zero-vs-few-shot",
+      "cmp-unit-vs-integration-tests",
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-f01",
+      "q-d1-f03",
+      "q-d2-f01",
+      "q-d2-f02",
+      "q-d2-f04",
+      "q-d2-f05",
+      "q-d2-f06",
+      "q-d2-f08",
+      "q-d2-f09",
+      "q-d2-f10",
+      "q-d2-f11",
+      "q-d3-f01",
+      "q-d3-f02",
+      "q-d4-f01",
+      "q-d4-f02",
+      "q-d5-f01",
+      "q-d5-f02",
+      "q-d5-f02-b",
+      "q-d5-f04",
+      "q-d5-f05"
+    ],
+    "relatedDomainIds": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6"
+    ],
+    "lastVerifiedAt": "2026-10-12"
   },
   {
     "id": "responsible",
-    "title": "Responsible use: inline suggestions",
+    "title": "Application card: GitHub Copilot inline suggestions",
     "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -38,15 +166,101 @@
       "d6o1",
       "d6o2",
       "d2o1"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d1-principles",
+      "lesson-d1-risks",
+      "lesson-d1-validation",
+      "lesson-d1-security-review",
+      "lesson-d2-inline-suggestions",
+      "lesson-d3-data-flow"
+    ],
+    "relatedGlossaryIds": [
+      "g-generative-ai",
+      "g-hallucination",
+      "g-responsible-ai",
+      "g-ai-bias",
+      "g-transparency",
+      "g-code-accountability",
+      "g-verification-validation",
+      "g-automation-bias",
+      "g-critical-evaluation",
+      "g-security-vulnerability-scan",
+      "g-peer-review-ai",
+      "g-inline-suggestions",
+      "g-ghost-text",
+      "g-completions-panel",
+      "g-cli-execution-confirm",
+      "g-data-flow",
+      "g-copilot-proxy",
+      "g-code-generation",
+      "g-static-analysis-copilot"
+    ],
+    "relatedComparisonIds": [
+      "cmp-chat-vs-inline"
+    ],
+    "relatedQuestionIds": [
+      "q01",
+      "q02",
+      "q03",
+      "q-d1-f01",
+      "q-d1-f02",
+      "q-d1-f03",
+      "q-d1-f04",
+      "q-d1-f05",
+      "q-d1-a01",
+      "q-d1-a02",
+      "q-d1-a03",
+      "q-d1-a04",
+      "q-d1-a05",
+      "q-d1-a06",
+      "q-d1-a07",
+      "q-d1-a09",
+      "q-d1-a10",
+      "q-d1-e01",
+      "q-d1-e02",
+      "q-d1-e03",
+      "q-d1-e04",
+      "q-d1-e05",
+      "q-d1-e06",
+      "q-d1-e07",
+      "q-d1-e08",
+      "q-d2-a04",
+      "q-d2-a11",
+      "q-d2-e06",
+      "q-d2-e14",
+      "q-d4-f04",
+      "q-d5-a03",
+      "q-d5-a05",
+      "q-d5-a09",
+      "q-d5-e02",
+      "q-d5-e04",
+      "q-d5-e05",
+      "q-d6-a03",
+      "q-d6-a04",
+      "q-d6-e03",
+      "q-sc02-2",
+      "q-sc03-2",
+      "q-sc04-2",
+      "q-sc05-1",
+      "q-sc05-2",
+      "q-sc05-3",
+      "q-sc09-3"
+    ],
+    "relatedDomainIds": [
+      "d1",
+      "d6",
+      "d2"
     ]
   },
   {
     "id": "chat",
-    "title": "Responsible use: Copilot Chat",
-    "url": "https://docs.github.com/copilot/responsible-use/chat-in-github",
+    "title": "Application card: GitHub Copilot Chat",
+    "url": "https://docs.github.com/en/copilot/responsible-use/chat",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
@@ -55,19 +269,166 @@
       "d2o4",
       "d3o1",
       "d3o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-chat-essentials",
+      "lesson-d2-agent-edits",
+      "lesson-d4-refinement",
+      "lesson-d5-generation-refactoring",
+      "lesson-d5-legacy-modernization",
+      "lesson-d5-security-remediation"
+    ],
+    "relatedGlossaryIds": [
+      "g-hallucination",
+      "g-copilot-chat",
+      "g-inline-chat",
+      "g-chat-participants",
+      "g-slash-commands",
+      "g-chat-variables",
+      "g-agent-mode",
+      "g-copilot-edits",
+      "g-copilot-extensions",
+      "g-thread-reset",
+      "g-code-refactoring",
+      "g-doc-generation",
+      "g-legacy-modernization",
+      "g-code-translation",
+      "g-code-explanation",
+      "g-algorithm-optimization",
+      "g-vulnerability-remediation",
+      "g-perf-bottlenecks"
+    ],
+    "relatedComparisonIds": [
+      "cmp-chat-vs-inline",
+      "cmp-agent-vs-edits",
+      "cmp-agent-vs-chat",
+      "cmp-mcp-vs-extensions",
+      "cmp-spaces-vs-chat"
+    ],
+    "relatedQuestionIds": [
+      "q04",
+      "q05",
+      "q06",
+      "q-d2-f01",
+      "q-d2-f02",
+      "q-d2-f03",
+      "q-d2-a14",
+      "q-d3-a06",
+      "q-d3-a08",
+      "q-d3-e01",
+      "q-d4-f03",
+      "q-d4-f05",
+      "q-d5-f01",
+      "q-sc03-3"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d3"
     ]
   },
   {
     "id": "prompt",
-    "title": "Prompt engineering for GitHub Copilot",
+    "title": "Prompt engineering for GitHub Copilot Chat",
     "url": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d4o1",
       "d4o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d4-crafting",
+      "lesson-d4-zero-few-shot",
+      "lesson-d4-refinement",
+      "lesson-d4-decomposition-pruning"
+    ],
+    "relatedGlossaryIds": [
+      "g-custom-instructions",
+      "g-context-gathering",
+      "g-context-window",
+      "g-knowledge-cutoff",
+      "g-prompt-engineering",
+      "g-zero-shot",
+      "g-few-shot",
+      "g-system-prompt",
+      "g-prompt-anatomy",
+      "g-role-prompting",
+      "g-step-by-step",
+      "g-context-priming",
+      "g-iterative-refinement",
+      "g-thread-reset",
+      "g-task-decomposition",
+      "g-context-pruning",
+      "g-negative-prompting",
+      "g-output-specification"
+    ],
+    "relatedComparisonIds": [
+      "cmp-zero-vs-few-shot"
+    ],
+    "relatedQuestionIds": [
+      "q04",
+      "q07",
+      "q08",
+      "q-d2-a02",
+      "q-d2-a15",
+      "q-d2-a16",
+      "q-d2-a19",
+      "q-d2-a21",
+      "q-d2-e09",
+      "q-d2-e15",
+      "q-d2-e16",
+      "q-d3-f05",
+      "q-d3-a01",
+      "q-d3-a02",
+      "q-d3-a04",
+      "q-d3-a06",
+      "q-d3-a07",
+      "q-d3-a08",
+      "q-d3-a10",
+      "q-d3-e01",
+      "q-d3-e03",
+      "q-d3-e05",
+      "q-d4-f01",
+      "q-d4-f02",
+      "q-d4-f03",
+      "q-d4-f04",
+      "q-d4-f05",
+      "q-d4-a01",
+      "q-d4-a02",
+      "q-d4-a03",
+      "q-d4-a04",
+      "q-d4-a05",
+      "q-d4-a07",
+      "q-d4-a08",
+      "q-d4-a09",
+      "q-d4-a10",
+      "q-d4-a11",
+      "q-d4-e01",
+      "q-d4-e02",
+      "q-d4-e03",
+      "q-d4-e04",
+      "q-d4-e05",
+      "q-d5-a02",
+      "q-d5-a04",
+      "q-d5-a05",
+      "q-d5-a07",
+      "q-d5-a10",
+      "q-d5-a11",
+      "q-sc02-1",
+      "q-sc02-3",
+      "q-sc03-3",
+      "q-sc08-2",
+      "q-sc08-3"
+    ],
+    "relatedDomainIds": [
+      "d4"
     ]
   },
   {
@@ -75,12 +436,76 @@
     "title": "Writing tests with GitHub Copilot",
     "url": "https://docs.github.com/en/copilot/tutorials/write-tests",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "tutorial",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o1",
       "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d1-validation",
+      "lesson-d5-testing",
+      "lesson-d5-security-remediation"
+    ],
+    "relatedGlossaryIds": [
+      "g-verification-validation",
+      "g-code-correctness",
+      "g-unit-test-generation",
+      "g-integration-test-generation",
+      "g-edge-case-discovery",
+      "g-test-assertions-mocking",
+      "g-vulnerability-remediation",
+      "g-static-analysis-copilot"
+    ],
+    "relatedComparisonIds": [
+      "cmp-unit-vs-integration-tests"
+    ],
+    "relatedQuestionIds": [
+      "q01",
+      "q09",
+      "q10",
+      "q-d1-a01",
+      "q-d1-a02",
+      "q-d1-a04",
+      "q-d1-a06",
+      "q-d1-a08",
+      "q-d1-a09",
+      "q-d1-a10",
+      "q-d1-e01",
+      "q-d1-e02",
+      "q-d1-e03",
+      "q-d1-e05",
+      "q-d1-e07",
+      "q-d2-f03",
+      "q-d2-a06",
+      "q-d2-e10",
+      "q-d3-e03",
+      "q-d4-a07",
+      "q-d4-e01",
+      "q-d4-e05",
+      "q-d5-f02",
+      "q-d5-f05",
+      "q-d5-a01",
+      "q-d5-a02",
+      "q-d5-a06",
+      "q-d5-a07",
+      "q-d5-a08",
+      "q-d5-a10",
+      "q-d5-e01",
+      "q-d5-e03",
+      "q-d5-e04",
+      "q-d5-e05",
+      "q-sc02-1",
+      "q-sc02-2",
+      "q-sc02-3",
+      "q-sc05-1",
+      "q-sc05-2"
+    ],
+    "relatedDomainIds": [
+      "d5"
     ]
   },
   {
@@ -88,180 +513,622 @@
     "title": "Excluding content from GitHub Copilot",
     "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d6o1",
       "d6o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "relatedGlossaryIds": [
+      "g-ip-copyright",
+      "g-status-menu",
+      "g-cli-context-limits",
+      "g-secret-leak-prevention",
+      "g-content-exclusion",
+      "g-repo-content-exclusion",
+      "g-org-content-exclusion",
+      "g-exclusion-syntax",
+      "g-exclusion-propagation",
+      "g-client-exclusion-check",
+      "g-exclusion-limitations"
+    ],
+    "relatedComparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "relatedQuestionIds": [
+      "q11",
+      "q12",
+      "q-d1-e04",
+      "q-d6-f02",
+      "q-d6-a01",
+      "q-d6-a08",
+      "q-d6-a10",
+      "q-d6-e01",
+      "q-sc01-2"
+    ],
+    "relatedDomainIds": [
+      "d6"
     ]
   },
   {
     "id": "cli",
-    "title": "Using GitHub Copilot in the CLI",
-    "url": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-cli",
+    "title": "Getting started with GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli",
+      "lesson-d6-troubleshooting-limits"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-cli",
+      "g-gh-copilot-explain",
+      "g-gh-copilot-suggest",
+      "g-cli-shell-aliases",
+      "g-cli-execution-confirm",
+      "g-cli-context-limits",
+      "g-exclusion-limitations"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-f11"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "agent-mode",
-    "title": "Using GitHub Copilot Agent Mode in VS Code",
-    "url": "https://code.visualstudio.com/docs/copilot/copilot-chat#_agent-mode",
-    "publisher": "VS Code Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "title": "Using agent mode in your IDE",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
       "d2o3"
-    ]
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-agent-edits",
+      "lesson-d2-mcp"
+    ],
+    "relatedGlossaryIds": [
+      "g-agent-mode",
+      "g-copilot-edits",
+      "g-mcp",
+      "g-agent-sessions",
+      "g-sub-agents"
+    ],
+    "relatedComparisonIds": [
+      "cmp-agent-vs-edits",
+      "cmp-agent-vs-chat",
+      "cmp-sessions-vs-subagents"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-a07",
+      "q-d2-f04",
+      "q-d2-f05",
+      "q-d2-a01",
+      "q-d2-a03",
+      "q-d2-a04",
+      "q-d2-a05",
+      "q-d2-a06",
+      "q-d2-a14",
+      "q-d2-a15",
+      "q-d2-a16",
+      "q-d2-a18",
+      "q-d2-e01",
+      "q-d2-e05",
+      "q-d2-e06",
+      "q-d2-e10",
+      "q-d2-e11",
+      "q-d2-e14",
+      "q-d2-e17",
+      "q-d2-e18",
+      "q-sc04-1"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "lastVerifiedAt": "2026-10-12",
+    "status": "verified"
   },
   {
     "id": "mcp",
-    "title": "Using Model Context Protocol with GitHub Copilot",
-    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
+    "title": "About Model Context Protocol (MCP)",
+    "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-mcp"
+    ],
+    "relatedGlossaryIds": [
+      "g-mcp",
+      "g-mcp-server",
+      "g-mcp-client",
+      "g-mcp-tools"
+    ],
+    "relatedComparisonIds": [
+      "cmp-mcp-vs-extensions"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-f06",
+      "q-d2-f07",
+      "q-d2-a07",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e04",
+      "q-d2-e07",
+      "q-sc03-1",
+      "q-sc07-1"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "instructions",
-    "title": "Adding custom instructions for GitHub Copilot",
-    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
+    "title": "About customizing GitHub Copilot responses",
+    "url": "https://docs.github.com/en/copilot/concepts/prompting/response-customization",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
       "d4o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-instructions-prompts"
+    ],
+    "relatedGlossaryIds": [
+      "g-custom-instructions",
+      "g-scoped-instructions",
+      "g-prompt-files",
+      "g-system-prompt"
+    ],
+    "relatedComparisonIds": [
+      "cmp-instructions-vs-prompts"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-f08",
+      "q-d2-a05",
+      "q-d2-a07",
+      "q-d2-a09",
+      "q-d2-a10",
+      "q-d2-a19",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e03",
+      "q-d2-e04",
+      "q-d2-e07",
+      "q-d2-e08",
+      "q-d2-e12",
+      "q-d2-e16",
+      "q-d4-e03",
+      "q-sc03-1",
+      "q-sc06-1",
+      "q-sc06-2",
+      "q-sc06-3",
+      "q-sc07-1"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d4"
     ]
   },
   {
     "id": "prompt-files",
-    "title": "Creating reusable prompt files for Copilot",
-    "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
+    "title": "Adding repository custom instructions for GitHub Copilot in your IDE",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
       "d4o1",
       "d4o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-instructions-prompts"
+    ],
+    "relatedGlossaryIds": [
+      "g-prompt-files"
+    ],
+    "relatedComparisonIds": [
+      "cmp-instructions-vs-prompts"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-f09",
+      "q-d2-a05",
+      "q-d2-a07",
+      "q-d2-a09",
+      "q-d2-a10",
+      "q-d2-a19",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e03",
+      "q-d2-e04",
+      "q-d2-e07",
+      "q-d2-e08",
+      "q-d2-e12",
+      "q-d2-e16",
+      "q-d4-e03",
+      "q-sc03-1",
+      "q-sc06-1",
+      "q-sc06-2",
+      "q-sc06-3",
+      "q-sc07-1"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d4"
     ]
   },
   {
     "id": "spaces",
     "title": "About GitHub Copilot Spaces",
-    "url": "https://docs.github.com/en/copilot/how-tos/provide-context/use-copilot-spaces/use-copilot-spaces",
+    "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [
+      "g-spaces"
+    ],
+    "relatedComparisonIds": [
+      "cmp-spaces-vs-chat"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-f10",
+      "q-d2-a07",
+      "q-d2-a09",
+      "q-d2-a10",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e03",
+      "q-d2-e04",
+      "q-d2-e07",
+      "q-d2-e12",
+      "q-sc03-1",
+      "q-sc06-1",
+      "q-sc06-2",
+      "q-sc07-1"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "spark",
-    "title": "GitHub Spark overview and micro-app creation",
-    "url": "https://github.blog/news-insights/product-news/introducing-github-spark/",
+    "title": "Upcoming deprecation of GitHub Spark on github.com",
+    "url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/",
     "publisher": "GitHub Blog",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "reference",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [
+      "g-spark"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "code-review",
-    "title": "Using GitHub Copilot Code Review in Pull Requests",
-    "url": "https://docs.github.com/en/copilot/using-github-copilot/code-review-with-copilot",
+    "title": "About GitHub Copilot code review",
+    "url": "https://docs.github.com/en/copilot/concepts/agents/code-review",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
       "d2o4",
       "d5o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d1-security-review",
+      "lesson-d2-pr-code-review"
+    ],
+    "relatedGlossaryIds": [
+      "g-peer-review-ai",
+      "g-copilot-code-review",
+      "g-pr-summaries",
+      "g-code-review-policies"
+    ],
+    "relatedComparisonIds": [
+      "cmp-review-vs-summary"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-a11",
+      "q-d2-e01",
+      "q-d2-e18",
+      "q-d5-f02-b",
+      "q-d5-f04",
+      "q-d5-a09",
+      "q-d5-e02",
+      "q-sc04-1",
+      "q-sc04-2",
+      "q-sc04-3"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d5"
     ]
   },
   {
     "id": "policies",
-    "title": "Managing policies for Copilot in your organization",
-    "url": "https://docs.github.com/en/copilot/managing-copilot/managing-policies-for-copilot-in-your-organization",
+    "title": "Managing policies and features for GitHub Copilot in your organization",
+    "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
       "d6o1",
       "d6o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-pr-code-review",
+      "lesson-d2-org-governance",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d6-public-code-matching"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-code-review",
+      "g-org-policies",
+      "g-enterprise-policies",
+      "g-seat-management",
+      "g-subscription-plans",
+      "g-audit-logs",
+      "g-code-review-policies",
+      "g-policy-inheritance",
+      "g-content-exclusion",
+      "g-repo-content-exclusion",
+      "g-org-content-exclusion",
+      "g-public-code-matching",
+      "g-public-code-log",
+      "g-compliance-auditability"
+    ],
+    "relatedComparisonIds": [
+      "cmp-exclusion-vs-publicmatch",
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-a05",
+      "q-d1-e06",
+      "q-d3-f04",
+      "q-d3-e04",
+      "q-d6-f01",
+      "q-d6-f02",
+      "q-d6-f03",
+      "q-d6-f04",
+      "q-d6-a05",
+      "q-d6-a06",
+      "q-sc01-3",
+      "q-sc07-2"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d6"
     ]
   },
   {
     "id": "audit-log",
-    "title": "Reviewing audit logs for GitHub Copilot",
-    "url": "https://docs.github.com/en/copilot/managing-copilot/reviewing-audit-logs-for-copilot",
+    "title": "Reviewing the audit log for your organization",
+    "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-audit-logs"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f04",
+      "q-d6-f05",
+      "q-d6-e02",
+      "q-sc07-3"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "rest-api",
-    "title": "GitHub Copilot user management and metrics REST API",
+    "title": "REST API endpoints for Copilot",
     "url": "https://docs.github.com/en/rest/copilot",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-seat-management",
+      "g-usage-metrics-api"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f05",
+      "q-d6-a05",
+      "q-d6-a09",
+      "q-d6-e02",
+      "q-d6-e05",
+      "q-sc07-3",
+      "q-sc09-2"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "privacy",
-    "title": "GitHub Copilot Trust Center & Privacy Statement",
-    "url": "https://docs.github.com/en/enterprise-cloud%40latest/copilot/reference/ai-models/model-hosting",
-    "publisher": "GitHub Trust Center",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "title": "Resources for getting approval of GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
       "d3o2",
       "d6o1",
       "d6o2"
+    ],
+    "status": "needs-review",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d1-risks",
+      "lesson-d1-security-review",
+      "lesson-d5-security-remediation",
+      "lesson-d6-ownership-privacy"
+    ],
+    "relatedGlossaryIds": [
+      "g-ip-copyright",
+      "g-security-vulnerability-scan",
+      "g-subscription-plans",
+      "g-data-flow",
+      "g-copilot-proxy",
+      "g-telemetry-data",
+      "g-code-retention-policy",
+      "g-post-processing",
+      "g-transit-encryption",
+      "g-secret-leak-prevention",
+      "g-output-ownership",
+      "g-enterprise-data-privacy",
+      "g-public-code-matching",
+      "g-public-code-log",
+      "g-compliance-auditability"
+    ],
+    "relatedComparisonIds": [
+      "cmp-exclusion-vs-publicmatch"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-f05",
+      "q-d3-f03",
+      "q-d6-f01",
+      "q-d6-f03",
+      "q-d6-a07",
+      "q-d6-e04",
+      "q-sc10-3"
+    ],
+    "relatedDomainIds": [
+      "d3",
+      "d6"
     ]
   },
   {
     "id": "architecture",
-    "title": "GitHub Copilot Architecture, Context, and LLM Lifecycle",
-    "url": "https://docs.github.com/en/copilot/about-github-copilot/how-github-copilot-works",
+    "title": "About GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/get-started/about-github-copilot",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-06",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
       "d3o2"
+    ],
+    "status": "needs-review",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-lifecycle-limits"
+    ],
+    "relatedGlossaryIds": [
+      "g-transparency",
+      "g-nondeterminism",
+      "g-data-flow",
+      "g-context-gathering",
+      "g-prompt-construction",
+      "g-copilot-proxy",
+      "g-telemetry-data",
+      "g-tokenization",
+      "g-post-processing",
+      "g-transit-encryption",
+      "g-suggestion-lifecycle",
+      "g-context-window",
+      "g-latency-tradeoff",
+      "g-temperature-determinism",
+      "g-knowledge-cutoff",
+      "g-context-scope-limits",
+      "g-context-priming",
+      "g-context-pruning"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-f07",
+      "q-d3-f01",
+      "q-d3-f02",
+      "q-d3-f03",
+      "q-d3-f04",
+      "q-d3-f05"
+    ],
+    "relatedDomainIds": [
+      "d3"
     ]
   },
   {
@@ -269,38 +1136,77 @@
     "title": "MCP configuration reference",
     "url": "https://code.visualstudio.com/docs/agents/reference/mcp-configuration",
     "publisher": "VS Code Docs",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
       "d2o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a08",
+      "q-sc03-2"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
     "id": "mcp-spec",
-    "title": "MCP server tools specification",
+    "title": "Tools",
     "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
     "publisher": "Model Context Protocol",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
       "d6o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a17",
+      "q-d2-a18",
+      "q-d2-e11",
+      "q-d2-e15",
+      "q-d2-e19",
+      "q-sc07-2"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d6"
     ]
   },
   {
     "id": "inline-usage",
-    "title": "Getting code suggestions in your IDE",
-    "url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/get-ide-code-suggestions",
+    "title": "Getting code suggestions in your IDE with GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/get-ide-code-suggestions",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
       "d3o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a12",
+      "q-d2-a13",
+      "q-d3-a02"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d3"
     ]
   },
   {
@@ -308,11 +1214,27 @@
     "title": "Use GitHub Copilot CLI",
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-cli"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a22",
+      "q-d2-e13"
+    ],
+    "relatedDomainIds": [
+      "d2"
     ]
   },
   {
@@ -320,53 +1242,127 @@
     "title": "Troubleshooting network errors for GitHub Copilot",
     "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o2"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-a03",
+      "q-d3-a05",
+      "q-d3-a09",
+      "q-d3-e02"
+    ],
+    "relatedDomainIds": [
+      "d3"
     ]
   },
   {
     "id": "exclusion-concept",
-    "title": "Content exclusion: supported surfaces and limitations",
-    "url": "https://docs.github.com/en/copilot/concepts/context/content-exclusion",
+    "title": "Content exclusion for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o2",
       "d6o1",
       "d6o2",
       "d1o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d3-data-flow"
+    ],
+    "relatedGlossaryIds": [
+      "g-exclusion-limitations"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-e04",
+      "q-d6-a01",
+      "q-d6-a02",
+      "q-d6-a03",
+      "q-d6-a04",
+      "q-d6-a10",
+      "q-d6-e01",
+      "q-sc01-1",
+      "q-sc01-2",
+      "q-sc05-3",
+      "q-sc10-1"
+    ],
+    "relatedDomainIds": [
+      "d3",
+      "d6",
+      "d1"
     ]
   },
   {
     "id": "public-code",
-    "title": "GitHub Copilot code referencing",
-    "url": "https://docs.github.com/en/copilot/concepts/completions/code-referencing",
+    "title": "Finding public code that matches GitHub Copilot suggestions",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d6o1",
       "d1o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [
+      "lesson-d6-public-code-matching"
+    ],
+    "relatedGlossaryIds": [
+      "g-public-code-matching"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f01",
+      "q-d6-a02",
+      "q-d6-a04",
+      "q-d6-e03",
+      "q-sc01-1",
+      "q-sc10-1",
+      "q-sc10-2"
+    ],
+    "relatedDomainIds": [
+      "d6",
+      "d1"
     ]
   },
   {
     "id": "workspace-context",
-    "title": "Workspace context in VS Code",
+    "title": "Workspace context",
     "url": "https://code.visualstudio.com/docs/agents/reference/workspace-context",
     "publisher": "VS Code Docs",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d4o2",
       "d3o1",
       "d3o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-a06",
+      "q-sc08-1",
+      "q-sc08-2"
+    ],
+    "relatedDomainIds": [
+      "d4",
+      "d3"
     ]
   },
   {
@@ -374,11 +1370,20 @@
     "title": "Server-sent events",
     "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
     "publisher": "MDN",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-a11"
+    ],
+    "relatedDomainIds": [
+      "d3"
     ]
   },
   {
@@ -386,11 +1391,20 @@
     "title": "Vitest fake timers",
     "url": "https://vitest.dev/guide/mocking/timers",
     "publisher": "Vitest",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d5-e01"
+    ],
+    "relatedDomainIds": [
+      "d5"
     ]
   },
   {
@@ -398,37 +1412,75 @@
     "title": "fast-check property based testing",
     "url": "https://fast-check.dev/docs/introduction/",
     "publisher": "fast-check",
-    "sourceType": "official-docs",
+    "sourceType": "documentation",
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d5-e03"
+    ],
+    "relatedDomainIds": [
+      "d5"
     ]
   },
   {
     "id": "secret-scanning",
-    "title": "About push protection",
-    "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection",
+    "title": "Push protection",
+    "url": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d6o1",
       "d6o2",
       "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-a02",
+      "q-d6-a03",
+      "q-sc01-1",
+      "q-sc04-3",
+      "q-sc05-3",
+      "q-sc10-1"
+    ],
+    "relatedDomainIds": [
+      "d6",
+      "d5"
     ]
   },
   {
     "id": "codeql",
-    "title": "About code scanning with CodeQL",
-    "url": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql",
+    "title": "Code scanning with CodeQL",
+    "url": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning",
     "publisher": "GitHub Docs",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o2"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-12",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc04-3",
+      "q-sc10-2"
+    ],
+    "relatedDomainIds": [
+      "d5"
     ]
   },
   {
@@ -436,12 +1488,136 @@
     "title": "Measuring enterprise developer productivity",
     "url": "https://github.blog/enterprise-software/devops/measuring-enterprise-developer-productivity/",
     "publisher": "GitHub Blog",
-    "sourceType": "official-docs",
-    "lastCheckedAt": "2026-09-07",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o1",
       "d1o1"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc09-1",
+      "q-sc09-3"
+    ],
+    "relatedDomainIds": [
+      "d5",
+      "d1"
+    ]
+  },
+  {
+    "id": "plans",
+    "title": "Plans for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/get-started/plans",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o1",
+      "d2o4",
+      "d6o1"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [
+      "g-subscription-plans"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2",
+      "d6"
+    ]
+  },
+  {
+    "id": "feature-matrix",
+    "title": "Copilot feature matrix",
+    "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d2o1",
+      "d2o3",
+      "d2o4"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [
+      "g-subscription-plans"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ]
+  },
+  {
+    "id": "model-hosting",
+    "title": "Hosting of models for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/reference/ai-models/model-hosting",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d3o2",
+      "d6o2"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d3-data-flow",
+      "lesson-d3-retention-privacy",
+      "lesson-d6-ownership-privacy"
+    ],
+    "relatedGlossaryIds": [
+      "g-data-flow",
+      "g-copilot-proxy",
+      "g-code-retention-policy",
+      "g-enterprise-data-privacy"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d3",
+      "d6"
+    ]
+  },
+  {
+    "id": "privacy-training",
+    "title": "Managing GitHub Copilot policies as an individual subscriber",
+    "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-12",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d6o1",
+      "d6o2"
+    ],
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d3-retention-privacy",
+      "lesson-d6-ownership-privacy"
+    ],
+    "relatedGlossaryIds": [
+      "g-code-retention-policy",
+      "g-enterprise-data-privacy"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d6"
     ]
   }
 ]

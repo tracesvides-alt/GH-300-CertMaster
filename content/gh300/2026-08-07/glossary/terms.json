@@ -1233,8 +1233,8 @@
       "gh copilot",
       "Copilot CLI"
     ],
-    "shortDefinition": "ターミナル環境で自然言語を用いてシェルコマンドやGit操作の提案・説明を受けられるGitHub CLI拡張機能。",
-    "detailedDefinition": "`gh extension install github/gh-copilot` で導入されるツール。ターミナル上で `gh copilot explain` や `gh copilot suggest` を実行することで、複雑なコマンドライン構文やシェルスクリプトの作成・解説を対話形式で支援する。",
+    "shortDefinition": "現行のGitHub Copilot CLIは、ターミナルで対話し、コード調査・編集やコマンド実行を支援するエージェント型ツール。",
+    "detailedDefinition": "現行CLIは @github/copilot パッケージなどで導入し、copilot コマンドで起動する。初回認証や作業ディレクトリへの信頼確認を行う。旧 gh copilot 拡張の explain/suggest とは区別する。",
     "category": "Copilot機能",
     "importance": "essential",
     "domainIds": [
@@ -1250,9 +1250,9 @@
       "スクリプト実行前の挙動確認"
     ],
     "examPoints": [
-      "GitHub CLI (`gh`) の拡張機能として動作する",
-      "`explain` と `suggest` の2大主要サブコマンドがある",
-      "Content ExclusionはCLIではサポートされていない（重要）"
+      "現行CLIは copilot で起動する",
+      "コマンドとファイル変更の許可を確認する",
+      "Content ExclusionはCopilot CLIでサポートされない"
     ],
     "commonConfusions": [
       "IDE内ターミナルの `@terminal` と、スタンドアロンの `gh copilot` コマンドの混同"
@@ -1270,10 +1270,11 @@
     "questionIds": [],
     "sourceIds": [
       "cli",
-      "guide"
+      "guide",
+      "cli-current"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1284,25 +1285,24 @@
       "コマンド解説",
       "copilot explain"
     ],
-    "shortDefinition": "指定したシェルコマンドやフラグの意味・動作を自然言語で詳細に解説させるCopilot CLIコマンド。",
-    "detailedDefinition": "構文: `gh copilot explain \"<コマンド文字列>\"`。難解なパイプラインや普段使わないオプションの意味を段階的に分解して説明してくれるため、見慣れないスクリプトを実行する前の安全確認に利用される。",
+    "shortDefinition": "旧GitHub CLI拡張 gh copilot の explain サブコマンド。現行Copilot CLIの標準コマンドではない。",
+    "detailedDefinition": "旧拡張の歴史的なコマンドとして扱う。2026年の現行GitHub Copilot CLIは copilot で開始し、対話で質問や作業を依頼する。試験資料が旧拡張を前提にする場合は人間による確認が必要。",
     "category": "Copilot機能",
-    "importance": "essential",
+    "importance": "supplementary",
     "domainIds": [
       "d2"
     ],
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "`suggest` との使い分けが試験で直接問われる中核コマンド。",
+    "whyItMatters": "旧拡張と現行CLIの混同を避けるために残す用語。",
     "useCases": [
       "`gh copilot explain \"iptables -L -n -v\"` でファイアウォール設定の意味を理解",
       "`git log --graph --oneline --all` のフラグ確認"
     ],
     "examPoints": [
-      "目的は『既存コマンドの理解・説明』であること",
-      "実行は行わず説明のみを出力する",
-      "ダブルクォートでコマンドを囲むのが基本"
+      "現行CLIの起動コマンドは copilot",
+      "旧 gh copilot 拡張の仕様は現行CLIへそのまま適用しない"
     ],
     "commonConfusions": [
       "新しくコマンドを作らせる `suggest` との混同"
@@ -1321,7 +1321,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-gh-copilot-suggest",
@@ -1331,25 +1331,24 @@
       "コマンド提案",
       "copilot suggest"
     ],
-    "shortDefinition": "やりたい作業を自然言語で入力し、適切なシェルコマンドやGitコマンドを提案させるCopilot CLIコマンド。",
-    "detailedDefinition": "構文: `gh copilot suggest \"<やりたいこと>\"`。コマンドの種類として `generic shell command`, `gh command`, `git command` のいずれの対象かを対話型で選択でき、生成されたコマンドを実行、クリップボードにコピー、または再修正できる。",
+    "shortDefinition": "旧GitHub CLI拡張 gh copilot の suggest サブコマンド。現行Copilot CLIの標準コマンドではない。",
+    "detailedDefinition": "旧拡張の歴史的なコマンドとして扱う。2026年の現行GitHub Copilot CLIは copilot で開始し、対話で質問や作業を依頼する。試験資料が旧拡張を前提にする場合は人間による確認が必要。",
     "category": "Copilot機能",
-    "importance": "essential",
+    "importance": "supplementary",
     "domainIds": [
       "d2"
     ],
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "CLI上で自然言語からコマンドを生成する主力機能であり、オプション選択ワークフローが出題対象。",
+    "whyItMatters": "旧拡張と現行CLIの混同を避けるために残す用語。",
     "useCases": [
       "`gh copilot suggest \"Undo the last git commit without losing changes\"`",
       "`gh copilot suggest \"Find all .log files older than 30 days and delete them\"`"
     ],
     "examPoints": [
-      "目的は『やりたいことからコマンドを生成する』こと",
-      "コマンドタイプ（generic / gh / git）を選択可能",
-      "提案後に実行確認（Execute command）を求められる安全設計"
+      "現行CLIの起動コマンドは copilot",
+      "旧 gh copilot 拡張の仕様は現行CLIへそのまま適用しない"
     ],
     "commonConfusions": [
       "`explain` との混同",
@@ -1370,7 +1369,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-cli-shell-aliases",
@@ -1381,25 +1380,24 @@
       "ghce",
       "CLIエイリアス"
     ],
-    "shortDefinition": "Copilot CLIのコマンド入力を短縮し、対話型実行をシェルから素早く呼び出すための公式推奨エイリアス設定。",
-    "detailedDefinition": "`gh copilot alias -- bash` 等を実行して `.bashrc` や `.zshrc` に登録する。`ghcs` (`gh copilot suggest`) と `ghce` (`gh copilot explain`) が登録され、長いコマンド入力を省いて即座に支援を呼び出せる。",
+    "shortDefinition": "旧 gh copilot 拡張で使われた ghcs / ghce エイリアス。現行CLIの必須設定ではない。",
+    "detailedDefinition": "旧拡張のエイリアスであり、現行GitHub Copilot CLIは copilot コマンドで起動する。最新の導入手順ではこれらのエイリアスを前提にしない。",
     "category": "Copilot機能",
-    "importance": "important",
+    "importance": "supplementary",
     "domainIds": [
       "d2"
     ],
     "objectiveIds": [
       "d2o2"
     ],
-    "whyItMatters": "実務的なCLIセットアップ手順として公式ドキュメントで強調されている。",
+    "whyItMatters": "古いCLI教材と現行手順を見分けるための歴史的な用語。",
     "useCases": [
       "`ghcs \"tar extract to specific directory\"`",
       "`ghce \"kill -9 $(lsof -t -i:8080)\"`"
     ],
     "examPoints": [
-      "`ghcs` は suggest のエイリアス",
-      "`ghce` は explain のエイリアス",
-      "シェル設定ファイルに評価スクリプトを追加して設定する"
+      "ghcs / ghce は旧拡張のエイリアス",
+      "現行CLIは copilot コマンドを利用する"
     ],
     "commonConfusions": [
       "デフォルトで自動的に設定されているという誤解（明示的な設定が必要）"
@@ -1419,7 +1417,7 @@
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-cli-execution-confirm",
@@ -2276,8 +2274,8 @@
       "Spark",
       "マイクロアプリビルダー"
     ],
-    "shortDefinition": "自然言語の対話だけでアイデアからフルスタックのマイクロアプリケーションを構築・カスタマイズ・ホストできるAIツール。",
-    "detailedDefinition": "開発環境の構築やデプロイ設定を一切行わずに、プロンプトで指示するだけでデータ永続化とUIを備えたWebアプリケーション（Spark）を即座に作成・反復改善できる革新的なプラットフォーム。",
+    "shortDefinition": "自然言語からアプリを構築するサービスとして提供されたが、github.com上のGitHub Sparkは2026年8月に終了した。",
+    "detailedDefinition": "GitHubは2026年8月4日にSparkの新規利用と新規アプリ作成を停止し、既存ユーザーには8月31日までのコード書き出しを案内した。既にデプロイされたアプリは継続動作する。現在の新規構築手段として紹介しない。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -2286,14 +2284,14 @@
     "objectiveIds": [
       "d2o3"
     ],
-    "whyItMatters": "2026年シラバスの最先端機能の1つ。プロトタイピングや社内ツールの迅速な構築手法として位置付けられる。",
+    "whyItMatters": "2026年8月版シラバスにはSparkが残るが、製品の現行提供状況と区別して学ぶ必要がある。",
     "useCases": [
-      "アイデアの即時プロトタイピング",
-      "チーム内専用の簡単な投票ツールやダッシュボードの構築"
+      "過去のSpark機能と廃止時期を理解する",
+      "既存のデプロイ済みSparkアプリの継続動作を説明する"
     ],
     "examPoints": [
-      "自然言語による指示で動くWebアプリを生成・ホストする",
-      "コードを直接記述・編集するモードも備える"
+      "2026年8月4日以降はSparkの新規利用・新規アプリ作成ができない",
+      "既存デプロイ済みアプリは引き続き動作する"
     ],
     "commonConfusions": [
       "IDE用コード補完プラグインとの混同"
@@ -2315,7 +2313,7 @@
       "guide"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -2537,8 +2535,8 @@
       "Copilotプラン",
       "Business vs Enterprise"
     ],
-    "shortDefinition": "個人向けのCopilot Individual (Pro)、組織向けのCopilot Business、大規模企業向けのCopilot Enterpriseといった提供プランの違い。",
-    "detailedDefinition": "Businessでは組織ポリシー管理、Content Exclusion、シート管理、ゼロデータ保持（コードスニペットの非学習）が提供される。Enterpriseではさらに、Copilot in GitHub.comでのリポジトリ横断インデックス、Copilot Spaces、カスタムモデルファインチューニング、より高度な監査ログが追加される。",
+    "shortDefinition": "個人向けFree・Student・Pro・Pro+・Maxと、組織向けBusiness・Enterpriseなど、GitHub Copilotの利用条件と管理機能を定めるプラン。",
+    "detailedDefinition": "利用可能な機能、AIクレジット、モデル、組織ポリシーはプランで異なり、管理者設定や利用面によっても変わります。現行プラン表と機能マトリクスを確認し、特定機能がEnterprise専用などと固定的に断言しないでください。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2549,15 +2547,15 @@
       "d2o4",
       "d6o1"
     ],
-    "whyItMatters": "どのプランでどの機能（Content Exclusionやゼロデータ保持など）が利用できるかの正確な理解が問われる。",
+    "whyItMatters": "プランによる機能と管理機能の違いを、現行表で確認する必要がある。",
     "useCases": [
       "企業導入時のプラン選定",
       "コンプライアンス要件に応じたBusiness以上の選択"
     ],
     "examPoints": [
-      "BusinessとEnterpriseではコードスニペットがモデル学習に利用されない（ゼロ保持）",
-      "Content ExclusionはBusinessおよびEnterpriseで利用可能",
-      "EnterpriseではGitHub.com上での高度な検索やSpacesが利用可能"
+      "Business/Enterprise顧客データはモデル学習に使用されない",
+      "Content ExclusionはBusiness/Enterpriseで利用可能",
+      "機能の提供範囲は現行プラン表と機能マトリクスで確認する"
     ],
     "commonConfusions": [
       "個人プランと組織プランでプライバシーポリシーが同一であるという誤解"
@@ -2578,10 +2576,12 @@
     "sourceIds": [
       "policies",
       "privacy",
-      "guide"
+      "guide",
+      "plans",
+      "feature-matrix"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -2789,7 +2789,7 @@
       "アーキテクチャフロー"
     ],
     "shortDefinition": "IDEやクライアントからコンテキストが収集され、プロンプトが合成され、プロキシを経てLLMに送信され、フィルタリングされて提案が返る一連の経路。",
-    "detailedDefinition": "クライアント（エディタ）→ 安全なTLS通信 → GitHub Copilot Proxy（認証・Content Exclusionチェック・プロンプト組み立て）→ Azure OpenAI LLM（推論）→ GitHub Proxy（セーフティフィルタ・Public Code Matching）→ クライアント（提案表示）という厳格なパイプラインで構成される。",
+    "detailedDefinition": "GitHubの現行資料では、クライアントが関連コンテキストを使ってリクエストを作り、モデルの出力が安全性や公開コード一致のフィルタを通って表示されると説明されています。モデルや機能ごとに経路と保持条件が異なるため、特定の単一プロキシや単一モデルに固定した説明は再確認が必要です。",
     "category": "アーキテクチャ",
     "importance": "essential",
     "domainIds": [
@@ -2828,11 +2828,13 @@
     "sourceIds": [
       "architecture",
       "privacy",
-      "guide"
+      "guide",
+      "responsible",
+      "model-hosting"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-context-gathering",
@@ -2951,7 +2953,7 @@
       "プロキシゲートウェイ"
     ],
     "shortDefinition": "クライアントとAIモデルの間に立ち、認証、ポリシー検証、Content Exclusionの評価、ログ処理を担うGitHubのバックエンドサーバー群。",
-    "detailedDefinition": "すべてのCopilotリクエストが経由する中継基盤。クライアントから送られたファイルパスがContent Exclusion対象でないか検証し、対象であればモデル呼び出しを即座にブロックする。また、モデルからの出力に対してもセーフティチェックやPublic Code Match判定を実施する。",
+    "detailedDefinition": "GitHubの現行資料では、クライアントが関連コンテキストを使ってリクエストを作り、モデルの出力が安全性や公開コード一致のフィルタを通って表示されると説明されています。モデルや機能ごとに経路と保持条件が異なるため、特定の単一プロキシや単一モデルに固定した説明は再確認が必要です。",
     "category": "アーキテクチャ",
     "importance": "essential",
     "domainIds": [
@@ -2992,11 +2994,13 @@
     ],
     "sourceIds": [
       "architecture",
-      "privacy"
+      "privacy",
+      "responsible",
+      "model-hosting"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-telemetry-data",
@@ -3059,8 +3063,8 @@
       "Zero Retention",
       "コード非保持ポリシー"
     ],
-    "shortDefinition": "Copilot BusinessおよびEnterpriseにおいて、ユーザーのコードスニペットやプロンプトを推論後に一切永続化（保存）せず即時破棄する規約。",
-    "detailedDefinition": "モデルが提案を返した瞬間に、送信されたプロンプトと生成されたコードスニペットはGitHubおよびモデルホスト（Azure）のメモリから破棄され、ディスクに保存されない。また、これらが基礎モデルの再学習・トレーニングに利用されることも一切ない。",
+    "shortDefinition": "Copilotの入力・出力の保持条件。モデル学習への利用可否やモデル提供者とのゼロデータ保持契約とは別に、機能別の条件を確認する。",
+    "detailedDefinition": "Business/Enterprise顧客データはGitHubのモデル学習に使用されません。一方、全機能の入力・出力が一律に即時破棄されるとは断言できません。モデル提供者とのゼロデータ保持契約にも例外があるため、利用するモデルと機能の公式条件を確認します。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -3073,13 +3077,13 @@
     ],
     "whyItMatters": "企業の最高情報セキュリティ責任者(CISO)が最も確認する項目であり、試験でも超頻出。",
     "useCases": [
-      "機密リポジトリでのCopilot利用の安全保障",
-      "サードパーティ監査へのゼロリテンション証明"
+      "企業のセキュリティ審査で機能別の保持条件を確認する",
+      "モデル提供者の保持契約と例外を確認する"
     ],
     "examPoints": [
-      "BusinessおよびEnterpriseプランではゼロリテンション（非保持）が標準",
-      "送信されたコードが他社のためのAI学習データとして使われることはない",
-      "推論完了後にスニペットは即座に破棄される"
+      "モデル学習への利用可否とデータ保持条件は別",
+      "Business/Enterprise顧客データはGitHubのモデル学習に使われない",
+      "保持条件はモデルと機能の最新資料で確認する"
     ],
     "commonConfusions": [
       "Copilotを使うと自社のコードが世界中に流出・学習されるという誤解"
@@ -3099,11 +3103,13 @@
     "questionIds": [],
     "sourceIds": [
       "privacy",
-      "guide"
+      "guide",
+      "model-hosting",
+      "privacy-training"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-tokenization",
@@ -5340,7 +5346,7 @@
       "Trust Center"
     ],
     "shortDefinition": "商用プラン（Business/Enterprise）において、顧客のコード、プロンプト、個人データを保護するための厳格なセキュリティ・プライバシー保証体系。",
-    "detailedDefinition": "1. ゼロデータ保持（コードスニペットの非永続化）、2. モデル学習への不使用、3. 転送時の暗号化、4. SOC 2 Type 2やISO 27001などの国際セキュリティ標準準拠、5. Content Exclusionによる機密保護から構成される。",
+    "detailedDefinition": "Business/Enterprise顧客データはGitHubのAIモデル学習に使用されない。データ保持やモデル提供者の条件は機能・モデル別に確認し、Content Exclusionの対応範囲や契約条件と合わせて評価する。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5355,9 +5361,9 @@
       "EUデータ保護規則（GDPR）対応の確認"
     ],
     "examPoints": [
-      "Business/Enterprise契約ではコードスニペットがモデル学習に使われない",
-      "個人プラン（Individual）とはデータ保持ポリシーが異なる",
-      "業界標準のセキュリティ認証を取得している"
+      "Business/Enterprise顧客データはモデル学習に使われない",
+      "保持条件と学習利用は別に確認する",
+      "管理者ポリシーとContent Exclusionの適用範囲を確認する"
     ],
     "commonConfusions": [
       "クラウドAIを使うとすべての社内資産が無防備になるという誤解"
@@ -5376,11 +5382,13 @@
     "questionIds": [],
     "sourceIds": [
       "privacy",
-      "guide"
+      "guide",
+      "privacy-training",
+      "model-hosting"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "g-public-code-matching",
@@ -5391,8 +5399,8 @@
       "公開コードフィルタリング",
       "コード一致検出"
     ],
-    "shortDefinition": "Copilotが生成した約150文字以上のコード提案が、GitHub上の公開リポジトリのコードと一致するか照合し、ブロックまたは参照情報を提示する保護機能。",
-    "detailedDefinition": "組織設定で「Suggestions matching public code」を「Block」に設定することで、公開コードと一致する提案をユーザー画面に表示させず遮断できる。これにより、意図しないGPL等のライセンス伝播や著作権侵害のリスクを未然に防止する。",
+    "shortDefinition": "Copilotの提案と周辺約150文字を公開コードと照合し、対応製品では一致提案をBlockするか参照情報を表示する機能。",
+    "detailedDefinition": "照合対象はGitHub上の公開リポジトリのインデックスです。Blockは検出した一致提案を表示せず、Allowでは一致元とライセンス情報を確認できます。インデックスの更新間隔や製品ごとの対応差があるため、完全な著作権・ライセンス保証ではありません。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5407,9 +5415,8 @@
       "提案されたコードの一致元リポジトリとライセンスの確認"
     ],
     "examPoints": [
-      "約150文字（tokens）以上の一致が照合対象",
-      "設定で「Block（ブロック）」または「Allow（許可・参照情報表示）」を選択可能",
-      "Content Exclusion（自社ファイルの保護）とは保護の方向性が逆（公開コードの自社への流入防止）"
+      "約150文字は提案と周辺コードの照合文脈であり、提案長の下限ではない",
+      "Block/Allowと製品ごとの対応範囲を区別する"
     ],
     "commonConfusions": [
       "Content Exclusion（自社コードを送信しない）とPublic Code Matching（他者の公開コードを取り込まない）の混同"
@@ -5431,10 +5438,11 @@
     "sourceIds": [
       "policies",
       "privacy",
-      "guide"
+      "guide",
+      "public-code"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -5597,8 +5605,8 @@
       "CLIでの非対応",
       "Exclusion Limitations"
     ],
-    "shortDefinition": "Content ExclusionがすべてのCopilot機能に適用されるわけではなく、GitHub Copilot in the CLI、Cloud Agent、一部のAgent Mode等では除外がサポートされていないという重要な仕様上の制約。",
-    "detailedDefinition": "公式ドキュメントに明記されている重大な注意事項。Webブラウザ上のCopilotやIDEエディタ補完では除外が効くが、CLI環境で除外対象ファイルを引数に指定したり、Agent Modeで自律探索させた場合、除外が適用されずに内容が処理される危険がある。機密管理の設計で最重要。",
+    "shortDefinition": "Content Exclusionは機能ごとに対応範囲が異なり、Copilot CLIとIDE ChatのAgent modeではサポートされない。",
+    "detailedDefinition": "現行GitHub Docsは、Copilot CLIとIDE ChatのAgent modeがContent Exclusion非対応と明記している。GitHub.comやCopilot code reviewには対応範囲があるため、Cloud agent等を一括して非対応と断言せず、利用面の表を確認する。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5613,9 +5621,9 @@
       "Agent Mode利用時の機密ファイルアクセス制限"
     ],
     "examPoints": [
-      "GitHub Copilot in the CLIはContent Exclusionをサポートしていない（最重要）",
-      "Cloud agentや一部のAgent Modeでも除外が効かない場合がある",
-      "全機能万能のセキュリティ境界ではないため多層防御が必要"
+      "Copilot CLIとIDE ChatのAgent modeは非対応",
+      "他の製品面は最新の対応表で確認する",
+      "除外設定だけを万能なセキュリティ境界としない"
     ],
     "commonConfusions": [
       "Content Exclusionを設定すればCLIでも自動的にファイルが保護されるという危険な思い込み"
@@ -5637,10 +5645,11 @@
     "sourceIds": [
       "exclusion",
       "cli",
-      "guide"
+      "guide",
+      "exclusion-concept"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {

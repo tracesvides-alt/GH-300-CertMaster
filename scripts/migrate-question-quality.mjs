@@ -10,35 +10,35 @@ const sources = JSON.parse(fs.readFileSync(sourcesFile, 'utf8'));
 const additions = {
   'mcp-config': ['MCP configuration reference', 'https://code.visualstudio.com/docs/agents/reference/mcp-configuration', 'VS Code Docs'],
   'mcp-spec': ['MCP server tools specification', 'https://modelcontextprotocol.io/specification/2025-06-18/server/tools', 'Model Context Protocol'],
-  'inline-usage': ['Getting code suggestions in your IDE', 'https://docs.github.com/en/copilot/how-tos/get-code-suggestions/get-ide-code-suggestions', 'GitHub Docs'],
+  'inline-usage': ['Getting code suggestions in your IDE with GitHub Copilot', 'https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/get-ide-code-suggestions', 'GitHub Docs'],
   'cli-current': ['Use GitHub Copilot CLI', 'https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli', 'GitHub Docs'],
   'network': ['Troubleshooting network errors for GitHub Copilot', 'https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors', 'GitHub Docs'],
-  'exclusion-concept': ['Content exclusion: supported surfaces and limitations', 'https://docs.github.com/en/copilot/concepts/context/content-exclusion', 'GitHub Docs'],
-  'public-code': ['GitHub Copilot code referencing', 'https://docs.github.com/en/copilot/concepts/completions/code-referencing', 'GitHub Docs'],
+  'exclusion-concept': ['Content exclusion for GitHub Copilot', 'https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion', 'GitHub Docs'],
+  'public-code': ['Finding public code that matches GitHub Copilot suggestions', 'https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code', 'GitHub Docs'],
   'workspace-context': ['Workspace context in VS Code', 'https://code.visualstudio.com/docs/agents/reference/workspace-context', 'VS Code Docs'],
   'streaming': ['Server-sent events', 'https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events', 'MDN'],
   'timer-testing': ['Vitest fake timers', 'https://vitest.dev/guide/mocking/timers', 'Vitest'],
   'property-testing': ['fast-check property based testing', 'https://fast-check.dev/docs/introduction/', 'fast-check'],
-  'secret-scanning': ['About push protection', 'https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection', 'GitHub Docs'],
-  'codeql': ['About code scanning with CodeQL', 'https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql', 'GitHub Docs'],
+  'secret-scanning': ['Push protection', 'https://docs.github.com/en/code-security/concepts/secret-security/push-protection', 'GitHub Docs'],
+  'codeql': ['Code scanning with CodeQL', 'https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning', 'GitHub Docs'],
   'space-framework': ['Measuring enterprise developer productivity', 'https://github.blog/enterprise-software/devops/measuring-enterprise-developer-productivity/', 'GitHub Blog'],
 };
 for (const [id, [title, url, publisher]] of Object.entries(additions)) {
   if (!sources.some(s => s.id === id)) sources.push({ id, title, url, publisher,
-    sourceType: 'official-docs', lastCheckedAt: '2026-09-07', syllabusVersion: '2026-08-07',
+    sourceType: 'documentation', lastCheckedAt: '2026-10-12', syllabusVersion: '2026-08-07',
     relatedObjectiveIds: [...new Set(bank.filter(q => edits[q.id]?.sources.includes(id)).map(q => q.objectiveId))] });
 }
 const correctedUrls = {
   'workspace-context': 'https://code.visualstudio.com/docs/agents/reference/workspace-context',
-  privacy: 'https://docs.github.com/en/enterprise-cloud%40latest/copilot/reference/ai-models/model-hosting',
-  instructions: 'https://docs.github.com/en/copilot/reference/customization-cheat-sheet',
-  'prompt-files': 'https://docs.github.com/en/copilot/reference/customization-cheat-sheet',
-  spaces: 'https://docs.github.com/en/copilot/how-tos/provide-context/use-copilot-spaces/use-copilot-spaces',
-  mcp: 'https://docs.github.com/en/copilot/reference/customization-cheat-sheet',
+  privacy: 'https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval',
+  instructions: 'https://docs.github.com/en/copilot/concepts/prompting/response-customization',
+  'prompt-files': 'https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide',
+  spaces: 'https://docs.github.com/en/copilot/concepts/context/spaces',
+  mcp: 'https://docs.github.com/en/copilot/concepts/context/mcp',
 };
 for (const s of sources) if (correctedUrls[s.id]) {
   s.url = correctedUrls[s.id];
-  s.lastCheckedAt = '2026-09-07';
+  s.lastCheckedAt = '2026-10-12';
 }
 for (const q of bank) {
   if (q.difficulty === 'beginner') continue;

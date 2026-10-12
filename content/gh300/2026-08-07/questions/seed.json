@@ -747,7 +747,7 @@
     "answer": [
       "C"
     ],
-    "explanation": "CLI、cloud agent、IDE ChatのAgent modeはcontent exclusionをサポートしていません。",
+    "explanation": "現行GitHub DocsではCopilot CLIとIDE ChatのAgent modeにContent Exclusionが適用されない。機能ごとの適用範囲を確認する必要がある。",
     "choiceExplanations": {
       "C": "公式資料で非対応の機能を確認します。",
       "D": "適用範囲に制限があります。",
@@ -761,7 +761,7 @@
       "Content exclusionには機能ごとの適用範囲があります。"
     ],
     "createdAt": "2026-09-06",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "cognitiveLevel": "recall",
     "examLike": false
   },
@@ -3481,7 +3481,7 @@
     "objectiveId": "d2o1",
     "difficulty": "beginner",
     "type": "single-select",
-    "status": "verified",
+    "status": "needs-review",
     "cognitiveLevel": "recall",
     "examLike": false,
     "question": "ターミナル環境でGitコマンドやシェルコマンドの入力支援、エラー原因の説明を自然言語から取得できる公式CLIツールはどれですか？",
@@ -8090,7 +8090,7 @@
     "objectiveId": "d3o1",
     "difficulty": "beginner",
     "type": "single-select",
-    "status": "verified",
+    "status": "needs-review",
     "cognitiveLevel": "recall",
     "examLike": false,
     "question": "GitHub Copilotがコード補完（Completion）を生成する際、カーソル位置の前後のコードを考慮して中央部分を埋めるアルゴリズム手法はどれですか？",
@@ -8136,7 +8136,7 @@
     "objectiveId": "d3o1",
     "difficulty": "beginner",
     "type": "single-select",
-    "status": "verified",
+    "status": "needs-review",
     "cognitiveLevel": "recall",
     "examLike": false,
     "question": "エディタ内で開かれている別タブのファイルから関連するコンテキストを自動的に拾い上げるGitHub Copilotの仕組みはどれですか？",
@@ -13958,7 +13958,7 @@
     "status": "verified",
     "cognitiveLevel": "recall",
     "examLike": false,
-    "question": "GitHub上の公開コードと約150文字以上一致する提案コードを自動的にブロックまたは許諾情報を表示するGitHub Copilotのポリシー設定はどれですか？",
+    "question": "GitHub上の公開コードと一致する提案を、対応製品でブロックするか参照情報付きで表示するためのGitHub Copilotのポリシーはどれですか？",
     "choices": [
       {
         "id": "D",
@@ -13989,10 +13989,11 @@
     },
     "sourceIds": [
       "policies",
-      "privacy"
+      "privacy",
+      "public-code"
     ],
     "createdAt": "2026-09-07",
-    "lastVerifiedAt": "2026-09-07"
+    "lastVerifiedAt": "2026-10-12"
   },
   {
     "id": "q-d6-f02",

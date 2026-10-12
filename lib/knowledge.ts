@@ -15,7 +15,7 @@ export type ImportanceLevel = z.infer<typeof importanceLevel>;
 export const difficulty = z.enum(['beginner', 'intermediate', 'advanced']);
 export type Difficulty = z.infer<typeof difficulty>;
 
-export const publisherEnum = z.enum(['Microsoft Learn', 'GitHub Docs']);
+export const publisherEnum = z.enum(['Microsoft Learn', 'GitHub Docs', 'GitHub Blog', 'VS Code Docs', 'Model Context Protocol', 'MDN', 'Vitest', 'fast-check']);
 
 // ────────────────────────────────────────────
 // Domain
@@ -166,7 +166,9 @@ export const officialSourceSchema = z.object({
   relatedLessonIds: z.array(nonempty).default([]),
   relatedGlossaryIds: z.array(nonempty).default([]),
   relatedComparisonIds: z.array(nonempty).default([]),
+  relatedQuestionIds: z.array(nonempty).default([]),
   lastCheckedAt: nonempty,
+  lastVerifiedAt: nonempty.optional(),
   status: contentStatus.default('verified'),
 });
 export type OfficialSource = z.infer<typeof officialSourceSchema>;
@@ -304,6 +306,7 @@ export function validateKnowledgeBase(kb: KnowledgeBase): ValidationError[] {
     checkRefs('OfficialSource', s.id, 'relatedLessonIds', s.relatedLessonIds, ids.lessons, 'Lesson');
     checkRefs('OfficialSource', s.id, 'relatedGlossaryIds', s.relatedGlossaryIds, ids.glossary, 'GlossaryTerm');
     checkRefs('OfficialSource', s.id, 'relatedComparisonIds', s.relatedComparisonIds, ids.comparisons, 'ComparisonGuide');
+    checkRefs('OfficialSource', s.id, 'relatedQuestionIds', s.relatedQuestionIds, ids.questions, 'Question');
     if (s.syllabusVersion !== kb.version) {
       errors.push({ entity: 'OfficialSource', id: s.id, field: 'syllabusVersion', message: `Expected "${kb.version}", got "${s.syllabusVersion}"` });
     }

@@ -45,6 +45,8 @@ export const sources = sourcesData as Array<{
   relatedLessonIds?: string[];
   relatedGlossaryIds?: string[];
   relatedComparisonIds?: string[];
+  relatedQuestionIds?: string[];
+  lastVerifiedAt?: string;
   status?: string;
 }>;
 
@@ -161,7 +163,7 @@ export function buildKnowledgeBase(): KnowledgeBase {
       id: s.id,
       title: s.title,
       url: s.url,
-      publisher: s.publisher as 'Microsoft Learn' | 'GitHub Docs',
+      publisher: s.publisher as OfficialSource['publisher'],
       sourceType: (s.sourceType as 'study-guide' | 'documentation' | 'tutorial' | 'reference') ?? 'documentation',
       syllabusVersion: s.syllabusVersion as '2026-08-07',
       relatedDomainIds: s.relatedDomainIds ?? [],
@@ -169,7 +171,9 @@ export function buildKnowledgeBase(): KnowledgeBase {
       relatedLessonIds: s.relatedLessonIds ?? [],
       relatedGlossaryIds: s.relatedGlossaryIds ?? [],
       relatedComparisonIds: s.relatedComparisonIds ?? [],
+      relatedQuestionIds: s.relatedQuestionIds ?? [],
       lastCheckedAt: s.lastCheckedAt,
+      lastVerifiedAt: s.lastVerifiedAt,
       status: (s.status as 'draft' | 'verified' | 'needs-review') ?? 'verified',
     })),
     questionIds: questions.map((q) => q.id),
@@ -189,7 +193,7 @@ export const questionSchema = z
     objectiveId: nonempty,
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
     type: z.enum(['single-select', 'multiple-select']),
-    status: z.enum(['verified', 'ai-generated']),
+    status: z.enum(['verified', 'needs-review', 'ai-generated']),
     question: nonempty,
     choices: z.array(z.object({ id: nonempty, text: nonempty })).length(4),
     answer: z.array(nonempty).min(1),

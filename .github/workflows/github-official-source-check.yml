@@ -1,0 +1,25 @@
+name: GitHub official source check
+on:
+  schedule:
+    - cron: '37 3 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check GitHub official source URLs
+        run: node scripts/check-official-sources.mjs
+      - name: Preserve audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-official-source-check
+          path: artifacts/github-official-source-check.json
+          if-no-files-found: warn
+          retention-days: 90

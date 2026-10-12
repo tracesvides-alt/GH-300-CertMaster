@@ -95,7 +95,7 @@
       },
       {
         "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】商用プロプライエタリ製品を開発している企業において、他者のオープンソースコードが意図せず混入することを防ぎたい場合。組織管理者は「Suggestions matching public code」ポリシーを「Block」に設定し、150文字以上の公開コード一致を未然に遮断します。"
+        "content": "【シナリオ】商用プロプライエタリ製品を開発している企業において、他者のオープンソースコードが意図せず混入することを防ぎたい場合。組織管理者は「Suggestions matching public code」ポリシーを「Block」に設定し、検出された公開コードとの一致提案を表示しないようにします。ただし完全なライセンス保証ではありません。"
       },
       {
         "heading": "5. Limitations & Considerations",
@@ -419,54 +419,53 @@
   },
   {
     "id": "lesson-d2-cli",
-    "title": "GitHub Copilot in the CLIのコマンド操作とセーフガード",
+    "title": "現行GitHub Copilot CLIの利用と安全確認",
     "slug": "github-copilot-cli-usage-safeguards",
     "domainId": "d2",
     "objectiveIds": [
       "d2o2"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "GitHub CLI拡張機能としてのCopilot CLIにおいて、`gh copilot explain` と `gh copilot suggest` の使い分け、シェルエイリアス設定、実行前の確認セーフガード、およびContent Exclusion非適用の制約を理解します。",
+    "summary": "現行のGitHub Copilot CLIは `copilot` で始める対話型のターミナル向けエージェントです。コマンド実行やファイル変更の権限、Content Exclusionの非対応を確認します。",
     "estimatedMinutes": 7,
     "difficulty": "intermediate",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "ターミナル環境で動作する `gh copilot` コマンドの2大サブコマンド（`explain` と `suggest`）の操作法、安全対策（Human-in-the-loop）、およびCLI環境固有の重大な制限事項を学びます。"
+        "content": "現行のGitHub Copilot CLIの導入、対話型セッション、非対話型プロンプト、実行権限の確認方法を学びます。旧 `gh copilot explain/suggest` 拡張の説明とは区別します。"
       },
       {
-        "heading": "2. Core Concepts: explain と suggest の使い分け",
-        "content": "・`gh copilot explain \"<コマンド>\"`: 既存の難解なコマンドラインやパイプラインの意味を自然言語で解説させる。実行は行わない。\n・`gh copilot suggest \"<やりたいこと>\"`: 達成したい目的から適切なコマンド（generic shell / gh / git）を生成させる。対話型でオプションを選択可能。"
+        "heading": "2. 起動と利用",
+        "content": "Node.js 22以降なら `npm install -g @github/copilot` で導入し、プロジェクトで `copilot` を起動します。初回は `/login` で認証し、作業ディレクトリへの信頼を確認します。`copilot -p \"質問\"` で非対話実行も可能です。"
       },
       {
-        "heading": "3. How It Works: 実行確認セーフガードとエイリアス",
-        "content": "提案されたコマンドは自動実行されず、「Copy to clipboard」「Execute command」「Revise command」「Exit」のメニューが表示されます。また、`gh copilot alias -- bash` でシェルエイリアス（`ghcs` = suggest, `ghce` = explain）を設定して素早く起動できます。"
+        "heading": "3. 権限と安全",
+        "content": "Copilot CLIはコードの調査、ファイル編集、コマンド実行などを支援します。ツール利用を許可・拒否する設定と提示された変更を確認し、機密情報をプロンプトに含めないでください。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】サーバー管理者から渡されたシェルスクリプト内に `find . -type f -mtime +30 -exec rm -f {} +` というコマンドがあり、実行前に正確な挙動を確認したい場合。`gh copilot explain` を実行して各フラグの動作を自然言語で分解解説させます。"
+        "heading": "4. 試験向けシナリオ",
+        "content": "不明なシェルコマンドを実行する前にCopilot CLIへ意味と副作用を質問し、返答を公式マニュアルや安全な環境で検証します。提案をそのまま実行しません。"
       },
       {
-        "heading": "5. Limitations & Considerations (最重要)",
-        "content": "【試験最頻出の制約】GitHub Copilot in the CLIは、OrganizationやRepositoryで設定された「Content Exclusion（コンテンツ除外）」をサポートしていません。除外設定された機密ファイル名やパスをCLIコマンドの引数に渡すと、その内容がプロンプトとして処理される危険があるため注意が必要です。"
+        "heading": "5. Content Exclusionの制限",
+        "content": "GitHub Docsは、GitHub Copilot CLIとIDE ChatのAgent modeがContent Exclusionをサポートしないと明記しています。除外設定だけに機密保護を依存しないでください。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: 既存の複雑なコマンドの意味を解説させるCLIコマンドは？ → `gh copilot explain`。\nQ2: やりたい作業からコマンドを生成させるCLIコマンドは？ → `gh copilot suggest`。\nQ3: CLI版CopilotはContent Exclusionをサポートしているか？ → No（サポート対象外）。"
+        "heading": "6. 30秒チェック",
+        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: 非対話で質問するには？ → `copilot -p \"質問\"`。\nQ3: CLIでContent Exclusionは適用されるか？ → 現行GitHub Docsでは非対応。"
       }
     ],
     "keyPoints": [
-      "`gh copilot explain` はコマンドの解説、`gh copilot suggest` はやりたいことからのコマンド生成。",
-      "提案されたコマンドは自動実行されず、ユーザーの承認（Execute command選択）を待つ安全設計。",
-      "CLI版CopilotではContent Exclusionが適用されない（重大な制約）。"
+      "現行GitHub Copilot CLIは `copilot` で起動する。",
+      "ファイル変更・ツール実行の権限を確認する。",
+      "CLIにContent Exclusionは適用されない。"
     ],
     "commonMistakes": [
-      "`explain` と `suggest` の目的を逆にしてしまうこと。",
-      "CLIでもエディタと同様にContent Exclusionが自動的に効いていると過信すること。"
+      "旧 `gh copilot` 拡張のコマンドを現行CLIの標準操作として教えること。",
+      "CLIにもIDEと同じContent Exclusionが適用されると考えること。"
     ],
     "examTips": [
-      "「Content ExclusionはCLIではサポートされていない」はGH-300の定番トラップ問題です。",
-      "シェルエイリアス（`ghcs` = suggest, `ghce` = explain）の名称対応も確認しておきましょう。"
+      "試験問題が旧拡張と現行CLIを混同していないか、製品名とコマンドを確認する。"
     ],
     "glossaryIds": [
       "g-copilot-cli",
@@ -481,10 +480,11 @@
     "questionIds": [],
     "sourceIds": [
       "cli",
+      "cli-current",
       "exclusion",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -850,47 +850,45 @@
       "d3o1"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "エディタからGitHub Proxy、LLM推論基盤、そして後処理フィルタを経て提案が返るエンドツーエンドの安全なデータ通信経路とゲートウェイの役割を理解します。",
+    "summary": "Copilotがクライアントの文脈からリクエストを構成し、モデル推論と安全性フィルタを経て提案を返す流れを、機能・モデルごとの違いに注意しながら理解します。",
     "estimatedMinutes": 8,
     "difficulty": "intermediate",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "開発者がコードを入力した瞬間に裏側でどのような通信が発生し、どのコンポーネントがセキュリティや除外判定を担っているのか、アーキテクチャの全体像を学びます。"
+        "content": "インライン提案を例に、入力文脈、モデル推論、出力整形・安全性確認、ユーザーによる採用の順序を学びます。"
       },
       {
-        "heading": "2. Core Concepts: 通信経路と各レイヤーの責務",
-        "content": "1. クライアント（IDE拡張）: ローカルコンテキスト（前後コード、開いているタブ）を収集し、HTTPS/TLS経由で送信。\n2. GitHub Copilot Proxy: 認証・認可の検証、Content Exclusion対象ファイルの判定、組織ポリシーの適用。\n3. LLM基盤（Azure OpenAI）: プロンプトを受け取り、推論してトークン列を出力。\n4. 後処理パイプライン: 有害コンテンツの遮断、Public Code Matching（公開コード一致判定）、フォーマット整形。\n5. クライアント（IDE）: ゴーストテキストを描画。"
+        "heading": "2. 入力と文脈",
+        "content": "GitHub Docsのインライン提案の説明では、カーソル周辺コードや開いているタブの文脈を使ってプロンプトを構成します。収集される文脈は製品面と設定によって異なります。"
       },
       {
-        "heading": "3. How It Works: なぜProxyが不可欠なのか",
-        "content": "エディタが直接OpenAIのエンドポイントに通信するのではなく、GitHub Proxyが介在することで、悪意あるプロンプトの遮断、企業のContent Exclusion設定の強制、および利用状況テレメトリの正確な収集が可能になります。"
+        "heading": "3. 推論と出力",
+        "content": "プロンプトは利用可能なモデルで処理され、生成結果に安全性フィルタや公開コード一致判定が適用されます。モデルの提供元や保持条件を単一のAzure OpenAI経路として固定しないでください。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】企業のセキュリティ担当者から「IDEが直接サードパーティのサーバーにコードを平文で送信しているのではないか」と懸念された場合。「すべての通信はTLS 1.2/1.3で暗号化され、GitHubの管理するセキュアプロキシを経由して隔離されたモデル基盤で処理される」と回答します。"
+        "heading": "4. 管理上の注意",
+        "content": "Content Exclusionは機能ごとに対応状況が異なり、Copilot CLIおよびIDE ChatのAgent modeではサポートされません。送信範囲を管理するときは製品ごとの仕様を確認します。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・プロキシ層での判定により、Content Exclusion対象ファイルであると判断されたリクエストは、LLMに到達する前に即時遮断されます。"
+        "heading": "5. 人間による確認",
+        "content": "提案はユーザーが明示的に採用するまではコードへ適用されません。出力が安全・正確であるかはテストとレビューで判断します。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: クライアントとLLMの間でContent Exclusionの判定を行う中間コンポーネントは？ → GitHub Copilot Proxy。\nQ2: 通信は平文で行われるか？ → No（TLSで暗号化）。\nQ3: Public Code Matchingはどの段階で実行されるか？ → LLM出力後の後処理パイプライン。"
+        "heading": "6. 30秒チェック",
+        "content": "Q1: インライン提案に使われる文脈は？ → カーソル周辺や利用可能なタブ。\nQ2: すべて同じモデルホストか？ → いいえ。\nQ3: 内容除外は全機能に適用されるか？ → いいえ。"
       }
     ],
     "keyPoints": [
-      "通信はすべてHTTPS/TLSで暗号化される。",
-      "GitHub Proxyが認証、Content Exclusionの評価、ポリシー適用を行う。",
-      "LLM出力後に後処理フィルタとPublic Code Matchingが適用される。"
+      "文脈を組み立ててモデルに送り、出力をフィルタして提案を表示する。",
+      "モデルホストと保持条件は機能・モデルごとに確認する。",
+      "提案は人間が検証する。"
     ],
     "commonMistakes": [
-      "IDEが直接LLMの公開APIに通信しているという誤解。",
-      "Content ExclusionがIDEローカルだけで判定されているという誤解（Proxyでも厳格に検証）。"
+      "全Copilot機能が同じモデル・同じ保持条件だと思い込むこと。"
     ],
     "examTips": [
-      "「GitHub Proxyが中間でセキュリティ・除外判定を行う」点が頻出です。",
-      "データフローの順序（クライアント → Proxy → LLM → 後処理 → クライアント）を把握しましょう。"
+      "製品面を特定してからデータフローの説明を選ぶ。"
     ],
     "glossaryIds": [
       "g-data-flow",
@@ -903,11 +901,12 @@
       "q06"
     ],
     "sourceIds": [
-      "architecture",
-      "privacy",
+      "responsible",
+      "model-hosting",
+      "exclusion-concept",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -981,54 +980,51 @@
   },
   {
     "id": "lesson-d3-retention-privacy",
-    "title": "コードスニペットの非保持規約（Zero Retention）と信頼性",
+    "title": "Copilotのデータ利用と保持条件を分けて確認する",
     "slug": "code-retention-policy-zero-retention",
     "domainId": "d3",
     "objectiveIds": [
       "d3o1"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "Copilot BusinessおよびEnterpriseにおける「コードスニペット非保持（Zero Retention）」の確約、モデル学習への不使用、および利用状況テレメトリデータとの明確な分離を学習します。",
+    "summary": "Business/Enterpriseのモデル学習不使用と、機能・モデルごとに異なる入力・出力の保持条件を区別します。",
     "estimatedMinutes": 7,
     "difficulty": "intermediate",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "企業がCopilotを導入する際に最も厳格にチェックされるデータ保護基準（コードが保持・学習されない保証）の技術的および規約的根拠を理解します。"
+        "content": "「モデル学習に使わない」と「どのサーバーにも保存されない」は別の主張であると理解します。"
       },
       {
-        "heading": "2. Core Concepts: ゼロデータ保持 (Zero Retention)",
-        "content": "Copilot BusinessおよびCopilot Enterprise契約において、GitHubおよび基盤ホスト（Azure OpenAI）は、送信されたコードスニペット、コンテキスト、および生成された提案をディスクに永続化（保存）しません。推論処理が完了した瞬間にメモリから即座に破棄されます。"
+        "heading": "2. Business/Enterpriseの学習利用",
+        "content": "GitHub Docsは、Copilot Business/Enterprise顧客データをGitHubのAIモデル学習に使用しないと説明しています。個人向けプランには別の設定があります。"
       },
       {
-        "heading": "3. How It Works: モデル再学習の完全否定",
-        "content": "「自社のコードがCopilotの学習データとして使われ、競合他社に提案として出力されてしまうのではないか」という懸念に対し、Business/Enterpriseでは顧客コードをモデルのファインチューニングや再学習に利用しないことが契約上明記されています。"
+        "heading": "3. モデル提供者と保持条件",
+        "content": "モデルホスティングの公式資料には、提供者ごとのゼロデータ保持契約や例外が記載されています。すべてのモデル・機能に単一の保持条件を当てはめません。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】金融機関の開発部門がCopilot Businessを導入するにあたり、自社の機密ロジックがAIの学習データに転用されないか法務から問われた場合。「Copilot Businessではコードスニペットは推論後に即時破棄（ゼロ保持）され、他社向けのAIモデル学習には一切利用されない」と説明するのが正解です。"
+        "heading": "4. 実務での確認",
+        "content": "利用するプラン、製品面、モデル、プレビュー機能、管理者ポリシーを特定し、最新の契約条件とモデルホスティング資料を確認します。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・個人向けプラン（Copilot Individual/Pro）では、ユーザーが明示的に設定でオプトアウトしない限り学習利用が許可されている場合があるため、組織プラン（Business/Enterprise）との違いを明確に認識する必要があります。"
+        "heading": "5. よくある誤解",
+        "content": "Business/Enterpriseで学習に使われないことを根拠に、全入力が即時削除されると断定しないでください。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: Copilot Businessで顧客コードはモデル学習に使われるか？ → No（一切使われない）。\nQ2: 推論完了後のコードスニペットの扱いは？ → 即座に破棄される（Zero Retention）。\nQ3: テレメトリデータに顧客のソースコードは含まれるか？ → No（利用メトリクスのみ）。"
+        "heading": "6. 30秒チェック",
+        "content": "Q1: 学習不使用と保持期間は同義か？ → いいえ。\nQ2: 保持条件は何で変わるか？ → 機能・モデル・契約条件。"
       }
     ],
     "keyPoints": [
-      "Copilot Business / Enterpriseではコードスニペットの非保持（Zero Retention）が標準。",
-      "顧客コードが基礎モデルのトレーニングや再学習に使われることはない。",
-      "テレメトリデータ（受入率や遅延時間などの集計値）とコード内容は明確に分離される。"
+      "Business/Enterprise顧客データはGitHubのモデル学習に使われない。",
+      "保持条件は利用する機能・モデルの資料で別途確認する。"
     ],
     "commonMistakes": [
-      "個人向けプランとEnterprise向けプランでデータ保持ポリシーが同一であるという誤認。",
-      "クラウドに送信されたコードが永久にサーバー上に保存されるという誤解。"
+      "学習不使用から一律の即時削除を推論すること。"
     ],
     "examTips": [
-      "「Business/Enterprise契約ではコードスニペットは学習に利用されない」は満場一致の正答基準です。",
-      "Zero Retentionというキーワードを確実に覚えておきましょう。"
+      "「学習」「保持」「モデル提供者」を区別する。"
     ],
     "glossaryIds": [
       "g-code-retention-policy",
@@ -1039,10 +1035,11 @@
     "comparisonIds": [],
     "questionIds": [],
     "sourceIds": [
-      "privacy",
+      "privacy-training",
+      "model-hosting",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1738,14 +1735,14 @@
   },
   {
     "id": "lesson-d6-ownership-privacy",
-    "title": "コード出力の所有権とエンタープライズデータ保護保証",
+    "title": "生成コードの権利と企業向けデータ保護条件",
     "slug": "code-output-ownership-and-enterprise-privacy",
     "domainId": "d6",
     "objectiveIds": [
       "d6o1"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "GitHub Copilotが生成したコードの所有権・知的財産権が顧客に帰属すること（GitHubは権利主張しない）、およびSOC 2・ISO等のエンタープライズコンプライアンス保証を解説します。",
+    "summary": "出力の権利に関するGitHubの規約と、Business/Enterpriseでのモデル学習不使用を確認します。保持条件や知財補償の詳細は契約と利用機能別に再確認します。",
     "estimatedMinutes": 7,
     "difficulty": "intermediate",
     "sections": [
@@ -1797,10 +1794,12 @@
     "questionIds": [],
     "sourceIds": [
       "privacy",
-      "guide"
+      "guide",
+      "model-hosting",
+      "privacy-training"
     ],
     "lastVerifiedAt": "2026-09-06",
-    "status": "verified"
+    "status": "needs-review"
   },
   {
     "id": "lesson-d6-public-code-matching",
@@ -1811,47 +1810,47 @@
       "d6o2"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "公開リポジトリのコードと約150文字以上一致する提案を検出するPublic Code Matchingの動作、Block/Allowポリシーの選定、および一致ログ（Reference Log）によるライセンス追跡を習得します。",
+    "summary": "Copilotの公開コード一致判定で、Block設定による提案非表示とAllow設定時の参照情報の表示を区別します。照合には提案とその周辺約150文字が使われます。",
     "estimatedMinutes": 8,
     "difficulty": "intermediate",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "オープンソースコードとの一致を検知してライセンス汚染を防ぐ「Public Code Matching（公開コードフィルタリング）」の判定基準、ポリシー設定、およびContent Exclusionとの明確な違いを学びます。"
+        "content": "GitHubの公開リポジトリとの一致検出、Block/Allowの挙動、Content Exclusionとの違いを確認します。ライセンス判断は人間による確認が必要です。"
       },
       {
-        "heading": "2. Core Concepts: 約150文字の一致判定",
-        "content": "GitHub Copilotが生成したコード提案が、GitHub上の公開リポジトリに存在するコードと約150文字（tokens）以上一致するかどうかを後処理パイプラインで自動照合します。\n・Block（推奨・安全）: 一致が検知された提案をエディタに表示せず即時遮断する。\n・Allow: 一致する提案の表示を許可するが、参照ログ（Reference Log）に一致元のリポジトリURLやライセンス情報を出力する。"
+        "heading": "2. Core Concepts: 公開コードとの照合",
+        "content": "GitHub Docsによると、Copilotは候補の提案とその周辺の約150文字を公開リポジトリのインデックスと照合します。「150文字以上の提案だけが対象」という意味ではありません。Blockモードが利用できる製品では一致提案を表示せず、Allowの場合は一致元とライセンス情報を参照できます。"
       },
       {
-        "heading": "3. How It Works: Content Exclusionとの決定的な相違",
-        "content": "・Content Exclusion: 「自社の機密コードをCopilotに読ませない・送信させない」ための内から外への防護壁。\n・Public Code Matching: 「外部の公開OSSコードを自社コードベースに混入させない」ための外から内への防護壁。"
+        "heading": "3. Content Exclusionとの違い",
+        "content": "Content Exclusionは指定した自社ファイルをCopilotの参照対象から除く管理設定です。公開コード一致判定は生成された候補と公開コードの類似性を調べる別の仕組みです。両方とも適用範囲と限界を確認してください。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】企業でOSSライセンス（GPL等）の混入によるソースコード開示義務リスクをゼロにしたい場合。組織管理者は組織ポリシーで「Suggestions matching public code」を「Block」に設定します。"
+        "heading": "4. When to Use",
+        "content": "公開コードとの一致提案を表示したくない場合は、利用する製品でBlockモードがサポートされることを確認したうえでポリシーを設定します。一致が検出されなかった場合も、生成コードのライセンス・品質レビューを省略しません。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・Block設定にした場合、一般的なアルゴリズムや定型的なボイラープレートであっても、公開コードと一致すると提案が出なくなるため、提案頻度がわずかに下がるトレードオフがあります。"
+        "heading": "5. Limitations",
+        "content": "インデックスは継続的に更新されますが、すべての公開コードを即時に網羅するものではありません。短い定型コードの扱いや製品ごとのBlock対応状況も異なります。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: 公開コード一致判定の基準となる文字数はおよそ何文字？ → 約150文字（tokens）。\nQ2: ライセンス混入を完全に防ぐためのポリシー設定値は？ → Block。\nQ3: 自社ファイルをAIに送らない機能はContent Exclusion、公開コードの流入を防ぐ機能は？ → Public Code Matching。"
+        "heading": "6. 30秒チェック",
+        "content": "Q1: 約150文字は何を指す？ → 照合に使う提案とその周辺コード。\nQ2: Blockで保証されることは？ → 対応製品で検出された一致提案を表示しないこと。\nQ3: Content Exclusionと同じ機能か？ → いいえ。"
       }
     ],
     "keyPoints": [
-      "約150文字以上の公開コード一致をリアルタイム照合する。",
-      "Block設定で提案を遮断、Allow設定で一致元ライセンス等の参照情報を提示。",
-      "Content Exclusion（自社コードの送信防止）とPublic Code Matching（他者コードの流入防止）の違いを区別する。"
+      "提案とその周辺約150文字を公開コードと照合する。",
+      "BlockとAllowの挙動、および製品ごとの対応状況を確認する。",
+      "一致検出は完全なライセンス保証ではない。"
     ],
     "commonMistakes": [
-      "Content ExclusionとPublic Code Matchingの役割を逆に覚えてしまうこと。",
-      "短すぎる数文字の変数名や構文までPublic Code Matchで弾かれると思い込むこと。"
+      "150文字以上の提案だけが検査されると考えること。",
+      "Blockを設定すれば著作権リスクがゼロになると考えること。"
     ],
     "examTips": [
-      "「約150文字」「Blockポリシー」「ライセンス混入防止」がキーワードです。",
-      "両機能の方向性の違い（送信防止 vs 流入防止）は試験頻出です。"
+      "「提案と周辺約150文字」と「提案の長さ」を取り違えない。",
+      "公開コード一致判定とContent Exclusionの目的を区別する。"
     ],
     "glossaryIds": [
       "g-public-code-matching",
@@ -1865,11 +1864,11 @@
     ],
     "questionIds": [],
     "sourceIds": [
+      "public-code",
       "policies",
-      "privacy",
       "guide"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-12",
     "status": "verified"
   },
   {
@@ -1895,7 +1894,7 @@
       },
       {
         "heading": "3. How It Works: 【重大制約】Content Exclusionが効かない機能",
-        "content": "公式ドキュメントに明記されている重大な制限事項:\n・GitHub Copilot in the CLI: Content Exclusionは一切サポートされていません。\n・Cloud agent および IDE Chatの一部自律Agentモード: 除外が適用されない場合があります。\nWeb上のPRやIDEの通常のインライン補完・基本チャットでは除外が適用されますが、CLI環境等では除外されないため、多層防御の運用規律が必要です。"
+        "content": "公式ドキュメントに明記されている重大な制限事項:\n・GitHub Copilot in the CLI: Content Exclusionは一切サポートされていません。\n・IDE ChatのAgent mode: Content Exclusionはサポートされていません。GitHub.comやCopilot code reviewの適用範囲は別途公式表で確認します。\nWeb上のPRやIDEの通常のインライン補完・基本チャットでは除外が適用されますが、CLI環境等では除外されないため、多層防御の運用規律が必要です。"
       },
       {
         "heading": "4. When to Use & 試験向けシナリオ",

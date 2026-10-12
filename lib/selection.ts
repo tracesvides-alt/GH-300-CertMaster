@@ -108,7 +108,7 @@ export function filterEligibleQuestions(
   return preventDuplicateQuestions(bank).filter(
     (q) =>
       domains.some((d) => d.id === q.domainId) &&
-      (q.status === 'verified' || (!options.verifiedOnly && options.includeAI)) &&
+      (q.status === 'verified' || (q.status === 'ai-generated' && !options.verifiedOnly && options.includeAI)) &&
       (options.domainId === 'all' || q.domainId === options.domainId) &&
       (options.objectiveId === 'all' || q.objectiveId === options.objectiveId) &&
       (options.scope !== 'incorrect' || history[q.id]?.latestCorrect === false) &&
