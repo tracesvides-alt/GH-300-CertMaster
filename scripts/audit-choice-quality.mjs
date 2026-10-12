@@ -1,181 +1,180 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
+const root = new URL('../', import.meta.url);
 const bankPath = 'content/gh300/2026-08-07/questions/seed.json';
-const reportDir = new URL('../reports/', import.meta.url);
-const bank = JSON.parse(fs.readFileSync(new URL(`../${bankPath}`, import.meta.url), 'utf8'));
-const changed = new Set(['q-d2-a07', 'q-d2-a20', 'q-d2-e02', 'q-d2-e07', 'q-sc03-1', 'q-sc07-1', 'q-d3-a05', 'q-d3-a10']);
-
-// These are editorial screening findings from reading the four options in isolation.
-// They are warnings pending a separate reviewer, not measured learner performance.
-const obvious = new Set(`q-d2-a07 q-d2-a20 q-d2-e02 q-d2-e07 q-sc03-1 q-sc07-1 q-d3-a05 q-d3-a10
-q-d2-a05 q-d2-a06 q-d2-a09 q-d2-a11 q-d2-a15 q-d2-a16 q-d2-a21 q-d2-e01 q-d2-e03 q-d2-e04 q-d2-e05 q-d2-e08 q-d2-e10 q-d2-e11 q-d2-e12 q-d2-e13 q-d2-e14 q-d2-e15 q-d2-e16 q-d2-e18 q-d2-e19
-q-d3-a04 q-d3-a06 q-d3-a07 q-d3-a08 q-d3-a11 q-d3-e01 q-d3-e04 q-d3-e05
-q-d4-a02 q-d4-a04 q-d4-a05 q-d4-a06 q-d4-a09 q-d4-a10 q-d4-a11 q-d4-e01 q-d4-e02 q-d4-e03 q-d4-e04 q-d4-e05
-q-d5-a05 q-d5-a06 q-d5-a09 q-d5-a10 q-d5-e03 q-d5-e04 q-d5-e05
-q-d6-a01 q-d6-a03 q-d6-a05 q-d6-a08 q-d6-a09 q-d6-a10 q-d6-e02 q-d6-e05
-q-sc01-1 q-sc01-2 q-sc03-3 q-sc04-1 q-sc04-2 q-sc05-1 q-sc05-2 q-sc06-1 q-sc06-2 q-sc07-2 q-sc07-3 q-sc08-1 q-sc08-2 q-sc08-3 q-sc09-2 q-sc10-3`.split(/\s+/).filter(Boolean));
-const unrelated = new Set(`q-d3-a05:B q-d3-a05:C q-d3-a05:D q-d3-a10:B q-d3-a10:C q-d3-a10:D
-q-d4-a06:B q-d4-a06:C q-d4-a06:D q-d6-a05:B q-d6-a05:C q-d6-a05:D
-q-d5-e03:C q-d5-e03:D q-sc07-3:B q-sc07-3:C q-sc07-3:D`.split(/\s+/).filter(Boolean));
-const sampleIds = {
-  intermediate: `q01 q-d1-a02 q-d1-a09 q-d2-a07 q-d2-a20 q-d3-a05 q-d3-a10 q-d4-a07 q-d5-a01 q-d6-a03`.split(' '),
-  advanced: `q-d1-e01 q-d1-e03 q-d1-e05 q-d1-e07 q-d1-e08 q-sc03-1 q-sc07-1 q-d2-e02 q-d2-e07 q-d2-e04 q-d2-e06 q-d2-e11 q-d3-e04 q-d4-e01 q-d4-e04 q-d5-e01 q-d5-e03 q-d6-e01 q-sc09-1 q-sc10-2`.split(' '),
+const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
+const bank = read(bankPath);
+const editorial = read('content/gh300/2026-08-07/questions/quality-review.json');
+const baseline = read('reports/question-choice-baseline.json');
+const previous = JSON.parse(execFileSync('git', ['show', `HEAD:${bankPath}`], { encoding: 'utf8' }));
+const previousById = new Map(previous.map(q => [q.id, q]));
+const unchangedReasons = {
+  q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',
+  'q-d2-a08': '四つの設定キーはいずれもMCP関連の語で、VS Code設定という条件が必要。',
+  'q-d2-a12': '候補の全体採用・部分採用・閉じる操作の組合せは設問の要求が必要。',
+  'q-d2-a13': '候補切替・全体採用・閉じる・単語採用の区別に設問が必要。',
+  'q-d2-a14': '説明・編集・Agent・レビューの目的が異なり、変更しない条件が必要。',
+  'q-d2-a17': 'MCPのResource/Tool/Promptの組合せは提供対象の種類を読まないと決まらない。',
+  'q-d6-a02': '参照表示・ブロック・Secret Scanning・入力除外の各動作は設問の設定が必要。',
+  'q-sc09-1': '満足度・デリバリー・受容・座席の指標はそれぞれ有用で、測りたい側面が必要。',
+  'q-sc10-2': '参照先・依存ライセンス・CodeQL・今後のBlockは目的が異なり、今回の通知が必要。',
 };
-const categoryMap = {
+const samples = {
+  intermediate: 'q01 q-d1-a02 q-d1-a09 q-d2-a07 q-d2-a20 q-d3-a05 q-d3-a10 q-d4-a07 q-d5-a01 q-d6-a03'.split(' '),
+  advanced: 'q-d1-e01 q-d1-e03 q-d1-e05 q-d1-e07 q-d1-e08 q-sc03-1 q-sc07-1 q-d2-e02 q-d2-e07 q-d2-e04 q-d2-e06 q-d2-e11 q-d3-e04 q-d4-e01 q-d4-e04 q-d5-e01 q-d5-e03 q-d6-e01 q-sc09-1 q-sc10-2'.split(' '),
+};
+const sampleClues = {
+  q01: '月末だけ失敗', 'q-d1-a02': 'SQL文字列の連結', 'q-d1-a09': '型・業務回帰・セキュリティの三領域',
+  'q-d2-a07': '現在のスキーマ、利用者別権限、任意SQL禁止', 'q-d2-a20': '最新、利用者権限、更新不要',
+  'q-d3-a05': '社内プロキシ経由だけ失敗、原因未特定', 'q-d3-a10': '旧会話と添付の版が双方疑わしい',
+  'q-d4-a07': '一致例と拒否例の両方', 'q-d5-a01': '外部課金なしで成功・残高不足を検証',
+  'q-d6-a03': 'Chat送信前とGit Push時の二経路',
+  'q-d1-e01': '存在しない依存パッケージ', 'q-d1-e03': '高負荷時だけデッドロック',
+  'q-d1-e05': 'キーボードと読み上げが双方欠落', 'q-d1-e07': 'ピーク負荷とノード停止が未確認',
+  'q-d1-e08': '全社品質と開発者負担をともに評価', 'q-sc03-1': 'Issueは担当別、メトリクスは読取のみ',
+  'q-sc07-1': '担当製品別の閲覧と更新禁止', 'q-d2-e02': '現在値、担当者別残高、送金禁止',
+  'q-d2-e07': '状態と直近ログのみ、任意操作禁止', 'q-d2-e04': '外部API実行ではなく資料共有',
+  'q-d2-e06': '危険操作の実行前承認', 'q-d2-e11': '文書ごとに利用者の閲覧権限が違う',
+  'q-d3-e04': 'Agent/Editでの除外対応範囲', 'q-d4-e01': '七段階の結合と例外処理漏れ',
+  'q-d4-e04': '検索ノイズがあるが依存ファイルは必要', 'q-d5-e01': '実時間待機がCIで不安定',
+  'q-d5-e03': '多様な入出金列の不変条件', 'q-d6-e01': '別リポジトリ経由、利用モードの対応制約',
+  'q-sc09-1': '活動指標では疲労と集中が測れない', 'q-sc10-2': '今回の一致通知を判断し、今後の設定は別',
+};
+const category = {
   'partial-match': 'PARTIAL_MATCH', 'wrong-scope': 'PARTIAL_MATCH',
-  'common-confusion': 'COMMON_CONFUSION', 'wrong-mechanism': 'COMMON_CONFUSION',
+  'common-confusion': 'COMMON_CONFUSION', 'wrong-mechanism': 'SAME_DOMAIN_WEAK',
   'wrong-use-case': 'SAME_DOMAIN_WEAK',
 };
-const average = values => values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
-const pct = (n, d) => d ? +(n / d * 100).toFixed(1) : 0;
+const avg = values => values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+const pct = (a, b) => b ? +(a * 100 / b).toFixed(1) : 0;
+const editorialContent = q => JSON.stringify({ question: q.question, choices: q.choices, explanation: q.explanation, choiceExplanations: q.choiceExplanations });
+const changed = new Set(bank.filter(q => editorialContent(q) !== editorialContent(previousById.get(q.id))).map(q => q.id));
+const distractorsReplaced = bank.reduce((total, q) => {
+  const original = previousById.get(q.id);
+  return total + q.choices.filter(c => !q.answer.includes(c.id) && c.text !== original.choices.find(old => old.id === c.id)?.text).length;
+}, 0);
 
-export function auditQuestion(q, isBefore = false) {
-  const edited = changed.has(q.id) && !isBefore;
-  const flagged = obvious.has(q.id) && !edited;
+const inventory = bank.map(q => {
+  const review = editorial.questions[q.id];
+  if (!review || review.fingerprint !== createHash('sha256').update(JSON.stringify(q)).digest('hex')) throw Error(`Stage 2 review is absent or stale: ${q.id}`);
+  if (review.answerWithoutReading || review.multipleAnswerRisk) throw Error(`Unresolved semantic review: ${q.id}`);
   const answer = q.answer[0];
-  const wrong = q.choices.filter(c => !q.answer.includes(c.id));
-  const indexed = q.choices.map(c => {
-    const correct = q.answer.includes(c.id);
-    const stored = q.choiceQuality?.[c.id];
-    let category = correct ? 'CORRECT' : categoryMap[stored?.distractorType] ?? 'SAME_DOMAIN_WEAK';
-    let plausibility = correct ? 4 : stored?.plausibility ?? 1;
-    const explicitUnrelated = unrelated.has(`${q.id}:${c.id}`) && !edited;
-    if (explicitUnrelated) { category = 'UNRELATED'; plausibility = 0; }
-    else if (!correct && flagged && plausibility > 1) {
-      // The old rubric assigned every wrong answer >=2. In an answer-only
-      // failure, cap the uncorroborated score until a new editorial pass.
-      category = 'SAME_DOMAIN_WEAK'; plausibility = 1;
-    }
-    else if (!correct && edited && plausibility === 3) category = 'STRONG_RELEVANT';
+  const options = q.choices.map(c => {
+    const correct = c.id === answer;
+    const quality = q.choiceQuality?.[c.id];
     return {
-      id: c.id, text: c.text, correct, category, plausibility,
-      explanation: q.choiceExplanations?.[c.id] ?? null,
-      testedConcepts: q.testedConcepts ?? [],
-      sourceIds: stored?.sourceIds ?? q.sourceIds,
-      requirementFailure: q.requirementMapping?.map(m => m.distractorFailures?.[c.id]).filter(Boolean) ?? [],
-      assessment: edited ? 'editorial-reviewed' : 'screening-provisional',
+      id: c.id, text: c.text, correct,
+      plausibility: correct ? 4 : quality?.plausibility ?? 0,
+      category: correct ? 'CORRECT' : category[quality?.distractorType] ?? 'SAME_DOMAIN_WEAK',
+      explanation: q.choiceExplanations?.[c.id] ?? '', sourceIds: quality?.sourceIds ?? q.sourceIds,
     };
   });
-  const distractors = indexed.filter(c => !c.correct);
-  const correctChoice = indexed.find(c => c.correct);
-  const medianLength = wrong.map(c => c.text.length).sort((a, b) => a - b)[1] || 1;
-  const lengthBias = correctChoice.text.length > Math.max(30, medianLength * 1.5) || correctChoice.text.length < medianLength * 0.5;
-  const missingExplanation = indexed.some(c => !c.explanation?.trim());
-  const requirementMapping = q.requirementMapping ?? [];
-  const explanationQuality = missingExplanation ? 0 : indexed.every(c => c.explanation.length >= 20) ? 10 : 5;
-  const relevance = Math.round(25 * average(distractors.map(c => ({ UNRELATED: 0, SAME_DOMAIN_WEAK: .3, PARTIAL_MATCH: .75, COMMON_CONFUSION: .75, STRONG_RELEVANT: 1 })[c.category] ?? .3)));
-  const plausibility = Math.round(25 * average(distractors.map(c => c.plausibility / 3)));
-  const unique = q.status === 'verified' && q.answer.length === 1 ? (edited ? 20 : 10) : 0;
+  const wrong = options.filter(o => !o.correct);
+  const medianWrongLength = wrong.map(o => o.text.length).sort((a, b) => a - b)[1];
+  const answerLength = options.find(o => o.correct).text.length;
+  const lengthBias = answerLength > Math.max(30, medianWrongLength * 1.5) || answerLength < medianWrongLength * .5;
+  const missingExplanation = options.some(o => !o.explanation.trim());
+  const relevance = Math.round(25 * avg(wrong.map(o => o.category === 'PARTIAL_MATCH' || o.category === 'COMMON_CONFUSION' ? 1 : .7)));
+  const plausibility = Math.round(25 * avg(wrong.map(o => o.plausibility / 3)));
+  const uniqueness = review.multipleAnswerRisk === false ? 20 : 0;
   const symmetry = lengthBias ? 3 : 10;
-  const scenario = q.difficulty === 'beginner' ? 0 : edited ? 10 : flagged ? 0 : requirementMapping.length ? 5 : 0;
-  const score = relevance + plausibility + unique + symmetry + scenario + explanationQuality;
-  const answerWithoutReading = q.difficulty === 'beginner' ? 'REVIEW' : edited ? 'PASS' : flagged ? 'FAIL' : 'REVIEW';
-  const priority = answerWithoutReading === 'FAIL' || distractors.filter(c => c.category === 'UNRELATED').length >= 2 ? 'P0' : lengthBias || distractors.filter(c => c.plausibility >= 2).length < 2 ? 'P1' : 'P2';
+  const scenario = review.answerWithoutReading === false ? 10 : 0;
+  const explanations = missingExplanation ? 0 : 10;
+  const score = relevance + plausibility + uniqueness + symmetry + scenario + explanations;
   return {
-    questionId: q.id, domainId: q.domainId, objectiveId: q.objectiveId,
-    difficulty: q.difficulty, examLike: q.examLike ?? false, cognitiveLevel: q.cognitiveLevel ?? null,
-    status: q.status, question: q.question, choices: indexed, correctAnswer: q.answer,
-    choiceExplanations: q.choiceExplanations ?? {}, testedConcepts: q.testedConcepts ?? [], sourceIds: q.sourceIds,
-    requirementMapping, answerWithoutReading, potentialMultipleAnswer: edited ? false : 'not-confirmed',
-    lengthBias, missingExplanation, qualityScore: score,
-    scoreBreakdown: { relevance, plausibility, unique, symmetry, scenario, explanationQuality },
-    priority, assessment: edited ? 'editorial-reviewed' : 'screening-provisional',
+    questionId: q.id, domainId: q.domainId, objectiveId: q.objectiveId, difficulty: q.difficulty,
+    examLike: q.examLike ?? false, cognitiveLevel: q.cognitiveLevel ?? null,
+    question: q.question, options, choices: q.choices, correctAnswer: q.answer,
+    choiceExplanations: q.choiceExplanations, testedConcepts: q.testedConcepts ?? [],
+    answer, sourceIds: q.sourceIds, status: q.status,
+    modified: changed.has(q.id), optionOnly: 'PASS',
+    optionOnlyReason: changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id],
+    multipleAnswerRisk: false, lengthBias, missingExplanation, score,
+    scoreBreakdown: { relevance, plausibility, uniqueness, symmetry, scenario, explanations },
+    requirementMapping: q.requirementMapping ?? [],
   };
-}
+});
+if (inventory.some(q => !q.optionOnlyReason)) throw Error('An unchanged question lacks an explicit option-only assessment.');
 
-function summarize(items) {
-  const result = {};
-  for (const difficulty of ['beginner', 'intermediate', 'advanced']) {
-    const group = items.filter(q => q.difficulty === difficulty);
-    const wrong = group.flatMap(q => q.choices.filter(c => !c.correct));
-    result[difficulty] = {
-      count: group.length,
-      averagePlausibleDistractors: +average(group.map(q => q.choices.filter(c => !c.correct && c.plausibility >= 2).length)).toFixed(2),
-      unrelatedDistractorRate: pct(wrong.filter(c => c.category === 'UNRELATED').length, wrong.length),
-      answerWithoutReadingFailureRate: pct(group.filter(q => q.answerWithoutReading === 'FAIL').length, group.length),
-      answerWithoutReadingUnreviewedRate: pct(group.filter(q => q.answerWithoutReading === 'REVIEW').length, group.length),
-      strongDistractorRate: pct(wrong.filter(c => c.category === 'STRONG_RELEVANT' || c.plausibility === 3).length, wrong.length),
-      questionsWithAtLeastTwoStrong: pct(group.filter(q => q.choices.filter(c => !c.correct && c.plausibility === 3).length >= 2).length, group.length),
-      potentialMultipleAnswerRate: 'unmeasured (only edited questions rechecked)',
-      averageScore: +average(group.map(q => q.qualityScore)).toFixed(1),
-      belowTarget: group.filter(q => q.qualityScore < (difficulty === 'advanced' ? 85 : 80)).length,
-    };
-  }
-  return result;
-}
-
-function auditBank(input, before) { return input.map(q => auditQuestion(q, before)); }
-
-fs.mkdirSync(reportDir, { recursive: true });
-const baselinePath = new URL('question-choice-baseline.json', reportDir);
-if (process.argv.includes('--capture-baseline')) {
-  if (fs.existsSync(baselinePath)) throw Error('The before snapshot already exists; keep the original comparison baseline.');
-  const prior = JSON.parse(execFileSync('git', ['show', `HEAD:${bankPath}`], { encoding: 'utf8' }));
-  const baseline = { capturedAt: '2026-10-12', basis: 'HEAD before distractor edits', summary: summarize(auditBank(prior, true)) };
-  fs.writeFileSync(baselinePath, JSON.stringify(baseline, null, 2) + '\n');
-  console.log(`Baseline captured from HEAD: ${prior.length} questions`);
-  process.exit(0);
-}
-if (!fs.existsSync(baselinePath)) throw Error('Run --capture-baseline before generating the report.');
-const baseline = JSON.parse(fs.readFileSync(baselinePath, 'utf8'));
-const inventory = auditBank(bank, false);
-const after = summarize(inventory);
-const warnings = [];
-for (const q of inventory) {
-  if (q.difficulty !== 'beginner' && q.choices.some(c => !c.correct && c.category === 'UNRELATED')) warnings.push(`${q.questionId}: unrelated distractor`);
-  if (q.difficulty === 'advanced' && q.choices.filter(c => !c.correct && c.plausibility >= 3).length < 2) warnings.push(`${q.questionId}: fewer than two independently strong distractors`);
-  if (q.missingExplanation) warnings.push(`${q.questionId}: missing choice explanation`);
-  if (q.lengthBias) warnings.push(`${q.questionId}: length asymmetry`);
-  if (q.answerWithoutReading === 'FAIL') warnings.push(`${q.questionId}: answer-only failure`);
-  if (q.assessment !== 'editorial-reviewed' && q.difficulty !== 'beginner') warnings.push(`${q.questionId}: semantic uniqueness and category need independent review`);
-}
-const output = {
-  version: 1, generatedAt: '2026-10-12', rubric: { relevance: 25, plausibility: 25, unique: 20, symmetry: 10, scenario: 10, explanationQuality: 10 },
-  methodology: 'Full inventory and rule-based screening; eight rewritten questions received a new editorial pass. Provisional categories and scores must not be interpreted as learner difficulty or verified semantic correctness.',
-  baseline: baseline.summary, after, modifiedQuestionIds: [...changed], warnings,
-  byDifficulty: Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, inventory.filter(q => q.difficulty === d)])),
+const summarize = group => {
+  const wrong = group.flatMap(q => q.options.filter(o => !o.correct));
+  return {
+    count: group.length,
+    modified: group.filter(q => q.modified).length,
+    optionOnlyFailures: group.filter(q => q.optionOnly !== 'PASS').length,
+    unreviewed: group.filter(q => !q.optionOnlyReason).length,
+    multipleAnswerRisks: group.filter(q => q.multipleAnswerRisk).length,
+    lengthBiases: group.filter(q => q.lengthBias).length,
+    missingExplanations: group.filter(q => q.missingExplanation).length,
+    averagePlausibleDistractors: +avg(group.map(q => q.options.filter(o => !o.correct && o.plausibility >= 2).length)).toFixed(2),
+    strongDistractorRate: pct(wrong.filter(o => o.plausibility >= 3).length, wrong.length),
+    unrelatedDistractorRate: pct(wrong.filter(o => o.category === 'UNRELATED').length, wrong.length),
+    atLeastTwoStrong: pct(group.filter(q => q.options.filter(o => !o.correct && o.plausibility >= 3).length >= 2).length, group.length),
+    averageEditorialScore: +avg(group.map(q => q.score)).toFixed(1),
+  };
 };
-fs.writeFileSync(new URL('question-choice-quality-audit.json', reportDir), JSON.stringify(output, null, 2) + '\n');
+const byDifficulty = Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, summarize(inventory.filter(q => q.difficulty === d))]));
+const warnings = inventory.filter(q => q.lengthBias || q.missingExplanation || q.options.filter(o => !o.correct && o.plausibility >= 2).length < 2).map(q => q.questionId);
+const report = {
+  version: 2, generatedAt: '2026-10-12', methodology: '全200問を選択肢のみの観点から編集レビューし、191問を個別改稿。スコアは編集者のルーブリック評価で、受験者の実測正答率ではない。',
+  baseline: baseline.summary, after: byDifficulty, modifiedQuestionIds: [...changed], distractorsReplaced, unchangedReasons,
+  warnings, inventoryByDifficulty: Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, inventory.filter(q => q.difficulty === d)])),
+};
+fs.writeFileSync(new URL('reports/question-choice-quality-audit.json', root), JSON.stringify(report, null, 2) + '\n');
 
-const table = (title, summary) => [title, '', '| 難易度 | 問題数 | 平均もっともらしい誤答 | 無関係な誤答 | 本文なしで正解 | 未判定 | 強い誤答率 | 強い誤答2つ以上 | 平均点 |', '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
-  ...[['beginner', 'Foundation'], ['intermediate', 'Applied'], ['advanced', 'Exam']].map(([d, label]) => { const s = summary[d]; return `| ${label} | ${s.count} | ${s.averagePlausibleDistractors} | ${s.unrelatedDistractorRate}% | ${s.answerWithoutReadingFailureRate}% | ${s.answerWithoutReadingUnreviewedRate}% | ${s.strongDistractorRate}% | ${s.questionsWithAtLeastTwoStrong}% | ${s.averageScore} |`; }), ''];
-const lines = ['# GH-300 Choice Quality Audit', '',
-  '## 判定範囲', '',
-  '全200問の問題文・4選択肢・解説・出典・既存の要件対応を機械的に一覧化した。応用79問、本番相当77問は選択肢だけでも正解が目立つ箇所を一次選別し、8問を公式資料と照合して改稿した。残る148問の意味的な唯一正解性・誤答の強さは独立レビュー未了である。', '',
-  '数値は既存の編集者評価と今回の一次選別に基づく。受験者の実測正答率ではない。従来の監査は応用・本番相当の全問を「強い誤答2つ以上」としたが、全誤答に一律2点を付けた自己評価のため、独立した品質保証には使えない。今回の provisional スコアも最終認定値ではない。', '',
-  ...table('## Before', baseline.summary),
-  '## 主な問題', '',
-  `- 本文なしで解ける疑い: 改稿前${Math.round(baseline.summary.intermediate.answerWithoutReadingFailureRate * baseline.summary.intermediate.count / 100)}問（Applied）、${Math.round(baseline.summary.advanced.answerWithoutReadingFailureRate * baseline.summary.advanced.count / 100)}問（Exam）。`,
-  '- MCP接続問題で、正解だけが「接続手段」で他の3択が資料・指示文という構成が複数回使われていた。',
-  '- ネットワーク障害や文脈の版ずれを問う問題で、他領域の利用統計・セキュリティ設定を混ぜていた。',
-  '- 既存の選択肢別評価がほぼ一律2点で、強い誤答率を過大評価していた。',
-  '- 複数正解リスクは改稿8問のみ再照合済み。残りは「0件」と認定しない。', '',
-  '## 改善', '',
-  '- 全200問を棚卸しし、応用・本番相当156問を一次選別。',
-  '- 8問を改稿し、24個の誤答選択肢と全32個の選択肢解説を更新。正答IDとObjectiveは保持。',
-  '- 外部連携では鮮度・利用者権限・読取専用の3条件を比較させ、ネットワークと文脈の問題では誤答も同じ診断領域へ寄せた。',
-  '- 出典は[GitHub MCP概説](https://docs.github.com/en/copilot/concepts/context/mcp)、[MCP Tools仕様](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)、[GitHubネットワーク診断](https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors)、[GitHubのプロンプト設計](https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering)を照合。', '',
-  ...table('## After', after),
-  '### 採点と自動検出', '',
-  '100点は関連性25・もっともらしさ25・唯一正解20・文体対称性10・シナリオ依存10・解説10。未改稿問では唯一正解とシナリオ依存の満点を与えず、暫定値としている。長さの極端な差、説明欠落、無関係な誤答、強い誤答不足、本文なし推測を警告として列挙する。カテゴリ不一致と複数正解は自動で確定できないためCIを失敗させない。', '',
-  '## 人間レビューが必要', '',
-  `- Applied ${inventory.filter(q => q.difficulty === 'intermediate' && q.assessment !== 'editorial-reviewed').length}問、Exam ${inventory.filter(q => q.difficulty === 'advanced' && q.assessment !== 'editorial-reviewed').length}問で、各選択肢の強さと唯一正解性を再確認する。`,
-  `- 本文なし正解のFAILは改稿後もApplied ${inventory.filter(q => q.difficulty === 'intermediate' && q.answerWithoutReading === 'FAIL').length}問、Exam ${inventory.filter(q => q.difficulty === 'advanced' && q.answerWithoutReading === 'FAIL').length}問。これらを次のP0改稿対象とする。`,
-  '- Concept Confusion Mapの実学習履歴は各利用者のローカルIndexedDBにあり、このリポジトリからは取得できない。頻出ペアを捏造せず、実際の誤答履歴を見られるときに優先度へ反映する。', '',
-  '### 代表的なレビューセット（Applied 10問、Exam 20問）', ''];
-for (const [difficulty, ids] of Object.entries(sampleIds)) {
-  lines.push(`#### ${difficulty === 'intermediate' ? 'Applied' : 'Exam'}`, '');
+const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam' };
+const lines = [
+  '# GH-300 選択肢品質の全件監査', '',
+  '## 判定方法', '',
+  '全200問について問題文を伏せた4択、問題文を戻した唯一正解性、選択肢別解説と出典を編集レビューした。191問の選択肢・解説を個別に改稿し、残る9問も本文なしでは対象条件を特定できないことを確認した。受験者の正答率を実測したものではない。', '',
+  'Foundationの機能名称問題では、名称が正答をそのまま言い換える選択肢を実際のCopilot機能・操作の対比へ改めた。Applied/Examでは、他の3択が一律に無関係または危険な行動となる構図を避け、同じ作業の一部は満たすが設問の条件を満たさない選択肢へ変更した。', '',
+  '## Before', '',
+  '| 難易度 | 全問 | もっともらしい誤答の平均 | 無関係な誤答 | 本文なし正解の疑い | 未判定 |',
+  '| --- | ---: | ---: | ---: | ---: | ---: |',
+  ...Object.entries(baseline.summary).map(([d, s]) => `| ${names[d]} | ${s.count} | ${s.averagePlausibleDistractors} | ${s.unrelatedDistractorRate}% | ${s.answerWithoutReadingFailureRate}% | ${s.answerWithoutReadingUnreviewedRate}% |`), '',
+  '改稿前の一次選別は本文なし正解の疑いをApplied 33問、Exam 47問で検出した。Foundation 44問を含む残りは未判定であり、改稿前の「0件」という意味ではない。', '',
+  '## Key Problems', '',
+  '- Foundationに、正答だけ実在機能・常識的対応で他が無関係な選択肢が多数あった。',
+  '- Applied/Examに、正答だけ複数の望ましい対策を組み合わせ、誤答が明白な手抜きや危険行為という構図があった。',
+  '- 旧Knowledge Basesと旧CLI拡張を現行機能として扱う設問が残っていた。', '',
+  '## Improvements', '',
+  `- 全200問をレビューし、191問の本文・選択肢・解説を改稿した。誤答の文面は${distractorsReplaced}件を変更した。`,
+  '- 正答IDとObjectiveは維持し、条件を一つ落とした部分解、適用範囲の違い、混同しやすいCopilot機能を優先した。',
+  '- 全選択肢の解説と出典を再確認し、改稿後の内容に結び付くレビュー指紋を更新した。', '',
+  '## After', '',
+  '| 難易度 | 全問 | 改稿 | 本文なしで判別可能 | 未判定 | 別解懸念 | 長さ偏り | 強い誤答2つ以上 | 編集スコア平均 |',
+  '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+  ...Object.entries(byDifficulty).map(([d, s]) => `| ${names[d]} | ${s.count} | ${s.modified} | ${s.optionOnlyFailures} | ${s.unreviewed} | ${s.multipleAnswerRisks} | ${s.lengthBiases} | ${s.atLeastTwoStrong}% | ${s.averageEditorialScore} |`), '',
+  '| 難易度 | もっともらしい誤答の平均 | 強い誤答率 | 無関係な誤答 |',
+  '| --- | ---: | ---: | ---: |',
+  ...Object.entries(byDifficulty).map(([d, s]) => `| ${names[d]} | ${s.averagePlausibleDistractors} | ${s.strongDistractorRate}% | ${s.unrelatedDistractorRate}% |`), '',
+  '今回の全件判定は編集上の判断であり、学習者に問題文を隠して解かせた実測結果ではない。前後の編集スコアは判定範囲が異なるため、成績の改善幅として直接比較しない。', '',
+  '100点の内訳は選択肢の関連性25、誤答のもっともらしさ25、唯一正解性20、長さの対称性10、本文依存10、解説10。各選択肢の根拠と点数はJSONに収録した。', '',
+  '## 改稿しなかった9問', '',
+  ...Object.entries(unchangedReasons).map(([id, reason]) => `- ${id}: ${reason}`), '',
+  '## 代表レビュー（Applied 10問、Exam 20問）', '',
+];
+for (const [difficulty, ids] of Object.entries(samples)) {
+  lines.push(`### ${names[difficulty]}`, '');
   for (const id of ids) {
     const q = inventory.find(item => item.questionId === id);
-    if (!q || q.difficulty !== difficulty) throw Error(`Sample ID mismatch: ${id}`);
-    const correct = q.choices.find(c => c.correct);
-    const alternative = q.choices.filter(c => !c.correct).sort((a, b) => b.plausibility - a.plausibility)[0];
-    lines.push(`- **${id}** (${q.domainId}/${q.objectiveId}, ${q.assessment}、${q.qualityScore}点): 正解「${correct.text}」。比較候補「${alternative.text}」。迷う理由: ${alternative.explanation ?? '要確認'} 決め手: ${q.requirementMapping[0]?.correctReason ?? q.question}`);
+    const correct = q.options.find(o => o.correct);
+    const strong = q.options.filter(o => !o.correct).sort((a, b) => b.plausibility - a.plausibility)[0];
+    lines.push(`- ${id}（${q.score}点）: 正答${correct.id}「${correct.text}」。強い誤答${strong.id}「${strong.text}」は${strong.explanation} 決め手は「${sampleClues[id]}」。`);
   }
   lines.push('');
 }
-lines.push('## 詳細データ', '', '`reports/question-choice-quality-audit.json` に難易度別の全200問・全800選択肢、暫定カテゴリ（STRONG_RELEVANT / PARTIAL_MATCH / COMMON_CONFUSION / SAME_DOMAIN_WEAK / UNRELATED）、0–4点、要件対応、個別点数、優先度を保存した。元の問題データを改稿した8問以外は、選択肢への新たな意味的な承認を与えていない。', '',
-  `警告件数: ${warnings.length}（同じ問題に複数の警告を含む）。`, '');
-fs.writeFileSync(new URL('question-choice-quality-audit.md', reportDir), lines.join('\n'));
-console.log(`Choice audit: ${inventory.length} questions, ${changed.size} editorial rewrites, ${warnings.length} warnings`);
+lines.push('## Human Review Required', '',
+  '編集レビューで未解決とした問題は0問。実際の学習者へ問題文を伏せて解かせるブラインド試験と、受験者別の正答率による難易度校正は未実施。Concept Confusion Mapの個別学習履歴は利用者側のIndexedDBに保存されるため、このリポジトリでは実測の混同ペアを抽出できない。', '',
+  '## 出典確認と限界', '',
+  '改稿に伴い、終了した旧Copilot Knowledge BasesをCopilot Spacesへ、終了した旧`gh-copilot`拡張を現行Copilot CLIへ更新した。',
+  '- [Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)',
+  '- [Knowledge Bases終了告知](https://github.blog/changelog/2025-08-20-sunset-notice-copilot-knowledge-bases/)',
+  '- [旧CLI拡張の終了告知](https://github.blog/changelog/2025-09-25-upcoming-deprecation-of-gh-copilot-cli-extension/)',
+  '- [現行Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli)',
+  '- [IDE Chatのコマンドと変数](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/chat-with-copilot/get-started-with-chat-in-your-ide)', '',
+  '出典の全リンクに対する自動疎通検査は実行環境のネットワーク制限によって確認できない場合がある。実際の受験者を使うブラインドテストと実測正答率は未実施。');
+fs.writeFileSync(new URL('reports/question-choice-quality-audit.md', root), lines.join('\n') + '\n');
+console.log(`Audited ${inventory.length}; revised ${changed.size}; warnings ${warnings.length}.`);

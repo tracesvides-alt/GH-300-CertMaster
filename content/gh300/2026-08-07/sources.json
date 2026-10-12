@@ -131,8 +131,6 @@
       "q-d2-f06",
       "q-d2-f08",
       "q-d2-f09",
-      "q-d2-f10",
-      "q-d2-f11",
       "q-d3-f01",
       "q-d3-f02",
       "q-d4-f01",
@@ -586,9 +584,7 @@
       "g-exclusion-limitations"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [
-      "q-d2-f11"
-    ],
+    "relatedQuestionIds": [],
     "relatedDomainIds": [
       "d2"
     ]
@@ -1242,7 +1238,8 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d2-a22",
-      "q-d2-e13"
+      "q-d2-e13",
+      "q-d2-f11"
     ],
     "relatedDomainIds": [
       "d2"

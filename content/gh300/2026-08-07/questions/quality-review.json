@@ -1,1256 +1,1608 @@
 {
   "rubricVersion": 1,
-  "reviewedAt": "2026-09-07",
+  "reviewedAt": "2026-10-12",
   "reviewer": "Codex editorial second pass",
-  "method": "Separate rubric pass after authored revisions; not an independent human reviewer or an empirical difficulty calibration.",
+  "method": "全200問の選択肢単独・唯一正解性を改稿後に編集レビュー。独立の受験者実測ではない。",
   "questions": {
     "q01": {
-      "fingerprint": "291fd08ac13f694c0ca4ed974b20edab025c00536b40f89e98467ed5ab681649",
+      "fingerprint": "6fd52a4b50a51a4c1db2e5768db17bfc0630c1506e2f0fd5681d9b894d0d96aa",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。報告された境界条件を独立した期待値で検証できる。 比較対象: 速度の比較には使えるが、問題になっている月末の正否を確認していない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。報告された境界条件を独立した期待値で検証できる。 構造を確認できても丸めなどの実際の月末結果を検証しない。 別の観点を得られるが、モデル間の一致は仕様との一致を保証しない。 実行検証はできるが報告された月末の失敗を狙っていない。"
     },
     "q04": {
-      "fingerprint": "62d7c783fd673b391004a7594bee20e173aca7cd57459afdb69e6bb5bc2edb00",
+      "fingerprint": "1434fab6c0e10c2ef498f521daa934943e734ad195628baacc010d05cee7c4e4",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。説明と実行結果を照合し、元のコードを変更しない条件を満たす。 比較対象: テスト改善には使えるが、元の挙動を独立に確かめる手順ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。説明と実行結果を照合し、元のコードを変更しない条件を満たす。 可読性改善には使えるが、説明を得る前にコードを変更する。 既存契約の手掛かりにはなるが関数の説明を直接得て照合するわけではない。 説明は得られるが入力例の実行照合が欠ける。"
     },
     "q07": {
-      "fingerprint": "5f3540834c5f8292c2a98af7eb5a905f7e1d6b1dce1d6de96ae923e2759d4b81",
+      "fingerprint": "76a156cf304a8ed67843f89aa616265cf3124c5490b999cb8b4922912e680384",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。曖昧な日月の順序と出力契約の両方を具体化する。 比較対象: 非機能要件の補足であり日月の曖昧さは残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。曖昧な日月の順序と出力契約の両方を具体化する。 実装環境は明確になるが日月の解釈は決まらない。 入力の曖昧さは減るが期待するISO出力例を示さない。 出力例は与えられるが日/月の一般的な入力規則を明示しない。"
     },
     "q10": {
-      "fingerprint": "39d385d1582ca382537231b1455dba410c66654c408b5284a2eb35753afa2b01",
+      "fingerprint": "03587b5ba9919cd15f84ce2ce62376e64afc00545d1f7745cee3b27cd4a041e9",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。外部通信を隔離し、要求されている宛先と本文を直接検証する。 比較対象: 結合テストには有用だが、外部通信を行わない条件に合わない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。外部通信を隔離し、要求されている宛先と本文を直接検証する。 成功分岐は検証できるが、呼び出し引数の誤りを検出できない。 表示の回帰には有用だが、通知に渡された値は直接検証しない。 結合テストには有用だが、外部通信を行わない条件に合わない。"
     },
     "q-d1-a01": {
-      "fingerprint": "92bb6dc732c91e44b4036bc69e56e6bc03a675144b883c9f4b9a8eba642dee1e",
+      "fingerprint": "1851e0857fdbd8d81de43d833309cfa8d70a278d5a1eaa3100d1deaec1fcb75d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。正常系で動いた後も未検証の境界値や失敗経路を確認する必要がある。 比較対象: レビューの補助にはなるが実行時の境界条件を直接検証しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。正常系で動いた後も未検証の境界値や失敗経路を確認する必要がある。 正常系の回帰は確認できるが未検証の異常系が残る。 一部の問題は見られるが未確認の境界を直接試さない。 想定は整理できるが境界・例外経路の実行検証が残る。"
     },
     "q-d1-a02": {
-      "fingerprint": "3db4cdc1d4524f7dc5c38ebe773bc4e312815257cbbba84418aff5c5317495bc",
+      "fingerprint": "9b3c7a7b1ad09da172980413bea18540371afd18e0a75ea08bb18ff4029aae42",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。ユーザー入力をSQL構文として解釈させない修正である。 比較対象: 入力検証は有用だが、許容文字内のSQL構文を安全に分離できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。ユーザー入力をSQL構文として解釈させない修正である。 文脈依存のエスケープに頼るより文と値の分離が確実である。 被害軽減と検知にはなるがインジェクションの原因は残る。 ORMを使ってもraw文字列連結が残れば注入リスクが残る。"
     },
     "q-d1-a03": {
-      "fingerprint": "f3f8f25f041dc7530043a8cf1654b917e21b3ea4aad4944a511bfb4be3f32b16",
+      "fingerprint": "a6ba11905bc8dd86d472b658bc67456a4800f32b619bf11a5936da6f13edafa2",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。仕様やリスクを自分で判定する力を直接訓練する。 比較対象: 利用の振り返りには使えるが正否を判断する演習がない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。仕様やリスクを自分で判定する力を直接訓練する。 編集効率には有用だが仕様違反を判断する力の訓練ではない。 出力の安定には役立つが仕様違反を見抜く基礎判断を鍛えない。 事例共有は有用だが採用率は判断力の改善指標ではない。"
     },
     "q-d1-a04": {
-      "fingerprint": "2327debad250a4655b105a1d7fc487bf2706314e5c9d0a59d44f27f20bc54d03",
+      "fingerprint": "fbc044673abaf73fa1dc6cb86141811ef8c3b8d3d79768be103c3f2cb7a51079",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。パスワード保存向けの計算コストを持つ方式と検証まで指定する。 比較対象: 鍵管理には配慮しているが復号不要のパスワード検証に可逆暗号を選んでいる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。パスワード保存向けの計算コストを持つ方式と検証まで指定する。 ソルト付きの高速汎用ハッシュよりパスワード保存専用方式が適する。 復号可能な暗号化はパスワード照合用のハッシュ保存と異なる。 オンライン試行は制限できるが漏えい済みハッシュの推測対策ではない。"
     },
     "q-d1-a05": {
-      "fingerprint": "b82f1530d9827e1bac0b737afa6dd408283cd119a3b8180ea53a4a92c2f8c672",
+      "fingerprint": "9f89ae3a1b0838e2e16b200249c0c79ee6e96402c34f066b03a885116ee45038",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。参照情報は出所確認の助けとなるが、条件の適合判断は別途必要である。 比較対象: CodeQLはコードのセキュリティ解析でありライセンス審査ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。参照情報は出所確認の助けとなるが、条件の適合判断は別途必要である。 参照表示だけでは採用したコード全体の条件を確認できない。 CodeQLはコードのセキュリティ解析でありライセンス審査ではない。 記録は有用だが利用条件と採否のレビューまで要る。"
     },
     "q-d1-a06": {
-      "fingerprint": "5c26ecf406ef584268aed27e17722dd9fbfe5c959cfd60a212d5139b3c559540",
+      "fingerprint": "6fc48175f6c4609346c52ab0439272d97362c48c4f616a3c773ac4bbc219febf",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。機械的検査だけでは見落としやすい意味上の問題を確認する。 比較対象: 追加の指摘は有用だがAI同士の一致は独立した仕様検証にならない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。機械的検査だけでは見落としやすい意味上の問題を確認する。 静的な整合性は有用だが業務仕様に合うとは限らない。 AIが見落とした異常系やAPI実在性を確認できない。 形式と実行範囲は見られるが仕様条件の確認を先送りする。"
     },
     "q-d1-a07": {
-      "fingerprint": "4ede7e6dd3e43dd6b33af2b106c9b3ffa886afe92dfe6f4e8de98bc70742bc5b",
+      "fingerprint": "1dad580689a022b4e40757709e57072ba1a80ae472579ded15ad97ccec89970c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。重要な判断の前に人間が確認・介入するHuman-in-the-loopを実装する。 比較対象: 自動テストは必要でも人間による互換性判断を代替しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。重要な判断の前に人間が確認・介入するHuman-in-the-loopを実装する。 マージ前の人間承認という運用を満たさない。 自動化は有効でも担当者がマージ前に確認しない。 指示は出力を誘導するが承認の強制ゲートではない。"
     },
     "q-d1-a08": {
-      "fingerprint": "8a7bd487581debf9e5dd7ee654220d7bf56d7fd24499c533eb948210edf9d65f",
+      "fingerprint": "2ef1cd124d2cf19be3734b2b0dd641024bef483a6d95748f5f12b34f400c6908",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。不正な実装に対して失敗することを確認し検証の空洞化を検出する。 比較対象: 意図の可読性には有用だがアサーションの実効性は確認できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。不正な実装に対して失敗することを確認し検証の空洞化を検出する。 意図の可読性には有用だがアサーションの実効性は確認できない。 ケースだけ増えても期待するエラーを捕まえる保証がない。 経路を通っても誤りを検出するアサーションとは限らない。"
     },
     "q-d1-a09": {
-      "fingerprint": "1936042f3fc938e5d5767ee64025fe3f01c3fb4e56de132312e830b7588bdb60",
+      "fingerprint": "ca3791fc9f014bc193dccd2581c73cc78e86ab2b3fd6ba93181d16b88b3f4e7f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。静的整合性・動作・セキュリティの三観点を組み合わせる。 比較対象: 静的品質の確認に偏り、業務動作とセキュリティ検査が不足する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。静的整合性・動作・セキュリティの三観点を組み合わせる。 業務回帰やコードのセキュリティ上の問題を十分に覆わない。 動作確認に偏り、静的な問題とセキュリティ解析が不足する。 秘密情報の検出は有効だが広いセキュリティ解析とは異なる。"
     },
     "q-d1-a10": {
-      "fingerprint": "079c3f11431976dc246b734e5817b5190769b4201797ac2bb7d60b1e06569e90",
+      "fingerprint": "2aff5ab94e45b841868939cdc742542d27d1150d7c9f0b5ef45e0b7ade7e0e9c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。問題となった保守性と最適化目的の両方を判断できる。 比較対象: 速度の評価だけでは可読性の悪化という問題を解消しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。問題となった保守性と最適化目的の両方を判断できる。 出力は守れるが可読性悪化を採用時に解消しない。 説明を足しても難解な実装と性能効果の不明さが残る。 互換性の検証は有用だが保守性の要件が残る。"
     },
     "q-d1-e01": {
-      "fingerprint": "9d12002aea8518f9ba66c105427001921390023d71ea0f0fd89830c903b18e74",
+      "fingerprint": "3b847b496168e55eb51bbf6ccbf4bc700856a512d1eed0794badb213ed86d583",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。架空の依存名をもっともらしく提示するリスクに対して出所を独立に確認する。 比較対象: 隔離実行は調査に有用だが成功だけで本番への信頼を認定できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。架空の依存名をもっともらしく提示するリスクに対して出所を独立に確認する。 同名項目が正当な提案元か確認しなければ危険である。 複数モデルが同じ誤情報を出す可能性があり出所の検証にならない。 動くことだけではパッケージの信頼性を示せない。"
     },
     "q-d1-e02": {
-      "fingerprint": "569a046451eaa6592b884dee24e2d4b50e66dfa81b63cc5e85751d519bf59562",
+      "fingerprint": "f6fb250ef9019b343a9ce19a008b55f0d70eb06c2d9d614be44378084d87eb99",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既存検証を維持する条件と変更ごとの追跡可能性を両方満たす。 比較対象: 静的解析の証跡は得られるが動作検証と人間の判断が不足する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既存検証を維持する条件と変更ごとの追跡可能性を両方満たす。 追跡はできても採用変更の仕様妥当性を担保しない。 AIレビューは補助であり独立した人間の検証を置き換えない。 レビューと追跡はあるが既存の検証手順を維持していない。"
     },
     "q-d1-e03": {
-      "fingerprint": "2d469934748793a4d5417f1508bbc1af572f37349de92e5409965f72a9f90a3f",
+      "fingerprint": "d9a01a10118f91909ea3c869ba87557af12da68160b9fc5304742500403d3731",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。高負荷という再現条件と説明への過信の両方に対処する。 比較対象: 通常負荷のカバレッジを増やしても稀な競合を検出できるとは限らない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。高負荷という再現条件と説明への過信の両方に対処する。 設計理解の補助にはなるが実行と独立検証が不足する。 現象は検出できても不変条件の独立した確認を欠く。 レビューは有効だが高負荷時だけ起こる競合を実行で捕まえにくい。"
     },
     "q-d1-e04": {
-      "fingerprint": "a536b9d857d9ba7e5b9ccb3a931058c3b4c2277fd0520b548a37122c902c3f2a",
+      "fingerprint": "2af148cc0ff908d03d72a41af6dbae4148b879367cb615405ccb9a12ecbb78be",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入力前の最小化で、手動貼り付けに含まれる機密情報を直接除去する。 比較対象: ファイル除外は手動で貼り付ける本文のサニタイズを代行しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入力前の最小化で、手動貼り付けに含まれる機密情報を直接除去する。 認証情報を入力に残してしまう。 個人情報の最小化を満たさない。 業務用プランやアクセス権があっても不要な個人情報の投入は避ける。"
     },
     "q-d1-e05": {
-      "fingerprint": "cbc8103e49b4a8a3e89e4fe8505f63169e2cba2df43c801e9b99f97c51ec41d1",
+      "fingerprint": "939413539e91346ba76caf94b0049196025e595aa7627728ae879c571be398bc",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。キーボード操作と読み上げ双方を実際に検証する。 比較対象: 静的検査ではフォーカス遷移や操作時の読み上げのすべてを確認できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。キーボード操作と読み上げ双方を実際に検証する。 属性の存在だけではキーボード操作と読み上げを確認できない。 入力操作は見られるが支援技術の要件が残る。 既存部品も統合方法によって不具合が生じ、画像比較だけでは検出できない。"
     },
     "q-d1-e06": {
-      "fingerprint": "530b75ac0a56f7b30837c6ed52fd1428a3daea86a02d4fa4c39e7fd029e2f4d3",
+      "fingerprint": "c3e3b68749b368e17f3e547516efec91555527253bc7a3549c58d00b6f92bd8d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。 比較対象: 履歴は追跡に有用だがライセンス条件の判断そのものではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。 安全性は見られるがライセンス条件を確認できない。 生成スニペット自身の出所と条件を見落とす。 履歴は追跡に有用だがライセンス条件の判断そのものではない。"
     },
     "q-d1-e07": {
-      "fingerprint": "d70f2673dad389cf32e3e06fe9c6da4f8cfc9b1ed9ca63fa8dd1f55cbd665a2d",
+      "fingerprint": "e109114ffd94b4e65729e78b691a83134c2ab9af6e0d62753c74e5f497d61ee5",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。未検証の負荷・障害という二条件に直接対応する。 比較対象: 供給網の改善には有用だが今回未確認の実行条件を評価しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。未検証の負荷・障害という二条件に直接対応する。 ピーク負荷とノード停止時の振る舞いは実行で検証されない。 供給網の改善には有用だが今回未確認の実行条件を評価しない。 障害注入で確認すべき未検証条件が残る。"
     },
     "q-d1-e08": {
-      "fingerprint": "a6205b74f80b731900d935c7902d1c6a170f2a4c380bf736cd025e9efbd21191",
+      "fingerprint": "b9e3551cf7bf7db5e1a9e4df51587081b2a7be752e71d3fad6818f1c68905a53",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。安全な判断力の共有と実際の開発者体験を合わせて改善する。 比較対象: 入力改善には有用だが採用率だけでは安全性や成果を評価できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。安全な判断力の共有と実際の開発者体験を合わせて改善する。 失敗例は役立つが品質と開発者負担を評価しない。 手順は良いが生産性と品質を単一指標で判断できない。 利用量の把握には使えるが多く生成することが生産性とは限らない。"
     },
     "q-d2-a01": {
-      "fingerprint": "46ede7ae28e8104f028da02c5eae4d4a5274e01cfa3fa9f9a134e78c0a908649",
+      "fingerprint": "621b101220c75bdfe50ef136bdd79cf12a7e9ca5b7f84bbef823b270508ab481",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較対象: 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 部分利用はできるがエディタ上のインライン確認ではない。 修正はできるが編集中の関数でインライン差分を部分適用する条件とは異なる。 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。"
     },
     "q-d2-a02": {
-      "fingerprint": "0bbe0a004ae28f064075e02bb7681aba17973dbe980822820c5ab682c3eca885",
+      "fingerprint": "663683c2f99784437b212dcba872142f8107df10d9f085fa8432b7ef88abc817",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。参照先が既知なので必要なコードを直接与えると対象を限定できる。 比較対象: 選択箇所は伝わるが別ファイルの契約を確認する情報が欠ける。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。参照先が既知なので必要なコードを直接与えると対象を限定できる。 関連定義を探せるが必要な定義と対象ファイルを明示していない。 型の正確な構造を渡せない。 規約の共有には有用だが具体的な型定義の内容を提供しない。"
     },
     "q-d2-a03": {
-      "fingerprint": "49a54ceab6dff9c53894be136d3498e511f6a36f8d433b2890ea34f566409ba6",
+      "fingerprint": "6378d0ea9062589b1ac4d1adf1bddfb827ab0986d633a70ece3862a09434ebac",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。相談段階では変更せず、実装段階で局所的な差分を確認できる。 比較対象: 相談前に編集を始めるため段階の順序が逆になる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。相談段階では変更せず、実装段階で局所的な差分を確認できる。 設計相談は合うが選択関数だけの差分確認より範囲が広い。 コード変更なしの最初の相談を満たさない。 局所的なコード生成には使えるが設計候補の相談を先に行わない。"
     },
     "q-d2-a04": {
-      "fingerprint": "c534004cdb1c9b8af1abc7fe53f651bcec3581da172aa69d42dcef09b74f177f",
+      "fingerprint": "c1d8ef13187a7640e7a2ea05d5c4ac57ed1fd36be58a6f776fd145168888bec3",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。危険な操作を実行前に止め、満たすべき制約を明示する。 比較対象: Gitの分岐は外部DBや未追跡データの破壊を防がない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。危険な操作を実行前に止め、満たすべき制約を明示する。 Git管理外のデータへの影響と許容する操作がまだ不明である。 説明だけで実際の保持データと許容範囲を確定できない。 ローカル環境にも保持すべきデータがあり場所だけでは判断できない。"
     },
     "q-d2-a05": {
-      "fingerprint": "4b63df32e80e522a22e07c544fb60dd59bb6af2f6a94dcda4b67c40ac2bc5ff3",
+      "fingerprint": "bf44f45c12d85efd5476a0278b2b5c2fb45f18dfffa24777439db3f0f5088c4d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。問われているのは検索や説明に加えて編集・実行を繰り返す能力である。 比較対象: 文脈の検索はAskにも有用だが自律的な編集と再実行とは別である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。問われているのは検索や説明に加えて編集・実行を繰り返す能力である。 ログを渡して相談できるが編集・実行の反復は手動になる。 Agent利用でもテスト結果を次の操作に使う条件が欠ける。 局所修正には使えるが一連のツール実行は自動化しない。"
     },
     "q-d2-a06": {
-      "fingerprint": "c09fefa952be938fa41b58ccb0dae9d45f0ddddb6fc1b6f4322c3c36698045f2",
+      "fingerprint": "b52abaef00df2db94f3a965fe98f4f3ce37d1979d242ad02fd9d5ae779e1dc9f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 比較対象: レビューは補助であり失敗したテストが直ったかの確認が欠ける。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 失敗ログを修正判断へ取り込んでいない。 ログは使うが修正後の検証を反復しない。 設定変更だけではログに示された実装修正を確認できない。"
     },
     "q-d2-a07": {
-      "fingerprint": "68fd38e6b68301b57a8a5355fa73404746f6d36461bf1e48768abe5adf41f90a",
+      "fingerprint": "b31b2009ac3cc2ab868ade97c34ef2efbd227c8d5029a9f2338a5f0d97253b6b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。 同じMCP経由で現在値を取れるが、共有管理者権限では利用者ごとの閲覧境界を守れない。 資料を共有できるが、前日の静的コピーでは現在のスキーマを保証できない。 MCP連携ではあるが、指示文だけでは任意SQLの実行権限を強制的に制限できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。 閲覧範囲は守れても変更や任意SQLを禁じる条件を外す。 権限は考慮できても現在のスキーマを取得する条件を満たさない。 MCP連携ではあるが、指示文だけでは任意SQLの実行権限を強制的に制限できない。"
     },
     "q-d2-a08": {
-      "fingerprint": "6a27cfcf482e685154fe4ab4fb39ccf6c2ce7b4e62ff2da8fa616242c0dfe7be",
+      "fingerprint": "8a9470670519fb6d2d659dd307c7f6ee02235bef0b8cc708c09b3e3165f6c2a3",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。VS Codeの.vscode/mcp.jsonではサーバー定義をserversに配置する。 比較対象: inputsは入力変数の定義に使うものでサーバー登録先ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。VS Codeの.vscode/mcp.jsonではサーバー定義をserversに配置する。 他のMCPクライアントで使われる形式で、ここで指定したVS Code設定とは異なる。 inputsは入力変数の定義に使うものでサーバー登録先ではない。 ツールの選択とMCPサーバー起動定義は別であり、この設定の登録キーではない。"
     },
     "q-d2-a09": {
-      "fingerprint": "07134d2c1ac8cc20406f6b019ffe75463a5fedec8719ab842642920a45de81d7",
+      "fingerprint": "1d9047ef74e461cc58c7ad7869c18c65ca883fdab3b313e3d51ad0d3200a1e6f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 比較対象: 個人設定ではチームの更新をリポジトリで一元管理できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 Git共有できるが毎回の呼び出しが必要で自動適用ではない。 常時参照できてもGit上の一元管理にならない。 共有資料には使えるが毎回の自動適用を満たさない。"
     },
     "q-d2-a10": {
-      "fingerprint": "2f3311ad2d923710a271bd6c78131ea3ebf7291cf736e38c46f07c19ce8e3fd7",
+      "fingerprint": "93d678913c754a317531d78e1aa4a989961aad45417dbc49292cc82392cbd3f7",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。常時の規約とオンデマンドのタスクを、それぞれの適用方法に合わせている。 比較対象: 文脈の共有はできるが規約の自動適用という条件を満たさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。常時の規約とオンデマンドのタスクを、それぞれの適用方法に合わせている。 定型タスクには合うが命名規約を自動適用しない。 命名規約は合うがノート作成まで常時の指示になる。 文脈の共有はできるが規約の自動適用という条件を満たさない。"
     },
     "q-d2-a11": {
-      "fingerprint": "64d91c3b8bf8f21b2a17f3477e09cfd9a4e512a5228f4a3eaa3cf1276ca7dc94",
+      "fingerprint": "be6c06be5f00da72bfabe48f5ff7a4077ea031bde5848cc776283cf0b97ee9ad",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。レビュアー向けに今回の変更を要約する目的へ直接対応する。 比較対象: レビューの指摘は改善点であり変更の目的や全体像の要約とは異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。レビュアー向けに今回の変更を要約する目的へ直接対応する。 リスク調査に使えるがサマリーの自動下書きではない。 差分の一部の説明は得られるがPR全体の要約ではない。 APIの説明は得られるがPR変更の概要ではない。"
     },
     "q-d2-a12": {
-      "fingerprint": "496d82dbd24ff0f1349771a173aed697dc84e906529db1a65a20a0414afec455",
+      "fingerprint": "a7ef7bbf281a25729fab672578e0e7942ef3b284f00677f282cc781548193812",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。候補全体の採用と候補の却下という二つの操作に合う。 比較対象: Windowsでの一語採用は部分採用であり今回は全体採用が必要である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。候補全体の採用と候補の却下という二つの操作に合う。 Windowsでの一語採用は部分採用であり今回は全体採用が必要である。 別案への切替は候補を閉じることとは異なる。 補完の採用・却下と対話編集の起動を混同している。"
     },
     "q-d2-a13": {
-      "fingerprint": "ae4e0a76e6cfb9650fa7c58f280791050b6f3e634f8ed652252b5c5a46b3b629",
+      "fingerprint": "bba024d30b3df3521ca8ec41c99ccad0ee7127f33062bdf55301fc8257083243",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。部分採用なので残りの提案を取り込まずに編集を続けられる。 比較対象: 別案の表示は現在の先頭単語の部分採用ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。部分採用なので残りの提案を取り込まずに編集を続けられる。 全体採用では不要な残りの部分まで取り込む。 却下では必要な単語も取り込めない。 別案の表示は現在の先頭単語の部分採用ではない。"
     },
     "q-d2-a14": {
-      "fingerprint": "0a894cae0a5f0f6aea4a423a8615f286c2b7aabe878b7a969fa096b8ad7bd4bd",
+      "fingerprint": "718242bf090ffe54624c5126945b8ad04463f1b3d70233612a9dc79441662f5c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。現状の意味を理解する段階なので説明依頼が適する。 比較対象: 修正の提案は意図を理解した後の段階である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。現状の意味を理解する段階なので説明依頼が適する。 修正の提案は意図を理解した後の段階である。 自律的な置換は書き換え前の理解という条件に合わない。 改善点の把握には有用だが現状のマッチ条件を説明する依頼とは違う。"
     },
     "q-d2-a15": {
-      "fingerprint": "0151dde779e25466b419a12a8a1d5471df46da4af5a0467d79fdfa5649b1eed6",
+      "fingerprint": "26be7afe6933cf9e6651ac0c7a903f31e724a8fb9563fda2ff114b0004e239ce",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。検索結果を実際の内容と関連付けることで対象の取り違えを減らす。 比較対象: 候補の一つだけでは同名ファイルを取り違える可能性が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。検索結果を実際の内容と関連付けることで対象の取り違えを減らす。 名前の一致だけでは参照関係や実際の処理範囲を確定できない。 入口の発見には有効だが実装の特定には参照追跡が必要である。 変更履歴は手掛かりだが現在の参照先全体を示さない。"
     },
     "q-d2-a16": {
-      "fingerprint": "69ad6bd3aa0636d350c8f84286828fec8c19e3fd1206cb1a654c2fbb8bdc40b5",
+      "fingerprint": "80e0ee9492802aa068ac6c0e4889281e3bece3254cdd3646bca49a99eae25307",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。作業を小さく分けると影響範囲と検証対象を把握しやすい。 比較対象: まとめて確認すると問題の切り分けとレビューの負担が大きい。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。作業を小さく分けると影響範囲と検証対象を把握しやすい。 差分は整理できるが未検証の変更を一括で広げる。 形式の検査では各エンドポイントのバリデーション契約を確認できない。 一部を確認しても残りの大きな変更は未検証のままである。"
     },
     "q-d2-a17": {
-      "fingerprint": "f483b4d3c67218937d612bc1fc1080b395e6a00dd214571f43c039e709535946",
+      "fingerprint": "9e689fafa2bd67896013038d4c0cf766ca7823713b4834124735782159841d10",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。読み取りコンテキストと実行要求を区別している。読み取りをToolで提供する実装もあり得る。 比較対象: Promptは対話のテンプレートであり操作実行そのものではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。読み取りコンテキストと実行要求を区別している。読み取りをToolで提供する実装もあり得る。 読み取りToolは可能だがResourceは副作用のある操作を表す設計ではない。 Promptは対話のテンプレートであり操作実行そのものではない。 指示を記述してもチケット作成の実行機構を提供したことにはならない。"
     },
     "q-d2-a18": {
-      "fingerprint": "4eb8311ab3f79d8c6fbb8b39b60f5334cff36fccd56fccfbf1e90ae8c7476e83",
+      "fingerprint": "7574557e5799fbc195219cb17df8eaf64cda50cad9e2ad56c457d2ceb68fe891",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。プロンプトの遵守だけに依存せず、実際のアクセス境界で権限とデータを制限する。 比較対象: 通信保護とデータへの認可は別であり、暗号化だけでは範囲を制御できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。プロンプトの遵守だけに依存せず、実際のアクセス境界で権限とデータを制限する。 認可だけでは不要な機密情報の過剰返却を防げない。 伝送保護と最小化だけでは利用者ごとの権限を守れない。 指示は権限の強制ではなく、サーバー側でアクセスを制限する必要がある。"
     },
     "q-d2-a19": {
-      "fingerprint": "c050fc227bfb1a0ec4df91382a61c9af57893cc0b981bdbd1397a6b582d79de0",
+      "fingerprint": "995a2bcf032062fabdc53c244524b86054d03268c87ee7bb42bd68e1227f5dcd",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要な規約を明確で実行可能な指示として伝える。 比較対象: 禁止事項が多すぎると重要な規約を把握しにくく、望む代替も不明瞭になる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な規約を明確で実行可能な指示として伝える。 簡潔になっても望む具体的な規約を伝えない。 具体例はあるが重要な規約が埋もれる。 特定タスクの手順はPrompt Filesなどで必要時に呼ぶほうが適する。"
     },
     "q-d2-a20": {
-      "fingerprint": "9586bca3f6fc7202e71bc283bf185d92973bd765fcb50339045f2d6caf0cc3ea",
+      "fingerprint": "92650fa54f81a50aa086fe2ef374867e6a48e6233799cc29aadb2a94a7a4953b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。最新の検索結果を取得しつつ、閲覧権限と読取専用の操作範囲をサーバーで守れる。 最新値は取得できるが、共通の管理者権限は利用者ごとの閲覧境界を失わせる。 共有資料としては有用だが、昨日の一覧では現在の注文状態を照会できない。 検索は可能だが、指示だけでは不要な更新権限を排除できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。最新の検索結果を取得しつつ、閲覧権限と読取専用の操作範囲をサーバーで守れる。 現在値は得られるが利用者ごとの閲覧権限を越える。 権限は守れても回答が常に最新にならない。 検索は可能だが、指示だけでは不要な更新権限を排除できない。"
     },
     "q-d2-a21": {
-      "fingerprint": "83fc2b128876edb2e1aa13f6dff61a28e3d58118d850df873fc9463a5ed70afe",
+      "fingerprint": "bb22391e0bc126cc902460822d5b2bbd440a16d9b726df1ba41b2cc59560fa59",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対象がファイルとして特定されているので直接の参照が適する。 比較対象: 選択範囲外の構造が欠ける可能性がある。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対象がファイルとして特定されているので直接の参照が適する。 選択部分は明示できるがファイル全体を確実に含めない。 検索結果の抜粋は得られるがファイル内容全体の明示添付ではない。 実装内容の明示参照にならない。"
     },
     "q-d2-a22": {
-      "fingerprint": "e978d59ff924fba4110a4c77d689882ec57a9518b7d1f87f20d43e21d97a08bc",
+      "fingerprint": "e0953a7050a7fbc8d5b803207071896a6d27084e7bd5028852052e027086921d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。端末で利用でき、構文の確認と実行判断を分けられる。 比較対象: レビューも利用できるが現在求めるシェル構文の説明ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。端末で利用でき、構文の確認と実行判断を分けられる。 説明は得られても自分で理解したうえで実行を判断する条件を満たさない。 編集支援は利用できるがコマンド構文を確認する目的と異なる。 今回の構文と影響を理解してから実行できない。"
     },
     "q-d2-e01": {
-      "fingerprint": "ff3c9c426ef4a9bc231597cc87331f5070ade99f43455369ea0fc44a4af39a19",
+      "fingerprint": "d17e16b1e841bcb747fe0003cc823b4364c065ae1060897461002b0b68fa1b92",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較対象: 局所編集はできるが横断的な編集とテストの反復を自分でつなぐ必要がある。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 方針の相談には合うが手動切替を減らす条件を満たさない。 局所変更はできても失敗ログによる継続修正が手動になる。 依存部分を扱えるが複数ファイルとテストの反復は任せられない。"
     },
     "q-d2-e02": {
-      "fingerprint": "f030725c773115878572c59c67a0745fff78ea477999c7ed5005ea8043745c1b",
+      "fingerprint": "15f700b11e322761fbad2101c3b6c8a0648245bda85b3c79f5bf7836d55a0ae6",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。現在値の取得、利用者ごとの認可、読取専用の操作範囲を同時に満たす。 現在値を取れる点は近いが、共有管理者トークンでは担当者別の残高閲覧権限を守れない。 仕様理解には役立つが、定期出力では現在のレートや残高を保証できない。 MCPで現在値を取得できても、送金権限を指示文だけで無効にはできない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。現在値の取得、利用者ごとの認可、読取専用の操作範囲を同時に満たす。 最新性と読取専用は合うが担当者の閲覧範囲を越える。 閲覧範囲は守るが現在値の要件を外す。 MCPで現在値を取得できても、送金権限を指示文だけで無効にはできない。"
     },
     "q-d2-e03": {
-      "fingerprint": "d5852110f006eea367c04b55a62db017524a3a48f57680350c1c4d2b1b11d568",
+      "fingerprint": "349acc315fc12e3a3fbc0e6da55cdc9af3547dabf0510c653a4ddd1db184fc66",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 比較対象: 個人に閉じ、チームで同じタスクをバージョン管理する要件を満たさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 形式は共有できてもタスクを必要時だけ引数付きで呼ぶ構成ではない。 資料は共有できるが手順と引数の再利用ができない。 個人別の管理でリポジトリ上の定型タスク共有にならない。"
     },
     "q-d2-e04": {
-      "fingerprint": "d8ca3e3862844a2f1242dd88522b5e82e221ee8655abf6ceb1a05d7fd9b7a817",
+      "fingerprint": "d6db0a7265a237725765913e1c1c695ad2352694a67676172b2bce99fb212322",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。共通の資料を集めた文脈の共有という目的に合う。 比較対象: 個人指示に名前を書くだけでは資料集合をチームに共有できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。共通の資料を集めた文脈の共有という目的に合う。 参照は可能でもチームで選んだ資料をまとめる共有空間の要件と異なる。 作業手順は共有できるが資料集合そのものの共有ではない。 共通規約としては使えても選択した資料をまとめて共有する用途と異なる。"
     },
     "q-d2-e05": {
-      "fingerprint": "06c12c4e893b0071e9f2f0902097aebc99f208441cb3180010f813c54e1abf6b",
+      "fingerprint": "cc011b54317b367dc181c1b926663901d49e68adc19fd23e74fac2a147339133",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較対象: 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 案は得られるが対象コード上の差分プレビューを直接適用できない。 編集は可能だが一行ずつのインライン差分確認という条件を外す。 追記には適しても選択済みコードの対話的な差分修正ではない。"
     },
     "q-d2-e06": {
-      "fingerprint": "607d0a7b12f9aeb3027f6e80dbba32e9848d9926c01409cca784a7aa2f844cb6",
+      "fingerprint": "26b667a2a343daf61292a2e44f3b5b65309eb02782531e7cfc6c0fbe741c9ab9",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。承認が常に出るとは仮定せず、実際の設定で実行前の制御を確認する。 比較対象: 通信の暗号化はコマンドやツールの実行承認とは別の制御である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。承認が常に出るとは仮定せず、実際の設定で実行前の制御を確認する。 実行前承認を保証できない。 ツール側で危険操作を許していれば不十分である。 マージ前のレビューは既に実行された破壊的な操作を防がない。"
     },
     "q-d2-e07": {
-      "fingerprint": "95b0a2a1d1cc8a06fb49ef5e18e0f19f1d516f82242c11313ee7f9a414245b6e",
+      "fingerprint": "3928709d24f8fd3f50f4123ae83afc1a3034ec76e52968a69c9a50fa2fc4dbdb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。必要な読取操作のみを公開し、削除や任意実行の権限をツール側から排除できる。 同じ情報は得られるが、全操作を許すと指示では削除権限を制限できない。 Resourceで情報を共有できても、起動時の一覧は現在の状態や直近ログではない。 dockerコマンドで取得は可能だが、任意シェル実行を許すと要求された操作制限を守れない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な読取操作のみを公開し、削除や任意実行の権限をツール側から排除できる。 公開ツールが限定されて見えてもサーバー側の実行範囲が広い。 過去の情報で現在の状態や直近ログを満たせない。 dockerコマンドで取得は可能だが、任意シェル実行を許すと要求された操作制限を守れない。"
     },
     "q-d2-e08": {
-      "fingerprint": "befcb0972af44f678f4bddee96cf28915c49b7ce13acc3d8320cbc70a2bbcc35",
+      "fingerprint": "b8944e5c9c90a23e50d12701ced21fb33d0d80135b8ed901e1a9c8dca90b8b42",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。他のプロジェクトの方針と対象リポジトリの規約を両立する範囲で調整する。 比較対象: 生成タスクの再利用には有用だが常時指示の矛盾を解消しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。他のプロジェクトの方針と対象リポジトリの規約を両立する範囲で調整する。 当リポジトリの競合は消えるが他案件の個人方針を保てない。 個人指示は残るが当リポジトリの公開API限定規約を保てない。 必要時の生成はできるが常時適用される矛盾を解消しない。"
     },
     "q-d2-e09": {
-      "fingerprint": "872aa1ad018f499202f402f328fe646aebb2a1322cf0150812eea2e479d1ab44",
+      "fingerprint": "fbaeabac68912f7390ec9c6b7150957d467bff7715c6e36ed8a4270bda48e594",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。参照先が既知なので必要なコードを直接与えると対象を限定できる。 比較対象: 未特定のコードを探すときは有用だが、既知の参照先を直接絞る目的には広すぎる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。参照先が既知なので必要なコードを直接与えると対象を限定できる。 探せるが指定した二ファイルを確実に含める条件とは異なる。 必要なスタイル文脈を欠く。 規約の共有には有用だが具体的な型定義の内容を提供しない。"
     },
     "q-d2-e10": {
-      "fingerprint": "3fe892512bd436e1e9b4789d0b679383e2b6ba6a9276b0d8df696e5eb2126da9",
+      "fingerprint": "c2160427760c7c2b53ac18952bb3788f5ab34531a734018be959b8e5acad1b89",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 比較対象: レビューは補助であり失敗したテストが直ったかの確認が欠ける。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 ログは利用するが再実行までの反復を行わない。 Redで定めた仕様を勝手に変えてしまう。 失敗結果を次の判断に利用していない。"
     },
     "q-d2-e11": {
-      "fingerprint": "3b34656df9df72bd47992c3334382e05eb74cdc3702452ef45104c494b8d5a8a",
+      "fingerprint": "d00fcc3f92f66201100be767ada7b1465d95294c3740faf1fdcfa86c16bd8539",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。プロンプトの遵守だけに依存せず、実際のアクセス境界で権限とデータを制限する。 比較対象: 通信保護とデータへの認可は別であり、暗号化だけでは範囲を制御できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。プロンプトの遵守だけに依存せず、実際のアクセス境界で権限とデータを制限する。 クライアント表示の制限ではサーバーの過剰返却を防げない。 接続可否と文書ごとの認可は別である。 短くしても閲覧権限を越えた情報は流れ得る。"
     },
     "q-d2-e12": {
-      "fingerprint": "d9c71123e1bb3d2731c42adc09865fe22ad8305497a80a98934bbd2d3bb57926",
+      "fingerprint": "1db1f41d2e7891308dca7a1a1753751233cf4d1b8742a68fdabc6e607f0f1caf",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 比較対象: 文脈は共有できるが指示を毎回入力するためタスクの再利用要件が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 規約は共有できるがタスクを引数付きで呼ぶ構成ではない。 資料は共有できるが生成手順を書き直す必要が残る。 リポジトリで共有するオンデマンドタスクとは異なる。"
     },
     "q-d2-e13": {
-      "fingerprint": "f6112949f8ff04d31d2b1fa6bb58da988ac4d8a399ebe3f88ab9d4172848e4d4",
+      "fingerprint": "af93a827d6e9d162babd1c32f21cdbca5e6e32813c12eb8ee0a6ef801c85767a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。端末で利用でき、構文の確認と実行判断を分けられる。 比較対象: 編集支援は利用できるがコマンド構文を確認する目的と異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。端末で利用でき、構文の確認と実行判断を分けられる。 実行前の構文確認という条件を満たさない。 提案を理解する前に実行してしまう。 今回の提案の構文と影響を確認しない。"
     },
     "q-d2-e14": {
-      "fingerprint": "980ae5cf4e6e2002bbbe31e14f793ecf6dfbbd49314fd25aff7bbe5b2b23c87e",
+      "fingerprint": "feb9d76031526d8cea8767f3cf331dd7575ab69cd0d9a88da7b92937319ed8d6",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。危険な操作を実行前に止め、満たすべき制約を明示する。 比較対象: 構文が正しくても要求していないデータ消去は実行すべきではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。危険な操作を実行前に止め、満たすべき制約を明示する。 ブランチは検証データの完全なバックアップを保証しない。 正しい構文でも保存データを消す可能性がある。 保存が必要でバックアップも未確認という条件を無視する。"
     },
     "q-d2-e15": {
-      "fingerprint": "cdab57763ee7996bd3d1d24cfcb8664f55b14177061d3284868c9796ec6f367a",
+      "fingerprint": "76c601648e06da1451e6383cde89e71994b95cfeba19dbd74ba3dc2520a6df07",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要な情報を選択して取得することで入力の肥大化を抑える。 比較対象: 通信待ちの延長はモデルの入力容量を増やさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な情報を選択して取得することで入力の肥大化を抑える。 要約を集めても初期文脈の肥大化と関連性の問題は残る。 選別はできても長い文書では抜粋取得が必要である。 分割しても全件を読むならトークン制限を解消しない。"
     },
     "q-d2-e16": {
-      "fingerprint": "4bcb21367cc7d55fc983ce3df7f726dcfe2e39e030ae1d031578c8502dca859b",
+      "fingerprint": "be5eca48cd15401e853e81e7100451791d04b613d045818214516b55de0438a7",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要な規約を明確で実行可能な指示として伝える。 比較対象: 特定タスクの手順はPrompt Filesなどで必要時に呼ぶほうが適する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な規約を明確で実行可能な指示として伝える。 見やすくても不要な禁止規則の量を減らさない。 資料移動だけで重要規約の埋没を解消しない。 常時必要な規約まで手動呼び出しになる。"
     },
     "q-d2-e17": {
-      "fingerprint": "6cf1de44b48efbe6780a81566a24e2d836c5e7b9c41ec68417a73b8eb469a0bf",
+      "fingerprint": "f4d5df311cfa36b4c50ee3ac36a3a7ff70c4e676963724df8eae797c9605924a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 比較対象: 説明には適するがエディタ上で直接修正差分を確認する操作ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択箇所の直接編集と適用前の差分確認という操作要件に合う。 解決案は得られるが診断情報からの素早いインライン適用ではない。 広い問題には向くが特定箇所を直接直す条件より過大である。 続きの提案には適するが既存範囲に対する指示付きの差分編集ではない。"
     },
     "q-d2-e18": {
-      "fingerprint": "221bcacb5682e94de2e229c0747ecf008dc8228afcab02c0ed2ab4f1bd5b0448",
+      "fingerprint": "0721c55fc30606d52cf048c96c4a69b1006c386fb75168d66d7bd5457f532cdc",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較対象: 相談はできるが手動切替を減らすという条件に合わない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 相談には使えても複数ファイル・依存追加・実行が手動になる。 一か所の編集には向くがツール操作の反復が自動にならない。 既存差分の検査であり新規作成の継続作業ではない。"
     },
     "q-d2-e19": {
-      "fingerprint": "dd62cc9f6295293ccce48f8a003de86d26bd2a1fadb402b60a1bb889eb576318",
+      "fingerprint": "08dc742f70a246dbfe6542a16c588c6bd48ce8697df4ce33d6c172467e618295",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。MCPのTool実行エラーをクライアントへ伝えると修正の判断材料になる。再実行の成功保証ではない。 比較対象: 該当データなしと実行失敗を混同し、SQLの修正に必要な情報を失う。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。MCPのTool実行エラーをクライアントへ伝えると修正の判断材料になる。再実行の成功保証ではない。 エラーを伝えても同じ構文を繰り返すだけでは解決しない。 無断のクエリ改変は要求と実行内容の対応を失わせる。 失敗と空の正常結果を区別できない。"
     },
     "q-d3-a01": {
-      "fingerprint": "8fb25e1bbc7425477370f90a0f65fb5f258ecfda3a0a18bdec06397b17f45230",
+      "fingerprint": "9b0b070a77625ec54f4495346bf4f49d2b73a9c24b91ca603420d53db790ecdb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なコードを提供し、無関係な文脈を減らすという両方に対応する。 比較対象: 規約の改善はできるが具体的な型定義や不要な文脈の問題は残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要なコードを提供し、無関係な文脈を減らすという両方に対応する。 必要な文脈は足せるがノイズが残る。 ノイズは減るが必要な型を文脈へ足せない。 候補切替は利用できるが長さは正確性の基準ではなく文脈も変わらない。"
     },
     "q-d3-a02": {
-      "fingerprint": "293edf0b7066b80649dcf80b2f34143e216a46231eb8e850562a593e981cd623",
+      "fingerprint": "edf34a06a0c836042b857051c46fad91ecac8f5522d5e5eceec7780a19563ea2",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既存の前後のコードを文脈として渡せる。生成の整合性は採用前に検証する。 比較対象: 要約は役立つが元の後続コードをそのまま活かす方法より情報を失う。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既存の前後のコードを文脈として渡せる。生成の整合性は採用前に検証する。 後続の実コードを文脈として使えない。 周辺の具体的な文脈を減らすため今回の目的に合わない。 中間挿入に後続コードの文脈を使わない。"
     },
     "q-d3-a03": {
-      "fingerprint": "1be6b3a8eb17c6d7e7a0fbed77d03f3bd6dafdd5b9a7922d353eacc759f4a386",
+      "fingerprint": "d2fba30f149d68667fc4e4c1c683f9f22a0d7e28c22a0b7d2c0a63fbcd946a85",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。発生している証明書チェーンの信頼エラーに対し、検証を維持したまま対応する。 比較対象: 遅延対策はCAの信頼関係を修復しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。発生している証明書チェーンの信頼エラーに対し、検証を維持したまま対応する。 認証の問題には有用だがCAが信頼されない原因を解消しない。 証明書チェーンのエラーを解消できるとは限らない。 証明書は直せても実際の通信経路を検証していない。"
     },
     "q-d3-a04": {
-      "fingerprint": "e9c99885337035e8a7005d76f9d741194b893358aa194e50722dcc4457acc996",
+      "fingerprint": "d453e119fb20a2f0044f0f86c70e8ccd2c2bc471b0975eab3318459efdf67534",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。公式の文脈提供の手順を使い、観測可能な結果で改善を確かめる。 比較対象: 非公開の内部挙動の推定に依存し、必要なAPI契約も直接示していない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。公式の文脈提供の手順を使い、観測可能な結果で改善を確かめる。 旧文脈は減るが現在の定義を示さない。 新定義は示すが旧版の混入を減らせない。 旧版の所在は分かるが現在の正しい契約を与えない。"
     },
     "q-d3-a05": {
-      "fingerprint": "9cc73b2cc8dd24c5d574299edf9e645b3e3900678636ed478d007a46d3003b16",
+      "fingerprint": "85220101b01abdd75e3a14c1da4bacd634e7a6ffd235ef2d7c376ed15c1874d6",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。プロキシ経路に限る失敗の原因が未確定なので、診断結果から通信先・証明書・経路を切り分ける。 遅延が原因なら効果があり得るが、まだ遅延と判明しておらず証明書や宛先の問題も残る。 宛先制御が原因なら動く可能性はあるが、根拠なしの全許可は過剰で証明書エラーにも対応しない。 証明書検証が原因なら接続は変わる可能性があるが、原因未特定の段階で保護を外すのは不適切。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。プロキシ経路に限る失敗の原因が未確定なので、診断結果から通信先・証明書・経路を切り分ける。 診断で原因を分けずに設定を変えると切り分けられない。 許可先以外のプロキシ・証明書の失敗を特定しない。 証明書検証が原因なら接続は変わる可能性があるが、原因未特定の段階で保護を外すのは不適切。"
     },
     "q-d3-a06": {
-      "fingerprint": "36bbbb4899cd0de59af8049244e02948d6b36b9e194f3bda5f6b84e7d82ed42e",
+      "fingerprint": "21e21fe6eee00e6a55d13bbc1143201e817e531bd3dcb545c561ab957aa05e2f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 比較対象: 通信待ちの延長はモデルの入力・出力上限を増やさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 制約は整理するが入力容量の逼迫を改善しない。 会話は切れても過剰な入力が残る。 入力は減るが出力を小さく検証する条件が欠ける。"
     },
     "q-d3-a07": {
-      "fingerprint": "db56ec7d85c76375e23608a2bf5289446ed8a888da16c29ac8e16d56e475f876",
+      "fingerprint": "798a2f5cd5a3001b0e300c5286e9fe3875b6ac2e2fd78e7f3f3911780dee0bfb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要な意味を保ちながら入力容量の影響を直接比較できる。 比較対象: 出力量は減らせるが入力の肥大化を調べる実験にならない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な意味を保ちながら入力容量の影響を直接比較できる。 出力量は減らせても入力量の比較実験にならない。 入力は減るが対象箇所の文脈を保てない。 モデル差と入力容量の要因を切り分けられない。"
     },
     "q-d3-a08": {
-      "fingerprint": "b4c173347e08b62f3cafdf5eca3a6c6872fffb50a149eae7814c5c7c4b63485c",
+      "fingerprint": "dc55ba088e5364972c18e097f0ea0621b7e6edd4930c4bc3741a7acfc833ad5d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 比較対象: 出力長だけの調整では入力容量や対象範囲の問題が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 入力の容量制約を解決しない。 後半の必要な実装を文脈へ渡せない。 未読の後半に関する根拠を増やせない。"
     },
     "q-d3-a09": {
-      "fingerprint": "2322d892a972935f3123586870a4414d545b750e4cdf339388032ff2a5e6a9e0",
+      "fingerprint": "3ede9be07b1ee08531c6311a35a8cf4988871180e8500569059ad81f6822cc38",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。最新の公式一覧と実際の接続エラーに基づいてネットワークを設定する。 比較対象: パッケージ取得とCopilotの通信は別の接続先を利用する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。最新の公式一覧と実際の接続エラーに基づいてネットワークを設定する。 Web閲覧だけではCopilotの宛先を網羅できない。 リポジトリ操作のSSH許可だけではCopilotのHTTPS通信を解決しない。 必要な通信ポートを確認していない。"
     },
     "q-d3-a10": {
-      "fingerprint": "d020fa063925b34d1e267847c5bc566a032353a42c122d48d8d1de058d089869",
+      "fingerprint": "de40b32da193568afe48917eb536cea80bde1d511aa2c2158885746d99c025f8",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。旧版を含む二つの文脈源を確認し、現在の実装を明示できる。 添付が旧版なら改善するが、会話に残る古い説明が回答へ混ざる可能性を残す。 履歴の混入は減るが、古い添付を使えば同じ関数名を再び参照し得る。 指示は参考になるが、古い会話とファイルのどちらが原因かを切り分けられない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。旧版を含む二つの文脈源を確認し、現在の実装を明示できる。 現在の実装は渡せても旧版の指示が混ざる。 履歴は切れても旧添付が残る可能性がある。 指示は参考になるが、古い会話とファイルのどちらが原因かを切り分けられない。"
     },
     "q-d3-a11": {
-      "fingerprint": "b3e8df96a5fc146f195c8676e1faaa0ece9fc06a315d6a35f911a813129264ca",
+      "fingerprint": "7d5baad0533c0ac69b7e79b43c6ea64e3c80044adf6923d490f9b1dabc9bc9d2",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。逐次受信とTTFTは別の概念であり、表示改善だけでモデルの生成開始が速くなるとは限らない。 比較対象: キャッシュは再利用時に有効だが新規回答の途中表示にはならない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。逐次表示と初期生成遅延の独立計測を両立する。 逐次表示はできるが初期生成遅延を切り出せない。 遅延計測はできても届いた部分から表示しない。 既存応答には有効だが新規生成の逐次表示を実現しない。"
     },
     "q-d3-e01": {
-      "fingerprint": "f7e3f52949c23cd6808788dc77b572da31b9d4316f440aca026fc6b8557dcd44",
+      "fingerprint": "b9d6f5e7d2f015e4a9154c42fa5e776270de6a051b1f77e1579b5f6fcaf48702",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 比較対象: 出力長だけの調整では入力容量や対象範囲の問題が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 入力は減るが出力容量が再び上限に達し得る。 履歴は切れるが全文入力の容量問題は残る。 入力は減っても判断に必要な文脈が不足する。"
     },
     "q-d3-e02": {
-      "fingerprint": "1a248294d54fdfe2a95446ad00c8e6b764b9d196d2c2e57d6bbb729bbe373c58",
+      "fingerprint": "08d8a08641a41632598b0029f2f834dac8627f52529f7987eff7c2d89857d1cb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。発生している証明書チェーンの信頼エラーに対し、検証を維持したまま対応する。 比較対象: 宛先制御の問題には有用だが証明書の信頼とは別の確認である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。発生している証明書チェーンの信頼エラーに対し、検証を維持したまま対応する。 認証の問題には有用だがCAが信頼されない原因を解消しない。 証明書は直せても経路が適切か分からない。 証明書の信頼基準を満たさない。"
     },
     "q-d3-e03": {
-      "fingerprint": "a65f5deea69ef3bcaa63d993823d6858a52561609798d087437483960bf5c2af",
+      "fingerprint": "93f02706f720fd0b366c3b2f7843fa898233b6bd35bae09a014bc41e99100465",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。具体的な前後の文脈と独立したテストによって契約維持を確認する。 比較対象: 要約によって具体的な後続処理を失い、既存形式の維持も確認していない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。具体的な前後の文脈と独立したテストによって契約維持を確認する。 前後文脈は使えるが既存の契約で結果を検証しない。 既存の入力検証と返却形式の情報を渡していない。 既存の返却契約が補完時に示されない。"
     },
     "q-d3-e04": {
-      "fingerprint": "1be0ef916f2b02ee2e367729eab825463e32a8dd13da3b19738be1c4bbc051a7",
+      "fingerprint": "b8c14b7a4e283a64711a5fe558a43cea468ce4369c50d8a4318078f4e3d71633",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。Content Exclusionの対応範囲を超える利用では別のアクセス制御が必要である。 比較対象: 公開コード一致は生成提案に対する仕組みで機密入力のアクセス制限ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Content Exclusionの対応範囲を超える利用では別のアクセス制御が必要である。 補完の対応からAgentへの対応を推定できない。 ルールの粒度を変えても非対応モードの権限を絞れない。 手動入力は抑えられるがAgentのアクセス境界が残る。"
     },
     "q-d3-e05": {
-      "fingerprint": "a49ae622c4cd67aa9262c5caf4fc056ceabf000832f239e2c3d8205edde3bd84",
+      "fingerprint": "1502100a51be7602fa7bd66817254f719cd0e29ed1abd767f1debe381996af3a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なコードを提供し、無関係な文脈を減らすという両方に対応する。 比較対象: 情報の追加はできるが無関係な文脈によるノイズは残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要なコードを提供し、無関係な文脈を減らすという両方に対応する。 有益な文脈を足せるがノイズを減らせない。 ノイズは減るが必要な型の文脈を足せない。 定義を調べられるが補完へ混ざる無関係なタブは残る。"
     },
     "q-d4-a01": {
-      "fingerprint": "f117e97181e2777deed837f36d1d91591b7cce2fa4c9ee827a5be63bb0b60710",
+      "fingerprint": "25428a740a975c44e4eeb686a5005f64da5b6dd97bac1a9a55d1fb4743a0a740",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。誤っていた技術選択と業務契約を直接具体化する。 比較対象: 表現は明確になるがDBと異常系の指定が不足する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。誤っていた技術選択と業務契約を直接具体化する。 技術は一致するが必要な例外契約が不足する。 振る舞いは示せても技術選択の誤りを防げない。 非機能要件は有用だが今回の誤りを直接解消しない。"
     },
     "q-d4-a02": {
-      "fingerprint": "95f736b22559f8b38dc4c0c5518b92804ea01a21a000dea4a2eee70d72737379",
+      "fingerprint": "cf15ffccb77682107a8c94da9243dd7fc6c32c7a98bcc88aff11d472c72fbd87",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。望む動作を明確にすることで曖昧さを減らす。内部の注意機構について断定する必要はない。 比較対象: 同じ禁止の反復では代替手段が明確にならない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。望む動作を明確にすることで曖昧さを減らす。内部の注意機構について断定する必要はない。 入力は簡潔になるが採用すべきAPIを伝えない。 対象名は伝わるが誤用を防ぐ具体性が不足する。 資料は得られるが今回の判断条件を指定しない。"
     },
     "q-d4-a03": {
-      "fingerprint": "96880f5e07a854ad6537c186b2fab3adae3f1db7766d8917b3ab8942e2617216",
+      "fingerprint": "fae86e56a0a9f18dca3de171db839766e47ab936ecec95d045e3588fc0ee43d5",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。形式と内容の契約を示し、実際にパースとスキーマ検証を行う。指示だけで成功を保証しない。 比較対象: 形式名だけでは必要なキーや型を固定できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。形式と内容の契約を示し、実際にパースとスキーマ検証を行う。指示だけで成功を保証しない。 JSON形式でも求めるスキーマにならない可能性がある。 内容は合っても厳格なJSONとしてパースできない。 見た目だけでは構文やスキーマに適合するとは限らない。"
     },
     "q-d4-a04": {
-      "fingerprint": "0422cf67b09df95e119af6fe8b10100efade93c35c34e5cb1b46300257a87d69",
+      "fingerprint": "25b6205bff7aa29831986871b4102f9b15384b88f3958cd77ac04995dc8943fb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。新しい課題に不要な履歴を減らし、現在の文脈を明示する。 比較対象: 共通指示の追加は過去会話の整理とは異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。新しい課題に不要な履歴を減らし、現在の文脈を明示する。 現在の資料は加わるが旧版の会話が混ざる。 訂正はできるが長い旧文脈を保持したままになる。 会話は切れても旧版を再導入する。"
     },
     "q-d4-a05": {
-      "fingerprint": "6a84cdde379dbbc9b6d2854bd7dbf20d4ddfb41c6c4bea222ef3bb417ecbd648",
+      "fingerprint": "af8dead5d65877f61cd93a87e782e1cc9e8248380223809e86878231b3f8e956",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。補完位置の近くに必要な契約を具体的に提供する。 比較対象: 補完の段階で守るべき契約がまだ定まっていない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。補完位置の近くに必要な契約を具体的に提供する。 目的は伝わるが契約は補完時に示せない。 入力は伝わるが出力と異常系の契約が不足する。 結果条件は伝わるが入力の意味と型が曖昧になる。"
     },
     "q-d4-a06": {
-      "fingerprint": "2eda80c32246088c4f29f42bdac18391d1474aafc88429ecb44dca24e7695601",
+      "fingerprint": "8d6cad7622e48c4073889eb6c3f5ce938d2365f6b432b58b16c2c75cc098587c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。検索対象の制御と結果の確認が今回のノイズに直接対応する。機密保護の境界とは別である。 比較対象: 表示順と検索対象の除外は異なる設定である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。検索対象の制御と結果の確認が今回のノイズに直接対応する。機密保護の境界とは別である。 検索結果を一時的に絞れても生成物の混入は残る。 配置は変わるが検索側で意図したソースの抽出を検証しない。 一時的には調査できるが毎回のノイズを解消しない。"
     },
     "q-d4-a07": {
-      "fingerprint": "ad5765d78b2aa3fb60234fa7a692d6e07513e2758cf9f45f6f038976d33823d7",
+      "fingerprint": "8c29e608b25a3bf9350ef621c9755554ab996c9992b30a6af8538c224973fbdc",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。受理と拒否の境界を具体化し、実行で結果を確認できる。 比較対象: 説明の整合性と実際のマッチ結果は別の検証である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。受理と拒否の境界を具体化し、実行で結果を確認できる。 誤一致を独立の期待値で確認できない。 条件は明確でも生成した式の結果を確認しない。 簡潔さは受理すべき集合を正しく表すことの保証ではない。"
     },
     "q-d4-a08": {
-      "fingerprint": "94fa1fdc18dbf5593b8f8841ac6c0f16299475ee0cc61561179e30237309c6d5",
+      "fingerprint": "35bb9d0243a5b498e63baf1f0c2adf8992d9a145c7c78b8c52e0b7c5602904b5",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。未特定の箇所は探索し、既知の対象は直接与えるという使い分けになる。 比較対象: 未特定の調査には狭すぎ、既知の修正には広すぎる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。未特定の箇所は探索し、既知の対象は直接与えるという使い分けになる。 調査は合うが既知の二ファイルを明示参照しない。 後者は合うが未特定の調査を局所範囲へ狭める。 指示の共有だけでは具体的な実装情報を提供できない。"
     },
     "q-d4-a09": {
-      "fingerprint": "621e4d4df37540b800e6d47dff65afe8addbc6927c677b1b6d10646206929bc5",
+      "fingerprint": "89a175fc2359e31f52df37770f741e2c99e8ec36f664a1ce8ee4ab88bd122a0e",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。役割名だけでなく具体的な評価軸と根拠を要求する。 比較対象: 役割は補助になるが今回不足している評価軸が明示されていない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。役割名だけでなく具体的な評価軸と根拠を要求する。 領域は伝わるが責務分割などの焦点と根拠を定めない。 観点は絞れるが検証可能な指摘を得にくい。 一部は合うが今回抑えたい命名規則への偏りを残す。"
     },
     "q-d4-a10": {
-      "fingerprint": "88dc2a4bca7ffbf2613d338c9829e4f6101c92a158d0c58b02d4701019e5a5e9",
+      "fingerprint": "c13adae5e6d092977c57c98f0fdf310b40394c0e787d670b567088a9d59de472",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。今回の失敗を示す直接の観測情報を提供する。 比較対象: 環境の補足にはなるが実際のエラー出力を省いている。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。今回の失敗を示す直接の観測情報を提供する。 実行条件は分かるが失敗内容を特定できない。 失敗は分かるが再現に必要な実行条件が欠ける。 基準は分かるが現在のエラーを診断できない。"
     },
     "q-d4-a11": {
-      "fingerprint": "9023951f65d36df59c744585cdf89bf1da9d82aba437aee58503c1c8e45ebdde",
+      "fingerprint": "60c99d5d8cadcaec4a0ec033bcb30d207d419bbe0891493028e475aff4ce6c1c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要な契約を保持しながら余分な情報を減らす。 比較対象: 必要とされている失敗時の契約が失われる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要な契約を保持しながら余分な情報を減らす。 文章は短くなるが必要な異常系の条件を失う。 短くても具体的な入力規則を伝えられない。 必要なエラー契約を保てない。"
     },
     "q-d4-e01": {
-      "fingerprint": "0c785d58f47b3e7f91a40f925653ed3ae1b648b0dab881012fe8399c5c2359fd",
+      "fingerprint": "5f154c01dc5b7a854877d86f2a725a67961b96889c31ddb36b458203c4443211",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。分割によって確認可能な範囲を作り、段階間の契約も先に明確化する。 比較対象: 具体化は有用でも一括生成の複雑さと遅い検証が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。分割によって確認可能な範囲を作り、段階間の契約も先に明確化する。 条件は増えるが各段階での生成と検証を行わない。 分割できても型の不整合が結合時に残る。 生成量を抑えても報告された例外漏れを防げない。"
     },
     "q-d4-e02": {
-      "fingerprint": "67d1d40990a05e1970a8774790227f66c70f1f1460591f8691d0c0cf764fe9af",
+      "fingerprint": "51f4f1b49e27be615899781736d68974939c5080b6d82317570f0d6426e44665",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。新しい課題に不要な履歴を減らし、現在の文脈を明示する。 比較対象: 共通指示の追加は過去会話の整理とは異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。新しい課題に不要な履歴を減らし、現在の文脈を明示する。 新資料は加わるが無関係な調査履歴が残る。 旧履歴は整理できても混入を避けられない。 会話は切れても無関係なログを再投入する。"
     },
     "q-d4-e03": {
-      "fingerprint": "de7506c9ba5c6a23d98aa418a4ce86ddde8a83cc65f108bda2f32391e146d30b",
+      "fingerprint": "db1f8de1847cb289a17ec821c7ff51d4a60e921cfca99bc752af3fd1d7f60dee",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。複数の禁止事項に対して望む代替動作を具体化する。 比較対象: 一部は改善するが残りの曖昧な規約を解消していない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。複数の禁止事項に対して望む代替動作を具体化する。 短くても望む代替表現を示さない。 一部は肯定的だが全規約を置き換えない。 ロガーの代替方針が不明のままである。"
     },
     "q-d4-e04": {
-      "fingerprint": "28360f8355f2e4e8121d0d9dd49d2c0872cef1fc68bd7d98169d404e2c971d54",
+      "fingerprint": "111c63ca5a99ccd08fbafdb388e73c472bd66143022e9aa496d122d5fd0cf6b6",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既知の実装と依存設定に限定することで必要な文脈の精度を高める。 比較対象: 改善の可能性はあるが既知の対象へ直接限定する方法より広い。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既知の実装と依存設定に限定することで必要な文脈の精度を高める。 ノイズは減るが関係するファイルを確実に指定しない。 対象は絞れるが必要な依存文脈が不足する。 関連コードは与えられても求める修正範囲が曖昧になる。"
     },
     "q-d4-e05": {
-      "fingerprint": "560b2aca3011fce4ba05ea7ed1f95cb117cf8828fc195881b3acc97622b09f5f",
+      "fingerprint": "3f53b9a5fb16efa2c0fae78aff3811507c3d60683351490ce3ff06defb7cb561",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。許可・禁止の仕様を先に定め、誤った遷移も検証できる。 比較対象: 既存出力の保存だけではそれが許可された状態遷移であると判断できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。許可・禁止の仕様を先に定め、誤った遷移も検証できる。 拒否すべき状態間の組合せが未検証になる。 成功側の仕様が独立に確定できない。 結果の変化は見られるが遷移規則の妥当性は検証できない。"
     },
     "q-d5-a01": {
-      "fingerprint": "56fe92e391ee0d863a38ff3519c64bb0137d46a15f2df48ce54edc6b4509a06d",
+      "fingerprint": "f4adec58516d5be4e3e374c3e081a9ad4f2e28d8836bb23a7f263065ac2bb526",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。単体で外部通信を隔離し、成功・失敗の両方を制御できる。 比較対象: 結合検証には有用だが単体テストとして外部依存が残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。単体で外部通信を隔離し、成功・失敗の両方を制御できる。 戻り値は制御できるが外部呼出しの引数などの振る舞いを十分に検証しない。 両条件は見られるが外部への課金リクエストを避ける条件に反する。 表示の回帰検査には使えるが決済モジュールの失敗時の振る舞いが確認できない。"
     },
     "q-d5-a02": {
-      "fingerprint": "660775393700e423b712cec17dfa5249b61453dd19063310ec046e886c5296e3",
+      "fingerprint": "1728f284eb6ddba00d393beccd3a849d1a8c647a05526921166378e954bedfab",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既存の振る舞いを保ちながら構造の複雑さを減らす。 比較対象: 構造は改善できるが外部契約を維持する条件に反する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既存の振る舞いを保ちながら構造の複雑さを減らす。 可読性は上がっても既存の振る舞いを維持できない。 行数が少なくても複雑さや可読性が改善するとは限らない。 分割はできても独立した既存契約を基準に確認しない。"
     },
     "q-d5-a03": {
-      "fingerprint": "330f46047d0642648e23342622d89a7123a8cc5c93b4fd87e578003f26fbc9cb",
+      "fingerprint": "3cfb71b3f0ef9de81db6893d0fb95653280a80156425594ce8f5b02ceb8b5cfe",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。要約自体も生成出力なので実際の変更との一致を確認する。 比較対象: 文体の確認だけでは要約に含まれる技術的な誤りを直せない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。要約自体も生成出力なので実際の変更との一致を確認する。 差分は確認しても作成者が目的とのずれを直さない。 意図には沿って見えても存在しない変更を見逃す。 コードのテスト成功は説明文の正確性を証明しない。"
     },
     "q-d5-a04": {
-      "fingerprint": "53d2a6faeddefa1681579bfc637c03cb961f1664c9fd07c2e44949975423bf12",
+      "fingerprint": "0a3b8e39d57925e7f295ed0cc6f0dfc8b8daefc63b2a0807b5c4e300468953d8",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。具体的な期待と観測の差を調べるため、再現可能な文脈を渡す。 比較対象: 版の変更が必要と確認されていない段階で原因調査を省いている。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。具体的な期待と観測の差を調べるため、再現可能な文脈を渡す。 再現はできても正しい動作を独立に示せない。 差異は伝わるが具体的な原因箇所を調べにくい。 版の変更が必要と確認されていない段階で原因調査を省いている。"
     },
     "q-d5-a05": {
-      "fingerprint": "83bce857f3b63bd84b2ad033e713f08307031b6e014e1f6a4fb50392b8ed0b67",
+      "fingerprint": "b47fb3f32f983df2c23dbdff2612e67a1ef35b1666af2485659b3e2ca0e3a33f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応設定でも生成の遵守は保証ではないため実出力を確認する。 比較対象: PR要約とコミット生成は別の出力である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応設定でも生成の遵守は保証ではないため実出力を確認する。 指示の動作は見られても今回の差分との一致を確認しない。 種別は見ても説明内容が変更と一致するかを確認しない。 説明は確認できてもConventional Commitsの種別が未確認である。"
     },
     "q-d5-a06": {
-      "fingerprint": "90802463bd5025fc4c7d8763ac0b7dbca31f0a7f5d9b3149c9111ce1902e30e2",
+      "fingerprint": "d22807ed678e39fd7d7d660275db6807a1bd75bb4ce6ef9f6f366b33df73dfe1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。失敗時にどの振る舞いが崩れたかを把握しやすくする。 比較対象: 大きな差分だけでは失敗した仕様を特定しにくい。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。失敗時にどの振る舞いが崩れたかを把握しやすくする。 行番号は分かってもどの振る舞いが失敗したか追いにくい。 分割しても失敗時の対象と期待を名前から特定しにくい。 大きな差分では個々の振る舞いの失敗が曖昧になる。"
     },
     "q-d5-a07": {
-      "fingerprint": "f7bce846040991715810ef713a834b6c04b9def1453f2cd4cd96a40fe9856968",
+      "fingerprint": "9dc33ef822b7438c9f5f0542cd6b056e39e28243b9f514474800277d841e88fd",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。具体的な版の変更情報と実際の動作検証を組み合わせる。 比較対象: 型エラーがなくても実行時の契約変更があり得る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。具体的な版の変更情報と実際の動作検証を組み合わせる。 変更内容は分かるが振る舞いの破壊的変更を確認できない。 結果は見られるが必要な構文・契約変更を把握しにくい。 追加機能の説明だけでは削除や振る舞いの変更を見落とす。"
     },
     "q-d5-a08": {
-      "fingerprint": "8957faf64a3faeae7738770594673ffe1bce4edd19090a93d82eca2ccbf93a48",
+      "fingerprint": "285549e5874ca874cc7151d565aa5cff5e32e78d3ffe962d02943ebb213953d4",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。環境ごとの切替を分離する。SQLiteと本番DBの構文・動作の差にも注意が必要である。 比較対象: DBの動作の検証を省くためデータアクセス層の不具合を見逃す。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。環境ごとの切替を分離する。SQLiteと本番DBの構文・動作の差にも注意が必要である。 本番設定は維持できてもDB方言や制約の差を見逃す。 互換性は見るが本番接続設定まで変更してしまう。 本番への接続が残り、隔離という目的を満たさない。"
     },
     "q-d5-a09": {
-      "fingerprint": "71ed367ec41060bbe29f57a96f4cd5f1af291545b1c50727d66c067f7b3b7585",
+      "fingerprint": "6e64275cffb5313c7476c1fb8dc1e0bf1ec260f058af08fdd17383b47745c987",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。AIレビューも誤りや見逃しがあるため実際の要件に基づいて判断する。 比較対象: 見出しだけで重要性を判断すると必要な改善を見落とす。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。AIレビューも誤りや見逃しがあるため実際の要件に基づいて判断する。 差分は見ても要件と追加検証の判断が欠ける。 要件への対応が実際のコードで成立するか見られない。 一致しても事実や仕様への適合を保証しない。"
     },
     "q-d5-a10": {
-      "fingerprint": "d43269f7e70f45f071ba3631f5cb12bb493a5b35c3ff2851717cd4fbcc818832",
+      "fingerprint": "05a1f5536bf358bbfc083963592547607785e1ffa6fd821adbfc8b1c6b78a20c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。理論・実測・互換性を合わせて性能改善を判断する。 比較対象: コードの長さと処理性能は同じ指標ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。理論・実測・互換性を合わせて性能改善を判断する。 性能は評価できても利用側の契約を維持できない。 理論値だけでは現在のボトルネック改善を確認できない。 負荷条件を変えた比較で最適化案の効果を判定できない。"
     },
     "q-d5-a11": {
-      "fingerprint": "1b871ec61e9f43ee1836bd0bc2997eda04997f69285ace0b7d4c36ae7e4f1716",
+      "fingerprint": "9f0cecf2723e7148c515a4f6ddd0eb36ce7bf59437395830f5d16f28c11243fd",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。初回導入と利用条件の確認という読者の目的に対応する。 比較対象: 更新の把握には有用だが最初に実行するための案内が不足する。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。初回導入と利用条件の確認という読者の目的に対応する。 導入は始められても最小実行と利用条件に届きにくい。 使用例は見られても初回導入と利用条件が欠ける。 更新の把握には有用だが最初に実行するための案内が不足する。"
     },
     "q-d5-e01": {
-      "fingerprint": "032060ed6de7668eb6f9f3f86353f14cf3ea3a11e2beb77db66bcad4169a4401",
+      "fingerprint": "8c179e330085e3afb0b76ea7c246db2a85474c78cd127001dcd73d8a306d6173",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。制御可能な時間依存を固定でき、実時間の待機も避けられる。 比較対象: 遅さが増し、環境がさらに遅い場合の不安定性も残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。制御可能な時間依存を固定でき、実時間の待機も避けられる。 実時間依存とCIでの不安定さが残る。 再試行は不安定性を隠す可能性があり決定論的な検証にならない。 時間は制御できても非同期の状態更新を待たない。"
     },
     "q-d5-e02": {
-      "fingerprint": "af0fba7117faa450b2a45387c4977bd3adfe8405972d50b88850d2340a946c21",
+      "fingerprint": "834f216ce6bb764ac99f56c356c9c98d32fc815c99a6f5144c07277e61e46be1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。説明内容と変更の妥当性をそれぞれ人間が確認する。 比較対象: コードのテストだけでは文章中の誤情報や機密情報を検証できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。説明内容と変更の妥当性をそれぞれ人間が確認する。 内容を見ても人間の承認をマージ条件にできない。 検出語がないことは説明の正確性や変更の妥当性を示さない。 承認だけでは誤記や機密情報を含む要約の確認が不十分である。"
     },
     "q-d5-e03": {
-      "fingerprint": "3ea8429964440d6bce4829b7f6ea92483f6edd2b5433e3a4fe5efbabd60e4ad1",
+      "fingerprint": "19da96807f613a84cdb1e8c3930609e2daeb922fa74dad296fb9f5790b942abc",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。広い入力集合に対し業務上の不変条件を確認する目的に合う。有限のテストで数学的証明を保証するものではない。 比較対象: 外部依存の隔離には有用だが残高の整合性は直接検証しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。広い入力集合に対し業務上の不変条件を確認する目的に合う。有限のテストで数学的証明を保証するものではない。 境界値には有効だが多様な入力列の不変条件は調べられない。 多様性は得られても独立した不変条件を検証できない。 条件は良いが順序や端数の多様な組合せを覆えない。"
     },
     "q-d5-e04": {
-      "fingerprint": "2839a34227aca1b2ddf1a8a85ee2c9415aeb298d828c946ed347b626d892ac34",
+      "fingerprint": "7c3e60cb644a460c9d177acc49ac0657a28f5fca5e4f3d000baf242a8af22871",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。型や書式の検査だけでは検証できない実際の契約まで確認する。 比較対象: 生成の一致は実装と一致していることの証拠ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。型や書式の検査だけでは検証できない実際の契約まで確認する。 型は見られても例外と実装の矛盾を残す。 比較できても誤ったコメントをテストの根拠にしてしまう。 局所の記述は合っても利用者が期待する契約の確認が欠ける。"
     },
     "q-d5-e05": {
-      "fingerprint": "fcc08a260c858542d33f352f2d6e91d26d66af6a1812c68a37d046f50531eef3",
+      "fingerprint": "7c2618b6d1f80b78ddacce1a4107bcc8466617dc3cc250ce81117edf1b1622ca",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。意図した変更と回帰不具合を区別して期待値を変更する。 比較対象: 要約は補助になるが実際の表示との照合を代替しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。意図した変更と回帰不具合を区別して期待値を変更する。 画面の変化は分かるが意図した仕様か確認していない。 文面だけではUIの意図しない変化を見逃し得る。 選別しても実際の画面と仕様との照合が欠ける。"
     },
     "q-d6-a01": {
-      "fingerprint": "d6922d4a588ce12ec2316e93f36d43873fa267e0ccdab19f6e5d148c3a00af64",
+      "fingerprint": "fef7a364aed80a5d2bae51d2171d1fa6456f21c7ad46be3c0e1bc15be36536ab",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応機能に対するファイル文脈の除外を設定する。Agent/Editなどの非対応範囲には別途対策が必要である。 比較対象: 出力候補の公開コード一致と入力ファイルの除外は別の目的である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応機能に対するファイル文脈の除外を設定する。Agent/Editなどの非対応範囲には別途対策が必要である。 Git管理からの除外は既存の機密ファイルのCopilot文脈制御を保証しない。 意図したディレクトリと.envの対象を正確に指定できない。 提案の一致制御と入力文脈の除外は別である。"
     },
     "q-d6-a02": {
-      "fingerprint": "433cddf0278515e4d68b981161d4974083959d481e08a5270fd42d0a03cd02e6",
+      "fingerprint": "993688919ac08164513a73f929f4c00ef7781a9d0e9bbaf523e221ca31fd199f",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。公開コード一致のBlockは該当提案の提示を制御する。全知財リスクの解消を保証しない。 比較対象: 参照情報を見て判断する利用と提案のBlockを混同している。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。公開コード一致のBlockは該当提案の提示を制御する。全知財リスクの解消を保証しない。 参照情報を見て判断する利用と提案のBlockを混同している。 Content Exclusionの役割でありこの設定の対象ではない。 Push Protectionの役割であり提案の公開コード一致とは異なる。"
     },
     "q-d6-a03": {
-      "fingerprint": "7ba899feaa4712974f07f8bae4a966d13fcce17bd8b9896a6124589ccd58d565",
+      "fingerprint": "308ded038cab8e2672f1cae5a066027028688f0a1bf85a1be9c10249fd2373b6",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入力の最小化とコミット時の秘密情報対策は別の層として実施する。 比較対象: Push ProtectionはGitへのPushの保護でChatの貼り付けを保証しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入力の最小化とコミット時の秘密情報対策は別の層として実施する。 Chat送信は抑えられるがコミット時の検出が欠ける。 Git側の検出はできても手動のChat入力を守れない。 除外設定は手動入力とGit側の保護を代替しない。"
     },
     "q-d6-a04": {
-      "fingerprint": "a2226553cb287af68683adb8f9fa67f983b3cb095c5e0acbc88698efab42a529",
+      "fingerprint": "a3c51c66052f93f292c810f45a2cb2562acb39af9885c19a24a89889868021c1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。出所の確認を助ける情報を提供する。ただし適合性はその情報をもとに別途判断する。 比較対象: 入力文脈の除外は出力コードの出所を特定する機能ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。出所の確認を助ける情報を提供する。ただし適合性はその情報をもとに別途判断する。 Blockは今後の提案制御であり既に採用したコードの参照根拠ではない。 参照元の条件を直接確認していない。 セキュリティ解析はライセンス条件の判断を代替しない。"
     },
     "q-d6-a05": {
-      "fingerprint": "3af23f5cf680abcc73001efc1ea9fd969c7a5307f4b22cc1515a8f3deaad0063",
+      "fingerprint": "f9ef6bbbc23974486a82b9417872fe733d7a6cf513ce56956c39290a1208058c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。割り当て管理が利用資格と請求の管理に対応する。反映時点や残るアクセスは別途確認する。 比較対象: ファイル文脈の除外はシートの回収ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。割り当て管理が利用資格と請求の管理に対応する。反映時点や残るアクセスは別途確認する。 利用表示を変えてもシートの割当は回収できない。 利用停止でも対象シートの解除ではない。 リポジトリ権限とCopilot座席の割当は別である。"
     },
     "q-d6-a06": {
-      "fingerprint": "a9b77720dd18fba6271cee7b75fafac585018e134c1813bc6df943e08c968025",
+      "fingerprint": "72d6d54bc27adf84ae5160cfb48892dddf34176716c4f1c45425f1a16adf3e8d",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。Enterpriseが組織に判断を委ねる設定と、強制した設定を区別する。 比較対象: 個人の選択で上位が強制する制約を緩和できるわけではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Enterpriseが組織に判断を委ねる設定と、強制した設定を区別する。 強制ポリシーを下位で緩和できない。 委任時の選択と強制設定の優先順位を混同している。 自然言語の指示は管理ポリシーの強制を上書きしない。"
     },
     "q-d6-a07": {
-      "fingerprint": "76e2089153f889903b1228ce5ba574b465995755229d42b96943b7e5d4c381c6",
+      "fingerprint": "d991af311e663f070c4e06259ce83f3a41b6ec7774c14386c4894008c72fe2d7",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。目的の異なるデータ処理を分け、プランと機能の適用条件を確認する。 比較対象: 通信の暗号化と保存の方針は別の事項である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。目的の異なるデータ処理を分け、プランと機能の適用条件を確認する。 学習方針と機能別の保存条件を混同する。 伝送保護は学習方針の根拠にならない。 生成コードの一致設定と顧客データの利用方針は別の事項である。"
     },
     "q-d6-a08": {
-      "fingerprint": "787b47717841d092855d3175f764a6bf5b9a613cb12d7758fb855b99f7ade721",
+      "fingerprint": "2196b018395f395c1fae362b2485f7339c94468cc87feb91a8436ac98c87cb41",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。エディタがそのファイルをどの状態として扱うかの直接の手掛かりになる。 比較対象: Gitの追跡除外とCopilotの除外状態は同一ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。エディタがそのファイルをどの状態として扱うかの直接の手掛かりになる。 ルール設定は確認できても今のクライアント状態を示さない。 候補がない理由を除外だと特定できない。 出力一致の方針は入力ファイルの除外理由を示さない。"
     },
     "q-d6-a09": {
-      "fingerprint": "d2f03e42c7490889818bedc94d3174f9fb0890718b83331ab687dc11a27bdc66",
+      "fingerprint": "0478f85ca91b1bc58e127968a63599a3431ed64f25e881360d16606cc9d6083a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対象APIの提供項目と期間を確認して利用傾向を調べる。成果や能力を直接示すものではない。 比較対象: 設定変更の追跡は利用傾向の集計とは別である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対象APIの提供項目と期間を確認して利用傾向を調べる。成果や能力を直接示すものではない。 導入規模は分かるが採用に関する利用指標が欠ける。 PR数はCopilot利用の継続的な利用量を示さない。 管理操作であって利用のKPIではない。"
     },
     "q-d6-a10": {
-      "fingerprint": "f9316c45ab460d2829fab02c61a5a1fdaf937fdb4e12a756f21b2d7bb41a6c0f",
+      "fingerprint": "9892c60fafb1eea14300d4cac2f5e7622db0937cb7f9350213cc87d053e0da5c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応機能に対するファイル文脈の除外を設定する。Agent/Editなどの非対応範囲には別途対策が必要である。 比較対象: 出力候補の公開コード一致と入力ファイルの除外は別の目的である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応機能に対するファイル文脈の除外を設定する。Agent/Editなどの非対応範囲には別途対策が必要である。 新しいリポジトリのパスへ適用されない。 公開範囲とCopilotの入力文脈制御は異なる。 Git追跡を変えてもCopilotの対象除外を保証しない。"
     },
     "q-d6-e01": {
-      "fingerprint": "ae6785b79fa12350d8d2c663b50fda72c3bd08931198b22f335d3b453c191eb7",
+      "fingerprint": "4b2ccd9dde37b8f24925c518503a051cf7465f043dbe767d92797ed388267096",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。参照先や利用機能が変わると対象と対応範囲も確認する必要がある。 比較対象: 出力の公開コード一致は機密入力の除外状態を示さない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。参照先や利用機能が変わると対象と対応範囲も確認する必要がある。 待機だけでは実際の参照先の適用範囲が分からない。 パスが合ってもモードにより保護範囲が異なる。 出力の公開コード一致は機密入力の除外状態を示さない。"
     },
     "q-d6-e02": {
-      "fingerprint": "040554a057f447e9e0bd58ab7b30b1127ba6f54c050167fa8e5423fdf53eb075",
+      "fingerprint": "c4c6953704dfdeb37f7a560bec8435f272671fd085bfa2d2da0a4e3f8cdb1e1a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。管理操作の追跡に適する。記録項目と保管設定を確認し、完全性や法的証明を無条件に断定しない。 比較対象: コードの変更履歴と管理設定の変更履歴は別である。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。管理操作の追跡に適する。記録項目と保管設定を確認し、完全性や法的証明を無条件に断定しない。 操作者は確認できても長期保管の条件を満たさない。 シート情報では対象ポリシーの変更者を追えない。 利用統計から実際の管理操作の操作者は確定できない。"
     },
     "q-d6-e03": {
-      "fingerprint": "7e0a148dc6c4d6f1227195d274a9a06bbe1797f6a791687e739c0622fc4b51e3",
+      "fingerprint": "9bc7589d44a6a7cc75ed795c0b989ba1fbcf630f1ff2bf34b13ffa5bb926e247",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。提案抑制と個別の出所・条件の確認を組み合わせる。 比較対象: 型検査はライセンス条件を評価する検査ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。提案抑制と個別の出所・条件の確認を組み合わせる。 安全性の検査で利用条件は確定できない。 通知がないことは出所や条件の保証ではない。 入力ファイルの除外は生成された公開コード一致の審査ではない。"
     },
     "q-d6-e04": {
-      "fingerprint": "2e377fbbb7b2d4ab6a1d80e2a662fc70a88c96271a3c5588b95f270881f1ce02",
+      "fingerprint": "633dada6b929b94fd9fe6f5bb0f3fec5d342e47881805656a6e37c2078703b61",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。モデルの学習に使うかと、サービス運用上の保存を区別する必要がある。 比較対象: 学習不使用は全機能での即時削除という意味ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Business/Enterpriseの学習不使用と、機能別の保存条件を分けて確認する。 学習不使用から保存なしとは導けない。 公開コードの一致制御から顧客データの利用目的は判断できない。 通信暗号化はモデル学習方針の根拠にならない。"
     },
     "q-d6-e05": {
-      "fingerprint": "831c253eaf5152575a86773455bacfda649ae75ed315d13caa1ff0b1419134a6",
+      "fingerprint": "fd2dae28c3a855908ad3b814120c0561ca5ffd216a96832a009ce13d1716724e",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。個別の割り当てと活動情報を使い、欠損を未利用と断定しない。 比較対象: 受容率が低くてもChatなどを利用している可能性がある。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。個別の割り当てと活動情報を使い、欠損を未利用と断定しない。 不明値を休眠と誤認して解除する。 活動情報がある休眠利用者を候補に含めない。 誤って解除しないための確認段階が欠ける。"
     },
     "q-sc01-1": {
-      "fingerprint": "7d76060dc6379d7bf7ebfa478fe8fdadf0e71c761c934ff4b770fffbf15d9379",
+      "fingerprint": "09089a6c9156a824e86fa82e99288f95d732d8ed1ec50035d6c2de0772558260",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。 比較対象: Gitの追跡設定はCopilotの除外ポリシーとは異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。 Git追跡設定はCopilotの文脈除外を保証しない。 出力側の制御で入力側の文脈を除外できない。 秘密情報検出はファイル内容の文脈利用を止めない。"
     },
     "q-sc01-2": {
-      "fingerprint": "ccaf7f273765dcccb4eead14f3407c4f4ff154873f83c07b89b360678ed64be0",
+      "fingerprint": "0d5c5608620b3e2302737ad5b7bb8a0a51c08939a563c5857e749e6a2f9b3b35",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。設定対象・クライアント状態・反映の問題を切り分ける。 比較対象: 出力の一致制御は入力ファイルの除外確認ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。設定対象・クライアント状態・反映の問題を切り分ける。 現在のクライアントで何が適用されているか分からない。 候補は消えてもContent Exclusionの動作を確認できない。 表示とルールの範囲を照合しないと対象誤りを見逃す。"
     },
     "q-sc01-3": {
-      "fingerprint": "fad9731ad0938cc9a31b7c888fdee27f9e0238c36e0ef9114e45936718545bd5",
+      "fingerprint": "112f0e1725f8497fe1603fdbf44a5d3132c09d51c0f3582ecfed152c8f03a888",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。今回の対象を上位で強制しつつ、それ以外の委任は維持できる。 比較対象: 個人で変更できる制御ではEnterpriseの一律強制を実装できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。今回の対象を上位で強制しつつ、それ以外の委任は維持できる。 各組織で例外を作れてしまい一律必須にならない。 対象は守れるが他の設定を委任したい条件を満たさない。 個人で変更できる制御ではEnterpriseの一律強制を実装できない。"
     },
     "q-sc02-1": {
-      "fingerprint": "b6d395b49c754353e1bf7bfcf2b182ce90bb0ef74ff8ba8f406d3271d8af5e3c",
+      "fingerprint": "9551fb3797105367470a223437aa371cca91c261139b1afdadc76fb7f7b24596",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既存の振る舞いを独立した期待値で保護してから変更する。 比較対象: 変更後の誤りを新しい期待値として取り込む可能性がある。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既存の振る舞いを独立した期待値で保護してから変更する。 境界と例外を含む回帰条件が欠ける。 網羅しても期待値の独立性がない。 正常系だけでは金融計算の境界や例外の回帰を捉えにくい。"
     },
     "q-sc02-2": {
-      "fingerprint": "6bb555d8c55a3604f827ddcfc338d09cb8cdb5f01fbcc7c02f82a8926b062a63",
+      "fingerprint": "1f621c1fbca4773cc0343b6c2ac5b302c1446c49b147ba5ada5f13285808a49c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。AI出力から独立した業務上の根拠を使って妥当性を検証する。 比較対象: 型や一般的な指摘だけでは具体的な金融ルールを検証できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。AI出力から独立した業務上の根拠を使って妥当性を検証する。 仕様を確認しても実装結果を独立した期待値で検証しない。 レビューは行うが重要な金融仕様を独立に確かめない。 型や一般的な指摘だけでは具体的な金融ルールを検証できない。"
     },
     "q-sc02-3": {
-      "fingerprint": "18142eb2974dadaa90aa22296247fe8ff1a07701f3a160658e3dd956603042fc",
+      "fingerprint": "6f9c76ba265d7677a08ee5e6b587b24bdbf55b69787f41adaac153dbcf8177d8",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。社内規則と具体例を結び付け、境界での誤解を減らす。 比較対象: 桁数と丸め方式は別の指定であり業務規則を特定できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。社内規則と具体例を結び付け、境界での誤解を減らす。 特殊な社内規則との一致を独立に確認できない。 例にない条件での規則が曖昧になる。 桁数と丸め方式は別の指定であり業務規則を特定できない。"
     },
     "q-sc03-1": {
-      "fingerprint": "7d2351ef5429b2b0efd879e9e220636da67d1cdb5b52d27a167f0a8d5653e8e7",
+      "fingerprint": "9da941c151449cacade809f3bfa0e5c98d2e80dfc5e73bb6a6c2fd7e7d8c9685",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。現在の情報を取得でき、担当者別の閲覧権限と本番の読取専用範囲をサーバー側で守れる。 両システムには接続できるが、共通管理者資格情報ではチームごとの閲覧境界が失われる。 Resourceで資料を共有できても、定期集計では現在のIssueやメトリクスを保証できない。 機能としては接続できるが、指示文はIssue変更や本番操作の権限を強制的に無効化しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。現在の情報を取得でき、担当者別の閲覧権限と本番の読取専用範囲をサーバー側で守れる。 現在値は得られるがIssueの担当チーム別閲覧権限を守れない。 権限は絞れても最新の本番状態ではない。 機能としては接続できるが、指示文はIssue変更や本番操作の権限を強制的に無効化しない。"
     },
     "q-sc03-2": {
-      "fingerprint": "c5dae14ca02ef49cdc7a82b246387a1e17ee13ef1ce99d7f99150e3a13bfe2b9",
+      "fingerprint": "a952396b8c145f7b5de0b29a951274cd33b763aa7725a1a082faf6e54b155a5e",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。実際の接続設定と秘密値を分離し、必要な権限に制限する。 比較対象: Privateでも共有キーのコミットは露出範囲を広げ、履歴にも残る。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実際の接続設定と秘密値を分離し、必要な権限に制限する。 Privateでも共有資格情報を設定ファイルに含める必要はない。 秘密情報は分離できてもIDEの接続設定にならない。 自然言語の非表示指示は秘密管理やアクセス制御を代替しない。"
     },
     "q-sc03-3": {
-      "fingerprint": "d6c7c770c6abddd0b84e4886f37b1b0c29fdb0e8901deb4a5fa18b773d4aa176",
+      "fingerprint": "5293b694a42d64a949836e24f325099684db8de5d1bd67cc1f1ea6d73d337188",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 比較対象: 通信待ちの延長はモデルの入力・出力上限を増やさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入出力の容量制約を考慮し、処理対象を小さくする。途切れだけで原因は断定せずログも確認する。 入力は減るが大きな応答の容量上限が残る。 待機時間を変えても返却する情報量は減らない。 分割後も全件投入するなら文脈を圧迫する。"
     },
     "q-sc04-1": {
-      "fingerprint": "3b4c1d0648ec6b9aa69e9e3a0c6b109bba8d89098096abb9ac4232126ecfda47",
+      "fingerprint": "5009ec15375e223cb727da481c01fb8d693af6bca78aa3982432858f901d3ff1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較対象: 既存変更の評価には適するが新規の実装とテスト実行を進める役割とは違う。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 相談はできるが手動切替を減らせない。 局所編集には合うが反復は手動になる。 複数ファイルは扱えるが失敗結果を使う反復ができない。"
     },
     "q-sc04-2": {
-      "fingerprint": "e19aa7bf83e98ab7008609d76c037c7f9f38b6fc02b7a3f0a0db9d0190564771",
+      "fingerprint": "c8833697829949cfc859d03738d69323c14abff312b2bfab64b2139b86cf5201",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。レビュアー向けに今回の変更を要約する目的へ直接対応する。 比較対象: APIの説明は有用だがPR全体の意図と影響の説明とは異なる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。レビュアー向けに今回の変更を要約する目的へ直接対応する。 改善点は得られるがPR差分の変更概要を下書きする機能ではない。 コミット単位の説明は得られるがPR全体を要約しない。 仕様の説明でありPRの影響範囲の要約ではない。"
     },
     "q-sc04-3": {
-      "fingerprint": "f15890a4ea03182c147e5c2b8b56ab91f17b054c37fc492f336b2e1907645314",
+      "fingerprint": "f4209efd827e2050cded8eb199b9993092f165cb6b5eb385e824a3b33e989041",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。AIによる助言と再現可能な専用の静的検査を補完させる。 比較対象: AIレビューの反復は専用の静的解析と同じ検査を保証しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。AIによる助言と再現可能な専用の静的検査を補完させる。 規約は見られても指定された静的セキュリティ検査がない。 セキュリティは見られても定めた規約検査がない。 規約検査と要約だけでは専用のセキュリティ解析が欠ける。"
     },
     "q-sc05-1": {
-      "fingerprint": "e861307175cbacf374d16453effec01ec823a0da217eaf382933eb11c16c30c8",
+      "fingerprint": "cb9ec006409bfb6d14bc5dfcd7097d66a71058d546b11cb941d1d693e5ce7b00",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。もっともらしさを根拠とせず、独立した情報でハルシネーションを検出する。 比較対象: 別モデルも同じ誤情報を生成する可能性がある。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。もっともらしさを根拠とせず、独立した情報でハルシネーションを検出する。 検索は有効だがモデルの回答だけでは正式な契約と動作を確認できない。 存在は見られても対象動作を実行で検証していない。 名称だけでは契約全体の適合を確認できない。"
     },
     "q-sc05-2": {
-      "fingerprint": "b5b4e2a05bf3cf041a295663a63b321134d23bfe4ab3ce8af68457c218971ff4",
+      "fingerprint": "21e4325976f30b53c8cb533a02187304743db2637a9ca76fa76a41a9cd363dc3",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。型付きAPIの不一致を早期検出し、修正後の動作も確認する。 比較対象: 書式の検査だけではメソッドの実在性を検証できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。型付きAPIの不一致を早期検出し、修正後の動作も確認する。 型エラーを消してもSDKの実在性や動作を確認しない。 修正方針は合うがPR前の検出と動作確認が欠ける。 存在しないメソッドの問題を隠してしまう。"
     },
     "q-sc05-3": {
-      "fingerprint": "a3841066a86637d854b2b5e519b9bd0f5b75359f62c97df9adb3fd84864672de",
+      "fingerprint": "4173007cfc4c9a3aab133a2dc827413df853bdab152b4da16f812d883e007dd2",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。Chatへの投入とGitの秘密情報保護は別の経路として対策する。 比較対象: 公開コード一致は生成提案の制御であり秘密入力の送信制御ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Chatへの投入とGitの秘密情報保護は別の経路として対策する。 検出はできてもPush時のブロックが欠ける。 送信経路は抑えても患者情報の閲覧境界が残る。 公開コード一致は生成提案の制御であり秘密入力の送信制御ではない。"
     },
     "q-sc06-1": {
-      "fingerprint": "7ada5a96773a7da032c6b69b8ea076a7801f20cc28f8561afbbaebcd8f326606",
+      "fingerprint": "57a31a1fe2134e9499d028e25813b60fb7fd29f13bdefd4f05adbe03a794b9bc",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 比較対象: 共有文脈には適するがリポジトリの常時指示と同じ適用方法ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対応するChatでリポジトリの共通指示を自動的に提供できる。指示遵守自体の保証ではない。 共有できても自動適用ではない。 常時適用できてもリポジトリでの一元管理ではない。 資料共有には合うが共通規約の自動適用と異なる。"
     },
     "q-sc06-2": {
-      "fingerprint": "b4b3a1011e70d10f9ffea9afae7c005ecc027024495aaf42911cbfd406d4611f",
+      "fingerprint": "7680356370f174c9c37f5222c5e23acf7545c4f1665fad4c05732020b99bccfd",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 比較対象: 個人に閉じ、チームで同じタスクをバージョン管理する要件を満たさない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。必要時だけ呼び出す定型タスクの再利用とリポジトリでの共有に適する。 共有できても必要時に呼ぶタスク別テンプレートではない。 資料は共有できるが構造化したタスク手順を呼び出せない。 チームでGit管理する再利用テンプレートではない。"
     },
     "q-sc06-3": {
-      "fingerprint": "a6d06b7fd06c59c40f6400c002e4e0f47ff6b9e2ef98940a94bc995f6f962299",
+      "fingerprint": "5bd5925b2b43a5b85758156b7576d1beaa09d2780502c5ae21d857ab9ce9055b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。他のプロジェクトの方針と対象リポジトリの規約を両立する範囲で調整する。 比較対象: 生成タスクの再利用には有用だが常時指示の矛盾を解消しない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。他のプロジェクトの方針と対象リポジトリの規約を両立する範囲で調整する。 競合は消えるが他案件の個人方針まで失う。 他案件の方針は保てても当リポジトリの限定規約を壊す。 生成タスクの再利用には有用だが常時指示の矛盾を解消しない。"
     },
     "q-sc07-1": {
-      "fingerprint": "bd475e57fe18fa4b55372eb41996df385b65c9454906e2aad02cbc1a62664584",
+      "fingerprint": "a37dce260fa9685438e763e544ef89996ed1fa6d5ce579ec7bf006f7b175edd1",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "問題文の全条件と選択肢を照合。現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。 最新情報の検索はできるが、共通管理者権限では担当製品以外の閲覧を防げない。 資料共有には役立つが、朝の出力はその後の更新を反映せず最新状態を保証しない。 MCPで検索はできても、指示文だけでは記録変更の権限を禁止できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。 権限は守れても記録変更を禁じる条件に反する。 閲覧は絞れても最新状態を保証できない。 MCPで検索はできても、指示文だけでは記録変更の権限を禁止できない。"
     },
     "q-sc07-2": {
-      "fingerprint": "d38e9adfd86c61d59bd161440fae56d03999259e392724d4923b5b1674bfb077",
+      "fingerprint": "549b545e8b1622c782c10a662ef551b829a251fec8f3f936a3b468f734a24c9b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。接続が許可されても文書単位の権限は別に必要である。 比較対象: 接続承認の記録だけではサーバーが返す文書を制限できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。接続が許可されても文書単位の権限は別に必要である。 サーバーの承認と文書ごとの閲覧権限は別である。 伝送保護とクライアント表示ではサーバーの過剰返却を防げない。 接続者の確認だけでは担当者別の文書認可ができない。"
     },
     "q-sc07-3": {
-      "fingerprint": "48d1aeff5798a24c21e101298da3d4174442aa2fecb65d494e79beaea4231614",
+      "fingerprint": "2d4a6141c5c1a6ae9664b1a1ebe48f6674f3c951b7559f4387c30b02d2e58330",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。管理ポリシーの変更を追跡するための機能である。記録項目は対応イベントを確認する。 比較対象: 使用量の集計は設定変更の操作者を示さない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。管理ポリシーの変更を追跡するための機能である。記録項目は対応イベントを確認する。 利用変化から管理操作のイベントと操作者は特定できない。 イベントは使えても操作者を監査記録から確認していない。 シート操作とポリシー変更は別のイベントである。"
     },
     "q-sc08-1": {
-      "fingerprint": "282d840c930c382044620d916abf520962c369bba04f022d1c5a483db0c0f479",
+      "fingerprint": "c4fcd71ee23e66d10b186d1828f5eb855645cf484cd1aeea1e66ea1021eb9e09",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。検索による関連情報の取得と、モデル重みの学習を区別している。 比較対象: 過去の回答は現在のコードを参照した根拠の代わりにはならない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。検索による関連情報の取得と、モデル重みの学習を区別している。 検索による選択を行わず入力容量を圧迫する。 現在の関連実装を質問ごとに取得する方法ではない。 過去の説明は更新済みコードの根拠にならない。"
     },
     "q-sc08-2": {
-      "fingerprint": "290f1b35d1509e773d1f963fcd039301fdd7924418942b9e279dbe00ee5d2a0f",
+      "fingerprint": "7dcc572017e8278924d3d701437a0cb25063f6b3c74656355ddc19e07de9a49b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。実際に使われた文脈を確認し、正しい対象の明示によって比較できる。 比較対象: 説明を長くしても引用元の新旧は修正されない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実際に使われた文脈を確認し、正しい対象の明示によって比較できる。 新資料は渡せても旧版がどこから来たか切り分けられない。 調査できても現在版を確実に回答へ渡せない。 モデル差は見られるが古い参照情報の原因を解消しない。"
     },
     "q-sc08-3": {
-      "fingerprint": "6aac381c4077880d4ba44c85a549eeefb58bf67c29a8362ab25f3c0283905af1",
+      "fingerprint": "7ce68d17ba8b28c1278a730001237883d8bb939fa30544cf7d141e8c52b9f6d8",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。参照先が既知なので必要なコードを直接与えると対象を限定できる。 比較対象: 未特定のコードを探すときは有用だが、既知の参照先を直接絞る目的には広すぎる。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。参照先が既知なので必要なコードを直接与えると対象を限定できる。 検索結果の抜粋は得られても二ファイルの内容を確実に含めない。 一方の依存ファイルを明示していない。 規約は与えられても現在の二ファイルの内容を参照できない。"
     },
     "q-sc09-1": {
-      "fingerprint": "446dc3b9b51eb8e43092de07eb965a91b4bc7953f24a7a29ea2138ccf8a26fc1",
+      "fingerprint": "47f54f8a14826cf2ef6ed0a4f65849d4efdbef559a13010924233c219b104dfd",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。既存活動指標では捉えない満足度や集中の体験を直接補完する。 比較対象: デリバリーの性能や効率には有用だが疲労や割り込みは直接測らない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。既存活動指標では捉えない満足度や集中の体験を直接補完する。 利用の内訳は詳しくなるが活動量中心という不足は解消しない。 デリバリーの性能や効率には有用だが疲労や割り込みは直接測らない。 ライセンス利用の管理には有用だが開発者体験の測定ではない。"
     },
     "q-sc09-2": {
-      "fingerprint": "a33f94ca98988790e698eada6c05d47eca6c536cae1adc896044dd1e8acc58b2",
+      "fingerprint": "5dede3483a05188900871c5ab71fdb01c977c4d77602e964bdf271e93e9f8c80",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。対象APIの提供項目と期間を確認して利用傾向を調べる。成果や能力を直接示すものではない。 比較対象: 割り当ては利用資格であり実際の利用や採用と同じ指標ではない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。対象APIの提供項目と期間を確認して利用傾向を調べる。成果や能力を直接示すものではない。 割当状況だけでは提案の受容傾向を集計できない。 管理イベントから言語別の利用状況は得られない。 リポジトリ活動とCopilotの利用指標は同一ではない。"
     },
     "q-sc09-3": {
-      "fingerprint": "0a1faf2fa94e8d6c5f6d828ace7ec85135afb88114ee29f40f0076d8de4a21af",
+      "fingerprint": "4a77d55c7ed9fb9e256f8cc10dc99cd2c3a92dd89450830259676b33bc5e5adf",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。負担と理解の二条件を別々に直接評価できる。 比較対象: 活動量だけでは設計理解と質問対応負担を評価できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。負担と理解の二条件を別々に直接評価できる。 負担は見られるが理解低下の有無を確かめられない。 理解は見られるが先輩への負担変化を直接確かめない。 活動量だけでは設計理解と質問対応負担を評価できない。"
     },
     "q-sc10-1": {
-      "fingerprint": "0e6d24cd116f536c1d5baa98f183eea52025c9e934fb563fcafd48f1c137a868",
+      "fingerprint": "0233bf07d08473fe5a1698c03925374ba2c7935078145f61ca717ddb10e355cb",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。出力一致を抑えつつ社内の入力文脈を維持する二条件を満たす。 比較対象: 参照して判断する運用には適するが提案の提示抑制という条件に合わない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。出力一致を抑えつつ社内の入力文脈を維持する二条件を満たす。 出所確認はできるが一致した提案の抑制条件を満たさない。 一致は抑えられるが社内コードの文脈利用を続けられない。 秘密情報の検査であり公開コードに一致した提案の抑制ではない。"
     },
     "q-sc10-2": {
-      "fingerprint": "7830a34c2cf787deaacbeb6f6473e896750589fb3e083ef2be835adf3e832f0f",
+      "fingerprint": "767701f0a75434db2d2fcd649d20aa83fc38dc1e2b63b18bc9d31ea1b1045558",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。今回通知されたスニペットの出所と条件の確認に直接対応する。 比較対象: 依存パッケージと今回の生成スニペットの出所は同じとは限らない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。今回通知されたスニペットの出所と条件の確認に直接対応する。 将来の抑制には有用だが採用済みスニペットの根拠を示さない。 依存パッケージと今回の生成スニペットの出所は同じとは限らない。 セキュリティ解析はライセンスの参照情報を確認する手段ではない。"
     },
     "q-sc10-3": {
-      "fingerprint": "b343a8f937d5bce8592b87833f3715394165b00eb15b8c9572f8805162bcb6cf",
+      "fingerprint": "8aaad2561e9c64ebf9f9dde4879f5b0debcede4b7264b77de51398a9f297b23c",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。モデルの学習に使うかと、サービス運用上の保存を区別する必要がある。 比較対象: 公開コードの一致制御から顧客データの利用目的は判断できない。"
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。モデルの学習に使うかと、サービス運用上の保存を区別する必要がある。 学習不使用から即時削除まで推論できない。 出力一致と通信保護は学習方針の根拠ではない。 保存条件から基盤モデルの学習方針は導けない。"
+    },
+    "q02": {
+      "fingerprint": "4b6c4556358372fb50a4fd35a94e81210d213841ea386a40611e9414d44e1d35",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。問題になっている境界条件の期待値を独立に確認できる。 性能評価には有効だが月末の計算結果の正しさを示さない。 構文や形式の確認には役立つが金額の丸め規則は検証しない。 追加の意見は得られるがモデル間の一致は仕様との一致を保証しない。"
+    },
+    "q03": {
+      "fingerprint": "08a424626764448239ae74bd6f5ca05ec3e0c0c353dffc724356971898aea6d3",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。提案内容を確認してから採否を決める基本的な操作に合う。 別案の探索には使えるが、どの案を使うかを読む必要が残る。 部分採用は一部が必要と判断した後の操作である。 複雑な案の理解には有用だが、まず表示された内容を確認する。"
+    },
+    "q05": {
+      "fingerprint": "4fbd46c448251ecb2e8dac20fcbc57c7babd713e5878449f7e0b61e3aa36d066",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。明示した質問と提供したコードの文脈が回答に利用される。 リポジトリ全体の全文が自動的に常に入力されるわけではない。 モデルの知識も働くが、添付した現行コードを除外してしまう。 ファイルだけでは何を説明してほしいかという要求を落とす。"
+    },
+    "q06": {
+      "fingerprint": "4d8b588079cb786c9cbe49607832d09f3f5463290db655b8422e52e94f31c761",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。公式契約と実行結果の両面から採用判断を行える。 形式的な品質は見られるがAPIの実在や振る舞いは確認できない。 説明の改善はできるが実在性の根拠にはならない。 要約は変更の伝達に役立つがAPIの正しさを検証しない。"
+    },
+    "q08": {
+      "fingerprint": "301c7955fe5497c678886e365fd03b544a3be8a849e731faff7cf2a154aaa9c7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。無関係な履歴を切り、現在の要件だけを提供できる。 新しい資料は加わるが旧タスクの履歴も残る。 要約は旧履歴を整理できるが新しいタスクへの混入を防げない。 常時指示を変えても既存会話の文脈は残る。"
+    },
+    "q09": {
+      "fingerprint": "df3ec060635daf5916da116e3240e9d8842d1cf206583ea70d8d29d55a5f86e8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。不足している境界と異常系を直接テストできる。 通常系の回帰には有用だが未確認の条件が残る。 性能には役立つが日付の正否を調べる依頼ではない。 保守性には役立つが月末や不正入力の期待結果を指定しない。"
+    },
+    "q11": {
+      "fingerprint": "b7ce6beca06f91cc697e473a7e2a3693e3a7b86ae5394273e604a1cf59d208df",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Agentモードの非対応という公式の制約を踏まえて追加の境界を設ける。 反映待ちの調査は有用だがAgentへの対応自体を保証しない。 公開コード一致は提案の出力側の設定で、機密ファイルの参照制御ではない。 Gitの追跡対象とAgentのファイルアクセスは同じ制御ではない。"
+    },
+    "q12": {
+      "fingerprint": "56d2703f9728061e251b21fdb3a3278808af413809ef23e36bfe89a9e31d8960",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。クライアントの古い状態を切り分け、実際の除外表示と動作を確かめる。 Gitの追跡状態は補完除外のクライアント反映を直接示さない。 管理設定の調査には役立つが一人だけ古いセッションという条件を確認しない。 出力の参照情報は入力側の除外状態を示さない。"
+    },
+    "q-d1-f01": {
+      "fingerprint": "7228f789b5044249a4bf146b1c41f837304df4e4b0aa2a751ea78f251896aa35",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。生成結果を確認して製品へ取り込む判断は開発チームが行う。 公開コードの出所確認は必要だが採用判断の主体にはならない。 CIは検証を支援するが仕様適合の責任を引き受けない。 モデル提供者の説明と開発チームの採用責任は別である。"
+    },
+    "q-d1-f02": {
+      "fingerprint": "2a7dd6edf7ceebcb158b8e6bd5156823fcb11471297305f8f21315d5b313175a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実在しないAPIをもっともらしく生成する例である。 バイアスは偏った結果の問題で、APIの実在性とは異なる。 悪意ある外部指示を取り込んだという条件は示されていない。 会話履歴の前提が変化したという条件は示されていない。"
+    },
+    "q-d1-f03": {
+      "fingerprint": "8deb97770e34b4cb6fb304bb9c8f48b0dbb504ccab3e30c747a5dbc3accfe757",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。未確認の権限境界を実行で検証し、コード上の判断も確かめる。 正常系の信頼性には役立つが権限不足時を調べない。 型の整合性は重要だが認可ロジックの正しさを保証しない。 説明は参考になるが拒否条件の実行結果を確かめない。"
+    },
+    "q-d1-f04": {
+      "fingerprint": "7a64eab1720711c1bf2c69779f1d43bc33c505c81f97b3f4c3aa7653db151ad4",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。代表性のない例やデータから偏った処理が生まれ得る。 通信遅延は地域別の分割誤りの直接原因ではない。 出所通知の有無と地域別の処理精度は別の問題である。 コード整形だけでは人名形式への偏りを説明しない。"
+    },
+    "q-d1-f05": {
+      "fingerprint": "eaf2345fb6fbd7b50898e146eb0dac3deebca1c2985db7ac1a2c3f6fdbde8b44",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。MD5はパスワード保存用の方式ではないため、保存処理そのものを直す。 総当たり対策には有効だが保存方式の弱さは残る。 権限制御は重要だが漏えい時のMD5の弱さを解消しない。 通信保護は必要でも保存済みハッシュの方式とは別である。"
+    },
+    "q-d2-f01": {
+      "fingerprint": "bb7315ed4a25206b978961cd1c3422781e207eceed173af2215f4743b55386b2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択範囲の編集提案をその場で確認する用途に合う。 設計相談には合うが選択箇所の差分適用を主目的としない。 広い作業には適するが今回は局所編集だけが対象である。 続きの補完には適するが選択コードの対話的な修正ではない。"
+    },
+    "q-d2-f02": {
+      "fingerprint": "967d67979ddeda1aff9bfe82cc9c2074dc7c1a0763eccbdf7ca26cff35eb50eb",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択中のコードを明示して参照できる。 ファイル全体の参照であり選択範囲だけとは粒度が異なる。 ワークスペース検索・参照の範囲が広すぎる。 直近のコマンドを参照する文脈でコード選択ではない。"
+    },
+    "q-d2-f03": {
+      "fingerprint": "b2622c9a2aeb3bc82dadcd98edcf80aa78faaba804b2633a09ce48eb57d31655",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択したコードのテスト生成を依頼するコマンドである。 診断されたコードの修正案を依頼する用途である。 既存コードの意味の説明を求める用途である。 ドキュメントコメントの生成を求める用途である。"
+    },
+    "q-d2-f04": {
+      "fingerprint": "99b45ce64f3f1cea11eedc59196d15bfe365af930e853dd78ad35438fedcd95d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。横断的な編集と実行結果を使った継続作業に対応する。 相談には適するが手動切替を減らす条件に合わない。 局所編集はできるが三ファイルとテストの反復は手作業になる。 既存差分の評価はできるが変更の実行ループではない。"
+    },
+    "q-d2-f05": {
+      "fingerprint": "70abcf66816acc0bc98b2310bd19047320def50db2e0f19307d63cf25faf4d32",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。実行前に対象と影響を確認し、必要なら拒否・指示し直す。 GitブランチはDBなどのデータを復元できるとは限らない。 指示は有用だが既に提示された実行の承認判断を代替しない。 構文が正しくても保存すべきデータを消す可能性がある。"
+    },
+    "q-d2-f06": {
+      "fingerprint": "53a97dcc0781d51b384d1bd084ed7fb6bd459153fdf5cf0178eaeb2b2f9c62ed",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。外部システムとの標準化されたデータ・ツール連携を提供する。 依頼文の再利用には役立つが実行機構を追加しない。 文脈共有には役立つが現在の外部状態への操作接続ではない。 利用規約を伝えられるが外部ツールの実装にはならない。"
+    },
+    "q-d2-f07": {
+      "fingerprint": "0efe24320a3bb0bd1365528329123d49e8043ed238ce9d7f7d05633d02aac3fd",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。モデルが引数を付けて呼び出す操作を公開する区分である。 参照するデータの提供には適するが操作呼び出しの区分ではない。 対話テンプレートの提供には適するが副作用のある操作ではない。 サーバーからモデル生成を依頼する仕組みで、チケット作成ツールではない。"
+    },
+    "q-d2-f08": {
+      "fingerprint": "ffc383e5b96c68102d45aa7205f076923a61e92347370cd7967995178a18298c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。リポジトリ全体向けのCopilotカスタム指示の標準ファイルである。 パス別の指示には使えるが今回の単一の全体規約とは役割が異なる。 必要時に呼ぶタスク向けで常時適用の指示ではない。 Agent向けの指示に使えるが問いはCopilotの共通指示の標準配置である。"
+    },
+    "q-d2-f09": {
+      "fingerprint": "ec0a17d9bb74be1f2b1793f7a0e4e49f1a1434c9f4c92e4b67e9e801953c5614",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。再利用可能なPrompt Fileとして保存する配置と拡張子である。 全体へ自動適用する規約用で必要時のタスク呼び出しと異なる。 対象パスに応じる指示用でオンデマンドのプロンプトではない。 Agent指示のファイルでプロンプトファイルとは役割が異なる。"
+    },
+    "q-d2-f10": {
+      "fingerprint": "4f3dfa932fc5f598f2c2e7a717813c57b8ec63b7405c4ef2257d82f0851dfc6c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選んだ資料を整理して共有し、質問の文脈として利用できる。 常時の規約には適するが資料集合の共有という目的とは異なる。 定型タスクの呼び出しには適するが資料集合の共有ではない。 外部ツールへのアクセスには適するが資料をまとめた共有空間とは異なる。"
+    },
+    "q-d2-f11": {
+      "fingerprint": "844b9231b9d18184d0152c0b6b9cb37e8a2eb231fe42e8f9f48dbcc56762743a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。端末で自然言語の相談とツール利用を行う現行のCopilot CLIである。 IDE内のChatには適するがGUIのない端末では使えない。 外部ツール連携のサーバーで、単独の端末対話ツールではない。 共有文脈の整理に使う機能で端末操作のCLIではない。"
+    },
+    "q-d3-f01": {
+      "fingerprint": "f1f40ba474f1805fdfb1223f9438f22a4efac0d1d5323e7838d1c7876db9a59d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。カーソル前後のコードを手掛かりに中間部分を生成する。 カーソル前の続きだけを重視し、後続の実装を条件にしない。 関連ファイルを探す仕組みで関数内部の前後補完とは異なる。 会話の要約は長い対話の整理に使うが中間補完の方式ではない。"
+    },
+    "q-d3-f02": {
+      "fingerprint": "89e476c3bf583e4f98ad4afdd02c6bb16f3e51d8b75f1e470492df764ef986d5",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。開いている関連タブの内容を補完の文脈として利用する説明に合う。 リポジトリ検索の文脈と、開いているタブの文脈は区別する。 会話の過去情報であり別タブの型定義そのものではない。 規約は渡せても現在開いた型定義の自動参照ではない。"
+    },
+    "q-d3-f03": {
+      "fingerprint": "45e2d7e6bc8b2e468a0a8815d77e9f7060305add7f4a9245f80843ec2cb7e31e",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。CopilotサービスへのHTTPSのアウトバウンド通信を確認する。 Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。 クライアント側へ入る通信は一般的な接続要件と向きが逆である。 ローカルDBへの通信はCopilotサービスへの接続ではない。"
+    },
+    "q-d3-f04": {
+      "fingerprint": "919a9cd4ebab3447439c6311c048dd307badf789f04fa20efb1f829d0e95f6ca",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。 Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。 Gitの転送経路はCopilotの通信要件と同一ではない。 管理画面へのアクセスはCopilotサービスへの到達性を示さない。"
+    },
+    "q-d3-f05": {
+      "fingerprint": "53d7067b2cadebf403400a539456622b31b39370f7b28cb586c96848e3a1347a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。入力と出力の容量を管理する基本単位である。 行数は目安になるがモデルの文脈上限の単位ではない。 文字数とトークン数は一致しない。 ファイルサイズは保存量であり入力トークン数とは異なる。"
+    },
+    "q-d4-f01": {
+      "fingerprint": "78be5501d0016e13a5976aa475a05c1fe468186c6c92b5b07b93081c2ee436fe",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。 役割指定は補助になるが何を満たすべきかが曖昧なままである。 禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。 大量の資料があっても依頼の目的と条件が不足する。"
+    },
+    "q-d4-f02": {
+      "fingerprint": "00c969e42352ca5d8fb5d646d63eb6ef747c7214a3957c98d61d5bb303b2feb7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。少数の具体例を入力に含めて出力を誘導する。 例を示さず指示する方式であり二組の例という条件と異なる。 役割の指定はあり得るが入力・出力例を示すこと自体の名称ではない。 外部資料の取得を文脈へ加える方法で例示数とは別である。"
+    },
+    "q-d4-f03": {
+      "fingerprint": "28c779dce350e2dc83529547da1bbecc9e348eb76efa7980cd054c96f6db5c5a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。旧タスクの文脈を切り、現在の情報で始められる。 資料は増えるが旧APIの履歴は残る。 モデル変更だけでは旧履歴の混入を解消しない。 常時指示を増やしても会話の古い前提は残る。"
+    },
+    "q-d4-f04": {
+      "fingerprint": "95479ba554f10c12655f4e922ae9694e6725cde1740a76486439fd4723bbabea",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。判断の段階を明示して説明を求める手法に当たる。 少数の見本を示す手法で、段階的な検討の依頼とは異なる。 役割を与える手法で、検討順序の指定とは異なる。 結果の形式を定める手法で、考慮順序そのものではない。"
+    },
+    "q-d4-f05": {
+      "fingerprint": "98f44a8b7b28ec23700c9c89079dba30f95cf868cbe7755062b102bf011d6bef",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。会話の蓄積によって扱う前提がずれていく状況である。 もっともらしい誤情報の生成を指し、履歴の混入だけとは区別する。 外部入力から指示が乗っ取られる条件は示されていない。 生成コードが公開コードに似るかの問題で会話履歴の変化ではない。"
+    },
+    "q-d5-f01": {
+      "fingerprint": "ecc8c2db64f9876a35bb73a42c45e90d1f572204f6c6583d580196a20db8d35a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。選択コードのドキュメントコメントを生成する。 処理の意味を説明するがコメント生成は主目的ではない。 テスト生成を依頼する。 不具合修正案を依頼する。"
+    },
+    "q-d5-f02": {
+      "fingerprint": "36a38e40b99092a00f93ee27d6336a0c816260ee91be2f8b5f30dee61e9e8eec",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。未確認の境界・異常系と期待結果を直接指定できる。 正常系の補強にはなるが指定された未確認条件は残る。 対象処理の境界動作を検証できなくなる。 性能調査であり例外と境界の正しさを検証しない。"
+    },
+    "q-d5-f02-b": {
+      "fingerprint": "61b2d444067f50dea40567017597ce928578c067d1418f7f8e1628c20d564a84",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。ステージ済み差分に基づくコミットメッセージ提案の操作である。 内容の相談はできるが問いのビュー上の専用操作ではない。 コード品質のレビューが目的でコミット文生成ではない。 PR本文の概要を作る機能でコミット入力欄とは異なる。"
+    },
+    "q-d5-f04": {
+      "fingerprint": "9bec820ee946614cb215475834e087031d1599f9044cf1144148add37559a592",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。PRの変更内容から概要の下書きを生成する。 PRの改善点をレビューする機能で概要の下書きとは目的が異なる。 Issueの議論をまとめる用途でPR差分の概要ではない。 一つのコミット文を提案する用途でPR概要とは異なる。"
+    },
+    "q-d5-f05": {
+      "fingerprint": "5b9aebe4eb2758ad6d394cb86fd664e53d9dd05d4a493f7a26353deb1a3c8d2a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。外部依存を置換し、応答を制御する。 テストデータの準備に使うが通信を置換する機能そのものではない。 呼び出し観察には使えるが応答の置換が主眼ならモック・スタブが近い。 時間の進行を制御するがAPI応答の代替ではない。"
+    },
+    "q-d6-f01": {
+      "fingerprint": "28e3df633f44f8fa085ef449860d5537654192c39a14864dcf2caf98c79cb0a5",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。公開コード一致の提案を許可・ブロックする設定である。 入力として使うリポジトリ内容の除外であり提案の一致判定とは異なる。 一致した提案の参照情報を扱う機能でブロック方針の設定名ではない。 リポジトリ内の秘密情報の検出で生成提案の一致制御ではない。"
+    },
+    "q-d6-f02": {
+      "fingerprint": "40761942c53bbdc4c8c627d377cc2f44f3fbba5ba0f4e166eda2228e6888bd63",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。指定したリポジトリやパスの内容を対応機能の文脈から除外する。 生成提案の公開コード一致を扱う出力側の制御である。 応答の方針を伝えるがファイルへのアクセス制御ではない。 提案の参照表示に関する機能で入力ファイルを制限しない。"
+    },
+    "q-d6-f03": {
+      "fingerprint": "532e44221cd62215135fd7262fbaceff4863fc498a0766ece515d934f2457ae4",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。Business/Enterpriseの顧客データについて示された方針である。 このプランの方針を管理者の許可制に置き換えた説明ではない。 保持期間と基盤モデルの再学習は別の論点である。 入力元の公開・非公開でこの方針を分ける説明ではない。"
+    },
+    "q-d6-f04": {
+      "fingerprint": "7433c6f5ef05b48674eec1d1fda844c1d1d416a077c74d6dfa6af4e6abca2b02",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。管理操作のイベントと実行者・時刻の追跡に使う。 利用統計を集計するが管理操作の履歴ではない。 現在の割当の確認や操作には使えるが変更イベントの監査記録とは異なる。 コード変更の履歴で組織設定の操作は記録しない。"
+    },
+    "q-d6-f05": {
+      "fingerprint": "7c4d3a756f9a283df8f220af5d35d3b08313608cb94a5a6c84e1a6094c4fd8f8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "選択肢だけを読み正解が浮かないかを再評価。利用指標の集計をAPIで取得する。 割当状況の管理・取得で受容率などの指標とは異なる。 管理イベントの追跡で利用指標の集計ではない。 費用の確認で補完の受容率や言語別利用の集計ではない。"
     }
   },
   "choiceAudit": {

@@ -5,7 +5,7 @@ import audit from '../reports/question-choice-quality-audit.json';
 
 describe('choice-quality inventory', () => {
   it('tracks every question and option without dropping or relabeling an answer', () => {
-    const entries = Object.values(audit.byDifficulty).flat();
+    const entries = Object.values(audit.inventoryByDifficulty).flat();
     expect(entries).toHaveLength(seed.length);
     expect(new Set(entries.map(q => q.questionId)).size).toBe(seed.length);
     const byId = new Map(seed.map(q => [q.id, q]));
@@ -15,8 +15,8 @@ describe('choice-quality inventory', () => {
       expect(original).toBeDefined();
       expect(row.question).toBe(original!.question);
       expect(row.correctAnswer).toEqual(original!.answer);
-      expect(row.choices).toHaveLength(4);
-      for (const choice of row.choices) {
+      expect(row.options).toHaveLength(4);
+      for (const choice of row.options) {
         expect(original!.choices.find(c => c.id === choice.id)?.text).toBe(choice.text);
         expect(choice.correct).toBe(original!.answer.includes(choice.id));
         expect(choice.explanation?.trim()).toBeTruthy();
@@ -27,19 +27,21 @@ describe('choice-quality inventory', () => {
     }
   });
 
-  it('keeps the eight rewrites scenario-dependent and marks other semantic scores provisional', () => {
-    const entries = Object.values(audit.byDifficulty).flat();
-    expect(audit.modifiedQuestionIds).toHaveLength(8);
+  it('records an option-only assessment and two plausible distractors for all 200 questions', () => {
+    const entries = Object.values(audit.inventoryByDifficulty).flat();
+    expect(audit.modifiedQuestionIds).toHaveLength(191);
+    expect(audit.warnings).toEqual([]);
     for (const row of entries) {
-      if (audit.modifiedQuestionIds.includes(row.questionId)) {
-        expect(row.assessment).toBe('editorial-reviewed');
-        expect(row.answerWithoutReading).toBe('PASS');
-        expect(row.choices.filter(c => !c.correct && c.plausibility >= 3)).toHaveLength(2);
-        expect(row.requirementMapping[0].correctReason).toBeTruthy();
-        expect(Object.keys(row.requirementMapping[0].distractorFailures)).toHaveLength(3);
-      } else {
-        expect(row.assessment).toBe('screening-provisional');
+      expect(row.optionOnly).toBe('PASS');
+      expect(row.optionOnlyReason).toBeTruthy();
+      expect(row.multipleAnswerRisk).toBe(false);
+      expect(row.lengthBias).toBe(false);
+      expect(row.options.filter(c => !c.correct && c.plausibility >= 2).length).toBeGreaterThanOrEqual(2);
+      if (row.difficulty === 'advanced') {
+        expect(row.options.filter(c => !c.correct && c.plausibility >= 3).length).toBeGreaterThanOrEqual(2);
       }
+      expect(row.requirementMapping[0].correctReason).toBeTruthy();
+      expect(Object.keys(row.requirementMapping[0].distractorFailures)).toHaveLength(3);
     }
   });
 });
