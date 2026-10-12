@@ -229,12 +229,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。実行結果を観測するループによって失敗原因へ対応し、再実行で確認する。 比較対象: レビューは補助であり失敗したテストが直ったかの確認が欠ける。"
     },
     "q-d2-a07": {
-      "fingerprint": "98286e5108975b2580271598df55340fc56b20af39966e0600c167a5f406267f",
+      "fingerprint": "68fd38e6b68301b57a8a5355fa73404746f6d36461bf1e48768abe5adf41f90a",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なのは外部システムへ接続して最新データや操作結果を取得する仕組みである。 比較対象: 資料を文脈として共有できるが、それだけでは外部APIの操作機能を提供しない。"
+      "rationale": "問題文の全条件と選択肢を照合。現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。 同じMCP経由で現在値を取れるが、共有管理者権限では利用者ごとの閲覧境界を守れない。 資料を共有できるが、前日の静的コピーでは現在のスキーマを保証できない。 MCP連携ではあるが、指示文だけでは任意SQLの実行権限を強制的に制限できない。"
     },
     "q-d2-a08": {
       "fingerprint": "6a27cfcf482e685154fe4ab4fb39ccf6c2ce7b4e62ff2da8fa616242c0dfe7be",
@@ -333,12 +333,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。必要な規約を明確で実行可能な指示として伝える。 比較対象: 禁止事項が多すぎると重要な規約を把握しにくく、望む代替も不明瞭になる。"
     },
     "q-d2-a20": {
-      "fingerprint": "0ef38a49cce450b48cbbac3a245ebed595e1dd4621b7af53826e51a24ca6c467",
+      "fingerprint": "9586bca3f6fc7202e71bc283bf185d92973bd765fcb50339045f2d6caf0cc3ea",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。外部APIの実行手段を提供するため、指示や資料の共有だけとは区別される。 比較対象: 使い方の指示だけではAPIへ接続するツールを作れない。"
+      "rationale": "問題文の全条件と選択肢を照合。最新の検索結果を取得しつつ、閲覧権限と読取専用の操作範囲をサーバーで守れる。 最新値は取得できるが、共通の管理者権限は利用者ごとの閲覧境界を失わせる。 共有資料としては有用だが、昨日の一覧では現在の注文状態を照会できない。 検索は可能だが、指示だけでは不要な更新権限を排除できない。"
     },
     "q-d2-a21": {
       "fingerprint": "83fc2b128876edb2e1aa13f6dff61a28e3d58118d850df873fc9463a5ed70afe",
@@ -365,12 +365,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。複数ファイルの変更とツール実行・失敗への対応を同じ作業ループで進められる。 比較対象: 局所編集はできるが横断的な編集とテストの反復を自分でつなぐ必要がある。"
     },
     "q-d2-e02": {
-      "fingerprint": "9e5ae1d493431d3d66a19baf2935b7f4193c7a3e71aedb34adccb9f8514e0377",
+      "fingerprint": "f030725c773115878572c59c67a0745fff78ea477999c7ed5005ea8043745c1b",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なのは外部システムへ接続して最新データや操作結果を取得する仕組みである。 比較対象: 常時参照する指示には適するが指示の記述だけでは外部接続できない。"
+      "rationale": "問題文の全条件と選択肢を照合。現在値の取得、利用者ごとの認可、読取専用の操作範囲を同時に満たす。 現在値を取れる点は近いが、共有管理者トークンでは担当者別の残高閲覧権限を守れない。 仕様理解には役立つが、定期出力では現在のレートや残高を保証できない。 MCPで現在値を取得できても、送金権限を指示文だけで無効にはできない。"
     },
     "q-d2-e03": {
       "fingerprint": "d5852110f006eea367c04b55a62db017524a3a48f57680350c1c4d2b1b11d568",
@@ -405,12 +405,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。承認が常に出るとは仮定せず、実際の設定で実行前の制御を確認する。 比較対象: 通信の暗号化はコマンドやツールの実行承認とは別の制御である。"
     },
     "q-d2-e07": {
-      "fingerprint": "1a2ee32450bd01101d24ffe7edd297632301a596f8251e355bd35665bbab79a1",
+      "fingerprint": "95b0a2a1d1cc8a06fb49ef5e18e0f19f1d516f82242c11313ee7f9a414245b6e",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なのは外部システムへ接続して最新データや操作結果を取得する仕組みである。 比較対象: 依頼の再利用には適するがテンプレートそのものはAPI接続機構ではない。"
+      "rationale": "問題文の全条件と選択肢を照合。必要な読取操作のみを公開し、削除や任意実行の権限をツール側から排除できる。 同じ情報は得られるが、全操作を許すと指示では削除権限を制限できない。 Resourceで情報を共有できても、起動時の一覧は現在の状態や直近ログではない。 dockerコマンドで取得は可能だが、任意シェル実行を許すと要求された操作制限を守れない。"
     },
     "q-d2-e08": {
       "fingerprint": "befcb0972af44f678f4bddee96cf28915c49b7ce13acc3d8320cbc70a2bbcc35",
@@ -541,12 +541,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。公式の文脈提供の手順を使い、観測可能な結果で改善を確かめる。 比較対象: 非公開の内部挙動の推定に依存し、必要なAPI契約も直接示していない。"
     },
     "q-d3-a05": {
-      "fingerprint": "86f4e6b09f8fe69312ea74fd4244131da0103d702d5479a43f7f0949c7264683",
+      "fingerprint": "9cc73b2cc8dd24c5d574299edf9e645b3e3900678636ed478d007a46d3003b16",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。失敗がネットワーク環境に依存するという切り分け結果を活かす。 比較対象: 入力容量の問題には関係し得るが環境依存の通信エラーを優先して調べるべきである。"
+      "rationale": "問題文の全条件と選択肢を照合。プロキシ経路に限る失敗の原因が未確定なので、診断結果から通信先・証明書・経路を切り分ける。 遅延が原因なら効果があり得るが、まだ遅延と判明しておらず証明書や宛先の問題も残る。 宛先制御が原因なら動く可能性はあるが、根拠なしの全許可は過剰で証明書エラーにも対応しない。 証明書検証が原因なら接続は変わる可能性があるが、原因未特定の段階で保護を外すのは不適切。"
     },
     "q-d3-a06": {
       "fingerprint": "36bbbb4899cd0de59af8049244e02948d6b36b9e194f3bda5f6b84e7d82ed42e",
@@ -581,12 +581,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。最新の公式一覧と実際の接続エラーに基づいてネットワークを設定する。 比較対象: パッケージ取得とCopilotの通信は別の接続先を利用する。"
     },
     "q-d3-a10": {
-      "fingerprint": "470ce4f89f4fdcaa340471d705651d1c2730007bec3c2edb56496950ee7b647e",
+      "fingerprint": "d020fa063925b34d1e267847c5bc566a032353a42c122d48d8d1de058d089869",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。会話や関連コードが回答の文脈に使われることを踏まえた対処である。 比較対象: 利用資格や統計の確認は旧版を参照する理由の調査ではない。"
+      "rationale": "問題文の全条件と選択肢を照合。旧版を含む二つの文脈源を確認し、現在の実装を明示できる。 添付が旧版なら改善するが、会話に残る古い説明が回答へ混ざる可能性を残す。 履歴の混入は減るが、古い添付を使えば同じ関数名を再び参照し得る。 指示は参考になるが、古い会話とファイルのどちらが原因かを切り分けられない。"
     },
     "q-d3-a11": {
       "fingerprint": "b3e8df96a5fc146f195c8676e1faaa0ece9fc06a315d6a35f911a813129264ca",
@@ -1061,12 +1061,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。社内規則と具体例を結び付け、境界での誤解を減らす。 比較対象: 桁数と丸め方式は別の指定であり業務規則を特定できない。"
     },
     "q-sc03-1": {
-      "fingerprint": "08ea133b51c7c248ae3a24abe33b9c7c6e1f7edad766bfd7f78fc342ea2ae89c",
+      "fingerprint": "7d2351ef5429b2b0efd879e9e220636da67d1cdb5b52d27a167f0a8d5653e8e7",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。必要なのは外部システムへ接続して最新データや操作結果を取得する仕組みである。 比較対象: 資料を文脈として共有できるが、それだけでは外部APIの操作機能を提供しない。"
+      "rationale": "問題文の全条件と選択肢を照合。現在の情報を取得でき、担当者別の閲覧権限と本番の読取専用範囲をサーバー側で守れる。 両システムには接続できるが、共通管理者資格情報ではチームごとの閲覧境界が失われる。 Resourceで資料を共有できても、定期集計では現在のIssueやメトリクスを保証できない。 機能としては接続できるが、指示文はIssue変更や本番操作の権限を強制的に無効化しない。"
     },
     "q-sc03-2": {
       "fingerprint": "c5dae14ca02ef49cdc7a82b246387a1e17ee13ef1ce99d7f99150e3a13bfe2b9",
@@ -1157,12 +1157,12 @@
       "rationale": "第2段階で本文の条件と各案の反例を照合。他のプロジェクトの方針と対象リポジトリの規約を両立する範囲で調整する。 比較対象: 生成タスクの再利用には有用だが常時指示の矛盾を解消しない。"
     },
     "q-sc07-1": {
-      "fingerprint": "171800fe4471819fca3b2ac15a087906e227849c7a0b4c5c15878616cbe958be",
+      "fingerprint": "bd475e57fe18fa4b55372eb41996df385b65c9454906e2aad02cbc1a62664584",
       "multipleAnswerRisk": false,
       "answerWithoutReading": false,
       "difficultyConsistent": true,
       "requirementCoverage": true,
-      "rationale": "第2段階で本文の条件と各案の反例を照合。最新情報のAPIへのアクセスという実行機能を追加する。 比較対象: 既存資料の共有には有用だが最新データを検索するAPIとは異なる。"
+      "rationale": "問題文の全条件と選択肢を照合。現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。 最新情報の検索はできるが、共通管理者権限では担当製品以外の閲覧を防げない。 資料共有には役立つが、朝の出力はその後の更新を反映せず最新状態を保証しない。 MCPで検索はできても、指示文だけでは記録変更の権限を禁止できない。"
     },
     "q-sc07-2": {
       "fingerprint": "d38e9adfd86c61d59bd161440fae56d03999259e392724d4923b5b1674bfb077",
@@ -1252,5 +1252,20 @@
       "requirementCoverage": true,
       "rationale": "第2段階で本文の条件と各案の反例を照合。モデルの学習に使うかと、サービス運用上の保存を区別する必要がある。 比較対象: 公開コードの一致制御から顧客データの利用目的は判断できない。"
     }
+  },
+  "choiceAudit": {
+    "reviewedAt": "2026-10-12",
+    "reviewer": "Codex choice-quality editorial pass",
+    "method": "Choice-by-choice scenario and official-source review for edited questions only; remaining fingerprints preserved.",
+    "questionIds": [
+      "q-d2-a07",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e07",
+      "q-sc03-1",
+      "q-sc07-1",
+      "q-d3-a05",
+      "q-d3-a10"
+    ]
   }
 }

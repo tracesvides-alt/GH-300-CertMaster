@@ -13,7 +13,8 @@
     "sources:check": "node scripts/check-official-sources.mjs",
     "content:audit": "node scripts/audit-learning-content.mjs",
     "quality:audit": "node scripts/audit-questions.mjs",
-    "quality:check": "node scripts/audit-questions.mjs --check"
+    "quality:check": "node scripts/audit-questions.mjs --check",
+    "choice:audit": "node scripts/audit-choice-quality.mjs"
   },
   "dependencies": {
     "dexie": "^4.0.0",

@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-10-12",
+  "basis": "HEAD before distractor edits",
+  "summary": {
+    "beginner": {
+      "count": 44,
+      "averagePlausibleDistractors": 0,
+      "unrelatedDistractorRate": 0,
+      "answerWithoutReadingFailureRate": 0,
+      "answerWithoutReadingUnreviewedRate": 100,
+      "strongDistractorRate": 0,
+      "questionsWithAtLeastTwoStrong": 0,
+      "potentialMultipleAnswerRate": "unmeasured (only edited questions rechecked)",
+      "averageScore": 40.1,
+      "belowTarget": 44
+    },
+    "intermediate": {
+      "count": 79,
+      "averagePlausibleDistractors": 1.75,
+      "unrelatedDistractorRate": 5.1,
+      "answerWithoutReadingFailureRate": 41.8,
+      "answerWithoutReadingUnreviewedRate": 58.2,
+      "strongDistractorRate": 0,
+      "questionsWithAtLeastTwoStrong": 0,
+      "potentialMultipleAnswerRate": "unmeasured (only edited questions rechecked)",
+      "averageScore": 59.3,
+      "belowTarget": 79
+    },
+    "advanced": {
+      "count": 77,
+      "averagePlausibleDistractors": 1.17,
+      "unrelatedDistractorRate": 2.2,
+      "answerWithoutReadingFailureRate": 61,
+      "answerWithoutReadingUnreviewedRate": 39,
+      "strongDistractorRate": 0,
+      "questionsWithAtLeastTwoStrong": 0,
+      "potentialMultipleAnswerRate": "unmeasured (only edited questions rechecked)",
+      "averageScore": 55.2,
+      "belowTarget": 77
+    }
+  }
+}

@@ -726,24 +726,18 @@
     "relatedQuestionIds": [
       "q-d2-f08",
       "q-d2-a05",
-      "q-d2-a07",
       "q-d2-a09",
       "q-d2-a10",
       "q-d2-a19",
-      "q-d2-a20",
-      "q-d2-e02",
       "q-d2-e03",
       "q-d2-e04",
-      "q-d2-e07",
       "q-d2-e08",
       "q-d2-e12",
       "q-d2-e16",
       "q-d4-e03",
-      "q-sc03-1",
       "q-sc06-1",
       "q-sc06-2",
-      "q-sc06-3",
-      "q-sc07-1"
+      "q-sc06-3"
     ],
     "relatedDomainIds": [
       "d2",
@@ -777,24 +771,18 @@
     "relatedQuestionIds": [
       "q-d2-f09",
       "q-d2-a05",
-      "q-d2-a07",
       "q-d2-a09",
       "q-d2-a10",
       "q-d2-a19",
-      "q-d2-a20",
-      "q-d2-e02",
       "q-d2-e03",
       "q-d2-e04",
-      "q-d2-e07",
       "q-d2-e08",
       "q-d2-e12",
       "q-d2-e16",
       "q-d4-e03",
-      "q-sc03-1",
       "q-sc06-1",
       "q-sc06-2",
-      "q-sc06-3",
-      "q-sc07-1"
+      "q-sc06-3"
     ],
     "relatedDomainIds": [
       "d2",
@@ -830,16 +818,13 @@
     ],
     "relatedQuestionIds": [
       "q-d2-f10",
-      "q-d2-a07",
       "q-d2-a09",
       "q-d2-a10",
       "q-d2-a20",
       "q-d2-e02",
       "q-d2-e03",
       "q-d2-e04",
-      "q-d2-e07",
       "q-d2-e12",
-      "q-sc03-1",
       "q-sc06-1",
       "q-sc06-2",
       "q-sc07-1"
@@ -1193,7 +1178,13 @@
       "q-d2-e11",
       "q-d2-e15",
       "q-d2-e19",
-      "q-sc07-2"
+      "q-sc07-2",
+      "q-d2-a07",
+      "q-d2-a20",
+      "q-d2-e02",
+      "q-d2-e07",
+      "q-sc03-1",
+      "q-sc07-1"
     ],
     "relatedDomainIds": [
       "d2",
