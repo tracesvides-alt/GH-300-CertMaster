@@ -1,0 +1,2247 @@
+{
+  "reviewedAt": "2026-10-13",
+  "capturedAt": "2026-10-13T13:17:41.792Z",
+  "bankSha256": "424db3de9a3a95ec48172ee625f6aeece85d778fa78078b37b5eff71470b38c5",
+  "scope": {
+    "activeApplied": 96,
+    "domains": {
+      "d1": 24,
+      "d2": 14,
+      "d3": 9,
+      "d4": 16,
+      "d5": 20,
+      "d6": 13
+    },
+    "additionalChangedFoundationRead": 23,
+    "retiredNotIncluded": 12
+  },
+  "summary": {
+    "answerMismatches": 14,
+    "strongOptionOnlyConcerns": 8,
+    "clearDifficultyReductions": 5,
+    "allRepaired": false
+  },
+  "method": "96問の本文・四択・正答・全体解説を個別再読。個別誤答解説は不整合箇所を追加確認。受験者実測・独立複数評価ではない。公式一次情報は下記の疑義を確認した範囲。",
+  "checks": {
+    "unitTests": {
+      "files": 18,
+      "passed": 194
+    },
+    "typecheck": "PASS",
+    "cleanupCheck": {
+      "status": "FAIL",
+      "staleDistractorRows": 39
+    },
+    "mutatedQuestionData": false
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "4bb48e9324bf6128c19f4dfceb21373c4032056cb4fe97c06d64437f426b44b2",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "翌月末の適用は判断可能。「期待値は？」の省略形が残る。応用の入口として扱える。"
+    },
+    {
+      "id": "q07",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "0f7ad3c4ba8a42ef383ef4276445d1a5701f58ff5050b69efc4e147d3835f35b",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "C"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "日付解釈の条件適用は可能。「追加する例は？」の省略形は整えたい。対比する二例を選ぶ構成は維持。"
+    },
+    {
+      "id": "q10",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "105ae104bbab155baa8e1ac81c2b5fe5947c1f956a40d8da0cad20cc863abc56",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "B"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "全体解説が正答理由の直後に「成功分岐は検証できるが…」と誤答の説明を連結し、正答の限界と誤読できる。"
+    },
+    {
+      "id": "q-d1-a01",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "5648928d54c20c480b395095f605a3f4a6021da18d1747c23b256f795f97642b",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "日本語は明確。例外の発生場所とリソース取得後の解放を対応させる判断は残る。"
+    },
+    {
+      "id": "q-d1-a02",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "9101c8caf3d872128cd5d30a926bc19af36170e01cbb97edf03f6e7d234a019c",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "SQL構文への混入と値の分離を対応させる判断は成立。誤答の対象が別の層で、難度は低め。"
+    },
+    {
+      "id": "q-d1-a03",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "f7dd9978f77cdee086bf67d9b455b49251cba1a9845033c472dd42df31e2eb25",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "本文がviewerの期待動作を明示し、ほぼその言い換えを選ぶ。誤答解説のguest・editorの権限は本文では未定義。"
+    },
+    {
+      "id": "q-d1-a04",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "cf339ee62332490d381b1322e08410bcfa357098aab3a666c9feb9610b47dc09",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "オフライン攻撃とオンライン制限の区別は成立。独自比較関数より承認済みライブラリという一般的な安全性も手がかりになる。"
+    },
+    {
+      "id": "q-d1-a07",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "00c8e0fd2f1251b25bb5611b68e0c56e0d78eb96388becaa84b0f725682ee378",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "強制する設定と通知を区別できるが、三つの誤答がすべて通知手段で、選択肢構成が単純。"
+    },
+    {
+      "id": "q-d1-a08",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "d9eb655052c9944997d81dd5165ce7ce9ee9d167cbd7dfaebfa0ea82abb91390",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "欠陥注入と検出を問う意図は明確。誤答が命名・件数・通過回数に偏り、検証方法の比較として弱い。"
+    },
+    {
+      "id": "q-d1-a09",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "c9781ee572def9308cf3c33cd24ccd5fcefb9b2005aef6357be7f0eb20f0e53b",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "回帰検証の不足を判断できる。テストによる「保証」の断定を避け、確認できる範囲として解説する。"
+    },
+    {
+      "id": "q-d1-a10",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "42e38743348de9cd73b677a40c5dfd43c09b17a1f88641f90a9740e354de20b6",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "速度と戻り値の二条件は維持。ただしC・Dは仕様に反する操作を露骨に示す。"
+    },
+    {
+      "id": "q-d1-e04",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "c1fbc69250171899cde29f61de40cff468f358d31ade1e8ecc585ad15d37551e",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "相関を保つ仮IDとトークン除去を両立する判断は成立。仮ID化の限界も説明されている。"
+    },
+    {
+      "id": "q-d1-e06",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "5c44f15ca1f2eb0ab7aa94f3f79ac3632f30155d3407b8d5bf7a9f981845bcbd",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "フィルターと個別審査の区別は成立。残る審査を別チェックで代替する誤答との比較は可能。"
+    },
+    {
+      "id": "q-d2-a02",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "47e236af2efedf34797ce6555d724d2ee054862b72306a02b0953d8b4bd8d130",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "文は長くなったが「Copilot Chatが…扱い」は生成コードとの区別が曖昧。呼出しコードは添付済みなのに正解でも要求する点を整理したい。"
+    },
+    {
+      "id": "q-d2-a04",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "848033e487436f8c5402e627e4ea0290a55ab768e5e2116f5b079a41acf9c1fd",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "対象と保持するディレクトリは明確。三誤答のうち二つが過剰削除で、一般的な安全策だけでも絞りやすい。"
+    },
+    {
+      "id": "q-d2-a07",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "50d90fcc669b422beaf24c23b80ccd88ec23f51669aa26399afde6c179b12d43",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "権限と任意SQL禁止の条件は明確。正解だけが通常の安全設計で、誤答は管理者資格情報・SQL文字列など極端。"
+    },
+    {
+      "id": "q-d2-a15",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "ee1088c0f07d104eb4c9fc0c2649d81dd8bd648973838b95c9c8d75fc75ad67e",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "importを直接示して読みやすくなった。worker.tsの役割は本文で未説明なのに選択肢に現れる。"
+    },
+    {
+      "id": "q-d2-a18",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "40ffdc66a0e905c5e2dfba17a1339da879d2c87f6c43c73ec9a1ffa75b2916dc",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "データ最小化の判断は成立。ダミーPATという条件により、実際の漏洩対策とは区別できる。"
+    },
+    {
+      "id": "q-d2-a20",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "1de7e646f1546573b60dc0d78538755d94975e797e403821a11dc8ad9e65f0e2",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "最新性と権限の条件は読み取れる。「最新、利用者権限、更新不要の条件の下で」は不自然な名詞列。"
+    },
+    {
+      "id": "q-d2-e08",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "e2c609c60af6731718da32a5a726a5168fbb9c3bb3a4ee18480081bf9f149568",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "旧来の圧縮文が残る。「AAA形式」「共通AAA」「配置」を説明し、架空の改名による誤答を現実的な案にしたい。"
+    },
+    {
+      "id": "q-d2-e14",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "d24f0908e188c79c801a257b16d6dcd0dc6362a95d1e455e5edea13534eb8d5b",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "NULL許容と既存値を維持する判断は成立。本文の「提案DDLはNOT NULL・DEFAULTなし」は表か短いコード例にしたい。"
+    },
+    {
+      "id": "q-d2-e15",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "e417e8abbd9e50147bb588b177fada0e6f8783224a93dc788347e74165a110f0",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "読みやすい。検索・抜粋取得を選ぶ判断は成立。「MCP仕様で唯一必須の設計」と受け取られない説明が望ましい。"
+    },
+    {
+      "id": "q-d2-e16",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "82cd33b563fda8010336823c9987e0a6174a57f437773a4b3d8abd67f49cc1dd",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「共通指示は100行」「Python、Node、TypeScript案件」の表現が不均一。対象別の指示分離は成立。"
+    },
+    {
+      "id": "q-d3-a01",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "0b50e837fc540854739aa2e79a8c5e1c10c3d30dee5dbca5f7fd293089b5167d",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": true,
+      "note": "型資料の影響を切り分ける比較からFew-shotの利点を答える知識問題へ変更。O(1)強制最適化・100%安全保証という誤答が露骨。"
+    },
+    {
+      "id": "q-d3-a03",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "a86e7ff05efa8fcc3b638b4321ae4c78e71ed7dab9f35cb67f9c778761863609",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": true,
+      "note": "ファイル名の知識を問う基礎的な設問へ変更。通常のインライン補完へカスタム指示が自動反映されるとの前提も公式Docsと合わない。"
+    },
+    {
+      "id": "q-d3-a05",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "c9305aa58af8b982ade5b1908292632ad671c530031592e4d8176872589869e2",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「社内プロキシ経由だけ失敗、原因未特定」が文頭に残る。証明書の信頼とStrictSSLを混同させない説明が必要。"
+    },
+    {
+      "id": "q-d3-a06",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "f5e45db28e3edc6f334ae3453ba572f5313e01a708e4f1652de5f75522943dcf",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": true,
+      "note": "履歴の決定事項を引き継ぐ設問から隣接タブの一般的な操作へ変更。50タブ・最小化・コミット履歴という誤答が弱い。"
+    },
+    {
+      "id": "q-d3-a07",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "8244c114778cf69a3a5267bab840710afc77170794b9c4f13bf1081b0f89dc90",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": true,
+      "note": "入力量だけを変える比較から、目的と制約を伝える一般論へ変更。誤答の経歴・作者名・履歴は選択肢だけで除外しやすい。"
+    },
+    {
+      "id": "q-d3-a09",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "25bbf6940171974934bd01cb0707a682b8a580daf3fa288b75450257c15f1a0f",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "ネットワーク条件は明確。三誤答がSSH・無関係DB・全面インバウンド開放で、現実的な切り分け案として弱い。"
+    },
+    {
+      "id": "q-d3-a11",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "18aaadb29e6206f3a3a2d0859df27ead6b796de3b1d4e39ac97c949820670ee5",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「変更前は完了の10秒後まで」は時刻が矛盾。完了時刻10秒なら表示開始20秒にも読め、選択肢Aの開始10秒と一致しない。"
+    },
+    {
+      "id": "q-d3-e03",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "db8ad41339f847cdc3a7254646c9ca69b4b75dfeffba2ca63def80fac8553285",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "金額の各処理を掛算・除算だけで圧縮している。処理順と各段階の単位を示すと技術判断へ集中できる。"
+    },
+    {
+      "id": "q-d4-a01",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "27f7ea1d0aed7491a5f1756f1b576954c0912963179008961097dd2ed373aa7c",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": true,
+      "note": "日本語は読みやすいが、重複時の動作条件が削除された。通常の技術スタック指定と極端な移行・as anyを比べる構成へ単純化。"
+    },
+    {
+      "id": "q-d4-a02",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "9b82cc102317baa62644f2123f6c34231880c36027026aa96fea2a34d1920038",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": false,
+      "note": "意図は明確。誤答が要件削除・独自ロガー新規作成・ログ無効化で、正解だけが通常の指示改善。"
+    },
+    {
+      "id": "q-d4-a03",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "8b30c0f8fe2348db89aec57523cd7c667b6996b4000cfe23b60d98b80211e8e4",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": false,
+      "note": "「泥臭く抽出」が誤答への否定的な評価を含む。正解だけが受信仕様に沿う通常の対策で、形式・型の近い誤答が失われた。"
+    },
+    {
+      "id": "q-d4-a05",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "0c2787cb1f96172e4fa542294645362d1ce55225cd6ee1f26790506d38526030",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "日本語は明確。ただし仕様が例をそのまま言っているため、二条件の転記に近い易しい応用。"
+    },
+    {
+      "id": "q-d4-a06",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "01d8d5071877ad17c29efd1936f017ff97726cef22fed1e7c16fae441970ba5e",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "パスと除外条件は明確。「**」の作用はこの検索ツールの条件として保つ。"
+    },
+    {
+      "id": "q-d4-a09",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "098b95565631823b232c75f231f6395e9b6ce46aac17f4c95aba1d0b8f9cf9ff",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "特定の変更に対する影響範囲を尋ねる構成は成立。目的が明示されているため難度は低め。"
+    },
+    {
+      "id": "q-d4-a10",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "95a3178d75e4216dff74342e826467e03167387789d5e40055028ccca247b027",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "CI固有の文脈は明確。正解だけが必要な調査資料を多数列挙する長さの偏りがある。"
+    },
+    {
+      "id": "q-d5-a02",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "1a7742a9c481340e6d3900e0f79405076f0e9b73380fa6265b5a5fa3befefd95",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "日本語は改善したが、入力検証をfinallyの外に置く境界と入力拒否時の非記録条件が薄れた。"
+    },
+    {
+      "id": "q-d5-a03",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "522a67623e873765660a4d96046be441c093e56f4c562d7a5a91bebeb2cae961",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": false,
+      "note": "正解は回帰検証、誤答は要約を盲信・警告無視・検査スキップで、本文を読む必要が小さい。"
+    },
+    {
+      "id": "q-d5-a04",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "1583641d9a9460a7605268ea6755dd9a2781de199e714f1a839545aa192c6f36",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "新規顧客の欠落を再現するデータは判断可能。SQL本文がないのに解説でINNER JOINが原因と断定している。"
+    },
+    {
+      "id": "q-d5-a05",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "5a0c440639751b2e332234da76c890fcdba4d9166ae969b469ba206c1ec53c49",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "仕様と実差分を合わせる判断は成立。変更していない割引機能などの誤答はやや露骨。"
+    },
+    {
+      "id": "q-d5-a06",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "2bd4cd998bce8d586e49c0e976dd8a63afdb000a097493fc205617dc8286e91b",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "失敗の切り分けと個別再実行という目的は明確。単一責任とテスト分割の基本に近い難度。"
+    },
+    {
+      "id": "q-d5-a07",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "06adf6fcb5cf5a34db3c75ede0fe9b79a7db9b3141b7091949595b8a618320a7",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "境界を説明して改善。解説の「0時〜9時台」は不正確で、UTCとの日付差は日本時間9時には解消する。"
+    },
+    {
+      "id": "q-d5-a08",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "03d8a10c00034a87b6bb0872947ed0e091c8b6188156275827d2aa74bc953018",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "CRUDと固有機能の区別は明確になったが、->>をPostgreSQL固有としてSQLiteで構文エラーとする前提が不適切。"
+    },
+    {
+      "id": "q-d5-a09",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "9d9453074e0d0452a395c62c57c787648283ae53500a21ce4c7e3fd6e84d8cfc",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "型と実データの相違を踏まえた検証は成立。nullの再現を判断する応用の入口。"
+    },
+    {
+      "id": "q-d5-a10",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "5c0ec022259434afac7abf591ddb548f2550efecb4ed3409eea28dc232a8bf6d",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "規模・重複・順序・性能の条件は明確。正解が最も長く、残りの不足が露骨になっている。"
+    },
+    {
+      "id": "q-d5-a11",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "d748ba5d0e30ab1adb1711f863217273bc9f6142a3666fd71feba7cb3cde2179",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "エラーと環境差は明確。単一の環境変数名を対応させる判断で、易しい応用。"
+    },
+    {
+      "id": "q-d5-e04",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "82af74ee0cbafa2992dab120da2cabab443a2608e9ffcb5806e338246c0fe255",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「実装と契約テストはnull、呼出側はnull分岐」が圧縮文。現行契約と文書の不一致は判断可能。"
+    },
+    {
+      "id": "q-d6-a01",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "6246e08a6af4bb411ccf6e0ff5228f1a991aec81c30d5111ed90d49ce3792be2",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "対象リポジトリの設定追加という判断は成立。新規repoへの除外設定の適用を明確に説明。"
+    },
+    {
+      "id": "q-d6-a03",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "16520fb0b943d272bb793e4cd2b8cac950e4070332ca28239ba614fecce3cccd",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "Git PushとChat入力の経路は区別できる。問いは「二経路それぞれ」だが選択肢は既に保護済みのGit側を省略する。"
+    },
+    {
+      "id": "q-d6-a08",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "b1c4f8807ce81671deb1578cdf476c3df36ce23ebc3380931ff48fa457fb34c1",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "本文は明確。誤答の「すべて偶然100%ブロック」「突如解除」は露骨な言い回し。"
+    },
+    {
+      "id": "q-d6-a09",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "ad560b3e7659a7d0c4d9f61f5254bb5dae2b31c47618a855eff64b0616b7afc2",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「活動者数」「受容数」は説明したい。利用人数の増加と一人当たりの利用量の区別は成立。"
+    },
+    {
+      "id": "q-d6-a10",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "6277d01d5c878463ebf40de176245a3c677d0fb16c394f694e8f6656a97e9760",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "除外対象と公開設定の区別は成立。q-d6-a01と判断が近く、改稿後の重複確認が必要。"
+    },
+    {
+      "id": "q-sc01-2",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "7837d46bc5bbee62a18d8ca6a8ae41e565f2a69a5bf0248124e45a01559b3719",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "残る組織ルールを追う判断は成立。設定レベルの説明は名詞の連続で圧縮されている。"
+    },
+    {
+      "id": "q-sc02-3",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "d785519e3ddb029bfa8d86f5b600a5d804030c86fe94122595f0133460de1c59",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "異なる同距離の丸め方を二記録から判定する推論は維持。「同距離を小さい側…」は表と具体例で説明したい。"
+    },
+    {
+      "id": "q-sc03-1",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "55ca4ca758b17577223158db43154a01b159311ebd8743de1156ee30f9dda52d",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "担当チーム・現在値・読取専用の条件はあるが、接続と認可の説明が省略されている。"
+    },
+    {
+      "id": "q-sc03-3",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "32f3cb9952c253ba2fb8ed679bcdedf81fbc2338c2b6f7fb72a5f349882208e4",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「入力容量」「各候補」「対象の経路」の指示先を明示したい。時刻と相関IDの照合は可能。"
+    },
+    {
+      "id": "q-sc04-3",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "2c9ecdfd976d377e7e0d7e96d6519c220a15ab2964f2ef4aa05e167a0654e35c",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「対象を組み合わせる設定」が抽象的。検査対象のディレクトリを問うと明示したい。"
+    },
+    {
+      "id": "q-sc05-1",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "30b7a4b8e9495e08ef8231f401ca1b053846f14a2713f7fe9226c91acad1660d",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「対象版の型はgetPatientだけ」という名詞省略が残る。存在しないAPIと契約の照合自体は成立。"
+    },
+    {
+      "id": "q-sc05-2",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "9efd7f56efc590b361e808026d9ae4c187e9b81049c92208c89c00c35d99154e",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「自由なモック」の意味を説明したい。実SDKの型とモックのずれを照合する応用判断は残る。"
+    },
+    {
+      "id": "q-sc05-3",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "d8c1d42084f7f41824e268eddfe1da9ad18d1c19253a288b0720b5d0e28a5612",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "二経路・検出と停止の条件を組み合わせる判断は維持。四つの対策を表で比較すると読みやすい。"
+    },
+    {
+      "id": "q-sc06-3",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "4fb26cf90798421d527836a8af22118f5bc6c20941f5cb9e93490f1073a6fb71",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "「個人指示は全関数JSDoc」と圧縮。「各repo」を各リポジトリと表すと自然。条件の照合は可能。"
+    },
+    {
+      "id": "q-sc07-1",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "9845cc95dd78d61475bcd6ed93b56d8d084b60515969945102b7e9cffaeb9350",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "状況は明確。読取専用をサーバーで強制する案と、更新禁止を指示するだけの案を比較できる。"
+    },
+    {
+      "id": "q-d1-a11",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "337f4325d99919fa740e90584d6731632ca5e09739410a15c21471a3ec650a4a",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "参照されたコミット時点を照合する意図は明確。利用条件の適合を自動保証する説明にはなっていない。"
+    },
+    {
+      "id": "q-d1-a12",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "ab09c87b40360ce23a65185aba34e1ee9a1a021790d6777fde93b43a2216f54e",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "C"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "他条件を固定して地域だけを変える比較は成立。日本語の主語・対象は明確。"
+    },
+    {
+      "id": "q-d1-a13",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "eccd494b9b37930641cdee53cfec5d9d40c0054b636f6281bdaf1fc87333a8af",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "日本語は明確。ただし正解だけが実効性のあるテストと承認を含み、誤答は通知・型・要約に偏る。"
+    },
+    {
+      "id": "q-d1-a14",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "2cc563e8f2a8b955be647c2631d021fbe883ffc41dc2297ee5c2c346fd81039d",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "B"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "X/Yと組織基準の照合は成立するが低難度。「中間的な設定値」は意味や存在が未定義。"
+    },
+    {
+      "id": "q-d2-a23",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "919047857aa123a365ba7e5ff3dc0302a4ebb0ee28080425c2336c8df2be3549",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "待受ポートを8770へ変更するAが正しいがCを正解登録。接続拒否と認証失敗の区別は明確。"
+    },
+    {
+      "id": "q-d2-a24",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "20c5bc09c1bcb5ce224bbbbd914044b8cce1f0382d4fe06abd4b40c5b79fcd63",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "常時規約とオンデマンド手順を分離するAに対してDを正解登録。配置判断は明確。"
+    },
+    {
+      "id": "q-d2-a25",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "dae6d2f556b0414f55c7bb07c052764be720798e1fd5ffa357f6e305138721b4",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "文章は読みやすい。誤答に危険な即時実行・対象拡大があり、安全な案を選ぶだけになりやすい。"
+    },
+    {
+      "id": "q-d2-a26",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "ee3bfe9e22f64bccf6fb32c3de95c948352ad51c9a2888a5aeeea9ccc8dc0467",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "正しいスコープ分離を示すAに対してBが正解登録。依頼外変更の除外という判断自体は明確。"
+    },
+    {
+      "id": "q-d3-a12",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "21f420f0ba57505919efc9fac36235644af86f28c77aee4b669e7e9cb4f03b16",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "最後の入力40ms＋100msで140msのAに対してCを正解登録。計算式を正解だけに詳しく書いている。"
+    },
+    {
+      "id": "q-d3-a13",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "fed2999fcd3f3cdda29c77b07757ac450c7cc64db27649cb5243f122b87c7833",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "Retry-Afterの待機と負荷抑制を示すAに対してDを正解登録。極端な連続再試行も誤答の手がかり。"
+    },
+    {
+      "id": "q-d3-a14",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "e3c3ac22ea68d2c69e1ef07a82d4ee26fd4f4944a763007d63476f1471587d31",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "単位と必須情報は明確になった。選択肢の合計値は計算の負担を減らすが、必須情報を保つ判断は残る。"
+    },
+    {
+      "id": "q-d3-a15",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "bf9737df7bee27409e0af23fe5d411b83bbc4df99c3f4ee40d5aa960af522b13",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "数値は満たすが書式不足というAに対してBを正解登録。各形式の出現回数は本文では未指定。"
+    },
+    {
+      "id": "q-d4-a14",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "cc2d7261960d6cb11221c6b95d1d2d9219e758ecc00daf608eda71d6f4af97d6",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "APIのエラーと注文・通知の関係が明確になった。二結果を同時に検証する条件は残る。"
+    },
+    {
+      "id": "q-d5-a12",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "59ca9384e10e778476e495fa81784597fdc31b707ad26e8388fdadb4e3823f95",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "承認仕様を満たす>=100のAに対して全価格0.8倍のCを正解登録。100だけのテストなら複数案がGreenになる点も説明したい。"
+    },
+    {
+      "id": "q-d5-a14",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "6f0180c0168f7c056e6e63b6a3268d9db7240c209077b2429badb5db1636a694",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "課金確定と結果不明の違いは明確。誤答Dが即時再試行へ変更され、二重課金という一般的な危険性で除外しやすい。"
+    },
+    {
+      "id": "q-d5-a15",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "50c487e1c1bf5ad4505617335badf692d7460d35c9f650d8f1bace2f2b7c3481",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "整数・下限・型の三条件は明確。正しい拒否／許可／拒否のAに対してBを正解登録。"
+    },
+    {
+      "id": "q-d6-a11",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "ace851d981748b7f8f37b5e4a476e52258691841098632817e10757744b1864f",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "全階層の.keyに一致するAに対して直下だけのCを正解登録。選択肢の注釈がパターンの作用を先に教えている。"
+    },
+    {
+      "id": "q-d6-a12",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "18ea4b14e873c4ec59624808d08bd5dd5f26fe257e4c0086daee166a08eb269d",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "再読込して状態をそろえるAに対してクローン名変更のDを正解登録。三誤答は切り分けとして弱い。"
+    },
+    {
+      "id": "q-d6-a13",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "914081095e6468e8fa93dd3a0ef213e3e69af699bf9905d921635f783e3bf382",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "自社の適用契約を照合する意図は明確だが、選択肢の注釈が適否の条件を全部説明している。"
+    },
+    {
+      "id": "q-d6-a14",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "bb0c5398afc777e684d55ed5d85cd8218431e71809db037b7ee63535c1421b93",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "Organization側configルールを変えるAに対してRepository側tmpルールのBを正解登録。設定元と対象を対応させる判断は成立。"
+    },
+    {
+      "id": "q-d1-a15",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "dded350e85c12b2ea13649b9682240d1b3c1d62617ee46df412cfb3bf21a3008",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "C"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「評価100件」「期待表示データセット」を自然な入力・期待結果の説明にしたい。"
+    },
+    {
+      "id": "q-d1-a16",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "6a4a580b4ed2523ff43ce35f1a8e8e9d9f5b5334b7257477106313559c651a67",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "B"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。数値と採用条件は明確だが、解説の「マイノリティ群」は本文で定義されていない。"
+    },
+    {
+      "id": "q-d1-a17",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "939cb0e13dfa1593e98939721dc08fdb83adc8c0c8f391d002c1aba202ab3465",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "D"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。担当者・責任者の呼称を選択肢と統一したい。条件適用は可能。"
+    },
+    {
+      "id": "q-d1-a18",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "40eff5c269b5c7fca2bb4ee0e3de10c3160521008ae8ea17b5bdbc6be27ef8d5",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「業務企画が対象者規則」「部門に照合」が不自然。仕様の確認先を問う意図は明確。"
+    },
+    {
+      "id": "q-d1-a19",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "459e828a13fc31150febbee906eef4eaf2c74f198744e9dba7a2815f7c33c5a8",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "C"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "C"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。四つの基準を一文に詰め、「取引行」「監督段階」と圧縮している。基準を表にしたい。"
+    },
+    {
+      "id": "q-d1-a20",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "bd9beac849e5cbf4bdbea915d64bb73034a01b7e1fea261723e558b72d317593",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "B"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "B"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「時刻のそろった記録」が曖昧。時刻と因果の二条件を維持しつつ整文したい。"
+    },
+    {
+      "id": "q-d1-a21",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "8e9d72bbd8ee300b3374595256168d4e1fd618a12d175a159b6cc41ec81a6f7f",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "D"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "D"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。重複する「として」を整える程度。現在の文章でも並べ替えの目的は分かる。"
+    },
+    {
+      "id": "q-d1-a22",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "changedSincePreviousInvestigation": false,
+      "fingerprint": "2358acbd1b93ff1be4d062f9bc3fce33f87e4934c732bd7206d748abe3041616",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "前回から未変更。「APIの100件」「APIへ通用」が不自然。解説の「調整（学習）」もプロンプト修正とモデル学習を混同させる。"
+    },
+    {
+      "id": "q-d3-a16",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "ffc727dbbc1ff4f145c2ff23f934ccd1e673842cda18b6ed240360bee4d50067",
+      "registeredAnswerIds": [
+        "D"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "D"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "具体的な入力・出力を記録するAに対してDを正解登録。「受容回数」「共有範囲はデータ」も残る。"
+    },
+    {
+      "id": "q-d3-a17",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "7abdb9a0ec62a64e98ab432caca8f201dd6b2ec9b4bc03f1eeaeb20abfde0e1f",
+      "registeredAnswerIds": [
+        "A"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": false,
+      "registeredDisplayLabel": [
+        "A"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "選択肢で処理段階を説明し改善。ただし本文の独自ログ名の役割説明は不足し、後段の選択肢で復元させる。"
+    },
+    {
+      "id": "q-d3-a18",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "73d129af4bda2aabd45c7178f8365fb974042f286c04c58dc824a3dccb687011",
+      "registeredAnswerIds": [
+        "C"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "C"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": false,
+      "clearDifficultyReduction": false,
+      "note": "古い応答を破棄してv9を待つAに対してCを正解登録。「現在版と一致する応答」「処理中要求」の曖昧さは残る。"
+    },
+    {
+      "id": "q-d3-a19",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "changedSincePreviousInvestigation": true,
+      "fingerprint": "55d5a3e63fc17a6d33685808a69e851d1f313ed6c9acc73e27a10aa1f1a9a617",
+      "registeredAnswerIds": [
+        "B"
+      ],
+      "contentAnswerIds": [
+        "A"
+      ],
+      "answerMismatch": true,
+      "registeredDisplayLabel": [
+        "B"
+      ],
+      "contentDisplayLabel": [
+        "A"
+      ],
+      "strongOptionOnlyConcern": true,
+      "clearDifficultyReduction": false,
+      "note": "トークン合計に沿うAに対してBを正解登録。正解だけがトークンで計算し、他は文字数を使うので本文不要の手がかりが強い。"
+    }
+  ]
+}

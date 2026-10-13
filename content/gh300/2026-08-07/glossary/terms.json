@@ -160,7 +160,9 @@
     "comparisonIds": [],
     "questionIds": [
       "q02",
-      "q-d1-g02"
+      "q-d1-g02",
+      "q-d1-a17",
+      "q-d1-a21"
     ],
     "sourceIds": [
       "responsible",
@@ -212,7 +214,10 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d1-f04"
+      "q-d1-f04",
+      "q-d1-a15",
+      "q-d1-a16",
+      "q-d1-a17"
     ],
     "sourceIds": [
       "responsible"
@@ -325,7 +330,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d1-g03"
+      "q-d1-g03",
+      "q-d1-a20"
     ],
     "sourceIds": [
       "responsible",
@@ -384,7 +390,10 @@
     "comparisonIds": [],
     "questionIds": [
       "q02",
-      "q-d1-f01"
+      "q-d1-f01",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a22"
     ],
     "sourceIds": [
       "responsible",
@@ -523,7 +532,8 @@
       "d1"
     ],
     "objectiveIds": [
-      "d1o2"
+      "d1o2",
+      "d1o1"
     ],
     "whyItMatters": "AI導入現場で最も発生しやすい人的リスクであり、責任あるAI運用テストの定番テーマ。",
     "useCases": [
@@ -548,7 +558,9 @@
     "comparisonIds": [],
     "questionIds": [
       "q02",
-      "q-d1-g05"
+      "q-d1-g05",
+      "q-d1-a19",
+      "q-d1-a22"
     ],
     "sourceIds": [
       "responsible"
@@ -3196,7 +3208,8 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d3-g04"
+      "q-d3-g04",
+      "q-d3-a16"
     ],
     "sourceIds": [
       "privacy",
@@ -3282,7 +3295,8 @@
       "d3"
     ],
     "objectiveIds": [
-      "d3o1"
+      "d3o1",
+      "d3o2"
     ],
     "whyItMatters": "モデルのサイズ制限（Token budget）やコスト、処理速度の基本単位となるため。",
     "useCases": [
@@ -3307,10 +3321,12 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d3-f05"
+      "q-d3-f05",
+      "q-d3-a19"
     ],
     "sourceIds": [
-      "architecture"
+      "architecture",
+      "dotnet-tokens"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
@@ -3364,7 +3380,8 @@
     "comparisonIds": [],
     "questionIds": [
       "q06",
-      "q-d3-g06"
+      "q-d3-g06",
+      "q-d3-a17"
     ],
     "sourceIds": [
       "architecture",
@@ -3529,11 +3546,13 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q-d3-g09"
+      "q-d3-g09",
+      "q-d3-a19"
     ],
     "sourceIds": [
       "architecture",
-      "prompt"
+      "prompt",
+      "dotnet-tokens"
     ],
     "syllabusVersion": "2026-08-07",
     "lastVerifiedAt": "2026-09-06",
@@ -4408,7 +4427,8 @@
       "d4"
     ],
     "objectiveIds": [
-      "d4o2"
+      "d4o2",
+      "d4o1"
     ],
     "whyItMatters": "生成コードを組織の技術スタックやセキュリティ要件に厳密に準拠させるための必須スキル。",
     "useCases": [
@@ -4458,7 +4478,8 @@
       "d4"
     ],
     "objectiveIds": [
-      "d4o2"
+      "d4o2",
+      "d4o1"
     ],
     "whyItMatters": "開発ツールの自動化やテストケース作成で出力をそのまま利用するための実務的必須要件。",
     "useCases": [
@@ -4610,10 +4631,12 @@
     "category": "開発生産性",
     "importance": "important",
     "domainIds": [
-      "d5"
+      "d5",
+      "d2"
     ],
     "objectiveIds": [
-      "d5o1"
+      "d5o1",
+      "d2o1"
     ],
     "whyItMatters": "コードベースの保守性とチーム開発の知識共有を底上げする定番の生産性向上テクニック。",
     "useCases": [
@@ -4820,7 +4843,8 @@
       "d5"
     ],
     "objectiveIds": [
-      "d5o1"
+      "d5o1",
+      "d5o2"
     ],
     "whyItMatters": "単に動くコードを作るだけでなく、商用品質の最適化を行うエンジニアリング能力が問われる。",
     "useCases": [
@@ -5625,10 +5649,12 @@
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
-      "d6"
+      "d6",
+      "d3"
     ],
     "objectiveIds": [
-      "d6o1"
+      "d6o1",
+      "d3o1"
     ],
     "whyItMatters": "企業のセキュリティコンプライアンス要件（SOC2, GDPR等）を満たすための公式エビデンス。",
     "useCases": [
@@ -5954,10 +5980,12 @@
     "category": "プライバシーと管理",
     "importance": "important",
     "domainIds": [
-      "d6"
+      "d6",
+      "d2"
     ],
     "objectiveIds": [
-      "d6o2"
+      "d6o2",
+      "d2o4"
     ],
     "whyItMatters": "大企業へのAI導入の最終承認要件であり、試験のエンタープライズシナリオに直結。",
     "useCases": [

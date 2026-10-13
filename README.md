@@ -31,18 +31,19 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 - **多軸比較ガイド 17本**:
   - 試験で最も混同しやすい技術概念（Copilot Free vs Pro vs Business vs Enterprise、Content Exclusion vs Policy、Embeddings vs RAG等）を徹底整理。
   - `Comparison Table`（多軸比較表）、`Decision Guide`（選択決定フロー）、`Common Traps`（共通トラップ）、`Exam Tips`を収録。
-- **公式出典台帳 57件**:
+- **公式出典台帳 63件**:
   - Microsoft LearnおよびGitHub Docsの公式ドキュメントURL、確認日、関連Objectiveを一元管理。
 
 ### 3. 多彩な学習・演習モード & 3段階難易度モデル
 
-公式シラバスおよび出題意図に基づき、全**316問**のVerified問題集を明確な3段階難易度で体系化：
+公式シラバスおよび出題意図に基づき、出題対象**310問**（Verified 309問・要レビュー1問）を3段階難易度で体系化。保存資産322問のうち、重複・学習上の追加が小さい応用12問は新規演習から除外し、本文・ID・過去の履歴参照は維持。2026-10-14には、GH-300との関連性が薄い応用6問を問題データから削除：
 
 - **3段階難易度モデル（Difficulty Architecture）**:
   - **Difficulty 1: Foundation（163問）**: 用語・原則・操作の確認。120語の用語集と1対1対応し、機能名や設定キーを確実に定着。
-  - **Difficulty 2: Applied（93問）**: 具体的な入力、失敗例、利用条件、契約・テスト境界へ知識を適用する問題。
-  - **Difficulty 3: Exam（60問）**: 複数の証拠、処理段階、契約とテストの差を多角的に比較して判断する本番同等問題（選択肢A〜Dが完全均等配分）。
-  - 全14 Objectiveすべてで基礎・応用・本番相当の3層構造を配備し、死角のない対策を実現。
+  - **Difficulty 2: Applied（90問）**: 具体的な入力、失敗例、利用条件、契約・テスト境界へ知識を適用する問題。過去の追加・改稿後、GH-300関連性レビューで出題軸の変更を優先とした6問は、利用者の指示により変更ではなく削除。D1～D6は24／14／6／16／17／13問。
+  - **Difficulty 3: Exam（57問）**: 複数の証拠、処理段階、契約とテストの差を比較する本番を想定した分析問題。実試験との難易度等価性は未測定。
+  - 全6 Domain / 14 Objectiveに問題を配置。所属分類の再評価後、IDE操作（d2o1）の応用問題は未配備。細目別の不足は [所属分類レビュー](reports/question-objective-classification-review.md) に記録。
+  - 追加はD1・D3の最終12問で停止し、今後は既存問題の品質改善を優先。[追加レビュー記録](reports/d1-d3-final-additions-review.md)。新問は独立した追加台帳で管理し、過去の固定ベースラインは維持。
 - **10組の Scenario Sets（共通実務シナリオ問題）**:
   - 1つの包括的な実務ケースから複数角度で出題する共通シナリオ問題群。スマートフォンでも読み返しやすいアコーディオンパネルを装備。
 - **Key Clues Highlighting（回答後の判断材料表示）**:
@@ -123,7 +124,7 @@ app/
     tutor/route.ts               AIチューター用サーバーエンドポイント
 content/gh300/2026-08-07/
   syllabus.json                  GH-300シラバス（6 Domain / 14 Objective / トピック一覧）
-  sources.json                   57件の公式ドキュメント出典台帳
+  sources.json                   64件の公式ドキュメント出典台帳
   lessons/
     seed.json                    28本の構造化レッスン（全14 Objective網羅）
   glossary/
@@ -131,7 +132,9 @@ content/gh300/2026-08-07/
   comparisons/
     guides.json                  17本の多軸比較ガイド
   questions/
-    seed.json                    全316問の根拠付きVerified固定問題
+    seed.json                    保存資産322問（新規出題310問）
+    selection-exclusions.json    出題対象外12問の理由・代替問題・内容指紋
+    additions-review.json        最終追加12問の初稿・品質評価・反実仮想・内容指紋
 lib/
   content.ts                     教材読み込み、スキーマ定義、グローバル検索
   knowledge.ts                   Knowledge Baseの整合性検証（双方向リンク監査等）
@@ -180,6 +183,10 @@ npm run syllabus:check
 - [GitHub Docs: GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 - [GitHub Docs: Responsible use of GitHub Copilot](https://docs.github.com/en/copilot/responsible-use)
 - [GitHub Trust Center: Privacy and Data Protection](https://resources.github.com/copilot-trust-center/)
+
+2026-10-13の見直しは[日本語・採点・選択肢の修正記録](reports/applied-remediation-review.md)にまとめています。当時の応用96問と関連する基礎6問を確認し、採点不一致14問、極端な誤答、難度の低下、日本語を修正しました。2026-10-14には、関連性レビューに基づき応用6問を削除しました。[削除記録](reports/applied-six-deletion-review.md)に対象と確認結果を記載しています。`npm run applied:remediation:check`で、残った応用90問と基礎6問の文面・承認した正答内容の対応を検査できます。
+
+旧`rewrite-d*-applied.mjs`によるレビュー済み問題の直接上書きは停止しました。改稿は未レビューの草案として作成し、選択肢IDと正しい本文の対応を確認してからレビュー記録を更新します。
 
 ---
 

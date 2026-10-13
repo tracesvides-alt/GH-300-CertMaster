@@ -6,6 +6,7 @@ import glossaryData from '@/content/gh300/2026-08-07/glossary/terms.json';
 import comparisonsData from '@/content/gh300/2026-08-07/comparisons/guides.json';
 import scenarioSetsData from '@/content/gh300/2026-08-07/scenario-sets/seed.json';
 import seeds from '@/content/gh300/2026-08-07/questions/seed.json';
+import { isQuestionActive } from './question-availability';
 import {
   type Lesson,
   type GlossaryTerm,
@@ -176,7 +177,7 @@ export function buildKnowledgeBase(): KnowledgeBase {
       lastVerifiedAt: s.lastVerifiedAt,
       status: (s.status as 'draft' | 'verified' | 'needs-review') ?? 'verified',
     })),
-    questionIds: questions.map((q) => q.id),
+    questionIds: allQuestions.map((q) => q.id),
     version,
   };
 }
@@ -250,7 +251,8 @@ export const questionSchema = z
     })) fail('Choice quality metadata must match answers and sources');
   });
 export type Question = z.infer<typeof questionSchema>;
-export const questions = seeds.map((q) => questionSchema.parse(q));
+export const allQuestions = seeds.map((q) => questionSchema.parse(q));
+export const questions = allQuestions.filter(isQuestionActive);
 export function validateAI(value: unknown, objectiveId: string, allowedSources: string[]) {
   const q = questionSchema.parse(value);
   if (

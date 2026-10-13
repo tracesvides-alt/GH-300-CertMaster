@@ -1,0 +1,122 @@
+{
+  "reviewedAt": "2026-10-13",
+  "purpose": "重複・学習上の追加が小さい応用問題を新規演習から外す。問題資産と保存済み履歴は保持する。",
+  "questions": [
+    {
+      "id": "q-d3-a08",
+      "replacementIds": [
+        "q-d2-a02",
+        "q-d3-a14"
+      ],
+      "reason": "対象コードと依存型を残す判断は既存の型契約文脈・入力予算問題と重なる。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "9ef0c483818d53ac2123e8de9bf6d6cd5403e57ad9fde6cb3adabfa141a1e3c4"
+    },
+    {
+      "id": "q-d4-a15",
+      "replacementIds": [
+        "q-d2-a02"
+      ],
+      "reason": "対象実装と依存型の添付という正答行動が同じで、別製品という背景の違いにとどまる。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "7bc2d4a36cea9669dc71ad7008a9958775c84ef97db46ed771b67bf84e1f437a"
+    },
+    {
+      "id": "q-d3-a10",
+      "replacementIds": [
+        "q-d3-a01"
+      ],
+      "reason": "モデル等を固定し関連文脈だけを変更する対照実験を繰り返している。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "269041dfca11c900ab3a261d91eb54196b22b9a1952da110f2c5dcd4de7d3950"
+    },
+    {
+      "id": "q-d4-a04",
+      "replacementIds": [
+        "q-d3-a01",
+        "q-d3-a06"
+      ],
+      "reason": "新規Chatという背景を加えても、現行資料へ置き換える判断は既存の文脈比較と履歴整理で扱える。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "659785decf66070db4a25a151bd8a3c40960b853c8b37ca4238e8b1f73e8c2cd"
+    },
+    {
+      "id": "q-d4-a11",
+      "replacementIds": [
+        "q-d3-a06"
+      ],
+      "reason": "要約で現行契約を残し失効した情報を除く判断が同じ。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "e14b1201f28267ddbd8a27bcae99241c6730e3b2338113d34a185c40bc5f6d20"
+    },
+    {
+      "id": "q-d4-a12",
+      "replacementIds": [
+        "q07",
+        "q-d4-a05",
+        "q-sc02-3"
+      ],
+      "reason": "失敗した入力形式の例を契約に沿って追加する判断の反復。日付解釈・正常ゼロ対不正入力・丸め方式推定は残す。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "495e587528f502f78a7eb3ddf3c109fcb3ad1b4b9d002cf0ebe303faf6b119e1"
+    },
+    {
+      "id": "q-d4-a13",
+      "replacementIds": [
+        "q-d4-a01",
+        "q-d4-a05"
+      ],
+      "reason": "awaitとPromiseの対応を一つ識別するだけで、既存の契約に沿うプロンプト具体化に比べ学習上の追加が小さい。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "ae4024960e2c3c2d603c56d2a850585645c923212920ff93503f1720374fc103"
+    },
+    {
+      "id": "q-d4-a07",
+      "replacementIds": [
+        "q-d4-a05"
+      ],
+      "reason": "正常例・負例を対比して曖昧な契約を具体化する判断が同じ。正規表現の全体一致は教材で維持する。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "9da427a1288365396ebbc11eaf3ea91824427f9a1aef67f64fd31c11c7febcc8"
+    },
+    {
+      "id": "q-d5-a01",
+      "replacementIds": [
+        "q-d4-a14",
+        "q10"
+      ],
+      "reason": "決済APIの失敗をモックで再現し注文状態を観測する判断が結合テスト問題と重なる。依存隔離と引数観測はq10で残す。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "bfe6e0267551ce9e1e75775c102c31518db4d26b3dc394afd7d501707868171a"
+    },
+    {
+      "id": "q-d2-e09",
+      "replacementIds": [
+        "q-d2-e14"
+      ],
+      "reason": "size文字列を既知の値へ置換するだけで、参照経路や互換性へ契約を適用する既存問より判断量が少ない。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f"
+    },
+    {
+      "id": "q-d2-a16",
+      "replacementIds": [
+        "q-d1-a13",
+        "q-d2-e14"
+      ],
+      "reason": "テストで確認できる変更単位から進むという一般的な判断は、採用ゲートと移行の検証問題で具体的に練習できる。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "cd2be04042dad80d3e01ecbd67b717a746014b2f08e3b066aba0ece1672e4787"
+    },
+    {
+      "id": "q-d5-a13",
+      "replacementIds": [
+        "q-d3-e03",
+        "q-sc02-3"
+      ],
+      "reason": "単一の税額計算だけになっている。変換段階を照合する回帰検証と、複数例から丸め方式を適用する問題を残す。",
+      "retiredAt": "2026-10-13",
+      "fingerprint": "63ea3aae0140be74bd1c48a43c7fa221925b4fa3a76dd99a5e8fcef8efb716ce"
+    }
+  ]
+}

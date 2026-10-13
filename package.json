@@ -18,6 +18,7 @@
     "choice:audit": "node scripts/audit-choice-quality.mjs",
     "difficulty:audit": "node scripts/audit-question-difficulty.mjs",
     "difficulty:check": "node scripts/audit-question-difficulty.mjs --check",
+    "classification:check": "node scripts/audit-question-classification.mjs",
     "glossary:coverage": "node scripts/audit-glossary-coverage.mjs",
     "glossary:coverage:strict": "node scripts/audit-glossary-coverage.mjs --strict",
     "glossary:sync": "node scripts/sync-glossary-basic-questions.mjs",
@@ -25,6 +26,8 @@
     "applied:sync": "node scripts/sync-applied-questions.mjs",
     "applied:audit": "node scripts/audit-applied-question-review.mjs",
     "applied:check": "node scripts/audit-applied-question-review.mjs --check",
+    "applied:cleanup:check": "node scripts/check-applied-cleanup.mjs",
+    "applied:remediation:check": "node scripts/check-applied-remediation.mjs",
     "exam:sync": "node scripts/sync-exam-questions.mjs",
     "exam:audit": "node scripts/audit-exam-question-review.mjs",
     "exam:check": "node scripts/audit-exam-question-review.mjs --check"

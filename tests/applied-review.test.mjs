@@ -11,6 +11,13 @@ const bank = read('content/gh300/2026-08-07/questions/seed.json');
 const report = read('reports/applied-question-quality-review.json');
 
 describe('Applied editorial review maintenance', () => {
+  it('requires explicit provenance for a question moved from Exam to Applied', () => {
+    const invalid = structuredClone(report);
+    const row = invalid.questions.find(r => r.reviewType === 'reclassified-from-exam');
+    expect(row).toBeDefined();
+    delete row.classificationChange;
+    expect(validateAppliedReview(bank, invalid)).toContain(`Invalid baseline: ${row.id}`);
+  });
   it('binds every Applied decision to the current text', () => {
     expect(validateAppliedReview(bank, report)).toEqual([]);
     const changed = structuredClone(bank);
@@ -43,10 +50,12 @@ describe('Applied editorial review maintenance', () => {
         'content/gh300/2026-08-07/questions/difficulty-review.json',
         'content/gh300/2026-08-07/questions/quality-review.json',
         'content/gh300/2026-08-07/sources.json', 'content/gh300/2026-08-07/syllabus.json',
-        'reports/question-difficulty-baseline.json','reports/question-choice-content-baseline.json'];
+        'reports/question-difficulty-baseline.json','reports/question-choice-content-baseline.json',
+        'content/gh300/2026-08-07/questions/removals.json'];
       for (const file of files) write(file, read(file));
       fs.mkdirSync(path.join(fixture, 'scripts/applied-question-drafts'), { recursive: true });
       fs.copyFileSync(new URL('scripts/sync-applied-questions.mjs', root), path.join(fixture, 'scripts/sync-applied-questions.mjs'));
+      fs.copyFileSync(new URL('scripts/question-removals.mjs', root), path.join(fixture, 'scripts/question-removals.mjs'));
       const drafts = read('scripts/applied-question-drafts/d1.json');
       // The old importer would overwrite a reviewed question with this stale draft.
       drafts.questions.find(q => q.id === id).question = '古い未レビュー文面';

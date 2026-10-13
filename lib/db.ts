@@ -1,6 +1,7 @@
 import Dexie, { type EntityTable } from 'dexie';
 import { type Question, questionSchema, questions } from './content';
 import { type Attempt } from './learning';
+import { withCurrentQuestionClassification } from './question-classification';
 import type { SelectionOptions } from './selection';
 import type { PracticeRun } from './practice-session';
 import {
@@ -95,6 +96,7 @@ export async function recordAttemptAdaptive(
   sessionId?: string,
   now = Date.now()
 ): Promise<Attempt> {
+  q = withCurrentQuestionClassification(q);
   const att: Attempt = {
     id: crypto.randomUUID(),
     questionId: q.id,

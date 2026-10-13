@@ -22,7 +22,11 @@ export function validateAppliedReview(bank, report) {
       errors.push(`Stale Applied review: ${row.id}`);
       continue;
     }
-    if (row.before.difficulty !== 'intermediate' || row.before.id !== row.id) errors.push(`Invalid baseline: ${row.id}`);
+    const fromExam = row.before.difficulty === 'advanced' && row.reviewType === 'reclassified-from-exam' &&
+      row.classificationChange?.from === 'advanced' && row.classificationChange?.to === 'intermediate' &&
+      row.classificationChange?.reason?.trim() && q.difficulty === 'intermediate' &&
+      q.cognitiveLevel === 'apply' && q.examLike === false;
+    if ((row.before.difficulty !== 'intermediate' && !fromExam) || row.before.id !== row.id) errors.push(`Invalid baseline: ${row.id}`);
     if (JSON.stringify(row.before.answer) !== JSON.stringify(q.answer)) errors.push(`Changed answer identity: ${row.id}`);
     if (q.difficulty !== row.difficulty || q.status !== 'verified') errors.push(`Unresolved classification: ${row.id}`);
     if (!row.decisiveCondition || !row.assessment || !row.optionOnlyReview) errors.push(`Missing editorial decision: ${row.id}`);
@@ -39,16 +43,20 @@ export function validateAppliedReview(bank, report) {
 
 function render(report) {
   const s = report.summary;
-  const lines = ['# 応用編 全件レビューと難易度判定', '', `レビュー日：${report.reviewedAt}`, '',
-    `対象は作業開始時の応用${s.reviewed}問（既存${s.existing}問・追加${s.added}問）。本文・四つの選択肢・正答・個別解説を全件参照した。`, '',
-    `応用として${s.rewritten}問を改稿、${s.retained}問を維持、${s.reclassified}問を基礎へ再分類した。再分類${s.reclassified}問のうち3問の文面も修正したため、実質的な文面修正は合計${s.textRewritten}問。応用は${s.appliedAfter}問になった。`, '',
+  const lines = ['# 応用編 全件レビューと難易度判定', '', `初回レビュー日：${report.reviewedAt}。最新更新：${report.lastUpdated ?? report.reviewedAt}`, '',
+    ...(report.selectionSummary ? [`保存済み応用は${report.selectionSummary.totalStoredApplied}問、新規出題の応用は${report.selectionSummary.activeApplied}問。${report.selectionSummary.retiredApplied}問を出題対象外として保持している。以下の累計台帳は保存資産の記録であり、対象外を現在の合格数に含めない。`, ''] : []),
+    ...(report.followUpReviews?.length ? ['## 追加の見直し', '',
+      ...report.followUpReviews.map(r => `- ${r.reviewedAt}：${r.questionIds.join('、')}を追加レビュー。詳細：[レビュー記録](${r.report.split('/').pop().replace(/\.json$/,'.md')})。`), '',
+      '以下の改稿数は初回レビューと追加改稿の累計。追加レビューは記載した対象だけであり、全問題の意味的な品質が独立検証済みであることは意味しない。', ''] : []),
+    `台帳の対象は${s.reviewed}問（既存${s.existing}問・追加${s.added}問）。${s.reclassifiedFromExam ? `当初の応用102問に、難易度を見直して本番相当から移管した${s.reclassifiedFromExam}問を含む。` : ''}本文・四つの選択肢・正答・個別解説を各レビュー時点で参照した。`, '',
+    `初回判定の内訳は、応用として${s.rewritten}問を改稿、${s.retained}問を維持、${s.reclassified}問を基礎へ再分類。初回比較の文面修正は${s.textRewritten}問。以後の改稿・再評価は上記の追加レビューに記録し、この初回内訳を現在の改稿総数とは扱わない。保存済み応用は${s.appliedAfter}問、新規出題の応用は${report.selectionSummary?.activeApplied ?? s.appliedAfter}問。`, '',
     '## 難易度の判定', '',
     '変更前のままで全問を応用と呼ぶのは適切ではなかった。特に追加問題には、正答だけが安全・丁寧で、他の選択肢が隠蔽・無検証・無関係な操作になっているものがあった。長い事例や専門語だけでは応用に分類しない。', '',
     '| 分類 | 必要な判断 |', '| --- | --- |',
     '| 基礎 | 定義・原則・機能・操作の識別 |',
     '| 応用 | 具体的な失敗・入力・ログ・契約に知識を当てはめ、対策や期待値を選ぶ |',
     '| 試験相当の分析問題 | 複数の証拠、処理段階、未検証条件を比較して原因や最小変更を導く |', '',
-    `修正後の${s.appliedAfter}問は応用の入口から中程度を狙っている。基礎知識を理解した人が短時間で解ける問題も含むが、選択肢の見た目だけでは、今回の対象・時点・契約を確定できないようにした。全問を複雑な障害解析へ引き上げることはしていない。`, '',
+    `現在の出題対象${report.selectionSummary?.activeApplied ?? s.appliedAfter}問は応用の入口から中程度を狙っている。基礎知識を理解した人が短時間で解ける問題も含む。本文の対象・時点・契約で選択肢を区別することを設計目標とするが、編集評価だけで全問の本文なし推測を排除したとは断定しない。`, '',
     '## 修正した問題の作り方', '',
     '- 既知の失敗入力、型・APIの契約、待受ポート、レート制限応答など、判断に必要な条件を本文へ置いた。',
     '- 誤答は別の状況では候補になる対策や、境界値・対象範囲・時点を取り違えた案に置き換えた。',
@@ -63,9 +71,9 @@ function render(report) {
     '- [契約の更新履歴](https://github.com/customer-terms/updates)、[Generative AI Services Terms](https://github.com/customer-terms/github-generative-ai-services-terms)：古いBlock設定だけで補償を判定する問題を、対象機能・適用契約・現行のRequired Mitigationsを照合する問題へ変更。実際の補償成立をこの設問だけで保証しない。', '',
     `## 基礎へ戻した${s.reclassified}問`, '',
     ...report.questions.filter(r => r.difficulty === 'beginner').map(r => `- ${r.id}：${r.assessment}`), '',
-    '## 全102問の判定一覧', '',
+    `## 全${report.questions.length}問の判定一覧`, '',
     '| ID | 区分 | 判定 | 現在の難易度 | 判定理由 |', '| --- | --- | --- | --- | --- |',
-    ...report.questions.map(r => `| ${r.id} | ${r.added?'追加':'既存'} | ${r.decision} | ${r.difficulty==='intermediate'?'応用':'基礎'} | ${r.assessment.replaceAll('|','／')} |`), '',
+    ...report.questions.map(r => `| ${r.id} | ${r.added?'追加':'既存'} | ${r.selectionState==='retired'?'出題対象外':r.decision} | ${r.difficulty==='intermediate'?'応用':'基礎'} | ${r.assessment.replaceAll('|','／')} |`), '',
     '## 全問の本文・選択肢・誤答の根拠', '',
     '以下は改稿後を含む二回目の読み直しの記録。問題ごとの変更前の全文は対応するJSONレポートのbeforeに保存している。', ''];
   for (const row of report.questions) {

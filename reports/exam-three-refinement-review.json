@@ -1,0 +1,1350 @@
+{
+  "reviewedAt": "2026-10-13",
+  "scope": [
+    "q-d4-e04",
+    "q-d5-e03",
+    "q-sc10-3"
+  ],
+  "independentBlindExperiment": false,
+  "measuredLearnerDifficulty": false,
+  "method": "対象3問の本文・全選択肢・解説を編集上で再読。3段階の必要な判断を記録し、同じ4択で各誤答が正答となる条件置換を3件ずつ照合。自動検査は意味的正解や実試験等価性の証明ではない。",
+  "questions": [
+    {
+      "id": "q-d4-e04",
+      "title": "依存関係・検索ノイズ・予算に合う最小文脈",
+      "format": "複合制約トレードオフ",
+      "before": {
+        "id": "q-d4-e04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d4o2",
+          "複合制約トレードオフ",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "issuer設定をconfig.tsから読み",
+          "refresh.tsが検証結果を利用",
+          "refreshの戻り値契約は維持"
+        ],
+        "question": "モノレポのjwt.tsはissuer設定をconfig.tsから読み、refresh.tsが検証結果を利用します。Chatの検索結果は同名のモバイル実装でした。今回の変更はissuer違反を拒否することで、refreshの戻り値契約は維持します。必要最小限の文脈で依頼する構成は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "jwtの全文と、モバイル実装の検索結果・一般的なJWT仕様を示す"
+          },
+          {
+            "id": "C",
+            "text": "configの全文と、リポジトリ全体のファイル名一覧を示す"
+          },
+          {
+            "id": "A",
+            "text": "jwt・config・refreshの関連部分と、拒否条件・維持する契約を示す"
+          },
+          {
+            "id": "D",
+            "text": "jwt・configの関連部分と拒否条件だけを示す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。",
+        "choiceExplanations": {
+          "A": "設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。",
+          "B": "同名の別実装は今回の依存契約の代わりにならず、refreshへの影響も分からない。",
+          "C": "設定は分かるが、検証処理と利用側の振る舞いが不足する。",
+          "D": "現行のrefreshの戻り値契約を維持する依頼なのに、利用先の文脈が欠ける。"
+        },
+        "sourceIds": [
+          "prompt",
+          "workspace-context"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "同名の別実装は今回の依存契約の代わりにならず、refreshへの影響も分からない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "設定は分かるが、検証処理と利用側の振る舞いが不足する。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "現行のrefreshの戻り値契約を維持する依頼なのに、利用先の文脈が欠ける。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "モノレポのjwt.tsはissuer設定をconfig.tsから読み、refresh.tsが検証結果を利用します。Chatの検索結果は同名のモバイル実装でした。今回の変更はissuer違反を拒否することで、refreshの戻り値契約は維持します。必要最小限の文脈で依頼する構成は？",
+            "correctReason": "設定の供給元と結果の利用先を含むため、変更条件と維持条件を検証できる。無関係な同名実装は外す。",
+            "distractorFailures": {
+              "B": "同名の別実装は今回の依存契約の代わりにならず、refreshへの影響も分からない。",
+              "C": "設定は分かるが、検証処理と利用側の振る舞いが不足する。",
+              "D": "現行のrefreshの戻り値契約を維持する依頼なのに、利用先の文脈が欠ける。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d4-e04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d4o2",
+          "複合制約トレードオフ",
+          "dependency-context",
+          "retrieval-scope",
+          "input-budget"
+        ],
+        "clues": [
+          "serverのrefreshがjwtを呼びます",
+          "実際の呼出元の契約も維持",
+          "予算900トークン"
+        ],
+        "question": "Copilotでserverのjwtを修正します。jwtはconfigを読み、serverのrefreshがjwtを呼びます。検索は同名のmobile/refreshを返しました。issuer違反を拒否し、実際の呼出元の契約も維持します。予算900トークン。Pはjwtとconfigの抜粋600、QはP＋mobile/refreshの抜粋850、RはP＋server/refreshの抜粋850、Sはserverの3ファイル全文1400。要件を満たす最も短い依頼文脈は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "Pを依頼文脈に採用し、承認要件に沿って検証する"
+          },
+          {
+            "id": "C",
+            "text": "Qを依頼文脈に採用し、承認要件に沿って検証する"
+          },
+          {
+            "id": "A",
+            "text": "Rを依頼文脈に採用し、承認要件に沿って検証する"
+          },
+          {
+            "id": "D",
+            "text": "Sを依頼文脈に採用し、承認要件に沿って検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。",
+        "choiceExplanations": {
+          "A": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。",
+          "B": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。",
+          "C": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。",
+          "D": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+        },
+        "sourceIds": [
+          "prompt",
+          "workspace-context"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "workspace-context"
+            ],
+            "rationale": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "serverのrefreshがjwtを呼びます",
+            "correctReason": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。",
+            "distractorFailures": {
+              "B": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。",
+              "C": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。",
+              "D": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+            }
+          },
+          {
+            "requirement": "実際の呼出元の契約も維持",
+            "correctReason": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。",
+            "distractorFailures": {
+              "B": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。",
+              "C": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。",
+              "D": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+            }
+          },
+          {
+            "requirement": "予算900トークン",
+            "correctReason": "Rは設定元と実際の呼出元を含み、850で予算内。Pは維持対象の呼出元がなく、Qは別実装、Sは予算超過なので、Rが必要十分な最小案。",
+            "distractorFailures": {
+              "B": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。",
+              "C": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。",
+              "D": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+            }
+          }
+        ],
+        "contentRevision": "exam-three-refinement-2026-10-13"
+      },
+      "fingerprint": "96c1f81cfe1f69efe5cae8d8b9c649fee10432838b6b816347b796262fee26f6",
+      "blindBefore": {
+        "verdict": "FAIL",
+        "rationale": "前回評価で、正答だけが網羅的・妥当な対策となり、選択肢の一般的な良し悪しから推測しやすいと判断。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "選択肢は別条件ならいずれも成立し、今回の証拠の対象・到達段階・制約を本文へ照合する必要がある。全3誤答の正答化を同じ4択で再読した編集判断。独立した受験者のブラインド実測ではない。"
+      },
+      "reasoningSteps": [
+        "設定を供給するconfigと、jwtを利用するserver/refreshを依存方向から特定し、mobileの検索結果を分離する。",
+        "各案の対象とトークン量を契約維持・予算へ照合し、Pの不足、Qの対象違い、Sの超過を判定する。",
+        "必要な3ファイルの関連部分を850で含むRを選び、拒否条件と呼出元の契約を検証する。"
+      ],
+      "clues": [
+        "serverのrefreshがjwtを呼びます",
+        "実際の呼出元の契約も維持",
+        "予算900トークン"
+      ],
+      "distractors": [
+        {
+          "id": "B",
+          "text": "Pを依頼文脈に採用し、承認要件に沿って検証する",
+          "temptation": "最少の600と変更対象のjwt・設定元がそろう点に注目し、維持すべき呼出元を落とす。",
+          "whyWrong": "Pは拒否条件だけの変更なら最小案だが、今回は実際の呼出元の契約維持も要件で、その文脈がない。"
+        },
+        {
+          "id": "C",
+          "text": "Qを依頼文脈に採用し、承認要件に沿って検証する",
+          "temptation": "名前とトークン数が合う検索結果を、依存関係で確かめず採用する。",
+          "whyWrong": "Qはトークン量こそ予算内だが、検索が返した同名のmobile実装は今回のserver呼出元ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Sを依頼文脈に採用し、承認要件に沿って検証する",
+          "temptation": "正しい依存ファイルを全部含むことだけを見て、入力予算を落とす。",
+          "whyWrong": "Sは正しい3ファイルを含むが1400で予算900を超える。全文確認が必須で予算が広がる場合の案。"
+        }
+      ],
+      "counterfactuals": [
+        {
+          "from": "実際の呼出元の契約も維持します",
+          "to": "今回はjwtとconfigの拒否条件だけを確認し、呼出元の契約確認は対象外です",
+          "answerId": "B",
+          "rationale": "呼出元の参照が要件でなくなるため、必要なjwtとconfigを含むP600が最短。Q/Rの追加部分は不要。",
+          "question": "Copilotでserverのjwtを修正します。jwtはconfigを読み、serverのrefreshがjwtを呼びます。検索は同名のmobile/refreshを返しました。issuer違反を拒否し、今回はjwtとconfigの拒否条件だけを確認し、呼出元の契約確認は対象外です。予算900トークン。Pはjwtとconfigの抜粋600、QはP＋mobile/refreshの抜粋850、RはP＋server/refreshの抜粋850、Sはserverの3ファイル全文1400。要件を満たす最も短い依頼文脈は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "serverのrefreshがjwtを呼びます",
+          "to": "mobileのrefreshがこのserverのjwtを呼びます",
+          "answerId": "C",
+          "rationale": "実際の利用先がmobileになり、契約維持に必要なその抜粋を含むQ850が最短。Rは違う利用先を含む。",
+          "question": "Copilotでserverのjwtを修正します。jwtはconfigを読み、mobileのrefreshがこのserverのjwtを呼びます。検索は同名のmobile/refreshを返しました。issuer違反を拒否し、実際の呼出元の契約も維持します。予算900トークン。Pはjwtとconfigの抜粋600、QはP＋mobile/refreshの抜粋850、RはP＋server/refreshの抜粋850、Sはserverの3ファイル全文1400。要件を満たす最も短い依頼文脈は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "予算900トークン",
+          "to": "予算1600トークンで、serverの3ファイル全文の確認も必須",
+          "answerId": "D",
+          "rationale": "全文という追加要件と1600の予算を同時に満たすのはS1400。抜粋のP/Q/Rでは全文確認を満たさない。",
+          "question": "Copilotでserverのjwtを修正します。jwtはconfigを読み、serverのrefreshがjwtを呼びます。検索は同名のmobile/refreshを返しました。issuer違反を拒否し、実際の呼出元の契約も維持します。予算1600トークンで、serverの3ファイル全文の確認も必須。Pはjwtとconfigの抜粋600、QはP＋mobile/refreshの抜粋850、RはP＋server/refreshの抜粋850、Sはserverの3ファイル全文1400。要件を満たす最も短い依頼文脈は？",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 23,
+        "wrong": [
+          23,
+          23,
+          23
+        ],
+        "medianWrong": 23,
+        "ratio": 1,
+        "position": "C"
+      },
+      "difficultyAssessment": "本番相当として維持。対象の依存関係を解析した後、維持契約と予算を照合する。正答だけが全部入りではなく、対象違い・不足・全文過剰という異なる誤りを判断する。",
+      "readingCharacters": {
+        "before": 265,
+        "after": 327
+      }
+    },
+    {
+      "id": "q-d5-e03",
+      "title": "変異テストで生成範囲とオラクルの盲点を切り分ける",
+      "format": "実験対照比較",
+      "before": {
+        "id": "q-d5-e03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d5",
+        "objectiveId": "d5o1",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "modernization",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d5o1",
+          "複合制約トレードオフ",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "残高を負にせず",
+          "手数料なしで総額を保存",
+          "残高内の単発送金だけ",
+          "期待値は対象実装の戻り値をコピー"
+        ],
+        "question": "Copilotに口座間送金のプロパティテストを作らせました。仕様は残高を負にせず、手数料なしで総額を保存することです。生成器は残高内の単発送金だけを作り、期待値は対象実装の戻り値をコピーしています。1万件成功しました。強化する組合せは？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "残高内の単発送金だけを保ち、残高が非負であることを検証する"
+          },
+          {
+            "id": "A",
+            "text": "残高不足を含む送金列を生成し、総額保存と拒否時の不変を検証する"
+          },
+          {
+            "id": "C",
+            "text": "送金列を生成し、対象実装の戻り値から期待残高を作る"
+          },
+          {
+            "id": "B",
+            "text": "残高内の単発送金を10万件へ増やし、対象実装の戻り値を期待値にする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。",
+        "choiceExplanations": {
+          "A": "入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。",
+          "B": "入力の偏りと期待値の自己参照がどちらも残る。",
+          "C": "入力は改善するが、実装の誤った出力も期待値として採用してしまう。",
+          "D": "検証は独立するが、送金や拒否経路の欠陥を通らない。"
+        },
+        "sourceIds": [
+          "property-testing",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "検証は独立するが、送金や拒否経路の欠陥を通らない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "入力は改善するが、実装の誤った出力も期待値として採用してしまう。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "入力の偏りと期待値の自己参照がどちらも残る。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotに口座間送金のプロパティテストを作らせました。仕様は残高を負にせず、手数料なしで総額を保存することです。生成器は残高内の単発送金だけを作り、期待値は対象実装の戻り値をコピーしています。1万件成功しました。強化する組合せは？",
+            "correctReason": "入力列に失敗や順序の影響を含め、実装から独立した不変条件を定義する必要がある。多数成功しても不足した生成器と自己参照の期待値は補えない。",
+            "distractorFailures": {
+              "D": "検証は独立するが、送金や拒否経路の欠陥を通らない。",
+              "C": "入力は改善するが、実装の誤った出力も期待値として採用してしまう。",
+              "B": "入力の偏りと期待値の自己参照がどちらも残る。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d5-e03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d5",
+        "objectiveId": "d5o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "modernization",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d5o2",
+          "実験対照比較",
+          "mutation-testing",
+          "generator-reachability",
+          "property-oracle"
+        ],
+        "clues": [
+          "口座を初期化し、残高内・不足の単発だけ",
+          "検証条件は総額一致だけ",
+          "拒否を返すが両口座間で同額を移動",
+          "2回目の成功時に元口座だけ減算"
+        ],
+        "question": "Copilot生成の送金テストを変異実装で検証します。仕様は成功時の総額保存と、残高不足で拒否し両残高を変えないこと。各ケースは口座を初期化し、残高内・不足の単発だけ、独立した検証条件は総額一致だけです。M2は拒否を返すが両口座間で同額を移動します。M3は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。双方とも未検出。各変異の欠落を埋める追加変更は？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "M2とM3の両方に、同じ口座での操作列の生成を追加する"
+          },
+          {
+            "id": "A",
+            "text": "M2に拒否時の両残高の検証、M3に同じ口座での操作列の生成を追加する"
+          },
+          {
+            "id": "C",
+            "text": "M2とM3の両方に、拒否時の両残高の検証を追加する"
+          },
+          {
+            "id": "B",
+            "text": "M2に同じ口座での操作列の生成、M3に拒否時の両残高の検証を追加する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+        "choiceExplanations": {
+          "A": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+          "D": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。",
+          "C": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。",
+          "B": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+        },
+        "sourceIds": [
+          "property-testing",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "property-testing",
+              "tests"
+            ],
+            "rationale": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "残高内・不足の単発だけ",
+            "correctReason": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+            "distractorFailures": {
+              "D": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。",
+              "C": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。",
+              "B": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+            }
+          },
+          {
+            "requirement": "検証条件は総額一致だけ",
+            "correctReason": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+            "distractorFailures": {
+              "D": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。",
+              "C": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。",
+              "B": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+            }
+          },
+          {
+            "requirement": "拒否を返すが両口座間で同額を移動",
+            "correctReason": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+            "distractorFailures": {
+              "D": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。",
+              "C": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。",
+              "B": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+            }
+          },
+          {
+            "requirement": "2回目の成功時に元口座だけ減算",
+            "correctReason": "M2は単発の不足入力で到達するが総額を保つので、拒否時の個別残高不変を検証する。M3は単発では到達せず、同じ口座で成功を2回起こす列を生成すれば既存の総額検証が検出する。",
+            "distractorFailures": {
+              "D": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。",
+              "C": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。",
+              "B": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+            }
+          }
+        ],
+        "contentRevision": "exam-three-refinement-2026-10-13"
+      },
+      "fingerprint": "93eca7a947c7b6cd58b7be5261dd31a2068b5c391327101386ad0cf5c72121f0",
+      "blindBefore": {
+        "verdict": "FAIL",
+        "rationale": "前回評価で、正答だけが網羅的・妥当な対策となり、選択肢の一般的な良し悪しから推測しやすいと判断。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "選択肢は別条件ならいずれも成立し、今回の証拠の対象・到達段階・制約を本文へ照合する必要がある。全3誤答の正答化を同じ4択で再読した編集判断。独立した受験者のブラインド実測ではない。"
+      },
+      "reasoningSteps": [
+        "M2は単発の残高不足でも実行される一方、M3は同じ状態で2回の成功を必要とし、現行の生成範囲外だと分ける。",
+        "M2の移動は総額を変えず既存オラクルで見逃すが、M3の片側減算は総額を壊し、到達さえすれば既存オラクルで検出できると照合する。",
+        "M2には拒否時の個別残高の不変検証、M3には同じ口座の操作列生成を追加し、両変異を再実行する。"
+      ],
+      "clues": [
+        "口座を初期化し、残高内・不足の単発だけ",
+        "検証条件は総額一致だけ",
+        "拒否を返すが両口座間で同額を移動",
+        "2回目の成功時に元口座だけ減算"
+      ],
+      "distractors": [
+        {
+          "id": "D",
+          "text": "M2とM3の両方に、同じ口座での操作列の生成を追加する",
+          "temptation": "状態を持つ送金なら操作列を増やせば両方を検出できると考え、総額が保たれるM2の検証条件を落とす。",
+          "whyWrong": "両方が2回目以降にだけ総額を壊す場合に成立。今回のM2は単発で到達し、操作列を増やしても総額だけの検証では拒否時の移動を見逃す。"
+        },
+        {
+          "id": "C",
+          "text": "M2とM3の両方に、拒否時の両残高の検証を追加する",
+          "temptation": "拒否時の不変条件が欠けている事実を両変異へ広げ、成功2回目にだけ発生するM3を落とす。",
+          "whyWrong": "両方が拒否を返しつつ総額を保って残高を動かす場合に成立。M3の問題は2回目の成功で、単発生成と拒否時だけの検証では到達・検出できない。"
+        },
+        {
+          "id": "B",
+          "text": "M2に同じ口座での操作列の生成、M3に拒否時の両残高の検証を追加する",
+          "temptation": "生成器と検証器を両方強化する点は合うが、未到達と到達しても見逃す問題への対応を取り違える。",
+          "whyWrong": "変異の性質を逆に割り当てた案。M2は生成範囲内で検証が不足し、M3は生成範囲外なので、その役割を逆にすると双方の穴が残る。"
+        }
+      ],
+      "counterfactuals": [
+        {
+          "from": "M2は拒否を返すが両口座間で同額を移動します。M3は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。",
+          "to": "M2は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。M3は拒否を返すが両口座間で同額を移動します。",
+          "answerId": "B",
+          "rationale": "到達範囲外の片側減算はM2へ、総額で見逃す拒否時の移動はM3へ入れ替わり、追加変更の対応も逆になる。",
+          "question": "Copilot生成の送金テストを変異実装で検証します。仕様は成功時の総額保存と、残高不足で拒否し両残高を変えないこと。各ケースは口座を初期化し、残高内・不足の単発だけ、独立した検証条件は総額一致だけです。M2は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。M3は拒否を返すが両口座間で同額を移動します。双方とも未検出。各変異の欠落を埋める追加変更は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "M2は拒否を返すが両口座間で同額を移動します。M3は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。",
+          "to": "M2とM3は、単発の残高不足で拒否を返しますが、両口座間で同額を移動します。移動方向だけが異なります。",
+          "answerId": "C",
+          "rationale": "両方とも既存生成器で到達し総額を保つので、両方の拒否時の個別残高を検証する。",
+          "question": "Copilot生成の送金テストを変異実装で検証します。仕様は成功時の総額保存と、残高不足で拒否し両残高を変えないこと。各ケースは口座を初期化し、残高内・不足の単発だけ、独立した検証条件は総額一致だけです。M2とM3は、単発の残高不足で拒否を返しますが、両口座間で同額を移動します。移動方向だけが異なります。双方とも未検出。各変異の欠落を埋める追加変更は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "M2は拒否を返すが両口座間で同額を移動します。M3は同じ口座で2回目の成功時に元口座だけ減算し、初回は正常です。",
+          "to": "M2とM3は同じ口座で2回目の成功時に元口座だけ減算します。減算額だけが異なり、初回はどちらも正常です。",
+          "answerId": "D",
+          "rationale": "両方が単発生成の範囲外。成功を2回起こす列を追加すれば、既存の総額検証が両方の片側減算を検出する。",
+          "question": "Copilot生成の送金テストを変異実装で検証します。仕様は成功時の総額保存と、残高不足で拒否し両残高を変えないこと。各ケースは口座を初期化し、残高内・不足の単発だけ、独立した検証条件は総額一致だけです。M2とM3は同じ口座で2回目の成功時に元口座だけ減算します。減算額だけが異なり、初回はどちらも正常です。双方とも未検出。各変異の欠落を埋める追加変更は？",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 34,
+        "wrong": [
+          25,
+          27,
+          34
+        ],
+        "medianWrong": 27,
+        "ratio": 1.2592592592592593,
+        "position": "B"
+      },
+      "difficultyAssessment": "本番相当として維持。未検出という同じ結果を、未到達とオラクルの見逃しという二原因へ分け、別々の最小追加を導く。生成器と検証器を全部強化するだけの問題を解消。テスト内容に合わせObjectiveをd5o1からd5o2へ修正。",
+      "readingCharacters": {
+        "before": 236,
+        "after": 302
+      }
+    },
+    {
+      "id": "q-sc10-3",
+      "title": "MCPの承認記録と保存対象を分けた差分審査",
+      "format": "複合制約トレードオフ",
+      "before": {
+        "id": "q-sc10-3",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc10",
+        "scenarioType": "enterprise",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d6o2",
+          "複合制約トレードオフ",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "BusinessのIDE Chatだけを対象",
+          "後から外部MCPを追加",
+          "外部MCPの保存も承認済み"
+        ],
+        "question": "【SecureBank Online事例】承認申請はBusinessのIDE Chatだけを対象にしています。後から外部MCPを追加し、顧客データをそのサーバーへ返す設計になりました。担当者は「Businessの学習不使用方針で外部MCPの保存も承認済み」と説明しています。未承認の変更だけを審査する最小範囲は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "外部MCPの送信・保存・権限を追加審査する"
+          },
+          {
+            "id": "C",
+            "text": "GitHub側の保持条件だけ再確認し、外部の取扱いは保つ"
+          },
+          {
+            "id": "B",
+            "text": "MCP承認の証跡で根拠を訂正し、接続手順だけ確認する"
+          },
+          {
+            "id": "D",
+            "text": "シートの割当数だけ再確認し、送信と保存条件は保つ"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。",
+        "choiceExplanations": {
+          "A": "元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。",
+          "B": "MCPの送信・保存・権限は今回の既存承認の対象外で、使える証跡がない。",
+          "C": "追加した送信先の審査をしない。",
+          "D": "利用者数だけでは外部MCPの取扱いを審査できない。"
+        },
+        "sourceIds": [
+          "model-hosting",
+          "mcp",
+          "privacy"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "追加した送信先の審査をしない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "MCPの送信・保存・権限は今回の既存承認の対象外で、使える証跡がない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "利用者数だけでは外部MCPの取扱いを審査できない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "【SecureBank Online事例】承認申請はBusinessのIDE Chatだけを対象にしています。後から外部MCPを追加し、顧客データをそのサーバーへ返す設計になりました。担当者は「Businessの学習不使用方針で外部MCPの保存も承認済み」と説明しています。未承認の変更だけを審査する最小範囲は？",
+            "correctReason": "元の承認はBusiness IDE Chatだけで、新しい第三者の取扱いを覆わない。",
+            "distractorFailures": {
+              "C": "追加した送信先の審査をしない。",
+              "B": "MCPの送信・保存・権限は今回の既存承認の対象外で、使える証跡がない。",
+              "D": "利用者数だけでは外部MCPの取扱いを審査できない。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-sc10-3",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc10",
+        "scenarioType": "enterprise",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d6o2",
+          "複合制約トレードオフ",
+          "approval-scope",
+          "data-classification",
+          "mcp-result-retention"
+        ],
+        "clues": [
+          "仮名化データ",
+          "検索結果は保存なし",
+          "顧客ID付きデータ",
+          "検索結果30日保存",
+          "GitHub側条件は不変"
+        ],
+        "question": "【SecureBank Online事例】承認記録はBusiness IDE ChatとMCP-P、仮名化データ、MCPの要求ログ24h・検索結果は保存なし、利用者Devだけ。新版は送信先PとDevを維持し、顧客ID付きデータを送り、要求ログ24h・検索結果30日保存に変更します。GitHub側条件は不変。社内規則は変更項目を追加審査し、不変項目の証跡を再利用します。今回の審査範囲は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "送信データの分類とMCP検索結果の保存を審査し、既存の利用者範囲承認を再利用する"
+          },
+          {
+            "id": "C",
+            "text": "GitHub側の保持と利用者範囲を審査し、既存のMCP取扱い承認を再利用する"
+          },
+          {
+            "id": "B",
+            "text": "MCPの送信先と利用者範囲を審査し、既存のデータ分類承認を再利用する"
+          },
+          {
+            "id": "D",
+            "text": "送信データの分類と利用者範囲を審査し、既存のMCP保存条件承認を再利用する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+        "choiceExplanations": {
+          "A": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+          "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+          "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+          "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+        },
+        "sourceIds": [
+          "model-hosting",
+          "mcp",
+          "privacy"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "model-hosting",
+              "mcp",
+              "privacy"
+            ],
+            "rationale": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "仮名化データ",
+            "correctReason": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+            "distractorFailures": {
+              "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+              "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+              "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+            }
+          },
+          {
+            "requirement": "検索結果は保存なし",
+            "correctReason": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+            "distractorFailures": {
+              "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+              "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+              "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+            }
+          },
+          {
+            "requirement": "顧客ID付きデータ",
+            "correctReason": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+            "distractorFailures": {
+              "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+              "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+              "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+            }
+          },
+          {
+            "requirement": "検索結果30日保存",
+            "correctReason": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+            "distractorFailures": {
+              "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+              "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+              "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+            }
+          },
+          {
+            "requirement": "GitHub側条件は不変",
+            "correctReason": "仮名化から顧客ID付きへ、検索結果の非保存から30日保存へ変わるため両者を審査する。要求ログ24h、利用者DevとGitHub側条件は不変で、対応する証跡は再利用できる。",
+            "distractorFailures": {
+              "C": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。",
+              "B": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。",
+              "D": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+            }
+          }
+        ],
+        "contentRevision": "exam-three-refinement-2026-10-13"
+      },
+      "fingerprint": "24bc1c030c5fecccc964e72b6c2f1e071b96f473fd279fc59ade91abde489c1e",
+      "blindBefore": {
+        "verdict": "FAIL",
+        "rationale": "前回評価で、正答だけが網羅的・妥当な対策となり、選択肢の一般的な良し悪しから推測しやすいと判断。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "選択肢は別条件ならいずれも成立し、今回の証拠の対象・到達段階・制約を本文へ照合する必要がある。全3誤答の正答化を同じ4択で再読した編集判断。独立した受験者のブラインド実測ではない。"
+      },
+      "reasoningSteps": [
+        "承認記録と新版を、送信先・データ分類・要求ログ・検索結果保存・利用者・GitHub側条件に分けて比較する。",
+        "同じ要求ログ24hを検索結果の保存条件へ広げず、変更された分類と結果保存に承認の欠落があると照合する。",
+        "データ分類とMCP検索結果保存を追加審査し、P・Dev・要求ログ・GitHub側条件の不変な証跡を再利用する。"
+      ],
+      "clues": [
+        "仮名化データ",
+        "検索結果は保存なし",
+        "顧客ID付きデータ",
+        "検索結果30日保存",
+        "GitHub側条件は不変"
+      ],
+      "distractors": [
+        {
+          "id": "C",
+          "text": "GitHub側の保持と利用者範囲を審査し、既存のMCP取扱い承認を再利用する",
+          "temptation": "Businessの承認を中心に考えてGitHub側を再審査し、第三者MCPの検索結果保存の変更を覆う証跡と取り違える。",
+          "whyWrong": "GitHub側条件と利用者が変わる場合の案。今回は両者が不変で、変更されたMCPの検索結果保存を既存承認で覆うことはできない。"
+        },
+        {
+          "id": "B",
+          "text": "MCPの送信先と利用者範囲を審査し、既存のデータ分類承認を再利用する",
+          "temptation": "MCP追加時に必要な接続先・利用者確認へ戻り、今回は同じPでもデータ分類と保存対象が変わる点を落とす。",
+          "whyWrong": "送信先と利用者が変わる場合の案。今回はPとDevが不変で、送信データの分類変更と結果保存の審査を落としている。"
+        },
+        {
+          "id": "D",
+          "text": "送信データの分類と利用者範囲を審査し、既存のMCP保存条件承認を再利用する",
+          "temptation": "分類変更は捉えるが、要求ログ24hの一致からMCPの保存全体が不変と誤認し、結果30日の変更を落とす。",
+          "whyWrong": "データ分類と利用者だけが変わる場合の案。今回は利用者が不変で、検索結果30日保存は既存の保存なしの承認を再利用できない。"
+        }
+      ],
+      "counterfactuals": [
+        {
+          "from": "新版は送信先PとDevを維持し、顧客ID付きデータを送り、要求ログ24h・検索結果30日保存に変更します。GitHub側条件は不変。",
+          "to": "新版はデータ分類・MCP要求ログ24h・検索結果非保存を維持し、送信先をMCP-Q、利用者をOpsへ変更します。GitHub側条件は不変。",
+          "answerId": "B",
+          "rationale": "変更は送信先と利用者なので、その範囲を審査する。データ分類は不変で対応証跡を再利用する。",
+          "question": "【SecureBank Online事例】承認記録はBusiness IDE ChatとMCP-P、仮名化データ、MCPの要求ログ24h・検索結果は保存なし、利用者Devだけ。新版はデータ分類・MCP要求ログ24h・検索結果非保存を維持し、送信先をMCP-Q、利用者をOpsへ変更します。GitHub側条件は不変。社内規則は変更項目を追加審査し、不変項目の証跡を再利用します。今回の審査範囲は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "新版は送信先PとDevを維持し、顧客ID付きデータを送り、要求ログ24h・検索結果30日保存に変更します。GitHub側条件は不変。",
+          "to": "新版は送信先P・仮名化データ・MCP要求ログ24h・検索結果非保存を維持し、GitHub側の保持条件と利用者Opsへの変更だけを申請します。",
+          "answerId": "C",
+          "rationale": "変更対象はGitHub側保持と利用者。MCPの取扱いは不変なので対応する既存証跡を再利用する。",
+          "question": "【SecureBank Online事例】承認記録はBusiness IDE ChatとMCP-P、仮名化データ、MCPの要求ログ24h・検索結果は保存なし、利用者Devだけ。新版は送信先P・仮名化データ・MCP要求ログ24h・検索結果非保存を維持し、GitHub側の保持条件と利用者Opsへの変更だけを申請します。社内規則は変更項目を追加審査し、不変項目の証跡を再利用します。今回の審査範囲は？",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "新版は送信先PとDevを維持し、顧客ID付きデータを送り、要求ログ24h・検索結果30日保存に変更します。GitHub側条件は不変。",
+          "to": "新版は送信先P・MCP要求ログ24h・検索結果非保存を維持し、顧客ID付きデータと利用者Opsへ変更します。GitHub側条件は不変。",
+          "answerId": "D",
+          "rationale": "変更はデータ分類と利用者で、MCPの結果非保存を含む保存条件は不変。対応する保存条件の証跡を再利用する。",
+          "question": "【SecureBank Online事例】承認記録はBusiness IDE ChatとMCP-P、仮名化データ、MCPの要求ログ24h・検索結果は保存なし、利用者Devだけ。新版は送信先P・MCP要求ログ24h・検索結果非保存を維持し、顧客ID付きデータと利用者Opsへ変更します。GitHub側条件は不変。社内規則は変更項目を追加審査し、不変項目の証跡を再利用します。今回の審査範囲は？",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 40,
+        "wrong": [
+          34,
+          37,
+          38
+        ],
+        "medianWrong": 37,
+        "ratio": 1.0810810810810811,
+        "position": "A"
+      },
+      "difficultyAssessment": "本番相当として維持。同じ送信先と同じ要求ログ期間という紛らわしい一致を、結果保存とデータ分類の変更から分離する。GitHub側と第三者の条件も区別し、差分審査と証跡再利用を両立する。保持値は架空の社内契約で、GitHubの共通仕様ではない。",
+      "readingCharacters": {
+        "before": 255,
+        "after": 343
+      }
+    }
+  ],
+  "summary": {
+    "rewritten": 3,
+    "retainedExam": 3,
+    "counterfactuals": 9,
+    "unchangedOtherQuestions": 313,
+    "objectiveCorrection": {
+      "id": "q-d5-e03",
+      "from": "d5o1",
+      "to": "d5o2"
+    }
+  },
+  "semanticModelVerification": {
+    "casesPassed": 12,
+    "method": "手で記述した設問条件の検証モデル。変異実装を具体的な残高へ実行し、文脈の必要集合・予算と承認差分は別の計算で確認。学習者のブラインド実験ではなく、モデルが文章の意味を自動理解したという主張でもない。",
+    "cases": [
+      {
+        "questionId": "q-d5-e03",
+        "case": "current",
+        "profiles": [
+          "rejection-moves-value",
+          "second-loses-credit"
+        ],
+        "detectedByChoice": {
+          "A": [
+            true,
+            true
+          ],
+          "B": [
+            false,
+            false
+          ],
+          "C": [
+            true,
+            false
+          ],
+          "D": [
+            false,
+            true
+          ]
+        },
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d5-e03",
+        "case": "counterfactual-1",
+        "profiles": [
+          "second-loses-credit",
+          "rejection-moves-value"
+        ],
+        "detectedByChoice": {
+          "A": [
+            false,
+            false
+          ],
+          "B": [
+            true,
+            true
+          ],
+          "C": [
+            false,
+            true
+          ],
+          "D": [
+            true,
+            false
+          ]
+        },
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d5-e03",
+        "case": "counterfactual-2",
+        "profiles": [
+          "rejection-moves-value",
+          "rejection-moves-value"
+        ],
+        "detectedByChoice": {
+          "A": [
+            true,
+            false
+          ],
+          "B": [
+            false,
+            true
+          ],
+          "C": [
+            true,
+            true
+          ],
+          "D": [
+            false,
+            false
+          ]
+        },
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d5-e03",
+        "case": "counterfactual-3",
+        "profiles": [
+          "second-loses-credit",
+          "second-loses-credit"
+        ],
+        "detectedByChoice": {
+          "A": [
+            false,
+            true
+          ],
+          "B": [
+            true,
+            false
+          ],
+          "C": [
+            false,
+            false
+          ],
+          "D": [
+            true,
+            true
+          ]
+        },
+        "winner": "D"
+      },
+      {
+        "questionId": "q-d4-e04",
+        "case": "current",
+        "constraints": {
+          "needed": [
+            "jwt",
+            "config",
+            "server"
+          ],
+          "budget": 900,
+          "full": false
+        },
+        "sufficientChoices": [
+          "A"
+        ],
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d4-e04",
+        "case": "counterfactual-1",
+        "constraints": {
+          "needed": [
+            "jwt",
+            "config"
+          ],
+          "budget": 900,
+          "full": false
+        },
+        "sufficientChoices": [
+          "B",
+          "C",
+          "A"
+        ],
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d4-e04",
+        "case": "counterfactual-2",
+        "constraints": {
+          "needed": [
+            "jwt",
+            "config",
+            "mobile"
+          ],
+          "budget": 900,
+          "full": false
+        },
+        "sufficientChoices": [
+          "C"
+        ],
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d4-e04",
+        "case": "counterfactual-3",
+        "constraints": {
+          "needed": [
+            "jwt",
+            "config",
+            "server"
+          ],
+          "budget": 1600,
+          "full": true
+        },
+        "sufficientChoices": [
+          "D"
+        ],
+        "winner": "D"
+      },
+      {
+        "questionId": "q-sc10-3",
+        "case": "current",
+        "approved": {
+          "sender": "P",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Dev",
+          "githubConditions": "approved"
+        },
+        "current": {
+          "sender": "P",
+          "classification": "customer-id",
+          "requestLogHours": 24,
+          "resultDays": 30,
+          "users": "Dev",
+          "githubConditions": "approved"
+        },
+        "changedFields": [
+          "classification",
+          "resultDays"
+        ],
+        "winner": "A"
+      },
+      {
+        "questionId": "q-sc10-3",
+        "case": "counterfactual-1",
+        "approved": {
+          "sender": "P",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Dev",
+          "githubConditions": "approved"
+        },
+        "current": {
+          "sender": "Q",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Ops",
+          "githubConditions": "approved"
+        },
+        "changedFields": [
+          "sender",
+          "users"
+        ],
+        "winner": "B"
+      },
+      {
+        "questionId": "q-sc10-3",
+        "case": "counterfactual-2",
+        "approved": {
+          "sender": "P",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Dev",
+          "githubConditions": "approved"
+        },
+        "current": {
+          "sender": "P",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Ops",
+          "githubConditions": "changed"
+        },
+        "changedFields": [
+          "githubConditions",
+          "users"
+        ],
+        "winner": "C"
+      },
+      {
+        "questionId": "q-sc10-3",
+        "case": "counterfactual-3",
+        "approved": {
+          "sender": "P",
+          "classification": "pseudonymous",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Dev",
+          "githubConditions": "approved"
+        },
+        "current": {
+          "sender": "P",
+          "classification": "customer-id",
+          "requestLogHours": 24,
+          "resultDays": 0,
+          "users": "Ops",
+          "githubConditions": "approved"
+        },
+        "changedFields": [
+          "classification",
+          "users"
+        ],
+        "winner": "D"
+      }
+    ]
+  },
+  "verification": {
+    "testsPassed": 173,
+    "testFiles": 14,
+    "typeCheck": "PASS",
+    "isolatedNextBuild": "PASS",
+    "qualityCheck": "PASS",
+    "difficultyCheck": "PASS",
+    "appliedCheck": "PASS",
+    "examCheck": "PASS",
+    "choiceAudit": "PASS",
+    "priorAppliedFivePreserved": true,
+    "caseModelsPassed": 12,
+    "scope": [
+      "q-d4-e04",
+      "q-d5-e03",
+      "q-sc10-3"
+    ]
+  },
+  "remainingDifficultyCandidates": [
+    "q-d1-e01",
+    "q-d1-e02",
+    "q-d5-e04",
+    "q-sc02-3",
+    "q-d3-e03"
+  ]
+}

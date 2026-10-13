@@ -19,6 +19,11 @@ import {
 } from '../lib/selection';
 import { practiceResult, improvedObjectives, type PracticeRun } from '../lib/practice-session';
 const now = 1700000000000;
+// Algorithm comparisons need separate objectives; adjacent authored questions
+// may legitimately share an objective after an editorial classification change.
+const objectiveFixtures = domains.flatMap(d => d.objectives.map(o =>
+  questions.find(q => q.objectiveId === o.id && q.status === 'verified')!,
+));
 function rng(seed = 1) {
   return () => {
     seed = (seed * 1664525 + 1013904223) >>> 0;
@@ -199,7 +204,8 @@ describe('history and question weighting', () => {
   });
 });
 describe('objective weakness', () => {
-  const qs = [questions[0], questions[1], questions[2]];
+  const qs = objectiveFixtures.slice(0, 3);
+  const lowSampleQuestion = objectiveFixtures[3];
   const history = qs.flatMap((q, i) =>
     Array.from({ length: 10 }, (_, j) =>
       answer({ ...q, id: `history-${i}-${j}` }, i === 2 || (i === 1 && j < 4), now - j * 1000),
@@ -211,12 +217,12 @@ describe('objective weakness', () => {
   it('smooths low sample objectives instead of ranking a single failure as weakest', () => {
     const stats = calculateObjectiveStats([
       ...history,
-      answer({ ...questions[6], id: 'one' }, false),
+      answer({ ...lowSampleQuestion, id: 'one' }, false),
     ]);
-    expect(stats[questions[6].objectiveId].masteryScore).toBeGreaterThan(
+    expect(stats[lowSampleQuestion.objectiveId].masteryScore).toBeGreaterThan(
       stats[qs[0].objectiveId].masteryScore,
     );
-    expect(stats[questions[6].objectiveId].confidence).toBeLessThan(0.3);
+    expect(stats[lowSampleQuestion.objectiveId].confidence).toBeLessThan(0.3);
     expect(stats[qs[0].objectiveId].incorrectCount).toBe(10);
   });
   it('recent accuracy can reflect improvement despite lifetime mistakes', () => {
@@ -288,7 +294,7 @@ describe('AI eligibility', () => {
 });
 describe('practice results and DB migration', () => {
   it('reports exact session scores, wrong objectives, lessons and smoothed improvement', () => {
-    const chosen = questions.slice(0, 5),
+    const chosen = objectiveFixtures.slice(0, 5),
       attempts = chosen.map((q, i) => answer(q, i !== 0));
     const run: PracticeRun = {
       id: 'session',

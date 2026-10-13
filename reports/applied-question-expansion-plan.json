@@ -1,0 +1,1845 @@
+{
+  "plannedAt": "2026-10-13",
+  "status": "SUPERSEDED_BY_FINAL_TWELVE",
+  "method": "現行応用96問の本文と正答を再読し、近接する基礎・本番相当を参照した企画段階の編集照合。題材名でなく、条件・必要な判断・決め手・正答行動の差を記録する。全文と四択は未執筆のため、重複排除の最終合格ではない。",
+  "baseline": {
+    "total": 316,
+    "foundation": 163,
+    "applied": 96,
+    "exam": 57,
+    "verified": 315,
+    "bankFingerprint": "325b2b0d5598765ed6e727650ac265c5a2a9634a9734cb79b0c8d21ebe11a6d9",
+    "appliedInventory": [
+      {
+        "id": "q01",
+        "objectiveId": "d1o2",
+        "question": "Copilotが作った月送り処理は、1月15日→2月15日は成功しますが、1月31日→3月3日となります。仕様は「翌月に同じ日がなければ翌月末」です。2025年の回帰テストに追加する期待値は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "1月31日→2月28日"
+          }
+        ],
+        "fingerprint": "4bb48e9324bf6128c19f4dfceb21373c4032056cb4fe97c06d64437f426b44b2"
+      },
+      {
+        "id": "q07",
+        "objectiveId": "d4o1",
+        "question": "Copilotの日付解析が2025年の03/04を3月4日と解釈しました。入力契約はDD/MMです。プロンプトへ追加する、曖昧さを解消する例は？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "03/04 → 2025-04-03、13/04 → 2025-04-13"
+          }
+        ],
+        "fingerprint": "0f7ad3c4ba8a42ef383ef4276445d1a5701f58ff5050b69efc4e147d3835f35b"
+      },
+      {
+        "id": "q10",
+        "objectiveId": "d5o2",
+        "question": "通知サービスを呼ぶ単体テストをCopilotに依頼します。外部通信は行わず、宛先と本文が正しく渡ることを確認したい。適切なテスト設計は？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "通知クライアントをモック化し、呼び出し引数を検証する"
+          }
+        ],
+        "fingerprint": "105ae104bbab155baa8e1ac81c2b5fe5947c1f956a40d8da0cad20cc863abc56"
+      },
+      {
+        "id": "q-d1-a01",
+        "objectiveId": "d1o2",
+        "question": "Copilotのファイル読取案は、正常時にcloseしますが、parseが例外を投げる経路ではcloseされません。成功ケースのテストは通っています。最も直接的に欠陥を検出する追加テストは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "parseを失敗させ、取得済みファイルのcloseが呼ばれるか確認する"
+          }
+        ],
+        "fingerprint": "d19a448f8f243666da651cd96c7ef95f634c60979c511f40df14a4d53381efb6"
+      },
+      {
+        "id": "q-d1-a02",
+        "objectiveId": "d1o2",
+        "question": "Copilotが生成したSQL検索APIを検証しています。WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "WHEREの値を束縛パラメーターへ分離し、攻撃文字列で条件が変わらないか検証する"
+          }
+        ],
+        "fingerprint": "c58373d7cf864eb082c221190875835fbedd7feec072c8b37aa395d67136c1c0"
+      },
+      {
+        "id": "q-d1-a03",
+        "objectiveId": "d1o2",
+        "question": "新人がCopilotの権限判定案を採用した。仕様ではviewerは更新不可だが、生成条件はguest以外なら更新可。違反を具体的に説明する研修で、追加すべき入力・期待値は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "viewer → 更新を拒否"
+          }
+        ],
+        "fingerprint": "0a0b7056e8ecc43963214e9c18575745831c545f9aa22881e071b15a477cd633"
+      },
+      {
+        "id": "q-d1-a04",
+        "objectiveId": "d1o2",
+        "question": "Copilotで作った認証処理を検証しています。保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "承認済みの保存用ライブラリへ替え、ソルト・計算コスト・照合を検証する"
+          }
+        ],
+        "fingerprint": "1bfe09abe55b8f36982450f566e3ab50494bd2553149b0e3e88fa7cce2189b44"
+      },
+      {
+        "id": "q-d1-a07",
+        "objectiveId": "d1o2",
+        "question": "Copilot指示には担当者承認後にマージとあるが、テスト成功後は未承認でもマージ可能だった。テスト結果を保ち、承認を実効条件にする変更は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "マージに必要なレビュー承認数を設定"
+          }
+        ],
+        "fingerprint": "8f879f62d2f85bf337063502efd3ca407c96dd00468b1291f9c498a03ff495b2"
+      },
+      {
+        "id": "q-d1-a08",
+        "objectiveId": "d1o2",
+        "question": "Copilot生成テストはexpectを含むが、エラー処理を削っても成功する。行カバレッジは増えた。テストが失敗を検出するか確かめる次の観測は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "不正実装で対象assertionが実行され失敗するか"
+          }
+        ],
+        "fingerprint": "6193a5c11440470b89f55f6716bd22e1198b67d1c385b59a7421aa35b2014205"
+      },
+      {
+        "id": "q-d1-a09",
+        "objectiveId": "d1o2",
+        "question": "Copilotの変更をマージするCIには型検査、リンター、秘密情報検出があります。要求は「既存の注文金額計算を変えないこと」です。今ある検査を保ったまま追加する確認として最も直接的なのは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "注文仕様から定めた金額の回帰テスト"
+          }
+        ],
+        "fingerprint": "4e54465b57d213995fb7991cb20f6bebfb5a520551d28cd7accba47e375ca204"
+      },
+      {
+        "id": "q-d1-a10",
+        "objectiveId": "d1o2",
+        "question": "Copilotの案Pは15msで空入力null、案Qは20msで[]を返す。契約は空入力[]、応答時間25ms以下。今ある測定で両条件を満たす案は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Qを採用候補にする"
+          }
+        ],
+        "fingerprint": "09411c639b3dbeac231f8a031f537d9b5312878559c060697acb7efe0377b788"
+      },
+      {
+        "id": "q-d1-e04",
+        "objectiveId": "d6o1",
+        "question": "障害ログをChatへ渡す前に氏名をランダム値へ置換したところ、同じ人の連続リクエストを追えなくなりました。認証トークンもログに含まれます。実名を渡さず相関を残す前処理は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "同じ人を同じ仮IDへ置換し、トークンは削除する"
+          }
+        ],
+        "fingerprint": "c1fbc69250171899cde29f61de40cff468f358d31ade1e8ecc585ad15d37551e"
+      },
+      {
+        "id": "q-d1-e06",
+        "objectiveId": "d6o2",
+        "question": "公開コード一致のBlock設定を有効にしたチームが、生成スニペットのライセンス審査を省略できるか検討しています。設定の効用と限界を踏まえた判断は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "一致の抑制策として利用し、参照情報と採用コードの個別審査も続ける"
+          }
+        ],
+        "fingerprint": "5c44f15ca1f2eb0ab7aa94f3f79ac3632f30155d3407b8d5bf7a9f981845bcbd"
+      },
+      {
+        "id": "q-d2-a02",
+        "objectiveId": "d4o1",
+        "question": "ChatがUserProfileのemailを必須文字列として使う案を返しました。現行のtypes/user.tsではemail?: stringです。現在の型契約を踏まえて直させるため、追加する文脈は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "現行types/user.tsの定義と、その値を使う対象関数"
+          }
+        ],
+        "fingerprint": "03c58e7af3ed65dd0cc6d87bca239f7a26e8d312cd54dcbf0c39b50284d4ea5f"
+      },
+      {
+        "id": "q-d2-a04",
+        "objectiveId": "d1o2",
+        "question": "Copilotの削除案は作業/tmp/job-*。実対象はjob-cacheとjob-fixturesで、保持対象はjob-fixtures。許可した変更範囲を保つ修正版の対象は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "/tmp/job-cacheのみ"
+          }
+        ],
+        "fingerprint": "f28b1fd7d97d14ec9cc0a8762919b41c6a0dfced02606c827d4dd9cac9fe4699"
+      },
+      {
+        "id": "q-d2-a07",
+        "objectiveId": "d2o3",
+        "question": "IDEのCopilot Chatから社内DBの現在のスキーマを参照します。利用者ごとの閲覧権限を守り、スキーマ変更や任意SQLの実行は許可しません。最も適した連携設計は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "利用者を認可し、メタデータ取得だけを許すMCPツールを提供する"
+          }
+        ],
+        "fingerprint": "250e326649d759dd1a1b883e788972049736f115f47d9d7e347bf530ec64da0c"
+      },
+      {
+        "id": "q-d2-a15",
+        "objectiveId": "d5o1",
+        "question": "Agentの検索で同名の認証関数がold/auth.tsとsrc/auth.tsに見つかった。現在のrouter.tsはsrc/auth.tsをimportしている。今回の現行経路の修正対象は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "src/auth.tsの関数"
+          }
+        ],
+        "fingerprint": "0ed029f1b9eb4ab315eec15cd0fe5e6569505dd48c694693fb7771ab352fe469"
+      },
+      {
+        "id": "q-d2-a16",
+        "objectiveId": "d5o1",
+        "question": "Agentが認証APIと請求APIを変更したい。認証には旧契約テストがあり、請求にはない。今回の最初の作業は「既存の動作を確かめられる単位で変更する」。合う進め方は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "認証を変更し、契約テスト後に次の範囲へ進む"
+          }
+        ],
+        "fingerprint": "3145ba9e2bc858d43a7fb1c0a955e78fea47c283b0234633fe4ed808dd0b2b3a"
+      },
+      {
+        "id": "q-d2-a18",
+        "objectiveId": "d2o3",
+        "question": "チケット検索MCPをCopilotへ接続する前に、ローカルで検証しています。要約に必要なのは件名と状態です。担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。この検証で不足した対策をサーバーへ追加する案は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "返却項目を件名と状態へ絞り、許可した項目だけが出ることを検証する"
+          }
+        ],
+        "fingerprint": "012a89448a2e34af7435279a4c8d8b5b603b7c77424296536648858e82872275"
+      },
+      {
+        "id": "q-d2-a20",
+        "objectiveId": "d2o3",
+        "question": "Spacesへアップロードした朝の注文CSVと、担当者認可付きの注文APIがある。午後の注文キャンセルを含む現在値だけを照会したい。利用するデータ経路は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "認可付きAPIを読むMCPツール"
+          }
+        ],
+        "fingerprint": "b58d124adfd34afef1d21560be405a9dff331e4751127f9ca6b10e4783243bf8"
+      },
+      {
+        "id": "q-d2-e08",
+        "objectiveId": "d2o3",
+        "question": "VS Codeで全階層の*.test.tsだけにAAA形式の指示を適用したい。共通指示へ置いたら通常実装にも混ざった。共有を保ち、テストだけに限定する配置は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "共通AAAを外し、applyTo: **/*.test.tsへ移す"
+          }
+        ],
+        "fingerprint": "e2c609c60af6731718da32a5a726a5168fbb9c3bb3a4ee18480081bf9f149568"
+      },
+      {
+        "id": "q-d2-e09",
+        "objectiveId": "d5o1",
+        "question": "Copilotへ渡した画面はButtonにsize=\"small\"を渡すが、共通Buttonの契約はsize=\"sm\"。Chatはlargeへ変更する案を返した。契約へ合わせる最小修正は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "呼出しのsizeをsmへ変更する"
+          }
+        ],
+        "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f"
+      },
+      {
+        "id": "q-d2-e14",
+        "objectiveId": "d5o1",
+        "question": "CopilotのDB変更案を検証しています。承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。既存値を保持して要件を満たす、次の変更と検証は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "NULL許容の列を追加し、既存行の保持と未登録値・旧版アプリの動作を検証する"
+          }
+        ],
+        "fingerprint": "d24f0908e188c79c801a257b16d6dcd0dc6362a95d1e455e5edea13534eb8d5b"
+      },
+      {
+        "id": "q-d2-e15",
+        "objectiveId": "d2o3",
+        "question": "社内の大規模ナレッジベース（数千件のドキュメント）をMCP経由でCopilotに連携させる際、全ドキュメントを初期コンテキストとして流し込むとトークン制限を超過してしまいます。MCPの仕様に則った最も効率的な設計はどれですか？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "検索と抜粋取得のツールを提供し、関連する部分を段階的に渡す"
+          }
+        ],
+        "fingerprint": "e417e8abbd9e50147bb588b177fada0e6f8783224a93dc788347e74165a110f0"
+      },
+      {
+        "id": "q-d2-e16",
+        "objectiveId": "d2o3",
+        "question": "共通指示は100行。対象はPython、Node、現在のTypeScript案件の三領域が混在している。今回のTypeScript修正で指示の対象を絞り、共有を維持する整理は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "共通事項を残し、言語別規約をパス付き指示へ分ける"
+          }
+        ],
+        "fingerprint": "82cd33b563fda8010336823c9987e0a6174a57f437773a4b3d8abd67f49cc1dd"
+      },
+      {
+        "id": "q-d3-a01",
+        "objectiveId": "d4o2",
+        "question": "Copilot補完はuser.nameを返す。開いている旧型はname、現行型はdisplayName。依存版やモデルを変えず、文脈の影響だけを比べる実験は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "現行型へタブを替え、同じ入力で候補を比べる"
+          }
+        ],
+        "fingerprint": "d72fddf163e6a746975714c66eefd1713297efd13793861b3ba17d2619997a5a"
+      },
+      {
+        "id": "q-d3-a03",
+        "objectiveId": "d3o1",
+        "question": "社内プロキシ経由のIDEだけがself signed certificate in certificate chainで失敗します。許可先とプロキシURLは確認済みです。まず対処する設定は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "IDEが使う信頼ストアへ社内CAを登録する"
+          }
+        ],
+        "fingerprint": "f6b93dff4dcb59b27c1dcc0ed385dfcbd1518ad23494653d7e0198efd6f02611"
+      },
+      {
+        "id": "q-d3-a05",
+        "objectiveId": "d3o1",
+        "question": "Copilotは直結で成功し社内プロキシで失敗する。許可先のブロックか証明書検証かは未特定。二つを切り分ける最初の証拠は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "接続診断の宛先到達性と証明書エラー"
+          }
+        ],
+        "fingerprint": "3e7c4211527e6cfab1c02aa52bfb62c58dab7d2b82d9eadce71636830f7e1e84"
+      },
+      {
+        "id": "q-d3-a06",
+        "objectiveId": "d4o2",
+        "question": "同じChatの冒頭には「同期APIを使う」、最新の決定には「非同期APIへ移行する」とあります。新規Chatへ要約を移す際、保持する内容は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "現行の非同期API契約と関連コード、未解決の移行条件"
+          }
+        ],
+        "fingerprint": "4bdd76279435283e4c6d3e15570942d79b744f60b91b7dfddee4e213ce5706f7"
+      },
+      {
+        "id": "q-d3-a07",
+        "objectiveId": "d4o2",
+        "question": "同じネットワークで、巨大な全文を添付した依頼だけ応答が遅くなります。検索品質を保ちながら入力を減らす最初の比較実験は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "対象関数と依存する型だけを添付した依頼で比較する"
+          }
+        ],
+        "fingerprint": "95d8bfbc134bee383346d384ea124941c2552da07acae4c654c778b0f959bbd8"
+      },
+      {
+        "id": "q-d3-a08",
+        "objectiveId": "d4o1",
+        "question": "大きなファイルの後半にあるrefundを調べたいのに、全文添付の回答は前半のchargeに偏ります。refundはMoney型とvalidateRefundを利用します。最初に試す入力の絞り方は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "refundとMoney、validateRefundの関係する定義を渡す"
+          }
+        ],
+        "fingerprint": "3fecea95f1a8bd5e199f285cd0b44c25494914ebd69a667eead5bbcaec99652f"
+      },
+      {
+        "id": "q-d3-a09",
+        "objectiveId": "d3o1",
+        "question": "接続診断はgithub.comへのHTTPS成功、公式のChat接続先へのアウトバウンドHTTPS遮断。最小の許可変更は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "遮断されたChat接続先へのアウトバウンドHTTPS"
+          }
+        ],
+        "fingerprint": "e557086f054ad82d6438b65deca900fa5029962f23cdbcc56bddd25340e48387"
+      },
+      {
+        "id": "q-d3-a10",
+        "objectiveId": "d4o2",
+        "question": "Chatの回答が旧sdk-v1.mdを引用した。現行はv2だが、添付はv1のまま。資料の版だけの影響を比較したい。次の実験は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "添付をv2へ替え、モデルと対象コードを固定"
+          }
+        ],
+        "fingerprint": "bb6ea6854546411bf57d81861d898fc537971b3540862e67366e67b18e02b83c"
+      },
+      {
+        "id": "q-d3-a11",
+        "objectiveId": "d3o2",
+        "question": "回答を完了後にまとめて表示していた画面をストリーミングへ変更しました。同じ依頼で最初の内容は2秒、回答完了は10秒です。変更前は10秒まで画面に内容がありませんでした。改善を正確に表す説明は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "表示開始は10秒から2秒になり、全体の完了時間は10秒のままである"
+          }
+        ],
+        "fingerprint": "54589184478ea1d5c5b2cf052558105d78db557b6eb4b6b55186a7575e470573"
+      },
+      {
+        "id": "q-d3-e03",
+        "objectiveId": "d5o2",
+        "question": "Copilotの金額処理と生成テストを照合します。入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。承認済み部分を保つ修正と検証は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "中間の変換を取り除き、入出力の単位と結果を検証する"
+          }
+        ],
+        "fingerprint": "db8ad41339f847cdc3a7254646c9ca69b4b75dfeffba2ca63def80fac8553285"
+      },
+      {
+        "id": "q-d4-a01",
+        "objectiveId": "d4o1",
+        "question": "ユーザー登録を依頼したところ言語とDBが期待と異なりました。今回はTypeScript・Prismaを使い、重複メール時はエラーにする必要があります。最優先の追記は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "利用技術、入力と戻り値、重複メール時の処理を明示する"
+          }
+        ],
+        "fingerprint": "479ae5a2ca8d208e3ac6fbf08cb6206f21cd1d1cbc532c103fc16623618c5628"
+      },
+      {
+        "id": "q-d4-a02",
+        "objectiveId": "d4o1",
+        "question": "「直接console.logを使わない」とCopilotへ指示したところ、独自のログ関数を生成しました。チームは既存のappLoggerを使う方針です。次に足す情報は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "appLoggerのimportと呼出し例"
+          }
+        ],
+        "fingerprint": "c63898c3f82f55f534cb321539a2a1f7324b3f30b37f8846944d218caa016ad1"
+      },
+      {
+        "id": "q-d4-a03",
+        "objectiveId": "d4o1",
+        "question": "CopilotへJSONを依頼すると、説明文の後に{\"count\":\"3\"}が返りました。呼出し側はJSON全体をパースし、countを数値として検証します。追加する出力契約は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "説明文なしのJSONだけ、countは数値、例は{\"count\":3}"
+          }
+        ],
+        "fingerprint": "151d8402e714426a8b8e17c7e4866e365c886bedfe7a177c6b6e919bfddf8173"
+      },
+      {
+        "id": "q-d4-a04",
+        "objectiveId": "d4o2",
+        "question": "新しいChatへ移っても旧ライブラリの書き方が提案されます。移動時に旧版のhelper.tsを毎回添付していました。現行helper.tsは別パスにあります。次に変える操作は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "現行helper.tsへ添付を替え、使う版を明示する"
+          }
+        ],
+        "fingerprint": "cc6a2f836bb38838e21be6873c2c039fe2345162413ea4b59600a2d457d0f331"
+      },
+      {
+        "id": "q-d4-a05",
+        "objectiveId": "d4o1",
+        "question": "Copilotの補完はparseAmountの不正入力を0へ変換します。契約では不正入力はエラー、数値文字列の\"0\"は有効です。関数の直前に追加する説明は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "数値文字列は数値化し、不正形式は例外。\"0\"→0、\"abc\"→例外"
+          }
+        ],
+        "fingerprint": "5b3e7339c75c74499f29931fd9c7bd14704edc3bc8732038f3294cc96543a200"
+      },
+      {
+        "id": "q-d4-a06",
+        "objectiveId": "d4o2",
+        "question": "Copilotの検索結果にsrcの実装とdistの古い生成物が混ざる。調査対象はsrcで、distだけを検索対象から外したい。指定は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "検索除外へdist/**を追加"
+          }
+        ],
+        "fingerprint": "169bdef1f4051146fdee991c1abc0b35a53f121a25aabcad0f52186bffd3150a"
+      },
+      {
+        "id": "q-d4-a07",
+        "objectiveId": "d4o1",
+        "question": "正規表現案は「AB-123」を受け入れますが「xAB-123y」も受け入れます。契約は大文字2字・ハイフン・数字3字だけからなる文字列全体です。Copilotへ次に追加する例は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "AB-123は一致、xAB-123yは不一致"
+          }
+        ],
+        "fingerprint": "bbfa191de32e1d896f4df2c5786aba94c234690e4564a4971abc22705399db05"
+      },
+      {
+        "id": "q-d4-a09",
+        "objectiveId": "d4o1",
+        "question": "Copilotへ保守性レビューを頼むと命名の提案に偏ります。今回は「税率変更で修正箇所が散らばっていないか」を知りたい。焦点を合わせる依頼は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "税率変更が波及する関数と依存を挙げ、共通化の候補を示す"
+          }
+        ],
+        "fingerprint": "73c856b3e47829313061b70e0b18bd09c983103c84dfa3879ccd9cfb28750bd0"
+      },
+      {
+        "id": "q-d4-a10",
+        "objectiveId": "d4o2",
+        "question": "IDEでは成功するビルドがCIだけ失敗します。ソースは添付済みです。CIログでは別の作業ディレクトリからコマンドを実行し、モジュール解決エラーになっています。Chatへ次に渡す文脈は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "CIの作業ディレクトリ・コマンド・エラーとパス設定"
+          }
+        ],
+        "fingerprint": "98fc0361a0fdfbbb1e60567cb7076b9ddcaf4360f8e3444b7dcfbfef02e4e50c"
+      },
+      {
+        "id": "q-d4-a11",
+        "objectiveId": "d4o2",
+        "question": "Copilotへの依頼を短くする。現行仕様は上限100件、空入力[]、認証失敗で例外。背景には、廃止済みCSV出力の経緯がある。現行仕様を維持する要約は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "上限100件、空入力[]、認証失敗は例外"
+          }
+        ],
+        "fingerprint": "a6213747c6400b22369cc961ba93c9dc6a2a9b9189240f4efc8b05cb0fcfbd82"
+      },
+      {
+        "id": "q-d5-a01",
+        "objectiveId": "d5o2",
+        "question": "processPaymentは決済APIが残高不足を返すと注文をunpaidに保つ契約です。生成テストは成功応答だけをモック化しています。外部課金なしで追加するテストは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "APIに残高不足を返させ、注文がunpaidのままか確認する"
+          }
+        ],
+        "fingerprint": "35f152ce124caca1eac4812abc0502967e3654cdb936fdccc0f8a4036438615e"
+      },
+      {
+        "id": "q-d5-a02",
+        "objectiveId": "d5o1",
+        "question": "Copilotの早期return案は失敗時に監査記録を飛ばす。契約は成功・失敗の両方で1回記録。条件を満たす配置は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "全終了経路を通るfinallyで1回記録"
+          }
+        ],
+        "fingerprint": "eb7bef1ac8115a9eac30bd6461989958207a8d1b712938b3d0d9414bfd3fa84f"
+      },
+      {
+        "id": "q-d5-a03",
+        "objectiveId": "d5o1",
+        "question": "CopilotのPR要約は「互換性変更なし」。差分は公開関数の引数削除で、削除は承認済み。利用側には呼出しの修正が必要。説明へ補う内容は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "削除した引数と呼出し側の移行方法"
+          }
+        ],
+        "fingerprint": "cdf4555882b604285a9267c141df72604dc67e480f61d81a5f3304d0ee8ac061"
+      },
+      {
+        "id": "q-d5-a04",
+        "objectiveId": "d4o1",
+        "question": "CopilotのSQL案は通常の顧客を返しますが、契約上は含むべき「注文0件の顧客」が抜けます。Chatへ次に渡す最小の再現材料は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "注文0件の顧客行・現在のクエリ・含むべき結果"
+          }
+        ],
+        "fingerprint": "d7f6ef351868ae6c6b22aa8b150a07bb4f63d7f97fd30f838e6d8a8917fba07f"
+      },
+      {
+        "id": "q-d5-a05",
+        "objectiveId": "d5o1",
+        "question": "Conventional Commitsを使っています。差分は税込価格の丸めバグ修正ですが、生成文は「docs: update examples」です。採用する修正文は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "fix: 税込価格の境界値の丸め誤りを修正"
+          }
+        ],
+        "fingerprint": "5257a576adabbedc7d5771b64698426e8ab0d650cac6856ab8e2a7a8d2cb0e9a"
+      },
+      {
+        "id": "q-d5-a06",
+        "objectiveId": "d5o2",
+        "question": "生成されたtest(\"works\")は価格、権限、通知をまとめて検証します。失敗理由を特定し、それぞれ個別に再実行したい。適切な修正は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "振る舞い別に名前を付けたテストへ分け、各期待値を保つ"
+          }
+        ],
+        "fingerprint": "9865ab33d44db83f9801d44fd94ddfb75997948aa482b5ea96ace777e6215e7d"
+      },
+      {
+        "id": "q-d5-a07",
+        "objectiveId": "d5o2",
+        "question": "ライブラリv2への移行で、型検査は通りますが日付の戻り値が変わりました。ガイドには「既定タイムゾーンをUTCへ変更」とあります。Copilotへ追加する確認は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "既存の利用タイムゾーンで入出力を固定した互換性テスト"
+          }
+        ],
+        "fingerprint": "db3e9a34246beb3853757ffecb564b4efb2e22ab66b3841a6308c3c8e3315d00"
+      },
+      {
+        "id": "q-d5-a08",
+        "objectiveId": "d5o2",
+        "question": "単純CRUDはSQLiteで通るが、本番DB固有JSON演算子のテストはSQLiteで構文エラー。検索仕様を変更せず必要な確認を保つ構成は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "CRUDはSQLite、固有検索は本番と同種DBで検証"
+          }
+        ],
+        "fingerprint": "d9af351bc4b294da78373c79e7c508c6454b398017f87a0f7b381612ad833a4f"
+      },
+      {
+        "id": "q-d5-a09",
+        "objectiveId": "d5o2",
+        "question": "Copilotレビューが「nullチェックを削除できる」と提案しました。型はUserですが、既知の旧データにはnullが混ざる運用です。採否を決める確認は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "旧データのnullケースを再現し、削除後の動作を検証する"
+          }
+        ],
+        "fingerprint": "081991672b7dc43815dbb06fa520954d94bd87e3c6c39d1133fd020db7ed7ad5"
+      },
+      {
+        "id": "q-d5-a10",
+        "objectiveId": "d5o2",
+        "question": "Copilotの最適化案は100件で5ms、旧版は100件で8ms。本番は10万件が中心。出力互換を保ち、本番規模で採否を判断する比較は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "両版を同じ10万件で動かし、結果と時間を比較"
+          }
+        ],
+        "fingerprint": "2629aceeea158432015d7a68624472e2f5cfbbe87369e67a8f3e3e3300c9cc96"
+      },
+      {
+        "id": "q-d5-a11",
+        "objectiveId": "d5o1",
+        "question": "CopilotのREADMEをクリーン環境で実行するとAPP_MODE未設定で止まる。既存開発者の端末はAPP_MODE=testで成功。最初に補う導入手順は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "APP_MODE=testの設定と起動前の確認"
+          }
+        ],
+        "fingerprint": "5b987964e83b5eb13328cd84e742d0490ca4541dadbf6c1bcf9be0d439e5e65a"
+      },
+      {
+        "id": "q-d5-e04",
+        "objectiveId": "d5o1",
+        "question": "CopilotがfindUserの説明を生成しました。承認済みv2契約は未発見ならnullです。実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。現行契約と利用者の互換性を保つ修正は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "JSDocを承認済みv2契約へ合わせ、未発見の記述を照合する"
+          }
+        ],
+        "fingerprint": "82af74ee0cbafa2992dab120da2cabab443a2608e9ffcb5806e338246c0fe255"
+      },
+      {
+        "id": "q-d6-a01",
+        "objectiveId": "d6o1",
+        "question": "対応する通常補完で、repo-Aのsecrets/は除外されています。同じ構成をrepo-Bへコピーしたところ補完が出ました。設定の対象はrepo-Aだけです。最初に直す対象は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "repo-Bの識別とsecrets/のパスを含む除外設定"
+          }
+        ],
+        "fingerprint": "44b6b17acd3e2f0b1135a91c59330cb0bb0952a51b93b1c8f80d7a3f1689b8af"
+      },
+      {
+        "id": "q-d6-a03",
+        "objectiveId": "d6o1",
+        "question": "GitへのトークンのPushは保護機能で停止しました。その後、開発者は同じ値を含むログをChatへ貼ろうとしています。今回の送信を防ぐ対策は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Chatへ渡すログのトークンを送信前に置換する"
+          }
+        ],
+        "fingerprint": "2f89338f9f9d6b02b8140b87211dcff407b6c4126b4aeeddbf31b3de4e557f44"
+      },
+      {
+        "id": "q-d6-a08",
+        "objectiveId": "d6o2",
+        "question": "Copilotの補完はsrc/a.tsで出るがsrc/b.tsでは出ない。接続診断は成功、b.tsの表示はContent excluded。今の証拠が支持する原因は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "b.tsへの内容除外の適用"
+          }
+        ],
+        "fingerprint": "8ec8771ea41f013b21a5756c4ece7a2ab14c0769d7fbe79ab04308e5db298b72"
+      },
+      {
+        "id": "q-d6-a09",
+        "objectiveId": "d2o4",
+        "question": "Copilotの活動者数が増えましたが、同期間にシート割当も倍増しました。「一人当たりの利用が増えたか」を確認したい。次に比較する集計は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "同じ対象者・期間にそろえた一人当たりの利用状況"
+          }
+        ],
+        "fingerprint": "9b748dbe5868d82344b77d61bf5d192413317e6aac1cedc7286218bd339f7e01"
+      },
+      {
+        "id": "q-d6-a10",
+        "objectiveId": "d6o1",
+        "question": "repo-NはPrivate、Copilot除外一覧にはrepo-Oだけがある。通常補完でrepo-Nのsecret.keyが参照される。repo-Nの指定パスを外す最小変更は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "repo-Nとsecret.keyを除外一覧へ追加"
+          }
+        ],
+        "fingerprint": "b129faecd33abdc9d4e089737f4c4763bb831f9eaa20ebddefd1a909d429aeda"
+      },
+      {
+        "id": "q-sc01-2",
+        "objectiveId": "d6o2",
+        "question": "【AnyCompany Tech事例】通常補完でsecret.keyは除外されたまま。Repositoryのsecret.keyルールは削除済みで、Organizationの**/*.keyが同じファイルに一致する。機密解除は承認済み。次に見直す設定元は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Organizationの**/*.keyの対象範囲"
+          }
+        ],
+        "fingerprint": "7837d46bc5bbee62a18d8ca6a8ae41e565f2a69a5bf0248124e45a01559b3719"
+      },
+      {
+        "id": "q-sc02-3",
+        "objectiveId": "d4o1",
+        "question": "【Apex Financial事例】Copilotへの既存例は2.4→2、2.6→3です。候補は最近接への丸めで、同距離を小さい側・大きい側・偶数・奇数へ寄せる4方式です。承認済みの記録は1.5→2、4.5→4です。その方式を保つため追加する2.5と3.5の入出力例は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "2.5→2と3.5→4の入出力例を追加する"
+          }
+        ],
+        "fingerprint": "d785519e3ddb029bfa8d86f5b600a5d804030c86fe94122595f0133460de1c59"
+      },
+      {
+        "id": "q-sc03-1",
+        "objectiveId": "d2o3",
+        "question": "【Horizon Cloud事例】Issue検索は利用者の担当チーム内、本番メトリクスは現在値の読取のみ。Copilotへ公開するMCPの認可・操作範囲の組合せは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "利用者ごとに担当を検証し、読取操作のみ公開"
+          }
+        ],
+        "fingerprint": "55ca4ca758b17577223158db43154a01b159311ebd8743de1156ee30f9dda52d"
+      },
+      {
+        "id": "q-sc03-3",
+        "objectiveId": "d4o1",
+        "question": "【Horizon Cloud事例】ログ取得MCPの応答が入力容量を超えます。障害は14:02の注文受付で、相関IDはR17と分かっています。最初の取得要求は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "14:02前後のR17のログと、調査に必要な周辺イベント"
+          }
+        ],
+        "fingerprint": "ee4aad637a62d0caf7c219059a752b98f48283245bdf2571dd5bb3a9e69a4fd9"
+      },
+      {
+        "id": "q-sc04-3",
+        "objectiveId": "d5o2",
+        "question": "【Nordic Retail事例】AgentのPRに対し、AIの改善指摘に加えて、決めた静的セキュリティ検査と規約検査を毎回実行したい。適した構成は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Copilotレビューと、CodeQL・リンターのCIチェックを組み合わせる"
+          }
+        ],
+        "fingerprint": "1e4b1b5813b8c5bd10b1e2a9aab5067ec485d4324d842266587bc79cc5e4f69b"
+      },
+      {
+        "id": "q-sc05-1",
+        "objectiveId": "d1o2",
+        "question": "【Vanguard Health事例】Copilotが内部SDKのfetchPatientV2を呼ぶ案を返す。対象版の型はgetPatient(id)だけで、社内契約もその名前を指定。今回の修正候補は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "getPatient(id)で呼び出し、契約の期待値を検証"
+          }
+        ],
+        "fingerprint": "30b7a4b8e9495e08ef8231f401ca1b053846f14a2713f7fe9226c91acad1660d"
+      },
+      {
+        "id": "q-sc05-2",
+        "objectiveId": "d1o2",
+        "question": "【Vanguard Health事例】SDKの実APIはgetPatientだけだが、自由なモックでは生成案fetchPatientV2も成功する。採用前にこの不整合を検出する検査は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "実SDKの型と正式APIの契約テスト"
+          }
+        ],
+        "fingerprint": "9efd7f56efc590b361e808026d9ae4c187e9b81049c92208c89c00c35d99154e"
+      },
+      {
+        "id": "q-sc05-3",
+        "objectiveId": "d6o1",
+        "question": "【Vanguard Health事例】患者情報はChat送信前に匿名化し、原本の閲覧は担当者へ限定したい。認証トークンはコミット済みの検出と新規Pushの停止が必要。両経路を扱う構成は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "入力前の匿名化・担当者の閲覧制限・Secret ScanningとPush Protection"
+          }
+        ],
+        "fingerprint": "d8c1d42084f7f41824e268eddfe1da9ad18d1c19253a288b0720b5d0e28a5612"
+      },
+      {
+        "id": "q-sc06-3",
+        "objectiveId": "d2o3",
+        "question": "【Global Logistics事例】GitHub.comの個人指示は全関数JSDoc、repo-Rは公開APIだけ、repo-Sは全関数を要求する。各repoの方針を保ち、競合を避ける整理は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "個人のJSDoc規約を外し、RとSの各repoに規約を置く"
+          }
+        ],
+        "fingerprint": "4fb26cf90798421d527836a8af22118f5bc6c20941f5cb9e93490f1073a6fb71"
+      },
+      {
+        "id": "q-sc07-1",
+        "objectiveId": "d2o3",
+        "question": "【CyberShield Systems事例】承認済みの脆弱性DBをCopilot Chatから最新状態で検索します。利用者は担当製品の情報だけ閲覧でき、記録の変更は禁止です。最適な連携設計は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "担当製品の閲覧権限を検証する読取専用MCP検索ツールを公開する"
+          }
+        ],
+        "fingerprint": "9845cc95dd78d61475bcd6ed93b56d8d084b60515969945102b7e9cffaeb9350"
+      },
+      {
+        "id": "q-d1-a11",
+        "objectiveId": "d6o2",
+        "question": "Copilotの断片Pの参照通知はcommit 7aを示す。参照先の現在のHEADはMIT表示だが、7aではGPL表示だった。今回の一致断片の審査で優先して照合する版は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "通知が示す7aのコードとライセンス条件"
+          }
+        ],
+        "fingerprint": "76df199a1759766df7acf20ef5d89bf6322a3ed8db1146e2da378749c635b136"
+      },
+      {
+        "id": "q-d1-a12",
+        "objectiveId": "d1o1",
+        "question": "Copilotの採点案は同じ業務上の属性でも地域Rだけ点数が低い。仕様では地域を使わない。修正後、その偏りが残っていないか確かめるテストは？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "業務属性を固定し、地域だけ変えた入力の点数を比較"
+          }
+        ],
+        "fingerprint": "53e670117c5c0326d796d8451556573ef11829e9abea194da9deb55bdbea0d46"
+      },
+      {
+        "id": "q-d1-a13",
+        "objectiveId": "d1o2",
+        "question": "Copilot案で権限不足時の拒否が消えたPRが、成功系テストとレビュー通知だけでマージされた。拒否仕様は承認済み。再発をマージ前に止める追加条件は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "拒否の回帰テスト成功と担当者承認を必須にする"
+          }
+        ],
+        "fingerprint": "75f0ef2ad676d23fd23b4e8258c556307879ff273947f2eefef2146ad370fcf4"
+      },
+      {
+        "id": "q-d1-a14",
+        "objectiveId": "d1o2",
+        "question": "Copilotが通信設定Xを提案した。検証テストはXとYの両方で成功し、承認済み技術基準はYを指定している。今回は基準を変更しない。採用案は？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "Yへ直し、再テストして基準との照合を記録"
+          }
+        ],
+        "fingerprint": "0cb449f0d5c5c8a74481c30197c2bfb374a4d6e72f6af2ae3b325db9468fb28d"
+      },
+      {
+        "id": "q-d2-a23",
+        "objectiveId": "d2o3",
+        "question": "CopilotのMCP接続ログはhttp://127.0.0.1:8765/mcpへのconnection refused。HTTPサーバーの起動ログは8770で待受中、8765のプロセスはない。最初の修正候補は？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "MCP接続URLのポートを8770へ合わせる"
+          }
+        ],
+        "fingerprint": "76e80279686ecff33ff99e378e82aa47828631efc664aa6f32273fcb87556ee9"
+      },
+      {
+        "id": "q-d2-a24",
+        "objectiveId": "d2o3",
+        "question": "Copilotへ共通規約とリリースノート手順を渡したら、日常の修正回答にもノートが生成される。規約は常時、ノート手順は必要時だけ使いたい。移す内容と配置は？",
+        "correctChoices": [
+          {
+            "id": "D",
+            "text": "ノート手順だけをPrompt Fileへ移す"
+          }
+        ],
+        "fingerprint": "066610ff1749c66293cab6e6776a3af04d5ab24d65bda4971de7097eea455178"
+      },
+      {
+        "id": "q-d2-a25",
+        "objectiveId": "d2o2",
+        "question": "Copilot CLIの削除案をdry-runすると、消してよいrun-cacheに加え保存対象run-fixturesも一覧に出た。まだ実行していない。許可範囲の検証を完了する次の操作は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "対象をrun-cacheへ絞り、dry-runで一覧を再確認"
+          }
+        ],
+        "fingerprint": "930295b0a7d74b18fb56bfb5497118c86bca1d1d12297e77bc544f52245dc676"
+      },
+      {
+        "id": "q-d2-a26",
+        "objectiveId": "d1o2",
+        "question": "Agentへの依頼はsrc/parser.tsの修正だけ。差分ではparser.tsの修正に加えpackage.jsonの依存更新もあり、更新理由は未確認。依頼範囲を保つ次の指示は？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "依存更新を分け、parser修正を既存依存で検証する"
+          }
+        ],
+        "fingerprint": "3e16fa1c8c0589f103c67b56e728e040308aac1d75b1e6e0ec88996b3fcebdc8"
+      },
+      {
+        "id": "q-d3-a12",
+        "objectiveId": "d3o2",
+        "question": "補完クライアントの待機仕様は「最後の入力から100ms後に送信」。入力は0msと40ms、80ms時点では未送信。Copilot関連の診断で、この仕様なら次の送信予定時刻は？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "140ms"
+          }
+        ],
+        "fingerprint": "6f42479042b2e8a180e1e2c49f611a5f43917e31ec35dc74d883b433e8bcfa29"
+      },
+      {
+        "id": "q-d3-a13",
+        "objectiveId": "d2o4",
+        "question": "Copilot利用集計を取るGitHub REST APIが429とRetry-After: 8を返した。今回の応答では8秒の待機が指示され、同じ処理の再試行はまだ1回目。採用する再試行案は？",
+        "correctChoices": [
+          {
+            "id": "D",
+            "text": "8秒以上待って再試行し、同時実行数を抑える"
+          }
+        ],
+        "fingerprint": "d239ab6fb785dec510501f66facdf70fb3be5a981975aa05b67a7aedb6c2984f"
+      },
+      {
+        "id": "q-d3-a14",
+        "objectiveId": "d4o1",
+        "question": "Copilotへ渡す文脈の予算は4096トークン。現在は無関係な資料3000と対象コード1000がある。調査に必須の型定義500を足すため、必要な情報を保つ整理は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "無関係な資料を減らし、対象1000と型500を残す"
+          }
+        ],
+        "fingerprint": "1edc0574577326624982c05f1acaaa029eeb6c64f2cd37fafbc81cbfc0c19857"
+      },
+      {
+        "id": "q-d3-a15",
+        "objectiveId": "d5o2",
+        "question": "同じ保存済みプロンプトとモデルで、CopilotのformatTotal(8)案を20回実行しました。全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。この入力に対する採用判断と追加検証は？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "数値は達成・書式は未達と判断し、書式の修正と桁数テストを追加する"
+          }
+        ],
+        "fingerprint": "29a731cfe6c1dcc21bb41c16fc5935569388469b892020e0d71e5b87d66ecbaa"
+      },
+      {
+        "id": "q-d4-a12",
+        "objectiveId": "d4o1",
+        "question": "Copilotへ電話番号の正規化を依頼し、市外局番4桁の例だけが誤る。契約は入力に含めた承認済み対応表の区切りを使うこと。今回の失敗を直すFew-shot例は？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "4桁市外局番の入力と、対応表による期待出力"
+          }
+        ],
+        "fingerprint": "78888b1ea812e3202f3add0071a193123ab31339ba4348919b604358501aef84"
+      },
+      {
+        "id": "q-d4-a13",
+        "objectiveId": "d4o1",
+        "question": "Copilotの非同期関数案はcallbackへ値を渡す。利用側はawaitで戻り値を受け、Node-style callbackの採用は今回禁止。修正依頼の最小例は？",
+        "correctChoices": [
+          {
+            "id": "D",
+            "text": "Promiseを返し、awaitした値を使う入出力例"
+          }
+        ],
+        "fingerprint": "218433df69437de40703c9f7a36f03a91f0b2d700a2351a720cd6bfc915b3f4a"
+      },
+      {
+        "id": "q-d4-a14",
+        "objectiveId": "d5o2",
+        "question": "Copilotに決済処理を分割実装させた。DB更新関数、API呼出関数、通知関数の単体テストは成功。契約は「決済失敗時はpaidへ更新せず通知しない」。次に必要な結合テストは？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "API失敗を再現し、DB状態と通知呼出しを確認"
+          }
+        ],
+        "fingerprint": "34ece5f47560f7d0bd45574c3020b224e96f633b7331092e4a0011db86925b67"
+      },
+      {
+        "id": "q-d4-a15",
+        "objectiveId": "d4o1",
+        "question": "Copilotの回答は別製品の類似関数を根拠にしている。修正対象はorders/refund.tsとそのMoney型に確定。今回の依頼文脈として最も直接的なのは？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "refund.tsとMoneyの定義を添付して質問する"
+          }
+        ],
+        "fingerprint": "afce05470269c034c6ab50de2f40891598f0ab90b876135778f14bf3b9fe12b4"
+      },
+      {
+        "id": "q-d5-a12",
+        "objectiveId": "d5o2",
+        "question": "CopilotとTDDで割引処理を作る。承認済み仕様は価格100以上で20%引き、100未満は割引なし。初回テストは100→80で失敗した。90と100の契約を保つGreen段階の実装条件は？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "価格>=100で0.8倍、それ以外は元の価格"
+          }
+        ],
+        "fingerprint": "36214e95ca607d9a7f84651ba8572cb99fbe43c9b6273cbb867f2af6c0c1eb12"
+      },
+      {
+        "id": "q-d5-a13",
+        "objectiveId": "d5o2",
+        "question": "税計算をCopilotで近代化する。税額は価格の10%を四捨五入して整数にし、価格へ足す承認済み仕様。変更前に価格101の回帰テストへ固定する期待値は？",
+        "correctChoices": [
+          {
+            "id": "D",
+            "text": "101 → 111"
+          }
+        ],
+        "fingerprint": "b8f1bd34eb5279348c810de05f5774095965cb9e95451bd917f6762b69af3656"
+      },
+      {
+        "id": "q-d5-a14",
+        "objectiveId": "d5o2",
+        "question": "Copilotの決済処理案はすべての失敗をnullへ変える。APIはPaymentDeclined（課金なし確定）とTimeout（結果不明）を返す。二重課金を避ける修正は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Declinedは拒否を返し、Timeoutは状態照会する"
+          }
+        ],
+        "fingerprint": "9c2c05f1ee5f737994a67f7225357bdacca27b2e0c58d21e402cc0ba7a974742"
+      },
+      {
+        "id": "q-d5-a15",
+        "objectiveId": "d5o2",
+        "question": "Copilotの登録APIは型キャストだけでageをDBへ渡す。契約は整数18以上で、17や文字列はDBへ渡さず拒否。境界検証と追加テストの組合せは？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "整数・18以上を検査し、17と文字列のDB未呼出しを検証"
+          }
+        ],
+        "fingerprint": "3564890bbc3a885d6e42b481b319d47cf47beab6c638c5c97a87470e75b6ce2d"
+      },
+      {
+        "id": "q-d6-a11",
+        "objectiveId": "d6o1",
+        "question": "対応するContent Exclusionでsecrets配下の全階層の.keyだけを除外し、secrets/readme.mdは文脈に残したい。例示するパターンは？",
+        "correctChoices": [
+          {
+            "id": "C",
+            "text": "secrets/**/*.key"
+          }
+        ],
+        "fingerprint": "faf7ce6d130816e60ad19cc6e16822eff87b288cbcb046601ec0b5f31e8a5e4e"
+      },
+      {
+        "id": "q-d6-a12",
+        "objectiveId": "d6o2",
+        "question": "除外設定を変更後、同じ通常補完モードで再読込した利用者AにはContent excludedと出る。利用者Bは旧セッションのまま。両者の適用先とパスは一致する。次の切り分けは？",
+        "correctChoices": [
+          {
+            "id": "D",
+            "text": "Bも再読込し、除外表示と候補を確認"
+          }
+        ],
+        "fingerprint": "16d4385c0b4706f74640162415f21231356f92932a6eaf5594922cc1458b99b2"
+      },
+      {
+        "id": "q-d6-a13",
+        "objectiveId": "d6o1",
+        "question": "Copilotの補償審査で、今回使う機能とテナントに適用される契約・Required Mitigationsの確認が必要。資料Pは旧契約時のBlock画面、Qは現行だが別機能、Rは現行の対象機能・同じテナント、Sは別テナントの現行資料。照合の基準にする資料は？",
+        "correctChoices": [
+          {
+            "id": "A",
+            "text": "Rの適用契約と対象機能の軽減策"
+          }
+        ],
+        "fingerprint": "19579e21c270a988d7c72d19e31b18a08541f18427fcea88bdc352603f80bc1d"
+      },
+      {
+        "id": "q-d6-a14",
+        "objectiveId": "d6o1",
+        "question": "repo-Rの除外一覧はOrganization由来のconfig/**と、Repository由来のtmp/**。configだけを文脈へ戻す変更は組織で承認済み。どの設定を管理者へ変更依頼する？",
+        "correctChoices": [
+          {
+            "id": "B",
+            "text": "Organization由来のconfig/**"
+          }
+        ],
+        "fingerprint": "ff07e974d565db791a12e51a048bc529789bac65cf1df25df2d0d94079dead01"
+      }
+    ]
+  },
+  "projected": {
+    "additions": 18,
+    "total": 334,
+    "foundation": 163,
+    "applied": 114,
+    "exam": 57,
+    "domains": [
+      {
+        "id": "d1",
+        "title": "責任あるAIの利用",
+        "before": 40,
+        "plannedAdditions": 8,
+        "after": 48
+      },
+      {
+        "id": "d2",
+        "title": "Copilotの機能を使いこなす",
+        "before": 98,
+        "plannedAdditions": 4,
+        "after": 102
+      },
+      {
+        "id": "d3",
+        "title": "データとアーキテクチャ",
+        "before": 33,
+        "plannedAdditions": 4,
+        "after": 37
+      },
+      {
+        "id": "d4",
+        "title": "プロンプトとコンテキスト",
+        "before": 54,
+        "plannedAdditions": 0,
+        "after": 54
+      },
+      {
+        "id": "d5",
+        "title": "開発生産性を高める",
+        "before": 58,
+        "plannedAdditions": 0,
+        "after": 58
+      },
+      {
+        "id": "d6",
+        "title": "プライバシーと保護",
+        "before": 33,
+        "plannedAdditions": 2,
+        "after": 35
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "planId": "P-D1-01",
+      "objectiveId": "d1o1",
+      "title": "評価データの代表性を補う",
+      "scenario": "英語中心の名前・文字列でだけ採用評価を済ませた生成処理を、多言語の利用者へ展開する。未評価の利用者群を提示する。",
+      "decision": "展開対象を代表する未評価の入力群を選び、既存の評価へ追加する。",
+      "reasoning": [
+        "現在の評価が代表していない利用者群を特定する。",
+        "その群の評価材料を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a12"
+      ],
+      "adjacent": [
+        "q-d1-f04",
+        "q-d1-e09"
+      ],
+      "distinction": "既存は属性だけを変えた同一条件の反実仮想比較と代理変数の除去。新規は採用前の評価集合の代表性・対象範囲の不足を判断する。",
+      "sourceIds": [
+        "ml-fairness",
+        "chat"
+      ],
+      "guard": "地域名や属性を置き換えてq-d1-a12の比較テストを再作成しない。正答を「地域だけ変える」にしない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-02",
+      "objectiveId": "d1o1",
+      "title": "全体の改善に隠れた集団別の不利益",
+      "scenario": "全体の誤り率は低下したが、少数の利用者群では増えている。社内の集団別基準と二群の集計を与える。",
+      "decision": "全体平均だけで採用せず、未達の利用者群に対する確認・軽減を選ぶ。",
+      "reasoning": [
+        "与えられた基準を各群へ適用する。",
+        "未達の群へ確認範囲を絞る。"
+      ],
+      "closestApplied": [
+        "q-d1-a12",
+        "q-d6-a09"
+      ],
+      "adjacent": [
+        "q-d1-e09",
+        "q-sc09-1"
+      ],
+      "distinction": "q-d1-a12は入力属性による差の再現、q-d6-a09は人数をそろえた利用状況。新規はすでに測定した群別の結果から、全体平均が隠す不利益を扱う。",
+      "sourceIds": [
+        "ml-fairness",
+        "chat"
+      ],
+      "guard": "人数・閾値は架空の社内条件。法的な公平性基準や公式数値として断定しない。複数実験を選ぶ本番相当へ膨らませない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-03",
+      "objectiveId": "d1o1",
+      "title": "生成コメントのステレオタイプを除く",
+      "scenario": "役割を説明する生成コメントに、業務上不要な性別・出身による決め付けが入った。コードの振る舞いと役割分担は承認済み。",
+      "decision": "役割と責務の説明を保ち、根拠のない属性表現を除く修正文を選ぶ。",
+      "reasoning": [
+        "業務に必要な役割情報と不要な属性の決め付けを分ける。",
+        "承認済みの役割を保つ説明を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a12",
+        "q-d5-a03"
+      ],
+      "adjacent": [
+        "q-d1-f04"
+      ],
+      "distinction": "既存の公平性問題は数値判定の偏り、文書修正は互換性の記載不足。新規は自然言語出力の根拠のない属性付けを扱う。",
+      "sourceIds": [
+        "ml-fairness",
+        "chat"
+      ],
+      "guard": "正答だけを礼儀正しい長文にせず、四択すべてを同じ役割説明の候補にする。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-04",
+      "objectiveId": "d1o2",
+      "title": "技術レビューと業務仕様の承認を分ける",
+      "scenario": "生成案の技術検査は済んでいるが、割引対象などの業務ルールの解釈が未確定。仕様決定者・実装担当者・運用担当者の責務を与える。",
+      "decision": "未確定の業務仕様を決める責務のある人へ照合し、採用判断の根拠を確定する。",
+      "reasoning": [
+        "技術検査では未確定な業務判断を特定する。",
+        "与えられた責務に従って照合先を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a07",
+        "q-d1-a14"
+      ],
+      "adjacent": [
+        "q-d1-f01",
+        "q-d1-e02"
+      ],
+      "distinction": "既存はマージの承認ゲートや確定済み技術基準への適合。新規は仕様が未確定なときの責任分担・照合先を選ぶ。",
+      "sourceIds": [
+        "chat",
+        "guide"
+      ],
+      "guard": "最終責任者の用語当てにしない。必要な判断と各担当の実際の責務を対応付ける。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-05",
+      "objectiveId": "d1o2",
+      "title": "影響範囲に応じて人の監督を選ぶ",
+      "scenario": "架空の運用基準に、読取調査・文書変更・可逆な設定変更・本番の不可逆な処理の区分がある。提案された操作の実際の影響を与える。",
+      "decision": "操作を基準の区分へ適用し、必要な人の確認・承認の段階を選ぶ。",
+      "reasoning": [
+        "提案の実際の影響と可逆性を確認する。",
+        "運用基準に合う監督段階を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a07",
+        "q-d2-a04",
+        "q-d2-a26"
+      ],
+      "adjacent": [
+        "q-d2-e06",
+        "q-d2-e22"
+      ],
+      "distinction": "既存は明示済みの承認が欠ける、または変更対象が範囲外という問題。新規は与えられたリスク分類から監督の段階自体を判断する。CLIのallow/deny優先順位は問わない。",
+      "sourceIds": [
+        "chat",
+        "guide"
+      ],
+      "guard": "「常に全員へ承認」が万能正答にならないよう、四択をすべて異なる区分で適切な監督手順にする。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-06",
+      "objectiveId": "d1o1",
+      "title": "報告で観測事実と推測を分ける",
+      "scenario": "AIの障害説明が、同時刻に発生した二つの事象だけから原因を断定している。調査で確認できた事実と未確認事項を提示する。",
+      "decision": "確認した事実を残し、原因は未確定と分かる説明へ改める。",
+      "reasoning": [
+        "記録が示す事実と因果の推測を区別する。",
+        "証拠の強さに合う報告文を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a14"
+      ],
+      "adjacent": [
+        "q-d1-g03",
+        "q-d1-e08",
+        "q-d6-e02"
+      ],
+      "distinction": "既存の本番相当は研修効果の比較実験や監査候補の時刻・対象照合。新規は追加実験やログ候補の選択でなく、説明の確実性と透明性を扱う。",
+      "sourceIds": [
+        "chat",
+        "guide"
+      ],
+      "guard": "既存の時刻や指標を変えただけの因果判定にしない。正答だけに「確認が必要」という安全語を付けない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-07",
+      "objectiveId": "d1o1",
+      "title": "操作方法の制限が生む不利益を軽減する",
+      "scenario": "生成UIの並べ替えがドラッグ操作だけになった。対象利用者にはドラッグできない人がおり、同等の並べ替え機能を残す要件がある。",
+      "decision": "同等の操作結果を得られる代替入力経路を選ぶ。",
+      "reasoning": [
+        "操作方法の制限による利用者の不利益を特定する。",
+        "同じ機能を維持する軽減策を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a12"
+      ],
+      "adjacent": [
+        "q-d1-e05"
+      ],
+      "distinction": "既存のアクセシビリティ問題はフォーカス復帰と読み上げ通知の二障害を診断する。新規は入力方法の選択が排除する利用者と同等機能の確保を扱う。",
+      "sourceIds": [
+        "chat",
+        "guide"
+      ],
+      "guard": "既存のEscape・フォーカス・aria状態の修正を短くした問題にしない。法律の適合保証は扱わない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D1-08",
+      "objectiveId": "d1o2",
+      "title": "改善に使った例と採用評価の例を分ける",
+      "scenario": "失敗した例をプロンプト修正に繰り返し使い、その同じ例だけで採用評価をしている。利用場面を保った複数の評価集合を提示する。",
+      "decision": "調整に使っていない代表的な入力群で、採用に必要な振る舞いを確認する。",
+      "reasoning": [
+        "調整に使った例への成功と一般化の評価を分ける。",
+        "未使用で代表的な評価集合を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-a08",
+        "q-sc05-2"
+      ],
+      "adjacent": [
+        "q-sc02-2",
+        "q-d4-e07"
+      ],
+      "distinction": "既存はassertionの検出力・モック境界・実装と期待値の共通誤解。新規は評価入力の調整への再利用による偏りを扱い、期待値計算やモデル比較は行わない。",
+      "sourceIds": [
+        "chat",
+        "ml-fairness"
+      ],
+      "guard": "P-D1-01の代表性と同じ問題にしない。本問の決め手は「調整へ使用済みか」であり、利用者群の欠落ではない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D3-01",
+      "objectiveId": "d3o1",
+      "title": "利用計測と生成入力の再現材料を区別する",
+      "scenario": "誤った補完を調査する。提供された計測は受容回数と時間だけで、入力や候補本文を含まない。社内で共有可能な再現材料の範囲は承認済み。",
+      "decision": "集計値だけでは生成内容を再現できないと判断し、許可された入力・候補・再現条件の記録を選ぶ。",
+      "reasoning": [
+        "現在の記録に含まれる情報の粒度を確認する。",
+        "生成内容を再現するために不足する記録を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d6-a09"
+      ],
+      "adjacent": [
+        "q-d3-g04",
+        "q-d3-f03"
+      ],
+      "distinction": "既存は一人当たりの利用集計、基礎は通信の役割名。新規は計測イベントと生成入力の記録を、実際の調査目的へ使い分ける。",
+      "sourceIds": [
+        "architecture",
+        "chat",
+        "copilot-allowlist"
+      ],
+      "guard": "GitHubが全コードを収集する、固定項目を必ずログ保存するという未確認仕様は断定しない。提示した記録だけを根拠にする。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D3-02",
+      "objectiveId": "d3o1",
+      "title": "候補生成後に提示されない段階を切り分ける",
+      "scenario": "入力送信と候補応答の受信は成功したが、提示直前のフィルターが候補を抑止したと分かる架空の処理記録を与える。",
+      "decision": "ネットワークや推論の不成立ではなく、後処理・提示段階の問題として扱う。",
+      "reasoning": [
+        "候補が取得済みという事実から成功した段階を特定する。",
+        "未提示になる処理段階を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d3-a05",
+        "q-d6-a08"
+      ],
+      "adjacent": [
+        "q-d3-g06"
+      ],
+      "distinction": "既存はプロキシの遮断か証明書か、入力ファイルの内容除外かを判定する。新規は候補が生成・取得された後の経路を扱う。公開一致設定の変更は正答にしない。",
+      "sourceIds": [
+        "chat",
+        "responsible"
+      ],
+      "guard": "Copilot内部の固定パイプライン順や未公開ログ名を暗記させない。必要な処理順と記録は問題で与える。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D3-03",
+      "objectiveId": "d3o2",
+      "title": "編集後に届いた古い補完候補の扱い",
+      "scenario": "要求時の文書版と候補の対象版を扱う架空のクライアント規則を与える。編集後に、古い版の要求への応答が遅れて返る。",
+      "decision": "現在の文書に適合しない候補の採用を避け、現行版に対する候補を待つ／要求する。",
+      "reasoning": [
+        "候補の対象版と現在の版を照合する。",
+        "採用可能な候補の状態を判断する。"
+      ],
+      "closestApplied": [
+        "q-d3-a12",
+        "q-d3-a11",
+        "q-d3-a01"
+      ],
+      "adjacent": [
+        "q-d3-g08"
+      ],
+      "distinction": "既存は送信待機時刻、最初の表示時間、タブの内容変更。新規は送信済み要求の応答が現在の編集状態に有効かを判断する。",
+      "sourceIds": [
+        "inline-usage",
+        "responsible"
+      ],
+      "guard": "文書版IDや応答無効化をCopilotの公開済み内部実装と主張しない。ケース内で与える規則へ適用する。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D3-04",
+      "objectiveId": "d3o2",
+      "title": "入力と応答用のトークン予算を区別する",
+      "scenario": "問題で定義した上限と入力・応答予約の算定規則を使う。必要な入力は上限内でも、応答予約を含む合計が上限を超える例を与える。",
+      "decision": "必要な入力を維持したまま、与えられた予約条件を満たす予算案を選ぶ。",
+      "reasoning": [
+        "入力だけの量と問題で定義した合計の量を区別する。",
+        "条件を満たす予算案を計算する。"
+      ],
+      "closestApplied": [
+        "q-d3-a14"
+      ],
+      "adjacent": [
+        "q-d3-g09",
+        "q-d3-e01"
+      ],
+      "distinction": "既存は無関係な資料を削る入力の整理、本番相当は出力途中終了と入力欠落の二観測。新規は生成前の入力・応答予約の会計で、資料選択や二障害診断を問わない。",
+      "sourceIds": [
+        "architecture",
+        "guide"
+      ],
+      "guard": "実装時に公式の上限の説明と整合するか再確認。未公開のCopilot設定画面や固定予算・全モデル共通の算定方式を作らない。単なる入力削減問題になる場合は取り下げる。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D6-01",
+      "objectiveId": "d6o1",
+      "title": "除外設定の利用条件を確認する",
+      "scenario": "対応する通常補完の設定を導入したい。管理者権限と対象パスは確認済みだが、適用する契約・組織の利用条件が満たされていないケースを与える。",
+      "decision": "パスを繰り返し変更するのではなく、当該機能を利用できる契約・組織条件を照合する。",
+      "reasoning": [
+        "確認済みの設定範囲と未確認の利用条件を分ける。",
+        "公式の利用条件に照合する対象を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d6-a01",
+        "q-d6-a10",
+        "q-d6-a12"
+      ],
+      "adjacent": [
+        "q-d6-f02",
+        "q11"
+      ],
+      "distinction": "既存は対象repo・パス・セッション反映の不足。新規は利用できる条件の不足であり、除外非対応のAgent／CLIという未解決仕様へ依存しない。",
+      "sourceIds": [
+        "exclusion-concept",
+        "plans"
+      ],
+      "guard": "現行の契約・対象機能の公式記載を執筆時に再確認。既存q11の不確実性を引き継ぐ利用モードは避ける。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D6-02",
+      "objectiveId": "d6o1",
+      "title": "保持条件を確認する主体を分ける",
+      "scenario": "モデル提供者の保持契約と、自社で保存する会話・監査記録の管理方針を区別する。提供者側の確認済み根拠だけから社内側の削除を結論付けようとしている。",
+      "decision": "確認済み根拠の対象範囲を保ち、未確認の自社記録の保持条件を別に確認する。",
+      "reasoning": [
+        "保持の根拠が適用される主体を確認する。",
+        "根拠が及ばない記録の確認先を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d1-e04",
+        "q-sc05-3"
+      ],
+      "adjacent": [
+        "q-d6-a07",
+        "q-d6-e04",
+        "q-sc10-3"
+      ],
+      "distinction": "既存の応用は入力前の仮名化・匿名化、本番相当は学習／保持／入力許可の三条件やMCP変更の追加審査。新規は提供者契約と自社記録の二主体の適用範囲だけを扱う。",
+      "sourceIds": [
+        "model-hosting",
+        "privacy"
+      ],
+      "guard": "自社記録の存在はケースで明示。GitHub・IDE・全提供者に一律のゼロ保持や保存期間を断定しない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D2-01",
+      "objectiveId": "d2o1",
+      "title": "IDEのサインイン先と利用資格を照合する",
+      "scenario": "Copilotの拡張とネットワークは正常で、利用資格のある会社アカウントとIDEのサインイン先が異なる。現在の画面・アカウント情報を示す。",
+      "decision": "利用資格のあるアカウントでIDEの認証を整える。",
+      "reasoning": [
+        "利用資格とサインイン先を対応付ける。",
+        "不足するIDEの有効化条件を直す。"
+      ],
+      "closestApplied": [
+        "q-d3-a05"
+      ],
+      "adjacent": [
+        "q-d2-g04",
+        "q-sc03-2",
+        "q-d3-f04",
+        "q-d6-a05"
+      ],
+      "distinction": "既存は通信診断や管理者によるseat回収、MCPの本人資格情報。新規はCopilot本体のIDEサインインと既存利用資格の対応を扱う。",
+      "sourceIds": [
+        "inline-usage",
+        "feature-matrix"
+      ],
+      "guard": "基礎の設定メニュー名称問題を繰り返さず、どの有効化条件が不足するかを具体的な状態で選ばせる。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D2-02",
+      "objectiveId": "d2o1",
+      "title": "Chatとインライン補完の有効化を分ける",
+      "scenario": "IDEのChatは使え、除外表示もない。特定言語だけ補完が無効になっており、他言語は補完できる。",
+      "decision": "対象言語のインライン補完設定を確認・有効化する。",
+      "reasoning": [
+        "全体の利用資格・接続と機能別の状態を分ける。",
+        "該当する言語・補完の設定を選ぶ。"
+      ],
+      "closestApplied": [
+        "q-d6-a08",
+        "q-d3-a09"
+      ],
+      "adjacent": [
+        "q-d2-g04"
+      ],
+      "distinction": "既存はContent excludedやサービス接続先の遮断。新規は正常なChatと他言語の補完を根拠に、言語別の有効化範囲を扱う。",
+      "sourceIds": [
+        "inline-usage"
+      ],
+      "guard": "IDE・標準設定・対象言語を明示し、ショートカット暗記や一般的な再読込を正答にしない。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D2-03",
+      "objectiveId": "d2o2",
+      "title": "CLI導入の失敗段階を判定する",
+      "scenario": "現行CLIをnpmで導入する際、PATHは認識されているがランタイム前提条件で停止した記録を与える。認証やツール実行はまだ始まっていない。",
+      "decision": "導入方式の前提条件を満たす対応を選ぶ。",
+      "reasoning": [
+        "インストール・起動・認証・実行許可のどの段階かを判断する。",
+        "公式の導入条件へ照合する。"
+      ],
+      "closestApplied": [
+        "q-d2-a25"
+      ],
+      "adjacent": [
+        "q-d2-g05",
+        "q-d2-g07",
+        "q-d2-g08"
+      ],
+      "distinction": "既存は削除案のdry-run検証、基礎は旧拡張や許可設定の識別。新規は現行CLIの導入前提で停止する原因と次の操作を扱う。",
+      "sourceIds": [
+        "cli-install",
+        "cli"
+      ],
+      "guard": "旧gh-copilotは正答にしない。OS・導入方式・ランタイムのバージョン条件は執筆時の公式資料へ再照合する。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    },
+    {
+      "planId": "P-D2-04",
+      "objectiveId": "d2o2",
+      "title": "目的のCLIセッションを再開する",
+      "scenario": "別の作業セッションが複数あり、続きを行う案件・作業ディレクトリ・保存済みの会話が指定されている。セッション一覧の記録を提示する。",
+      "decision": "対象のセッションを選んで再開し、別案件や新規会話へ意図せず切り替えない。",
+      "reasoning": [
+        "案件とディレクトリ・会話を対応付ける。",
+        "目的に合う保存済みセッションを再開する。"
+      ],
+      "closestApplied": [
+        "q-d2-a25",
+        "q-d3-a06"
+      ],
+      "adjacent": [
+        "q-d2-g12",
+        "q-d4-e02"
+      ],
+      "distinction": "既存はCLIの操作許可やChatの要約移動、新規Chatの開始。新規はCLIの複数セッション一覧から目的の作業を再開する。",
+      "sourceIds": [
+        "cli-sessions"
+      ],
+      "guard": "/resumeと/continueの両方が同じ選択UIを開ける場合、片方を誤答にしない。操作名だけでなく選ぶセッションの内容を四択の判定対象にする。",
+      "difficulty": "intermediate",
+      "cognitiveLevel": "apply",
+      "sourceStatus": "RECHECK_BEFORE_AUTHORING",
+      "duplicateStatus": "DISTINCT_AT_PLAN_STAGE",
+      "status": "PROPOSED"
+    }
+  ],
+  "notSelected": [
+    {
+      "theme": "SQL・パスワード保存・月末・権限境界の採用前検証",
+      "reason": "D1の既存応用に十分な具体例があり、業種名・入力値の変更では重複となる。"
+    },
+    {
+      "theme": "証明書・HTTPS接続先・プロキシ認証",
+      "reason": "D3の応用3問と本番相当で実施済み。"
+    },
+    {
+      "theme": "除外glob・設定元・再読込",
+      "reason": "D6の既存応用で複数演習済み。"
+    },
+    {
+      "theme": "公開コードの通知commitとHEADのライセンスの違い",
+      "reason": "q-d1-a11とq-d6-e03で実施済み。"
+    },
+    {
+      "theme": "同じプロンプトで出力が変わるがテストは通る",
+      "reason": "q-d3-a15の20回実行と書式検証の構造へ近付きやすい。"
+    },
+    {
+      "theme": "入力予算に合わせ無関係な資料を減らす",
+      "reason": "q-d3-a14、q-d3-a08と同じ判断になる。"
+    },
+    {
+      "theme": "本番相当を短くして応用へコピーする",
+      "reason": "ユーザー方針と重複回避に反する。既存57問は維持。"
+    }
+  ],
+  "executionBatches": [
+    {
+      "order": 1,
+      "ids": [
+        "P-D2-01",
+        "P-D2-02",
+        "P-D2-03",
+        "P-D2-04"
+      ],
+      "purpose": "IDEの応用0問、CLIの応用1問という空白を埋める。"
+    },
+    {
+      "order": 2,
+      "ids": [
+        "P-D1-01",
+        "P-D1-02",
+        "P-D1-03",
+        "P-D1-04",
+        "P-D1-05",
+        "P-D1-06",
+        "P-D1-07",
+        "P-D1-08"
+      ],
+      "purpose": "D1のコード検証偏重を改善し、倫理・監督・説明の判断を追加。"
+    },
+    {
+      "order": 3,
+      "ids": [
+        "P-D3-01",
+        "P-D3-02",
+        "P-D3-03",
+        "P-D3-04",
+        "P-D6-01",
+        "P-D6-02"
+      ],
+      "purpose": "データ処理・候補の状態・プライバシー条件を補強。"
+    }
+  ],
+  "verification": {
+    "candidateIdsUnique": true,
+    "allNearestIdsValid": true,
+    "allNearestApplied": true,
+    "allSourceIdsValid": true,
+    "bankUnchanged": true
+  },
+  "supersededBy": "reports/d1-d3-final-additions-review.json",
+  "currentActiveBaseline": {
+    "total": 304,
+    "applied": 84,
+    "exam": 57,
+    "foundation": 163
+  },
+  "finalExpansionCap": {
+    "maximum": 12,
+    "domains": {
+      "d1": 8,
+      "d3": 4
+    },
+    "furtherExpansion": false
+  }
+}

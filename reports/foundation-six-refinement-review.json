@@ -1,0 +1,1763 @@
+{
+  "reviewedAt": "2026-10-13",
+  "method": "対象6問の本文・全選択肢・解説を編集者が再読。選択肢だけで目立つ評価語・極端な誤答を修正。各誤答が成立する本文を3件ずつ確認した。自動監査は意味的品質の証明ではない。",
+  "independentReviewer": false,
+  "measuredLearnerDifficulty": false,
+  "realExamEquivalenceValidated": false,
+  "questions": [
+    {
+      "id": "q05",
+      "title": "説明の目的に合うコード文脈",
+      "before": {
+        "id": "q05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilot Chatへ「この関数を説明して」と入力し、現在のファイルを添付した。回答の根拠となる入力として最も適切なのは？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "質問文とリポジトリのすべてのファイル全文"
+          },
+          {
+            "id": "A",
+            "text": "質問文と添付した関数の内容、および利用可能な会話文脈"
+          },
+          {
+            "id": "D",
+            "text": "添付ファイルの内容だけで質問文は使わない"
+          },
+          {
+            "id": "C",
+            "text": "質問文とモデルの学習済み情報だけ"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "明示した質問と提供したコードの文脈が回答に利用される。",
+        "choiceExplanations": {
+          "A": "明示した質問と提供したコードの文脈が回答に利用される。",
+          "B": "リポジトリ全体の全文が自動的に常に入力されるわけではない。",
+          "C": "モデルの知識も働くが、添付した現行コードを除外してしまう。",
+          "D": "ファイルだけでは何を説明してほしいかという要求を落とす。"
+        },
+        "sourceIds": [
+          "chat"
+        ],
+        "trustedSourceFacts": [
+          "明示した質問と提供したコードの文脈が回答に利用される。",
+          "リポジトリ全体の全文が自動的に常に入力されるわけではない。",
+          "モデルの知識も働くが、添付した現行コードを除外してしまう。",
+          "ファイルだけでは何を説明してほしいかという要求を落とす。"
+        ],
+        "createdAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-12",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat"
+            ],
+            "rationale": "明示した質問と提供したコードの文脈が回答に利用される。"
+          },
+          "B": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "chat"
+            ],
+            "rationale": "リポジトリ全体の全文が自動的に常に入力されるわけではない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "chat"
+            ],
+            "rationale": "モデルの知識も働くが、添付した現行コードを除外してしまう。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "chat"
+            ],
+            "rationale": "ファイルだけでは何を説明してほしいかという要求を落とす。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot Chatへ「この関数を説明して」と入力し、現在のファイルを添付した。回答の根拠となる入力として最も適切なのは？",
+            "correctReason": "明示した質問と提供したコードの文脈が回答に利用される。",
+            "distractorFailures": {
+              "B": "リポジトリ全体の全文が自動的に常に入力されるわけではない。",
+              "C": "モデルの知識も働くが、添付した現行コードを除外してしまう。",
+              "D": "ファイルだけでは何を説明してほしいかという要求を落とす。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": []
+      },
+      "after": {
+        "id": "q05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "question": "VS CodeのCopilot Chatで送料計算を説明させます。shipping.tsは計算処理、rates.tsは料金表、shipping.test.tsは期待結果、types.tsは配送先の型です。関数から参照される料金表の値を説明に含めたい。明示的に渡す文脈は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "shipping.tsの計算関数を範囲選択する"
+          },
+          {
+            "id": "A",
+            "text": "rates.tsの料金表をファイルとして添付する"
+          },
+          {
+            "id": "D",
+            "text": "types.tsの配送先の型定義を添付する"
+          },
+          {
+            "id": "C",
+            "text": "shipping.test.tsの検証コードを添付する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "説明したい料金表の値はrates.tsにある。そのコードを明示的な文脈として渡す。添付は回答の正確性や全コードの利用を保証しない。",
+        "choiceExplanations": {
+          "A": "説明したい料金表の値はrates.tsにある。そのコードを明示的な文脈として渡す。添付は回答の正確性や全コードの利用を保証しない。",
+          "B": "計算手順の説明に向くが、別ファイルに定義された料金表の値はこの関数内にはない。",
+          "C": "期待される計算結果の説明に向く。料金表そのものの値を伝える目的には、定義ファイルを使う。",
+          "D": "配送先のフィールドや型の説明に向く。今回知りたい料金表の値の定義ではない。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-09-06",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "計算手順の説明に向くが、別ファイルに定義された料金表の値はこの関数内にはない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "説明したい料金表の値はrates.tsにある。そのコードを明示的な文脈として渡す。添付は回答の正確性や全コードの利用を保証しない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "配送先のフィールドや型の説明に向く。今回知りたい料金表の値の定義ではない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "期待される計算結果の説明に向く。料金表そのものの値を伝える目的には、定義ファイルを使う。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "関数から参照される料金表の値を説明に含めたい。",
+            "correctReason": "説明したい料金表の値はrates.tsにある。そのコードを明示的な文脈として渡す。添付は回答の正確性や全コードの利用を保証しない。",
+            "distractorFailures": {
+              "B": "計算手順の説明に向くが、別ファイルに定義された料金表の値はこの関数内にはない。",
+              "D": "配送先のフィールドや型の説明に向く。今回知りたい料金表の値の定義ではない。",
+              "C": "期待される計算結果の説明に向く。料金表そのものの値を伝える目的には、定義ファイルを使う。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13",
+        "clues": [
+          "関数から参照される料金表の値を説明に含めたい。"
+        ],
+        "testedConcepts": [
+          "context-gathering",
+          "explicit-code-context"
+        ],
+        "distractorQuality": "scenario-contrast"
+      },
+      "fingerprint": "d52752ee29435b4bcd50f56d7547fdcc200223750873a3aca0b52806269398e0",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "正答だけが質問・コード・会話を含む包括的な入力。他の選択肢は全ファイルの自動送信や質問文の不使用という極端な説明だった。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "四つとも実在するコード文脈の渡し方。どのファイルが必要かは本文の目的で決まり、万能な良い対応を一つ置かない。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "説明したい対象を、計算手順ではなく料金表の値と識別する。",
+        "その定義を持つrates.tsを明示的に文脈へ追加する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "関数から参照される料金表の値を説明に含めたい。",
+          "to": "関数内の計算手順を説明に含めたい。",
+          "question": "VS CodeのCopilot Chatで送料計算を説明させます。shipping.tsは計算処理、rates.tsは料金表、shipping.test.tsは期待結果、types.tsは配送先の型です。関数内の計算手順を説明に含めたい。明示的に渡す文脈は？",
+          "answerId": "B",
+          "rationale": "処理の定義があるshipping.tsを選択する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "関数から参照される料金表の値を説明に含めたい。",
+          "to": "検証コードで期待している結果を説明に含めたい。",
+          "question": "VS CodeのCopilot Chatで送料計算を説明させます。shipping.tsは計算処理、rates.tsは料金表、shipping.test.tsは期待結果、types.tsは配送先の型です。検証コードで期待している結果を説明に含めたい。明示的に渡す文脈は？",
+          "answerId": "C",
+          "rationale": "期待値を持つshipping.test.tsを添付する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "関数から参照される料金表の値を説明に含めたい。",
+          "to": "配送先の各フィールドの型を説明に含めたい。",
+          "question": "VS CodeのCopilot Chatで送料計算を説明させます。shipping.tsは計算処理、rates.tsは料金表、shipping.test.tsは期待結果、types.tsは配送先の型です。配送先の各フィールドの型を説明に含めたい。明示的に渡す文脈は？",
+          "answerId": "D",
+          "rationale": "型定義を持つtypes.tsを添付する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "shipping.tsの計算関数を範囲選択する",
+          "whyWrong": "計算手順の説明に向くが、別ファイルに定義された料金表の値はこの関数内にはない。"
+        },
+        {
+          "id": "D",
+          "text": "types.tsの配送先の型定義を添付する",
+          "whyWrong": "配送先のフィールドや型の説明に向く。今回知りたい料金表の値の定義ではない。"
+        },
+        {
+          "id": "C",
+          "text": "shipping.test.tsの検証コードを添付する",
+          "whyWrong": "期待される計算結果の説明に向く。料金表そのものの値を伝える目的には、定義ファイルを使う。"
+        }
+      ],
+      "lengths": {
+        "correct": 24,
+        "medianWrong": 23,
+        "ratio": 1.043,
+        "position": "B",
+        "byChoice": {
+          "B": 23,
+          "A": 24,
+          "D": 21,
+          "C": 27
+        }
+      }
+    },
+    {
+      "id": "q-d3-f03",
+      "title": "HTTPS通信の役割と向き",
+      "before": {
+        "id": "q-d3-f03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "企業ネットワークでCopilot拡張から公式のサービスへ通信します。通常許可する外向き通信として適切なのは？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "GitサーバーへSSHで送る通信だけ"
+          },
+          {
+            "id": "C",
+            "text": "開発PCへインバウンドHTTPSを受ける通信"
+          },
+          {
+            "id": "A",
+            "text": "Copilotの接続先へHTTPSで送る通信"
+          },
+          {
+            "id": "D",
+            "text": "ローカルDBへ平文HTTPで送る通信"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。",
+        "choiceExplanations": {
+          "A": "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。",
+          "B": "Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。",
+          "C": "クライアント側へ入る通信は一般的な接続要件と向きが逆である。",
+          "D": "ローカルDBへの通信はCopilotサービスへの接続ではない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "privacy"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [
+          "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。",
+          "Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。",
+          "クライアント側へ入る通信は一般的な接続要件と向きが逆である。",
+          "ローカルDBへの通信はCopilotサービスへの接続ではない。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "privacy"
+            ],
+            "rationale": "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "architecture",
+              "privacy"
+            ],
+            "rationale": "Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "privacy"
+            ],
+            "rationale": "クライアント側へ入る通信は一般的な接続要件と向きが逆である。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "privacy"
+            ],
+            "rationale": "ローカルDBへの通信はCopilotサービスへの接続ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "企業ネットワークでCopilot拡張から公式のサービスへ通信します。通常許可する外向き通信として適切なのは？",
+            "correctReason": "CopilotサービスへのHTTPSのアウトバウンド通信を確認する。",
+            "distractorFailures": {
+              "B": "Git転送には使えるがCopilotサービスのHTTPS通信を代替しない。",
+              "C": "クライアント側へ入る通信は一般的な接続要件と向きが逆である。",
+              "D": "ローカルDBへの通信はCopilotサービスへの接続ではない。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": []
+      },
+      "after": {
+        "id": "q-d3-f03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot拡張とクラウドの間のHTTPS通信を、提案を得るまでの流れに沿って確認します。端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。該当する通信は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "生成された候補を、生成サービスから端末へ返す通信"
+          },
+          {
+            "id": "C",
+            "text": "利用資格を確認する要求を、端末から認証先へ送る通信"
+          },
+          {
+            "id": "A",
+            "text": "文脈を含む要求を、端末から生成サービスへ送る通信"
+          },
+          {
+            "id": "D",
+            "text": "利用状況を記録する情報を、端末から収集先へ送る通信"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "生成の入力を渡す段階では、端末側で集めた文脈を含む要求が生成サービスへ送られる。外向きのHTTPS接続である。",
+        "choiceExplanations": {
+          "A": "生成の入力を渡す段階では、端末側で集めた文脈を含む要求が生成サービスへ送られる。外向きのHTTPS接続である。",
+          "B": "生成後の候補を受け取る段階。推論を始めるための入力の送信とは向きと内容が異なる。",
+          "C": "認証・利用資格を確認する段階。今回のコード文脈を推論へ渡す通信の役割ではない。",
+          "D": "利用状況などの計測情報を送る段階。生成のための入力文脈と、収集先への計測通信を混同している。"
+        },
+        "sourceIds": [
+          "network-settings",
+          "chat",
+          "copilot-allowlist"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network-settings",
+              "chat",
+              "copilot-allowlist"
+            ],
+            "rationale": "生成後の候補を受け取る段階。推論を始めるための入力の送信とは向きと内容が異なる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network-settings",
+              "chat",
+              "copilot-allowlist"
+            ],
+            "rationale": "認証・利用資格を確認する段階。今回のコード文脈を推論へ渡す通信の役割ではない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "network-settings",
+              "chat",
+              "copilot-allowlist"
+            ],
+            "rationale": "生成の入力を渡す段階では、端末側で集めた文脈を含む要求が生成サービスへ送られる。外向きのHTTPS接続である。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network-settings",
+              "chat",
+              "copilot-allowlist"
+            ],
+            "rationale": "利用状況などの計測情報を送る段階。生成のための入力文脈と、収集先への計測通信を混同している。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。",
+            "correctReason": "生成の入力を渡す段階では、端末側で集めた文脈を含む要求が生成サービスへ送られる。外向きのHTTPS接続である。",
+            "distractorFailures": {
+              "B": "生成後の候補を受け取る段階。推論を始めるための入力の送信とは向きと内容が異なる。",
+              "C": "認証・利用資格を確認する段階。今回のコード文脈を推論へ渡す通信の役割ではない。",
+              "D": "利用状況などの計測情報を送る段階。生成のための入力文脈と、収集先への計測通信を混同している。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13",
+        "clues": [
+          "端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。"
+        ],
+        "testedConcepts": [
+          "outbound-https",
+          "request-response",
+          "network-endpoint-purpose"
+        ],
+        "distractorQuality": "scenario-contrast"
+      },
+      "fingerprint": "5dcaa6251c11638e38920ec5c3939183af7b8723a3b1f470ac12684ccca5c961",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "正答だけがCopilotのHTTPS通信。他の選択肢にはローカルDBへの平文HTTPなど、このサービスと関係のない経路が含まれていた。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "四つともCopilotに関係する通信の役割。通信内容と処理段階が本文なしでは確定しない。HTTP対HTTPSの常識だけでは選べない。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "対象の段階を、生成結果の受信や認証・計測ではなく推論入力の送信と識別する。",
+        "コード文脈を含む端末から生成サービスへの要求を選ぶ。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。",
+          "to": "クラウドで作られた提案を、エディターに表示するために受け取る段階です。",
+          "question": "Copilot拡張とクラウドの間のHTTPS通信を、提案を得るまでの流れに沿って確認します。クラウドで作られた提案を、エディターに表示するために受け取る段階です。該当する通信は？",
+          "answerId": "B",
+          "rationale": "生成サービスから端末へ返る候補の通信となる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。",
+          "to": "提案の生成に先立って、サインインとサービスを利用する資格を確認する段階です。",
+          "question": "Copilot拡張とクラウドの間のHTTPS通信を、提案を得るまでの流れに沿って確認します。提案の生成に先立って、サインインとサービスを利用する資格を確認する段階です。該当する通信は？",
+          "answerId": "C",
+          "rationale": "認証先への利用資格確認が対象となる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。",
+          "to": "提案の生成処理とは別に、利用状況を計測先へ報告する段階です。",
+          "question": "Copilot拡張とクラウドの間のHTTPS通信を、提案を得るまでの流れに沿って確認します。提案の生成処理とは別に、利用状況を計測先へ報告する段階です。該当する通信は？",
+          "answerId": "D",
+          "rationale": "利用状況の収集先へ送る計測通信が対象となる。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "生成された候補を、生成サービスから端末へ返す通信",
+          "whyWrong": "生成後の候補を受け取る段階。推論を始めるための入力の送信とは向きと内容が異なる。"
+        },
+        {
+          "id": "C",
+          "text": "利用資格を確認する要求を、端末から認証先へ送る通信",
+          "whyWrong": "認証・利用資格を確認する段階。今回のコード文脈を推論へ渡す通信の役割ではない。"
+        },
+        {
+          "id": "D",
+          "text": "利用状況を記録する情報を、端末から収集先へ送る通信",
+          "whyWrong": "利用状況などの計測情報を送る段階。生成のための入力文脈と、収集先への計測通信を混同している。"
+        }
+      ],
+      "lengths": {
+        "correct": 24,
+        "medianWrong": 25,
+        "ratio": 0.96,
+        "position": "C",
+        "byChoice": {
+          "B": 24,
+          "C": 25,
+          "A": 24,
+          "D": 25
+        }
+      }
+    },
+    {
+      "id": "q-d3-f04",
+      "title": "接続ログに応じた設定確認",
+      "before": {
+        "id": "q-d3-f04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "github.comのWeb閲覧はできるのにIDEのCopilotだけ接続に失敗します。社内ファイアウォールで最初に照合すべきものは？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "公式のCopilot接続先一覧とHTTPSアウトバウンド許可"
+          },
+          {
+            "id": "C",
+            "text": "GitのSSH接続先だけを許すルール"
+          },
+          {
+            "id": "D",
+            "text": "社内プロキシの管理画面だけを許すルール"
+          },
+          {
+            "id": "B",
+            "text": "github.comのWeb表示だけを許すルール"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。",
+        "choiceExplanations": {
+          "A": "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。",
+          "B": "Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。",
+          "C": "Gitの転送経路はCopilotの通信要件と同一ではない。",
+          "D": "管理画面へのアクセスはCopilotサービスへの到達性を示さない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "policies"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [
+          "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。",
+          "Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。",
+          "Gitの転送経路はCopilotの通信要件と同一ではない。",
+          "管理画面へのアクセスはCopilotサービスへの到達性を示さない。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "policies"
+            ],
+            "rationale": "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "architecture",
+              "policies"
+            ],
+            "rationale": "Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "policies"
+            ],
+            "rationale": "Gitの転送経路はCopilotの通信要件と同一ではない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "policies"
+            ],
+            "rationale": "管理画面へのアクセスはCopilotサービスへの到達性を示さない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "github.comのWeb閲覧はできるのにIDEのCopilotだけ接続に失敗します。社内ファイアウォールで最初に照合すべきものは？",
+            "correctReason": "Copilot固有の接続先と外向きHTTPSの許可を診断に沿って確認する。",
+            "distractorFailures": {
+              "B": "Webサイトを見られることだけではCopilotの接続先が許可されたとは言えない。",
+              "C": "Gitの転送経路はCopilotの通信要件と同一ではない。",
+              "D": "管理画面へのアクセスはCopilotサービスへの到達性を示さない。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": []
+      },
+      "after": {
+        "id": "q-d3-f04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "github.comのWeb閲覧はできますが、IDEのCopilotは使えません。ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。この記録に対応して最初に確認するものは？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "公式接続先一覧と外向き通信の許可設定"
+          },
+          {
+            "id": "C",
+            "text": "IDEのプロキシ接続先と認証情報の設定"
+          },
+          {
+            "id": "D",
+            "text": "信頼済み証明書と証明書チェーンの設定"
+          },
+          {
+            "id": "B",
+            "text": "サインイン中のアカウントと利用資格の設定"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "拒否されたCopilot接続先を公式一覧と照合し、外向き通信のルールを確認する。github.comが表示できても別の接続先が許可されているとは限らない。",
+        "choiceExplanations": {
+          "A": "拒否されたCopilot接続先を公式一覧と照合し、外向き通信のルールを確認する。github.comが表示できても別の接続先が許可されているとは限らない。",
+          "B": "アカウントや利用資格の不一致が示された場合の確認先。今回の拒否ログが示す通信ルールへの確認を置き換えない。",
+          "C": "プロキシへの接続や認証の問題が示された場合の確認先。今回はファイアウォールの拒否という根拠がある。",
+          "D": "証明書の検証失敗が示された場合の確認先。今回は信頼チェーンでなく通信の拒否が記録されている。"
+        },
+        "sourceIds": [
+          "network",
+          "network-settings",
+          "copilot-allowlist"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "network",
+              "network-settings",
+              "copilot-allowlist"
+            ],
+            "rationale": "拒否されたCopilot接続先を公式一覧と照合し、外向き通信のルールを確認する。github.comが表示できても別の接続先が許可されているとは限らない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network",
+              "network-settings",
+              "copilot-allowlist"
+            ],
+            "rationale": "プロキシへの接続や認証の問題が示された場合の確認先。今回はファイアウォールの拒否という根拠がある。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network",
+              "network-settings",
+              "copilot-allowlist"
+            ],
+            "rationale": "証明書の検証失敗が示された場合の確認先。今回は信頼チェーンでなく通信の拒否が記録されている。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "network",
+              "network-settings",
+              "copilot-allowlist"
+            ],
+            "rationale": "アカウントや利用資格の不一致が示された場合の確認先。今回の拒否ログが示す通信ルールへの確認を置き換えない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。",
+            "correctReason": "拒否されたCopilot接続先を公式一覧と照合し、外向き通信のルールを確認する。github.comが表示できても別の接続先が許可されているとは限らない。",
+            "distractorFailures": {
+              "C": "プロキシへの接続や認証の問題が示された場合の確認先。今回はファイアウォールの拒否という根拠がある。",
+              "D": "証明書の検証失敗が示された場合の確認先。今回は信頼チェーンでなく通信の拒否が記録されている。",
+              "B": "アカウントや利用資格の不一致が示された場合の確認先。今回の拒否ログが示す通信ルールへの確認を置き換えない。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13",
+        "clues": [
+          "ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。"
+        ],
+        "testedConcepts": [
+          "network-troubleshooting",
+          "firewall-allowlist"
+        ],
+        "distractorQuality": "scenario-contrast"
+      },
+      "fingerprint": "5e1ce76c57ff6ac8aedb76a8ff522b3c108bc7962b011918165d316f6bab47fe",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "正答だけが公式情報と適切な許可を組み合わせ、誤答はSSH・Web閲覧・管理画面だけという不足が明白な設定だった。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "四つとも接続問題で有効な確認先。安全な設定を唯一の正答にせず、ログの種類で対象を選ぶ。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "ログが示す対象をファイアウォールによる接続先の拒否と識別する。",
+        "公式接続先と外向き通信の許可を照合する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。",
+          "to": "接続は成功していますが、IDEにサインインしたアカウントにはCopilotの利用資格が割り当てられていないと表示されています。",
+          "question": "github.comのWeb閲覧はできますが、IDEのCopilotは使えません。接続は成功していますが、IDEにサインインしたアカウントにはCopilotの利用資格が割り当てられていないと表示されています。この記録に対応して最初に確認するものは？",
+          "answerId": "B",
+          "rationale": "通信経路でなく、利用資格を持つアカウントかを確認する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。",
+          "to": "外向き通信は許可済みですが、IDEのログに社内プロキシからの407 Proxy Authentication Requiredが記録されています。",
+          "question": "github.comのWeb閲覧はできますが、IDEのCopilotは使えません。外向き通信は許可済みですが、IDEのログに社内プロキシからの407 Proxy Authentication Requiredが記録されています。この記録に対応して最初に確認するものは？",
+          "answerId": "C",
+          "rationale": "要求されたプロキシ認証とIDEの設定を確認する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。",
+          "to": "外向き通信とプロキシ認証は成功していますが、IDEのログに証明書の信頼チェーンの検証失敗が記録されています。",
+          "question": "github.comのWeb閲覧はできますが、IDEのCopilotは使えません。外向き通信とプロキシ認証は成功していますが、IDEのログに証明書の信頼チェーンの検証失敗が記録されています。この記録に対応して最初に確認するものは？",
+          "answerId": "D",
+          "rationale": "信頼済み証明書とチェーンを確認する。検証の無効化は提案しない。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "IDEのプロキシ接続先と認証情報の設定",
+          "whyWrong": "プロキシへの接続や認証の問題が示された場合の確認先。今回はファイアウォールの拒否という根拠がある。"
+        },
+        {
+          "id": "D",
+          "text": "信頼済み証明書と証明書チェーンの設定",
+          "whyWrong": "証明書の検証失敗が示された場合の確認先。今回は信頼チェーンでなく通信の拒否が記録されている。"
+        },
+        {
+          "id": "B",
+          "text": "サインイン中のアカウントと利用資格の設定",
+          "whyWrong": "アカウントや利用資格の不一致が示された場合の確認先。今回の拒否ログが示す通信ルールへの確認を置き換えない。"
+        }
+      ],
+      "lengths": {
+        "correct": 18,
+        "medianWrong": 19,
+        "ratio": 0.947,
+        "position": "A",
+        "byChoice": {
+          "A": 18,
+          "C": 19,
+          "D": 18,
+          "B": 20
+        }
+      }
+    },
+    {
+      "id": "q-d4-f01",
+      "title": "補うべきプロンプトの構成要素",
+      "before": {
+        "id": "q-d4-f01",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilotへの依頼が「良いコードを書いて」だけで曖昧です。目的、条件、関連コードを短く伝える改善として最も適切なのは？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "役割名を指定し、入出力条件と周辺コードはモデルに推測させる"
+          },
+          {
+            "id": "D",
+            "text": "関連ファイルをすべて添付し、作業目的は簡潔に「修正」と書く"
+          },
+          {
+            "id": "A",
+            "text": "一つの目的を明示し、具体的な条件と必要な周辺文脈を簡潔に示す"
+          },
+          {
+            "id": "C",
+            "text": "禁止語を網羅し、望む代替案や周辺コードは示さない"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。",
+        "choiceExplanations": {
+          "A": "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。",
+          "B": "役割指定は補助になるが何を満たすべきかが曖昧なままである。",
+          "C": "禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。",
+          "D": "大量の資料があっても依頼の目的と条件が不足する。"
+        },
+        "sourceIds": [
+          "prompt",
+          "guide"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [
+          "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。",
+          "役割指定は補助になるが何を満たすべきかが曖昧なままである。",
+          "禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。",
+          "大量の資料があっても依頼の目的と条件が不足する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt",
+              "guide"
+            ],
+            "rationale": "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt",
+              "guide"
+            ],
+            "rationale": "役割指定は補助になるが何を満たすべきかが曖昧なままである。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "prompt",
+              "guide"
+            ],
+            "rationale": "禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "prompt",
+              "guide"
+            ],
+            "rationale": "大量の資料があっても依頼の目的と条件が不足する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotへの依頼が「良いコードを書いて」だけで曖昧です。目的、条件、関連コードを短く伝える改善として最も適切なのは？",
+            "correctReason": "目的・具体性・必要な文脈の三点を伝えつつ不要な情報を抑える。",
+            "distractorFailures": {
+              "B": "役割指定は補助になるが何を満たすべきかが曖昧なままである。",
+              "C": "禁止事項だけでは推奨する動作と必要な文脈が伝わりにくい。",
+              "D": "大量の資料があっても依頼の目的と条件が不足する。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": []
+      },
+      "after": {
+        "id": "q-d4-f01",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilotへの依頼内容を整えます。目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。補うプロンプトの要素は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "実装する機能と達成したい作業についての目的"
+          },
+          {
+            "id": "D",
+            "text": "代表的な入力と期待する出力についての具体例"
+          },
+          {
+            "id": "A",
+            "text": "利用できるライブラリと出力形式についての条件"
+          },
+          {
+            "id": "C",
+            "text": "関連するコードと利用環境についての前提"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "利用できる依存関係と出力形式は、守ってほしい制約にあたる。目的やコードを増やすだけではこの制約は伝わらない。",
+        "choiceExplanations": {
+          "A": "利用できる依存関係と出力形式は、守ってほしい制約にあたる。目的やコードを増やすだけではこの制約は伝わらない。",
+          "B": "作業のゴールを伝える要素。今回の目的は提示済みで、補いたいのは依存関係と出力形式の制約である。",
+          "C": "コードや環境という文脈を伝える要素。今回は対象コードが提示済みで、利用条件を明示する必要がある。",
+          "D": "望む入出力の振る舞いを具体的に示す要素。今回は境界値の挙動ではなく依存関係と回答形式を指定したい。"
+        },
+        "sourceIds": [
+          "prompt"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "作業のゴールを伝える要素。今回の目的は提示済みで、補いたいのは依存関係と出力形式の制約である。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "望む入出力の振る舞いを具体的に示す要素。今回は境界値の挙動ではなく依存関係と回答形式を指定したい。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "利用できる依存関係と出力形式は、守ってほしい制約にあたる。目的やコードを増やすだけではこの制約は伝わらない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "コードや環境という文脈を伝える要素。今回は対象コードが提示済みで、利用条件を明示する必要がある。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。",
+            "correctReason": "利用できる依存関係と出力形式は、守ってほしい制約にあたる。目的やコードを増やすだけではこの制約は伝わらない。",
+            "distractorFailures": {
+              "B": "作業のゴールを伝える要素。今回の目的は提示済みで、補いたいのは依存関係と出力形式の制約である。",
+              "D": "望む入出力の振る舞いを具体的に示す要素。今回は境界値の挙動ではなく依存関係と回答形式を指定したい。",
+              "C": "コードや環境という文脈を伝える要素。今回は対象コードが提示済みで、利用条件を明示する必要がある。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13",
+        "clues": [
+          "目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。"
+        ],
+        "testedConcepts": [
+          "prompt-anatomy",
+          "constraints"
+        ],
+        "distractorQuality": "scenario-contrast"
+      },
+      "fingerprint": "382ad07c0f12ac63853680da7d141449b746b138f0732aa7a200aca08874e75d",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "正答だけが目的・条件・文脈をすべて含み、誤答は必要情報を省く・推測させる・禁止語だけという明白な不足だった。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "目的・文脈・制約・例をそれぞれ肯定的に記述。四要素を全部盛りにした唯一の正答を置かず、今回不足する要素を識別する。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "依存関係と回答形式の指定を、守ってほしい制約と識別する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。",
+          "to": "関連コードと環境は提示済みですが、「修正して」とだけ書いたため、何の機能を実現するか伝わっていません。",
+          "question": "Copilotへの依頼内容を整えます。関連コードと環境は提示済みですが、「修正して」とだけ書いたため、何の機能を実現するか伝わっていません。補うプロンプトの要素は？",
+          "answerId": "B",
+          "rationale": "達成したい機能・作業の目的を補う。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。",
+          "to": "実装する機能と条件は提示済みですが、どの関数を変更するかと、使っているフレームワークのバージョンが伝わっていません。",
+          "question": "Copilotへの依頼内容を整えます。実装する機能と条件は提示済みですが、どの関数を変更するかと、使っているフレームワークのバージョンが伝わっていません。補うプロンプトの要素は？",
+          "answerId": "C",
+          "rationale": "関連コードと利用環境という文脈を補う。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。",
+          "to": "目的、コード、条件は提示済みですが、説明だけでは境界値での振る舞いが伝わりません。代表的な入力をどう変換するかを具体的に示したい。",
+          "question": "Copilotへの依頼内容を整えます。目的、コード、条件は提示済みですが、説明だけでは境界値での振る舞いが伝わりません。代表的な入力をどう変換するかを具体的に示したい。補うプロンプトの要素は？",
+          "answerId": "D",
+          "rationale": "入力と期待出力の具体例を補う。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "実装する機能と達成したい作業についての目的",
+          "whyWrong": "作業のゴールを伝える要素。今回の目的は提示済みで、補いたいのは依存関係と出力形式の制約である。"
+        },
+        {
+          "id": "D",
+          "text": "代表的な入力と期待する出力についての具体例",
+          "whyWrong": "望む入出力の振る舞いを具体的に示す要素。今回は境界値の挙動ではなく依存関係と回答形式を指定したい。"
+        },
+        {
+          "id": "C",
+          "text": "関連するコードと利用環境についての前提",
+          "whyWrong": "コードや環境という文脈を伝える要素。今回は対象コードが提示済みで、利用条件を明示する必要がある。"
+        }
+      ],
+      "lengths": {
+        "correct": 22,
+        "medianWrong": 21,
+        "ratio": 1.048,
+        "position": "C",
+        "byChoice": {
+          "B": 21,
+          "D": 21,
+          "A": 22,
+          "C": 19
+        }
+      }
+    },
+    {
+      "id": "q-d6-a07",
+      "title": "学習利用と保持などの確認事項を区別する",
+      "before": {
+        "id": "q-d6-a07",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "社内説明資料に「Businessの入力は基盤モデルの学習に使われないので、履歴は常に即時削除される」とあります。修正すべき説明は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "学習利用と保持条件は別であり、保持は対象機能の方針で確認する"
+          },
+          {
+            "id": "C",
+            "text": "公開コード一致がBlockなら、保持も行われないと説明する"
+          },
+          {
+            "id": "D",
+            "text": "通信が暗号化されていれば、保存も行われないと説明する"
+          },
+          {
+            "id": "B",
+            "text": "学習不使用なら保持も不要なので、即時削除という結論を保つ"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "学習に使わないことから保存の有無や期間は導けないため、別の根拠で確認する。",
+        "choiceExplanations": {
+          "A": "学習に使わないことから保存の有無や期間は導けないため、別の根拠で確認する。",
+          "B": "学習利用以外の処理・保持の可能性を無視している。",
+          "C": "公開コード一致は提案の制御であり保存の条件ではない。",
+          "D": "暗号化は保存の有無とは別の制御である。"
+        },
+        "sourceIds": [
+          "model-hosting",
+          "privacy"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "学習に使わないことから保存の有無や期間は導けないため、別の根拠で確認する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "学習利用以外の処理・保持の可能性を無視している。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "公開コード一致は提案の制御であり保存の条件ではない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "暗号化は保存の有無とは別の制御である。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "学習不使用から保持期間を推論する誤りを修正する。",
+            "correctReason": "学習に使わないことから保存の有無や期間は導けないため、別の根拠で確認する。",
+            "distractorFailures": {
+              "B": "学習利用以外の処理・保持の可能性を無視している。",
+              "C": "公開コード一致は提案の制御であり保存の条件ではない。",
+              "D": "暗号化は保存の有無とは別の制御である。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": [],
+        "testedConcepts": [
+          "d6o2",
+          "scenario-application"
+        ]
+      },
+      "after": {
+        "id": "q-d6-a07",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "監査担当者は、Copilot Businessについて入力の学習利用を確認済みです。次に、処理後のプロンプトや応答が残る期間を調べます。確認する事項は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "対象機能とモデル提供者のデータ保持条件"
+          },
+          {
+            "id": "C",
+            "text": "生成候補と公開コードとの一致の扱い"
+          },
+          {
+            "id": "D",
+            "text": "端末からサービスへの通信の暗号化条件"
+          },
+          {
+            "id": "B",
+            "text": "入力や応答の基盤モデルへの学習利用条件"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "処理後に残るデータと期間は保持条件の問題。学習利用とは別に、対象の機能・モデル提供者などの条件を確認する。一律の即時削除や固定期間は断定しない。",
+        "choiceExplanations": {
+          "A": "処理後に残るデータと期間は保持条件の問題。学習利用とは別に、対象の機能・モデル提供者などの条件を確認する。一律の即時削除や固定期間は断定しない。",
+          "B": "モデルの学習に利用するかを確認する事項。学習利用を確認しても、その事実だけから保持の有無や期間は導けない。",
+          "C": "公開コードと一致する生成候補の扱いを確認する事項。提案の制御と、処理後のデータ保持は別の確認対象である。",
+          "D": "送信経路の保護を確認する事項。暗号化して送ることから、処理後の保存の有無や期間は導けない。"
+        },
+        "sourceIds": [
+          "model-hosting",
+          "privacy"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "処理後に残るデータと期間は保持条件の問題。学習利用とは別に、対象の機能・モデル提供者などの条件を確認する。一律の即時削除や固定期間は断定しない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "公開コードと一致する生成候補の扱いを確認する事項。提案の制御と、処理後のデータ保持は別の確認対象である。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "送信経路の保護を確認する事項。暗号化して送ることから、処理後の保存の有無や期間は導けない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "model-hosting",
+              "privacy"
+            ],
+            "rationale": "モデルの学習に利用するかを確認する事項。学習利用を確認しても、その事実だけから保持の有無や期間は導けない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "次に、処理後のプロンプトや応答が残る期間を調べます。",
+            "correctReason": "処理後に残るデータと期間は保持条件の問題。学習利用とは別に、対象の機能・モデル提供者などの条件を確認する。一律の即時削除や固定期間は断定しない。",
+            "distractorFailures": {
+              "C": "公開コードと一致する生成候補の扱いを確認する事項。提案の制御と、処理後のデータ保持は別の確認対象である。",
+              "D": "送信経路の保護を確認する事項。暗号化して送ることから、処理後の保存の有無や期間は導けない。",
+              "B": "モデルの学習に利用するかを確認する事項。学習利用を確認しても、その事実だけから保持の有無や期間は導けない。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13",
+        "clues": [
+          "次に、処理後のプロンプトや応答が残る期間を調べます。"
+        ],
+        "testedConcepts": [
+          "data-retention",
+          "training-use-separation"
+        ]
+      },
+      "fingerprint": "ff80b239bdfc96f6ffa974489f664b0b41fad81beb384ef4b7ac968e980d63fc",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "正答だけが学習と保持を区別する妥当な説明で、全誤答が暗号化・公開一致・学習不使用から即時削除を断定していた。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "四つとも実際に確認する事項であり、一律のゼロ保持を主張する誤答を廃止。監査で知りたいデータの扱いを本文から識別する。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "知りたいのが学習利用でなく、処理後の保持期間だと識別する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "次に、処理後のプロンプトや応答が残る期間を調べます。",
+          "to": "確認記録を再点検し、入力や応答がモデルの学習に使われるかを調べます。",
+          "question": "監査担当者は、Copilot Businessについて入力の学習利用を確認済みです。確認記録を再点検し、入力や応答がモデルの学習に使われるかを調べます。確認する事項は？",
+          "answerId": "B",
+          "rationale": "学習利用の確認対象となる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "次に、処理後のプロンプトや応答が残る期間を調べます。",
+          "to": "次に、公開リポジトリのコードと一致する提案をブロックするかを調べます。",
+          "question": "監査担当者は、Copilot Businessについて入力の学習利用を確認済みです。次に、公開リポジトリのコードと一致する提案をブロックするかを調べます。確認する事項は？",
+          "answerId": "C",
+          "rationale": "公開コード一致の扱いを確認する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "次に、処理後のプロンプトや応答が残る期間を調べます。",
+          "to": "次に、端末からクラウドへ情報を送る経路が暗号化されるかを調べます。",
+          "question": "監査担当者は、Copilot Businessについて入力の学習利用を確認済みです。次に、端末からクラウドへ情報を送る経路が暗号化されるかを調べます。確認する事項は？",
+          "answerId": "D",
+          "rationale": "通信の暗号化条件を確認する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "生成候補と公開コードとの一致の扱い",
+          "whyWrong": "公開コードと一致する生成候補の扱いを確認する事項。提案の制御と、処理後のデータ保持は別の確認対象である。"
+        },
+        {
+          "id": "D",
+          "text": "端末からサービスへの通信の暗号化条件",
+          "whyWrong": "送信経路の保護を確認する事項。暗号化して送ることから、処理後の保存の有無や期間は導けない。"
+        },
+        {
+          "id": "B",
+          "text": "入力や応答の基盤モデルへの学習利用条件",
+          "whyWrong": "モデルの学習に利用するかを確認する事項。学習利用を確認しても、その事実だけから保持の有無や期間は導けない。"
+        }
+      ],
+      "lengths": {
+        "correct": 19,
+        "medianWrong": 18,
+        "ratio": 1.056,
+        "position": "A",
+        "byChoice": {
+          "A": 19,
+          "C": 17,
+          "D": 18,
+          "B": 19
+        }
+      }
+    },
+    {
+      "id": "q-d3-e05",
+      "title": "文脈の関連性に応じたタブの整理",
+      "before": {
+        "id": "q-d3-e05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "testedConcepts": [
+          "d3o1",
+          "condition-application"
+        ],
+        "clues": [],
+        "question": "補完に旧案件の名前が混ざる。関連する型定義を文脈に残し、旧案件のタブから入る不要な文脈を減らす操作は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "関連する型定義を開き、旧案件のタブも残す"
+          },
+          {
+            "id": "A",
+            "text": "関連する型定義を開き、旧案件のタブを閉じる"
+          },
+          {
+            "id": "D",
+            "text": "関連する型定義を閉じ、旧案件のタブも閉じる"
+          },
+          {
+            "id": "C",
+            "text": "関連する型定義を閉じ、旧案件のタブを残す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "必要な文脈を残し、無関係な文脈を減らす。内部の順位計算や改善の保証を断定しない。",
+        "choiceExplanations": {
+          "A": "必要な文脈を残し、無関係な文脈を減らす。内部の順位計算や改善の保証を断定しない。",
+          "B": "必要な文脈を足すが旧案件の文脈を減らさない。",
+          "D": "不要な文脈は減るが必要な型定義も失う。",
+          "C": "必要な文脈を失い不要な文脈を残す。"
+        },
+        "sourceIds": [
+          "prompt"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "必要な文脈を残し、無関係な文脈を減らす。内部の順位計算や改善の保証を断定しない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "必要な文脈を足すが旧案件の文脈を減らさない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "不要な文脈は減るが必要な型定義も失う。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "必要な文脈を失い不要な文脈を残す。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "補完に旧案件の名前が混ざる。関連する型定義を文脈に残し、旧案件のタブから入る不要な文脈を減らす操作は？",
+            "correctReason": "必要な文脈を残し、無関係な文脈を減らす。内部の順位計算や改善の保証を断定しない。",
+            "distractorFailures": {
+              "B": "必要な文脈を足すが旧案件の文脈を減らさない。",
+              "D": "不要な文脈は減るが必要な型定義も失う。",
+              "C": "必要な文脈を失い不要な文脈を残す。"
+            }
+          }
+        ],
+        "contentRevision": "applied-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d3-e05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "testedConcepts": [
+          "context-relevance",
+          "neighboring-tabs"
+        ],
+        "clues": [
+          "model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。"
+        ],
+        "question": "Copilotの補完を使い、画面の入力処理を書いています。model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。今回の文脈を整理するために閉じるタブの組は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "model.tsとrules.tsのタブを閉じる"
+          },
+          {
+            "id": "A",
+            "text": "utils.tsとstate.tsのタブを閉じる"
+          },
+          {
+            "id": "D",
+            "text": "model.tsとstate.tsのタブを閉じる"
+          },
+          {
+            "id": "C",
+            "text": "utils.tsとrules.tsのタブを閉じる"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "今回使うmodel.tsとrules.tsを残し、別案件のutils.tsとstate.tsを閉じる。関連ファイルを開き無関係なファイルを閉じる文脈整理の基本であり、提案精度や内部順位を保証する操作ではない。",
+        "choiceExplanations": {
+          "A": "今回使うmodel.tsとrules.tsを残し、別案件のutils.tsとstate.tsを閉じる。関連ファイルを開き無関係なファイルを閉じる文脈整理の基本であり、提案精度や内部順位を保証する操作ではない。",
+          "B": "今回の型と検証ルールを両方閉じ、別案件のタブを残してしまう。四つのファイルの役割が逆の案件なら適切な組になる。",
+          "C": "別案件のutils.tsは閉じるが、今回必要なrules.tsも閉じ、別案件のstate.tsを残してしまう。",
+          "D": "別案件のstate.tsは閉じるが、今回必要なmodel.tsも閉じ、別案件のutils.tsを残してしまう。"
+        },
+        "sourceIds": [
+          "prompt"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "今回の型と検証ルールを両方閉じ、別案件のタブを残してしまう。四つのファイルの役割が逆の案件なら適切な組になる。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "今回使うmodel.tsとrules.tsを残し、別案件のutils.tsとstate.tsを閉じる。関連ファイルを開き無関係なファイルを閉じる文脈整理の基本であり、提案精度や内部順位を保証する操作ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "別案件のstate.tsは閉じるが、今回必要なmodel.tsも閉じ、別案件のutils.tsを残してしまう。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "別案件のutils.tsは閉じるが、今回必要なrules.tsも閉じ、別案件のstate.tsを残してしまう。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。",
+            "correctReason": "今回使うmodel.tsとrules.tsを残し、別案件のutils.tsとstate.tsを閉じる。関連ファイルを開き無関係なファイルを閉じる文脈整理の基本であり、提案精度や内部順位を保証する操作ではない。",
+            "distractorFailures": {
+              "B": "今回の型と検証ルールを両方閉じ、別案件のタブを残してしまう。四つのファイルの役割が逆の案件なら適切な組になる。",
+              "D": "別案件のstate.tsは閉じるが、今回必要なmodel.tsも閉じ、別案件のutils.tsを残してしまう。",
+              "C": "別案件のutils.tsは閉じるが、今回必要なrules.tsも閉じ、別案件のstate.tsを残してしまう。"
+            }
+          }
+        ],
+        "contentRevision": "foundation-six-review-2026-10-13"
+      },
+      "fingerprint": "c89aa61d547f73c970e4ef3daec47e8b6ab74c52b0e7ccd0a5871bda68ec86a5",
+      "blindBefore": {
+        "result": "REVISE",
+        "rationale": "選択肢に「関連する」「旧案件」という評価済みのラベルがあり、本文なしで必要な型定義を残し旧案件を閉じる案を選べた。"
+      },
+      "blindAfter": {
+        "result": "EDITORIAL_PASS",
+        "rationale": "四択には中立的なファイル名だけを置き、「関連」「不要」「旧」といった評価語を廃止。どの組を閉じるかは本文の案件との対応が必要。"
+      },
+      "difficultyDecision": "基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。",
+      "reasoningSteps": [
+        "本文のファイルの役割から、今回使う二つと別案件の二つを区別する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。",
+          "to": "utils.tsとstate.tsはこの画面の型と検証ルール、model.tsとrules.tsは別案件のファイルです。",
+          "question": "Copilotの補完を使い、画面の入力処理を書いています。utils.tsとstate.tsはこの画面の型と検証ルール、model.tsとrules.tsは別案件のファイルです。今回の文脈を整理するために閉じるタブの組は？",
+          "answerId": "B",
+          "rationale": "今回使うutils.tsとstate.tsを残し、model.tsとrules.tsを閉じる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。",
+          "to": "model.tsとstate.tsはこの画面の型と検証ルール、utils.tsとrules.tsは別案件のファイルです。",
+          "question": "Copilotの補完を使い、画面の入力処理を書いています。model.tsとstate.tsはこの画面の型と検証ルール、utils.tsとrules.tsは別案件のファイルです。今回の文脈を整理するために閉じるタブの組は？",
+          "answerId": "C",
+          "rationale": "今回使うmodel.tsとstate.tsを残し、utils.tsとrules.tsを閉じる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。",
+          "to": "utils.tsとrules.tsはこの画面の型と検証ルール、model.tsとstate.tsは別案件のファイルです。",
+          "question": "Copilotの補完を使い、画面の入力処理を書いています。utils.tsとrules.tsはこの画面の型と検証ルール、model.tsとstate.tsは別案件のファイルです。今回の文脈を整理するために閉じるタブの組は？",
+          "answerId": "D",
+          "rationale": "今回使うutils.tsとrules.tsを残し、model.tsとstate.tsを閉じる。",
+          "editoriallyValidated": true
+        }
+      ],
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "model.tsとrules.tsのタブを閉じる",
+          "whyWrong": "今回の型と検証ルールを両方閉じ、別案件のタブを残してしまう。四つのファイルの役割が逆の案件なら適切な組になる。"
+        },
+        {
+          "id": "D",
+          "text": "model.tsとstate.tsのタブを閉じる",
+          "whyWrong": "別案件のstate.tsは閉じるが、今回必要なmodel.tsも閉じ、別案件のutils.tsを残してしまう。"
+        },
+        {
+          "id": "C",
+          "text": "utils.tsとrules.tsのタブを閉じる",
+          "whyWrong": "別案件のutils.tsは閉じるが、今回必要なrules.tsも閉じ、別案件のstate.tsを残してしまう。"
+        }
+      ],
+      "lengths": {
+        "correct": 24,
+        "medianWrong": 24,
+        "ratio": 1,
+        "position": "B",
+        "byChoice": {
+          "B": 24,
+          "A": 24,
+          "D": 24,
+          "C": 24
+        }
+      }
+    }
+  ],
+  "verification": {
+    "testsPassed": 176,
+    "testFiles": 14,
+    "typeCheck": "PASS",
+    "isolatedBuild": "PASS",
+    "qualityAudit": "PASS",
+    "foundationAudit": "PASS",
+    "difficultyAudit": "PASS",
+    "appliedAudit": "PASS",
+    "examAudit": "PASS",
+    "choiceAudit": "PASS",
+    "glossaryCoverage": {
+      "total": 120,
+      "verified": 119,
+      "needsReview": 1,
+      "missing": 0
+    },
+    "conditionReplayCases": 18,
+    "conditionReplayMeaning": "置換の構造と4択すべてへの正答変更を検査。意味的な正答と別解は編集者が本文を再読して照合。独立受験者による検証ではない。",
+    "unchangedOtherQuestions": 310,
+    "earlierThirteenQuestionsPreserved": true,
+    "sources": [
+      {
+        "id": "chat",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/responsible-use/chat"
+      },
+      {
+        "id": "prompt",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering"
+      },
+      {
+        "id": "privacy",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval"
+      },
+      {
+        "id": "network",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors"
+      },
+      {
+        "id": "model-hosting",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/reference/ai-models/model-hosting"
+      },
+      {
+        "id": "network-settings",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings"
+      },
+      {
+        "id": "copilot-allowlist",
+        "httpStatus": 200,
+        "titleMatched": true,
+        "finalUrl": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
+      }
+    ]
+  },
+  "summary": {
+    "reviewed": 6,
+    "rewritten": 6,
+    "reclassified": 0,
+    "counterfactuals": 18,
+    "bankTotal": 316,
+    "foundation": 163,
+    "applied": 96,
+    "exam": 57,
+    "sourceCount": 63,
+    "pendingFollowUpQuestionIds": []
+  }
+}

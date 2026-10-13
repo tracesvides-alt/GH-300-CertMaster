@@ -59,7 +59,14 @@
     "comparisonIds": [],
     "questionIds": [
       "q01",
-      "q02"
+      "q02",
+      "q-d1-a15",
+      "q-d1-a16",
+      "q-d1-a17",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a20",
+      "q-d1-a21"
     ],
     "sourceIds": [
       "responsible",
@@ -127,7 +134,13 @@
       "g-public-code-matching"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a15",
+      "q-d1-a16",
+      "q-d1-a17",
+      "q-d1-a20",
+      "q-d1-a21"
+    ],
     "sourceIds": [
       "responsible",
       "privacy",
@@ -205,7 +218,10 @@
     ],
     "questionIds": [
       "q01",
-      "q02"
+      "q02",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a22"
     ],
     "sourceIds": [
       "responsible",
@@ -994,7 +1010,10 @@
       "cmp-safety-filter-types"
     ],
     "questionIds": [
-      "q06"
+      "q06",
+      "q-d3-a16",
+      "q-d3-a17",
+      "q-d3-a19"
     ],
     "sourceIds": [
       "responsible",
@@ -1004,7 +1023,8 @@
       "cli-exclusion-admin",
       "inline-usage",
       "public-code",
-      "network-settings"
+      "network-settings",
+      "dotnet-tokens"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"
@@ -1083,7 +1103,10 @@
       "q06",
       "q-d3-f01",
       "q-d3-a02",
-      "q-d3-e03"
+      "q-d3-e03",
+      "q-d3-a16",
+      "q-d3-a17",
+      "q-d3-a19"
     ],
     "sourceIds": [
       "architecture",
@@ -1093,7 +1116,8 @@
       "inline-usage",
       "responsible",
       "model-hosting",
-      "repository-indexing"
+      "repository-indexing",
+      "dotnet-tokens"
     ],
     "lastVerifiedAt": "2026-10-12",
     "status": "needs-review"

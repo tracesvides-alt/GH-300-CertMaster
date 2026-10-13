@@ -11,6 +11,18 @@ const bank = read('content/gh300/2026-08-07/questions/seed.json');
 const report = read('reports/exam-question-quality-review.json');
 
 describe('six-point Exam review freshness', () => {
+  it('keeps a current fingerprint for a question moved out of Exam', () => {
+    const edited = structuredClone(bank);
+    const archived = report.reclassifiedQuestions[0];
+    edited.find(q => q.id === archived.id).choices[0].text += '未レビューの変更';
+    expect(validateExamReview(edited, report)).toContain(`Stale reclassified Exam review: ${archived.id}`);
+  });
+
+  it('does not silently lose the history when an Exam question is reclassified', () => {
+    const missing = structuredClone(report);
+    const archived = missing.reclassifiedQuestions.shift();
+    expect(validateExamReview(bank, missing)).toContain(`Lost historical Exam review: ${archived.id}`);
+  });
   it('covers the actual advanced inventory and rejects edited options', () => {
     expect(validateExamReview(bank,report)).toEqual([]);
     const edited = structuredClone(bank);

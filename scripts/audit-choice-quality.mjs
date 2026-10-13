@@ -1,16 +1,23 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import {loadQuestionAdditions,validateQuestionAdditions,combinedChoiceBaseline} from './question-additions.mjs';
 
 const root = new URL('../', import.meta.url);
 const bankPath = 'content/gh300/2026-08-07/questions/seed.json';
 const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
 const bank = read(bankPath);
+const retiredIds = new Set(read('content/gh300/2026-08-07/questions/selection-exclusions.json').questions.map(q => q.id));
+const activeBank = bank.filter(q => !retiredIds.has(q.id));
 const editorial = read('content/gh300/2026-08-07/questions/quality-review.json');
 const baseline = read('reports/question-choice-baseline.json');
-const contentBaseline = read('reports/question-choice-content-baseline.json');
+const additions = loadQuestionAdditions(root);
+const additionErrors = validateQuestionAdditions(bank, additions);
+if (additionErrors.length) throw Error(additionErrors.join('\n'));
+const additionById = new Map(additions?.questions.map(r => [r.id, r]) ?? []);
+const contentBaseline = combinedChoiceBaseline(read('reports/question-choice-content-baseline.json'), additions);
 const unchangedReasons = {
   q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',
-  'q-d2-a08': '四つの設定キーはいずれもMCP関連の語で、VS Code設定という条件が必要。',
+  'q-d2-a08': 'MCPのClient・Server・Resource・Toolを区別し、接続を利用する側という条件で選ぶ。',
   'q-d2-a12': '候補の全体採用・部分採用・閉じる操作の組合せは設問の要求が必要。',
   'q-d2-a13': '候補切替・全体採用・閉じる・単語採用の区別に設問が必要。',
   'q-d2-a14': '説明・編集・Agent・レビューの目的が異なり、変更しない条件が必要。',
@@ -21,7 +28,7 @@ const unchangedReasons = {
 };
 const difficultyReview = read('content/gh300/2026-08-07/questions/difficulty-review.json');
 const chooseSamples = (level, count) => {
-  const groups = ['d1','d2','d3','d4','d5','d6'].map(d => bank.filter(q => q.difficulty === level && q.domainId === d));
+  const groups = ['d1','d2','d3','d4','d5','d6'].map(d => activeBank.filter(q => q.difficulty === level && q.domainId === d));
   const result = [];
   for (let i = 0; result.length < count; i++) {
     let added = false;
@@ -97,8 +104,8 @@ const inventory = bank.map(q => {
     question: q.question, options, choices: q.choices, correctAnswer: q.answer,
     choiceExplanations: q.choiceExplanations, testedConcepts: q.testedConcepts ?? [],
     answer, sourceIds: q.sourceIds, status: q.status,
-    modified: changed.has(q.id), optionOnly: 'PASS',
-    optionOnlyReason: changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id] ?? (contentBaseline.questions[q.id]?.added ? '用語問題として新規追加。誤答は同じ領域の隣接概念で、設問の定義文で区別する。' : undefined),
+    modified: changed.has(q.id), newlyAdded: additionById.has(q.id), optionOnly: retiredIds.has(q.id) ? 'EXCLUDED' : 'PASS',
+    optionOnlyReason: additionById.get(q.id)?.review.optionOnlyEvidence ?? (changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id] ?? (contentBaseline.questions[q.id]?.added ? '用語問題として新規追加。誤答は同じ領域の隣接概念で、設問の定義文で区別する。' : undefined)),
     multipleAnswerRisk: false, lengthBias, missingExplanation, score,
     scoreBreakdown: { relevance, plausibility, uniqueness, symmetry, scenario, explanations },
     requirementMapping: q.requirementMapping ?? [],
@@ -123,11 +130,15 @@ const summarize = group => {
     averageEditorialScore: +avg(group.map(q => q.score)).toFixed(1),
   };
 };
-const byDifficulty = Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, summarize(inventory.filter(q => q.difficulty === d))]));
-const warnings = inventory.filter(q => q.lengthBias || q.missingExplanation || q.options.filter(o => !o.correct && o.plausibility >= 2).length < 2).map(q => q.questionId);
+const activeInventory = inventory.filter(q => !retiredIds.has(q.questionId));
+const byDifficulty = Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, summarize(activeInventory.filter(q => q.difficulty === d))]));
+const warnings = activeInventory.filter(q => q.lengthBias || q.missingExplanation || q.options.filter(o => !o.correct && o.plausibility >= 2).length < 2).map(q => q.questionId);
 const report = {
-  version: 2, generatedAt: '2026-10-12', methodology: `全${bank.length}問の編集レビュー。難易度の再評価後の分類・文面で再集計。スコアは編集判断であり、学習者の実測難易度ではない。`,
+  version: 2, generatedAt: editorial.lastUpdated ?? editorial.reviewedAt, methodology: `全${bank.length}問の記録済み編集レビューを現行の分類・文面で再集計。スコアは編集判断であり、学習者の実測難易度ではない。追加評価を待つ候補も別途記載する。`,
+  pendingFollowUpQuestionIds: editorial.pendingFollowUpQuestionIds ?? [],
   baseline: baseline.summary, after: byDifficulty, modifiedQuestionIds: [...changed], distractorsReplaced, unchangedReasons,
+  retiredQuestionIds: [...retiredIds], activeTotal: activeInventory.length, storedTotal: bank.length,
+  newlyAddedQuestionIds: [...additionById.keys()],
   warnings, inventoryByDifficulty: Object.fromEntries(['beginner', 'intermediate', 'advanced'].map(d => [d, inventory.filter(q => q.difficulty === d)])),
 };
 fs.writeFileSync(new URL('reports/question-choice-quality-audit.json', root), JSON.stringify(report, null, 2) + '\n');
@@ -136,7 +147,9 @@ const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam
 const lines = [
   '# GH-300 選択肢品質の全件監査', '',
   '## 判定方法', '',
-  `全${bank.length}問の記録された編集レビューを基に、分類・本文で再集計した。変更件数は初回の選択肢監査前からの累積で、表示順の変更も含む。基礎154問の今回の全件再レビューと改稿41問はfoundation-glossary-quality-review.mdに別記する。受験者の正答率を実測したものではない。`, '',
+  `新規出題${activeBank.length}問を集計。保存資産${bank.length}問のうち${retiredIds.size}問は出題対象外で、現在のPASS集計へ含めない。`, '',
+  `新規追加${additionById.size}問は独立した追加台帳から参照する。追加そのものを過去の改稿・誤答置換件数に含めず、固定ベースラインは維持する。`, '',
+  `全${bank.length}問の記録された編集レビューを基に、分類・本文で再集計した。変更件数は初回の選択肢監査前からの累積で、表示順の変更も含む。基礎の対応・指紋検査と追加レビューの履歴はfoundation-glossary-quality-review.mdに別記する。毎回全問を新たに意味的再評価したという主張ではなく、受験者の正答率も未測定。`, '',
   'Foundationの機能名称問題では、名称が正答をそのまま言い換える選択肢を実際のCopilot機能・操作の対比へ改めた。Applied/Examでは、他の3択が一律に無関係または危険な行動となる構図を避け、同じ作業の一部は満たすが設問の条件を満たさない選択肢へ変更した。', '',
   '## Before', '',
   '| 難易度 | 全問 | もっともらしい誤答の平均 | 無関係な誤答 | 本文なし正解の疑い | 未判定 |',
@@ -149,7 +162,7 @@ const lines = [
   '- 旧Knowledge Basesと旧CLI拡張を現行機能として扱う設問が残っていた。', '',
   '## Improvements', '',
   `- 全${bank.length}問のレビュー記録を確認し、${changed.size}問の本文・選択肢・解説または表示順が固定ベースラインから変更された。誤答の文面は${distractorsReplaced}件を変更した。`,
-  '- 正答IDとObjectiveは維持し、条件を一つ落とした部分解、適用範囲の違い、混同しやすいCopilot機能を優先した。',
+  '- 正答IDを維持し、条件を一つ落とした部分解、適用範囲の違い、混同しやすいCopilot機能を優先した。後続の難易度レビューで所属を訂正したObjectiveはquestion-difficulty-audit.mdに記録する。',
   '- 全選択肢の解説と出典を再確認し、改稿後の内容に結び付くレビュー指紋を更新した。', '',
   '## After', '',
   '| 難易度 | 全問 | 改稿 | 本文なしで判別可能 | 未判定 | 別解懸念 | 長さ偏り | 強い誤答2つ以上 | 編集スコア平均 |',
@@ -175,7 +188,7 @@ for (const [difficulty, ids] of Object.entries(samples)) {
   lines.push('');
 }
 lines.push('## Human Review Required', '',
-  '編集レビューで未解決とした問題は0問。実際の学習者へ問題文を伏せて解かせるブラインド試験と、受験者別の正答率による難易度校正は未実施。Concept Confusion Mapの個別学習履歴は利用者側のIndexedDBに保存されるため、このリポジトリでは実測の混同ペアを抽出できない。', '',
+  `台帳の失敗フラグは0問だが、追加評価を待つ候補は${report.pendingFollowUpQuestionIds.length}問（${report.pendingFollowUpQuestionIds.join('、') || 'なし'}）。実際の学習者へ本文を伏せる検証や難易度校正は未実施。台帳のPASSを推測リスク解消の保証とは扱わない。個別学習履歴は利用者側のIndexedDBに保存されるため、このリポジトリでは実測の混同ペアを抽出できない。`, '',
   '## 出典確認と限界', '',
   '改稿に伴い、終了した旧Copilot Knowledge BasesをCopilot Spacesへ、終了した旧`gh-copilot`拡張を現行Copilot CLIへ更新した。',
   '- [Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)',

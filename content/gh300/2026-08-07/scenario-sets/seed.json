@@ -39,9 +39,9 @@
       "d4"
     ],
     "objectiveIds": [
-      "d5o1",
+      "d5o2",
       "d1o2",
-      "d4o2"
+      "d4o1"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -64,12 +64,12 @@
     "scenario": "SaaSプロバイダーのHorizon Cloudの開発チームは、IDE内でCopilot Chatを使いながら社内Jira（Issue追跡）およびGrafana（本番メトリクス）の情報をシームレスに参照して障害調査を行いたいと考えています。これまでは開発者がブラウザからエラーログやIssueチケット本文をコピー＆ペーストしてプロンプトに貼り付けていましたが、時間的ロスと機密情報の誤送信リスクが課題となっていました。プラットフォームチームは、標準化されたオープンプロトコルを用いて社内システムとCopilotをセキュアに接続する基盤の導入を決定しました。",
     "domainIds": [
       "d2",
-      "d3"
+      "d4"
     ],
     "objectiveIds": [
       "d2o3",
       "d2o1",
-      "d3o2"
+      "d4o1"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -96,8 +96,7 @@
       "d5"
     ],
     "objectiveIds": [
-      "d2o1",
-      "d5o1",
+      "d2o3",
       "d5o2"
     ],
     "difficulty": "intermediate",
@@ -126,9 +125,8 @@
       "d6"
     ],
     "objectiveIds": [
-      "d1o1",
       "d1o2",
-      "d6o2"
+      "d6o1"
     ],
     "difficulty": "intermediate",
     "questionIds": [
@@ -152,13 +150,12 @@
     "title": "Global Logistics: チーム全体へのCustom InstructionsとPrompt Files標準化",
     "scenario": "国際貨物追跡システムを開発するGlobal Logisticsには50名以上の開発者が所属しており、TypeScriptとGo言語の混在リポジトリを運用しています。各メンバーがCopilotに指示を出す際、「非同期処理にはPromiseではなくasync/awaitを使う」「エラーハンドリングには社内カスタムエラークラスを使う」などのコーディング規約を毎回チャットに入力する必要があり、プロンプト記述のブレが発生していました。リードアーキテクトは、リポジトリ内に設定ファイルを配置し、チームメンバー全員が意識せずとも自動的にコーディング規約やコンテキストがCopilotへ注入される仕組みを整備することにしました。",
     "domainIds": [
-      "d4",
-      "d2"
+      "d2",
+      "d4"
     ],
     "objectiveIds": [
-      "d4o1",
-      "d4o2",
-      "d2o3"
+      "d2o3",
+      "d4o2"
     ],
     "difficulty": "advanced",
     "questionIds": [
@@ -180,12 +177,10 @@
     "title": "CyberShield Systems: Copilot Extensions の開発とOrganizationポリシー統制",
     "scenario": "セキュリティ製品ベンダーのCyberShield Systemsは、社内の脆弱性情報をCopilotから検索するMCP連携を設計しています。承認済みの接続先だけを利用し、同じサーバーへ接続する利用者でも文書ごとの閲覧権限を守る必要があります。管理者は接続ポリシーとサーバーの認可を分けて確認し、変更操作を監査ログで追跡する運用を求めています。",
     "domainIds": [
-      "d2",
-      "d6"
+      "d2"
     ],
     "objectiveIds": [
-      "d2o2",
-      "d6o1",
+      "d2o3",
       "d2o4"
     ],
     "difficulty": "advanced",
@@ -215,7 +210,6 @@
     ],
     "objectiveIds": [
       "d3o1",
-      "d3o2",
       "d2o1"
     ],
     "difficulty": "advanced",
@@ -239,11 +233,12 @@
     "scenario": "モバイルゲーム開発会社のNexis Gamesでは、Copilot導入による投資対効果（ROI）と開発者体験の改善度を評価するため、GitHubが提唱するSPACEフレームワークやCopilot Impact Metricsの導入を検討しています。VPoEは「単なるコード生成行数や提案受容率（Acceptance Rate）の数値だけにとらわれず、開発者の認知負荷（Cognitive Load）、レビュー待ち時間、新メンバーの初回コミットまでの期間（Time to First PR）を総合的に計測したい」と考えています。",
     "domainIds": [
       "d5",
+      "d2",
       "d1"
     ],
     "objectiveIds": [
       "d5o1",
-      "d5o2",
+      "d2o4",
       "d1o1"
     ],
     "difficulty": "advanced",
@@ -266,13 +261,11 @@
     "title": "SecureBank Online: 公開コード一致フィルター（Duplication Detection）と知的財産保護",
     "scenario": "インターネット専業銀行のSecureBank Onlineの法務・知財コンプライアンス部門は、Copilotが提案するコードの中に、GitHub上の公開リポジトリに存在する特定のオープンソースコード（GPL等のコピーレフトライセンスを含む）と完全に一致するスニペットが含まれ、知財紛争に巻き込まれるリスクを懸念しています。管理者は、Organization全体で公開コードと一致するコード提案を自動的にブロック（Match public code: Block）するポリシーの強制適用を決定しました。",
     "domainIds": [
-      "d6",
-      "d1"
+      "d6"
     ],
     "objectiveIds": [
-      "d6o1",
-      "d1o1",
-      "d6o2"
+      "d6o2",
+      "d6o1"
     ],
     "difficulty": "advanced",
     "questionIds": [

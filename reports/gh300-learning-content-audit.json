@@ -33,7 +33,8 @@
         "g-ip-copyright",
         "g-transparency",
         "g-code-accountability",
-        "g-nondeterminism"
+        "g-nondeterminism",
+        "g-automation-bias"
       ],
       "comparisonIds": []
     },
@@ -79,7 +80,8 @@
         "g-chat-variables",
         "g-status-menu",
         "g-agent-mode",
-        "g-copilot-edits"
+        "g-copilot-edits",
+        "g-doc-generation"
       ],
       "comparisonIds": [
         "cmp-chat-vs-inline",
@@ -165,7 +167,8 @@
         "g-audit-logs",
         "g-usage-metrics-api",
         "g-code-review-policies",
-        "g-policy-inheritance"
+        "g-policy-inheritance",
+        "g-compliance-auditability"
       ],
       "comparisonIds": [
         "cmp-org-vs-enterprise-policies"
@@ -191,6 +194,7 @@
         "g-tokenization",
         "g-post-processing",
         "g-transit-encryption",
+        "g-enterprise-data-privacy",
         "g-fill-in-the-middle",
         "g-safety-filtering"
       ],
@@ -207,6 +211,7 @@
       ],
       "glossaryIds": [
         "g-nondeterminism",
+        "g-tokenization",
         "g-suggestion-lifecycle",
         "g-context-window",
         "g-latency-tradeoff",
@@ -240,7 +245,9 @@
         "g-prompt-anatomy",
         "g-role-prompting",
         "g-step-by-step",
-        "g-context-priming"
+        "g-context-priming",
+        "g-negative-prompting",
+        "g-output-specification"
       ],
       "comparisonIds": [
         "cmp-instructions-vs-prompts",
@@ -307,6 +314,7 @@
       "glossaryIds": [
         "g-verification-validation",
         "g-security-vulnerability-scan",
+        "g-algorithm-optimization",
         "g-unit-test-generation",
         "g-integration-test-generation",
         "g-edge-case-discovery",
@@ -646,7 +654,8 @@
           "cli-exclusion-admin",
           "inline-usage",
           "public-code",
-          "network-settings"
+          "network-settings",
+          "dotnet-tokens"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -670,7 +679,8 @@
           "inline-usage",
           "responsible",
           "model-hosting",
-          "repository-indexing"
+          "repository-indexing",
+          "dotnet-tokens"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -1147,7 +1157,8 @@
           "d1"
         ],
         "objectiveIds": [
-          "d1o2"
+          "d1o2",
+          "d1o1"
         ],
         "sourceIds": [
           "responsible"
@@ -2204,10 +2215,12 @@
           "d3"
         ],
         "objectiveIds": [
-          "d3o1"
+          "d3o1",
+          "d3o2"
         ],
         "sourceIds": [
-          "architecture"
+          "architecture",
+          "dotnet-tokens"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -2293,7 +2306,8 @@
         ],
         "sourceIds": [
           "architecture",
-          "prompt"
+          "prompt",
+          "dotnet-tokens"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -2630,7 +2644,8 @@
           "d4"
         ],
         "objectiveIds": [
-          "d4o2"
+          "d4o2",
+          "d4o1"
         ],
         "sourceIds": [
           "prompt"
@@ -2649,7 +2664,8 @@
           "d4"
         ],
         "objectiveIds": [
-          "d4o2"
+          "d4o2",
+          "d4o1"
         ],
         "sourceIds": [
           "prompt"
@@ -2705,10 +2721,12 @@
         "id": "g-doc-generation",
         "title": "Documentation Generation (JSDoc, Docstrings)",
         "domainIds": [
-          "d5"
+          "d5",
+          "d2"
         ],
         "objectiveIds": [
-          "d5o1"
+          "d5o1",
+          "d2o1"
         ],
         "sourceIds": [
           "chat",
@@ -2787,7 +2805,8 @@
           "d5"
         ],
         "objectiveIds": [
-          "d5o1"
+          "d5o1",
+          "d5o2"
         ],
         "sourceIds": [
           "chat"
@@ -3083,10 +3102,12 @@
         "id": "g-enterprise-data-privacy",
         "title": "Data Privacy in Copilot Business and Enterprise",
         "domainIds": [
-          "d6"
+          "d6",
+          "d3"
         ],
         "objectiveIds": [
-          "d6o1"
+          "d6o1",
+          "d3o1"
         ],
         "sourceIds": [
           "privacy",
@@ -3209,10 +3230,12 @@
         "id": "g-compliance-auditability",
         "title": "Enterprise Compliance and Auditability",
         "domainIds": [
-          "d6"
+          "d6",
+          "d2"
         ],
         "objectiveIds": [
-          "d6o2"
+          "d6o2",
+          "d2o4"
         ],
         "sourceIds": [
           "privacy",
@@ -3837,7 +3860,7 @@
           "d6o2"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
         "lastVerifiedAt": "2026-10-12"
       },
       {
@@ -3847,15 +3870,26 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d1",
+          "d2",
+          "d3",
+          "d5",
           "d6",
-          "d2"
+          "d4"
         ],
         "objectiveIds": [
           "d1o1",
           "d1o2",
+          "d2o1",
+          "d3o1",
+          "d5o2",
+          "d5o1",
+          "d2o2",
           "d6o1",
+          "d4o1",
+          "d2o3",
+          "d2o4",
           "d6o2",
-          "d2o1"
+          "d3o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3868,19 +3902,27 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d2",
+          "d4",
+          "d5",
+          "d1",
+          "d6",
           "d3"
         ],
         "objectiveIds": [
           "d2o1",
-          "d2o2",
           "d2o3",
-          "d2o4",
-          "d3o1",
-          "d3o2"
+          "d4o2",
+          "d5o1",
+          "d5o2",
+          "d1o1",
+          "d1o2",
+          "d4o1",
+          "d6o1",
+          "d3o1"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       },
       {
@@ -3889,15 +3931,26 @@
         "url": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d4"
+          "d3",
+          "d4",
+          "d2",
+          "d5",
+          "d1"
         ],
         "objectiveIds": [
+          "d3o1",
           "d4o1",
-          "d4o2"
+          "d4o2",
+          "d2o3",
+          "d3o2",
+          "d5o2",
+          "d1o2",
+          "d2o1",
+          "d5o1"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       },
       {
@@ -3906,11 +3959,21 @@
         "url": "https://docs.github.com/en/copilot/tutorials/write-tests",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d5"
+          "d1",
+          "d5",
+          "d4",
+          "d6",
+          "d2"
         ],
         "objectiveIds": [
+          "d1o2",
           "d5o1",
-          "d5o2"
+          "d5o2",
+          "d4o1",
+          "d6o1",
+          "d1o1",
+          "d2o1",
+          "d2o3"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3923,11 +3986,19 @@
         "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d6"
+          "d2",
+          "d6",
+          "d1",
+          "d5"
         ],
         "objectiveIds": [
+          "d2o2",
           "d6o1",
-          "d6o2"
+          "d6o2",
+          "d1o1",
+          "d2o1",
+          "d5o2",
+          "d2o4"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3940,10 +4011,12 @@
         "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d6"
         ],
         "objectiveIds": [
-          "d2o2"
+          "d2o2",
+          "d6o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3957,13 +4030,16 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d2",
+          "d5",
           "d1"
         ],
         "objectiveIds": [
           "d2o3",
           "d2o1",
-          "d1o1",
-          "d2o2"
+          "d2o2",
+          "d5o2",
+          "d1o2",
+          "d5o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3976,12 +4052,21 @@
         "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d4",
+          "d6",
+          "d5",
+          "d3"
         ],
         "objectiveIds": [
           "d2o3",
+          "d2o1",
+          "d4o1",
           "d2o4",
-          "d2o2"
+          "d6o2",
+          "d6o1",
+          "d5o2",
+          "d3o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -3999,7 +4084,8 @@
         ],
         "objectiveIds": [
           "d2o3",
-          "d4o1"
+          "d4o1",
+          "d4o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4032,15 +4118,15 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d2",
-          "d4"
+          "d4",
+          "d3"
         ],
         "objectiveIds": [
           "d2o1",
           "d2o3",
           "d2o4",
-          "d4o1",
           "d4o2",
-          "d2o2"
+          "d3o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4069,13 +4155,17 @@
         "url": "https://docs.github.com/en/copilot/concepts/agents/code-review",
         "publisher": "GitHub Docs",
         "domainIds": [
+          "d1",
           "d2",
           "d5"
         ],
         "objectiveIds": [
+          "d1o2",
           "d2o3",
+          "d5o1",
           "d2o4",
-          "d5o1"
+          "d5o2",
+          "d2o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4089,12 +4179,17 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d2",
-          "d6"
+          "d6",
+          "d5",
+          "d3"
         ],
         "objectiveIds": [
+          "d2o3",
           "d2o4",
           "d6o1",
-          "d6o2"
+          "d6o2",
+          "d5o1",
+          "d3o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4110,7 +4205,8 @@
           "d2"
         ],
         "objectiveIds": [
-          "d2o4"
+          "d2o4",
+          "d2o3"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4123,10 +4219,15 @@
         "url": "https://docs.github.com/en/rest/copilot",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d5",
+          "d1"
         ],
         "objectiveIds": [
-          "d2o4"
+          "d2o4",
+          "d2o3",
+          "d5o1",
+          "d1o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4138,18 +4239,24 @@
         "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d3",
-          "d6"
+          "d1",
+          "d5",
+          "d6",
+          "d2",
+          "d3"
         ],
         "objectiveIds": [
-          "d3o1",
-          "d3o2",
+          "d1o1",
+          "d1o2",
+          "d5o2",
           "d6o1",
+          "d2o4",
+          "d3o1",
           "d6o2"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "needs-review"
       },
       {
@@ -4158,11 +4265,24 @@
         "url": "https://docs.github.com/en/copilot/get-started/about-github-copilot",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d3"
+          "d3",
+          "d1",
+          "d4",
+          "d6",
+          "d2",
+          "d5"
         ],
         "objectiveIds": [
           "d3o1",
-          "d3o2"
+          "d3o2",
+          "d1o1",
+          "d4o1",
+          "d6o1",
+          "d6o2",
+          "d4o2",
+          "d2o3",
+          "d2o1",
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4175,11 +4295,13 @@
         "url": "https://code.visualstudio.com/docs/agents/reference/mcp-configuration",
         "publisher": "VS Code Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d4"
         ],
         "objectiveIds": [
           "d2o3",
-          "d2o1"
+          "d2o1",
+          "d4o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-09-07"
@@ -4191,11 +4313,15 @@
         "publisher": "Model Context Protocol",
         "domainIds": [
           "d2",
-          "d6"
+          "d4",
+          "d5"
         ],
         "objectiveIds": [
           "d2o3",
-          "d6o1"
+          "d2o1",
+          "d4o1",
+          "d2o4",
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-09-07"
@@ -4207,11 +4333,17 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d3",
-          "d2"
+          "d2",
+          "d4",
+          "d5"
         ],
         "objectiveIds": [
           "d3o1",
-          "d2o1"
+          "d2o1",
+          "d4o1",
+          "d3o2",
+          "d5o1",
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4224,10 +4356,12 @@
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d5"
         ],
         "objectiveIds": [
-          "d2o1"
+          "d2o2",
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4243,10 +4377,11 @@
           "d3"
         ],
         "objectiveIds": [
-          "d3o2"
+          "d3o1"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       },
       {
@@ -4257,13 +4392,15 @@
         "domainIds": [
           "d3",
           "d6",
+          "d2",
           "d1"
         ],
         "objectiveIds": [
-          "d3o2",
-          "d6o1",
+          "d3o1",
           "d6o2",
-          "d1o1"
+          "d6o1",
+          "d2o4",
+          "d1o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4276,12 +4413,15 @@
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code",
         "publisher": "GitHub Docs",
         "domainIds": [
+          "d3",
           "d6",
-          "d1"
+          "d2"
         ],
         "objectiveIds": [
+          "d3o1",
+          "d6o2",
           "d6o1",
-          "d1o1"
+          "d2o4"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4294,13 +4434,17 @@
         "url": "https://code.visualstudio.com/docs/agents/reference/workspace-context",
         "publisher": "VS Code Docs",
         "domainIds": [
-          "d4",
-          "d3"
+          "d2",
+          "d3",
+          "d4"
         ],
         "objectiveIds": [
-          "d4o2",
+          "d2o1",
+          "d2o3",
           "d3o1",
-          "d3o2"
+          "d4o2",
+          "d3o2",
+          "d4o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-09-07"
@@ -4328,7 +4472,7 @@
           "d5"
         ],
         "objectiveIds": [
-          "d5o1"
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-09-07"
@@ -4342,10 +4486,10 @@
           "d5"
         ],
         "objectiveIds": [
-          "d5o1"
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-09-07"
+        "lastCheckedAt": "2026-10-13"
       },
       {
         "id": "secret-scanning",
@@ -4354,12 +4498,17 @@
         "publisher": "GitHub Docs",
         "domainIds": [
           "d6",
-          "d5"
+          "d2",
+          "d5",
+          "d1"
         ],
         "objectiveIds": [
           "d6o1",
           "d6o2",
-          "d5o2"
+          "d2o4",
+          "d2o3",
+          "d5o2",
+          "d1o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4372,10 +4521,17 @@
         "url": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d5"
+          "d2",
+          "d5",
+          "d6",
+          "d1"
         ],
         "objectiveIds": [
-          "d5o2"
+          "d2o3",
+          "d5o2",
+          "d6o2",
+          "d6o1",
+          "d1o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4389,11 +4545,14 @@
         "publisher": "GitHub Blog",
         "domainIds": [
           "d5",
+          "d2",
           "d1"
         ],
         "objectiveIds": [
           "d5o1",
-          "d1o1"
+          "d2o4",
+          "d1o1",
+          "d1o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4409,7 +4568,6 @@
           "d6"
         ],
         "objectiveIds": [
-          "d2o1",
           "d2o4",
           "d6o1"
         ],
@@ -4424,12 +4582,13 @@
         "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d6"
         ],
         "objectiveIds": [
           "d2o1",
-          "d2o3",
-          "d2o4"
+          "d2o4",
+          "d6o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4447,12 +4606,12 @@
         ],
         "objectiveIds": [
           "d3o1",
-          "d3o2",
+          "d6o1",
           "d6o2"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       },
       {
@@ -4461,11 +4620,12 @@
         "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies",
         "publisher": "GitHub Docs",
         "domainIds": [
+          "d3",
           "d6"
         ],
         "objectiveIds": [
-          "d6o1",
-          "d6o2"
+          "d3o1",
+          "d6o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4506,7 +4666,7 @@
       },
       {
         "id": "cli-exclusion-admin",
-        "title": "Administering GitHub Copilot CLI for your enterprise",
+        "title": "Administering Copilot CLI for your enterprise",
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
         "publisher": "GitHub Docs",
         "domainIds": [
@@ -4596,10 +4756,12 @@
         "url": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/",
         "publisher": "GitHub Blog",
         "domainIds": [
-          "d3"
+          "d3",
+          "d5"
         ],
         "objectiveIds": [
-          "d3o1"
+          "d3o1",
+          "d5o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4631,6 +4793,7 @@
           "d2"
         ],
         "objectiveIds": [
+          "d2o1",
           "d2o3"
         ],
         "syllabusVersion": "2026-08-07",
@@ -4649,7 +4812,8 @@
         ],
         "objectiveIds": [
           "d2o4",
-          "d3o1"
+          "d3o1",
+          "d3o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4662,14 +4826,16 @@
         "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d3"
+          "d3",
+          "d6"
         ],
         "objectiveIds": [
-          "d3o1"
+          "d3o1",
+          "d6o1"
         ],
         "syllabusVersion": "2026-08-07",
-        "lastCheckedAt": "2026-10-12",
-        "lastVerifiedAt": "2026-10-12",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       },
       {
@@ -4742,10 +4908,10 @@
         "url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d3"
+          "d2"
         ],
         "objectiveIds": [
-          "d3o2"
+          "d2o4"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4798,6 +4964,118 @@
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
         "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "ml-fairness",
+        "title": "Machine learning fairness",
+        "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-fairness-ml?view=azureml-api-2",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "autofix-triage",
+        "title": "Triaging code scanning alerts in pull requests",
+        "url": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/triage-alerts-in-pull-requests",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified"
+      },
+      {
+        "id": "ml-sql-injection",
+        "title": "SQL injection",
+        "url": "https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-injection?view=sql-server-ver17",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "status": "verified"
+      },
+      {
+        "id": "ml-password-hashing",
+        "title": "Hash passwords in ASP.NET Core",
+        "url": "https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-10.0",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "status": "verified"
+      },
+      {
+        "id": "artifact-attestations",
+        "title": "Artifact attestations",
+        "url": "https://docs.github.com/en/actions/concepts/security/artifact-attestations",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "status": "verified"
+      },
+      {
+        "id": "copilot-allowlist",
+        "title": "Copilot allowlist reference",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "status": "verified"
+      },
+      {
+        "id": "dotnet-tokens",
+        "title": "Understanding tokens",
+        "url": "https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens",
+        "publisher": "Microsoft Learn",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
         "status": "verified"
       }
     ]

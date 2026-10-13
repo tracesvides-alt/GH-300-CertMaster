@@ -1,0 +1,1868 @@
+{
+  "reviewedAt": "2026-10-13",
+  "scope": [
+    "q-d5-e04",
+    "q-d1-e02",
+    "q-sc02-3",
+    "q-d1-e01",
+    "q-d3-e03"
+  ],
+  "independentBlindExperiment": false,
+  "measuredLearnerDifficulty": false,
+  "questions": [
+    {
+      "id": "q-d5-e04",
+      "title": "生成文書と現行API契約の不一致",
+      "decision": "応用へ再分類・改稿",
+      "before": {
+        "id": "q-d5-e04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d5",
+        "objectiveId": "d5o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d5o2",
+          "インシデント切り分け",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "承認済みv2仕様",
+          "未発見ならnull",
+          "JSDocはUserNotFoundError",
+          "v1が例外方式"
+        ],
+        "question": "公開関数findUserの承認済みv2仕様と契約テストは「未発見ならnull」です。実装もnullを返しますが、Copilotが生成したJSDocはUserNotFoundErrorを投げると記載しています。移行ガイドにはv1が例外方式だったとあります。互換性を保つ修正は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "JSDocをv2のnull契約へ合わせ、未発見ケースとの一致を確認する"
+          },
+          {
+            "id": "C",
+            "text": "契約テストを例外方式へ変え、実装はnullのまま維持する"
+          },
+          {
+            "id": "D",
+            "text": "v2仕様を例外方式へ変え、利用者へ変更内容を告知する"
+          },
+          {
+            "id": "B",
+            "text": "実装と契約テストを例外方式へ合わせ、JSDocを保つ"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。",
+        "choiceExplanations": {
+          "A": "現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。",
+          "B": "現在はnullが承認済みのv2契約なので、古い例外方式へ実装と検査を変えてしまう。",
+          "C": "テストだけを古い契約にすると、正しい現行実装を失敗扱いにする。",
+          "D": "承認済み契約を変更する要求はなく、文書誤記の修正範囲を超える。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "テストだけを古い契約にすると、正しい現行実装を失敗扱いにする。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "承認済み契約を変更する要求はなく、文書誤記の修正範囲を超える。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "現在はnullが承認済みのv2契約なので、古い例外方式へ実装と検査を変えてしまう。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "公開関数findUserの承認済みv2仕様と契約テストは「未発見ならnull」です。実装もnullを返しますが、Copilotが生成したJSDocはUserNotFoundErrorを投げると記載しています。移行ガイドにはv1が例外方式だったとあります。互換性を保つ修正は？",
+            "correctReason": "現在の仕様・実装・テストが一致しており、古い契約を記述した生成文だけが不整合。実装を変えず文書を直す。",
+            "distractorFailures": {
+              "C": "テストだけを古い契約にすると、正しい現行実装を失敗扱いにする。",
+              "D": "承認済み契約を変更する要求はなく、文書誤記の修正範囲を超える。",
+              "B": "現在はnullが承認済みのv2契約なので、古い例外方式へ実装と検査を変えてしまう。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d5-e04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d5",
+        "objectiveId": "d5o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "testedConcepts": [
+          "d5o1",
+          "generated-documentation",
+          "api-contract-consistency"
+        ],
+        "clues": [],
+        "question": "CopilotがfindUserの説明を生成しました。承認済みv2契約は未発見ならnullです。実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。現行契約と利用者の互換性を保つ修正は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "JSDocを承認済みv2契約へ合わせ、未発見の記述を照合する"
+          },
+          {
+            "id": "C",
+            "text": "契約テストを承認済みv2契約へ合わせ、未発見の期待値を照合する"
+          },
+          {
+            "id": "D",
+            "text": "呼出側を承認済みv2契約へ合わせ、未発見の分岐処理を照合する"
+          },
+          {
+            "id": "B",
+            "text": "実装を承認済みv2契約へ合わせ、未発見の実行結果を照合する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。",
+        "choiceExplanations": {
+          "A": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。",
+          "C": "期待値が旧例外方式なら必要だが、今回はテストが承認契約のnullと一致する。",
+          "D": "呼出側が例外を待つなら必要だが、今回はnull分岐が現行契約に合う。",
+          "B": "実装が旧例外方式なら必要だが、今回はnullを返して契約に合う。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "期待値が旧例外方式なら必要だが、今回はテストが承認契約のnullと一致する。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "呼出側が例外を待つなら必要だが、今回はnull分岐が現行契約に合う。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "実装が旧例外方式なら必要だが、今回はnullを返して契約に合う。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。",
+            "correctReason": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。",
+            "distractorFailures": {
+              "C": "期待値が旧例外方式なら必要だが、今回はテストが承認契約のnullと一致する。",
+              "D": "呼出側が例外を待つなら必要だが、今回はnull分岐が現行契約に合う。",
+              "B": "実装が旧例外方式なら必要だが、今回はnullを返して契約に合う。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-five-review-2026-10-13"
+      },
+      "fingerprint": "82af74ee0cbafa2992dab120da2cabab443a2608e9ffcb5806e338246c0fe255",
+      "classificationChange": {
+        "from": "advanced",
+        "to": "intermediate",
+        "reason": "応用へ再分類。具体的な移行契約を成果物へ適用する問題であり、矛盾する証拠の有効範囲を多段階に分析する問題ではない。文書生成・整合性の目標d5o1へ所属を訂正。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "各案は別条件なら成立し、今回の観測・承認対象を本文へ照合する。一般に最も安全・網羅的な案だけを選ぶ構成を解消した編集判断。独立受験者の実測ではない。"
+      },
+      "reasoningSteps": [
+        "承認済みv2の未発見契約を基準に、各成果物の記述と動作を照合する。",
+        "旧版を記述するJSDocだけを修正し、現行のnull契約を維持する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。",
+          "to": "JSDocと契約テストはnull、呼出側はnull分岐ですが、実装だけが旧v1の例外方式です。",
+          "question": "CopilotがfindUserの説明を生成しました。承認済みv2契約は未発見ならnullです。JSDocと契約テストはnull、呼出側はnull分岐ですが、実装だけが旧v1の例外方式です。現行契約と利用者の互換性を保つ修正は？",
+          "answerId": "B",
+          "rationale": "文書・テスト・呼出側でなく実装の動作だけを承認契約へ合わせる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。",
+          "to": "JSDocと実装はnull、呼出側はnull分岐ですが、契約テストだけが旧v1の例外を期待します。",
+          "question": "CopilotがfindUserの説明を生成しました。承認済みv2契約は未発見ならnullです。JSDocと実装はnull、呼出側はnull分岐ですが、契約テストだけが旧v1の例外を期待します。現行契約と利用者の互換性を保つ修正は？",
+          "answerId": "C",
+          "rationale": "承認契約と合う実装を変更せず、古い期待値だけを直す。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "実装と契約テストはnull、呼出側はnull分岐ですが、JSDocだけが旧v1の例外方式です。",
+          "to": "JSDocと実装と契約テストはnullですが、呼出側だけが旧v1の例外を待つ処理です。",
+          "question": "CopilotがfindUserの説明を生成しました。承認済みv2契約は未発見ならnullです。JSDocと実装と契約テストはnullですが、呼出側だけが旧v1の例外を待つ処理です。現行契約と利用者の互換性を保つ修正は？",
+          "answerId": "D",
+          "rationale": "承認契約は維持し、呼出側の未発見分岐だけをnullへ移行する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 30,
+        "wrong": [
+          29,
+          30,
+          31
+        ],
+        "medianWrong": 30,
+        "ratio": 1,
+        "position": "A"
+      },
+      "assessment": "応用へ再分類。具体的な移行契約を成果物へ適用する問題であり、矛盾する証拠の有効範囲を多段階に分析する問題ではない。文書生成・整合性の目標d5o1へ所属を訂正。",
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "契約テストを承認済みv2契約へ合わせ、未発見の期待値を照合する",
+          "whyWrong": "期待値が旧例外方式なら必要だが、今回はテストが承認契約のnullと一致する。"
+        },
+        {
+          "id": "D",
+          "text": "呼出側を承認済みv2契約へ合わせ、未発見の分岐処理を照合する",
+          "whyWrong": "呼出側が例外を待つなら必要だが、今回はnull分岐が現行契約に合う。"
+        },
+        {
+          "id": "B",
+          "text": "実装を承認済みv2契約へ合わせ、未発見の実行結果を照合する",
+          "whyWrong": "実装が旧例外方式なら必要だが、今回はnullを返して契約に合う。"
+        }
+      ]
+    },
+    {
+      "id": "q-d1-e02",
+      "title": "成功ラベルと証跡の実際の範囲を照合する",
+      "decision": "本番相当として強化",
+      "before": {
+        "id": "q-d1-e02",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d1o2",
+          "インシデント切り分け",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "公開APIを変えたY",
+          "Yは型検査だけ成功",
+          "承認対象はXだけ",
+          "不足する証跡だけ"
+        ],
+        "question": "AgentのPRでコミットXの契約テストと承認が成功した。その後、公開APIを変えたYをPushした。Yは型検査だけ成功。担当者の承認対象はXだけ。運用基準は現行の契約変更に対するテストと承認で、既にある適合証跡は再利用する。Yへ不足する証跡だけを補う案は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Yの契約テストとYの変更に対する承認を補う"
+          },
+          {
+            "id": "B",
+            "text": "Xの契約テストとXの承認を両方そのまま使う"
+          },
+          {
+            "id": "D",
+            "text": "既存の契約テストを使い、Yの変更承認だけを補う"
+          },
+          {
+            "id": "C",
+            "text": "既存の承認を使い、Yの契約テストだけを補う"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現行のYには契約テストと変更承認の両方が不足している。",
+        "choiceExplanations": {
+          "A": "現行のYには契約テストと変更承認の両方が不足している。",
+          "B": "公開APIが変わったYの動作と採用判断を確認できない。",
+          "C": "既存承認はXだけを対象としており、Yの契約変更は未承認。",
+          "D": "Xの動作検査は変更されたYの契約を確認しない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "現行のYには契約テストと変更承認の両方が不足している。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "公開APIが変わったYの動作と採用判断を確認できない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "Xの動作検査は変更されたYの契約を確認しない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "既存承認はXだけを対象としており、Yの契約変更は未承認。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "AgentのPRでコミットXの契約テストと承認が成功した。その後、公開APIを変えたYをPushした。Yは型検査だけ成功。担当者の承認対象はXだけ。運用基準は現行の契約変更に対するテストと承認で、既にある適合証跡は再利用する。Yへ不足する証跡だけを補う案は？",
+            "correctReason": "現行のYには契約テストと変更承認の両方が不足している。",
+            "distractorFailures": {
+              "B": "公開APIが変わったYの動作と採用判断を確認できない。",
+              "D": "Xの動作検査は変更されたYの契約を確認しない。",
+              "C": "既存承認はXだけを対象としており、Yの契約変更は未承認。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d1-e02",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d1o2",
+          "evidence-scope",
+          "mock-boundary",
+          "approval-granularity"
+        ],
+        "clues": [
+          "POSTの応答契約を変更",
+          "POSTは成功スタブ",
+          "許可範囲は同じファイルの書式変更だけ"
+        ],
+        "question": "AgentのPRでYがPOSTの応答契約を変更しました。証跡Tは「Yのテスト成功」、Rは「Yのファイル承認済み」です。Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。社内基準は変更した実ルートの契約検証と変更種別の承認を要求し、有効な証跡は再利用します。不足だけを補う案は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "POST契約の実ルート検証と、POSTの契約変更に対する承認を補う"
+          },
+          {
+            "id": "B",
+            "text": "既存のテスト証跡と承認証跡を両方再利用して追加を終える"
+          },
+          {
+            "id": "D",
+            "text": "既存のテスト証跡を再利用し、POSTの契約変更の承認を補う"
+          },
+          {
+            "id": "C",
+            "text": "既存の承認証跡を再利用し、POST契約の実ルート検証を補う"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "対象Yとファイル名の一致だけでは十分でない。Tは変更したPOST実ルートを通らず、Rは挙動変更を承認していないので、両方の不足を補う。",
+        "choiceExplanations": {
+          "A": "対象Yとファイル名の一致だけでは十分でない。Tは変更したPOST実ルートを通らず、Rは挙動変更を承認していないので、両方の不足を補う。",
+          "B": "実POSTの契約検証と挙動変更の承認がともに記録されている場合の案。今回の成功・承認ラベルだけでは両基準を満たさない。",
+          "D": "実POSTの契約検証が記録されていれば再利用できるが、今回は成功スタブで代替されている。",
+          "C": "POSTの挙動変更が承認範囲なら再利用できるが、今回は書式変更だけの承認である。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "対象Yとファイル名の一致だけでは十分でない。Tは変更したPOST実ルートを通らず、Rは挙動変更を承認していないので、両方の不足を補う。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "実POSTの契約検証と挙動変更の承認がともに記録されている場合の案。今回の成功・承認ラベルだけでは両基準を満たさない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "実POSTの契約検証が記録されていれば再利用できるが、今回は成功スタブで代替されている。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "POSTの挙動変更が承認範囲なら再利用できるが、今回は書式変更だけの承認である。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。",
+            "correctReason": "対象Yとファイル名の一致だけでは十分でない。Tは変更したPOST実ルートを通らず、Rは挙動変更を承認していないので、両方の不足を補う。",
+            "distractorFailures": {
+              "B": "実POSTの契約検証と挙動変更の承認がともに記録されている場合の案。今回の成功・承認ラベルだけでは両基準を満たさない。",
+              "D": "実POSTの契約検証が記録されていれば再利用できるが、今回は成功スタブで代替されている。",
+              "C": "POSTの挙動変更が承認範囲なら再利用できるが、今回は書式変更だけの承認である。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-five-review-2026-10-13"
+      },
+      "fingerprint": "590394842b6b00b562007771815c78abcf92ed994fc649591dcf6a2108511426",
+      "classificationChange": {
+        "from": "advanced",
+        "to": "advanced",
+        "reason": "本番相当として維持・強化。成功ラベル、実行経路、承認対象の粒度が違う証跡を比較し、再利用の可否を個別に導く。単に「テスト・承認がない」という明示条件の言い換えを解消。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "各案は別条件なら成立し、今回の観測・承認対象を本文へ照合する。一般に最も安全・網羅的な案だけを選ぶ構成を解消した編集判断。独立受験者の実測ではない。"
+      },
+      "reasoningSteps": [
+        "Yで変わった対象をPOSTの挙動と特定し、T/Rの表題と明細を分ける。",
+        "Tの実行経路とRの承認種別を社内基準へ照合し、対象Yやファイル名の一致だけでは不足すると判断する。",
+        "実POST契約の検証と、POSTの契約変更の承認を補い、それぞれの対象を記録する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。",
+          "to": "Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲にはそのPOST契約変更も含まれます。",
+          "question": "AgentのPRでYがPOSTの応答契約を変更しました。証跡Tは「Yのテスト成功」、Rは「Yのファイル承認済み」です。Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲にはそのPOST契約変更も含まれます。社内基準は変更した実ルートの契約検証と変更種別の承認を要求し、有効な証跡は再利用します。不足だけを補う案は？",
+          "answerId": "B",
+          "rationale": "今回の変更に対応する実ルート検証と変更承認の両方がそろい、再利用できる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。",
+          "to": "Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲は同じファイルの書式変更だけです。",
+          "question": "AgentのPRでYがPOSTの応答契約を変更しました。証跡Tは「Yのテスト成功」、Rは「Yのファイル承認済み」です。Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲は同じファイルの書式変更だけです。社内基準は変更した実ルートの契約検証と変更種別の承認を要求し、有効な証跡は再利用します。不足だけを補う案は？",
+          "answerId": "D",
+          "rationale": "テストは有効だが挙動変更の承認がないため、承認だけを補う。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。",
+          "to": "Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲には今回のPOST契約変更も含まれます。",
+          "question": "AgentのPRでYがPOSTの応答契約を変更しました。証跡Tは「Yのテスト成功」、Rは「Yのファイル承認済み」です。Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲には今回のPOST契約変更も含まれます。社内基準は変更した実ルートの契約検証と変更種別の承認を要求し、有効な証跡は再利用します。不足だけを補う案は？",
+          "answerId": "C",
+          "rationale": "変更承認は有効だが実POSTの検証がないため、実ルート検証だけを補う。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 33,
+        "wrong": [
+          27,
+          29,
+          29
+        ],
+        "medianWrong": 29,
+        "ratio": 1.1379310344827587,
+        "position": "A"
+      },
+      "assessment": "本番相当として維持・強化。成功ラベル、実行経路、承認対象の粒度が違う証跡を比較し、再利用の可否を個別に導く。単に「テスト・承認がない」という明示条件の言い換えを解消。",
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "既存のテスト証跡と承認証跡を両方再利用して追加を終える",
+          "whyWrong": "実POSTの契約検証と挙動変更の承認がともに記録されている場合の案。今回の成功・承認ラベルだけでは両基準を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "既存のテスト証跡を再利用し、POSTの契約変更の承認を補う",
+          "whyWrong": "実POSTの契約検証が記録されていれば再利用できるが、今回は成功スタブで代替されている。"
+        },
+        {
+          "id": "C",
+          "text": "既存の承認証跡を再利用し、POST契約の実ルート検証を補う",
+          "whyWrong": "POSTの挙動変更が承認範囲なら再利用できるが、今回は書式変更だけの承認である。"
+        }
+      ]
+    },
+    {
+      "id": "q-sc02-3",
+      "title": "承認済み挙動から丸め例を選ぶ",
+      "decision": "応用へ再分類・改稿",
+      "before": {
+        "id": "q-sc02-3",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc02",
+        "scenarioType": "modernization",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d4o2",
+          "実験対照比較",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "2.4→2と2.6→3",
+          "四捨五入でも偶数丸めでもこの例に合う",
+          "採用契約は偶数丸め"
+        ],
+        "question": "【Apex Financial事例】「正数を整数へ丸める」プロンプトに、2.4→2と2.6→3を示しました。Copilotは四捨五入でも偶数丸めでもこの例に合うと回答しています。採用契約は偶数丸めです。二方式を区別して一般化を誤らせない追加情報は？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "常に小さい整数へという規則と、2.5→2・3.5→3の例"
+          },
+          {
+            "id": "C",
+            "text": "同距離なら大きい整数へという規則と、2.5→3・3.5→4の例"
+          },
+          {
+            "id": "B",
+            "text": "小数1桁までという規則と、4.4→4・4.6→5の例"
+          },
+          {
+            "id": "A",
+            "text": "同距離なら偶数へという規則と、2.5→2・3.5→4の例"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。",
+        "choiceExplanations": {
+          "A": "既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。",
+          "B": "中間点がないため二方式の曖昧さを残す。",
+          "C": "正数の四捨五入の例であり、今回の偶数丸めの2.5→2を満たさない。",
+          "D": "切捨ての規則であり、3.5を偶数の4へ進める契約に反する。"
+        },
+        "sourceIds": [
+          "prompt"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "切捨ての規則であり、3.5を偶数の4へ進める契約に反する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "正数の四捨五入の例であり、今回の偶数丸めの2.5→2を満たさない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "中間点がないため二方式の曖昧さを残す。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "【Apex Financial事例】「正数を整数へ丸める」プロンプトに、2.4→2と2.6→3を示しました。Copilotは四捨五入でも偶数丸めでもこの例に合うと回答しています。採用契約は偶数丸めです。二方式を区別して一般化を誤らせない追加情報は？",
+            "correctReason": "既存例は二方式が同じ結果になる領域。中間点で偶数の向きが変わる二例と規則を示すことで、切捨てとも区別できる。",
+            "distractorFailures": {
+              "D": "切捨ての規則であり、3.5を偶数の4へ進める契約に反する。",
+              "C": "正数の四捨五入の例であり、今回の偶数丸めの2.5→2を満たさない。",
+              "B": "中間点がないため二方式の曖昧さを残す。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-sc02-3",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d4",
+        "objectiveId": "d4o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc02",
+        "scenarioType": "modernization",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "testedConcepts": [
+          "d4o1",
+          "few-shot-examples",
+          "rounding-contract-application"
+        ],
+        "clues": [],
+        "question": "【Apex Financial事例】Copilotへの既存例は2.4→2、2.6→3です。候補は最近接への丸めで、同距離を小さい側・大きい側・偶数・奇数へ寄せる4方式です。承認済みの記録は1.5→2、4.5→4です。その方式を保つため追加する2.5と3.5の入出力例は？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "2.5→2と3.5→3の入出力例を追加する"
+          },
+          {
+            "id": "C",
+            "text": "2.5→3と3.5→4の入出力例を追加する"
+          },
+          {
+            "id": "B",
+            "text": "2.5→3と3.5→3の入出力例を追加する"
+          },
+          {
+            "id": "A",
+            "text": "2.5→2と3.5→4の入出力例を追加する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。",
+        "choiceExplanations": {
+          "A": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。",
+          "D": "同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。",
+          "C": "同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。",
+          "B": "同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。"
+        },
+        "sourceIds": [
+          "prompt"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt"
+            ],
+            "rationale": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "承認済みの記録は1.5→2、4.5→4です。",
+            "correctReason": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。",
+            "distractorFailures": {
+              "D": "同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。",
+              "C": "同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。",
+              "B": "同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-five-review-2026-10-13"
+      },
+      "fingerprint": "d785519e3ddb029bfa8d86f5b600a5d804030c86fe94122595f0133460de1c59",
+      "classificationChange": {
+        "from": "advanced",
+        "to": "intermediate",
+        "reason": "応用へ再分類。候補方式の識別と新しい入力への適用が中心であり、複合証拠の独立した検証を要する本番相当とは区別する。本文から方式名を転記するだけの構成を解消し、few-shotの目標d4o1へ所属を訂正。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "各案は別条件なら成立し、今回の観測・承認対象を本文へ照合する。一般に最も安全・網羅的な案だけを選ぶ構成を解消した編集判断。独立受験者の実測ではない。"
+      },
+      "reasoningSteps": [
+        "同距離で上下に分かれる承認記録を4候補へ照合し、偶数方式を特定する。",
+        "特定した方式を未提示の2.5と3.5へ適用し、必要な入出力例を追加する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "承認済みの記録は1.5→2、4.5→4です。",
+          "to": "承認済みの記録は1.5→2、4.5→5です。",
+          "question": "【Apex Financial事例】Copilotへの既存例は2.4→2、2.6→3です。候補は最近接への丸めで、同距離を小さい側・大きい側・偶数・奇数へ寄せる4方式です。承認済みの記録は1.5→2、4.5→5です。その方式を保つため追加する2.5と3.5の入出力例は？",
+          "answerId": "C",
+          "rationale": "同距離は両方とも大きい側で、2.5→3・3.5→4となる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "承認済みの記録は1.5→2、4.5→4です。",
+          "to": "承認済みの記録は1.5→1、4.5→4です。",
+          "question": "【Apex Financial事例】Copilotへの既存例は2.4→2、2.6→3です。候補は最近接への丸めで、同距離を小さい側・大きい側・偶数・奇数へ寄せる4方式です。承認済みの記録は1.5→1、4.5→4です。その方式を保つため追加する2.5と3.5の入出力例は？",
+          "answerId": "D",
+          "rationale": "同距離は両方とも小さい側で、2.5→2・3.5→3となる。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "承認済みの記録は1.5→2、4.5→4です。",
+          "to": "承認済みの記録は1.5→1、4.5→5です。",
+          "question": "【Apex Financial事例】Copilotへの既存例は2.4→2、2.6→3です。候補は最近接への丸めで、同距離を小さい側・大きい側・偶数・奇数へ寄せる4方式です。承認済みの記録は1.5→1、4.5→5です。その方式を保つため追加する2.5と3.5の入出力例は？",
+          "answerId": "B",
+          "rationale": "同距離は奇数へ向かい、2.5→3・3.5→3となる。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 21,
+        "wrong": [
+          21,
+          21,
+          21
+        ],
+        "medianWrong": 21,
+        "ratio": 1,
+        "position": "D"
+      },
+      "assessment": "応用へ再分類。候補方式の識別と新しい入力への適用が中心であり、複合証拠の独立した検証を要する本番相当とは区別する。本文から方式名を転記するだけの構成を解消し、few-shotの目標d4o1へ所属を訂正。",
+      "wrongChoiceAnalysis": [
+        {
+          "id": "D",
+          "text": "2.5→2と3.5→3の入出力例を追加する",
+          "whyWrong": "同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。"
+        },
+        {
+          "id": "C",
+          "text": "2.5→3と3.5→4の入出力例を追加する",
+          "whyWrong": "同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。"
+        },
+        {
+          "id": "B",
+          "text": "2.5→3と3.5→3の入出力例を追加する",
+          "whyWrong": "同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d1-e01",
+      "title": "同名パッケージの証跡を配布物へ対応付ける",
+      "decision": "本番相当として強化",
+      "before": {
+        "id": "q-d1-e01",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d1o1",
+          "複合制約トレードオフ",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "発行元未確認",
+          "指定の色変換テストに失敗",
+          "出所確認と必要な機能の両方"
+        ],
+        "question": "Copilotが画像処理の依存PとQを提案しました。Pは機能テスト成功・既知脆弱性0件ですが、公開は昨日で発行元未確認です。Qは承認済みの発行元・署名一致ですが、指定の色変換テストに失敗します。採用基準は出所確認と必要な機能の両方です。各候補の判断は？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "PもQも採用候補とし、次段階の性能検査へ進む"
+          },
+          {
+            "id": "C",
+            "text": "Pは出所確認まで保留、Qは採用候補"
+          },
+          {
+            "id": "B",
+            "text": "Pは採用候補、Qは機能修正と再検証まで保留"
+          },
+          {
+            "id": "A",
+            "text": "Pは出所確認まで保留、Qは機能修正と再検証まで保留"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。",
+        "choiceExplanations": {
+          "A": "Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。",
+          "B": "Pの出所が未確認なので、機能成功だけでは採用基準を満たさない。",
+          "C": "Qは承認済みの出所でも必要な色変換に失敗する。",
+          "D": "両者の未達条件を先送りして採用候補とする。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat"
+            ],
+            "rationale": "両者の未達条件を先送りして採用候補とする。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat"
+            ],
+            "rationale": "Qは承認済みの出所でも必要な色変換に失敗する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat"
+            ],
+            "rationale": "Pの出所が未確認なので、機能成功だけでは採用基準を満たさない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "chat"
+            ],
+            "rationale": "Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが画像処理の依存PとQを提案しました。Pは機能テスト成功・既知脆弱性0件ですが、公開は昨日で発行元未確認です。Qは承認済みの発行元・署名一致ですが、指定の色変換テストに失敗します。採用基準は出所確認と必要な機能の両方です。各候補の判断は？",
+            "correctReason": "Pの動作検査は出所を、Qの署名は必要な機能を保証しない。双方に別々の未達条件がある。",
+            "distractorFailures": {
+              "D": "両者の未達条件を先送りして採用候補とする。",
+              "C": "Qは承認済みの出所でも必要な色変換に失敗する。",
+              "B": "Pの出所が未確認なので、機能成功だけでは採用基準を満たさない。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d1-e01",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d1o1",
+          "artifact-provenance",
+          "evidence-binding",
+          "independent-validation"
+        ],
+        "clues": [
+          "予定hash p2",
+          "確認済み出所はp1",
+          "機能成功はq2/Windows",
+          "各記録の日付は最新"
+        ],
+        "question": "Copilot提案の依存P/Qを審査します。社内基準は予定配布物と一致する出所証跡と、同じ配布物のLinux機能検査です。Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。各記録の日付は最新でパッケージ名も一致します。今回不足する証跡だけを補う案は？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "PとQの両方に、予定配布物の機能検査だけを補う"
+          },
+          {
+            "id": "C",
+            "text": "PとQの両方に、予定配布物の出所照合だけを補う"
+          },
+          {
+            "id": "B",
+            "text": "Pに予定配布物の機能検査、Qに予定配布物の出所照合を補う"
+          },
+          {
+            "id": "A",
+            "text": "Pに予定配布物の出所照合、Qに予定配布物の機能検査を補う"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Pでは機能検査のhashとLinuxが合うが出所は別hash。Qでは出所のhashは合うが機能検査はWindowsで、Linuxの証拠にならない。名前や日付で代用せず不足だけを補う。",
+        "choiceExplanations": {
+          "A": "Pでは機能検査のhashとLinuxが合うが出所は別hash。Qでは出所のhashは合うが機能検査はWindowsで、Linuxの証拠にならない。名前や日付で代用せず不足だけを補う。",
+          "B": "出所と機能の不足対象を逆にした案。Pのp2/Linux機能検査とQのq2出所証跡は既にある。",
+          "C": "両方の出所が別hashなら成立するが、今回Qの出所は予定q2と一致する。QのLinux機能検査は補えない。",
+          "D": "両方のLinux機能検査が不足する場合に成立するが、今回Pのp2/Linuxは検証済み。不足するPの出所照合を補えない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat",
+          "artifact-attestations"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "artifact-attestations"
+            ],
+            "rationale": "両方のLinux機能検査が不足する場合に成立するが、今回Pのp2/Linuxは検証済み。不足するPの出所照合を補えない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "artifact-attestations"
+            ],
+            "rationale": "両方の出所が別hashなら成立するが、今回Qの出所は予定q2と一致する。QのLinux機能検査は補えない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "artifact-attestations"
+            ],
+            "rationale": "出所と機能の不足対象を逆にした案。Pのp2/Linux機能検査とQのq2出所証跡は既にある。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "artifact-attestations"
+            ],
+            "rationale": "Pでは機能検査のhashとLinuxが合うが出所は別hash。Qでは出所のhashは合うが機能検査はWindowsで、Linuxの証拠にならない。名前や日付で代用せず不足だけを補う。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。",
+            "correctReason": "Pでは機能検査のhashとLinuxが合うが出所は別hash。Qでは出所のhashは合うが機能検査はWindowsで、Linuxの証拠にならない。名前や日付で代用せず不足だけを補う。",
+            "distractorFailures": {
+              "D": "両方のLinux機能検査が不足する場合に成立するが、今回Pのp2/Linuxは検証済み。不足するPの出所照合を補えない。",
+              "C": "両方の出所が別hashなら成立するが、今回Qの出所は予定q2と一致する。QのLinux機能検査は補えない。",
+              "B": "出所と機能の不足対象を逆にした案。Pのp2/Linux機能検査とQのq2出所証跡は既にある。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-five-review-2026-10-13"
+      },
+      "fingerprint": "acf2b69ea9f47bd3604f356e74a87fe08aa13a36140ddbbe33f83ebb8ff5b732",
+      "classificationChange": {
+        "from": "advanced",
+        "to": "advanced",
+        "reason": "本番相当として維持・強化。最新・同名という表面的な一致を、配布物ごとの出所・機能の有効範囲から分離する。最も慎重な両方保留という選択肢の見た目では正答が決まらない。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "各案は別条件なら成立し、今回の観測・承認対象を本文へ照合する。一般に最も安全・網羅的な案だけを選ぶ構成を解消した編集判断。独立受験者の実測ではない。"
+      },
+      "reasoningSteps": [
+        "各記録をパッケージ名や日付でなく、予定配布物のhashへ対応付ける。",
+        "P/Qで出所の対象hashと機能検査の対象hash・実行環境を照合し、別配布物やWindowsの成功を今回のLinuxへ拡張しないと判断する。",
+        "Pの予定p2の出所照合とQの予定q2のLinux機能検査を補い、対応する既存の有効な証跡は再利用する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。",
+          "to": "Pは予定hash p2、確認済み出所はp2、機能成功はp2/Windows。Qは予定hash q2、確認済み出所はq1、機能成功はq2/Linuxです。",
+          "question": "Copilot提案の依存P/Qを審査します。社内基準は予定配布物と一致する出所証跡と、同じ配布物のLinux機能検査です。Pは予定hash p2、確認済み出所はp2、機能成功はp2/Windows。Qは予定hash q2、確認済み出所はq1、機能成功はq2/Linuxです。各記録の日付は最新でパッケージ名も一致します。今回不足する証跡だけを補う案は？",
+          "answerId": "B",
+          "rationale": "Pで不足するのはLinuxの機能検査、Qで不足するのは予定q2の出所照合。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。",
+          "to": "Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq1、機能成功はq2/Linuxです。",
+          "question": "Copilot提案の依存P/Qを審査します。社内基準は予定配布物と一致する出所証跡と、同じ配布物のLinux機能検査です。Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq1、機能成功はq2/Linuxです。各記録の日付は最新でパッケージ名も一致します。今回不足する証跡だけを補う案は？",
+          "answerId": "C",
+          "rationale": "両方で予定hashとLinuxの機能検査は合い、出所照合だけが不足する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "Pは予定hash p2、確認済み出所はp1、機能成功はp2/Linux。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。",
+          "to": "Pは予定hash p2、確認済み出所はp2、機能成功はp2/Windows。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。",
+          "question": "Copilot提案の依存P/Qを審査します。社内基準は予定配布物と一致する出所証跡と、同じ配布物のLinux機能検査です。Pは予定hash p2、確認済み出所はp2、機能成功はp2/Windows。Qは予定hash q2、確認済み出所はq2、機能成功はq2/Windowsです。各記録の日付は最新でパッケージ名も一致します。今回不足する証跡だけを補う案は？",
+          "answerId": "D",
+          "rationale": "両方の出所は予定配布物へ合うが、Windows成功をLinuxへ拡張できず、機能検査だけが不足する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 28,
+        "wrong": [
+          23,
+          23,
+          28
+        ],
+        "medianWrong": 23,
+        "ratio": 1.2173913043478262,
+        "position": "D"
+      },
+      "assessment": "本番相当として維持・強化。最新・同名という表面的な一致を、配布物ごとの出所・機能の有効範囲から分離する。最も慎重な両方保留という選択肢の見た目では正答が決まらない。",
+      "wrongChoiceAnalysis": [
+        {
+          "id": "D",
+          "text": "PとQの両方に、予定配布物の機能検査だけを補う",
+          "whyWrong": "両方のLinux機能検査が不足する場合に成立するが、今回Pのp2/Linuxは検証済み。不足するPの出所照合を補えない。"
+        },
+        {
+          "id": "C",
+          "text": "PとQの両方に、予定配布物の出所照合だけを補う",
+          "whyWrong": "両方の出所が別hashなら成立するが、今回Qの出所は予定q2と一致する。QのLinux機能検査は補えない。"
+        },
+        {
+          "id": "B",
+          "text": "Pに予定配布物の機能検査、Qに予定配布物の出所照合を補う",
+          "whyWrong": "出所と機能の不足対象を逆にした案。Pのp2/Linux機能検査とQのq2出所証跡は既にある。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-e03",
+      "title": "単位契約に合わせる修正箇所",
+      "decision": "応用へ再分類・改稿",
+      "before": {
+        "id": "q-d3-e03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "d3o1",
+          "複合制約トレードオフ",
+          "evidence-condition-comparison"
+        ],
+        "clues": [
+          "前半でドルをセントへ変換",
+          "後半で100で割ってドルを返します",
+          "中間でも100で割",
+          "既存の前後処理を維持"
+        ],
+        "question": "金額計算の中間部分をCopilotで補完しました。前半でドルをセントへ変換し、後半で100で割ってドルを返します。提案は中間でも100で割っています。入力100ドルの期待値100ドルに対して結果1ドルでした。既存の前後処理を維持する最小修正は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "後半の100除算だけを外し、中間のドル化を維持する"
+          },
+          {
+            "id": "D",
+            "text": "処理を残し、期待する戻り値の単位をセントに変える"
+          },
+          {
+            "id": "A",
+            "text": "中間はセント単位のまま計算し、既存の後半でドルへ戻す"
+          },
+          {
+            "id": "C",
+            "text": "中間を残し、前半の変換だけもう一度追加する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。",
+        "choiceExplanations": {
+          "A": "入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。",
+          "B": "今回は後半を維持する制約があり、その変更は許されない。計算結果だけなら合わせられるが変更範囲が違う。",
+          "C": "数値が合う場合でも既存前半を変え、単位の契約を崩して誤りを相殺する。",
+          "D": "公開契約はドルで返すことであり、実装に合わせた単位変更は要求を満たさない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "architecture",
+              "responsible"
+            ],
+            "rationale": "今回は後半を維持する制約があり、その変更は許されない。計算結果だけなら合わせられるが変更範囲が違う。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "architecture",
+              "responsible"
+            ],
+            "rationale": "公開契約はドルで返すことであり、実装に合わせた単位変更は要求を満たさない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "responsible"
+            ],
+            "rationale": "入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "architecture",
+              "responsible"
+            ],
+            "rationale": "数値が合う場合でも既存前半を変え、単位の契約を崩して誤りを相殺する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "金額計算の中間部分をCopilotで補完しました。前半でドルをセントへ変換し、後半で100で割ってドルを返します。提案は中間でも100で割っています。入力100ドルの期待値100ドルに対して結果1ドルでした。既存の前後処理を維持する最小修正は？",
+            "correctReason": "入力と出力の単位を追うと中間と後半で二重に割っている。前後を文脈として使い、中間の契約をセントへそろえる。",
+            "distractorFailures": {
+              "B": "今回は後半を維持する制約があり、その変更は許されない。計算結果だけなら合わせられるが変更範囲が違う。",
+              "D": "公開契約はドルで返すことであり、実装に合わせた単位変更は要求を満たさない。",
+              "C": "数値が合う場合でも既存前半を変え、単位の契約を崩して誤りを相殺する。"
+            }
+          }
+        ],
+        "contentRevision": "exam-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d3-e03",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d5",
+        "objectiveId": "d5o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "testedConcepts": [
+          "d5o2",
+          "unit-conversion",
+          "generated-code-validation"
+        ],
+        "clues": [],
+        "question": "Copilotの金額処理と生成テストを照合します。入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。承認済み部分を保つ修正と検証は？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "後半の変換を取り除き、入出力の単位と結果を検証する"
+          },
+          {
+            "id": "D",
+            "text": "変換を保ち、入力単位に合うテスト期待値へ直して検証する"
+          },
+          {
+            "id": "A",
+            "text": "中間の変換を取り除き、入出力の単位と結果を検証する"
+          },
+          {
+            "id": "C",
+            "text": "前半の変換を取り除き、入出力の単位と結果を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。",
+        "choiceExplanations": {
+          "A": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。",
+          "B": "中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。",
+          "C": "入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。",
+          "D": "実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "tests",
+              "responsible"
+            ],
+            "rationale": "入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。",
+            "correctReason": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。",
+            "distractorFailures": {
+              "B": "中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。",
+              "D": "実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。",
+              "C": "入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-five-review-2026-10-13"
+      },
+      "fingerprint": "db8ad41339f847cdc3a7254646c9ca69b4b75dfeffba2ca63def80fac8553285",
+      "classificationChange": {
+        "from": "advanced",
+        "to": "intermediate",
+        "reason": "応用へ再分類。具体的な単位契約への適用と修正箇所の選択であり、別々の証跡の有効範囲を分析する本番相当とは区別する。Copilot内部のデータフローではなく、出力コードの検証を問うためd3o1からd5o2へ所属を訂正。"
+      },
+      "blindAfter": {
+        "verdict": "PASS",
+        "rationale": "各案は別条件なら成立し、今回の観測・承認対象を本文へ照合する。一般に最も安全・網羅的な案だけを選ぶ構成を解消した編集判断。独立受験者の実測ではない。"
+      },
+      "reasoningSteps": [
+        "承認済み前後処理の単位を追い、中間の除算が二重変換を生むことを確認する。",
+        "中間だけを修正し、独立したドル入出力の期待値で再検証する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。",
+          "to": "入力100ドル。前半×100と中間÷100が承認済みで、中間はドルを返します。Copilotが後半へさらに÷100を加え、結果は1ドル（期待100ドル）でした。",
+          "question": "Copilotの金額処理と生成テストを照合します。入力100ドル。前半×100と中間÷100が承認済みで、中間はドルを返します。Copilotが後半へさらに÷100を加え、結果は1ドル（期待100ドル）でした。承認済み部分を保つ修正と検証は？",
+          "answerId": "B",
+          "rationale": "承認済み前半・中間を保ち、生成された後半の余分な除算だけを除く。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。",
+          "to": "入力10000セント。中間÷100と後半で値をそのまま返す処理が承認済みです。Copilotが前半へ×100を加え、結果は10000ドル（期待100ドル）でした。",
+          "question": "Copilotの金額処理と生成テストを照合します。入力10000セント。中間÷100と後半で値をそのまま返す処理が承認済みです。Copilotが前半へ×100を加え、結果は10000ドル（期待100ドル）でした。承認済み部分を保つ修正と検証は？",
+          "answerId": "C",
+          "rationale": "入力は既にセントなので生成された前半の余分な乗算を除き、承認済み中間でドルへ変換する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "入力100ドル。前半×100はセントを渡す承認済み処理、後半÷100はドルに戻す承認済み処理です。中間へCopilotが÷100を加え、結果は1ドル（期待100ドル）でした。",
+          "to": "入力100ドル。前半×100、中間で値を維持、後半÷100で実結果100ドルです。3段階は承認済みですが、Copilotのテストだけが期待1ドルで失敗しました。",
+          "question": "Copilotの金額処理と生成テストを照合します。入力100ドル。前半×100、中間で値を維持、後半÷100で実結果100ドルです。3段階は承認済みですが、Copilotのテストだけが期待1ドルで失敗しました。承認済み部分を保つ修正と検証は？",
+          "answerId": "D",
+          "rationale": "承認契約と実行結果が合うので、実装を変えず生成テストの期待値を100ドルへ直す。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 25,
+        "wrong": [
+          25,
+          25,
+          27
+        ],
+        "medianWrong": 25,
+        "ratio": 1,
+        "position": "C"
+      },
+      "assessment": "応用へ再分類。具体的な単位契約への適用と修正箇所の選択であり、別々の証跡の有効範囲を分析する本番相当とは区別する。Copilot内部のデータフローではなく、出力コードの検証を問うためd3o1からd5o2へ所属を訂正。",
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "後半の変換を取り除き、入出力の単位と結果を検証する",
+          "whyWrong": "中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。"
+        },
+        {
+          "id": "D",
+          "text": "変換を保ち、入力単位に合うテスト期待値へ直して検証する",
+          "whyWrong": "実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。"
+        },
+        {
+          "id": "C",
+          "text": "前半の変換を取り除き、入出力の単位と結果を検証する",
+          "whyWrong": "入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 5,
+    "strengthenedExam": 2,
+    "reclassifiedApplied": 3,
+    "total": 316,
+    "counts": {
+      "beginner": 163,
+      "intermediate": 96,
+      "advanced": 57
+    },
+    "counterfactuals": 15,
+    "unchangedOtherQuestions": 311
+  },
+  "semanticModelVerification": {
+    "casesPassed": 20,
+    "method": "手で記述した設問条件を別の検証モデルで計算。対象hash・OS、実行経路・承認種別、成果物の契約、丸め4方式、単位変換を確認。文章の意味の自動理解、独立した受験者の難易度実測ではない。",
+    "cases": [
+      {
+        "questionId": "q-d1-e01",
+        "case": "current",
+        "input": {
+          "p": {
+            "planned": "p2",
+            "source": "p1",
+            "testHash": "p2",
+            "os": "Linux"
+          },
+          "q": {
+            "planned": "q2",
+            "source": "q2",
+            "testHash": "q2",
+            "os": "Windows"
+          }
+        },
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d1-e01",
+        "case": "counterfactual-1",
+        "input": {
+          "p": {
+            "planned": "p2",
+            "source": "p2",
+            "testHash": "p2",
+            "os": "Windows"
+          },
+          "q": {
+            "planned": "q2",
+            "source": "q1",
+            "testHash": "q2",
+            "os": "Linux"
+          }
+        },
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d1-e01",
+        "case": "counterfactual-2",
+        "input": {
+          "p": {
+            "planned": "p2",
+            "source": "p1",
+            "testHash": "p2",
+            "os": "Linux"
+          },
+          "q": {
+            "planned": "q2",
+            "source": "q1",
+            "testHash": "q2",
+            "os": "Linux"
+          }
+        },
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d1-e01",
+        "case": "counterfactual-3",
+        "input": {
+          "p": {
+            "planned": "p2",
+            "source": "p2",
+            "testHash": "p2",
+            "os": "Windows"
+          },
+          "q": {
+            "planned": "q2",
+            "source": "q2",
+            "testHash": "q2",
+            "os": "Windows"
+          }
+        },
+        "winner": "D"
+      },
+      {
+        "questionId": "q-d1-e02",
+        "case": "current",
+        "input": {
+          "test": {
+            "target": "Y",
+            "routes": [
+              {
+                "method": "GET",
+                "handler": "real"
+              },
+              {
+                "method": "POST",
+                "handler": "stub"
+              }
+            ],
+            "contract": "candidate"
+          },
+          "approval": {
+            "target": "Y",
+            "scope": [
+              "formatting"
+            ]
+          }
+        },
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d1-e02",
+        "case": "counterfactual-1",
+        "input": {
+          "test": {
+            "target": "Y",
+            "routes": [
+              {
+                "method": "GET",
+                "handler": "real"
+              },
+              {
+                "method": "POST",
+                "handler": "real"
+              }
+            ],
+            "contract": "candidate"
+          },
+          "approval": {
+            "target": "Y",
+            "scope": [
+              "formatting",
+              "POST-behavior"
+            ]
+          }
+        },
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d1-e02",
+        "case": "counterfactual-2",
+        "input": {
+          "test": {
+            "target": "Y",
+            "routes": [
+              {
+                "method": "GET",
+                "handler": "real"
+              },
+              {
+                "method": "POST",
+                "handler": "real"
+              }
+            ],
+            "contract": "candidate"
+          },
+          "approval": {
+            "target": "Y",
+            "scope": [
+              "formatting"
+            ]
+          }
+        },
+        "winner": "D"
+      },
+      {
+        "questionId": "q-d1-e02",
+        "case": "counterfactual-3",
+        "input": {
+          "test": {
+            "target": "Y",
+            "routes": [
+              {
+                "method": "GET",
+                "handler": "real"
+              },
+              {
+                "method": "POST",
+                "handler": "stub"
+              }
+            ],
+            "contract": "candidate"
+          },
+          "approval": {
+            "target": "Y",
+            "scope": [
+              "formatting",
+              "POST-behavior"
+            ]
+          }
+        },
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d5-e04",
+        "case": "current",
+        "input": {
+          "doc": "throw",
+          "implementation": "null",
+          "test": "null",
+          "caller": "null"
+        },
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d5-e04",
+        "case": "counterfactual-1",
+        "input": {
+          "doc": "null",
+          "implementation": "throw",
+          "test": "null",
+          "caller": "null"
+        },
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d5-e04",
+        "case": "counterfactual-2",
+        "input": {
+          "doc": "null",
+          "implementation": "null",
+          "test": "throw",
+          "caller": "null"
+        },
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d5-e04",
+        "case": "counterfactual-3",
+        "input": {
+          "doc": "null",
+          "implementation": "null",
+          "test": "null",
+          "caller": "throw"
+        },
+        "winner": "D"
+      },
+      {
+        "questionId": "q-sc02-3",
+        "case": "current",
+        "input": [
+          [
+            1.5,
+            2
+          ],
+          [
+            4.5,
+            4
+          ]
+        ],
+        "winner": "A"
+      },
+      {
+        "questionId": "q-sc02-3",
+        "case": "counterfactual-1",
+        "input": [
+          [
+            1.5,
+            2
+          ],
+          [
+            4.5,
+            5
+          ]
+        ],
+        "winner": "C"
+      },
+      {
+        "questionId": "q-sc02-3",
+        "case": "counterfactual-2",
+        "input": [
+          [
+            1.5,
+            1
+          ],
+          [
+            4.5,
+            4
+          ]
+        ],
+        "winner": "D"
+      },
+      {
+        "questionId": "q-sc02-3",
+        "case": "counterfactual-3",
+        "input": [
+          [
+            1.5,
+            1
+          ],
+          [
+            4.5,
+            5
+          ]
+        ],
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d3-e03",
+        "case": "current",
+        "input": {
+          "input": 100,
+          "operators": [
+            100,
+            0.01,
+            0.01
+          ],
+          "approved": [
+            0,
+            2
+          ],
+          "contractExpected": 100,
+          "testExpected": 100
+        },
+        "winner": "A"
+      },
+      {
+        "questionId": "q-d3-e03",
+        "case": "counterfactual-1",
+        "input": {
+          "input": 100,
+          "operators": [
+            100,
+            0.01,
+            0.01
+          ],
+          "approved": [
+            0,
+            1
+          ],
+          "contractExpected": 100,
+          "testExpected": 100
+        },
+        "winner": "B"
+      },
+      {
+        "questionId": "q-d3-e03",
+        "case": "counterfactual-2",
+        "input": {
+          "input": 10000,
+          "operators": [
+            100,
+            0.01,
+            1
+          ],
+          "approved": [
+            1,
+            2
+          ],
+          "contractExpected": 100,
+          "testExpected": 100
+        },
+        "winner": "C"
+      },
+      {
+        "questionId": "q-d3-e03",
+        "case": "counterfactual-3",
+        "input": {
+          "input": 100,
+          "operators": [
+            100,
+            1,
+            0.01
+          ],
+          "approved": [
+            0,
+            1,
+            2
+          ],
+          "contractExpected": 100,
+          "testExpected": 1
+        },
+        "winner": "D"
+      }
+    ]
+  },
+  "verification": {
+    "testsPassed": 176,
+    "testFiles": 14,
+    "typeCheck": "PASS",
+    "isolatedBuild": "PASS",
+    "qualityAudit": "PASS",
+    "difficultyAudit": "PASS",
+    "appliedAudit": "PASS",
+    "examAudit": "PASS",
+    "choiceAudit": "PASS",
+    "caseModelsPassed": 20,
+    "officialSource": {
+      "id": "artifact-attestations",
+      "httpStatus": 200,
+      "titleMatched": true
+    },
+    "earlierEightQuestionsPreserved": true,
+    "unchangedOtherQuestions": 311
+  }
+}

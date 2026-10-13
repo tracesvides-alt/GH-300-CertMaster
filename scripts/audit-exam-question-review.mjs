@@ -22,6 +22,24 @@ export function validateExamReview(bank, report) {
   const errors = [];
   const reviewed = new Map(report.questions.map(row => [row.id, row]));
   if (reviewed.size !== report.questions.length) errors.push('Duplicate review ID');
+  const archived = report.reclassifiedQuestions ?? [];
+  const archiveIds = new Set(archived.map(r => r.id));
+  if (archiveIds.size !== archived.length || archived.some(r => reviewed.has(r.id))) errors.push('Duplicate archived review ID');
+  for (const id of report.initialReviewQuestionIds ?? []) {
+    if (!reviewed.has(id) && !archiveIds.has(id)) errors.push(`Lost historical Exam review: ${id}`);
+  }
+  for (const row of archived) {
+    const q = bank.find(q => q.id === row.id);
+    if (!q || row.fingerprint !== hash(q) || hash(row.after) !== row.fingerprint) {
+      errors.push(`Stale reclassified Exam review: ${row.id}`);
+      continue;
+    }
+    if (q.difficulty !== 'intermediate' || q.cognitiveLevel !== 'apply' || q.examLike !== false ||
+        q.status !== 'verified' || row.before.id !== row.id || row.before.difficulty !== 'advanced' ||
+        row.classificationChange?.from !== 'advanced' || row.classificationChange?.to !== 'intermediate' ||
+        !row.classificationChange?.reason?.trim() ||
+        JSON.stringify(row.before.answer) !== JSON.stringify(q.answer)) errors.push(`Invalid Exam reclassification: ${row.id}`);
+  }
   for (const q of bank.filter(q => q.difficulty === 'advanced')) {
     if (!reviewed.has(q.id)) errors.push(`Unreviewed Exam question: ${q.id}`);
   }
@@ -78,11 +96,17 @@ function render(report, sources) {
   const s = report.summary;
   const before = report.comparison.before, after = report.comparison.after;
   const positions = Object.fromEntries('ABCD'.split('').map(p => [p,report.questions.filter(r => r.lengths.position === p).length]));
-  const lines = ['# 本番相当問題 全件6観点レビュー', '', `開始：${report.reviewStartedAt}／完了：${report.reviewedAt}`, '',
-    `対象は既存${s.existing}問と追加${s.added}問、全${s.reviewed}問。追加${s.added}問は全件改稿し、既存も含む${s.textRewritten}問の本文または選択肢を実質修正した。残る${s.reviewed-s.textRewritten}問は本文と選択肢を維持し、Clues・三段階推論・反実仮想を更新した。正答IDと表示順は維持。全60問を分析問題へ整え、本番相当の編集上の分類を維持した。`, '',
+  const lines = ['# 本番相当問題 全件6観点レビュー', '', `初回レビュー：${report.reviewStartedAt}〜${report.reviewedAt}／最新更新：${report.lastUpdated ?? report.reviewedAt}`, '',
+    ...(report.followUpReviews?.length ? ['## 追加の見直し', '',
+      ...report.followUpReviews.map(r => `- ${r.reviewedAt}：${r.questionIds.join('、')}を追加改稿。詳細：[追加レビュー](${r.report.split('/').pop().replace(/\.json$/,'.md')})。`), '',
+      '追加レビューは上記の対象だけ。全件の整合性監査と、全件の意味的な再評価は別であり、初回のPASSを独立した本文なし検証の結果として扱わない。', ''] : []),
+    `現在の本番相当台帳は既存${s.existing}問と追加${s.added}問、全${s.reviewed}問。現在の層に残る${s.textRewritten}問を各レビュー時点で実質改稿した。${report.reclassifiedQuestions?.length ?? 0}問は応用として再評価し、下記の履歴を残して応用台帳へ移管した。正答IDと表示順は維持。`, '',
+    ...(report.reclassifiedQuestions?.length ? ['## 応用へ移管した問題', '',
+      ...report.reclassifiedQuestions.map(r => `- ${r.id}：${r.classificationChange.reason}`), '',
+      '移管前の全文と現在の指紋はJSONのreclassifiedQuestionsへ保存。移管後の適用・選択肢レビューは応用台帳と追加レビューレポートで確認する。', ''] : []),
     '## 判定基準とレビュー方法', '',
     '本番相当は、文が長いことや専門語の多さでは判定しない。観測を段階・対象・版へ分け、複数の制約または独立した証拠へ照合し、採用案・不足検査・最小変更を結論として選ぶことを求める。どの条件を落とすと誤答を選ぶかも記録した。', '',
-    `選択肢だけの編集上の再読では、変更前${s.beforeBlindFailures}問をFAIL（正答が安全・慎重・全部入りという手掛かり）とした。修正後は全${s.reviewed}問をPASSと判断した。本文を除いた一覧を別に出力して全選択肢を再読し、反実仮想の全文も同じ4択で再判定した。`, '',
+    `以前の選択肢だけの編集評価では、変更前${s.beforeBlindFailures}問をFAIL（正答が安全・慎重・全部入りという手掛かり）とし、当時の台帳をPASSと判断した。その後の再評価で推測しやすい候補が見つかったため、追加レビューと再分類を追記した。現在の全問で推測リスクが解消済みという保証ではない。`, '',
     '**これは同じ編集者による疑似ブラインド評価で、初見の独立した受験者による盲検実験ではない。PASSは正答を推測する確率がゼロという意味ではなく、設問条件なしで必ず選べる唯一の正答や一律に危険・無関係な三誤答の構図を認めなかったという編集判断。**', '',
     '反実仮想は本文に実在する一つの条件ブロックを置き換え、選択肢を変えず、元の正答と異なる既存選択肢を正答にする。観測・入力の変更に加え、承認範囲・変更可能な箇所・測定目的を変える例も含む。全文はJSONのcounterfactual.questionで再現できる。', '',
     '## 追加と既存の分量比較', '',
@@ -99,7 +123,7 @@ function render(report, sources) {
     '## 形式・文字長・位置', '',
     ...Object.entries(s.formats).map(([f,n]) => `- ${f}：${n}問`), '',
     `正答表示位置はA:${positions.A}／B:${positions.B}／C:${positions.C}／D:${positions.D}。A/B/C/Dはアプリの表示位置を表し、保存用choice IDと混同しない。`, '',
-    '全60問で正答文字長÷誤答3択の中央値は0.5〜1.5の範囲。これは補助的な警戒基準であり、比率だけで合否を決めない。Domainごとの9問では3/9=33.3%が出るが、4位置への整数配分のため全てを30%以下にはできない。', '',
+    `現在の${s.reviewed}問で正答文字長÷誤答3択の中央値は0.5〜1.5の範囲。これは補助的な警戒基準であり、比率だけで合否を決めない。Domainごとの9問では3/9=33.3%が出るが、4位置への整数配分のため全てを30%以下にはできない。`, '',
     '## 公式情報の修正', '',
     '- [GitHub App型Extensionsの廃止](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)：旧Chat連携と存続する通常GitHub Appを分け、現行MCPへ置換する。privateなら廃止を回避できるという説明は削除。',
     '- [Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)：旧Knowledge Basesと同一の現行名として記述しない。Space共有と参照repoへの閲覧アクセスは別に判断する。',

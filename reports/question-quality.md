@@ -1,6 +1,6 @@
-# Applied / Exam Question Quality Report
+# Foundation / Applied / Exam Question Quality Report
 
-Total: 200. Stage 2: separate editorial rubric review, content-fingerprint bound.
+Active: 310; stored: 322; excluded: 12. Stage 2: content-fingerprint bound.
 
 位置はUIの表示順で集計。保存用choice IDとは別です。複数選択は正解出現数を分母として別集計します。
 
@@ -8,46 +8,14 @@ Total: 200. Stage 2: separate editorial rubric review, content-fingerprint bound
 
 ## Foundation Questions
 
-Total: 80
+Total: 163
 
 | Position | Count | Share |
 | --- | ---: | ---: |
-| A | 20 | 25.0% |
-| B | 20 | 25.0% |
-| C | 20 | 25.0% |
-| D | 20 | 25.0% |
-
-Multiple-select questions: 0
-
-Weak Distractor Questions: 0
-
-Potential Multiple Answer: 0
-
-Choice Length Bias: 0
-
-Questions with >= 2 strong distractors: 100.0%
-
-Missing/stale Stage 2 review: 0
-
-| Domain | Single-select N | A | B | C | D |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| d1 | 9 | 2 | 2 | 2 | 3 |
-| d2 | 34 | 9 | 9 | 8 | 8 |
-| d3 | 8 | 2 | 2 | 2 | 2 |
-| d4 | 8 | 2 | 2 | 2 | 2 |
-| d5 | 8 | 2 | 2 | 2 | 2 |
-| d6 | 13 | 3 | 3 | 4 | 3 |
-
-## Applied Questions
-
-Total: 78
-
-| Position | Count | Share |
-| --- | ---: | ---: |
-| A | 19 | 24.4% |
-| B | 20 | 25.6% |
-| C | 19 | 24.4% |
-| D | 20 | 25.6% |
+| A | 41 | 25.2% |
+| B | 43 | 26.4% |
+| C | 40 | 24.5% |
+| D | 39 | 23.9% |
 
 Multiple-select questions: 0
 
@@ -64,22 +32,22 @@ Missing/stale Stage 2 review: 0
 | Domain | Single-select N | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | d1 | 13 | 3 | 4 | 3 | 3 |
-| d2 | 19 | 5 | 4 | 5 | 5 |
-| d3 | 13 | 3 | 3 | 3 | 4 |
-| d4 | 12 | 3 | 3 | 3 | 3 |
-| d5 | 13 | 3 | 4 | 3 | 3 |
-| d6 | 8 | 2 | 2 | 2 | 2 |
+| d2 | 70 | 17 | 17 | 18 | 18 |
+| d3 | 23 | 7 | 5 | 5 | 6 |
+| d4 | 22 | 5 | 8 | 6 | 3 |
+| d5 | 21 | 6 | 5 | 4 | 6 |
+| d6 | 14 | 3 | 4 | 4 | 3 |
 
-## Exam Questions
+## Applied Questions
 
-Total: 42
+Total: 90
 
 | Position | Count | Share |
 | --- | ---: | ---: |
-| A | 11 | 26.2% |
-| B | 11 | 26.2% |
-| C | 10 | 23.8% |
-| D | 10 | 23.8% |
+| A | 24 | 26.7% |
+| B | 23 | 25.6% |
+| C | 20 | 22.2% |
+| D | 23 | 25.6% |
 
 Multiple-select questions: 0
 
@@ -95,21 +63,52 @@ Missing/stale Stage 2 review: 0
 
 | Domain | Single-select N | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| d1 | 8 | 2 | 2 | 2 | 2 |
-| d2 | 9 | 2 | 2 | 2 | 3 |
-| d3 | 5 | 2 | 1 | 1 | 1 |
-| d4 | 6 | 1 | 2 | 2 | 1 |
-| d5 | 7 | 2 | 2 | 2 | 1 |
-| d6 | 7 | 2 | 2 | 1 | 2 |
+| d1 | 24 | 5 | 7 | 6 | 6 |
+| d2 | 14 | 4 | 3 | 3 | 4 |
+| d3 | 6 | 2 | 2 | 0 | 2 |
+| d4 | 16 | 4 | 4 | 4 | 4 |
+| d5 | 17 | 5 | 4 | 4 | 4 |
+| d6 | 13 | 4 | 3 | 3 | 3 |
+
+## Exam Questions
+
+Total: 57
+
+| Position | Count | Share |
+| --- | ---: | ---: |
+| A | 15 | 26.3% |
+| B | 15 | 26.3% |
+| C | 12 | 21.1% |
+| D | 15 | 26.3% |
+
+Multiple-select questions: 0
+
+Weak Distractor Questions: 0
+
+Potential Multiple Answer: 0
+
+Choice Length Bias: 0
+
+Questions with >= 2 strong distractors: 100.0%
+
+Missing/stale Stage 2 review: 0
+
+| Domain | Single-select N | A | B | C | D |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| d1 | 11 | 3 | 3 | 3 | 2 |
+| d2 | 14 | 3 | 3 | 4 | 4 |
+| d3 | 5 | 2 | 1 | 0 | 2 |
+| d4 | 8 | 2 | 2 | 2 | 2 |
+| d5 | 13 | 3 | 4 | 3 | 3 |
+| d6 | 6 | 2 | 2 | 0 | 2 |
 
 ## Findings
 
-- WARNING beginner/d1: answer-distribution — D: 33.3% (3/9)
-- WARNING beginner/d6: answer-distribution — C: 30.8% (4/13)
-- WARNING intermediate/d1: answer-distribution — B: 30.8% (4/13)
-- WARNING intermediate/d5: answer-distribution — B: 30.8% (4/13)
-- WARNING intermediate/d3: answer-distribution — D: 30.8% (4/13)
-- WARNING advanced/d2: answer-distribution — D: 33.3% (3/9)
+- WARNING beginner/d1: answer-distribution — B: 30.8% (4/13)
+- WARNING beginner/d4: answer-distribution — B: 36.4% (8/22)
+- WARNING beginner/d3: answer-distribution — A: 30.4% (7/23)
+- WARNING intermediate/d6: answer-distribution — A: 30.8% (4/13)
+- WARNING advanced/d5: answer-distribution — B: 30.8% (4/13)
 
 Domain × Difficultyは単一選択8問以上でしきい値を適用。13問を4位置に分けた4/13 = 30.8%は整数制約によるWarningとして残します。
 

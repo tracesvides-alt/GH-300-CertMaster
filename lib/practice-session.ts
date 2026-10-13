@@ -1,6 +1,7 @@
 import { type Question, domains, objectives, lessons } from './content';
 import { type Attempt } from './learning';
 import { calculateObjectiveStats, type ObjectiveStats, type SelectionOptions } from './selection';
+import { withCurrentAttemptClassification } from './question-classification';
 export type PracticeRun = {
   id: string;
   questions: Question[];
@@ -63,6 +64,9 @@ export function practiceResult(run: PracticeRun) {
   };
 }
 export function improvedObjectives(run: PracticeRun, allAttempts: Attempt[]) {
+  // A stored baseline used the labels at run start. A later classification
+  // change makes that baseline incomparable with current per-objective stats.
+  if (run.answers.some(a => withCurrentAttemptClassification(a).objectiveId !== a.objectiveId)) return [];
   const ids = [
     ...new Set(run.answers.filter((a) => a.status === 'verified').map((a) => a.objectiveId)),
   ];

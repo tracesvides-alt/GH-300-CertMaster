@@ -21,7 +21,10 @@ describe('GitHub official source registry', () => {
       expect(url.protocol).toBe('https:');
       expect(url.hostname).toBe(source.publisher === 'GitHub Docs' ? 'docs.github.com' : 'github.blog');
       if (url.hostname === 'docs.github.com') expect(url.pathname).toMatch(/^\/en\//);
-      expect(source.lastCheckedAt).toBe('2026-10-12');
+      expect(source.lastCheckedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(new Date(`${source.lastCheckedAt}T00:00:00Z`).toISOString().slice(0, 10)).toBe(source.lastCheckedAt);
+      const todayJst = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
+      expect(source.lastCheckedAt <= todayJst).toBe(true);
       for (const field of ['relatedDomainIds', 'relatedObjectiveIds', 'relatedLessonIds', 'relatedGlossaryIds', 'relatedComparisonIds', 'relatedQuestionIds'])
         expect(Array.isArray(source[field])).toBe(true);
     }

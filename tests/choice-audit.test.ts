@@ -4,6 +4,9 @@ import seed from '../content/gh300/2026-08-07/questions/seed.json';
 import sources from '../content/gh300/2026-08-07/sources.json';
 import audit from '../reports/question-choice-quality-audit.json';
 import baseline from '../reports/question-choice-content-baseline.json';
+import exclusions from '../content/gh300/2026-08-07/questions/selection-exclusions.json';
+import additions from '../content/gh300/2026-08-07/questions/additions-review.json';
+import {combinedChoiceBaseline} from '../scripts/question-additions.mjs';
 
 describe('choice-quality inventory', () => {
   it('tracks every question and option without dropping or relabeling an answer', () => {
@@ -29,11 +32,15 @@ describe('choice-quality inventory', () => {
     }
   });
 
-  it('records an option-only assessment and two plausible distractors for all 200 questions', () => {
+  it('records quality decisions for all active questions without presenting archived items as passed', () => {
     const entries = Object.values(audit.inventoryByDifficulty).flat();
     expect(audit.modifiedQuestionIds.length).toBeGreaterThan(0);
     expect(audit.warnings).toEqual([]);
     for (const row of entries) {
+      if (exclusions.questions.some(q => q.id === row.questionId)) {
+        expect(row.optionOnly).toBe('EXCLUDED');
+        continue;
+      }
       expect(row.optionOnly).toBe('PASS');
       expect(row.optionOnlyReason).toBeTruthy();
       expect(row.multipleAnswerRisk).toBe(false);
@@ -48,7 +55,9 @@ describe('choice-quality inventory', () => {
   });
 
   it('keeps the change count anchored to the fixed pre-review question snapshot', () => {
-    expect(Object.keys(baseline.questions)).toHaveLength(seed.length);
+    const combined = combinedChoiceBaseline(baseline, additions);
+    expect(Object.keys(combined.questions)).toHaveLength(seed.length);
+    expect(Object.keys(baseline.questions)).toHaveLength(additions.baseline.stored);
     for (const q of seed) {
       const content = JSON.stringify({
         question: q.question,
@@ -58,7 +67,7 @@ describe('choice-quality inventory', () => {
       });
       const current = createHash('sha256').update(content).digest('hex');
       expect(audit.modifiedQuestionIds.includes(q.id)).toBe(
-        current !== baseline.questions[q.id as keyof typeof baseline.questions].contentHash,
+        current !== combined.questions[q.id].contentHash,
       );
     }
   });

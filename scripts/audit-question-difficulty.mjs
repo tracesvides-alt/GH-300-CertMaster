@@ -1,10 +1,16 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import {loadQuestionAdditions,validateQuestionAdditions,combinedDifficultyBaseline} from './question-additions.mjs';
 const root = new URL('../', import.meta.url);
 const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
 const bank = read('content/gh300/2026-08-07/questions/seed.json');
+const retiredIds = new Set(read('content/gh300/2026-08-07/questions/selection-exclusions.json').questions.map(q => q.id));
 const review = read('content/gh300/2026-08-07/questions/difficulty-review.json');
-const baseline = read('reports/question-difficulty-baseline.json');
+const additions = loadQuestionAdditions(root);
+const additionErrors = validateQuestionAdditions(bank, additions);
+if (additionErrors.length) throw Error(additionErrors.join('\n'));
+const baseline = combinedDifficultyBaseline(read('reports/question-difficulty-baseline.json'), additions);
+const additionIds = new Set(additions?.questions.map(r => r.id) ?? []);
 const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam' };
 const fingerprint = q => createHash('sha256').update(JSON.stringify(q)).digest('hex');
 // Display-order changes do not count as editorial rewrites in this audit.
@@ -26,26 +32,33 @@ const rows = bank.map(q => {
   if (before.difficulty !== r.beforeDifficulty) throw Error(`Baseline label mismatch: ${q.id}`);
   if (JSON.stringify(before.answer) !== JSON.stringify(q.answer)) throw Error(`Answer ID changed: ${q.id}`);
   return { id: q.id, domainId: q.domainId, objectiveId: q.objectiveId,
-    beforeDifficulty: before.difficulty, difficulty: q.difficulty, rewritten,
-    reclassified: before.difficulty !== q.difficulty, assessment: r.assessment,
+    origin: additionIds.has(q.id) ? 'new-addition' : 'historical',
+    beforeDifficulty: additionIds.has(q.id) ? null : before.difficulty, difficulty: q.difficulty, rewritten,
+    reclassified: !additionIds.has(q.id) && before.difficulty !== q.difficulty, assessment: r.assessment,
     reasoningSteps: r.reasoningSteps, counterfactual: r.counterfactual,
     beforeQuestion: before.question, question: q.question, fingerprint: r.fingerprint };
 });
 const count = (items, key) => Object.fromEntries(Object.keys(names).map(d => [d, items.filter(r => r[key] === d).length]));
-const summary = { total: rows.length, rewritten: rows.filter(r => r.rewritten).length,
+const summary = { total: rows.length, added: additionIds.size, historicalTotal: rows.length - additionIds.size, rewritten: rows.filter(r => r.rewritten).length,
   reclassified: rows.filter(r => r.reclassified).length,
   before: count(rows, 'beforeDifficulty'), after: count(rows, 'difficulty'),
   rewritesByOriginalDifficulty: count(rows.filter(r => r.rewritten), 'beforeDifficulty'),
   transitions: Object.fromEntries(Object.keys(names).map(d => [d, count(rows.filter(r => r.beforeDifficulty === d), 'difficulty')])) };
-const result = { generatedAt: review.reviewedAt, baselineCommit: baseline.commit, summary,
+const activeRows = rows.filter(q => !retiredIds.has(q.id));
+const result = { generatedAt: review.lastUpdated ?? review.reviewedAt, baselineCommit: baseline.commit, summary,
+  selectionSummary: { active: activeRows.length, retired: retiredIds.size, after: count(activeRows, 'difficulty') },
+  followUpReviews: review.followUpReviews ?? [],
   methodology: review.method, secondPass: review.secondPass,
   measuredLearnerDifficulty: false, independentReviewer: false, realExamEquivalenceValidated: false, questions: rows };
 if (!process.argv.includes('--check')) {
   fs.writeFileSync(new URL('reports/question-difficulty-audit.json', root), JSON.stringify(result, null, 2) + '\n');
-  const lines = ['# GH-300 全200問の難易度再評価', '',
+  const lines = [`# GH-300 全${summary.total}問の難易度台帳`, '',
+    `保存資産${summary.total}問の台帳。新規出題は${activeRows.length}問で、${retiredIds.size}問を対象外とする。以下の過去比較は保存資産の累計で、対象外を現行の合格問題として数えない。`, '',
+    `新規${additionIds.size}問は独立した追加台帳から読み込み、変更前の件数と難易度遷移には含めない。固定された過去のベースラインファイルは維持する。`, '',
     '## 結論', '',
     '従来の難易度は適切とは言えなかった。Foundationの基本知識確認は維持できる一方、Appliedには操作の記憶問題、Examには長い状況説明を付けただけの機能名識別が含まれていた。選択肢のもっともらしさと、解答に必要な思考の深さは別に評価する必要がある。', '',
-    `全${summary.total}問の本文・4選択肢・解説を参照し、${summary.rewritten}問を実質改稿、${summary.reclassified}問を下位へ再分類した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。`, '',
+    `各レビューの累計で、全${summary.total}問の台帳に${summary.rewritten}問の実質改稿、${summary.reclassified}問の下位への再分類を記録した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。`, '',
+    ...(review.followUpReviews?.length ? ['## 追加レビューの履歴', '', ...review.followUpReviews.map(r => `- ${r.reviewedAt}：${r.questionIds.join('、')}。[記録](${r.report.split('/').pop().replace(/\.json$/,'.md')})。`), '', '履歴の各対象を追加評価しており、現在の全問を毎回新たに意味的再評価したという主張ではない。', ''] : []),
     '| 難易度 | 変更前 | 変更後 | 判断基準 |', '| --- | ---: | ---: | --- |',
     `| Foundation | ${summary.before.beginner} | ${summary.after.beginner} | 用語・機能・原則・操作の識別 |`,
     `| Applied | ${summary.before.intermediate} | ${summary.after.intermediate} | 具体的な入力・不具合・用途へ知識を適用 |`,
@@ -66,11 +79,11 @@ if (!process.argv.includes('--check')) {
       `変更前: ${r.beforeQuestion}`, '', `変更後: ${r.question}`, '',
       `評価: ${r.assessment}`, '', ...(r.counterfactual ? [`条件を変えた場合: ${r.counterfactual}`, ''] : []));
   }
-  lines.push('## 全200問の評価台帳', '',
+  lines.push(`## 全${summary.total}問の評価台帳`, '',
     '| ID | 元の難易度 | 現在 | 文面 | 評価理由・必要な判断 |', '| --- | --- | --- | --- | --- |',
-    ...rows.map(r => `| ${r.id} | ${names[r.beforeDifficulty]} | ${names[r.difficulty]} | ${r.rewritten ? '改稿' : '維持'} | ${r.assessment.replaceAll('|', '／')} |`), '',
+    ...rows.map(r => `| ${r.id} | ${r.origin==='new-addition'?'新規':names[r.beforeDifficulty]} | ${names[r.difficulty]} | ${r.origin==='new-addition'?'新規追加':r.rewritten ? '改稿' : '維持'} | ${r.assessment.replaceAll('|', '／')} |`), '',
     '## 検証方法と限界', '',
-    '全200問の初回の難易度評価に続き、改稿90問の本文・全選択肢を別パスで再読した。単位の誤記、計測指標の分母、明らかに無関係な通信対策の選択肢などを追加修正した。同じ編集者のレビューであり、独立した別人による評価ではない。', '',
+    '初回の難易度評価と、その後の対象別の追加レビューを累積した台帳。同じ編集者の判断であり、独立した別人による評価ではない。現在の内容指紋と分類の一致は検証するが、その検査だけで意味的品質を証明しない。', '',
     'この評価は問題が要求する認知操作の分類である。実際の学習者の正答率・解答時間・識別力は未測定で、実試験と同じ難しさだとは断定できない。Foundationは正しく理解した学習者には易しくてよい。Examも全問を難問にするのではなく、基礎知識だけの問題と区別する。', '',
     '自動検査は内容指紋、分類、根拠、回答ID、回答後のヒント、全件網羅を確認する。根拠欄の存在やテスト成功だけで設問の意味的品質を証明するものではない。問題を変更したら再読して台帳を更新する。', '',
     '共通シナリオの文脈・問題IDと保存済み解答との対応は維持した。ただし、文面を改稿した問題の過去の正答率は改稿前の成績であり、新問の実測難易度として解釈しない。', '',

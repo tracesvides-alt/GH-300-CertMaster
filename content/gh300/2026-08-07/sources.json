@@ -5,7 +5,7 @@
     "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
     "publisher": "Microsoft Learn",
     "sourceType": "study-guide",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -145,15 +145,76 @@
       "q-d2-f06",
       "q-d2-f08",
       "q-d2-f09",
+      "q-d2-a08",
       "q-d3-f01",
       "q-d3-f02",
-      "q-d4-f01",
       "q-d4-f02",
       "q-d5-f01",
       "q-d5-f02",
       "q-d5-f02-b",
       "q-d5-f04",
       "q-d5-f05",
+      "q-sc06-3",
+      "q-d1-g01",
+      "q-d1-g02",
+      "q-d2-g01",
+      "q-d2-g02",
+      "q-d2-g03",
+      "q-d2-g04",
+      "q-d2-g05",
+      "q-d2-g06",
+      "q-d2-g07",
+      "q-d2-g08",
+      "q-d2-g09",
+      "q-d2-g10",
+      "q-d2-g16",
+      "q-d2-g18",
+      "q-d2-g22",
+      "q-d3-g01",
+      "q-d3-g02",
+      "q-d3-g03",
+      "q-d3-g05",
+      "q-d3-g08",
+      "q-d3-g10",
+      "q-d3-g12",
+      "q-d3-g13",
+      "q-d4-g01",
+      "q-d4-g02",
+      "q-d4-g04",
+      "q-d4-g06",
+      "q-d4-g08",
+      "q-d4-g09",
+      "q-d5-g01",
+      "q-d5-g02",
+      "q-d5-g03",
+      "q-d5-g04",
+      "q-d5-g05",
+      "q-d5-g06",
+      "q-d5-g07",
+      "q-d5-g08",
+      "q-d5-g10",
+      "q-d5-g12",
+      "q-d5-g13",
+      "q-d5-g14",
+      "q-d5-g15",
+      "q-d5-g17",
+      "q-d5-g18",
+      "q-d6-g02",
+      "q-d6-g04",
+      "q-d1-a12",
+      "q-d1-a13",
+      "q-d1-a14",
+      "q-d2-a26",
+      "q-d3-a13",
+      "q-d3-a15",
+      "q-d4-a12",
+      "q-d4-a13",
+      "q-d4-a14",
+      "q-d5-a13",
+      "q-d5-a15",
+      "q-d6-a11",
+      "q-d6-a12",
+      "q-d6-a13",
       "q-d1-e09",
       "q-d2-e20",
       "q-d2-e21",
@@ -163,7 +224,12 @@
       "q-d4-e08",
       "q-d5-e06",
       "q-d5-e08",
-      "q-d6-e07"
+      "q-d6-e07",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a20",
+      "q-d3-a17",
+      "q-d3-a19"
     ],
     "relatedDomainIds": [
       "d1",
@@ -186,9 +252,17 @@
     "relatedObjectiveIds": [
       "d1o1",
       "d1o2",
+      "d2o1",
+      "d3o1",
+      "d5o2",
+      "d5o1",
+      "d2o2",
       "d6o1",
+      "d4o1",
+      "d2o3",
+      "d2o4",
       "d6o2",
-      "d2o1"
+      "d3o2"
     ],
     "status": "verified",
     "relatedLessonIds": [
@@ -246,41 +320,64 @@
       "q-d1-a06",
       "q-d1-a07",
       "q-d1-a10",
+      "q-d1-e01",
+      "q-d1-e02",
+      "q-d1-e03",
       "q-d1-e04",
+      "q-d1-e05",
       "q-d1-e06",
+      "q-d1-e07",
+      "q-d1-e08",
       "q-d2-a11",
       "q-d2-e14",
+      "q-d3-e03",
       "q-d4-f04",
-      "q-d5-a02",
       "q-d5-a03",
-      "q-d5-a05",
       "q-d5-a10",
       "q-d5-a11",
+      "q-d5-e02",
+      "q-d5-e04",
       "q-d6-a04",
+      "q-d6-e03",
+      "q-sc02-1",
+      "q-sc02-2",
       "q-sc04-2",
       "q-sc05-1",
       "q-sc05-2",
       "q-sc05-3",
-      "q-d1-e01",
-      "q-d1-e02",
-      "q-d1-e03",
-      "q-d1-e05",
-      "q-d1-e07",
-      "q-d1-e08",
-      "q-d3-e03",
-      "q-d5-e02",
-      "q-d5-e04",
-      "q-d6-e03",
-      "q-sc02-1",
-      "q-sc02-2",
       "q-sc09-3",
+      "q-d1-g01",
+      "q-d1-g02",
+      "q-d1-g03",
+      "q-d1-g05",
+      "q-d1-g06",
+      "q-d3-g03",
+      "q-d3-g06",
+      "q-d3-g14",
+      "q-d5-g01",
+      "q-d5-g08",
+      "q-d5-g09",
+      "q-d5-g11",
+      "q-d5-g14",
+      "q-d5-g17",
+      "q-d6-g03",
+      "q-d1-a11",
+      "q-d1-a12",
+      "q-d1-a13",
+      "q-d1-a14",
+      "q-d5-a15",
       "q-d1-e09",
-      "q-d5-e06"
+      "q-d5-e06",
+      "q-d1-a21",
+      "q-d3-a17"
     ],
     "relatedDomainIds": [
       "d1",
+      "d2",
+      "d3",
+      "d5",
       "d6",
-      "d2"
+      "d4"
     ]
   },
   {
@@ -289,18 +386,22 @@
     "url": "https://docs.github.com/en/copilot/responsible-use/chat",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
-      "d2o2",
       "d2o3",
-      "d2o4",
-      "d3o1",
-      "d3o2"
+      "d4o2",
+      "d5o1",
+      "d5o2",
+      "d1o1",
+      "d1o2",
+      "d4o1",
+      "d6o1",
+      "d3o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-13",
     "relatedLessonIds": [
       "lesson-d2-chat-essentials",
       "lesson-d2-agent-edits",
@@ -341,24 +442,44 @@
       "q04",
       "q05",
       "q06",
+      "q-d1-e01",
       "q-d2-f01",
       "q-d2-f02",
       "q-d2-f03",
       "q-d2-a02",
       "q-d2-a14",
       "q-d2-e09",
+      "q-d3-f03",
       "q-d3-a10",
       "q-d4-f03",
       "q-d4-f05",
       "q-d4-a10",
       "q-d5-f01",
       "q-sc05-1",
-      "q-d1-e01",
+      "q-d2-g03",
+      "q-d2-g17",
+      "q-d4-g05",
+      "q-d4-g07",
+      "q-d4-a15",
       "q-d4-e06",
-      "q-d4-e09"
+      "q-d4-e09",
+      "q-d1-a15",
+      "q-d1-a16",
+      "q-d1-a17",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a20",
+      "q-d1-a21",
+      "q-d1-a22",
+      "q-d3-a16",
+      "q-d3-a17"
     ],
     "relatedDomainIds": [
       "d2",
+      "d4",
+      "d5",
+      "d1",
+      "d6",
       "d3"
     ]
   },
@@ -368,14 +489,21 @@
     "url": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d3o1",
       "d4o1",
-      "d4o2"
+      "d4o2",
+      "d2o3",
+      "d3o2",
+      "d5o2",
+      "d1o2",
+      "d2o1",
+      "d5o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-13",
     "relatedLessonIds": [
       "lesson-d3-prompt-pipeline",
       "lesson-d4-crafting",
@@ -408,10 +536,10 @@
     ],
     "relatedQuestionIds": [
       "q04",
+      "q05",
       "q07",
       "q08",
       "q-d2-a02",
-      "q-d2-a15",
       "q-d2-a19",
       "q-d2-a21",
       "q-d2-e09",
@@ -424,6 +552,7 @@
       "q-d3-a07",
       "q-d3-a08",
       "q-d3-a10",
+      "q-d3-e01",
       "q-d3-e05",
       "q-d4-f01",
       "q-d4-f02",
@@ -440,22 +569,46 @@
       "q-d4-a09",
       "q-d4-a10",
       "q-d4-a11",
-      "q-d4-e02",
-      "q-d5-a04",
-      "q-d5-a07",
-      "q-sc08-3",
-      "q-d3-e01",
       "q-d4-e01",
+      "q-d4-e02",
       "q-d4-e03",
       "q-d4-e04",
       "q-d4-e05",
+      "q-d5-a04",
+      "q-d5-a07",
       "q-sc02-3",
+      "q-sc08-3",
+      "q-d3-g09",
+      "q-d3-g11",
+      "q-d4-g01",
+      "q-d4-g02",
+      "q-d4-g03",
+      "q-d4-g04",
+      "q-d4-g05",
+      "q-d4-g06",
+      "q-d4-g07",
+      "q-d4-g08",
+      "q-d4-g09",
+      "q-d5-g02",
+      "q-d5-g04",
+      "q-d5-g05",
+      "q-d5-g10",
+      "q-d5-g18",
+      "q-d4-a12",
+      "q-d4-a13",
+      "q-d4-a14",
+      "q-d4-a15",
       "q-d4-e06",
       "q-d4-e07",
-      "q-d4-e09"
+      "q-d4-e09",
+      "q-d1-a22"
     ],
     "relatedDomainIds": [
-      "d4"
+      "d3",
+      "d4",
+      "d2",
+      "d5",
+      "d1"
     ]
   },
   {
@@ -467,8 +620,14 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d1o2",
       "d5o1",
-      "d5o2"
+      "d5o2",
+      "d4o1",
+      "d6o1",
+      "d1o1",
+      "d2o1",
+      "d2o3"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -509,39 +668,49 @@
       "q-d1-a08",
       "q-d1-a09",
       "q-d1-a10",
+      "q-d1-e02",
+      "q-d1-e03",
+      "q-d1-e05",
+      "q-d1-e07",
       "q-d2-f03",
       "q-d2-a06",
       "q-d2-a16",
+      "q-d2-e01",
+      "q-d2-e10",
+      "q-d3-e03",
       "q-d4-a07",
+      "q-d4-e01",
+      "q-d4-e05",
       "q-d5-f02",
       "q-d5-f05",
       "q-d5-a01",
-      "q-d5-a02",
       "q-d5-a04",
       "q-d5-a06",
       "q-d5-a07",
       "q-d5-a08",
       "q-d5-a09",
       "q-d5-a10",
-      "q-sc05-2",
-      "q-d1-e02",
-      "q-d1-e03",
-      "q-d1-e05",
-      "q-d1-e07",
-      "q-d2-e01",
-      "q-d2-e10",
-      "q-d4-e01",
-      "q-d4-e05",
       "q-d5-e01",
       "q-d5-e03",
       "q-d5-e04",
       "q-d5-e05",
       "q-sc02-1",
       "q-sc02-2",
+      "q-sc05-2",
+      "q-d5-g03",
+      "q-d5-g07",
+      "q-d5-g13",
+      "q-d5-g15",
+      "q-d5-a12",
+      "q-d5-a13",
       "q-d5-e07"
     ],
     "relatedDomainIds": [
-      "d5"
+      "d1",
+      "d5",
+      "d4",
+      "d6",
+      "d2"
     ]
   },
   {
@@ -553,8 +722,13 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d2o2",
       "d6o1",
-      "d6o2"
+      "d6o2",
+      "d1o1",
+      "d2o1",
+      "d5o2",
+      "d2o4"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -586,10 +760,19 @@
       "q-d6-a01",
       "q-d6-a08",
       "q-d6-a10",
-      "q-sc01-2"
+      "q-sc01-2",
+      "q-d6-g01",
+      "q-d6-g02",
+      "q-d6-g04",
+      "q-d6-a11",
+      "q-d6-a12",
+      "q-d6-a14"
     ],
     "relatedDomainIds": [
-      "d6"
+      "d2",
+      "d6",
+      "d1",
+      "d5"
     ]
   },
   {
@@ -601,7 +784,8 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o2"
+      "d2o2",
+      "d6o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -619,9 +803,15 @@
       "g-exclusion-limitations"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g05",
+      "q-d2-g06",
+      "q-d2-g07",
+      "q-d2-a25"
+    ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d6"
     ]
   },
   {
@@ -635,8 +825,10 @@
     "relatedObjectiveIds": [
       "d2o3",
       "d2o1",
-      "d1o1",
-      "d2o2"
+      "d2o2",
+      "d5o2",
+      "d1o2",
+      "d5o1"
     ],
     "relatedLessonIds": [
       "lesson-d2-agent-edits",
@@ -664,18 +856,21 @@
       "q-d2-a05",
       "q-d2-a06",
       "q-d2-a14",
-      "q-d2-a15",
       "q-d2-a16",
       "q-d2-e05",
+      "q-d2-e10",
       "q-d2-e14",
       "q-d2-e17",
       "q-d2-e18",
       "q-sc04-1",
-      "q-d2-e10",
+      "q-d2-g12",
+      "q-d2-g13",
+      "q-d2-a26",
       "q-d2-e20"
     ],
     "relatedDomainIds": [
       "d2",
+      "d5",
       "d1"
     ],
     "lastVerifiedAt": "2026-10-12",
@@ -691,8 +886,13 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
+      "d2o1",
+      "d4o1",
       "d2o4",
-      "d2o2"
+      "d6o2",
+      "d6o1",
+      "d5o2",
+      "d3o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -713,23 +913,31 @@
       "q-d2-f06",
       "q-d2-f07",
       "q-d2-a07",
+      "q-d2-a08",
       "q-d2-a18",
       "q-d2-a20",
-      "q-d2-e04",
-      "q-sc03-1",
-      "q-sc03-3",
-      "q-sc07-1",
       "q-d2-e02",
+      "q-d2-e04",
       "q-d2-e07",
       "q-d2-e11",
+      "q-sc03-1",
       "q-sc03-2",
+      "q-sc03-3",
+      "q-sc07-1",
       "q-sc07-2",
       "q-sc10-3",
+      "q-d2-g11",
+      "q-d3-g13",
+      "q-d2-a23",
       "q-d2-e24",
       "q-d6-e07"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d4",
+      "d6",
+      "d5",
+      "d3"
     ]
   },
   {
@@ -742,7 +950,8 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
-      "d4o1"
+      "d4o1",
+      "d4o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -769,10 +978,13 @@
       "q-d2-e08",
       "q-d2-e12",
       "q-d2-e16",
-      "q-sc06-1",
-      "q-sc06-3",
       "q-d4-e03",
+      "q-sc06-1",
       "q-sc06-2",
+      "q-sc06-3",
+      "q-d2-g15",
+      "q-d4-g03",
+      "q-d2-a24",
       "q-d2-e23",
       "q-d4-e08"
     ],
@@ -817,8 +1029,8 @@
       "q-d2-e12",
       "q-d2-e16",
       "q-sc06-1",
-      "q-sc06-3",
       "q-sc06-2",
+      "q-d2-a24",
       "q-d2-e23"
     ],
     "relatedDomainIds": [
@@ -838,9 +1050,8 @@
       "d2o1",
       "d2o3",
       "d2o4",
-      "d4o1",
       "d4o2",
-      "d2o2"
+      "d3o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -865,11 +1076,14 @@
       "q-d2-e12",
       "q-sc06-1",
       "q-sc07-1",
+      "q-d2-g22",
+      "q-d3-g13",
       "q-d2-e21"
     ],
     "relatedDomainIds": [
       "d2",
-      "d4"
+      "d4",
+      "d3"
     ]
   },
   {
@@ -892,7 +1106,9 @@
       "g-spark"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g16"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -906,9 +1122,12 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d1o2",
       "d2o3",
+      "d5o1",
       "d2o4",
-      "d5o1"
+      "d5o2",
+      "d2o1"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -933,13 +1152,16 @@
       "q-d5-f04",
       "q-d5-a03",
       "q-d5-a09",
+      "q-d5-e02",
       "q-sc04-1",
       "q-sc04-2",
       "q-sc04-3",
-      "q-d5-e02",
+      "q-d2-g14",
+      "q-d2-g21",
       "q-d2-e20"
     ],
     "relatedDomainIds": [
+      "d1",
       "d2",
       "d5"
     ]
@@ -953,9 +1175,12 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d2o3",
       "d2o4",
       "d6o1",
-      "d6o2"
+      "d6o2",
+      "d5o1",
+      "d3o1"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -988,7 +1213,6 @@
     "relatedQuestionIds": [
       "q-d1-a05",
       "q-d1-e06",
-      "q-d3-f04",
       "q-d6-f01",
       "q-d6-f02",
       "q-d6-f03",
@@ -996,12 +1220,23 @@
       "q-d6-a05",
       "q-d6-a06",
       "q-sc01-3",
+      "q-d2-g14",
+      "q-d2-g18",
+      "q-d2-g19",
+      "q-d2-g20",
+      "q-d2-g21",
+      "q-d6-g01",
+      "q-d6-g03",
+      "q-d6-g05",
+      "q-d6-a14",
       "q-d2-e24",
       "q-d6-e06"
     ],
     "relatedDomainIds": [
       "d2",
-      "d6"
+      "d6",
+      "d5",
+      "d3"
     ]
   },
   {
@@ -1013,7 +1248,8 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o4"
+      "d2o4",
+      "d2o3"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1027,8 +1263,9 @@
     "relatedQuestionIds": [
       "q-d6-f04",
       "q-d6-f05",
+      "q-d6-e02",
       "q-sc07-3",
-      "q-d6-e02"
+      "q-d6-g05"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1043,7 +1280,10 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o4"
+      "d2o4",
+      "d2o3",
+      "d5o1",
+      "d1o1"
     ],
     "status": "verified",
     "relatedLessonIds": [
@@ -1058,13 +1298,15 @@
       "q-d6-f05",
       "q-d6-a05",
       "q-d6-a09",
-      "q-sc07-3",
-      "q-sc09-2",
       "q-d6-e02",
-      "q-d6-e05"
+      "q-d6-e05",
+      "q-sc07-3",
+      "q-sc09-2"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d5",
+      "d1"
     ]
   },
   {
@@ -1073,16 +1315,19 @@
     "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d3o1",
-      "d3o2",
+      "d1o1",
+      "d1o2",
+      "d5o2",
       "d6o1",
+      "d2o4",
+      "d3o1",
       "d6o2"
     ],
     "status": "needs-review",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-13",
     "relatedLessonIds": [
       "lesson-d1-risks",
       "lesson-d1-security-review",
@@ -1112,17 +1357,22 @@
     "relatedQuestionIds": [
       "q-d1-f05",
       "q-d1-e04",
-      "q-d3-f03",
       "q-d6-f01",
       "q-d6-f03",
       "q-d6-a03",
       "q-d6-a07",
       "q-d6-e04",
-      "q-sc10-3"
+      "q-sc10-3",
+      "q-d2-g20",
+      "q-d3-g04",
+      "q-d3-g05"
     ],
     "relatedDomainIds": [
-      "d3",
-      "d6"
+      "d1",
+      "d5",
+      "d6",
+      "d2",
+      "d3"
     ]
   },
   {
@@ -1135,7 +1385,15 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
-      "d3o2"
+      "d3o2",
+      "d1o1",
+      "d4o1",
+      "d6o1",
+      "d6o2",
+      "d4o2",
+      "d2o3",
+      "d2o1",
+      "d5o2"
     ],
     "status": "needs-review",
     "lastVerifiedAt": "2026-10-12",
@@ -1168,19 +1426,37 @@
       "q-d2-f07",
       "q-d3-f01",
       "q-d3-f02",
-      "q-d3-f03",
-      "q-d3-f04",
       "q-d3-f05",
       "q-d3-a01",
       "q-d3-a08",
-      "q-sc03-3",
       "q-d3-e01",
-      "q-d3-e03",
+      "q-sc03-3",
       "q-sc08-2",
-      "q-d3-e07"
+      "q-d1-g03",
+      "q-d1-g04",
+      "q-d3-g01",
+      "q-d3-g02",
+      "q-d3-g04",
+      "q-d3-g06",
+      "q-d3-g07",
+      "q-d3-g09",
+      "q-d3-g10",
+      "q-d3-g11",
+      "q-d3-g12",
+      "q-d3-g14",
+      "q-d3-a14",
+      "q-d3-a15",
+      "q-d3-e07",
+      "q-d3-a16",
+      "q-d3-a19"
     ],
     "relatedDomainIds": [
-      "d3"
+      "d3",
+      "d1",
+      "d4",
+      "d6",
+      "d2",
+      "d5"
     ]
   },
   {
@@ -1193,17 +1469,19 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
-      "d2o1"
+      "d2o1",
+      "d4o1"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d2-a08",
-      "q-sc03-2"
+      "q-sc03-2",
+      "q-d2-a23"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d4"
     ]
   },
   {
@@ -1216,27 +1494,33 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
-      "d6o1"
+      "d2o1",
+      "d4o1",
+      "d2o4",
+      "d5o2"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d2-a07",
+      "q-d2-a08",
       "q-d2-a17",
       "q-d2-a18",
-      "q-d2-e15",
-      "q-sc03-1",
-      "q-sc07-1",
       "q-d2-e02",
       "q-d2-e07",
       "q-d2-e11",
+      "q-d2-e15",
       "q-d2-e19",
-      "q-sc07-2"
+      "q-sc03-1",
+      "q-sc07-1",
+      "q-sc07-2",
+      "q-d2-g11"
     ],
     "relatedDomainIds": [
       "d2",
-      "d6"
+      "d4",
+      "d5"
     ]
   },
   {
@@ -1249,7 +1533,11 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
-      "d2o1"
+      "d2o1",
+      "d4o1",
+      "d3o2",
+      "d5o1",
+      "d5o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1264,13 +1552,19 @@
     "relatedQuestionIds": [
       "q-d2-a12",
       "q-d2-a13",
-      "q-d3-a02",
       "q-d3-f02",
+      "q-d3-a02",
+      "q-d2-g01",
+      "q-d2-g02",
+      "q-d3-g08",
+      "q-d5-g06",
       "q-d3-e08"
     ],
     "relatedDomainIds": [
       "d3",
-      "d2"
+      "d2",
+      "d4",
+      "d5"
     ]
   },
   {
@@ -1282,7 +1576,8 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o1"
+      "d2o2",
+      "d5o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1296,11 +1591,14 @@
     "relatedQuestionIds": [
       "q-d2-f11",
       "q-d2-a22",
+      "q-d2-e01",
       "q-d2-e13",
-      "q-d2-e01"
+      "q-d2-g08",
+      "q-d2-g09"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d5"
     ]
   },
   {
@@ -1309,25 +1607,28 @@
     "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d3o2"
+      "d3o1"
     ],
     "status": "verified",
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
+      "q-d3-f04",
       "q-d3-a03",
       "q-d3-a05",
       "q-d3-a09",
       "q-d3-e02",
+      "q-d3-g07",
       "q-d3-e06"
     ],
     "relatedDomainIds": [
       "d3"
-    ]
+    ],
+    "lastVerifiedAt": "2026-10-13"
   },
   {
     "id": "exclusion-concept",
@@ -1338,10 +1639,11 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d3o2",
-      "d6o1",
+      "d3o1",
       "d6o2",
-      "d1o1"
+      "d6o1",
+      "d2o4",
+      "d1o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1356,19 +1658,20 @@
       "cmp-safety-filter-types"
     ],
     "relatedQuestionIds": [
+      "q-d3-e04",
       "q-d6-a02",
       "q-d6-a04",
+      "q-d6-e01",
       "q-sc01-1",
       "q-sc01-2",
       "q-sc05-3",
       "q-sc10-1",
-      "q-d3-e04",
-      "q-d6-e01",
       "q-d6-e07"
     ],
     "relatedDomainIds": [
       "d3",
       "d6",
+      "d2",
       "d1"
     ]
   },
@@ -1381,8 +1684,10 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d3o1",
+      "d6o2",
       "d6o1",
-      "d1o1"
+      "d2o4"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1400,15 +1705,18 @@
       "q-d6-f01",
       "q-d6-a02",
       "q-d6-a04",
+      "q-d6-e03",
       "q-sc01-1",
       "q-sc10-1",
       "q-sc10-2",
-      "q-d6-e03",
+      "q-d1-a11",
+      "q-d6-a13",
       "q-d6-e06"
     ],
     "relatedDomainIds": [
+      "d3",
       "d6",
-      "d1"
+      "d2"
     ]
   },
   {
@@ -1420,9 +1728,12 @@
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d4o2",
+      "d2o1",
+      "d2o3",
       "d3o1",
-      "d3o2"
+      "d4o2",
+      "d3o2",
+      "d4o1"
     ],
     "relatedLessonIds": [
       "lesson-d2-chat-essentials"
@@ -1431,14 +1742,18 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d4-a06",
-      "q-sc08-1",
       "q-d4-e04",
+      "q-sc08-1",
       "q-sc08-2",
+      "q-d2-g10",
+      "q-d3-g13",
+      "q-d3-a14",
       "q-d3-e07"
     ],
     "relatedDomainIds": [
-      "d4",
-      "d3"
+      "d2",
+      "d3",
+      "d4"
     ]
   },
   {
@@ -1455,9 +1770,7 @@
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [
-      "q-d3-a11"
-    ],
+    "relatedQuestionIds": [],
     "relatedDomainIds": [
       "d3"
     ]
@@ -1471,7 +1784,7 @@
     "lastCheckedAt": "2026-09-07",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d5o1"
+      "d5o2"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
@@ -1489,10 +1802,10 @@
     "url": "https://fast-check.dev/docs/introduction/",
     "publisher": "fast-check",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-09-07",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d5o1"
+      "d5o2"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
@@ -1515,7 +1828,10 @@
     "relatedObjectiveIds": [
       "d6o1",
       "d6o2",
-      "d5o2"
+      "d2o4",
+      "d2o3",
+      "d5o2",
+      "d1o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1528,11 +1844,14 @@
       "q-sc01-1",
       "q-sc04-3",
       "q-sc05-3",
-      "q-sc10-1"
+      "q-sc10-1",
+      "q-d5-g11"
     ],
     "relatedDomainIds": [
       "d6",
-      "d5"
+      "d2",
+      "d5",
+      "d1"
     ]
   },
   {
@@ -1544,7 +1863,11 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d5o2"
+      "d2o3",
+      "d5o2",
+      "d6o2",
+      "d6o1",
+      "d1o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1555,10 +1878,14 @@
       "q-d1-a09",
       "q-sc04-3",
       "q-sc10-2",
+      "q-d5-g09",
       "q-d5-e06"
     ],
     "relatedDomainIds": [
-      "d5"
+      "d2",
+      "d5",
+      "d6",
+      "d1"
     ]
   },
   {
@@ -1571,21 +1898,24 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d5o1",
-      "d1o1"
+      "d2o4",
+      "d1o1",
+      "d1o2"
     ],
     "status": "verified",
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d6-a09",
       "q-d1-e08",
+      "q-d6-a09",
       "q-sc09-1",
       "q-sc09-3",
       "q-d5-e08"
     ],
     "relatedDomainIds": [
       "d5",
+      "d2",
       "d1"
     ]
   },
@@ -1599,7 +1929,6 @@
     "lastVerifiedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o1",
       "d2o4",
       "d6o1"
     ],
@@ -1611,7 +1940,9 @@
       "g-subscription-plans"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g20"
+    ],
     "relatedDomainIds": [
       "d2",
       "d6"
@@ -1628,8 +1959,8 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
-      "d2o3",
-      "d2o4"
+      "d2o4",
+      "d6o1"
     ],
     "status": "verified",
     "relatedLessonIds": [
@@ -1642,7 +1973,8 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d6"
     ]
   },
   {
@@ -1651,12 +1983,12 @@
     "url": "https://docs.github.com/en/copilot/reference/ai-models/model-hosting",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
-    "lastVerifiedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
-      "d3o2",
+      "d6o1",
       "d6o2"
     ],
     "status": "verified",
@@ -1680,7 +2012,9 @@
     "relatedQuestionIds": [
       "q-d6-a07",
       "q-d6-e04",
-      "q-sc10-3"
+      "q-sc10-3",
+      "q-d3-g03",
+      "q-d3-g05"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1697,8 +2031,8 @@
     "lastVerifiedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d6o1",
-      "d6o2"
+      "d3o1",
+      "d6o1"
     ],
     "status": "verified",
     "relatedLessonIds": [
@@ -1712,6 +2046,7 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [],
     "relatedDomainIds": [
+      "d3",
       "d6"
     ]
   },
@@ -1739,6 +2074,7 @@
       "cmp-mcp-vs-extensions"
     ],
     "relatedQuestionIds": [
+      "q-d2-g17",
       "q-d2-e24"
     ],
     "relatedDomainIds": [
@@ -1768,6 +2104,8 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d2-e06",
+      "q-d2-g08",
+      "q-d2-g09",
       "q-d2-e22"
     ],
     "relatedDomainIds": [
@@ -1853,7 +2191,9 @@
     ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a25"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -1881,6 +2221,7 @@
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
+      "q-d2-g12",
       "q-d2-e22"
     ],
     "relatedDomainIds": [
@@ -1907,7 +2248,9 @@
       "g-sub-agents"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g13"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -1921,7 +2264,8 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d3o1"
+      "d3o1",
+      "d5o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1937,7 +2281,8 @@
       "q-d3-e08"
     ],
     "relatedDomainIds": [
-      "d3"
+      "d3",
+      "d5"
     ]
   },
   {
@@ -1963,7 +2308,9 @@
     "relatedComparisonIds": [
       "cmp-test-generation-vs-explorer"
     ],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d5-g12"
+    ],
     "relatedDomainIds": [
       "d5"
     ]
@@ -1977,6 +2324,7 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
+      "d2o1",
       "d2o3"
     ],
     "status": "verified",
@@ -1989,7 +2337,9 @@
       "g-legacy-knowledge-bases"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g22"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -2004,7 +2354,8 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
-      "d3o1"
+      "d3o1",
+      "d3o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -2014,7 +2365,9 @@
     ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d3-g13"
+    ],
     "relatedDomainIds": [
       "d2",
       "d3"
@@ -2026,13 +2379,14 @@
     "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/network-settings",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-13",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d3o1"
+      "d3o1",
+      "d6o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-13",
     "relatedLessonIds": [
       "lesson-d3-data-flow"
     ],
@@ -2041,10 +2395,13 @@
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
+      "q-d3-f03",
+      "q-d3-f04",
       "q-d3-e06"
     ],
     "relatedDomainIds": [
-      "d3"
+      "d3",
+      "d6"
     ]
   },
   {
@@ -2068,6 +2425,8 @@
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
+      "q-d5-g13",
+      "q-d5-a12",
       "q-d5-e07"
     ],
     "relatedDomainIds": [
@@ -2094,7 +2453,10 @@
       "g-safe-exception-handling"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d5-g16",
+      "q-d5-a14"
+    ],
     "relatedDomainIds": [
       "d5"
     ]
@@ -2119,7 +2481,10 @@
       "g-safe-exception-handling"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d5-g16",
+      "q-d5-a14"
+    ],
     "relatedDomainIds": [
       "d5"
     ]
@@ -2166,10 +2531,10 @@
     "syllabusVersion": "2026-08-07",
     "status": "verified",
     "relatedObjectiveIds": [
-      "d3o2"
+      "d2o4"
     ],
     "relatedDomainIds": [
-      "d3"
+      "d2"
     ],
     "relatedQuestionIds": [
       "q-d3-a13"
@@ -2264,7 +2629,10 @@
       "d1"
     ],
     "relatedQuestionIds": [
-      "q-d1-e09"
+      "q-d1-e09",
+      "q-d1-a15",
+      "q-d1-a16",
+      "q-d1-a17"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
@@ -2292,5 +2660,127 @@
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": []
+  },
+  {
+    "id": "ml-sql-injection",
+    "title": "SQL injection",
+    "url": "https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-injection?view=sql-server-ver17",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-13",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-a02"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "ml-password-hashing",
+    "title": "Hash passwords in ASP.NET Core",
+    "url": "https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-10.0",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-13",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-a04"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "artifact-attestations",
+    "title": "Artifact attestations",
+    "url": "https://docs.github.com/en/actions/concepts/security/artifact-attestations",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-13",
+    "status": "verified",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-e01"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "copilot-allowlist",
+    "title": "Copilot allowlist reference",
+    "url": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-13",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-f03",
+      "q-d3-f04"
+    ]
+  },
+  {
+    "id": "dotnet-tokens",
+    "title": "Understanding tokens",
+    "url": "https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "lastCheckedAt": "2026-10-13",
+    "syllabusVersion": "2026-08-07",
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-10-13",
+    "relatedLessonIds": [
+      "lesson-d3-prompt-pipeline",
+      "lesson-d3-data-flow"
+    ],
+    "relatedGlossaryIds": [
+      "g-tokenization",
+      "g-context-window"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-a19"
+    ],
+    "relatedDomainIds": [
+      "d3"
+    ]
   }
 ]

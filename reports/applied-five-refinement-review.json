@@ -1,0 +1,1421 @@
+{
+  "reviewedAt": "2026-10-13",
+  "scope": [
+    "q-d2-e14",
+    "q-d3-a15",
+    "q-d2-a18",
+    "q-d1-a02",
+    "q-d1-a04"
+  ],
+  "independentBlindExperiment": false,
+  "measuredLearnerDifficulty": false,
+  "method": "編集再レビュー。別条件で全誤答を正解へ変えられることを、同じ四選択肢と置換後の全文で確認する。意味的正解は編集者が照合し、構造チェックとは区別する。",
+  "questions": [
+    {
+      "id": "q-d2-e14",
+      "title": "既存行と列契約に合うマイグレーション",
+      "before": {
+        "id": "q-d2-e14",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "testedConcepts": [
+          "d2o2",
+          "condition-application"
+        ],
+        "clues": [],
+        "question": "Agentがmigrate resetを提案した。今回の目的は新しい列の追加だけで、ローカルDBの検証データを保持する必要がある。先に確認する変更案は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "既存データを保つ列追加マイグレーション"
+          },
+          {
+            "id": "C",
+            "text": "DBを初期化してから列を追加する案"
+          },
+          {
+            "id": "B",
+            "text": "検証データを削除して同じresetを再実行する案"
+          },
+          {
+            "id": "D",
+            "text": "DBを空にしてスキーマの型検査だけ行う案"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "保持条件を満たす変更方法を評価する。",
+        "choiceExplanations": {
+          "A": "保持条件を満たす変更方法を評価する。",
+          "C": "resetは保持条件と衝突する。",
+          "B": "保持対象を失う。",
+          "D": "型検査はデータの保持を確かめない。"
+        },
+        "sourceIds": [
+          "agent-mode",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "保持条件を満たす変更方法を評価する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "resetは保持条件と衝突する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "保持対象を失う。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "型検査はデータの保持を確かめない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Agentがmigrate resetを提案した。今回の目的は新しい列の追加だけで、ローカルDBの検証データを保持する必要がある。先に確認する変更案は？",
+            "correctReason": "保持条件を満たす変更方法を評価する。",
+            "distractorFailures": {
+              "C": "resetは保持条件と衝突する。",
+              "B": "保持対象を失う。",
+              "D": "型検査はデータの保持を確かめない。"
+            }
+          }
+        ],
+        "contentRevision": "applied-review-2026-10-12"
+      },
+      "after": {
+        "id": "q-d2-e14",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioType": "team",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "testedConcepts": [
+          "d2o2",
+          "schema-migration",
+          "nullable-contract",
+          "existing-data-preservation"
+        ],
+        "clues": [],
+        "question": "CopilotのDB変更案を検証しています。承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。既存値を保持して要件を満たす、次の変更と検証は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "NULL許容の列を追加し、既存行の保持と未登録値・旧版アプリの動作を検証する"
+          },
+          {
+            "id": "C",
+            "text": "既存列を改名して利用箇所を切り替え、旧列名の残存と既存値の保持を検証する"
+          },
+          {
+            "id": "B",
+            "text": "NULL許容で列を追加して承認済み値を埋め、NOT NULL化と未設定時の拒否を検証する"
+          },
+          {
+            "id": "D",
+            "text": "新表へ既存行を複製して参照先を切り替え、行数・既存値・読み書きの一致を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。",
+        "choiceExplanations": {
+          "A": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。",
+          "C": "改名の移行には適するが、今回は既存列名を維持して新列を追加する。失敗したNULL制約も解消しない。",
+          "B": "必須化と承認済み値の補完が要件なら適するが、今回は未登録をNULLで許すため必須化は契約を変える。",
+          "D": "新表への移行が承認対象なら適するが、今回は既存usersへの列追加で参照先も維持する。"
+        },
+        "sourceIds": [
+          "agent-mode",
+          "responsible"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "改名の移行には適するが、今回は既存列名を維持して新列を追加する。失敗したNULL制約も解消しない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "必須化と承認済み値の補完が要件なら適するが、今回は未登録をNULLで許すため必須化は契約を変える。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "agent-mode",
+              "responsible"
+            ],
+            "rationale": "新表への移行が承認対象なら適するが、今回は既存usersへの列追加で参照先も維持する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。",
+            "correctReason": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。",
+            "distractorFailures": {
+              "C": "改名の移行には適するが、今回は既存列名を維持して新列を追加する。失敗したNULL制約も解消しない。",
+              "B": "必須化と承認済み値の補完が要件なら適するが、今回は未登録をNULLで許すため必須化は契約を変える。",
+              "D": "新表への移行が承認対象なら適するが、今回は既存usersへの列追加で参照先も維持する。"
+            }
+          }
+        ],
+        "contentRevision": "applied-five-refinement-2026-10-13"
+      },
+      "fingerprint": "097a22634c917a102e080e5269722232ccc49784264cb8f1cc9c611c0c2e645c",
+      "assessment": "応用として維持。具体的なDDL失敗と承認済み列契約から変更方法を選ぶ。改名・必須化・表移行も正当な別要件として区別する。",
+      "optionOnlyReview": "全選択肢は異なる欠陥・契約なら成立する案。一般に正しい文を一つ選ぶ構成を解消し、今回の観測と確認済み条件を本文で照合する。各誤答が正解となる反実仮想全文を3件確認。独立受験者のブラインド実測ではない。",
+      "reasoningSteps": [
+        "既存行に追加値がなく、NOT NULL・DEFAULTなしが適用失敗を生むと判断する。",
+        "未登録をNULLで許す契約をDDLへ適用し、データ保持と旧版の動作を確認する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。",
+          "to": "承認要件はnickname列を新設して必須にし、既存行には承認済みの空文字を設定することです。提案DDLはNOT NULL・DEFAULTなしで既存行への適用に失敗しました。既存列名と参照先は維持します。",
+          "question": "CopilotのDB変更案を検証しています。承認要件はnickname列を新設して必須にし、既存行には承認済みの空文字を設定することです。提案DDLはNOT NULL・DEFAULTなしで既存行への適用に失敗しました。既存列名と参照先は維持します。既存値を保持して要件を満たす、次の変更と検証は？",
+          "answerId": "B",
+          "rationale": "NULL許容で追加して既存値を補完した後、必須制約を検証する順序が必要。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。",
+          "to": "承認要件は既存display_name列をnicknameへ改名することです。既存値は保持し、旧列名を使う利用箇所も切り替えます。Copilot案は別の空のnickname列を追加するため、既存値を引き継げません。",
+          "question": "CopilotのDB変更案を検証しています。承認要件は既存display_name列をnicknameへ改名することです。既存値は保持し、旧列名を使う利用箇所も切り替えます。Copilot案は別の空のnickname列を追加するため、既存値を引き継げません。既存値を保持して要件を満たす、次の変更と検証は？",
+          "answerId": "C",
+          "rationale": "新列追加ではなく改名と利用箇所の移行を検証する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "承認要件はusersに未登録をNULLで許すnickname列を追加することです。提案DDLはNOT NULL・DEFAULTなしで、既存3行への適用に失敗しました。既存列名と参照先は変更しません。",
+          "to": "承認要件は既存usersの全行を新しいusers_v2表へ移し、参照先を切り替えることです。Copilot案は空の新表を作るだけで、既存行の移行と参照先変更がありません。",
+          "question": "CopilotのDB変更案を検証しています。承認要件は既存usersの全行を新しいusers_v2表へ移し、参照先を切り替えることです。Copilot案は空の新表を作るだけで、既存行の移行と参照先変更がありません。既存値を保持して要件を満たす、次の変更と検証は？",
+          "answerId": "D",
+          "rationale": "承認済みの表移行として複製・切替・一致検証を行う。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 38,
+        "medianWrong": 39,
+        "position": "A",
+        "ratio": 0.9743589743589743
+      },
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "既存列を改名して利用箇所を切り替え、旧列名の残存と既存値の保持を検証する",
+          "whyWrong": "改名の移行には適するが、今回は既存列名を維持して新列を追加する。失敗したNULL制約も解消しない。"
+        },
+        {
+          "id": "B",
+          "text": "NULL許容で列を追加して承認済み値を埋め、NOT NULL化と未設定時の拒否を検証する",
+          "whyWrong": "必須化と承認済み値の補完が要件なら適するが、今回は未登録をNULLで許すため必須化は契約を変える。"
+        },
+        {
+          "id": "D",
+          "text": "新表へ既存行を複製して参照先を切り替え、行数・既存値・読み書きの一致を検証する",
+          "whyWrong": "新表への移行が承認対象なら適するが、今回は既存usersへの列追加で参照先も維持する。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-a15",
+      "title": "生成の再現性と契約テストの検証範囲",
+      "before": {
+        "id": "q-d3-a15",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "同一の保存済みプロンプト・モデルでCopilot提案を20回比較した。文面は違うが契約テストは全件成功した。再現性と正しさの評価は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "文面が異なるので、契約にも全件違反している"
+          },
+          {
+            "id": "B",
+            "text": "文面の再現性はないが、確認した契約には適合する"
+          },
+          {
+            "id": "C",
+            "text": "テストが成功したので、文面も完全に再現している"
+          },
+          {
+            "id": "D",
+            "text": "モデルが同じなので、入力が必ず違っていたと断定する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。",
+        "choiceExplanations": {
+          "B": "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。",
+          "A": "文面差だけから契約違反は導けない。",
+          "C": "実行結果と文面一致は別である。",
+          "D": "同一入力で出力が異なる可能性を除外できない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "guide"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "文面差だけから契約違反は導けない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "実行結果と文面一致は別である。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "同一入力で出力が異なる可能性を除外できない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "同一の保存済みプロンプト・モデルでCopilot提案を20回比較した。文面は違うが契約テストは全件成功した。再現性と正しさの評価は？",
+            "correctReason": "観測された文面差と検証した契約を分ける。未検証条件の保証はしない。",
+            "distractorFailures": {
+              "A": "文面差だけから契約違反は導けない。",
+              "C": "実行結果と文面一致は別である。",
+              "D": "同一入力で出力が異なる可能性を除外できない。"
+            }
+          }
+        ],
+        "contentRevision": "applied-review-2026-10-12",
+        "clues": [],
+        "testedConcepts": [
+          "d3o2",
+          "condition-application"
+        ]
+      },
+      "after": {
+        "id": "q-d3-a15",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "同じ保存済みプロンプトとモデルで、CopilotのformatTotal(8)案を20回実行しました。全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。この入力に対する採用判断と追加検証は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "数値は未達・書式は達成と判断し、数値の修正と期待値テストを追加する"
+          },
+          {
+            "id": "B",
+            "text": "数値は達成・書式は未達と判断し、書式の修正と桁数テストを追加する"
+          },
+          {
+            "id": "C",
+            "text": "数値と書式は達成と判断し、この入力について採用候補として結果を記録する"
+          },
+          {
+            "id": "D",
+            "text": "数値と書式は未達と判断し、両方の修正と期待値・桁数テストを追加する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。",
+        "choiceExplanations": {
+          "A": "数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。",
+          "B": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。",
+          "C": "8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。",
+          "D": "数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "guide"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "architecture",
+              "guide"
+            ],
+            "rationale": "数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。",
+            "correctReason": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。",
+            "distractorFailures": {
+              "A": "数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。",
+              "C": "8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。",
+              "D": "数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。"
+            }
+          }
+        ],
+        "contentRevision": "applied-five-refinement-2026-10-13",
+        "clues": [],
+        "testedConcepts": [
+          "d3o2",
+          "nondeterminism",
+          "test-scope",
+          "output-format-contract"
+        ]
+      },
+      "fingerprint": "2342bd1a608a17ff57a399900216a7d28a89734f9fa24a2997e16ba73f27d8a9",
+      "assessment": "応用として維持。実行結果とテストの境界を契約へ適用する。非決定性から正誤を断定せず、この入力で確認できた範囲に結論を限定する。",
+      "optionOnlyReview": "全選択肢は異なる欠陥・契約なら成立する案。一般に正しい文を一つ選ぶ構成を解消し、今回の観測と確認済み条件を本文で照合する。各誤答が正解となる反実仮想全文を3件確認。独立受験者のブラインド実測ではない。",
+      "reasoningSteps": [
+        "数値化した期待値テストと、生の文字列の書式を別の検証対象として分ける。",
+        "契約の数値8と2桁へ観測結果を照合し、未達の書式だけを修正・検証する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。",
+          "to": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8で、書式は8.0と8.00の両表記を許容します。",
+          "question": "同じ保存済みプロンプトとモデルで、CopilotのformatTotal(8)案を20回実行しました。全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8で、書式は8.0と8.00の両表記を許容します。この入力に対する採用判断と追加検証は？",
+          "answerId": "C",
+          "rationale": "文面は揺れていても、この入力の数値と許容書式の両方を満たす。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。",
+          "to": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の承認済み契約は数値9で、書式は小数点以下1桁または2桁を許容します。",
+          "question": "同じ保存済みプロンプトとモデルで、CopilotのformatTotal(8)案を20回実行しました。全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の承認済み契約は数値9で、書式は小数点以下1桁または2桁を許容します。この入力に対する採用判断と追加検証は？",
+          "answerId": "A",
+          "rationale": "既存テストの期待値は承認済み契約と違う。書式は許容内だが数値を直す必要がある。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の契約は数値8と小数点以下2桁の両方です。",
+          "to": "全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の承認済み契約は数値9と小数点以下2桁の両方です。",
+          "question": "同じ保存済みプロンプトとモデルで、CopilotのformatTotal(8)案を20回実行しました。全結果は文字列8.0か8.00で、Number(result)===8のテストだけが全件成功しました。この入力の承認済み契約は数値9と小数点以下2桁の両方です。この入力に対する採用判断と追加検証は？",
+          "answerId": "D",
+          "rationale": "数値8は9の契約と違い、8.0も2桁を満たさない。両方を修正・検証する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 32,
+        "medianWrong": 33,
+        "position": "B",
+        "ratio": 0.9696969696969697
+      },
+      "wrongChoiceAnalysis": [
+        {
+          "id": "A",
+          "text": "数値は未達・書式は達成と判断し、数値の修正と期待値テストを追加する",
+          "whyWrong": "数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。"
+        },
+        {
+          "id": "C",
+          "text": "数値と書式は達成と判断し、この入力について採用候補として結果を記録する",
+          "whyWrong": "8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。"
+        },
+        {
+          "id": "D",
+          "text": "数値と書式は未達と判断し、両方の修正と期待値・桁数テストを追加する",
+          "whyWrong": "数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d2-a18",
+      "title": "MCPの返却・認可・ログ・資格情報の境界",
+      "before": {
+        "id": "q-d2-a18",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o3",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "チケット検索MCPの返却には、要約に必要な件名・状態に加えて利用者の個人アクセストークンも含まれています。検索権限の検証は既にあります。サーバーで次に直すものは？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "返却項目を許可した件名・状態などに限定する"
+          },
+          {
+            "id": "C",
+            "text": "通信を暗号化した上で全項目を返す"
+          },
+          {
+            "id": "D",
+            "text": "回答でトークンを表示しない指示を加える"
+          },
+          {
+            "id": "B",
+            "text": "検索時の認証有効期限を短くする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。",
+        "choiceExplanations": {
+          "A": "用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。",
+          "B": "認証期限は返却データへの不要な秘密混入を解消しない。",
+          "C": "通信路を守っても、宛先のモデルへ不要な秘密を送る事実は残る。",
+          "D": "表示を抑える指示では入力側への秘密送信を防げない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "認証期限は返却データへの不要な秘密混入を解消しない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "通信路を守っても、宛先のモデルへ不要な秘密を送る事実は残る。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "表示を抑える指示では入力側への秘密送信を防げない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "認可後にも残る不要データの送信をサーバーで減らす。",
+            "correctReason": "用途に不要な秘密をモデル側へ渡す前に除く。閲覧認可済みでも返却項目は最小化する。",
+            "distractorFailures": {
+              "B": "認証期限は返却データへの不要な秘密混入を解消しない。",
+              "C": "通信路を守っても、宛先のモデルへ不要な秘密を送る事実は残る。",
+              "D": "表示を抑える指示では入力側への秘密送信を防げない。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": [],
+        "testedConcepts": [
+          "d2o3",
+          "scenario-application"
+        ]
+      },
+      "after": {
+        "id": "q-d2-a18",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o3",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "チケット検索MCPをCopilotへ接続する前に、ローカルで検証しています。要約に必要なのは件名と状態です。担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。この検証で不足した対策をサーバーへ追加する案は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "返却項目を件名と状態へ絞り、許可した項目だけが出ることを検証する"
+          },
+          {
+            "id": "C",
+            "text": "検索に利用者別の閲覧権を適用し、担当外チケットの取得拒否を検証する"
+          },
+          {
+            "id": "D",
+            "text": "保存ログから認証情報を除き、保存後に許可した項目だけが残るか検証する"
+          },
+          {
+            "id": "B",
+            "text": "漏えいした接続トークンを失効・再発行し、旧トークンの接続拒否を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。",
+        "choiceExplanations": {
+          "A": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。",
+          "C": "担当外の検索が通る場合に必要。今回の検索認可は拒否テストで確認済みであり、余分な返却項目は取り除けない。",
+          "D": "保存ログに認証情報が残る場合に必要。今回は保存項目を確認済みで、問題は返却側にある。",
+          "B": "実際の接続資格情報が漏えいした場合に必要。今回はローカルのダミー値で、本番資格情報の漏えいもない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "担当外の検索が通る場合に必要。今回の検索認可は拒否テストで確認済みであり、余分な返却項目は取り除けない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "保存ログに認証情報が残る場合に必要。今回は保存項目を確認済みで、問題は返却側にある。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "mcp",
+              "mcp-spec"
+            ],
+            "rationale": "実際の接続資格情報が漏えいした場合に必要。今回はローカルのダミー値で、本番資格情報の漏えいもない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。",
+            "correctReason": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。",
+            "distractorFailures": {
+              "C": "担当外の検索が通る場合に必要。今回の検索認可は拒否テストで確認済みであり、余分な返却項目は取り除けない。",
+              "D": "保存ログに認証情報が残る場合に必要。今回は保存項目を確認済みで、問題は返却側にある。",
+              "B": "実際の接続資格情報が漏えいした場合に必要。今回はローカルのダミー値で、本番資格情報の漏えいもない。"
+            }
+          }
+        ],
+        "contentRevision": "applied-five-refinement-2026-10-13",
+        "clues": [],
+        "testedConcepts": [
+          "d2o3",
+          "mcp-result-minimization",
+          "authorization",
+          "credential-boundaries"
+        ]
+      },
+      "fingerprint": "012a89448a2e34af7435279a4c8d8b5b603b7c77424296536648858e82872275",
+      "assessment": "応用として維持。単に最も安全な案を選ぶのではなく、観測した失敗境界へ対応する対策を選ぶ。全案は別の欠陥なら正当な修正となる。",
+      "optionOnlyReview": "全選択肢は異なる欠陥・契約なら成立する案。一般に正しい文を一つ選ぶ構成を解消し、今回の観測と確認済み条件を本文で照合する。各誤答が正解となる反実仮想全文を3件確認。独立受験者のブラインド実測ではない。",
+      "reasoningSteps": [
+        "検証済みの検索認可・保存ログと、ツールの返却スキーマを別境界として分ける。",
+        "余分なPAT欄がある返却側へ項目制限を適用し、許可項目だけの結果を検証する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。",
+          "to": "返却項目と保存ログは件名と状態だけです。しかし担当外チケットも検索結果に出ます。本番資格情報の漏えいはありません。",
+          "question": "チケット検索MCPをCopilotへ接続する前に、ローカルで検証しています。要約に必要なのは件名と状態です。返却項目と保存ログは件名と状態だけです。しかし担当外チケットも検索結果に出ます。本番資格情報の漏えいはありません。この検証で不足した対策をサーバーへ追加する案は？",
+          "answerId": "C",
+          "rationale": "返却・保存項目でなく、対象チケットへの閲覧認可が不足する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。",
+          "to": "担当外チケットの取得は拒否され、返却も件名と状態だけです。しかし保存ログにはテスト用ダミーPATが残ります。本番資格情報の漏えいはありません。",
+          "question": "チケット検索MCPをCopilotへ接続する前に、ローカルで検証しています。要約に必要なのは件名と状態です。担当外チケットの取得は拒否され、返却も件名と状態だけです。しかし保存ログにはテスト用ダミーPATが残ります。本番資格情報の漏えいはありません。この検証で不足した対策をサーバーへ追加する案は？",
+          "answerId": "D",
+          "rationale": "検証済みの返却・認可を保ち、保存ログ側の認証情報を除く。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "担当外チケットの取得は拒否され、保存ログにも件名と状態だけが残ります。しかしツールの返却にはテスト用ダミーPATが追加されています。本番資格情報の漏えいはありません。",
+          "to": "担当外チケットの取得は拒否され、返却と保存ログは件名と状態だけです。しかし検証者が接続用の本番トークンを公開チケットへ誤って貼り、漏えいが確認されました。",
+          "question": "チケット検索MCPをCopilotへ接続する前に、ローカルで検証しています。要約に必要なのは件名と状態です。担当外チケットの取得は拒否され、返却と保存ログは件名と状態だけです。しかし検証者が接続用の本番トークンを公開チケットへ誤って貼り、漏えいが確認されました。この検証で不足した対策をサーバーへ追加する案は？",
+          "answerId": "B",
+          "rationale": "現在の返却・認可・ログとは別に、漏えい済みの接続資格情報を失効させる。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 32,
+        "medianWrong": 34,
+        "position": "A",
+        "ratio": 0.9411764705882353
+      },
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "検索に利用者別の閲覧権を適用し、担当外チケットの取得拒否を検証する",
+          "whyWrong": "担当外の検索が通る場合に必要。今回の検索認可は拒否テストで確認済みであり、余分な返却項目は取り除けない。"
+        },
+        {
+          "id": "D",
+          "text": "保存ログから認証情報を除き、保存後に許可した項目だけが残るか検証する",
+          "whyWrong": "保存ログに認証情報が残る場合に必要。今回は保存項目を確認済みで、問題は返却側にある。"
+        },
+        {
+          "id": "B",
+          "text": "漏えいした接続トークンを失効・再発行し、旧トークンの接続拒否を検証する",
+          "whyWrong": "実際の接続資格情報が漏えいした場合に必要。今回はローカルのダミー値で、本番資格情報の漏えいもない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d1-a02",
+      "title": "SQL検索の失敗境界に応じた修正",
+      "before": {
+        "id": "q-d1-a02",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "Webフォームからのユーザー入力を受け取る処理をCopilotに書かせたところ、SQL文を文字列連結で組み立てるコードが提案されました。開発者が取るべき正しい対応はどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "入力値をエスケープして文字列連結し、危険な文字のテストを追加する"
+          },
+          {
+            "id": "D",
+            "text": "ORMのパラメータ束縛を使い、現在のSQL文字列の連結だけは維持する"
+          },
+          {
+            "id": "A",
+            "text": "SQL文と値を分離し、パラメータ化クエリへ変更して検証する"
+          },
+          {
+            "id": "C",
+            "text": "DBユーザーの権限を絞り、失敗したクエリを監査ログに残す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "ユーザー入力をSQL構文として解釈させない修正である。",
+        "choiceExplanations": {
+          "A": "ユーザー入力をSQL構文として解釈させない修正である。",
+          "B": "文脈依存のエスケープに頼るより文と値の分離が確実である。",
+          "C": "被害軽減と検知にはなるがインジェクションの原因は残る。",
+          "D": "ORMを使ってもraw文字列連結が残れば注入リスクが残る。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [
+          "ユーザー入力をSQL構文として解釈させない修正である。",
+          "文脈依存のエスケープに頼るより文と値の分離が確実である。",
+          "被害軽減と検知にはなるがインジェクションの原因は残る。",
+          "ORMを使ってもraw文字列連結が残れば注入リスクが残る。"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "ユーザー入力をSQL構文として解釈させない修正である。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "文脈依存のエスケープに頼るより文と値の分離が確実である。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "被害軽減と検知にはなるがインジェクションの原因は残る。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "ORMを使ってもraw文字列連結が残れば注入リスクが残る。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Webフォームからのユーザー入力を受け取る処理をCopilotに書かせたところ、SQL文を文字列連結で組み立てるコードが提案されました。開発者が取るべき正しい対応はどれですか？",
+            "correctReason": "ユーザー入力をSQL構文として解釈させない修正である。",
+            "distractorFailures": {
+              "B": "文脈依存のエスケープに頼るより文と値の分離が確実である。",
+              "C": "被害軽減と検知にはなるがインジェクションの原因は残る。",
+              "D": "ORMを使ってもraw文字列連結が残れば注入リスクが残る。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": [],
+        "testedConcepts": [
+          "d1o2",
+          "scenario-requirement-matching"
+        ]
+      },
+      "after": {
+        "id": "q-d1-a02",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "Copilotが生成したSQL検索APIを検証しています。WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "ORDER BYを許可列への写像に替え、未知の列指定が拒否されるか検証する"
+          },
+          {
+            "id": "D",
+            "text": "DB資格情報を必要な読取権限へ絞り、更新・削除の拒否を検証する"
+          },
+          {
+            "id": "A",
+            "text": "WHEREの値を束縛パラメーターへ分離し、攻撃文字列で条件が変わらないか検証する"
+          },
+          {
+            "id": "C",
+            "text": "取得時に対象行の閲覧権を確認し、他利用者の行が返らないか検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "WHEREへ連結した値がSQL構文として解釈されている。文と値を分離し、同じ入力が検索条件を変えないことを確認する。",
+        "choiceExplanations": {
+          "A": "WHEREへ連結した値がSQL構文として解釈されている。文と値を分離し、同じ入力が検索条件を変えないことを確認する。",
+          "B": "利用者指定の列名を動的に組み立てる場合に必要。今回は固定列であり、WHEREの値の連結は解消しない。",
+          "C": "他利用者の行が認可なしに返る場合に必要。今回は行の閲覧権を確認済みで、許可された行の検索条件が崩れている。",
+          "D": "不要な更新・削除権限がある場合に必要。今回の資格情報はSELECTのみで、読取クエリの条件改変を止められない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests",
+          "ml-sql-injection"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-sql-injection"
+            ],
+            "rationale": "利用者指定の列名を動的に組み立てる場合に必要。今回は固定列であり、WHEREの値の連結は解消しない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-sql-injection"
+            ],
+            "rationale": "不要な更新・削除権限がある場合に必要。今回の資格情報はSELECTのみで、読取クエリの条件改変を止められない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-sql-injection"
+            ],
+            "rationale": "WHEREへ連結した値がSQL構文として解釈されている。文と値を分離し、同じ入力が検索条件を変えないことを確認する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-sql-injection"
+            ],
+            "rationale": "他利用者の行が認可なしに返る場合に必要。今回は行の閲覧権を確認済みで、許可された行の検索条件が崩れている。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。",
+            "correctReason": "WHEREへ連結した値がSQL構文として解釈されている。文と値を分離し、同じ入力が検索条件を変えないことを確認する。",
+            "distractorFailures": {
+              "B": "利用者指定の列名を動的に組み立てる場合に必要。今回は固定列であり、WHEREの値の連結は解消しない。",
+              "D": "不要な更新・削除権限がある場合に必要。今回の資格情報はSELECTのみで、読取クエリの条件改変を止められない。",
+              "C": "他利用者の行が認可なしに返る場合に必要。今回は行の閲覧権を確認済みで、許可された行の検索条件が崩れている。"
+            }
+          }
+        ],
+        "contentRevision": "applied-five-refinement-2026-10-13",
+        "clues": [],
+        "testedConcepts": [
+          "d1o2",
+          "sql-value-binding",
+          "query-validation",
+          "security-boundaries"
+        ]
+      },
+      "fingerprint": "c58373d7cf864eb082c221190875835fbedd7feec072c8b37aa395d67136c1c0",
+      "assessment": "応用として維持。具体的な失敗経路へ知識を適用する。パラメータ化という単語だけでなく、値と識別子・権限の役割を区別する。",
+      "optionOnlyReview": "全選択肢は異なる欠陥・契約なら成立する案。一般に正しい文を一つ選ぶ構成を解消し、今回の観測と確認済み条件を本文で照合する。各誤答が正解となる反実仮想全文を3件確認。独立受験者のブラインド実測ではない。",
+      "reasoningSteps": [
+        "値・列指定・DB操作権限・行認可を分け、失敗はWHEREの値の構文解釈だと特定する。",
+        "束縛パラメーターを値へ適用し、攻撃入力を使う回帰テストで修正を検証する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。",
+          "to": "WHEREの値はパラメーター束縛で、攻撃文字列も一つの検索値になります。しかしORDER BYには利用者の任意の列名が連結され、契約で許可しない列も指定できます。DB資格情報はSELECTのみ、行の閲覧権は確認済みです。",
+          "question": "Copilotが生成したSQL検索APIを検証しています。WHEREの値はパラメーター束縛で、攻撃文字列も一つの検索値になります。しかしORDER BYには利用者の任意の列名が連結され、契約で許可しない列も指定できます。DB資格情報はSELECTのみ、行の閲覧権は確認済みです。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+          "answerId": "B",
+          "rationale": "値の束縛は確認済み。可変の列指定を契約の許可集合へ制限する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。",
+          "to": "WHEREの値は束縛され、ORDER BYは固定列、行の閲覧権も確認済みです。しかし検索用のDB資格情報で更新と削除を実行でき、読取専用の運用基準に違反します。",
+          "question": "Copilotが生成したSQL検索APIを検証しています。WHEREの値は束縛され、ORDER BYは固定列、行の閲覧権も確認済みです。しかし検索用のDB資格情報で更新と削除を実行でき、読取専用の運用基準に違反します。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+          "answerId": "D",
+          "rationale": "欠陥は資格情報の過剰権限であり、読取専用にして拒否を検証する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。",
+          "to": "WHEREの値は束縛され、ORDER BYは固定列、DB資格情報はSELECTのみです。しかし別利用者の行IDを指定すると閲覧権なしでも結果が返ります。",
+          "question": "Copilotが生成したSQL検索APIを検証しています。WHEREの値は束縛され、ORDER BYは固定列、DB資格情報はSELECTのみです。しかし別利用者の行IDを指定すると閲覧権なしでも結果が返ります。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+          "answerId": "C",
+          "rationale": "構文とDB操作権限でなく、対象行に対する利用者の閲覧認可が不足する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 40,
+        "medianWrong": 32,
+        "position": "C",
+        "ratio": 1.25
+      },
+      "wrongChoiceAnalysis": [
+        {
+          "id": "B",
+          "text": "ORDER BYを許可列への写像に替え、未知の列指定が拒否されるか検証する",
+          "whyWrong": "利用者指定の列名を動的に組み立てる場合に必要。今回は固定列であり、WHEREの値の連結は解消しない。"
+        },
+        {
+          "id": "D",
+          "text": "DB資格情報を必要な読取権限へ絞り、更新・削除の拒否を検証する",
+          "whyWrong": "不要な更新・削除権限がある場合に必要。今回の資格情報はSELECTのみで、読取クエリの条件改変を止められない。"
+        },
+        {
+          "id": "C",
+          "text": "取得時に対象行の閲覧権を確認し、他利用者の行が返らないか検証する",
+          "whyWrong": "他利用者の行が認可なしに返る場合に必要。今回は行の閲覧権を確認済みで、許可された行の検索条件が崩れている。"
+        }
+      ]
+    },
+    {
+      "id": "q-d1-a04",
+      "title": "認証のオフライン・オンライン・比較・ログの境界",
+      "before": {
+        "id": "q-d1-a04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "Copilot Chatで「ユーザーパスワードをハッシュ化して保存する処理を書いてください」と指示したところ、単純なMD5ハッシュ計算コードが返されました。最も適切な改善プロンプトはどれですか？",
+        "choices": [
+          {
+            "id": "C",
+            "text": "暗号化へ変更し、鍵の保存と復号処理を明示する"
+          },
+          {
+            "id": "A",
+            "text": "パスワード保存用にArgon2等を指定し、ソルトと検証処理も要求する"
+          },
+          {
+            "id": "B",
+            "text": "SHA-256へ置き換え、利用者別ソルトと検証処理を追加する"
+          },
+          {
+            "id": "D",
+            "text": "既存のハッシュ処理を残し、ログインAPIのレート制限を要求する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "パスワード保存向けの計算コストを持つ方式と検証まで指定する。",
+        "choiceExplanations": {
+          "A": "パスワード保存向けの計算コストを持つ方式と検証まで指定する。",
+          "B": "ソルト付きの高速汎用ハッシュよりパスワード保存専用方式が適する。",
+          "C": "復号可能な暗号化はパスワード照合用のハッシュ保存と異なる。",
+          "D": "オンライン試行は制限できるが漏えい済みハッシュの推測対策ではない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-12",
+        "trustedSourceFacts": [
+          "パスワード保存向けの計算コストを持つ方式と検証まで指定する。",
+          "ソルト付きの高速汎用ハッシュよりパスワード保存専用方式が適する。",
+          "復号可能な暗号化はパスワード照合用のハッシュ保存と異なる。",
+          "オンライン試行は制限できるが漏えい済みハッシュの推測対策ではない。"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "パスワード保存向けの計算コストを持つ方式と検証まで指定する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "ソルト付きの高速汎用ハッシュよりパスワード保存専用方式が適する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "復号可能な暗号化はパスワード照合用のハッシュ保存と異なる。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "responsible",
+              "tests"
+            ],
+            "rationale": "オンライン試行は制限できるが漏えい済みハッシュの推測対策ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot Chatで「ユーザーパスワードをハッシュ化して保存する処理を書いてください」と指示したところ、単純なMD5ハッシュ計算コードが返されました。最も適切な改善プロンプトはどれですか？",
+            "correctReason": "パスワード保存向けの計算コストを持つ方式と検証まで指定する。",
+            "distractorFailures": {
+              "B": "ソルト付きの高速汎用ハッシュよりパスワード保存専用方式が適する。",
+              "C": "復号可能な暗号化はパスワード照合用のハッシュ保存と異なる。",
+              "D": "オンライン試行は制限できるが漏えい済みハッシュの推測対策ではない。"
+            }
+          }
+        ],
+        "contentRevision": "difficulty-audit-2026-10-12",
+        "clues": [],
+        "testedConcepts": [
+          "d1o2",
+          "scenario-requirement-matching"
+        ]
+      },
+      "after": {
+        "id": "q-d1-a04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "apply",
+        "examLike": false,
+        "question": "Copilotで作った認証処理を検証しています。保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+        "choices": [
+          {
+            "id": "C",
+            "text": "認証ログからパスワードを除き、許可したログ項目と保存結果を検証する"
+          },
+          {
+            "id": "A",
+            "text": "承認済みの保存用ライブラリへ替え、ソルト・計算コスト・照合を検証する"
+          },
+          {
+            "id": "B",
+            "text": "照合を定数時間の比較へ替え、正誤パスワードで比較の処理経路を検証する"
+          },
+          {
+            "id": "D",
+            "text": "ログイン試行を利用者別に制限し、連続失敗時の拒否と解除を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "保存値だけの高速な候補照合には、ソルトだけでなく保存向けの計算コストを持つ方式が必要。検証済みのライブラリで保存と照合を確認する。",
+        "choiceExplanations": {
+          "A": "保存値だけの高速な候補照合には、ソルトだけでなく保存向けの計算コストを持つ方式が必要。検証済みのライブラリで保存と照合を確認する。",
+          "B": "秘密値の比較経路が入力に依存する場合に必要。今回は比較を確認済みで、保存値を使う通信なしの推測は遅くできない。",
+          "C": "ログにパスワードが残る場合に必要。今回のログは確認済みであり、保存ハッシュへの推測対策は変わらない。",
+          "D": "ログイン経路の大量試行に必要。今回は制限済みで、通信しない保存値への推測には適用されない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests",
+          "ml-password-hashing"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-13",
+        "trustedSourceFacts": [],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-password-hashing"
+            ],
+            "rationale": "ログにパスワードが残る場合に必要。今回のログは確認済みであり、保存ハッシュへの推測対策は変わらない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-password-hashing"
+            ],
+            "rationale": "保存値だけの高速な候補照合には、ソルトだけでなく保存向けの計算コストを持つ方式が必要。検証済みのライブラリで保存と照合を確認する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-password-hashing"
+            ],
+            "rationale": "秘密値の比較経路が入力に依存する場合に必要。今回は比較を確認済みで、保存値を使う通信なしの推測は遅くできない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "tests",
+              "ml-password-hashing"
+            ],
+            "rationale": "ログイン経路の大量試行に必要。今回は制限済みで、通信しない保存値への推測には適用されない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。",
+            "correctReason": "保存値だけの高速な候補照合には、ソルトだけでなく保存向けの計算コストを持つ方式が必要。検証済みのライブラリで保存と照合を確認する。",
+            "distractorFailures": {
+              "C": "ログにパスワードが残る場合に必要。今回のログは確認済みであり、保存ハッシュへの推測対策は変わらない。",
+              "B": "秘密値の比較経路が入力に依存する場合に必要。今回は比較を確認済みで、保存値を使う通信なしの推測は遅くできない。",
+              "D": "ログイン経路の大量試行に必要。今回は制限済みで、通信しない保存値への推測には適用されない。"
+            }
+          }
+        ],
+        "contentRevision": "applied-five-refinement-2026-10-13",
+        "clues": [],
+        "testedConcepts": [
+          "d1o2",
+          "offline-password-guessing",
+          "password-storage",
+          "validation-boundaries"
+        ]
+      },
+      "fingerprint": "ba97ff093a0c7ab678334be560d54f8ff54c0f839cdc3c844415ddb1ed415bad",
+      "assessment": "応用として維持。特定の方式名の暗記ではなく、観測された攻撃経路と確認済み対策から保存方式の修正を選ぶ。",
+      "optionOnlyReview": "全選択肢は異なる欠陥・契約なら成立する案。一般に正しい文を一つ選ぶ構成を解消し、今回の観測と確認済み条件を本文で照合する。各誤答が正解となる反実仮想全文を3件確認。独立受験者のブラインド実測ではない。",
+      "reasoningSteps": [
+        "攻撃が通信なしに保存値へ行われるため、ログイン試行制限や比較処理とは別の境界だと判断する。",
+        "保存用の計算コストを持つライブラリへ変更し、ソルトと正常・異常照合を検証する。"
+      ],
+      "counterfactuals": [
+        {
+          "from": "保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。",
+          "to": "保存は承認済みのパスワード保存ライブラリで、ソルトと計算コストを検証済みです。しかし照合ループが最初の不一致で終了します。ログにパスワードはなく、オンラインの試行制限も確認済みです。",
+          "question": "Copilotで作った認証処理を検証しています。保存は承認済みのパスワード保存ライブラリで、ソルトと計算コストを検証済みです。しかし照合ループが最初の不一致で終了します。ログにパスワードはなく、オンラインの試行制限も確認済みです。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+          "answerId": "B",
+          "rationale": "保存方式ではなく、秘密値の比較経路を入力に依存させない修正が不足する。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。",
+          "to": "保存用ライブラリ、定数時間比較、オンラインの試行制限は確認済みです。しかし失敗時の認証ログに、入力パスワードが平文で保存されています。",
+          "question": "Copilotで作った認証処理を検証しています。保存用ライブラリ、定数時間比較、オンラインの試行制限は確認済みです。しかし失敗時の認証ログに、入力パスワードが平文で保存されています。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+          "answerId": "C",
+          "rationale": "保存ハッシュの方式とは別に、ログへ秘密情報を残さない制限を加える。",
+          "editoriallyValidated": true
+        },
+        {
+          "from": "保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。",
+          "to": "保存用ライブラリ、定数時間比較、パスワードを含まないログは確認済みです。しかし同じ利用者へのオンライン連続失敗が、制限や待機なしで受け付けられます。",
+          "question": "Copilotで作った認証処理を検証しています。保存用ライブラリ、定数時間比較、パスワードを含まないログは確認済みです。しかし同じ利用者へのオンライン連続失敗が、制限や待機なしで受け付けられます。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+          "answerId": "D",
+          "rationale": "保存値へのオフライン推測でなく、ログイン経路の試行を制限する。",
+          "editoriallyValidated": true
+        }
+      ],
+      "lengths": {
+        "correct": 34,
+        "medianWrong": 33,
+        "position": "B",
+        "ratio": 1.0303030303030303
+      },
+      "wrongChoiceAnalysis": [
+        {
+          "id": "C",
+          "text": "認証ログからパスワードを除き、許可したログ項目と保存結果を検証する",
+          "whyWrong": "ログにパスワードが残る場合に必要。今回のログは確認済みであり、保存ハッシュへの推測対策は変わらない。"
+        },
+        {
+          "id": "B",
+          "text": "照合を定数時間の比較へ替え、正誤パスワードで比較の処理経路を検証する",
+          "whyWrong": "秘密値の比較経路が入力に依存する場合に必要。今回は比較を確認済みで、保存値を使う通信なしの推測は遅くできない。"
+        },
+        {
+          "id": "D",
+          "text": "ログイン試行を利用者別に制限し、連続失敗時の拒否と解除を検証する",
+          "whyWrong": "ログイン経路の大量試行に必要。今回は制限済みで、通信しない保存値への推測には適用されない。"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rewritten": 5,
+    "retainedApplied": 5,
+    "counterfactuals": 15,
+    "questionCount": 316,
+    "unchangedOtherQuestions": 311
+  },
+  "structuralVerification": {
+    "currentFingerprints": true,
+    "preservedAnswerIds": true,
+    "uniqueLiteralReplays": 15,
+    "allFourChoicesCanWinUnderReviewedConditions": true,
+    "semanticValidation": "editorial, not automated or independent learner measurement"
+  },
+  "remainingPriorityCandidates": [
+    "q05",
+    "q-d3-f03",
+    "q-d3-f04",
+    "q-d4-f01",
+    "q-d6-a07",
+    "q-d3-e05",
+    "q-d4-e04",
+    "q-d5-e03",
+    "q-sc10-3"
+  ],
+  "verification": {
+    "testsPassed": 173,
+    "testFiles": 14,
+    "typeCheck": "PASS",
+    "isolatedNextBuild": "PASS",
+    "qualityCheck": "PASS",
+    "difficultyCheck": "PASS",
+    "appliedCheck": "PASS",
+    "examCheck": "PASS",
+    "choiceAudit": "PASS",
+    "modifiedQuestionIds": [
+      "q-d1-a02",
+      "q-d1-a04",
+      "q-d2-a18",
+      "q-d2-e14",
+      "q-d3-a15"
+    ],
+    "unchangedOtherQuestions": 311
+  }
+}

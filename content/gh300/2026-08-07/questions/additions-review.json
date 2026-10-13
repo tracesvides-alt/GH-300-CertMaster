@@ -1,0 +1,5400 @@
+{
+  "createdAt": "2026-10-13",
+  "status": "EDITORIALLY_REVIEWED",
+  "scope": {
+    "maximumAdditions": 12,
+    "domains": {
+      "d1": 8,
+      "d3": 4
+    },
+    "furtherExpansion": false
+  },
+  "baseline": {
+    "stored": 316,
+    "active": 304,
+    "applied": 84,
+    "exam": 57,
+    "foundation": 163,
+    "bankFingerprint": "5d81d2a05f6588ed834116f9bd6148d8963058fd68ba8147b0e78adf922ae584",
+    "existingFingerprints": [
+      {
+        "id": "q01",
+        "fingerprint": "4bb48e9324bf6128c19f4dfceb21373c4032056cb4fe97c06d64437f426b44b2"
+      },
+      {
+        "id": "q02",
+        "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84"
+      },
+      {
+        "id": "q03",
+        "fingerprint": "10b30e2ea1ac4b406027094a94d758839ad88c3886b70e9a608690c47c7d9119"
+      },
+      {
+        "id": "q04",
+        "fingerprint": "050088c3525776679b7d6dfa2b9ed9e35f17d59f73a8d009647f862c75478853"
+      },
+      {
+        "id": "q05",
+        "fingerprint": "e191e2b3f6bfcf5e3ef9cfcd3635a3ff76ab3b391a0ae8b90b6ccaf82293531c"
+      },
+      {
+        "id": "q06",
+        "fingerprint": "d7a59fc743a71d9754620e4591295de8b28b5c9b97cbf459c4b8cb9af4c34a6f"
+      },
+      {
+        "id": "q07",
+        "fingerprint": "0f7ad3c4ba8a42ef383ef4276445d1a5701f58ff5050b69efc4e147d3835f35b"
+      },
+      {
+        "id": "q08",
+        "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb"
+      },
+      {
+        "id": "q09",
+        "fingerprint": "43a062d837f11fefd8a9f6e7acd4a7d388af49eb4fb54d371141e368af92c7c6"
+      },
+      {
+        "id": "q10",
+        "fingerprint": "105ae104bbab155baa8e1ac81c2b5fe5947c1f956a40d8da0cad20cc863abc56"
+      },
+      {
+        "id": "q11",
+        "fingerprint": "379fd0d12f9c5115e4ab7bb4142f2e75e67693dc7a5bb7bc2c6652853dac29a4"
+      },
+      {
+        "id": "q12",
+        "fingerprint": "591175ec6efd4fb58e59cf09b03b4bd0813e848d2f84d55d309296e53bff1bfd"
+      },
+      {
+        "id": "q-d1-f01",
+        "fingerprint": "d7f35f0dfdd4156a170cae8ea65f922c5421e3f9628524b069ba445793ac07e7"
+      },
+      {
+        "id": "q-d1-f02",
+        "fingerprint": "d42a0176e0ae9d62a19feb949a0406650a3789c257c735ff3102bf3237676246"
+      },
+      {
+        "id": "q-d1-f03",
+        "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221"
+      },
+      {
+        "id": "q-d1-f04",
+        "fingerprint": "6015f406d685253afd1a68e8b83053021648cfe338b7b8df4316b7edd45a73b7"
+      },
+      {
+        "id": "q-d1-f05",
+        "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca"
+      },
+      {
+        "id": "q-d1-a01",
+        "fingerprint": "d19a448f8f243666da651cd96c7ef95f634c60979c511f40df14a4d53381efb6"
+      },
+      {
+        "id": "q-d1-a02",
+        "fingerprint": "c58373d7cf864eb082c221190875835fbedd7feec072c8b37aa395d67136c1c0"
+      },
+      {
+        "id": "q-d1-a03",
+        "fingerprint": "0a0b7056e8ecc43963214e9c18575745831c545f9aa22881e071b15a477cd633"
+      },
+      {
+        "id": "q-d1-a04",
+        "fingerprint": "1bfe09abe55b8f36982450f566e3ab50494bd2553149b0e3e88fa7cce2189b44"
+      },
+      {
+        "id": "q-d1-a05",
+        "fingerprint": "b1b1eed0b123da4d2f1279edff0120316f5dfd33bef1bdf9c09923dab09fb10f"
+      },
+      {
+        "id": "q-d1-a06",
+        "fingerprint": "a1e16bc97ab118bddfa60e5eceb1de1e31ef30f90dd99f8ac418ad543db36ec2"
+      },
+      {
+        "id": "q-d1-a07",
+        "fingerprint": "8f879f62d2f85bf337063502efd3ca407c96dd00468b1291f9c498a03ff495b2"
+      },
+      {
+        "id": "q-d1-a08",
+        "fingerprint": "6193a5c11440470b89f55f6716bd22e1198b67d1c385b59a7421aa35b2014205"
+      },
+      {
+        "id": "q-d1-a09",
+        "fingerprint": "4e54465b57d213995fb7991cb20f6bebfb5a520551d28cd7accba47e375ca204"
+      },
+      {
+        "id": "q-d1-a10",
+        "fingerprint": "09411c639b3dbeac231f8a031f537d9b5312878559c060697acb7efe0377b788"
+      },
+      {
+        "id": "q-d1-e01",
+        "fingerprint": "4eee26a6abdd3d97a7b87f4bf51efca1ded0c1b131a784c018b2ad71eab00799"
+      },
+      {
+        "id": "q-d1-e02",
+        "fingerprint": "590394842b6b00b562007771815c78abcf92ed994fc649591dcf6a2108511426"
+      },
+      {
+        "id": "q-d1-e03",
+        "fingerprint": "2205c7245f8f2072905b7f2ceebe13435665b49e28d8529c9705fc74dc8b0170"
+      },
+      {
+        "id": "q-d1-e04",
+        "fingerprint": "c1fbc69250171899cde29f61de40cff468f358d31ade1e8ecc585ad15d37551e"
+      },
+      {
+        "id": "q-d1-e05",
+        "fingerprint": "789ebdd241e84569a139a29f681a9c499b4ee0991b90b272d23811d0077077a9"
+      },
+      {
+        "id": "q-d1-e06",
+        "fingerprint": "5c44f15ca1f2eb0ab7aa94f3f79ac3632f30155d3407b8d5bf7a9f981845bcbd"
+      },
+      {
+        "id": "q-d1-e07",
+        "fingerprint": "7ae618aad17f0978104ddcb72d4062ed9ae32427d774feff9a576da01d9f7848"
+      },
+      {
+        "id": "q-d1-e08",
+        "fingerprint": "467006240a76f743e306dd2a607691a82ee8e12168ab8d80587076cd38af6d8e"
+      },
+      {
+        "id": "q-d2-f01",
+        "fingerprint": "3c78eb8c6c3ef6f1efc6229be42e7777f0346272265b096b605f95216df1433b"
+      },
+      {
+        "id": "q-d2-f02",
+        "fingerprint": "ddf3c12d3654beb66ae19688081a0f4b3f1105504a069be0076b162899e2d398"
+      },
+      {
+        "id": "q-d2-f03",
+        "fingerprint": "72458cd1e6984f72a1c2e41306896e236fe0ae0106af0e7a43fe14f2081a2b7f"
+      },
+      {
+        "id": "q-d2-f04",
+        "fingerprint": "ae0c503dd5f40e57cb90353e97a380c96f49af93e20282206e5419fa2bfa7bc4"
+      },
+      {
+        "id": "q-d2-f05",
+        "fingerprint": "364590f34237835ae1c6eb80c52e5bbce2b7b5df10ed237c91ee6bc6f3d74f7d"
+      },
+      {
+        "id": "q-d2-f06",
+        "fingerprint": "198d660b6de71d860bc512cd5b6dc4c3a47c89b31ad849a3a4118adebd898a9e"
+      },
+      {
+        "id": "q-d2-f07",
+        "fingerprint": "031f7ece06dbad4387fa308fc38c3042c7f52ab86a5e0815245e3c71f5ebc6f5"
+      },
+      {
+        "id": "q-d2-f08",
+        "fingerprint": "b022b14b7339341e0765fef0660d3bc77d87c0de6e6936edd1a5dd3e1c3f95b4"
+      },
+      {
+        "id": "q-d2-f09",
+        "fingerprint": "c2e6717c11e2d858b8086607966eb3d07832f9d387e4f7e25fb3ae8608af564b"
+      },
+      {
+        "id": "q-d2-f10",
+        "fingerprint": "750b38c643a61d013601a0cb6b751542296eff0e2ada21d842dab18471905d51"
+      },
+      {
+        "id": "q-d2-f11",
+        "fingerprint": "c35301ede7be24957be08c2c85a83b99ccc1e8ada774ec980833e0d377144987"
+      },
+      {
+        "id": "q-d2-a01",
+        "fingerprint": "bcaf18c68d429df1c9d90f9b1c83ef17c5b469dd4079683b3f8d20f490c93751"
+      },
+      {
+        "id": "q-d2-a02",
+        "fingerprint": "5cd2272ce8eab0c8469ee33e97bb9a8eae3dbe5dc37df76cbbeb00a531e782e1"
+      },
+      {
+        "id": "q-d2-a03",
+        "fingerprint": "cf41c87872909594ff97eb77857714be7ef5ba68325e36d9612f4895c267b661"
+      },
+      {
+        "id": "q-d2-a04",
+        "fingerprint": "f28b1fd7d97d14ec9cc0a8762919b41c6a0dfced02606c827d4dd9cac9fe4699"
+      },
+      {
+        "id": "q-d2-a05",
+        "fingerprint": "7c092b2978352c3a9b830e4e6111b82db065da54af28c874c7aa80cce24d5431"
+      },
+      {
+        "id": "q-d2-a06",
+        "fingerprint": "cc1affd9d830cfcbd25e5a1160a56a29d317ab667b557cbb884b032bff397391"
+      },
+      {
+        "id": "q-d2-a07",
+        "fingerprint": "250e326649d759dd1a1b883e788972049736f115f47d9d7e347bf530ec64da0c"
+      },
+      {
+        "id": "q-d2-a08",
+        "fingerprint": "62450fe2e553e205d9e2879e79ab735a9039a0138ad7107277123c410dcb1c60"
+      },
+      {
+        "id": "q-d2-a09",
+        "fingerprint": "db8c723442783d8c7660a9e76bbf7a492e167e0b93056ae2a830e807df20e7de"
+      },
+      {
+        "id": "q-d2-a10",
+        "fingerprint": "e318ecd3468f5874eb19f97ecabd3885e25e0b4600be7d27f55a197806ccdc9b"
+      },
+      {
+        "id": "q-d2-a11",
+        "fingerprint": "1c2911934361f342b64aa08adfb8214781926ffea07b59badfebf77609d2fa44"
+      },
+      {
+        "id": "q-d2-a12",
+        "fingerprint": "eac08d262bd6624d0f534dca78ba7d0292ba56d56a265da48bdffee91650e974"
+      },
+      {
+        "id": "q-d2-a13",
+        "fingerprint": "0cfa258a6442eae6dcf830f49d3af1a05fb286b3a109d95ce42992bf6f0b227d"
+      },
+      {
+        "id": "q-d2-a14",
+        "fingerprint": "1490e2421004020f16f8b1db98b4a352ae633bcec21a15a834677f92c4d865f0"
+      },
+      {
+        "id": "q-d2-a15",
+        "fingerprint": "eef14c19ae0f415f20ad408e17ec57daf9d29274f1746507dd315e2e8705b752"
+      },
+      {
+        "id": "q-d2-a16",
+        "fingerprint": "3145ba9e2bc858d43a7fb1c0a955e78fea47c283b0234633fe4ed808dd0b2b3a"
+      },
+      {
+        "id": "q-d2-a17",
+        "fingerprint": "2eeacf4f213882b50451227d701269e324917c5fda73f3579117c11e2864b457"
+      },
+      {
+        "id": "q-d2-a18",
+        "fingerprint": "012a89448a2e34af7435279a4c8d8b5b603b7c77424296536648858e82872275"
+      },
+      {
+        "id": "q-d2-a19",
+        "fingerprint": "3ddb5b897d5848b7d6fc4033f69f3048322a5aae907abd6d25665d2cef026659"
+      },
+      {
+        "id": "q-d2-a20",
+        "fingerprint": "b58d124adfd34afef1d21560be405a9dff331e4751127f9ca6b10e4783243bf8"
+      },
+      {
+        "id": "q-d2-a21",
+        "fingerprint": "772f8c667b77981e2356f7cfca6a9d99e6215f4d27971593f81e3fb7907d2aeb"
+      },
+      {
+        "id": "q-d2-a22",
+        "fingerprint": "efe01f10e755f906c7740fca898b1034a0198960f1f6529017bcb73eaa61c7b9"
+      },
+      {
+        "id": "q-d2-e01",
+        "fingerprint": "2d3e355c40589bfe47612f29777482e2b4068439ad49bb156c09704459078fbb"
+      },
+      {
+        "id": "q-d2-e02",
+        "fingerprint": "8b66683be2a8c26043fc0b022419dcea3ac81ad24f71821a929949da21ef88fa"
+      },
+      {
+        "id": "q-d2-e03",
+        "fingerprint": "06b537f9d01afbfbcff2381d11a64e16508764771480dddd78ad622c9ce35538"
+      },
+      {
+        "id": "q-d2-e04",
+        "fingerprint": "78b784ecbe3ef6860c0e9999c6bfffb1bae32516cb887572748a98899843e11b"
+      },
+      {
+        "id": "q-d2-e05",
+        "fingerprint": "509e41e5f0b312b33db624b560447891fde9d8b472d96ff8852dc51501c237c9"
+      },
+      {
+        "id": "q-d2-e06",
+        "fingerprint": "91e073e6ee2fd776467cba88b4aadd0ad10eb60457b47400e621affef4959b8d"
+      },
+      {
+        "id": "q-d2-e07",
+        "fingerprint": "4b26ce796739077ef12f14a6070f37bede25e10a167006f7ad05cab893398ab6"
+      },
+      {
+        "id": "q-d2-e08",
+        "fingerprint": "e2c609c60af6731718da32a5a726a5168fbb9c3bb3a4ee18480081bf9f149568"
+      },
+      {
+        "id": "q-d2-e09",
+        "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f"
+      },
+      {
+        "id": "q-d2-e10",
+        "fingerprint": "32c5d5ae1171823e2bf9d98e8b481b987f5e3c6d257199fcb744c16cb9e707da"
+      },
+      {
+        "id": "q-d2-e11",
+        "fingerprint": "14d752028e18b8b56c72442cc13f0e1b868f6514dd4aa9c88d71b98b6a6f2dbe"
+      },
+      {
+        "id": "q-d2-e12",
+        "fingerprint": "c63421c71ecde9dc422727b6f0c72a630025eb4db6d9b76d4694b8274e501e99"
+      },
+      {
+        "id": "q-d2-e13",
+        "fingerprint": "ff29a5213992c8c0a3b840f89b06f690e2714fcd752fce020f1656113770335e"
+      },
+      {
+        "id": "q-d2-e14",
+        "fingerprint": "d24f0908e188c79c801a257b16d6dcd0dc6362a95d1e455e5edea13534eb8d5b"
+      },
+      {
+        "id": "q-d2-e15",
+        "fingerprint": "e417e8abbd9e50147bb588b177fada0e6f8783224a93dc788347e74165a110f0"
+      },
+      {
+        "id": "q-d2-e16",
+        "fingerprint": "82cd33b563fda8010336823c9987e0a6174a57f437773a4b3d8abd67f49cc1dd"
+      },
+      {
+        "id": "q-d2-e17",
+        "fingerprint": "c1b5e56bce44469225ff19df418c5aaac0c2ccf48b59c0a5f16047a6ff4ae821"
+      },
+      {
+        "id": "q-d2-e18",
+        "fingerprint": "5eed9348d3a099be0c921cfe0f48e63680d6a408968a93510063f1a3be698f3f"
+      },
+      {
+        "id": "q-d2-e19",
+        "fingerprint": "13a6da7887cc7639baa2eb24f2a515d87b5845eabd968186aa424d081d1518f0"
+      },
+      {
+        "id": "q-d3-f01",
+        "fingerprint": "a07e7bbfd51135b0209c1723092ed1bd2f4605033232a53f75bb5a8c82bec388"
+      },
+      {
+        "id": "q-d3-f02",
+        "fingerprint": "49bc918e7eae3788480274d5606dc9511d74fbf5a9958785c9a138fbb3a3f137"
+      },
+      {
+        "id": "q-d3-f03",
+        "fingerprint": "4923399359ba7545a3411c8e3a7f4eccd315638f4cd79d5871bbeeece52f9169"
+      },
+      {
+        "id": "q-d3-f04",
+        "fingerprint": "70ba50ad52b25352978d3db63d6a43144fc04cccf291f998e391b09763a7c4c6"
+      },
+      {
+        "id": "q-d3-f05",
+        "fingerprint": "eaa7bdf9382969f02ccb8d8476a5eeeb40bf1aaf5191760ebd28e241227e0a71"
+      },
+      {
+        "id": "q-d3-a01",
+        "fingerprint": "7ca7eb3fd33455f3646e17b4421d4821a52a82330199166f202941cf966b5c88"
+      },
+      {
+        "id": "q-d3-a02",
+        "fingerprint": "7a86a3e2cbe361ca019587763ca0c45a7d08a7d16eea7a493b799d26aecc020d"
+      },
+      {
+        "id": "q-d3-a03",
+        "fingerprint": "f6b93dff4dcb59b27c1dcc0ed385dfcbd1518ad23494653d7e0198efd6f02611"
+      },
+      {
+        "id": "q-d3-a04",
+        "fingerprint": "174d5becdad93f12bdf4543d97c53b3743d8c984edad399f0acb6364def5fba1"
+      },
+      {
+        "id": "q-d3-a05",
+        "fingerprint": "3e7c4211527e6cfab1c02aa52bfb62c58dab7d2b82d9eadce71636830f7e1e84"
+      },
+      {
+        "id": "q-d3-a06",
+        "fingerprint": "4eff377c4e31c0ed964eec91645e344a183a453efcee695a5d44650867e5ad06"
+      },
+      {
+        "id": "q-d3-a07",
+        "fingerprint": "7dd4ec19cf7fcd3e0ec69075d7ac6298a03dd7a835d266732f11be296f70c9f1"
+      },
+      {
+        "id": "q-d3-a08",
+        "fingerprint": "3fecea95f1a8bd5e199f285cd0b44c25494914ebd69a667eead5bbcaec99652f"
+      },
+      {
+        "id": "q-d3-a09",
+        "fingerprint": "e557086f054ad82d6438b65deca900fa5029962f23cdbcc56bddd25340e48387"
+      },
+      {
+        "id": "q-d3-a10",
+        "fingerprint": "bb6ea6854546411bf57d81861d898fc537971b3540862e67366e67b18e02b83c"
+      },
+      {
+        "id": "q-d3-a11",
+        "fingerprint": "54589184478ea1d5c5b2cf052558105d78db557b6eb4b6b55186a7575e470573"
+      },
+      {
+        "id": "q-d3-e01",
+        "fingerprint": "576a7cbe177a6c98e385cbeea90d37cf06e6dc4f0dddc7d9af80a7f5b6f5ffdc"
+      },
+      {
+        "id": "q-d3-e02",
+        "fingerprint": "046e3092cac780b0edf944823115dfd9165d9b58c54f71c7c59fd4f74d6da111"
+      },
+      {
+        "id": "q-d3-e03",
+        "fingerprint": "db8ad41339f847cdc3a7254646c9ca69b4b75dfeffba2ca63def80fac8553285"
+      },
+      {
+        "id": "q-d3-e04",
+        "fingerprint": "61787e417f9a646671b6be7ac05683c5539b3a7ba424183a390d0015f1cb849d"
+      },
+      {
+        "id": "q-d3-e05",
+        "fingerprint": "c69f8c94d367c29d1cc08cba44284bb1750a95140ad5ccf0b6285b63e8a246ba"
+      },
+      {
+        "id": "q-d4-f01",
+        "fingerprint": "382ad07c0f12ac63853680da7d141449b746b138f0732aa7a200aca08874e75d"
+      },
+      {
+        "id": "q-d4-f02",
+        "fingerprint": "41d01ab27e3e89b75f401a0ea83cc9f2c0966410c09def47bbc40860904014dd"
+      },
+      {
+        "id": "q-d4-f03",
+        "fingerprint": "ff7f93ea894b5e79f50b88d040cb6ade17efe53389ad5d127f63dfeebdabf1b9"
+      },
+      {
+        "id": "q-d4-f04",
+        "fingerprint": "fbd726d5e58b3abf273b2bc83788e2df77e415957cb13ad0548836e181faa031"
+      },
+      {
+        "id": "q-d4-f05",
+        "fingerprint": "dc6bf9b7cc453206f25dbb2b237beae86e944d9fef9f7d67d28282f161aa0f50"
+      },
+      {
+        "id": "q-d4-a01",
+        "fingerprint": "534c34fd3ab32c25f3219b6c44f36040ca6568f06b47965ee16b751bd6392611"
+      },
+      {
+        "id": "q-d4-a02",
+        "fingerprint": "c63898c3f82f55f534cb321539a2a1f7324b3f30b37f8846944d218caa016ad1"
+      },
+      {
+        "id": "q-d4-a03",
+        "fingerprint": "190a9474ca04212d3b2e34b2be8dbde9c5ea2f5898ab9c482f04a4e18cef650f"
+      },
+      {
+        "id": "q-d4-a04",
+        "fingerprint": "cc6a2f836bb38838e21be6873c2c039fe2345162413ea4b59600a2d457d0f331"
+      },
+      {
+        "id": "q-d4-a05",
+        "fingerprint": "bd8529ce25e03ffcaca1ed235d0f9efe7f818226fa09faacf1e795b46d66ba72"
+      },
+      {
+        "id": "q-d4-a06",
+        "fingerprint": "d3746c1b56da2f5112ed2b4b8c5ab2aeaa6dbe20256e0843d08b6883c54c2f6c"
+      },
+      {
+        "id": "q-d4-a07",
+        "fingerprint": "bbfa191de32e1d896f4df2c5786aba94c234690e4564a4971abc22705399db05"
+      },
+      {
+        "id": "q-d4-a08",
+        "fingerprint": "65d41aa87684d4544249772c8a0790c5fe7e64d9ac0fc51b252dab0a33a645fd"
+      },
+      {
+        "id": "q-d4-a09",
+        "fingerprint": "73c856b3e47829313061b70e0b18bd09c983103c84dfa3879ccd9cfb28750bd0"
+      },
+      {
+        "id": "q-d4-a10",
+        "fingerprint": "98fc0361a0fdfbbb1e60567cb7076b9ddcaf4360f8e3444b7dcfbfef02e4e50c"
+      },
+      {
+        "id": "q-d4-a11",
+        "fingerprint": "a6213747c6400b22369cc961ba93c9dc6a2a9b9189240f4efc8b05cb0fcfbd82"
+      },
+      {
+        "id": "q-d4-e01",
+        "fingerprint": "734642f7ea681812e5428215edb88573f4c3b49aa392bf22e81e7abbfe2bfd58"
+      },
+      {
+        "id": "q-d4-e02",
+        "fingerprint": "0dd39d3c3469617b5d2c6ae403a2f55871f3df48539474b3b25214d2c1db8a83"
+      },
+      {
+        "id": "q-d4-e03",
+        "fingerprint": "9f0bb76e87051900b91a4ef14f5b611d852fdc32e2fe8dbefaf247c91f3faf93"
+      },
+      {
+        "id": "q-d4-e04",
+        "fingerprint": "96c1f81cfe1f69efe5cae8d8b9c649fee10432838b6b816347b796262fee26f6"
+      },
+      {
+        "id": "q-d4-e05",
+        "fingerprint": "e85d09fecc30dddf6427ed3afac74d4c104a3ecc15d993e5d9b84ea99a1fc034"
+      },
+      {
+        "id": "q-d5-f01",
+        "fingerprint": "6b5ac2232974b30c20ea637a30a04027044f07d1823663444d89e1112942cafd"
+      },
+      {
+        "id": "q-d5-f02",
+        "fingerprint": "359752543ecebc37e09bc918957ea846822ea4eeae525ff3142ed0a3abddaafa"
+      },
+      {
+        "id": "q-d5-f02-b",
+        "fingerprint": "c979224a6b66b65b3bbcfaadc96029eeb74f6faf0a444e7a80057c0ebe6211af"
+      },
+      {
+        "id": "q-d5-f04",
+        "fingerprint": "245c6f1a10af726abd4762820323720c72e3b1436ba414592803ac55f2df19f3"
+      },
+      {
+        "id": "q-d5-f05",
+        "fingerprint": "444aed0a3b0412afa6757350b77835cf8f37c11cd891c74ddb05774b9a8d20ad"
+      },
+      {
+        "id": "q-d5-a01",
+        "fingerprint": "35f152ce124caca1eac4812abc0502967e3654cdb936fdccc0f8a4036438615e"
+      },
+      {
+        "id": "q-d5-a02",
+        "fingerprint": "8614744f140f3dd7adff52fe7a520662f157a3b08105a4bb72348e8737cb6a3b"
+      },
+      {
+        "id": "q-d5-a03",
+        "fingerprint": "450ecde7572f74d8cc1007538d77340ca1594ba5dd42e3bb71ae2d689423b9a6"
+      },
+      {
+        "id": "q-d5-a04",
+        "fingerprint": "f4be89d654677826448fbc8a76a17cca1013699c91b5eadd8a508d3695670362"
+      },
+      {
+        "id": "q-d5-a05",
+        "fingerprint": "90b6683d1ba03d7a827b69ea3fad481be8cfe1e95e27b6a7dacd609c3491c857"
+      },
+      {
+        "id": "q-d5-a06",
+        "fingerprint": "9865ab33d44db83f9801d44fd94ddfb75997948aa482b5ea96ace777e6215e7d"
+      },
+      {
+        "id": "q-d5-a07",
+        "fingerprint": "6ea6dba20612ee4beb2d10e32c8cd1687e38e19d7dd975b6506ff147b64e39ef"
+      },
+      {
+        "id": "q-d5-a08",
+        "fingerprint": "3c2edf1603532c474445ce8153c921a1bed50ab79103d87accb8862a53a4b545"
+      },
+      {
+        "id": "q-d5-a09",
+        "fingerprint": "8525042597356b67003267b2bbb1f92acdc20e61dd2ec36711a2734fa5e4181d"
+      },
+      {
+        "id": "q-d5-a10",
+        "fingerprint": "0cfb545f818a33ae37c244dd980fb1ee73137027a20c60b5066b0cd74fb6ffeb"
+      },
+      {
+        "id": "q-d5-a11",
+        "fingerprint": "d29ed8543b47a98c69ac782f22d23e8160a89dec146e2a663853c2a177f11729"
+      },
+      {
+        "id": "q-d5-e01",
+        "fingerprint": "c627a353e1c711e6b1206d49fc8f61bc13363b943442f31ac73dfbd216a3da90"
+      },
+      {
+        "id": "q-d5-e02",
+        "fingerprint": "4a9ca6b8f431db921c1fee332ed7ac30cda1bea6ba20dcb4e7574df391780a11"
+      },
+      {
+        "id": "q-d5-e03",
+        "fingerprint": "93eca7a947c7b6cd58b7be5261dd31a2068b5c391327101386ad0cf5c72121f0"
+      },
+      {
+        "id": "q-d5-e04",
+        "fingerprint": "82af74ee0cbafa2992dab120da2cabab443a2608e9ffcb5806e338246c0fe255"
+      },
+      {
+        "id": "q-d5-e05",
+        "fingerprint": "9f60c2f417a04740ef2bb5b64a0830fc38c5cbb29504b106e751d670c7fbca54"
+      },
+      {
+        "id": "q-d6-f01",
+        "fingerprint": "0559b3a8fb842075921ab73fe9173c2c2321b86d267e294acab808089230331b"
+      },
+      {
+        "id": "q-d6-f02",
+        "fingerprint": "e48b9bfa6c983cb2c7c331dc06e0110ed6fc42030fd74f1afe49f49d96826710"
+      },
+      {
+        "id": "q-d6-f03",
+        "fingerprint": "9bd31a4ca27a75342de0f7cce7fe99e6a8578cf67b2d4015bc490bc9845bfe2c"
+      },
+      {
+        "id": "q-d6-f04",
+        "fingerprint": "7226abbbdc2f06e900926ef26b3bfb44b691d8e97a857a432ea50105839177ad"
+      },
+      {
+        "id": "q-d6-f05",
+        "fingerprint": "6cc965b31ee79297e83b5dd639880e1b45dae35212a1338caffdfb5693a03f98"
+      },
+      {
+        "id": "q-d6-a01",
+        "fingerprint": "44b6b17acd3e2f0b1135a91c59330cb0bb0952a51b93b1c8f80d7a3f1689b8af"
+      },
+      {
+        "id": "q-d6-a02",
+        "fingerprint": "22f701917328fbef8786f6a69a66014cc402cfab780a16585d0ebd0a434c95a4"
+      },
+      {
+        "id": "q-d6-a03",
+        "fingerprint": "2f89338f9f9d6b02b8140b87211dcff407b6c4126b4aeeddbf31b3de4e557f44"
+      },
+      {
+        "id": "q-d6-a04",
+        "fingerprint": "3b891e39dcf72231ae8d1452328655eb5fbee33c5eb79017626d034dfcd15fe6"
+      },
+      {
+        "id": "q-d6-a05",
+        "fingerprint": "7fa1c343074fc26afd879196012a5bd9f26d1b624feec18db2b487511b6ae9b2"
+      },
+      {
+        "id": "q-d6-a06",
+        "fingerprint": "a2c12fe270b9c16c5e46d3cd3cd3ad406f0955b59a0c62edbcfca71eb864d9c3"
+      },
+      {
+        "id": "q-d6-a07",
+        "fingerprint": "e1240a1c26e4c75de7b6d21dc56cd8a4673ec0c688dc2fed9232cc97d1e24ad7"
+      },
+      {
+        "id": "q-d6-a08",
+        "fingerprint": "8ec8771ea41f013b21a5756c4ece7a2ab14c0769d7fbe79ab04308e5db298b72"
+      },
+      {
+        "id": "q-d6-a09",
+        "fingerprint": "9b748dbe5868d82344b77d61bf5d192413317e6aac1cedc7286218bd339f7e01"
+      },
+      {
+        "id": "q-d6-a10",
+        "fingerprint": "b129faecd33abdc9d4e089737f4c4763bb831f9eaa20ebddefd1a909d429aeda"
+      },
+      {
+        "id": "q-d6-e01",
+        "fingerprint": "f97dcc39e7eb482661110313f5cd4e0020ea57662c7801dbb4e292e3c9594406"
+      },
+      {
+        "id": "q-d6-e02",
+        "fingerprint": "c6157a0ae92d82629c2c7f6b0fab76a383041dc31e66b1ed9abdfa5c46ebb353"
+      },
+      {
+        "id": "q-d6-e03",
+        "fingerprint": "c600ee1006df555896969c7effff378f1e15cd96f5b24f28e9ee394dae342531"
+      },
+      {
+        "id": "q-d6-e04",
+        "fingerprint": "bbb6f5c459bab6b683086a9b71ac58c4c46b21c5e1cc48c5b86bdb3074f622e2"
+      },
+      {
+        "id": "q-d6-e05",
+        "fingerprint": "89ede4f660245be390e321404bab9c06743e49ef87962e4ff7365d06440f09ba"
+      },
+      {
+        "id": "q-sc01-1",
+        "fingerprint": "0e952bbbf17ccebbdf48e3507989694d92296f86b5500035ad31758e10534b8d"
+      },
+      {
+        "id": "q-sc01-2",
+        "fingerprint": "7837d46bc5bbee62a18d8ca6a8ae41e565f2a69a5bf0248124e45a01559b3719"
+      },
+      {
+        "id": "q-sc01-3",
+        "fingerprint": "6c6365ec33fe8213d5e41762fd559638780ed00503817f54af289364db71e0ca"
+      },
+      {
+        "id": "q-sc02-1",
+        "fingerprint": "3b095633f7e7ad777af527dd9e6dbef644efc5abc7edfd4635006f68cf42c843"
+      },
+      {
+        "id": "q-sc02-2",
+        "fingerprint": "9232a513f8237b6496e86f3f64dcdb77d0b5b10586b04bead9f5dde4ddeea346"
+      },
+      {
+        "id": "q-sc02-3",
+        "fingerprint": "d785519e3ddb029bfa8d86f5b600a5d804030c86fe94122595f0133460de1c59"
+      },
+      {
+        "id": "q-sc03-1",
+        "fingerprint": "55ca4ca758b17577223158db43154a01b159311ebd8743de1156ee30f9dda52d"
+      },
+      {
+        "id": "q-sc03-2",
+        "fingerprint": "d8fa37792b6929374953348483daf7160dcca4bc83d3abc4d384bdb4216b31e7"
+      },
+      {
+        "id": "q-sc03-3",
+        "fingerprint": "32f3cb9952c253ba2fb8ed679bcdedf81fbc2338c2b6f7fb72a5f349882208e4"
+      },
+      {
+        "id": "q-sc04-1",
+        "fingerprint": "f7c51e33908b8b3404415b4acc67f2acf3be329314874aea9f2a3a7d2a2e940f"
+      },
+      {
+        "id": "q-sc04-2",
+        "fingerprint": "2aaa7e65e537183dfe43ff6e4cfba3362cef1664d0f82c5ef9f66096604e978e"
+      },
+      {
+        "id": "q-sc04-3",
+        "fingerprint": "2c9ecdfd976d377e7e0d7e96d6519c220a15ab2964f2ef4aa05e167a0654e35c"
+      },
+      {
+        "id": "q-sc05-1",
+        "fingerprint": "30b7a4b8e9495e08ef8231f401ca1b053846f14a2713f7fe9226c91acad1660d"
+      },
+      {
+        "id": "q-sc05-2",
+        "fingerprint": "9efd7f56efc590b361e808026d9ae4c187e9b81049c92208c89c00c35d99154e"
+      },
+      {
+        "id": "q-sc05-3",
+        "fingerprint": "d8c1d42084f7f41824e268eddfe1da9ad18d1c19253a288b0720b5d0e28a5612"
+      },
+      {
+        "id": "q-sc06-1",
+        "fingerprint": "68058730fb5fe14466d9376e68f59cbc95190ac0c246c6046b1f1a5ae8666f89"
+      },
+      {
+        "id": "q-sc06-2",
+        "fingerprint": "9adafa81381d52bdaae8307c2e458caa71537796064ee6fc8648b60f1d423bde"
+      },
+      {
+        "id": "q-sc06-3",
+        "fingerprint": "4fb26cf90798421d527836a8af22118f5bc6c20941f5cb9e93490f1073a6fb71"
+      },
+      {
+        "id": "q-sc07-1",
+        "fingerprint": "9845cc95dd78d61475bcd6ed93b56d8d084b60515969945102b7e9cffaeb9350"
+      },
+      {
+        "id": "q-sc07-2",
+        "fingerprint": "bf79f557f045573d9f076d8b06e0d094b53d90310b11c33706f370eb59bb97ff"
+      },
+      {
+        "id": "q-sc07-3",
+        "fingerprint": "d5197b7fa4d04cbff4567b2bc3f6cede5f9d8646d455730694a2da243d5df052"
+      },
+      {
+        "id": "q-sc08-1",
+        "fingerprint": "7eec7a31e7629d35f60eea7a904add5d427ecc3fc4be17bb783ee0b552447c83"
+      },
+      {
+        "id": "q-sc08-2",
+        "fingerprint": "fe91841479969449aa3a1074c953e146ab5a0be114bf5dab45d094045a0988ea"
+      },
+      {
+        "id": "q-sc08-3",
+        "fingerprint": "d92b125c3de14e43ac50738bd6434d72b1a5525eeaf5951636d57be4610bea1f"
+      },
+      {
+        "id": "q-sc09-1",
+        "fingerprint": "61a4fd3d5d009198bbf44bbd9dbd542bdc6662584f631c8677cdcda28661f1aa"
+      },
+      {
+        "id": "q-sc09-2",
+        "fingerprint": "8b5dea6b1ab4d9ae3f899638922197ba2751fe81be728cf5db56be6be188f3f9"
+      },
+      {
+        "id": "q-sc09-3",
+        "fingerprint": "5c634907ac437093f4f2eb15935fbe29d90034145e4d306b835fdb58232a315c"
+      },
+      {
+        "id": "q-sc10-1",
+        "fingerprint": "b78daa79ddfc7270a0c3b929f4fa0665579eced1b61107802bcbd40ce04899bc"
+      },
+      {
+        "id": "q-sc10-2",
+        "fingerprint": "b4fe9a6ebd5a65eab53d93dfeecaad9286d1a1bda26af3cfbc06d05f556fe7c9"
+      },
+      {
+        "id": "q-sc10-3",
+        "fingerprint": "599bc3621db7cfcf8c1fc5a2e6917fec7128950e0fd90abc0b4ef7f8a3bd45ae"
+      },
+      {
+        "id": "q-d1-g01",
+        "fingerprint": "86ff307268b73cb11410aef3cc5b3198df4d2f832834ca032f68ac9056dc5a27"
+      },
+      {
+        "id": "q-d1-g02",
+        "fingerprint": "39c4246084be16a8ba881d548559cae151f70a2edae33b17f324020156328157"
+      },
+      {
+        "id": "q-d1-g03",
+        "fingerprint": "2e10bb56c954bda1ae01f50e14234bd5a0d585c852673758755ca2b08c4160a5"
+      },
+      {
+        "id": "q-d1-g04",
+        "fingerprint": "841f0c749bc1fcc207460a006f7820fef976a69853d474e1c9e1996c23f04bc4"
+      },
+      {
+        "id": "q-d1-g05",
+        "fingerprint": "5f2d63141a2ce200ecead7010037196cbb67bec1860dac142479f293a084f842"
+      },
+      {
+        "id": "q-d1-g06",
+        "fingerprint": "2c33782d05c3b99a51fd7d982a7b00d47744df512b4e9612946acc7f00e2e5f1"
+      },
+      {
+        "id": "q-d2-g01",
+        "fingerprint": "f9710ad21939be24518e840d1fc3f88f43f8c8c50c3fa0a578bc982321a38a9a"
+      },
+      {
+        "id": "q-d2-g02",
+        "fingerprint": "35d09731c36caf207734d6e924aff7abd3e0cbd87c1fcdd7d112360c2a4969d2"
+      },
+      {
+        "id": "q-d2-g03",
+        "fingerprint": "6a81cf193e6f603e318885e968d49f11307ab2b42f63be8c6945ce96bad2c8e7"
+      },
+      {
+        "id": "q-d2-g04",
+        "fingerprint": "99b6cd5d495e833e8fd6421d988e2cc0624092a2cd53daef7fa1b61bd6e1677d"
+      },
+      {
+        "id": "q-d2-g05",
+        "fingerprint": "66fce926b94a784d8588ff69ce5e6e1f74f9c5582795cedc082887074c766178"
+      },
+      {
+        "id": "q-d2-g06",
+        "fingerprint": "5a5eadc6aceeb499976a2f8c027a581645d1ac1597fc968f690167bc0ebe8307"
+      },
+      {
+        "id": "q-d2-g07",
+        "fingerprint": "8bccf8cf521e809068ccbf1a3417c6e05310e8ef709cead7eef84fad4db05b38"
+      },
+      {
+        "id": "q-d2-g08",
+        "fingerprint": "1a11a4cf37c9dedd027cb86c03724543337a0a0642b9d8241c8910614fb49f1c"
+      },
+      {
+        "id": "q-d2-g09",
+        "fingerprint": "2e0b1519c6cca9e6d80fe86066927931b15aa0c350ebeb62d39cb743551229ea"
+      },
+      {
+        "id": "q-d2-g10",
+        "fingerprint": "5adab5a93c52330e4c8b40123336aef31b4f84b288e7e3fc5c841f5d55201fdf"
+      },
+      {
+        "id": "q-d2-g11",
+        "fingerprint": "7660303f5e5063f0e7d250df51bc54ab16554695417f33a4914b431d122b4711"
+      },
+      {
+        "id": "q-d2-g12",
+        "fingerprint": "c66b0b530e84f515fd684e6c6e29c56160ac82974cfb9f6646f97cbe622e23b5"
+      },
+      {
+        "id": "q-d2-g13",
+        "fingerprint": "b6109b3f365aff3b938596f061999c2889bb2710671cff79fa66b2220170937c"
+      },
+      {
+        "id": "q-d2-g14",
+        "fingerprint": "d1322521571846d372be57a41a4c17f130d37a9f18ed43341c25863f13b86306"
+      },
+      {
+        "id": "q-d2-g15",
+        "fingerprint": "9fe5ff62d6b2f9fe45a306dd4b70b5667a2030fad99a63fc6788ddf338d9fc55"
+      },
+      {
+        "id": "q-d2-g16",
+        "fingerprint": "e61169718c17cff016966e49d9116a0aed4e82cc09342e58ab06c0276afb29b8"
+      },
+      {
+        "id": "q-d2-g17",
+        "fingerprint": "961ccda60fa6946337b12f904dc5adefb954c658f8e78fa107a6e56c100c72d1"
+      },
+      {
+        "id": "q-d2-g18",
+        "fingerprint": "5a9af2dc47600390a6ae139ab9e6f3f8e3cc535d084ea7f0ac435b2d92a623ca"
+      },
+      {
+        "id": "q-d2-g19",
+        "fingerprint": "5fbd19711c62241cd1869a8776af4746c8523da568ed02feaf091643ad9d8dff"
+      },
+      {
+        "id": "q-d2-g20",
+        "fingerprint": "f845769a619e2cab0023c24ca6d1f9b44eaa1d718da78507119c64a4432f6200"
+      },
+      {
+        "id": "q-d2-g21",
+        "fingerprint": "c29cbdd8d57076432461967992582372ff5345341eae96281ceed5f44b1c07de"
+      },
+      {
+        "id": "q-d2-g22",
+        "fingerprint": "e48d46a7df53c3f5e1382b913557ccb98d3e837f4e5d622990655d1e5fbd23a1"
+      },
+      {
+        "id": "q-d3-g01",
+        "fingerprint": "378c17ebb4620693f69695754e95b98b69bf048625a8ea2bc42d5184ba50b59c"
+      },
+      {
+        "id": "q-d3-g02",
+        "fingerprint": "137805438da65df26217cccc6f776b3956f33f051242386239bc4ac327ec72e0"
+      },
+      {
+        "id": "q-d3-g03",
+        "fingerprint": "c9ad04fb14c658bb79317ffde40e9e9870fb11e641f4fdb84231143ded1051cf"
+      },
+      {
+        "id": "q-d3-g04",
+        "fingerprint": "4769dea78fbb89a7d512e39de5c4b5548287f870607d06c8c883b7ffce7b9bc0"
+      },
+      {
+        "id": "q-d3-g05",
+        "fingerprint": "0d97da061c181f77544f7553606e7e1853e802964a393b2e7dc6009949f2ad4d"
+      },
+      {
+        "id": "q-d3-g06",
+        "fingerprint": "ef61b9e24b7833f4fb53bcff76af75182d618c1ee7846fc408a6c2ed253f4b7c"
+      },
+      {
+        "id": "q-d3-g07",
+        "fingerprint": "adc53e8ed4e6e7f66ca74965a2eaf9bfb725843cb7fa948d366551b322510a58"
+      },
+      {
+        "id": "q-d3-g08",
+        "fingerprint": "2247c08f0b34439a2b7e4886f683d2f16b7c151ec9c3bb93a40a888979f38abd"
+      },
+      {
+        "id": "q-d3-g09",
+        "fingerprint": "a158e93ed119608834d757fb3c3f8ec549ea9861e1a5174203b5f122c7eac238"
+      },
+      {
+        "id": "q-d3-g10",
+        "fingerprint": "f55240c2e7be7e60f380484c2d3840f7f31208f42a0f7072ad70bf2ea27838e1"
+      },
+      {
+        "id": "q-d3-g11",
+        "fingerprint": "ac382682fda5b90b2f58279c7839184128af5d7541c277730617d40bddf33e97"
+      },
+      {
+        "id": "q-d3-g12",
+        "fingerprint": "e6a7b1b3ab0128c78cc52f55c55106447571eb03815533d40ee5a640c08f67e9"
+      },
+      {
+        "id": "q-d3-g13",
+        "fingerprint": "092bed4f6b43a2144fefa15abff9545e0947af63e9dd8bf4c92645a771d205da"
+      },
+      {
+        "id": "q-d3-g14",
+        "fingerprint": "3b21307f83bf55dae374cee7baa70feaa25833473078ee7fe71f858c5e3812a6"
+      },
+      {
+        "id": "q-d4-g01",
+        "fingerprint": "bf4ab6c3368b28ef1dccbea060bc3ad070a9c9e02ca3690711636a24be9fa929"
+      },
+      {
+        "id": "q-d4-g02",
+        "fingerprint": "76cd3e73a3dd2cd60a91c0877961288b7ac0d4a8608e37005be6f92d5df3efe2"
+      },
+      {
+        "id": "q-d4-g03",
+        "fingerprint": "3d4b7c3049b2b637738a2b0ea3ff24b952008cfe6d0b6b7ef7b630ab511a95f8"
+      },
+      {
+        "id": "q-d4-g04",
+        "fingerprint": "efe3aa9d5abe1f770c209b07ea1ed9902d6d17c289fbaf49efcfb7e61424ad04"
+      },
+      {
+        "id": "q-d4-g05",
+        "fingerprint": "c1f9032031aef78791439e8a19ee81c34d3452a4cb7bd54ca7ba2931eaf5f900"
+      },
+      {
+        "id": "q-d4-g06",
+        "fingerprint": "4490736f87391766f97c9f983c89d29e1c2dcd87ed56a266585d35011fa58d27"
+      },
+      {
+        "id": "q-d4-g07",
+        "fingerprint": "9a3f8c5541484bdd9b7bebd45cf37213673d8eaa4c79fcecc906455aca2bd188"
+      },
+      {
+        "id": "q-d4-g08",
+        "fingerprint": "49bf4c4ed4ff68cfa5d08350aefa7e541cfad6a5f8b5791933cb610241eb4890"
+      },
+      {
+        "id": "q-d4-g09",
+        "fingerprint": "d4f203c12433667daaafc7870be8f678d553a607e9775a1aad455898456957c2"
+      },
+      {
+        "id": "q-d5-g01",
+        "fingerprint": "43100203a9afa74c999d916a47db15d85c56bd9bd5dbeb902f050a8d6c03c632"
+      },
+      {
+        "id": "q-d5-g02",
+        "fingerprint": "740fc5e68239fa57b235d73a4131b609723d0053caf75fddb1d988c64a11ada6"
+      },
+      {
+        "id": "q-d5-g03",
+        "fingerprint": "a5621ced4faec8ce39df8124b0f94d9f788da19587d01adad6bf802047030cd8"
+      },
+      {
+        "id": "q-d5-g04",
+        "fingerprint": "f6c3c387e4841d82d6b74182c28f231f8871f8f8b095178fd685ffbf9eaadc08"
+      },
+      {
+        "id": "q-d5-g05",
+        "fingerprint": "d50fcae3380a23bc380cea3d37272641e6e1332dcd7a366b6969386c999becac"
+      },
+      {
+        "id": "q-d5-g06",
+        "fingerprint": "a2dbccc8c7f963e43d634e67da6a02a2dce83d1b0ec1da8d1a80eef9ecd66ff6"
+      },
+      {
+        "id": "q-d5-g07",
+        "fingerprint": "cf6559ce8e1501ed5c4ef4d85a3e8f26390537b008abef8d8f6f2e49f2b4a5ee"
+      },
+      {
+        "id": "q-d5-g08",
+        "fingerprint": "b601ee941627fc51c9b0213cbb6130f3ce06f0a77dc356d646977b5ae6fb8aa7"
+      },
+      {
+        "id": "q-d5-g09",
+        "fingerprint": "c7810de947ab9fde957963ab432861920c16e6655ff9bfedc1401942f255fb55"
+      },
+      {
+        "id": "q-d5-g10",
+        "fingerprint": "f5742dc9d0aa1bc349506c750f917226d0b75d7c14d67c4cddd212add486d6af"
+      },
+      {
+        "id": "q-d5-g11",
+        "fingerprint": "bdc919bdd76bacc07ca2c7431a88dcfec950f1e275559adc167263300c0f45a6"
+      },
+      {
+        "id": "q-d5-g12",
+        "fingerprint": "bb7feb01fac3c81d7a8e5b60f7970b9a3d095b696e539ef539a70fcec2376dd5"
+      },
+      {
+        "id": "q-d5-g13",
+        "fingerprint": "4d6e421c5d139603dd2d09237702e9e047974136de52b96727523dc1a6da31e4"
+      },
+      {
+        "id": "q-d5-g14",
+        "fingerprint": "a935a5ea6dce910359192678049e2d27dd7449a8cc209e77ff9f64ac3d6a6d31"
+      },
+      {
+        "id": "q-d5-g15",
+        "fingerprint": "8cc97fc5b799e4ad25c6aa2306cb4e1d10416b6785b230b2c5d253e3a4e66ae6"
+      },
+      {
+        "id": "q-d5-g16",
+        "fingerprint": "d8c110539c4a2692704238bfae54357ed7ed84df45c927040b57f63b0ef5ceda"
+      },
+      {
+        "id": "q-d5-g17",
+        "fingerprint": "953a79b75c3ced375ebfd29c627de0030fe95329a93f5ec5b327da9b71d0fc72"
+      },
+      {
+        "id": "q-d5-g18",
+        "fingerprint": "6a441db503496aec319213c2d17d7fe62464f8e86d258775c17209a61ce77f0d"
+      },
+      {
+        "id": "q-d6-g01",
+        "fingerprint": "242a3b1f5bb3e2a687a0662b6b7de5b4d7b57b826d1031b2d62d5b0af0ffb998"
+      },
+      {
+        "id": "q-d6-g02",
+        "fingerprint": "62b92d0ccfbff020a2c2594c4838933a5df65d2d7e9aec65a3ccfbe02e58d94e"
+      },
+      {
+        "id": "q-d6-g03",
+        "fingerprint": "d3d83828fb81e1ecb50f0ecb2abb134b012eba90eb77488a81eddc8e60f87d2d"
+      },
+      {
+        "id": "q-d6-g04",
+        "fingerprint": "4b2e47f261055ef431e8a1cdc0629bf45b8ce4b521313d04bd13c348037e98bc"
+      },
+      {
+        "id": "q-d6-g05",
+        "fingerprint": "128d55f46c44f4b0f2acba0785ee209a66469da4d259537bf7c822b2f7b8f4ca"
+      },
+      {
+        "id": "q-d1-a11",
+        "fingerprint": "76df199a1759766df7acf20ef5d89bf6322a3ed8db1146e2da378749c635b136"
+      },
+      {
+        "id": "q-d1-a12",
+        "fingerprint": "53e670117c5c0326d796d8451556573ef11829e9abea194da9deb55bdbea0d46"
+      },
+      {
+        "id": "q-d1-a13",
+        "fingerprint": "75f0ef2ad676d23fd23b4e8258c556307879ff273947f2eefef2146ad370fcf4"
+      },
+      {
+        "id": "q-d1-a14",
+        "fingerprint": "0cb449f0d5c5c8a74481c30197c2bfb374a4d6e72f6af2ae3b325db9468fb28d"
+      },
+      {
+        "id": "q-d2-a23",
+        "fingerprint": "76e80279686ecff33ff99e378e82aa47828631efc664aa6f32273fcb87556ee9"
+      },
+      {
+        "id": "q-d2-a24",
+        "fingerprint": "066610ff1749c66293cab6e6776a3af04d5ab24d65bda4971de7097eea455178"
+      },
+      {
+        "id": "q-d2-a25",
+        "fingerprint": "930295b0a7d74b18fb56bfb5497118c86bca1d1d12297e77bc544f52245dc676"
+      },
+      {
+        "id": "q-d2-a26",
+        "fingerprint": "3e16fa1c8c0589f103c67b56e728e040308aac1d75b1e6e0ec88996b3fcebdc8"
+      },
+      {
+        "id": "q-d3-a12",
+        "fingerprint": "6f42479042b2e8a180e1e2c49f611a5f43917e31ec35dc74d883b433e8bcfa29"
+      },
+      {
+        "id": "q-d3-a13",
+        "fingerprint": "d239ab6fb785dec510501f66facdf70fb3be5a981975aa05b67a7aedb6c2984f"
+      },
+      {
+        "id": "q-d3-a14",
+        "fingerprint": "7d5ca7504abb129a10b299400e7dd0879d327515f9c6c00b9fb80de39132c7a9"
+      },
+      {
+        "id": "q-d3-a15",
+        "fingerprint": "29a731cfe6c1dcc21bb41c16fc5935569388469b892020e0d71e5b87d66ecbaa"
+      },
+      {
+        "id": "q-d4-a12",
+        "fingerprint": "78888b1ea812e3202f3add0071a193123ab31339ba4348919b604358501aef84"
+      },
+      {
+        "id": "q-d4-a13",
+        "fingerprint": "218433df69437de40703c9f7a36f03a91f0b2d700a2351a720cd6bfc915b3f4a"
+      },
+      {
+        "id": "q-d4-a14",
+        "fingerprint": "280f8390e3258ba25f2cb7b4bf27dd00d584d6edf2d9da7678455a065e61d514"
+      },
+      {
+        "id": "q-d4-a15",
+        "fingerprint": "afce05470269c034c6ab50de2f40891598f0ab90b876135778f14bf3b9fe12b4"
+      },
+      {
+        "id": "q-d5-a12",
+        "fingerprint": "36214e95ca607d9a7f84651ba8572cb99fbe43c9b6273cbb867f2af6c0c1eb12"
+      },
+      {
+        "id": "q-d5-a13",
+        "fingerprint": "b8f1bd34eb5279348c810de05f5774095965cb9e95451bd917f6762b69af3656"
+      },
+      {
+        "id": "q-d5-a14",
+        "fingerprint": "762a4904a291fe887444e837b6eb09143742a16e69fbd60757dffb73fcc28e09"
+      },
+      {
+        "id": "q-d5-a15",
+        "fingerprint": "e430056202494be5cb5563aaab60482bcf679cf37e98b37f1162d4f79bae4797"
+      },
+      {
+        "id": "q-d6-a11",
+        "fingerprint": "faf7ce6d130816e60ad19cc6e16822eff87b288cbcb046601ec0b5f31e8a5e4e"
+      },
+      {
+        "id": "q-d6-a12",
+        "fingerprint": "16d4385c0b4706f74640162415f21231356f92932a6eaf5594922cc1458b99b2"
+      },
+      {
+        "id": "q-d6-a13",
+        "fingerprint": "19579e21c270a988d7c72d19e31b18a08541f18427fcea88bdc352603f80bc1d"
+      },
+      {
+        "id": "q-d6-a14",
+        "fingerprint": "ff07e974d565db791a12e51a048bc529789bac65cf1df25df2d0d94079dead01"
+      },
+      {
+        "id": "q-d1-e09",
+        "fingerprint": "a17935abee295d735bbc78587d7b79a265809385df2acc81221084fdba71bf0a"
+      },
+      {
+        "id": "q-d2-e20",
+        "fingerprint": "58199de9a1eee48a06d908e1d86b2828422c1cdd7b8ce868b7b3cd7a72712441"
+      },
+      {
+        "id": "q-d2-e21",
+        "fingerprint": "cc72da83c96d7f48e7aee4ba9ed612cde50ca3df7e73228805b28af3a7db14e5"
+      },
+      {
+        "id": "q-d2-e22",
+        "fingerprint": "0b4e9f424da3be9a7573acccd90562abb466411a069c14a9fc74e5b312087a4e"
+      },
+      {
+        "id": "q-d2-e23",
+        "fingerprint": "38731c678e515467882579639ca8f638b2218baece41ed27abe1350360c7cf38"
+      },
+      {
+        "id": "q-d2-e24",
+        "fingerprint": "44304b3699921ef66a76d35fa2e6304f78a8736df0f29331e807df89ed25a04d"
+      },
+      {
+        "id": "q-d3-e06",
+        "fingerprint": "9984b2f14ce6f147067783d0c25a501fade64e0ba65dd73e0c19fce6f4a241fb"
+      },
+      {
+        "id": "q-d3-e07",
+        "fingerprint": "c1ae903f868f8c21ce3841e5154db58369b0dac5acb638dffea1f4076a5b8500"
+      },
+      {
+        "id": "q-d3-e08",
+        "fingerprint": "3f4ddd3392ca0d8bc3604c735860cd551c4bdc9b8823bf4317158609abb945a2"
+      },
+      {
+        "id": "q-d4-e06",
+        "fingerprint": "05d124917c9c03acf915b2b5efd1a439c024c7de34a4fc3a1f49ae316e19dc73"
+      },
+      {
+        "id": "q-d4-e07",
+        "fingerprint": "84e0463cc0dc0c59a1d64ee919467e505e1d6c9fef64fe66999f47eb1c45385c"
+      },
+      {
+        "id": "q-d4-e08",
+        "fingerprint": "cee59d49be64ef48f3ffcb79f7fec01d7e4e813ffbccaf39c015ba2d7822031d"
+      },
+      {
+        "id": "q-d4-e09",
+        "fingerprint": "09edbae5f56f4d2d4eb030ef142bb6bca5109354b4e4b72337b518ac194bad24"
+      },
+      {
+        "id": "q-d5-e06",
+        "fingerprint": "7935e366f903fe2c494f45fbb12a93defe84d566eac280852a17d842b0383239"
+      },
+      {
+        "id": "q-d5-e07",
+        "fingerprint": "268db5600777d6506902ad59450707edee4b7d2c428b728b0219520362c30825"
+      },
+      {
+        "id": "q-d5-e08",
+        "fingerprint": "1e7ca932c19fb7968e48f6a1ac6a2d93d14a064a28da931dc6051b047bcc4066"
+      },
+      {
+        "id": "q-d6-e06",
+        "fingerprint": "10867795f46ab814ff5cb38f1b82abe80fb237792cf90343a6646d485dc03ea6"
+      },
+      {
+        "id": "q-d6-e07",
+        "fingerprint": "ba1d60ab37e8be6b03020587fc8c4bc8e39e986adcd8d1a17f8cde0e49a9245a"
+      }
+    ],
+    "historicalBaselineFingerprints": {
+      "reports/question-difficulty-baseline.json": "fb9280a23e9e64d252d154078095c43150d84c35558f7bbce0d2d83a88519e4d",
+      "reports/question-choice-content-baseline.json": "7d85dc439423d0c9d9a9d727ad7413d6feab5cb2aef000d934d4ffb9d338d1d2",
+      "reports/question-choice-baseline.json": "24168b1ea774cea5ddd82ba35879ee082dde1eced0ef61935b8850a429efd574"
+    }
+  },
+  "method": "現行応用84問の本文と正答を参照。追加12問の本文・四択・解説・反実仮想を別途再読してから登録する。過去の固定ベースラインへ追加分を混ぜず、この追加台帳を出典とする。",
+  "sourceChecks": [
+    {
+      "id": "chat",
+      "url": "https://docs.github.com/en/copilot/responsible-use/chat",
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "responsible",
+      "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "ml-fairness",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-fairness-ml?view=azureml-api-2",
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "dotnet-tokens",
+      "url": "https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens",
+      "checkedAt": "2026-10-13"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-d1-a15",
+      "title": "評価集合の代表性",
+      "initial": {
+        "id": "q-d1-a15",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilotで作った氏名表示処理を日本語・アラビア語の利用者へ展開します。評価100件は英数字の氏名だけで、長さ・空入力・重複のケースは含みます。今回は未評価の利用者群で表示品質を確認したい。承認済みの期待表示を用意して追加する評価集合は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "英数字の長い氏名と、その期待表示"
+          },
+          {
+            "id": "B",
+            "text": "英数字の空入力と、その期待表示"
+          },
+          {
+            "id": "C",
+            "text": "日本語・アラビア語の氏名と、その期待表示"
+          },
+          {
+            "id": "D",
+            "text": "英数字の重複氏名と、その期待表示"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "展開対象のうち現在の評価に欠ける言語群を含め、利用者による品質差を確認できる。",
+        "choiceExplanations": {
+          "A": "長さの回帰確認には有用だが、既に含まれる英数字群の追加になる。",
+          "B": "空入力の回帰確認には有用だが、未評価の言語群を含まない。",
+          "C": "展開対象のうち現在の評価に欠ける言語群を含め、利用者による品質差を確認できる。",
+          "D": "重複の回帰確認には有用だが、未評価の言語群を含まない。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "評価集合の代表性"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "長さの回帰確認には有用だが、既に含まれる英数字群の追加になる。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "空入力の回帰確認には有用だが、未評価の言語群を含まない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "展開対象のうち現在の評価に欠ける言語群を含め、利用者による品質差を確認できる。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "重複の回帰確認には有用だが、未評価の言語群を含まない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotで作った氏名表示処理を日本語・アラビア語の利用者へ展開します。評価100件は英数字の氏名だけで、長さ・空入力・重複のケースは含みます。今回は未評価の利用者群で表示品質を確認したい。承認済みの期待表示を用意して追加する評価集合は？",
+            "correctReason": "展開対象のうち現在の評価に欠ける言語群を含め、利用者による品質差を確認できる。",
+            "distractorFailures": {
+              "A": "長さの回帰確認には有用だが、既に含まれる英数字群の追加になる。",
+              "B": "空入力の回帰確認には有用だが、未評価の言語群を含まない。",
+              "D": "重複の回帰確認には有用だが、未評価の言語群を含まない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：日本語とアラビア語、英数字の氏名だけ",
+          "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "言語群は評価済みで、未確認なのが英数字の長い氏名ならA。"
+          },
+          {
+            "choiceId": "B",
+            "condition": "言語群は評価済みで、未確認なのが空入力ならB。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d5-a10"
+        ],
+        "distinction": "評価集合が代表していない対象を補う。属性だけを変えた公平性比較、性能採用の規模・順序比較とは異なる。",
+        "optionOnlyEvidence": "正答「日本語・アラビア語の氏名と、各入力の正しい表示結果を追加する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。言語群は評価済みで、未確認なのが英数字の長い氏名ならA。 言語群は評価済みで、未確認なのが空入力ならB。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-ai-bias"
+        ],
+        "decisiveClues": [
+          "日本語とアラビア語",
+          "英数字の氏名だけ"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDCと説明が一致することを再読。多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。 誤答はA：英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。／B：空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。／D：重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 28.5,
+          "correctToMedian": 1.05,
+          "displayPosition": "C"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "長い英数字の氏名と、各入力の正しい表示結果を追加する",
+            "whyWrong": "英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。"
+          },
+          {
+            "id": "B",
+            "text": "空入力・空白だけの氏名と、各入力の正しい表示結果を追加する",
+            "whyWrong": "空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。"
+          },
+          {
+            "id": "D",
+            "text": "重複する英数字の氏名と、各入力の正しい表示結果を追加する",
+            "whyWrong": "重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。"
+          }
+        ],
+        "priorFinding": "前回から未変更。「評価100件」「期待表示データセット」を自然な入力・期待結果の説明にしたい。",
+        "counterfactual": "言語群は評価済みで、未確認なのが英数字の長い氏名ならA。 言語群は評価済みで、未確認なのが空入力ならB。",
+        "approvedAnswerIds": [
+          "C"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a15",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotで作成した氏名の表示処理を、日本語とアラビア語を使う利用者へ展開します。既存の評価用データ100件は英数字の氏名だけで、長い氏名・空入力・重複する氏名は確認済みです。今回は、まだ評価していない利用者群でも正しく表示できるか確認します。各入力の正しい表示結果を事前に定める場合、どのデータを追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "長い英数字の氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "B",
+            "text": "空入力・空白だけの氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "C",
+            "text": "日本語・アラビア語の氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "D",
+            "text": "重複する英数字の氏名と、各入力の正しい表示結果を追加する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。",
+        "choiceExplanations": {
+          "C": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。",
+          "A": "英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。",
+          "B": "空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。",
+          "D": "重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "評価集合の代表性"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotで作成した氏名の表示処理を、日本語とアラビア語を使う利用者へ展開します。既存の評価用データ100件は英数字の氏名だけで、長い氏名・空入力・重複する氏名は確認済みです。今回は、まだ評価していない利用者群でも正しく表示できるか確認します。各入力の正しい表示結果を事前に定める場合、どのデータを追加すべきですか。",
+            "correctReason": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。",
+            "distractorFailures": {
+              "A": "英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。",
+              "B": "空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。",
+              "D": "重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "514b535fda40418a717303822921035cf6900905637c4f79e55c545e3aae996a",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "評価済みの入力群と、新しい展開対象との差を特定する。",
+          "不足する群を承認済み期待表示で評価する集合を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "言語群は評価済みで、未確認なのが英数字の長い氏名ならA。"
+          },
+          {
+            "choiceId": "B",
+            "condition": "言語群は評価済みで、未確認なのが空入力ならB。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d5-a10"
+        ],
+        "distinction": "評価集合が代表していない対象を補う。属性だけを変えた公平性比較、性能採用の規模・順序比較とは異なる。",
+        "optionOnlyEvidence": "四択はすべて入力群と期待表示の評価集合。特定言語を無条件に優先せず、既に評価された範囲と展開先を読む必要がある。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-ai-bias"
+        ],
+        "decisiveClues": [
+          "評価100件は英数字の氏名だけ",
+          "未評価の利用者群"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "入力群はいずれも妥当な回帰評価。長さ・空入力・重複は既存集合に含むため、新しい利用者群の追加と区別できる。追加対象の欠落を判断する応用の入口。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 16,
+          "correctToMedian": 1.25,
+          "displayPosition": "C"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "英数字の長い氏名と、その期待表示",
+            "whyWrong": "長さの回帰確認には有用だが、既に含まれる英数字群の追加になる。"
+          },
+          {
+            "id": "B",
+            "text": "英数字の空入力と、その期待表示",
+            "whyWrong": "空入力の回帰確認には有用だが、未評価の言語群を含まない。"
+          },
+          {
+            "id": "D",
+            "text": "英数字の重複氏名と、その期待表示",
+            "whyWrong": "重複の回帰確認には有用だが、未評価の言語群を含まない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a16",
+      "title": "全体平均に隠れる集団別の不利益",
+      "initial": {
+        "id": "q-d1-a16",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilot生成の表示処理を同じ評価集合で比較しました。変更前はA群900件中90件、B群100件中10件が失敗。変更後はA群36件、B群20件が失敗しました。社内の採用条件は「どの群も失敗率を悪化させない」です。この条件に沿った評価は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "全体の失敗率5.6%が改善したため、採用条件を満たす"
+          },
+          {
+            "id": "B",
+            "text": "A群4%・B群20%なので、B群を再評価する"
+          },
+          {
+            "id": "C",
+            "text": "A群4%・B群2%なので、採用条件を満たす"
+          },
+          {
+            "id": "D",
+            "text": "A群40%・B群20%なので、両群を再評価する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "A群は10%から4%へ改善、B群は10%から20%へ悪化する。B群への影響を確認・軽減する必要がある。",
+        "choiceExplanations": {
+          "A": "全体では改善しても、群ごとの悪化を許さない今回の採用条件を確認していない。",
+          "B": "A群は10%から4%へ改善、B群は10%から20%へ悪化する。B群への影響を確認・軽減する必要がある。",
+          "C": "B群の分母は100件なので20件の失敗は20%であり、2%ではない。",
+          "D": "A群の分母は900件なので36件の失敗は4%であり、40%ではない。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "全体平均に隠れる集団別の不利益"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "全体では改善しても、群ごとの悪化を許さない今回の採用条件を確認していない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "A群は10%から4%へ改善、B群は10%から20%へ悪化する。B群への影響を確認・軽減する必要がある。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "B群の分母は100件なので20件の失敗は20%であり、2%ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "A群の分母は900件なので36件の失敗は4%であり、40%ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot生成の表示処理を同じ評価集合で比較しました。変更前はA群900件中90件、B群100件中10件が失敗。変更後はA群36件、B群20件が失敗しました。社内の採用条件は「どの群も失敗率を悪化させない」です。この条件に沿った評価は？",
+            "correctReason": "A群は10%から4%へ改善、B群は10%から20%へ悪化する。B群への影響を確認・軽減する必要がある。",
+            "distractorFailures": {
+              "A": "全体では改善しても、群ごとの悪化を許さない今回の採用条件を確認していない。",
+              "C": "B群の分母は100件なので20件の失敗は20%であり、2%ではない。",
+              "D": "A群の分母は900件なので36件の失敗は4%であり、40%ではない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：B群は100件、B群20件",
+          "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "社内条件が全体失敗率だけの改善で、群別の不悪化条件がないならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "変更後のB群の失敗が20件でなく2件ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d6-a09"
+        ],
+        "distinction": "既に測定された群別の結果を採用条件へ適用する。属性変更の対照実験や一人当たり利用の集計ではない。",
+        "optionOnlyEvidence": "正答「A群の失敗率は4%に改善したが、B群の失敗率が20%に悪化しているため、B群を再評価する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。社内条件が全体失敗率だけの改善で、群別の不悪化条件がないならA。 変更後のB群の失敗が20件でなく2件ならC。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-ai-bias"
+        ],
+        "decisiveClues": [
+          "B群は100件",
+          "B群20件"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDBと説明が一致することを再読。A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。 誤答はA：全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。／C：B群の失敗率は20/100で20%であり、2%とする計算は誤りです。／D：A群の失敗率は36/900で4%であり、40%とする計算は誤りです。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 41.5,
+          "correctToMedian": 1.06,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "全体の失敗率が5.6%に改善しているため、社内の採用条件を満たしていると評価する",
+            "whyWrong": "全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。"
+          },
+          {
+            "id": "C",
+            "text": "A群の失敗率が4%、B群の失敗率が2%であるため、両群ともに改善したと評価する",
+            "whyWrong": "B群の失敗率は20/100で20%であり、2%とする計算は誤りです。"
+          },
+          {
+            "id": "D",
+            "text": "A群の失敗率が40%、B群の失敗率が20%であるため、両群ともに再評価が必要と評価する",
+            "whyWrong": "A群の失敗率は36/900で4%であり、40%とする計算は誤りです。"
+          }
+        ],
+        "priorFinding": "前回から未変更。数値と採用条件は明確だが、解説の「マイノリティ群」は本文で定義されていない。",
+        "counterfactual": "社内条件が全体失敗率だけの改善で、群別の不悪化条件がないならA。 変更後のB群の失敗が20件でなく2件ならC。",
+        "approvedAnswerIds": [
+          "B"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a16",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotが生成した表示処理を、変更前後で同じ評価用データに適用しました。A群は900件、B群は100件です。変更前の失敗はA群90件・B群10件、変更後の失敗はA群36件・B群20件でした。社内の採用条件は「どの群でも失敗率が悪化しないこと」です。この条件に沿った評価はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "全体の失敗率が5.6%に改善しているため、社内の採用条件を満たしていると評価する"
+          },
+          {
+            "id": "B",
+            "text": "A群の失敗率は4%に改善したが、B群の失敗率が20%に悪化しているため、B群を再評価する"
+          },
+          {
+            "id": "C",
+            "text": "A群の失敗率が4%、B群の失敗率が2%であるため、両群ともに改善したと評価する"
+          },
+          {
+            "id": "D",
+            "text": "A群の失敗率が40%、B群の失敗率が20%であるため、両群ともに再評価が必要と評価する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。",
+        "choiceExplanations": {
+          "B": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。",
+          "A": "全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。",
+          "C": "B群の失敗率は20/100で20%であり、2%とする計算は誤りです。",
+          "D": "A群の失敗率は36/900で4%であり、40%とする計算は誤りです。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "全体平均に隠れる集団別の不利益"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "B群の失敗率は20/100で20%であり、2%とする計算は誤りです。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "A群の失敗率は36/900で4%であり、40%とする計算は誤りです。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが生成した表示処理を、変更前後で同じ評価用データに適用しました。A群は900件、B群は100件です。変更前の失敗はA群90件・B群10件、変更後の失敗はA群36件・B群20件でした。社内の採用条件は「どの群でも失敗率が悪化しないこと」です。この条件に沿った評価はどれですか。",
+            "correctReason": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。",
+            "distractorFailures": {
+              "A": "全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。",
+              "C": "B群の失敗率は20/100で20%であり、2%とする計算は誤りです。",
+              "D": "A群の失敗率は36/900で4%であり、40%とする計算は誤りです。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "e1b80a2df4137c6483e86fab8b4b95db997e4687f86ea4719d30385bcfd51ab7",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "群ごとの分母を保ち、変更前後の失敗率を計算する。",
+          "全体平均でなく、各群を社内の採用条件へ照合する。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "社内条件が全体失敗率だけの改善で、群別の不悪化条件がないならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "変更後のB群の失敗が20件でなく2件ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d6-a09"
+        ],
+        "distinction": "既に測定された群別の結果を採用条件へ適用する。属性変更の対照実験や一人当たり利用の集計ではない。",
+        "optionOnlyEvidence": "各案に数値と採用判断を置く。改善・再評価のどちらも別データでは妥当で、正答だけを慎重な対策文にしない。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-ai-bias"
+        ],
+        "decisiveClues": [
+          "A群900件",
+          "B群100件",
+          "どの群も失敗率を悪化させない"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "分母900・100を保つと4%・20%。全体5.6%は正しいが社内条件を満たさない。分母誤りと目的誤りを分ける応用の中程度。群別の社会的評価基準を公式の数値と誤認させない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 22.5,
+          "correctToMedian": 0.98,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "全体の失敗率5.6%が改善したため、採用条件を満たす",
+            "whyWrong": "全体では改善しても、群ごとの悪化を許さない今回の採用条件を確認していない。"
+          },
+          {
+            "id": "C",
+            "text": "A群4%・B群2%なので、採用条件を満たす",
+            "whyWrong": "B群の分母は100件なので20件の失敗は20%であり、2%ではない。"
+          },
+          {
+            "id": "D",
+            "text": "A群40%・B群20%なので、両群を再評価する",
+            "whyWrong": "A群の分母は900件なので36件の失敗は4%であり、40%ではない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a17",
+      "title": "生成コメントの属性による決め付け",
+      "initial": {
+        "id": "q-d1-a17",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilotが役割コメントを「女性は入力、男性は承認」と生成しました。承認済みの権限表では、担当者は入力のみ、責任者は入力と承認が可能で、性別は使いません。根拠のない属性表現を除き、権限表を保つ修正文は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "担当者は承認、責任者は入力を担う"
+          },
+          {
+            "id": "B",
+            "text": "担当者は入力と承認、責任者は入力を担う"
+          },
+          {
+            "id": "C",
+            "text": "担当者は入力、責任者は承認のみを担う"
+          },
+          {
+            "id": "D",
+            "text": "担当者は入力、責任者は入力と承認を担う"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "業務上の役割で説明し、根拠のない性別の決め付けを除きつつ、承認済みの権限を維持する。",
+        "choiceExplanations": {
+          "A": "属性表現はないが、担当者と責任者の承認権限を逆にしている。",
+          "B": "属性表現はないが、担当者にも承認権限を与えている。",
+          "C": "属性表現はないが、責任者が持つ入力権限を落としている。",
+          "D": "業務上の役割で説明し、根拠のない性別の決め付けを除きつつ、承認済みの権限を維持する。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "生成コメントの属性による決め付け"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "属性表現はないが、担当者と責任者の承認権限を逆にしている。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "属性表現はないが、担当者にも承認権限を与えている。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "属性表現はないが、責任者が持つ入力権限を落としている。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "業務上の役割で説明し、根拠のない性別の決め付けを除きつつ、承認済みの権限を維持する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが役割コメントを「女性は入力、男性は承認」と生成しました。承認済みの権限表では、担当者は入力のみ、責任者は入力と承認が可能で、性別は使いません。根拠のない属性表現を除き、権限表を保つ修正文は？",
+            "correctReason": "業務上の役割で説明し、根拠のない性別の決め付けを除きつつ、承認済みの権限を維持する。",
+            "distractorFailures": {
+              "A": "属性表現はないが、担当者と責任者の承認権限を逆にしている。",
+              "B": "属性表現はないが、担当者にも承認権限を与えている。",
+              "C": "属性表現はないが、責任者が持つ入力権限を落としている。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：一般担当者は入力だけ、管理責任者は入力と承認の両方",
+          "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "権限表が担当者に承認、責任者に入力だけを許すならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "責任者の権限が承認だけで入力を許さないならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d5-a03"
+        ],
+        "distinction": "自然言語出力のステレオタイプを除く。数値判断の属性依存や公開APIの移行説明とは異なる。",
+        "optionOnlyEvidence": "正答「一般担当者は入力だけを行え、管理責任者は入力と承認を行える」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。権限表が担当者に承認、責任者に入力だけを許すならA。 責任者の権限が承認だけで入力を許さないならC。",
+        "lessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-ai-bias",
+          "g-responsible-ai"
+        ],
+        "decisiveClues": [
+          "一般担当者は入力だけ",
+          "管理責任者は入力と承認の両方"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDDと説明が一致することを再読。AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。 誤答はA：性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。／B：性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。／C：性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 28.5,
+          "correctToMedian": 1.02,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "一般担当者は承認だけを行え、管理責任者は入力だけを行える",
+            "whyWrong": "性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。"
+          },
+          {
+            "id": "B",
+            "text": "一般担当者は入力と承認を行え、管理責任者は入力だけを行える",
+            "whyWrong": "性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。"
+          },
+          {
+            "id": "C",
+            "text": "一般担当者は入力だけを行え、管理責任者は承認だけを行える",
+            "whyWrong": "性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。"
+          }
+        ],
+        "priorFinding": "前回から未変更。担当者・責任者の呼称を選択肢と統一したい。条件適用は可能。",
+        "counterfactual": "権限表が担当者に承認、責任者に入力だけを許すならA。 責任者の権限が承認だけで入力を許さないならC。",
+        "approvedAnswerIds": [
+          "D"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a17",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotが生成した役割の説明には「女性は入力、男性は承認」と書かれていました。しかし、承認済みの権限表では、一般担当者は入力だけ、管理責任者は入力と承認の両方を行えます。性別は権限の判断に使いません。根拠のない性別の表現を取り除き、権限表の内容を保つ修正文はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "一般担当者は承認だけを行え、管理責任者は入力だけを行える"
+          },
+          {
+            "id": "B",
+            "text": "一般担当者は入力と承認を行え、管理責任者は入力だけを行える"
+          },
+          {
+            "id": "C",
+            "text": "一般担当者は入力だけを行え、管理責任者は承認だけを行える"
+          },
+          {
+            "id": "D",
+            "text": "一般担当者は入力だけを行え、管理責任者は入力と承認を行える"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。",
+        "choiceExplanations": {
+          "D": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。",
+          "A": "性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。",
+          "B": "性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。",
+          "C": "性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "生成コメントの属性による決め付け"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "ml-fairness",
+              "chat"
+            ],
+            "rationale": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが生成した役割の説明には「女性は入力、男性は承認」と書かれていました。しかし、承認済みの権限表では、一般担当者は入力だけ、管理責任者は入力と承認の両方を行えます。性別は権限の判断に使いません。根拠のない性別の表現を取り除き、権限表の内容を保つ修正文はどれですか。",
+            "correctReason": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。",
+            "distractorFailures": {
+              "A": "性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。",
+              "B": "性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。",
+              "C": "性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "e594aea385af9187067ce788b75f6cf0da3998361ff1a31aec7b1d426091879e",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "根拠のない属性の割当と、承認済みの業務役割を分ける。",
+          "中立な表現のうち、役割ごとの操作範囲を維持する案を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "権限表が担当者に承認、責任者に入力だけを許すならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "責任者の権限が承認だけで入力を許さないならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12",
+          "q-d5-a03"
+        ],
+        "distinction": "自然言語出力のステレオタイプを除く。数値判断の属性依存や公開APIの移行説明とは異なる。",
+        "optionOnlyEvidence": "四択をすべて属性による決め付けのない文章にした。礼儀正しさだけで選べず、業務上の権限表との対応が必要。",
+        "lessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-ai-bias",
+          "g-responsible-ai"
+        ],
+        "decisiveClues": [
+          "担当者は入力のみ",
+          "責任者は入力と承認",
+          "性別は使いません"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "四択はすべて性別表現を取り除いている。正答を中立さだけでは選べず、担当者と責任者の二つの権限へ照合が必要。役割の説明を保つ公平性の適用。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 18.5,
+          "correctToMedian": 1.03,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "担当者は承認、責任者は入力を担う",
+            "whyWrong": "属性表現はないが、担当者と責任者の承認権限を逆にしている。"
+          },
+          {
+            "id": "B",
+            "text": "担当者は入力と承認、責任者は入力を担う",
+            "whyWrong": "属性表現はないが、担当者にも承認権限を与えている。"
+          },
+          {
+            "id": "C",
+            "text": "担当者は入力、責任者は承認のみを担う",
+            "whyWrong": "属性表現はないが、責任者が持つ入力権限を落としている。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a18",
+      "title": "未確定の業務仕様の承認先",
+      "initial": {
+        "id": "q-d1-a18",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilotの割引実装案は技術テストに通りましたが、「契約更新者を初回割引へ含めるか」は未決定です。職務表では業務企画が対象者規則、QAが確定仕様の検証、運用が公開日時、セキュリティがアクセス権を決めます。採用前に確定すべき論点と照合先は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "対象者規則を業務企画へ照合する"
+          },
+          {
+            "id": "B",
+            "text": "確定仕様の検証結果をQAへ照合する"
+          },
+          {
+            "id": "C",
+            "text": "公開日時を運用へ照合する"
+          },
+          {
+            "id": "D",
+            "text": "アクセス権をセキュリティへ照合する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "テストが通っても未確定の業務判断は決まらない。対象者規則を決める責務へ照合し、期待動作の根拠を確定する。",
+        "choiceExplanations": {
+          "A": "テストが通っても未確定の業務判断は決まらない。対象者規則を決める責務へ照合し、期待動作の根拠を確定する。",
+          "B": "確定した仕様の検証には必要だが、未決定の対象者規則の決定責務ではない。",
+          "C": "公開日時の決定には必要だが、対象者の扱いを確定しない。",
+          "D": "アクセス権の決定には必要だが、割引対象者の規則を確定しない。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "未確定の業務仕様の承認先"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "テストが通っても未確定の業務判断は決まらない。対象者規則を決める責務へ照合し、期待動作の根拠を確定する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "確定した仕様の検証には必要だが、未決定の対象者規則の決定責務ではない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "公開日時の決定には必要だが、対象者の扱いを確定しない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "アクセス権の決定には必要だが、割引対象者の規則を確定しない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotの割引実装案は技術テストに通りましたが、「契約更新者を初回割引へ含めるか」は未決定です。職務表では業務企画が対象者規則、QAが確定仕様の検証、運用が公開日時、セキュリティがアクセス権を決めます。採用前に確定すべき論点と照合先は？",
+            "correctReason": "テストが通っても未確定の業務判断は決まらない。対象者規則を決める責務へ照合し、期待動作の根拠を確定する。",
+            "distractorFailures": {
+              "B": "確定した仕様の検証には必要だが、未決定の対象者規則の決定責務ではない。",
+              "C": "公開日時の決定には必要だが、対象者の扱いを確定しない。",
+              "D": "アクセス権の決定には必要だが、割引対象者の規則を確定しない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：契約更新者にも初回割引を適用するかは未決定、対象者の規則は業務企画",
+          "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "C",
+            "condition": "未決定事項が公開日時で、対象者規則は承認済みならC。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "未決定事項がAPIへのアクセス権で、割引規則は承認済みならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a07",
+          "q-d1-a14"
+        ],
+        "distinction": "未確定仕様の決定責務を問う。承認ゲートを強制する問題や確定済み技術基準への修正とは異なる。",
+        "optionOnlyEvidence": "正答「割引対象者の規則を、業務企画部門へ確認する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。未決定事項が公開日時で、対象者規則は承認済みならC。 未決定事項がAPIへのアクセス権で、割引規則は承認済みならD。",
+        "lessonIds": [
+          "lesson-d1-validation",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-code-accountability"
+        ],
+        "decisiveClues": [
+          "契約更新者にも初回割引を適用するかは未決定",
+          "対象者の規則は業務企画"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDAと説明が一致することを再読。単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。 誤答はB：QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。／C：運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。／D：セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 21.5,
+          "correctToMedian": 0.98,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "確定仕様の検証結果を、QA部門へ確認する",
+            "whyWrong": "QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。"
+          },
+          {
+            "id": "C",
+            "text": "キャンペーンの公開日時を、運用部門へ確認する",
+            "whyWrong": "運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。"
+          },
+          {
+            "id": "D",
+            "text": "機能のアクセス権を、セキュリティ部門へ確認する",
+            "whyWrong": "セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。"
+          }
+        ],
+        "priorFinding": "前回から未変更。「業務企画が対象者規則」「部門に照合」が不自然。仕様の確認先を問う意図は明確。",
+        "counterfactual": "未決定事項が公開日時で、対象者規則は承認済みならC。 未決定事項がAPIへのアクセス権で、割引規則は承認済みならD。",
+        "approvedAnswerIds": [
+          "A"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a18",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotが提案した割引処理は技術面のテストに通りましたが、契約更新者にも初回割引を適用するかは未決定です。社内では、対象者の規則は業務企画、確定仕様の検証はQA、公開日時は運用、アクセス権はセキュリティの各部門が担当します。採用前に、未決定の事項をどの部門へ確認すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "割引対象者の規則を、業務企画部門へ確認する"
+          },
+          {
+            "id": "B",
+            "text": "確定仕様の検証結果を、QA部門へ確認する"
+          },
+          {
+            "id": "C",
+            "text": "キャンペーンの公開日時を、運用部門へ確認する"
+          },
+          {
+            "id": "D",
+            "text": "機能のアクセス権を、セキュリティ部門へ確認する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。",
+        "choiceExplanations": {
+          "A": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。",
+          "B": "QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。",
+          "C": "運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。",
+          "D": "セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "未確定の業務仕様の承認先"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが提案した割引処理は技術面のテストに通りましたが、契約更新者にも初回割引を適用するかは未決定です。社内では、対象者の規則は業務企画、確定仕様の検証はQA、公開日時は運用、アクセス権はセキュリティの各部門が担当します。採用前に、未決定の事項をどの部門へ確認すべきですか。",
+            "correctReason": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。",
+            "distractorFailures": {
+              "B": "QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。",
+              "C": "運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。",
+              "D": "セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "3f88dc9de631e289458809d7aa0aab86944f099189551e5d191c09fda033bf28",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "技術検査では決まらない業務仕様の未決事項を特定する。",
+          "問題で与えた職務表に従って、決定責務のある照合先を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "C",
+            "condition": "未決定事項が公開日時で、対象者規則は承認済みならC。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "未決定事項がAPIへのアクセス権で、割引規則は承認済みならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a07",
+          "q-d1-a14"
+        ],
+        "distinction": "未確定仕様の決定責務を問う。承認ゲートを強制する問題や確定済み技術基準への修正とは異なる。",
+        "optionOnlyEvidence": "四択はすべて担当責務への照合。本文の未決事項が変われば別の担当が正答になり、承認を取るという一般論だけでは決まらない。",
+        "lessonIds": [
+          "lesson-d1-validation",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-code-accountability"
+        ],
+        "decisiveClues": [
+          "契約更新者を初回割引へ含めるか",
+          "業務企画が対象者規則"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "技術検査の成功を業務判断の根拠にできないことと、ケースで明示した職務の照合が必要。通知やゲートの欠落を直す既存問題とは異なる。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 16,
+          "correctToMedian": 0.94,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "確定仕様の検証結果をQAへ照合する",
+            "whyWrong": "確定した仕様の検証には必要だが、未決定の対象者規則の決定責務ではない。"
+          },
+          {
+            "id": "C",
+            "text": "公開日時を運用へ照合する",
+            "whyWrong": "公開日時の決定には必要だが、対象者の扱いを確定しない。"
+          },
+          {
+            "id": "D",
+            "text": "アクセス権をセキュリティへ照合する",
+            "whyWrong": "アクセス権の決定には必要だが、割引対象者の規則を確定しない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a19",
+      "title": "影響と可逆性に応じた人の監督",
+      "initial": {
+        "id": "q-d1-a19",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "架空の運用基準は、読取は利用者の事後確認、一時環境の更新は実装担当の事前確認、復元可能な本番更新は運用担当の事前承認、復元不能な本番更新は業務責任者の事前承認です。Copilotの提案は本番の取引行を削除し、復元手段はありません。適用する監督段階は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "利用者が実行後の出力を確認する"
+          },
+          {
+            "id": "B",
+            "text": "実装担当が実行前の手順を確認する"
+          },
+          {
+            "id": "C",
+            "text": "業務責任者が実行前に承認する"
+          },
+          {
+            "id": "D",
+            "text": "運用担当が実行前に承認する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "本番データを復元不能に変える影響を基準へ適用し、定義された業務責任者の事前承認を選ぶ。",
+        "choiceExplanations": {
+          "A": "読取の段階であり、今回の復元不能な本番更新には合わない。",
+          "B": "一時環境の更新の段階であり、本番の不可逆な影響を扱う責務へ達しない。",
+          "C": "本番データを復元不能に変える影響を基準へ適用し、定義された業務責任者の事前承認を選ぶ。",
+          "D": "復元可能な本番更新の段階であり、今回は復元手段がない。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "影響と可逆性に応じた人の監督"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "読取の段階であり、今回の復元不能な本番更新には合わない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "一時環境の更新の段階であり、本番の不可逆な影響を扱う責務へ達しない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "本番データを復元不能に変える影響を基準へ適用し、定義された業務責任者の事前承認を選ぶ。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "復元可能な本番更新の段階であり、今回は復元手段がない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "架空の運用基準は、読取は利用者の事後確認、一時環境の更新は実装担当の事前確認、復元可能な本番更新は運用担当の事前承認、復元不能な本番更新は業務責任者の事前承認です。Copilotの提案は本番の取引行を削除し、復元手段はありません。適用する監督段階は？",
+            "correctReason": "本番データを復元不能に変える影響を基準へ適用し、定義された業務責任者の事前承認を選ぶ。",
+            "distractorFailures": {
+              "A": "読取の段階であり、今回の復元不能な本番更新には合わない。",
+              "B": "一時環境の更新の段階であり、本番の不可逆な影響を扱う責務へ達しない。",
+              "D": "復元可能な本番更新の段階であり、今回は復元手段がない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：本番DBの取引レコードを削除、復元する手段がありません",
+          "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "提案が本番を変更しない読取だけならA。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "提案が復元手段のある本番更新ならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a07",
+          "q-d2-a04",
+          "q-d2-a26"
+        ],
+        "distinction": "実施前に必要な監督段階自体を判断する。明示済み承認の欠落や操作範囲違反を直す問題ではない。",
+        "optionOnlyEvidence": "正答「業務責任者が実行前に承認する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。提案が本番を変更しない読取だけならA。 提案が復元手段のある本番更新ならD。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-validation"
+        ],
+        "glossaryIds": [
+          "g-code-accountability",
+          "g-automation-bias"
+        ],
+        "decisiveClues": [
+          "本番DBの取引レコードを削除",
+          "復元する手段がありません"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDCと説明が一致することを再読。本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。 誤答はA：事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。／B：実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。／D：運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 14.5,
+          "correctToMedian": 0.97,
+          "displayPosition": "C"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "利用者が実行後の結果を確認する",
+            "whyWrong": "事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。"
+          },
+          {
+            "id": "B",
+            "text": "実装担当が実行前の手順を確認する",
+            "whyWrong": "実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。"
+          },
+          {
+            "id": "D",
+            "text": "運用担当が実行前に承認する",
+            "whyWrong": "運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。"
+          }
+        ],
+        "priorFinding": "前回から未変更。四つの基準を一文に詰め、「取引行」「監督段階」と圧縮している。基準を表にしたい。",
+        "counterfactual": "提案が本番を変更しない読取だけならA。 提案が復元手段のある本番更新ならD。",
+        "approvedAnswerIds": [
+          "C"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a19",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "この問題では、次の架空の運用基準を使います。読取処理は利用者が実行後に確認します。一時環境の更新は実装担当が実行前に確認します。本番の更新は、復元できる場合は運用担当、復元できない場合は業務責任者の事前承認が必要です。Copilotが提案した処理は、本番DBの取引レコードを削除し、復元する手段がありません。どの確認・承認が必要ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "利用者が実行後の結果を確認する"
+          },
+          {
+            "id": "B",
+            "text": "実装担当が実行前の手順を確認する"
+          },
+          {
+            "id": "C",
+            "text": "業務責任者が実行前に承認する"
+          },
+          {
+            "id": "D",
+            "text": "運用担当が実行前に承認する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。",
+        "choiceExplanations": {
+          "C": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。",
+          "A": "事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。",
+          "B": "実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。",
+          "D": "運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "影響と可逆性に応じた人の監督"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "この問題では、次の架空の運用基準を使います。読取処理は利用者が実行後に確認します。一時環境の更新は実装担当が実行前に確認します。本番の更新は、復元できる場合は運用担当、復元できない場合は業務責任者の事前承認が必要です。Copilotが提案した処理は、本番DBの取引レコードを削除し、復元する手段がありません。どの確認・承認が必要ですか。",
+            "correctReason": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。",
+            "distractorFailures": {
+              "A": "事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。",
+              "B": "実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。",
+              "D": "運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "af9e2dfd23e12d608cb5f2dab8600173ff39b82a9463f6fb12be68093d2424c6",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "操作名だけでなく、本番への影響と復元可能性を確認する。",
+          "架空のリスク区分へ適用し、必要な監督段階を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "提案が本番を変更しない読取だけならA。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "提案が復元手段のある本番更新ならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a07",
+          "q-d2-a04",
+          "q-d2-a26"
+        ],
+        "distinction": "実施前に必要な監督段階自体を判断する。明示済み承認の欠落や操作範囲違反を直す問題ではない。",
+        "optionOnlyEvidence": "四択は基準内の妥当な監督段階。最も多人数の承認を万能正答にせず、操作の影響と可逆性で選ぶ。役割は架空の基準で、Copilotの製品権限仕様ではない。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-validation"
+        ],
+        "glossaryIds": [
+          "g-code-accountability",
+          "g-automation-bias"
+        ],
+        "decisiveClues": [
+          "本番の取引行を削除",
+          "復元手段はありません"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "事前承認は二択にあり、承認という語だけでは選べない。本番影響と復元不能の区分を架空の基準に当てはめる。実行を実際に勧める問題ではない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 14.5,
+          "correctToMedian": 0.97,
+          "displayPosition": "C"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "利用者が実行後の出力を確認する",
+            "whyWrong": "読取の段階であり、今回の復元不能な本番更新には合わない。"
+          },
+          {
+            "id": "B",
+            "text": "実装担当が実行前の手順を確認する",
+            "whyWrong": "一時環境の更新の段階であり、本番の不可逆な影響を扱う責務へ達しない。"
+          },
+          {
+            "id": "D",
+            "text": "運用担当が実行前に承認する",
+            "whyWrong": "復元可能な本番更新の段階であり、今回は復元手段がない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a20",
+      "title": "観測事実と原因の確認状態",
+      "initial": {
+        "id": "q-d1-a20",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilotが障害報告を生成します。時刻のそろった記録にはデプロイ10:00、エラー発生10:01とあります。原因の再現実験は未実施で、デプロイもDB障害も候補です。確認済みの事実と原因の確実性を保つ報告は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "デプロイ10:00・障害10:01。原因は更新と確認済み"
+          },
+          {
+            "id": "B",
+            "text": "デプロイ10:00・障害10:01。因果は未確認"
+          },
+          {
+            "id": "C",
+            "text": "障害10:00・デプロイ10:01。因果は未確認"
+          },
+          {
+            "id": "D",
+            "text": "デプロイ10:00・障害10:01。原因はDB障害と確認済み"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "記録の前後関係を正確に残し、原因候補を確定した事実と区別する。",
+        "choiceExplanations": {
+          "A": "時刻は合うが、候補のデプロイ更新を確認済み原因へ変えている。",
+          "B": "記録の前後関係を正確に残し、原因候補を確定した事実と区別する。",
+          "C": "原因は未確認とするが、記録の時刻と前後関係を逆にする。",
+          "D": "時刻は合うが、候補のDB障害を確認済み原因へ変えている。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "観測事実と原因の確認状態"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "時刻は合うが、候補のデプロイ更新を確認済み原因へ変えている。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "記録の前後関係を正確に残し、原因候補を確定した事実と区別する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "原因は未確認とするが、記録の時刻と前後関係を逆にする。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "時刻は合うが、候補のDB障害を確認済み原因へ変えている。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが障害報告を生成します。時刻のそろった記録にはデプロイ10:00、エラー発生10:01とあります。原因の再現実験は未実施で、デプロイもDB障害も候補です。確認済みの事実と原因の確実性を保つ報告は？",
+            "correctReason": "記録の前後関係を正確に残し、原因候補を確定した事実と区別する。",
+            "distractorFailures": {
+              "A": "時刻は合うが、候補のデプロイ更新を確認済み原因へ変えている。",
+              "C": "原因は未確認とするが、記録の時刻と前後関係を逆にする。",
+              "D": "時刻は合うが、候補のDB障害を確認済み原因へ変えている。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：デプロイは10:00、再現実験はまだ行っておらず",
+          "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "同じ時刻記録に加え、更新だけを変えた再現実験で原因が確認済みならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "記録が障害10:00・デプロイ10:01で、原因が未確認ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a14"
+        ],
+        "distinction": "報告の根拠の強さと正確な観測を問う。比較実験の設計や技術基準の採否とは異なる。",
+        "optionOnlyEvidence": "正答「デプロイ10:00・エラー発生10:01の事実を記録し、因果関係は未確認と報告する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。同じ時刻記録に加え、更新だけを変えた再現実験で原因が確認済みならA。 記録が障害10:00・デプロイ10:01で、原因が未確認ならC。",
+        "lessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-transparency"
+        ],
+        "decisiveClues": [
+          "デプロイは10:00",
+          "再現実験はまだ行っておらず"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDBと説明が一致することを再読。時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。 誤答はA：時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。／C：ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。／D：DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 41.5,
+          "correctToMedian": 0.99,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はデプロイ更新と確認済みと報告する",
+            "whyWrong": "時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。"
+          },
+          {
+            "id": "C",
+            "text": "エラー発生10:00・デプロイ10:01と記録し、因果関係は未確認と報告する",
+            "whyWrong": "ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。"
+          },
+          {
+            "id": "D",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はDB障害と確認済みと報告する",
+            "whyWrong": "DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。"
+          }
+        ],
+        "priorFinding": "前回から未変更。「時刻のそろった記録」が曖昧。時刻と因果の二条件を維持しつつ整文したい。",
+        "counterfactual": "同じ時刻記録に加え、更新だけを変えた再現実験で原因が確認済みならA。 記録が障害10:00・デプロイ10:01で、原因が未確認ならC。",
+        "approvedAnswerIds": [
+          "B"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a20",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotに障害報告の草案を作成させます。同じ時刻基準で記録されたログでは、デプロイは10:00、エラーの発生は10:01です。原因を確認する再現実験はまだ行っておらず、デプロイの影響とDB障害の両方が候補です。確認できた事実と、まだ確認できていない原因を区別する報告はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はデプロイ更新と確認済みと報告する"
+          },
+          {
+            "id": "B",
+            "text": "デプロイ10:00・エラー発生10:01の事実を記録し、因果関係は未確認と報告する"
+          },
+          {
+            "id": "C",
+            "text": "エラー発生10:00・デプロイ10:01と記録し、因果関係は未確認と報告する"
+          },
+          {
+            "id": "D",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はDB障害と確認済みと報告する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。",
+        "choiceExplanations": {
+          "B": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。",
+          "A": "時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。",
+          "C": "ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。",
+          "D": "DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "観測事実と原因の確認状態"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "guide"
+            ],
+            "rationale": "DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotに障害報告の草案を作成させます。同じ時刻基準で記録されたログでは、デプロイは10:00、エラーの発生は10:01です。原因を確認する再現実験はまだ行っておらず、デプロイの影響とDB障害の両方が候補です。確認できた事実と、まだ確認できていない原因を区別する報告はどれですか。",
+            "correctReason": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。",
+            "distractorFailures": {
+              "A": "時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。",
+              "C": "ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。",
+              "D": "DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "記録が示す前後関係と、未確認の因果を分ける。",
+          "時刻の事実と確認状態を同時に保つ説明を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "同じ時刻記録に加え、更新だけを変えた再現実験で原因が確認済みならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "記録が障害10:00・デプロイ10:01で、原因が未確認ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a14"
+        ],
+        "distinction": "報告の根拠の強さと正確な観測を問う。比較実験の設計や技術基準の採否とは異なる。",
+        "optionOnlyEvidence": "原因を未確認とする案を二つ置き、慎重な語だけでは決まらない。確定した報告も別の証拠条件なら正答となる。",
+        "lessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-principles"
+        ],
+        "glossaryIds": [
+          "g-transparency"
+        ],
+        "decisiveClues": [
+          "デプロイ10:00",
+          "エラー発生10:01",
+          "原因の再現実験は未実施"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "未確認という慎重な説明が二択にある。確認済みの原因報告も別証拠なら妥当であり、時刻の観測と確認状態を双方読む必要がある。複雑な因果実験の選択までは要求しない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 26,
+          "correctToMedian": 0.92,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "デプロイ10:00・障害10:01。原因は更新と確認済み",
+            "whyWrong": "時刻は合うが、候補のデプロイ更新を確認済み原因へ変えている。"
+          },
+          {
+            "id": "C",
+            "text": "障害10:00・デプロイ10:01。因果は未確認",
+            "whyWrong": "原因は未確認とするが、記録の時刻と前後関係を逆にする。"
+          },
+          {
+            "id": "D",
+            "text": "デプロイ10:00・障害10:01。原因はDB障害と確認済み",
+            "whyWrong": "時刻は合うが、候補のDB障害を確認済み原因へ変えている。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a21",
+      "title": "生成UIの入力方法による排除",
+      "initial": {
+        "id": "q-d1-a21",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "Copilotで生成した注文一覧は、ドラッグでしか順序を変えられません。キーボード利用者にも同じ並べ替え結果を得られるようにし、詳細表示や取消の仕様は維持します。代替操作として追加する動作は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "上下キーで、順序を変えず項目間のフォーカスを移す"
+          },
+          {
+            "id": "B",
+            "text": "Enterキーで、選択項目の詳細を表示する"
+          },
+          {
+            "id": "C",
+            "text": "Escapeキーで、進行中の変更を取り消す"
+          },
+          {
+            "id": "D",
+            "text": "上下キーで、選択項目の位置を一つ入れ替える"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "ドラッグできない利用者にも同等の位置変更を提供し、入力方法による利用上の不利益を軽減する。",
+        "choiceExplanations": {
+          "A": "一覧の移動には有用だが、フォーカスだけを変えても項目の順序は変わらない。",
+          "B": "詳細表示には有用だが、並べ替え結果を得られない。",
+          "C": "取消には有用だが、並べ替え結果を得られない。",
+          "D": "ドラッグできない利用者にも同等の位置変更を提供し、入力方法による利用上の不利益を軽減する。"
+        },
+        "sourceIds": [
+          "chat",
+          "responsible"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "生成UIの入力方法による排除"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "一覧の移動には有用だが、フォーカスだけを変えても項目の順序は変わらない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "詳細表示には有用だが、並べ替え結果を得られない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "取消には有用だが、並べ替え結果を得られない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "ドラッグできない利用者にも同等の位置変更を提供し、入力方法による利用上の不利益を軽減する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotで生成した注文一覧は、ドラッグでしか順序を変えられません。キーボード利用者にも同じ並べ替え結果を得られるようにし、詳細表示や取消の仕様は維持します。代替操作として追加する動作は？",
+            "correctReason": "ドラッグできない利用者にも同等の位置変更を提供し、入力方法による利用上の不利益を軽減する。",
+            "distractorFailures": {
+              "A": "一覧の移動には有用だが、フォーカスだけを変えても項目の順序は変わらない。",
+              "B": "詳細表示には有用だが、並べ替え結果を得られない。",
+              "C": "取消には有用だが、並べ替え結果を得られない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：キーボードだけ、同じ並べ替え結果",
+          "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "追加要件が順序変更でなく、一覧内のフォーカス移動ならA。"
+          },
+          {
+            "choiceId": "B",
+            "condition": "追加要件がキーボードでの詳細表示ならB。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12"
+        ],
+        "distinction": "入力方法による排除と同等機能の確保。既存本番相当q-d1-e05のフォーカス復帰・読み上げ障害を短縮したものではない。",
+        "optionOnlyEvidence": "正答「上下キーで、選択中の項目を一つ上または下へ移動する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。追加要件が順序変更でなく、一覧内のフォーカス移動ならA。 追加要件がキーボードでの詳細表示ならB。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-responsible-ai"
+        ],
+        "decisiveClues": [
+          "キーボードだけ",
+          "同じ並べ替え結果"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDDと説明が一致することを再読。アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。 誤答はA：フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。／B：詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。／C：操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 25,
+          "correctToMedian": 1,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "上下キーで、順序は変えずに項目間のフォーカスを移動する",
+            "whyWrong": "フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。"
+          },
+          {
+            "id": "B",
+            "text": "Enterキーで、選択中の項目の詳細画面を表示する",
+            "whyWrong": "詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。"
+          },
+          {
+            "id": "C",
+            "text": "Escapeキーで、編集中の順序変更を取り消す",
+            "whyWrong": "操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。"
+          }
+        ],
+        "priorFinding": "前回から未変更。重複する「として」を整える程度。現在の文章でも並べ替えの目的は分かる。",
+        "counterfactual": "追加要件が順序変更でなく、一覧内のフォーカス移動ならA。 追加要件がキーボードでの詳細表示ならB。",
+        "approvedAnswerIds": [
+          "D"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a21",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotが生成した注文一覧では、ドラッグ操作でしか項目の順序を変更できません。キーボードだけで操作する利用者にも同じ並べ替え結果を得られるようにします。詳細表示と変更取消の仕様は維持する場合、どのキーボード操作を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "上下キーで、順序は変えずに項目間のフォーカスを移動する"
+          },
+          {
+            "id": "B",
+            "text": "Enterキーで、選択中の項目の詳細画面を表示する"
+          },
+          {
+            "id": "C",
+            "text": "Escapeキーで、編集中の順序変更を取り消す"
+          },
+          {
+            "id": "D",
+            "text": "上下キーで、選択中の項目を一つ上または下へ移動する"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。",
+        "choiceExplanations": {
+          "D": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。",
+          "A": "フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。",
+          "B": "詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。",
+          "C": "操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。"
+        },
+        "sourceIds": [
+          "chat",
+          "responsible"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o1",
+          "生成UIの入力方法による排除"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "responsible"
+            ],
+            "rationale": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotが生成した注文一覧では、ドラッグ操作でしか項目の順序を変更できません。キーボードだけで操作する利用者にも同じ並べ替え結果を得られるようにします。詳細表示と変更取消の仕様は維持する場合、どのキーボード操作を追加すべきですか。",
+            "correctReason": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。",
+            "distractorFailures": {
+              "A": "フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。",
+              "B": "詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。",
+              "C": "操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "4fe3a41b5fd491d2a3ff723e5d4042b99e905afe8c36a18efe3968cf2d206ef6",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "入力方法の制限が失わせている機能を特定する。",
+          "同じ結果を得る代替入力経路を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "追加要件が順序変更でなく、一覧内のフォーカス移動ならA。"
+          },
+          {
+            "choiceId": "B",
+            "condition": "追加要件がキーボードでの詳細表示ならB。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a12"
+        ],
+        "distinction": "入力方法による排除と同等機能の確保。既存本番相当q-d1-e05のフォーカス復帰・読み上げ障害を短縮したものではない。",
+        "optionOnlyEvidence": "四択はすべて妥当なキーボード操作で、アクセシブルという語を正答だけに置かない。どの機能を同等にするかを読んで選ぶ。",
+        "lessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks"
+        ],
+        "glossaryIds": [
+          "g-responsible-ai"
+        ],
+        "decisiveClues": [
+          "同じ並べ替え結果",
+          "詳細表示や取消の仕様は維持"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "四択ともキーボード操作として妥当。単なるフォーカス移動と並べ替え結果を分けることが決め手。既存のアクセシビリティ本番問題の通知・復帰診断とは異なる。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 21,
+          "correctToMedian": 1,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "上下キーで、順序を変えず項目間のフォーカスを移す",
+            "whyWrong": "一覧の移動には有用だが、フォーカスだけを変えても項目の順序は変わらない。"
+          },
+          {
+            "id": "B",
+            "text": "Enterキーで、選択項目の詳細を表示する",
+            "whyWrong": "詳細表示には有用だが、並べ替え結果を得られない。"
+          },
+          {
+            "id": "C",
+            "text": "Escapeキーで、進行中の変更を取り消す",
+            "whyWrong": "取消には有用だが、並べ替え結果を得られない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a22",
+      "title": "調整と採用評価の入力を分ける",
+      "initial": {
+        "id": "q-d1-a22",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "CopilotのプロンプトをR集合で何度も修正しました。Rは現行APIの100件、Sは調整に未使用の現行API100件、Tは未使用の別API100件、UはRを並べ替えた100件です。全て期待値は承認済み。調整例以外でも現行APIへ通用するか評価する集合は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "S集合を採用評価に使う"
+          },
+          {
+            "id": "B",
+            "text": "R集合を採用評価に使う"
+          },
+          {
+            "id": "C",
+            "text": "T集合を採用評価に使う"
+          },
+          {
+            "id": "D",
+            "text": "U集合を採用評価に使う"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "対象APIの契約を保ちながら調整に使っていない例を評価し、調整例への成功と未使用例での適用を分ける。",
+        "choiceExplanations": {
+          "A": "対象APIの契約を保ちながら調整に使っていない例を評価し、調整例への成功と未使用例での適用を分ける。",
+          "B": "調整に使った同じ例であり、その例へ合わせた改善と未使用例での適用を分けられない。",
+          "C": "未使用だが別APIの契約で、今回の現行APIの採用評価にならない。",
+          "D": "順序を変えても調整済みの入力そのもので、未使用の評価集合にはならない。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "調整と採用評価の入力を分ける"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "対象APIの契約を保ちながら調整に使っていない例を評価し、調整例への成功と未使用例での適用を分ける。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "調整に使った同じ例であり、その例へ合わせた改善と未使用例での適用を分けられない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "未使用だが別APIの契約で、今回の現行APIの採用評価にならない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "順序を変えても調整済みの入力そのもので、未使用の評価集合にはならない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "CopilotのプロンプトをR集合で何度も修正しました。Rは現行APIの100件、Sは調整に未使用の現行API100件、Tは未使用の別API100件、UはRを並べ替えた100件です。全て期待値は承認済み。調整例以外でも現行APIへ通用するか評価する集合は？",
+            "correctReason": "対象APIの契約を保ちながら調整に使っていない例を評価し、調整例への成功と未使用例での適用を分ける。",
+            "distractorFailures": {
+              "B": "調整に使った同じ例であり、その例へ合わせた改善と未使用例での適用を分けられない。",
+              "C": "未使用だが別APIの契約で、今回の現行APIの採用評価にならない。",
+              "D": "順序を変えても調整済みの入力そのもので、未使用の評価集合にはならない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：Sは修正に使っていない同じAPI、UはRの順番だけ",
+          "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "B",
+            "condition": "目的が未使用例への適用でなく、修正に使ったRを元の順序で追試することならB。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "評価対象がTの別APIで、そのAPIのプロンプトを未使用例で評価するならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a08",
+          "q-sc05-2"
+        ],
+        "distinction": "評価入力の調整への再利用を判定する。assertionの検出力やモック境界ではなく、期待値は全て承認済み。q-d1-a15の利用者群欠落とも異なる。",
+        "optionOnlyEvidence": "正答「同じAPIの未使用データSで評価する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。目的が未使用例への適用でなく、修正に使ったRを元の順序で追試することならB。 評価対象がTの別APIで、そのAPIのプロンプトを未使用例で評価するならC。",
+        "lessonIds": [
+          "lesson-d1-validation"
+        ],
+        "glossaryIds": [
+          "g-automation-bias",
+          "g-code-accountability"
+        ],
+        "decisiveClues": [
+          "Sは修正に使っていない同じAPI",
+          "UはRの順番だけ"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDAと説明が一致することを再読。評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。 誤答はB：調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。／C：仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。／D：順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 18.5,
+          "correctToMedian": 0.97,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "プロンプト修正に使ったデータRで評価する",
+            "whyWrong": "調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。"
+          },
+          {
+            "id": "C",
+            "text": "別APIの未使用データTで評価する",
+            "whyWrong": "仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。"
+          },
+          {
+            "id": "D",
+            "text": "Rの順番だけを変えたデータUで評価する",
+            "whyWrong": "順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。"
+          }
+        ],
+        "priorFinding": "前回から未変更。「APIの100件」「APIへ通用」が不自然。解説の「調整（学習）」もプロンプト修正とモデル学習を混同させる。",
+        "counterfactual": "目的が未使用例への適用でなく、修正に使ったRを元の順序で追試することならB。 評価対象がTの別APIで、そのAPIのプロンプトを未使用例で評価するならC。",
+        "approvedAnswerIds": [
+          "A"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d1-a22",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilotへ渡すプロンプトを、評価用データRを使って何度も修正しました。Rは対象APIへの入力例100件、Sは修正に使っていない同じAPIへの入力例100件、Tは修正に使っていない別APIへの入力例100件です。UはRの順番だけを変えたものです。各入力の正しい期待結果はすべて定めてあります。修正に使った例以外でも対象APIに合う結果を得られるか確認するには、どのデータを評価に使うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "同じAPIの未使用データSで評価する"
+          },
+          {
+            "id": "B",
+            "text": "プロンプト修正に使ったデータRで評価する"
+          },
+          {
+            "id": "C",
+            "text": "別APIの未使用データTで評価する"
+          },
+          {
+            "id": "D",
+            "text": "Rの順番だけを変えたデータUで評価する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。",
+        "choiceExplanations": {
+          "A": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。",
+          "B": "調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。",
+          "C": "仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。",
+          "D": "順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d1o2",
+          "調整と採用評価の入力を分ける"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "chat",
+              "prompt"
+            ],
+            "rationale": "順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotへ渡すプロンプトを、評価用データRを使って何度も修正しました。Rは対象APIへの入力例100件、Sは修正に使っていない同じAPIへの入力例100件、Tは修正に使っていない別APIへの入力例100件です。UはRの順番だけを変えたものです。各入力の正しい期待結果はすべて定めてあります。修正に使った例以外でも対象APIに合う結果を得られるか確認するには、どのデータを評価に使うべきですか。",
+            "correctReason": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。",
+            "distractorFailures": {
+              "B": "調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。",
+              "C": "仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。",
+              "D": "順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "集合の使用履歴と評価対象のAPIを分ける。",
+          "対象契約に合い、調整へ再利用していない集合を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "B",
+            "condition": "目的が未使用例への適用でなく、修正に使ったRを元の順序で追試することならB。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "評価対象がTの別APIで、そのAPIのプロンプトを未使用例で評価するならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d1-a08",
+          "q-sc05-2"
+        ],
+        "distinction": "評価入力の調整への再利用を判定する。assertionの検出力やモック境界ではなく、期待値は全て承認済み。q-d1-a15の利用者群欠落とも異なる。",
+        "optionOnlyEvidence": "どの集合も100件・承認済み期待値で、量や丁寧さでは選べない。未使用という条件だけでもTと区別できず、対象契約への照合が必要。",
+        "lessonIds": [
+          "lesson-d1-validation"
+        ],
+        "glossaryIds": [
+          "g-automation-bias",
+          "g-code-accountability"
+        ],
+        "decisiveClues": [
+          "調整に未使用の現行API",
+          "Rを並べ替えた"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "どの集合も同じ100件と承認済み期待値。Tは未使用でも別契約、Uは順番を替えた調整済み入力。同じ属性分布の欠落でなく、再利用の履歴で判断する。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 11,
+          "correctToMedian": 1,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "R集合を採用評価に使う",
+            "whyWrong": "調整に使った同じ例であり、その例へ合わせた改善と未使用例での適用を分けられない。"
+          },
+          {
+            "id": "C",
+            "text": "T集合を採用評価に使う",
+            "whyWrong": "未使用だが別APIの契約で、今回の現行APIの採用評価にならない。"
+          },
+          {
+            "id": "D",
+            "text": "U集合を採用評価に使う",
+            "whyWrong": "順序を変えても調整済みの入力そのもので、未使用の評価集合にはならない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a16",
+      "title": "利用計測と生成内容の調査材料",
+      "initial": {
+        "id": "q-d3-a16",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "社内のCopilot検証記録には受容回数と応答時間だけがあり、入力・候補本文は含みません。誤った補完について、その時点の入力と候補内容を照合したい。共有範囲は承認済みの架空データです。追加する調査材料は？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "同時点の接続先とHTTP応答状態の記録"
+          },
+          {
+            "id": "B",
+            "text": "同時点の受容回数と応答時間の記録"
+          },
+          {
+            "id": "C",
+            "text": "同時点の座席割当と請求件数の記録"
+          },
+          {
+            "id": "D",
+            "text": "同時点の入力・候補本文と処理条件の記録"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "生成内容の調査に必要な入力・候補と条件を揃える。これは社内の検証記録であり、GitHubの固定収集項目を主張するものではない。",
+        "choiceExplanations": {
+          "A": "接続の調査には有用だが、誤った候補内容を入力と照合できない。",
+          "B": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。",
+          "C": "契約・費用の調査には有用だが、今回の生成内容を示さない。",
+          "D": "生成内容の調査に必要な入力・候補と条件を揃える。これは社内の検証記録であり、GitHubの固定収集項目を主張するものではない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "利用計測と生成内容の調査材料"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "接続の調査には有用だが、誤った候補内容を入力と照合できない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "生成内容の調査に必要な入力・候補と条件を揃える。これは社内の検証記録であり、GitHubの固定収集項目を主張するものではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "社内のCopilot検証記録には受容回数と応答時間だけがあり、入力・候補本文は含みません。誤った補完について、その時点の入力と候補内容を照合したい。共有範囲は承認済みの架空データです。追加する調査材料は？",
+            "correctReason": "生成内容の調査に必要な入力・候補と条件を揃える。これは社内の検証記録であり、GitHubの固定収集項目を主張するものではない。",
+            "distractorFailures": {
+              "A": "接続の調査には有用だが、誤った候補内容を入力と照合できない。",
+              "B": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。",
+              "C": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：送信した入力や返されたコードはありません、入力と出力を照合",
+          "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "調査目的が要求の接続失敗とHTTP応答の確認ならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "調査目的が割当と請求の一致の確認ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d6-a09"
+        ],
+        "distinction": "利用イベントと生成内容の調査材料を目的で区別する。一人当たり利用の比較ではない。",
+        "optionOnlyEvidence": "正答「同じ要求の入力、返されたコード、生成時の条件を記録する」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。調査目的が要求の接続失敗とHTTP応答の確認ならA。 調査目的が割当と請求の一致の確認ならC。",
+        "lessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "glossaryIds": [
+          "g-telemetry-data"
+        ],
+        "decisiveClues": [
+          "送信した入力や返されたコードはありません",
+          "入力と出力を照合"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDDと説明が一致することを再読。入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。 誤答はA：接続の調査には有用だが、誤った候補内容を入力と照合できない。／B：利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。／C：契約・費用の調査には有用だが、今回の生成内容を示さない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 23.5,
+          "correctToMedian": 1.15,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "同じ要求の接続先とHTTP応答ステータスを記録する",
+            "whyWrong": "接続の調査には有用だが、誤った候補内容を入力と照合できない。"
+          },
+          {
+            "id": "B",
+            "text": "同じ要求の提案採用数と応答時間を記録する",
+            "whyWrong": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。"
+          },
+          {
+            "id": "C",
+            "text": "同じ期間のライセンス割当と請求件数を記録する",
+            "whyWrong": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+          }
+        ],
+        "priorFinding": "具体的な入力・出力を記録するAに対してDを正解登録。「受容回数」「共有範囲はデータ」も残る。",
+        "counterfactual": "調査目的が要求の接続失敗とHTTP応答の確認ならA。 調査目的が割当と請求の一致の確認ならC。",
+        "approvedAnswerIds": [
+          "D"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d3-a16",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "社内で、Copilotの補完結果を調査しています。現在の記録には、提案を採用した回数と応答時間だけが残り、送信した入力や返されたコードはありません。誤った補完が出た場面の入力と出力を照合したいと考えています。共有が許可された架空のコードだけを使う場合、どの記録を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "同じ要求の接続先とHTTP応答ステータスを記録する"
+          },
+          {
+            "id": "B",
+            "text": "同じ要求の提案採用数と応答時間を記録する"
+          },
+          {
+            "id": "C",
+            "text": "同じ期間のライセンス割当と請求件数を記録する"
+          },
+          {
+            "id": "D",
+            "text": "同じ要求の入力、返されたコード、生成時の条件を記録する"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。",
+        "choiceExplanations": {
+          "A": "接続の調査には有用だが、誤った候補内容を入力と照合できない。",
+          "B": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。",
+          "C": "契約・費用の調査には有用だが、今回の生成内容を示さない。",
+          "D": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。"
+        },
+        "sourceIds": [
+          "architecture",
+          "chat"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "利用計測と生成内容の調査材料"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "接続の調査には有用だが、誤った候補内容を入力と照合できない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "chat"
+            ],
+            "rationale": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "社内で、Copilotの補完結果を調査しています。現在の記録には、提案を採用した回数と応答時間だけが残り、送信した入力や返されたコードはありません。誤った補完が出た場面の入力と出力を照合したいと考えています。共有が許可された架空のコードだけを使う場合、どの記録を追加すべきですか。",
+            "correctReason": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。",
+            "distractorFailures": {
+              "A": "接続の調査には有用だが、誤った候補内容を入力と照合できない。",
+              "B": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。",
+              "C": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "6ac1bd6b9d571b76fb38676657ad2ba8363262381928d220908a732632fb7adc",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "現在の利用計測に含まれない情報の粒度を確認する。",
+          "生成内容の照合という調査目的へ必要な記録を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "A",
+            "condition": "調査目的が要求の接続失敗とHTTP応答の確認ならA。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "調査目的が割当と請求の一致の確認ならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d6-a09"
+        ],
+        "distinction": "利用イベントと生成内容の調査材料を目的で区別する。一人当たり利用の比較ではない。",
+        "optionOnlyEvidence": "四択はすべて妥当な調査記録。対象が生成内容・接続・利用・請求のどれかによって正答が変わる。",
+        "lessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "glossaryIds": [
+          "g-telemetry-data"
+        ],
+        "decisiveClues": [
+          "受容回数と応答時間だけ",
+          "入力と候補内容を照合"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "四択は接続・利用・請求・生成内容に使う妥当な記録。集計だけでは本文を復元できないが、本文を共有することを常に勧めるものでもない。共有可能な架空データと明示済み。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 17.5,
+          "correctToMedian": 1.09,
+          "displayPosition": "D"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "同時点の接続先とHTTP応答状態の記録",
+            "whyWrong": "接続の調査には有用だが、誤った候補内容を入力と照合できない。"
+          },
+          {
+            "id": "B",
+            "text": "同時点の受容回数と応答時間の記録",
+            "whyWrong": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。"
+          },
+          {
+            "id": "C",
+            "text": "同時点の座席割当と請求件数の記録",
+            "whyWrong": "契約・費用の調査には有用だが、今回の生成内容を示さない。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a17",
+      "title": "生成後の候補提示段階の切り分け",
+      "initial": {
+        "id": "q-d3-a17",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "独自の補完クライアントの検証記録は「要求送信成功、候補1件受信、提示可判定0件、UIへ渡した候補0件」です。画面には候補が出ません。今回、生成の不成立と区別して最初に調べる段階は？ 記録の項目はこの検証用の定義です。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "受信候補に対する、提示前の判定を調べる"
+          },
+          {
+            "id": "B",
+            "text": "送信要求に対する、接続経路を調べる"
+          },
+          {
+            "id": "C",
+            "text": "UIへ渡した候補に対する、描画処理を調べる"
+          },
+          {
+            "id": "D",
+            "text": "送信前の入力に対する、文脈組立てを調べる"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "候補の受信までは成功し、提示可判定で0件になっている。生成後・表示前の判定を確認する。",
+        "choiceExplanations": {
+          "A": "候補の受信までは成功し、提示可判定で0件になっている。生成後・表示前の判定を確認する。",
+          "B": "送信と候補受信は成功しており、今回の0件化が起きた段階とは異なる。",
+          "C": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。",
+          "D": "入力の内容確認は別の調査で、今回示された0件化は候補受信の後に起きている。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "生成後の候補提示段階の切り分け"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "候補の受信までは成功し、提示可判定で0件になっている。生成後・表示前の判定を確認する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "送信と候補受信は成功しており、今回の0件化が起きた段階とは異なる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "入力の内容確認は別の調査で、今回示された0件化は候補受信の後に起きている。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "独自の補完クライアントの検証記録は「要求送信成功、候補1件受信、提示可判定0件、UIへ渡した候補0件」です。画面には候補が出ません。今回、生成の不成立と区別して最初に調べる段階は？ 記録の項目はこの検証用の定義です。",
+            "correctReason": "候補の受信までは成功し、提示可判定で0件になっている。生成後・表示前の判定を確認する。",
+            "distractorFailures": {
+              "B": "送信と候補受信は成功しており、今回の0件化が起きた段階とは異なる。",
+              "C": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。",
+              "D": "入力の内容確認は別の調査で、今回示された0件化は候補受信の後に起きている。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：候補を1件受信、表示可能と判定した候補0件",
+          "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "B",
+            "condition": "要求送信が接続エラーで失敗し、候補受信が0件ならB。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "提示可判定1件・UIへ渡した候補1件なのに表示されないならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d3-a05",
+          "q-d6-a08"
+        ],
+        "distinction": "生成後の候補の提示判定。要求の通信失敗や入力ファイルのContent Exclusionとは異なる。",
+        "optionOnlyEvidence": "正答「候補を受信した後の、表示可能かを判定する処理を調べる」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。要求送信が接続エラーで失敗し、候補受信が0件ならB。 提示可判定1件・UIへ渡した候補1件なのに表示されないならC。",
+        "lessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "glossaryIds": [
+          "g-post-processing"
+        ],
+        "decisiveClues": [
+          "候補を1件受信",
+          "表示可能と判定した候補0件"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDAと説明が一致することを再読。ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。 誤答はB：送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。／C：UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。／D：入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 25,
+          "correctToMedian": 1.04,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "要求を送信するときの、サーバーへの接続処理を調べる",
+            "whyWrong": "送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。"
+          },
+          {
+            "id": "C",
+            "text": "候補をUIへ渡した後の、画面に描画する処理を調べる",
+            "whyWrong": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。"
+          },
+          {
+            "id": "D",
+            "text": "要求を送信する前の、入力を組み立てる処理を調べる",
+            "whyWrong": "入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。"
+          }
+        ],
+        "priorFinding": "選択肢で処理段階を説明し改善。ただし本文の独自ログ名の役割説明は不足し、後段の選択肢で復元させる。",
+        "counterfactual": "要求送信が接続エラーで失敗し、候補受信が0件ならB。 提示可判定1件・UIへ渡した候補1件なのに表示されないならC。",
+        "approvedAnswerIds": [
+          "A"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d3-a17",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "この問題の検証用クライアントは、入力を組み立てて送信し、受信した補完候補を表示前に判定してからUIへ渡します。ログには「送信成功、候補を1件受信、表示可能と判定した候補0件、UIへ渡した候補0件」とあります。画面には候補が出ていません。生成できなかった場合と区別して、最初に調べる処理段階はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "候補を受信した後の、表示可能かを判定する処理を調べる"
+          },
+          {
+            "id": "B",
+            "text": "要求を送信するときの、サーバーへの接続処理を調べる"
+          },
+          {
+            "id": "C",
+            "text": "候補をUIへ渡した後の、画面に描画する処理を調べる"
+          },
+          {
+            "id": "D",
+            "text": "要求を送信する前の、入力を組み立てる処理を調べる"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。",
+        "choiceExplanations": {
+          "A": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。",
+          "B": "送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。",
+          "C": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。",
+          "D": "入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat",
+          "guide"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "生成後の候補提示段階の切り分け"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "chat",
+              "guide"
+            ],
+            "rationale": "入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "この問題の検証用クライアントは、入力を組み立てて送信し、受信した補完候補を表示前に判定してからUIへ渡します。ログには「送信成功、候補を1件受信、表示可能と判定した候補0件、UIへ渡した候補0件」とあります。画面には候補が出ていません。生成できなかった場合と区別して、最初に調べる処理段階はどれですか。",
+            "correctReason": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。",
+            "distractorFailures": {
+              "B": "送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。",
+              "C": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。",
+              "D": "入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "f6f02c6c146e8f33fb20077492d6cfe70e8716661c5d42575a7bf28e2eb7b488",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "成功した送信・生成と、その後の候補件数を区別する。",
+          "最初に件数が0となった生成後の段階を選ぶ。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "B",
+            "condition": "要求送信が接続エラーで失敗し、候補受信が0件ならB。"
+          },
+          {
+            "choiceId": "C",
+            "condition": "提示可判定1件・UIへ渡した候補1件なのに表示されないならC。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d3-a05",
+          "q-d6-a08"
+        ],
+        "distinction": "生成後の候補の提示判定。要求の通信失敗や入力ファイルのContent Exclusionとは異なる。",
+        "optionOnlyEvidence": "四択は同じパイプラインの異なる段階。提示前という語を知るだけでなく、受信済み・判定・UI引渡しの観測を照合する。",
+        "lessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "glossaryIds": [
+          "g-post-processing"
+        ],
+        "decisiveClues": [
+          "候補1件受信",
+          "提示可判定0件",
+          "UIへ渡した候補0件"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "候補受信は成功、提示可判定で0件化、UIへも0件という記録を読み取る。Content Exclusionの入力段階の判断や通信遮断とは異なる。安全フィルターの無効化は正答にしない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 19.5,
+          "correctToMedian": 0.97,
+          "displayPosition": "A"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "B",
+            "text": "送信要求に対する、接続経路を調べる",
+            "whyWrong": "送信と候補受信は成功しており、今回の0件化が起きた段階とは異なる。"
+          },
+          {
+            "id": "C",
+            "text": "UIへ渡した候補に対する、描画処理を調べる",
+            "whyWrong": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。"
+          },
+          {
+            "id": "D",
+            "text": "送信前の入力に対する、文脈組立てを調べる",
+            "whyWrong": "入力の内容確認は別の調査で、今回示された0件化は候補受信の後に起きている。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a19",
+      "title": "文字数と実測トークン数の区別",
+      "initial": {
+        "id": "q-d3-a19",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "needs-review",
+        "question": "独自の補完検証ゲートは、対象モデル用tokenizerで測った入力全体が800トークン以下なら通します。記録は入力全体をtokenizeした内訳で、共通前置きは50トークン、本文Xは600文字・900トークン、本文Yは800文字・200トークンです。前置きを含む二入力の合否は？ 数値はこの検証例の測定値です。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Xだけを通し、Yは止める"
+          },
+          {
+            "id": "B",
+            "text": "Yだけを通し、Xは止める"
+          },
+          {
+            "id": "C",
+            "text": "XとYを両方通す"
+          },
+          {
+            "id": "D",
+            "text": "XとYを両方止める"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "トークンで算定するとXは950で超過、Yは250で範囲内。文字数から一定比率で推測せず、実測単位を使う。",
+        "choiceExplanations": {
+          "A": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。",
+          "B": "トークンで算定するとXは950で超過、Yは250で範囲内。文字数から一定比率で推測せず、実測単位を使う。",
+          "C": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。",
+          "D": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+        },
+        "sourceIds": [
+          "dotnet-tokens",
+          "guide",
+          "architecture"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": null,
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "文字数と実測トークン数の区別"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "final-d1-d3-additions-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "トークンで算定するとXは950で超過、Yは250で範囲内。文字数から一定比率で推測せず、実測単位を使う。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "独自の補完検証ゲートは、対象モデル用tokenizerで測った入力全体が800トークン以下なら通します。記録は入力全体をtokenizeした内訳で、共通前置きは50トークン、本文Xは600文字・900トークン、本文Yは800文字・200トークンです。前置きを含む二入力の合否は？ 数値はこの検証例の測定値です。",
+            "correctReason": "トークンで算定するとXは950で超過、Yは250で範囲内。文字数から一定比率で推測せず、実測単位を使う。",
+            "distractorFailures": {
+              "A": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。",
+              "C": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。",
+              "D": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+            }
+          }
+        ]
+      },
+      "review": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "状況と制約を整理する：800トークン以下、本文Xは600文字・900トークン",
+          "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "C",
+            "condition": "入力の実測値が同じで、上限が1000トークンならC。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "入力の実測値が同じで、上限が200トークンならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d3-a14"
+        ],
+        "distinction": "入力の測定単位を判断する。資料やコードの分量を変えて予算を配分する既存問題ではない。応答予約案は重複リスクから採用しなかった。",
+        "optionOnlyEvidence": "正答「前置き＋本文Yを送信し、前置き＋本文Xは送信しない」は本文の対象・条件に照合して選ぶ。別の目的では誤答の処理も候補となる。入力の実測値が同じで、上限が1000トークンならC。 入力の実測値が同じで、上限が200トークンならD。",
+        "lessonIds": [
+          "lesson-d3-prompt-pipeline",
+          "lesson-d3-data-flow"
+        ],
+        "glossaryIds": [
+          "g-tokenization",
+          "g-context-window"
+        ],
+        "decisiveClues": [
+          "800トークン以下",
+          "本文Xは600文字・900トークン"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+        "secondReadNotes": "正答IDBと説明が一致することを再読。入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。 誤答はA：文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。／C：Xは上限を超えており、両方を通すとゲートの条件を満たさない。／D：Yは上限以下なので、両方を止めると許容された入力も拒否する。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 24.5,
+          "correctToMedian": 1.02,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "前置き＋本文Xを送信し、前置き＋本文Yは送信しない",
+            "whyWrong": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。"
+          },
+          {
+            "id": "C",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信する",
+            "whyWrong": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。"
+          },
+          {
+            "id": "D",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信しない",
+            "whyWrong": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+          }
+        ],
+        "priorFinding": "トークン合計に沿うAに対してBを正解登録。正解だけがトークンで計算し、他は文字数を使うので本文不要の手がかりが強い。",
+        "counterfactual": "入力の実測値が同じで、上限が1000トークンならC。 入力の実測値が同じで、上限が200トークンならD。",
+        "approvedAnswerIds": [
+          "B"
+        ],
+        "readabilityEvidence": "状況と制約を文章として説明し、問いの動作対象を明示。独自の用語・規則は本文で定義。"
+      },
+      "after": {
+        "id": "q-d3-a19",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "intermediate",
+        "type": "single-select",
+        "status": "verified",
+        "question": "この問題のアプリは、モデルへ送る入力が800トークン以下なら送信を許可します。入力は共通の前置きと、本文Xまたは本文Yで構成します。対象モデルのトークナイザーで入力全体を測った内訳は、前置き50トークン、本文Xは600文字・900トークン、本文Yは800文字・200トークンでした。「前置き＋本文X」と「前置き＋本文Y」のうち、どちらを送信できますか。数値はこの検証例の条件です。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "前置き＋本文Xを送信し、前置き＋本文Yは送信しない"
+          },
+          {
+            "id": "B",
+            "text": "前置き＋本文Yを送信し、前置き＋本文Xは送信しない"
+          },
+          {
+            "id": "C",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信する"
+          },
+          {
+            "id": "D",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信しない"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。",
+        "choiceExplanations": {
+          "A": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。",
+          "B": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。",
+          "C": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。",
+          "D": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+        },
+        "sourceIds": [
+          "dotnet-tokens",
+          "guide",
+          "architecture"
+        ],
+        "trustedSourceFacts": [],
+        "createdAt": "2026-10-13",
+        "lastVerifiedAt": "2026-10-13",
+        "cognitiveLevel": "apply",
+        "scenarioType": "condition-application",
+        "testedConcepts": [
+          "d3o1",
+          "文字数と実測トークン数の区別"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "examLike": false,
+        "clues": [],
+        "contentRevision": "applied-readable-semantic-hotfix-2026-10-13",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "dotnet-tokens",
+              "guide",
+              "architecture"
+            ],
+            "rationale": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "この問題のアプリは、モデルへ送る入力が800トークン以下なら送信を許可します。入力は共通の前置きと、本文Xまたは本文Yで構成します。対象モデルのトークナイザーで入力全体を測った内訳は、前置き50トークン、本文Xは600文字・900トークン、本文Yは800文字・200トークンでした。「前置き＋本文X」と「前置き＋本文Y」のうち、どちらを送信できますか。数値はこの検証例の条件です。",
+            "correctReason": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。",
+            "distractorFailures": {
+              "A": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。",
+              "C": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。",
+              "D": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+            }
+          }
+        ]
+      },
+      "fingerprint": "1ca613f8ea30348960ec942a719454b997e6d0f8b518e55a156b261a0b0c35f4",
+      "previousEditorialReview": {
+        "status": "PASS_EDITORIAL",
+        "reasoningSteps": [
+          "文字数と対象tokenizerの測定値を区別し、前置きを含めたトークン数を計算する。",
+          "入力全体の950・250を上限800へ適用する。"
+        ],
+        "counterfactuals": [
+          {
+            "choiceId": "C",
+            "condition": "入力の実測値が同じで、上限が1000トークンならC。"
+          },
+          {
+            "choiceId": "D",
+            "condition": "入力の実測値が同じで、上限が200トークンならD。"
+          }
+        ],
+        "nearestAppliedIds": [
+          "q-d3-a14"
+        ],
+        "distinction": "入力の測定単位を判断する。資料やコードの分量を変えて予算を配分する既存問題ではない。応答予約案は重複リスクから採用しなかった。",
+        "optionOnlyEvidence": "四択は合否の対称な四通りで、正答だけに正しい測定方法を書く形を避けた。文字数の長短だけでは逆の結論になる。",
+        "lessonIds": [
+          "lesson-d3-prompt-pipeline",
+          "lesson-d3-data-flow"
+        ],
+        "glossaryIds": [
+          "g-tokenization",
+          "g-context-window"
+        ],
+        "decisiveClues": [
+          "入力全体が800トークン以下",
+          "共通前置きは50トークン",
+          "600文字・900トークン",
+          "800文字・200トークン"
+        ],
+        "difficultyAnchors": [
+          "q-d1-a12",
+          "q10",
+          "q-d3-a11",
+          "q-d3-a12",
+          "q-d2-e14"
+        ],
+        "difficultyEvidence": "具体的な観測・契約を整理して条件へ適用する二段階。複合障害の三段階分析を重ねず、応用の入口から中程度。",
+        "secondReadNotes": "入力全体をtokenizeした内訳を用い、950と250を800へ照合する。測定済み内訳なので別々のtokenize結果を一般に足せるという断定はない。文字数から一律変換せず、文脈の配分も変更しない。",
+        "reviewedAt": "2026-10-13",
+        "lengthAndPosition": {
+          "median": 10.5,
+          "correctToMedian": 1.14,
+          "displayPosition": "B"
+        },
+        "wrongChoiceAnalysis": [
+          {
+            "id": "A",
+            "text": "Xだけを通し、Yは止める",
+            "whyWrong": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。"
+          },
+          {
+            "id": "C",
+            "text": "XとYを両方通す",
+            "whyWrong": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。"
+          },
+          {
+            "id": "D",
+            "text": "XとYを両方止める",
+            "whyWrong": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+          }
+        ]
+      }
+    }
+  ],
+  "independentReviewer": false,
+  "measuredLearnerDifficulty": false,
+  "realExamEquivalenceValidated": false,
+  "reviewedAt": "2026-10-13",
+  "summary": {
+    "added": 12,
+    "stored": 322,
+    "active": 310,
+    "foundation": 163,
+    "applied": 90,
+    "exam": 57,
+    "verifiedActive": 309,
+    "retired": 12,
+    "domains": {
+      "d1": {
+        "count": 48,
+        "percent": 15.5
+      },
+      "d2": {
+        "count": 98,
+        "percent": 31.6
+      },
+      "d3": {
+        "count": 34,
+        "percent": 11
+      },
+      "d4": {
+        "count": 46,
+        "percent": 14.8
+      },
+      "d5": {
+        "count": 51,
+        "percent": 16.5
+      },
+      "d6": {
+        "count": 33,
+        "percent": 10.6
+      }
+    },
+    "activeAdditions": 11,
+    "deleted": 6
+  },
+  "preservation": {
+    "existingQuestionFingerprintsPreserved": true,
+    "historicalBaselinesPreserved": true,
+    "existingIdsPreserved": true,
+    "retiredAssetsPreserved": true
+  },
+  "verification": {
+    "tests": {
+      "passed": 194,
+      "files": 18
+    },
+    "typecheck": "PASS",
+    "productionBuild": "PASS via isolated Next.js production test build",
+    "e2e": {
+      "passed": 16,
+      "existingFlows": 14,
+      "newQuestionFlows": 2,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "newQuestionIdsTested": [
+        "q-d1-a15",
+        "q-d1-a16",
+        "q-d1-a17",
+        "q-d1-a18",
+        "q-d1-a19",
+        "q-d1-a20",
+        "q-d1-a21",
+        "q-d1-a22",
+        "q-d3-a16",
+        "q-d3-a17",
+        "q-d3-a18",
+        "q-d3-a19"
+      ],
+      "answerPersistence": "12 correct attempts on each device"
+    },
+    "mockAllocationSeeds": 100,
+    "audits": [
+      "applied:check",
+      "applied:cleanup:check",
+      "classification:check",
+      "difficulty:check",
+      "quality:check",
+      "choice:audit",
+      "glossary:coverage:strict"
+    ],
+    "initialE2EIssue": "Test locator getByLabel replaced with the observed combobox accessible name; new flows retested successfully.",
+    "furtherExpansion": false,
+    "latestFollowUp": {
+      "report": "reports/applied-remediation-review.json",
+      "verifiedAt": "2026-10-13T14:36:35.871Z",
+      "unitTests": {
+        "files": 19,
+        "passed": 210
+      },
+      "typecheck": "PASS",
+      "productionBuild": {
+        "status": "PASS",
+        "outputDirectory": ".next-e2e"
+      },
+      "editorialChecks": {
+        "answerContent": "PASS",
+        "applied": "PASS",
+        "cleanup": "PASS",
+        "classification": "PASS",
+        "choiceAudit": "PASS",
+        "difficulty": "PASS",
+        "foundationCoverage": "PASS",
+        "quality": "PASS"
+      },
+      "browser": {
+        "repairedFourteenQuestions": {
+          "desktop": "14/14; 14 correct attempts persisted; no page errors",
+          "mobile": "14/14; 14 correct attempts persisted; no page errors"
+        },
+        "addedTwelveQuestions": {
+          "desktop": "12/12; 12 correct attempts persisted; no page errors",
+          "mobile": "12/12; 12 correct attempts persisted; no page errors"
+        },
+        "horizontalOverflow": false,
+        "screenshots": [
+          "artifacts/applied-hotfix-desktop-q-d3-a18.png",
+          "artifacts/applied-hotfix-mobile-q-d3-a19.png"
+        ]
+      },
+      "preservation": {
+        "counts": true,
+        "answerIds": true,
+        "choicePositions": true,
+        "untargetedQuestionAssets": true,
+        "historicalBaselines": true
+      },
+      "git": {
+        "committed": false,
+        "pushed": false
+      }
+    }
+  },
+  "removedAdditions": [
+    {
+      "id": "q-d3-a18",
+      "domainId": "d3",
+      "fingerprint": "00019b17f8731154d187c6bd9f5bbbb4a9f32d82c60ff5fa4cfc19abae0e8b74",
+      "deletedAt": "2026-10-14"
+    }
+  ],
+  "deletionFollowUp": {
+    "deletedAt": "2026-10-14",
+    "questionIds": [
+      "q-d2-a15",
+      "q-d3-a11",
+      "q-d3-a12",
+      "q-d3-a18",
+      "q-d5-a02",
+      "q-d5-a05"
+    ],
+    "report": "reports/applied-six-deletion-review.json",
+    "priorSummary": {
+      "added": 12,
+      "stored": 328,
+      "active": 316,
+      "foundation": 163,
+      "applied": 96,
+      "exam": 57,
+      "verifiedActive": 315,
+      "retired": 12,
+      "domains": {
+        "d1": {
+          "count": 48,
+          "percent": 15.2
+        },
+        "d2": {
+          "count": 98,
+          "percent": 31
+        },
+        "d3": {
+          "count": 37,
+          "percent": 11.7
+        },
+        "d4": {
+          "count": 46,
+          "percent": 14.6
+        },
+        "d5": {
+          "count": 54,
+          "percent": 17.1
+        },
+        "d6": {
+          "count": 33,
+          "percent": 10.4
+        }
+      }
+    }
+  }
+}

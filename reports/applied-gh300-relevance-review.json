@@ -1,0 +1,5330 @@
+{
+  "reviewedAt": "2026-10-13",
+  "status": "RELEVANCE_REVIEW_COMPLETE_CHANGES_NOT_APPLIED",
+  "reviewer": "Codex editorial review; not an independent human examiner",
+  "scope": {
+    "activeApplied": 96,
+    "excludedAppliedNotReviewed": 12,
+    "otherDifficultiesNotReviewed": true
+  },
+  "method": [
+    "全96問の現行本文・四択・正答・解説を読み、最後に何を判断する問題か確認。",
+    "公式の技能範囲に位置付けたうえで、Copilotの操作・文脈・出力検証・責任ある採用に学習が戻るかを判断。",
+    "Copilotという語を外して解けるかを警告材料にするが、単独で合否を決めない。責任ある利用や生成テストの検証は一般的な開発知識も必要。",
+    "ドメインID・既存PASS・広い公式リンクの付与だけでは関連性を認定しない。",
+    "架空の内部アルゴリズムを利用者向けの試験技能と混同しない。"
+  ],
+  "rubric": {
+    "ALIGNED": "関連性を保てている",
+    "REFRAME": "関連はあるがCopilotの判断へ寄せる",
+    "REPLACE_FOCUS": "優先して出題軸を変更"
+  },
+  "limitations": [
+    "関連性の編集評価であり、本試験で出題されないという断定ではない。",
+    "ALIGNEDは難易度・ブラインドチェック・事実の全件再検証の合格を意味しない。",
+    "前回の読みやすさ・採点修正とは別の評価軸。前回の合格をGH-300関連性の保証として扱わない。",
+    "学習者の実測はなく、主観が入る境界判定には問題別の理由を残した。"
+  ],
+  "sources": [
+    {
+      "id": "guide",
+      "title": "公式GH-300 Study Guide",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "checkedAt": "2026-10-13",
+      "supports": "試験範囲の基準。2026-08-07版。関連領域も出題され得るため、未記載だけで試験対象外と断定しない。"
+    },
+    {
+      "id": "validation",
+      "title": "GitHub Docs：責任あるインライン提案の利用",
+      "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+      "checkedAt": "2026-10-13",
+      "supports": "生成提案の確認、入力から提示までの概念、潜在的な偏りを確認。固定100ms・v7/v9判定・重複送信の設問固有規則を確認した資料ではない。"
+    },
+    {
+      "id": "testing",
+      "title": "GitHub Docs：Copilotでのテスト作成",
+      "url": "https://docs.github.com/en/copilot/tutorials/write-tests",
+      "checkedAt": "2026-10-13",
+      "supports": "テスト生成、条件を指定した依頼、モック、例外・不足ケースの追加、結果の確認との接点。個々の言語構文・DB仕様を検証した資料ではない。"
+    },
+    {
+      "id": "prompting",
+      "title": "GitHub Docs：プロンプト設計",
+      "url": "https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering",
+      "checkedAt": "2026-10-13",
+      "supports": "例・関連コード・明確な要件・対話履歴・反復という利用方法との接点。架空の入力上限を製品定数として確認した資料ではない。"
+    },
+    {
+      "id": "mcp",
+      "title": "GitHub Docs：CopilotとMCP",
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "checkedAt": "2026-10-13",
+      "supports": "Copilotへ外部ツール・情報を連携することとの接点。個別の架空社内サーバーの実装仕様を保証しない。"
+    },
+    {
+      "id": "customization",
+      "title": "GitHub Docs：応答のカスタマイズ",
+      "url": "https://docs.github.com/en/copilot/concepts/prompting/response-customization",
+      "checkedAt": "2026-10-13",
+      "supports": "カスタム指示の適用範囲と、指示が毎回厳密に守られる保証ではないこと。対象環境ごとの詳細仕様は別途確認が必要。"
+    },
+    {
+      "id": "exclusion",
+      "title": "GitHub Docs：コンテンツ除外",
+      "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
+      "checkedAt": "2026-10-13",
+      "supports": "Copilot固有の入力除外と設定・診断との接点。"
+    },
+    {
+      "id": "network",
+      "title": "GitHub Docs：Copilotのネットワーク診断",
+      "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors",
+      "checkedAt": "2026-10-13",
+      "supports": "接続・プロキシ・証明書診断の運用上の接点。"
+    }
+  ],
+  "summary": {
+    "ALIGNED": 62,
+    "REFRAME": 28,
+    "REPLACE_FOCUS": 6
+  },
+  "byDomain": [
+    {
+      "domain": "d1",
+      "total": 24,
+      "ALIGNED": 16,
+      "REFRAME": 8,
+      "REPLACE_FOCUS": 0
+    },
+    {
+      "domain": "d2",
+      "total": 14,
+      "ALIGNED": 10,
+      "REFRAME": 4,
+      "REPLACE_FOCUS": 0
+    },
+    {
+      "domain": "d3",
+      "total": 9,
+      "ALIGNED": 3,
+      "REFRAME": 3,
+      "REPLACE_FOCUS": 3
+    },
+    {
+      "domain": "d4",
+      "total": 16,
+      "ALIGNED": 12,
+      "REFRAME": 4,
+      "REPLACE_FOCUS": 0
+    },
+    {
+      "domain": "d5",
+      "total": 20,
+      "ALIGNED": 10,
+      "REFRAME": 7,
+      "REPLACE_FOCUS": 3
+    },
+    {
+      "domain": "d6",
+      "total": 13,
+      "ALIGNED": 11,
+      "REFRAME": 2,
+      "REPLACE_FOCUS": 0
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "category": "REFRAME",
+      "theme": "翌月末の期待値",
+      "rationale": "暦の期待値だけを選ぶため、独立した仕様で生成物を検証する学習が解説に残らない。",
+      "recommendation": "生成テストが誤った実装の3月3日を正解としている状況を示し、仕様を根拠に期待値を直して再検証する方針を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "2e63a4a475c40948bfa0f5b0b387dd90edbbc31fd9f87e3459199d93146ad7cc",
+      "current": {
+        "question": "Copilotが生成した「翌月の同じ日へ進める」処理を検証しています。1月15日は2月15日になりますが、1月31日は3月3日になってしまいます。承認済みの仕様では、翌月に同じ日がない場合は翌月末にする必要があります。2025年の1月31日を入力する回帰テストでは、どの結果を期待すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "1月31日→1月31日"
+          },
+          {
+            "id": "B",
+            "text": "1月31日→3月3日"
+          },
+          {
+            "id": "C",
+            "text": "1月31日→2月1日"
+          },
+          {
+            "id": "A",
+            "text": "1月31日→2月28日"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。",
+        "choiceExplanations": {
+          "A": "存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。",
+          "B": "現在の誤った出力を期待値にしてしまい回帰を検出できない。",
+          "C": "翌月の初日へ切り替える別の契約である。",
+          "D": "入力を維持する契約ではなく、翌月へ進める必要がある。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q07",
+      "category": "ALIGNED",
+      "theme": "日付のfew-shot例",
+      "rationale": "曖昧な仕様をCopilotのプロンプトへ対照的な入出力例で具体化する。",
+      "recommendation": "維持。暦計算を増やさず、例を追加することで解釈を絞る意味を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "e7cf07442b65f9b89075fd7a875a0ed4b7e748d18c67c6246237df97965070d2",
+      "current": {
+        "question": "Copilotが生成した日付解析処理は、入力「03/04」を3月4日と解釈しました。このアプリの入力形式は日／月（DD/MM）で、年は2025年です。日と月の解釈を明確にするため、日が12以下の例と12を超える例をプロンプトへ追加します。どの入出力例が仕様に合っていますか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "03/04 → 2025-04-03、13/04 → 入力エラー"
+          },
+          {
+            "id": "D",
+            "text": "03/04 → 入力エラー、13/04 → 2025-04-13"
+          },
+          {
+            "id": "C",
+            "text": "03/04 → 2025-04-03、13/04 → 2025-04-13"
+          },
+          {
+            "id": "A",
+            "text": "03/04 → 2025-03-04、04/13 → 2025-04-13"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "DD/MMを曖昧な入力と日が12を超える入力へ適用し、年とISO出力も具体化する。",
+        "choiceExplanations": {
+          "C": "DD/MMを曖昧な入力と日が12を超える入力へ適用し、年とISO出力も具体化する。",
+          "A": "月/日の例なので、現在の誤解を強化してしまう。",
+          "B": "13日はDD/MMで有効な日であり、誤って拒否している。",
+          "D": "03/04も契約で一意に解釈できるため、曖昧という理由で拒否しない。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q10",
+      "category": "ALIGNED",
+      "theme": "外部依存のテストをCopilotへ依頼",
+      "rationale": "Copilotへ作らせるテストの隔離条件と検証対象を選ぶ。公式テスト教材とも具体的な接点がある。",
+      "recommendation": "維持。呼び出し引数を検証する理由を保つ。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "80737e38a145482577b1e2baceeeccc71913331647678250ba863a3a90f2506f",
+      "current": {
+        "question": "通知サービスを呼び出す処理の単体テストをCopilotに作成させます。テスト中は外部へ通信せず、処理が通知クライアントへ正しい宛先と本文を渡すことを確認したいと考えています。この目的に合うテスト設計はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "通知用のテスト環境に接続し、受信したメッセージを検証する"
+          },
+          {
+            "id": "A",
+            "text": "通知クライアントをスタブ化し、固定の成功戻り値を検証する"
+          },
+          {
+            "id": "C",
+            "text": "通知処理の前後で、画面表示のスナップショットを比較する"
+          },
+          {
+            "id": "B",
+            "text": "通知クライアントをモック化し、呼び出し引数を検証する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "外部通信をモックで隔離し、通知クライアントに渡された宛先と本文を検証します。固定の成功値を返すだけのスタブでは、呼び出し引数の誤りを確認できません。",
+        "choiceExplanations": {
+          "B": "外部通信をモックで隔離し、通知クライアントに渡された宛先と本文を検証します。固定の成功値を返すだけのスタブでは、呼び出し引数の誤りを確認できません。",
+          "A": "成功分岐は検証できるが、呼び出し引数の誤りを検出できない。",
+          "C": "表示の回帰には有用だが、通知に渡された値は直接検証しない。",
+          "D": "結合テストには有用だが、外部通信を行わない条件に合わない。"
+        },
+        "sourceIds": [
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a01",
+      "category": "ALIGNED",
+      "theme": "例外経路のリソース解放",
+      "rationale": "正常系だけ成功した生成コードの検証不足を、例外を起こす追加テストで補う。",
+      "recommendation": "維持。生成されたテストも例外時のcloseを独立した仕様と照合することを解説へ補足できる。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "0555ffcecff96bedd2e80faf430ade048a13bc2729b6ac50852814b63942aad2",
+      "current": {
+        "question": "GitHub Copilotが生成したファイル読み込み関数の実装をレビューしています。正常系ではファイルハンドルが正常にcloseされますが、データ解析（parse）処理で例外がスローされる経路ではcloseされずにリソースがリークする問題が見つかりました。正常系のテストは既にパスしている場合、このリソースリークの欠陥を最も直接的に検出するための追加テストとして、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "D",
+            "text": "大容量のファイルを渡して正常にparse処理を行わせ、全体の処理実行時間が許容範囲内に収まるかを検証する"
+          },
+          {
+            "id": "C",
+            "text": "空のファイルを渡して正常にparse処理を行わせ、返却されるオブジェクトのデータ形式が正しいかを検証する"
+          },
+          {
+            "id": "A",
+            "text": "不正なデータを渡してparse処理を例外で失敗させ、開いたファイルのcloseメソッドが確実に呼ばれるか検証する"
+          },
+          {
+            "id": "B",
+            "text": "ファイルが存在しない状態でopen処理を失敗させ、期待されるエラー型が正しく返却されるかを検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "リソース解放の欠陥を検証するには、parse処理で意図的に例外を発生させ、例外発生時でもfinallyブロック等で確実にcloseが実行されるかを検証するテストが必要です。",
+        "choiceExplanations": {
+          "A": "リソース解放の欠陥を検証するには、parse処理で意図的に例外を発生させ、例外発生時でもfinallyブロック等で確実にcloseが実行されるかを検証するテストが必要です。",
+          "B": "ファイルオープン自体の失敗では、ファイル取得後に発生するparse例外時のクローズ漏れを検証できません。",
+          "C": "空ファイルの正常系テストでは、データ解析中の例外送出経路を通過しません。",
+          "D": "大容量ファイルの性能測定では、例外発生時のリソース解放処理の成否は検証できません。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a02",
+      "category": "ALIGNED",
+      "theme": "生成SQLの脆弱性と回帰検証",
+      "rationale": "生成コードの具体的な安全性欠陥を検出し、修正と攻撃入力の再検証を組み合わせる。",
+      "recommendation": "維持。SQL構文の暗記を増やさず、生成案を安全だと見なさない判断を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "5c10255e01fa78b0929be3270e3d835784706dc0727fd021fc721dddbc60a893",
+      "current": {
+        "question": "GitHub Copilotが生成したSQL検索APIのコードを検証しています。WHERE句の検索条件（name）にユーザー入力値が直接SQL文字列の連結で埋め込まれており、入力値に x' OR '1'='1 を渡すと検索条件が不正に拡大されるSQLインジェクション脆弱性が確認されました。なお、ORDER BY句は固定列であり、DB資格情報や行レベルセキュリティは適切に設定されています。この脆弱性を根本から解消し、再発を防止するための実装変更および回帰テストとして、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "ORDER BY句の列指定をホワイトリスト方式へ変更し、定義外の未知の列が指定された場合に確実に拒否されるかを検証する"
+          },
+          {
+            "id": "D",
+            "text": "DB接続ユーザーの権限を最小限の読取権限に絞り込み、更新や削除などのクエリ実行が確実に拒否されるかを検証する"
+          },
+          {
+            "id": "A",
+            "text": "WHERE句の値を束縛パラメーター（プレースホルダー）へ分離し、攻撃文字列を入力しても検索条件が変わらないかを検証する"
+          },
+          {
+            "id": "C",
+            "text": "データ取得時に対象行のアクセス権限チェックを追加し、他ユーザーに属するレコードが返却されないかを検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "SQLインジェクションを防ぐ根本的な対策は、ユーザー入力値をSQL構文から分離するパラメータ化クエリ（バインド変数）の利用です。攻撃文字列を入力しても構文解釈が変わらないことを回帰テストで確認します。",
+        "choiceExplanations": {
+          "A": "SQLインジェクションを防ぐ根本的な対策は、ユーザー入力値をSQL構文から分離するパラメータ化クエリ（バインド変数）の利用です。攻撃文字列を入力しても構文解釈が変わらないことを回帰テストで確認します。",
+          "B": "ORDER BY句のホワイトリスト検証はソート列インジェクション対策であり、WHERE句の文字列連結脆弱性を解消しません。",
+          "C": "行レベルアクセス制御は重要ですが、SQL構文そのものが改ざんされる脆弱性の直接的な解決策にはなりません。",
+          "D": "DB権限の最小化は多層防御として有効ですが、不正な条件拡大による他者データの閲覧漏洩自体は防げません。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests",
+          "ml-sql-injection"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a03",
+      "category": "ALIGNED",
+      "theme": "権限仕様と生成コードの不一致",
+      "rationale": "AIの許可条件を承認済み権限表へ照合し、未検証の拒否経路を検出する。",
+      "recommendation": "維持。Copilotが作った実装とテストが同じ誤解を共有するリスクの説明を添える余地がある。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "814f349244a14283095b8c477d34dc64344a8297a34719f2c82cc3578608598d",
+      "current": {
+        "question": "Copilotが生成した権限判定は「guest以外は更新可能」という条件です。仕様ではguestとviewerは閲覧だけ、editorは更新も可能です。guestの拒否とeditorの許可はテスト済みですが、viewerは未検証です。生成コードと仕様の不一致を検出するため、どの追加テストを行うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "viewerを入力し、更新が拒否されることを検証する"
+          },
+          {
+            "id": "D",
+            "text": "editorを入力し、更新が許可されることを検証する"
+          },
+          {
+            "id": "C",
+            "text": "guestを入力し、更新が拒否されることを検証する"
+          },
+          {
+            "id": "B",
+            "text": "viewerを入力し、更新が許可されることを検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "仕様では拒否すべきviewerが、誤った実装によって許可されてしまうバグを再現・検出するには、「viewerロールでアクセスした際に更新が拒否されること」をアサーションとして検証する必要があります。",
+        "choiceExplanations": {
+          "A": "仕様では拒否すべきviewerが、誤った実装によって許可されてしまうバグを再現・検出するには、「viewerロールでアクセスした際に更新が拒否されること」をアサーションとして検証する必要があります。",
+          "B": "viewerの更新許可を期待すると、仕様に反する生成コードが成功してしまいます。",
+          "C": "guestの拒否は確認済みで、guest以外を許可する実装におけるviewerの問題を検出できません。",
+          "D": "editorの許可は仕様に合い確認済みで、viewerの拒否を検証するケースではありません。"
+        },
+        "sourceIds": [
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a04",
+      "category": "REFRAME",
+      "theme": "パスワード保存方式",
+      "rationale": "正解の決め手が暗号・認証方式の既知の優劣で、Copilotへの改善依頼・検証方法の比較が薄い。",
+      "recommendation": "承認済みライブラリと現行認証コードをコンテキストに渡し、生成修正の保存・照合・既存互換を確認する依頼を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "0a7517b7eada92edfa200cc21782a83cdef0078ddbb2a8c14be11d3f6184c037",
+      "current": {
+        "question": "GitHub Copilotが生成したユーザー認証処理のパスワード保存ロジックをセキュリティ検証しています。現在はユーザー固有ソルト付きのSHA-256（単一ハッシュ）で保存されており、オフライン検証において短時間で大量のパスワード候補を総当たり照合（ブルートフォース攻撃）できてしまう弱点が確認されました。定数時間比較やログイン試行回数制限などの対策は既に実施されている場合、このハッシュ保存処理を安全に強化するための改善指示として、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "承認済みのパスワード保存ライブラリ（Argon2やbcrypt等）を採用し、ソルト・計算コスト・照合処理を検証する"
+          },
+          {
+            "id": "C",
+            "text": "認証ログからパスワード情報を完全に除外するように修正し、許可されたログ項目と保存結果が正しいかを検証する"
+          },
+          {
+            "id": "B",
+            "text": "照合処理を定数時間比較の独自関数へ置き換え、正誤それぞれのパスワードで処理時間の差異が生じないかを検証する"
+          },
+          {
+            "id": "D",
+            "text": "ログイン試行を利用者アカウントごとに制限するミドルウェアを追加し、連続失敗時のアカウントロックを検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "単一のSHA-256などの高速ハッシュ関数はGPUや専用ハードウェアによるオフライン総当たり攻撃に弱いため、ストレッチングや計算コストを調整できるパスワード専用ハッシュアルゴリズム（Argon2やbcrypt等）を採用する必要があります。",
+        "choiceExplanations": {
+          "A": "単一のSHA-256などの高速ハッシュ関数はGPUや専用ハードウェアによるオフライン総当たり攻撃に弱いため、ストレッチングや計算コストを調整できるパスワード専用ハッシュアルゴリズム（Argon2やbcrypt等）を採用する必要があります。",
+          "B": "定数時間比較はタイミング攻撃対策として有効ですが、オフラインでの高速なハッシュ総当たり照合の根本対策にはなりません。",
+          "C": "ログへのパスワード非出力は基本対策ですが、データベースに保存されたハッシュ値自体の強度不足を解決しません。",
+          "D": "オンラインのログイン試行回数制限は既に実施されており、漏洩したDBハッシュに対するオフライン総当たり攻撃を防ぐことはできません。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests",
+          "ml-password-hashing"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a07",
+      "category": "REFRAME",
+      "theme": "PR承認を強制する設定",
+      "rationale": "AI出力の人間による確認という目的は範囲内だが、最終判断は一般的なブランチ保護設定に偏る。",
+      "recommendation": "Copilotのレビューコメントと人間の承認を区別し、生成コードを採用するための検証・承認の組み合わせを問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "b9210cbaa46a8df647f7c490144ce0f6434785805370eabecc0b1b70a41b1524",
+      "current": {
+        "question": "社内規則では、Copilot生成コードを含むPRも、既存のCIテスト成功と担当者のレビュー承認を両方満たしてからマージします。現在はCIが成功するだけで未承認のPRをマージできます。CIを維持し、欠けている条件を強制するには、どの設定を追加すべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "既存CIに加え、CODEOWNERSへのレビュー依頼を必須にする"
+          },
+          {
+            "id": "B",
+            "text": "既存CIに加え、CodeQLの検査成功を必須にする"
+          },
+          {
+            "id": "D",
+            "text": "既存CIに加え、本番デプロイ時の環境承認を必須にする"
+          },
+          {
+            "id": "A",
+            "text": "既存CIに加え、PRのレビュー承認を必須にする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "ガイドラインを実効性のある保護として強制するには、ブランチ保護ルール（またはRulesets）で「マージ前に必要な承認レビュー数（Required Approvals）」を有効化する必要があります。",
+        "choiceExplanations": {
+          "A": "ガイドラインを実効性のある保護として強制するには、ブランチ保護ルール（またはRulesets）で「マージ前に必要な承認レビュー数（Required Approvals）」を有効化する必要があります。",
+          "B": "CodeQLは静的解析であり、担当者によるレビュー承認の必須化ではありません。",
+          "C": "依頼を送ることと、承認が完了することは別です。",
+          "D": "本番へのデプロイ承認では、未承認のPRのマージ自体を防げません。"
+        },
+        "sourceIds": [
+          "responsible",
+          "code-review"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a08",
+      "category": "ALIGNED",
+      "theme": "生成テストの検出力",
+      "rationale": "expectや行カバレッジがあることと、AI生成テストが欠陥を検出できることを区別する。",
+      "recommendation": "維持。ミューテーションツールの詳細操作へ広げず、誤った実装を検出するか確認する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "f9901de5087b85121de4f9147deba8e68d726dd58d5a232f92b9215641aa6ebb",
+      "current": {
+        "question": "Copilotが生成したテストにはexpectがあり、行カバレッジも上がりました。しかし、実装のエラー処理を意図的に削除しても成功します。テストがその欠陥を検出できるか確認するには、次にどの検証を行うべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "正常な実装を実行し、対象の処理経路の行カバレッジを確認する"
+          },
+          {
+            "id": "A",
+            "text": "欠陥を入れた実装を実行し、対象のアサーションで失敗するか確認する"
+          },
+          {
+            "id": "D",
+            "text": "対象のテストを単独で実行し、他のテストとの実行順序の影響を確認する"
+          },
+          {
+            "id": "C",
+            "text": "正常な実装を実行し、正常入力の各戻り値が仕様と合うか確認する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "欠陥を入れた実装へテストを実行し、対象のアサーションが実行されて失敗することを確認します。行を通ったか、正常な戻り値が合うかだけでは、そのエラー処理の欠落を検出できるか確認できません。",
+        "choiceExplanations": {
+          "A": "欠陥を入れた実装へテストを実行し、対象のアサーションが実行されて失敗することを確認します。行を通ったか、正常な戻り値が合うかだけでは、そのエラー処理の欠落を検出できるか確認できません。",
+          "B": "行カバレッジは経路を通ったことを示しますが、欠陥を検出するアサーションの有効性は確認できません。",
+          "C": "正常な実装・入力だけでは、削除されたエラー処理をテストが検出できるか確認できません。",
+          "D": "実行順の影響の調査は有用ですが、今回の欠陥の検出力を直接確認する方法ではありません。"
+        },
+        "sourceIds": [
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a09",
+      "category": "ALIGNED",
+      "theme": "生成変更の業務回帰",
+      "rationale": "型・セキュリティチェックが通ってもAIの変更で業務動作が保たれるとは限らない判断を問う。",
+      "recommendation": "維持。CI製品の細かな設定を追加しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "a203bc94ec2ce6c41cf818dc47f3c9a4786c19f9e29fb255ac53de0f73756f08",
+      "current": {
+        "question": "GitHub Copilotが変更したコードをマージするCIパイプラインには、型検査、リンター、シークレットスキャンが導入されています。型・業務回帰・セキュリティの三領域のバランスを取りつつ、要求である「既存の注文金額計算を変えないこと」を検証したいと考えています。現在の検査を維持したまま、計算ロジックに破壊的変更がないことを最も直接的に確認するために追加すべき検証はどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "外部依存ライブラリの既知脆弱性スキャン（Dependabotやnpm audit）を実行し、セキュリティリスクを検証する"
+          },
+          {
+            "id": "D",
+            "text": "GitHub組織設定で公開コードとの一致検出（Public Code Filter）が有効になっているかを確認する"
+          },
+          {
+            "id": "C",
+            "text": "生成されたコードがチームのコードフォーマット規則（PrettierやESLint等）に準拠しているかを検証する"
+          },
+          {
+            "id": "A",
+            "text": "注文仕様に基づいて過去の計算パターンを網羅した、金額計算の回帰テスト（リグレッションテスト）を実行する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "型チェックやセキュリティスキャンでは、業務ロジックの数値計算が意図どおり保持されているかを保証できません。仕様に基づく回帰テストを実行して期待通りの金額が算出されるかを直接検証する必要があります。",
+        "choiceExplanations": {
+          "A": "型チェックやセキュリティスキャンでは、業務ロジックの数値計算が意図どおり保持されているかを保証できません。仕様に基づく回帰テストを実行して期待通りの金額が算出されるかを直接検証する必要があります。",
+          "B": "依存ライブラリの脆弱性検査はセキュリティ維持に必須ですが、自社コードの金額計算ロジックの正しさは検証できません。",
+          "C": "コード整形規則のチェックは可読性のためのものであり、計算の数値結果の正しさとは無関係です。",
+          "D": "公開コードの一致設定は知的財産リスクの対策であり、注文金額の業務計算ルールを検証するものではありません。"
+        },
+        "sourceIds": [
+          "tests",
+          "codeql"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a10",
+      "category": "REFRAME",
+      "theme": "性能とAPI契約",
+      "rationale": "案PとQの速度・戻り値比較だけで解け、一般的な仕様充足問題として終わっている。",
+      "recommendation": "性能改善の生成案を採用する際に契約テストと測定結果を両方照合する検証方針へ変える。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "5158201256712e3a9abca9d0e902aa953effb655a367136e3af1256265eb0e8e",
+      "current": {
+        "question": "GitHub Copilotが提案した2つのデータ検索関数（案Pと案Q）を比較検証しています。システムのAPI仕様契約は「空入力時には空配列 [] を返却し、レスポンス時間は25ms以下であること」です。ベンチマーク測定の結果、案Pは応答時間15msですが空入力時に null を返し、案Qは応答時間20msで空入力時に [] を返しました。両方の契約条件を満たす採用候補として、最も適切な判断はどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "案Pを採用候補とする（15msとより高速であり、戻り値の違いは呼び出し側の実装で吸収できるため）"
+          },
+          {
+            "id": "C",
+            "text": "案Pを採用し、空入力時のテストケースをレスポンス測定の対象範囲から除外するよう設定を変更する"
+          },
+          {
+            "id": "A",
+            "text": "案Qを採用候補とする（20msで応答時間要件を満たし、戻り値も契約どおり空配列を返却するため）"
+          },
+          {
+            "id": "D",
+            "text": "案Qの戻り値を null に変更して処理時間をさらに短縮させた上で、本番コードへ採用する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "案Qは応答時間（20ms ≦ 25ms）と戻り値の契約（空配列 []）の両方を満たしています。速度だけで契約違反（null返却）のある案Pを採用してはいけません。",
+        "choiceExplanations": {
+          "A": "案Qは応答時間（20ms ≦ 25ms）と戻り値の契約（空配列 []）の両方を満たしています。速度だけで契約違反（null返却）のある案Pを採用してはいけません。",
+          "B": "案Pは15msと高速ですが、仕様契約である「空配列 [] を返す」を満たしておらずnullを返すため不適合です。",
+          "C": "測定対象から空入力を除外しても、実際のシステム運用時に契約違反のnullが返却されてバグを引き起こします。",
+          "D": "案Qの戻り値をnullに変えてしまうと、正常だった契約（空配列返却）を自ら破壊することになります。"
+        },
+        "sourceIds": [
+          "responsible",
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-e04",
+      "category": "ALIGNED",
+      "theme": "Chatへ渡すログの仮ID化",
+      "rationale": "Copilotへ送る情報から秘密と実名を除き、調査に必要な相関だけを残す入力上の判断を問う。",
+      "recommendation": "維持。仮ID化で再識別リスクがすべて消えると断定しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "7c994e826ccd27d86039222e2c8358c7a194e666be8adca64266878ea96b1446",
+      "current": {
+        "question": "障害ログをChatへ渡す前に氏名をランダムな値へ置換すると、同じ人の連続リクエストを追えなくなりました。ログには認証トークンも含まれています。実名を渡さずに同じ人のリクエストを対応付け、認証情報も除くには、どの前処理が適切ですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "実名を維持し、ログ全体の行数だけを減らす"
+          },
+          {
+            "id": "B",
+            "text": "同じ人も行ごとに別IDへ置換し、トークンは削除する"
+          },
+          {
+            "id": "C",
+            "text": "氏名を削除し、認証トークンを相関IDとして残す"
+          },
+          {
+            "id": "A",
+            "text": "同じ人を同じ仮IDへ置換し、トークンは削除する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "必要な相関構造を一貫した仮IDで残し、認証秘密を除く。仮ID化だけで全ての再識別リスクが消える保証ではない。",
+        "choiceExplanations": {
+          "A": "必要な相関構造を一貫した仮IDで残し、認証秘密を除く。仮ID化だけで全ての再識別リスクが消える保証ではない。",
+          "B": "同一人の相関が失われて、既に報告された問題が残る。",
+          "C": "診断のために認証秘密を送る必要はない。",
+          "D": "少量でも実名を送るため今回の条件に合わない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "privacy"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-e06",
+      "category": "ALIGNED",
+      "theme": "公開コードBlockと利用審査",
+      "rationale": "Copilotの一致抑制機能を採用コードの適合保証と混同しない判断を扱う。",
+      "recommendation": "維持。機能の役割と人間による確認を分ける。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o2",
+      "officialScopeAnchor": "d6o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "182c61651cccbd6ad3e8afb43997190846ed9f3214cabf6d602dc70416e0aeac",
+      "current": {
+        "question": "公開コードと一致する提案のBlock設定を有効にしたチームが、生成コードのライセンス審査を省略できるか検討しています。一致を抑える機能の役割と、採用コードの利用条件の確認を区別すると、どの判断が適切ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "一致の抑制策として利用し、参照情報と採用コードの個別審査も続ける"
+          },
+          {
+            "id": "D",
+            "text": "一致の抑制策として利用し、残りの審査を生成履歴の保存で完了する"
+          },
+          {
+            "id": "C",
+            "text": "一致を抑制し、残りは依存関係のライセンスだけ確認する"
+          },
+          {
+            "id": "B",
+            "text": "一致を抑制し、残りの採用審査をCodeQLと型検査で行う"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。",
+        "choiceExplanations": {
+          "A": "一致フィルターはリスク軽減策であり採用コード全体の適合保証ではない。",
+          "B": "安全性は見られるがライセンス条件を確認できない。",
+          "C": "生成スニペット自身の出所と条件を見落とす。",
+          "D": "履歴は追跡に有用だがライセンス条件の判断そのものではない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "policies"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a02",
+      "category": "ALIGNED",
+      "theme": "型と呼び出し側を文脈へ追加",
+      "rationale": "Copilotへ不足している現行型・利用例を渡して生成修正の前提を整える判断を問う。",
+      "recommendation": "維持。型構文自体の暗記を主題にしない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "fe77719a7b488cb755461a650a84bfef84403ac34bcb9263f4c7827ef18fc61f",
+      "current": {
+        "question": "Copilot Chatが生成したコードは、UserProfile.emailを必ず存在する文字列として扱い、未設定の入力で失敗しました。対象関数のコードはChatへ添付済みです。現行の型定義はtypes/user.tsのemail?: stringで、DBも未設定を許しています。省略可能な型と実際の使われ方に沿って修正を依頼するには、どの資料を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "現行の型定義と、emailを使う呼び出し側のコード"
+          },
+          {
+            "id": "C",
+            "text": "現行の通信設定と、プロフィール取得のHTTPログ"
+          },
+          {
+            "id": "D",
+            "text": "現行のテスト入力と、プロフィール画面の画像"
+          },
+          {
+            "id": "B",
+            "text": "現行のDB定義と、emailを保存するSQL"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "省略可能な型と利用箇所を対応付け、未設定値の扱いを依頼できる。",
+        "choiceExplanations": {
+          "A": "省略可能な型と利用箇所を対応付け、未設定値の扱いを依頼できる。",
+          "B": "保存経路の検証には有用だが、今回不足している型の省略可能性を直接示さない。",
+          "C": "取得失敗の調査には有用だが、今回の省略可能な値の利用契約とは異なる。",
+          "D": "画面や入力例だけでは、修正先が守る型定義を直接示せない。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a04",
+      "category": "REFRAME",
+      "theme": "削除対象の限定",
+      "rationale": "許可されたパスをそのまま選ぶ問題で、生成コマンドを実行前に検証する手順を測っていない。",
+      "recommendation": "生成コマンドの実対象を列挙し、保持対象を外して再確認する採用判断を問う。q-d2-a25との重複も避ける。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "499fcea8e16052fc9b15408e6532563444921eadbd4aa8491313a6fc4fb1843f",
+      "current": {
+        "question": "Copilotが提案した削除コマンドは、/tmp/job-*を対象にしています。一致するディレクトリにはjob-cacheとjob-fixturesがあり、削除が許可されているのはjob-cacheだけです。job-fixturesには保存が必要なテストデータがあります。許可された範囲を守るには、削除対象をどのように指定し直すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "/tmp/job-*に一致する二つを削除対象にする"
+          },
+          {
+            "id": "C",
+            "text": "/tmp/job-fixturesだけを削除対象にする"
+          },
+          {
+            "id": "D",
+            "text": "/tmp/job-*/cacheだけを削除対象にする"
+          },
+          {
+            "id": "A",
+            "text": "/tmp/job-cacheだけを削除対象にする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "保持対象を外し、不要なキャッシュに限定する。",
+        "choiceExplanations": {
+          "A": "保持対象を外し、不要なキャッシュに限定する。",
+          "B": "保持対象を含めてしまう。",
+          "C": "保持すべき側を選んでいる。",
+          "D": "job-cacheは/tmp直下にあり、/tmp/job-*/cacheという下位パスでは対象のディレクトリを指定できません。"
+        },
+        "sourceIds": [
+          "agent-mode"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a07",
+      "category": "ALIGNED",
+      "theme": "MCPの動的スキーマ取得",
+      "rationale": "Copilotへ最新情報を与えるMCP連携を、実行権限・利用者認可と組み合わせて選ぶ。",
+      "recommendation": "維持。MCPサーバーの実装言語やSQL構文の細部へ広げない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "559011bea6e4007685108aea57f3cf95e9edd1bbb597646895a04e5f31a5b456",
+      "current": {
+        "question": "IDEのCopilot Chatから、社内DBの現在のスキーマを調べられるようにします。利用者ごとの閲覧権限を守り、スキーマの変更や任意のSQL実行は許可しません。スキーマは更新されるため、照会時の状態を取得する必要があります。どの連携設計が要件を満たしますか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "任意SQLを実行できるMCPツールを提供し、指示文で読取専用にする"
+          },
+          {
+            "id": "C",
+            "text": "管理者が出力したスキーマをResourceで共有し、権限別に閲覧を分ける"
+          },
+          {
+            "id": "A",
+            "text": "利用者を認可し、メタデータ取得だけを許すMCPツールを提供する"
+          },
+          {
+            "id": "B",
+            "text": "利用者を認可するが、MCPへ任意SQLの実行も公開する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。",
+        "choiceExplanations": {
+          "A": "現在のメタデータを取得でき、サーバーで利用者の権限と操作範囲を制限できる。",
+          "B": "閲覧範囲は守れても変更や任意SQLを禁じる条件を外す。",
+          "C": "権限は考慮できても現在のスキーマを取得する条件を満たさない。",
+          "D": "MCP連携ではあるが、指示文だけでは任意SQLの実行権限を強制的に制限できない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a15",
+      "category": "REPLACE_FOCUS",
+      "theme": "import別名の参照先",
+      "rationale": "Agentという語はあるが、正解はimport構文を読んで修正先を特定するだけで決まる。",
+      "recommendation": "同じD5o1で、Copilotのコード説明・参照検索を利用して修正範囲を確認し、誤った編集候補を検証する作業判断へ変更する。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "3e2d31939c3601759e84b6c1c8178c10951e203a27d78c9761ed6860a9a9fa01",
+      "current": {
+        "question": "Agentの検索で、session.tsとtoken.tsの両方にverify関数が見つかりました。router.tsは「import { verify as check } from \"./session\"」で読み込み、check(req)を呼びます。worker.tsはtoken.tsのverifyを使います。routerの現在の認証処理を修正して検証するには、どこを対象にすべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "token.tsのverifyを修正してworker経路を検証"
+          },
+          {
+            "id": "C",
+            "text": "router.tsのimportをtoken.tsへ替えて経路を検証"
+          },
+          {
+            "id": "A",
+            "text": "session.tsのverifyを修正してrouter経路を検証"
+          },
+          {
+            "id": "D",
+            "text": "worker.tsのimportをsession.tsへ替えて経路を検証"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "importの別名checkを元のverifyへたどると、routerの実行対象はsession.tsと分かる。",
+        "choiceExplanations": {
+          "A": "importの別名checkを元のverifyへたどると、routerの実行対象はsession.tsと分かる。",
+          "B": "同名でも別のworker経路の関数で、routerの実行対象ではない。",
+          "C": "修正対象の特定ではなく、承認されていない認証経路の切替になる。",
+          "D": "workerの認証経路を変える操作で、routerの現行経路を直さない。"
+        },
+        "sourceIds": [
+          "prompt",
+          "agent-mode"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a18",
+      "category": "ALIGNED",
+      "theme": "MCP結果の秘密情報",
+      "rationale": "Copilotへ提供するツール結果の情報境界を、認可・ログ・返却内容の違いで判断する。",
+      "recommendation": "維持。認証情報がダミーなので失効を選ばないという本番漏えいとの区別を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "8f1962d02c338ca1f7f9a174c65bff6952482860319746f9d4c6be5369cc0ce8",
+      "current": {
+        "question": "チケット検索MCPサーバーをCopilotへ接続する前に、架空のデータで検証しています。要約に必要なのは件名と状態だけです。担当外チケットの取得は拒否され、保存ログにも必要な二項目だけが残ります。しかし、ツールが返すJSONにはテスト用のダミーPATが含まれていました。本番の認証情報は漏れていません。この結果から、サーバーへ追加すべき対策はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "返却項目を件名と状態へ絞り、許可した項目だけが出ることを検証する"
+          },
+          {
+            "id": "C",
+            "text": "検索に利用者別の閲覧権を適用し、担当外チケットの取得拒否を検証する"
+          },
+          {
+            "id": "D",
+            "text": "保存ログから認証情報を除き、保存後に許可した項目だけが残るか検証する"
+          },
+          {
+            "id": "B",
+            "text": "漏えいした接続トークンを失効・再発行し、旧トークンの接続拒否を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。",
+        "choiceExplanations": {
+          "A": "認可とログの最小化は確認済みだが、ツール結果の項目制限が不足する。ダミーであってもPAT欄を返さない契約を検証する。",
+          "C": "担当外の検索が通る場合に必要。今回の検索認可は拒否テストで確認済みであり、余分な返却項目は取り除けない。",
+          "D": "保存ログに認証情報が残る場合に必要。今回は保存項目を確認済みで、問題は返却側にある。",
+          "B": "実際の接続資格情報が漏えいした場合に必要。今回はローカルのダミー値で、本番資格情報の漏えいもない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a20",
+      "category": "ALIGNED",
+      "theme": "Spacesと動的ツールの選択",
+      "rationale": "アップロードした静的資料と、認可付きMCPの現在値取得をCopilotのコンテキスト源として選ぶ。",
+      "recommendation": "維持。Spacesすべてが常に古いとは説明しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "d2efa07547b3fec60af1690099035920a334c48a8c25409a59bfd38bcc31af93",
+      "current": {
+        "question": "注文の参照先として、朝のCSVをアップロードしたCopilot Spacesと、利用者の担当範囲を認可する注文管理APIがあります。午後に発生したキャンセルを含む現在の状態を、担当者の閲覧権限を守って照会します。データの更新操作は必要ありません。どのデータ取得経路を使うべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "朝のCSVを読むSpaces"
+          },
+          {
+            "id": "A",
+            "text": "認可付きAPIを読むMCPツール"
+          },
+          {
+            "id": "D",
+            "text": "CSVの形式を説明する共通指示"
+          },
+          {
+            "id": "C",
+            "text": "朝のCSVを添付するPrompt File"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現在のデータ源と担当者の閲覧範囲を両立する。",
+        "choiceExplanations": {
+          "A": "現在のデータ源と担当者の閲覧範囲を両立する。",
+          "B": "アップロード済みスナップショットには午後の変更がない。",
+          "C": "同じ過去資料を再利用しても現在値にはならない。",
+          "D": "形式の説明は現在の注文状態を取得しない。"
+        },
+        "sourceIds": [
+          "spaces",
+          "mcp"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-e08",
+      "category": "ALIGNED",
+      "theme": "パス別のカスタム指示",
+      "rationale": "Copilotの常時指示とパス別指示の適用範囲を直接判断する。",
+      "recommendation": "維持。VS Codeという対象環境と全階層の条件を明示したままにする。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "customization"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "9611d9c4ebc6384e15db8f0c99712a99413a6c7d93b923ec2201dfdb7b478cea",
+      "current": {
+        "question": "VS Codeで、テストコードを準備・実行・検証の三段階（AAA形式）にする規約を共有しています。対象は、どの階層にあるものも含め、末尾が.test.tsのファイルだけです。規約を共通指示へ書いたところ、通常の実装コードにも混ざりました。共通規約の共有を保ち、AAA規約だけをテストへ限定する配置はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "共通指示のAAA規約を残し、applyTo: **/*.test.tsのパス別指示にも加える"
+          },
+          {
+            "id": "A",
+            "text": "共通指示のAAA規約を外し、applyTo: **/*.test.tsのパス別指示へ移す"
+          },
+          {
+            "id": "C",
+            "text": "共通指示のAAA規約を外し、各対話で使う個人指示へ移す"
+          },
+          {
+            "id": "B",
+            "text": "共通指示のAAA規約を外し、applyTo: *.test.tsのパス別指示へ移す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。",
+        "choiceExplanations": {
+          "A": "パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。",
+          "D": "共通指示の適用範囲が変わらない。",
+          "C": "適用範囲をさらに広げる。",
+          "B": "*.test.tsだけでは、この設問で求めるすべての下位階層のテストを指定できません。"
+        },
+        "sourceIds": [
+          "instructions",
+          "prompt-files"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-e14",
+      "category": "ALIGNED",
+      "theme": "DB変更案の既存互換",
+      "rationale": "AIのDB変更案が承認仕様・既存データ・旧版動作を保つかを修正と検証の組で扱う。",
+      "recommendation": "維持。DDLの細かな構文試験へ広げない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "0fc25c39b5882e620d7f61a2b827553bfb1a64f224b277f8049072f69f594ef2",
+      "current": {
+        "question": "CopilotのDB変更案を検証しています。usersへnickname列を追加し、未登録はNULLとして許可する仕様です。しかし提案はNOT NULLで既定値がなく、既存3行への適用に失敗しました。既存の列名、参照先、値は保ちます。仕様を満たす次の変更と検証はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "NULL許容の列を追加し、既存行の保持と未登録値・旧版アプリの動作を検証する"
+          },
+          {
+            "id": "C",
+            "text": "既存列を改名して利用箇所を切り替え、旧列名の残存と既存値の保持を検証する"
+          },
+          {
+            "id": "B",
+            "text": "NULL許容で列を追加して承認済み値を埋め、NOT NULL化と未設定時の拒否を検証する"
+          },
+          {
+            "id": "D",
+            "text": "新表へ既存行を複製して参照先を切り替え、行数・既存値・読み書きの一致を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。",
+        "choiceExplanations": {
+          "A": "既存行に追加値がなくてもNULL許容なら追加できる。未登録を許す契約と旧版の互換性を確認する。",
+          "C": "改名の移行には適するが、今回は既存列名を維持して新列を追加する。失敗したNULL制約も解消しない。",
+          "B": "必須化と承認済み値の補完が要件なら適するが、今回は未登録をNULLで許すため必須化は契約を変える。",
+          "D": "新表への移行が承認対象なら適するが、今回は既存usersへの列追加で参照先も維持する。"
+        },
+        "sourceIds": [
+          "agent-mode",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-e15",
+      "category": "ALIGNED",
+      "theme": "MCPでの段階的取得",
+      "rationale": "Copilotの入力制約へ配慮し、ツールで検索・抜粋して必要なコンテキストを取得する。",
+      "recommendation": "維持。独自のRAG実装アルゴリズムへ広げない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "459311980637296ae062d37f988886930f35699c5d75d7efc0d5e1167232de1d",
+      "current": {
+        "question": "社内文書をMCP経由でCopilotへ提供します。数千件の文書を初期入力へすべて含めると、トークン上限を超えます。文書は長いため、関連する文書だけを選んでも、全文を返すと上限を超えることがあります。調査に必要な情報を段階的に取得するには、どの設計が適切ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "検索と抜粋取得のツールを提供し、関連する部分を段階的に渡す"
+          },
+          {
+            "id": "B",
+            "text": "全文をサーバー側で短く要約し、すべての要約を初期入力へ載せる"
+          },
+          {
+            "id": "D",
+            "text": "文書をResourceで分割し、初回に全Resourceの概要と本文を読む"
+          },
+          {
+            "id": "C",
+            "text": "関連度の高い文書だけを選ぶが、選んだ文書は毎回全文を返す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "必要な情報を選択して取得することで入力の肥大化を抑える。",
+        "choiceExplanations": {
+          "A": "必要な情報を選択して取得することで入力の肥大化を抑える。",
+          "B": "要約を集めても初期文脈の肥大化と関連性の問題は残る。",
+          "C": "選別はできても長い文書では抜粋取得が必要である。",
+          "D": "分割しても全件を読むならトークン制限を解消しない。"
+        },
+        "sourceIds": [
+          "mcp-spec",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-e16",
+      "category": "ALIGNED",
+      "theme": "言語別の指示分離",
+      "rationale": "Copilotの共有指示のスコープを整理し、不要な規約の混入を減らす。",
+      "recommendation": "維持。指示が毎回必ず守られるとは説明しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "customization"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "7fb5da595b0696f3f5746dd2e13fb346de4d9203a2be5e2a0a50da83b99a2e09",
+      "current": {
+        "question": "チームで共有する共通指示には、全案件共通の事項と、Python・JavaScript・TypeScriptの個別規約が混在しています。現在のTypeScript案件では、他言語の規約が回答に混ざります。共通事項とTypeScriptの必要な規約を保ち、チームで共有し続けるには、どのように整理すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "共通事項を残し、言語別規約をパス付き指示へ分ける"
+          },
+          {
+            "id": "D",
+            "text": "全規約を残し、100行を短い見出しへ変更する"
+          },
+          {
+            "id": "C",
+            "text": "TypeScript規約を削り、禁止例だけを残す"
+          },
+          {
+            "id": "B",
+            "text": "個人指示へ全規約を移し、共有ファイルを外す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "共通と対象別の規約をスコープで整理する。",
+        "choiceExplanations": {
+          "A": "共通と対象別の規約をスコープで整理する。",
+          "D": "見出しだけでは適用範囲の混在が残る。",
+          "C": "必要な言語規約を失う。",
+          "B": "共有という条件を失う。"
+        },
+        "sourceIds": [
+          "instructions",
+          "prompt-files",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a01",
+      "category": "ALIGNED",
+      "theme": "型資料を変える対照実験",
+      "rationale": "Copilotの文脈が提案に与える影響を、他条件を固定した試行で確認する。",
+      "recommendation": "維持。型名の一致だけではなく文脈を調整する学習を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o2",
+      "officialScopeAnchor": "d4o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "b595e2b1193b20102e79f0a1275aec0098872deb5b3ca18c4d878ed0516e329e",
+      "current": {
+        "question": "Copilotの補完はuser.nameを参照するコードを返します。開いている型資料にはnameが載っていますが、現在の型定義で使うプロパティはdisplayNameです。ライブラリの版、モデル、依頼文を同じにして、型資料の違いが補完に与える影響だけを比較します。次の試行では、どの条件を一つだけ変えるべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "モデルを別モデルへ替えて候補を比較"
+          },
+          {
+            "id": "A",
+            "text": "型資料を現行定義へ替えて候補を比較"
+          },
+          {
+            "id": "D",
+            "text": "ライブラリを別バージョンへ替えて候補を比較"
+          },
+          {
+            "id": "B",
+            "text": "依頼文の言語を替えて候補を比較"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "疑っている型資料だけを変更し、他の条件を固定した比較になる。",
+        "choiceExplanations": {
+          "A": "疑っている型資料だけを変更し、他の条件を固定した比較になる。",
+          "B": "依頼文の言語の影響を測る試行で、型資料の影響を分離しない。",
+          "C": "モデルの影響を測る試行で、型資料の影響を分離しない。",
+          "D": "依存版の影響を測る試行で、型資料の影響を分離しない。"
+        },
+        "sourceIds": [
+          "architecture"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a03",
+      "category": "ALIGNED",
+      "theme": "Copilot接続の社内CA",
+      "rationale": "実際のCopilot接続環境のTLS診断と信頼設定に結び付く。",
+      "recommendation": "維持。ネットワーク一般の設定暗記ではなく、Copilotの接続エラーへ対応する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "network"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "b88ec8548773c114eb98ebf059e8c21f0f6de8475af1ed5f360039a3c89cf614",
+      "current": {
+        "question": "社内プロキシを通るIDEだけで、Copilot接続がself signed certificate in certificate chainというエラーになります。接続先の許可、プロキシURL、認証情報は確認済みで、エラーは証明書チェーンの検証時に発生しています。社内CAを使う環境で、最初に見直す設定はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "IDEが使う信頼ストアへ社内CAを登録する"
+          },
+          {
+            "id": "D",
+            "text": "DNSサーバーとプロキシの名前解決を変更する"
+          },
+          {
+            "id": "C",
+            "text": "公式接続先へのファイアウォール許可を追加する"
+          },
+          {
+            "id": "B",
+            "text": "プロキシの認証ユーザーとパスワードを更新する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "証明書チェーンの検証に失敗しているため、対応する信頼設定を確認する。",
+        "choiceExplanations": {
+          "A": "証明書チェーンの検証に失敗しているため、対応する信頼設定を確認する。",
+          "B": "407などの認証失敗への対処であり、証明書の信頼は追加されない。",
+          "C": "宛先許可は確認済みで、TLS証明書を信頼する設定とは別。",
+          "D": "名前解決後の証明書検証で失敗しており、DNS変更は原因に対応しない。"
+        },
+        "sourceIds": [
+          "network"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a05",
+      "category": "ALIGNED",
+      "theme": "プロキシ経由のCopilot失敗",
+      "rationale": "補完とChatが使える接続条件との差から、Copilotのネットワーク問題を切り分ける。",
+      "recommendation": "維持。D3のコアなデータ処理ではなくネットワーク運用寄りであることは留意。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "network"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "7d18b33cdc7aa54abcd1c7a17b66c92cf7083c860f0e472847cc979b395f8ef1",
+      "current": {
+        "question": "CopilotのIDE拡張機能は、社内プロキシ経由では通信に失敗し、直接接続では補完とChatが動作します。プロキシ経由の失敗原因はまだ絞れていません。最初の切り分けとして、どの接続条件を確認すべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "Gitのコミット履歴と変更行数"
+          },
+          {
+            "id": "D",
+            "text": "座席の割当一覧と利用者数"
+          },
+          {
+            "id": "B",
+            "text": "同じコードの型検査とテスト結果"
+          },
+          {
+            "id": "A",
+            "text": "接続診断の宛先到達性と証明書エラー"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "失敗経路の到達性とTLS検証を直接比較する。",
+        "choiceExplanations": {
+          "A": "失敗経路の到達性とTLS検証を直接比較する。",
+          "C": "コード履歴は接続失敗を分類しない。",
+          "D": "今回はネットワーク経路の差が観測されている。",
+          "B": "ローカルのコード検査は通信の失敗原因を示さない。"
+        },
+        "sourceIds": [
+          "network"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a06",
+      "category": "ALIGNED",
+      "theme": "Chat履歴の引継ぎ",
+      "rationale": "撤回した案・現在の制約・未確定事項を整理して、Copilotの新しい対話へ適切な履歴を渡す。",
+      "recommendation": "維持。単なる全履歴の貼付けとは区別する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o2",
+      "officialScopeAnchor": "d4o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "5ba175377649c1c8a66d7f3656988bf7cdd079d5dfeb33a5ff877557b26847a7",
+      "current": {
+        "question": "Copilot Chatの冒頭では、同期APIとCSV出力を使う予定でした。その後、非同期APIとJSON出力を採用し、旧案は撤回しました。タイムアウト時の動作はまだ決まっていません。新しいChatへ引き継ぐ際、現在の決定と未決定事項を正しく分けた要約はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "非同期API・JSON出力を採用済み、タイムアウト時は例外を返すと記す"
+          },
+          {
+            "id": "A",
+            "text": "非同期API・JSON出力を採用済み、タイムアウトの動作を未決定と記す"
+          },
+          {
+            "id": "B",
+            "text": "同期API・JSON出力を採用済み、タイムアウトの動作を未決定と記す"
+          },
+          {
+            "id": "C",
+            "text": "非同期API・CSV出力を採用済み、タイムアウトの動作を未決定と記す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "撤回された同期・CSVを制約に残さず、決定済みと未決定の境界も維持する。",
+        "choiceExplanations": {
+          "A": "撤回された同期・CSVを制約に残さず、決定済みと未決定の境界も維持する。",
+          "B": "撤回済みの同期方式を現行契約として残す。",
+          "C": "撤回済みのCSV方式を現行契約として残す。",
+          "D": "未決定のタイムアウトを確定した仕様に変えている。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a07",
+      "category": "ALIGNED",
+      "theme": "入力を絞る対照試行",
+      "rationale": "必要なコードと型を残し、Copilotへの文脈量を変えて結果を比較する。",
+      "recommendation": "維持。入力を減らせば必ず速くなるという製品保証にはしない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o2",
+      "officialScopeAnchor": "d4o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "bb11189066abf9e4567b5b5fd1759c7a8187ea05c165bceee2f1c7a20decb69e",
+      "current": {
+        "question": "同じモデルとネットワークを使っていても、大きなファイルの全文を添付した依頼だけ応答が遅くなります。出力上限も同じです。対象関数とその依存型の情報を残し、入力の量による影響だけを最初に比較したいと考えています。どの試行を行うべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "同じ全文のままモデルを替え、他条件を固定する"
+          },
+          {
+            "id": "A",
+            "text": "対象関数と依存型の抜粋へ替え、他条件を固定する"
+          },
+          {
+            "id": "B",
+            "text": "同じ全文のまま出力上限を下げ、他条件を固定する"
+          },
+          {
+            "id": "D",
+            "text": "同じ全文のまま接続経路を替え、他条件を固定する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "必要な意味を保った抜粋で入力量だけを変え、比較の目的に合う。",
+        "choiceExplanations": {
+          "A": "必要な意味を保った抜粋で入力量だけを変え、比較の目的に合う。",
+          "B": "出力量の影響を調べる試行で、入力量は変化しない。",
+          "C": "モデルの影響を調べる試行で、入力量は変化しない。",
+          "D": "通信経路の影響を調べる試行で、入力量は変化しない。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a09",
+      "category": "ALIGNED",
+      "theme": "Chat接続先への通信許可",
+      "rationale": "github.comへの接続とCopilotサービスへの接続を区別する実用的な診断を扱う。",
+      "recommendation": "維持。宛先の最新性は公式ネットワーク資料で確認する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "network"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "cfa665d49b906e065100441d4200b4e552cdc14bc5428319a440455dcae7ea09",
+      "current": {
+        "question": "接続診断ではgithub.comへのHTTPS通信は成功しましたが、公式のCopilot Chat接続先への外向きHTTPS通信はファイアウォールで拒否されました。開発PCへの外部からの接続は不要です。今回の接続に必要な範囲だけ許可するには、どの設定変更が適切ですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "github.comへのアウトバウンドSSH"
+          },
+          {
+            "id": "A",
+            "text": "遮断されたChat接続先へのアウトバウンドHTTPS"
+          },
+          {
+            "id": "C",
+            "text": "開発PCへのインバウンドHTTPS"
+          },
+          {
+            "id": "B",
+            "text": "社内DBへのアウトバウンドHTTP"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "観測された宛先と通信方向へ許可を限定する。",
+        "choiceExplanations": {
+          "A": "観測された宛先と通信方向へ許可を限定する。",
+          "D": "Gitの通信でChatの遮断とは別。",
+          "C": "今回の要求は外向き通信。",
+          "B": "Chatのサービス宛先ではない。"
+        },
+        "sourceIds": [
+          "network"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a11",
+      "category": "REPLACE_FOCUS",
+      "theme": "ストリーミング表示の時間",
+      "rationale": "開発者がCopilot Chatの表示実装を変更する設定で、一般的なストリーミングUIの時間計算が核心。",
+      "recommendation": "同じD3o2で、Copilotの出力を読む際の限界や生成候補と採用の関係を判断する問題へ出題軸を変更する。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o2",
+      "officialScopeAnchor": "d3o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "a74510ebe0c9a8c7c77d27e495840c8b144f08b568679dc0680c8725a94b9eae",
+      "current": {
+        "question": "Copilot Chatの回答表示を、生成完了後の一括表示からストリーミング表示へ変更しました。同じ依頼で、最初の内容を表示できるのは開始から2秒後、生成が完了するのは10秒後です。変更前は、生成が完了する10秒後まで何も表示していませんでした。今回の表示方法の変更による効果を、どのように評価すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "回答量が5分の1になったため表示が早くなった"
+          },
+          {
+            "id": "C",
+            "text": "最初の内容を生成する時間が0秒になった"
+          },
+          {
+            "id": "A",
+            "text": "表示開始は10秒から2秒になり、全体の完了時間は10秒のままである"
+          },
+          {
+            "id": "B",
+            "text": "モデルの全体生成時間が10秒から2秒へ短縮された"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "表示方法を変えると最初の内容を開始から2秒後に示せますが、生成完了は10秒後のままです。画面で待つ時間の改善と、モデル全体の生成時間の短縮を区別します。",
+        "choiceExplanations": {
+          "A": "表示方法を変えると最初の内容を開始から2秒後に示せますが、生成完了は10秒後のままです。画面で待つ時間の改善と、モデル全体の生成時間の短縮を区別します。",
+          "B": "完了時刻は変わっていないため生成全体が短縮された証拠はない。",
+          "C": "最初の内容には2秒かかっており、ストリーミングでもその待ち時間は残る。",
+          "D": "回答量の変化という観測は与えられていない。"
+        },
+        "sourceIds": [
+          "streaming"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-e03",
+      "category": "REFRAME",
+      "theme": "ドルとセントの余分な換算",
+      "rationale": "生成コードとテストの検証に接点はあるが、実際には100倍・100除算の場所を選ぶ算数が中心。",
+      "recommendation": "Copilot生成実装と生成テストが同じ単位の誤解を共有した場合に、独立した単位仕様で再検証する方針を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "a80e80aa67d8cf4a9a3ba5496e9353ec6b8b72d26110288bdcd08780352355e0",
+      "current": {
+        "question": "Copilotの金額処理と生成テストを照合しています。承認済みの処理は、前半でドルを100倍してセントへ変換し、後半で100で割ってドルへ戻します。Copilotは二つの処理の間へ、さらに100で割る処理を追加しました。入力100ドルが1ドルになった場合、承認済みの処理を保つ修正と検証はどれですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "後半の変換を取り除き、入出力の単位と結果を検証する"
+          },
+          {
+            "id": "D",
+            "text": "変換を保ち、入力単位に合うテスト期待値へ直して検証する"
+          },
+          {
+            "id": "A",
+            "text": "中間の変換を取り除き、入出力の単位と結果を検証する"
+          },
+          {
+            "id": "C",
+            "text": "前半の変換を取り除き、入出力の単位と結果を検証する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。",
+        "choiceExplanations": {
+          "A": "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。",
+          "B": "中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。",
+          "C": "入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。",
+          "D": "実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a01",
+      "category": "ALIGNED",
+      "theme": "実装環境と契約をプロンプトへ明示",
+      "rationale": "Copilotの誤った言語・ORM・業務条件を、具体的な修正依頼へ戻す。",
+      "recommendation": "維持。選択肢が仕様の転記に寄る難度は別に確認する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "d98d94cc7b487212750b6e270435e45f9fa74937150609b8ce70cf7ae0146bb1",
+      "current": {
+        "question": "Copilotのユーザー登録処理は、Pythonと直接SQLを使っています。しかし、呼び出し側はTypeScriptで、DB操作はPrismaへ統一されています。また、重複したメールアドレスは登録せず例外を返す仕様です。既存環境と重複時の動作を両方守る修正指示はどれですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "TypeScriptと直接SQLを使い、重複メールでは例外を返す"
+          },
+          {
+            "id": "D",
+            "text": "PythonとPrismaを使い、重複メールでは例外を返す"
+          },
+          {
+            "id": "A",
+            "text": "TypeScriptとPrismaを使い、重複メールでは例外を返す"
+          },
+          {
+            "id": "C",
+            "text": "TypeScriptとPrismaを使い、重複メールでは既存行を返す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既存の実装環境と重複時の業務契約をともに具体化する。",
+        "choiceExplanations": {
+          "A": "既存の実装環境と重複時の業務契約をともに具体化する。",
+          "B": "実装言語と重複時契約は合うが、DB操作の統一方針を満たさない。",
+          "C": "実装環境は合うが、重複時の戻り値を変えている。",
+          "D": "DB操作と重複時契約は合うが、既存呼出側の言語と異なる。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a02",
+      "category": "ALIGNED",
+      "theme": "禁止から代替実装例へ",
+      "rationale": "否定だけの依頼を、現行APIの使い方という具体的文脈で改善する。",
+      "recommendation": "維持。few-shot・既存コード例の役割を説明する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "c10ab88f646302d80459911ba0a1a1246c38b6f9e4d139935b318277a253d991",
+      "current": {
+        "question": "Copilotへ「console.logを直接使わない」と指示したところ、独自のログ関数を作成しました。チームでは既存のappLoggerをインポートして使う方針です。新しいロガーを作らず、この方針に沿うコードを得るため、プロンプトへどの情報を追加すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "console.logを禁止する指示と、その理由を詳しく示す"
+          },
+          {
+            "id": "C",
+            "text": "既存コードでログ出力を省略している箇所の例を示す"
+          },
+          {
+            "id": "A",
+            "text": "appLoggerのインポート方法と、実際の呼び出し例を示す"
+          },
+          {
+            "id": "D",
+            "text": "同じ用途を持つ別ライブラリのloggerの使用例を示す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "望む代替を現行コードの例で具体化する。",
+        "choiceExplanations": {
+          "A": "望む代替を現行コードの例で具体化する。",
+          "B": "禁止だけでは既存appLoggerを特定できない。",
+          "C": "必要なログ出力を消すという別の動作になる。",
+          "D": "別のAPIへ誘導して統一方針から外れる。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a03",
+      "category": "ALIGNED",
+      "theme": "回答形式を例で具体化",
+      "rationale": "Copilotへ出力形式・値の型・構造を明示するプロンプト判断を扱う。",
+      "recommendation": "維持。JSONを指示しても応答が保証されず受信側検証が必要なことを保つ。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "d88cffa85082bc2afde8dcc7e83a442dcbffcbf2b8596aa583da44c996318a00",
+      "current": {
+        "question": "Copilotの回答は説明文の後にJSONが続き、countが文字列になっています。呼び出し側は応答全体をJSONとして読み、ルート直下のcountが単一の数値か検証します。件数3の例を使って出力形式を明示する場合、どの指示と例が仕様に合いますか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "JSONだけを返し、例を {\"count\":\"3\"} とする"
+          },
+          {
+            "id": "A",
+            "text": "JSONだけを返し、例を {\"count\":3} とする"
+          },
+          {
+            "id": "C",
+            "text": "JSONだけを返し、例を {\"data\":{\"count\":3}} とする"
+          },
+          {
+            "id": "D",
+            "text": "JSONだけを返し、例を {\"count\":[3]} とする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "説明文を含めず、ルートに単一の数値countを持つ契約になる。受信後も検証する。",
+        "choiceExplanations": {
+          "A": "説明文を含めず、ルートに単一の数値countを持つ契約になる。受信後も検証する。",
+          "B": "countの値が文字列で、受信側の数値検証を満たさない。",
+          "C": "数値はあるが、countの位置がdata配下になっている。",
+          "D": "ルートのcountは配列で、単一の数値という契約と異なる。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a05",
+      "category": "ALIGNED",
+      "theme": "正常値と不正入力の対照例",
+      "rationale": "Copilotが混同したゼロと不正入力を、few-shotの具体例で分ける。",
+      "recommendation": "維持。生成コードの契約を伝える例の意味を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "c56658f9d874de0f80f0265c9d451a548fecc6dff7e8179034d27fb9e21946c4",
+      "current": {
+        "question": "Copilotが生成したparseAmountは、不正な文字列でも0を返します。承認済みの仕様では、数値文字列は数値へ変換し、「0」は有効な0として扱います。一方、数値でない文字列では例外を発生させます。正常なゼロと不正入力を区別させるには、どの二つの例をプロンプトへ追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "\"0\" → 0、\"abc\" → 例外"
+          },
+          {
+            "id": "B",
+            "text": "\"0\" → 0、\"abc\" → 0"
+          },
+          {
+            "id": "C",
+            "text": "\"0\" → 例外、\"abc\" → 例外"
+          },
+          {
+            "id": "D",
+            "text": "\"0\" → \"0\"、\"abc\" → \"abc\""
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "有効なゼロと不正な文字列を対比し、変換と拒否の境界を示す。",
+        "choiceExplanations": {
+          "A": "有効なゼロと不正な文字列を対比し、変換と拒否の境界を示す。",
+          "B": "不正値を正常なゼロへ変え、現状の不具合を保持する。",
+          "C": "有効なゼロまで拒否し、入力契約を狭める。",
+          "D": "文字列の返却となり、数値へ変換する契約を満たさない。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a06",
+      "category": "REFRAME",
+      "theme": "検索除外のglob",
+      "rationale": "文脈のノイズ削減は適切だが、架空検索ツールのglob仕様を読むことが核心。",
+      "recommendation": "古い生成物と現行ソースのどちらをCopilotへ渡すか、検索・添付する文脈の選択を問う。パターン暗記を避ける。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o2",
+      "officialScopeAnchor": "d4o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "bd3c97f4c232318ad2348e0dad7177b1aef6e41ed389508e1259c757ff6920f3",
+      "current": {
+        "question": "Copilotへ渡す検索結果に古いビルド生成物が混ざっています。この検索ツールでは「**」が任意の階層を表します。dist/a.js、packages/client/dist/a.js、packages/server/dist/b.jsを除外し、各パッケージのsrcは検索対象に残します。どの除外パターンが条件を満たしますか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "**/dist/** を検索除外へ指定"
+          },
+          {
+            "id": "B",
+            "text": "dist/** を検索除外へ指定"
+          },
+          {
+            "id": "C",
+            "text": "packages/client/dist/** を検索除外へ指定"
+          },
+          {
+            "id": "D",
+            "text": "packages/** を検索除外へ指定"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "ルートと各packageのdistを外し、srcを検索対象として残す。",
+        "choiceExplanations": {
+          "A": "ルートと各packageのdistを外し、srcを検索対象として残す。",
+          "B": "ルートdistは外せるが、packages配下のdistを残す。",
+          "C": "clientのdistだけで、ルートとserverの生成物を残す。",
+          "D": "生成物と一緒にpackages配下のsrcも外してしまう。"
+        },
+        "sourceIds": [
+          "workspace-context"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a09",
+      "category": "ALIGNED",
+      "theme": "レビュー依頼の焦点",
+      "rationale": "漠然とした保守性レビューをCopilotに求める代わりに、目的・依存・変更容易性を明示する。",
+      "recommendation": "維持。税計算の設計自体を主題にしない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "2cb6c58203de68786458e963447846e295385dc263e82941fc9efb9c8e1ba406",
+      "current": {
+        "question": "Copilotに保守性のレビューを依頼すると、命名の指摘ばかりになります。今回は、税率を変えるときに修正箇所が複数のモジュールへ散らばっていないかを調べたいと考えています。この目的に合わせるには、どの依頼文を追加すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "税計算の関数名を一覧にし、チームの命名規則へそろえる"
+          },
+          {
+            "id": "C",
+            "text": "税計算の処理時間を測り、計算量の改善候補を示す"
+          },
+          {
+            "id": "D",
+            "text": "税計算のコメントと実装を照合し、説明の不足を示す"
+          },
+          {
+            "id": "A",
+            "text": "税率変更が波及する関数と依存を挙げ、共通化の候補を示す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "変更容易性を具体的な変更が波及する範囲として評価させる。",
+        "choiceExplanations": {
+          "A": "変更容易性を具体的な変更が波及する範囲として評価させる。",
+          "B": "命名の一貫性は今回の修正範囲の散在を直接評価しない。",
+          "C": "性能は評価できるが変更箇所の分散という観点ではない。",
+          "D": "文書の正確性は評価できるが変更容易性の依存分析とは異なる。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a10",
+      "category": "ALIGNED",
+      "theme": "CI失敗を調べる文脈",
+      "rationale": "Copilotへソースだけでなく失敗環境の実行条件・エラーを渡す判断を問う。",
+      "recommendation": "維持。モジュール解決の細部より、診断に必要なコンテキストを扱う。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o2",
+      "officialScopeAnchor": "d4o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "65cb05f5ef65f0634b6e5d1adb7f7c863edf94e2aa5b5b14146fe7d7a7aedadc",
+      "current": {
+        "question": "ローカルIDEでは成功するビルドが、CIではモジュール解決エラーで失敗します。ソースコードはChatへ添付済みです。CIログでは、ローカルと異なる作業ディレクトリからコマンドを実行しています。失敗する環境のパス解決を調べてもらうため、次にどの情報を渡すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "CIのテスト結果・カバレッジとPRの説明文"
+          },
+          {
+            "id": "C",
+            "text": "ローカルの依存一覧・型定義とリンター設定"
+          },
+          {
+            "id": "B",
+            "text": "ローカルの成功コマンド・実行時間と生成物のサイズ"
+          },
+          {
+            "id": "A",
+            "text": "CIの作業ディレクトリ・コマンド・エラーとパス設定"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "失敗する環境の実行条件をモジュール解決の設定と結び付ける。",
+        "choiceExplanations": {
+          "A": "失敗する環境の実行条件をモジュール解決の設定と結び付ける。",
+          "B": "成功時の情報だけでは失敗した実行条件を追えない。",
+          "C": "有用な場合もあるが観測された作業位置の差が不足する。",
+          "D": "ビルドのモジュール解決に必要な実行条件が分からない。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a02",
+      "category": "REPLACE_FOCUS",
+      "theme": "return/throwとfinally",
+      "rationale": "リファクタリングは範囲内だが、四択は言語の例外制御構文の配置そのものを試す。",
+      "recommendation": "同じD5o1で、生成リファクタリングの採用前に、正常・例外・入力拒否の契約を保つ依頼・検証計画を選ぶ問題へ変更する。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "9d2ae86396a8c113ed9ab5b6b0ec53964eeed5a565e7d3f5dbb3987dcd50efd0",
+      "current": {
+        "question": "Copilotが提案した早期returnを採用すると、監査記録が欠けました。仕様では、入力検証を通過した処理は成功・失敗ともに一度記録し、入力検証で拒否した場合は記録しません。検証後には成功時のreturnと失敗時のthrowがあり、監査関数自体は例外を出しません。どこに記録処理を置けば、この条件を満たしますか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "入力検証後の処理だけを囲むfinallyで、一度記録する"
+          },
+          {
+            "id": "B",
+            "text": "入力検証後の成功時returnの直前で、一度記録する"
+          },
+          {
+            "id": "C",
+            "text": "入力検証後の処理のcatchの中で、一度記録する"
+          },
+          {
+            "id": "D",
+            "text": "入力検証も含む処理全体のfinallyで、一度記録する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "入力検証後の処理ブロックのfinally等で記録し、処理の終了経路を覆い入力拒否は含めない。",
+        "choiceExplanations": {
+          "A": "入力検証後の処理ブロックのfinally等で記録し、処理の終了経路を覆い入力拒否は含めない。",
+          "B": "成功だけ記録し、処理失敗時の監査を欠く。",
+          "C": "処理失敗だけ記録し、成功時の監査を欠く。",
+          "D": "入力拒否も記録する配置で、今回の監査対象を広げる。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a03",
+      "category": "ALIGNED",
+      "theme": "不正確なPR要約の修正",
+      "rationale": "Copilot生成要約と実際の公開API差分を照合し、利用者が必要な移行情報を補う。",
+      "recommendation": "維持。生成要約だけで互換性を判断しない意味を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "a84c50a5174689c5bb8828fe17de7629fd7d6f06f8c6ca5a8ab5f47d71e051bd",
+      "current": {
+        "question": "CopilotのPR要約は「互換性の変更なし」となっています。しかし、承認済みの差分では公開関数submitのretry引数を削除しており、利用側の呼び出し修正が必要です。戻り値、環境変数、権限設定は変えていません。利用者が移行できるように、どの説明を追加すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "変更した戻り値と、新しい結果の受け取り例を説明する"
+          },
+          {
+            "id": "C",
+            "text": "変更した環境変数と、新しい起動設定例を説明する"
+          },
+          {
+            "id": "A",
+            "text": "削除したretry引数と、新しいsubmitの呼び出し例を説明する"
+          },
+          {
+            "id": "D",
+            "text": "変更した必要権限と、新しい認可設定例を説明する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "実際の公開API変更を利用側が適用できる移行方法として説明する。",
+        "choiceExplanations": {
+          "A": "実際の公開API変更を利用側が適用できる移行方法として説明する。",
+          "B": "戻り値は変更されておらず、今回の移行対象ではない。",
+          "C": "環境変数は変更されておらず、今回の移行対象ではない。",
+          "D": "必要権限は変更されておらず、今回の移行対象ではない。"
+        },
+        "sourceIds": [
+          "code-review",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a04",
+      "category": "ALIGNED",
+      "theme": "欠落ケースをChatへ提示",
+      "rationale": "生成SQLの誤りを再現する入力と独立した期待結果を、Copilotの修正依頼へ渡す。",
+      "recommendation": "維持。未提示のSQL構文を断定しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "e98fb595cf33cee531f287ef81249b29034cc687dacc82ae9734983eb51cbd3f",
+      "current": {
+        "question": "Copilotが提案した顧客一覧のSQLは、注文がある顧客だけを返し、注文0件の有効な顧客を落としてしまいます。論理削除済みの顧客は一覧から除外する仕様です。欠落するケースを再現して修正を確認するには、どのテストデータと期待結果をChatへ渡すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "未削除・注文1件の顧客行と、その顧客を含む結果"
+          },
+          {
+            "id": "D",
+            "text": "未削除・注文0件の顧客行と、その顧客を除く結果"
+          },
+          {
+            "id": "A",
+            "text": "未削除・注文0件の顧客行と、その顧客を含む結果"
+          },
+          {
+            "id": "C",
+            "text": "削除済み・注文0件の顧客行と、その顧客を除く結果"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "注文0件でも有効な顧客は一覧に含む仕様です。その入力と期待結果を与えて欠落を検出します。JOINや絞り込み条件を調べる必要がありますが、クエリ本文がないので原因のSQL構文までは断定できません。",
+        "choiceExplanations": {
+          "A": "注文0件でも有効な顧客は一覧に含む仕様です。その入力と期待結果を与えて欠落を検出します。JOINや絞り込み条件を調べる必要がありますが、クエリ本文がないので原因のSQL構文までは断定できません。",
+          "B": "注文ありの既知の成功例で、今回の欠落条件を再現しない。",
+          "C": "削除済みの除外確認として有用だが、今回の未削除顧客の欠落とは異なる。",
+          "D": "今回の誤動作を期待結果にしており、承認契約に反する。"
+        },
+        "sourceIds": [
+          "tests",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a05",
+      "category": "REPLACE_FOCUS",
+      "theme": "Conventional Commitsのfix分類",
+      "rationale": "Copilotの機能を選択・操作・検証する知識を使わず、外部のコミット分類規約を答える問題。確認したガイドに規約自体の明示はない。",
+      "recommendation": "同じD5o1で、Copilotが生成した変更説明に差分と一致しない内容がある場合の照合・修正判断へ変更する。PR要約問題との差別化も必要。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "b243f6c2a29386a1e79b24491255c8ba22a4de6b3373caab2d2b7462902782f4",
+      "current": {
+        "question": "チームではConventional Commitsを使います。Copilotの差分はMath.floor(total)をMath.round(total)へ変え、10.6の結果を10から11にするものです。承認済みの仕様は四捨五入で、公開APIや文書の変更はありません。実際の変更内容に合うコミットメッセージはどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "refactor: 税込価格の処理を関数分割"
+          },
+          {
+            "id": "B",
+            "text": "docs: 税込価格の利用例を追記"
+          },
+          {
+            "id": "A",
+            "text": "fix: 税込価格の丸め誤りを修正"
+          },
+          {
+            "id": "C",
+            "text": "feat: 税込価格の割引機能を追加"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既存の誤動作を直す差分なのでfixと、その修正内容を対応付ける。",
+        "choiceExplanations": {
+          "A": "既存の誤動作を直す差分なのでfixと、その修正内容を対応付ける。",
+          "B": "文書だけを変更した差分の説明で、今回の実装修正と異なる。",
+          "C": "機能追加の差分の説明で、今回のバグ修正と異なる。",
+          "D": "動作を変えない内部構造の整理の説明で、今回の誤動作修正を表さない。"
+        },
+        "sourceIds": [
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a06",
+      "category": "ALIGNED",
+      "theme": "生成テストの分割",
+      "rationale": "Copilotの生成テストが複数動作をまとめている問題を、診断・個別実行・期待値保持の観点で改善する。",
+      "recommendation": "維持。テスト命名の一般常識だけでなく生成テストの改善を主題にする。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "724c5f3881fec412caa2fc235efe7c9eab2ecfaa5dd85b6077bbf939a14beebf",
+      "current": {
+        "question": "Copilotが生成したtest(\"works\")は、価格計算・アクセス権限・通知送信の検証を一つのテストへまとめています。失敗した仕様をすぐに特定し、その仕様だけを再実行できるようにしたいと考えています。どのようにテストを整理すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "アサーションを三つのヘルパーへ移し、同じテストから呼ぶ"
+          },
+          {
+            "id": "C",
+            "text": "三つの期待値を一枚のスナップショットにまとめる"
+          },
+          {
+            "id": "B",
+            "text": "worksという名前に三つの仕様を書き、同じテストに残す"
+          },
+          {
+            "id": "A",
+            "text": "振る舞い別に名前を付けたテストへ分け、各期待値を保つ"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "診断性と個別実行の両方を改善し、必要な検証を保持する。",
+        "choiceExplanations": {
+          "A": "診断性と個別実行の両方を改善し、必要な検証を保持する。",
+          "B": "名前を増やしても振る舞い別には実行できない。",
+          "C": "全体の差分は見られても個別の振る舞いを再実行できない。",
+          "D": "コードは整理できるがテストの実行単位が変わらない。"
+        },
+        "sourceIds": [
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a07",
+      "category": "ALIGNED",
+      "theme": "移行後のタイムゾーン検証",
+      "rationale": "Copilotへ互換性テストを依頼する際に、移行資料と日付境界という不足ケースを選ぶ。",
+      "recommendation": "維持。時差計算の細部を増やさない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "c1d53e630dbfe45200e4fbd418297b9c23174405009c709504456d28fcaa2166",
+      "current": {
+        "question": "日付処理ライブラリをv2へ移行すると、型検査は成功しても日付が1日ずれました。移行ガイドでは、既定タイムゾーンがUTCへ変わっています。アプリの仕様は、日本時間（Asia/Tokyo）での年月日を維持することです。Copilotへ、どの入力を使う互換性テストを依頼すべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "同じ日付を不正な形式で与え、入力エラーを比較"
+          },
+          {
+            "id": "A",
+            "text": "同じ時刻をAsia/Tokyoの境界前後で与え、暦日を比較"
+          },
+          {
+            "id": "D",
+            "text": "同じ日付を大量に与え、処理時間を比較"
+          },
+          {
+            "id": "B",
+            "text": "同じ時刻をUTCの正午付近で与え、ISO文字列を比較"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "日本時間で日付が変わる前後の同じ時刻を新旧実装に与え、年月日を比較します。型検査ではタイムゾーンによる日付の違いを検出できません。例えば日本時間の午前0時はUTCの前日15時です。",
+        "choiceExplanations": {
+          "A": "日本時間で日付が変わる前後の同じ時刻を新旧実装に与え、年月日を比較します。型検査ではタイムゾーンによる日付の違いを検出できません。例えば日本時間の午前0時はUTCの前日15時です。",
+          "B": "UTC正午での比較では、利用者側の日付境界とその契約を確認しない。",
+          "C": "入力形式の契約の確認で、今回の有効日時のタイムゾーン差を確認しない。",
+          "D": "性能の比較で、暦日の互換性を確認しない。"
+        },
+        "sourceIds": [
+          "tests",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a08",
+      "category": "ALIGNED",
+      "theme": "生成DBテストの環境差",
+      "rationale": "生成テストの成功を本番互換とみなさず、実際のDB機能を検証する実行環境を選ぶ。",
+      "recommendation": "維持。SQLite一般の全機能について断定しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "273ad7052118339db3eb1274446520202cc4aec5231b214a771a568007a04d77",
+      "current": {
+        "question": "Copilotが生成したDBテストは、基本的なCRUD操作ならSQLiteで成功します。しかし、本番DBの固有機能を使う検索は、今回のSQLite環境では実行できません。基本CRUDの軽量なテストは維持し、固有機能の検索は実際の動作も確認する方針です。どのテスト実行構成が適切ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "CRUDはSQLite、固有機能の検索は本番と同種のDBで実行する"
+          },
+          {
+            "id": "C",
+            "text": "CRUDは本番と同種のDB、固有機能の検索はSQLiteで実行する"
+          },
+          {
+            "id": "B",
+            "text": "CRUDも固有機能の検索も、本番と同種のDBで実行する"
+          },
+          {
+            "id": "D",
+            "text": "CRUDはSQLite、固有機能の検索は固定結果のスタブで実行する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "基本CRUDはSQLiteで維持し、今回その環境で実行できない固有機能は本番と同種のDBで検証します。固定結果のスタブでは、固有機能の実際の動作を確認できません。基本CRUDを軽量な環境で維持する条件も満たします。",
+        "choiceExplanations": {
+          "A": "基本CRUDはSQLiteで維持し、今回その環境で実行できない固有機能は本番と同種のDBで検証します。固定結果のスタブでは、固有機能の実際の動作を確認できません。基本CRUDを軽量な環境で維持する条件も満たします。",
+          "B": "固有検索は確認できるが、CRUDの軽量なSQLiteテストを維持する条件を満たさない。",
+          "C": "確認できる対象を逆にし、固有検索の演算子を実行できない。",
+          "D": "利用側のテストには使えるが、固有演算子の実動作を確認できない。"
+        },
+        "sourceIds": [
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a09",
+      "category": "ALIGNED",
+      "theme": "Code review提案と旧データ",
+      "rationale": "Copilotの削除提案を宣言型だけで採用せず、既知の実データによるテストで安全性を確認する。",
+      "recommendation": "維持。AIレビューが運用前提を把握しているとは限らない理由を保つ。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "8c38f046b36ee3aa509d202c06dc01bb34a2a15e6bb56c7d76c69647f9bfa782",
+      "current": {
+        "question": "Copilotのコードレビューはnullチェックの削除を提案しました。宣言上の型はUserですが、移行済みの旧データにはnullが混ざっています。正常なUserを使うテストは成功しています。削除前後の安全性を判断するため、次にどの入力を使って検証すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "Userの最大長nameを渡し、削除前後の動作を確認"
+          },
+          {
+            "id": "B",
+            "text": "Userの空文字nameを渡し、削除前後の動作を確認"
+          },
+          {
+            "id": "A",
+            "text": "旧データのnullを渡し、削除前後の動作を確認"
+          },
+          {
+            "id": "C",
+            "text": "Userの省略可能なemailを外し、削除前後の動作を確認"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "宣言型で表せない既知の運用入力を再現し、防御を外した影響を検証する。",
+        "choiceExplanations": {
+          "A": "宣言型で表せない既知の運用入力を再現し、防御を外した影響を検証する。",
+          "B": "空文字も検証対象になり得るが、User自体がnullという前提を通らない。",
+          "C": "emailの欠損は別の境界で、User自体のnullを通らない。",
+          "D": "文字数の境界は別の前提で、User自体のnullを通らない。"
+        },
+        "sourceIds": [
+          "code-review",
+          "tests"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a10",
+      "category": "ALIGNED",
+      "theme": "生成最適化案の本番検証",
+      "rationale": "Copilotの高速化提案を本番の規模・データ分布・結果契約へ照合して採用する。",
+      "recommendation": "維持。性能アルゴリズムの専門試験にしない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "39ab9c6b9e0f9257339295c651f739c3129fad9600504d0e81ab70d622cdfdd4",
+      "current": {
+        "question": "Copilotの検索最適化案は、重複キーのない100件では旧実装より高速でした。しかし本番は重複キーを含む10万件が中心で、同じキーの結果の順序も維持する必要があります。各案は、新旧実装へ同じデータを入力して比較します。本番への採用判断には、どの追加比較が適切ですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "重複あり100件で、結果の並びと時間を比較"
+          },
+          {
+            "id": "A",
+            "text": "重複あり10万件で、結果の並びと時間を比較"
+          },
+          {
+            "id": "B",
+            "text": "重複なし10万件で、結果の並びと時間を比較"
+          },
+          {
+            "id": "D",
+            "text": "重複あり10万件で、結果の件数と時間を比較"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "本番の規模と重複の特徴を再現し、順序の互換性と性能をともに比較する。",
+        "choiceExplanations": {
+          "A": "本番の規模と重複の特徴を再現し、順序の互換性と性能をともに比較する。",
+          "B": "規模と順序は確認するが、本番にある重複キーの条件を通らない。",
+          "C": "重複と順序は確認するが、本番の中心規模を通らない。",
+          "D": "本番入力で件数と性能は確認するが、件数が同じでも順序の違反を見逃す。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a11",
+      "category": "REFRAME",
+      "theme": "READMEの不足環境変数",
+      "rationale": "生成文書の検証へ接点はあるが、正解がエラー文の変数名をそのまま選ぶだけになっている。",
+      "recommendation": "新規環境で生成手順を再現し、実設定・依存・実行条件をコンテキストに渡してREADMEを補う判断へ寄せる。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "e1bd5d54f9f65c5d82e24a1c1c8009a98977a8bafd17a882a621609c09ac2f44",
+      "current": {
+        "question": "Copilotが生成したREADMEに従って新しい環境で起動すると、APP_MODE is requiredで停止しました。既存端末はAPP_MODE=testで起動します。PORT=3000は両環境で同じです。新しい環境でも起動できるように、どの設定手順をREADMEへ追加すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "REQUEST_TIMEOUT=30の設定と、起動前の値の確認"
+          },
+          {
+            "id": "C",
+            "text": "LOG_LEVEL=infoの設定と、起動前の値の確認"
+          },
+          {
+            "id": "B",
+            "text": "PORT=3000の設定と、起動前の値の確認"
+          },
+          {
+            "id": "A",
+            "text": "APP_MODE=testの設定と、起動前の値の確認"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "エラーと成功環境の差が示す必須のAPP_MODEを、再現できる起動手順へ追加する。",
+        "choiceExplanations": {
+          "A": "エラーと成功環境の差が示す必須のAPP_MODEを、再現できる起動手順へ追加する。",
+          "B": "PORTは両環境で同じで、今回の停止条件ではない。",
+          "C": "ログ出力の設定は有用だが、今回不足している必須前提を満たさない。",
+          "D": "通信待機の設定は有用だが、今回の起動前の停止を解消しない。"
+        },
+        "sourceIds": [
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-e04",
+      "category": "ALIGNED",
+      "theme": "生成JSDocと現行契約",
+      "rationale": "生成説明だけが旧版の契約を記している場面で、実装を誤って変えず文書を照合・修正する。",
+      "recommendation": "維持。AI生成文書を独立した現行仕様へ合わせる判断を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o1",
+      "officialScopeAnchor": "d5o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "71c00e5be08eb80a59bc8a821d5a3bf3eb5550dd07f169a4a5225b7c0c6219f9",
+      "current": {
+        "question": "Copilotが生成したfindUserの説明を確認しています。承認済みのv2仕様では、利用者が見つからなければnullを返します。実装・仕様を検証するテスト・呼び出し側の分岐は、いずれもnullに対応しています。一方、JSDocだけが旧v1の例外方式を説明しています。現行仕様と利用側の動作を保つ修正はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "JSDocを承認済みv2契約へ合わせ、未発見の記述を照合する"
+          },
+          {
+            "id": "C",
+            "text": "契約テストを承認済みv2契約へ合わせ、未発見の期待値を照合する"
+          },
+          {
+            "id": "D",
+            "text": "呼出側を承認済みv2契約へ合わせ、未発見の分岐処理を照合する"
+          },
+          {
+            "id": "B",
+            "text": "実装を承認済みv2契約へ合わせ、未発見の実行結果を照合する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。",
+        "choiceExplanations": {
+          "A": "承認契約と実装・テスト・呼出側がnullで一致し、生成文書だけが旧版を記述している。文書を直し、実行契約は変えない。",
+          "C": "期待値が旧例外方式なら必要だが、今回はテストが承認契約のnullと一致する。",
+          "D": "呼出側が例外を待つなら必要だが、今回はnull分岐が現行契約に合う。",
+          "B": "実装が旧例外方式なら必要だが、今回はnullを返して契約に合う。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a01",
+      "category": "ALIGNED",
+      "theme": "コピー先リポジトリの除外",
+      "rationale": "Copilotコンテンツ除外のリポジトリ単位の対象設定を直接問う。",
+      "recommendation": "維持。Git追跡とCopilot除外を混同しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "26c899d5126efb97c872ee4372d85732e88bb6a92010f58c35598ca110c657c2",
+      "current": {
+        "question": "リポジトリAでは、Copilotのコンテンツ除外によりsecrets/を参照対象から外しています。コードを複製したリポジトリBには除外ルールがなく、通常補完で同じパスが参照されています。Bでもsecrets/を除外するには、どの設定を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "repo-Bの識別とsecrets/のパスを含む除外設定"
+          },
+          {
+            "id": "C",
+            "text": "repo-Bの公開コード一致をBlockにする設定"
+          },
+          {
+            "id": "D",
+            "text": "repo-BのGit追跡を無視する.gitignore設定"
+          },
+          {
+            "id": "B",
+            "text": "repo-Aのsecrets/をさらに細かく分割した除外設定"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。",
+        "choiceExplanations": {
+          "A": "除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。",
+          "B": "Aのルールを細かくしてもBは対象にならない。",
+          "C": "出力側の公開一致設定は入力ファイルの除外を代替しない。",
+          "D": "Gitの追跡対象とCopilotのContent Exclusionは同じではない。"
+        },
+        "sourceIds": [
+          "exclusion"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a03",
+      "category": "ALIGNED",
+      "theme": "Push保護とChat送信の境界",
+      "rationale": "Gitの秘密検出と、Copilotへ手動入力する秘密の除去を別経路として判断する。",
+      "recommendation": "維持。Git機能は比較材料でありChat入力保護が主題。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "b278340db9a3feb709e75cd4ed492022b8aa5121873f8809124051aadb54a26c",
+      "current": {
+        "question": "認証トークンのGit Pushはプッシュ保護によって止まりました。その後、開発者は同じトークンを含むエラーログをCopilot Chatへ貼ろうとしています。Git側の保護を維持したまま、今回のChat入力からの漏洩を防ぐには、送信前にどの対策を行うべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "GitのPushを再試行してブロックを確認する"
+          },
+          {
+            "id": "A",
+            "text": "Chatへ渡すログのトークンを送信前に置換する"
+          },
+          {
+            "id": "D",
+            "text": "ログをPrivateリポジトリへ置いてから原文を貼る"
+          },
+          {
+            "id": "C",
+            "text": "公開コード一致の設定をBlockへ変更する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Gitとは別の入力経路なので、貼り付ける前に秘密を除く。",
+        "choiceExplanations": {
+          "A": "Gitとは別の入力経路なので、貼り付ける前に秘密を除く。",
+          "B": "Git経路の検証だけでは手動のChat入力を保護しない。",
+          "C": "提案側の一致設定は入力の秘密情報を除去しない。",
+          "D": "保存先をPrivateにしても貼り付け内容から秘密は消えない。"
+        },
+        "sourceIds": [
+          "secret-scanning",
+          "privacy"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a08",
+      "category": "ALIGNED",
+      "theme": "Content excludedの診断",
+      "rationale": "Copilotのファイル別除外表示と接続成功を根拠に、非表示原因を直接切り分ける。",
+      "recommendation": "維持。候補の一致抑制と入力ファイル除外を区別する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o2",
+      "officialScopeAnchor": "d6o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "d0f640dbb21fd5bc3a40d7d202f422910535d7152ed55f406de9eef68e3926c7",
+      "current": {
+        "question": "同じプロジェクトのsrc/a.tsではCopilot補完が出ますが、src/b.tsでは出ません。接続診断は成功し、b.tsを開くとContent excludedと表示されます。今回の二つのファイルの違いと表示から、最も直接的に支持される原因はどれですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "利用者のCopilotライセンスが割り当てられていない"
+          },
+          {
+            "id": "D",
+            "text": "補完用の接続先が社内プロキシで遮断されている"
+          },
+          {
+            "id": "C",
+            "text": "提示予定のコードが公開コード一致フィルターで除かれている"
+          },
+          {
+            "id": "A",
+            "text": "src/b.tsに一致するコンテンツ除外ルールが適用されている"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "対象固有の表示と他ファイル成功の両方に合う。",
+        "choiceExplanations": {
+          "A": "対象固有の表示と他ファイル成功の両方に合う。",
+          "B": "他ファイルの成功を説明しない。",
+          "D": "接続成功と他ファイルの補完を説明しない。",
+          "C": "表示された除外理由とは異なる。"
+        },
+        "sourceIds": [
+          "exclusion"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a09",
+      "category": "REFRAME",
+      "theme": "利用状況の母数",
+      "rationale": "Copilot利用評価という題材だが、具体的な利用指標・APIの解釈を使わない一般的な母数の問題。",
+      "recommendation": "Copilotのライセンス割当・活動者・利用データで分かることの違いを示し、適切な指標と比較条件を選ぶ。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o4",
+      "officialScopeAnchor": "d2o4",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "cac49187832c0823ca2fea1ba83207816da6386ebb95c5f64e2089c35814402e",
+      "current": {
+        "question": "Copilotを使った人数が増えましたが、同じ期間にライセンスを割り当てた人数も倍増しました。利用者が増えただけなのか、一人当たりの利用も増えたのかを区別したいと考えています。この目的のため、次にどの集計を比較すべきですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "監査ログにあるポリシー変更操作の総数"
+          },
+          {
+            "id": "D",
+            "text": "全リポジトリで増えたコード行数の総数"
+          },
+          {
+            "id": "B",
+            "text": "全組織の活動者数の総数だけの前後比較"
+          },
+          {
+            "id": "A",
+            "text": "同じ対象者・期間にそろえた一人当たりの利用状況"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。",
+        "choiceExplanations": {
+          "A": "人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。",
+          "B": "割当人数の増加と一人当たりの変化を区別できない。",
+          "C": "管理操作の数は一人当たりの利用頻度とは異なる。",
+          "D": "コード量はCopilot利用の一人当たりの変化を直接表さない。"
+        },
+        "sourceIds": [
+          "rest-api",
+          "space-framework"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a10",
+      "category": "ALIGNED",
+      "theme": "Privateとコンテンツ除外",
+      "rationale": "リポジトリ公開範囲とCopilotへ文脈として提供する範囲を区別して設定する。",
+      "recommendation": "維持。Privateなら自動除外という誤解を避ける。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "483f69b3c4111570e03a29ea61c53c5252fac14123a594ae661af1afc0b36e4f",
+      "current": {
+        "question": "リポジトリNはPrivateですが、Copilotの除外一覧にあるのはリポジトリOだけです。通常補完ではNのsecret.keyが参照されます。Oの設定を維持し、Nのこのファイルだけを除外する最小限の変更はどれですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "repo-Oのパターンを細かく分割"
+          },
+          {
+            "id": "A",
+            "text": "repo-Nとsecret.keyを除外一覧へ追加"
+          },
+          {
+            "id": "D",
+            "text": "repo-Nの公開コード一致をBlockへ変更"
+          },
+          {
+            "id": "B",
+            "text": "repo-Nの名前だけを変更"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "公開範囲とCopilot文脈の除外は別で、適用先Nが必要。",
+        "choiceExplanations": {
+          "A": "公開範囲とCopilot文脈の除外は別で、適用先Nが必要。",
+          "C": "別リポジトリの設定変更である。",
+          "D": "出力の類似制御は入力パスを除外しない。",
+          "B": "設定対象を整えず名前だけを変える。"
+        },
+        "sourceIds": [
+          "exclusion"
+        ]
+      }
+    },
+    {
+      "id": "q-sc01-2",
+      "category": "ALIGNED",
+      "theme": "組織とrepoの除外",
+      "rationale": "Copilot除外ルールの設定元と残る適用範囲を診断する。",
+      "recommendation": "維持。変更承認と他ファイルの除外維持を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o2",
+      "officialScopeAnchor": "d6o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "a321fd67f89e4a48b905a65d8915130ff886561f3ba5924170720da9117afc7a",
+      "current": {
+        "question": "【AnyCompany Tech事例】secret.keyの機密解除は承認済みです。リポジトリ側の個別除外ルールを削除しましたが、通常補完ではまだ除外されています。除外一覧には、同じファイルに一致する組織側の**/*.keyが残っています。次にどの設定元を見直すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "削除済みRepositoryルールの反映だけ"
+          },
+          {
+            "id": "C",
+            "text": "公開コード一致のAllow／Block"
+          },
+          {
+            "id": "A",
+            "text": "Organizationの**/*.keyの対象範囲"
+          },
+          {
+            "id": "B",
+            "text": "secret.keyのGit追跡状態"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。",
+        "choiceExplanations": {
+          "A": "残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。",
+          "D": "反映だけでは残る組織ルールの一致を解消しない。",
+          "C": "出力の一致設定であり対象パスの入力除外ではない。",
+          "B": "Gitの追跡状態は今回の組織ルールを変更しない。"
+        },
+        "sourceIds": [
+          "exclusion",
+          "exclusion-concept"
+        ]
+      }
+    },
+    {
+      "id": "q-sc02-3",
+      "category": "REFRAME",
+      "theme": "丸め方式の追加例",
+      "rationale": "few-shotの題材ではあるが、最終判断が偶数丸めの計算へ寄り、例が解釈を区別する役割が薄い。",
+      "recommendation": "既存例だけでは複数の解釈が成立すると示し、Copilotの解釈を絞れる対照例の選択を問う。計算量を増やさない。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "8bf48193eef5c17747d29105404a7f55e57b2560ff93d8d8911e6b8964001617",
+      "current": {
+        "question": "【Apex Financial事例】Copilotへは2.4→2、2.6→3の丸め例を渡しています。候補となる方式は、最も近い整数へ丸め、ちょうど中間なら小さい方・大きい方・偶数・奇数のいずれかへ寄せる四つです。承認済みの結果は1.5→2、4.5→4でした。同じ方式を使うために追加する、2.5と3.5の入出力例はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "2.5→2と3.5→3の入出力例を追加する"
+          },
+          {
+            "id": "C",
+            "text": "2.5→3と3.5→4の入出力例を追加する"
+          },
+          {
+            "id": "B",
+            "text": "2.5→3と3.5→3の入出力例を追加する"
+          },
+          {
+            "id": "A",
+            "text": "2.5→2と3.5→4の入出力例を追加する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。",
+        "choiceExplanations": {
+          "A": "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。",
+          "D": "同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。",
+          "C": "同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。",
+          "B": "同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。"
+        },
+        "sourceIds": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-sc03-1",
+      "category": "ALIGNED",
+      "theme": "MCPの利用者認可と読取限定",
+      "rationale": "Copilotの外部ツール利用で必要な最新情報と担当範囲を両立する設計を判断する。",
+      "recommendation": "維持。ただし同種のMCP読取・認可問題の重複を増やさない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "8e9dbac42bfde57df7b39274457187c2b3444a8837bb99618aa29e7381d3bad9",
+      "current": {
+        "question": "【Horizon Cloud事例】CopilotからIssue検索と本番メトリクスの照会を行います。Issueは利用者の担当チームのものだけ閲覧できる必要があります。本番メトリクスは照会時の値を読み取るだけで、更新は許可しません。MCPサーバーの認可と公開操作をどのように組み合わせるべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "共有管理者で接続し、読取操作のみ公開"
+          },
+          {
+            "id": "B",
+            "text": "利用者ごとに担当を検証し、更新操作も公開"
+          },
+          {
+            "id": "C",
+            "text": "毎朝の共有ファイルへ出し、現在値は照会しない"
+          },
+          {
+            "id": "A",
+            "text": "利用者ごとに担当を検証し、読取操作のみ公開"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "閲覧範囲と現在値・読取制限を両立する。",
+        "choiceExplanations": {
+          "A": "閲覧範囲と現在値・読取制限を両立する。",
+          "D": "担当チームごとの閲覧境界を守らない。",
+          "B": "禁止された更新操作まで公開する。",
+          "C": "現在値の要求を満たさない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec"
+        ]
+      }
+    },
+    {
+      "id": "q-sc03-3",
+      "category": "REFRAME",
+      "theme": "相関IDと時刻のログ抽出",
+      "rationale": "文脈を絞る目的はあるが、指定されたIDと時刻を一致させる一般的なログ検索になっている。",
+      "recommendation": "Copilotの調査に必要なイベントがそろう抜粋と、無関係な大量ログの違いを判断させる。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "ef17964670035a419413bcc0bf7375cff7aa7a4ae30f647cde725b786bff9750",
+      "current": {
+        "question": "【Horizon Cloud事例】ログ取得MCPが返す全件のログは、Copilotへ渡せる入力上限を超えます。調べる注文は14:02に受け付けられ、相関IDはR17です。受付前後1分の範囲に必要な受付・検証イベントがそろっています。各選択肢の取得量は上限以内の場合、この注文の経路を調べる取得条件はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "14:01〜14:03、相関IDをR17以外にして取得"
+          },
+          {
+            "id": "C",
+            "text": "14:19〜14:21、相関ID R17で取得"
+          },
+          {
+            "id": "B",
+            "text": "14:01〜14:03、相関ID R18で取得"
+          },
+          {
+            "id": "A",
+            "text": "14:01〜14:03、相関ID R17で取得"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "時刻と相関IDの両方を合わせ、必要な経路のイベントを容量内で取得する。",
+        "choiceExplanations": {
+          "A": "時刻と相関IDの両方を合わせ、必要な経路のイベントを容量内で取得する。",
+          "B": "時刻は合うが、別の要求の経路を取得する。",
+          "C": "相関IDは合うが、障害時刻から外れる。",
+          "D": "対象要求を除外し、今回必要な経路を取得しない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "architecture"
+        ]
+      }
+    },
+    {
+      "id": "q-sc04-3",
+      "category": "REFRAME",
+      "theme": "CI検査のディレクトリ指定",
+      "rationale": "AIレビューを他の検査が補う意味は範囲内だが、実際の四択はAPI/UIの指定パスの転記に終わる。",
+      "recommendation": "Copilotレビュー・型検査・静的検査・実行テストが保証できる範囲の違いから、必要な補完検証を選ぶ。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "82b3f52f9ae7d41cabcca512b6cee1955b37843590ae7af8199ce01933ba6972",
+      "current": {
+        "question": "【Nordic Retail事例】PRはapps/api/token.tsとapps/web/page.tsを変更します。Copilotレビューを行うほか、このPRではAPIにCodeQL、UIにリンターを実行する方針です。各チェックは指定したディレクトリ内だけを検査します。レビューを継続しつつ、それぞれの検査対象をどう指定すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "CodeQLはapps/web、リンターはapps/apiを検査"
+          },
+          {
+            "id": "D",
+            "text": "CodeQLはapps/web、リンターもapps/webを検査"
+          },
+          {
+            "id": "C",
+            "text": "CodeQLはapps/api、リンターもapps/apiを検査"
+          },
+          {
+            "id": "A",
+            "text": "CodeQLはapps/api、リンターはapps/webを検査"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "APIのセキュリティとUIの規約をそれぞれ専用の静的チェックで確認し、AIの助言を補完する。",
+        "choiceExplanations": {
+          "A": "APIのセキュリティとUIの規約をそれぞれ専用の静的チェックで確認し、AIの助言を補完する。",
+          "B": "両チェックの対象を逆にし、APIのCodeQLとUIの規約検査を欠く。",
+          "C": "APIのCodeQLは確認するが、UIの規約検査を欠く。",
+          "D": "UIの規約は確認するが、APIのCodeQLを欠く。"
+        },
+        "sourceIds": [
+          "code-review",
+          "codeql",
+          "secret-scanning"
+        ]
+      }
+    },
+    {
+      "id": "q-sc05-1",
+      "category": "ALIGNED",
+      "theme": "存在しないSDK API",
+      "rationale": "CopilotがもっともらしいAPIを作るリスクを、現行SDKと承認仕様への照合で扱う。",
+      "recommendation": "維持。AIの回答へ型宣言を合わせてしまう誤りを残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "a6cf6cfc0767bd277a03af14252d5c3761a3fc1e3dca62708796701a0eb89dca",
+      "current": {
+        "question": "【Vanguard Health事例】Copilotは内部SDKのfetchPatientV2を呼び出すコードを提案しました。しかし、使用中のSDKの型定義にはgetPatient(id)だけがあり、承認済みの仕様でもこのAPIを使うことになっています。現在のSDKと仕様に合わせる修正・検証として、どの案が適切ですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "fetchPatientV2の型宣言を追加して型検査"
+          },
+          {
+            "id": "A",
+            "text": "getPatient(id)で呼び出し、契約の期待値を検証"
+          },
+          {
+            "id": "D",
+            "text": "公開SDKの同名メソッドの引数へ置換"
+          },
+          {
+            "id": "C",
+            "text": "存在確認をせず、メソッド名だけ短く変更"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "利用する版の実体と承認契約へ合わせる。",
+        "choiceExplanations": {
+          "A": "利用する版の実体と承認契約へ合わせる。",
+          "B": "型宣言の追加では実メソッドは増えない。",
+          "D": "別SDKの契約へ合わせても内部SDKを保証しない。",
+          "C": "実在するAPIへ照合していない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat"
+        ]
+      }
+    },
+    {
+      "id": "q-sc05-2",
+      "category": "ALIGNED",
+      "theme": "自由モックが隠す架空API",
+      "rationale": "生成実装とテストだけの一致を信用せず、実SDKの型・契約という独立した根拠で検証する。",
+      "recommendation": "維持。q-sc05-1とは実装修正とテストの独立性で役割を分ける。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "c5d872b09fb04639820f0a3c88834164bf9ff47fbfa7bda32ee52f1944d1d546",
+      "current": {
+        "question": "【Vanguard Health事例】実際のSDKが提供する患者取得APIはgetPatientだけです。一方、テスト用モックは任意のメソッド名を受け付けるため、Copilotが生成したfetchPatientV2の呼び出しでも成功を返してしまいます。採用前に、このモックが隠している不整合を検出するには、どの検査を追加すべきですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "同じ自由モックに正常入力を追加"
+          },
+          {
+            "id": "A",
+            "text": "実SDKの型と正式APIの契約テスト"
+          },
+          {
+            "id": "C",
+            "text": "メソッド名のスナップショット保存"
+          },
+          {
+            "id": "D",
+            "text": "自由モックの戻り値を固定して再実行"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "モックが隠すAPI契約を実体へ照合する。",
+        "choiceExplanations": {
+          "A": "モックが隠すAPI契約を実体へ照合する。",
+          "B": "同じ偽のAPIで入力を増やしても不整合を隠す。",
+          "C": "名前を保存しても実在を確認しない。",
+          "D": "戻り値固定は呼出し先の存在を確認しない。"
+        },
+        "sourceIds": [
+          "tests",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-sc05-3",
+      "category": "REFRAME",
+      "theme": "Chat入力とSecret Scanning",
+      "rationale": "Copilot入力の保護は範囲内だが、正解の組み合わせでGitの既存秘密検出とPush停止の知識が大きな比重を占める。",
+      "recommendation": "Copilotへ送る患者情報・秘密・必要な調査文脈の取扱いを主題にし、Git秘密検出の製品識別を正解の決め手にしない。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "3c175cc20930614aadd35ada1a22139e905ed2d4f645f7bdd28495157281ea0f",
+      "current": {
+        "question": "【Vanguard Health事例】患者情報はChatへ送る前に匿名化し、原本の閲覧は担当者だけに限定します。また、認証トークンは既にコミットされたものの検出と、新規Pushの停止が必要です。患者情報とGitへの秘密情報の両方を扱う構成はどれですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "入力前の匿名化・担当者の閲覧制限・Secret Scanningのみ"
+          },
+          {
+            "id": "B",
+            "text": "入力前の匿名化・全員の原本閲覧・Push Protectionのみ"
+          },
+          {
+            "id": "A",
+            "text": "入力前の匿名化・担当者の閲覧制限・Secret ScanningとPush Protection"
+          },
+          {
+            "id": "C",
+            "text": "原本をそのままChatへ渡す・担当者の閲覧制限・公開コード一致のBlock"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。",
+        "choiceExplanations": {
+          "A": "患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。",
+          "D": "既存の検出は行うが、Push停止の条件が欠ける。",
+          "B": "原本の担当者限定とコミット済みの検出条件が欠ける。",
+          "C": "患者の入力前匿名化もGitのトークン保護も満たさない。"
+        },
+        "sourceIds": [
+          "responsible",
+          "secret-scanning",
+          "exclusion-concept"
+        ]
+      }
+    },
+    {
+      "id": "q-sc06-3",
+      "category": "ALIGNED",
+      "theme": "個人指示とリポジトリ指示",
+      "rationale": "GitHub.comのCopilot個人指示とプロジェクト規約の競合を、適用範囲に応じて整理する。",
+      "recommendation": "維持。環境によって異なる指示対応を一般化しない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "customization"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "3a30f64f30f840216fa4402981c5360ef56c08d09c666516b8389ae6455f7d3b",
+      "current": {
+        "question": "【Global Logistics事例】GitHub.comの個人指示では、すべての関数にJSDocを付けるよう求めています。一方、リポジトリRの規約は公開APIだけ、リポジトリSの規約はすべての関数が対象です。各リポジトリの規約を変更せず、個人指示との競合を減らすには、どのように整理すべきですか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "個人指示を残し、Rの規約を全関数へ合わせる"
+          },
+          {
+            "id": "A",
+            "text": "個人のJSDoc規約を外し、RとSの各repoに規約を置く"
+          },
+          {
+            "id": "B",
+            "text": "個人指示を公開APIだけへ変え、Sも同じにする"
+          },
+          {
+            "id": "C",
+            "text": "個人指示を残し、Rの規約だけを毎回再送する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "グローバルな競合を外し、プロジェクトごとの方針を保持する。",
+        "choiceExplanations": {
+          "A": "グローバルな競合を外し、プロジェクトごとの方針を保持する。",
+          "D": "Rの方針を変えている。",
+          "B": "Sの方針を変えている。",
+          "C": "関連する個人指示との競合が残る。"
+        },
+        "sourceIds": [
+          "personal-instructions",
+          "instructions",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-sc07-1",
+      "category": "ALIGNED",
+      "theme": "最新の脆弱性情報をMCPへ連携",
+      "rationale": "Copilotが外部の現在値へアクセスする設計と、権限・操作範囲を直接比較する。",
+      "recommendation": "維持。q-sc03-1等との差は小さく、今後は同じ認可・読取題材へ置換を集中させない。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "8f6594167c723576d0ac034938f9a6fc2ad9a2a6879e256588391b4b2779d2d1",
+      "current": {
+        "question": "【CyberShield Systems事例】Copilot Chatから、承認済みの脆弱性DBを検索します。情報は照会時の最新状態が必要です。利用者が閲覧できるのは担当製品の情報だけで、DBの更新は禁止されています。どの連携設計がこの三条件を満たしますか。",
+        "choices": [
+          {
+            "id": "D",
+            "text": "検索と更新を兼ねるMCPツールを公開し、更新しないよう指示する"
+          },
+          {
+            "id": "C",
+            "text": "毎朝の脆弱性一覧を担当製品別に共有し、現在値は問い合わせない"
+          },
+          {
+            "id": "A",
+            "text": "担当製品の閲覧権限を検証する読取専用MCP検索ツールを公開する"
+          },
+          {
+            "id": "B",
+            "text": "担当製品の閲覧を認可し、MCPには検索と更新も公開する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。",
+        "choiceExplanations": {
+          "A": "現在の脆弱性情報を検索しながら、担当範囲と読取専用の制限をサーバーで守れる。",
+          "B": "権限は守れても記録変更を禁じる条件に反する。",
+          "C": "閲覧は絞れても最新状態を保証できない。",
+          "D": "MCPで検索はできても、指示文だけでは記録変更の権限を禁止できない。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-spec",
+          "spaces"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a11",
+      "category": "ALIGNED",
+      "theme": "コード参照と一致時点",
+      "rationale": "Copilotの一致通知の参照情報を、現在HEADではなく実際の一致元へ照合する利用判断を扱う。",
+      "recommendation": "維持。法的適合性の断定やGPL詳細の暗記へ広げず、個別の条件確認へつなぐ。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o2",
+      "officialScopeAnchor": "d6o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "0d83bdd5fdc498941c7808070037b72ca431b72a76665b76d148a0223f8d7f59",
+      "current": {
+        "question": "GitHub Copilotの提案コードに公開コード一致の通知が表示され、一致元のコミットとして「commit 7a」が示されました。参照先リポジトリの最新（HEAD）コミットではMITライセンスと表示されていますが、一致元である7aの時点ではGPLライセンスが適用されていました。このコード断片のライセンス適合性を審査する際、最優先で照合すべき対象はどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "通知が示しているcommit 7aの時点のコードと、その時点で適用されていたGPLライセンス条件"
+          },
+          {
+            "id": "B",
+            "text": "リポジトリの最新HEADにおけるソースコードと、現在表示されているMITライセンスの表記のみ"
+          },
+          {
+            "id": "C",
+            "text": "自社プロジェクトのpackage.jsonに含まれている別パッケージのオープンソースライセンス情報"
+          },
+          {
+            "id": "D",
+            "text": "将来のコード提案をブロック（Block）に設定した時点の組織ポリシーと適用対象リポジトリの一覧"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Copilotが一致を検出した特定のコミット時点（7a）のライセンス条件を照合する必要があります。後にリポジトリのライセンスが変更されていたとしても、取り込む断片の当時の権利条件を確認しなければ法的な適合性を判断できません。",
+        "choiceExplanations": {
+          "A": "Copilotが一致を検出した特定のコミット時点（7a）のライセンス条件を照合する必要があります。後にリポジトリのライセンスが変更されていたとしても、取り込む断片の当時の権利条件を確認しなければ法的な適合性を判断できません。",
+          "B": "最新HEADがMITであっても、提案されたコードがコミット7aのGPLコードと一致している以上、最新の表記のみに依拠するのは法的リスクがあります。",
+          "C": "自社の依存パッケージのライセンスはプロジェクト全体の確認事項であり、今回一致した特定断片の出所判断にはなりません。",
+          "D": "Block設定の組織ポリシーは今後の設定方針であり、すでに提示された一致断片のライセンス判定そのものではありません。"
+        },
+        "sourceIds": [
+          "public-code",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a12",
+      "category": "ALIGNED",
+      "theme": "地域属性による偏り",
+      "rationale": "生成コードが不要な属性の偏りを引き継ぐリスクを、条件を統制した公平性確認へ結び付ける。",
+      "recommendation": "維持。一般的な統計手法の詳細へ広げず、AI利用による潜在的被害の軽減を説明する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "f0968514717f11c94dc5e5aa153875812d4201f380481852cd36ec10b6a4b2eb",
+      "current": {
+        "question": "GitHub Copilotが生成した信用スコアリング処理を検証したところ、同じ業務属性（年収や勤続年数など）であっても特定の地域Rだけ点数が低く算出されるバイアス（偏り）が見つかりました。システムの仕様では「地域属性は採点に使用しない」と定められています。コード修正後、その偏りが残っていないか確かめるテストとして、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "地域パラメータの値を固定し、業務属性の入力値を変化させた場合の算定結果のスコアを比較する"
+          },
+          {
+            "id": "B",
+            "text": "地域ごとに業務属性の値も変化させたサンプル群を用意し、地域ごとの平均スコアを算出して比較する"
+          },
+          {
+            "id": "C",
+            "text": "業務属性の入力値を一定に固定し、地域パラメータのみを変更した複数の入力データで算定結果のスコアを比較する"
+          },
+          {
+            "id": "D",
+            "text": "業務属性と地域パラメータを完全に同一にした状態で複数回実行し、それぞれの処理時間を比較する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "特定の属性による偏りを検証するには、評価対象以外の属性を同一条件に統制（固定）し、検証対象の属性（地域）のみを変化させて結果に差が出ないかを確認（公平性のテスト）する必要があります。",
+        "choiceExplanations": {
+          "C": "特定の属性による偏りを検証するには、評価対象以外の属性を同一条件に統制（固定）し、検証対象の属性（地域）のみを変化させて結果に差が出ないかを確認（公平性のテスト）する必要があります。",
+          "A": "地域を固定して業務属性を変えると、業務ロジックの感度は測れますが、地域による不当なバイアスが残っていないかは検証できません。",
+          "B": "地域と業務属性の両方を同時に変えてしまうと、スコアの差が業務属性によるものか地域の偏りによるものか判別できません。",
+          "D": "処理時間の比較は性能テストであり、算出スコアの公平性やバイアスの有無とは無関係です。"
+        },
+        "sourceIds": [
+          "responsible",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a13",
+      "category": "ALIGNED",
+      "theme": "生成変更の検証と承認",
+      "rationale": "生成修正が拒否動作を壊しても正常系成功・通知だけで採用されるという責任ある利用の失敗を扱う。",
+      "recommendation": "維持。レビュー通知を人間の承認と混同しない判断を中心にする。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "5d9d6a19005a9f1a419f2bafd4331fab4813e8b6db7d2f2509f9e98df1627811",
+      "current": {
+        "question": "Copilotの修正案でアクセス拒否処理が削除されましたが、正常系テストの成功とレビュー通知だけでマージされました。社内規則は、権限不足時の拒否動作の検証と、担当者による承認を両方求めています。この二つをマージ前に強制する追加条件はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "拒否動作の回帰テスト成功と、担当者の承認を必須にする"
+          },
+          {
+            "id": "B",
+            "text": "拒否動作の回帰テスト成功と、担当者への通知を必須にする"
+          },
+          {
+            "id": "C",
+            "text": "正常動作の回帰テスト成功と、担当者の承認を必須にする"
+          },
+          {
+            "id": "D",
+            "text": "型検査の成功と、担当者の承認を必須にする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "異常系・権限拒否のデグレードを防ぐには、拒否動作を検証する自動回帰テストを必須ステータスチェックにし、かつ人間のレビュー承認をゲートとして機能させることが不可欠です。",
+        "choiceExplanations": {
+          "A": "異常系・権限拒否のデグレードを防ぐには、拒否動作を検証する自動回帰テストを必須ステータスチェックにし、かつ人間のレビュー承認をゲートとして機能させることが不可欠です。",
+          "B": "拒否動作は検証しますが、通知だけでは承認を必須にできません。",
+          "C": "承認は必須ですが、正常系だけでは拒否処理の欠落を直接検出できません。",
+          "D": "型検査と承認だけでは、拒否動作を検証する回帰テストという条件が不足します。"
+        },
+        "sourceIds": [
+          "responsible",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a14",
+      "category": "ALIGNED",
+      "theme": "生成設定と承認基準",
+      "rationale": "AI提案の動作確認だけで組織基準を上書きしないという採用責任を問う。",
+      "recommendation": "維持。抽象的なX/Yでの条件照合の難度は別評価だが、関連性はある。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "c5e896bd305f28fbc4745aa49b5b64154b8795e8917536a59bc1a66c0d246e22",
+      "current": {
+        "question": "Copilotが提案した通信設定Xと、技術基準で指定された設定Yは、どちらもテストに成功しました。今回は承認済みの技術基準を変更しない方針です。テスト結果と組織基準を踏まえ、どの設定を採用して記録すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "設定Xを採用し、テスト成功と現行基準の内容を記録する"
+          },
+          {
+            "id": "B",
+            "text": "設定Yを採用し、再テストと現行基準への適合を記録する"
+          },
+          {
+            "id": "C",
+            "text": "設定Xを採用し、基準をYからXへ変更した記録を残す"
+          },
+          {
+            "id": "D",
+            "text": "設定Yを採用し、基準をYからXへ変更した記録を残す"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "AIが生成した設定が動作したとしても、組織の定めたセキュリティやアーキテクチャ基準（設定Y）を優先して遵守する必要があります。基準に合わせた修正と再テストを行い記録します。",
+        "choiceExplanations": {
+          "B": "AIが生成した設定が動作したとしても、組織の定めたセキュリティやアーキテクチャ基準（設定Y）を優先して遵守する必要があります。基準に合わせた修正と再テストを行い記録します。",
+          "A": "テストが成功しても、設定Xは変更しない方針の技術基準Yに適合しません。",
+          "C": "採用に合わせて基準を変更する案であり、今回の方針に反します。",
+          "D": "設定Yの採用自体は合いますが、基準をXへ変更する必要はなく今回の方針にも反します。"
+        },
+        "sourceIds": [
+          "responsible",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a23",
+      "category": "REFRAME",
+      "theme": "MCPの接続ポート不一致",
+      "rationale": "MCP設定の題材は適切だが、正解は二つのポート番号を合わせる一般的な接続問題で決まる。",
+      "recommendation": "Copilot側のMCP接続設定・サーバー起動・ツール定義のどの層を調べるかを、実際の設定と診断で問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "mcp"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "f908cef967fcc4859bf6a4311d7bd95c13a48540e6697010d73a9a09c30dbe0c",
+      "current": {
+        "question": "CopilotのMCP接続が、http://127.0.0.1:8765/mcpへのconnection refusedで失敗しました。サーバーの起動ログは「8770で待受中」となっており、8765には待受プロセスがありません。同じサーバーへ接続するため、最初にどの設定を修正すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "接続URLのパスだけ/mcp/v2へ変える"
+          },
+          {
+            "id": "B",
+            "text": "サーバーのAPI認証トークンを再発行する"
+          },
+          {
+            "id": "C",
+            "text": "MCP接続URLのポートを8770へ合わせる"
+          },
+          {
+            "id": "D",
+            "text": "MCPツールの入力スキーマを変更する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "接続先と実際の待受ポートの不一致が観測されている。",
+        "choiceExplanations": {
+          "C": "接続先と実際の待受ポートの不一致が観測されている。",
+          "A": "パス変更では待受がないポートへの接続は直らない。",
+          "B": "認証段階へ到達していない。",
+          "D": "ツール引数の処理前の接続で失敗している。"
+        },
+        "sourceIds": [
+          "mcp",
+          "mcp-config"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a24",
+      "category": "ALIGNED",
+      "theme": "共通指示とPrompt File",
+      "rationale": "Copilotへ常時適用する規約と、必要時に呼び出すタスク指示の用途を直接区別する。",
+      "recommendation": "維持。通常タスクへ専用手順を混ぜない理由を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o3",
+      "officialScopeAnchor": "d2o3",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "customization"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "5b4f6104327b74f1ac6050b62cb46d1e98eb5ca69b55768a74fe5c766fcee6fe",
+      "current": {
+        "question": "Copilotの共通指示へ開発規約とリリースノート作成手順を一緒に書いたところ、通常のコード修正でもリリースノートが生成されるようになりました。開発規約は常時使い、リリースノートの手順は必要なタスクでだけ呼び出したいと考えています。どの内容をどこへ移すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "共通規約だけをPrompt Fileへ移す"
+          },
+          {
+            "id": "B",
+            "text": "両方を同じ共通指示へ短縮して残す"
+          },
+          {
+            "id": "C",
+            "text": "両方を個人の共通指示へ移す"
+          },
+          {
+            "id": "D",
+            "text": "ノート手順だけをPrompt Fileへ移す"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "常時の規約を残し、タスク手順をオンデマンド化する。",
+        "choiceExplanations": {
+          "D": "常時の規約を残し、タスク手順をオンデマンド化する。",
+          "A": "ノート手順が常時の指示に残る。",
+          "B": "短縮しても適用頻度は変わらない。",
+          "C": "共有と適用頻度の問題を解決しない。"
+        },
+        "sourceIds": [
+          "instructions",
+          "prompt-files"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a25",
+      "category": "REFRAME",
+      "theme": "CLIの削除対象の再確認",
+      "rationale": "生成コマンドの安全利用は範囲内だが、Copilot CLIの機能・実行承認との関連が解説で弱い。",
+      "recommendation": "実際のCLIで提案・承認・実行する流れを踏まえ、許可範囲に絞った案を実行前に確認する判断にする。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o2",
+      "officialScopeAnchor": "d2o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "876d852bb7c23c6b99e487af75715fc094b52027bda2ba805a4a120df3fa42b9",
+      "current": {
+        "question": "Copilot CLIが提案した削除コマンドを事前検証（dry-run）しました。削除してよいrun-cacheに加え、保存が必要なrun-fixturesも対象一覧に出ています。まだ削除は実行していません。対象が許可範囲に収まることを確認してから実行するには、次にどの操作を行うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "対象をrun-cacheだけに修正し、dry-runで変更後の一覧を確認する"
+          },
+          {
+            "id": "B",
+            "text": "対象をrun-fixturesだけに修正し、dry-runで変更後の一覧を確認する"
+          },
+          {
+            "id": "C",
+            "text": "対象を両ディレクトリのままにし、dry-runで一覧を再確認する"
+          },
+          {
+            "id": "D",
+            "text": "対象をrun-cacheだけに修正し、実行後の一覧で保存対象の保持を確認する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "許可外を除く変更を行い、変更後の実対象を再検証する。",
+        "choiceExplanations": {
+          "A": "許可外を除く変更を行い、変更後の実対象を再検証する。",
+          "B": "削除が許可されたのはrun-cacheで、run-fixturesは保持する必要があります。",
+          "C": "両方を対象にしたままでは、保持が必要なrun-fixturesを削除する指定が残ります。",
+          "D": "実行後の確認では、許可外の削除が起こる前に対象を検証する条件を満たしません。"
+        },
+        "sourceIds": [
+          "cli",
+          "cli-usage"
+        ]
+      }
+    },
+    {
+      "id": "q-d2-a26",
+      "category": "ALIGNED",
+      "theme": "Agentの依頼外変更",
+      "rationale": "Agentの編集差分を依頼範囲へ照合し、根拠のない依存更新をそのまま採用しない判断を問う。",
+      "recommendation": "維持。差分の確認と対象修正の独立検証を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
+      "current": {
+        "question": "Agentにsrc/parser.tsのバグ修正だけを依頼しました。提示された差分にはparser.tsの修正とpackage.jsonの依存更新が含まれていますが、依存更新が必要な理由は確認できていません。依頼した範囲の修正を既存の依存環境で検証するため、次にどのように指示すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "依存更新も採用し、parser修正だけを説明する"
+          },
+          {
+            "id": "B",
+            "text": "依存更新を分け、parser修正を既存依存で検証する"
+          },
+          {
+            "id": "C",
+            "text": "parser修正を戻し、依存更新だけを検証する"
+          },
+          {
+            "id": "D",
+            "text": "両差分を採用し、回帰テストは依存更新後に作る"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "依頼外変更を独立させ、対象修正が元環境で成立するか確認する。",
+        "choiceExplanations": {
+          "B": "依頼外変更を独立させ、対象修正が元環境で成立するか確認する。",
+          "A": "未確認の依頼外更新を混ぜている。",
+          "C": "依頼された修正を外している。",
+          "D": "採用後に検証を遅らせている。"
+        },
+        "sourceIds": [
+          "agent-mode",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a12",
+      "category": "REPLACE_FOCUS",
+      "theme": "100msのデバウンス計算",
+      "rationale": "Copilotを使わず架空のクライアント規則だけで40+100を計算する。固定待機値は確認した公式資料の仕様ではない。",
+      "recommendation": "同じD3o2で、補完の入力コンテキスト・生成・提示・利用者による採用を区別する問題へ変更する。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o2",
+      "officialScopeAnchor": "d3o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "0d90acd5e5694b2c9e843781b0f454b7da208d1c387e4e38adc3cd80ca049d1a",
+      "current": {
+        "question": "この問題の補完クライアントは、最後のキー入力から100msが経過すると補完を要求します。途中で入力があると、待機時間をその入力時点から数え直します。利用者は0msと40msに入力し、80ms時点ではまだ要求していません。その後は入力しない場合、次の送信予定時刻は何msですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "100ms"
+          },
+          {
+            "id": "B",
+            "text": "80ms"
+          },
+          {
+            "id": "C",
+            "text": "140ms"
+          },
+          {
+            "id": "D",
+            "text": "240ms"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。",
+        "choiceExplanations": {
+          "C": "最後の40msから100ms待つ。これは設問で与えた待機仕様の適用。",
+          "A": "最初の入力を基準にしている。",
+          "B": "まだ100ms経っていない。",
+          "D": "待機時間を二重に足している。"
+        },
+        "sourceIds": [
+          "architecture",
+          "inline-usage"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a13",
+      "category": "REFRAME",
+      "theme": "REST APIの429再試行",
+      "rationale": "組織管理APIと接点はあるが、設問の核心は汎用HTTPの待機時間指示。",
+      "recommendation": "Copilotの管理APIで取得できる情報や権限を含む業務判断に寄せ、HTTP再試行だけを正解の決め手にしない。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d2",
+      "registeredObjective": "d2o4",
+      "officialScopeAnchor": "d2o4",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "30aca1c9da64ee139d1fd56272a83a037bd5d4bcfe57214c6ba0f174117e7493",
+      "current": {
+        "question": "Copilotの利用状況を集計するGitHub REST APIが、HTTP 429とRetry-After: 8を返しました。この応答では8秒の待機が指示されており、同じ処理の再試行はまだ1回目です。待機指示を守り、負荷の集中を避ける再試行案はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "2秒待って再試行し、同時実行数を抑える"
+          },
+          {
+            "id": "B",
+            "text": "8秒待って再試行し、同時実行数を倍にする"
+          },
+          {
+            "id": "C",
+            "text": "即時再試行し、成功後に8秒待つ"
+          },
+          {
+            "id": "D",
+            "text": "8秒以上待って再試行し、同時実行数を抑える"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "サーバーの待機指示を守り集中を抑える。",
+        "choiceExplanations": {
+          "D": "サーバーの待機指示を守り集中を抑える。",
+          "A": "指定された待機時間より短い。",
+          "B": "待機してもさらに同時負荷を増やしている。",
+          "C": "待機を再試行後へ移している。"
+        },
+        "sourceIds": [
+          "rest-best-practices",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a14",
+      "category": "REFRAME",
+      "theme": "4096トークンの予算",
+      "rationale": "必要な文脈の保持は関連するが、選択肢の合計と上限の比較が主で、内容の重要性を判断する余地がない。",
+      "recommendation": "生成修正に必要な実装・型・仕様と、要約可能な背景を実際の内容で比較して、渡す文脈を選ぶ。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d4",
+      "registeredObjective": "d4o1",
+      "officialScopeAnchor": "d4o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "prompting"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "e6bc6acd650ac08eef8aaad32ce10460652c81c962629911550def24cbbe53d6",
+      "current": {
+        "question": "今回Copilotへ渡せる入力は4096トークンまでです。対象の実装コード1000トークンと型定義500トークンは、どちらも全量が必要です。背景資料3000トークンは要約や抜粋ができます。対象コードと型定義を残して上限以内にするには、どの構成で渡すべきですか。各数値はこの設問で与えた条件です。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "背景資料2000、対象コード1000、型定義500トークンを渡す"
+          },
+          {
+            "id": "B",
+            "text": "背景資料3000、対象コード1000、型定義500トークンを渡す"
+          },
+          {
+            "id": "C",
+            "text": "背景資料3000、対象コード500、型定義500トークンを渡す"
+          },
+          {
+            "id": "D",
+            "text": "背景資料3000、対象コード1000トークンを渡し、型定義は渡さない"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "合計3500で予算内に収まり、対象と型の必須情報を両方維持する。",
+        "choiceExplanations": {
+          "A": "合計3500で予算内に収まり、対象と型の必須情報を両方維持する。",
+          "B": "合計4500で、今回の予算4096を超える。",
+          "C": "合計4000だが、全量必要な対象実装を半分にする。",
+          "D": "合計4000だが、必須の型定義を省く。"
+        },
+        "sourceIds": [
+          "architecture",
+          "workspace-context"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a15",
+      "category": "REFRAME",
+      "theme": "数値と表示書式",
+      "rationale": "独立したassertionは範囲内だが、数値比較と文字列書式の区別のみで、AIテストの検証という学習が薄い。",
+      "recommendation": "Copilotが作ったテストの成功が書式を保証しない状況から、仕様に基づく追加assertionを依頼・検証する方針を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "a7fb0c419e97db7e68cc18a2697bc6d373804e1b9874081f7a3319654eaa80e7",
+      "current": {
+        "question": "Copilotが生成したformatTotal(8)を20回実行すると、12回は文字列「8.0」、8回は「8.00」でした。Number(result) === 8のテストはすべて成功しています。仕様は、数値として8であることに加え、小数点以下2桁の文字列を返すことです。この入力の採用判断と追加検証はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "数値は未達・書式は達成と判断し、数値の修正と期待値テストを追加する"
+          },
+          {
+            "id": "B",
+            "text": "数値は達成・書式は未達と判断し、書式の修正と桁数テストを追加する"
+          },
+          {
+            "id": "C",
+            "text": "数値と書式は達成と判断し、この入力について採用候補として結果を記録する"
+          },
+          {
+            "id": "D",
+            "text": "数値と書式は未達と判断し、両方の修正と期待値・桁数テストを追加する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。",
+        "choiceExplanations": {
+          "A": "数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。",
+          "B": "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。",
+          "C": "8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。",
+          "D": "数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d4-a14",
+      "category": "ALIGNED",
+      "theme": "生成単体テスト後の結合確認",
+      "rationale": "Copilotの分割実装と単体テストだけでは未確認の外部失敗時連携を、結合テストで補う。",
+      "recommendation": "維持。通知しないことを独立した期待値にする。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "99423fa6c0c7ad496a10fa10438b3248c1f178c071297869bb9c59d993825905",
+      "current": {
+        "question": "Copilotに決済処理を分割実装させ、各関数の単体テストと正常決済の結合テストは成功しました。仕様では、外部APIが残高不足を返した場合は注文をunpaidのままにし、通知を送信しません。この連携は未検証です。次に追加する結合テストの入力と期待結果はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "APIは残高不足、注文unpaid・通知0回を確認"
+          },
+          {
+            "id": "B",
+            "text": "APIは残高不足、注文paid・通知1回を確認"
+          },
+          {
+            "id": "C",
+            "text": "APIは成功、注文paid・通知1回を確認"
+          },
+          {
+            "id": "D",
+            "text": "APIはタイムアウト、注文pending・通知0回を確認"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "未確認の残高不足を依存側で再現し、注文と通知の二つの連携結果を検証する。",
+        "choiceExplanations": {
+          "A": "未確認の残高不足を依存側で再現し、注文と通知の二つの連携結果を検証する。",
+          "B": "失敗を再現するが、承認済みの注文状態と通知の期待値を逆にする。",
+          "C": "既に確認済みの正常連携を繰り返し、残高不足を通らない。",
+          "D": "結果不明のタイムアウトを扱うテストで、今回の残高不足契約を検証しない。"
+        },
+        "sourceIds": [
+          "prompt",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a12",
+      "category": "REFRAME",
+      "theme": "TDDの割引条件",
+      "rationale": "CopilotとTDDという前置きがあるが、選択肢は比較演算子と価格計算の実装条件そのもの。",
+      "recommendation": "Copilotに境界の両側のテストを作らせ、成功した一例へ過剰に合わせた実装を検出する次の作業判断へ変える。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "3dd90ba2a9f595d7a087a6148e8354f85c6da3dcbab8506a0e3c40d40a617a02",
+      "current": {
+        "question": "CopilotとTDDで割引処理を作成します。承認済みの仕様は、価格100以上なら20%引き、100未満なら割引なしです。初回の100→80のテストが失敗しました。価格90の仕様も守り、初回テストを成功させる実装条件はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "価格>100で0.8倍、それ以外は元の価格"
+          },
+          {
+            "id": "B",
+            "text": "全価格を0.8倍、入力条件は設けない"
+          },
+          {
+            "id": "C",
+            "text": "価格>=100で0.8倍、それ以外は元の価格"
+          },
+          {
+            "id": "D",
+            "text": "価格<=100で0.8倍、それ以外は元の価格"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "100のテストだけなら複数の実装が成功する可能性があります。100以上を0.8倍にし、90などの100未満はそのまま返す条件を選びます。境界の両側のテストも追加して確認します。",
+        "choiceExplanations": {
+          "C": "100のテストだけなら複数の実装が成功する可能性があります。100以上を0.8倍にし、90などの100未満はそのまま返す条件を選びます。境界の両側のテストも追加して確認します。",
+          "A": "100を割引せず、最初のテストを通らない。",
+          "B": "100は通るが100未満にも割引し契約を破る。",
+          "D": "100未満にも割引し、100超には割引しない。"
+        },
+        "sourceIds": [
+          "tests",
+          "unit-test-aaa"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a14",
+      "category": "REFRAME",
+      "theme": "決済拒否とタイムアウト",
+      "rationale": "生成コードの安全性へ関連するが、決め手は決済APIの業務上の状態遷移だけ。",
+      "recommendation": "Copilotの一律エラー処理案を、現行API仕様・再試行制約へ照合して、検証と改善を依頼する判断を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "84fc8644238b01545bf426c5bea3c5284c8062fbcf560359c1fecade1fcceeef",
+      "current": {
+        "question": "Copilotの決済コードは、PaymentDeclinedとTimeoutを区別せずnullへ変換します。このAPIでは、Declinedなら課金されていないことが確定しますが、Timeoutでは課金結果が分かりません。再試行する前に二つの状態を区別する仕様に沿う処理はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Declinedは拒否を返し、Timeoutは状態照会する"
+          },
+          {
+            "id": "B",
+            "text": "Declinedは状態照会し、Timeoutは拒否を返す"
+          },
+          {
+            "id": "C",
+            "text": "Declinedは拒否を返し、Timeoutも拒否を返す"
+          },
+          {
+            "id": "D",
+            "text": "Declinedは状態照会し、Timeoutも状態照会する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "確定した拒否と結果不明を分け、不明時は課金状態の確認を先に行う。",
+        "choiceExplanations": {
+          "A": "確定した拒否と結果不明を分け、不明時は課金状態の確認を先に行う。",
+          "B": "確定した拒否と結果不明の扱いを逆にする。",
+          "C": "結果不明のTimeoutまで課金なしと断定し、再試行判断の根拠を失う。",
+          "D": "確定したDeclinedも結果不明として扱い、APIが与える区別を失う。"
+        },
+        "sourceIds": [
+          "exception-best-practices",
+          "exception-sensitive"
+        ]
+      }
+    },
+    {
+      "id": "q-d5-a15",
+      "category": "REFRAME",
+      "theme": "登録APIの型と年齢境界",
+      "rationale": "入力検証・テストは範囲内だが、答えるのは17/18/文字列の期待値表で、AI利用方法が薄い。",
+      "recommendation": "Copilot生成テストに不足する型境界・年齢境界・拒否時のDB非呼出を、仕様に基づいて補う依頼を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d5",
+      "registeredObjective": "d5o2",
+      "officialScopeAnchor": "d5o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "testing"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "a54a52ad4d22d017528307f685a96ae662a2938c19cd0e9124f4cd2d497052cd",
+      "current": {
+        "question": "Copilotが生成した登録APIは、ageを型キャストするだけでDBへ渡します。仕様は18以上の整数だけを受け入れ、数値文字列は変換せず拒否することです。拒否した入力ではDB保存を呼び出さないことも検証します。整数17・整数18・文字列「18」の順で、どの期待結果が適切ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "整数17は拒否、整数18は許可、文字列「18」は許可とする"
+          },
+          {
+            "id": "B",
+            "text": "整数17は拒否、整数18は許可、文字列「18」は拒否とする"
+          },
+          {
+            "id": "C",
+            "text": "整数17は拒否、整数18は拒否、文字列「18」は拒否とする"
+          },
+          {
+            "id": "D",
+            "text": "整数17は許可、整数18は許可、文字列「18」は拒否とする"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "整数の下限を含め、文字列は拒否する。拒否した二入力でDBが呼ばれないことも確認する。",
+        "choiceExplanations": {
+          "A": "境界は合うが、数値文字列を拒否する型契約を破る。",
+          "B": "整数の下限を含め、文字列は拒否する。拒否した二入力でDBが呼ばれないことも確認する。",
+          "C": "整数18まで拒否し、18以上という下限の包含を取り違える。",
+          "D": "整数17も許可し、下限未満の拒否を欠く。"
+        },
+        "sourceIds": [
+          "responsible",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a11",
+      "category": "ALIGNED",
+      "theme": "コンテンツ除外パターン",
+      "rationale": "Copilotの除外対象を設定する技能を直接扱い、対象範囲を比較する。",
+      "recommendation": "維持。検索globの一般知識のみを扱うq-d4-a06とは、Copilotの設定を直接問う点で区別。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "f1e7cd8b3678ec4ec48f264f7642d77356edea4f97c7a94a0dae5baba14b3953",
+      "current": {
+        "question": "コンテンツ除外に対応する通常補完で、secretsディレクトリの直下とすべての下位階層にある.keyファイルだけを除外します。secrets/readme.mdと、secrets以外の.keyファイルは参照対象に残します。どのパスパターンが条件を満たしますか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "secrets/*.keyを除外する"
+          },
+          {
+            "id": "B",
+            "text": "secrets/**を除外する"
+          },
+          {
+            "id": "C",
+            "text": "secrets/**/*.keyを除外する"
+          },
+          {
+            "id": "D",
+            "text": "**/*.keyを除外する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "階層をまたぐ.keyの条件を両立する。",
+        "choiceExplanations": {
+          "C": "階層をまたぐ.keyの条件を両立する。",
+          "A": "深い階層の.keyを含めない。",
+          "B": "readme.mdも除外する。",
+          "D": "secrets以外の.keyまで対象にする。"
+        },
+        "sourceIds": [
+          "exclusion",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a12",
+      "category": "ALIGNED",
+      "theme": "除外変更のIDE反映",
+      "rationale": "Copilotの除外変更とクライアント状態の差を、同条件にそろえて検証する。",
+      "recommendation": "維持。単なるネットワーク切替とは区別する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o2",
+      "officialScopeAnchor": "d6o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "16f701ce2aba0771a5a523955cbcca1098a29865d9cde8c21a3d47440c4d9cdc",
+      "current": {
+        "question": "管理者がコンテンツ除外を変更すると、IDEを再読み込みした利用者AにはContent excludedと表示されました。利用者Bは古いセッションを使い続け、同じファイルで補完が出ています。リポジトリ、パス、通常補完モードは同じです。まず条件をそろえて比較するには、どの操作を行うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "AのIDEを再読み込みし、Aの対象ファイルで補完を確認する"
+          },
+          {
+            "id": "B",
+            "text": "Bを直接接続へ切り替え、同じファイルで補完を確認する"
+          },
+          {
+            "id": "C",
+            "text": "Bで除外対象外のファイルを開き、そこで補完を確認する"
+          },
+          {
+            "id": "D",
+            "text": "BのIDEを再読み込みし、同じファイルの除外表示と補完を確認する"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "差があるクライアント状態をそろえて比較する。",
+        "choiceExplanations": {
+          "D": "差があるクライアント状態をそろえて比較する。",
+          "A": "Aは既に再読み込みして正常に除外表示されています。差が残るBの状態をそろえる検証になりません。",
+          "B": "ネットワーク経路を変えても、今回異なる古いセッションの状態をそろえられません。",
+          "C": "別のファイルでの補完成功だけでは、同じ対象に除外設定が反映されたかを確認できません。"
+        },
+        "sourceIds": [
+          "exclusion",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a13",
+      "category": "REFRAME",
+      "theme": "知財補償の適用資料",
+      "rationale": "出力所有・制約に接点はあるが、四択の核心は時点・機能・テナントが一致する資料の選択という一般的な資料照合。",
+      "recommendation": "Copilotの公開コード対策が所有・ライセンス・補償の全条件を保証しないという適用判断を問う。契約問題へ深掘りしない。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "124a3f6ca0f1f7c29b9de8cf9f5988937b61fd9953eb7509aa97532b669848dd",
+      "current": {
+        "question": "Copilotの知財補償について、今回の機能と自社テナントに適用される契約・必須の軽減策を確認します。資料Pは旧契約時のBlock画面、Qは現行の別機能の資料、Rは現行の対象機能・自社テナントの資料、Sは現行の別テナントの資料です。最初に照合の基準とする資料はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "資料Rの適用契約と、対象機能の軽減策を基準にする"
+          },
+          {
+            "id": "B",
+            "text": "資料Pの旧契約と、Block設定の保存画面を基準にする"
+          },
+          {
+            "id": "C",
+            "text": "資料Qの現行契約と、別機能の軽減策を基準にする"
+          },
+          {
+            "id": "D",
+            "text": "資料Sの別テナントの契約と、軽減策を基準にする"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。",
+        "choiceExplanations": {
+          "A": "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。",
+          "B": "旧設定の証跡だけでは現行の適用条件を確認できない。",
+          "C": "時点は合うが、対象機能の条件ではない。",
+          "D": "他テナントの契約条件をそのまま自分の適用条件とみなさない。"
+        },
+        "sourceIds": [
+          "generative-ai-terms",
+          "copilot-contract-updates",
+          "public-code",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d6-a14",
+      "category": "ALIGNED",
+      "theme": "組織由来の除外変更",
+      "rationale": "Copilotコンテンツ除外の変更対象と設定元を直接選ぶ。",
+      "recommendation": "維持。存在しないrepo側ルールを変える案との比較を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d6",
+      "registeredObjective": "d6o1",
+      "officialScopeAnchor": "d6o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "exclusion"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "9acba8a7dc72032b14bffe7109557a188f20714085d4b35e242587cc49ebecce",
+      "current": {
+        "question": "リポジトリRには、組織由来のconfig/**と、リポジトリ由来のtmp/**という除外ルールがあります。configだけを参照対象へ戻す方針が組織で承認され、tmpの除外は維持します。管理者へ変更を依頼する設定元と対象はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "リポジトリ側でtmp/**の除外ルールを変更する"
+          },
+          {
+            "id": "B",
+            "text": "組織側でconfig/**の除外ルールを変更する"
+          },
+          {
+            "id": "C",
+            "text": "リポジトリ側でconfig/**の除外範囲を変更する"
+          },
+          {
+            "id": "D",
+            "text": "組織側でtmp/**の除外範囲を変更する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "configを除外している設定元を変更する。",
+        "choiceExplanations": {
+          "B": "configを除外している設定元を変更する。",
+          "A": "別パスの設定を変えてもconfigは除外されたまま。",
+          "C": "config/**を除外している既存ルールは組織側です。リポジトリ側で同じ対象を編集しても、その組織ルールは残ります。",
+          "D": "維持すべきtmpの除外ではなく、組織由来のconfigルールが変更対象です。"
+        },
+        "sourceIds": [
+          "exclusion",
+          "policies"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a15",
+      "category": "ALIGNED",
+      "theme": "多言語利用者の検証漏れ",
+      "rationale": "AI生成UIの評価データが利用者の文字体系を代表していないという包括性・安全性の問題を扱う。",
+      "recommendation": "維持。単なるUnicodeの仕様暗記にせず、未評価の利用者を確認する理由を残す。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "514b535fda40418a717303822921035cf6900905637c4f79e55c545e3aae996a",
+      "current": {
+        "question": "Copilotで作成した氏名の表示処理を、日本語とアラビア語を使う利用者へ展開します。既存の評価用データ100件は英数字の氏名だけで、長い氏名・空入力・重複する氏名は確認済みです。今回は、まだ評価していない利用者群でも正しく表示できるか確認します。各入力の正しい表示結果を事前に定める場合、どのデータを追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "長い英数字の氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "B",
+            "text": "空入力・空白だけの氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "C",
+            "text": "日本語・アラビア語の氏名と、各入力の正しい表示結果を追加する"
+          },
+          {
+            "id": "D",
+            "text": "重複する英数字の氏名と、各入力の正しい表示結果を追加する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。",
+        "choiceExplanations": {
+          "C": "多言語・国際化の表示検証を行うには、対象言語（日本語のマルチバイト文字やアラビア語のRTL表記など）の実際の文字体系を含んだ評価セットを用意して期待結果と照合する必要があります。",
+          "A": "英数字の長大入力は既にカバーされている境界値テストであり、非ラテン文字固有の文字体系や表示の問題を検証できません。",
+          "B": "空文字テストは既存データで確認済みであり、日本語やアラビア語の固有の文字処理の検証にはなりません。",
+          "D": "重複氏名のテストはデータ管理上の確認であり、多言語文字のレンダリングやレイアウト検証にはなりません。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a16",
+      "category": "ALIGNED",
+      "theme": "集団別の失敗率",
+      "rationale": "全体平均の改善が特定集団の悪化を隠すという責任あるAI利用の評価を扱う。",
+      "recommendation": "維持。計算自体より、全体指標だけで生成変更を採用しない意味を解説する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "e1b80a2df4137c6483e86fab8b4b95db997e4687f86ea4719d30385bcfd51ab7",
+      "current": {
+        "question": "Copilotが生成した表示処理を、変更前後で同じ評価用データに適用しました。A群は900件、B群は100件です。変更前の失敗はA群90件・B群10件、変更後の失敗はA群36件・B群20件でした。社内の採用条件は「どの群でも失敗率が悪化しないこと」です。この条件に沿った評価はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "全体の失敗率が5.6%に改善しているため、社内の採用条件を満たしていると評価する"
+          },
+          {
+            "id": "B",
+            "text": "A群の失敗率は4%に改善したが、B群の失敗率が20%に悪化しているため、B群を再評価する"
+          },
+          {
+            "id": "C",
+            "text": "A群の失敗率が4%、B群の失敗率が2%であるため、両群ともに改善したと評価する"
+          },
+          {
+            "id": "D",
+            "text": "A群の失敗率が40%、B群の失敗率が20%であるため、両群ともに再評価が必要と評価する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。",
+        "choiceExplanations": {
+          "B": "A群は90/900から36/900へ改善しましたが、B群は10/100から20/100へ悪化しています。全体平均が下がっても「どの群も悪化しない」という採用条件は満たさず、B群の原因を調べ直す必要があります。",
+          "A": "全体平均が改善していても、特定グループの失敗率が悪化している場合は「どの群も悪化させない」という採用条件を満たしません。",
+          "C": "B群の失敗率は20/100で20%であり、2%とする計算は誤りです。",
+          "D": "A群の失敗率は36/900で4%であり、40%とする計算は誤りです。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a17",
+      "category": "ALIGNED",
+      "theme": "生成文書の性別ステレオタイプ",
+      "rationale": "AI生成説明の根拠のない性別表現を識別し、承認済みの職務権限に戻す。",
+      "recommendation": "維持。役割表の転記に寄りすぎる難度の問題は関連性とは別に扱う。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "e594aea385af9187067ce788b75f6cf0da3998361ff1a31aec7b1d426091879e",
+      "current": {
+        "question": "Copilotが生成した役割の説明には「女性は入力、男性は承認」と書かれていました。しかし、承認済みの権限表では、一般担当者は入力だけ、管理責任者は入力と承認の両方を行えます。性別は権限の判断に使いません。根拠のない性別の表現を取り除き、権限表の内容を保つ修正文はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "一般担当者は承認だけを行え、管理責任者は入力だけを行える"
+          },
+          {
+            "id": "B",
+            "text": "一般担当者は入力と承認を行え、管理責任者は入力だけを行える"
+          },
+          {
+            "id": "C",
+            "text": "一般担当者は入力だけを行え、管理責任者は承認だけを行える"
+          },
+          {
+            "id": "D",
+            "text": "一般担当者は入力だけを行え、管理責任者は入力と承認を行える"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。",
+        "choiceExplanations": {
+          "D": "AIが生成した不適切な性別ステレオタイプを排除し、組織で定義された実際の職務権限（一般担当者は入力のみ、管理責任者は入力＋承認）を正確に表現する記述に修正します。",
+          "A": "性別表記は排除されていますが、担当者と責任者の権限内容が本来の規定と逆転してしまっています。",
+          "B": "性別表記は排除されていますが、一般担当者に本来持たないはずの承認権限を付与してしまっています。",
+          "C": "性別表記は排除されていますが、管理責任者から本来持っているはずの入力権限が抜け落ちています。"
+        },
+        "sourceIds": [
+          "ml-fairness",
+          "chat"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a18",
+      "category": "REFRAME",
+      "theme": "未確定の業務ルール",
+      "rationale": "人間が仕様を決める必要は範囲内だが、正解は設問で定義した担当部門名の照合で決まる。",
+      "recommendation": "AIが未決定の割引規則を仮定した生成案を採用してよいか、仕様確定・再生成・再検証の順序を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "3f88dc9de631e289458809d7aa0aab86944f099189551e5d191c09fda033bf28",
+      "current": {
+        "question": "Copilotが提案した割引処理は技術面のテストに通りましたが、契約更新者にも初回割引を適用するかは未決定です。社内では、対象者の規則は業務企画、確定仕様の検証はQA、公開日時は運用、アクセス権はセキュリティの各部門が担当します。採用前に、未決定の事項をどの部門へ確認すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "割引対象者の規則を、業務企画部門へ確認する"
+          },
+          {
+            "id": "B",
+            "text": "確定仕様の検証結果を、QA部門へ確認する"
+          },
+          {
+            "id": "C",
+            "text": "キャンペーンの公開日時を、運用部門へ確認する"
+          },
+          {
+            "id": "D",
+            "text": "機能のアクセス権を、セキュリティ部門へ確認する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。",
+        "choiceExplanations": {
+          "A": "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。",
+          "B": "QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。",
+          "C": "運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。",
+          "D": "セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a19",
+      "category": "REFRAME",
+      "theme": "架空の運用承認表",
+      "rationale": "破壊的なAI提案のリスクは重要だが、架空の社内承認表を読んで担当者を選ぶだけになっている。",
+      "recommendation": "承認がない不可逆操作を止め、対象・影響・復元可能性を確認してから利用者へ判断を戻す方針を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "af9e2dfd23e12d608cb5f2dab8600173ff39b82a9463f6fb12be68093d2424c6",
+      "current": {
+        "question": "この問題では、次の架空の運用基準を使います。読取処理は利用者が実行後に確認します。一時環境の更新は実装担当が実行前に確認します。本番の更新は、復元できる場合は運用担当、復元できない場合は業務責任者の事前承認が必要です。Copilotが提案した処理は、本番DBの取引レコードを削除し、復元する手段がありません。どの確認・承認が必要ですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "利用者が実行後の結果を確認する"
+          },
+          {
+            "id": "B",
+            "text": "実装担当が実行前の手順を確認する"
+          },
+          {
+            "id": "C",
+            "text": "業務責任者が実行前に承認する"
+          },
+          {
+            "id": "D",
+            "text": "運用担当が実行前に承認する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。",
+        "choiceExplanations": {
+          "C": "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。",
+          "A": "事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。",
+          "B": "実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。",
+          "D": "運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a20",
+      "category": "ALIGNED",
+      "theme": "障害報告の推測と事実",
+      "rationale": "Copilotで作る報告が未確認の因果を断定しないよう、証拠の範囲を維持する判断を問う。",
+      "recommendation": "維持。一般的な因果推論の講義へ広げず、生成文書の信頼性を確認する。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
+      "current": {
+        "question": "Copilotに障害報告の草案を作成させます。同じ時刻基準で記録されたログでは、デプロイは10:00、エラーの発生は10:01です。原因を確認する再現実験はまだ行っておらず、デプロイの影響とDB障害の両方が候補です。確認できた事実と、まだ確認できていない原因を区別する報告はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はデプロイ更新と確認済みと報告する"
+          },
+          {
+            "id": "B",
+            "text": "デプロイ10:00・エラー発生10:01の事実を記録し、因果関係は未確認と報告する"
+          },
+          {
+            "id": "C",
+            "text": "エラー発生10:00・デプロイ10:01と記録し、因果関係は未確認と報告する"
+          },
+          {
+            "id": "D",
+            "text": "デプロイ10:00・エラー発生10:01から、障害原因はDB障害と確認済みと報告する"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。",
+        "choiceExplanations": {
+          "B": "時系列の事実（デプロイとエラー発生時刻）を正確に記録しつつ、因果関係が立証されていない段階では推測や候補を「確認済みの原因」として断定しない客観的な報告が必要です。",
+          "A": "時間的な近接性はあるものの、因果関係が未検証の段階でデプロイが原因であると断定するのは不正確な報告です。",
+          "C": "ログに記録された時系列（デプロイ10:00、障害10:01）の前後関係を逆転させており客観的事実に反します。",
+          "D": "DB障害も原因候補の一つにすぎず、検証なしに確定原因として報告するのは誤りです。"
+        },
+        "sourceIds": [
+          "chat",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a21",
+      "category": "REFRAME",
+      "theme": "キーボードでの並べ替え",
+      "rationale": "包括性と関係するが、最終的な選択がUIのキー操作設計だけになっている。",
+      "recommendation": "生成UIがキーボード利用者を排除する検証漏れを示し、Copilotへ代替操作と検証条件を指定する改善依頼を問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o1",
+      "officialScopeAnchor": "d1o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "4fe3a41b5fd491d2a3ff723e5d4042b99e905afe8c36a18efe3968cf2d206ef6",
+      "current": {
+        "question": "Copilotが生成した注文一覧では、ドラッグ操作でしか項目の順序を変更できません。キーボードだけで操作する利用者にも同じ並べ替え結果を得られるようにします。詳細表示と変更取消の仕様は維持する場合、どのキーボード操作を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "上下キーで、順序は変えずに項目間のフォーカスを移動する"
+          },
+          {
+            "id": "B",
+            "text": "Enterキーで、選択中の項目の詳細画面を表示する"
+          },
+          {
+            "id": "C",
+            "text": "Escapeキーで、編集中の順序変更を取り消す"
+          },
+          {
+            "id": "D",
+            "text": "上下キーで、選択中の項目を一つ上または下へ移動する"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。",
+        "choiceExplanations": {
+          "D": "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。",
+          "A": "フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。",
+          "B": "詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。",
+          "C": "操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。"
+        },
+        "sourceIds": [
+          "chat",
+          "responsible"
+        ]
+      }
+    },
+    {
+      "id": "q-d1-a22",
+      "category": "ALIGNED",
+      "theme": "プロンプト改善の独立評価",
+      "rationale": "プロンプトを調整した例だけでAI出力を評価する偏りを避け、同じ対象の未使用例で確認する。",
+      "recommendation": "維持。モデルを追加学習した話ではないことを保つ。",
+      "verdictLabel": "関連性を保てている",
+      "registeredDomain": "d1",
+      "registeredObjective": "d1o2",
+      "officialScopeAnchor": "d1o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 3,
+      "questionFingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
+      "current": {
+        "question": "Copilotへ渡すプロンプトを、評価用データRを使って何度も修正しました。Rは対象APIへの入力例100件、Sは修正に使っていない同じAPIへの入力例100件、Tは修正に使っていない別APIへの入力例100件です。UはRの順番だけを変えたものです。各入力の正しい期待結果はすべて定めてあります。修正に使った例以外でも対象APIに合う結果を得られるか確認するには、どのデータを評価に使うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "同じAPIの未使用データSで評価する"
+          },
+          {
+            "id": "B",
+            "text": "プロンプト修正に使ったデータRで評価する"
+          },
+          {
+            "id": "C",
+            "text": "別APIの未使用データTで評価する"
+          },
+          {
+            "id": "D",
+            "text": "Rの順番だけを変えたデータUで評価する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。",
+        "choiceExplanations": {
+          "A": "評価対象が同じAPIで、プロンプト修正に使っていないSを使います。修正に使った例だけでは、他の入力にも適用できるかを判断できません。ここで行ったのはプロンプトの修正で、モデル自体の追加学習ではありません。",
+          "B": "調整に使用したデータそのものでは、調整例への過剰適合と未知の入力に対する汎化性能を切り分けて評価できません。",
+          "C": "仕様の異なる別APIのデータセットでは、現行APIに対するプロンプトの有効性を正しく測定できません。",
+          "D": "順序をシャッフルしただけであっても入力内容はデータセットRと同一であるため、未知のデータに対する評価にはなりません。"
+        },
+        "sourceIds": [
+          "chat",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a16",
+      "category": "REFRAME",
+      "theme": "入力と出力の調査記録",
+      "rationale": "データフローへ接点はあるが、汎用的な入出力ログを選ぶだけで、Copilotの文脈や管理指標との違いが薄い。",
+      "recommendation": "同じ再現用の安全なコード・関連ファイル・依頼・出力を照合し、利用率だけでは生成理由を説明できないことを問う。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "6ac1bd6b9d571b76fb38676657ad2ba8363262381928d220908a732632fb7adc",
+      "current": {
+        "question": "社内で、Copilotの補完結果を調査しています。現在の記録には、提案を採用した回数と応答時間だけが残り、送信した入力や返されたコードはありません。誤った補完が出た場面の入力と出力を照合したいと考えています。共有が許可された架空のコードだけを使う場合、どの記録を追加すべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "同じ要求の接続先とHTTP応答ステータスを記録する"
+          },
+          {
+            "id": "B",
+            "text": "同じ要求の提案採用数と応答時間を記録する"
+          },
+          {
+            "id": "C",
+            "text": "同じ期間のライセンス割当と請求件数を記録する"
+          },
+          {
+            "id": "D",
+            "text": "同じ要求の入力、返されたコード、生成時の条件を記録する"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。",
+        "choiceExplanations": {
+          "A": "接続の調査には有用だが、誤った候補内容を入力と照合できない。",
+          "B": "利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。",
+          "C": "契約・費用の調査には有用だが、今回の生成内容を示さない。",
+          "D": "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。"
+        },
+        "sourceIds": [
+          "architecture",
+          "chat"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a17",
+      "category": "REFRAME",
+      "theme": "架空クライアントの表示判定",
+      "rationale": "受信後の処理というD3との関連はあるが、任意のログ段階名を読んで処理箇所を選ぶだけになっている。",
+      "recommendation": "公開資料で説明される生成・出力処理・フィルターの役割を問う。非表示だけで生成失敗を断定しない判断を残す。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "f6f02c6c146e8f33fb20077492d6cfe70e8716661c5d42575a7bf28e2eb7b488",
+      "current": {
+        "question": "この問題の検証用クライアントは、入力を組み立てて送信し、受信した補完候補を表示前に判定してからUIへ渡します。ログには「送信成功、候補を1件受信、表示可能と判定した候補0件、UIへ渡した候補0件」とあります。画面には候補が出ていません。生成できなかった場合と区別して、最初に調べる処理段階はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "候補を受信した後の、表示可能かを判定する処理を調べる"
+          },
+          {
+            "id": "B",
+            "text": "要求を送信するときの、サーバーへの接続処理を調べる"
+          },
+          {
+            "id": "C",
+            "text": "候補をUIへ渡した後の、画面に描画する処理を調べる"
+          },
+          {
+            "id": "D",
+            "text": "要求を送信する前の、入力を組み立てる処理を調べる"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。",
+        "choiceExplanations": {
+          "A": "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。",
+          "B": "送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。",
+          "C": "UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。",
+          "D": "入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。"
+        },
+        "sourceIds": [
+          "responsible",
+          "chat",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a18",
+      "category": "REPLACE_FOCUS",
+      "theme": "v7/v9の非同期応答",
+      "rationale": "正解は架空の文書版一致・重複要求の規則で決まり、非同期クライアント実装の読解が中心。",
+      "recommendation": "同じD3o2で、古い文脈の提案と現行コードの整合を確認する利用者の判断へ変更する。版番号アルゴリズムを問わない。",
+      "verdictLabel": "優先して出題軸を変更",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o2",
+      "officialScopeAnchor": "d3o2",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 1,
+      "questionFingerprint": "00019b17f8731154d187c6bd9f5bbbb4a9f32d82c60ff5fa4cfc19abae0e8b74",
+      "current": {
+        "question": "この問題の補完クライアントは、編集時点ごとに文書へ版番号を付けます。要求時の文書版が現在の版と同じ場合だけ、返された候補を採用します。また、同じ版への要求が処理中なら重複送信しません。現在の文書はv9で、その版の要求は処理中です。このとき、以前の文書v7をもとにした要求への応答が届きました。応答と処理中の要求をどう扱うべきですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "v7への応答を採用し、処理中のv9の要求を取り消す"
+          },
+          {
+            "id": "B",
+            "text": "v7への応答を破棄し、v10の要求を新たに送信する"
+          },
+          {
+            "id": "C",
+            "text": "v7への応答を破棄し、処理中のv9への応答を待つ"
+          },
+          {
+            "id": "D",
+            "text": "v7への応答を破棄し、v9の要求を新たに送信する"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "v7の文書をもとにした候補は、現在の文書v9に対応しないので破棄します。v9の要求は既に処理中のため、重複送信せず結果を待ちます。これは問題で定めたクライアントの規則に基づく判断です。",
+        "choiceExplanations": {
+          "A": "現在版v9と一致しない候補を採用し、有効な版の要求を取り消す。",
+          "B": "現在版はv9であり、v10への要求は今回の編集状態へ対応しない。",
+          "C": "v7の文書をもとにした候補は、現在の文書v9に対応しないので破棄します。v9の要求は既に処理中のため、重複送信せず結果を待ちます。これは問題で定めたクライアントの規則に基づく判断です。",
+          "D": "現行版の要求は既に処理中なので、重複送信しない規則を破る。"
+        },
+        "sourceIds": [
+          "inline-usage",
+          "responsible",
+          "guide"
+        ]
+      }
+    },
+    {
+      "id": "q-d3-a19",
+      "category": "REFRAME",
+      "theme": "文字数とトークン数",
+      "rationale": "LLMの入力制約は関連するが、独自アプリの送信許可条件へ足し算を適用する問題になっている。",
+      "recommendation": "文字数だけでは文脈量を判断できない理由と、必要なコードを保って入力を絞る判断を問う。架空の上限の計算は主題にしない。",
+      "verdictLabel": "関連はあるがCopilotの判断へ寄せる",
+      "registeredDomain": "d3",
+      "registeredObjective": "d3o1",
+      "officialScopeAnchor": "d3o1",
+      "scopeAnchorIsNotARelevancePass": true,
+      "evidenceSourceIds": [
+        "guide",
+        "validation"
+      ],
+      "evidenceLevel": "scope-and-concept; not a fresh factual validation of every choice",
+      "priority": 2,
+      "questionFingerprint": "1ca613f8ea30348960ec942a719454b997e6d0f8b518e55a156b261a0b0c35f4",
+      "current": {
+        "question": "この問題のアプリは、モデルへ送る入力が800トークン以下なら送信を許可します。入力は共通の前置きと、本文Xまたは本文Yで構成します。対象モデルのトークナイザーで入力全体を測った内訳は、前置き50トークン、本文Xは600文字・900トークン、本文Yは800文字・200トークンでした。「前置き＋本文X」と「前置き＋本文Y」のうち、どちらを送信できますか。数値はこの検証例の条件です。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "前置き＋本文Xを送信し、前置き＋本文Yは送信しない"
+          },
+          {
+            "id": "B",
+            "text": "前置き＋本文Yを送信し、前置き＋本文Xは送信しない"
+          },
+          {
+            "id": "C",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信する"
+          },
+          {
+            "id": "D",
+            "text": "前置き＋本文Xと、前置き＋本文Yを両方送信しない"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。",
+        "choiceExplanations": {
+          "A": "文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。",
+          "B": "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。",
+          "C": "Xは上限を超えており、両方を通すとゲートの条件を満たさない。",
+          "D": "Yは上限以下なので、両方を止めると許容された入力も拒否する。"
+        },
+        "sourceIds": [
+          "dotnet-tokens",
+          "guide",
+          "architecture"
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "bankSha256AtInitialRead": "e24b1145e909468ecb6284e8e663841f6345f12d544483e1bf06e8119a101ae7",
+    "bankSha256AtReportWrite": "192f4c127a48a9120bd6b3bedfd43e2abf2c0c8d9a194bf542437240d305d64c",
+    "bankBytesChangedDuringReview": true,
+    "allReviewedAppliedContentUnchanged": true,
+    "initialContentReference": "reports/applied-remediation-review.json: questions[].after",
+    "exclusionSha256": "a08c5416818dfcac4b5712cd35747bbe4746facdd74fae5f3188c1815791ec1c",
+    "all96HaveManualDecision": true,
+    "questionAssetsChangedByThisTask": false,
+    "domainCountsChangedByThisTask": false,
+    "uiChangedByThisTask": false,
+    "buildRun": false,
+    "testsRun": false,
+    "whyNoBuild": "新規の分析レポートのみ。問題・アプリを変更していないため。"
+  },
+  "deletionFollowUp": {
+    "deletedAt": "2026-10-14",
+    "questionIds": [
+      "q-d2-a15",
+      "q-d3-a11",
+      "q-d3-a12",
+      "q-d3-a18",
+      "q-d5-a02",
+      "q-d5-a05"
+    ],
+    "remainingApplied": 90,
+    "remainingCategories": {
+      "ALIGNED": 62,
+      "REFRAME": 28,
+      "REPLACE_FOCUS": 0
+    },
+    "report": "reports/applied-six-deletion-review.json"
+  }
+}

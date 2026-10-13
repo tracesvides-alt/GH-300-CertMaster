@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { domains, type Question } from './content';
 import type { Attempt } from './learning';
+import { withCurrentAttemptClassification } from './question-classification';
+import { isQuestionActive } from './question-availability';
 export const questionCounts = [5, 10, 20, 30, 50] as const;
 export const selectionOptionsSchema = z
   .object({
@@ -75,7 +77,7 @@ export function calculateObjectiveStats(
   attempts: Attempt[],
   objectiveIds: string[] = [],
 ): Record<string, ObjectiveStats> {
-  const verified = attempts.filter((a) => a.status === 'verified');
+  const verified = attempts.filter((a) => a.status === 'verified').map(withCurrentAttemptClassification);
   const ids = new Set([...objectiveIds, ...verified.map((a) => a.objectiveId)]);
   return Object.fromEntries(
     [...ids].map((id) => {
@@ -112,6 +114,7 @@ export function filterEligibleQuestions(
   const history = buildQuestionHistory(context.attempts);
   return preventDuplicateQuestions(bank).filter(
     (q) =>
+      isQuestionActive(q) &&
       domains.some((d) => d.id === q.domainId) &&
       (q.status === 'verified' || (q.status === 'ai-generated' && !options.verifiedOnly && options.includeAI)) &&
       (options.domainId === 'all' || q.domainId === options.domainId) &&

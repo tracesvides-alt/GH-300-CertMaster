@@ -33,6 +33,7 @@ import {
   domains,
   objectives,
   questions,
+  allQuestions,
   lessons,
   sources,
   version,
@@ -60,6 +61,8 @@ import { ResumeLearningCard } from './components/resume-learning-card';
 import { choiceLabel, answerLabels } from '@/lib/choice-labels';
 import { withTimeout } from '@/lib/with-timeout';
 import { mastery, score, streak, type Attempt } from '@/lib/learning';
+import { withCurrentAttemptClassification, withCurrentQuestionClassification } from '@/lib/question-classification';
+import { isQuestionActive, withoutDeletedSessionQuestions } from '@/lib/question-availability';
 import PracticeSetup, { CountPicker } from './components/practice-setup';
 import PracticeResult from './components/practice-result';
 import WrongAnswerNotebook from './components/wrong-answer-notebook';
@@ -95,7 +98,7 @@ const labels = ['学習ダッシュボード', '教材を読む', '問題演習'
 type StudyTab = 'Learn' | 'Glossary' | 'Compare';
 const kb = buildKnowledgeBase();
 const importanceLabels = { essential: '必須', important: '重要', supplementary: '補助' };
-const difficulty = { beginner: '基礎', intermediate: '標準', advanced: '応用' };
+const difficulty = { beginner: '基礎', intermediate: '応用', advanced: '本番相当' };
 type Session = {
   id: string;
   questions: Question[];
@@ -172,15 +175,18 @@ export default function App() {
       .put({ id: 'practice', value })
       .catch(() => setNotice('設定を保存できませんでした。今回の設定はそのまま利用できます。'));
   }
-  const attempts = useLiveQuery(() => db.attempts.orderBy('at').reverse().toArray(), []) ?? [];
+  const attempts = useLiveQuery(async () =>
+    (await db.attempts.orderBy('at').reverse().toArray()).map(withCurrentAttemptClassification), []) ?? [];
   const bookmarks = useLiveQuery(() => db.bookmarks.toArray(), []) ?? [];
   const generated = useLiveQuery(() => db.generated.toArray(), []) ?? [];
-  const sessions = useLiveQuery(() => db.sessions.toArray(), []) ?? [];
+  const sessions = useLiveQuery(async () => (await db.sessions.toArray()).map(s =>
+    s.completed ? s : withoutDeletedSessionQuestions({ ...s, questions: s.questions.map(withCurrentQuestionClassification) })), []) ?? [];
   const lessonCompletions = useLiveQuery(() => db.lessonCompletions.toArray(), []) ?? [];
   const completedLessonIds = lessonCompletions.map((c) => c.id);
 
   // Adaptive Learning live queries & state
-  const wrongAnswers = useLiveQuery(() => db.wrongAnswers.toArray(), []) ?? [];
+  const wrongAnswers = useLiveQuery(async () =>
+    (await db.wrongAnswers.toArray()).map(withCurrentAttemptClassification), []) ?? [];
   const questionReviews = useLiveQuery(() => db.questionReviews.toArray(), []) ?? [];
   const confusionPairs = useLiveQuery(() => db.confusionPairs.toArray(), []) ?? [];
   const [reviewSubTab, setReviewSubTab] = useState<'notebook' | 'confusion' | 'history'>('notebook');
@@ -374,7 +380,8 @@ export default function App() {
     setSelected([]);
     setNotice('');
   }
-  function start(list: Question[], options = practiceOptions, history = attempts) {
+  function start(requested: Question[], options = practiceOptions, history = attempts) {
+    const list = requested.filter(isQuestionActive);
     setPracticeSummary(null);
     setPracticeRun(
       list.length
@@ -401,6 +408,17 @@ export default function App() {
     setTab('Practice');
     if (!list.length)
       setNotice('対象の問題がありません。条件を変えるか、少し時間をおいてください。');
+  }
+  function showHistoricalAnswer(question: Question, answer: string[]) {
+    setPracticeSummary(null);
+    setPracticeRun(null);
+    setQueue([question]);
+    setIndex(0);
+    setSelected(answer);
+    setRevealed(true);
+    setSession(null);
+    setNotice('');
+    setTab('Practice');
   }
   async function practice(options = practiceOptions) {
     if (lock.current) return;
@@ -2423,7 +2441,7 @@ export default function App() {
                     ready={settingsReady && !busy}
                     loading={busy ? '演習を準備しています…' : !settingsReady ? '設定を読み込んでいます…' : undefined}
                     notice={notice}
-                    verifiedCount={questions.length}
+                    verifiedCount={questions.filter(q => q.status === 'verified').length}
                   />
                   <button
                     className="textbutton"
@@ -2524,11 +2542,11 @@ export default function App() {
                           <button onClick={() => beginMock(5)}>5問のミニ模試</button>
                         </div>
                         <div className="notice">
-                          Verified問題は現在{questions.length}
+                          Verified問題は現在{questions.filter(q => q.status === 'verified').length}
                           問です。候補不足時は実施問題数と配分を調整して表示します。収録目標は約200問です。
                         </div>
                         {sessions
-                          .filter((s) => !s.completed)
+                          .filter((s) => !s.completed && s.questions.length > 0)
                           .map((s) => (
                             <button
                               className="resume"
@@ -2727,15 +2745,13 @@ export default function App() {
                                   {new Date(a.at).toLocaleString('ja-JP')}
                                 </span>
                               </div>
-                              <p>{bank.find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
+                              <p>{[...allQuestions, ...generated].find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
                               <button
                                 className="textbutton"
                                 onClick={() => {
-                                  const item = bank.find((q) => q.id === a.questionId);
+                                  const item = [...allQuestions, ...generated].find((q) => q.id === a.questionId);
                                   if (item) {
-                                    start([item]);
-                                    setSelected(a.answer);
-                                    setRevealed(true);
+                                    showHistoricalAnswer(item, a.answer);
                                   }
                                 }}
                               >

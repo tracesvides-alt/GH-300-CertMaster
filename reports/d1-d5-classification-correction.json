@@ -1,0 +1,345 @@
+{
+  "reviewedAt": "2026-10-13",
+  "guideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+  "method": "ユーザーがD1の不足とD5の過剰を懸念し、元の学習意図を尊重して戻すよう依頼したため、前回のD1→D5移動16問を再審査した。D1のAI出力検証とD5の具体的なテスト・修正技能には重なりがある。単一の技術手法だけで主Domainを決めず、元のD1の出題意図を優先し、副テーマを記録する。",
+  "summary": {
+    "restored": 16,
+    "beforeDomains": {
+      "d1": 24,
+      "d2": 98,
+      "d3": 33,
+      "d4": 54,
+      "d5": 74,
+      "d6": 33
+    },
+    "afterDomains": {
+      "d1": 40,
+      "d2": 98,
+      "d3": 33,
+      "d4": 54,
+      "d5": 58,
+      "d6": 33
+    },
+    "unchangedOtherQuestions": 299
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "question": "Copilotが作った月送り処理は、1月15日→2月15日は成功しますが、1月31日→3月3日となります。仕様は「翌月に同じ日がなければ翌月末」です。2025年の回帰テストに追加する期待値は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "生成された月送り処理を承認仕様の独立した期待値へ照合し、採用前の検証を補う。回帰テストの具体例でAI出力検証の必要性を学ぶD1の出題意図を主にする。",
+      "fingerprint": "4bb48e9324bf6128c19f4dfceb21373c4032056cb4fe97c06d64437f426b44b2"
+    },
+    {
+      "id": "q-d1-f03",
+      "question": "認可処理の正常ログインはテスト済み。権限のない利用者の拒否を確認するため、追加するテスト入力は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "正常ログインの成功だけを採用根拠にせず、権限のない利用者の拒否を確認する。安全性を採用前に検証する学習意図を主にする。",
+      "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221"
+    },
+    {
+      "id": "q-d1-f05",
+      "question": "Copilotがパスワード保存処理にMD5を使うコードを提案しました。採用前に最も直接的に修正すべき点は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "Copilotの安全でない提案をそのまま採用せず、人が保存方式の妥当性を確認・修正する。採用前のセキュリティ検証の基礎としてD1に戻す。",
+      "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca"
+    },
+    {
+      "id": "q-d1-a01",
+      "question": "Copilotのファイル読取案は、正常時にcloseしますが、parseが例外を投げる経路ではcloseされません。成功ケースのテストは通っています。最も直接的に欠陥を検出する追加テストは？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "成功したテストだけで生成コードを正しいと判断せず、例外経路に残った欠陥を検証する。AI案を過信しない採用前の評価を主にする。",
+      "fingerprint": "d19a448f8f243666da651cd96c7ef95f634c60979c511f40df14a4d53381efb6"
+    },
+    {
+      "id": "q-d1-a02",
+      "question": "Copilotが生成したSQL検索APIを検証しています。WHEREのnameを文字列連結しており、入力x' OR '1'='1で検索条件が拡大しました。ORDER BYは固定列、DB資格情報はSELECTのみ、行ごとの閲覧権も確認済みです。確認済みの対策を保ち、観測した欠陥を直す変更と回帰テストは？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "生成されたSQLの攻撃入力に対する振る舞いを確認し、確認済みの対策と未解決の欠陥を区別して安全な採用へ進む。D1の出力検証が主、SQL修正手法は副テーマ。",
+      "fingerprint": "c58373d7cf864eb082c221190875835fbedd7feec072c8b37aa395d67136c1c0"
+    },
+    {
+      "id": "q-d1-a03",
+      "question": "新人がCopilotの権限判定案を採用した。仕様ではviewerは更新不可だが、生成条件はguest以外なら更新可。違反を具体的に説明する研修で、追加すべき入力・期待値は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "新人が採用した生成条件の権限違反を、仕様の独立した期待値で具体的に再現する研修。一般原則名でなく、責任ある検証・運用としてd1o2へ整理する。",
+      "fingerprint": "0a0b7056e8ecc43963214e9c18575745831c545f9aa22881e071b15a477cd633"
+    },
+    {
+      "id": "q-d1-a04",
+      "question": "Copilotで作った認証処理を検証しています。保存は利用者別ソルト付きのSHA-256一回です。保存値だけを使う検証で、通信なしに大量の候補を短時間で照合できました。定数時間比較、パスワードを含まないログ、オンラインの試行制限は確認済みです。正常な照合と確認済みの対策を保ち、観測した弱点を直す改善指示は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "Copilotの認証案を既存の成功条件だけで承認せず、保存値に対する別の攻撃経路を検証し、採用の妥当性を判断する。保存方式の技能は副テーマ。",
+      "fingerprint": "1bfe09abe55b8f36982450f566e3ab50494bd2553149b0e3e88fa7cce2189b44"
+    },
+    {
+      "id": "q-d1-a08",
+      "question": "Copilot生成テストはexpectを含むが、エラー処理を削っても成功する。行カバレッジは増えた。テストが失敗を検出するか確かめる次の観測は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "Copilot生成テストや行カバレッジを品質保証とみなさず、既知の不正実装を検出できるか評価する。AI出力を批判的に検証する学習意図を主にする。",
+      "fingerprint": "6193a5c11440470b89f55f6716bd22e1198b67d1c385b59a7421aa35b2014205"
+    },
+    {
+      "id": "q-d1-a09",
+      "question": "Copilotの変更をマージするCIには型検査、リンター、秘密情報検出があります。要求は「既存の注文金額計算を変えないこと」です。今ある検査を保ったまま追加する確認として最も直接的なのは？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "型・リンター・秘密情報の検査が成功しても、生成変更が業務仕様へ適合する根拠が不足することを判断する。採用前の独立した検証としてD1を主にする。",
+      "fingerprint": "4e54465b57d213995fb7991cb20f6bebfb5a520551d28cd7accba47e375ca204"
+    },
+    {
+      "id": "q-d1-e03",
+      "question": "Copilotが書いたキューのテストは1万回成功しました。停止した実行の記録では、処理PがロックLを保持してMを待ち、処理QがMを保持してLを待っています。AIの説明は「各ロックの取得は安全」です。次に依頼する修正と検証の組合せは？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "AIの説明と多数回の成功を安全性の証明にせず、相互待ちの記録へ照合して修正と再現検証を要求する。根拠に基づくAI出力の採用判断を主にする。",
+      "fingerprint": "2205c7245f8f2072905b7f2ceebe13435665b49e28d8529c9705fc74dc8b0170"
+    },
+    {
+      "id": "q-d1-e05",
+      "question": "Copilotで作ったドロップダウンを検査しました。Tabで開閉ボタンへ移動でき、Enterで開けます。Escapeで閉じるとフォーカスがページ先頭へ飛びます。読み上げでは項目名は分かりますが、開閉後も「折りたたみ」と聞こえます。二つの観測を説明する修正は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "secondaryObjectiveIds": [
+        "d5o1"
+      ],
+      "rationale": "生成UIがキーボードと支援技術の利用者に生む具体的な不利益を観測し、軽減策を判断する。D1の潜在的な害・包摂性の確認を主にし、UI修正技能を副テーマとする。",
+      "fingerprint": "789ebdd241e84569a139a29f681a9c499b4ee0991b90b272d23811d0077077a9"
+    },
+    {
+      "id": "q-d1-e07",
+      "question": "Copilotのキュー変更を試験しました。目標はp95遅延200ms以下と受付済み注文の欠落0件です。通常負荷は90ms・欠落0、ピーク負荷は170ms・欠落0、ピーク中のノード停止は180ms・欠落3件でした。残る検証枠を最も有効に使う対象は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "通常負荷の成功を運用全体の保証とせず、目標未達の停止条件を特定して検証枠を使う。生成変更の採用根拠を十分にする運用判断を主にする。",
+      "fingerprint": "7ae618aad17f0978104ddcb72d4062ed9ae32427d774feff9a576da01d9f7848"
+    },
+    {
+      "id": "q-d1-e08",
+      "question": "Copilot研修後、採用率30%→50%、案件難易度は低下、レビュー時間は不変、流出不具合は少数で傾向不明。今回の測定目的は「品質とレビュー負担への研修効果」。案件差を扱い、この目的を測る次の比較は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o1"
+      ],
+      "rationale": "AI研修の採用率上昇だけで品質向上を断定せず、案件差を考慮して責任ある運用の効果を検証する。元のD1を維持し、生産性の測定を副テーマとする。",
+      "fingerprint": "467006240a76f743e306dd2a607691a82ee8e12168ab8d80587076cd38af6d8e"
+    },
+    {
+      "id": "q-sc02-2",
+      "question": "【Apex Financial事例】正数の金額を整数へ偶数丸めする契約です。旧実装は2.5→2、3.5→4、Copilot案と同時生成テストは2.5→3、3.5→4でした。通常値2.4→2はどちらも通ります。新案を採用する前の判断は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "同時生成された実装とテストが同じ誤りを共有し得るため、承認契約を独立した根拠にして採用前に検証する。AI出力の検証という元の学習意図を主にする。",
+      "fingerprint": "9232a513f8237b6496e86f3f64dcdb77d0b5b10586b04bead9f5dde4ddeea346"
+    },
+    {
+      "id": "q-sc05-1",
+      "question": "【Vanguard Health事例】Copilotが内部SDKのfetchPatientV2を呼ぶ案を返す。対象版の型はgetPatient(id)だけで、社内契約もその名前を指定。今回の修正候補は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o1"
+      ],
+      "rationale": "実在しないSDKを含む生成案を、実際の対象版と承認契約へ照合して修正する。ハルシネーションの検出・採用前の検証としてd1o2へ置く。",
+      "fingerprint": "30b7a4b8e9495e08ef8231f401ca1b053846f14a2713f7fe9226c91acad1660d"
+    },
+    {
+      "id": "q-sc05-2",
+      "question": "【Vanguard Health事例】SDKの実APIはgetPatientだけだが、自由なモックでは生成案fetchPatientV2も成功する。採用前にこの不整合を検出する検査は？",
+      "before": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "after": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "secondaryObjectiveIds": [
+        "d5o2"
+      ],
+      "rationale": "自由なモックの成功だけで生成APIを採用せず、実SDKと公式契約へ照合する。AI出力を独立した根拠で検証する必要性を主にする。",
+      "fingerprint": "9efd7f56efc590b361e808026d9ae4c187e9b81049c92208c89c00c35d99154e"
+    }
+  ],
+  "verification": {
+    "testsPassed": 185,
+    "testFiles": 16,
+    "typeCheck": "PASS",
+    "isolatedBuild": "PASS",
+    "browserTestsPassed": 2,
+    "projects": [
+      "desktop",
+      "mobile"
+    ],
+    "qualityAudit": "PASS",
+    "classificationAudit": "PASS",
+    "difficultyAudit": "PASS",
+    "choiceAudit": "PASS",
+    "foundationAudit": "PASS",
+    "appliedAudit": "PASS",
+    "examAudit": "PASS",
+    "mockAllocation": {
+      "seeds": 100,
+      "count": 50,
+      "unique": true,
+      "verifiedOnly": true,
+      "domainRangesPass": true
+    },
+    "selectionFixtureCorrection": "旧テストの隣接問題を異なるObjectiveとする前提を、実際に異なるObjectiveのアルゴリズム用データへ訂正。判定・閾値は維持。"
+  },
+  "positionAdjustments": [
+    {
+      "id": "q-d1-a04",
+      "from": "B",
+      "to": "A",
+      "reason": "D1へ戻した後のDomain内の正答位置の偏りを解消。文面と保存用正答IDは維持。"
+    },
+    {
+      "id": "q-d1-e02",
+      "from": "C",
+      "to": "A",
+      "reason": "D1へ戻した後のDomain内の正答位置の偏りを解消。文面と保存用正答IDは維持。"
+    },
+    {
+      "id": "q-d1-e05",
+      "from": "C",
+      "to": "D",
+      "reason": "D1へ戻した後のDomain内の正答位置の偏りを解消。文面と保存用正答IDは維持。"
+    }
+  ]
+}

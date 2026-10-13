@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { questions, domains, scenarioSets, type Question } from '../lib/content';
+import { questions, allQuestions, domains, scenarioSets, type Question } from '../lib/content';
 import {
   selectQuestions,
   selectMockQuestions,
@@ -27,7 +27,7 @@ describe('Question Bank Difficulty Distribution', () => {
     expect(counts.advanced).toBeGreaterThanOrEqual(25); // Capacity for a 50-question mock.
     expect(counts.intermediate + counts.advanced).toBeGreaterThanOrEqual(50);
     expect(difficultyReview.status).toBe('reviewed');
-    expect(Object.keys(difficultyReview.questions)).toHaveLength(questions.length);
+    expect(Object.keys(difficultyReview.questions)).toHaveLength(allQuestions.length);
     for (const q of questions) {
       const row = difficultyReview.questions[q.id as keyof typeof difficultyReview.questions];
       expect(row.difficulty).toBe(q.difficulty);

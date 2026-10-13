@@ -1,0 +1,48 @@
+{
+  "removedAt": "2026-10-14",
+  "purpose": "GH-300との関連性レビューで出題軸の変更を優先とした6問を、利用者の指示で変更ではなく削除する。",
+  "questions": [
+    {
+      "id": "q-d2-a15",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "3e2d31939c3601759e84b6c1c8178c10951e203a27d78c9761ed6860a9a9fa01",
+      "reason": "Agentという語はあるが、正解はimport構文を読んで修正先を特定するだけで決まる。"
+    },
+    {
+      "id": "q-d3-a11",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "fingerprint": "a74510ebe0c9a8c7c77d27e495840c8b144f08b568679dc0680c8725a94b9eae",
+      "reason": "開発者がCopilot Chatの表示実装を変更する設定で、一般的なストリーミングUIの時間計算が核心。"
+    },
+    {
+      "id": "q-d5-a02",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "9d2ae86396a8c113ed9ab5b6b0ec53964eeed5a565e7d3f5dbb3987dcd50efd0",
+      "reason": "リファクタリングは範囲内だが、四択は言語の例外制御構文の配置そのものを試す。"
+    },
+    {
+      "id": "q-d5-a05",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "b243f6c2a29386a1e79b24491255c8ba22a4de6b3373caab2d2b7462902782f4",
+      "reason": "Copilotの機能を選択・操作・検証する知識を使わず、外部のコミット分類規約を答える問題。確認したガイドに規約自体の明示はない。"
+    },
+    {
+      "id": "q-d3-a12",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "fingerprint": "0d90acd5e5694b2c9e843781b0f454b7da208d1c387e4e38adc3cd80ca049d1a",
+      "reason": "Copilotを使わず架空のクライアント規則だけで40+100を計算する。固定待機値は確認した公式資料の仕様ではない。"
+    },
+    {
+      "id": "q-d3-a18",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "fingerprint": "00019b17f8731154d187c6bd9f5bbbb4a9f32d82c60ff5fa4cfc19abae0e8b74",
+      "reason": "正解は架空の文書版一致・重複要求の規則で決まり、非同期クライアント実装の読解が中心。"
+    }
+  ]
+}

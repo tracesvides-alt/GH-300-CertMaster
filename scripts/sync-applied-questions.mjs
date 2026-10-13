@@ -3,6 +3,7 @@
 // an editorial review; importing a scenario does not establish Applied quality.
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import { removedQuestionIds } from './question-removals.mjs';
 
 const root = new URL('../', import.meta.url);
 const bankDir = 'content/gh300/2026-08-07/';
@@ -43,7 +44,7 @@ seed.forEach(countPosition);
 
 let added = 0;
 for (const d of drafts) {
-  if (questionById.has(d.id)) continue;
+  if (questionById.has(d.id) || removedQuestionIds.has(d.id)) continue;
   const objective = objectives.find((o) => o.id === d.objectiveId) ?? fail(`Unknown objective: ${d.objectiveId}`);
   if (d.distractors.length !== 3) fail(`${d.id} needs exactly three distractors`);
   if (d.sourceIds.some((s) => !sourceIds.has(s))) fail(`${d.id} has an unknown source`);

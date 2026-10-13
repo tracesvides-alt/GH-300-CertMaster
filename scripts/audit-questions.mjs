@@ -4,17 +4,19 @@ import { questionIssues, distributionIssues, positionDistribution } from '../lib
 const root = new URL('../content/gh300/2026-08-07/', import.meta.url);
 const read = file => JSON.parse(fs.readFileSync(new URL(file, root), 'utf8'));
 const questions = read('questions/seed.json'), sources = read('sources.json');
+const retiredIds = new Set(read('questions/selection-exclusions.json').questions.map(q => q.id));
+const activeQuestions = questions.filter(q => !retiredIds.has(q.id));
 const syllabus = read('syllabus.json'), sets = read('scenario-sets/seed.json');
 const reviewFile = new URL('questions/quality-review.json', root);
 const reviews = fs.existsSync(reviewFile) ? JSON.parse(fs.readFileSync(reviewFile, 'utf8')).questions : {};
 const fingerprint = q => createHash('sha256').update(JSON.stringify(q)).digest('hex');
-const issues = [...distributionIssues(questions)];
+const issues = [...distributionIssues(activeQuestions)];
 const add = (id, rule, detail) => issues.push({ id, severity: 'failure', rule, detail });
 for (const q of questions) {
   if (!syllabus.domains.some(d => d.id === q.domainId && d.objectives.some(o => o.id === q.objectiveId))) add(q.id, 'objective', 'Unknown domain/objective');
   if (q.sourceIds.some(id => !sources.some(s => s.id === id))) add(q.id, 'source', 'Unknown source');
   const review = reviews[q.id];
-  issues.push(...questionIssues(q, review));
+  if (!retiredIds.has(q.id)) issues.push(...questionIssues(q, review));
   if (!review || review.fingerprint !== fingerprint(q)) add(q.id, 'stage-2', 'Missing or stale editorial review');
 }
 for (const set of sets) for (const id of set.questionIds) {
@@ -25,7 +27,7 @@ for (const d of syllabus.domains) for (const o of d.objectives) {
 }
 const groups = {};
 for (const difficulty of ['beginner', 'intermediate', 'advanced']) {
-  const qs = questions.filter(q => q.difficulty === difficulty);
+  const qs = activeQuestions.filter(q => q.difficulty === difficulty);
   const qi = issues.filter(i => qs.some(q => q.id === i.id));
   const strongCount = qs.filter(q => q.choices.filter(c => !q.answer.includes(c.id) && (q.choiceQuality?.[c.id]?.plausibility ?? 0) >= 2).length >= 2).length;
   groups[difficulty] = { total: qs.length, ...positionDistribution(qs),
@@ -37,10 +39,10 @@ for (const difficulty of ['beginner', 'intermediate', 'advanced']) {
     twoStrongDistractorPercentage: qs.length ? strongCount / qs.length * 100 : 0,
     missingOrStaleReviews: qi.filter(i => i.rule === 'stage-2').length };
 }
-const report = { rubricVersion: 1, total: questions.length, groups, issues,
+const report = { rubricVersion: 1, total: activeQuestions.length, storedTotal: questions.length, retiredQuestionIds: [...retiredIds], groups, issues,
   passed: !issues.some(i => i.severity === 'failure'),
   note: 'Plausibility is an editorial score, not measured learner difficulty. Multiple-select is reported separately with correct occurrences as denominator.' };
-const lines = ['# Foundation / Applied / Exam Question Quality Report', '', `Total: ${questions.length}. Stage 2: separate editorial rubric review, content-fingerprint bound.`, '',
+const lines = ['# Foundation / Applied / Exam Question Quality Report', '', `Active: ${activeQuestions.length}; stored: ${questions.length}; excluded: ${retiredIds.size}. Stage 2: content-fingerprint bound.`, '',
   '位置はUIの表示順で集計。保存用choice IDとは別です。複数選択は正解出現数を分母として別集計します。', '',
   'もっともらしさ・別解・本文なし推測は編集レビューの判断であり、実受験者による難易度測定ではありません。', ''];
 for (const [difficulty, group] of Object.entries(groups)) {
