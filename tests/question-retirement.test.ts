@@ -62,7 +62,7 @@ describe('retired questions and historical compatibility',()=>{
       expect(result.questions.every(q=>isQuestionActive(q)&&q.status==='verified')).toBe(true);
     }
   });
-  it('binds the remaining editorial records to current assets and keeps two concrete alternatives for every rewrite',()=>{
+  it('binds the remaining editorial records to current assets and keeps at least two concrete alternatives for every rewrite',()=>{
     expect(report.questions).toHaveLength(45);
     expect(report.questions.filter(r=>r.decision==='REWRITTEN')).toHaveLength(21);
     expect(report.questions.filter(r=>r.decision==='RETIRED')).toHaveLength(12);
@@ -70,8 +70,8 @@ describe('retired questions and historical compatibility',()=>{
       expect(row.fingerprint).toBe(hash(rawQuestions.find(q=>q.id===row.id)));
       expect(row.after.answer).toEqual(row.before.answer);
       if(row.decision==='REWRITTEN'){
-        expect(row.counterfactuals).toHaveLength(2);
-        expect(new Set(row.counterfactuals.map(c=>'choiceId' in c ? c.choiceId : '')).size).toBe(2);
+        expect(row.counterfactuals.length).toBeGreaterThanOrEqual(2);
+        expect(new Set(row.counterfactuals.map(c=>'choiceId' in c ? c.choiceId : '')).size).toBeGreaterThanOrEqual(2);
       }
     }
   });

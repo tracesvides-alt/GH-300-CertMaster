@@ -1,6 +1,6 @@
 {
   "reviewedAt": "2026-10-12",
-  "lastUpdated": "2026-10-13",
+  "lastUpdated": "2026-10-14",
   "followUpReviews": [
     {
       "reviewedAt": "2026-10-13",
@@ -1050,7 +1050,7 @@
         "g-verification-validation"
       ],
       "status": "verified",
-      "question": "請求額計算の月末と丸め規則が仕様どおりかを検証したい。直接必要な根拠は？",
+      "question": "請求額計算の月末日や丸め規則が仕様どおりに実装されているかを検証したいと考えています。この検証において、直接確認すべき根拠として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -1081,7 +1081,7 @@
         "C": "知財の根拠であり計算仕様とは別。"
       },
       "review": {
-        "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84",
+        "fingerprint": "d5d7735e78d3bd1d0497873a04a4668fcd51095760ce7791402b687937929d0f",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1095,7 +1095,7 @@
         "g-inline-suggestions"
       ],
       "status": "verified",
-      "question": "入力中のカーソル位置に、未確定のコード候補を薄く重ねて提示するCopilot機能は？",
+      "question": "エディタでのコード入力中に、現在のカーソル位置に未確定のコード補完候補を薄い文字（ゴーストテキスト）で重ねて提示するCopilotの機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -1126,7 +1126,7 @@
         "B": "質問や説明を会話形式で依頼する機能。"
       },
       "review": {
-        "fingerprint": "10b30e2ea1ac4b406027094a94d758839ad88c3886b70e9a608690c47c7d9119",
+        "fingerprint": "57b35ffd5e6f649a7c8be1c2ad2cfe299e97096935a4b02c78f29fd8017b8730",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1140,7 +1140,7 @@
         "g-copilot-chat"
       ],
       "status": "verified",
-      "question": "未経験の言語で書かれた関数の目的を、コードを変更せずに確認したい。入力例で説明の正否も確かめる場合の最適な進め方は？",
+      "question": "未経験の言語で記述された関数の目的を、既存コードを変更することなく確認したいと考えています。具体的な入力例を用いてCopilotの説明が正しいかも検証する場合の進め方として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -1171,7 +1171,7 @@
         "C": "説明は得られるが入力例の実行照合が欠ける。"
       },
       "review": {
-        "fingerprint": "050088c3525776679b7d6dfa2b9ed9e35f17d59f73a8d009647f862c75478853",
+        "fingerprint": "6ffbeeb2c0dddb90008e951af6af0a88012305c4d8a0e697ff2dadb82bf0245e",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1185,7 +1185,7 @@
         "g-context-gathering"
       ],
       "status": "verified",
-      "question": "VS CodeのCopilot Chatで送料計算を説明させます。shipping.tsは計算処理、rates.tsは料金表、shipping.test.tsは期待結果、types.tsは配送先の型です。関数から参照される料金表の値を説明に含めたい。明示的に渡す文脈は？",
+      "question": "VS CodeのCopilot Chatで送料計算関数のロジックを解説させようとしています。プロジェクト内には計算処理（shipping.ts）、料金表（rates.ts）、期待結果（shipping.test.ts）、配送先の型（types.ts）が存在します。関数から参照される料金表の具体的な値を解説に反映させるため、明示的に指定すべき文脈（コンテキスト）として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -1216,7 +1216,7 @@
         "D": "配送先のフィールドや型の説明に向く。今回知りたい料金表の値の定義ではない。"
       },
       "review": {
-        "fingerprint": "e191e2b3f6bfcf5e3ef9cfcd3635a3ff76ab3b391a0ae8b90b6ccaf82293531c",
+        "fingerprint": "47e3b47aeed8d29e2cdaa94584eb9a21d861172a937301b13c16e4bfc9dec971",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1238,7 +1238,7 @@
         "g-code-correctness"
       ],
       "status": "verified",
-      "question": "Copilotが新しいSDKメソッドを提案した。ライブラリの対象バージョンで、その名前と引数が実在するかを最初に照合する資料は？",
+      "question": "Copilotが新しいSDKメソッドを提案しました。使用しているライブラリの対象バージョンにおいて、そのメソッド名や引数の仕様が実在するかを最初に照合すべき公式資料として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -1269,7 +1269,7 @@
         "C": "利用量はこのAPIの存在を示さない。"
       },
       "review": {
-        "fingerprint": "d7a59fc743a71d9754620e4591295de8b28b5c9b97cbf459c4b8cb9af4c34a6f",
+        "fingerprint": "248afd227e442b487898e812cd56a3c020177cb765a50de37905107ff25587fe",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1290,7 +1290,7 @@
         "g-thread-reset"
       ],
       "status": "verified",
-      "question": "認証バグを長く相談した後、無関係な商品一覧の実装をChatで始める。旧タスクの履歴が回答に混ざるのを避ける操作は？",
+      "question": "認証機能のバグについて長くChatで相談した後、別の無関係な商品一覧機能の実装をChatで開始します。過去のタスク履歴や古い文脈が回答に混ざるのを防ぐための操作として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -1321,7 +1321,7 @@
         "D": "無関係な履歴を切り、現在の要件だけを提供できる。"
       },
       "review": {
-        "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb",
+        "fingerprint": "c4d44ce58261ef1c701a61691ad3bc3040eb2cd303067410186d0f4eb087289b",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1335,7 +1335,7 @@
         "g-unit-test-generation"
       ],
       "status": "verified",
-      "question": "日付処理のテストをCopilotに生成させる。通常の日付は既に通るが、月末と不正入力が未確認である。追加する指示は？",
+      "question": "日付処理の単体テストをCopilotに生成させようとしています。通常の日付ケースは既にパスしていますが、月末日や不正な入力に対する境界値の検証がまだ行われていません。プロンプトに追加すべき指示として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -1366,7 +1366,7 @@
         "D": "保守性には役立つが月末や不正入力の期待結果を指定しない。"
       },
       "review": {
-        "fingerprint": "43a062d837f11fefd8a9f6e7acd4a7d388af49eb4fb54d371141e368af92c7c6",
+        "fingerprint": "95fcef045e5a00f085c1f507224e151ec540127a6f607aa05536744f3702decd",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1380,7 +1380,7 @@
         "g-exclusion-limitations"
       ],
       "status": "needs-review",
-      "question": "IDEのAgentで対象ファイルが参照された。除外ルールのリポジトリ・パスと反映は確認済み。このモードで次に確認する仕様は？",
+      "question": "IDEのAgentモードで作業中、対象ファイルが参照されました。リポジトリやパスに対する除外ルールの設定と反映は確認済みです。この状況において、次に確認すべき公式仕様として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -1411,7 +1411,7 @@
         "B": "対象リポジトリとパターンは確認済みである。"
       },
       "review": {
-        "fingerprint": "379fd0d12f9c5115e4ab7bb4142f2e75e67693dc7a5bb7bc2c6652853dac29a4",
+        "fingerprint": "c5a21a84c8834dd1f2c4d58e19d32b477b47d24fa46acf145f5174839d7938ac",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1432,7 +1432,7 @@
         "g-client-exclusion-check"
       ],
       "status": "verified",
-      "question": "管理者は除外ルールの対象パスを確認済みです。ある開発者だけ古いIDEセッションで補完が出るように見える場合、次の切り分けは？",
+      "question": "管理者によってコンテンツ除外ルールの対象パスが正しく設定されていることを確認しました。しかし、特定の開発者の古いIDEセッションでのみ補完が表示されるように見える場合、次に実施すべき切り分けとして最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -1463,7 +1463,7 @@
         "D": "クライアントの古い状態を切り分け、実際の除外表示と動作を確かめる。"
       },
       "review": {
-        "fingerprint": "591175ec6efd4fb58e59cf09b03b4bd0813e848d2f84d55d309296e53bff1bfd",
+        "fingerprint": "d20c6a3aa649618f011ca3088d41a3cc788e27c690f281b130625853cb0a189a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1522,7 +1522,7 @@
         "g-hallucination"
       ],
       "status": "verified",
-      "question": "Copilotが存在しないSDKメソッドを、自然で断定的な説明とともに提案しました。この現象の名称は？",
+      "question": "Copilotが存在しないSDKメソッドを、もっともらしく断定的な説明とともに提案しました。このような現象を指す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -1553,7 +1553,7 @@
         "D": "会話履歴の前提が変化したという条件は示されていない。"
       },
       "review": {
-        "fingerprint": "d42a0176e0ae9d62a19feb949a0406650a3789c257c735ff3102bf3237676246",
+        "fingerprint": "0ca873aad13e5b4b78cf8f57787e0912ee93fe17225d029906ab3ca68b43851b",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1565,7 +1565,7 @@
       "questionId": "q-d1-f03",
       "termIds": [],
       "status": "verified",
-      "question": "認可処理の正常ログインはテスト済み。権限のない利用者の拒否を確認するため、追加するテスト入力は？",
+      "question": "認可処理の正常ログインケースはテスト済みです。権限のない利用者が適切にアクセス拒否されることを確認するために、追加すべきテスト入力として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -1596,7 +1596,7 @@
         "C": "別操作の成功では対象操作の拒否を確認しない。"
       },
       "review": {
-        "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221",
+        "fingerprint": "c1acb279c3c4289045ee53b96638182afa7c5c9fd91d4dff0b3aa1b0e72a1979",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1620,7 +1620,7 @@
         "g-ai-bias"
       ],
       "status": "verified",
-      "question": "人名処理で、特定地域の名前だけ誤分割が多い。例示データも一地域の形式に偏っていた。この問題の主な分類は？",
+      "question": "人名分割処理において、特定地域の人名だけ誤分割が多発していました。調査したところ、プロンプトの例示データが一つの地域の形式に偏っていたことが判明しました。この問題の根本原因の分類として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -1651,7 +1651,7 @@
         "B": "会話の前提が変わる観測はない。"
       },
       "review": {
-        "fingerprint": "6015f406d685253afd1a68e8b83053021648cfe338b7b8df4316b7edd45a73b7",
+        "fingerprint": "b16c09d4ff0712d535838f20a394099b1d091797c379ee4999d2e515457f0f0a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -1665,7 +1665,7 @@
         "g-security-vulnerability-scan"
       ],
       "status": "verified",
-      "question": "Copilotがパスワード保存処理にMD5を使うコードを提案しました。採用前に最も直接的に修正すべき点は？",
+      "question": "Copilotがパスワード保存処理にMD5ハッシュ関数を使用するコードを提案しました。この提案を本番コードに採用する前に、直接的に修正すべき点として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -1696,7 +1696,7 @@
         "D": "通信保護は必要でも保存済みハッシュの方式とは別である。"
       },
       "review": {
-        "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca",
+        "fingerprint": "7cb9d263669d0adf76c1932136b931a644b154d20b3dd7fa65b1124cbcc7aa73",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2023,7 +2023,7 @@
         "g-inline-chat"
       ],
       "status": "verified",
-      "question": "VS Codeで選択した関数だけを会話形式で修正し、差分を見て採否を決めたい。使う機能は？",
+      "question": "VS Codeで選択した特定の関数のみを会話形式で対話的に修正し、差分プレビューを確認しながら採否を判断したい場合、使用すべき機能として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -2054,7 +2054,7 @@
         "D": "続きの補完には適するが選択コードの対話的な修正ではない。"
       },
       "review": {
-        "fingerprint": "3c78eb8c6c3ef6f1efc6229be42e7777f0346272265b096b605f95216df1433b",
+        "fingerprint": "a620b80bfe0db21b87858bf9e3799eab5e8ef86b65cba46234975c5abe1471c6",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2068,7 +2068,7 @@
         "g-chat-variables"
       ],
       "status": "verified",
-      "question": "Copilot Chatで「今選択している数行」だけを明示参照し、ファイル全体とは分けたい。使うチャット変数は？",
+      "question": "Copilot Chatにおいて、ファイル全体ではなく「現在エディタ上で選択している行」のみを明示的に参照させるために使用するチャット変数として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -2099,7 +2099,7 @@
         "D": "直近のコマンドを参照する文脈でコード選択ではない。"
       },
       "review": {
-        "fingerprint": "ddf3c12d3654beb66ae19688081a0f4b3f1105504a069be0076b162899e2d398",
+        "fingerprint": "e4f07dab50e313e730a2d16ef16a577fc51a28977ec20cdce267712e4f2371a5",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2113,7 +2113,7 @@
         "g-slash-commands"
       ],
       "status": "verified",
-      "question": "選択した既存関数についてCopilot Chatに単体テストの案を依頼する。対応環境で入力するスラッシュコマンドは？",
+      "question": "エディタで選択した既存の関数について、Copilot Chatに単体テストのコード生成を依頼する場合、対応環境で入力するスラッシュコマンドとして最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -2144,7 +2144,7 @@
         "D": "ドキュメントコメントの生成を求める用途である。"
       },
       "review": {
-        "fingerprint": "72458cd1e6984f72a1c2e41306896e236fe0ae0106af0e7a43fe14f2081a2b7f",
+        "fingerprint": "82d9d49e7d59f2f9aa0a6e1312d285a439986f794140d99d2509819cfa8b41f8",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2158,7 +2158,7 @@
         "g-agent-mode"
       ],
       "status": "verified",
-      "question": "三つのファイルを変更し、テストを実行して失敗ログから再修正してほしい。Copilotの利用形態は？",
+      "question": "複数ファイルにまたがるコードを変更し、テストを実行して失敗ログから自律的に再修正を行わせたいと考えています。この作業に最も適したCopilotの利用形態はどれですか？",
       "choices": [
         {
           "id": "A",
@@ -2189,7 +2189,7 @@
         "D": "既存差分の評価はできるが変更の実行ループではない。"
       },
       "review": {
-        "fingerprint": "ae0c503dd5f40e57cb90353e97a380c96f49af93e20282206e5419fa2bfa7bc4",
+        "fingerprint": "681003ca04ca8d2230e238100fc76c33815fa8e824074341699fa3b957d4b274",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2208,7 +2208,7 @@
       "questionId": "q-d2-f05",
       "termIds": [],
       "status": "verified",
-      "question": "Agentによる削除コマンドを、実行される前に許可または拒否する制御は？",
+      "question": "Copilot Agentがファイルの削除コマンドなどを実行しようとする際、実行前にユーザーが許可または拒否できるようにするための制御機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -2239,7 +2239,7 @@
         "D": "参照範囲の設定であり削除コマンドの承認ではない。"
       },
       "review": {
-        "fingerprint": "364590f34237835ae1c6eb80c52e5bbce2b7b5df10ed237c91ee6bc6f3d74f7d",
+        "fingerprint": "6c0af329d2ba24e71ea2e61cc1a1c35e5cf85f0a86193c0a82fe055b417c6683",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2260,7 +2260,7 @@
         "g-mcp"
       ],
       "status": "verified",
-      "question": "Copilotから社内チケットシステムの現在の状態を取得し、必要なら操作も行う共通の連携方式を選びます。適するものは？",
+      "question": "Copilotから社内チケットシステムの現在の状態を取得し、必要に応じてチケット作成などの操作も実行できる共通連携方式として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -2291,7 +2291,7 @@
         "D": "利用規約を伝えられるが外部ツールの実装にはならない。"
       },
       "review": {
-        "fingerprint": "198d660b6de71d860bc512cd5b6dc4c3a47c89b31ad849a3a4118adebd898a9e",
+        "fingerprint": "7072ec1d4d1c03c4bada423dae0560b86e4333c837245c87e1952992f470661e",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2305,7 +2305,7 @@
         "g-mcp-tools"
       ],
       "status": "verified",
-      "question": "MCPサーバーで「引数を渡すとチケットを作成する」操作をCopilotに公開します。該当するMCPの機能区分は？",
+      "question": "MCP（Model Context Protocol）サーバーにおいて、「引数を受け取って外部チケットを新規作成する」操作をCopilot向けに公開したい場合、該当するMCPの機能区分（プリミティブ）として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -2336,7 +2336,7 @@
         "D": "サーバーからモデル生成を依頼する仕組みで、チケット作成ツールではない。"
       },
       "review": {
-        "fingerprint": "031f7ece06dbad4387fa308fc38c3042c7f52ab86a5e0815245e3c71f5ebc6f5",
+        "fingerprint": "0aed4ea92592541ea3a0878ed0ce6d06b1e7bccddd5dc3d5b49109f11e5a3086",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2350,7 +2350,7 @@
         "g-custom-instructions"
       ],
       "status": "verified",
-      "question": "リポジトリ全体へ常時適用するCopilotの共通規約を、一つのファイルでGit管理したい。標準の配置は？",
+      "question": "リポジトリ全体に対して常時適用されるCopilotのコーディング共通規約を、単一のMarkdownファイルとしてGit管理する場合の標準的な配置パスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -2381,7 +2381,7 @@
         "D": "Agent向けの指示に使えるが問いはCopilotの共通指示の標準配置である。"
       },
       "review": {
-        "fingerprint": "b022b14b7339341e0765fef0660d3bc77d87c0de6e6936edd1a5dd3e1c3f95b4",
+        "fingerprint": "d4f0a945c9586251f598c33253e2261ff8d0f12143081abf62f3f9121579c4c9",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2402,7 +2402,7 @@
         "g-prompt-files"
       ],
       "status": "verified",
-      "question": "チームで共有し、必要なときだけ呼び出すレビュー用プロンプトをVS Code向けに保存したい。配置の例は？",
+      "question": "チーム内で共有し、必要なタイミングでのみ手動で呼び出して使用するコードレビュー用プロンプトをVS Code向けに保存する場合、最も適切なファイル配置の例はどれですか？",
       "choices": [
         {
           "id": "D",
@@ -2433,7 +2433,7 @@
         "D": "Agent指示のファイルでプロンプトファイルとは役割が異なる。"
       },
       "review": {
-        "fingerprint": "c2e6717c11e2d858b8086607966eb3d07832f9d387e4f7e25fb3ae8608af564b",
+        "fingerprint": "d5f199477c563a384edd25b29ca00291a3abc5f8527a7e2cdc354ea46985b029",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2454,7 +2454,7 @@
         "g-spaces"
       ],
       "status": "verified",
-      "question": "チームがリポジトリ、Issue、設計資料を一つに整理し、Copilotへの質問で共有の文脈として使いたい。現在のGitHub機能は？",
+      "question": "チームで複数のリポジトリ、Issue、設計資料をひとまとめに整理し、Copilotへの質問において共有コンテキストとして横断的に活用するためのGitHub公式機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -2485,7 +2485,7 @@
         "D": "外部ツールへのアクセスには適するが資料をまとめた共有空間とは異なる。"
       },
       "review": {
-        "fingerprint": "750b38c643a61d013601a0cb6b751542296eff0e2ada21d842dab18471905d51",
+        "fingerprint": "21a28d3b10cbca030582377f559d97ca58571d6670b288b3fb908e068a1b1326",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -2506,7 +2506,7 @@
         "g-copilot-cli"
       ],
       "status": "verified",
-      "question": "GUIのない端末で自然言語からGit操作を相談し、提案内容を確認してから実行したい。現在利用するGitHubのツールは？",
+      "question": "GUIのないターミナル環境において、自然言語でGit操作やシェルコマンドの提案を受け、内容を確認してから実行するためのGitHub公式ツールとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -2537,7 +2537,7 @@
         "D": "共有文脈の整理に使う機能で端末操作のCLIではない。"
       },
       "review": {
-        "fingerprint": "c35301ede7be24957be08c2c85a83b99ccc1e8ada774ec980833e0d377144987",
+        "fingerprint": "1c662aaf0961b6d7095c7d42cca0c98fcd46478f49ca4c8d4a1de57bb0a41ee7",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -3011,7 +3011,7 @@
       "questionId": "q-d2-a06",
       "termIds": [],
       "status": "verified",
-      "question": "Copilot Agentへビルドエラーの修正を依頼しました。Agentはビルドを実行し、エラーログを読んでソースを修正した後、再びビルドを実行しました。この自己修正を支える仕組みはどれですか。",
+      "question": "Copilot Agentへビルドエラーの修正を依頼しました。Agentはビルドを実行し、エラーログを解析してソースコードを修正した後、再びビルドを実行しました。この自己修正ループを支える仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -3042,7 +3042,7 @@
         "D": "設定変更だけではログに示された実装修正を確認できない。"
       },
       "review": {
-        "fingerprint": "447d74bcad0536caa29083c9dbcae1f97026fa1699657b3fd925d1997ab606c5",
+        "fingerprint": "c39e577607d322f4f240066c2c99f5467b7d80a6342a4f01e833f2b6ed58c97e",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -4905,7 +4905,7 @@
       "questionId": "q-d2-e04",
       "termIds": [],
       "status": "verified",
-      "question": "複数サービスの設計文書をまとめ、チームが共通の背景資料を参照して仕様を相談したい。今回は外部APIの実行ではなく、選んだ資料の共有が目的です。適する機能は？",
+      "question": "複数サービスにまたがる設計文書をまとめ、チームで共通の背景資料を参照しながらCopilotに仕様を相談したいと考えています。外部APIの呼び出しではなく、指定した資料の共有と参照を目的とする場合、最も適したGitHub Copilotの機能はどれですか？",
       "choices": [
         {
           "id": "D",
@@ -4936,7 +4936,7 @@
         "D": "共通規約としては使えても選択した資料をまとめて共有する用途と異なる。"
       },
       "review": {
-        "fingerprint": "78b784ecbe3ef6860c0e9999c6bfffb1bae32516cb887572748a98899843e11b",
+        "fingerprint": "47e3bc3b83ca3ea092b9eb0d930f12408dd9f3846d3afdc7c19c7d7f0d6529c3",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -4998,7 +4998,7 @@
       "questionId": "q-d2-e12",
       "termIds": [],
       "status": "verified",
-      "question": "OpenAPI仕様書からクライアントコードを生成する依頼を、チームで共有して必要時に呼びたい。入力ファイルと出力規約を毎回書き直さずに済む構成は？",
+      "question": "OpenAPI仕様書からクライアントコードを生成する定型依頼を、チームで共有して必要な時に再利用したいと考えています。入力ファイルや出力規約を毎回チャットに手動で書き直さずに済む構成として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -5029,7 +5029,7 @@
         "D": "リポジトリで共有するオンデマンドタスクとは異なる。"
       },
       "review": {
-        "fingerprint": "c63421c71ecde9dc422727b6f0c72a630025eb4db6d9b76d4694b8274e501e99",
+        "fingerprint": "d309338e3777895a9d50969a4798ce0e1ea856a400783aab6c78ca56e5227f35",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5048,7 +5048,7 @@
       "questionId": "q-d2-e13",
       "termIds": [],
       "status": "verified",
-      "question": "GUIのないLinux環境でシステム監視コマンドを調べます。Copilot CLIが利用できる環境で、実行前の構文確認を優先した進め方は？",
+      "question": "GUIのないLinux環境においてシステム監視コマンドを調べる際、Copilot CLIを利用できる環境で、コマンド実行前の構文確認を最優先にした進め方として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -5079,7 +5079,7 @@
         "D": "今回の提案の構文と影響を確認しない。"
       },
       "review": {
-        "fingerprint": "ff29a5213992c8c0a3b840f89b06f690e2714fcd752fce020f1656113770335e",
+        "fingerprint": "038329cdff58de5728725f673cd090719e7ae1ba4874b348a1d743b0fa588538",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5193,7 +5193,7 @@
         "g-fill-in-the-middle"
       ],
       "status": "verified",
-      "question": "関数の先頭と末尾を残し、その間だけCopilotに補完させます。前後のコードを同時に条件として使う考え方は？",
+      "question": "関数の先頭と末尾のコードを残し、その中間の実装コードのみをCopilotに補完させようとしています。このようにカーソル前後のコードを同時にコンテキストとして活用する仕組みを表す概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -5224,7 +5224,7 @@
         "D": "会話の要約は長い対話の整理に使うが中間補完の方式ではない。"
       },
       "review": {
-        "fingerprint": "a07e7bbfd51135b0209c1723092ed1bd2f4605033232a53f75bb5a8c82bec388",
+        "fingerprint": "09001227a73a2c7030c26d11886b30d700f8506f0939e9dd94e5204ab0dd25c0",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5238,7 +5238,7 @@
         "g-context-priming"
       ],
       "status": "verified",
-      "question": "現在のTypeScriptファイルで補完を求めたところ、開いている別タブの型定義が文脈に使われました。最も近い仕組みは？",
+      "question": "現在編集中のTypeScriptファイルでコード補完を行ったところ、エディタで同時に開いていた別タブの型定義がコンテキストとして参照されました。この動作を実現している仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -5269,7 +5269,7 @@
         "D": "規約は渡せても現在開いた型定義の自動参照ではない。"
       },
       "review": {
-        "fingerprint": "49bc918e7eae3788480274d5606dc9511d74fbf5a9958785c9a138fbb3a3f137",
+        "fingerprint": "fd37118aa3c4b67e4d2417b30fa7c8d3358af68372b4d10a9fc36bc5a1d4fb24",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5281,7 +5281,7 @@
       "questionId": "q-d3-f03",
       "termIds": [],
       "status": "verified",
-      "question": "Copilot拡張とクラウドの間のHTTPS通信を、提案を得るまでの流れに沿って確認します。端末で集めたコードの文脈を、推論に必要な入力として渡す段階です。該当する通信は？",
+      "question": "Copilot拡張機能とバックエンドクラウド間のHTTPS通信フローにおいて、端末上で収集したコードコンテキストをLLMの推論入力として送信する段階に該当する通信として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -5312,7 +5312,7 @@
         "D": "利用状況などの計測情報を送る段階。生成のための入力文脈と、収集先への計測通信を混同している。"
       },
       "review": {
-        "fingerprint": "4923399359ba7545a3411c8e3a7f4eccd315638f4cd79d5871bbeeece52f9169",
+        "fingerprint": "fee1070191cd4d42a53378eecce6f3326fc3e0c41091265d12c42e87577eeca3",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5332,7 +5332,7 @@
       "questionId": "q-d3-f04",
       "termIds": [],
       "status": "verified",
-      "question": "github.comのWeb閲覧はできますが、IDEのCopilotは使えません。ファイアウォールの拒否ログに、IDEからCopilot接続先への通信が記録されています。この記録に対応して最初に確認するものは？",
+      "question": "Webブラウザでgithub.comの閲覧は可能ですが、IDE上でGitHub Copilotが接続エラーとなり利用できません。社内ファイアウォールの拒否ログにIDEからCopilot接続先への通信が記録されていた場合、最初に対処・確認すべき項目として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -5363,7 +5363,7 @@
         "D": "証明書の検証失敗が示された場合の確認先。今回は信頼チェーンでなく通信の拒否が記録されている。"
       },
       "review": {
-        "fingerprint": "70ba50ad52b25352978d3db63d6a43144fc04cccf291f998e391b09763a7c4c6",
+        "fingerprint": "11e7aa646ffc1642c90eb659ac8ce9991a9698eda742ed90f99f072646ff67c4",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5385,7 +5385,7 @@
         "g-tokenization"
       ],
       "status": "verified",
-      "question": "長いコードをChatへ添付すると入力上限に達します。モデルの文脈長を数える際の基本単位は？",
+      "question": "長いソースコードをCopilot Chatに添付したところ、コンテキストウィンドウの上限に達しました。LLMが文脈長（コンテキストウィンドウ）や利用量を計測する際の基本単位として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -5416,7 +5416,7 @@
         "D": "ファイルサイズは保存量であり入力トークン数とは異なる。"
       },
       "review": {
-        "fingerprint": "eaa7bdf9382969f02ccb8d8476a5eeeb40bf1aaf5191760ebd28e241227e0a71",
+        "fingerprint": "de4ebdb387ec654e1861c5cedf3d1a9b71640c4d674e6f0cafb008bc7bc55c2a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5746,7 +5746,7 @@
       "questionId": "q-d3-e05",
       "termIds": [],
       "status": "verified",
-      "question": "Copilotの補完を使い、画面の入力処理を書いています。model.tsとrules.tsはこの画面の型と検証ルール、utils.tsとstate.tsは別案件のファイルです。今回の文脈を整理するために閉じるタブの組は？",
+      "question": "エディタでCopilotのインライン補完を活用して画面の入力処理を実装しています。現在開いているタブのうち、model.tsとrules.tsはこの画面の型定義とバリデーション規則ですが、utils.tsとstate.tsは別機能の作業ファイルです。補完のコンテキストを整理・最適化するために閉じるべきタブの組み合わせとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -5777,7 +5777,7 @@
         "D": "別案件のstate.tsは閉じるが、今回必要なmodel.tsも閉じ、別案件のutils.tsを残してしまう。"
       },
       "review": {
-        "fingerprint": "c69f8c94d367c29d1cc08cba44284bb1750a95140ad5ccf0b6285b63e8a246ba",
+        "fingerprint": "bd88dd31a24e99d02f0604457d1630a08487cfce794b1361d27b31232f4ed35d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5799,7 +5799,7 @@
         "g-prompt-anatomy"
       ],
       "status": "verified",
-      "question": "Copilotへの依頼内容を整えます。目的と対象コードを提示しましたが、新規ライブラリを使う案と長い説明が返りました。既存の依存関係で実装し、差分だけを受け取りたい。補うプロンプトの要素は？",
+      "question": "Copilotへのプロンプトにおいて、目的と対象コードを提示したところ、新規外部ライブラリを導入するコードと長大な説明文が返信されました。既存の依存関係のみで実装させ、説明なしでコード差分のみを出力させたい場合、プロンプトに追加すべき指示要素として最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -5830,7 +5830,7 @@
         "D": "望む入出力の振る舞いを具体的に示す要素。今回は境界値の挙動ではなく依存関係と回答形式を指定したい。"
       },
       "review": {
-        "fingerprint": "382ad07c0f12ac63853680da7d141449b746b138f0732aa7a200aca08874e75d",
+        "fingerprint": "a7b2d81ed9c9c7ac17ddc247f59c37971365357fa5ec52039864ad8048883db0",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5845,7 +5845,7 @@
         "g-few-shot"
       ],
       "status": "verified",
-      "question": "期待する入力と出力を二組示し、同じ形式の別の例をCopilotに生成させます。この手法は？",
+      "question": "プロンプト内で期待する入力と出力の具体例を2組提示した上で、同様の規則に従う新しいデータの生成をCopilotに依頼しました。このプロンプティング手法を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -5876,7 +5876,7 @@
         "D": "外部資料の取得を文脈へ加える方法で例示数とは別である。"
       },
       "review": {
-        "fingerprint": "41d01ab27e3e89b75f401a0ea83cc9f2c0966410c09def47bbc40860904014dd",
+        "fingerprint": "df1e877a7da70def5a5647a259ae5a4957d50d41f8d6ac4b82b8658bda2430ac",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5888,7 +5888,7 @@
       "questionId": "q-d4-f03",
       "termIds": [],
       "status": "verified",
-      "question": "午前の障害調査の長いChatに旧API名が残っています。午後の無関係な画面実装を始める操作として適切なのは？",
+      "question": "午前中の障害調査で使用した長大なChatセッションに古いAPI名の履歴が残っています。午後から開始する別の無関係な画面実装において、高い推論精度を保つためのチャット操作として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -5919,7 +5919,7 @@
         "D": "常時指示を増やしても会話の古い前提は残る。"
       },
       "review": {
-        "fingerprint": "ff7f93ea894b5e79f50b88d040cb6ade17efe53389ad5d127f63dfeebdabf1b9",
+        "fingerprint": "bdac5944382cc082ce62656cfe80faee7a508126f3e521e142ac8bd07e108488",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5933,7 +5933,7 @@
         "g-step-by-step"
       ],
       "status": "verified",
-      "question": "複数の条件を含む判断について「各条件を順に確認して結論を示す」と依頼します。最も近いプロンプト手法は？",
+      "question": "複数のビジネスルールを含む複雑な判定ロジックについて、「各条件を段階的に順を追って検討した上で最終的な結論を出力してください」とCopilotに指示しました。このプロンプティング手法に最も近いものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -5964,7 +5964,7 @@
         "D": "結果の形式を定める手法で、考慮順序そのものではない。"
       },
       "review": {
-        "fingerprint": "fbd726d5e58b3abf273b2bc83788e2df77e415957cb13ad0548836e181faa031",
+        "fingerprint": "653d363dc73638989c8a3112a8c6b94e2fd84b8a15de256f48dc1d40d076f2bc",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -5976,7 +5976,7 @@
       "questionId": "q-d4-f05",
       "termIds": [],
       "status": "verified",
-      "question": "同じChatで古い要件と新しい要件が混ざり、回答が徐々に当初の前提からずれています。最も近い現象は？",
+      "question": "同一のChatセッションで長時間の対話を続けた結果、過去の古い要件と新しい要件が混ざり合い、モデルの回答が当初の前提条件から徐々に逸脱していく現象を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -6007,7 +6007,7 @@
         "D": "生成コードが公開コードに似るかの問題で会話履歴の変化ではない。"
       },
       "review": {
-        "fingerprint": "dc6bf9b7cc453206f25dbb2b237beae86e944d9fef9f7d67d28282f161aa0f50",
+        "fingerprint": "0b56650e00752556049d9fd8e85a00710cea8e3975322edd6fd6dcce1e4954b6",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6217,7 +6217,7 @@
         "g-doc-generation"
       ],
       "status": "verified",
-      "question": "選択した関数のJSDocをCopilot Chatに生成させたい。対応環境で使用するコマンドは？",
+      "question": "エディタ上で選択した関数に対して、JSDoc形式のドキュメントコメントをCopilot Chatに生成させたい場合、対応環境で使用するスラッシュコマンドとして最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -6248,7 +6248,7 @@
         "D": "不具合修正案を依頼する。"
       },
       "review": {
-        "fingerprint": "6b5ac2232974b30c20ea637a30a04027044f07d1823663444d89e1112942cafd",
+        "fingerprint": "8113fa598296e4f7e4bfd2d1eb1245e00f5afbc271cd629370ccb82ede73b83c",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6269,7 +6269,7 @@
         "g-edge-case-discovery"
       ],
       "status": "verified",
-      "question": "通常入力のテストは通っています。空文字、上限値、例外時の振る舞いを追加検証する依頼として最も適切なのは？",
+      "question": "通常入力の正常系テストは既に通っています。空文字、上限値、例外発生時の境界値や異常系の振る舞いを追加検証するためのプロンプト指示として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -6300,7 +6300,7 @@
         "D": "性能調査であり例外と境界の正しさを検証しない。"
       },
       "review": {
-        "fingerprint": "359752543ecebc37e09bc918957ea846822ea4eeae525ff3142ed0a3abddaafa",
+        "fingerprint": "e567e6b0bc794a8ae2bd40024d2710b16ddbf83759494a6aa6f3952b5bb6a0df",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6319,7 +6319,7 @@
       "questionId": "q-d5-f02-b",
       "termIds": [],
       "status": "verified",
-      "question": "VS Codeのソース管理ビューでステージ済み差分からコミット文を提案してほしい。対応する操作は？",
+      "question": "VS Codeのソース管理（Git）ビューにおいて、ステージ済みの変更差分からコミットメッセージをCopilotに自動提案させるための操作として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -6350,7 +6350,7 @@
         "D": "PR本文の概要を作る機能でコミット入力欄とは異なる。"
       },
       "review": {
-        "fingerprint": "c979224a6b66b65b3bbcfaadc96029eeb74f6faf0a444e7a80057c0ebe6211af",
+        "fingerprint": "1d88043dd921dad0eb2a9de2fe9d02abcbebc2c0097e8489616f4fba6f9de28d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6371,7 +6371,7 @@
         "g-pr-summaries"
       ],
       "status": "verified",
-      "question": "GitHub.comで開いたPull Requestの変更概要をCopilotに箇条書きで下書きさせたい。使う機能は？",
+      "question": "GitHub.com上で作成中のPull Requestにおいて、変更概要を箇条書きでCopilotに下書き生成させる機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -6402,7 +6402,7 @@
         "D": "一つのコミット文を提案する用途でPR概要とは異なる。"
       },
       "review": {
-        "fingerprint": "245c6f1a10af726abd4762820323720c72e3b1436ba414592803ac55f2df19f3",
+        "fingerprint": "a43def4bff90a1a4cd991eed0e13135d616c221324e4c69c4ac4c5b803c4f5ff",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6423,7 +6423,7 @@
         "g-test-assertions-mocking"
       ],
       "status": "verified",
-      "question": "単体テストで外部通信を置き換えて既知の応答を返し、呼出しの宛先・本文も検証したい。組合せは？",
+      "question": "単体テストにおいて外部HTTP通信をモックに置き換えて固定レスポンスを返させ、同時にリクエストの宛先URLや送信本文が正しいかを検証したいと考えています。最も適切なテスト実装の組み合わせはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -6454,7 +6454,7 @@
         "C": "表示比較であり外部通信の検証対象とは異なる。"
       },
       "review": {
-        "fingerprint": "444aed0a3b0412afa6757350b77835cf8f37c11cd891c74ddb05774b9a8d20ad",
+        "fingerprint": "269f625e1538919f81d3e7d8645528c0ef7f5015d937ded020cbb1fb7c943c15",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6475,7 +6475,7 @@
         "g-public-code-matching"
       ],
       "status": "verified",
-      "question": "提案が公開コードと一致した場合の表示やブロックを制御したい。対象のCopilot設定は？",
+      "question": "Copilotのコード提案がGitHub上の公開コードと一致した場合の動作（許可またはブロック）を制御するための管理ポリシー設定として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -6506,7 +6506,7 @@
         "D": "リポジトリ内の秘密情報の検出で生成提案の一致制御ではない。"
       },
       "review": {
-        "fingerprint": "0559b3a8fb842075921ab73fe9173c2c2321b86d267e294acab808089230331b",
+        "fingerprint": "926adf02af4c1ca183eb1799bbde91423386267046d103ddc92b85edfd31ee55",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6527,7 +6527,7 @@
         "g-content-exclusion"
       ],
       "status": "verified",
-      "question": "機密ファイルの特定パスを、対応するCopilot機能が文脈として参照しないよう管理したい。使う設定は？",
+      "question": "機密ファイルが含まれる特定のパスやファイルを、Copilotの機能がコンテキストとして参照しないよう組織レベルまたはリポジトリレベルで管理するための設定として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -6558,7 +6558,7 @@
         "D": "提案の参照表示に関する機能で入力ファイルを制限しない。"
       },
       "review": {
-        "fingerprint": "e48b9bfa6c983cb2c7c331dc06e0110ed6fc42030fd74f1afe49f49d96826710",
+        "fingerprint": "6ca975c3b23af82dde4963f59914b92dd13fa6f194039027e54be1f2fb31e7fd",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6572,7 +6572,7 @@
         "g-enterprise-data-privacy"
       ],
       "status": "verified",
-      "question": "Copilot Business/Enterpriseの顧客コードとプロンプトが、基盤モデルの学習へ使われるかを確認します。公式方針に合うものは？",
+      "question": "GitHub Copilot BusinessおよびEnterpriseにおいて、ユーザーのコードスニペットやプロンプトが基盤モデルの再学習に使用されるかに関する公式プライバシー方針として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -6603,7 +6603,7 @@
         "D": "入力元の公開・非公開でこの方針を分ける説明ではない。"
       },
       "review": {
-        "fingerprint": "9bd31a4ca27a75342de0f7cce7fe99e6a8578cf67b2d4015bc490bc9845bfe2c",
+        "fingerprint": "ea9bed238dd429e46bec4585be85e9cf1aa4db6e0beef5abb38ccad7fe94e53d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6624,7 +6624,7 @@
         "g-audit-logs"
       ],
       "status": "verified",
-      "question": "Copilotシートの割当変更や組織ポリシー変更について、実行者と時刻を追跡したい。参照する情報源は？",
+      "question": "Copilotのシート割り当て変更や組織ポリシーの変更履歴について、操作を実行した管理者アカウントと日時を追跡するために参照すべき情報源として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "C",
@@ -6655,7 +6655,7 @@
         "D": "コード変更の履歴で組織設定の操作は記録しない。"
       },
       "review": {
-        "fingerprint": "7226abbbdc2f06e900926ef26b3bfb44b691d8e97a857a432ea50105839177ad",
+        "fingerprint": "72b2e03c6761eee5262903e6b9b864364cbadc6476612c138151b23f33640df3",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -6676,7 +6676,7 @@
         "g-usage-metrics-api"
       ],
       "status": "verified",
-      "question": "組織のCopilot利用状況を、受容率や言語別の集計も含めてAPIで取得したい。利用するAPIは？",
+      "question": "組織全体のCopilot利用状況について、コード提案の受容率や言語別の統計データをプログラムから集計・取得するために使用するAPIとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -6707,7 +6707,7 @@
         "D": "費用の確認で補完の受容率や言語別利用の集計ではない。"
       },
       "review": {
-        "fingerprint": "6cc965b31ee79297e83b5dd639880e1b45dae35212a1338caffdfb5693a03f98",
+        "fingerprint": "c998cdb34af16d51037d69e2a8801095778668c5bfebd1c642177c0a4dad3727",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7517,7 +7517,7 @@
         "g-repo-content-exclusion"
       ],
       "status": "verified",
-      "question": "【AnyCompany Tech事例】機密コードを通常の補完とChatの文脈から除外する方針です。既存のGit追跡設定とは別に、対応する利用環境で設定するものは？",
+      "question": "【AnyCompany Tech事例】機密コードを通常のコード補完やChatのコンテキストから確実に除外する方針を定めています。既存の.gitignore設定とは別に、Copilot環境で設定すべき機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -7548,7 +7548,7 @@
         "D": "秘密情報検出はファイル内容の文脈利用を止めない。"
       },
       "review": {
-        "fingerprint": "0e952bbbf17ccebbdf48e3507989694d92296f86b5500035ad31758e10534b8d",
+        "fingerprint": "1c6789e9e0ad16b2ad51dcf42a04b03ffa401b5b86065a30af780d8d0fc03f94",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7560,7 +7560,7 @@
       "questionId": "q-sc04-1",
       "termIds": [],
       "status": "verified",
-      "question": "【Nordic Retail事例】IDEで複数ファイルの修正とテスト失敗への再修正を進めたい。必要な承認設定を別途確認する前提で、手動の切り替えを減らせる利用形態は？",
+      "question": "【Nordic Retail事例】IDE上で複数ファイルにまたがるコード修正と、テスト失敗ログに基づく自動的な再修正を進めたいと考えています。必要なツール承認設定を別途確認する前提において、手動でのモード切り替えを最小化できるCopilotの利用形態として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -7591,7 +7591,7 @@
         "D": "複数ファイルは扱えるが失敗結果を使う反復ができない。"
       },
       "review": {
-        "fingerprint": "f7c51e33908b8b3404415b4acc67f2acf3be329314874aea9f2a3a7d2a2e940f",
+        "fingerprint": "9c62ba514b0ecc71d28367155251ec6d52ea1cfdd670827effa3d57be82a138a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7660,7 +7660,7 @@
       "questionId": "q-sc06-1",
       "termIds": [],
       "status": "verified",
-      "question": "【Global Logistics事例】対応するCopilot Chatでasync/awaitなどの共通規約を自動的に文脈へ加え、Gitで管理したい。配置する仕組みは？",
+      "question": "【Global Logistics事例】リポジトリ内のCopilot Chatにおいて、async/awaitの使用規約などの共通ルールを自動的にプロンプトコンテキストへ付与し、Gitでバージョン管理したいと考えています。この要件を実現するための配置・設定手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -7691,7 +7691,7 @@
         "D": "資料共有には合うが共通規約の自動適用と異なる。"
       },
       "review": {
-        "fingerprint": "68058730fb5fe14466d9376e68f59cbc95190ac0c246c6046b1f1a5ae8666f89",
+        "fingerprint": "306f917688079743b4cea103eca79e3e92542ae7a8b1437f4f56488ca186917b",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7710,7 +7710,7 @@
       "questionId": "q-sc07-3",
       "termIds": [],
       "status": "verified",
-      "question": "【CyberShield Systems事例】組織のCopilotポリシー変更について、操作したアカウントと時刻を調べたい。参照する記録は？",
+      "question": "【CyberShield Systems事例】組織のCopilotポリシーが変更された際、変更操作を実行したアカウントと日時を特定して調査したいと考えています。参照すべき監査ログの記録として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -7741,7 +7741,7 @@
         "C": "料金の記録で管理操作の実行者の追跡とは別。"
       },
       "review": {
-        "fingerprint": "d5197b7fa4d04cbff4567b2bc3f6cede5f9d8646d455730694a2da243d5df052",
+        "fingerprint": "2164f0656340fd59582014c5f104f623ca712c752c9689b12a2c115bb15f0f9c",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7753,7 +7753,7 @@
       "questionId": "q-sc08-1",
       "termIds": [],
       "status": "verified",
-      "question": "【DataFlow Analytics事例】大規模リポジトリから、質問に関連する実装を探して文脈に加えたい。モデルを顧客コードで再学習することとは区別した説明は？",
+      "question": "【DataFlow Analytics事例】大規模リポジトリにおいて、ユーザーの質問に関連するコード実装を検索してプロンプトのコンテキストに付与したいと考えています。この仕組みについて、顧客コードによるモデル再学習とは区別した正しい説明として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "D",
@@ -7784,7 +7784,7 @@
         "D": "過去の説明は更新済みコードの根拠にならない。"
       },
       "review": {
-        "fingerprint": "7eec7a31e7629d35f60eea7a904add5d427ecc3fc4be17bb783ee0b552447c83",
+        "fingerprint": "62478d01a56e79acaec8c48843c3f76b629de631ad63d0f6e983dc71b29b177e",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7796,7 +7796,7 @@
       "questionId": "q-sc08-3",
       "termIds": [],
       "status": "verified",
-      "question": "【DataFlow Analytics事例】IDEのChatでDataPipeline.tsとSchemaValidator.tsの現行コードを参照させたい。対象が既知の場合の基本操作は？",
+      "question": "【DataFlow Analytics事例】IDEのCopilot Chatにおいて、DataPipeline.tsとSchemaValidator.tsの現行実装を確実に参照させた上で質問したいと考えています。参照対象ファイルが事前に特定できている場合の基本操作として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -7827,7 +7827,7 @@
         "C": "命名規約は現行実装そのものを提供しない。"
       },
       "review": {
-        "fingerprint": "d92b125c3de14e43ac50738bd6434d72b1a5525eeaf5951636d57be4610bea1f",
+        "fingerprint": "7b3c23f0eb0fcc3de78e4059ed89a891dce49159de22587fe37fc205c6fff303",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7839,7 +7839,7 @@
       "questionId": "q-sc09-2",
       "termIds": [],
       "status": "verified",
-      "question": "【Nexis Games事例】Copilotの受容率や言語別利用を継続集計したい。調べるAPIの種類は？",
+      "question": "【Nexis Games事例】組織内におけるCopilot提案の受容率や言語別の利用傾向を継続的に集計・可視化したいと考えています。この用途で参照すべきGitHub REST APIの種類として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -7870,7 +7870,7 @@
         "C": "請求情報で提案受容率の集計ではない。"
       },
       "review": {
-        "fingerprint": "8b5dea6b1ab4d9ae3f899638922197ba2751fe81be728cf5db56be6be188f3f9",
+        "fingerprint": "e28ee207aa1685bc1ee74733902e7aa397e30e3ac0b62ae508aac5a6ed5d54fc",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7889,7 +7889,7 @@
       "questionId": "q-sc10-1",
       "termIds": [],
       "status": "verified",
-      "question": "【SecureBank Online事例】対応する補完機能で公開コード一致の提案を抑えたい。同時に、社内コードを通常の補完文脈として使うことは継続したい。最も直接的な設定は？",
+      "question": "【SecureBank Online事例】コード補完機能において、公開リポジトリのコードと一致する提案の提示を抑制したいと考えています。同時に、社内既存コードを通常の補完コンテキストとして活用することは維持したい場合、最も直接的な設定として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "B",
@@ -7920,7 +7920,7 @@
         "D": "秘密情報の検査であり公開コードに一致した提案の抑制ではない。"
       },
       "review": {
-        "fingerprint": "b78daa79ddfc7270a0c3b929f4fa0665579eced1b61107802bcbd40ce04899bc",
+        "fingerprint": "46dd2bbf0fbea11a776b9d0b2863b714a698549027be9731cf45451a952ea260",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7939,7 +7939,7 @@
       "questionId": "q-sc10-2",
       "termIds": [],
       "status": "verified",
-      "question": "【SecureBank Online事例】Allow環境で採用した提案に公開コードの一致通知が出ました。今後の抑制設定は別に検討し、まず今回の採用判断の根拠を確認したい。どの対応が最も適しますか？",
+      "question": "【SecureBank Online事例】「Allow」設定の環境下で採用したコード提案に対し、公開コードとの一致通知が表示されました。今後のポリシー設定変更とは別に、今回の採用可否を法務・ライセンス観点から判断するための対応として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -7970,7 +7970,7 @@
         "D": "セキュリティ解析はライセンスの参照情報を確認する手段ではない。"
       },
       "review": {
-        "fingerprint": "b4fe9a6ebd5a65eab53d93dfeecaad9286d1a1bda26af3cfbc06d05f556fe7c9",
+        "fingerprint": "e92bfe75ad30db2f38ee26a5388fa603b83ba73efc1cea7768caf4d703b5c6f5",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -7991,7 +7991,7 @@
         "g-generative-ai"
       ],
       "status": "verified",
-      "question": "Copilotは、プロンプトや周辺コードの文脈から、これまで存在しなかった提案を作り出します。この種のAI技術の総称は？",
+      "question": "Copilotは、プロンプトや周辺コードの文脈から、これまで存在しなかった新しい提案を作り出します。この種のAI技術の総称として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8022,7 +8022,7 @@
         "D": "既存のリポジトリから類似コードを検索する技術であり、新しいコードを生成するものではない。"
       },
       "review": {
-        "fingerprint": "86ff307268b73cb11410aef3cc5b3198df4d2f832834ca032f68ac9056dc5a27",
+        "fingerprint": "3d2b0961da669fef5cee4540264f121b9254a3922c3f0cd715fe49b6a9ba0973",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8036,7 +8036,7 @@
         "g-responsible-ai"
       ],
       "status": "verified",
-      "question": "AIの提案を採用する前に、正確性・セキュリティ・ライセンス・偏りを評価し、最終責任は開発者が負う。この原則と実践の名称は？",
+      "question": "AIの提案を採用する前に、正確性・セキュリティ・ライセンス・バイアスを評価し、最終的な説明責任は開発者が負うという原則と実践の名称として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8067,7 +8067,7 @@
         "D": "ライセンス確認の一助にはなるが、評価と最終責任という原則全体を指す語ではない。"
       },
       "review": {
-        "fingerprint": "39c4246084be16a8ba881d548559cae151f70a2edae33b17f324020156328157",
+        "fingerprint": "5918029d9c7f67c1be25e14bca425c48e07359156e4110979fac1b0a50a3a363",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8081,7 +8081,7 @@
         "g-transparency"
       ],
       "status": "verified",
-      "question": "Copilot Chatが回答でどのファイルや文脈を参照したかを確認し、提案の妥当性を判断できるようにする性質は？",
+      "question": "Copilot Chatが回答の生成時にどのファイルや文脈を参照したかを確認し、提案の妥当性を判断できるようにする性質として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8112,7 +8112,7 @@
         "D": "情報セキュリティの保護特性であり、AI出力の判断根拠を把握する性質ではない。"
       },
       "review": {
-        "fingerprint": "2e10bb56c954bda1ae01f50e14234bd5a0d585c852673758755ca2b08c4160a5",
+        "fingerprint": "96c3b2ced484870e8c9f088ff731d56545107289cbc38fdbdaa1e66cf0ff0d89",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8126,7 +8126,7 @@
         "g-nondeterminism"
       ],
       "status": "verified",
-      "question": "同じプロンプトと同じコードを渡しても、Copilotの提案が毎回少しずつ異なることがあります。この性質を表す用語は？",
+      "question": "同一のプロンプトと同じコードを渡した場合でも、Copilotの提案が毎回少しずつ異なることがあります。この確率的な性質を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8157,7 +8157,7 @@
         "D": "LLMは確率的に次のトークンを選ぶため、同じ入力でも出力が変わり得る。この性質が非決定性である。"
       },
       "review": {
-        "fingerprint": "841f0c749bc1fcc207460a006f7820fef976a69853d474e1c9e1996c23f04bc4",
+        "fingerprint": "387d6ffb110940dc12f70da03b3e9b93c1cfe7ea3bf1be0bea4efcc033227a40",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8178,7 +8178,7 @@
         "g-automation-bias"
       ],
       "status": "verified",
-      "question": "Copilotの提案が整って見えるため、内容を確かめずにTabキーで受け入れ続けてしまう。この心理的な傾向を何と呼びますか？",
+      "question": "Copilotの提案が一見正しく整って見えるため、内容を精査せずにTabキーで安易に受け入れ続けてしまう心理的な傾向を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8209,7 +8209,7 @@
         "D": "最初に提示された数値や情報に判断が引きずられる心理効果であり、AI出力を精査しない傾向とは別である。"
       },
       "review": {
-        "fingerprint": "5f2d63141a2ce200ecead7010037196cbb67bec1860dac142479f293a084f842",
+        "fingerprint": "b53e5d69568c48ad08f61998972a3862f16c2543fef7d0d94ba08a9d40cf5940",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8230,7 +8230,7 @@
         "g-critical-evaluation"
       ],
       "status": "verified",
-      "question": "Copilotの最初の候補をそのまま使わず、要件への適合・副作用・エラー処理を自分で点検しながら比べる姿勢は？",
+      "question": "Copilotの最初の候補をそのまま鵜呑みにせず、要件への適合性・副作用・エラー処理を自ら点検しながら比較・検証する姿勢を表すプラクティスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8261,7 +8261,7 @@
         "D": "チームの他の開発者にコードを検査してもらう協同作業であり、開発者自身がAI提案の採否を判断する批判的評価とは異なる。"
       },
       "review": {
-        "fingerprint": "2c33782d05c3b99a51fd7d982a7b00d47744df512b4e9612946acc7f00e2e5f1",
+        "fingerprint": "babef74d705b4c12df299059a92f418ca926865ef15f2a1df98a7de6683d150f",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8275,7 +8275,7 @@
         "g-ghost-text"
       ],
       "status": "verified",
-      "question": "エディタ内でコードを入力中に、カーソルの直後に薄い灰色でインライン表示される未確定の補完候補テキストを表す用語は？",
+      "question": "エディタ内でコードを入力中に、カーソルの直後に薄い灰色でインライン表示される未確定の補完候補テキストを表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8306,7 +8306,7 @@
         "D": "Tabキーで移動するスニペットの入力枠であり、Copilotが動的に生成する薄い灰色テキストとは異なる。"
       },
       "review": {
-        "fingerprint": "f9710ad21939be24518e840d1fc3f88f43f8c8c50c3fa0a578bc982321a38a9a",
+        "fingerprint": "94291c4eee3aca9394a98c3f8736f3e6562527be4eb8ed3822139e0ee484d9b5",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8320,7 +8320,7 @@
         "g-completions-panel"
       ],
       "status": "verified",
-      "question": "VS Codeで通常のインライン候補に加えて、別タブを開いて最大10個の追加補完候補をまとめて生成・比較検討できる機能は？",
+      "question": "VS Codeにおいて、通常のインライン候補に加えて別タブを開き、最大10個の追加補完候補をまとめて生成・比較検討できる機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8351,7 +8351,7 @@
         "D": "別タブを開き最大10個の補完候補を並べて確認・採用できる機能がCopilot Completions Panelである。"
       },
       "review": {
-        "fingerprint": "35d09731c36caf207734d6e924aff7abd3e0cbd87c1fcdd7d112360c2a4969d2",
+        "fingerprint": "ab60dd7114c33720c30642daf6435a8b69f730be030031be7f1398501770a6ea",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8365,7 +8365,7 @@
         "g-chat-participants"
       ],
       "status": "verified",
-      "question": "Copilot Chatで `@workspace` や `@vscode` のように `@` 記号を付けて指定し、特定のコンテキストや機能へ質問をルーティングする仕組みは？",
+      "question": "Copilot Chatにおいて、`@workspace` や `@vscode` のように `@` 記号を付けて指定し、特定のコンテキストや機能へ質問をルーティングする仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8396,7 +8396,7 @@
         "D": "`.prompt.md` ファイルとして定義する再利用可能な指示文であり、`@` で呼び出す参加者ではない。"
       },
       "review": {
-        "fingerprint": "6a81cf193e6f603e318885e968d49f11307ab2b42f63be8c6945ce96bad2c8e7",
+        "fingerprint": "85e1674497cc55695e9c403e2d946681f7757f5bd487cf1ea4c80d9dcafd1f8a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8410,7 +8410,7 @@
         "g-status-menu"
       ],
       "status": "verified",
-      "question": "VS Codeのステータスバーに常駐し、Copilotの全体的な有効化/無効化や、現在の言語に対する補完設定の切り替え、ログ確認ができるUI要素は？",
+      "question": "VS Codeのステータスバーに常駐し、Copilotの全体的な有効化/無効化や、現在の言語に対する補完設定の切り替え、ログ確認ができるUI要素として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8441,7 +8441,7 @@
         "D": "ファイルツリーを表示する領域であり、Copilotの状態確認やトグルを行うメニューではない。"
       },
       "review": {
-        "fingerprint": "99b6cd5d495e833e8fd6421d988e2cc0624092a2cd53daef7fa1b61bd6e1677d",
+        "fingerprint": "4fd009abca905655628898ec5d22e3344ffc403a6ffccbe5117717febcd555b4",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8455,7 +8455,7 @@
         "g-gh-copilot-explain"
       ],
       "status": "verified",
-      "question": "2025年10月に終了した旧gh-copilot拡張の資料を確認している。既存シェルコマンドの意味を説明する旧サブコマンドは？",
+      "question": "2025年10月に提供終了した旧gh-copilot拡張の資料を確認しています。既存のシェルコマンドの意味を自然言語で説明するために使用されていた旧サブコマンドとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8486,7 +8486,7 @@
         "D": "旧拡張のシェルエイリアス設定用。"
       },
       "review": {
-        "fingerprint": "66fce926b94a784d8588ff69ce5e6e1f74f9c5582795cedc082887074c766178",
+        "fingerprint": "ba1b05da74ba7983389fc10e0a52766a39f716debca4215d21cdcd8995b43ec3",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8500,7 +8500,7 @@
         "g-gh-copilot-suggest"
       ],
       "status": "verified",
-      "question": "旧gh-copilot拡張の履歴資料で、自然言語からGitやシェルのコマンド候補を提案する操作を調べている。該当する旧サブコマンドは？",
+      "question": "旧gh-copilot拡張の履歴資料において、自然言語からGitやシェルのコマンド候補を提案させる操作として使用されていた旧サブコマンドとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8531,7 +8531,7 @@
         "C": "旧aliasはシェルエイリアスの設定用。"
       },
       "review": {
-        "fingerprint": "5a5eadc6aceeb499976a2f8c027a581645d1ac1597fc968f690167bc0ebe8307",
+        "fingerprint": "da8911e2b313b751cfde0c5564d59b9a1f9246275fdf340b7f0c1a70263ef90a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8545,7 +8545,7 @@
         "g-cli-shell-aliases"
       ],
       "status": "verified",
-      "question": "旧gh-copilot資料にghcs / ghceというシェルエイリアスがある。現行Copilot CLIへの移行説明として正しいものは？",
+      "question": "旧gh-copilot資料に記載されているghcs / ghceというシェルエイリアスについて、現行Copilot CLIへの移行説明として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8576,7 +8576,7 @@
         "D": "世代と起動コマンドの関係を取り違えている。"
       },
       "review": {
-        "fingerprint": "8bccf8cf521e809068ccbf1a3417c6e05310e8ef709cead7eef84fad4db05b38",
+        "fingerprint": "c1d41aa0e9ca62d41645c753bfb5ea46886887ddbf38d7634d97abaf8938e316",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8590,7 +8590,7 @@
         "g-cli-execution-confirm"
       ],
       "status": "verified",
-      "question": "現行Copilot CLIの変更系ツールで、個別の実行確認を省略できる場合がある。承認頻度に直接影響する仕組みは？",
+      "question": "現行Copilot CLIの変更系ツールにおいて、個別の実行確認を省略できる場合があります。この承認頻度に直接影響を与える仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8621,7 +8621,7 @@
         "D": "入力上限は実行権限の設定ではない。"
       },
       "review": {
-        "fingerprint": "1a11a4cf37c9dedd027cb86c03724543337a0a0642b9d8241c8910614fb49f1c",
+        "fingerprint": "388412d260ab3fb6c051532d08475dfd6a275f138a894208f55904cfd093a9d8",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8635,7 +8635,7 @@
         "g-cli-context-limits"
       ],
       "status": "verified",
-      "question": "現行Copilot CLIで、手元のプロジェクトファイルを調べて回答の文脈に加えたい。取得できる情報範囲に直接関係する条件は？",
+      "question": "現行Copilot CLIでローカルのプロジェクトファイルを調査し、回答の文脈に加えたいと考えています。CLIが取得できる情報範囲に直接関係する条件として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8666,7 +8666,7 @@
         "D": "出力形式を誘導するが、参照元への権限を付与しない。"
       },
       "review": {
-        "fingerprint": "2e0b1519c6cca9e6d80fe86066927931b15aa0c350ebeb62d39cb743551229ea",
+        "fingerprint": "b2949889aaa628aa057ab4859261fe5be837008f12391d0a1213c1152e2963ba",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8680,7 +8680,7 @@
         "g-copilot-edits"
       ],
       "status": "verified",
-      "question": "VS Codeにおいて、作業対象（Working Set）に指定した複数ファイルに対して、セッション内で同時にコード修正を生成・差分プレビューできる機能は？",
+      "question": "VS Codeにおいて、作業対象（Working Set）に指定した複数ファイルに対して、セッション内で同時にコード修正を生成・差分プレビューできる機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8711,7 +8711,7 @@
         "D": "作業対象ファイルを指定して複数ファイルへの変更を一括提案・プレビューできる専用UIがCopilot Editsである。"
       },
       "review": {
-        "fingerprint": "5adab5a93c52330e4c8b40123336aef31b4f84b288e7e3fc5c841f5d55201fdf",
+        "fingerprint": "a98698fcd788afebf0a0ac1170b9551badc51ed4e384fad0ce62237b1a8afafd",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8725,7 +8725,7 @@
         "g-mcp-server"
       ],
       "status": "verified",
-      "question": "Model Context Protocol（MCP）において、社内DBやAPIツール、リソースなどの外部データと操作を公開し、Copilotからの呼び出しに応答する構成要素は？",
+      "question": "Model Context Protocol（MCP）において、社内DBやAPIツール、リソースなどの外部データと操作を公開し、Copilotからの呼び出しに応答する構成要素として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8756,7 +8756,7 @@
         "D": "標準プロトコル仕様のコア概念ではなく、中核となる提供側コンポーネントはサーバーである。"
       },
       "review": {
-        "fingerprint": "7660303f5e5063f0e7d250df51bc54ab16554695417f33a4914b431d122b4711",
+        "fingerprint": "0ef3418497cb913818143d3c44f4d8eb5e2e1c1878ee0d7a729cf88b4f45cf82",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8770,7 +8770,7 @@
         "g-agent-sessions"
       ],
       "status": "verified",
-      "question": "Agent Modeにおいて、一連のタスク指示、ツールの実行履歴、コード編集、作業コンテキストをひとまとめに保持し、中断や再開の単位となる作業空間は？",
+      "question": "Agent Modeにおいて、一連のタスク指示、ツールの実行履歴、コード編集、作業コンテキストをひとまとめに保持し、中断や再開の単位となる作業空間として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8801,7 +8801,7 @@
         "D": "一時的なテキストメモ用のバッファであり、エージェントの会話・実行コンテキスト単位ではない。"
       },
       "review": {
-        "fingerprint": "c66b0b530e84f515fd684e6c6e29c56160ac82974cfb9f6646f97cbe622e23b5",
+        "fingerprint": "10ebe8d282e5b4657c4a82a0b8055785912ce9772741ebd17871853d934cebee",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8822,7 +8822,7 @@
         "g-sub-agents"
       ],
       "status": "verified",
-      "question": "メインのエージェントが大規模なタスクを実行する際、独立したコンテキストで下位タスク（調査やサブコンポーネント作成など）を並行して引き受け、結果をメインへ返す仕組みは？",
+      "question": "メインのエージェントが大規模なタスクを実行する際、独立したコンテキストで下位タスク（調査やサブコンポーネント作成など）を並行して引き受け、結果をメインへ返す仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8853,7 +8853,7 @@
         "D": "イベントに応じて実行される外部スクリプトであり、自律的に下位タスクを処理するエージェントではない。"
       },
       "review": {
-        "fingerprint": "b6109b3f365aff3b938596f061999c2889bb2710671cff79fa66b2220170937c",
+        "fingerprint": "0a71bb647c0790d3333502b0e30c5b1d4117be0def595c636fac8f989a5e7734",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8867,7 +8867,7 @@
         "g-copilot-code-review"
       ],
       "status": "verified",
-      "question": "GitHubのプルリクエストにおいて、変更差分をAIが自動分析し、潜在的なバグ・セキュリティ上の懸念・改善提案をインラインコメントとして投稿する機能は？",
+      "question": "GitHubのプルリクエストにおいて、変更差分をAIが自動分析し、潜在的なバグ・セキュリティ上の懸念・改善提案をインラインコメントとして投稿する機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8898,7 +8898,7 @@
         "D": "PR差分に対してコードレビューコメントや改善提案を自動投稿する機能がCopilot Code Reviewである。"
       },
       "review": {
-        "fingerprint": "d1322521571846d372be57a41a4c17f130d37a9f18ed43341c25863f13b86306",
+        "fingerprint": "4df76d3ffb483fc42c90401fd21b4ad7ad57d2183c24717ddafd280f8f0c4f1a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8912,7 +8912,7 @@
         "g-scoped-instructions"
       ],
       "status": "verified",
-      "question": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法は？",
+      "question": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8943,7 +8943,7 @@
         "D": "VS Codeの拡張機能やUI構成を切り替える機能であり、Copilotの指示ファイルの適用機能ではない。"
       },
       "review": {
-        "fingerprint": "9fe5ff62d6b2f9fe45a306dd4b70b5667a2030fad99a63fc6788ddf338d9fc55",
+        "fingerprint": "d1012c5bbd1432229bad6e311bbfcf5f397a9b615a795754381b79eebf957a06",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -8957,7 +8957,7 @@
         "g-spark"
       ],
       "status": "verified",
-      "question": "自然言語の指示から直接マイクロWebアプリケーションを構築・反復改善する実験的ツールとして公開され、github.com上で2026年8月に新規作成が終了したサービスは？",
+      "question": "自然言語の指示から直接マイクロWebアプリケーションを構築・反復改善する実験的ツールとして公開され、github.com上で2026年8月に新規作成が終了したサービスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -8988,7 +8988,7 @@
         "D": "Issueから仕様策定・コード変更・PR作成までを支援する開発者環境である。"
       },
       "review": {
-        "fingerprint": "e61169718c17cff016966e49d9116a0aed4e82cc09342e58ab06c0276afb29b8",
+        "fingerprint": "84cf6e5389601e608345ab5ed9b22f9f6d52f6d58cef4d53af064c9daff88080",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9002,7 +9002,7 @@
         "g-copilot-extensions"
       ],
       "status": "verified",
-      "question": "サードパーティのSaaSや社内サービスと連携してCopilot Chatを拡張する仕組みとして提供され、2025年11月に終了して現行のMCP等へ移行した旧連携方式は？",
+      "question": "サードパーティのSaaSや社内サービスと連携してCopilot Chatを拡張する仕組みとして提供され、2025年11月に終了して現行のMCP等へ移行した旧連携方式として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9033,7 +9033,7 @@
         "D": "リポジトリイベントを外部サーバーへHTTP通知する標準API機能である。"
       },
       "review": {
-        "fingerprint": "961ccda60fa6946337b12f904dc5adefb954c658f8e78fa107a6e56c100c72d1",
+        "fingerprint": "857d6c445beccc72fca0b5233d76d821dfcd4ed293f7988038d06fc648c81197",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9047,7 +9047,7 @@
         "g-org-policies"
       ],
       "status": "verified",
-      "question": "GitHub Organizationの管理者が、所属メンバーに対して「公開コード一致提案のブロック」や「特定機能の有効化」を一括適用する管理設定は？",
+      "question": "GitHub Organizationの管理者が、所属メンバーに対して「公開コード一致提案のブロック」や「特定機能の有効化」を一括適用する管理設定として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9078,7 +9078,7 @@
         "C": "個人の利用設定であり組織階層全体の強制ではない。"
       },
       "review": {
-        "fingerprint": "5a9af2dc47600390a6ae139ab9e6f3f8e3cc535d084ea7f0ac435b2d92a623ca",
+        "fingerprint": "c61ace853e8c41f6789c55262172917917521d9104151d997deefb1198b7de9d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9092,7 +9092,7 @@
         "g-enterprise-policies"
       ],
       "status": "verified",
-      "question": "GitHub Enterprise管理者が設定し、傘下のすべてのOrganizationに対して強制（Enforce）され、下位組織での緩和や無効化ができない最上位のポリシーは？",
+      "question": "GitHub Enterprise管理者が設定し、傘下のすべてのOrganizationに対して強制（Enforce）され、下位組織での緩和や無効化ができない最上位のポリシーとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9123,7 +9123,7 @@
         "D": "個人の利用設定であり組織階層全体の強制ではない。"
       },
       "review": {
-        "fingerprint": "5fbd19711c62241cd1869a8776af4746c8523da568ed02feaf091643ad9d8dff",
+        "fingerprint": "642d930fe9d1ae913a3c192029c52a70b9ceadad5b538b0c1af0724506304b4a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9137,7 +9137,7 @@
         "g-subscription-plans"
       ],
       "status": "verified",
-      "question": "個人向けのFree・Pro、組織向けのBusiness・Enterpriseなど、利用可能な機能や顧客コードのプライバシーポリシー（モデル学習利用の有無）を規定する体系は？",
+      "question": "個人向けのFree・Pro、組織向けのBusiness・Enterpriseなど、利用可能な機能や顧客コードのプライバシーポリシー（モデル学習利用の有無）を規定するライセンス・プラン体系として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9168,7 +9168,7 @@
         "D": "IdPと連携してユーザーIDを一元管理するアカウント構成であり、Copilotのサブスクリプションプランではない。"
       },
       "review": {
-        "fingerprint": "f845769a619e2cab0023c24ca6d1f9b44eaa1d718da78507119c64a4432f6200",
+        "fingerprint": "fd83bb44ab9f0f65b67acfffc878c0ddb62e2e081b95e614c446d799e3a0531c",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9182,7 +9182,7 @@
         "g-code-review-policies"
       ],
       "status": "verified",
-      "question": "組織の管理者が、Pull RequestにおけるCopilotによる自動コードレビューの動作（自動トリガーの有無や利用可否）を制御する管理ポリシーは？",
+      "question": "組織の管理者が、Pull RequestにおけるCopilotによる自動コードレビューの動作（自動トリガーの有無や利用可否）を制御する管理ポリシーとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9213,7 +9213,7 @@
         "D": "生成物と公開コードの一致を管理する。"
       },
       "review": {
-        "fingerprint": "c29cbdd8d57076432461967992582372ff5345341eae96281ceed5f44b1c07de",
+        "fingerprint": "fe93cb7f0e17b2290208c6374cc5917c1b52bf0b52ce3f6e30fdf7b7b0b4ea36",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9227,7 +9227,7 @@
         "g-legacy-knowledge-bases"
       ],
       "status": "verified",
-      "question": "旧教材にCopilot Knowledge Basesの設定手順がある。現在の共有コンテキスト機能との関係は？",
+      "question": "旧教材にCopilot Knowledge Basesの設定手順があります。現在の共有コンテキスト機能との関係・位置づけとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9258,7 +9258,7 @@
         "C": "Prompt Filesは依頼文の再利用で役割が異なる。"
       },
       "review": {
-        "fingerprint": "e48d46a7df53c3f5e1382b913557ccb98d3e837f4e5d622990655d1e5fbd23a1",
+        "fingerprint": "73a10f010a28891882dbdbc0009da36b7e02e11688c9514d13bef2085b07bb01",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9272,7 +9272,7 @@
         "g-data-flow"
       ],
       "status": "verified",
-      "question": "開発者のIDEから送信されたプロンプトやコンテキストが、GitHubのプロキシ基盤を経由してLLMに到達し、生成結果が後処理を経てエディタへ返却されるまでの一連のエンドツーエンドの通信・処理経路を表す概念は？",
+      "question": "開発者のIDEから送信されたプロンプトやコンテキストが、GitHubのプロキシ基盤を経由してLLMに到達し、生成結果が後処理を経てエディタへ返却されるまでの一連のエンドツーエンドの通信・処理経路を表す概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9303,7 +9303,7 @@
         "D": "LLMが一度に処理できる最大トークン容量の境界枠であり、エンドツーエンドの通信経路ではない。"
       },
       "review": {
-        "fingerprint": "378c17ebb4620693f69695754e95b98b69bf048625a8ea2bc42d5184ba50b59c",
+        "fingerprint": "b151a13daf0e238962b24150c401ae9b603cb4489dc0f2956b37bb7ddbbdc416",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9317,7 +9317,7 @@
         "g-prompt-construction"
       ],
       "status": "verified",
-      "question": "エディタ上でカーソル前後のコード、開いているタブ、隣接ファイルの関連スニペットなどを収集・優先度付けし、LLMに送信可能な形式へと合成・整形する内部処理の仕組みは？",
+      "question": "エディタ上でカーソル前後のコード、開いているタブ、隣接ファイルの関連スニペットなどを収集・優先度付けし、LLMに送信可能な形式へと合成・整形する内部処理の仕組みとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9348,7 +9348,7 @@
         "D": "プロジェクト全体のセマンティック検索やシンボル解析用に作成されるインデックス構造である。"
       },
       "review": {
-        "fingerprint": "137805438da65df26217cccc6f776b3956f33f051242386239bc4ac327ec72e0",
+        "fingerprint": "c310cb32ac151829a531a5bccc4a31a6fa1f0db4eea68c28b8215b6a86d9bed9",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9362,7 +9362,7 @@
         "g-copilot-proxy"
       ],
       "status": "verified",
-      "question": "Copilotの通信で、IDEとモデル提供側の間にあるGitHub側の中継基盤を指す用語は？",
+      "question": "Copilotの通信において、IDEとモデル提供側の間にあるGitHub側の中継基盤を指す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9393,7 +9393,7 @@
         "D": "関連コード検索用の索引であり通信中継ではない。"
       },
       "review": {
-        "fingerprint": "c9ad04fb14c658bb79317ffde40e9e9870fb11e641f4fdb84231143ded1051cf",
+        "fingerprint": "802b6ee3be0e29620a880bfdb17b06b24f2a6a44547e1e080e59522fecfcbb0b",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9407,7 +9407,7 @@
         "g-telemetry-data"
       ],
       "status": "verified",
-      "question": "Copilotの利用において、ソースコードそのもの（Code Snippets）とは厳格に区別され、提案の受入・却下イベント、レイテンシ、エラーログなどサービスの監視・改善目的で収集される利用統計データは？",
+      "question": "Copilotの利用において、ソースコードそのもの（Code Snippets）とは厳格に区別され、提案の受入・却下イベント、レイテンシ、エラーログなどサービスの監視・改善目的で収集される利用統計データとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9438,7 +9438,7 @@
         "C": "基盤LLMの言語モデル自体を事前学習・調整するために用いられる大規模コーパスである。"
       },
       "review": {
-        "fingerprint": "4769dea78fbb89a7d512e39de5c4b5548287f870607d06c8c883b7ffce7b9bc0",
+        "fingerprint": "861f486d409ba7c29478c32ac9144ac3cdc267ad680a930b2a21dd7b253b275d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9452,7 +9452,7 @@
         "g-code-retention-policy"
       ],
       "status": "verified",
-      "question": "Business/Enterpriseの「モデル学習に使わない」と「入力・出力をどれだけ保持するか」を確認している。後者を調べる概念は？",
+      "question": "Copilot Business/Enterpriseにおける「モデル学習に使わない」という規定と並び、「入力プロンプトや出力提案をサーバー側でどれだけ保持するか」を規定する概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9483,7 +9483,7 @@
         "D": "生成物と公開コードの一致を制御する。"
       },
       "review": {
-        "fingerprint": "0d97da061c181f77544f7553606e7e1853e802964a393b2e7dc6009949f2ad4d",
+        "fingerprint": "6af759e92c89992bc2487a57bd8fe83e31f4015365edcfcb4c74c06cf3765a19",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9497,7 +9497,7 @@
         "g-post-processing"
       ],
       "status": "verified",
-      "question": "LLMが生成した出力結果がエディタに表示される直前に実行され、公開コードとの一致検知（Public Code Matching）や有害コンテンツの検出・遮断を行う処理ステージは？",
+      "question": "LLMが生成した出力結果がエディタに表示される直前に実行され、公開コードとの一致検知（Public Code Matching）や有害コンテンツの検出・遮断を行う処理ステージとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9528,7 +9528,7 @@
         "D": "ユーザーの入力に関連ファイルやシステム指示を合成してプロンプトを充実させる入力前処理である。"
       },
       "review": {
-        "fingerprint": "ef61b9e24b7833f4fb53bcff76af75182d618c1ee7846fc408a6c2ed253f4b7c",
+        "fingerprint": "e673f35304a281bee85c4e4da5dd993fe505acd310aafb5d7c72261761fb1d95",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9542,7 +9542,7 @@
         "g-transit-encryption"
       ],
       "status": "verified",
-      "question": "コードがIDEからサービスへ送信される際、通信中の盗聴・改ざんを防ぐ保護を分類したい。該当するものは？",
+      "question": "コードがIDEからCopilotバックエンドサービスへ送信される際、通信経路上の盗聴・改ざんを防ぐ暗号化保護を表す概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9573,7 +9573,7 @@
         "D": "参照対象の範囲を決める。"
       },
       "review": {
-        "fingerprint": "adc53e8ed4e6e7f66ca74965a2eaf9bfb725843cb7fa948d366551b322510a58",
+        "fingerprint": "ed9542868629f9986c4fa373ecb1c968b92b6924c585867c9a6663a3f7d1c641",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9587,7 +9587,7 @@
         "g-suggestion-lifecycle"
       ],
       "status": "verified",
-      "question": "開発者のタイピング休止（デバウンス）によるトリガーから、周辺文脈の送信、ゴーストテキストの提示、そしてTabキーによる採択や追加入力による破棄・再計算に至る一連の状態遷移を表す概念は？",
+      "question": "開発者のタイピング休止（デバウンス）によるトリガーから、周辺文脈の送信、ゴーストテキストの提示、そしてTabキーによる採択や追加入力による破棄・再計算に至る一連の状態遷移を表すライフサイクル概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9618,7 +9618,7 @@
         "D": "打鍵休止から提案生成、ゴーストテキスト表示、確定・破棄に至る一連のクライアント側状態遷移をSuggestion Lifecycleと呼ぶ。"
       },
       "review": {
-        "fingerprint": "2247c08f0b34439a2b7e4886f683d2f16b7c151ec9c3bb93a40a888979f38abd",
+        "fingerprint": "c7a929e0c25889acd8ac3493f6725bb92d93643bda0da8db3e552d0feacd84b7",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9632,7 +9632,7 @@
         "g-context-window"
       ],
       "status": "verified",
-      "question": "LLMが1回のプロンプトと応答で同時に保持・処理できる情報量（トークン数）の物理的な上限枠であり、超過時には優先度の低い文脈が切り捨てられる境界を表す用語は？",
+      "question": "LLMが1回のプロンプトと応答で同時に保持・処理できる情報量（トークン数）の物理的な上限枠であり、超過時には優先度の低い文脈が切り捨てられる境界を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9663,7 +9663,7 @@
         "D": "次のトークンを選択する際の確率分布の平坦度合いを調整するハイパーパラメータである。"
       },
       "review": {
-        "fingerprint": "a158e93ed119608834d757fb3c3f8ec549ea9861e1a5174203b5f122c7eac238",
+        "fingerprint": "2de6c1baa949501ff53fd64987837e5bce5aa92d3817437a3019fe2be0bbfdd8",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9677,7 +9677,7 @@
         "g-latency-tradeoff"
       ],
       "status": "verified",
-      "question": "タイピングの快適さを保つインライン補完では超低遅延（レスポンス速度）が最優先される一方、チャットやエージェントでは推論の正確性や深い文脈理解が重視される、AI機能設計上の設計選択は？",
+      "question": "タイピングの快適さを保つインライン補完では超低遅延（レスポンス速度）が最優先される一方、チャットやエージェントでは推論の正確性や深い文脈理解が重視されるという、AI機能設計上のトレードオフとして最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9708,7 +9708,7 @@
         "D": "処理可能な入出力量の割当の比較。"
       },
       "review": {
-        "fingerprint": "f55240c2e7be7e60f380484c2d3840f7f31208f42a0f7072ad70bf2ea27838e1",
+        "fingerprint": "62c0529e43892c1d3d0a26ed6217c25965df837d86d92334e1c20124c76a6329",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9722,7 +9722,7 @@
         "g-temperature-determinism"
       ],
       "status": "verified",
-      "question": "LLMの候補トークンの確率分布を変え、出力のばらつきへ影響する設定は？低い値でも正確性や完全な再現性は保証されない。",
+      "question": "LLMの候補トークンの確率分布を制御し、出力のばらつきや多様性に影響を与えるパラメータ設定として、最も適切なものはどれですか（※低い値に設定しても正確性や完全な再現性が保証されるわけではありません）？",
       "choices": [
         {
           "id": "A",
@@ -9753,7 +9753,7 @@
         "D": "処理可能な情報量の上限を表す。"
       },
       "review": {
-        "fingerprint": "ac382682fda5b90b2f58279c7839184128af5d7541c277730617d40bddf33e97",
+        "fingerprint": "c5e4e13abea6ed40d3b078aab966864d61e6b08f18c329684de65770d4cc15f2",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9767,7 +9767,7 @@
         "g-knowledge-cutoff"
       ],
       "status": "verified",
-      "question": "基盤LLMが事前学習を完了した特定の日付境界であり、それ以降にリリースされた最新のフレームワークの仕様変更や新機能について、外部コンテキストを与えない限りモデルが知らないという制約は？",
+      "question": "基盤LLMが事前学習を完了した特定の日付境界であり、それ以降にリリースされた最新フレームワークの仕様変更や新機能について外部コンテキストを与えない限りモデルが知らないという制約を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9798,7 +9798,7 @@
         "D": "モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。"
       },
       "review": {
-        "fingerprint": "e6a7b1b3ab0128c78cc52f55c55106447571eb03815533d40ee5a640c08f67e9",
+        "fingerprint": "feb1f232ed541fd1f027246b47c425e4dca488e551c947578f3b78e76c79455f",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9812,7 +9812,7 @@
         "g-context-scope-limits"
       ],
       "status": "verified",
-      "question": "Copilotが利用できる文脈は製品面、添付資料、接続ツールと権限により異なる。この「何を参照できるか」という制約は？",
+      "question": "Copilotが利用できる文脈は、利用する機能面、添付資料、接続ツールおよび付与された権限によって異なります。この「何を参照できるか」という制約境界を表す概念として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9843,7 +9843,7 @@
         "D": "収集後の保持条件の制約。"
       },
       "review": {
-        "fingerprint": "092bed4f6b43a2144fefa15abff9545e0947af63e9dd8bf4c92645a771d205da",
+        "fingerprint": "46ac2d8778fea280f13f962b9113ac09b69dae9748feeaf72e3f389130434dc6",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9857,7 +9857,7 @@
         "g-safety-filtering"
       ],
       "status": "verified",
-      "question": "Public Code Matching（公開コード一致）やContent Exclusion（参照除外）とは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードは？",
+      "question": "Public Code MatchingやContent Exclusionとは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9888,7 +9888,7 @@
         "D": "コードやコミット内にハードコードされたAPIキーや認証トークンを検知・警告する機能である。"
       },
       "review": {
-        "fingerprint": "3b21307f83bf55dae374cee7baa70feaa25833473078ee7fe71f858c5e3812a6",
+        "fingerprint": "4d61f59254ca625086b7da8134bf8a16c02b3ba1d63aeb247f84d6d331068de7",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9902,7 +9902,7 @@
         "g-prompt-engineering"
       ],
       "status": "verified",
-      "question": "LLMから期待する品質のコードや回答を引き出すために、目的・文脈・制約条件・出力形式などを体系的に設計・反復改善する技術体系は？",
+      "question": "LLMから期待する品質のコードや回答を引き出すために、目的・文脈・制約条件・出力形式などを体系的に設計・反復改善する技術体系として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9933,7 +9933,7 @@
         "D": "トークン消費量を節約するためにコンテキストの取捨選択を行う管理手法である。"
       },
       "review": {
-        "fingerprint": "bf4ab6c3368b28ef1dccbea060bc3ad070a9c9e02ca3690711636a24be9fa929",
+        "fingerprint": "f79b983ee4b938c7b69e07f47fc3ee43c78a5eda21c05861ea40386775b5751b",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9947,7 +9947,7 @@
         "g-zero-shot"
       ],
       "status": "verified",
-      "question": "プロンプト内に入出力の具体例（Examples）を事前に提示せず、指示文や要件のみを直接与えてタスクの実行やコード生成を依頼するプロンプティング手法は？",
+      "question": "プロンプト内に入出力の具体例（Examples）を事前に提示せず、指示文や要件のみを直接与えてタスクの実行やコード生成を依頼するプロンプティング手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -9978,7 +9978,7 @@
         "D": "具体例（入出力ペア）を一切含めず、指示文と文脈のみでモデルにタスクを実行させる手法がZero-shot Promptingである。"
       },
       "review": {
-        "fingerprint": "76cd3e73a3dd2cd60a91c0877961288b7ac0d4a8608e37005be6f92d5df3efe2",
+        "fingerprint": "867c80f82fb5a54a0371538437dac08e3672892f889e151f4421d416f318c24f",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -9992,7 +9992,7 @@
         "g-system-prompt"
       ],
       "status": "verified",
-      "question": "チャット画面のユーザー入力よりも前段でモデルに注入され、AI全体の役割定義やコーディング規約、安全基準などの大前提の振る舞いを拘束する指示コンテキストは？",
+      "question": "チャット画面のユーザー入力よりも前段でモデルに注入され、AI全体の役割定義やコーディング規約、安全基準などの大前提の振る舞いを拘束する指示コンテキストとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10023,7 +10023,7 @@
         "D": "`/explain` や `/fix` のように特定の事前定義アクションを呼び出すためのプレフィックスである。"
       },
       "review": {
-        "fingerprint": "3d4b7c3049b2b637738a2b0ea3ff24b952008cfe6d0b6b7ef7b630ab511a95f8",
+        "fingerprint": "a3ec264e61f7bbbed79c850d029ed1f7e97ab0afc2579d411050b5821e9e0590",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10037,7 +10037,7 @@
         "g-role-prompting"
       ],
       "status": "verified",
-      "question": "『あなたは経験豊富なセキュリティアーキテクトです』のように、AIに特定の役割や専門家のペルソナを指定することで、回答の視点や評価基準を専門領域へ方向付ける手法は？",
+      "question": "「あなたは経験豊富なセキュリティアーキテクトです」のように、AIに特定の役割や専門家のペルソナを指定することで、回答の視点や評価基準を専門領域へ方向付ける手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10068,7 +10068,7 @@
         "D": "タスクの実行手順を1段階ずつ順序立てて進めるよう求めるプロンプト技法である。"
       },
       "review": {
-        "fingerprint": "efe3aa9d5abe1f770c209b07ea1ed9902d6d17c289fbaf49efcfb7e61424ad04",
+        "fingerprint": "342fee9a42d2294677ae2da77d62bebaa2c894c5c10affdb1852b5fe6f374be9",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10082,7 +10082,7 @@
         "g-iterative-refinement"
       ],
       "status": "verified",
-      "question": "Copilotから返された初回の提案に対し、一度に完璧を求めるのではなく、対話を継続しながら不足した要件や修正点を追加指示して段階的に品質を高めていくアプローチは？",
+      "question": "Copilotから返された初回の提案に対し、一度に完璧を求めるのではなく、対話を継続しながら不足した要件や修正点を追加指示して段階的に品質を高めていくアプローチとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10113,7 +10113,7 @@
         "D": "プロンプト内に入出力の正解サンプルをあらかじめ複数組含めておく手法である。"
       },
       "review": {
-        "fingerprint": "c1f9032031aef78791439e8a19ee81c34d3452a4cb7bd54ca7ba2931eaf5f900",
+        "fingerprint": "6cb8f05ea73b1410815e26586ba43ec08c0ae1539112a1288a051fd868128555",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10127,7 +10127,7 @@
         "g-task-decomposition"
       ],
       "status": "verified",
-      "question": "複雑で巨大な開発要件を一度のプロンプトで依頼するのではなく、設計、実装、テストなど管理可能な小さな単位に切り分けて順次AIに指示する手法は？",
+      "question": "複雑で巨大な開発要件を一度のプロンプトで依頼するのではなく、設計、実装、テストなど管理可能な小さな単位に切り分けて順次AIに指示する手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10158,7 +10158,7 @@
         "D": "大きなタスクを扱いやすい小単位のステップに分解して順次解決させる手法がTask Decompositionである。"
       },
       "review": {
-        "fingerprint": "4490736f87391766f97c9f983c89d29e1c2dcd87ed56a266585d35011fa58d27",
+        "fingerprint": "a639f6a47de8af1619e73f923780e6790fb44a7b8c997d0bbc9a48b3552c2757",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10172,7 +10172,7 @@
         "g-context-pruning"
       ],
       "status": "verified",
-      "question": "不要なファイルや過去の古い会話ログが混入して重要な指示が埋もれる現象（コンテキスト希釈）を防ぐため、プロンプトに含める文脈を必要最小限に絞り込む最適化手法は？",
+      "question": "不要なファイルや過去の古い会話ログが混入して重要な指示が埋もれる現象（コンテキスト希釈）を防ぐため、プロンプトに含める文脈を必要最小限に絞り込む最適化手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10203,7 +10203,7 @@
         "D": "コード全体の高速な検索やシンボル解決のために作成されるインデックス構造である。"
       },
       "review": {
-        "fingerprint": "9a3f8c5541484bdd9b7bebd45cf37213673d8eaa4c79fcecc906455aca2bd188",
+        "fingerprint": "eeaefe8cba4f863c0e27d52119a8764c636457b2d5aab0830875af89915d37f1",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10217,7 +10217,7 @@
         "g-negative-prompting"
       ],
       "status": "verified",
-      "question": "『新規の外部ライブラリを追加しない』『非推奨のAPIを使用しない』のように、AIに対して禁止事項や制約条件を明示的に指定して出力を制御するプロンプティング手法は？",
+      "question": "「新規の外部ライブラリを追加しない」「非推奨のAPIを使用しない」のように、AIに対して禁止事項や制約条件を明示的に指定して出力を制御するプロンプティング手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10248,7 +10248,7 @@
         "D": "AIに特定の役割や専門家の立場を付与してトーンや観点を制御する手法である。"
       },
       "review": {
-        "fingerprint": "49bf4c4ed4ff68cfa5d08350aefa7e541cfad6a5f8b5791933cb610241eb4890",
+        "fingerprint": "c3f42da9c6fde3ea7dcf2e36f4bdd18869159486cbe0be9c22bfd32fcae30cf2",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10269,7 +10269,7 @@
         "g-output-specification"
       ],
       "status": "verified",
-      "question": "AIの回答に前置きや余計な会話文を含めず、『TypeScriptの型定義のみを出力する』や『指定のJSONスキーマに従う』のように、返却形式を厳格に制限する指示手法は？",
+      "question": "AIの回答に前置きや余計な会話文を含めず、「TypeScriptの型定義のみを出力する」や「指定のJSONスキーマに従う」のように、返却形式を厳格に制限する指示手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10300,7 +10300,7 @@
         "D": "大きな実装タスクを設計・実装・テストなどの段階的な小タスクに分割する手法である。"
       },
       "review": {
-        "fingerprint": "d4f203c12433667daaafc7870be8f678d553a607e9775a1aad455898456957c2",
+        "fingerprint": "785746a5eafc4d25e9625f41fe3ee285e62847d95d92030919e23423bb2575ee",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10321,7 +10321,7 @@
         "g-code-generation"
       ],
       "status": "verified",
-      "question": "自然言語による仕様コメントや関数の型定義を入力として、Copilotが動作可能な関数本体や新しいコードブロックを自動生成する機能・プロセスは？",
+      "question": "自然言語による仕様コメントや関数の型定義を入力として、Copilotが動作可能な関数本体や新しいコードブロックを自動生成する機能・プロセスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10352,7 +10352,7 @@
         "D": "仕様コメントやシグネチャから、AIが新しい動作コードブロックや関数本体を合成・生成する機能がCode Generationである。"
       },
       "review": {
-        "fingerprint": "43100203a9afa74c999d916a47db15d85c56bd9bd5dbeb902f050a8d6c03c632",
+        "fingerprint": "c8b773fd8ac6e2ee65aef7bdc7523d9b8d5f28ef0f9ca85694ad326824175f85",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10366,7 +10366,7 @@
         "g-code-refactoring"
       ],
       "status": "verified",
-      "question": "プログラムの外部的な振る舞いや仕様を変更することなく、内部構造を整理して可読性・保守性・拡張性を向上させる作業をCopilotで支援するプラクティスは？",
+      "question": "プログラムの外部的な振る舞いや仕様を変更することなく、内部構造を整理して可読性・保守性・拡張性を向上させる作業をCopilotで支援するプラクティスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10397,7 +10397,7 @@
         "D": "自然言語の指示から新しい関数やロジックを作り出す生成作業である。"
       },
       "review": {
-        "fingerprint": "740fc5e68239fa57b235d73a4131b609723d0053caf75fddb1d988c64a11ada6",
+        "fingerprint": "25a5e53a37e927baf03ea7e7402f039962e2ca2607a33484544a2fd4f1770e75",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10411,7 +10411,7 @@
         "g-legacy-modernization"
       ],
       "status": "verified",
-      "question": "古いフレームワークや旧言語バージョンで書かれた既存コードを、テストによる動作保証を維持しながら、現行の標準仕様や最新アーキテクチャへと段階的に刷新する作業は？",
+      "question": "古いフレームワークや旧言語バージョンで書かれた既存コードを、テストによる動作保証を維持しながら現行の標準仕様や最新アーキテクチャへと段階的に刷新する作業として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10442,7 +10442,7 @@
         "D": "言語間のコード変換そのものを指し、レガシー刷新という包括的移行作業とは異なる。"
       },
       "review": {
-        "fingerprint": "a5621ced4faec8ce39df8124b0f94d9f788da19587d01adad6bf802047030cd8",
+        "fingerprint": "5dfe166dafa20ea79463ddf5113cfc61802e535e6d63c4c11d54eccb766d0177",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10456,7 +10456,7 @@
         "g-code-translation"
       ],
       "status": "verified",
-      "question": "Pythonで記述された既存の関数やクラスを、目的の言語の慣習や型システムに適合させながらTypeScriptやGoなどの別言語へ移植・変換する作業は？",
+      "question": "Pythonで記述された既存の関数やクラスを、目的の言語の慣習や型システムに適合させながらTypeScriptやGoなどの別言語へ移植・変換する作業として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10487,7 +10487,7 @@
         "D": "定型的な繰り返しコードの記述量を減らす省力化の工夫である。"
       },
       "review": {
-        "fingerprint": "f6c3c387e4841d82d6b74182c28f231f8871f8f8b095178fd685ffbf9eaadc08",
+        "fingerprint": "538d82acfa8d865f7b49fc10d40b5a2191e5c59c4582e9e6350af88a294f0436",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10501,7 +10501,7 @@
         "g-algorithm-optimization"
       ],
       "status": "verified",
-      "question": "時間計算量や空間計算量（Big-O）を改善するために、二重ループの解消や適切なデータ構造の選択を行い、処理効率を引き上げる実装改善手法は？",
+      "question": "時間計算量や空間計算量（Big-O）を改善するために、二重ループの解消や適切なデータ構造の選択を行い、処理効率を引き上げる実装改善手法として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10532,7 +10532,7 @@
         "D": "計算量やデータ構造を見直して処理速度やメモリ効率を向上させる手法がAlgorithm Optimizationである。"
       },
       "review": {
-        "fingerprint": "d50fcae3380a23bc380cea3d37272641e6e1332dcd7a366b6969386c999becac",
+        "fingerprint": "fdd7af6c7de52da52a230ad1de3adb8daf473f1b687e5347ec0ecf4a6b94b337",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10553,7 +10553,7 @@
         "g-boilerplate-reduction"
       ],
       "status": "verified",
-      "question": "データモデルの定義、CRUD操作、シリアライズ処理など、構文上記述が必要な反復的・定型的なコードの入力負担をCopilotで自動補完・短縮する効果は？",
+      "question": "データモデルの定義、CRUD操作、シリアライズ処理など、構文上記述が必要な反復的・定型的なコードの入力負担をCopilotで自動補完・短縮する効果として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10584,7 +10584,7 @@
         "D": "システムの要件や設計を外部文書としてまとめるタスクである。"
       },
       "review": {
-        "fingerprint": "a2dbccc8c7f963e43d634e67da6a02a2dce83d1b0ec1da8d1a80eef9ecd66ff6",
+        "fingerprint": "a468c5c8321136de1b09bf0890f1e2d67364da881bb909c388d85bef8c4af078",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10598,7 +10598,7 @@
         "g-integration-test-generation"
       ],
       "status": "verified",
-      "question": "関数単体の独立した論理を検証する単体テストとは異なり、APIとデータベース、または複数モジュール間の連携動作を検証するテストコードを生成するタスクは？",
+      "question": "関数単体の独立した論理を検証する単体テストとは異なり、APIとデータベース、または複数モジュール間の連携動作を検証するテストコードを生成するタスクとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10629,7 +10629,7 @@
         "D": "ユーザー操作画面からバックエンドまでの全経路を検証する最上位テスト生成である。"
       },
       "review": {
-        "fingerprint": "cf6559ce8e1501ed5c4ef4d85a3e8f26390537b008abef8d8f6f2e49f2b4a5ee",
+        "fingerprint": "c99bb46088e578f978e6a95c827085f608ef27d1095ec3957b1b731773367b20",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10643,7 +10643,7 @@
         "g-vulnerability-remediation"
       ],
       "status": "verified",
-      "question": "静的解析やCodeQLで検出されたSQLインジェクションや安全でない依存関係などの脆弱性に対し、安全な実装パターンへ修正・治療するセキュリティタスクは？",
+      "question": "静的解析やCodeQLで検出されたSQLインジェクションや安全でない依存関係などの脆弱性に対し、安全な実装パターンへ修正・治療するセキュリティタスクとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10674,7 +10674,7 @@
         "D": "実行遅延やメモリ消費の課題を特定する作業である。"
       },
       "review": {
-        "fingerprint": "b601ee941627fc51c9b0213cbb6130f3ce06f0a77dc356d646977b5ae6fb8aa7",
+        "fingerprint": "78f71ac26e0807a14147b5d3a62e25e8cba413d86d07a1d505767f785e3686ad",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10688,7 +10688,7 @@
         "g-static-analysis-copilot"
       ],
       "status": "verified",
-      "question": "CodeQLやリンターなどの決定的な静的解析ツールの警告メッセージをCopilotに入力として渡し、規格に準拠した的確な修正コードを提案させる連携プラクティスは？",
+      "question": "CodeQLやリンターなどの決定的な静的解析ツールの警告メッセージをCopilotに入力として渡し、規格に準拠した的確な修正コードを提案させる連携プラクティスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10719,7 +10719,7 @@
         "D": "決定的な解析ツールでルール違反を検出し、その出力をCopilotに渡して修正コードを生成させる連携がStatic Analysis Integrationである。"
       },
       "review": {
-        "fingerprint": "c7810de947ab9fde957963ab432861920c16e6655ff9bfedc1401942f255fb55",
+        "fingerprint": "cb5caf9180b233e2824e6c352010fc0c3c71a5d104e63a3f99302c2c05b6b60c",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10733,7 +10733,7 @@
         "g-perf-bottlenecks"
       ],
       "status": "verified",
-      "question": "プロファイリング結果や負荷条件を提示し、メモリリーク、不要な同期I/O、非効率な反復処理などシステムの性能低下を引き起こしている原因箇所を特定する作業は？",
+      "question": "プロファイリング結果や負荷条件を提示し、メモリリーク、不要な同期I/O、非効率な反復処理などシステムの性能低下を引き起こしている原因箇所を特定する作業として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10764,7 +10764,7 @@
         "D": "既存動作が壊れていないか期待値を検証する。"
       },
       "review": {
-        "fingerprint": "f5742dc9d0aa1bc349506c750f917226d0b75d7c14d67c4cddd212add486d6af",
+        "fingerprint": "f3bb4884451a808768983c1ba9f02dca4de4258819591ededdf74021a9aa0faa",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10778,7 +10778,7 @@
         "g-secret-leak-prevention"
       ],
       "status": "verified",
-      "question": "APIキーやDBパスワード、アクセストークンなどの機密資格情報をプロンプトやコードに直接記述せず、環境変数や安全な保管庫で管理して流出を防ぐセキュリティ原則は？",
+      "question": "APIキーやDBパスワード、アクセストークンなどの機密資格情報をプロンプトやコードに直接記述せず、環境変数や安全な保管庫で管理して流出を防ぐセキュリティ原則として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10809,7 +10809,7 @@
         "D": "実行時エラーでスタックトレース等の機密が露出しないよう制御する実装である。"
       },
       "review": {
-        "fingerprint": "bdc919bdd76bacc07ca2c7431a88dcfec950f1e275559adc167263300c0f45a6",
+        "fingerprint": "3af04f1f383d260c4daa60b8d34901e40438aeee5d441ef9416470d9dc0e4336",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10823,7 +10823,7 @@
         "g-test-explorer"
       ],
       "status": "verified",
-      "question": "Copilotが生成した単体テストや統合テストをVS Code内で自動検出し、GUI上で個別に実行・デバッグ・合否ステータスを確認できる公式エディタUI機能は？",
+      "question": "Copilotが生成した単体テストや統合テストをVS Code内で自動検出し、GUI上で個別に実行・デバッグ・合否ステータスを確認できる公式エディタUI機能として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10854,7 +10854,7 @@
         "D": "各種ツールの標準出力やログメッセージをテキスト表示するパネルである。"
       },
       "review": {
-        "fingerprint": "bb7feb01fac3c81d7a8e5b60f7970b9a3d095b696e539ef539a70fcec2376dd5",
+        "fingerprint": "6702bbc3f570ea09847e9c4408e2811a0a6abffe2bfabf3a1901b398009d2f8a",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10868,7 +10868,7 @@
         "g-arrange-act-assert"
       ],
       "status": "verified",
-      "question": "生成テストの入力とモックを用意し、対象関数を呼び、その戻り値を期待値と比較している。コードをこの三段階に整理するパターンは？",
+      "question": "生成テストの入力とモックを用意し、対象関数を呼び、その戻り値を期待値と比較している。コードをこの三段階に整理するテスト構造パターンとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10899,7 +10899,7 @@
         "C": "ビルドと実行・調査という実行作業。"
       },
       "review": {
-        "fingerprint": "4d6e421c5d139603dd2d09237702e9e047974136de52b96727523dc1a6da31e4",
+        "fingerprint": "f43d1ecced0eeb07c465f5f061484d4e51f1d9efa8935223b0337de65cf535b8",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10913,7 +10913,7 @@
         "g-code-quality-attributes"
       ],
       "status": "verified",
-      "question": "単に動作するだけでなく、信頼性、保守性、セキュリティ、処理効率、可読性など、ソフトウェアの価値を多面的に評価する非機能・品質特性の総称は？",
+      "question": "単に動作するだけでなく、信頼性、保守性、セキュリティ、処理効率、可読性など、ソフトウェアの価値を多面的に評価する非機能・品質特性の総称として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10944,7 +10944,7 @@
         "D": "コードの何パーセントがテストで実行されたかを示す網羅率指標である。"
       },
       "review": {
-        "fingerprint": "a935a5ea6dce910359192678049e2d27dd7449a8cc209e77ff9f64ac3d6a6d31",
+        "fingerprint": "67a1640425f3617808567ff7fa8f91ff63d067415088813c19f607df748e9758",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -10958,7 +10958,7 @@
         "g-reliability"
       ],
       "status": "verified",
-      "question": "システムや関数が、想定される運用環境と指定された時間枠において、障害や異常停止を起こさず継続的に正しく動作し続ける能力を表す品質特性は？",
+      "question": "システムや関数が、想定される運用環境と指定された時間枠において、障害や異常停止を起こさず継続的に正しく動作し続ける能力を表す品質特性として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -10989,7 +10989,7 @@
         "D": "システムが必要な時にいつでも利用可能な状態に維持されている割合を表す指標である。"
       },
       "review": {
-        "fingerprint": "8cc97fc5b799e4ad25c6aa2306cb4e1d10416b6785b230b2c5d253e3a4e66ae6",
+        "fingerprint": "5540bc974de7a5fadb39e19612dc1abebe25ea713a6f4b5a63be664d2f27e90f",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11003,7 +11003,7 @@
         "g-safe-exception-handling"
       ],
       "status": "verified",
-      "question": "例外を包括的に握り潰したり内部スタックトレースを露出させたりせず、具体的な例外型を捕捉して安全に回復・フォールバックさせる実装パターンは？",
+      "question": "例外を包括的に握り潰したり内部スタックトレースを露出させたりせず、具体的な例外型を捕捉して安全に回復・フォールバックさせる実装パターンとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11034,7 +11034,7 @@
         "D": "致命的な障害発生時に安全にシステム全体を停止または隔離する制御である。"
       },
       "review": {
-        "fingerprint": "d8c110539c4a2692704238bfae54357ed7ed84df45c927040b57f63b0ef5ceda",
+        "fingerprint": "580976039c3da3399af531418ce629ec67655fd2f54d74fbdbd0243538295daf",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11048,7 +11048,7 @@
         "g-input-validation"
       ],
       "status": "verified",
-      "question": "テストの期待値検証（Assertion）とは異なり、関数やAPIの境界で引数や外部データが前提条件（型・範囲・フォーマット）を満たしているかを検証する本番コードの実装は？",
+      "question": "テストの期待値検証（Assertion）とは異なり、関数やAPIの境界で引数や外部データが前提条件（型・範囲・フォーマット）を満たしているかを検証する本番コードの実装プラクティスとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11079,7 +11079,7 @@
         "D": "関数やAPIの入口で引数やリクエストデータの妥当性を検証し、不正入力を未然に弾く実装がInput Validationである。"
       },
       "review": {
-        "fingerprint": "953a79b75c3ced375ebfd29c627de0030fe95329a93f5ec5b327da9b71d0fc72",
+        "fingerprint": "cdfdcaae57e86752bbe84eec3ee71b54fe47bcd5a1433292e7319201b90bf339",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11093,7 +11093,7 @@
         "g-project-documentation"
       ],
       "status": "verified",
-      "question": "コードコメントや関数のJSDocとは異なり、システム全体の目的、アーキテクチャ設計、前提要件、セットアップ手順などを開発者向けに体系化した設計文書群は？",
+      "question": "コードコメントや関数のJSDocとは異なり、システム全体の目的、アーキテクチャ設計、前提要件、セットアップ手順などを開発者向けに体系化した設計文書群として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11124,7 +11124,7 @@
         "D": "変更の履歴や理由を時系列で記録したバージョン管理のログである。"
       },
       "review": {
-        "fingerprint": "6a441db503496aec319213c2d17d7fe62464f8e86d258775c17209a61ce77f0d",
+        "fingerprint": "7fbbdadcef50de3202b7fdfee7d6fb42271ac89d8cc0f88b96a246de7fa01b1d",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11138,7 +11138,7 @@
         "g-org-content-exclusion"
       ],
       "status": "verified",
-      "question": "個々のリポジトリ管理者に設定を委ねず、OrganizationまたはEnterpriseの管理者が一括して定義し、傘下のリポジトリ管理者が解除・上書きできないよう強制適用するコンテンツ除外は？",
+      "question": "個々のリポジトリ管理者に設定を委ねず、OrganizationまたはEnterpriseの管理者が一括して定義し、傘下のリポジトリ管理者が解除・上書きできないよう強制適用するコンテンツ除外の設定レベルとして、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11169,7 +11169,7 @@
         "D": "生成指示であり除外ポリシーを強制しない。"
       },
       "review": {
-        "fingerprint": "242a3b1f5bb3e2a687a0662b6b7de5b4d7b57b826d1031b2d62d5b0af0ffb998",
+        "fingerprint": "2f9950a873c01cb970b7520ef1bc715f4cb00640b959f885f7699c0f53d2d557",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11183,7 +11183,7 @@
         "g-exclusion-syntax"
       ],
       "status": "verified",
-      "question": "対応するContent Exclusion設定で、secretsの下の任意の階層にあるファイルを対象にする。再帰的なパス指定の例は？",
+      "question": "Content Exclusion設定において、secretsディレクトリ配下の任意の深さにあるすべてのファイルを対象にするための再帰的なパス指定の記述例として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11214,7 +11214,7 @@
         "D": "単一ファイルを指定する。"
       },
       "review": {
-        "fingerprint": "62b92d0ccfbff020a2c2594c4838933a5df65d2d7e9aec65a3ccfbe02e58d94e",
+        "fingerprint": "fbc07bfe61042971d04d816d5f5a5581a4605116123df19f74604e1a67eb43b5",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11228,7 +11228,7 @@
         "g-output-ownership"
       ],
       "status": "verified",
-      "question": "生成コードについてGitHubは所有権を主張しないが、他者の権利を侵害しないことが自動保証されるわけではない。この確認で扱う論点は？",
+      "question": "生成コードについてGitHubは所有権を主張しませんが、他者の権利を侵害しないことが自動的に保証されるわけではありません。この確認で取り扱う法的・ライセンス上の論点として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11259,7 +11259,7 @@
         "C": "保持期間・処理条件であり生成物の所有権ではない。"
       },
       "review": {
-        "fingerprint": "d3d83828fb81e1ecb50f0ecb2abb134b012eba90eb77488a81eddc8e60f87d2d",
+        "fingerprint": "8d7b5af0e1edff4850abe979c218a5097aa5f4ed5bf6f1ec069b1018f0d4ab24",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11273,7 +11273,7 @@
         "g-exclusion-propagation"
       ],
       "status": "verified",
-      "question": "管理者がGitHub上でContent Exclusionのパス設定を変更してから、各開発者のIDEクライアントへ設定が完全に同期・反映されるまでに最大30分程度要することがある時間的遅延は？",
+      "question": "管理者がGitHub上でContent Exclusionのパス設定を変更してから、各開発者のIDEクライアントへ設定が完全に同期・反映されるまでに最大30分程度要することがある時間的遅延を表す用語として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11304,7 +11304,7 @@
         "D": "短時間に多数のリクエストが集中した際に一時的にアクセスを制限する通信制御である。"
       },
       "review": {
-        "fingerprint": "4b2e47f261055ef431e8a1cdc0629bf45b8ce4b521313d04bd13c348037e98bc",
+        "fingerprint": "34e87764f52e0b24c424f9a44b43a0138f1ac7847808c1a69d981aab581272a5",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,
@@ -11318,7 +11318,7 @@
         "g-compliance-auditability"
       ],
       "status": "verified",
-      "question": "Enterprise管理者がGitHub Audit Log（監査ログ）の追跡やポリシー強制を通じて、Copilotの利用実態やセキュリティ設定が企業コンプライアンスに適合していることを証明・監査可能にする性質は？",
+      "question": "Enterprise管理者がGitHub Audit Log（監査ログ）の追跡やポリシー強制を通じて、Copilotの利用実態やセキュリティ設定が企業コンプライアンスに適合していることを証明・検証可能にする性質として、最も適切なものはどれですか？",
       "choices": [
         {
           "id": "A",
@@ -11349,7 +11349,7 @@
         "D": "第三者からの知財クレームに対してベンダー側が防護・補償を提供する契約条項である。"
       },
       "review": {
-        "fingerprint": "128d55f46c44f4b0f2acba0785ee209a66469da4d259537bf7c822b2f7b8f4ca",
+        "fingerprint": "7348b65dba84dad4d47d16b46864e4624cf523b1ae9b304f6ef63abd9fc3c5d1",
         "multipleAnswerRisk": false,
         "answerWithoutReading": false,
         "difficultyConsistent": true,

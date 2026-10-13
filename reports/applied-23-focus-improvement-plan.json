@@ -1,0 +1,274 @@
+{
+  "createdAt": "2026-10-14",
+  "status": "IMPLEMENTED_AND_EDITORIALLY_REVIEWED",
+  "scope": {
+    "totalTargets": 23,
+    "appliedCountPreserved": 90,
+    "activeCountPreserved": 310,
+    "domainAndObjectiveChangesPlanned": false,
+    "addedQuestions": 0,
+    "deletedQuestions": 0
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "ids": [
+        "q01",
+        "q-d2-a23",
+        "q-d3-a17",
+        "q-sc02-3",
+        "q-d5-a11",
+        "q-sc05-3"
+      ]
+    },
+    {
+      "phase": 2,
+      "ids": [
+        "q-d1-a10",
+        "q-d1-a18",
+        "q-d1-a19",
+        "q-d1-a21",
+        "q-d3-e03",
+        "q-sc04-3",
+        "q-d3-a15",
+        "q-d5-a12"
+      ]
+    },
+    {
+      "phase": 3,
+      "ids": [
+        "q-d2-a25",
+        "q-d6-a09",
+        "q-d3-a13",
+        "q-d3-a16",
+        "q-d3-a19",
+        "q-d4-a06",
+        "q-sc03-3",
+        "q-d3-a14",
+        "q-d6-a13"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "q01",
+      "title": "生成実装と生成テストが同じ誤りを持つ場合",
+      "phase": 1,
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "beforeFingerprint": "2e63a4a475c40948bfa0f5b0b387dd90edbbc31fd9f87e3459199d93146ad7cc"
+    },
+    {
+      "id": "q-d1-a10",
+      "title": "Copilotの最適化案を採用する根拠",
+      "phase": 2,
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "beforeFingerprint": "5158201256712e3a9abca9d0e902aa953effb655a367136e3af1256265eb0e8e"
+    },
+    {
+      "id": "q-d1-a18",
+      "title": "AIが補ってしまった未決定の業務仕様",
+      "phase": 2,
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "beforeFingerprint": "3f88dc9de631e289458809d7aa0aab86944f099189551e5d191c09fda033bf28"
+    },
+    {
+      "id": "q-d1-a19",
+      "title": "AI提案の影響範囲に応じた採用判断",
+      "phase": 2,
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "beforeFingerprint": "af9e2dfd23e12d608cb5f2dab8600173ff39b82a9463f6fb12be68093d2424c6"
+    },
+    {
+      "id": "q-d1-a21",
+      "title": "生成UIが利用者を排除していないか",
+      "phase": 2,
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "beforeFingerprint": "4fe3a41b5fd491d2a3ff723e5d4042b99e905afe8c36a18efe3968cf2d206ef6"
+    },
+    {
+      "id": "q-d2-a23",
+      "title": "CopilotのMCP接続方式を選ぶ",
+      "phase": 1,
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "beforeFingerprint": "f908cef967fcc4859bf6a4311d7bd95c13a48540e6697010d73a9a09c30dbe0c"
+    },
+    {
+      "id": "q-d2-a25",
+      "title": "Copilot CLIのツール権限の適用範囲",
+      "phase": 3,
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "beforeFingerprint": "876d852bb7c23c6b99e487af75715fc094b52027bda2ba805a4a120df3fa42b9"
+    },
+    {
+      "id": "q-d6-a09",
+      "title": "Copilotの導入・利用データをどう読むか",
+      "phase": 3,
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "beforeFingerprint": "cac49187832c0823ca2fea1ba83207816da6386ebb95c5f64e2089c35814402e"
+    },
+    {
+      "id": "q-d3-a13",
+      "title": "Copilot管理APIで取得する情報を選ぶ",
+      "phase": 3,
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "beforeFingerprint": "30aca1c9da64ee139d1fd56272a83a037bd5d4bcfe57214c6ba0f174117e7493"
+    },
+    {
+      "id": "q-d3-a17",
+      "title": "生成と出力処理を区別する",
+      "phase": 1,
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "beforeFingerprint": "f6f02c6c146e8f33fb20077492d6cfe70e8716661c5d42575a7bf28e2eb7b488"
+    },
+    {
+      "id": "q-d3-a16",
+      "title": "Copilotの提案を再現・調査する資料",
+      "phase": 3,
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "beforeFingerprint": "6ac1bd6b9d571b76fb38676657ad2ba8363262381928d220908a732632fb7adc"
+    },
+    {
+      "id": "q-d3-a19",
+      "title": "文脈量を文字数だけで判断しない",
+      "phase": 3,
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "beforeFingerprint": "1ca613f8ea30348960ec942a719454b997e6d0f8b518e55a156b261a0b0c35f4"
+    },
+    {
+      "id": "q-sc02-3",
+      "title": "解釈を区別するfew-shot例",
+      "phase": 1,
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "beforeFingerprint": "8bf48193eef5c17747d29105404a7f55e57b2560ff93d8d8911e6b8964001617"
+    },
+    {
+      "id": "q-d4-a06",
+      "title": "検索結果の古い生成物を整理する",
+      "phase": 3,
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "beforeFingerprint": "bd3c97f4c232318ad2348e0dad7177b1aef6e41ed389508e1259c757ff6920f3"
+    },
+    {
+      "id": "q-sc03-3",
+      "title": "障害調査へ必要なイベントを渡す",
+      "phase": 3,
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "beforeFingerprint": "ef17964670035a419413bcc0bf7375cff7aa7a4ae30f647cde725b786bff9750"
+    },
+    {
+      "id": "q-d3-a14",
+      "title": "修正に必要な文脈と要約できる資料",
+      "phase": 3,
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "beforeFingerprint": "e6bc6acd650ac08eef8aaad32ce10460652c81c962629911550def24cbbe53d6"
+    },
+    {
+      "id": "q-d5-a11",
+      "title": "生成READMEを新しい環境で再現する",
+      "phase": 1,
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "beforeFingerprint": "e1bd5d54f9f65c5d82e24a1c1c8009a98977a8bafd17a882a621609c09ac2f44"
+    },
+    {
+      "id": "q-d3-e03",
+      "title": "生成テストの期待値を独立した単位契約へ照合する",
+      "phase": 2,
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "beforeFingerprint": "a80e80aa67d8cf4a9a3ba5496e9353ec6b8b72d26110288bdcd08780352355e0"
+    },
+    {
+      "id": "q-sc04-3",
+      "title": "Copilotレビューを補う検証を選ぶ",
+      "phase": 2,
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "beforeFingerprint": "82b3f52f9ae7d41cabcca512b6cee1955b37843590ae7af8199ce01933ba6972"
+    },
+    {
+      "id": "q-d3-a15",
+      "title": "生成テストが検証していない契約を補う",
+      "phase": 2,
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "beforeFingerprint": "a7fb0c419e97db7e68cc18a2697bc6d373804e1b9874081f7a3319654eaa80e7"
+    },
+    {
+      "id": "q-d5-a12",
+      "title": "CopilotとTDDで次に追加するテスト",
+      "phase": 2,
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "beforeFingerprint": "3dd90ba2a9f595d7a087a6148e8354f85c6da3dcbab8506a0e3c40d40a617a02"
+    },
+    {
+      "id": "q-sc05-3",
+      "title": "調査に必要な情報を保ってChatへ渡す",
+      "phase": 1,
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "beforeFingerprint": "3c175cc20930614aadd35ada1a22139e905ed2d4f645f7bdd28495157281ea0f"
+    },
+    {
+      "id": "q-d6-a13",
+      "title": "Copilotの出力と知財対策の確認目的を区別する",
+      "phase": 3,
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "beforeFingerprint": "124a3f6ca0f1f7c29b9de8cf9f5988937b61fd9953eb7509aa97532b669848dd"
+    }
+  ],
+  "verification": {
+    "uniqueTargets": 23,
+    "allTargetIdsMatchReview": true,
+    "allComparisonIdsExist": true,
+    "currentTargetContentMatchesReview": true,
+    "questionAssetsEdited": false
+  },
+  "completion": {
+    "reviewedAt": "2026-10-14",
+    "report": "reports/applied-23-focus-improvement-review.json",
+    "questionIds": [
+      "q01",
+      "q-d2-a23",
+      "q-d3-a17",
+      "q-sc02-3",
+      "q-d5-a11",
+      "q-sc05-3",
+      "q-d1-a10",
+      "q-d1-a18",
+      "q-d1-a19",
+      "q-d1-a21",
+      "q-d3-e03",
+      "q-sc04-3",
+      "q-d3-a15",
+      "q-d5-a12",
+      "q-d6-a09",
+      "q-d2-a25",
+      "q-d3-a13",
+      "q-d3-a16",
+      "q-d3-a19",
+      "q-d4-a06",
+      "q-sc03-3",
+      "q-d3-a14",
+      "q-d6-a13"
+    ]
+  }
+}

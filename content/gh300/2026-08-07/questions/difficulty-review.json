@@ -5,17 +5,17 @@
   "method": "全件の編集評価。実測正答率・識別力・実試験との等価性は未測定。",
   "questions": {
     "q01": {
-      "fingerprint": "2e63a4a475c40948bfa0f5b0b387dd90edbbc31fd9f87e3459199d93146ad7cc",
+      "fingerprint": "12ba500ebaa49a8fb5f1080eb8723b9463350a0f1bad82ef1af63f221cdba457",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotが生成した「翌月の同じ日へ進める」処理を検証しています。1月15日は2月15日になりますが、1月31日は3月3日になってしまいます。承認済みの仕様では、翌月に同じ日がない場合は翌月末にする必要があります",
-        "存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。"
+        "生成物同士の一致ではなく、承認済みの月末補正を判断根拠にする。",
+        "実装と期待値の両方に同じ不一致があるため、両方の修正と境界の再検証を選ぶ。"
       ],
-      "counterfactual": "2024年の同じ入力なら2月29日を期待する。",
+      "counterfactual": "B：テストは既に2月末を期待し、実装だけが3月3日を返すなら、実装を修正して既存の期待値で再検証する。 C：実装は既に2月末を返し、生成テストだけが3月3日を期待しているなら、テストを修正する。 D：実装とテストは仕様に合い、呼び出し側が変換時に誤った日付を渡すなら、入力補正を修正する。",
       "evidence": [
         "responsible",
         "tests"
@@ -30,12 +30,12 @@
         ],
         "report": "reports/d1-d5-classification-correction.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。存在しない2月31日を、仕様どおり2月末へ補正するケースを検証する。 誤答はD：入力を維持する契約ではなく、翌月へ進める必要がある。／B：現在の誤った出力を期待値にしてしまい回帰を検出できない。／C：翌月の初日へ切り替える別の契約である。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。生成物同士の一致ではなく、承認済みの月末補正を判断根拠にする。 実装と期待値の両方に同じ不一致があるため、両方の修正と境界の再検証を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q02": {
-      "fingerprint": "a24ed93972f7810384f916a7c417ffbc839a4aa21393f7891133cb8b6829cd84",
+      "fingerprint": "d5d7735e78d3bd1d0497873a04a4668fcd51095760ce7791402b687937929d0f",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -48,7 +48,7 @@
       "evidence": []
     },
     "q03": {
-      "fingerprint": "10b30e2ea1ac4b406027094a94d758839ad88c3886b70e9a608690c47c7d9119",
+      "fingerprint": "57b35ffd5e6f649a7c8be1c2ad2cfe299e97096935a4b02c78f29fd8017b8730",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -61,10 +61,10 @@
       "evidence": []
     },
     "q04": {
-      "fingerprint": "050088c3525776679b7d6dfa2b9ed9e35f17d59f73a8d009647f862c75478853",
+      "fingerprint": "6ffbeeb2c0dddb90008e951af6af0a88012305c4d8a0e697ff2dadb82bf0245e",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -74,7 +74,7 @@
       "evidence": []
     },
     "q05": {
-      "fingerprint": "e191e2b3f6bfcf5e3ef9cfcd3635a3ff76ab3b391a0ae8b90b6ccaf82293531c",
+      "fingerprint": "47e3b47aeed8d29e2cdaa94584eb9a21d861172a937301b13c16e4bfc9dec971",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -98,7 +98,7 @@
       }
     },
     "q06": {
-      "fingerprint": "d7a59fc743a71d9754620e4591295de8b28b5c9b97cbf459c4b8cb9af4c34a6f",
+      "fingerprint": "248afd227e442b487898e812cd56a3c020177cb765a50de37905107ff25587fe",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -137,10 +137,10 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q08": {
-      "fingerprint": "bef832340b2694c7bd61ed9def609c1354b33e3a6a2c3b59780ea32087d82feb",
+      "fingerprint": "c4d44ce58261ef1c701a61691ad3bc3040eb2cd303067410186d0f4eb087289b",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -150,10 +150,10 @@
       "evidence": []
     },
     "q09": {
-      "fingerprint": "43a062d837f11fefd8a9f6e7acd4a7d388af49eb4fb54d371141e368af92c7c6",
+      "fingerprint": "95fcef045e5a00f085c1f507224e151ec540127a6f607aa05536744f3702decd",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -182,7 +182,7 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q11": {
-      "fingerprint": "379fd0d12f9c5115e4ab7bb4142f2e75e67693dc7a5bb7bc2c6652853dac29a4",
+      "fingerprint": "c5a21a84c8834dd1f2c4d58e19d32b477b47d24fa46acf145f5174839d7938ac",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -202,10 +202,10 @@
       }
     },
     "q12": {
-      "fingerprint": "591175ec6efd4fb58e59cf09b03b4bd0813e848d2f84d55d309296e53bff1bfd",
+      "fingerprint": "d20c6a3aa649618f011ca3088d41a3cc788e27c690f281b130625853cb0a189a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -228,10 +228,10 @@
       "evidence": []
     },
     "q-d1-f02": {
-      "fingerprint": "d42a0176e0ae9d62a19feb949a0406650a3789c257c735ff3102bf3237676246",
+      "fingerprint": "0ca873aad13e5b4b78cf8f57787e0912ee93fe17225d029906ab3ca68b43851b",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -241,7 +241,7 @@
       "evidence": []
     },
     "q-d1-f03": {
-      "fingerprint": "fa96d269bebcb5953048629f2b5cfbf6426486d1bcfb42b401d87f175eba0221",
+      "fingerprint": "c1acb279c3c4289045ee53b96638182afa7c5c9fd91d4dff0b3aa1b0e72a1979",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -264,7 +264,7 @@
       }
     },
     "q-d1-f04": {
-      "fingerprint": "6015f406d685253afd1a68e8b83053021648cfe338b7b8df4316b7edd45a73b7",
+      "fingerprint": "b16c09d4ff0712d535838f20a394099b1d091797c379ee4999d2e515457f0f0a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -277,10 +277,10 @@
       "evidence": []
     },
     "q-d1-f05": {
-      "fingerprint": "0f1f129f0818b082d08e53a8fab7b2b1cca072a324c2ea723a21657479fb01ca",
+      "fingerprint": "7cb9d263669d0adf76c1932136b931a644b154d20b3dd7fa65b1124cbcc7aa73",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -542,24 +542,25 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d1-a10": {
-      "fingerprint": "5158201256712e3a9abca9d0e902aa953effb655a367136e3af1256265eb0e8e",
+      "fingerprint": "b73bdb68045b3d0ca7f3695aa677bfc57a008c221b641020737e537fcdb0ea8b",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：GitHub Copilotが提案した2つのデータ検索関数（案Pと案Q）を比較検証しています。システムのAPI仕様契約は「空入力時には空配列 [] を返却し、レスポンス時間は25ms以下であること」です。ベンチマーク測定の結果、案Pは応答時間15msですが空入力時に null を返し、案Qは応答時間20msで空入力時に [] を返しました",
-        "案Qは応答時間（20ms ≦ 25ms）と戻り値の契約（空配列 []）の両方を満たしています。速度だけで契約違反（null返却）のある案Pを採用してはいけません。"
+        "性能・メモリの成功と、戻り値契約の不一致を分ける。",
+        "許可された範囲で契約を保つ生成修正を依頼し、修正後の動作と性能を確認する。"
       ],
-      "counterfactual": "空入力nullが許容契約なら、Pも採用候補になる。",
+      "counterfactual": "B：nullを返す新契約への移行が承認され、旧呼出側の対応だけが残っているなら呼出側を移行する。 C：戻り値の契約は合い、異なる負荷で測った結果だけでは性能を比較できないなら測定条件をそろえる。 D：戻り値と速度は合うがメモリ使用量が基準を超えるならメモリの改善を依頼する。",
       "evidence": [
         "responsible",
-        "tests"
+        "tests",
+        "prompt"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。案Qは応答時間（20ms ≦ 25ms）と戻り値の契約（空配列 []）の両方を満たしています。速度だけで契約違反（null返却）のある案Pを採用してはいけません。 誤答はB：案Pは15msと高速ですが、仕様契約である「空配列 [] を返す」を満たしておらずnullを返すため不適合です。／C：測定対象から空入力を除外しても、実際のシステム運用時に契約違反のnullが返却されてバグを引き起こします。／D：案Qの戻り値をnullに変えてしまうと、正常だった契約（空配列返却）を自ら破壊することになります。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。性能・メモリの成功と、戻り値契約の不一致を分ける。 許可された範囲で契約を保つ生成修正を依頼し、修正後の動作と性能を確認する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d1-e01": {
       "fingerprint": "2a60af5b9495df3224fa44a02d39192f6a535030727df0d5c9048a9b6e7ae4cd",
@@ -774,10 +775,10 @@
       }
     },
     "q-d2-f01": {
-      "fingerprint": "3c78eb8c6c3ef6f1efc6229be42e7777f0346272265b096b605f95216df1433b",
+      "fingerprint": "a620b80bfe0db21b87858bf9e3799eab5e8ef86b65cba46234975c5abe1471c6",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -787,10 +788,10 @@
       "evidence": []
     },
     "q-d2-f02": {
-      "fingerprint": "ddf3c12d3654beb66ae19688081a0f4b3f1105504a069be0076b162899e2d398",
+      "fingerprint": "e4f07dab50e313e730a2d16ef16a577fc51a28977ec20cdce267712e4f2371a5",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -800,10 +801,10 @@
       "evidence": []
     },
     "q-d2-f03": {
-      "fingerprint": "72458cd1e6984f72a1c2e41306896e236fe0ae0106af0e7a43fe14f2081a2b7f",
+      "fingerprint": "82d9d49e7d59f2f9aa0a6e1312d285a439986f794140d99d2509819cfa8b41f8",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -813,10 +814,10 @@
       "evidence": []
     },
     "q-d2-f04": {
-      "fingerprint": "ae0c503dd5f40e57cb90353e97a380c96f49af93e20282206e5419fa2bfa7bc4",
+      "fingerprint": "681003ca04ca8d2230e238100fc76c33815fa8e824074341699fa3b957d4b274",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -833,7 +834,7 @@
       }
     },
     "q-d2-f05": {
-      "fingerprint": "364590f34237835ae1c6eb80c52e5bbce2b7b5df10ed237c91ee6bc6f3d74f7d",
+      "fingerprint": "6c0af329d2ba24e71ea2e61cc1a1c35e5cf85f0a86193c0a82fe055b417c6683",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -853,10 +854,10 @@
       }
     },
     "q-d2-f06": {
-      "fingerprint": "198d660b6de71d860bc512cd5b6dc4c3a47c89b31ad849a3a4118adebd898a9e",
+      "fingerprint": "7072ec1d4d1c03c4bada423dae0560b86e4333c837245c87e1952992f470661e",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -866,10 +867,10 @@
       "evidence": []
     },
     "q-d2-f07": {
-      "fingerprint": "031f7ece06dbad4387fa308fc38c3042c7f52ab86a5e0815245e3c71f5ebc6f5",
+      "fingerprint": "0aed4ea92592541ea3a0878ed0ce6d06b1e7bccddd5dc3d5b49109f11e5a3086",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -879,10 +880,10 @@
       "evidence": []
     },
     "q-d2-f08": {
-      "fingerprint": "b022b14b7339341e0765fef0660d3bc77d87c0de6e6936edd1a5dd3e1c3f95b4",
+      "fingerprint": "d4f0a945c9586251f598c33253e2261ff8d0f12143081abf62f3f9121579c4c9",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -899,10 +900,10 @@
       }
     },
     "q-d2-f09": {
-      "fingerprint": "c2e6717c11e2d858b8086607966eb3d07832f9d387e4f7e25fb3ae8608af564b",
+      "fingerprint": "d5f199477c563a384edd25b29ca00291a3abc5f8527a7e2cdc354ea46985b029",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -919,10 +920,10 @@
       }
     },
     "q-d2-f10": {
-      "fingerprint": "750b38c643a61d013601a0cb6b751542296eff0e2ada21d842dab18471905d51",
+      "fingerprint": "21a28d3b10cbca030582377f559d97ca58571d6670b288b3fb908e068a1b1326",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -939,10 +940,10 @@
       }
     },
     "q-d2-f11": {
-      "fingerprint": "c35301ede7be24957be08c2c85a83b99ccc1e8ada774ec980833e0d377144987",
+      "fingerprint": "1c662aaf0961b6d7095c7d42cca0c98fcd46478f49ca4c8d4a1de57bb0a41ee7",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1063,7 +1064,7 @@
       "reasoning": "判断条件を特定する：コード変更後に自動でテストを実行し、テスト失敗ログを解析して再修正を自律的に繰り返すワークフローをI"
     },
     "q-d2-a06": {
-      "fingerprint": "447d74bcad0536caa29083c9dbcae1f97026fa1699657b3fd925d1997ab606c5",
+      "fingerprint": "c39e577607d322f4f240066c2c99f5467b7d80a6342a4f01e833f2b6ed58c97e",
       "beforeDifficulty": "intermediate",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -1455,10 +1456,10 @@
       }
     },
     "q-d2-e04": {
-      "fingerprint": "78b784ecbe3ef6860c0e9999c6bfffb1bae32516cb887572748a98899843e11b",
+      "fingerprint": "47e3bc3b83ca3ea092b9eb0d930f12408dd9f3846d3afdc7c19c7d7f0d6529c3",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1630,10 +1631,10 @@
       ]
     },
     "q-d2-e12": {
-      "fingerprint": "c63421c71ecde9dc422727b6f0c72a630025eb4db6d9b76d4694b8274e501e99",
+      "fingerprint": "d309338e3777895a9d50969a4798ce0e1ea856a400783aab6c78ca56e5227f35",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1650,10 +1651,10 @@
       }
     },
     "q-d2-e13": {
-      "fingerprint": "ff29a5213992c8c0a3b840f89b06f690e2714fcd752fce020f1656113770335e",
+      "fingerprint": "038329cdff58de5728725f673cd090719e7ae1ba4874b348a1d743b0fa588538",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1797,10 +1798,10 @@
       ]
     },
     "q-d3-f01": {
-      "fingerprint": "a07e7bbfd51135b0209c1723092ed1bd2f4605033232a53f75bb5a8c82bec388",
+      "fingerprint": "09001227a73a2c7030c26d11886b30d700f8506f0939e9dd94e5204ab0dd25c0",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1810,10 +1811,10 @@
       "evidence": []
     },
     "q-d3-f02": {
-      "fingerprint": "49bc918e7eae3788480274d5606dc9511d74fbf5a9958785c9a138fbb3a3f137",
+      "fingerprint": "fd37118aa3c4b67e4d2417b30fa7c8d3358af68372b4d10a9fc36bc5a1d4fb24",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -1823,7 +1824,7 @@
       "evidence": []
     },
     "q-d3-f03": {
-      "fingerprint": "4923399359ba7545a3411c8e3a7f4eccd315638f4cd79d5871bbeeece52f9169",
+      "fingerprint": "fee1070191cd4d42a53378eecce6f3326fc3e0c41091265d12c42e87577eeca3",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -1848,7 +1849,7 @@
       }
     },
     "q-d3-f04": {
-      "fingerprint": "70ba50ad52b25352978d3db63d6a43144fc04cccf291f998e391b09763a7c4c6",
+      "fingerprint": "11e7aa646ffc1642c90eb659ac8ce9991a9698eda742ed90f99f072646ff67c4",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -1873,10 +1874,10 @@
       }
     },
     "q-d3-f05": {
-      "fingerprint": "eaa7bdf9382969f02ccb8d8476a5eeeb40bf1aaf5191760ebd28e241227e0a71",
+      "fingerprint": "de4ebdb387ec654e1861c5cedf3d1a9b71640c4d674e6f0cafb008bc7bc55c2a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2199,24 +2200,24 @@
       }
     },
     "q-d3-e03": {
-      "fingerprint": "a80e80aa67d8cf4a9a3ba5496e9353ec6b8b72d26110288bdcd08780352355e0",
+      "fingerprint": "9efcc9bc413e8f5a49f7ea6367f4c536e4f9a74f0bf6d36c0c2939e668f457bd",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotの金額処理と生成テストを照合しています。承認済みの処理は、前半でドルを100倍してセントへ変換し、後半で100で割ってドルへ戻します。Copilotは二つの処理の間へ、さらに100で割る処理を追加しました",
-        "承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。"
+        "生成された実装とテストの一致が、単位の正しさの独立した根拠にならないことを識別する。",
+        "入力と外部依存へ渡す値の契約をテストの期待値へ落とす。"
       ],
-      "counterfactual": "前半の×100と中間の÷100が承認済みで、後半へ追加した÷100だけが余分ならB。 正しい処理は入力を二段階で100ずつ割るもので、先頭へ追加した×100だけが余分ならC。",
+      "counterfactual": "B：入力とAPI引数の単位は合い、表示の小数桁数だけが仕様と異なるなら書式を検証する。 C：単位は合い、中間の端数処理だけが承認した丸め方式と異なるなら丸めを検証する。 D：単位・金額・書式は合い、同じ依頼でAPIを重複して呼ぶことが問題なら呼出し回数を検証する。",
       "evidence": [
         "tests",
         "responsible"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。承認済みの前半・後半を保ち、生成された中間の余分な100除算だけを除く。100ドル→10000セント→100ドルと検証する。 誤答はB：中間までが承認済みで後半だけが余分な変換なら成立する。今回は承認済み後半を変えてしまう。／D：実行結果が承認済み契約に合い生成テストだけが誤っている場合に成立する。今回は実結果1ドルが期待100ドルに違反する。／C：入力が既にセントで前半だけが余分な変換なら成立する。今回はドルをセントへ変換する承認済み前半を変えてしまう。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。生成された実装とテストの一致が、単位の正しさの独立した根拠にならないことを識別する。 入力と外部依存へ渡す値の契約をテストの期待値へ落とす。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d3-e04": {
       "fingerprint": "6eee148869ff04e2a3970bcbe9a77e1389cba2cce2660d5d2d24b25739a75b90",
@@ -2246,7 +2247,7 @@
       }
     },
     "q-d3-e05": {
-      "fingerprint": "c69f8c94d367c29d1cc08cba44284bb1750a95140ad5ccf0b6285b63e8a246ba",
+      "fingerprint": "bd88dd31a24e99d02f0604457d1630a08487cfce794b1361d27b31232f4ed35d",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -2268,7 +2269,7 @@
       }
     },
     "q-d4-f01": {
-      "fingerprint": "382ad07c0f12ac63853680da7d141449b746b138f0732aa7a200aca08874e75d",
+      "fingerprint": "a7b2d81ed9c9c7ac17ddc247f59c37971365357fa5ec52039864ad8048883db0",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -2283,10 +2284,10 @@
       ]
     },
     "q-d4-f02": {
-      "fingerprint": "41d01ab27e3e89b75f401a0ea83cc9f2c0966410c09def47bbc40860904014dd",
+      "fingerprint": "df1e877a7da70def5a5647a259ae5a4957d50d41f8d6ac4b82b8658bda2430ac",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2296,10 +2297,10 @@
       "evidence": []
     },
     "q-d4-f03": {
-      "fingerprint": "ff7f93ea894b5e79f50b88d040cb6ade17efe53389ad5d127f63dfeebdabf1b9",
+      "fingerprint": "bdac5944382cc082ce62656cfe80faee7a508126f3e521e142ac8bd07e108488",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2309,10 +2310,10 @@
       "evidence": []
     },
     "q-d4-f04": {
-      "fingerprint": "fbd726d5e58b3abf273b2bc83788e2df77e415957cb13ad0548836e181faa031",
+      "fingerprint": "653d363dc73638989c8a3112a8c6b94e2fd84b8a15de256f48dc1d40d076f2bc",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2322,10 +2323,10 @@
       "evidence": []
     },
     "q-d4-f05": {
-      "fingerprint": "dc6bf9b7cc453206f25dbb2b237beae86e944d9fef9f7d67d28282f161aa0f50",
+      "fingerprint": "0b56650e00752556049d9fd8e85a00710cea8e3975322edd6fd6dcce1e4954b6",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2428,23 +2429,24 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d4-a06": {
-      "fingerprint": "bd3c97f4c232318ad2348e0dad7177b1aef6e41ed389508e1259c757ff6920f3",
+      "fingerprint": "28fd8d5c4677a837b8c618fd9d3e3532e5b7407bde1c968bfecbff29ee9c4879",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotへ渡す検索結果に古いビルド生成物が混ざっています。この検索ツールでは「**」が任意の階層を表します。dist/a.js、packages/client/dist/a.js、packages/server/dist/b.jsを除外し、各パッケージのsrcは検索対象に残します",
-        "ルートと各packageのdistを外し、srcを検索対象として残す。"
+        "古い型、対話の旧方針、例の不足ではなく、検索から混ざる旧生成物を特定する。",
+        "現行の変更に必要な情報を保ち、検索・添付資料の範囲を整理する。"
       ],
-      "counterfactual": "除外対象がルートdistだけでpackageのdistは必要ならB。 除外対象がclientのdistだけならC。",
+      "counterfactual": "B：検索資料は現行で、対話の旧方針だけが回答へ混ざるなら決定事項を整理する。 C：検索資料と対話は現行だが、型が不足して省略可能な値を誤って扱うなら現行型を追加する。 D：資料は現行で、入力形式の曖昧さから生成コードの拒否条件が違うなら対照例を追加する。",
       "evidence": [
+        "prompt",
         "workspace-context"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。ルートと各packageのdistを外し、srcを検索対象として残す。 誤答はB：ルートdistは外せるが、packages配下のdistを残す。／C：clientのdistだけで、ルートとserverの生成物を残す。／D：生成物と一緒にpackages配下のsrcも外してしまう。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。古い型、対話の旧方針、例の不足ではなく、検索から混ざる旧生成物を特定する。 現行の変更に必要な情報を保ち、検索・添付資料の範囲を整理する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d4-a07": {
       "fingerprint": "9da427a1288365396ebbc11eaf3ea91824427f9a1aef67f64fd31c11c7febcc8",
@@ -2653,10 +2655,10 @@
       ]
     },
     "q-d5-f01": {
-      "fingerprint": "6b5ac2232974b30c20ea637a30a04027044f07d1823663444d89e1112942cafd",
+      "fingerprint": "8113fa598296e4f7e4bfd2d1eb1245e00f5afbc271cd629370ccb82ede73b83c",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2673,10 +2675,10 @@
       }
     },
     "q-d5-f02": {
-      "fingerprint": "359752543ecebc37e09bc918957ea846822ea4eeae525ff3142ed0a3abddaafa",
+      "fingerprint": "e567e6b0bc794a8ae2bd40024d2710b16ddbf83759494a6aa6f3952b5bb6a0df",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2693,10 +2695,10 @@
       }
     },
     "q-d5-f02-b": {
-      "fingerprint": "c979224a6b66b65b3bbcfaadc96029eeb74f6faf0a444e7a80057c0ebe6211af",
+      "fingerprint": "1d88043dd921dad0eb2a9de2fe9d02abcbebc2c0097e8489616f4fba6f9de28d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2713,10 +2715,10 @@
       }
     },
     "q-d5-f04": {
-      "fingerprint": "245c6f1a10af726abd4762820323720c72e3b1436ba414592803ac55f2df19f3",
+      "fingerprint": "a43def4bff90a1a4cd991eed0e13135d616c221324e4c69c4ac4c5b803c4f5ff",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -2733,7 +2735,7 @@
       }
     },
     "q-d5-f05": {
-      "fingerprint": "444aed0a3b0412afa6757350b77835cf8f37c11cd891c74ddb05774b9a8d20ad",
+      "fingerprint": "269f625e1538919f81d3e7d8645528c0ef7f5015d937ded020cbb1fb7c943c15",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -2950,19 +2952,20 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d5-a11": {
-      "fingerprint": "e1bd5d54f9f65c5d82e24a1c1c8009a98977a8bafd17a882a621609c09ac2f44",
+      "fingerprint": "46706a3d1d3e8f1c43f6c644cdbf27fb1bff3a60c158486119407d4859d39f74",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotが生成したREADMEに従って新しい環境で起動すると、APP_MODE is requiredで停止しました。既存端末はAPP_MODE=testで起動します。PORT=3000は両環境で同じです",
-        "エラーと成功環境の差が示す必須のAPP_MODEを、再現できる起動手順へ追加する。"
+        "生成された手順と成功する設定例の差を特定する。",
+        "文書の環境設定手順を直し、実装やCIへ範囲を広げず新規環境で再現する。"
       ],
-      "counterfactual": "停止理由がPORT必須で、成功環境だけ3000を設定しているならB。 停止理由がREQUEST_TIMEOUT必須で、成功環境だけ30を設定しているならD。",
+      "counterfactual": "B：環境設定はそろい、READMEに必要な依存の導入手順だけが抜けていたなら依存導入手順を補う。 C：必須設定を廃止して承認済みの既定値を使う仕様へ変更する依頼なら、アプリの既定値を追加する。 D：READMEの新規環境では起動でき、CIだけに同じ必須設定がないならCI設定を追加する。",
       "evidence": [
-        "responsible"
+        "responsible",
+        "prompt"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -2971,9 +2974,9 @@
         "reason": "PR説明、コミット文、READMEの内容を実際の変更・導入条件へ合わせる文書品質の改善を問う。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。エラーと成功環境の差が示す必須のAPP_MODEを、再現できる起動手順へ追加する。 誤答はD：通信待機の設定は有用だが、今回の起動前の停止を解消しない。／C：ログ出力の設定は有用だが、今回不足している必須前提を満たさない。／B：PORTは両環境で同じで、今回の停止条件ではない。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。生成された手順と成功する設定例の差を特定する。 文書の環境設定手順を直し、実装やCIへ範囲を広げず新規環境で再現する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d5-e01": {
       "fingerprint": "f17e590323a9bc8e2ce5476c1988daba5bb54c1347d6eb9f41409e9af911789d",
@@ -3092,10 +3095,10 @@
       }
     },
     "q-d6-f01": {
-      "fingerprint": "0559b3a8fb842075921ab73fe9173c2c2321b86d267e294acab808089230331b",
+      "fingerprint": "926adf02af4c1ca183eb1799bbde91423386267046d103ddc92b85edfd31ee55",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3112,10 +3115,10 @@
       }
     },
     "q-d6-f02": {
-      "fingerprint": "e48b9bfa6c983cb2c7c331dc06e0110ed6fc42030fd74f1afe49f49d96826710",
+      "fingerprint": "6ca975c3b23af82dde4963f59914b92dd13fa6f194039027e54be1f2fb31e7fd",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3125,10 +3128,10 @@
       "evidence": []
     },
     "q-d6-f03": {
-      "fingerprint": "9bd31a4ca27a75342de0f7cce7fe99e6a8578cf67b2d4015bc490bc9845bfe2c",
+      "fingerprint": "ea9bed238dd429e46bec4585be85e9cf1aa4db6e0beef5abb38ccad7fe94e53d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3145,10 +3148,10 @@
       }
     },
     "q-d6-f04": {
-      "fingerprint": "7226abbbdc2f06e900926ef26b3bfb44b691d8e97a857a432ea50105839177ad",
+      "fingerprint": "72b2e03c6761eee5262903e6b9b864364cbadc6476612c138151b23f33640df3",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3165,10 +3168,10 @@
       }
     },
     "q-d6-f05": {
-      "fingerprint": "6cc965b31ee79297e83b5dd639880e1b45dae35212a1338caffdfb5693a03f98",
+      "fingerprint": "c998cdb34af16d51037d69e2a8801095778668c5bfebd1c642177c0a4dad3727",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3365,20 +3368,21 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d6-a09": {
-      "fingerprint": "cac49187832c0823ca2fea1ba83207816da6386ebb95c5f64e2089c35814402e",
+      "fingerprint": "8bb0cfa368a44fd3ddec68ff40d703a2598ecd4492a19ffdd3a1e8b376433574",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotを使った人数が増えましたが、同じ期間にライセンスを割り当てた人数も倍増しました。利用者が増えただけなのか、一人当たりの利用も増えたのかを区別したいと考えています",
-        "人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。"
+        "割当済み・利用可能であることと、IDE活動が観測されることを区別する。",
+        "無効なテレメトリーにより記録がないことを未利用へ読み替えず、収集条件と実利用を照合する。"
       ],
-      "counterfactual": "組織全体の利用者総数が目的なら総数が直接の指標になる。",
+      "counterfactual": "B：活動の収集条件は確認済みで、承認対象者と実際の座席割当だけが一致しないなら個別割当を照合する。 C：活動収集は確認済みで、対象利用者に適用されるIDE機能の無効設定が疑われるならポリシーを照合する。 D：IDE利用の観測条件は確認済みで、開発成果や品質の変化を評価する目的なら成果指標を照合する。",
       "evidence": [
-        "rest-api",
-        "space-framework"
+        "copilot-seat-api",
+        "copilot-metrics-data",
+        "rest-api"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -3387,9 +3391,9 @@
         "reason": "組織の利用集計API、シート割当・回収、監査イベント、Enterprise/Organizationの強制ポリシーを扱う。入力除外・出力所有権・公開コード通知の機能自体ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。人数と観測期間という母数をそろえることで、一人当たりの変化を判断できる。 誤答はC：管理操作の数は一人当たりの利用頻度とは異なる。／D：コード量はCopilot利用の一人当たりの変化を直接表さない。／B：割当人数の増加と一人当たりの変化を区別できない。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。割当済み・利用可能であることと、IDE活動が観測されることを区別する。 無効なテレメトリーにより記録がないことを未利用へ読み替えず、収集条件と実利用を照合する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d6-a10": {
       "fingerprint": "483f69b3c4111570e03a29ea61c53c5252fac14123a594ae661af1afc0b36e4f",
@@ -3547,10 +3551,10 @@
       }
     },
     "q-sc01-1": {
-      "fingerprint": "0e952bbbf17ccebbdf48e3507989694d92296f86b5500035ad31758e10534b8d",
+      "fingerprint": "1c6789e9e0ad16b2ad51dcf42a04b03ffa401b5b86065a30af780d8d0fc03f94",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3655,23 +3659,23 @@
       }
     },
     "q-sc02-3": {
-      "fingerprint": "8bf48193eef5c17747d29105404a7f55e57b2560ff93d8d8911e6b8964001617",
+      "fingerprint": "6432ddd96260e265c70d89b1819655a5deb9e8b6ab68d325afbe9a47e5911a62",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：【Apex Financial事例】Copilotへは2.4→2、2.6→3の丸め例を渡しています。候補となる方式は、最も近い整数へ丸め、ちょうど中間なら小さい方・大きい方・偶数・奇数のいずれかへ寄せる四つです。承認済みの結果は1.5→2、4.5→4でした",
-        "1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。"
+        "確認済みの通常値と、まだ解釈が違う中間値を分ける。",
+        "既存例で区別できない方式を、対照的な境界例で具体化する。"
       ],
-      "counterfactual": "承認済み記録が1.5→2、4.5→5で、中間値は大きい方へ丸めるならC。 承認済み記録が1.5→1、4.5→4で、中間値は小さい方へ丸めるならD。",
+      "counterfactual": "B：中間値の方式は合い、通常値を常に切り捨ててしまうなら、最も近い整数へ丸める通常例を追加する。 C：丸め結果は仕様に合い、数値でない入力を受け入れる処理だけが食い違うなら拒否例を追加する。 D：丸め処理自体は正しく、生成された呼び出しが既存関数の引数に合わないなら利用例を追加する。",
       "evidence": [
         "prompt"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。1.5は大きい側、4.5は小さい側の偶数へ丸めている。候補内で偶数方式を特定し、2.5は2、3.5は4の例を追加する。 誤答はD：同距離を小さい側へ寄せる方式の例。1.5→2という承認記録と合わない。／C：同距離を大きい側へ寄せる方式の例。4.5→4という承認記録と合わない。／B：同距離を奇数へ寄せる方式の例。1.5と4.5の承認記録がどちらも偶数へ向かう点と合わない。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。確認済みの通常値と、まだ解釈が違う中間値を分ける。 既存例で区別できない方式を、対照的な境界例で具体化する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-sc03-1": {
       "fingerprint": "8e9dbac42bfde57df7b39274457187c2b3444a8837bb99618aa29e7381d3bad9",
@@ -3714,20 +3718,20 @@
       ]
     },
     "q-sc03-3": {
-      "fingerprint": "ef17964670035a419413bcc0bf7375cff7aa7a4ae30f647cde725b786bff9750",
+      "fingerprint": "d7ac6a3ed7cbf203f0acdacdb7c0e5a9a955b9ad5e18e00305cbeb0d89df4c86",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：【Horizon Cloud事例】ログ取得MCPが返す全件のログは、Copilotへ渡せる入力上限を超えます。調べる注文は14:02に受け付けられ、相関IDはR17です。受付前後1分の範囲に必要な受付・検証イベントがそろっています",
-        "時刻と相関IDの両方を合わせ、必要な経路のイベントを容量内で取得する。"
+        "大きな全件入力から、調査する要求のイベントの対応を保つ条件を特定する。",
+        "MCPで必要な経路だけを取得し、例外・集計・構成差分という別目的の資料と分ける。"
       ],
-      "counterfactual": "調査対象の相関IDがR18ならB。 対象時刻が14:20でR17ならC。",
+      "counterfactual": "B：要求経路は確認済みで、R17の特定例外の発生箇所が未確認ならスタックと周辺コードを取得する。 C：R17だけの経路ではなく、同時間帯の処理件数と遅延の傾向を比較する目的なら集計を取得する。 D：要求経路と失敗段階は確認済みで、直前に変わった構成を調べる目的なら設定差分を取得する。",
       "evidence": [
-        "mcp",
-        "architecture"
+        "prompt",
+        "mcp"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -3736,15 +3740,15 @@
         "reason": "今回の目的に必要なコード・ログ・関連ファイルを選び、入力文脈を構成する。内部の処理経路や固定順位を問うのではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。時刻と相関IDの両方を合わせ、必要な経路のイベントを容量内で取得する。 誤答はD：対象要求を除外し、今回必要な経路を取得しない。／C：相関IDは合うが、障害時刻から外れる。／B：時刻は合うが、別の要求の経路を取得する。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。大きな全件入力から、調査する要求のイベントの対応を保つ条件を特定する。 MCPで必要な経路だけを取得し、例外・集計・構成差分という別目的の資料と分ける。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-sc04-1": {
-      "fingerprint": "f7c51e33908b8b3404415b4acc67f2acf3be329314874aea9f2a3a7d2a2e940f",
+      "fingerprint": "9c62ba514b0ecc71d28367155251ec6d52ea1cfdd670827effa3d57be82a138a",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -3781,25 +3785,25 @@
       }
     },
     "q-sc04-3": {
-      "fingerprint": "82b3f52f9ae7d41cabcca512b6cee1955b37843590ae7af8199ce01933ba6972",
+      "fingerprint": "a21246a8f1f5cef7e74c520e7542f103a09fb1711ed710ed4af3b9e444d5b105",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：【Nordic Retail事例】PRはapps/api/token.tsとapps/web/page.tsを変更します。Copilotレビューを行うほか、このPRではAPIにCodeQL、UIにリンターを実行する方針です。各チェックは指定したディレクトリ内だけを検査します",
-        "APIのセキュリティとUIの規約をそれぞれ専用の静的チェックで確認し、AIの助言を補完する。"
+        "レビュー・型・規約・依存の確認と、権限の実行結果の確認を区別する。",
+        "未検証の担当外要求を再現する実行テストを、許可ケースとともに依頼する。"
       ],
-      "counterfactual": "変更対象がAPIだけで、APIへCodeQLと規約検査の両方を適用する要件ならC。 変更対象がUIだけで、UIへCodeQLと規約検査の両方を適用する要件ならD。",
+      "counterfactual": "B：担当内外の実行テストは済み、静的検査で扱う脆弱性パターンの確認だけが残るなら静的検査を依頼する。 C：権限境界は確認済みで、チームの命名・形式規則の確認だけが残るなら規約検査を依頼する。 D：APIの実行動作は検証済みで、採用する依存の既知脆弱性だけが未確認なら依存検査を依頼する。",
       "evidence": [
+        "tests",
         "code-review",
-        "codeql",
-        "secret-scanning"
+        "responsible"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。APIのセキュリティとUIの規約をそれぞれ専用の静的チェックで確認し、AIの助言を補完する。 誤答はB：両チェックの対象を逆にし、APIのCodeQLとUIの規約検査を欠く。／D：UIの規約は確認するが、APIのCodeQLを欠く。／C：APIのCodeQLは確認するが、UIの規約検査を欠く。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。レビュー・型・規約・依存の確認と、権限の実行結果の確認を区別する。 未検証の担当外要求を再現する実行テストを、許可ケースとともに依頼する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-sc05-1": {
       "fingerprint": "a6cf6cfc0767bd277a03af14252d5c3761a3fc1e3dca62708796701a0eb89dca",
@@ -3862,21 +3866,20 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-sc05-3": {
-      "fingerprint": "3c175cc20930614aadd35ada1a22139e905ed2d4f645f7bdd28495157281ea0f",
+      "fingerprint": "0f65bf339ac5d3f9406dca29b9732c42f5c5f18a1570bc212a1ff7abdaa2f857",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：【Vanguard Health事例】患者情報はChatへ送る前に匿名化し、原本の閲覧は担当者だけに限定します。また、認証トークンは既にコミットされたものの検出と、新規Pushの停止が必要です",
-        "患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。"
+        "調査目的は利用者別の傾向ではなく、一つの要求の経路だと整理する。",
+        "機密情報を除いたまま必要なイベントの対応を保つ資料を選ぶ。"
       ],
-      "counterfactual": "Gitで既存のトークン検出だけを求めるなら、Push Protectionの追加要件は別になる。",
+      "counterfactual": "B：患者別の傾向比較が目的で、仮ID化した件数集計の共有が承認されているなら仮ID別集計を用いる。 C：個々の要求経路ではなく、時間帯ごとの失敗件数の比較が目的なら期間集計を用いる。 D：要求経路は確認済みで、特定例外の発生箇所の調査が目的なら機密を除いたスタックを用いる。",
       "evidence": [
         "responsible",
-        "secret-scanning",
-        "exclusion-concept"
+        "privacy"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -3885,15 +3888,15 @@
         "reason": "Chat入力・送信先・保持・除外範囲のプライバシー条件を設定・審査する。公開コード一致の通知の切り分けではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。患者データの入力・閲覧境界と、Gitの既存検出・新規Push停止をそれぞれ扱う。 誤答はD：既存の検出は行うが、Push停止の条件が欠ける。／B：原本の担当者限定とコミット済みの検出条件が欠ける。／C：患者の入力前匿名化もGitのトークン保護も満たさない。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。調査目的は利用者別の傾向ではなく、一つの要求の経路だと整理する。 機密情報を除いたまま必要なイベントの対応を保つ資料を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-sc06-1": {
-      "fingerprint": "68058730fb5fe14466d9376e68f59cbc95190ac0c246c6046b1f1a5ae8666f89",
+      "fingerprint": "306f917688079743b4cea103eca79e3e92542ae7a8b1437f4f56488ca186917b",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4004,7 +4007,7 @@
       }
     },
     "q-sc07-3": {
-      "fingerprint": "d5197b7fa4d04cbff4567b2bc3f6cede5f9d8646d455730694a2da243d5df052",
+      "fingerprint": "2164f0656340fd59582014c5f104f623ca712c752c9689b12a2c115bb15f0f9c",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4017,10 +4020,10 @@
       "evidence": []
     },
     "q-sc08-1": {
-      "fingerprint": "7eec7a31e7629d35f60eea7a904add5d427ecc3fc4be17bb783ee0b552447c83",
+      "fingerprint": "62478d01a56e79acaec8c48843c3f76b629de631ad63d0f6e983dc71b29b177e",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4057,7 +4060,7 @@
       }
     },
     "q-sc08-3": {
-      "fingerprint": "d92b125c3de14e43ac50738bd6434d72b1a5525eeaf5951636d57be4610bea1f",
+      "fingerprint": "7b3c23f0eb0fcc3de78e4059ed89a891dce49159de22587fe37fc205c6fff303",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4092,7 +4095,7 @@
       ]
     },
     "q-sc09-2": {
-      "fingerprint": "8b5dea6b1ab4d9ae3f899638922197ba2751fe81be728cf5db56be6be188f3f9",
+      "fingerprint": "e28ee207aa1685bc1ee74733902e7aa397e30e3ac0b62ae508aac5a6ed5d54fc",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4131,10 +4134,10 @@
       ]
     },
     "q-sc10-1": {
-      "fingerprint": "b78daa79ddfc7270a0c3b929f4fa0665579eced1b61107802bcbd40ce04899bc",
+      "fingerprint": "46dd2bbf0fbea11a776b9d0b2863b714a698549027be9731cf45451a952ea260",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4151,10 +4154,10 @@
       }
     },
     "q-sc10-2": {
-      "fingerprint": "b4fe9a6ebd5a65eab53d93dfeecaad9286d1a1bda26af3cfbc06d05f556fe7c9",
+      "fingerprint": "e92bfe75ad30db2f38ee26a5388fa603b83ba73efc1cea7768caf4d703b5c6f5",
       "beforeDifficulty": "advanced",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": true,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4197,10 +4200,10 @@
       }
     },
     "q-d1-g01": {
-      "fingerprint": "86ff307268b73cb11410aef3cc5b3198df4d2f832834ca032f68ac9056dc5a27",
+      "fingerprint": "3d2b0961da669fef5cee4540264f121b9254a3922c3f0cd715fe49b6a9ba0973",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4210,10 +4213,10 @@
       "evidence": []
     },
     "q-d1-g02": {
-      "fingerprint": "39c4246084be16a8ba881d548559cae151f70a2edae33b17f324020156328157",
+      "fingerprint": "5918029d9c7f67c1be25e14bca425c48e07359156e4110979fac1b0a50a3a363",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4223,10 +4226,10 @@
       "evidence": []
     },
     "q-d1-g03": {
-      "fingerprint": "2e10bb56c954bda1ae01f50e14234bd5a0d585c852673758755ca2b08c4160a5",
+      "fingerprint": "96c3b2ced484870e8c9f088ff731d56545107289cbc38fdbdaa1e66cf0ff0d89",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4236,10 +4239,10 @@
       "evidence": []
     },
     "q-d1-g04": {
-      "fingerprint": "841f0c749bc1fcc207460a006f7820fef976a69853d474e1c9e1996c23f04bc4",
+      "fingerprint": "387d6ffb110940dc12f70da03b3e9b93c1cfe7ea3bf1be0bea4efcc033227a40",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4256,10 +4259,10 @@
       }
     },
     "q-d1-g05": {
-      "fingerprint": "5f2d63141a2ce200ecead7010037196cbb67bec1860dac142479f293a084f842",
+      "fingerprint": "b53e5d69568c48ad08f61998972a3862f16c2543fef7d0d94ba08a9d40cf5940",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4276,10 +4279,10 @@
       }
     },
     "q-d1-g06": {
-      "fingerprint": "2c33782d05c3b99a51fd7d982a7b00d47744df512b4e9612946acc7f00e2e5f1",
+      "fingerprint": "babef74d705b4c12df299059a92f418ca926865ef15f2a1df98a7de6683d150f",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4289,10 +4292,10 @@
       "evidence": []
     },
     "q-d2-g01": {
-      "fingerprint": "f9710ad21939be24518e840d1fc3f88f43f8c8c50c3fa0a578bc982321a38a9a",
+      "fingerprint": "94291c4eee3aca9394a98c3f8736f3e6562527be4eb8ed3822139e0ee484d9b5",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4302,10 +4305,10 @@
       "evidence": []
     },
     "q-d2-g02": {
-      "fingerprint": "35d09731c36caf207734d6e924aff7abd3e0cbd87c1fcdd7d112360c2a4969d2",
+      "fingerprint": "ab60dd7114c33720c30642daf6435a8b69f730be030031be7f1398501770a6ea",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4315,10 +4318,10 @@
       "evidence": []
     },
     "q-d2-g03": {
-      "fingerprint": "6a81cf193e6f603e318885e968d49f11307ab2b42f63be8c6945ce96bad2c8e7",
+      "fingerprint": "85e1674497cc55695e9c403e2d946681f7757f5bd487cf1ea4c80d9dcafd1f8a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4328,7 +4331,7 @@
       "evidence": []
     },
     "q-d2-g04": {
-      "fingerprint": "99b6cd5d495e833e8fd6421d988e2cc0624092a2cd53daef7fa1b61bd6e1677d",
+      "fingerprint": "4fd009abca905655628898ec5d22e3344ffc403a6ffccbe5117717febcd555b4",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4341,7 +4344,7 @@
       "evidence": []
     },
     "q-d2-g05": {
-      "fingerprint": "66fce926b94a784d8588ff69ce5e6e1f74f9c5582795cedc082887074c766178",
+      "fingerprint": "ba1b05da74ba7983389fc10e0a52766a39f716debca4215d21cdcd8995b43ec3",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4354,7 +4357,7 @@
       "evidence": []
     },
     "q-d2-g06": {
-      "fingerprint": "5a5eadc6aceeb499976a2f8c027a581645d1ac1597fc968f690167bc0ebe8307",
+      "fingerprint": "da8911e2b313b751cfde0c5564d59b9a1f9246275fdf340b7f0c1a70263ef90a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4367,7 +4370,7 @@
       "evidence": []
     },
     "q-d2-g07": {
-      "fingerprint": "8bccf8cf521e809068ccbf1a3417c6e05310e8ef709cead7eef84fad4db05b38",
+      "fingerprint": "c1d41aa0e9ca62d41645c753bfb5ea46886887ddbf38d7634d97abaf8938e316",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4380,7 +4383,7 @@
       "evidence": []
     },
     "q-d2-g08": {
-      "fingerprint": "1a11a4cf37c9dedd027cb86c03724543337a0a0642b9d8241c8910614fb49f1c",
+      "fingerprint": "388412d260ab3fb6c051532d08475dfd6a275f138a894208f55904cfd093a9d8",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4393,7 +4396,7 @@
       "evidence": []
     },
     "q-d2-g09": {
-      "fingerprint": "2e0b1519c6cca9e6d80fe86066927931b15aa0c350ebeb62d39cb743551229ea",
+      "fingerprint": "b2949889aaa628aa057ab4859261fe5be837008f12391d0a1213c1152e2963ba",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4406,10 +4409,10 @@
       "evidence": []
     },
     "q-d2-g10": {
-      "fingerprint": "5adab5a93c52330e4c8b40123336aef31b4f84b288e7e3fc5c841f5d55201fdf",
+      "fingerprint": "a98698fcd788afebf0a0ac1170b9551badc51ed4e384fad0ce62237b1a8afafd",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4419,10 +4422,10 @@
       "evidence": []
     },
     "q-d2-g11": {
-      "fingerprint": "7660303f5e5063f0e7d250df51bc54ab16554695417f33a4914b431d122b4711",
+      "fingerprint": "0ef3418497cb913818143d3c44f4d8eb5e2e1c1878ee0d7a729cf88b4f45cf82",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4432,10 +4435,10 @@
       "evidence": []
     },
     "q-d2-g12": {
-      "fingerprint": "c66b0b530e84f515fd684e6c6e29c56160ac82974cfb9f6646f97cbe622e23b5",
+      "fingerprint": "10ebe8d282e5b4657c4a82a0b8055785912ce9772741ebd17871853d934cebee",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4452,10 +4455,10 @@
       }
     },
     "q-d2-g13": {
-      "fingerprint": "b6109b3f365aff3b938596f061999c2889bb2710671cff79fa66b2220170937c",
+      "fingerprint": "0a71bb647c0790d3333502b0e30c5b1d4117be0def595c636fac8f989a5e7734",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4465,10 +4468,10 @@
       "evidence": []
     },
     "q-d2-g14": {
-      "fingerprint": "d1322521571846d372be57a41a4c17f130d37a9f18ed43341c25863f13b86306",
+      "fingerprint": "4df76d3ffb483fc42c90401fd21b4ad7ad57d2183c24717ddafd280f8f0c4f1a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4478,10 +4481,10 @@
       "evidence": []
     },
     "q-d2-g15": {
-      "fingerprint": "9fe5ff62d6b2f9fe45a306dd4b70b5667a2030fad99a63fc6788ddf338d9fc55",
+      "fingerprint": "d1012c5bbd1432229bad6e311bbfcf5f397a9b615a795754381b79eebf957a06",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4491,10 +4494,10 @@
       "evidence": []
     },
     "q-d2-g16": {
-      "fingerprint": "e61169718c17cff016966e49d9116a0aed4e82cc09342e58ab06c0276afb29b8",
+      "fingerprint": "84cf6e5389601e608345ab5ed9b22f9f6d52f6d58cef4d53af064c9daff88080",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4504,10 +4507,10 @@
       "evidence": []
     },
     "q-d2-g17": {
-      "fingerprint": "961ccda60fa6946337b12f904dc5adefb954c658f8e78fa107a6e56c100c72d1",
+      "fingerprint": "857d6c445beccc72fca0b5233d76d821dfcd4ed293f7988038d06fc648c81197",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4517,7 +4520,7 @@
       "evidence": []
     },
     "q-d2-g18": {
-      "fingerprint": "5a9af2dc47600390a6ae139ab9e6f3f8e3cc535d084ea7f0ac435b2d92a623ca",
+      "fingerprint": "c61ace853e8c41f6789c55262172917917521d9104151d997deefb1198b7de9d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4530,7 +4533,7 @@
       "evidence": []
     },
     "q-d2-g19": {
-      "fingerprint": "5fbd19711c62241cd1869a8776af4746c8523da568ed02feaf091643ad9d8dff",
+      "fingerprint": "642d930fe9d1ae913a3c192029c52a70b9ceadad5b538b0c1af0724506304b4a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4543,7 +4546,7 @@
       "evidence": []
     },
     "q-d2-g20": {
-      "fingerprint": "f845769a619e2cab0023c24ca6d1f9b44eaa1d718da78507119c64a4432f6200",
+      "fingerprint": "fd83bb44ab9f0f65b67acfffc878c0ddb62e2e081b95e614c446d799e3a0531c",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4556,7 +4559,7 @@
       "evidence": []
     },
     "q-d2-g21": {
-      "fingerprint": "c29cbdd8d57076432461967992582372ff5345341eae96281ceed5f44b1c07de",
+      "fingerprint": "fe93cb7f0e17b2290208c6374cc5917c1b52bf0b52ce3f6e30fdf7b7b0b4ea36",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4569,7 +4572,7 @@
       "evidence": []
     },
     "q-d2-g22": {
-      "fingerprint": "e48d46a7df53c3f5e1382b913557ccb98d3e837f4e5d622990655d1e5fbd23a1",
+      "fingerprint": "73a10f010a28891882dbdbc0009da36b7e02e11688c9514d13bef2085b07bb01",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4582,10 +4585,10 @@
       "evidence": []
     },
     "q-d3-g01": {
-      "fingerprint": "378c17ebb4620693f69695754e95b98b69bf048625a8ea2bc42d5184ba50b59c",
+      "fingerprint": "b151a13daf0e238962b24150c401ae9b603cb4489dc0f2956b37bb7ddbbdc416",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4595,10 +4598,10 @@
       "evidence": []
     },
     "q-d3-g02": {
-      "fingerprint": "137805438da65df26217cccc6f776b3956f33f051242386239bc4ac327ec72e0",
+      "fingerprint": "c310cb32ac151829a531a5bccc4a31a6fa1f0db4eea68c28b8215b6a86d9bed9",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4608,7 +4611,7 @@
       "evidence": []
     },
     "q-d3-g03": {
-      "fingerprint": "c9ad04fb14c658bb79317ffde40e9e9870fb11e641f4fdb84231143ded1051cf",
+      "fingerprint": "802b6ee3be0e29620a880bfdb17b06b24f2a6a44547e1e080e59522fecfcbb0b",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4621,7 +4624,7 @@
       "evidence": []
     },
     "q-d3-g04": {
-      "fingerprint": "4769dea78fbb89a7d512e39de5c4b5548287f870607d06c8c883b7ffce7b9bc0",
+      "fingerprint": "861f486d409ba7c29478c32ac9144ac3cdc267ad680a930b2a21dd7b253b275d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4634,7 +4637,7 @@
       "evidence": []
     },
     "q-d3-g05": {
-      "fingerprint": "0d97da061c181f77544f7553606e7e1853e802964a393b2e7dc6009949f2ad4d",
+      "fingerprint": "6af759e92c89992bc2487a57bd8fe83e31f4015365edcfcb4c74c06cf3765a19",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4647,10 +4650,10 @@
       "evidence": []
     },
     "q-d3-g06": {
-      "fingerprint": "ef61b9e24b7833f4fb53bcff76af75182d618c1ee7846fc408a6c2ed253f4b7c",
+      "fingerprint": "e673f35304a281bee85c4e4da5dd993fe505acd310aafb5d7c72261761fb1d95",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4660,7 +4663,7 @@
       "evidence": []
     },
     "q-d3-g07": {
-      "fingerprint": "adc53e8ed4e6e7f66ca74965a2eaf9bfb725843cb7fa948d366551b322510a58",
+      "fingerprint": "ed9542868629f9986c4fa373ecb1c968b92b6924c585867c9a6663a3f7d1c641",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4673,10 +4676,10 @@
       "evidence": []
     },
     "q-d3-g08": {
-      "fingerprint": "2247c08f0b34439a2b7e4886f683d2f16b7c151ec9c3bb93a40a888979f38abd",
+      "fingerprint": "c7a929e0c25889acd8ac3493f6725bb92d93643bda0da8db3e552d0feacd84b7",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4686,10 +4689,10 @@
       "evidence": []
     },
     "q-d3-g09": {
-      "fingerprint": "a158e93ed119608834d757fb3c3f8ec549ea9861e1a5174203b5f122c7eac238",
+      "fingerprint": "2de6c1baa949501ff53fd64987837e5bce5aa92d3817437a3019fe2be0bbfdd8",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4699,7 +4702,7 @@
       "evidence": []
     },
     "q-d3-g10": {
-      "fingerprint": "f55240c2e7be7e60f380484c2d3840f7f31208f42a0f7072ad70bf2ea27838e1",
+      "fingerprint": "62c0529e43892c1d3d0a26ed6217c25965df837d86d92334e1c20124c76a6329",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4712,7 +4715,7 @@
       "evidence": []
     },
     "q-d3-g11": {
-      "fingerprint": "ac382682fda5b90b2f58279c7839184128af5d7541c277730617d40bddf33e97",
+      "fingerprint": "c5e4e13abea6ed40d3b078aab966864d61e6b08f18c329684de65770d4cc15f2",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4725,10 +4728,10 @@
       "evidence": []
     },
     "q-d3-g12": {
-      "fingerprint": "e6a7b1b3ab0128c78cc52f55c55106447571eb03815533d40ee5a640c08f67e9",
+      "fingerprint": "feb1f232ed541fd1f027246b47c425e4dca488e551c947578f3b78e76c79455f",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4738,7 +4741,7 @@
       "evidence": []
     },
     "q-d3-g13": {
-      "fingerprint": "092bed4f6b43a2144fefa15abff9545e0947af63e9dd8bf4c92645a771d205da",
+      "fingerprint": "46ac2d8778fea280f13f962b9113ac09b69dae9748feeaf72e3f389130434dc6",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -4751,10 +4754,10 @@
       "evidence": []
     },
     "q-d3-g14": {
-      "fingerprint": "3b21307f83bf55dae374cee7baa70feaa25833473078ee7fe71f858c5e3812a6",
+      "fingerprint": "4d61f59254ca625086b7da8134bf8a16c02b3ba1d63aeb247f84d6d331068de7",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4764,10 +4767,10 @@
       "evidence": []
     },
     "q-d4-g01": {
-      "fingerprint": "bf4ab6c3368b28ef1dccbea060bc3ad070a9c9e02ca3690711636a24be9fa929",
+      "fingerprint": "f79b983ee4b938c7b69e07f47fc3ee43c78a5eda21c05861ea40386775b5751b",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4777,10 +4780,10 @@
       "evidence": []
     },
     "q-d4-g02": {
-      "fingerprint": "76cd3e73a3dd2cd60a91c0877961288b7ac0d4a8608e37005be6f92d5df3efe2",
+      "fingerprint": "867c80f82fb5a54a0371538437dac08e3672892f889e151f4421d416f318c24f",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4790,10 +4793,10 @@
       "evidence": []
     },
     "q-d4-g03": {
-      "fingerprint": "3d4b7c3049b2b637738a2b0ea3ff24b952008cfe6d0b6b7ef7b630ab511a95f8",
+      "fingerprint": "a3ec264e61f7bbbed79c850d029ed1f7e97ab0afc2579d411050b5821e9e0590",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4803,10 +4806,10 @@
       "evidence": []
     },
     "q-d4-g04": {
-      "fingerprint": "efe3aa9d5abe1f770c209b07ea1ed9902d6d17c289fbaf49efcfb7e61424ad04",
+      "fingerprint": "342fee9a42d2294677ae2da77d62bebaa2c894c5c10affdb1852b5fe6f374be9",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4816,10 +4819,10 @@
       "evidence": []
     },
     "q-d4-g05": {
-      "fingerprint": "c1f9032031aef78791439e8a19ee81c34d3452a4cb7bd54ca7ba2931eaf5f900",
+      "fingerprint": "6cb8f05ea73b1410815e26586ba43ec08c0ae1539112a1288a051fd868128555",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4829,10 +4832,10 @@
       "evidence": []
     },
     "q-d4-g06": {
-      "fingerprint": "4490736f87391766f97c9f983c89d29e1c2dcd87ed56a266585d35011fa58d27",
+      "fingerprint": "a639f6a47de8af1619e73f923780e6790fb44a7b8c997d0bbc9a48b3552c2757",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4842,10 +4845,10 @@
       "evidence": []
     },
     "q-d4-g07": {
-      "fingerprint": "9a3f8c5541484bdd9b7bebd45cf37213673d8eaa4c79fcecc906455aca2bd188",
+      "fingerprint": "eeaefe8cba4f863c0e27d52119a8764c636457b2d5aab0830875af89915d37f1",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4855,10 +4858,10 @@
       "evidence": []
     },
     "q-d4-g08": {
-      "fingerprint": "49bf4c4ed4ff68cfa5d08350aefa7e541cfad6a5f8b5791933cb610241eb4890",
+      "fingerprint": "c3f42da9c6fde3ea7dcf2e36f4bdd18869159486cbe0be9c22bfd32fcae30cf2",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4875,10 +4878,10 @@
       }
     },
     "q-d4-g09": {
-      "fingerprint": "d4f203c12433667daaafc7870be8f678d553a607e9775a1aad455898456957c2",
+      "fingerprint": "785746a5eafc4d25e9625f41fe3ee285e62847d95d92030919e23423bb2575ee",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4895,10 +4898,10 @@
       }
     },
     "q-d5-g01": {
-      "fingerprint": "43100203a9afa74c999d916a47db15d85c56bd9bd5dbeb902f050a8d6c03c632",
+      "fingerprint": "c8b773fd8ac6e2ee65aef7bdc7523d9b8d5f28ef0f9ca85694ad326824175f85",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4908,10 +4911,10 @@
       "evidence": []
     },
     "q-d5-g02": {
-      "fingerprint": "740fc5e68239fa57b235d73a4131b609723d0053caf75fddb1d988c64a11ada6",
+      "fingerprint": "25a5e53a37e927baf03ea7e7402f039962e2ca2607a33484544a2fd4f1770e75",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4921,10 +4924,10 @@
       "evidence": []
     },
     "q-d5-g03": {
-      "fingerprint": "a5621ced4faec8ce39df8124b0f94d9f788da19587d01adad6bf802047030cd8",
+      "fingerprint": "5dfe166dafa20ea79463ddf5113cfc61802e535e6d63c4c11d54eccb766d0177",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4934,10 +4937,10 @@
       "evidence": []
     },
     "q-d5-g04": {
-      "fingerprint": "f6c3c387e4841d82d6b74182c28f231f8871f8f8b095178fd685ffbf9eaadc08",
+      "fingerprint": "538d82acfa8d865f7b49fc10d40b5a2191e5c59c4582e9e6350af88a294f0436",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4947,10 +4950,10 @@
       "evidence": []
     },
     "q-d5-g05": {
-      "fingerprint": "d50fcae3380a23bc380cea3d37272641e6e1332dcd7a366b6969386c999becac",
+      "fingerprint": "fdd7af6c7de52da52a230ad1de3adb8daf473f1b687e5347ec0ecf4a6b94b337",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4967,10 +4970,10 @@
       }
     },
     "q-d5-g06": {
-      "fingerprint": "a2dbccc8c7f963e43d634e67da6a02a2dce83d1b0ec1da8d1a80eef9ecd66ff6",
+      "fingerprint": "a468c5c8321136de1b09bf0890f1e2d67364da881bb909c388d85bef8c4af078",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4980,10 +4983,10 @@
       "evidence": []
     },
     "q-d5-g07": {
-      "fingerprint": "cf6559ce8e1501ed5c4ef4d85a3e8f26390537b008abef8d8f6f2e49f2b4a5ee",
+      "fingerprint": "c99bb46088e578f978e6a95c827085f608ef27d1095ec3957b1b731773367b20",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -4993,10 +4996,10 @@
       "evidence": []
     },
     "q-d5-g08": {
-      "fingerprint": "b601ee941627fc51c9b0213cbb6130f3ce06f0a77dc356d646977b5ae6fb8aa7",
+      "fingerprint": "78f71ac26e0807a14147b5d3a62e25e8cba413d86d07a1d505767f785e3686ad",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5006,10 +5009,10 @@
       "evidence": []
     },
     "q-d5-g09": {
-      "fingerprint": "c7810de947ab9fde957963ab432861920c16e6655ff9bfedc1401942f255fb55",
+      "fingerprint": "cb5caf9180b233e2824e6c352010fc0c3c71a5d104e63a3f99302c2c05b6b60c",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5019,7 +5022,7 @@
       "evidence": []
     },
     "q-d5-g10": {
-      "fingerprint": "f5742dc9d0aa1bc349506c750f917226d0b75d7c14d67c4cddd212add486d6af",
+      "fingerprint": "f3bb4884451a808768983c1ba9f02dca4de4258819591ededdf74021a9aa0faa",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5032,10 +5035,10 @@
       "evidence": []
     },
     "q-d5-g11": {
-      "fingerprint": "bdc919bdd76bacc07ca2c7431a88dcfec950f1e275559adc167263300c0f45a6",
+      "fingerprint": "3af04f1f383d260c4daa60b8d34901e40438aeee5d441ef9416470d9dc0e4336",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5045,10 +5048,10 @@
       "evidence": []
     },
     "q-d5-g12": {
-      "fingerprint": "bb7feb01fac3c81d7a8e5b60f7970b9a3d095b696e539ef539a70fcec2376dd5",
+      "fingerprint": "6702bbc3f570ea09847e9c4408e2811a0a6abffe2bfabf3a1901b398009d2f8a",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5058,7 +5061,7 @@
       "evidence": []
     },
     "q-d5-g13": {
-      "fingerprint": "4d6e421c5d139603dd2d09237702e9e047974136de52b96727523dc1a6da31e4",
+      "fingerprint": "f43d1ecced0eeb07c465f5f061484d4e51f1d9efa8935223b0337de65cf535b8",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5071,7 +5074,7 @@
       "evidence": []
     },
     "q-d5-g14": {
-      "fingerprint": "a935a5ea6dce910359192678049e2d27dd7449a8cc209e77ff9f64ac3d6a6d31",
+      "fingerprint": "67a1640425f3617808567ff7fa8f91ff63d067415088813c19f607df748e9758",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5084,10 +5087,10 @@
       "evidence": []
     },
     "q-d5-g15": {
-      "fingerprint": "8cc97fc5b799e4ad25c6aa2306cb4e1d10416b6785b230b2c5d253e3a4e66ae6",
+      "fingerprint": "5540bc974de7a5fadb39e19612dc1abebe25ea713a6f4b5a63be664d2f27e90f",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5097,10 +5100,10 @@
       "evidence": []
     },
     "q-d5-g16": {
-      "fingerprint": "d8c110539c4a2692704238bfae54357ed7ed84df45c927040b57f63b0ef5ceda",
+      "fingerprint": "580976039c3da3399af531418ce629ec67655fd2f54d74fbdbd0243538295daf",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5110,10 +5113,10 @@
       "evidence": []
     },
     "q-d5-g17": {
-      "fingerprint": "953a79b75c3ced375ebfd29c627de0030fe95329a93f5ec5b327da9b71d0fc72",
+      "fingerprint": "cdfdcaae57e86752bbe84eec3ee71b54fe47bcd5a1433292e7319201b90bf339",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5123,10 +5126,10 @@
       "evidence": []
     },
     "q-d5-g18": {
-      "fingerprint": "6a441db503496aec319213c2d17d7fe62464f8e86d258775c17209a61ce77f0d",
+      "fingerprint": "7fbbdadcef50de3202b7fdfee7d6fb42271ac89d8cc0f88b96a246de7fa01b1d",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5136,7 +5139,7 @@
       "evidence": []
     },
     "q-d6-g01": {
-      "fingerprint": "242a3b1f5bb3e2a687a0662b6b7de5b4d7b57b826d1031b2d62d5b0af0ffb998",
+      "fingerprint": "2f9950a873c01cb970b7520ef1bc715f4cb00640b959f885f7699c0f53d2d557",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5149,7 +5152,7 @@
       "evidence": []
     },
     "q-d6-g02": {
-      "fingerprint": "62b92d0ccfbff020a2c2594c4838933a5df65d2d7e9aec65a3ccfbe02e58d94e",
+      "fingerprint": "fbc07bfe61042971d04d816d5f5a5581a4605116123df19f74604e1a67eb43b5",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5162,7 +5165,7 @@
       "evidence": []
     },
     "q-d6-g03": {
-      "fingerprint": "d3d83828fb81e1ecb50f0ecb2abb134b012eba90eb77488a81eddc8e60f87d2d",
+      "fingerprint": "8d7b5af0e1edff4850abe979c218a5097aa5f4ed5bf6f1ec069b1018f0d4ab24",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5175,10 +5178,10 @@
       "evidence": []
     },
     "q-d6-g04": {
-      "fingerprint": "4b2e47f261055ef431e8a1cdc0629bf45b8ce4b521313d04bd13c348037e98bc",
+      "fingerprint": "34e87764f52e0b24c424f9a44b43a0138f1ac7847808c1a69d981aab581272a5",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
       "assessment": "単一の機能・用語・条件の識別を問うFoundation。",
       "reasoningSteps": [
@@ -5188,7 +5191,7 @@
       "evidence": []
     },
     "q-d6-g05": {
-      "fingerprint": "128d55f46c44f4b0f2acba0785ee209a66469da4d259537bf7c822b2f7b8f4ca",
+      "fingerprint": "7348b65dba84dad4d47d16b46864e4624cf523b1ae9b304f6ef63abd9fc3c5d1",
       "beforeDifficulty": "beginner",
       "difficulty": "beginner",
       "textRewritten": true,
@@ -5295,24 +5298,24 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d2-a23": {
-      "fingerprint": "f908cef967fcc4859bf6a4311d7bd95c13a48540e6697010d73a9a09c30dbe0c",
+      "fingerprint": "5e9a91d6fd51274462c8c07c7f8e81d3e3e51c675bd809c65d2361d7c3e4acab",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：CopilotのMCP接続が、http://127.0.0.1:8765/mcpへのconnection refusedで失敗しました。サーバーの起動ログは「8770で待受中」となっており、8765には待受プロセスがありません",
-        "接続先と実際の待受ポートの不一致が観測されている。"
+        "資料に示されたstdioと設定されたHTTPが異なることを特定する。",
+        "認証・ツール引数の層ではなく、プロセス起動による接続設定を選ぶ。"
       ],
-      "counterfactual": "接続は成功し401を返すなら、API認証条件の確認が候補になる。",
+      "counterfactual": "A：サーバーがHTTP方式を提供し、実際の待受URLだけが設定と異なっているならURLを更新する。 B：接続方式とURLは正しく、サーバーが認証エラーを返し資格情報の更新を求めるなら認証設定を更新する。 D：サーバー接続とツール一覧取得は成功し、呼出し時の引数検証だけが失敗するなら入力定義を照合する。",
       "evidence": [
         "mcp",
         "mcp-config"
       ],
-      "reasoning": "正答IDCと説明が一致することを再読。接続先と実際の待受ポートの不一致が観測されている。 誤答はA：パス変更では待受がないポートへの接続は直らない。／B：認証段階へ到達していない。／D：ツール引数の処理前の接続で失敗している。",
+      "reasoning": "本文の目的と未確認事項から正答Cを再照合。資料に示されたstdioと設定されたHTTPが異なることを特定する。 認証・ツール引数の層ではなく、プロセス起動による接続設定を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d2-a24": {
       "fingerprint": "5b4f6104327b74f1ac6050b62cb46d1e98eb5ca69b55768a74fe5c766fcee6fe",
@@ -5342,24 +5345,24 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d2-a25": {
-      "fingerprint": "876d852bb7c23c6b99e487af75715fc094b52027bda2ba805a4a120df3fa42b9",
+      "fingerprint": "ec662bee2c9f417f9e306c436c1f14ed48d8aaf672dd45f0582b6a3c6085ba6b",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilot CLIが提案した削除コマンドを事前検証（dry-run）しました。削除してよいrun-cacheに加え、保存が必要なrun-fixturesも対象一覧に出ています。まだ削除は実行していません",
-        "許可外を除く変更を行い、変更後の実対象を再検証する。"
+        "モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。",
+        "今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。"
       ],
-      "counterfactual": "削除許可の対象がrun-fixturesだけで、run-cacheを保持するならB。 両ディレクトリの削除が許可済みで、再確認すべき指定が両方を含む現在のコマンドならC。",
+      "counterfactual": "B：シェルを使う作業は不要で、モデルがシェル自体を選ばないようにする目的なら候補から外す。 C：過去に現在の場所へ保存した広い承認を取り消し、実行時に確認したいなら保存済み承認をリセットする。 D：Git操作の権限は確認済みで、CLIへ提供する追加ディレクトリの許可範囲だけを変更したいならパスを見直す。",
       "evidence": [
-        "cli",
-        "cli-usage"
+        "cli-tool-permissions",
+        "cli-current"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。許可外を除く変更を行い、変更後の実対象を再検証する。 誤答はB：削除が許可されたのはrun-cacheで、run-fixturesは保持する必要があります。／C：両方を対象にしたままでは、保持が必要なrun-fixturesを削除する指定が残ります。／D：実行後の確認では、許可外の削除が起こる前に対象を検証する条件を満たしません。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。 今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d2-a26": {
       "fingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
@@ -5389,20 +5392,20 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d3-a13": {
-      "fingerprint": "30aca1c9da64ee139d1fd56272a83a037bd5d4bcfe57214c6ba0f174117e7493",
+      "fingerprint": "b78cd2bd69aad408d8ea6f78fe50fed693af66e8cfbac405fc211c9cc2fee36c",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotの利用状況を集計するGitHub REST APIが、HTTP 429とRetry-After: 8を返しました。この応答では8秒の待機が指示されており、同じ処理の再試行はまだ1回目です",
-        "サーバーの待機指示を守り集中を抑える。"
+        "利用状況とライセンスの個別割当が別の情報だと区別する。",
+        "組織管理APIの座席一覧を選び、承認対象者へ照合する。"
       ],
-      "counterfactual": "待機指示が2秒なら、2秒以上を下限にする。",
+      "counterfactual": "A：個別割当は確認済みで、機能別の利用状況を評価する目的なら利用データを取得する。 B：対象者への割当は確認済みで、組織内の対象機能が有効かを調べる目的なら機能ポリシーを取得する。 C：現在の割当と設定は確認済みで、承認したポリシー変更が誰にいつ行われたかを調べるなら監査記録を取得する。",
       "evidence": [
-        "rest-best-practices",
-        "guide"
+        "copilot-seat-api",
+        "rest-api"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -5411,25 +5414,24 @@
         "reason": "Copilot利用集計の管理APIへの要求と再試行を扱う管理ワークフロー。モデルの文脈長・候補ライフサイクルの問題ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDDと説明が一致することを再読。サーバーの待機指示を守り集中を抑える。 誤答はA：指定された待機時間より短い。／B：待機してもさらに同時負荷を増やしている。／C：待機を再試行後へ移している。",
+      "reasoning": "本文の目的と未確認事項から正答Dを再照合。利用状況とライセンスの個別割当が別の情報だと区別する。 組織管理APIの座席一覧を選び、承認対象者へ照合する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d3-a14": {
-      "fingerprint": "e6bc6acd650ac08eef8aaad32ce10460652c81c962629911550def24cbbe53d6",
+      "fingerprint": "13b0abed4432c4345e48a442ed4d5a455be44d8a1d75539f9d857f0b61566cf3",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：今回Copilotへ渡せる入力は4096トークンまでです。対象の実装コード1000トークンと型定義500トークンは、どちらも全量が必要です。背景資料3000トークンは要約や抜粋ができます。対象コードと型定義を残して上限以内にするには、どの構成で渡すべきですか",
-        "合計3500で予算内に収まり、対象と型の必須情報を両方維持する。"
+        "合計容量ではなく、依頼する既存関数の修正に何が不足するかを判断する。",
+        "現行コード・型・再現例と期待結果を保ち、背景の要約とは分ける。"
       ],
-      "counterfactual": "対象は関連する500トークンだけで十分で、背景3000は全量必要ならC。 型はすでに共有済みで再送不要、背景3000と対象1000が全量必要ならD。",
+      "counterfactual": "B：実装と型は渡してあり、呼び出し側の利用方法の誤りを調べる目的ならAPIと利用例を追加する。 C：修正の実装依頼ではなく、新しいChatへ設計方針を引き継ぐ目的なら決定・未決定事項を要約する。 D：対象コードと型は渡してあり、CIだけの実行環境による失敗を調べる目的なら環境とログを追加する。",
       "evidence": [
-        "architecture",
-        "workspace-context"
+        "prompt"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -5438,25 +5440,25 @@
         "reason": "今回の目的に必要なコード・ログ・関連ファイルを選び、入力文脈を構成する。内部の処理経路や固定順位を問うのではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。合計3500で予算内に収まり、対象と型の必須情報を両方維持する。 誤答はB：合計4500で、今回の予算4096を超える。／C：合計4000だが、全量必要な対象実装を半分にする。／D：合計4000だが、必須の型定義を省く。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。合計容量ではなく、依頼する既存関数の修正に何が不足するかを判断する。 現行コード・型・再現例と期待結果を保ち、背景の要約とは分ける。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d3-a15": {
-      "fingerprint": "a7fb0c419e97db7e68cc18a2697bc6d373804e1b9874081f7a3319654eaa80e7",
+      "fingerprint": "fa75928150180b55e042cc2df23dd3d1db57e90551f976148a0b402b041f5595",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotが生成したformatTotal(8)を20回実行すると、12回は文字列「8.0」、8回は「8.00」でした。Number(result) === 8のテストはすべて成功しています。仕様は、数値として8であることに加え、小数点以下2桁の文字列を返すことです",
-        "数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。"
+        "生成テストで確認した数値と、未確認の文字列書式を分ける。",
+        "既存assertionを捨てず、別の契約を直接照合するassertionを追加する。"
       ],
-      "counterfactual": "全20回の結果が8.00で、数値と小数2桁の両方を満たすならC。 全20回の結果が9.00で、期待数値8だけを満たさず小数2桁は満たすならA。",
+      "counterfactual": "A：数値と書式は確認済みで、不正な型の入力だけを受け入れてしまうなら拒否動作を検証する。 C：出力は仕様に合い、通知の引数や回数だけが未検証なら通知クライアントを検証する。 D：書式は正しいが、計算された金額が仕様と異なるなら数値の期待値を検証する。",
       "evidence": [
-        "architecture",
-        "guide"
+        "tests",
+        "prompt"
       ],
       "classificationReview": {
         "date": "2026-10-13",
@@ -5465,9 +5467,9 @@
         "reason": "数値・書式の検査条件、生成コードの早期returnと変換の欠陥を具体的に検証する。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDBと説明が一致することを再読。数値化だけのテストは書式を検証しない。今回の数値は合うが8.0が2桁を満たさず、書式を直して独立検証する。 誤答はA：数値化した結果は今回の期待値8と一致する。一方8.0は2桁契約を満たさないため評価が逆。／C：8.0と8.00を許容する契約なら成立するが、今回は小数点以下2桁が必須である。／D：数値も不一致なら成立するが、今回の数値8は期待値に一致し、数値計算の修正は根拠がない。",
+      "reasoning": "本文の目的と未確認事項から正答Bを再照合。生成テストで確認した数値と、未確認の文字列書式を分ける。 既存assertionを捨てず、別の契約を直接照合するassertionを追加する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d4-a12": {
       "fingerprint": "495e587528f502f78a7eb3ddf3c109fcb3ad1b4b9d002cf0ebe303faf6b119e1",
@@ -5565,24 +5567,24 @@
       "reasoning": "判断条件を特定する：Copilot Chatの回答が、別プロジェクトの類似関数の実装を根拠にしており、現在のプロジェクト"
     },
     "q-d5-a12": {
-      "fingerprint": "3dd90ba2a9f595d7a087a6148e8354f85c6da3dcbab8506a0e3c40d40a617a02",
+      "fingerprint": "fd8e518052746f5f5961fb9e195b83794d55332f8e0630354f2be3cc21e2d6fc",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：CopilotとTDDで割引処理を作成します。承認済みの仕様は、価格100以上なら20%引き、100未満なら割引なしです。初回の100→80のテストが失敗しました",
-        "100のテストだけなら複数の実装が成功する可能性があります。100以上を0.8倍にし、90などの100未満はそのまま返す条件を選びます。境界の両側のテストも追加して確認します。"
+        "一つの成功例では複数の実装が成立し、生成案の価格帯の区別が不足していると分析する。",
+        "仕様の境界の両側で結果が分かれるテストを追加し、生成実装を絞り込む。"
       ],
-      "counterfactual": "仕様が価格100超だけを割引し、100の期待値も100へ変更済みならA。 仕様が価格にかかわらず20%引きで、90も72とするならB。",
+      "counterfactual": "A：価格帯ごとの動作は確認済みで、APIが不正な入力型を受け入れることが未検証なら型拒否を検証する。 B：価格帯の割引は正しく、端数価格を含む新仕様の丸めだけが未検証なら端数を検証する。 D：計算の境界は確認済みで、追加した保存処理の引数や回数だけが未検証なら保存を検証する。",
       "evidence": [
         "tests",
-        "unit-test-aaa"
+        "prompt"
       ],
-      "reasoning": "正答IDCと説明が一致することを再読。100のテストだけなら複数の実装が成功する可能性があります。100以上を0.8倍にし、90などの100未満はそのまま返す条件を選びます。境界の両側のテストも追加して確認します。 誤答はA：100を割引せず、最初のテストを通らない。／B：100は通るが100未満にも割引し契約を破る。／D：100未満にも割引し、100超には割引しない。",
+      "reasoning": "本文の目的と未確認事項から正答Cを再照合。一つの成功例では複数の実装が成立し、生成案の価格帯の区別が不足していると分析する。 仕様の境界の両側で結果が分かれるテストを追加し、生成実装を絞り込む。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d5-a13": {
       "fingerprint": "63ea3aae0140be74bd1c48a43c7fa221925b4fa3a76dd99a5e8fcef8efb716ce",
@@ -5690,26 +5692,25 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d6-a13": {
-      "fingerprint": "124a3f6ca0f1f7c29b9de8cf9f5988937b61fd9953eb7509aa97532b669848dd",
+      "fingerprint": "b4d625759e1171ec12175e06f996993eb0e7ef88137190bae69c4745d7a5eebf",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotの知財補償について、今回の機能と自社テナントに適用される契約・必須の軽減策を確認します。資料Pは旧契約時のBlock画面、Qは現行の別機能の資料、Rは現行の対象機能・自社テナントの資料、Sは現行の別テナントの資料です",
-        "時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。"
+        "一致抑制、断片の利用条件、申込・割当、入力保護の確認目的を区別する。",
+        "対象機能の補償条件への照合が未確認なので、その契約の軽減策と実設定を選ぶ。"
       ],
-      "counterfactual": "対象機能がQに示した機能へ変わり、契約対象も一致するならQを照合する。",
+      "counterfactual": "B：補償条件の調査ではなく、一致通知の断片を採用する利用条件の審査が目的なら一致元とライセンスを確認する。 C：適用機能の軽減策は確認済みで、申込主体や利用者の対象プランだけが未確認なら座席と契約主体を確認する。 D：出力の補償ではなく、手動入力が除外設定とは別経路で機密を渡していないかの確認が目的なら入力経路を照合する。",
       "evidence": [
         "generative-ai-terms",
-        "copilot-contract-updates",
         "public-code",
-        "guide"
+        "responsible"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。時点・機能・契約対象をそろえる。補償成立そのものを断定せず、実契約の全条件を確認する。 誤答はB：旧設定の証跡だけでは現行の適用条件を確認できない。／C：時点は合うが、対象機能の条件ではない。／D：他テナントの契約条件をそのまま自分の適用条件とみなさない。",
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。一致抑制、断片の利用条件、申込・割当、入力保護の確認目的を区別する。 対象機能の補償条件への照合が未確認なので、その契約の軽減策と実設定を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d6-a14": {
       "fingerprint": "9acba8a7dc72032b14bffe7109557a188f20714085d4b35e242587cc49ebecce",
@@ -6214,46 +6215,46 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d1-a18": {
-      "fingerprint": "3f88dc9de631e289458809d7aa0aab86944f099189551e5d191c09fda033bf28",
+      "fingerprint": "607be880ec104ca5c5a5290a0466d6edcd62264a38b225745c2af0606314ac10",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：契約更新者にも初回割引を適用するかは未決定、対象者の規則は業務企画",
-        "単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。"
+        "テスト成功の根拠が未決定の仮定であることを識別する。",
+        "AIに業務判断を決めさせず、確定条件を生成実装と期待値へ戻す。"
       ],
-      "counterfactual": "未決定事項が公開日時で、対象者規則は承認済みならC。 未決定事項がAPIへのアクセス権で、割引規則は承認済みならD。",
+      "counterfactual": "B：割引対象の規則は確定しており、境界のテストケースだけが不足しているなら境界テストを追加する。 C：割引条件とテストは確認済みで、公開日時と配信手順だけが未決定なら公開作業を確認する。 D：割引対象と期待値は確定しており、機能を使える利用者の権限だけが未決定ならアクセス権を確認する。",
       "evidence": [
-        "chat",
-        "guide"
+        "responsible",
+        "chat"
       ],
       "origin": "new-question-draft",
       "reviewRequired": false,
-      "reasoning": "正答IDAと説明が一致することを再読。単体テストが通っていても、ビジネスルールの前提が未定では正しさを保証できません。対象者の定義責任を持つ業務企画部門に照合し、仕様の確定を行ってから実装へ反映します。 誤答はB：QA部門は確定した仕様に基づいてテストを検証する役割であり、未決定のビジネス仕様そのものを策定する責務は持ちません。／C：運用部門へのリリース日程確認は必要ですが、割引対象者の適用条件という仕様論点の決定には繋がりません。／D：セキュリティ部門はアクセス制御を管轄しますが、マーケティング的な割引対象者の適用ルールを判断する権限はありません。",
-      "latestReview": "reports/applied-remediation-review.json"
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。テスト成功の根拠が未決定の仮定であることを識別する。 AIに業務判断を決めさせず、確定条件を生成実装と期待値へ戻す。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d1-a19": {
-      "fingerprint": "af9e2dfd23e12d608cb5f2dab8600173ff39b82a9463f6fb12be68093d2424c6",
+      "fingerprint": "2d4b07eb6b656bd947995a1c246ff965fa60b289dae9df14680ab5120e6cbfaa",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：本番DBの取引レコードを削除、復元する手段がありません",
-        "本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。"
+        "利用者が依頼した検証範囲と、生成案の本番への影響を区別する。",
+        "未実行・未承認という段階から、依頼範囲への修正と複製での検証を選ぶ。"
       ],
-      "counterfactual": "提案が本番を変更しない読取だけならA。 提案が復元手段のある本番更新ならD。",
+      "counterfactual": "A：本番変更の対象・手順と複製での検証が承認済みで、実行前確認が残っているなら本番手順を準備する。 B：依頼範囲と削除案は確認済みで、実行前に復元手順の成立だけを検証する依頼なら復元を試す。 D：承認済みの操作を実行済みで、処理後の対象と結果の一致を確認する依頼なら実行記録を照合する。",
       "evidence": [
-        "chat",
-        "guide"
+        "responsible",
+        "agent-mode"
       ],
       "origin": "new-question-draft",
       "reviewRequired": false,
-      "reasoning": "正答IDCと説明が一致することを再読。本番データに対する不可逆（復元手段がない）な削除処理であるため、定義された基準の中で最も厳格な「業務責任者による事前承認」が必須となります。 誤答はA：事後確認は参照系処理に適用されるレベルであり、本番の不可逆な削除処理には全く不十分です。／B：実装担当者による確認は検証・ステージング環境向けであり、本番データの不可逆削除を承認する権限には届きません。／D：運用担当者の承認は「復元可能な」本番変更に適用される基準であり、復元手段のない完全削除には適用できません。",
-      "latestReview": "reports/applied-remediation-review.json"
+      "reasoning": "本文の目的と未確認事項から正答Cを再照合。利用者が依頼した検証範囲と、生成案の本番への影響を区別する。 未実行・未承認という段階から、依頼範囲への修正と複製での検証を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d1-a20": {
       "fingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
@@ -6277,25 +6278,25 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d1-a21": {
-      "fingerprint": "4fe3a41b5fd491d2a3ff723e5d4042b99e905afe8c36a18efe3968cf2d206ef6",
+      "fingerprint": "3ec7b5ba9bfc441311660e15422b1a8832d64396b64430366ea830842f8c4179",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：キーボードだけ、同じ並べ替え結果",
-        "アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。"
+        "利用者の操作手段により、生成UIでできない動作を特定する。",
+        "すでに検証済みの支援を再追加せず、同じ結果を得る不足操作と期待結果を依頼する。"
       ],
-      "counterfactual": "追加要件が順序変更でなく、一覧内のフォーカス移動ならA。 追加要件がキーボードでの詳細表示ならB。",
+      "counterfactual": "A：位置変更はできるがフォーカス移動の順序が仕様に合わないなら、フォーカス順を修正する。 B：キーボードで位置変更はできるが、変更後の位置が読み上げられないなら読み上げを修正する。 C：位置変更と読み上げはできるが、変更取消が元の並びへ戻らないなら取消動作を修正する。",
       "evidence": [
-        "chat",
-        "responsible"
+        "responsible",
+        "tests"
       ],
       "origin": "new-question-draft",
       "reviewRequired": false,
-      "reasoning": "正答IDDと説明が一致することを再読。アクセシビリティの観点から、ドラッグ操作が困難なユーザーに対してもキーボードのみで項目の順序変更（並べ替え）が行える代替操作（上下キーによる位置交換等）を提供することが求められます。 誤答はA：フォーカス移動はナビゲーションに役立ちますが、項目の並び順そのものを変更する操作にはなりません。／B：詳細表示モーダルの表示は便利ですが、並べ替え結果を得るための代替操作にはなりません。／C：操作の取り消しは重要な機能ですが、キーボードで並び替えを行うこと自体の代替手段にはなりません。",
-      "latestReview": "reports/applied-remediation-review.json"
+      "reasoning": "本文の目的と未確認事項から正答Dを再照合。利用者の操作手段により、生成UIでできない動作を特定する。 すでに検証済みの支援を再追加せず、同じ結果を得る不足操作と期待結果を依頼する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d1-a22": {
       "fingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
@@ -6319,73 +6320,73 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d3-a16": {
-      "fingerprint": "6ac1bd6b9d571b76fb38676657ad2ba8363262381928d220908a732632fb7adc",
+      "fingerprint": "70b817a0f7e305c465ba972d1d677f44abc0f2dfee17f533d77d4e804784cfb0",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
       "reasoningSteps": [
-        "状況と制約を整理する：送信した入力や返されたコードはありません、入力と出力を照合",
-        "入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。"
+        "集計・管理設定・通信診断と、具体的な提案内容の再現資料の違いを整理する。",
+        "利用者が与えたコードと型、依頼、提示結果を対応付けて比較する。"
       ],
-      "counterfactual": "調査目的が要求の接続失敗とHTTP応答の確認ならA。 調査目的が割当と請求の一致の確認ならC。",
-      "evidence": [
-        "architecture",
-        "chat"
-      ],
-      "origin": "new-question-draft",
-      "reviewRequired": false,
-      "reasoning": "正答IDDと説明が一致することを再読。入力と返されたコードを同じ要求として対応付け、生成時の条件と照合します。採用回数や応答時間だけでは、どの内容を入力して誤ったコードが出たのか確認できません。 誤答はA：接続の調査には有用だが、誤った候補内容を入力と照合できない。／B：利用と時間の調査には有用だが、同じ粒度の集計を足しても本文は分からない。／C：契約・費用の調査には有用だが、今回の生成内容を示さない。",
-      "latestReview": "reports/applied-remediation-review.json"
-    },
-    "q-d3-a17": {
-      "fingerprint": "f6f02c6c146e8f33fb20077492d6cfe70e8716661c5d42575a7bf28e2eb7b488",
-      "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
-      "textRewritten": true,
-      "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
-      "reasoningSteps": [
-        "状況と制約を整理する：候補を1件受信、表示可能と判定した候補0件",
-        "ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。"
-      ],
-      "counterfactual": "要求送信が接続エラーで失敗し、候補受信が0件ならB。 提示可判定1件・UIへ渡した候補1件なのに表示されないならC。",
+      "counterfactual": "A：補完内容ではなく接続失敗を再現したく、特定の経路で到達性や証明書エラーが出るなら通信資料をそろえる。 B：対象利用者だけが機能を利用できず、座席や適用ポリシーが未確認なら管理設定をそろえる。 C：個別の誤提案の再現ではなく、同じ対象者の採用状況や応答時間の変化を評価する目的なら利用集計をそろえる。",
       "evidence": [
         "responsible",
-        "chat",
-        "guide"
-      ],
-      "origin": "new-question-draft",
-      "reviewRequired": false,
-      "reasoning": "正答IDAと説明が一致することを再読。ログでは候補の受信までは成功しています。その後の表示判定で候補が0件となり、UIへも渡っていません。この記録に沿って、受信後の表示判定を調べます。 誤答はB：送信と候補受信は成功しており、今回の候補が0件になった箇所が起きた段階とは異なる。／C：UIへ渡った候補が0件なので、渡した候補の描画失敗を示す記録ではない。／D：入力の内容確認は別の調査で、今回示された候補が0件になった箇所は候補受信の後に起きている。",
-      "latestReview": "reports/applied-remediation-review.json"
-    },
-    "q-d3-a19": {
-      "fingerprint": "1ca613f8ea30348960ec942a719454b997e6d0f8b518e55a156b261a0b0c35f4",
-      "beforeDifficulty": "intermediate",
-      "difficulty": "intermediate",
-      "textRewritten": true,
-      "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
-      "reasoningSteps": [
-        "状況と制約を整理する：800トークン以下、本文Xは600文字・900トークン",
-        "入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。"
-      ],
-      "counterfactual": "入力の実測値が同じで、上限が1000トークンならC。 入力の実測値が同じで、上限が200トークンならD。",
-      "evidence": [
-        "dotnet-tokens",
-        "guide",
+        "prompt",
         "architecture"
       ],
       "origin": "new-question-draft",
       "reviewRequired": false,
-      "reasoning": "正答IDBと説明が一致することを再読。入力全体の測定内訳を合計すると、Xは50＋900＝950トークンで上限を超え、Yは50＋200＝250トークンで上限以内です。文字数の長短ではなく、対象モデルで測ったトークン数で判定します。 誤答はA：文字数ではXが短いが、Xの入力全体は950トークンで上限を超える。／C：Xは上限を超えており、両方を通すとゲートの条件を満たさない。／D：Yは上限以下なので、両方を止めると許容された入力も拒否する。",
-      "latestReview": "reports/applied-remediation-review.json"
+      "reasoning": "本文の目的と未確認事項から正答Dを再照合。集計・管理設定・通信診断と、具体的な提案内容の再現資料の違いを整理する。 利用者が与えたコードと型、依頼、提示結果を対応付けて比較する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
+    },
+    "q-d3-a17": {
+      "fingerprint": "a0691dd8a6100c4452e60fcbf1a9da059404fd78798303ba26c4f1c1f7fbb4af",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "reasoningSteps": [
+        "同条件の比較で変えたのは公開コード一致設定だと整理する。",
+        "生成後の候補の扱いを、要求の接続・入力除外・IDE有効設定と区別する。"
+      ],
+      "counterfactual": "B：両設定で候補がなく、接続診断にもサービスの到達不能が出るなら接続失敗を調べる。 C：対象ファイルにContent excludedが表示され、他ファイルでは補完できるなら入力除外を調べる。 D：一致設定は同じで、IDEの通常補完を無効にした後だけ候補が出なくなったなら補完設定を調べる。",
+      "evidence": [
+        "responsible",
+        "public-code"
+      ],
+      "origin": "new-question-draft",
+      "reviewRequired": false,
+      "reasoning": "本文の目的と未確認事項から正答Aを再照合。同条件の比較で変えたのは公開コード一致設定だと整理する。 生成後の候補の扱いを、要求の接続・入力除外・IDE有効設定と区別する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
+    },
+    "q-d3-a19": {
+      "fingerprint": "673c796cfec55470173cd3d97b3e8b0863a2f6cfac5c7821e878224c62a5cc84",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "reasoningSteps": [
+        "入力上限と出力長・資料の版・ネットワークの問題を区別する。",
+        "添付の文字数だけでなく、モデルの公開制約と利用者が与えた文脈を確認する。"
+      ],
+      "counterfactual": "A：入力は受け付けられ、出力長の制約で回答が途中で途切れるなら出力量の条件を確認する。 C：入力と出力は制約内だが、回答が旧APIの仕様を参照するなら資料とAPIの版を確認する。 D：入力上限の表示ではなく、プロキシ経由での接続と証明書検証が失敗するなら接続経路を確認する。",
+      "evidence": [
+        "dotnet-tokens",
+        "prompt",
+        "architecture"
+      ],
+      "origin": "new-question-draft",
+      "reviewRequired": false,
+      "reasoning": "本文の目的と未確認事項から正答Bを再照合。入力上限と出力長・資料の版・ネットワークの問題を区別する。 添付の文字数だけでなく、モデルの公開制約と利用者が与えた文脈を確認する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "latestReview": "reports/applied-23-focus-improvement-review.json"
     }
   },
   "secondPass": "従来の改稿90問の再読、基礎154問の再評価に続き、応用102問を全件再評価。適用条件・全選択肢の差・条件を変えた場合の判断を記録。同じ編集者の再読であり、独立した別人のレビューではない。 本番相当60問の本文・全選択肢・変更後の反実仮想を全件再読。",
-  "lastUpdated": "2026-10-13",
+  "lastUpdated": "2026-10-14",
   "followUpReviews": [
     {
       "reviewedAt": "2026-10-13",
@@ -6798,6 +6799,36 @@
         "q-d2-a22"
       ],
       "report": "reports/applied-remediation-review.json"
+    },
+    {
+      "date": "2026-10-14",
+      "report": "reports/applied-23-focus-improvement-review.json",
+      "questionIds": [
+        "q01",
+        "q-d2-a23",
+        "q-d3-a17",
+        "q-sc02-3",
+        "q-d5-a11",
+        "q-sc05-3",
+        "q-d1-a10",
+        "q-d1-a18",
+        "q-d1-a19",
+        "q-d1-a21",
+        "q-d3-e03",
+        "q-sc04-3",
+        "q-d3-a15",
+        "q-d5-a12",
+        "q-d6-a09",
+        "q-d2-a25",
+        "q-d3-a13",
+        "q-d3-a16",
+        "q-d3-a19",
+        "q-d4-a06",
+        "q-sc03-3",
+        "q-d3-a14",
+        "q-d6-a13"
+      ],
+      "note": "Copilotの利用判断へ焦点を合わせた23問の改稿。既存の初回分類・基準スナップショットは保持。"
     }
   ],
   "deletionFollowUp": {
@@ -6811,5 +6842,101 @@
       "q-d5-a05"
     ],
     "report": "reports/applied-six-deletion-review.json"
+  },
+  "wordingInventoryCorrection": {
+    "date": "2026-10-14",
+    "ids": [
+      "q04",
+      "q08",
+      "q09",
+      "q12",
+      "q-d1-f02",
+      "q-d1-f05",
+      "q-d2-f01",
+      "q-d2-f02",
+      "q-d2-f03",
+      "q-d2-f04",
+      "q-d2-f06",
+      "q-d2-f07",
+      "q-d2-f08",
+      "q-d2-f09",
+      "q-d2-f10",
+      "q-d2-f11",
+      "q-d2-e04",
+      "q-d2-e12",
+      "q-d2-e13",
+      "q-d3-f01",
+      "q-d3-f02",
+      "q-d3-f05",
+      "q-d4-f02",
+      "q-d4-f03",
+      "q-d4-f04",
+      "q-d4-f05",
+      "q-d5-f01",
+      "q-d5-f02",
+      "q-d5-f02-b",
+      "q-d5-f04",
+      "q-d6-f01",
+      "q-d6-f02",
+      "q-d6-f03",
+      "q-d6-f04",
+      "q-d6-f05",
+      "q-sc01-1",
+      "q-sc04-1",
+      "q-sc06-1",
+      "q-sc08-1",
+      "q-sc10-1",
+      "q-sc10-2",
+      "q-d1-g01",
+      "q-d1-g02",
+      "q-d1-g03",
+      "q-d1-g04",
+      "q-d1-g05",
+      "q-d1-g06",
+      "q-d2-g01",
+      "q-d2-g02",
+      "q-d2-g03",
+      "q-d2-g10",
+      "q-d2-g11",
+      "q-d2-g12",
+      "q-d2-g13",
+      "q-d2-g14",
+      "q-d2-g15",
+      "q-d2-g16",
+      "q-d2-g17",
+      "q-d3-g01",
+      "q-d3-g02",
+      "q-d3-g06",
+      "q-d3-g08",
+      "q-d3-g09",
+      "q-d3-g12",
+      "q-d3-g14",
+      "q-d4-g01",
+      "q-d4-g02",
+      "q-d4-g03",
+      "q-d4-g04",
+      "q-d4-g05",
+      "q-d4-g06",
+      "q-d4-g07",
+      "q-d4-g08",
+      "q-d4-g09",
+      "q-d5-g01",
+      "q-d5-g02",
+      "q-d5-g03",
+      "q-d5-g04",
+      "q-d5-g05",
+      "q-d5-g06",
+      "q-d5-g07",
+      "q-d5-g08",
+      "q-d5-g09",
+      "q-d5-g11",
+      "q-d5-g12",
+      "q-d5-g15",
+      "q-d5-g16",
+      "q-d5-g17",
+      "q-d5-g18",
+      "q-d6-g04"
+    ],
+    "note": "既存の基礎編文章更新に伴う基準差分フラグの再計算のみ。教材やレビュー判定は変更しない。"
   }
 }
