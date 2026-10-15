@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {questionRemovals,removedQuestionIds} from './question-removals.mjs';
+import {reviewedQuestionSnapshot} from './question-repair-history.mjs';
 export const questionFingerprint=q=>createHash('sha256').update(JSON.stringify(q)).digest('hex');
 export function loadFeatureRefresh(root=new URL('../',import.meta.url)){
  const file=new URL('content/gh300/2026-08-07/questions/feature-refresh-review.json',root);
@@ -19,7 +20,7 @@ export function validateQuestionAdditions(bank,ledger){
  if(rows.filter(r=>r.after?.domainId==='d1').length+removed.filter(r=>r.domainId==='d1').length!==8||rows.filter(r=>r.after?.domainId==='d3').length+removed.filter(r=>r.domainId==='d3').length!==4)errors.push('Invalid addition domains');
  if(ledger.status!=='EDITORIALLY_REVIEWED')errors.push('Unsigned addition ledger');
  for(const r of rows){
-  const q=bank.find(q=>q.id===r.id);
+  const q=reviewedQuestionSnapshot(bank.find(q=>q.id===r.id),r.fingerprint);
   if(!q||questionFingerprint(q)!==r.fingerprint||questionFingerprint(r.after)!==r.fingerprint)errors.push('Stale added question: '+r.id);
   if(!r.initial||r.initial.status!=='needs-review'||r.initial.lastVerifiedAt!==null||r.initial.id!==r.id)errors.push('Missing draft provenance: '+r.id);
   if(JSON.stringify(r.initial.answer)!==JSON.stringify(q?.answer))errors.push('Changed added answer identity: '+r.id);

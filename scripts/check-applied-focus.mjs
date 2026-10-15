@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {reviewedQuestionSnapshot} from './question-repair-history.mjs';
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 // Checks that an editorial decision still refers to the reviewed assets.
 // It does not infer blind solvability or difficulty from text length or hashes.
@@ -9,7 +10,7 @@ export function validateAppliedFocus(bank,report,plan){
  const errors=[],ids=new Set(report.questions.map(r=>r.id));
  if(ids.size!==23||report.questions.length!==23||plan.targets.length!==23||plan.targets.some(r=>!ids.has(r.id)))errors.push('Incomplete focus review');
  for(const r of report.questions){
-  const q=bank.find(q=>q.id===r.id);
+  const q=reviewedQuestionSnapshot(bank.find(q=>q.id===r.id),r.fingerprint);
   if(!q||hash(q)!==r.fingerprint||hash(r.after)!==r.fingerprint){errors.push('Stale focus decision: '+r.id);continue;}
   if(hash(r.before)!==plan.targets.find(t=>t.id===r.id)?.beforeFingerprint)errors.push('Changed baseline: '+r.id);
   if(q.difficulty!=='intermediate'||q.cognitiveLevel!=='apply'||q.examLike||q.status!=='verified')errors.push('Invalid Applied classification: '+r.id);

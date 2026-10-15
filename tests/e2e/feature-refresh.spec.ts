@@ -1,8 +1,8 @@
 import {test,expect} from '@playwright/test';
-import ledger from '../../content/gh300/2026-08-07/questions/feature-refresh-review.json';
+import ledger from '../../reports/copilot-feature-quality-repairs-2026-10-16.json';
 
-for(const [batch,start,end] of [[1,0,37],[2,37,73]]){
- test(`feature refresh batch ${batch}: every new question scores and persists`,async({page},info)=>{
+for(const [batch,start,end] of [[1,0,46],[2,46,91]]){
+ test(`quality repair batch ${batch}: every reviewed question scores and persists`,async({page},info)=>{
   test.setTimeout(180000);
   const questions=ledger.questions.slice(start,end).map(r=>r.after);
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
@@ -30,7 +30,9 @@ for(const [batch,start,end] of [[1,0,37],[2,37,73]]){
    const q=questions.find(q=>q.question===stem)!;
    expect(q).toBeDefined();expect(seen.has(q.id)).toBe(false);seen.add(q.id);
    for(const input of await page.locator('.question fieldset input').all())expect((await input.boundingBox())!.width).toBeGreaterThanOrEqual(16);
-   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+   // Mobile innerWidth can itself grow with overflow. Compare to the actual
+   // viewport so long URLs cannot silently widen cards and break hit testing.
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth+1)).toBe(true);
    if(i===0)await page.screenshot({path:`artifacts/feature-refresh-${info.project.name}-${batch}.png`,fullPage:true});
    const ids=i===0?[q.choices.find(c=>!q.answer.includes(c.id))!.id]:q.answer;
    for(const id of ids)await page.locator('.question fieldset input').nth(q.choices.findIndex(c=>c.id===id)).check();

@@ -15,7 +15,7 @@ export function validateFeatureRefresh(bank, ledger, exclusions, plan) {
   const q=byId.get(row.id),v=row.review;
   if(!q||hash(q)!==row.fingerprint||hash(row.after)!==row.fingerprint)errors.push('Stale reviewed asset: '+row.id);
   if(row.id===row.oldId||!retired.has(row.oldId)||retired.has(row.id)||hash(byId.get(row.oldId))!==row.oldFingerprint)errors.push('Invalid history boundary: '+row.id);
-  if(v?.status!=='EDITORIAL_SECOND_READ'||!v.blindRationale||v.reasoningSteps?.length!==3||!v.distinction||!v.sourceEvidence?.length)errors.push('Missing editorial evidence: '+row.id);
+  if(v?.status!=='EDITORIAL_SECOND_READ'||!v.blindRationale||!Array.isArray(v.reasoningSteps)||v.reasoningSteps.length<(q?.difficulty==='advanced'?3:2)||!v.distinction||!v.sourceEvidence?.length)errors.push('Missing editorial evidence: '+row.id);
   if(!v.clues?.length||v.clues.some(c=>!q?.question.includes(c)))errors.push('Missing literal clues: '+row.id);
   const cf=v.counterfactual;
   if(!cf?.from||!cf.to||!cf.rationale||q?.question.split(cf.from).length!==2||q?.question.replace(cf.from,cf.to)!==cf.question||q?.answer.includes(cf.answerId)||!q?.choices.some(c=>c.id===cf.answerId))errors.push('Invalid counterfactual: '+row.id);

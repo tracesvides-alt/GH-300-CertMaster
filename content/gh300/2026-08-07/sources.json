@@ -2139,7 +2139,8 @@
       "q-d1-a10-feature-20261016",
       "q-d2-a04-feature-20261016",
       "q-d5-e07-feature-20261016",
-      "q-d6-e07-feature-20261016"
+      "q-d6-e07-feature-20261016",
+      "q-d2-e07-feature-20261016"
     ],
     "relatedDomainIds": [
       "d2",
@@ -3033,7 +3034,8 @@
       "q-d2-a26-feature-20261016",
       "q-d1-a16-feature-20261016",
       "q-d1-e07-feature-20261016",
-      "q-d5-e02-feature-20261016"
+      "q-d5-e02-feature-20261016",
+      "q-sc03-2-feature-20261016"
     ],
     "lastCheckedAt": "2026-10-16",
     "lastVerifiedAt": "2026-10-16",
@@ -3276,7 +3278,9 @@
       "q-d2-a18-feature-20261016",
       "q-sc03-1-feature-20261016",
       "q-sc07-1-feature-20261016",
-      "q-d5-e07-feature-20261016"
+      "q-d5-e07-feature-20261016",
+      "q-d2-e07-feature-20261016",
+      "q-d4-e09-feature-20261016"
     ],
     "lastCheckedAt": "2026-10-16",
     "lastVerifiedAt": "2026-10-16",
@@ -3307,7 +3311,8 @@
       "q-d4-e07-feature-20261016",
       "q-d4-e08-feature-20261016",
       "q-d2-e07-feature-20261016",
-      "q-d4-a14-feature-20261016"
+      "q-d4-a14-feature-20261016",
+      "q-d4-e05-feature-20261016"
     ],
     "lastCheckedAt": "2026-10-16",
     "lastVerifiedAt": "2026-10-16",
@@ -3532,6 +3537,29 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d5-e03-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-repair-cli-context",
+    "title": "Managing context in GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-e09-feature-20261016"
     ],
     "lastCheckedAt": "2026-10-16",
     "lastVerifiedAt": "2026-10-16",

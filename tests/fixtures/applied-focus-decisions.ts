@@ -1,8 +1,8 @@
 // Editorial actions selected from the scenarios; never derived from answer IDs.
 export const focusDecisions: Array<[string, RegExp]> = [
  ['q01',/^実装とテストを月末補正/],
- ['q-d2-a23',/stdio方式.*起動コマンドと引数/],
- ['q-d3-a17',/^生成後の公開コード一致/],
+ ['q-d2-a23',/^stdio接続としてcommandとargs/],
+ ['q-d3-a17',/^Aは公開コード一致の出力制御、BはContent Exclusionの入力制御/],
  ['q-sc02-3',/^2\.5→2と3\.5→4/],
  ['q-d5-a11',/^READMEへ環境設定の手順/],
  ['q-sc05-3',/^同じ要求IDの時刻・処理名・結果.*経路/],
@@ -14,9 +14,9 @@ export const focusDecisions: Array<[string, RegExp]> = [
  ['q-sc04-3',/^担当内・担当外の要求を実行.*許可と拒否/],
  ['q-d3-a15',/^出力文字列.*二桁.*書式/],
  ['q-d5-a12',/99→99と100→80/],
- ['q-d6-a09',/^IDEの収集条件.*実際の利用状況/],
+ ['q-d6-a09',/^IDE活動の収集条件.*テレメトリー/],
  ['q-d2-a25',/今回のセッション.*Git操作を許可.*git push.*拒否/],
- ['q-d3-a13',/Copilot座席割当一覧.*対象者一覧/],
+ ['q-d3-a13',/Copilot Seat一覧.*GitHubアカウント/],
  ['q-d3-a16',/コード・型・依頼と提示された提案/],
  ['q-d3-a19',/選択モデルの入力制約.*会話履歴・指示・添付資料/],
  ['q-d4-a06',/^検索・添付.*現行ソース.*依存型と仕様/],

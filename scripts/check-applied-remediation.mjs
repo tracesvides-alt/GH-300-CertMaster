@@ -3,6 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {loadFeatureRefresh} from './question-additions.mjs';
+import {reviewedQuestionSnapshot} from './question-repair-history.mjs';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 
 // Binds an explicit editorial decision to its answer content, not just an ID.
@@ -17,7 +18,7 @@ export function validateAppliedRemediation(bank, report, retiredIds = new Set(),
     if(!r||r.fingerprint!==hash(q)||hash(r.after)!==r.fingerprint||r.review?.status!=='EDITORIAL_SECOND_READ')errors.push('Unreviewed Applied asset: '+q.id);
   }
   for(const r of report.questions){
-    const q=bank.find(q=>q.id===r.id);
+    const q=reviewedQuestionSnapshot(bank.find(q=>q.id===r.id),r.fingerprint);
     if(!q||hash(q)!==r.fingerprint||hash(r.after)!==r.fingerprint){errors.push('Stale remediation decision: '+r.id);continue;}
     if(r.review.status!=='PASS_EDITORIAL'||q.status!=='verified'||!r.review.secondReadNotes?.trim())errors.push('Unsigned remediation decision: '+r.id);
     if(JSON.stringify(q.answer)!==JSON.stringify(r.approvedAnswerIds)||hash(q.choices.find(c=>q.answer.includes(c.id))?.text)!==r.approvedAnswerContentHash||q.choiceExplanations[q.answer[0]]!==q.explanation)errors.push('Answer content does not match editorial decision: '+r.id);

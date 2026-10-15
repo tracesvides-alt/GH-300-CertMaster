@@ -1320,17 +1320,17 @@
       "reasoning": "判断条件を特定する：チームのCopilot共通指示（.github/copilot-instructions.md）で、"
     },
     "q-d2-a20": {
-      "fingerprint": "d2efa07547b3fec60af1690099035920a334c48a8c25409a59bfd38bcc31af93",
+      "fingerprint": "4996cfdfc285948c0921f06b5a8bcf6dd1d6bc6da7a14fb86cd72fd91a9c00a5",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "発見済みと使用可能を区別する。 認証を完了しサーバーの認可範囲で現在データを取得する。",
       "reasoningSteps": [
-        "状況と制約を整理する：注文の参照先として、朝のCSVをアップロードしたCopilot Spacesと、利用者の担当範囲を認可する注文管理APIがあります。午後に発生したキャンセルを含む現在の状態を、担当者の閲覧権限を守って照会します。データの更新操作は必要ありません",
-        "現在のデータ源と担当者の閲覧範囲を両立する。"
+        "発見済みと使用可能を区別する。",
+        "認証を完了しサーバーの認可範囲で現在データを取得する。"
       ],
-      "counterfactual": "確認したいのが朝時点の保存記録ならCSVのSpaceを選べる。",
+      "counterfactual": "朝のスナップショットの説明なら既存CSVを使え、ライブMCP認証はその問いの前提ではない。",
       "evidence": [
         "spaces",
         "mcp"
@@ -1342,9 +1342,9 @@
         "reason": "MCP、Spaces、Instructionsなどの連携・権限・指示の適用範囲を判定する機能問題。組織ポリシーの設定・CLIコマンドの問題ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。現在のデータ源と担当者の閲覧範囲を両立する。 誤答はB：アップロード済みスナップショットには午後の変更がない。／D：形式の説明は現在の注文状態を取得しない。／C：同じ過去資料を再利用しても現在値にはならない。",
+      "reasoning": "発見済みと使用可能を区別する。 認証を完了しサーバーの認可範囲で現在データを取得する。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a21": {
       "fingerprint": "831f1b55d85a9bbc4d60de8ca989f8a3d604b81fe8cfaa80d35ce80adcc09a34",
@@ -1489,24 +1489,26 @@
       "evidence": []
     },
     "q-d2-e06": {
-      "fingerprint": "a17f5cf5fcebbfcd5ab4c72ad08ebe4270d114ca7d0703873086df7c8d7a2c59",
+      "fingerprint": "59fa2cff975b23f0600cfc4587d503ad81471dd2137d127105bbdc38f0510684",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める → PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。",
+      "assessment": "Pのallowとdenyの優先関係を判定する。 Qで実行ツールが提供されるか確認する。 実行拒否と候補外を別の結果として比較する。",
       "reasoningSteps": [
-        "利用可能ツールと実行許可という二層を分ける",
-        "PとQそれぞれの有効範囲を求める",
-        "PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。"
+        "Pのallowとdenyの優先関係を判定する。",
+        "Qで実行ツールが提供されるか確認する。",
+        "実行拒否と候補外を別の結果として比較する。"
       ],
-      "counterfactual": "「Qは利用可能ツールを読取系だけに制限し」→「Qはshellツールも利用可能にし、個別拒否はなく」なら表示A。QにもGit許可を実行できるshellがあり、commit/pushとも可能。元のQ両方不可は成立しない。",
+      "counterfactual": "Qにもbashと同じdenyがあるならPとQの実行可否がそろう。",
       "evidence": [
         "git pushだけ拒否",
         "利用可能ツールを読取系だけに制限",
         "denyはallowより優先",
         "許可指定は利用可能ツールを増やさない"
-      ]
+      ],
+      "reasoning": "Pのallowとdenyの優先関係を判定する。 Qで実行ツールが提供されるか確認する。 実行拒否と候補外を別の結果として比較する。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e07": {
       "fingerprint": "7187c383ddd230b3606248e4b5049c5bd7e1af2c1510c45701c8331e413b77b8",
@@ -1539,12 +1541,12 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "状況と制約を整理する：VS Codeで、テストコードを準備・実行・検証の三段階（AAA形式）にする規約を共有しています。対象は、どの階層にあるものも含め、末尾が.test.tsのファイルだけです。規約を共通指示へ書いたところ、通常の実装コードにも混ざりました パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。",
       "reasoningSteps": [
         "状況と制約を整理する：VS Codeで、テストコードを準備・実行・検証の三段階（AAA形式）にする規約を共有しています。対象は、どの階層にあるものも含め、末尾が.test.tsのファイルだけです。規約を共通指示へ書いたところ、通常の実装コードにも混ざりました",
         "パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。"
       ],
-      "counterfactual": "対象がルート直下の.test.tsだけで、下位階層には適用しないならB。 AAA規約を通常実装も含めて共通に使い、テスト向け指示にも同じ規約を置く方針ならD。",
+      "counterfactual": "対象をrepo直下だけへ変えたため、共通から外して*.test.tsを使う。",
       "evidence": [
         "instructions",
         "prompt-files"
@@ -1556,9 +1558,9 @@
         "reason": "Instructions、Prompt Files、PR summaries、Spacesの用途・配置・再利用を問う。全社ポリシー、Audit Log、購読管理の操作ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDAと説明が一致することを再読。パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。 誤答はD：共通指示の適用範囲が変わらない。／C：適用範囲をさらに広げる。／B：*.test.tsだけでは、この設問で求めるすべての下位階層のテストを指定できません。",
+      "reasoning": "状況と制約を整理する：VS Codeで、テストコードを準備・実行・検証の三段階（AAA形式）にする規約を共有しています。対象は、どの階層にあるものも含め、末尾が.test.tsのファイルだけです。規約を共通指示へ書いたところ、通常の実装コードにも混ざりました パス指定の指示で全階層のテストに対象を限定する。共通指示側のAAA指定は取り除く。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e09": {
       "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f",
@@ -2220,18 +2222,18 @@
       "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d3-e04": {
-      "fingerprint": "6eee148869ff04e2a3970bcbe9a77e1389cba2cce2660d5d2d24b25739a75b90",
+      "fingerprint": "8ee9b3ca8bd3cf45ad8f3e6b3381809b512fb94eaf7049597cd00982604ec9f4",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く → 設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。",
+      "assessment": "パスと反映の失敗を観測で除く。 通常補完とAgentの対応範囲を照合する。 非対応経路へ独立したアクセス境界を置く。",
       "reasoningSteps": [
-        "同一パスで異なる二経路の結果を比較する",
-        "ルールの修正ではなくアクセス境界の変更を導く",
-        "設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。"
+        "パスと反映の失敗を観測で除く。",
+        "通常補完とAgentの対応範囲を照合する。",
+        "非対応経路へ独立したアクセス境界を置く。"
       ],
-      "counterfactual": "「同じ機密パスにContent Exclusionを設定しました。通常補完では除外表示が出て提案が止まりますが、IDEのAgentではファイル読取ツールが成功します。パス一致と反映は確認済みで、この環境のAgentは除外非対応です」→「別の機密パスにだけContent Exclusionを設定しました。そのパスでは除外表示が出ますが、今回の通常補完は未登録のパスを取得しています。使用モードは対応しており、設定に今回の実パスがありません」なら表示C。非対応モードでなくパス適用先の不足となり、適切な登録が最小の修正になる。環境分離を増やす元の回答は原因の最小修正ではない。",
+      "counterfactual": "取得経路がMCPだけなら、そのMCPの提供停止が必要になる。ローカルファイルを別環境へ移すだけでは外部MCPの応答を止めない。",
       "evidence": [
         "通常補完では除外表示",
         "Agentではファイル読取ツールが成功",
@@ -2244,7 +2246,9 @@
         "to": "d6o2",
         "reason": "内容除外が通常補完と非対応モードで異なるという観測を切り分ける。除外の限界・問題解決を問う。",
         "report": "reports/question-objective-classification-review.json"
-      }
+      },
+      "reasoning": "パスと反映の失敗を観測で除く。 通常補完とAgentの対応範囲を照合する。 非対応経路へ独立したアクセス境界を置く。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-e05": {
       "fingerprint": "bd88dd31a24e99d02f0604457d1630a08487cfce794b1361d27b31232f4ed35d",
@@ -3188,23 +3192,23 @@
       }
     },
     "q-d6-a01": {
-      "fingerprint": "26c899d5126efb97c872ee4372d85732e88bb6a92010f58c35598ca110c657c2",
+      "fingerprint": "998e1738a84186a6f7dfaa310694828d94212f80693c9b976ff5506ce175eca1",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "コード内容の一致とrepo識別を分ける。 Bのrepoキーと限定パスを組み合わせる。",
       "reasoningSteps": [
-        "状況と制約を整理する：リポジトリAでは、Copilotのコンテンツ除外によりsecrets/を参照対象から外しています。コードを複製したリポジトリBには除外ルールがなく、通常補完で同じパスが参照されています",
-        "除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。"
+        "コード内容の一致とrepo識別を分ける。",
+        "Bのrepoキーと限定パスを組み合わせる。"
       ],
-      "counterfactual": "Bも設定対象ならパス・モード・クライアント反映を切り分ける。",
+      "counterfactual": "Bの直下.keyだけならBキーのsecrets/*.keyが合う。",
       "evidence": [
         "exclusion"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。除外の適用先がAだけなので、Bのリポジトリとパスを対象に追加する。 誤答はC：出力側の公開一致設定は入力ファイルの除外を代替しない。／D：Gitの追跡対象とCopilotのContent Exclusionは同じではない。／B：Aのルールを細かくしてもBは対象にならない。",
+      "reasoning": "コード内容の一致とrepo識別を分ける。 Bのrepoキーと限定パスを組み合わせる。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-a02": {
       "fingerprint": "7315af9651c46253d373b444f6da54718a14bc2035755ed11bb8dbff683811f5",
@@ -3368,17 +3372,17 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d6-a09": {
-      "fingerprint": "8bb0cfa368a44fd3ddec68ff40d703a2598ecd4492a19ffdd3a1e8b376433574",
+      "fingerprint": "0b72261c8bca4bfa75266772ac357cdb4add31233e4ae081aed4aa63a065daea",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "assessment": "割当管理とIDEの活動収集を別データ源として読む。 IDEの収集設定と活動記録の欠落を照合する。",
       "reasoningSteps": [
-        "割当済み・利用可能であることと、IDE活動が観測されることを区別する。",
-        "無効なテレメトリーにより記録がないことを未利用へ読み替えず、収集条件と実利用を照合する。"
+        "割当管理とIDEの活動収集を別データ源として読む。",
+        "IDEの収集設定と活動記録の欠落を照合する。"
       ],
-      "counterfactual": "B：活動の収集条件は確認済みで、承認対象者と実際の座席割当だけが一致しないなら個別割当を照合する。 C：活動収集は確認済みで、対象利用者に適用されるIDE機能の無効設定が疑われるならポリシーを照合する。 D：IDE利用の観測条件は確認済みで、開発成果や品質の変化を評価する目的なら成果指標を照合する。",
+      "counterfactual": "問いを活動収集ではなく管理による機能制限へ変えれば組織ポリシーの確認が合う。",
       "evidence": [
         "copilot-seat-api",
         "copilot-metrics-data",
@@ -3391,9 +3395,9 @@
         "reason": "組織の利用集計API、シート割当・回収、監査イベント、Enterprise/Organizationの強制ポリシーを扱う。入力除外・出力所有権・公開コード通知の機能自体ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "本文の目的と未確認事項から正答Aを再照合。割当済み・利用可能であることと、IDE活動が観測されることを区別する。 無効なテレメトリーにより記録がないことを未利用へ読み替えず、収集条件と実利用を照合する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "reasoning": "割当管理とIDEの活動収集を別データ源として読む。 IDEの収集設定と活動記録の欠落を照合する。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-23-focus-improvement-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-a10": {
       "fingerprint": "483f69b3c4111570e03a29ea61c53c5252fac14123a594ae661af1afc0b36e4f",
@@ -3415,18 +3419,18 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d6-e01": {
-      "fingerprint": "777bcb51d12e9528d3cb1a330e047bfbc43f330292665fe94e5858cfd309556b",
+      "fingerprint": "291b574552802fb6b3ec1e09aa8b1d088ccd34a934b255fc3ec9fa7ae75353ab",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。①の成功から通常補完の設定そのものを除外する。 → ②のリンクと③のモードを別の適用境界へ照合する。 → パス追加では補えない二経路を、権限・環境などで別に制限する。",
+      "assessment": "正常な実パスでパスと反映の不足を除く。 symlink経由とAgentの対応範囲を独立に確認する。 異なる制約へ同じパターン追加だけを適用しない。",
       "reasoningSteps": [
-        "①の成功から通常補完の設定そのものを除外する。",
-        "②のリンクと③のモードを別の適用境界へ照合する。",
-        "パス追加では補えない二経路を、権限・環境などで別に制限する。"
+        "正常な実パスでパスと反映の不足を除く。",
+        "symlink経由とAgentの対応範囲を独立に確認する。",
+        "異なる制約へ同じパターン追加だけを適用しない。"
       ],
-      "counterfactual": "「②は別workspaceのシンボリックリンク経由で読取あり、③はこの環境で除外非対応のIDE Agentで読取あり。設定の実パス一致と反映は確認済み」→「②③は対応する通常補完で実ファイルを参照し、設定更新直後の旧セッションでは読取あり、再読込後は両方に除外表示が出た」なら表示C。経路限界でなく、再読込により解消する伝播・セッション差になる。元のリンク／非対応モードの説明は新観測と一致しない。",
+      "counterfactual": "②が未登録の別repoならrepo識別の不足であり、③のAgent非対応とは別に直す。",
       "evidence": [
         "シンボリックリンク経由",
         "この環境で除外非対応のIDE Agent",
@@ -3438,7 +3442,9 @@
         "to": "d6o2",
         "reason": "公開コード一致の設定・参照・審査、または除外の適用差・対応範囲を扱う保護機能と切り分け。",
         "report": "reports/question-objective-classification-review.json"
-      }
+      },
+      "reasoning": "正常な実パスでパスと反映の不足を除く。 symlink経由とAgentの対応範囲を独立に確認する。 異なる制約へ同じパターン追加だけを適用しない。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e02": {
       "fingerprint": "d986597d034fce3f5f58f1cfd0761e48cb7c25bffc0dea692bc3fe24a0e196fe",
@@ -3564,24 +3570,24 @@
       "evidence": []
     },
     "q-sc01-2": {
-      "fingerprint": "a321fd67f89e4a48b905a65d8915130ff886561f3ba5924170720da9117afc7a",
+      "fingerprint": "7ee5ac69ffb4b3af295ef31f5673c6b718669ded4463fed5b448b3ef743fee67",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "repo共通とSeat管理元の差を比較する。 Xだけに適用される組織側の除外を調べる。",
       "reasoningSteps": [
-        "状況と制約を整理する：【AnyCompany Tech事例】secret.keyの機密解除は承認済みです。リポジトリ側の個別除外ルールを削除しましたが、通常補完ではまだ除外されています。除外一覧には、同じファイルに一致する組織側の**/*.keyが残っています",
-        "残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。"
+        "repo共通とSeat管理元の差を比較する。",
+        "Xだけに適用される組織側の除外を調べる。"
       ],
-      "counterfactual": "組織側の一致ルールがなく削除直後なら、クライアントの再読込と反映を調べる。",
+      "counterfactual": "全員に共通する残存repoルールが見つかれば、そのrepo設定を確認する。",
       "evidence": [
         "exclusion",
         "exclusion-concept"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。残る一致ルールの設定元を特定する。他の.keyの除外を必要に応じて保つ。 誤答はD：反映だけでは残る組織ルールの一致を解消しない。／C：出力の一致設定であり対象パスの入力除外ではない。／B：Gitの追跡状態は今回の組織ルールを変更しない。",
+      "reasoning": "repo共通とSeat管理元の差を比較する。 Xだけに適用される組織側の除外を調べる。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc01-3": {
       "fingerprint": "ccc625dcade0d2442dd7c81f52e753dd7bd8a700c213a2f677796d273cea47a9",
@@ -3932,25 +3938,25 @@
       ]
     },
     "q-sc06-3": {
-      "fingerprint": "3a30f64f30f840216fa4402981c5360ef56c08d09c666516b8389ae6455f7d3b",
+      "fingerprint": "4eb3a9741b1fa78c706e0c62b9956693f9ced7c34ef92d8744ee0a3df044e900",
       "beforeDifficulty": "advanced",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": true,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "二つの指示のうち共通化できるものを分ける。 repoごとに異なる規約だけを個人指示から外す。",
       "reasoningSteps": [
-        "状況と制約を整理する：【Global Logistics事例】GitHub.comの個人指示では、すべての関数にJSDocを付けるよう求めています。一方、リポジトリRの規約は公開APIだけ、リポジトリSの規約はすべての関数が対象です",
-        "グローバルな競合を外し、プロジェクトごとの方針を保持する。"
+        "二つの指示のうち共通化できるものを分ける。",
+        "repoごとに異なる規約だけを個人指示から外す。"
       ],
-      "counterfactual": "RとSの方針が同じなら、同じ規約を個人指示に置く選択肢もある。",
+      "counterfactual": "個人側に日本語を残す要件を外し、言語は指定しない方針へ変えたため、個人の二条件を外してrepoのJSDocだけを使う。",
       "evidence": [
         "personal-instructions",
         "instructions",
         "guide"
       ],
-      "reasoning": "正答IDAと説明が一致することを再読。グローバルな競合を外し、プロジェクトごとの方針を保持する。 誤答はD：Rの方針を変えている。／B：Sの方針を変えている。／C：関連する個人指示との競合が残る。",
+      "reasoning": "二つの指示のうち共通化できるものを分ける。 repoごとに異なる規約だけを個人指示から外す。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc07-1": {
       "fingerprint": "8f6594167c723576d0ac034938f9a6fc2ad9a2a6879e256588391b4b2779d2d1",
@@ -5298,37 +5304,37 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d2-a23": {
-      "fingerprint": "5e9a91d6fd51274462c8c07c7f8e81d3e3e51c675bd809c65d2361d7c3e4acab",
+      "fingerprint": "ae82994d085485137864a95b3d507f269b09f605f468a0238f75961b59fcbd07",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "assessment": "ツール実行前の接続失敗と読む。 サーバーの提供するstdio方式へ設定を合わせる。",
       "reasoningSteps": [
-        "資料に示されたstdioと設定されたHTTPが異なることを特定する。",
-        "認証・ツール引数の層ではなく、プロセス起動による接続設定を選ぶ。"
+        "ツール実行前の接続失敗と読む。",
+        "サーバーの提供するstdio方式へ設定を合わせる。"
       ],
-      "counterfactual": "A：サーバーがHTTP方式を提供し、実際の待受URLだけが設定と異なっているならURLを更新する。 B：接続方式とURLは正しく、サーバーが認証エラーを返し資格情報の更新を求めるなら認証設定を更新する。 D：サーバー接続とツール一覧取得は成功し、呼出し時の引数検証だけが失敗するなら入力定義を照合する。",
+      "counterfactual": "HTTPサーバーでURLが誤っているならURLを直す。",
       "evidence": [
         "mcp",
         "mcp-config"
       ],
-      "reasoning": "本文の目的と未確認事項から正答Cを再照合。資料に示されたstdioと設定されたHTTPが異なることを特定する。 認証・ツール引数の層ではなく、プロセス起動による接続設定を選ぶ。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "reasoning": "ツール実行前の接続失敗と読む。 サーバーの提供するstdio方式へ設定を合わせる。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-23-focus-improvement-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a24": {
-      "fingerprint": "5b4f6104327b74f1ac6050b62cb46d1e98eb5ca69b55768a74fe5c766fcee6fe",
+      "fingerprint": "ee2819a4c443d8d6fe973b610ae1006e39e48dfde9594c43391111b7afa525dc",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "自動適用と任意実行の違いを整理する。 共有範囲に合うrepoのPrompt Fileへ移す。",
       "reasoningSteps": [
-        "状況と制約を整理する：Copilotの共通指示へ開発規約とリリースノート作成手順を一緒に書いたところ、通常のコード修正でもリリースノートが生成されるようになりました。開発規約は常時使い、リリースノートの手順は必要なタスクでだけ呼び出したいと考えています",
-        "常時の規約を残し、タスク手順をオンデマンド化する。"
+        "自動適用と任意実行の違いを整理する。",
+        "共有範囲に合うrepoのPrompt Fileへ移す。"
       ],
-      "counterfactual": "ノート形式も全対話で必要なら、共通指示に残す設計が候補になる。",
+      "counterfactual": "個人専用ならユーザー領域のPrompt Fileへ分離できる。",
       "evidence": [
         "instructions",
         "prompt-files"
@@ -5340,9 +5346,9 @@
         "reason": "Instructions、Prompt Files、PR summaries、Spacesの用途・配置・再利用を問う。全社ポリシー、Audit Log、購読管理の操作ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "正答IDDと説明が一致することを再読。常時の規約を残し、タスク手順をオンデマンド化する。 誤答はA：ノート手順が常時の指示に残る。／B：短縮しても適用頻度は変わらない。／C：共有と適用頻度の問題を解決しない。",
+      "reasoning": "自動適用と任意実行の違いを整理する。 共有範囲に合うrepoのPrompt Fileへ移す。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a25": {
       "fingerprint": "ec662bee2c9f417f9e306c436c1f14ed48d8aaf672dd45f0582b6a3c6085ba6b",
@@ -5350,19 +5356,19 @@
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "assessment": "モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。 今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。",
       "reasoningSteps": [
         "モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。",
         "今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。"
       ],
-      "counterfactual": "B：シェルを使う作業は不要で、モデルがシェル自体を選ばないようにする目的なら候補から外す。 C：過去に現在の場所へ保存した広い承認を取り消し、実行時に確認したいなら保存済み承認をリセットする。 D：Git操作の権限は確認済みで、CLIへ提供する追加ディレクトリの許可範囲だけを変更したいならパスを見直す。",
+      "counterfactual": "今回の利用可能ツールからシェルを外す。git pushだけ拒否する元の方針とは異なる。",
       "evidence": [
         "cli-tool-permissions",
         "cli-current"
       ],
-      "reasoning": "本文の目的と未確認事項から正答Aを再照合。モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。 今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "reasoning": "モデルからシェルを外すと必要な作業も失うため、候補制限と実行権限を分ける。 今回のセッションに必要なGitの許可とPushの拒否を指定し、保存済み承認や追加パスへ変更を広げない。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-23-focus-improvement-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a26": {
       "fingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
@@ -5392,17 +5398,17 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d3-a13": {
-      "fingerprint": "b78cd2bd69aad408d8ea6f78fe50fed693af66e8cfbac405fc211c9cc2fee36c",
+      "fingerprint": "2e84e24616754da05dfedc4f75b3963c43a8dad8c7f617bd1552684f0021bdba",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "assessment": "活動なしとSeatなしを区別する。 割当一覧のアカウントを承認対象と照合する。",
       "reasoningSteps": [
-        "利用状況とライセンスの個別割当が別の情報だと区別する。",
-        "組織管理APIの座席一覧を選び、承認対象者へ照合する。"
+        "活動なしとSeatなしを区別する。",
+        "割当一覧のアカウントを承認対象と照合する。"
       ],
-      "counterfactual": "A：個別割当は確認済みで、機能別の利用状況を評価する目的なら利用データを取得する。 B：対象者への割当は確認済みで、組織内の対象機能が有効かを調べる目的なら機能ポリシーを取得する。 C：現在の割当と設定は確認済みで、承認したポリシー変更が誰にいつ行われたかを調べるなら監査記録を取得する。",
+      "counterfactual": "目的が活動評価なら利用レポートを選ぶ。Seat一覧では活動を判定できない。",
       "evidence": [
         "copilot-seat-api",
         "rest-api"
@@ -5414,9 +5420,9 @@
         "reason": "Copilot利用集計の管理APIへの要求と再試行を扱う管理ワークフロー。モデルの文脈長・候補ライフサイクルの問題ではない。",
         "report": "reports/question-objective-classification-review.json"
       },
-      "reasoning": "本文の目的と未確認事項から正答Dを再照合。利用状況とライセンスの個別割当が別の情報だと区別する。 組織管理APIの座席一覧を選び、承認対象者へ照合する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
+      "reasoning": "活動なしとSeatなしを区別する。 割当一覧のアカウントを承認対象と照合する。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-23-focus-improvement-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a14": {
       "fingerprint": "13b0abed4432c4345e48a442ed4d5a455be44d8a1d75539f9d857f0b61566cf3",
@@ -5652,24 +5658,24 @@
       "latestReview": "reports/applied-remediation-review.json"
     },
     "q-d6-a11": {
-      "fingerprint": "f1e7cd8b3678ec4ec48f264f7642d77356edea4f97c7a94a0dae5baba14b3953",
+      "fingerprint": "2ea5f8d606d14dd81426933d2de609f5ef2a28f4caf0cf59f68224fa13cd66fc",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。",
+      "assessment": "Git追跡とCopilot除外の設定元を分ける。 パターンのディレクトリと拡張子の範囲を照合する。",
       "reasoningSteps": [
-        "状況と制約を整理する：コンテンツ除外に対応する通常補完で、secretsディレクトリの直下とすべての下位階層にある.keyファイルだけを除外します。secrets/readme.mdと、secrets以外の.keyファイルは参照対象に残します",
-        "階層をまたぐ.keyの条件を両立する。"
+        "Git追跡とCopilot除外の設定元を分ける。",
+        "パターンのディレクトリと拡張子の範囲を照合する。"
       ],
-      "counterfactual": "secretsの全文書を除外するならsecrets/**が候補になる。",
+      "counterfactual": "Copilot側のパターンが直下だけになれば下位階層は除外しない。readmeを参照させる条件も保たれる。",
       "evidence": [
         "exclusion",
         "guide"
       ],
-      "reasoning": "正答IDCと説明が一致することを再読。階層をまたぐ.keyの条件を両立する。 誤答はA：深い階層の.keyを含めない。／B：readme.mdも除外する。／D：secrets以外の.keyまで対象にする。",
+      "reasoning": "Git追跡とCopilot除外の設定元を分ける。 パターンのディレクトリと拡張子の範囲を照合する。",
       "reviewRequired": false,
-      "latestReview": "reports/applied-remediation-review.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-a12": {
       "fingerprint": "16f701ce2aba0771a5a523955cbcca1098a29865d9cde8c21a3d47440c4d9cdc",
@@ -5786,18 +5792,18 @@
       }
     },
     "q-d2-e21": {
-      "fingerprint": "46ccb3597abeb1780ba79be37d3c6a084ff769c7b0d62534772693c74fdbf353",
+      "fingerprint": "4506fc07f6ef92cd4e629068fee3428c15d0d99b4eca4b6e05050efddcf5b195",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。 → BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。 → Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。",
+      "assessment": "Space共有と参照repoの権限を分ける。 BとCの403対象を各層へ対応させる。 Uの公開範囲を広げず不足する権限だけを補う。",
       "reasoningSteps": [
-        "B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。",
-        "BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。",
-        "Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。"
+        "Space共有と参照repoの権限を分ける。",
+        "BとCの403対象を各層へ対応させる。",
+        "Uの公開範囲を広げず不足する権限だけを補う。"
       ],
-      "counterfactual": "「CはSpaceが403だがRを直接閲覧できる」→「CもSpaceとUを閲覧できるが、Rを直接開くと403」なら表示C。Cの拒否も参照repoへ移り、両者のR閲覧権限が対象になる。元のCのSpace共有修正は成功済みの境界を扱ってしまう。",
+      "counterfactual": "両者がrepoを読めてSpaceだけ開けないなら、両者へのSpace共有が必要になる。",
       "evidence": [
         "BはSpaceとUを閲覧でき",
         "Rを直接開くと403",
@@ -5810,7 +5816,9 @@
         "to": "d2o3",
         "reason": "MCP、Spaces、Instructionsなどの連携・権限・指示の適用範囲を判定する機能問題。組織ポリシーの設定・CLIコマンドの問題ではない。",
         "report": "reports/question-objective-classification-review.json"
-      }
+      },
+      "reasoning": "Space共有と参照repoの権限を分ける。 BとCの403対象を各層へ対応させる。 Uの公開範囲を広げず不足する権限だけを補う。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e22": {
       "fingerprint": "bfc235ab00812bcb894e32dac6f604e512e149d43f706e43946eff1fa8526f62",
@@ -5860,18 +5868,18 @@
       }
     },
     "q-d2-e24": {
-      "fingerprint": "f05f4582b0d045b44e740e872c5591a7af1b3710de96294916cd1df523ce903f",
+      "fingerprint": "9655550e04c144765eb1e762e10ce89e289453227d21cd034ddb8a379251ff4e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。Issue連携の成功とChat廃止ログから停止対象を分ける。 → GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。 → MCPの接続承認と検索認可を検証してChat経路を置換する。",
+      "assessment": "廃止経路へ戻さずMCPの障害を診断する。 接続・スキーマ・認可の段階を分ける。 社内検索の認可だけを直しIssue連携を保つ。",
       "reasoningSteps": [
-        "Issue連携の成功とChat廃止ログから停止対象を分ける。",
-        "GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。",
-        "MCPの接続承認と検索認可を検証してChat経路を置換する。"
+        "廃止経路へ戻さずMCPの障害を診断する。",
+        "接続・スキーマ・認可の段階を分ける。",
+        "社内検索の認可だけを直しIssue連携を保つ。"
       ],
-      "counterfactual": "「同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない」→「今回停止したのは存続するGitHub AppのIssue連携で、接続ログはIssue用資格情報の失効だけを示す」なら表示B。歴史上のCopilot機能廃止はそのままだが、今回復旧すべき対象は通常AppのIssue認証へ変わる。",
+      "counterfactual": "同じ接続で必須引数不足ならMCPツールの入力定義・呼出引数を直す。",
       "evidence": [
         "GitHub App型",
         "2025年11月10日の廃止後",
@@ -5884,7 +5892,9 @@
         "to": "d2o3",
         "reason": "MCP、Spaces、Instructionsなどの連携・権限・指示の適用範囲を判定する機能問題。組織ポリシーの設定・CLIコマンドの問題ではない。",
         "report": "reports/question-objective-classification-review.json"
-      }
+      },
+      "reasoning": "廃止経路へ戻さずMCPの障害を診断する。 接続・スキーマ・認可の段階を分ける。 社内検索の認可だけを直しIssue連携を保つ。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-e06": {
       "fingerprint": "a79e690ea54a1f5b8d0b21a08873f3514885477d66d8050e7c00f860a726a4dc",
@@ -6106,18 +6116,18 @@
       ]
     },
     "q-d6-e06": {
-      "fingerprint": "c4dbdcda5155b0940f2004a90c0f4b45498d918310a6cf794b05c22c087c60ff",
+      "fingerprint": "9cacd930f15e7d9f18481e3a17fc68d1436b4318a2e0a616658f81fb50eda81a",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "三段階の分析・照合・結論を要求する。保存値、上位の実効設定、社内承認を別に読む。 → 強制Blockと反映確認済みという条件を各Orgへ適用する。 → 現時点では両方Blockとし、例外の技術反映は別手続きにする。",
+      "assessment": "保存値と強制される実効値を区別する。 両組織へ上位ポリシーを適用する。 下位設定では例外を作れないと判定する。",
       "reasoningSteps": [
-        "保存値、上位の実効設定、社内承認を別に読む。",
-        "強制Blockと反映確認済みという条件を各Orgへ適用する。",
-        "現時点では両方Blockとし、例外の技術反映は別手続きにする。"
+        "保存値と強制される実効値を区別する。",
+        "両組織へ上位ポリシーを適用する。",
+        "下位設定では例外を作れないと判定する。"
       ],
-      "counterfactual": "「Enterpriseの実効設定は強制Blockで」→「EnterpriseはNo policyでOrgに委任し」なら表示A。上位の強制がなくなり、AのAllowとBのBlockがそれぞれ実効になる。",
+      "counterfactual": "上位が選択を委任した場合は組織の値を使う。Aで候補が出ないという元の障害観測を残していない。",
       "evidence": [
         "強制Block",
         "Org-Aの保存値はAllow",
@@ -6130,7 +6140,9 @@
         "to": "d2o4",
         "reason": "組織の利用集計API、シート割当・回収、監査イベント、Enterprise/Organizationの強制ポリシーを扱う。入力除外・出力所有権・公開コード通知の機能自体ではない。",
         "report": "reports/question-objective-classification-review.json"
-      }
+      },
+      "reasoning": "保存値と強制される実効値を区別する。 両組織へ上位ポリシーを適用する。 下位設定では例外を作れないと判定する。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e07": {
       "fingerprint": "4873ad4bf3597afdf847bc324a9ee27412174429443eb30fad3e2673258280cc",
@@ -6342,25 +6354,25 @@
       "latestReview": "reports/applied-23-focus-improvement-review.json"
     },
     "q-d3-a17": {
-      "fingerprint": "a0691dd8a6100c4452e60fcbf1a9da059404fd78798303ba26c4f1c1f7fbb4af",
+      "fingerprint": "227efd19a514264987f89338aa2a32090fbf94d4fb311aedd134f489837c4096",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
       "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。",
+      "assessment": "対照試行で変化したものと固定されたものを分ける。 出力の一致制御と入力除外へ対応させる。",
       "reasoningSteps": [
-        "同条件の比較で変えたのは公開コード一致設定だと整理する。",
-        "生成後の候補の扱いを、要求の接続・入力除外・IDE有効設定と区別する。"
+        "対照試行で変化したものと固定されたものを分ける。",
+        "出力の一致制御と入力除外へ対応させる。"
       ],
-      "counterfactual": "B：両設定で候補がなく、接続診断にもサービスの到達不能が出るなら接続失敗を調べる。 C：対象ファイルにContent excludedが表示され、他ファイルでは補完できるなら入力除外を調べる。 D：一致設定は同じで、IDEの通常補完を無効にした後だけ候補が出なくなったなら補完設定を調べる。",
+      "counterfactual": "Bの入力除外が解除済みという状態へそろえたため、両方が出力の一致制御による差になる。",
       "evidence": [
         "responsible",
         "public-code"
       ],
       "origin": "new-question-draft",
       "reviewRequired": false,
-      "reasoning": "本文の目的と未確認事項から正答Aを再照合。同条件の比較で変えたのは公開コード一致設定だと整理する。 生成後の候補の扱いを、要求の接続・入力除外・IDE有効設定と区別する。 誤答3件は現在条件では外れ、各反実仮想では選べることを個別に確認。正答本文・主解説・選択肢別解説の対応も確認。",
-      "latestReview": "reports/applied-23-focus-improvement-review.json"
+      "reasoning": "対照試行で変化したものと固定されたものを分ける。 出力の一致制御と入力除外へ対応させる。",
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a19": {
       "fingerprint": "673c796cfec55470173cd3d97b3e8b0863a2f6cfac5c7821e878224c62a5cc84",
@@ -6390,7 +6402,7 @@
       "difficulty": "advanced",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "Copilot code reviewの指示参照元をhead branchと特定する。 共通指示とパス別指示を分け、変更した二ファイルへ照合する。 共通は両方で英語、セキュリティ指示はTypeScriptファイルだけと結論する。",
       "reasoningSteps": [
         "Copilot code reviewの指示参照元をhead branchと特定する。",
         "共通指示とパス別指示を分け、変更した二ファイルへ照合する。",
@@ -6403,90 +6415,88 @@
       ],
       "reasoning": "Copilot code reviewの指示参照元をhead branchと特定する。 共通指示とパス別指示を分け、変更した二ファイルへ照合する。 共通は両方で英語、セキュリティ指示はTypeScriptファイルだけと結論する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a19-feature-20261016": {
-      "fingerprint": "af941bda38939ff09f7bdfe1981254ba32e53467f1c5df05c4b9dccd1a5539f6",
+      "fingerprint": "8e0256cd8368044c93673e837893fee1ec37094ca7a87e1ddb3c2b077c88b165",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "診断済みの範囲と不足するイベントを分ける。 ログレベルを上げて新たに再現記録する。",
       "reasoningSteps": [
-        "単なる詳細イベントではなく、接続先別の到達性が必要と読む。",
-        "Copilotの接続診断コマンドとReachabilityを選ぶ。",
-        "接続先ごとの到達性を調べる入口はChat DiagnosticsのReachability。通常ログが不足しているというだけで、詳細度を上げる作業へ飛ばない。"
+        "診断済みの範囲と不足するイベントを分ける。",
+        "ログレベルを上げて新たに再現記録する。"
       ],
-      "counterfactual": "到達性診断済みで詳細イベントの新規記録が目的なら、ログレベルをTraceへ上げる。",
+      "counterfactual": "既存ログだけの提出ならログフォルダから収集する。",
       "evidence": [
         "feature-refresh-logs",
         "network"
       ],
-      "reasoning": "単なる詳細イベントではなく、接続先別の到達性が必要と読む。 Copilotの接続診断コマンドとReachabilityを選ぶ。 接続先ごとの到達性を調べる入口はChat DiagnosticsのReachability。通常ログが不足しているというだけで、詳細度を上げる作業へ飛ばない。",
+      "reasoning": "診断済みの範囲と不足するイベントを分ける。 ログレベルを上げて新たに再現記録する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e04-feature-20261016": {
-      "fingerprint": "9b08ecda9874db0eb74f45388c32fd786d94f723dae02eaddb4752726761f156",
+      "fingerprint": "fa00cd65cd4cce0f13e1b2bae19ef4968b8eae2429089743dc29418d2b59326d",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "Prompt FileとAgentの優先順位を判定する。 接続状態と実行承認を分ける。 一覧の修正とMCP接続が別の操作だと結論する。",
       "reasoningSteps": [
-        "Prompt Fileのtools指定があるため、Agentの既定一覧ではなくこちらを採る。",
-        "指定中の各ツールが実際に利用可能かを照合する。",
-        "未接続ツールを除き、Agent側だけにあるsearchも足さずreadのみとする。"
+        "Prompt FileとAgentの優先順位を判定する。",
+        "接続状態と実行承認を分ける。",
+        "一覧の修正とMCP接続が別の操作だと結論する。"
       ],
-      "counterfactual": "Prompt Fileにtools指定がなければ参照Agentのreadとsearchが使われる。",
+      "counterfactual": "Prompt Fileでtoolsを省略すればAgentの一覧が使われる。metricsは引き続き未接続なので接続が別に必要である。",
       "evidence": [
         "feature-refresh-prompt",
         "feature-refresh-tools"
       ],
-      "reasoning": "Prompt Fileのtools指定があるため、Agentの既定一覧ではなくこちらを採る。 指定中の各ツールが実際に利用可能かを照合する。 未接続ツールを除き、Agent側だけにあるsearchも足さずreadのみとする。",
+      "reasoning": "Prompt FileとAgentの優先順位を判定する。 接続状態と実行承認を分ける。 一覧の修正とMCP接続が別の操作だと結論する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e03-feature-20261016": {
-      "fingerprint": "6f9a51b94d195654c73228bc5f4b1c8baa449ae2d8318b7bb897cabfe29f99ef",
+      "fingerprint": "09c9622c93929cceb0d6944bcf0a0faaae2ae7ff81a576b4cc9d42753910507c",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "閲覧権限とCopilotの入力除外を分ける。 レビュー失敗をContent Exclusionへ対応させる。 出力のBlockを維持して入力だけ戻す。",
       "reasoningSteps": [
-        "レビュー済みの他ファイルと閲覧可能という観測から、機能全体の無効や閲覧権限不足と分ける。",
-        "Content Exclusionがcode reviewに及ぶ点と、公開一致Blockが出力を扱う点を照合する。",
-        "ファイルの除外だけを解除し、独立した公開一致Blockを維持する。"
+        "閲覧権限とCopilotの入力除外を分ける。",
+        "レビュー失敗をContent Exclusionへ対応させる。",
+        "出力のBlockを維持して入力だけ戻す。"
       ],
-      "counterfactual": "ファイルをレビューへ戻す要件は同じで、公開一致の提示も許すなら除外解除とAllow変更を組み合わせる。",
+      "counterfactual": "機密の入力除外を維持し、一致出力だけ許可するなら別の組合せになる。",
       "evidence": [
         "exclusion-concept",
         "public-code"
       ],
-      "reasoning": "レビュー済みの他ファイルと閲覧可能という観測から、機能全体の無効や閲覧権限不足と分ける。 Content Exclusionがcode reviewに及ぶ点と、公開一致Blockが出力を扱う点を照合する。 ファイルの除外だけを解除し、独立した公開一致Blockを維持する。",
+      "reasoning": "閲覧権限とCopilotの入力除外を分ける。 レビュー失敗をContent Exclusionへ対応させる。 出力のBlockを維持して入力だけ戻す。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q01-feature-20261016": {
-      "fingerprint": "297c5c025749648bee85ea70d8856bec87cd22665b50c1736f591f1f6a774b49",
+      "fingerprint": "74c1d1322c1317f10645c7fc3af0e22ef79280a0246fc61619732afb95c32fe0",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "特定コマンドの確認とツール全体の確認を分ける。 falseの確認要求とhookのdenyを区別して設定する。",
       "reasoningSteps": [
-        "操作対象をURL取得ではなくターミナルコマンドと特定する。",
-        "コマンド別の確認を要求し、他ツールの承認を維持する。",
-        "コマンド別の自動承認を見直す。falseのルールは実行禁止ではなく確認を要求する。"
+        "特定コマンドの確認とツール全体の確認を分ける。",
+        "falseの確認要求とhookのdenyを区別して設定する。"
       ],
-      "counterfactual": "対象がURL取得の応答承認になればurls.autoApproveを見直す。",
+      "counterfactual": "実行の禁止が目的ならPreToolUseのdenyを使い、autoApproveのfalseとは区別する。",
       "evidence": [
         "feature-refresh-approval"
       ],
-      "reasoning": "操作対象をURL取得ではなくターミナルコマンドと特定する。 コマンド別の確認を要求し、他ツールの承認を維持する。 コマンド別の自動承認を見直す。falseのルールは実行禁止ではなく確認を要求する。",
+      "reasoning": "特定コマンドの確認とツール全体の確認を分ける。 falseの確認要求とhookのdenyを区別して設定する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a04-feature-20261016": {
       "fingerprint": "9d43f67da57857900a4ba9db443d1ed1b4e6ad8726c75b7256dcfd2f82053822",
@@ -6494,7 +6504,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "外部ツールの実行と結果取込を異なる確認段階へ分ける。 開始は自動化し、Post-approvalの結果確認だけを残す。 実行前承認と、結果を文脈へ取り込む際の承認は別。今回残すのは結果確認。",
       "reasoningSteps": [
         "外部ツールの実行と結果取込を異なる確認段階へ分ける。",
         "開始は自動化し、Post-approvalの結果確認だけを残す。",
@@ -6506,128 +6516,122 @@
       ],
       "reasoning": "外部ツールの実行と結果取込を異なる確認段階へ分ける。 開始は自動化し、Post-approvalの結果確認だけを残す。 実行前承認と、結果を文脈へ取り込む際の承認は別。今回残すのは結果確認。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a07-feature-20261016": {
-      "fingerprint": "e5252d35b06436c7aa14415157fb4683aed94bcac6a825446170cb482df52ef2",
+      "fingerprint": "23678124f0a52474cc037b436adcac64d0f12162753e7d47dc82fff291e1fb50",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "ローカル・setupとAgentの通信境界を分ける。 repoの許可先だけを追加する。",
       "reasoningSteps": [
-        "ローカルではなくクラウドAgent側の拒否と特定する。",
-        "Internet accessの許可対象へ必要なドメインだけ追加する。",
-        "クラウドAgentの接続はその環境のfirewall設定で管理する。指定ドメインだけを追加する。"
+        "ローカル・setupとAgentの通信境界を分ける。",
+        "repoの許可先だけを追加する。"
       ],
-      "counterfactual": "ローカルのプロキシ経路が失敗しているならIDE側の接続設定を見直す。",
+      "counterfactual": "firewall無効化そのものが承認された目的なら設定の無効化を選ぶ。通常の推奨策に一般化しない。",
       "evidence": [
         "feature-refresh-firewall"
       ],
-      "reasoning": "ローカルではなくクラウドAgent側の拒否と特定する。 Internet accessの許可対象へ必要なドメインだけ追加する。 クラウドAgentの接続はその環境のfirewall設定で管理する。指定ドメインだけを追加する。",
+      "reasoning": "ローカル・setupとAgentの通信境界を分ける。 repoの許可先だけを追加する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a10-feature-20261016": {
-      "fingerprint": "931641949b07a617171ad353619c0b3bcd27a3b9f2af605846aa6552d0403417",
+      "fingerprint": "d0aa6fa42822c0ff769b7630f0182ce0fda3068c20c253ae5621a26c81cb85ef",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "停止がツール承認待ちかターン継続待ちかを区別する。 CLIのAutopilotを選び継続範囲を管理する。",
       "reasoningSteps": [
-        "不足しているのはツール許可ではなくタスク継続と特定する。",
-        "CLIのAutopilotで継続方式を変える。",
-        "Autopilotはタスクが完了するまで継続する実行方式。allow-all等の権限指定だけとは役割が異なる。"
+        "停止がツール承認待ちかターン継続待ちかを区別する。",
+        "CLIのAutopilotを選び継続範囲を管理する。"
       ],
-      "counterfactual": "継続方式を保ってツール確認だけ省くならallow-allが対象。",
+      "counterfactual": "継続ではなく実行承認が不足するケースである。利用可能な全ツールの確認抑制にはallow-all-toolsを使う。",
       "evidence": [
         "feature-refresh-autopilot",
         "cli-tool-permissions"
       ],
-      "reasoning": "不足しているのはツール許可ではなくタスク継続と特定する。 CLIのAutopilotで継続方式を変える。 Autopilotはタスクが完了するまで継続する実行方式。allow-all等の権限指定だけとは役割が異なる。",
+      "reasoning": "停止がツール承認待ちかターン継続待ちかを区別する。 CLIのAutopilotを選び継続範囲を管理する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a04-feature-20261016": {
-      "fingerprint": "a1b5943b1da01413b30dd08a2f9e0e49d8a4a886bfbef842f28a403572fc5741",
+      "fingerprint": "2348da4c4fdc9d01e09d271dcb98a4947b4aa7ce6b186814b470d0a01f90b1e0",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "ツールとURLで保存先とスコープを分ける。 場所Aの項目だけと全セッションのURL許可を変更する。",
       "reasoningSteps": [
-        "repo間でMCPだけ確認が戻るという観測を整理する。",
-        "ツール承認の場所スコープとURL承認の全セッション範囲へ照合する。",
-        "場所に紐づくツール承認と、セッションをまたぐURL承認は保存範囲が違う。"
+        "ツールとURLで保存先とスコープを分ける。",
+        "場所Aの項目だけと全セッションのURL許可を変更する。"
       ],
-      "counterfactual": "比較する二つとも場所に紐づくツール承認になれば、両方permissions-config.jsonに保存される。",
+      "counterfactual": "全場所のツール承認を消す方針なら、Aだけでなく全場所の項目とURL許可を外す。",
       "evidence": [
         "cli-tool-permissions"
       ],
-      "reasoning": "repo間でMCPだけ確認が戻るという観測を整理する。 ツール承認の場所スコープとURL承認の全セッション範囲へ照合する。 場所に紐づくツール承認と、セッションをまたぐURL承認は保存範囲が違う。",
+      "reasoning": "ツールとURLで保存先とスコープを分ける。 場所Aの項目だけと全セッションのURL許可を変更する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc05-1-feature-20261016": {
-      "fingerprint": "304055cf3c4537d9707a9d3c0cec26962cf53fb66733550fe1c425b18e448c04",
+      "fingerprint": "b49fb1a37b5b0d03e6fd432299ec3ccd41bb0f25bc761ba73bac44805222e358",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "回答に含まれる資料と実行先を区別する。 変更先Bを実行ワークスペースとして選ぶ。",
       "reasoningSteps": [
-        "追加添付は文脈、最初の選択は実行場所という違いを読む。",
-        "Bを変更先とする新しい主ワークスペースを選ぶ。",
-        "追加プロジェクトの添付は文脈であり主な実行先を変更しない。Bへ変更したいならBを主ワークスペースにする。"
+        "回答に含まれる資料と実行先を区別する。",
+        "変更先Bを実行ワークスペースとして選ぶ。"
       ],
-      "counterfactual": "Aを変えてBは資料にする要件なら、既存の実行先と添付を保つ。",
+      "counterfactual": "Aを変更するなら既存セッションとBの資料添付を使える。",
       "evidence": [
         "feature-refresh-context"
       ],
-      "reasoning": "追加添付は文脈、最初の選択は実行場所という違いを読む。 Bを変更先とする新しい主ワークスペースを選ぶ。 追加プロジェクトの添付は文脈であり主な実行先を変更しない。Bへ変更したいならBを主ワークスペースにする。",
+      "reasoning": "回答に含まれる資料と実行先を区別する。 変更先Bを実行ワークスペースとして選ぶ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a26-feature-20261016": {
-      "fingerprint": "f1fdc6759a3c3e3646adfce6fe486610e5559764227fccca9bee1b6743f219fb",
+      "fingerprint": "7146c7f353bc6c1a0bc20e2f4e56d0f577347222e4933718192a7839c39d09ed",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "残っている保存済み承認を対象ツールだけ外す。 実行前確認と一回の承認範囲を組み合わせる。",
       "reasoningSteps": [
-        "今回の入力に対する承認を、今後の呼出しへの許可から区別する。",
-        "一回限りの承認を選ぶ。",
-        "一回の承認なら今回の入力を確認した判断だけを適用し、次の呼出しへの確認を残す。"
+        "残っている保存済み承認を対象ツールだけ外す。",
+        "実行前確認と一回の承認範囲を組み合わせる。"
       ],
-      "counterfactual": "現在セッション全体を許可する条件ならセッション範囲の承認が合う。",
+      "counterfactual": "確認したい段階が結果取込ならPost-approvalを変更し、既存のPre-approvalを維持する。",
       "evidence": [
         "feature-refresh-approval"
       ],
-      "reasoning": "今回の入力に対する承認を、今後の呼出しへの許可から区別する。 一回限りの承認を選ぶ。 一回の承認なら今回の入力を確認した判断だけを適用し、次の呼出しへの確認を残す。",
+      "reasoning": "残っている保存済み承認を対象ツールだけ外す。 実行前確認と一回の承認範囲を組み合わせる。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a16-feature-20261016": {
-      "fingerprint": "7a5c5cdabf88f9b54d5e06ad82c18272b0513ebaf2d9c4677fa864a1611639a7",
+      "fingerprint": "5822934ffc7d268a0f2f5d1f829752c9bf6682ccd0494afaa5bc2b31761198f4",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "承認済みでも残るsandbox制限を特定する。 ネットワークではなく必要なファイルシステム範囲を追加する。",
       "reasoningSteps": [
-        "承認済みなので拒否は承認待ちでなくアクセス境界と読む。",
-        "sandboxを保ち必要なファイル範囲だけを調整する。",
-        "実行承認とsandboxの境界は別。承認済みでも拒否された範囲を必要な分だけ調整する。"
+        "承認済みでも残るsandbox制限を特定する。",
+        "ネットワークではなく必要なファイルシステム範囲を追加する。"
       ],
-      "counterfactual": "ファイル境界ではなく確認だけを省く要求ならAllow allが機能上の対象になる。",
+      "counterfactual": "拒否された境界をローカルパスからネットワークへ変えたケース。ローカル拒否という観測やディレクトリだけを追加する目的は残さない。",
       "evidence": [
         "feature-refresh-approval"
       ],
-      "reasoning": "承認済みなので拒否は承認待ちでなくアクセス境界と読む。 sandboxを保ち必要なファイル範囲だけを調整する。 実行承認とsandboxの境界は別。承認済みでも拒否された範囲を必要な分だけ調整する。",
+      "reasoning": "承認済みでも残るsandbox制限を特定する。 ネットワークではなく必要なファイルシステム範囲を追加する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a17-feature-20261016": {
       "fingerprint": "6e4780b4ad66b980d377b0a1cf4ee6c1c6038a18b25176dbb7e1d9a818759873",
@@ -6635,7 +6639,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "対象は既知の二つの関数で、ファイル全体ではないと整理する。 両ファイルを開き、Symbolsで個別に添付する。 シンボルは対象ファイルを開いて候補に出す。二つの関数単位で指定する要件に合う。",
       "reasoningSteps": [
         "対象は既知の二つの関数で、ファイル全体ではないと整理する。",
         "両ファイルを開き、Symbolsで個別に添付する。",
@@ -6647,68 +6651,65 @@
       ],
       "reasoning": "対象は既知の二つの関数で、ファイル全体ではないと整理する。 両ファイルを開き、Symbolsで個別に添付する。 シンボルは対象ファイルを開いて候補に出す。二つの関数単位で指定する要件に合う。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a18-feature-20261016": {
-      "fingerprint": "01530d57941f7d1f82a69be5e72713e7179ec693cf9ae266e8cc25b02f08e1fa",
+      "fingerprint": "ac29c1c76fabef687a99ae578df27c68674e3d33ac3a8b4f166a62736b834361",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "修正作業と変更後のレビューを分ける。 一回の再レビューで自動化方針を保つ。",
       "reasoningSteps": [
-        "新規pushの自動起動はなく、永続設定も変えないと読む。",
-        "PR単位で再レビューを依頼する。",
-        "今回だけ現在差分を再評価するなら、再レビューを明示依頼する。"
+        "修正作業と変更後のレビューを分ける。",
+        "一回の再レビューで自動化方針を保つ。"
       ],
-      "counterfactual": "継続して自動起動したい場合はReview new pushesを有効化する。",
+      "counterfactual": "修正済みコードの再評価ではなく、未修正の指摘の実装を委任するケースなのでFix with Copilotを使う。",
       "evidence": [
         "feature-refresh-review-config",
         "feature-refresh-review-howto"
       ],
-      "reasoning": "新規pushの自動起動はなく、永続設定も変えないと読む。 PR単位で再レビューを依頼する。 今回だけ現在差分を再評価するなら、再レビューを明示依頼する。",
+      "reasoning": "修正作業と変更後のレビューを分ける。 一回の再レビューで自動化方針を保つ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a19-feature-20261016": {
-      "fingerprint": "82cd5b54908508e8dd57ebc6a460e152d073061ce2b68d8f6ab4cd2542454bd9",
+      "fingerprint": "23e356ba8833c5af4bbdc0878145e3d5ca8707eab398570eb1a1fd444effd5c3",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "承認待ちと候補提供を区別する。 Chat単位で不要なツールだけ外す。",
       "reasoningSteps": [
-        "実行承認ではなく、モデルへ見せる候補の制限が必要と判断する。",
-        "対象ツールだけを無効化する。",
-        "モデルが使える候補の一覧を変える。必要なsearchの接続は維持できる。"
+        "承認待ちと候補提供を区別する。",
+        "Chat単位で不要なツールだけ外す。"
       ],
-      "counterfactual": "候補を残して確認を要求するなら自動承認を外す。",
+      "counterfactual": "候補を保ち実行確認だけ必要ならPre-approvalの自動化を外す。",
       "evidence": [
         "feature-refresh-tools"
       ],
-      "reasoning": "実行承認ではなく、モデルへ見せる候補の制限が必要と判断する。 対象ツールだけを無効化する。 モデルが使える候補の一覧を変える。必要なsearchの接続は維持できる。",
+      "reasoning": "承認待ちと候補提供を区別する。 Chat単位で不要なツールだけ外す。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a21-feature-20261016": {
-      "fingerprint": "eee4ba220bf15fa836762c628bd712a670c625eb54b5d0b795e40cc001dc03d8",
+      "fingerprint": "d5f5c7975a100fd22680cd577b09e3eb5d5ec214ecfda04d15817e27d9e2ff0f",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "repoとSpaceのアクセスを分ける。 既定アクセスとYの個別共有を設定する。",
       "reasoningSteps": [
-        "元repoではなくSpace自体の共有範囲を狭めると判断する。",
-        "組織メンバーの既定アクセスをNo accessとする。",
-        "一般メンバーへ既定で公開せず、必要な担当者だけを個別に許可できる。"
+        "repoとSpaceのアクセスを分ける。",
+        "既定アクセスとYの個別共有を設定する。"
       ],
-      "counterfactual": "組織全員へ閲覧利用を認めるならviewerが適切。",
+      "counterfactual": "組織全体への閲覧を認めるなら既定viewerを利用できる。",
       "evidence": [
         "spaces"
       ],
-      "reasoning": "元repoではなくSpace自体の共有範囲を狭めると判断する。 組織メンバーの既定アクセスをNo accessとする。 一般メンバーへ既定で公開せず、必要な担当者だけを個別に許可できる。",
+      "reasoning": "repoとSpaceのアクセスを分ける。 既定アクセスとYの個別共有を設定する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e01-feature-20261016": {
       "fingerprint": "931e18d0e1c19c5c88492e768545f7fda1c8dd5fcd314e0f616fdc7b308952a6",
@@ -6716,7 +6717,7 @@
       "difficulty": "advanced",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "実行承認を行える書込権限者と、タスクを依頼したAを整理する。 Agent PRの依頼者はそのPRの承認者になれない制限を適用する。 Aの実行承認とBのレビューを分離する。",
       "reasoningSteps": [
         "実行承認を行える書込権限者と、タスクを依頼したAを整理する。",
         "Agent PRの依頼者はそのPRの承認者になれない制限を適用する。",
@@ -6728,189 +6729,188 @@
       ],
       "reasoning": "実行承認を行える書込権限者と、タスクを依頼したAを整理する。 Agent PRの依頼者はそのPRの承認者になれない制限を適用する。 Aの実行承認とBのレビューを分離する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e02-feature-20261016": {
-      "fingerprint": "beedf8779f0268b1f8f0d647598f806f45ee902bf0cdddf404ef21f1881f31c3",
+      "fingerprint": "ad68b3c34c1e1d4b00859739d02fc97a071817a34f8437490d917496eb4af7f9",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "表示と採用を区別する。 コード参照の記録対象をQに限定する。 一致参照と安全性の保証を区別する。",
       "reasoningSteps": [
-        "Pは表示後に破棄、Qは採用という異なるイベントを整理する。",
-        "インラインのコード参照の採用時記録という条件に照合する。",
-        "Qの記録を確認し、Pにも採用記録があるとは扱わない。"
+        "表示と採用を区別する。",
+        "コード参照の記録対象をQに限定する。",
+        "一致参照と安全性の保証を区別する。"
       ],
-      "counterfactual": "両候補が採用され記録があるなら、それぞれの採用記録を確認する。",
+      "counterfactual": "Pも採用した場合は両候補の採用時の一致参照を確認できる。安全性保証は依然できない。",
       "evidence": [
         "public-code"
       ],
-      "reasoning": "Pは表示後に破棄、Qは採用という異なるイベントを整理する。 インラインのコード参照の採用時記録という条件に照合する。 Qの記録を確認し、Pにも採用記録があるとは扱わない。",
+      "reasoning": "表示と採用を区別する。 コード参照の記録対象をQに限定する。 一致参照と安全性の保証を区別する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e03-feature-20261016": {
-      "fingerprint": "0764506c7a65772ba7eb731339876c1c9a6e93067c563e42ea28d87bf88c87bc",
+      "fingerprint": "96a8008859b6cffdc6b5a70d189976ec93cb62613bc64b2460126e06dc9a13be",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "commit時点と依頼前checkpointの差を読む。 コード復元と外部ツールの副作用を分ける。 依頼前スナップショットと外部の補償更新を組み合わせる。",
       "reasoningSteps": [
-        "コード編集とMCPによる外部更新を二つの変更として整理する。",
-        "checkpointが扱うローカル変更と扱わない外部副作用を区別する。",
-        "コード復元とチケットの別処理を組み合わせる。"
+        "commit時点と依頼前checkpointの差を読む。",
+        "コード復元と外部ツールの副作用を分ける。",
+        "依頼前スナップショットと外部の補償更新を組み合わせる。"
       ],
-      "counterfactual": "外部更新を残す条件ならコードだけ復元する案を選ぶ。",
+      "counterfactual": "復元元の利用可能性だけを変えたケース。checkpointがないのでGitの最終commitを使い、外部は別に戻す。",
       "evidence": [
         "feature-refresh-edits",
         "feature-refresh-trust"
       ],
-      "reasoning": "コード編集とMCPによる外部更新を二つの変更として整理する。 checkpointが扱うローカル変更と扱わない外部副作用を区別する。 コード復元とチケットの別処理を組み合わせる。",
+      "reasoning": "commit時点と依頼前checkpointの差を読む。 コード復元と外部ツールの副作用を分ける。 依頼前スナップショットと外部の補償更新を組み合わせる。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e07-feature-20261016": {
-      "fingerprint": "056473bb5cfd6eab19b221417ad96641a7f3060fbb7aebd79b66a731a6bff25b",
+      "fingerprint": "00aea9df5f05d6f58b72c9e6017aa40a30faa94fee26bbf8d5892ae2bfd636d2",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "URLの要求・応答とMCPの実行前・取込前を分ける。 不足するのが取込前確認だと特定する。 送信側を変えず各経路の取込設定を変更する。",
       "reasoningSteps": [
-        "送信時と応答取込時の二段階で観測を整理する。",
-        "要求の自動承認と応答の手動確認が設定値に一致すると照合する。",
-        "変更せず、残したい応答確認を続ける。"
+        "URLの要求・応答とMCPの実行前・取込前を分ける。",
+        "不足するのが取込前確認だと特定する。",
+        "送信側を変えず各経路の取込設定を変更する。"
       ],
-      "counterfactual": "応答も自動にする要件ならapproveResponseをtrueへ変更する。",
+      "counterfactual": "URLは要求を自動化する変更、MCPは結果だけ確認する変更となる。",
       "evidence": [
         "feature-refresh-approval"
       ],
-      "reasoning": "送信時と応答取込時の二段階で観測を整理する。 要求の自動承認と応答の手動確認が設定値に一致すると照合する。 変更せず、残したい応答確認を続ける。",
+      "reasoning": "URLの要求・応答とMCPの実行前・取込前を分ける。 不足するのが取込前確認だと特定する。 送信側を変えず各経路の取込設定を変更する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e08-feature-20261016": {
-      "fingerprint": "3dd098b5128a4e482b6e815b8b39424c6f9c5faa638a803b273d6b514bc7bb09",
+      "fingerprint": "ede001f9e770adc29f2f414ef5c05b0588eca79341f2b105f3f359f80e2251a8",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "レビュー起動・Approve生成・要件算入を分ける。 成功している段階を変更対象から外す。 算入を直しても人の承認要件を維持する。",
       "reasoningSteps": [
-        "コメントがあることと承認が要件へ数えられることを区別する。",
-        "Copilotの承認許可とマージ要件への算入という二つの設定を確認する。",
-        "上位許可を前提に両方を有効化する。"
+        "レビュー起動・Approve生成・要件算入を分ける。",
+        "成功している段階を変更対象から外す。",
+        "算入を直しても人の承認要件を維持する。"
       ],
-      "counterfactual": "承認表示だけで算入不要なら承認許可だけ有効にする。",
+      "counterfactual": "算入済みでApprove生成が無効なら承認機能の有効化が不足している。",
       "evidence": [
         "feature-refresh-review-config",
         "code-review"
       ],
-      "reasoning": "コメントがあることと承認が要件へ数えられることを区別する。 Copilotの承認許可とマージ要件への算入という二つの設定を確認する。 上位許可を前提に両方を有効化する。",
+      "reasoning": "レビュー起動・Approve生成・要件算入を分ける。 成功している段階を変更対象から外す。 算入を直しても人の承認要件を維持する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e02-feature-20261016": {
-      "fingerprint": "aa8bf8ab196ae4e96706cc9e20a57c8382ced7ce6a131dcc9b8245bdc59b1eb2",
+      "fingerprint": "7de94d1f4cd54852a1666ee6a5ae52c4135ba7332789cf087ac37a286f7f06f0",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "実行前・取込前のどちらが不足か診断する。 ツール別管理と全体リセットを区別する。 対象ツールのPre-approvalだけを変更する。",
       "reasoningSteps": [
-        "対象ツールと対象段階をupdate_recordの実行前に限定する。",
-        "保存済みの承認リセット、ツール候補変更、実行後確認を切り分ける。",
-        "Manage Tool ApprovalでPreだけを変更する。"
+        "実行前・取込前のどちらが不足か診断する。",
+        "ツール別管理と全体リセットを区別する。",
+        "対象ツールのPre-approvalだけを変更する。"
       ],
-      "counterfactual": "全承認を消してよいならReset Tool Confirmationsが合う。",
+      "counterfactual": "全ツールの保存済み承認を消す目的ならReset Tool Confirmationsが合う。",
       "evidence": [
         "feature-refresh-approval"
       ],
-      "reasoning": "対象ツールと対象段階をupdate_recordの実行前に限定する。 保存済みの承認リセット、ツール候補変更、実行後確認を切り分ける。 Manage Tool ApprovalでPreだけを変更する。",
+      "reasoning": "実行前・取込前のどちらが不足か診断する。 ツール別管理と全体リセットを区別する。 対象ツールのPre-approvalだけを変更する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc02-2-feature-20261016": {
-      "fingerprint": "ddd7e5588c1c1bc960d1d1e07330ee105794ad49b2b22bede5a79b6af7af9fbe",
+      "fingerprint": "75886a4bd85e12b456671f722df9c6ac0d3548b5d9b5c7bf45890eeaca9c3339",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "MCP読取とcloudタスクの変更先を分ける。 PRを作るrepoごとにタスクが必要と判定する。 相互参照の文脈は各タスクへ保つ。",
       "reasoningSteps": [
-        "Bへの読取アクセスと変更先Aを異なる境界に分ける。",
-        "一タスク一repo・一PRというAgentの範囲へ照合する。",
-        "二つの変更タスクに分ける。"
+        "MCP読取とcloudタスクの変更先を分ける。",
+        "PRを作るrepoごとにタスクが必要と判定する。",
+        "相互参照の文脈は各タスクへ保つ。"
       ],
-      "counterfactual": "変更はAだけで足り、Bの読取だけ不足するならMCP読取設定が対象。",
+      "counterfactual": "Bを編集しない方針ならAのタスクとBの読取文脈で足りる。",
       "evidence": [
         "feature-refresh-cloud"
       ],
-      "reasoning": "Bへの読取アクセスと変更先Aを異なる境界に分ける。 一タスク一repo・一PRというAgentの範囲へ照合する。 二つの変更タスクに分ける。",
+      "reasoning": "MCP読取とcloudタスクの変更先を分ける。 PRを作るrepoごとにタスクが必要と判定する。 相互参照の文脈は各タスクへ保つ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e09-feature-20261016": {
-      "fingerprint": "9e250a48e234b0b5ef1777c953a512ed64248fcd707d69988f50ef0506f6b14f",
+      "fingerprint": "95f1326cfe3932a5a665f1d097026814e4533c0ffffafbb0a37643d85bff05f9",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "コード参照の索引対象を確認する。 反映時点と対象範囲の限界をそれぞれ照合する。 参照なしから独自性を証明しない。",
       "reasoningSteps": [
-        "二件を公開repoと非公開repoへ分ける。",
-        "公開コード索引の対象範囲と更新遅延を別々の制約として照合する。",
-        "Pは反映待ちの可能性、Qは索引対象外なので、参照なしを一律の不一致証明にはできないと結論する。"
+        "コード参照の索引対象を確認する。",
+        "反映時点と対象範囲の限界をそれぞれ照合する。",
+        "参照なしから独自性を証明しない。"
       ],
-      "counterfactual": "Qも公開索引の対象になり、Pだけに公開直後の反映待ちの可能性が残る。",
+      "counterfactual": "Pの反映を確認した条件へ変われば、その事実は採用できる。非公開Qの範囲と独自性に関する留保は変わらない。",
       "evidence": [
         "public-code"
       ],
-      "reasoning": "二件を公開repoと非公開repoへ分ける。 公開コード索引の対象範囲と更新遅延を別々の制約として照合する。 Pは反映待ちの可能性、Qは索引対象外なので、参照なしを一律の不一致証明にはできないと結論する。",
+      "reasoning": "コード参照の索引対象を確認する。 反映時点と対象範囲の限界をそれぞれ照合する。 参照なしから独自性を証明しない。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-a18-feature-20261016": {
-      "fingerprint": "e41d3998d03ac61cdf9f26d2405138d54db28110875c08033779ee2bc43bd6be",
+      "fingerprint": "bd69c56ef7007007a489d8a29df4a8e04e8e0411cd3153ca97f95449237a5639",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "存在とセッションへの読込を区別する。 CLIが提供する構成表示で前提を確認する。",
       "reasoningSteps": [
-        "設定ファイルの存在でなく、セッションがロードした構成が必要と読む。",
-        "環境一覧を出す/envを選ぶ。",
-        "ファイルの存在とセッションへの読込は別。現在読み込んだ構成の一覧を確認する目的に合う。"
+        "存在とセッションへの読込を区別する。",
+        "CLIが提供する構成表示で前提を確認する。"
       ],
-      "counterfactual": "挙動の原因解析が目的なら/diagnoseを使う。",
+      "counterfactual": "読込を確認済みで実行時ログの解析へ進むならdiagnoseを使う。",
       "evidence": [
         "feature-refresh-cli-reference"
       ],
-      "reasoning": "設定ファイルの存在でなく、セッションがロードした構成が必要と読む。 環境一覧を出す/envを選ぶ。 ファイルの存在とセッションへの読込は別。現在読み込んだ構成の一覧を確認する目的に合う。",
+      "reasoning": "存在とセッションへの読込を区別する。 CLIが提供する構成表示で前提を確認する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e02-feature-20261016": {
-      "fingerprint": "f42c35160d88449ca5cb0294224b5a188748e8fcc560a1f2331b55100d1ed973",
+      "fingerprint": "e4868409b838dae2d138dfcff2377fd197af223b627e2205b9c85dca0a928c4f",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "個人設定とrulesetの独立した起動を区別する。 初回と追加pushを別のイベントとして扱う。 有効な起動源の追加pushだけ止める。",
       "reasoningSteps": [
-        "個人とrulesetという二つの起動元を分ける。",
-        "それぞれが独立に評価され、個人の無効がrulesetを打ち消さないと照合する。",
-        "既存のrulesetを維持すれば方針を満たすと結論する。"
+        "個人設定とrulesetの独立した起動を区別する。",
+        "初回と追加pushを別のイベントとして扱う。",
+        "有効な起動源の追加pushだけ止める。"
       ],
-      "counterfactual": "個別依頼だけにするには自動レビューを起動しているruleset側を変更する。",
+      "counterfactual": "全ての自動起動をやめるならrulesetの自動レビュー全体を外す。",
       "evidence": [
         "feature-refresh-review-config"
       ],
-      "reasoning": "個人とrulesetという二つの起動元を分ける。 それぞれが独立に評価され、個人の無効がrulesetを打ち消さないと照合する。 既存のrulesetを維持すれば方針を満たすと結論する。",
+      "reasoning": "個人設定とrulesetの独立した起動を区別する。 初回と追加pushを別のイベントとして扱う。 有効な起動源の追加pushだけ止める。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e15-feature-20261016": {
       "fingerprint": "1123d4e764c637c80223ea06d54f771ba8c4add736a0f95f7d9e9f9c6f3c15ca",
@@ -6918,7 +6918,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "接続や認証でなくAgent固有のツール制限と特定する。 空配列を必要な検索の列挙へ変更する。 検索だけを利用可能にするには対象ツールを明示する。",
       "reasoningSteps": [
         "接続や認証でなくAgent固有のツール制限と特定する。",
         "空配列を必要な検索の列挙へ変更する。",
@@ -6930,27 +6930,27 @@
       ],
       "reasoning": "接続や認証でなくAgent固有のツール制限と特定する。 空配列を必要な検索の列挙へ変更する。 検索だけを利用可能にするには対象ツールを明示する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e19-feature-20261016": {
-      "fingerprint": "e0d5a66773310f4a9c4b576e8d04ea3e0e488b81862d1f8c40189469852221db",
+      "fingerprint": "712fa7a6a8a5e02fbd42c57f8edd2d0aceaf6014cbe0b5fc1ef1ea95cd8d61c3",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "回答の引用元を資料単位で分ける。 リンクとアップロードの更新方式を照合する。 旧スナップショットだけ差し替える。",
       "reasoningSteps": [
-        "ソースをGitHubのリンクとファイルアップロードに分ける。",
-        "それぞれの更新方法と、現在どちらが旧版かを照合する。",
-        "リンク追従は保ち、PDFだけ差し替える。"
+        "回答の引用元を資料単位で分ける。",
+        "リンクとアップロードの更新方式を照合する。",
+        "旧スナップショットだけ差し替える。"
       ],
-      "counterfactual": "PDFが現行でリンク先だけ誤っているなら、GitHubリンクを現行ファイルへ直す。",
+      "counterfactual": "監査用スナップショットへ方針を変えるならリンクをアップロードへ変えて固定する。",
       "evidence": [
         "spaces"
       ],
-      "reasoning": "ソースをGitHubのリンクとファイルアップロードに分ける。 それぞれの更新方法と、現在どちらが旧版かを照合する。 リンク追従は保ち、PDFだけ差し替える。",
+      "reasoning": "回答の引用元を資料単位で分ける。 リンクとアップロードの更新方式を照合する。 旧スナップショットだけ差し替える。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e02-feature-20261016": {
       "fingerprint": "0ddec06a730c355acaa4a7fc14b1c1e576ce43fb4a2952d8cf5d6b386afd4f2a",
@@ -6958,20 +6958,20 @@
       "difficulty": "advanced",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "Xのライセンス由来と個人依頼、組織rulesetの自動起動を分ける。 authorized users制限の対象とrulesetの例外を照合する。 現在の二つの経路の結果は整合しており維持すると結論する。",
       "reasoningSteps": [
         "Xのライセンス由来と個人依頼、組織rulesetの自動起動を分ける。",
         "authorized users制限の対象とrulesetの例外を照合する。",
         "現在の二つの経路の結果は整合しており維持すると結論する。"
       ],
-      "counterfactual": "未認可者の個人依頼制限を外すと、外部対応ライセンスのXも依頼できる。rulesetの自動レビューも継続する。",
+      "counterfactual": "許可利用者限定の設定だけを無効にすると、対応ライセンスのXも個別依頼できる。ruleset起動は引き続き有効である。",
       "evidence": [
         "code-review",
         "feature-refresh-review-config"
       ],
       "reasoning": "Xのライセンス由来と個人依頼、組織rulesetの自動起動を分ける。 authorized users制限の対象とrulesetの例外を照合する。 現在の二つの経路の結果は整合しており維持すると結論する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc03-1-feature-20261016": {
       "fingerprint": "c601abefa5fb234f58a128c710239e0cee6566e081cedd63a330f73ad2c31f3a",
@@ -6979,7 +6979,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "終了する実行方式と、統計を付けない出力形式を分ける。 単発の-pと出力を絞る--silentを組み合わせる。 -pは回答後に終了する非対話実行で、--silentは統計などを省いて回答のみを出す。",
       "reasoningSteps": [
         "終了する実行方式と、統計を付けない出力形式を分ける。",
         "単発の-pと出力を絞る--silentを組み合わせる。",
@@ -6991,69 +6991,67 @@
       ],
       "reasoning": "終了する実行方式と、統計を付けない出力形式を分ける。 単発の-pと出力を絞る--silentを組み合わせる。 -pは回答後に終了する非対話実行で、--silentは統計などを省いて回答のみを出す。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc03-2-feature-20261016": {
-      "fingerprint": "5d5d774e4b9d814609fc11cf9bf1f59232e4fb94af913b837f576d1fb20f7586",
+      "fingerprint": "01eaea456a0ea0a234d294f63672a77b3c08b19207f8965223e8b99c334fe1bc",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "確認ダイアログとsandbox拒否の実行段階を分ける。 Pのコマンド別承認とQのファイル境界を別の設定へ対応させる。 必要な範囲だけを変更してローカル実行を保つ。",
       "reasoningSteps": [
-        "回答だけでなく編集と実行の反復が必要と読む。",
-        "Agentへの切替だけで足りるか、有効ツールも照合する。",
-        "Agentと必要な実行ツールを合わせて有効化する。"
+        "確認ダイアログとsandbox拒否の実行段階を分ける。",
+        "Pのコマンド別承認とQのファイル境界を別の設定へ対応させる。",
+        "必要な範囲だけを変更してローカル実行を保つ。"
       ],
-      "counterfactual": "編集・実行を委任しないならAskで案を得る形を維持できる。",
+      "counterfactual": "Qの拒否だけがネットワーク境界へ変わるなら、Pのtrue規則を保ちQの通信許可を追加する。",
       "evidence": [
         "feature-refresh-ide",
         "feature-refresh-tools"
       ],
-      "reasoning": "回答だけでなく編集と実行の反復が必要と読む。 Agentへの切替だけで足りるか、有効ツールも照合する。 Agentと必要な実行ツールを合わせて有効化する。",
+      "reasoning": "確認ダイアログとsandbox拒否の実行段階を分ける。 Pのコマンド別承認とQのファイル境界を別の設定へ対応させる。 必要な範囲だけを変更してローカル実行を保つ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc07-1-feature-20261016": {
-      "fingerprint": "6e6bac97a9da44c1f8515a2ff21a3f09ea2203828aea372d1671e731c0c5710a",
+      "fingerprint": "c475cc155eef79928c47ddd6ad98bafc53c4de7a7226e840cab8ae4e38430a3c",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "対話選択の失敗と履歴の再開対象を分ける。 既知IDを明示して過去セッションを特定する。",
       "reasoningSteps": [
-        "選択画面を出せない環境で特定IDが必要と読む。",
-        "ID付きresumeを使い再開先を確定する。",
-        "TTYがないと選択画面は使えない。既知のIDを指定して再開先を確定する。"
+        "対話選択の失敗と履歴の再開対象を分ける。",
+        "既知IDを明示して過去セッションを特定する。"
       ],
-      "counterfactual": "対象が直近でよければ--continueで再開できる。",
+      "counterfactual": "再開対象の選択方針が固定IDから実行時の直近へ変わればcontinueを使う。固定IDのresumeはその方針に合わない。",
       "evidence": [
         "feature-refresh-cli-reference"
       ],
-      "reasoning": "選択画面を出せない環境で特定IDが必要と読む。 ID付きresumeを使い再開先を確定する。 TTYがないと選択画面は使えない。既知のIDを指定して再開先を確定する。",
+      "reasoning": "対話選択の失敗と履歴の再開対象を分ける。 既知IDを明示して過去セッションを特定する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a03-feature-20261016": {
-      "fingerprint": "0c2b3be1354e17bbc5979e951bfc2e8063cd86ed9dad2a6c8ff8c0749c020869",
+      "fingerprint": "219615e6476286297597cad0fea2e2a9df1e31156e39cfb9851b0c3694fa70b4",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "索引候補と利用者による明示添付を分ける。 目的の粒度に合うファイル単位の指定を選ぶ。",
       "reasoningSteps": [
-        "検索能力と今回の入力資料の指定を分ける。",
-        "対象が既知なので明示添付を選ぶ。",
-        "意味索引で検索できることと、今回使いたいファイルを明示することは別。既知の対象を明示添付する。"
+        "索引候補と利用者による明示添付を分ける。",
+        "目的の粒度に合うファイル単位の指定を選ぶ。"
       ],
-      "counterfactual": "既知の資料指定でなく探索が目的なら既存索引の検索を使う。",
+      "counterfactual": "フォルダ全体を文脈にする目的ならFolder指定が合う。",
       "evidence": [
         "repository-indexing",
         "feature-refresh-context"
       ],
-      "reasoning": "検索能力と今回の入力資料の指定を分ける。 対象が既知なので明示添付を選ぶ。 意味索引で検索できることと、今回使いたいファイルを明示することは別。既知の対象を明示添付する。",
+      "reasoning": "索引候補と利用者による明示添付を分ける。 目的の粒度に合うファイル単位の指定を選ぶ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-e02-feature-20261016": {
       "fingerprint": "b1b84a894df638bde0ef841a5772f26d9b71d6f74d097d3d695a5a49ee607382",
@@ -7061,7 +7059,7 @@
       "difficulty": "advanced",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "二環境の対応可否をGitHub.comとGHE.comで分ける。 GitHub.comでも管理対象のUnconfiguredは無効で、Enabledが必要と照合する。 GitHub.comでは管理者が有効化し、GHE.comは同じ設定だけでは利用できないと結論する。",
       "reasoningSteps": [
         "二環境の対応可否をGitHub.comとGHE.comで分ける。",
         "GitHub.comでも管理対象のUnconfiguredは無効で、Enabledが必要と照合する。",
@@ -7074,91 +7072,89 @@
       ],
       "reasoning": "二環境の対応可否をGitHub.comとGHE.comで分ける。 GitHub.comでも管理対象のUnconfiguredは無効で、Enabledが必要と照合する。 GitHub.comでは管理者が有効化し、GHE.comは同じ設定だけでは利用できないと結論する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc08-2-feature-20261016": {
-      "fingerprint": "09d5e7f58987faa3f03ed87b794236067ea04d9eddf81d1624fcc756022af6fd",
+      "fingerprint": "1941408ba0548ccd235e6d3d60af5e59a465706f63352e8ab918a9b15379b7dc",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "session logの実行段階を特定する。 setup失敗後の省略と依存不足を結ぶ。 cloudのsetup資格情報を修正して再検証する。",
       "reasoningSteps": [
-        "成功したローカルと失敗したクラウドを実行環境で分ける。",
-        "クラウド固有のセットアップと接続設定へ照合する。",
-        "cloud agentの準備・通信を調査する。"
+        "session logの実行段階を特定する。",
+        "setup失敗後の省略と依存不足を結ぶ。",
+        "cloudのsetup資格情報を修正して再検証する。"
       ],
-      "counterfactual": "ローカル経路だけが失敗するならローカルのproxy設定を確認する。",
+      "counterfactual": "失敗段階がAgentのBash通信ならrepoのInternet accessを確認する。",
       "evidence": [
         "feature-refresh-cloud",
         "feature-refresh-setup",
         "network"
       ],
-      "reasoning": "成功したローカルと失敗したクラウドを実行環境で分ける。 クラウド固有のセットアップと接続設定へ照合する。 cloud agentの準備・通信を調査する。",
+      "reasoning": "session logの実行段階を特定する。 setup失敗後の省略と依存不足を結ぶ。 cloudのsetup資格情報を修正して再検証する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-e07-feature-20261016": {
-      "fingerprint": "39af9621878da210d7e7a5706de458fcdd2dc7907e0b5dd079a82f12aeccbdb8",
+      "fingerprint": "8262c9eac25f491b3e1d8365c45060de68e6bd4bda2e74d3f4792dbe97d62b4f",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "認証問題と通常のGitHub疎通を除く。 Copilot固有の到達性診断を選ぶ。 Chat側の接続先を補完側と区別する。",
       "reasoningSteps": [
-        "補完とChatで疎通結果が違う点を整理する。",
-        "各診断先の機能と観測された不具合を照合する。",
-        "不達のChat経路を管理者へ確認依頼する。"
+        "認証問題と通常のGitHub疎通を除く。",
+        "Copilot固有の到達性診断を選ぶ。",
+        "Chat側の接続先を補完側と区別する。"
       ],
-      "counterfactual": "補完だけ不達という観測へ変えれば補完用経路の確認が対象になる。",
+      "counterfactual": "失敗が補完だけなら補完側のping先を調べる。末尾の目的は失敗した経路の調査のままで矛盾しない。",
       "evidence": [
         "network",
         "feature-refresh-logs"
       ],
-      "reasoning": "補完とChatで疎通結果が違う点を整理する。 各診断先の機能と観測された不具合を照合する。 不達のChat経路を管理者へ確認依頼する。",
+      "reasoning": "認証問題と通常のGitHub疎通を除く。 Copilot固有の到達性診断を選ぶ。 Chat側の接続先を補完側と区別する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a16-feature-20261016": {
-      "fingerprint": "0146a1ad5ef2ae1ea866468475c2a5d421855b8ee029ffbd03a594ec22a56728",
+      "fingerprint": "f2c27e2467526aa27cf1f657108156dc86832bcf98f72d0f7748ea7f694a56c6",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "共有済みbranchとローカル変更を分ける。 手元のファイル全体を明示添付する。",
       "reasoningSteps": [
-        "修正が存在する場所と、Chatが読むGitHubの場所を分ける。",
-        "ローカルファイルを明示した入力へ切り替える。",
-        "未pushの変更はGitHub側のrepo文脈にない。手元の修正版を使うにはローカルIDEで明示する。"
+        "共有済みbranchとローカル変更を分ける。",
+        "手元のファイル全体を明示添付する。"
       ],
-      "counterfactual": "旧型を確認する要求ならGitHub側の同じ文脈を使える。",
+      "counterfactual": "GitHub上の版を説明する目的ならGitHub.comのファイル文脈が適切である。",
       "evidence": [
         "feature-refresh-context",
         "repository-indexing"
       ],
-      "reasoning": "修正が存在する場所と、Chatが読むGitHubの場所を分ける。 ローカルファイルを明示した入力へ切り替える。 未pushの変更はGitHub側のrepo文脈にない。手元の修正版を使うにはローカルIDEで明示する。",
+      "reasoning": "共有済みbranchとローカル変更を分ける。 手元のファイル全体を明示添付する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a06-feature-20261016": {
-      "fingerprint": "38328892e0968dfa0a5ffdaccbbb9b864c48a5af9e08aef5262bff44ca415c3a",
+      "fingerprint": "b293358e118f468e0eff1c0b7d0f0d06454fb260cfb1f4d770339f36595304b3",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "入力欄の案内とモデルへ渡る本文を区別する。 本文へ入力要求と利用箇所を明示する。",
       "reasoningSteps": [
-        "入力欄に表示するヒントと、本文で求める入力を区別する。",
-        "本文で入力を求める仕組みを使う。",
-        "argument-hintは入力欄の案内。本文で入力を求める変数や質問の指示とは役割が違う。"
+        "入力欄の案内とモデルへ渡る本文を区別する。",
+        "本文へ入力要求と利用箇所を明示する。"
       ],
-      "counterfactual": "入力機能が済んで案内だけを変えるならargument-hintの改善が対象。",
+      "counterfactual": "現在ファイルが対象ならfile変数を使い、moduleの入力要求を置く必要はない。",
       "evidence": [
         "feature-refresh-prompt"
       ],
-      "reasoning": "入力欄に表示するヒントと、本文で求める入力を区別する。 本文で入力を求める仕組みを使う。 argument-hintは入力欄の案内。本文で入力を求める変数や質問の指示とは役割が違う。",
+      "reasoning": "入力欄の案内とモデルへ渡る本文を区別する。 本文へ入力要求と利用箇所を明示する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a07-feature-20261016": {
       "fingerprint": "2e02ca07e9ea2473e09effccaa01497626fa2f802051829828c568292c20340a",
@@ -7166,7 +7162,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "ファイル名とname、agent省略とtools指定を分ける。 明示した呼出名とツール指定時の既定Agentを組み合わせる。 nameはファイル名より呼出名として優先される。toolsが指定されAgent省略ならagentが既定。",
       "reasoningSteps": [
         "ファイル名とname、agent省略とtools指定を分ける。",
         "明示した呼出名とツール指定時の既定Agentを組み合わせる。",
@@ -7178,7 +7174,7 @@
       ],
       "reasoning": "ファイル名とname、agent省略とtools指定を分ける。 明示した呼出名とツール指定時の既定Agentを組み合わせる。 nameはファイル名より呼出名として優先される。toolsが指定されAgent省略ならagentが既定。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-a01-feature-20261016": {
       "fingerprint": "a8311df58f733bc39ed2c90361a4543d2738406f2f436ff4f65e4303126e99d7",
@@ -7186,7 +7182,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "省略時にはmodel pickerのMを使うと整理する。 プロンプトだけNにするmodel指定を使う。 そのプロンプトのmodelをNに固定し、通常の選択Mを保てる。",
       "reasoningSteps": [
         "省略時にはmodel pickerのMを使うと整理する。",
         "プロンプトだけNにするmodel指定を使う。",
@@ -7199,378 +7195,372 @@
       ],
       "reasoning": "省略時にはmodel pickerのMを使うと整理する。 プロンプトだけNにするmodel指定を使う。 そのプロンプトのmodelをNに固定し、通常の選択Mを保てる。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-a02-feature-20261016": {
-      "fingerprint": "fc05b80ff65b332e3ed2f1e44ce7e8fbb2f2f39a1824bbd2a1e46c5d48441583",
+      "fingerprint": "1e60fb0bb75c31d90c9eba751810376690b4a975504ca4239965ddb8c542685a",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "URL先の更新とCopilotが持つ取得内容を分ける。 VS Code側のWeb取得キャッシュを再起動で更新する。",
       "reasoningSteps": [
-        "暗黙の入力とAgentの添付候補を区別する。",
-        "必要なファイルを明示添付する。",
-        "必要な一ファイルを明示添付し、候補として表示される段階から今回の入力へ加える。"
+        "URL先の更新とCopilotが持つ取得内容を分ける。",
+        "VS Code側のWeb取得キャッシュを再起動で更新する。"
       ],
-      "counterfactual": "関数だけを明示したいのでシンボルの添付を選ぶ。",
+      "counterfactual": "更新対象を外部ブラウザへ限定した代替ケース。Copilotの旧キャッシュという元の問題は解決済みにそろえる。",
       "evidence": [
         "feature-refresh-context-model",
         "feature-refresh-context"
       ],
-      "reasoning": "暗黙の入力とAgentの添付候補を区別する。 必要なファイルを明示添付する。 必要な一ファイルを明示添付し、候補として表示される段階から今回の入力へ加える。",
+      "reasoning": "URL先の更新とCopilotが持つ取得内容を分ける。 VS Code側のWeb取得キャッシュを再起動で更新する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e05-feature-20261016": {
-      "fingerprint": "25196c5636e4c5b9fc3d3c122eaa4571ff459b3d650e2c370e8530a735d34582",
+      "fingerprint": "c7366a5ef2ed96da2e4c74f0bbd13856c10174998f0e42878c78b210dbedbe4a",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "文脈分離とファイル操作の権限を分ける。 手動起動設定とtools設定の役割を比較する。 調査委任を保ち提供ツールを読取専用へ絞る。",
       "reasoningSteps": [
-        "Subagentで解決した文脈量と、未解決の同一ファイルアクセスを分ける。",
-        "文脈分離と実行環境の分離が独立している点を適用する。",
-        "別文脈の委任に加えて作業場所も分ける。"
+        "文脈分離とファイル操作の権限を分ける。",
+        "手動起動設定とtools設定の役割を比較する。",
+        "調査委任を保ち提供ツールを読取専用へ絞る。"
       ],
-      "counterfactual": "ファイル分離が不要ならSubagentの文脈分離だけで要件を満たせる。",
+      "counterfactual": "全候補を利用させる方針ならtools省略が合う。文脈分離と実行承認はそのまま別の話である。",
       "evidence": [
         "feature-refresh-context-model",
         "feature-refresh-cli-compare"
       ],
-      "reasoning": "Subagentで解決した文脈量と、未解決の同一ファイルアクセスを分ける。 文脈分離と実行環境の分離が独立している点を適用する。 別文脈の委任に加えて作業場所も分ける。",
+      "reasoning": "文脈分離とファイル操作の権限を分ける。 手動起動設定とtools設定の役割を比較する。 調査委任を保ち提供ツールを読取専用へ絞る。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc02-3-feature-20261016": {
-      "fingerprint": "eecde019243e25364344778d374d5b6acac988b59e55d4d0d7d207948dda1e4a",
+      "fingerprint": "b38de081a8a9461c496b1c897c62980ef352819bc6df609892453f1d92a030b6",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "発見・回答への参照・遵守を三段階に分ける。 Referencesを調べ、内容との照合も続ける。",
       "reasoningSteps": [
-        "発見できたことと今回のリクエストで使ったことを分ける。",
-        "回答のReferencesで使用対象を確認する。",
-        "一覧に発見されたことと今回の依頼へ含まれたことは別。まず回答側の参照を確認する。"
+        "発見・回答への参照・遵守を三段階に分ける。",
+        "Referencesを調べ、内容との照合も続ける。"
       ],
-      "counterfactual": "発見場所が目的ならCustomizationsの一覧から出所を確認する。",
+      "counterfactual": "発見の再確認にはCustomizationsを使い、回答への適用や遵守の証明とは分ける。",
       "evidence": [
         "feature-refresh-vscode-instructions"
       ],
-      "reasoning": "発見できたことと今回のリクエストで使ったことを分ける。 回答のReferencesで使用対象を確認する。 一覧に発見されたことと今回の依頼へ含まれたことは別。まず回答側の参照を確認する。",
+      "reasoning": "発見・回答への参照・遵守を三段階に分ける。 Referencesを調べ、内容との照合も続ける。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc03-3-feature-20261016": {
-      "fingerprint": "839238ac2aac2bc6ee3fcf322adfba16def3a857ec493390a9899aa48373673c",
+      "fingerprint": "fcb39a42c780ca6d7868f95d7cca02db4b55bfbb02e1afff7170be812a8613a4",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "個人用ファイルの保存範囲を維持する。 Sync全体とPrompts and Instructions対象の有効化を分ける。",
       "reasoningSteps": [
-        "workspace共有でなく個人プロファイルの端末同期と読む。",
-        "Prompts and Instructionsの同期対象を確認する。",
-        "個人用のPrompt Fileを自動同期する項目はPrompts and Instructions。"
+        "個人用ファイルの保存範囲を維持する。",
+        "Sync全体とPrompts and Instructions対象の有効化を分ける。"
       ],
-      "counterfactual": "repoで共有する目的なら.github/promptsへ保存してコミットする。",
+      "counterfactual": "個人用の保存場所を保ち、同期を外して手動コピーする方針へ変更したケースである。",
       "evidence": [
         "feature-refresh-prompt"
       ],
-      "reasoning": "workspace共有でなく個人プロファイルの端末同期と読む。 Prompts and Instructionsの同期対象を確認する。 個人用のPrompt Fileを自動同期する項目はPrompts and Instructions。",
+      "reasoning": "個人用ファイルの保存範囲を維持する。 Sync全体とPrompts and Instructions対象の有効化を分ける。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-a14-feature-20261016": {
-      "fingerprint": "8dbbbbb64fa734a8294f232c822cc1787829a51c025293d721f803b526fc6881",
+      "fingerprint": "afe18b25470ef39f78c21c78a2cca0f74d9049c5cf0b235846de64a8205ec050",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "接続の可否と今回選ばれた検索経路を分ける。 外部MCPツールを入力で明示する。",
       "reasoningSteps": [
-        "接続修正でなく、既に使える能力の明示的な選択が必要と読む。",
-        "#のツール指定で対象を示す。",
-        "有効なMCP検索を明示したいのでツールの#参照を使う。"
+        "接続の可否と今回選ばれた検索経路を分ける。",
+        "外部MCPツールを入力で明示する。"
       ],
-      "counterfactual": "未知のローカル実装の探索にはcodebase検索を指定する。",
+      "counterfactual": "repo全体が対象ならcodebaseの指定が合う。",
       "evidence": [
         "feature-refresh-tools"
       ],
-      "reasoning": "接続修正でなく、既に使える能力の明示的な選択が必要と読む。 #のツール指定で対象を示す。 有効なMCP検索を明示したいのでツールの#参照を使う。",
+      "reasoning": "接続の可否と今回選ばれた検索経路を分ける。 外部MCPツールを入力で明示する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e06-feature-20261016": {
-      "fingerprint": "1eebb052dd0ee54dd2c90820706d5f8978e81fa896b42ab6d1ef2b2cb43e24d2",
+      "fingerprint": "ff5451e4e038173f29b55cad3ed7f607d54c14849d53a8e639fe3f607feea5d5",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "二ファイルとapplyToを照合する。 IのexcludeAgentをレビューだけへ適用する。 実装とレビューの読込集合を比較する。",
       "reasoningSteps": [
-        "変更対象がsrc/**に一致することを確認する。",
-        "次に利用主体をexcludeAgentへ照合する。",
-        "実装側だけが読み、レビュー側は除外されると判断する。"
+        "二ファイルとapplyToを照合する。",
+        "IのexcludeAgentをレビューだけへ適用する。",
+        "実装とレビューの読込集合を比較する。"
       ],
-      "counterfactual": "利用主体の除外がなければ両方が該当パスの指示を読む。",
+      "counterfactual": "除外先がcloud-agentならIは実装側から外れ、レビュー側には残る。",
       "evidence": [
         "feature-refresh-instructions"
       ],
-      "reasoning": "変更対象がsrc/**に一致することを確認する。 次に利用主体をexcludeAgentへ照合する。 実装側だけが読み、レビュー側は除外されると判断する。",
+      "reasoning": "二ファイルとapplyToを照合する。 IのexcludeAgentをレビューだけへ適用する。 実装とレビューの読込集合を比較する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e07-feature-20261016": {
-      "fingerprint": "915ac8547677504a1a10d5de2b7d451c4e0f8fce3d51c3d46727e6178ee8a6d9",
+      "fingerprint": "093fc15bbe9d0b56717ec1e6ea61a606dbfaecd2807f9eda129229f158c09f77",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "接続設定とツール提供の失敗を分ける。 クライアントごとのMCP定義場所を照合する。 VS Code接続を作りAgent側の最小ツール指定を保つ。",
       "reasoningSteps": [
-        "cloud agentのAgent定義からIDEへ移した項目を確認する。",
-        "mcp-serversのクライアント対応とtoolsの参照を照合する。",
-        "IDE用接続を作成して実ツール名を有効にする。"
+        "接続設定とツール提供の失敗を分ける。",
+        "クライアントごとのMCP定義場所を照合する。",
+        "VS Code接続を作りAgent側の最小ツール指定を保つ。"
       ],
-      "counterfactual": "同じ対応するcloud agentならAgent定義のmcp-serversを使う構成を読み込める。",
+      "counterfactual": "接続を登録しつつAgentの全ツールを止める目的ならtools: []が合う。元の検索利用要件は明示的に置き換えている。",
       "evidence": [
         "feature-refresh-custom-agent",
         "mcp-config"
       ],
-      "reasoning": "cloud agentのAgent定義からIDEへ移した項目を確認する。 mcp-serversのクライアント対応とtoolsの参照を照合する。 IDE用接続を作成して実ツール名を有効にする。",
+      "reasoning": "接続設定とツール提供の失敗を分ける。 クライアントごとのMCP定義場所を照合する。 VS Code接続を作りAgent側の最小ツール指定を保つ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e08-feature-20261016": {
-      "fingerprint": "16accd27b6d06d0282d4e843bbf9d97e72c55c769d6c660e57172e97e1104a4f",
+      "fingerprint": "def8654f077ee2c53d7349a2d4aeaadc10712b2d23e5232f4030d7bc1611227e",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "同名定義の階層優先順位を判定する。 既存PRの版固定と新規タスクの読込を分ける。 各タスクのrepo版と更新時点を組み合わせる。",
       "reasoningSteps": [
-        "同名定義の優先順位をrepo・Organization・Enterpriseで整理する。",
-        "開始時のAgent版と、その後の定義更新を別時点として照合する。",
-        "既存PRは元の版、新規タスクは更新後のrepo版とする。"
+        "同名定義の階層優先順位を判定する。",
+        "既存PRの版固定と新規タスクの読込を分ける。",
+        "各タスクのrepo版と更新時点を組み合わせる。"
       ],
-      "counterfactual": "既存PRは開始時の版を維持し、新規タスクの同名解決は残るOrganization版へ移る。",
+      "counterfactual": "両タスクが更新後に始まるならどちらも更新後のrepo版になる。",
       "evidence": [
         "feature-refresh-custom-agent"
       ],
-      "reasoning": "同名定義の優先順位をrepo・Organization・Enterpriseで整理する。 開始時のAgent版と、その後の定義更新を別時点として照合する。 既存PRは元の版、新規タスクは更新後のrepo版とする。",
+      "reasoning": "同名定義の階層優先順位を判定する。 既存PRの版固定と新規タスクの読込を分ける。 各タスクのrepo版と更新時点を組み合わせる。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e09-feature-20261016": {
-      "fingerprint": "add10a4ea65f1e2f9cd4552554e78726ced74a2e625b00667bb7ce9f2eff45b6",
+      "fingerprint": "2ed0cc5f34ea0c5298a00036631ebdfa4d11142849f0ce7f7cc8eca8b319f9c3",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "contextの内訳から占有の主因を特定する。 会話要約と固定ツール定義の対象範囲を分ける。 必要な検索を残して不要な定義を減らす。",
       "reasoningSteps": [
-        "失われたのは特定資料の詳細で、タスク全体の方針ではないと読む。",
-        "圧縮は元資料の完全保存でない点と、明示取得ができる点を照合する。",
-        "必要な定義だけを再取得して継続する。"
+        "contextの内訳から占有の主因を特定する。",
+        "会話要約と固定ツール定義の対象範囲を分ける。",
+        "必要な検索を残して不要な定義を減らす。"
       ],
-      "counterfactual": "無関係な別タスクへ移るなら新規会話で分離する。",
+      "counterfactual": "占有の主因が会話履歴へ変われば、方針を指定したcompactで履歴を要約する案が合う。",
       "evidence": [
         "feature-refresh-context-model",
         "feature-refresh-context"
       ],
-      "reasoning": "失われたのは特定資料の詳細で、タスク全体の方針ではないと読む。 圧縮は元資料の完全保存でない点と、明示取得ができる点を照合する。 必要な定義だけを再取得して継続する。",
+      "reasoning": "contextの内訳から占有の主因を特定する。 会話要約と固定ツール定義の対象範囲を分ける。 必要な検索を残して不要な定義を減らす。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e01-feature-20261016": {
-      "fingerprint": "e165be40145f3ce7aebcd263fe9a8466affb906300dde1fb3de7048dd2d61d9c",
+      "fingerprint": "e8ab66b2d0507af582078c9cbcd25cb3a41a17844d4e6290157a1c8429de410d",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "通常Actionsの成否と専用setupの認識条件を分ける。 正式job名とdefault branchをrepo別に照合する。 既に満たす条件を変えず不足だけ修正する。",
       "reasoningSteps": [
-        "通常Actionsの実行成功と、Agentが検出する条件を分ける。",
-        "所定job名とdefault branchの二条件を照合する。",
-        "両方を修正してセットアップとして認識させる。"
+        "通常Actionsの成否と専用setupの認識条件を分ける。",
+        "正式job名とdefault branchをrepo別に照合する。",
+        "既に満たす条件を変えず不足だけ修正する。"
       ],
-      "counterfactual": "job名が正しければ、default branchへの反映だけが不足している。",
+      "counterfactual": "両repoでjob名が正しくbranch配置だけ不足するなら、両方をdefault branchへ反映する。",
       "evidence": [
         "feature-refresh-setup"
       ],
-      "reasoning": "通常Actionsの実行成功と、Agentが検出する条件を分ける。 所定job名とdefault branchの二条件を照合する。 両方を修正してセットアップとして認識させる。",
+      "reasoning": "通常Actionsの成否と専用setupの認識条件を分ける。 正式job名とdefault branchをrepo別に照合する。 既に満たす条件を変えず不足だけ修正する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d2-e07-feature-20261016": {
-      "fingerprint": "d6e82f6e19d32001aa611754a9fcd0e06ecd7b69bdf0ad576b5a9abdc40e1661",
+      "fingerprint": "c38e583f9d1a87b9c4aba516a8f6c26e7d63f7853f2bfde08efa0b363799b071",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "Agent定義とCLIの候補制限を別に読む。 編集・実行が候補から落ちる層を特定する。 候補を修正し、実行許可は別途扱う。",
       "reasoningSteps": [
-        "実行許可と利用候補を分け、欠けているのは編集・実行ツールと読む。",
-        "修正と検証の二つを必要なツールへ照合する。",
-        "editとexecuteを追加する。"
+        "Agent定義とCLIの候補制限を別に読む。",
+        "編集・実行が候補から落ちる層を特定する。",
+        "候補を修正し、実行許可は別途扱う。"
       ],
-      "counterfactual": "編集は委任しない条件ならexecuteだけを追加すればよい。",
+      "counterfactual": "CLI制限がなくAgentが読取専用なら、Agentのツール制限を外す案で編集・実行を提供できる。",
       "evidence": [
         "feature-refresh-custom-agent",
         "feature-refresh-tools"
       ],
-      "reasoning": "実行許可と利用候補を分け、欠けているのは編集・実行ツールと読む。 修正と検証の二つを必要なツールへ照合する。 editとexecuteを追加する。",
+      "reasoning": "Agent定義とCLIの候補制限を別に読む。 編集・実行が候補から落ちる層を特定する。 候補を修正し、実行許可は別途扱う。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-e01-feature-20261016": {
-      "fingerprint": "2b8971d096ea4c4ddfc00397555d0407abb8f085db91f517b0ce295b1af09257",
+      "fingerprint": "c54fbee4985c07760088cd5dd0d8fc743f22cc42833872d20b43a2e3d40575eb",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "失敗を機能無効ではなく依頼者の権限へ絞る。 既存PR更新と新規タスク作成を区別する。 書込権限者から同じPRへ依頼する。",
       "reasoningSteps": [
-        "開始できる担当者と、修正したい既存PRのbranchを整理する。",
-        "既存PRでの@copilot起動の権限・branch範囲へ照合する。",
-        "書込権限者から既存PRへ依頼する。"
+        "失敗を機能無効ではなく依頼者の権限へ絞る。",
+        "既存PR更新と新規タスク作成を区別する。",
+        "書込権限者から同じPRへ依頼する。"
       ],
-      "counterfactual": "独立した新しいタスクを開始するなら、別IssueのCopilot割当が対応する。",
+      "counterfactual": "既存PRと分離した作業なら新規Issueの割当が合う。",
       "evidence": [
         "feature-refresh-risk",
         "feature-refresh-review-howto"
       ],
-      "reasoning": "開始できる担当者と、修正したい既存PRのbranchを整理する。 既存PRでの@copilot起動の権限・branch範囲へ照合する。 書込権限者から既存PRへ依頼する。",
+      "reasoning": "失敗を機能無効ではなく依頼者の権限へ絞る。 既存PR更新と新規タスク作成を区別する。 書込権限者から同じPRへ依頼する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-a09-feature-20261016": {
-      "fingerprint": "928c787582db039fba2834423155a2fb4c28f17719d07a5d43674a7f94a962ae",
+      "fingerprint": "20996285c6e90fb3f54b01b8fbf448633ef7ac2fce86a15a47e92f1992b9c193",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "言語別上書きと*の既定値を分ける。 対象言語だけfalseへ変更し他言語を保つ。",
       "reasoningSteps": [
-        "変更対象はアカウント全体でなく一言語の補完と読む。",
-        "アクティブ言語の補完設定だけを変える。",
-        "言語別の有効設定を使うため、Markdownだけ停止しTypeScriptは維持できる。"
+        "言語別上書きと*の既定値を分ける。",
+        "対象言語だけfalseへ変更し他言語を保つ。"
       ],
-      "counterfactual": "全言語で停止する要件なら全言語設定を無効化する。",
+      "counterfactual": "全言語を止める場合は*と明示上書きmarkdownを両方falseにする。",
       "evidence": [
         "feature-refresh-inline"
       ],
-      "reasoning": "変更対象はアカウント全体でなく一言語の補完と読む。 アクティブ言語の補完設定だけを変える。 言語別の有効設定を使うため、Markdownだけ停止しTypeScriptは維持できる。",
+      "reasoning": "言語別上書きと*の既定値を分ける。 対象言語だけfalseへ変更し他言語を保つ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e01-feature-20261016": {
-      "fingerprint": "b539b762d9f6ffbe7239cf66381b1c829077a54d8a73b7b3f463458e417ef26f",
+      "fingerprint": "62f414256195df0ecf738a05ba24aa0bf440670ab3ce6c1a723522794a901a5c",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "回答の参照元と実際の変更先が異なることを診断する。 ローカル変更とGitHub側の版を区別する。 Bを実行先にしたローカルAgentへ作業を委任する。",
       "reasoningSteps": [
-        "失敗条件が未コミット修正とローカル環境にあると読む。",
-        "各Copilotの実行場所と、編集・実行できる機能を照合する。",
-        "必要なツールを持つローカルAgentを選ぶ。"
+        "回答の参照元と実際の変更先が異なることを診断する。",
+        "ローカル変更とGitHub側の版を区別する。",
+        "Bを実行先にしたローカルAgentへ作業を委任する。"
       ],
-      "counterfactual": "共有済みコードをクラウドで編集・検証するならcloud agentが合う。",
+      "counterfactual": "Bを編集対象から参照専用へ変えた目的なら既存のA実行セッションを維持できる。",
       "evidence": [
         "feature-refresh-cloud",
         "feature-refresh-tools",
         "feature-refresh-context"
       ],
-      "reasoning": "失敗条件が未コミット修正とローカル環境にあると読む。 各Copilotの実行場所と、編集・実行できる機能を照合する。 必要なツールを持つローカルAgentを選ぶ。",
+      "reasoning": "回答の参照元と実際の変更先が異なることを診断する。 ローカル変更とGitHub側の版を区別する。 Bを実行先にしたローカルAgentへ作業を委任する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e03-feature-20261016": {
-      "fingerprint": "aef66f32ba6e835e38fe76a09164726affb511bbb285d29c019b0803244cab9c",
+      "fingerprint": "eb65aa15690a4e7d91bb364dd979ca46c15da582ebdb08d176c2eea91d4bb6f8",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "setup途中失敗とAgent開始の両観測を照合する。 後続stepの省略を説明する。 環境準備としてsetupを修正し新規タスクで検証する。",
       "reasoningSteps": [
-        "準備jobの成功・失敗とAgent作業の開始を別に整理する。",
-        "失敗後に後続stepを省略してAgentが始まる挙動へ照合する。",
-        "不足ツールの原因として準備stepの失敗を修正する。"
+        "setup途中失敗とAgent開始の両観測を照合する。",
+        "後続stepの省略を説明する。",
+        "環境準備としてsetupを修正し新規タスクで検証する。"
       ],
-      "counterfactual": "setupが成功する条件なら残りstepも実行した後にAgentが開始する。",
+      "counterfactual": "作成済みで参照先だけ違うなら、Agentの参照パスを直す。",
       "evidence": [
         "feature-refresh-setup",
         "feature-refresh-sessions"
       ],
-      "reasoning": "準備jobの成功・失敗とAgent作業の開始を別に整理する。 失敗後に後続stepを省略してAgentが始まる挙動へ照合する。 不足ツールの原因として準備stepの失敗を修正する。",
+      "reasoning": "setup途中失敗とAgent開始の両観測を照合する。 後続stepの省略を説明する。 環境準備としてsetupを修正し新規タスクで検証する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e04-feature-20261016": {
-      "fingerprint": "c99c8223eba734ae8a69609707fa2fc3f133a138a592075a3a583ad356a3ebd0",
+      "fingerprint": "58ae5d6b162f4ca24e8701154e5dd275cc2a194ef172f87aff4d337ebc5767ae",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "Chatとインライン提案の設定範囲を分ける。 有効化ではなく提案モデルの入口を選ぶ。",
       "reasoningSteps": [
-        "Chatとインライン提案のモデル設定を別の選択面と読む。",
-        "提案モデルの専用設定を使う。",
-        "インライン提案用のモデル選択はChatのmodel pickerとは別にある。"
+        "Chatとインライン提案の設定範囲を分ける。",
+        "有効化ではなく提案モデルの入口を選ぶ。"
       ],
-      "counterfactual": "ChatのモデルだけならChatのmodel pickerで選ぶ。",
+      "counterfactual": "会話だけの変更ならChatのmodel pickerが合う。",
       "evidence": [
         "feature-refresh-inline",
         "feature-refresh-models"
       ],
-      "reasoning": "Chatとインライン提案のモデル設定を別の選択面と読む。 提案モデルの専用設定を使う。 インライン提案用のモデル選択はChatのmodel pickerとは別にある。",
+      "reasoning": "Chatとインライン提案の設定範囲を分ける。 有効化ではなく提案モデルの入口を選ぶ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e05-feature-20261016": {
-      "fingerprint": "a755bc65d0233b8a696b036932e6a373cf0f934842294fff521992860501a5af",
+      "fingerprint": "2c42db0e8c6c78c6bf29fa01d094d26d69457ef3f047701262bd6c1f5c3f3088",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "共通setupとレビュー専用環境の参照を分ける。 事前導入と自然言語の指示を区別する。 レビュー専用workflowへ導入を置く。",
       "reasoningSteps": [
-        "既定では共通setupを再利用する状態と、レビューだけ分ける要件を整理する。",
-        "専用のreview準備workflowの有無と適用範囲を照合する。",
-        "review専用workflowへ追加ツールを分離する。"
+        "共通setupとレビュー専用環境の参照を分ける。",
+        "事前導入と自然言語の指示を区別する。",
+        "レビュー専用workflowへ導入を置く。"
       ],
-      "counterfactual": "両方へ共通導入する要件なら共通setupの変更が対象。",
+      "counterfactual": "共通化して両方へ導入する方針なら共通setupにstepを置く。",
       "evidence": [
         "feature-refresh-setup",
         "feature-refresh-review-howto"
       ],
-      "reasoning": "既定では共通setupを再利用する状態と、レビューだけ分ける要件を整理する。 専用のreview準備workflowの有無と適用範囲を照合する。 review専用workflowへ追加ツールを分離する。",
+      "reasoning": "共通setupとレビュー専用環境の参照を分ける。 事前導入と自然言語の指示を区別する。 レビュー専用workflowへ導入を置く。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc02-1-feature-20261016": {
-      "fingerprint": "3b5435716bf47c3791b561b7224152b631d63ba8c34909deb569088ff1e71b7f",
+      "fingerprint": "c0866318a989ae9eb3c120509f70613ed15de7e6c5931ac2c7891b8f900f4d8a",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "元PRのheadとbaseを区別する。 Fix with Copilotの新PRをhead宛にする。 修正PRの評価・取込と元PRのマージを別段階で進める。",
       "reasoningSteps": [
-        "レビューからAgentへの修正委任と、その成果物の保存先を整理する。",
-        "同じPRのコミットか別PRかの選択へ要件を照合する。",
-        "別PRを選び、元branchへの反映前に確認する。"
+        "元PRのheadとbaseを区別する。",
+        "Fix with Copilotの新PRをhead宛にする。",
+        "修正PRの評価・取込と元PRのマージを別段階で進める。"
       ],
-      "counterfactual": "別PRが不要で直接反映する方針なら同じPRへのコミットを選ぶ。",
+      "counterfactual": "元PRへの直接変更を許す方針なら直接コミットの選択が合い、修正専用PRの宛先を決める必要はなくなる。",
       "evidence": [
         "feature-refresh-review-howto"
       ],
-      "reasoning": "レビューからAgentへの修正委任と、その成果物の保存先を整理する。 同じPRのコミットか別PRかの選択へ要件を照合する。 別PRを選び、元branchへの反映前に確認する。",
+      "reasoning": "元PRのheadとbaseを区別する。 Fix with Copilotの新PRをhead宛にする。 修正PRの評価・取込と元PRのマージを別段階で進める。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d4-a14-feature-20261016": {
       "fingerprint": "1340f7e72bafd32e6c81ad3f6f9831d94085cdec1d54cd6a4007b8ca688f7ad0",
@@ -7578,142 +7568,140 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "手動起動とモデルからの自動呼出しを分ける。 それぞれのbooleanを独立に設定する。 自動のモデル呼出しを止め、利用者の手動選択は認める二つの設定。",
       "reasoningSteps": [
         "手動起動とモデルからの自動呼出しを分ける。",
         "それぞれのbooleanを独立に設定する。",
         "自動のモデル呼出しを止め、利用者の手動選択は認める二つの設定。"
       ],
-      "counterfactual": "手動に加え自動も認めるならdisable-model-invocationをfalseにする。",
+      "counterfactual": "手動選択はtrue、自動委任の禁止はfalseへ変わる。",
       "evidence": [
         "feature-refresh-custom-agent"
       ],
       "reasoning": "手動起動とモデルからの自動呼出しを分ける。 それぞれのbooleanを独立に設定する。 自動のモデル呼出しを止め、利用者の手動選択は認める二つの設定。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-a14-feature-20261016": {
-      "fingerprint": "e25ec954adfd6b5de86bca57e67c0f81e97b786276caad51187551fcc8d8ca40",
+      "fingerprint": "a8a5d0bf7fd59db8003d67430774670a19c08c219a9568998c642056004d4508",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "返信とAgentへの修正依頼を区別する。 未修正の指摘をFix with Copilotへ渡す。",
       "reasoningSteps": [
-        "レビューBotへの通常返信と実装Agentへの依頼を分ける。",
-        "Fix with Copilotで作業を渡す。",
-        "レビュー指摘から修正作業へ渡す操作。通常の返信コメントへCopilot code reviewは返答しない。"
+        "返信とAgentへの修正依頼を区別する。",
+        "未修正の指摘をFix with Copilotへ渡す。"
       ],
-      "counterfactual": "人向けの解決状態を変えるだけならResolve conversationが対象。",
+      "counterfactual": "人が修正した後の評価へ目的を変えたケース。cloud agentの修正依頼という元の問いは残さない。",
       "evidence": [
         "feature-refresh-review-howto"
       ],
-      "reasoning": "レビューBotへの通常返信と実装Agentへの依頼を分ける。 Fix with Copilotで作業を渡す。 レビュー指摘から修正作業へ渡す操作。通常の返信コメントへCopilot code reviewは返答しない。",
+      "reasoning": "返信とAgentへの修正依頼を区別する。 未修正の指摘をFix with Copilotへ渡す。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-a15-feature-20261016": {
-      "fingerprint": "049190d761271ba4f273b8fc14c1743fdc318dec8bfecbfca67606d12c8fd6f6",
+      "fingerprint": "26ba5767d080f13748b9a8c6fb74881fc3261d25142708f4a5a6f27e2a506272",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "マスク入力と環境変数への値の接続を分ける。 input参照を正しいenvへ指定する。",
       "reasoningSteps": [
-        "値の供給元を固定設定や作業パスではなく利用者の対話入力と特定する。",
-        "input参照による受け渡しと、passwordによる表示制御を両方満たす構成を選ぶ。",
-        "promptStringの入力参照で利用者の値をenvへ渡し、passwordで入力表示を隠せる。"
+        "マスク入力と環境変数への値の接続を分ける。",
+        "input参照を正しいenvへ指定する。"
       ],
-      "counterfactual": "入力の受け渡しは同じだが、表示する要件ならpassword: falseに変わる。",
+      "counterfactual": "サーバーが読む環境変数だけAPI_TOKENに変われば、同じapiKey入力をAPI_TOKENへ渡す。",
       "evidence": [
         "mcp-config"
       ],
-      "reasoning": "値の供給元を固定設定や作業パスではなく利用者の対話入力と特定する。 input参照による受け渡しと、passwordによる表示制御を両方満たす構成を選ぶ。 promptStringの入力参照で利用者の値をenvへ渡し、passwordで入力表示を隠せる。",
+      "reasoning": "マスク入力と環境変数への値の接続を分ける。 input参照を正しいenvへ指定する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d3-e08-feature-20261016": {
-      "fingerprint": "79c8ce5008f86e2382cfc742affde702f7cacd2d5bbd5abffabc5653311d0897",
+      "fingerprint": "78ee548975d2e8e72d53e63235d22f6663ef63d4ac45d4e214870dbab82bbd73",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "三経路の実行主体を分ける。 firewallの適用範囲と拒否ログを照合する。 Bash経路の許可先をrepoで変更する。",
       "reasoningSteps": [
-        "同じドメインでも三つの実行プロセスで結果が違うと読む。",
-        "Agent firewallが直接適用するプロセス範囲へ照合する。",
-        "失敗したBash経路の許可をCopilot側で追加する。"
+        "三経路の実行主体を分ける。",
+        "firewallの適用範囲と拒否ログを照合する。",
+        "Bash経路の許可先をrepoで変更する。"
       ],
-      "counterfactual": "失敗がMCPの誤接続先だけならMCP接続設定の修正が対象になる。",
+      "counterfactual": "失敗経路とログがsetupの失効secretを指すなら、その資格情報を更新する。",
       "evidence": [
         "feature-refresh-firewall",
         "feature-refresh-setup"
       ],
-      "reasoning": "同じドメインでも三つの実行プロセスで結果が違うと読む。 Agent firewallが直接適用するプロセス範囲へ照合する。 失敗したBash経路の許可をCopilot側で追加する。",
+      "reasoning": "三経路の実行主体を分ける。 firewallの適用範囲と拒否ログを照合する。 Bash経路の許可先をrepoで変更する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e06-feature-20261016": {
-      "fingerprint": "86f19af5875acd11d69b046f5683d57ee6514a4c5ca4e203609d05823b66b461",
+      "fingerprint": "c0e1c7c4fcb2b09eb67748af671532be38d763479dc9237d5077a7f776940cdb",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "観測から初回・draft・pushのイベントを分ける。 二つのオプションと方針を照合する。 起動源を増やさずrulesetを修正する。",
       "reasoningSteps": [
-        "通常PR・draft・追加pushという三つの起動時点を分ける。",
-        "現在の二設定を希望する起動範囲へ照合する。",
-        "draftは保ち、pushの自動レビューだけ無効にする。"
+        "観測から初回・draft・pushのイベントを分ける。",
+        "二つのオプションと方針を照合する。",
+        "起動源を増やさずrulesetを修正する。"
       ],
-      "counterfactual": "draftも対象ならdraftを有効にし、pushは無効にする。",
+      "counterfactual": "追加pushも不要なら両オプションを無効にする。",
       "evidence": [
         "feature-refresh-review-config"
       ],
-      "reasoning": "通常PR・draft・追加pushという三つの起動時点を分ける。 現在の二設定を希望する起動範囲へ照合する。 draftは保ち、pushの自動レビューだけ無効にする。",
+      "reasoning": "観測から初回・draft・pushのイベントを分ける。 二つのオプションと方針を照合する。 起動源を増やさずrulesetを修正する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e07-feature-20261016": {
-      "fingerprint": "a88947036d7365c750f8dee8ee6127528359f2a875adc5ef93c76895e5b0715a",
+      "fingerprint": "2ac22d3f8b6860fca48807b250d2881941aafaf5ae7a3d11e05a944aaa6dae4a",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "実ツール名とpermission kindを分ける。 候補制限二指定の優先順位を適用する。 実行許可ではbashが追加されないと判定する。",
       "reasoningSteps": [
-        "availableとexcludedの両方が指定された状態を整理する。",
-        "候補の優先順位を適用してから、allow-toolが候補を増やさない点へ照合する。",
-        "readとsearchだけが候補になると結論する。"
+        "実ツール名とpermission kindを分ける。",
+        "候補制限二指定の優先順位を適用する。",
+        "実行許可ではbashが追加されないと判定する。"
       ],
-      "counterfactual": "availableがなくsearchだけ除外する場合はreadとshellが候補に残る。",
+      "counterfactual": "bashも候補へ明示した場合はgrepとbashの両方が提供される。",
       "evidence": [
         "cli-tool-permissions",
         "feature-refresh-cli-reference"
       ],
-      "reasoning": "availableとexcludedの両方が指定された状態を整理する。 候補の優先順位を適用してから、allow-toolが候補を増やさない点へ照合する。 readとsearchだけが候補になると結論する。",
+      "reasoning": "実ツール名とpermission kindを分ける。 候補制限二指定の優先順位を適用する。 実行許可ではbashが追加されないと判定する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d5-e08-feature-20261016": {
-      "fingerprint": "f7ad89d3d54e6bff3ba6a9c0e3b265a2d1bda4ad5dae03005bb3b9e0b0610149",
+      "fingerprint": "c89e14b88bfe4766fd5ccaea4120e5f50c1c5b0079c5460a9dc14866102d5eb6",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "既存PRと初回PRの既定参照先を分ける。 直近値とrepo既定をそれぞれ照合する。 単一依頼の明示指定でPだけを変更する。",
       "reasoningSteps": [
-        "組織・repo・PRの前回値・今回の指定を整理する。",
-        "今回の依頼の明示値が優先される順序と、設定の保持を照合する。",
-        "Balancedで実行し、それがPRの直近深度になると結論する。"
+        "既存PRと初回PRの既定参照先を分ける。",
+        "直近値とrepo既定をそれぞれ照合する。",
+        "単一依頼の明示指定でPだけを変更する。"
       ],
-      "counterfactual": "上位の値がなければ組織既定Liteが使われる。",
+      "counterfactual": "両方が初回ならrepo既定Balancedを使う。Pも既に目的のBalancedになるため今回の明示指定は不要。",
       "evidence": [
         "code-review",
         "feature-refresh-review-config"
       ],
-      "reasoning": "組織・repo・PRの前回値・今回の指定を整理する。 今回の依頼の明示値が優先される順序と、設定の保持を照合する。 Balancedで実行し、それがPRの直近深度になると結論する。",
+      "reasoning": "既存PRと初回PRの既定参照先を分ける。 直近値とrepo既定をそれぞれ照合する。 単一依頼の明示指定でPだけを変更する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-e04-feature-20261016": {
       "fingerprint": "7b8432d18db54c50e4358ebd7ac3d46ae40e4aa7e632f9d94ac284bd6f06d64d",
@@ -7721,7 +7709,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "組織Aの管理Seat向け設定と、別組織Bのrepo内設定を分ける。 Aのownerによる組織設定の変更権限と、BのMaintainによる閲覧権限を照合する。 Aの組織側だけ変更でき、Bのrepo側にはrepo管理権限が追加で必要と結論する。",
       "reasoningSteps": [
         "組織Aの管理Seat向け設定と、別組織Bのrepo内設定を分ける。",
         "Aのownerによる組織設定の変更権限と、BのMaintainによる閲覧権限を照合する。",
@@ -7733,47 +7721,46 @@
       ],
       "reasoning": "組織Aの管理Seat向け設定と、別組織Bのrepo内設定を分ける。 Aのownerによる組織設定の変更権限と、BのMaintainによる閲覧権限を照合する。 Aの組織側だけ変更でき、Bのrepo側にはrepo管理権限が追加で必要と結論する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-a03-feature-20261016": {
-      "fingerprint": "50ca972792a74068e739ca2728573e0d08b1426cd6f50eec978aee2874918e11",
+      "fingerprint": "cf07bf2d12f254b32fe201b7d1f77af457ee6a0781719334d6b519ab43695490",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "直接の除外成功を確認する。 非除外ファイルへIDEが提供する意味情報の経路を分ける。",
       "reasoningSteps": [
-        "直接のファイル内容とIDE由来の意味情報を分ける。",
-        "Content Exclusionの保護限界へ照合する。",
-        "ファイル内容の直接除外とは別に、IDEが渡す型等の間接情報が使われる可能性がある。"
+        "直接の除外成功を確認する。",
+        "非除外ファイルへIDEが提供する意味情報の経路を分ける。"
       ],
-      "counterfactual": "未反映が実測された条件なら反映とパス登録の調査が対象になる。",
+      "counterfactual": "直接除外が未反映という観測なら、間接経路の評価より先に直接ファイルへの反映を確認する。",
       "evidence": [
         "exclusion-concept"
       ],
-      "reasoning": "直接のファイル内容とIDE由来の意味情報を分ける。 Content Exclusionの保護限界へ照合する。 ファイル内容の直接除外とは別に、IDEが渡す型等の間接情報が使われる可能性がある。",
+      "reasoning": "直接の除外成功を確認する。 非除外ファイルへIDEが提供する意味情報の経路を分ける。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e04-feature-20261016": {
-      "fingerprint": "a1e160ecd50f42ab296de3a970f0b246478837b403a5239c1be84626f2c53a01",
+      "fingerprint": "a34c7fcf3fe8a30d42a6c90233b8df1d18f7f585747c93dad64e4eb0da988cbe",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "適用対象の利用者集合をSeat管理元で比較する。 repo範囲と利用者範囲を別々に絞る。 R内の全対象者へ適用するrepo設定を選ぶ。",
       "reasoningSteps": [
-        "repoを使う利用者とSeatを配る組織の二軸を分ける。",
-        "repo除外と組織の管理Seat向け除外の対象範囲を照合する。",
-        "対象repoの管理設定で利用者横断の除外を行う。"
+        "適用対象の利用者集合をSeat管理元で比較する。",
+        "repo範囲と利用者範囲を別々に絞る。",
+        "R内の全対象者へ適用するrepo設定を選ぶ。"
       ],
-      "counterfactual": "repo利用者全体でなくAの管理Seatだけを横断対象にするのでAの組織設定が合う。",
+      "counterfactual": "AのSeat利用者だけへRの限定パスを適用するならAの組織設定を使う。",
       "evidence": [
         "exclusion-concept"
       ],
-      "reasoning": "repoを使う利用者とSeatを配る組織の二軸を分ける。 repo除外と組織の管理Seat向け除外の対象範囲を照合する。 対象repoの管理設定で利用者横断の除外を行う。",
+      "reasoning": "適用対象の利用者集合をSeat管理元で比較する。 repo範囲と利用者範囲を別々に絞る。 R内の全対象者へ適用するrepo設定を選ぶ。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc05-3-feature-20261016": {
       "fingerprint": "cf23072030dd18686ab07074b054bc5a273243d735d30cc15952615d79c70c1c",
@@ -7781,7 +7768,7 @@
       "difficulty": "intermediate",
       "textRewritten": false,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "一つのrepoに閉じないファイル除外が必要と読む。 全ファイルシステム対象の*と.envのパターンを組み合わせる。 Git内外の全階層の.envを対象にする。",
       "reasoningSteps": [
         "一つのrepoに閉じないファイル除外が必要と読む。",
         "全ファイルシステム対象の*と.envのパターンを組み合わせる。",
@@ -7793,88 +7780,86 @@
       ],
       "reasoning": "一つのrepoに閉じないファイル除外が必要と読む。 全ファイルシステム対象の*と.envのパターンを組み合わせる。 Git内外の全階層の.envを対象にする。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-sc10-3-feature-20261016": {
-      "fingerprint": "09158cdda0370b5287e1142d94fb4852426e4cf49d60c4c9f7edd60fa6e98b70",
+      "fingerprint": "2b9fec4c569187893abdb9e02e424beb2a08ec5f13bf35ef3ab1b7d03710334c",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "remoteのhostとrepo pathを比較する。 正規化される表記差と実際の別repoを分ける。 パス一致とrepo一致の両方で対象を決める。",
       "reasoningSteps": [
-        "比較する差がhost・repo pathでなくclone表記だと読む。",
-        "Copilotのrepo参照の照合規則へプロトコル・user・portを当てはめる。",
-        "その差だけで除外対象外とはしない。"
+        "remoteのhostとrepo pathを比較する。",
+        "正規化される表記差と実際の別repoを分ける。",
+        "パス一致とrepo一致の両方で対象を決める。"
       ],
-      "counterfactual": "Pだけ登録したhostとrepo pathへ一致し、Qはclone表記でなくrepo自体が別。",
+      "counterfactual": "Rも同じrepo pathなら三者へ適用される。",
       "evidence": [
         "exclusion"
       ],
-      "reasoning": "比較する差がhost・repo pathでなくclone表記だと読む。 Copilotのrepo参照の照合規則へプロトコル・user・portを当てはめる。 その差だけで除外対象外とはしない。",
+      "reasoning": "remoteのhostとrepo pathを比較する。 正規化される表記差と実際の別repoを分ける。 パス一致とrepo一致の両方で対象を決める。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d1-a11-feature-20261016": {
-      "fingerprint": "f5522b169d5c2092905657d5bffc6aad18a24ace588468ddcdce9f164e5c1b57",
+      "fingerprint": "c7d8018c0d495dba23ebfcc787846619a3302da572850e7f25c8800c3c9b1cf7",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "サービス障害と自動要求の抑制を分ける。 明示的なインライン要求で取得を試す。",
       "reasoningSteps": [
-        "認証失敗や機能無効ではなく、従量課金接続による自動要求の抑制と判断する。",
-        "継続設定を変えず一回だけ使うため、明示的なインライン提案要求を選ぶ。",
-        "metered接続でbuilt-in providerの自動要求が抑えられても、明示的なTrigger Inline Suggestionは利用できる。"
+        "サービス障害と自動要求の抑制を分ける。",
+        "明示的なインライン要求で取得を試す。"
       ],
-      "counterfactual": "一回の取得でなく全言語での継続停止なら、インライン補完の有効設定を無効にする。",
+      "counterfactual": "インラインモデルの変更が目的なら専用の設定操作を選びChatモデルとは分ける。",
       "evidence": [
         "feature-refresh-inline"
       ],
-      "reasoning": "認証失敗や機能無効ではなく、従量課金接続による自動要求の抑制と判断する。 継続設定を変えず一回だけ使うため、明示的なインライン提案要求を選ぶ。 metered接続でbuilt-in providerの自動要求が抑えられても、明示的なTrigger Inline Suggestionは利用できる。",
+      "reasoning": "サービス障害と自動要求の抑制を分ける。 明示的なインライン要求で取得を試す。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-a13-feature-20261016": {
-      "fingerprint": "bbd7bd256944086e5e47c119035ba7848f75591b57a46a67e659cc02621cad0c",
+      "fingerprint": "e636f7874d98a5ace85e382efd0fe342a9bb4d42ff783abd4ac84acd92f16345",
       "beforeDifficulty": "intermediate",
       "difficulty": "intermediate",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。",
+      "assessment": "表記の大小差とパスの場所を別に照合する。 大小非区別による一致を設定エラーと区別する。",
       "reasoningSteps": [
-        "必要なのは特定パスだけで、大小文字の別登録は不要と読む。",
-        "名前だけやフォルダ全体より狭いrepo直下のパス指定を選ぶ。",
-        "repo直下の指定ファイルへ限定し、大小文字違いもCopilotの照合では対象になる。"
+        "表記の大小差とパスの場所を別に照合する。",
+        "大小非区別による一致を設定エラーと区別する。"
       ],
-      "counterfactual": "同名ファイルをrepo全体で除外するなら名前で指定する。",
+      "counterfactual": "場所を限定しないファイル名パターンなら同名ファイルを別フォルダでも除外する。",
       "evidence": [
         "exclusion"
       ],
-      "reasoning": "必要なのは特定パスだけで、大小文字の別登録は不要と読む。 名前だけやフォルダ全体より狭いrepo直下のパス指定を選ぶ。 repo直下の指定ファイルへ限定し、大小文字違いもCopilotの照合では対象になる。",
+      "reasoning": "表記の大小差とパスの場所を別に照合する。 大小非区別による一致を設定エラーと区別する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     },
     "q-d6-e07-feature-20261016": {
-      "fingerprint": "ef38e6147bd8c1235bda67188bffb4acd7a300a24e789202e9809369c9d27ba7",
+      "fingerprint": "a111b77c1ec23a6665b48c81983b801ada1e8e268d9dd4b567a24d09dc95ef82",
       "beforeDifficulty": "advanced",
       "difficulty": "advanced",
-      "textRewritten": false,
+      "textRewritten": true,
       "reclassified": false,
-      "assessment": "本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。",
+      "assessment": "通常補完とCLIの保護範囲を区別する。 ローカルと外部検索の取得経路を分ける。 提供停止の方針を両経路へ適用する。",
       "reasoningSteps": [
-        "通常補完の除外とCLIの二つの入力経路を分ける。",
-        "Content Exclusion非対応というCLIの保護範囲へ両方を照合する。",
-        "通常補完の設定は維持し、CLI側では二経路とも候補から外す。"
+        "通常補完とCLIの保護範囲を区別する。",
+        "ローカルと外部検索の取得経路を分ける。",
+        "提供停止の方針を両経路へ適用する。"
       ],
-      "counterfactual": "残る経路がMCPだけなら、そのMCPを候補から外す変更だけで要件を満たす。",
+      "counterfactual": "ローカル側だけ実行時拒否へ変えた方針ならBとなる。元の候補停止要件は残さない。",
       "evidence": [
         "exclusion",
         "cli-tool-permissions"
       ],
-      "reasoning": "通常補完の除外とCLIの二つの入力経路を分ける。 Content Exclusion非対応というCLIの保護範囲へ両方を照合する。 通常補完の設定は維持し、CLI側では二経路とも候補から外す。",
+      "reasoning": "通常補完とCLIの保護範囲を区別する。 ローカルと外部検索の取得経路を分ける。 提供停止の方針を両経路へ適用する。",
       "reviewRequired": false,
-      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+      "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     }
   },
   "secondPass": "従来の改稿90問の再読、基礎154問の再評価に続き、応用102問を全件再評価。適用条件・全選択肢の差・条件を変えた場合の判断を記録。同じ編集者の再読であり、独立した別人のレビューではない。 本番相当60問の本文・全選択肢・変更後の反実仮想を全件再読。",
@@ -8400,6 +8385,103 @@
         "q-d6-e07-feature-20261016"
       ],
       "report": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "reviewedAt": "2026-10-16",
+      "questionIds": [
+        "q-d3-a13",
+        "q-d1-a21-feature-20261016",
+        "q-d2-e07-feature-20261016",
+        "q-d5-a14-feature-20261016",
+        "q-sc05-1-feature-20261016",
+        "q-d4-e06-feature-20261016",
+        "q-d2-e21",
+        "q-d3-e07-feature-20261016",
+        "q-d2-e24",
+        "q-d6-a09",
+        "q-d2-e11-feature-20261016",
+        "q-d6-e02-feature-20261016",
+        "q-d4-a14-feature-20261016",
+        "q-d5-e03-feature-20261016",
+        "q-d6-a11",
+        "q-d2-a23",
+        "q-sc03-3-feature-20261016",
+        "q-d6-e06",
+        "q-d5-e06-feature-20261016",
+        "q-d1-e02-feature-20261016",
+        "q-sc06-3",
+        "q-d2-e15-feature-20261016",
+        "q-d6-a13-feature-20261016",
+        "q-d3-a17",
+        "q-d6-a01",
+        "q-d5-e08-feature-20261016",
+        "q-d6-e03-feature-20261016",
+        "q-d4-e07-feature-20261016",
+        "q-d1-a10-feature-20261016",
+        "q-d2-a24",
+        "q-sc10-3-feature-20261016",
+        "q-d1-e08-feature-20261016",
+        "q-d2-e08",
+        "q-d2-e02-feature-20261016",
+        "q-sc08-2-feature-20261016",
+        "q-d1-a04-feature-20261016",
+        "q-d4-e01-feature-20261016",
+        "q-d3-a07-feature-20261016",
+        "q-d3-a06-feature-20261016",
+        "q-d3-a03-feature-20261016",
+        "q-d1-e09-feature-20261016",
+        "q-sc05-3-feature-20261016",
+        "q-d3-e08-feature-20261016",
+        "q-d5-e07-feature-20261016",
+        "q-d6-a03-feature-20261016",
+        "q-d2-a20",
+        "q-d2-e19-feature-20261016",
+        "q-d5-a09-feature-20261016",
+        "q-d2-e06",
+        "q-d5-e02-feature-20261016",
+        "q-d1-e03-feature-20261016",
+        "q-d1-e07-feature-20261016",
+        "q-d1-a11-feature-20261016",
+        "q-d1-a17-feature-20261016",
+        "q-sc07-1-feature-20261016",
+        "q-d5-e05-feature-20261016",
+        "q-d4-e08-feature-20261016",
+        "q-d4-e04-feature-20261016",
+        "q-d3-a19-feature-20261016",
+        "q01-feature-20261016",
+        "q-sc03-1-feature-20261016",
+        "q-d2-e01-feature-20261016",
+        "q-d3-a16-feature-20261016",
+        "q-d5-a15-feature-20261016",
+        "q-d6-e07-feature-20261016",
+        "q-d3-a14-feature-20261016",
+        "q-d5-e01-feature-20261016",
+        "q-d5-e04-feature-20261016",
+        "q-d4-e09-feature-20261016",
+        "q-d3-e04",
+        "q-sc01-2",
+        "q-sc02-2-feature-20261016",
+        "q-d1-a19-feature-20261016",
+        "q-d1-a16-feature-20261016",
+        "q-d3-e02-feature-20261016",
+        "q-d2-a26-feature-20261016",
+        "q-d6-e04-feature-20261016",
+        "q-d1-a07-feature-20261016",
+        "q-d4-a01-feature-20261016",
+        "q-d4-a02-feature-20261016",
+        "q-d2-a04-feature-20261016",
+        "q-sc03-2-feature-20261016",
+        "q-d2-a25",
+        "q-d2-a18-feature-20261016",
+        "q-sc02-3-feature-20261016",
+        "q-d1-e01-feature-20261016",
+        "q-d4-e05-feature-20261016",
+        "q-d1-e04-feature-20261016",
+        "q-sc02-1-feature-20261016",
+        "q-d1-a18-feature-20261016",
+        "q-d6-e01"
+      ],
+      "report": "reports/copilot-feature-quality-repairs-2026-10-16.json"
     }
   ],
   "deletionFollowUp": {

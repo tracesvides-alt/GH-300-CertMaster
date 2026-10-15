@@ -1,6 +1,6 @@
 # 本番相当問題 全件6観点レビュー
 
-初回レビュー：2026-10-12〜2026-10-13／最新更新：2026-10-13
+初回レビュー：2026-10-12〜2026-10-13／最新更新：2026-10-16
 
 ## 追加の見直し
 
@@ -8,6 +8,9 @@
 - 2026-10-13：q-d5-e04、q-d1-e02、q-sc02-3、q-d1-e01、q-d3-e03を追加改稿。詳細：[追加レビュー](difficulty-five-review.md)。
 - 2026-10-13：q01、q05、q06、q11、q-d1-f03、q-d1-f05、q-d1-a01、q-d1-a02、q-d1-a03、q-d1-a04、q-d1-a05、q-d1-a07、q-d1-a08、q-d1-a09、q-d1-e01、q-d1-e03、q-d1-e04、q-d1-e05、q-d1-e06、q-d1-e07、q-d1-e08、q-d2-f04、q-d2-f05、q-d2-f08、q-d2-f09、q-d2-f10、q-d2-f11、q-d2-a02、q-d2-a04、q-d2-a05、q-d2-a06、q-d2-a09、q-d2-a10、q-d2-a11、q-d2-a15、q-d2-a16、q-d2-a19、q-d2-a20、q-d2-a22、q-d2-e01、q-d2-e03、q-d2-e04、q-d2-e07、q-d2-e08、q-d2-e09、q-d2-e10、q-d2-e12、q-d2-e13、q-d2-e14、q-d2-e16、q-d2-e18、q-d3-f03、q-d3-f04、q-d3-f05、q-d3-a01、q-d3-a02、q-d3-a03、q-d3-a04、q-d3-a05、q-d3-a06、q-d3-a07、q-d3-a08、q-d3-a09、q-d3-a10、q-d3-e01、q-d3-e02、q-d3-e04、q-d3-e05、q-d4-a08、q-d4-a11、q-d4-e01、q-d4-e03、q-d5-f01、q-d5-f02、q-d5-f02-b、q-d5-f04、q-d5-f05、q-d5-a01、q-d5-a03、q-d5-a04、q-d5-a05、q-d5-a06、q-d5-a08、q-d5-a10、q-d5-a11、q-d5-e01、q-d5-e02、q-d5-e05、q-d6-f01、q-d6-f03、q-d6-f04、q-d6-f05、q-d6-a02、q-d6-a03、q-d6-a04、q-d6-a05、q-d6-a06、q-d6-a07、q-d6-a08、q-d6-a09、q-d6-e01、q-d6-e02、q-d6-e03、q-d6-e04、q-d6-e05、q-sc02-1、q-sc02-2、q-sc03-3、q-sc04-1、q-sc04-2、q-sc05-1、q-sc05-2、q-sc05-3、q-sc06-1、q-sc07-1、q-sc07-2、q-sc08-2、q-sc09-2、q-sc10-1、q-sc10-2、q-sc10-3、q-d1-g04、q-d1-g05、q-d2-g12、q-d4-g08、q-d4-g09、q-d5-g05、q-d6-g05、q-d1-a11、q-d2-a24、q-d2-a26、q-d3-a13、q-d3-a14、q-d3-a15、q-d4-a13、q-d4-a14、q-d4-a15、q-d5-a13、q-d6-a14、q-d2-e20、q-d2-e21、q-d2-e23、q-d2-e24、q-d3-e08、q-d4-e06、q-d4-e07、q-d6-e06を追加改稿。詳細：[追加レビュー](question-objective-classification-review.md)。
 - 2026-10-13：q01、q-d1-f03、q-d1-f05、q-d1-a01、q-d1-a02、q-d1-a03、q-d1-a04、q-d1-a08、q-d1-a09、q-d1-e03、q-d1-e05、q-d1-e07、q-d1-e08、q-sc02-2、q-sc05-1、q-sc05-2を追加改稿。詳細：[追加レビュー](d1-d5-classification-correction.md)。
+- undefined：を追加改稿。詳細：[追加レビュー](applied-23-focus-improvement-review.md)。
+- 2026-10-16：q-d2-e11-feature-20261016、q-d3-a19-feature-20261016、q-d4-e04-feature-20261016、q-d6-e03-feature-20261016、q01-feature-20261016、q-d1-a04-feature-20261016、q-d1-a07-feature-20261016、q-d1-a10-feature-20261016、q-d2-a04-feature-20261016、q-sc05-1-feature-20261016、q-d2-a26-feature-20261016、q-d1-a16-feature-20261016、q-d1-a17-feature-20261016、q-d1-a18-feature-20261016、q-d1-a19-feature-20261016、q-d1-a21-feature-20261016、q-d1-e01-feature-20261016、q-d1-e02-feature-20261016、q-d1-e03-feature-20261016、q-d1-e07-feature-20261016、q-d1-e08-feature-20261016、q-d5-e02-feature-20261016、q-sc02-2-feature-20261016、q-d1-e09-feature-20261016、q-d2-a18-feature-20261016、q-d2-e02-feature-20261016、q-d2-e15-feature-20261016、q-d2-e19-feature-20261016、q-d6-e02-feature-20261016、q-sc03-1-feature-20261016、q-sc03-2-feature-20261016、q-sc07-1-feature-20261016、q-d3-a03-feature-20261016、q-d3-e02-feature-20261016、q-sc08-2-feature-20261016、q-d3-e07-feature-20261016、q-d3-a16-feature-20261016、q-d3-a06-feature-20261016、q-d3-a07-feature-20261016、q-d4-a01-feature-20261016、q-d4-a02-feature-20261016、q-d4-e05-feature-20261016、q-sc02-3-feature-20261016、q-sc03-3-feature-20261016、q-d3-a14-feature-20261016、q-d4-e06-feature-20261016、q-d4-e07-feature-20261016、q-d4-e08-feature-20261016、q-d4-e09-feature-20261016、q-d2-e01-feature-20261016、q-d2-e07-feature-20261016、q-d4-e01-feature-20261016、q-d5-a09-feature-20261016、q-d5-e01-feature-20261016、q-d5-e03-feature-20261016、q-d5-e04-feature-20261016、q-d5-e05-feature-20261016、q-sc02-1-feature-20261016、q-d4-a14-feature-20261016、q-d5-a14-feature-20261016、q-d5-a15-feature-20261016、q-d3-e08-feature-20261016、q-d5-e06-feature-20261016、q-d5-e07-feature-20261016、q-d5-e08-feature-20261016、q-d1-e04-feature-20261016、q-d6-a03-feature-20261016、q-d6-e04-feature-20261016、q-sc05-3-feature-20261016、q-sc10-3-feature-20261016、q-d1-a11-feature-20261016、q-d6-a13-feature-20261016、q-d6-e07-feature-20261016を追加改稿。詳細：[追加レビュー](copilot-feature-refresh-2026-10-16.md)。
+- 2026-10-16：q-d3-a13、q-d1-a21-feature-20261016、q-d2-e07-feature-20261016、q-d5-a14-feature-20261016、q-sc05-1-feature-20261016、q-d4-e06-feature-20261016、q-d2-e21、q-d3-e07-feature-20261016、q-d2-e24、q-d6-a09、q-d2-e11-feature-20261016、q-d6-e02-feature-20261016、q-d4-a14-feature-20261016、q-d5-e03-feature-20261016、q-d6-a11、q-d2-a23、q-sc03-3-feature-20261016、q-d6-e06、q-d5-e06-feature-20261016、q-d1-e02-feature-20261016、q-sc06-3、q-d2-e15-feature-20261016、q-d6-a13-feature-20261016、q-d3-a17、q-d6-a01、q-d5-e08-feature-20261016、q-d6-e03-feature-20261016、q-d4-e07-feature-20261016、q-d1-a10-feature-20261016、q-d2-a24、q-sc10-3-feature-20261016、q-d1-e08-feature-20261016、q-d2-e08、q-d2-e02-feature-20261016、q-sc08-2-feature-20261016、q-d1-a04-feature-20261016、q-d4-e01-feature-20261016、q-d3-a07-feature-20261016、q-d3-a06-feature-20261016、q-d3-a03-feature-20261016、q-d1-e09-feature-20261016、q-sc05-3-feature-20261016、q-d3-e08-feature-20261016、q-d5-e07-feature-20261016、q-d6-a03-feature-20261016、q-d2-a20、q-d2-e19-feature-20261016、q-d5-a09-feature-20261016、q-d2-e06、q-d5-e02-feature-20261016、q-d1-e03-feature-20261016、q-d1-e07-feature-20261016、q-d1-a11-feature-20261016、q-d1-a17-feature-20261016、q-sc07-1-feature-20261016、q-d5-e05-feature-20261016、q-d4-e08-feature-20261016、q-d4-e04-feature-20261016、q-d3-a19-feature-20261016、q01-feature-20261016、q-sc03-1-feature-20261016、q-d2-e01-feature-20261016、q-d3-a16-feature-20261016、q-d5-a15-feature-20261016、q-d6-e07-feature-20261016、q-d3-a14-feature-20261016、q-d5-e01-feature-20261016、q-d5-e04-feature-20261016、q-d4-e09-feature-20261016、q-d3-e04、q-sc01-2、q-sc02-2-feature-20261016、q-d1-a19-feature-20261016、q-d1-a16-feature-20261016、q-d3-e02-feature-20261016、q-d2-a26-feature-20261016、q-d6-e04-feature-20261016、q-d1-a07-feature-20261016、q-d4-a01-feature-20261016、q-d4-a02-feature-20261016、q-d2-a04-feature-20261016、q-sc03-2-feature-20261016、q-d2-a25、q-d2-a18-feature-20261016、q-sc02-3-feature-20261016、q-d1-e01-feature-20261016、q-d4-e05-feature-20261016、q-d1-e04-feature-20261016、q-sc02-1-feature-20261016、q-d1-a18-feature-20261016、q-d6-e01を追加改稿。詳細：[追加レビュー](copilot-feature-quality-repairs-2026-10-16.md)。
 
 追加レビューは上記の対象だけ。全件の整合性監査と、全件の意味的な再評価は別であり、初回のPASSを独立した本文なし検証の結果として扱わない。
 
@@ -77,7 +80,7 @@
 - インシデント切り分け：28問
 - 複合制約トレードオフ：19問
 
-正答表示位置はA:15／B:15／C:12／D:15。A/B/C/Dはアプリの表示位置を表し、保存用choice IDと混同しない。
+正答表示位置はA:22／B:24／C:22／D:26。A/B/C/Dはアプリの表示位置を表し、保存用choice IDと混同しない。
 
 現在の57問で正答文字長÷誤答3択の中央値は0.5〜1.5の範囲。これは補助的な警戒基準であり、比率だけで合否を決めない。Domainごとの9問では3/9=33.3%が出るが、4位置への整数配分のため全てを30%以下にはできない。
 
@@ -159,7 +162,7 @@ GitHub Copilotが提案した外部依存パッケージPおよびQの採用審�
 - **出題形式**: 複合制約トレードオフ
 - **問題文要約**: POSTの応答契約を変更／POSTは成功スタブ／許可範囲は同じファイルの書式変更だけ
 
-問題文：GitHub Copilot Workspace（Agent）が作成したPull Requestにおいて、サービスYがPOSTの応答契約を変更しました。提出された証跡Tは「Yのテスト成功」、証跡Rは「Yのファイル承認済み」となっています。しかし、Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。社内基準では、変更された実ルートに対する契約検証と変更種別に応じた正式な承認が要求されており、有効な証跡は再利用可能です。基準を満たすために不足している証跡のみを補う対応として最も適切なものはどれですか？
+問題文：GitHub Copilot Agent（コーディングエージェント）が作成したPull Requestにおいて、サービスYがPOSTの応答契約を変更しました。提出された証跡Tは「Yのテスト成功」、証跡Rは「Yのファイル承認済み」となっています。しかし、Tの明細ではGETが実ルート、POSTは成功スタブです。Rの許可範囲は同じファイルの書式変更だけです。社内基準では、変更された実ルートに対する契約検証と変更種別に応じた正式な承認が要求されており、有効な証跡は再利用可能です。基準を満たすために不足している証跡のみを補う対応として最も適切なものはどれですか？
 
 **選択肢構成**（アプリの表示順）
 
@@ -190,7 +193,7 @@ GitHub Copilotが提案した外部依存パッケージPおよびQの採用審�
 
 <details><summary>条件変更後の問題文</summary>
 
-GitHub Copilot Workspace（Agent）が作成したPull Requestにおいて、サービスYがPOSTの応答契約を変更しました。提出された証跡Tは「Yのテスト成功」、証跡Rは「Yのファイル承認済み」となっています。しかし、Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲にはそのPOST契約変更も含まれます。社内基準では、変更された実ルートに対する契約検証と変更種別に応じた正式な承認が要求されており、有効な証跡は再利用可能です。基準を満たすために不足している証跡のみを補う対応として最も適切なものはどれですか？
+GitHub Copilot Agent（コーディングエージェント）が作成したPull Requestにおいて、サービスYがPOSTの応答契約を変更しました。提出された証跡Tは「Yのテスト成功」、証跡Rは「Yのファイル承認済み」となっています。しかし、Tの明細では変更したPOST実ルートを候補契約の期待値で検証済みです。Rの許可範囲にはそのPOST契約変更も含まれます。社内基準では、変更された実ルートに対する契約検証と変更種別に応じた正式な承認が要求されており、有効な証跡は再利用可能です。基準を満たすために不足している証跡のみを補う対応として最も適切なものはどれですか？
 
 </details>
 
@@ -573,64 +576,62 @@ GitHub Copilotが参照する社内ナレッジの応答キャッシュ機構を
 
 出典：[About Model Context Protocol (MCP)](https://docs.github.com/en/copilot/concepts/context/mcp)、[Tools](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)
 
-### q-d2-e06: 利用可能ツールと許可・拒否の二層
+### q-d2-e06: d2o2
 
 - **出題形式**: 複合制約トレードオフ
-- **問題文要約**: git pushだけ拒否／利用可能ツールを読取系だけに制限／denyはallowより優先／許可指定は利用可能ツールを増やさない
+- **問題文要約**: LinuxのCopilot CLIで二つの起動構成を比較します。Pはbashを提供し、--allow-tool="shell(git:*)"と--deny-tool="shell(git push)"を指定。Qは--available-tools=view,grepで同じallow指定を使います。どちらも同じrepoで、保存済み承認以外の制約はありません。git commitとgit pushを試す場合の違いはどれですか。
 
-問題文：GitHub Copilot CLIの権限管理ポリシーの演習です。セッションPはshellツールが利用可能で、Git操作を許可しgit pushだけ拒否しています。セッションQは利用可能ツールを読取系だけに制限し、Git操作の許可も指定しています。システム規則では、denyはallowより優先し、許可指定は利用可能ツールを増やさない規則です。この設定において、セッションPおよびQでgit commitとgit pushの実行を試みた場合の結果として最も適切なものはどれですか？
+問題文：LinuxのCopilot CLIで二つの起動構成を比較します。Pはbashを提供し、--allow-tool="shell(git:*)"と--deny-tool="shell(git push)"を指定。Qは--available-tools=view,grepで同じallow指定を使います。どちらも同じrepoで、保存済み承認以外の制約はありません。git commitとgit pushを試す場合の違いはどれですか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：Pではcommitが許可されpushは拒否されるが、Qでは実行ツール制限によりcommitもpushも拒否される【正答】
-- B：Pではcommitもpushも両方許可され、Qでは実行ツールの制限によりcommitもpushも拒否される
-- C：Pではcommitが許可されpushは拒否され、QではGit操作許可によりcommitもpushも許可される
-- D：Pでは個別拒否によりcommitもpushも拒否され、QではGit許可によりcommit可・push不可となる
+- A：Pはcommit可・push拒否、Qはどちらも実行ツールの候補外【正答】
+- B：Pは両方可、Qはどちらも実行ツールの候補外
+- C：Pはcommit可・push拒否、Qも同じ実行許可になる
+- D：Pは両方拒否、Qはcommit可・push拒否になる
 
 **【レビュー① ブラインドチェック】**
 
 変更前：PASS。複数の対象・結果の組合せがあり、本文の観測を隠すとどれを選ぶべきか確定しない。
 
-修正後：PASS。各案は利用可能ツールと許可・拒否の二層の異なる条件・段階を扱う。本文の「git pushだけ拒否」、「利用可能ツールを読取系だけに制限」、「denyはallowより優先」、「許可指定は利用可能ツールを増やさない」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「--deny-tool="shell(git push)"」「--available-tools=view,grep」を外して四案を再読し、各案の操作・範囲・時点を比較した。広いallowが個別denyを打ち消すと誤解している。 候補ツールの不足を実行許可だけで解消できると誤解している。 PのdenyをGit全体へ広げ、Qでは候補制限を無視している。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：利用可能ツールと実行許可という二層を分ける
-2. ステップ2（照合）：PとQそれぞれの有効範囲を求める
-3. ステップ3（結論）：PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。
+1. ステップ1（分析）：Pのallowとdenyの優先関係を判定する。
+2. ステップ2（照合）：Qで実行ツールが提供されるか確認する。
+3. ステップ3（結論）：実行拒否と候補外を別の結果として比較する。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「Qは利用可能ツールを読取系だけに制限し」が「Qはshellツールも利用可能にし、個別拒否はなく」なら、正答は **A → C** へ変わる。
+「Qは--available-tools=view,grepで」が「Qは--available-tools=view,grep,bashで、Pと同じdenyも指定しており」なら、正答は **A → C** へ変わる。
 
-変更後の正答：Pではcommitが許可されpushは拒否され、QではGit操作許可によりcommitもpushも許可される
+変更後の正答：Pはcommit可・push拒否、Qも同じ実行許可になる
 
-検証：QにもGit許可を実行できるshellがあり、commit/pushとも可能。元のQ両方不可は成立しない。
+検証：Qにもbashと同じdenyがあるならPとQの実行可否がそろう。
 
 <details><summary>条件変更後の問題文</summary>
 
-GitHub Copilot CLIの権限管理ポリシーの演習です。セッションPはshellツールが利用可能で、Git操作を許可しgit pushだけ拒否しています。セッションQはshellツールも利用可能にし、個別拒否はなく、Git操作の許可も指定しています。システム規則では、denyはallowより優先し、許可指定は利用可能ツールを増やさない規則です。この設定において、セッションPおよびQでgit commitとgit pushの実行を試みた場合の結果として最も適切なものはどれですか？
+LinuxのCopilot CLIで二つの起動構成を比較します。Pはbashを提供し、--allow-tool="shell(git:*)"と--deny-tool="shell(git push)"を指定。Qは--available-tools=view,grep,bashで、Pと同じdenyも指定しており同じallow指定を使います。どちらも同じrepoで、保存済み承認以外の制約はありません。git commitとgit pushを試す場合の違いはどれですか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
-- 「git pushだけ拒否」
-- 「利用可能ツールを読取系だけに制限」
-- 「denyはallowより優先」
-- 「許可指定は利用可能ツールを増やさない」
+- 「--deny-tool="shell(git push)"」
+- 「--available-tools=view,grep」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **B**：誘惑・見落としは「Git許可は読むが、より優先するpush拒否を落とす。」／今回不適合な理由：Pにおいて明示的に設定されたgit pushの拒否（deny）設定を無視しており、不適切な許可判定を行っています。
-- **C**：誘惑・見落としは「allowをツールを有効にする設定と混同する。」／今回不適合な理由：Qにおいて「許可指定は利用可能ツールを増やさない」という大原則を見落とし、読取専用環境でGit更新操作を誤って許可しています。
-- **D**：誘惑・見落としは「Pの個別push拒否をcommitにも広げ、Qのallowを利用可能化とも読む。」／今回不適合な理由：Pにおけるgit push拒否をGit操作全体（commit含む）への拒否へと拡大解釈してしまっています。
+- **B**：誘惑・見落としは「広いallowが個別denyを打ち消すと誤解している。」／今回不適合な理由：広いallowが個別denyを打ち消すと誤解している。
+- **C**：誘惑・見落としは「候補ツールの不足を実行許可だけで解消できると誤解している。」／今回不適合な理由：候補ツールの不足を実行許可だけで解消できると誤解している。
+- **D**：誘惑・見落としは「PのdenyをGit全体へ広げ、Qでは候補制限を無視している。」／今回不適合な理由：PのdenyをGit全体へ広げ、Qでは候補制限を無視している。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答56字／誤答（短い順）53・54・55字／誤答中央値54字／中央値比 **1.04**／正答表示位置 **A**。
+正答32字／誤答（短い順）21・26・28字／誤答中央値26字／中央値比 **1.23**／正答表示位置 **A**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める → PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。
+難易度判定：Pのallowとdenyの優先関係を判定する。 Qで実行ツールが提供されるか確認する。 実行拒否と候補外を別の結果として比較する。
 
 出典：[Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
 
@@ -995,64 +996,63 @@ Agentにカートの割引実装を依頼しました。合意した契約は「
 
 出典：[Troubleshooting network errors for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors)
 
-### q-d3-e04: 設定一致と利用経路の対応範囲
+### q-d3-e04: d6o2
 
 - **出題形式**: インシデント切り分け
-- **問題文要約**: 通常補完では除外表示／Agentではファイル読取ツールが成功／パス一致と反映は確認済み／この環境のAgentは除外非対応
+- **問題文要約**: Copilot Businessで機密ファイルをContent Exclusionへ登録しました。対応する通常補完では除外表示が出ますが、VS CodeのAgentではファイル読取が成功します。ファイルはシンボリックリンクではなく、パス一致と設定反映も確認済みです。通常補完の保護を残し、Agentからも内容を取得させない対処はどれですか。
 
-問題文：機密ファイルに対するコンテンツ除外ポリシー（Content Exclusion）の保護範囲を検証しました。同じ機密パスにContent Exclusionを設定しました。通常補完では除外表示が出て提案が止まりますが、IDEのAgentではファイル読取ツールが成功します。パス一致と反映は確認済みで、この環境のAgentは除外非対応です。この観測を踏まえ、機密漏洩を防ぐ最小の境界対策として最も適切なものはどれですか？
+問題文：Copilot Businessで機密ファイルをContent Exclusionへ登録しました。対応する通常補完では除外表示が出ますが、VS CodeのAgentではファイル読取が成功します。ファイルはシンボリックリンクではなく、パス一致と設定反映も確認済みです。通常補完の保護を残し、Agentからも内容を取得させない対処はどれですか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：通常補完の対象外タブを閉じ、入力文脈を縮小する
-- B：補完除外を保ち、Agentから機密へのアクセスを分離する【正答】
-- C：実際の対象に一致する除外パスを登録し、表示を再確認する
-- D：セッションを再読込し、除外の設定反映を再確認する
+- A：通常補完の除外を保ち、Agentの機密MCPサーバーだけを外す
+- B：通常補完の除外を保ち、Agentを機密ファイルのない実行環境へ移す【正答】
+- C：通常補完の除外を公開コード一致Blockへ替え、Agentを機密のない環境へ移す
+- D：通常補完の除外を公開コード一致Blockへ替え、Agentの機密MCPだけを外す
 
 **【レビュー① ブラインドチェック】**
 
 変更前：FAIL。正答だけがアクセス分離という強い保護を行い、他は同じ設定の繰返しに見える。
 
-修正後：PASS。各案は設定一致と利用経路の対応範囲の異なる条件・段階を扱う。本文の「通常補完では除外表示」、「Agentではファイル読取ツールが成功」、「パス一致と反映は確認済み」、「この環境のAgentは除外非対応」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「通常補完では除外表示」「Agentではファイル読取が成功」「パス一致と設定反映も確認済み」を外して四案を再読し、各案の操作・範囲・時点を比較した。MCPを外すだけではAgentのローカル読取が残る。 Agentの経路は直るが通常補完の入力除外を出力フィルタへ置き換えてしまう。 ローカル読取が残り、通常補完の入力除外も失う。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：同一パスで異なる二経路の結果を比較する
-2. ステップ2（照合）：ルールの修正ではなくアクセス境界の変更を導く
-3. ステップ3（結論）：設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。
+1. ステップ1（分析）：パスと反映の失敗を観測で除く。
+2. ステップ2（照合）：通常補完とAgentの対応範囲を照合する。
+3. ステップ3（結論）：非対応経路へ独立したアクセス境界を置く。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「同じ機密パスにContent Exclusionを設定しました。通常補完では除外表示が出て提案が止まりますが、IDEのAgentではファイル読取ツールが成功します。パス一致と反映は確認済みで、この環境のAgentは除外非対応です」が「別の機密パスにだけContent Exclusionを設定しました。そのパスでは除外表示が出ますが、今回の通常補完は未登録のパスを取得しています。使用モードは対応しており、設定に今回の実パスがありません」なら、正答は **B → C** へ変わる。
+「VS CodeのAgentではファイル読取が成功します」が「VS CodeのAgentはローカルの機密を読めませんが、機密MCPからだけ内容を取得できます」なら、正答は **B → A** へ変わる。
 
-変更後の正答：実際の対象に一致する除外パスを登録し、表示を再確認する
+変更後の正答：通常補完の除外を保ち、Agentの機密MCPサーバーだけを外す
 
-検証：非対応モードでなくパス適用先の不足となり、適切な登録が最小の修正になる。環境分離を増やす元の回答は原因の最小修正ではない。
+検証：取得経路がMCPだけなら、そのMCPの提供停止が必要になる。ローカルファイルを別環境へ移すだけでは外部MCPの応答を止めない。
 
 <details><summary>条件変更後の問題文</summary>
 
-機密ファイルに対するコンテンツ除外ポリシー（Content Exclusion）の保護範囲を検証しました。別の機密パスにだけContent Exclusionを設定しました。そのパスでは除外表示が出ますが、今回の通常補完は未登録のパスを取得しています。使用モードは対応しており、設定に今回の実パスがありません。この観測を踏まえ、機密漏洩を防ぐ最小の境界対策として最も適切なものはどれですか？
+Copilot Businessで機密ファイルをContent Exclusionへ登録しました。対応する通常補完では除外表示が出ますが、VS CodeのAgentはローカルの機密を読めませんが、機密MCPからだけ内容を取得できます。ファイルはシンボリックリンクではなく、パス一致と設定反映も確認済みです。通常補完の保護を残し、Agentからも内容を取得させない対処はどれですか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
 - 「通常補完では除外表示」
-- 「Agentではファイル読取ツールが成功」
-- 「パス一致と反映は確認済み」
-- 「この環境のAgentは除外非対応」
+- 「Agentではファイル読取が成功」
+- 「パス一致と設定反映も確認済み」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **A**：誘惑・見落としは「通常補完のノイズ削減を、Agentが実行する読取ツールの権限へ拡張する。」／今回不適合な理由：エディタタブを閉じても、Agentがファイルシステムから直接ファイルを読み出す動作を制限することはできません。
-- **C**：誘惑・見落としは「入力除外のよくあるパス誤りへ戻り、確認済みの条件を再検証する。」／今回不適合な理由：除外パスはすでに正しく一致しており通常補完で機能しているため、パスの再登録を行ってもAgentの非対応問題は解決しません。
-- **D**：誘惑・見落としは「伝播待ちという一般的な初動を、非対応モードの読取にも使う。」／今回不適合な理由：反映はすでに確認済みであり、セッションを再読み込みしても非対応のAgentツールが対応するわけではありません。
+- **A**：誘惑・見落としは「MCPを外すだけではAgentのローカル読取が残る。」／今回不適合な理由：MCPを外すだけではAgentのローカル読取が残る。
+- **C**：誘惑・見落としは「Agentの経路は直るが通常補完の入力除外を出力フィルタへ置き換えてしまう。」／今回不適合な理由：Agentの経路は直るが通常補完の入力除外を出力フィルタへ置き換えてしまう。
+- **D**：誘惑・見落としは「ローカル読取が残り、通常補完の入力除外も失う。」／今回不適合な理由：ローカル読取が残り、通常補完の入力除外も失う。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答28字／誤答（短い順）23・24・27字／誤答中央値24字／中央値比 **1.17**／正答表示位置 **B**。
+正答33字／誤答（短い順）31・40・40字／誤答中央値40字／中央値比 **0.82**／正答表示位置 **B**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く → 設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。
+難易度判定：パスと反映の失敗を観測で除く。 通常補完とAgentの対応範囲を照合する。 非対応経路へ独立したアクセス境界を置く。
 
 出典：[Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion)
 
@@ -1414,7 +1414,7 @@ GitHub Copilotが生成したPull Requestの要約には「API互換性変更な
 
 難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。型検査で覆われない応答の意味とログの公開を分ける。 → 承認証跡の有無と公開サンプル規則へ照合する。 → 応答承認を確認し、サンプルと要約を差分へ整合させる。
 
-出典：[About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)、[Application card: GitHub Copilot inline suggestions](https://docs.github.com/en/copilot/responsible-use/inline-suggestions)
+出典：[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review)、[Application card: GitHub Copilot inline suggestions](https://docs.github.com/en/copilot/responsible-use/inline-suggestions)
 
 ### q-d5-e03: 変異テストで生成範囲とオラクルの盲点を切り分ける
 
@@ -1537,63 +1537,63 @@ CopilotがUIのスナップショット一括更新を提案しました。失�
 
 出典：[Writing tests with GitHub Copilot](https://docs.github.com/en/copilot/tutorials/write-tests)
 
-### q-d6-e01: 除外の経路限界と設定伝播
+### q-d6-e01: d6o2
 
 - **出題形式**: インシデント切り分け
-- **問題文要約**: シンボリックリンク経由／この環境で除外非対応のIDE Agent／実パス一致と反映は確認済み
+- **問題文要約**: 同じContent Exclusionを三つの経路で検証しました。①実パスを使う通常補完は除外表示、②別workspaceのsymlink経由の通常補完は読取あり、③実パスを使うVS CodeのAgentも読取ありでした。登録パスと反映は①で確認済みです。②と③を追加パターンだけで解決できると考える前に、区別すべき適用上の制約はどれですか。
 
-問題文：機密リポジトリに対するContent Exclusionの適用をテストしました。同一ファイルに対し、通常補完①は再読込済みで除外表示が出ます。②は別workspaceのシンボリックリンク経由で読取あり、③はこの環境で除外非対応のIDE Agentで読取あり。設定の実パス一致と反映は確認済みです。②および③の漏洩リスクが、Content Exclusionの追加パス登録だけでは解決しない根本的な理由として最も適切なものはどれですか？
+問題文：同じContent Exclusionを三つの経路で検証しました。①実パスを使う通常補完は除外表示、②別workspaceのsymlink経由の通常補完は読取あり、③実パスを使うVS CodeのAgentも読取ありでした。登録パスと反映は①で確認済みです。②と③を追加パターンだけで解決できると考える前に、区別すべき適用上の制約はどれですか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：②はリンク経由、③は非対応モードという別の限界【正答】
-- B：②③とも公開コード一致の出力検出という同じ現象
-- C：②③とも旧セッションの伝播待ちという同じ遅れ
-- D：②③とも実パスの登録漏れという同じ設定不足
+- A：②はsymlink経由の制約、③はAgentでのContent Exclusion非対応【正答】
+- B：②はrepoキーの不一致、③はAgentでのContent Exclusion非対応
+- C：②はsymlink経由の制約、③は公開コード一致の出力フィルタ
+- D：②はrepoキーの不一致、③は公開コード一致の出力フィルタ
 
 **【レビュー① ブラインドチェック】**
 
 変更前：FAIL。正答だけが既知の二つの限界を挙げ、他に公開コード一致との明白な混同がある。
 
-修正後：PASS。各案は除外の経路限界と設定伝播の異なる条件・段階を扱う。本文の「シンボリックリンク経由」、「この環境で除外非対応のIDE Agent」、「実パス一致と反映は確認済み」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「symlink経由」「VS CodeのAgent」「①で確認済み」を外して四案を再読し、各案の操作・範囲・時点を比較した。②は同じ対象へのsymlink経由と明示され、repoキー不一致という診断には根拠がない。 ③はローカル読取であり公開コード一致の出力処理ではない。 二つの経路の制約を両方取り違えている。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：①の成功から通常補完の設定そのものを除外する。
-2. ステップ2（照合）：②のリンクと③のモードを別の適用境界へ照合する。
-3. ステップ3（結論）：パス追加では補えない二経路を、権限・環境などで別に制限する。
+1. ステップ1（分析）：正常な実パスでパスと反映の不足を除く。
+2. ステップ2（照合）：symlink経由とAgentの対応範囲を独立に確認する。
+3. ステップ3（結論）：異なる制約へ同じパターン追加だけを適用しない。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「②は別workspaceのシンボリックリンク経由で読取あり、③はこの環境で除外非対応のIDE Agentで読取あり。設定の実パス一致と反映は確認済み」が「②③は対応する通常補完で実ファイルを参照し、設定更新直後の旧セッションでは読取あり、再読込後は両方に除外表示が出た」なら、正答は **A → C** へ変わる。
+「②別workspaceのsymlink経由の通常補完は読取あり」が「②別repoへコピーしたファイルの通常補完は読取ありで、そのrepoキーは未登録」なら、正答は **A → B** へ変わる。
 
-変更後の正答：②③とも旧セッションの伝播待ちという同じ遅れ
+変更後の正答：②はrepoキーの不一致、③はAgentでのContent Exclusion非対応
 
-検証：経路限界でなく、再読込により解消する伝播・セッション差になる。元のリンク／非対応モードの説明は新観測と一致しない。
+検証：②が未登録の別repoならrepo識別の不足であり、③のAgent非対応とは別に直す。
 
 <details><summary>条件変更後の問題文</summary>
 
-機密リポジトリに対するContent Exclusionの適用をテストしました。同一ファイルに対し、通常補完①は再読込済みで除外表示が出ます。②③は対応する通常補完で実ファイルを参照し、設定更新直後の旧セッションでは読取あり、再読込後は両方に除外表示が出たです。②および③の漏洩リスクが、Content Exclusionの追加パス登録だけでは解決しない根本的な理由として最も適切なものはどれですか？
+同じContent Exclusionを三つの経路で検証しました。①実パスを使う通常補完は除外表示、②別repoへコピーしたファイルの通常補完は読取ありで、そのrepoキーは未登録、③実パスを使うVS CodeのAgentも読取ありでした。登録パスと反映は①で確認済みです。②と③を追加パターンだけで解決できると考える前に、区別すべき適用上の制約はどれですか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
-- 「シンボリックリンク経由」
-- 「この環境で除外非対応のIDE Agent」
-- 「実パス一致と反映は確認済み」
+- 「symlink経由」
+- 「VS CodeのAgent」
+- 「①で確認済み」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **B**：誘惑・見落としは「同じ保護UIに見える出力一致と、入力の読取限界を混同する。」／今回不適合な理由：公開コード一致ポリシー（Public Code Filter）とは全く異なる、入力側のContent Exclusionの保護境界の問題です。
-- **C**：誘惑・見落としは「設定伝播の一般的診断を、反映確認済みのリンク・モード問題へ適用する。」／今回不適合な理由：通常補完①で除外が機能していることから設定はすでに反映されており、伝播遅延ではありません。
-- **D**：誘惑・見落としは「登録漏れの一般的診断を、確認済みのパスと別経路へ適用する。」／今回不適合な理由：実パスの一致と設定反映はすでに確認されており、単なるパス登録漏れではありません。
+- **B**：誘惑・見落としは「②は同じ対象へのsymlink経由と明示され、repoキー不一致という診断には根拠がない。」／今回不適合な理由：②は同じ対象へのsymlink経由と明示され、repoキー不一致という診断には根拠がない。
+- **C**：誘惑・見落としは「③はローカル読取であり公開コード一致の出力処理ではない。」／今回不適合な理由：③はローカル読取であり公開コード一致の出力処理ではない。
+- **D**：誘惑・見落としは「二つの経路の制約を両方取り違えている。」／今回不適合な理由：二つの経路の制約を両方取り違えている。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答23字／誤答（短い順）21・22・23字／誤答中央値22字／中央値比 **1.05**／正答表示位置 **A**。
+正答44字／誤答（短い順）29・31・42字／誤答中央値31字／中央値比 **1.42**／正答表示位置 **A**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。①の成功から通常補完の設定そのものを除外する。 → ②のリンクと③のモードを別の適用境界へ照合する。 → パス追加では補えない二経路を、権限・環境などで別に制限する。
+難易度判定：正常な実パスでパスと反映の不足を除く。 symlink経由とAgentの対応範囲を独立に確認する。 異なる制約へ同じパターン追加だけを適用しない。
 
 出典：[Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion)
 
@@ -2568,66 +2568,64 @@ Copilot AgentがMCPツールの実行エラーに伴う再試行を行ってい�
 
 難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。開始前の保存差分とAgentの記録を分ける。 → .envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。 → .envだけを戻し、既存作業を保った状態で復旧を検証する。
 
-出典：[Using agent mode in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode)、[About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
+出典：[Using agent mode in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode)、[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
 
-### q-d2-e21: Space共有と参照元の二重の閲覧境界
+### q-d2-e21: d2o3
 
 - **出題形式**: インシデント切り分け
-- **問題文要約**: BはSpaceとUを閲覧でき／Rを直接開くと403／CはSpaceが403だがRを直接閲覧できる／403は対象への閲覧拒否とログで確認済み
+- **問題文要約**: Copilot Spaceにrepo-Rのリンクとアップロード資料Uがあります。BはSpaceでUを読めますがRの内容を使った回答を得られず、Rを直接開いても403です。CはRを直接読めますがSpaceのURLは403です。管理者はUだけを追加公開する案と、Spaceを共有する案を比較しています。必要な権限と、既存資料の共有への影響をどう扱いますか。
 
-問題文：GitHub Copilot Spaceにリポジトリrepo-Rとアップロード資料Uが登録されています。ユーザーAは全て閲覧可能です。しかし、BはSpaceとUを閲覧でき、Rを直接開くと403で回答にもRがない状態です。一方、CはSpaceが403だがRを直接閲覧できる状態です。全員同じSpaceリンクを使用し、403は対象への閲覧拒否とログで確認済みです。BとCが正常に利用できるようにするための修正対象の組み合わせとして最も適切なものはどれですか？
+問題文：Copilot Spaceにrepo-Rのリンクとアップロード資料Uがあります。BはSpaceでUを読めますがRの内容を使った回答を得られず、Rを直接開いても403です。CはRを直接読めますがSpaceのURLは403です。管理者はUだけを追加公開する案と、Spaceを共有する案を比較しています。必要な権限と、既存資料の共有への影響をどう扱いますか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：ユーザーBにはSpace自体の共有権限を付与し、ユーザーCにはリポジトリrepo-Rの閲覧権限を付与する
-- B：ユーザーBにはリポジトリrepo-Rの閲覧権限を付与し、ユーザーCにはSpace自体の共有権限を付与する【正答】
-- C：ユーザーBとCの両名に対して、リポジトリrepo-Rの閲覧権限を付与してアクセスを許可する
-- D：ユーザーBとCの両名に対して、Space自体の共有アクセス権限を付与して参加を許可する
+- A：BとCはSpace権限を付与し、Rのrepo権限は維持する
+- B：BはRのrepo権限、CはSpace権限を付与し、Uの共有は維持する【正答】
+- C：BとCはRのrepo権限を付与し、Space権限は維持する
+- D：BはUを公開し、CはRのrepo権限を付与する
 
 **【レビュー① ブラインドチェック】**
 
 変更前：FAIL。正答だけが安全・丁寧で、他三択に明白な危険行為、非対応の断定、無関係な操作がある。指示階層・廃止機能・因果の断定も別途点検が必要。
 
-修正後：PASS。各案はSpace共有と参照元の二重の閲覧境界の異なる条件・段階を扱う。本文の「BはSpaceとUを閲覧でき」、「Rを直接開くと403」、「CはSpaceが403だがRを直接閲覧できる」、「403は対象への閲覧拒否とログで確認済み」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「Rを直接開いても403」「SpaceのURLは403」を外して四案を再読し、各案の操作・範囲・時点を比較した。Bは既にSpaceを利用できるため元repoの権限不足が残る。 CにはSpaceへの共有不足が残る。 Uの公開はBのrepoアクセスを直さず、CのSpace共有も直さない。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。
-2. ステップ2（照合）：BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。
-3. ステップ3（結論）：Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。
+1. ステップ1（分析）：Space共有と参照repoの権限を分ける。
+2. ステップ2（照合）：BとCの403対象を各層へ対応させる。
+3. ステップ3（結論）：Uの公開範囲を広げず不足する権限だけを補う。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「CはSpaceが403だがRを直接閲覧できる」が「CもSpaceとUを閲覧できるが、Rを直接開くと403」なら、正答は **B → C** へ変わる。
+「BはSpaceでUを読めますがRの内容を使った回答を得られず、Rを直接開いても403です」が「BはRを直接読めますがSpaceのURLは403です」なら、正答は **B → A** へ変わる。
 
-変更後の正答：ユーザーBとCの両名に対して、リポジトリrepo-Rの閲覧権限を付与してアクセスを許可する
+変更後の正答：BとCはSpace権限を付与し、Rのrepo権限は維持する
 
-検証：Cの拒否も参照repoへ移り、両者のR閲覧権限が対象になる。元のCのSpace共有修正は成功済みの境界を扱ってしまう。
+検証：両者がrepoを読めてSpaceだけ開けないなら、両者へのSpace共有が必要になる。
 
 <details><summary>条件変更後の問題文</summary>
 
-GitHub Copilot Spaceにリポジトリrepo-Rとアップロード資料Uが登録されています。ユーザーAは全て閲覧可能です。しかし、BはSpaceとUを閲覧でき、Rを直接開くと403で回答にもRがない状態です。一方、CもSpaceとUを閲覧できるが、Rを直接開くと403状態です。全員同じSpaceリンクを使用し、403は対象への閲覧拒否とログで確認済みです。BとCが正常に利用できるようにするための修正対象の組み合わせとして最も適切なものはどれですか？
+Copilot Spaceにrepo-Rのリンクとアップロード資料Uがあります。BはRを直接読めますがSpaceのURLは403です。CはRを直接読めますがSpaceのURLは403です。管理者はUだけを追加公開する案と、Spaceを共有する案を比較しています。必要な権限と、既存資料の共有への影響をどう扱いますか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
-- 「BはSpaceとUを閲覧でき」
-- 「Rを直接開くと403」
-- 「CはSpaceが403だがRを直接閲覧できる」
-- 「403は対象への閲覧拒否とログで確認済み」
+- 「Rを直接開いても403」
+- 「SpaceのURLは403」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **A**：誘惑・見落としは「二つの権限を分ける点は合うが、成功・拒否の境界をB/Cで逆に割り当てる。」／今回不適合な理由：ユーザーBとCに必要な権限を完全に取り違えており、すでに持っている権限を重ねて付与しようとしています。
-- **C**：誘惑・見落としは「参照repoの拒否というBの原因だけで、Cも同じ設定へ共通化する。」／今回不適合な理由：Cはすでにrepo-Rを直接閲覧できており、不足しているのはSpaceへの参加アクセス権限です。
-- **D**：誘惑・見落としは「Space共有というCの原因だけで、Uを見られるBも同じ設定へ共通化する。」／今回不適合な理由：BはすでにSpaceと資料Uを閲覧できており、不足しているのは参照リポジトリrepo-Rへのアクセス権限です。
+- **A**：誘惑・見落としは「Bは既にSpaceを利用できるため元repoの権限不足が残る。」／今回不適合な理由：Bは既にSpaceを利用できるため元repoの権限不足が残る。
+- **C**：誘惑・見落としは「CにはSpaceへの共有不足が残る。」／今回不適合な理由：CにはSpaceへの共有不足が残る。
+- **D**：誘惑・見落としは「Uの公開はBのrepoアクセスを直さず、CのSpace共有も直さない。」／今回不適合な理由：Uの公開はBのrepoアクセスを直さず、CのSpace共有も直さない。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答52字／誤答（短い順）43・45・52字／誤答中央値45字／中央値比 **1.16**／正答表示位置 **B**。
+正答34字／誤答（短い順）23・29・29字／誤答中央値29字／中央値比 **1.17**／正答表示位置 **B**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。B/CのSpace・アップロード・repoのアクセス結果を別の経路へ分ける。 → BのU閲覧とR拒否、CのR閲覧とSpace拒否を、二つの独立した権限境界へ照合する。 → Bはrepo権限、CはSpace共有を修正対象にし、両者を一つの設定へまとめない。
+難易度判定：Space共有と参照repoの権限を分ける。 BとCの403対象を各層へ対応させる。 Uの公開範囲を広げず不足する権限だけを補う。
 
 出典：[About GitHub Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
 
@@ -2753,64 +2751,62 @@ GitHub Copilot Spaceにリポジトリrepo-Rとアップロード資料Uが登�
 
 出典：[About customizing GitHub Copilot responses](https://docs.github.com/en/copilot/concepts/prompting/response-customization)、[Adding repository custom instructions for GitHub Copilot in your IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide)
 
-### q-d2-e24: 旧Extensionsの廃止とMCP移行の認可
+### q-d2-e24: d2o3
 
 - **出題形式**: インシデント切り分け
-- **問題文要約**: GitHub App型／2025年11月10日の廃止後／Issue連携は動作する／接続承認は未完了
+- **問題文要約**: 旧GitHub App型Copilot ExtensionをMCPへ移行中です。旧Extension経路は廃止済みなので使用しません。通常のGitHub AppによるIssue連携は正常です。MCPのツール一覧には社内検索が現れますが、呼出しは認可待ちで止まります。同じサーバーの公開検索は成功します。次に直す対象と、そのまま維持する経路はどれですか。
 
-問題文：社内で運用していたGitHub App型の社内Copilot Extensionが2025年11月10日の廃止後に停止しました。同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない状態です。移行先として認可付きMCP検索を準備済みですが接続承認は未完了です。今回のログおよび廃止事象に対応した機能復旧・サービス再開の手順として最も適切なものはどれですか？
+問題文：旧GitHub App型Copilot ExtensionをMCPへ移行中です。旧Extension経路は廃止済みなので使用しません。通常のGitHub AppによるIssue連携は正常です。MCPのツール一覧には社内検索が現れますが、呼出しは認可待ちで止まります。同じサーバーの公開検索は成功します。次に直す対象と、そのまま維持する経路はどれですか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：準備済みMCPサーバーの接続承認および検索認可手続きを完了させ、Chat機能の連携経路をMCPへ置換する【正答】
-- B：存続している通常GitHub AppのIssue連携用資格情報を更新し、Extension APIの再疎通を検証する
-- C：MCPサーバーの検索引数スキーマを修正し、廃止されたExtension形式との後方互換性を再検証する
-- D：CLIのシート割り当てと利用権限ポリシーを再確認し、ローカル端末からの直接接続を検証する
+- A：MCP社内検索の認可を完了し、GitHub AppのIssue連携は維持する【正答】
+- B：MCP接続先を変更し、GitHub AppのIssue連携は維持する
+- C：MCP検索の入力スキーマを直し、GitHub AppのIssue連携は維持する
+- D：GitHub AppのIssue資格情報を更新し、MCP検索の認可は維持する
 
 **【レビュー① ブラインドチェック】**
 
 変更前：FAIL。正答だけが安全・丁寧で、他三択に明白な危険行為、非対応の断定、無関係な操作がある。指示階層・廃止機能・因果の断定も別途点検が必要。
 
-修正後：PASS。各案は旧Extensionsの廃止とMCP移行の認可の異なる条件・段階を扱う。本文の「GitHub App型」、「2025年11月10日の廃止後」、「Issue連携は動作する」、「接続承認は未完了」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「呼出しは認可待ち」「公開検索は成功」を外して四案を再読し、各案の操作・範囲・時点を比較した。同じサーバーで公開検索が成功するため接続先変更を支持しない。 引数不一致ではなく認可待ちという観測に合わない。 正常なIssue連携を修正してもMCPの認可不足は解消しない。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：Issue連携の成功とChat廃止ログから停止対象を分ける。
-2. ステップ2（照合）：GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。
-3. ステップ3（結論）：MCPの接続承認と検索認可を検証してChat経路を置換する。
+1. ステップ1（分析）：廃止経路へ戻さずMCPの障害を診断する。
+2. ステップ2（照合）：接続・スキーマ・認可の段階を分ける。
+3. ステップ3（結論）：社内検索の認可だけを直しIssue連携を保つ。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「同じGitHub AppのIssue連携は動作する。接続ログは廃止を示し、新しい認証失敗はない」が「今回停止したのは存続するGitHub AppのIssue連携で、接続ログはIssue用資格情報の失効だけを示す」なら、正答は **A → B** へ変わる。
+「呼出しは認可待ちで止まります」が「呼出しは入力スキーマの必須引数不足で止まります」なら、正答は **A → C** へ変わる。
 
-変更後の正答：存続している通常GitHub AppのIssue連携用資格情報を更新し、Extension APIの再疎通を検証する
+変更後の正答：MCP検索の入力スキーマを直し、GitHub AppのIssue連携は維持する
 
-検証：歴史上のCopilot機能廃止はそのままだが、今回復旧すべき対象は通常AppのIssue認証へ変わる。
+検証：同じ接続で必須引数不足ならMCPツールの入力定義・呼出引数を直す。
 
 <details><summary>条件変更後の問題文</summary>
 
-社内で運用していたGitHub App型の社内Copilot Extensionが2025年11月10日の廃止後に停止しました。今回停止したのは存続するGitHub AppのIssue連携で、接続ログはIssue用資格情報の失効だけを示す状態です。移行先として認可付きMCP検索を準備済みですが接続承認は未完了です。今回のログおよび廃止事象に対応した機能復旧・サービス再開の手順として最も適切なものはどれですか？
+旧GitHub App型Copilot ExtensionをMCPへ移行中です。旧Extension経路は廃止済みなので使用しません。通常のGitHub AppによるIssue連携は正常です。MCPのツール一覧には社内検索が現れますが、呼出しは入力スキーマの必須引数不足で止まります。同じサーバーの公開検索は成功します。次に直す対象と、そのまま維持する経路はどれですか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
-- 「GitHub App型」
-- 「2025年11月10日の廃止後」
-- 「Issue連携は動作する」
-- 「接続承認は未完了」
+- 「呼出しは認可待ち」
+- 「公開検索は成功」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **B**：誘惑・見落としは「同じGitHub Appなので資格情報の再発行で全部直ると考える。」／今回不適合な理由：GitHub App型Extension機能自体がサービス終了（廃止）しているため、Issue連携用資格情報を更新してもExtensionは動作しません。
-- **C**：誘惑・見落としは「MCP移行という方向は合うが、まだ接続前なのに引数の実行境界へ進む。」／今回不適合な理由：プロトコル自体がMCPへ刷新されているため、廃止された古いExtension形式との互換性をスキーマレベルで維持しようとしても解決になりません。
-- **D**：誘惑・見落としは「Copilot利用の管理設定は重要だが、今回のGitHub.comの停止をCLIの座席へ結び付ける。」／今回不適合な理由：今回の問題は社内Extensionの廃止に伴うChat連携の停止であり、CLIのシート割り当てや端末接続の問題ではありません。
+- **B**：誘惑・見落としは「同じサーバーで公開検索が成功するため接続先変更を支持しない。」／今回不適合な理由：同じサーバーで公開検索が成功するため接続先変更を支持しない。
+- **C**：誘惑・見落としは「引数不一致ではなく認可待ちという観測に合わない。」／今回不適合な理由：引数不一致ではなく認可待ちという観測に合わない。
+- **D**：誘惑・見落としは「正常なIssue連携を修正してもMCPの認可不足は解消しない。」／今回不適合な理由：正常なIssue連携を修正してもMCPの認可不足は解消しない。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答52字／誤答（短い順）44・50・58字／誤答中央値50字／中央値比 **1.04**／正答表示位置 **A**。
+正答38字／誤答（短い順）34・38・39字／誤答中央値38字／中央値比 **1.00**／正答表示位置 **A**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。Issue連携の成功とChat廃止ログから停止対象を分ける。 → GitHub App型Copilot Extensionsの廃止と、未承認のMCP代替を照合する。 → MCPの接続承認と検索認可を検証してChat経路を置換する。
+難易度判定：廃止経路へ戻さずMCPの障害を診断する。 接続・スキーマ・認可の段階を分ける。 社内検索の認可だけを直しIssue連携を保つ。
 
 出典：[Sunset notice: GitHub App-based Copilot Extensions](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)、[About Model Context Protocol (MCP)](https://docs.github.com/en/copilot/concepts/context/mcp)、[Managing policies and features for GitHub Copilot in your organization](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
 
@@ -3422,64 +3418,62 @@ Copilot Autofix案はWHEREの値とORDER BYの列名を両方プレースホル�
 
 出典：[Measuring enterprise developer productivity](https://github.blog/enterprise-software/devops/measuring-enterprise-developer-productivity/)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
 
-### q-d6-e06: 強制と委任の実効ポリシー
+### q-d6-e06: d2o4
 
 - **出題形式**: 複合制約トレードオフ
-- **問題文要約**: 強制Block／Org-Aの保存値はAllow／反映は確認済み／Enterprise設定の変更承認はまだない
+- **問題文要約**: Copilotの公開コード一致ポリシーで、EnterpriseはBlockを強制しています。Org-Aの保存値はAllow、Org-BはBlockです。Aの利用者だけ一致候補が出ないため、担当者はAの保存値の再保存を提案しました。反映と対象アカウントは確認済みです。両組織の実効値と、Aに例外を設ける際の変更先はどれですか。
 
-問題文：公開コード一致ポリシー（Suggestions matching public code）の設定演習です。Enterpriseの実効設定は強制Blockで、Org-Aの保存値はAllow、Org-BはBlock。反映は確認済みです。ポリシーがEnterpriseで強制された場合は個人設定で解除できません。社内セキュリティ委員会はOrg-AについてのみAllowとする例外を承認しましたが、Enterprise設定の変更承認はまだない状態です。この時点におけるOrganization AおよびBの実効ポリシー状態として最も適切なものはどれですか？
+問題文：Copilotの公開コード一致ポリシーで、EnterpriseはBlockを強制しています。Org-Aの保存値はAllow、Org-BはBlockです。Aの利用者だけ一致候補が出ないため、担当者はAの保存値の再保存を提案しました。反映と対象アカウントは確認済みです。両組織の実効値と、Aに例外を設ける際の変更先はどれですか。
 
 **選択肢構成**（アプリの表示順）
 
-- A：Organization Aの実効設定はAllowであり、Organization Bの実効設定はBlockである
-- B：Organization Aの実効設定はAllowであり、Organization Bの実効設定もAllowである
-- C：Organization Aの実効設定はBlockであり、Organization Bの実効設定もBlockである【正答】
-- D：Organization Aの実効設定はBlockであり、Organization Bの実効設定はAllowである
+- A：AはAllow・BはBlockで、Aの値はOrganization側で管理する
+- B：AもBもBlockで、Aの例外には個人側のAllow指定が必要
+- C：AもBもBlockで、Aの例外にはEnterprise側の制約変更が必要【正答】
+- D：AはBlock・BはAllowで、Aの例外にはOrganization側の変更が必要
 
 **【レビュー① ブラインドチェック】**
 
 変更前：FAIL。正答だけが安全・丁寧で、他三択に明白な危険行為、非対応の断定、無関係な操作がある。指示階層・廃止機能・因果の断定も別途点検が必要。
 
-修正後：PASS。各案は強制と委任の実効ポリシーの異なる条件・段階を扱う。本文の「強制Block」、「Org-Aの保存値はAllow」、「反映は確認済み」、「Enterprise設定の変更承認はまだない」を照合しないと今回の正答を確定できない。反実仮想では同じ選択肢の別案が正答になる。
+修正後：PASS。本文の条件「EnterpriseはBlockを強制」「Org-Aの保存値はAllow」を外して四案を再読し、各案の操作・範囲・時点を比較した。組織の保存値をそのまま実効値にしており上位強制を見落としている。 個人設定でも上位強制を解除できない。 BをAllowにする根拠がなく、Aの下位設定変更だけでも例外を作れない。 独立した受験者の実験ではない。
 
 **【レビュー② 多段階推論】**
 
-1. ステップ1（分析）：保存値、上位の実効設定、社内承認を別に読む。
-2. ステップ2（照合）：強制Blockと反映確認済みという条件を各Orgへ適用する。
-3. ステップ3（結論）：現時点では両方Blockとし、例外の技術反映は別手続きにする。
+1. ステップ1（分析）：保存値と強制される実効値を区別する。
+2. ステップ2（照合）：両組織へ上位ポリシーを適用する。
+3. ステップ3（結論）：下位設定では例外を作れないと判定する。
 
 **【レビュー③ 反実仮想（Counterfactual）】**
 
-「Enterpriseの実効設定は強制Blockで」が「EnterpriseはNo policyでOrgに委任し」なら、正答は **C → A** へ変わる。
+「Copilotの公開コード一致ポリシーで、EnterpriseはBlockを強制しています。Org-Aの保存値はAllow、Org-BはBlockです。Aの利用者だけ一致候補が出ないため、担当者はAの保存値の再保存を提案しました。反映と対象アカウントは確認済みです。両組織の実効値と、Aに例外を設ける際の変更先はどれですか。」が「Copilotの公開コード一致ポリシーでEnterpriseはOrganizationへ選択を委任しています。Org-AはAllow、Org-BはBlockで、反映は確認済みです。両組織の実効値と、Aの値を管理する階層はどれですか。」なら、正答は **C → A** へ変わる。
 
-変更後の正答：Organization Aの実効設定はAllowであり、Organization Bの実効設定はBlockである
+変更後の正答：AはAllow・BはBlockで、Aの値はOrganization側で管理する
 
-検証：上位の強制がなくなり、AのAllowとBのBlockがそれぞれ実効になる。
+検証：上位が選択を委任した場合は組織の値を使う。Aで候補が出ないという元の障害観測を残していない。
 
 <details><summary>条件変更後の問題文</summary>
 
-公開コード一致ポリシー（Suggestions matching public code）の設定演習です。EnterpriseはNo policyでOrgに委任し、Org-Aの保存値はAllow、Org-BはBlock。反映は確認済みです。ポリシーがEnterpriseで強制された場合は個人設定で解除できません。社内セキュリティ委員会はOrg-AについてのみAllowとする例外を承認しましたが、Enterprise設定の変更承認はまだない状態です。この時点におけるOrganization AおよびBの実効ポリシー状態として最も適切なものはどれですか？
+Copilotの公開コード一致ポリシーでEnterpriseはOrganizationへ選択を委任しています。Org-AはAllow、Org-BはBlockで、反映は確認済みです。両組織の実効値と、Aの値を管理する階層はどれですか。
 
 </details>
 
 **【レビュー④ 客観的手がかり（Clues）】**
 
-- 「強制Block」
+- 「EnterpriseはBlockを強制」
 - 「Org-Aの保存値はAllow」
-- 「反映は確認済み」
-- 「Enterprise設定の変更承認はまだない」
 
 **【レビュー⑤ 誤答の罠（Distractor Analysis）】**
 
-- **A**：誘惑・見落としは「委任時なら正しいOrg保存値を、強制がある現在へ適用する。」／今回不適合な理由：社内承認のみでEnterpriseの技術的強制が上書きされると誤解しており、下位Org-Aの保存値が有効になると誤判定しています。
-- **B**：誘惑・見落としは「上位優先は合うが、強制値を逆に読む。」／今回不適合な理由：Org-Bは組織の保存値もBlockであり、両組織ともAllowになることはあり得ません。
-- **D**：誘惑・見落としは「下位設定の比較だけを行い、保存値も強制値も逆に読む。」／今回不適合な理由：Org-AとOrg-Bの実効状態を逆にしてしまっており、ポリシー継承のルールを誤って解釈しています。
+- **A**：誘惑・見落としは「組織の保存値をそのまま実効値にしており上位強制を見落としている。」／今回不適合な理由：組織の保存値をそのまま実効値にしており上位強制を見落としている。
+- **B**：誘惑・見落としは「個人設定でも上位強制を解除できない。」／今回不適合な理由：個人設定でも上位強制を解除できない。
+- **D**：誘惑・見落としは「BをAllowにする根拠がなく、Aの下位設定変更だけでも例外を作れない。」／今回不適合な理由：BをAllowにする根拠がなく、Aの下位設定変更だけでも例外を作れない。
 
 **【レビュー⑥ 文字長・位置】**
 
-正答57字／誤答（短い順）57・57・57字／誤答中央値57字／中央値比 **1.00**／正答表示位置 **C**。
+正答36字／誤答（短い順）31・39・42字／誤答中央値39字／中央値比 **0.92**／正答表示位置 **C**。
 
-難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。保存値、上位の実効設定、社内承認を別に読む。 → 強制Blockと反映確認済みという条件を各Orgへ適用する。 → 現時点では両方Blockとし、例外の技術反映は別手続きにする。
+難易度判定：保存値と強制される実効値を区別する。 両組織へ上位ポリシーを適用する。 下位設定では例外を作れないと判定する。
 
 出典：[Managing policies and features for GitHub Copilot in your organization](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies)、[Finding public code that matches GitHub Copilot suggestions](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code)
 
@@ -3542,6 +3536,2204 @@ Copilot Autofix案はWHEREの値とORDER BYの列名を両方プレースホル�
 難易度判定：Examとして維持。三段階の分析・照合・結論を要求する。対象版の管理Docsと実際のexcluded表示でファイル取得の動作を確かめる。 → 同じ秘密がMCP応答で入る別経路と照合する。 → 既存除外を保ったままMCPの返却前で秘密を除去する。
 
 出典：[Administering Copilot CLI for your enterprise](https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise)、[Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion)、[About Model Context Protocol (MCP)](https://docs.github.com/en/copilot/concepts/context/mcp)、[GH-300 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
+
+### q-d2-e11-feature-20261016: レビュー指示のブランチとパス
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: GitHub.comでCopilot code reviewを使います。mainの共通指示は「日本語」、PRのhead branchでは「英語」へ変更しています。head branchのパス別指示にはapplyTo: "src/**/*.ts"と「セキュリティ観点を重視」があります。変更ファイルはsrc/auth/login.tsとdocs/auth.mdです。個人・組織の追加指示はありません。今回のレビューが読む指示の組合せはどれですか。
+
+問題文：GitHub.comでCopilot code reviewを使います。mainの共通指示は「日本語」、PRのhead branchでは「英語」へ変更しています。head branchのパス別指示にはapplyTo: "src/**/*.ts"と「セキュリティ観点を重視」があります。変更ファイルはsrc/auth/login.tsとdocs/auth.mdです。個人・組織の追加指示はありません。今回のレビューが読む指示の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：両ファイルで日本語の共通指示を読み、セキュリティ指示はlogin.tsで読む
+- B：両ファイルで英語の共通指示を読み、セキュリティ指示も両ファイルで読む
+- C：両ファイルで日本語の共通指示を読み、セキュリティ指示はどちらも読まない
+- D：両ファイルで英語の共通指示を読み、セキュリティ指示はlogin.tsで読む【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。四案の判断対象を比較し、本文の「PRのhead branchでは「英語」」「src/**/*.ts」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。維持候補の通常Chatでの言語規約分割と異なり、レビューのhead参照と変更ファイル別の適用を同時に判定する。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：Copilot code reviewの指示参照元をhead branchと特定する。
+2. ステップ2（照合）：共通指示とパス別指示を分け、変更した二ファイルへ照合する。
+3. ステップ3（結論）：共通は両方で英語、セキュリティ指示はTypeScriptファイルだけと結論する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「applyTo: "src/**/*.ts"」が「applyTo: "**"」なら、正答は **D → B** へ変わる。
+
+変更後の正答：両ファイルで英語の共通指示を読み、セキュリティ指示も両ファイルで読む
+
+検証：適用パスを全体へ広げれば、英語の共通指示に加えて両ファイルでセキュリティ指示を読む。
+
+<details><summary>条件変更後の問題文</summary>
+
+GitHub.comでCopilot code reviewを使います。mainの共通指示は「日本語」、PRのhead branchでは「英語」へ変更しています。head branchのパス別指示にはapplyTo: "**"と「セキュリティ観点を重視」があります。変更ファイルはsrc/auth/login.tsとdocs/auth.mdです。個人・組織の追加指示はありません。今回のレビューが読む指示の組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「PRのhead branchでは「英語」」
+- 「src/**/*.ts」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「パス照合は合っているが、レビュー指示をbase branchのmainから取るという取り違えがある。」／今回不適合な理由：パス照合は合っているが、レビュー指示をbase branchのmainから取るという取り違えがある。
+- **B**：誘惑・見落としは「headの選択は合っているが、docs/auth.mdはsrc/**/*.tsに一致しない。パス別指示を共通指示として扱っている。」／今回不適合な理由：headの選択は合っているが、docs/auth.mdはsrc/**/*.tsに一致しない。パス別指示を共通指示として扱っている。
+- **C**：誘惑・見落としは「baseの共通指示を選ぶ点も、headにある適合パスの指示を無視する点も誤り。」／今回不適合な理由：baseの共通指示を選ぶ点も、headにある適合パスの指示を無視する点も誤り。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答37字／誤答（短い順）34・35・38字／誤答中央値35字／中央値比 **1.06**／正答表示位置 **D**。
+
+難易度判定：Copilot code reviewの指示参照元をhead branchと特定する。 共通指示とパス別指示を分け、変更した二ファイルへ照合する。 共通は両方で英語、セキュリティ指示はTypeScriptファイルだけと結論する。
+
+出典：[Using GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)、[Adding repository custom instructions for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions)
+
+### q-d4-e04-feature-20261016: Prompt Fileのツール優先順位
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: VS CodeのLocal harnessで、カスタムAgentはtools: [read, search]です。Prompt FileはagentでそのAgentを指し、tools: [read, metrics/get]を持ちます。readとsearchは接続済みで、metricsのMCPは未接続です。ツール提供一覧の決定元と、metricsを使うために足りないものを組み合わせた説明はどれですか。
+
+問題文：VS CodeのLocal harnessで、カスタムAgentはtools: [read, search]です。Prompt FileはagentでそのAgentを指し、tools: [read, metrics/get]を持ちます。readとsearchは接続済みで、metricsのMCPは未接続です。ツール提供一覧の決定元と、metricsを使うために足りないものを組み合わせた説明はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Agentのtoolsが優先されており、metricsにはMCP接続が必要
+- B：二つのtoolsは合成されており、metricsにはPrompt File名の変更が必要
+- C：Prompt Fileのtoolsが優先されており、metricsにはMCP接続が必要【正答】
+- D：Prompt Fileのtoolsが優先されており、metricsには読取の自動承認だけが必要
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「tools: [read, metrics/get]」「MCPは未接続」を外して四案を再読し、各案の操作・範囲・時点を比較した。Agent優先ならsearchが候補に出るはずで、観測と合わない。 合成という規則ではなく、ファイル名も接続を作らない。 実行承認は未接続サーバーのツールを提供しない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：Prompt FileとAgentの優先順位を判定する。
+2. ステップ2（照合）：接続状態と実行承認を分ける。
+3. ステップ3（結論）：一覧の修正とMCP接続が別の操作だと結論する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「Prompt FileはagentでそのAgentを指し、tools: [read, metrics/get]を持ちます」が「Prompt Fileにはagent指定だけがありtools指定はありません」なら、正答は **C → A** へ変わる。
+
+変更後の正答：Agentのtoolsが優先されており、metricsにはMCP接続が必要
+
+検証：Prompt Fileでtoolsを省略すればAgentの一覧が使われる。metricsは引き続き未接続なので接続が別に必要である。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのLocal harnessで、カスタムAgentはtools: [read, search]です。Prompt Fileにはagent指定だけがありtools指定はありません。readとsearchは接続済みで、metricsのMCPは未接続です。ツール提供一覧の決定元と、metricsを使うために足りないものを組み合わせた説明はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「tools: [read, metrics/get]」
+- 「MCPは未接続」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「Agent優先ならsearchが候補に出るはずで、観測と合わない。」／今回不適合な理由：Agent優先ならsearchが候補に出るはずで、観測と合わない。
+- **B**：誘惑・見落としは「合成という規則ではなく、ファイル名も接続を作らない。」／今回不適合な理由：合成という規則ではなく、ファイル名も接続を作らない。
+- **D**：誘惑・見落としは「実行承認は未接続サーバーのツールを提供しない。」／今回不適合な理由：実行承認は未接続サーバーのツールを提供しない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答43字／誤答（短い順）37・44・47字／誤答中央値44字／中央値比 **0.98**／正答表示位置 **C**。
+
+難易度判定：Prompt FileとAgentの優先順位を判定する。 接続状態と実行承認を分ける。 一覧の修正とMCP接続が別の操作だと結論する。
+
+出典：[VS Code prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files)、[Use tools with agents](https://code.visualstudio.com/docs/agents/run/tools)
+
+### q-d6-e03-feature-20261016: レビュー対象除外と公開一致フィルタ
+
+- **出題形式**: 実験対照比較
+- **問題文要約**: Copilot code reviewでlegacy.tsだけがレビューされません。同じ利用者はファイルを閲覧でき、他ファイルのレビューは成功します。通常補完にはlegacy.tsの除外表示が出ています。機密解除済みのlegacy.tsをレビューへ戻しつつ、通常補完の公開コード一致は引き続き抑えます。管理すべき二つの設定と、その変更方向はどれですか。
+
+問題文：Copilot code reviewでlegacy.tsだけがレビューされません。同じ利用者はファイルを閲覧でき、他ファイルのレビューは成功します。通常補完にはlegacy.tsの除外表示が出ています。機密解除済みのlegacy.tsをレビューへ戻しつつ、通常補完の公開コード一致は引き続き抑えます。管理すべき二つの設定と、その変更方向はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：legacy.tsのContent Exclusionを保ち、公開コード一致をAllowへ変える
+- B：legacy.tsのContent Exclusionを解除し、公開コード一致もAllowへ変える
+- C：legacy.tsのContent Exclusionを保ち、公開コード一致のBlockも保つ
+- D：legacy.tsのContent Exclusionを解除し、公開コード一致のBlockを保つ【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「通常補完にはlegacy.tsの除外表示」「公開コード一致は引き続き抑えます」を外して四案を再読し、各案の操作・範囲・時点を比較した。入力除外が残るためレビュー復帰せず、抑制したい出力まで緩める。 レビュー復帰はできるが公開コード一致を抑える要件に合わない。 公開コード一致は保てるがレビュー対象へ戻らない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：閲覧権限とCopilotの入力除外を分ける。
+2. ステップ2（照合）：レビュー失敗をContent Exclusionへ対応させる。
+3. ステップ3（結論）：出力のBlockを維持して入力だけ戻す。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「機密解除済みのlegacy.tsをレビューへ戻しつつ、通常補完の公開コード一致は引き続き抑えます」が「legacy.tsは機密のため除外を保ち、通常補完では公開コード一致を許す方針です」なら、正答は **D → A** へ変わる。
+
+変更後の正答：legacy.tsのContent Exclusionを保ち、公開コード一致をAllowへ変える
+
+検証：機密の入力除外を維持し、一致出力だけ許可するなら別の組合せになる。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot code reviewでlegacy.tsだけがレビューされません。同じ利用者はファイルを閲覧でき、他ファイルのレビューは成功します。通常補完にはlegacy.tsの除外表示が出ています。legacy.tsは機密のため除外を保ち、通常補完では公開コード一致を許す方針です。管理すべき二つの設定と、その変更方向はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「通常補完にはlegacy.tsの除外表示」
+- 「公開コード一致は引き続き抑えます」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「入力除外が残るためレビュー復帰せず、抑制したい出力まで緩める。」／今回不適合な理由：入力除外が残るためレビュー復帰せず、抑制したい出力まで緩める。
+- **B**：誘惑・見落としは「レビュー復帰はできるが公開コード一致を抑える要件に合わない。」／今回不適合な理由：レビュー復帰はできるが公開コード一致を抑える要件に合わない。
+- **C**：誘惑・見落としは「公開コード一致は保てるがレビュー対象へ戻らない。」／今回不適合な理由：公開コード一致は保てるがレビュー対象へ戻らない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答48字／誤答（短い順）47・48・49字／誤答中央値48字／中央値比 **1.00**／正答表示位置 **D**。
+
+難易度判定：閲覧権限とCopilotの入力除外を分ける。 レビュー失敗をContent Exclusionへ対応させる。 出力のBlockを維持して入力だけ戻す。
+
+出典：[Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion)、[Finding public code that matches GitHub Copilot suggestions](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code)
+
+### q-d1-e01-feature-20261016: Agent PRの実行承認とマージ承認
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot cloud agentへ依頼したAが、生成されたPRの確認を担当しています。既定の設定でワークフローが承認待ちです。AもBも書込権限を持ち、Bはタスクの依頼者ではありません。このPRには人による必須承認も必要です。変更内容の確認後、ワークフロー実行と必須レビューを進める担当の組合せはどれですか。Aが行える承認はAが担当する方針です。
+
+問題文：Copilot cloud agentへ依頼したAが、生成されたPRの確認を担当しています。既定の設定でワークフローが承認待ちです。AもBも書込権限を持ち、Bはタスクの依頼者ではありません。このPRには人による必須承認も必要です。変更内容の確認後、ワークフロー実行と必須レビューを進める担当の組合せはどれですか。Aが行える承認はAが担当する方針です。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Aが実行と人のレビューの両方を承認する
+- B：Aが実行を承認し、Bが人のレビューを承認する【正答】
+- C：Bが実行を承認し、Aが人のレビューを承認する
+- D：Bが実行と人のレビューの両方を承認する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。四案の判断対象を比較し、本文の「Bはタスクの依頼者ではありません」「人による必須承認」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単に承認を推奨する一般論ではなく、Copilot PRでの依頼者制限と実行承認主体の違いを問う。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：実行承認を行える書込権限者と、タスクを依頼したAを整理する。
+2. ステップ2（照合）：Agent PRの依頼者はそのPRの承認者になれない制限を適用する。
+3. ステップ3（結論）：Aの実行承認とBのレビューを分離する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「Copilot cloud agentへ依頼したAが」が「別の担当者CがCopilot cloud agentへ依頼し、依頼者ではないAが」なら、正答は **B → A** へ変わる。
+
+変更後の正答：Aが実行と人のレビューの両方を承認する
+
+検証：Aが依頼者でなく必要な権限を持つなら、A優先という方針に従い実行承認とレビューをAが担当できる。
+
+<details><summary>条件変更後の問題文</summary>
+
+別の担当者CがCopilot cloud agentへ依頼し、依頼者ではないAが、生成されたPRの確認を担当しています。既定の設定でワークフローが承認待ちです。AもBも書込権限を持ち、Bはタスクの依頼者ではありません。このPRには人による必須承認も必要です。変更内容の確認後、ワークフロー実行と必須レビューを進める担当の組合せはどれですか。Aが行える承認はAが担当する方針です。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「Bはタスクの依頼者ではありません」
+- 「人による必須承認」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「依頼者AはこのAgent PRの人の承認者にはなれない。」／今回不適合な理由：依頼者AはこのAgent PRの人の承認者にはなれない。
+- **C**：誘惑・見落としは「実行承認は可能だが、人の承認を依頼者Aへ戻している。」／今回不適合な理由：実行承認は可能だが、人の承認を依頼者Aへ戻している。
+- **D**：誘惑・見落としは「Bでも実行承認はできるが、Aができる承認はAという担当方針より範囲が広い。」／今回不適合な理由：Bでも実行承認はできるが、Aができる承認はAという担当方針より範囲が広い。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答22字／誤答（短い順）19・19・22字／誤答中央値19字／中央値比 **1.16**／正答表示位置 **B**。
+
+難易度判定：実行承認を行える書込権限者と、タスクを依頼したAを整理する。 Agent PRの依頼者はそのPRの承認者になれない制限を適用する。 Aの実行承認とBのレビューを分離する。
+
+出典：[Risks and mitigations for GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations)
+
+### q-d1-e02-feature-20261016: コード参照を取るタイミング
+
+- **出題形式**: 実験対照比較
+- **問題文要約**: VS CodeでCopilotの公開コード一致を許可しています。候補Pは表示後に破棄し、候補Qは編集せず採用しました。監査担当は、採用履歴の参照情報からPとQそれぞれの公開コード一致と、コードの安全性を証明しようとしています。この履歴の取得範囲と、証明できる内容の組合せはどれですか。
+
+問題文：VS CodeでCopilotの公開コード一致を許可しています。候補Pは表示後に破棄し、候補Qは編集せず採用しました。監査担当は、採用履歴の参照情報からPとQそれぞれの公開コード一致と、コードの安全性を証明しようとしています。この履歴の取得範囲と、証明できる内容の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：PとQの採用時の一致参照を確認できるが、安全性全般は証明しない
+- B：Qの採用時の一致参照を確認でき、その参照でPも安全だと証明する
+- C：Qの採用時の一致参照を確認できるが、Pの判定や安全性全般は証明しない【正答】
+- D：PとQの採用時の一致参照を確認でき、両者の安全性も証明する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「Pは表示後に破棄」「Qは編集せず採用」を外して四案を再読し、各案の操作・範囲・時点を比較した。採用していない候補も採用時の参照履歴から調べられるという取り違えがある。 Qの一致情報はPにも安全性全般にも外挿できない。 非採用Pの記録と安全性保証の両方を過大評価している。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：表示と採用を区別する。
+2. ステップ2（照合）：コード参照の記録対象をQに限定する。
+3. ステップ3（結論）：一致参照と安全性の保証を区別する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「候補Pは表示後に破棄し」が「候補Pも編集せず採用し」なら、正答は **C → A** へ変わる。
+
+変更後の正答：PとQの採用時の一致参照を確認できるが、安全性全般は証明しない
+
+検証：Pも採用した場合は両候補の採用時の一致参照を確認できる。安全性保証は依然できない。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeでCopilotの公開コード一致を許可しています。候補Pも編集せず採用し、候補Qは編集せず採用しました。監査担当は、採用履歴の参照情報からPとQそれぞれの公開コード一致と、コードの安全性を証明しようとしています。この履歴の取得範囲と、証明できる内容の組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「Pは表示後に破棄」
+- 「Qは編集せず採用」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「採用していない候補も採用時の参照履歴から調べられるという取り違えがある。」／今回不適合な理由：採用していない候補も採用時の参照履歴から調べられるという取り違えがある。
+- **B**：誘惑・見落としは「Qの一致情報はPにも安全性全般にも外挿できない。」／今回不適合な理由：Qの一致情報はPにも安全性全般にも外挿できない。
+- **D**：誘惑・見落としは「非採用Pの記録と安全性保証の両方を過大評価している。」／今回不適合な理由：非採用Pの記録と安全性保証の両方を過大評価している。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答34字／誤答（短い順）29・31・31字／誤答中央値31字／中央値比 **1.10**／正答表示位置 **C**。
+
+難易度判定：表示と採用を区別する。 コード参照の記録対象をQに限定する。 一致参照と安全性の保証を区別する。
+
+出典：[Finding public code that matches GitHub Copilot suggestions](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code)
+
+### q-d1-e03-feature-20261016: 復元で戻る変更の境界
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: VS CodeのCopilot Agentへ依頼する前に、未コミットの自分の変更を含むcheckpointが作られました。Agentはコードを編集し、MCPで外部チケットを「対応中」へ更新しました。依頼直前のコードとチケット状態へ戻し、自分の未コミット変更は残します。チケットの更新前の値は記録済みです。どの復旧を組み合わせますか。
+
+問題文：VS CodeのCopilot Agentへ依頼する前に、未コミットの自分の変更を含むcheckpointが作られました。Agentはコードを編集し、MCPで外部チケットを「対応中」へ更新しました。依頼直前のコードとチケット状態へ戻し、自分の未コミット変更は残します。チケットの更新前の値は記録済みです。どの復旧を組み合わせますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Gitの最終commitへコードを戻し、外部チケットは記録した値へ別途戻す
+- B：依頼前checkpointでコードを戻し、MCPの同じ更新をもう一度実行する
+- C：新しいChatへ切り替えてコードを残し、外部チケットは記録した値へ別途戻す
+- D：依頼前checkpointでコードを戻し、外部チケットは記録した値へ別途戻す【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「未コミットの自分の変更」「外部チケット」「依頼直前」を外して四案を再読し、各案の操作・範囲・時点を比較した。最終commitは自分の未コミット変更を含まず、復元する時点が違う。 同じ「対応中」更新の再実行は元の状態への補償にならない。 新規Chatはコード変更を巻き戻さない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：commit時点と依頼前checkpointの差を読む。
+2. ステップ2（照合）：コード復元と外部ツールの副作用を分ける。
+3. ステップ3（結論）：依頼前スナップショットと外部の補償更新を組み合わせる。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「VS CodeのCopilot Agentへ依頼する前に、未コミットの自分の変更を含むcheckpointが作られました。Agentはコードを編集し、MCPで外部チケットを「対応中」へ更新しました。依頼直前のコードとチケット状態へ戻し、自分の未コミット変更は残します。チケットの更新前の値は記録済みです。どの復旧を組み合わせますか。」が「VS CodeのCopilot Agentがコードと外部チケットを変更しました。依頼前checkpointはなく、未コミット変更もありませんでした。最終commitが作業前のコードです。チケットの元の値は記録されています。両方を作業前へ戻す方法はどれですか。」なら、正答は **D → A** へ変わる。
+
+変更後の正答：Gitの最終commitへコードを戻し、外部チケットは記録した値へ別途戻す
+
+検証：復元元の利用可能性だけを変えたケース。checkpointがないのでGitの最終commitを使い、外部は別に戻す。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのCopilot Agentがコードと外部チケットを変更しました。依頼前checkpointはなく、未コミット変更もありませんでした。最終commitが作業前のコードです。チケットの元の値は記録されています。両方を作業前へ戻す方法はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「未コミットの自分の変更」
+- 「外部チケット」
+- 「依頼直前」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「最終commitは自分の未コミット変更を含まず、復元する時点が違う。」／今回不適合な理由：最終commitは自分の未コミット変更を含まず、復元する時点が違う。
+- **B**：誘惑・見落としは「同じ「対応中」更新の再実行は元の状態への補償にならない。」／今回不適合な理由：同じ「対応中」更新の再実行は元の状態への補償にならない。
+- **C**：誘惑・見落としは「新規Chatはコード変更を巻き戻さない。」／今回不適合な理由：新規Chatはコード変更を巻き戻さない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答38字／誤答（短い順）37・37・38字／誤答中央値37字／中央値比 **1.03**／正答表示位置 **D**。
+
+難易度判定：commit時点と依頼前checkpointの差を読む。 コード復元と外部ツールの副作用を分ける。 依頼前スナップショットと外部の補償更新を組み合わせる。
+
+出典：[Review and revert agent changes](https://code.visualstudio.com/docs/agents/run/review-code-edits)、[VS Code trust and safety](https://code.visualstudio.com/docs/agents/concepts/trust-and-safety)
+
+### q-d1-e07-feature-20261016: URLの送信承認と応答承認
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: VS CodeのLocal harnessで、URL取得と外部MCP検索を比較します。URLはapproveRequest: false、approveResponse: true、MCP検索はPre-approvalなし・Post-approvalなしです。通信開始の確認方針は維持し、外部データをChatへ入れる前には両経路で毎回確認します。変更対象の組合せはどれですか。
+
+問題文：VS CodeのLocal harnessで、URL取得と外部MCP検索を比較します。URLはapproveRequest: false、approveResponse: true、MCP検索はPre-approvalなし・Post-approvalなしです。通信開始の確認方針は維持し、外部データをChatへ入れる前には両経路で毎回確認します。変更対象の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：URLのapproveResponseをfalseにし、MCPのPost-approval自動化を外す【正答】
+- B：URLのapproveRequestをtrueにし、MCPのPost-approval自動化を外す
+- C：URLのapproveResponseをfalseにし、MCPのPre-approval自動化を外す
+- D：URLのapproveRequestをtrueにし、MCPのPre-approval自動化を外す
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「通信開始の確認方針は維持」「Chatへ入れる前」「両経路」を外して四案を再読し、各案の操作・範囲・時点を比較した。送信前確認を変えてしまい、URLの応答取込は自動のままである。 MCP側を実行前へ変えても結果取込の自動化が残る。 変更する段階が両経路とも違う。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：URLの要求・応答とMCPの実行前・取込前を分ける。
+2. ステップ2（照合）：不足するのが取込前確認だと特定する。
+3. ステップ3（結論）：送信側を変えず各経路の取込設定を変更する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「通信開始の確認方針は維持し、外部データをChatへ入れる前には両経路で毎回確認します」が「URLは送信前確認を省き応答は自動取込のまま、MCPだけ結果取込前に毎回確認します」なら、正答は **A → B** へ変わる。
+
+変更後の正答：URLのapproveRequestをtrueにし、MCPのPost-approval自動化を外す
+
+検証：URLは要求を自動化する変更、MCPは結果だけ確認する変更となる。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのLocal harnessで、URL取得と外部MCP検索を比較します。URLはapproveRequest: false、approveResponse: true、MCP検索はPre-approvalなし・Post-approvalなしです。URLは送信前確認を省き応答は自動取込のまま、MCPだけ結果取込前に毎回確認します。変更対象の組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「通信開始の確認方針は維持」
+- 「Chatへ入れる前」
+- 「両経路」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「送信前確認を変えてしまい、URLの応答取込は自動のままである。」／今回不適合な理由：送信前確認を変えてしまい、URLの応答取込は自動のままである。
+- **C**：誘惑・見落としは「MCP側を実行前へ変えても結果取込の自動化が残る。」／今回不適合な理由：MCP側を実行前へ変えても結果取込の自動化が残る。
+- **D**：誘惑・見落としは「変更する段階が両経路とも違う。」／今回不適合な理由：変更する段階が両経路とも違う。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答51字／誤答（短い順）48・49・50字／誤答中央値49字／中央値比 **1.04**／正答表示位置 **A**。
+
+難易度判定：URLの要求・応答とMCPの実行前・取込前を分ける。 不足するのが取込前確認だと特定する。 送信側を変えず各経路の取込設定を変更する。
+
+出典：[VS Code approvals](https://code.visualstudio.com/docs/agents/run/approvals)
+
+### q-d1-e08-feature-20261016: Copilotレビューの承認カウント
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。
+
+問題文：Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：CopilotがApproveを出せる設定だけを有効にし、人の必須承認も得る
+- B：Review new pushesだけを有効にし、人の必須承認も得る
+- C：Copilot承認を要件へ数える設定を有効にし、人の必須承認も得る【正答】
+- D：Copilot承認を要件へ数える設定を有効にし、人の必須承認を外す
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「Approveを出しました」「必須承認数は減りません」「人による必須承認」を外して四案を再読し、各案の操作・範囲・時点を比較した。Approveは既に出ているためその許可だけでは算入不足を直せない。 レビュー起動の設定は承認の算入可否を変えない。 算入とは別に維持する人の要件を外している。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：レビュー起動・Approve生成・要件算入を分ける。
+2. ステップ2（照合）：成功している段階を変更対象から外す。
+3. ステップ3（結論）：算入を直しても人の承認要件を維持する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「CopilotがApproveを出しました。しかし必須承認数は減りません」が「算入は有効ですがCopilotの承認自体が無効で、コメントしか出ません」なら、正答は **C → A** へ変わる。
+
+変更後の正答：CopilotがApproveを出せる設定だけを有効にし、人の必須承認も得る
+
+検証：算入済みでApprove生成が無効なら承認機能の有効化が不足している。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot approvalsのpublic previewを利用できるrepoで、算入は有効ですがCopilotの承認自体が無効で、コメントしか出ません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「Approveを出しました」
+- 「必須承認数は減りません」
+- 「人による必須承認」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「Approveは既に出ているためその許可だけでは算入不足を直せない。」／今回不適合な理由：Approveは既に出ているためその許可だけでは算入不足を直せない。
+- **B**：誘惑・見落としは「レビュー起動の設定は承認の算入可否を変えない。」／今回不適合な理由：レビュー起動の設定は承認の算入可否を変えない。
+- **D**：誘惑・見落としは「算入とは別に維持する人の要件を外している。」／今回不適合な理由：算入とは別に維持する人の要件を外している。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答33字／誤答（短い順）33・34・38字／誤答中央値34字／中央値比 **0.97**／正答表示位置 **C**。
+
+難易度判定：レビュー起動・Approve生成・要件算入を分ける。 成功している段階を変更対象から外す。 算入を直しても人の承認要件を維持する。
+
+出典：[Configuring code review](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review)、[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review)
+
+### q-d5-e02-feature-20261016: 一つのツールの保存済み承認を戻す
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: VS CodeのCopilotでread_reportは確認なしで実行できます。update_recordも実行前確認が出ず、実行後の結果だけ確認を求められます。今後はupdate_recordの入力を毎回確認し、結果取込前の確認とread_reportの設定は維持します。候補ツールを減らさずに直す操作はどれですか。
+
+問題文：VS CodeのCopilotでread_reportは確認なしで実行できます。update_recordも実行前確認が出ず、実行後の結果だけ確認を求められます。今後はupdate_recordの入力を毎回確認し、結果取込前の確認とread_reportの設定は維持します。候補ツールを減らさずに直す操作はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Manage Tool Approvalでupdate_recordのPost-approvalの自動化だけを外す
+- B：Manage Tool Approvalでupdate_recordのPre-approvalの自動化だけを外す【正答】
+- C：Reset Tool Confirmationsで全ツールの保存済み承認を消す
+- D：ツール選択からupdate_recordだけを無効にする
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「実行後の結果だけ」「入力を毎回確認」「read_reportの設定は維持」を外して四案を再読し、各案の操作・範囲・時点を比較した。実行後の確認は残っており、入力を実行前に確認する目的を満たさない。 read_reportの保存済み設定も消える。 実行前確認を復活させる代わりにツールを使用不能にする。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：実行前・取込前のどちらが不足か診断する。
+2. ステップ2（照合）：ツール別管理と全体リセットを区別する。
+3. ステップ3（結論）：対象ツールのPre-approvalだけを変更する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「今後はupdate_recordの入力を毎回確認し、結果取込前の確認とread_reportの設定は維持します」が「今後はread_reportも含め保存済みの全ツール承認を消して、すべて再承認します」なら、正答は **B → C** へ変わる。
+
+変更後の正答：Reset Tool Confirmationsで全ツールの保存済み承認を消す
+
+検証：全ツールの保存済み承認を消す目的ならReset Tool Confirmationsが合う。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのCopilotでread_reportは確認なしで実行できます。update_recordも実行前確認が出ず、実行後の結果だけ確認を求められます。今後はread_reportも含め保存済みの全ツール承認を消して、すべて再承認します。候補ツールを減らさずに直す操作はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「実行後の結果だけ」
+- 「入力を毎回確認」
+- 「read_reportの設定は維持」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「実行後の確認は残っており、入力を実行前に確認する目的を満たさない。」／今回不適合な理由：実行後の確認は残っており、入力を実行前に確認する目的を満たさない。
+- **C**：誘惑・見落としは「read_reportの保存済み設定も消える。」／今回不適合な理由：read_reportの保存済み設定も消える。
+- **D**：誘惑・見落としは「実行前確認を復活させる代わりにツールを使用不能にする。」／今回不適合な理由：実行前確認を復活させる代わりにツールを使用不能にする。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答56字／誤答（短い順）28・39・57字／誤答中央値39字／中央値比 **1.44**／正答表示位置 **B**。
+
+難易度判定：実行前・取込前のどちらが不足か診断する。 ツール別管理と全体リセットを区別する。 対象ツールのPre-approvalだけを変更する。
+
+出典：[VS Code approvals](https://code.visualstudio.com/docs/agents/run/approvals)
+
+### q-sc02-2-feature-20261016: クラウドAgentの変更範囲
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot cloud agentのタスクはrepo-Aを変更先にして始めました。repo-Bのコードを読むMCPは接続済みで、Bを含む説明は得られますがBのPRは作られていません。今回はAのAPI変更とBの呼出側変更をそれぞれPRにし、双方で相手repoの仕様を参照させます。参照権限と変更先を分けた進め方はどれですか。
+
+問題文：Copilot cloud agentのタスクはrepo-Aを変更先にして始めました。repo-Bのコードを読むMCPは接続済みで、Bを含む説明は得られますがBのPRは作られていません。今回はAのAPI変更とBの呼出側変更をそれぞれPRにし、双方で相手repoの仕様を参照させます。参照権限と変更先を分けた進め方はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Aのタスクだけを使い、BはMCPの読取文脈として与える
+- B：Bのタスクだけを使い、AはMCPの読取文脈として与える
+- C：AとBで別タスクを作り、相手repoの参照文脈は両方から外す
+- D：AとBで別タスクを作り、それぞれに相手repoの読取文脈を与える【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「repo-Aを変更先」「それぞれPR」「相手repoの仕様」を外して四案を再読し、各案の操作・範囲・時点を比較した。Bを読めてもBを変更先とするPR作成にはならない。 逆にAを変更先とする作業がなくなる。 PRは分けられるが両方で相手仕様を参照する条件が失われる。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：MCP読取とcloudタスクの変更先を分ける。
+2. ステップ2（照合）：PRを作るrepoごとにタスクが必要と判定する。
+3. ステップ3（結論）：相互参照の文脈は各タスクへ保つ。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「AのAPI変更とBの呼出側変更をそれぞれPRにし、双方で相手repoの仕様を参照させます」が「Aだけを変更してPRを作り、Bは現在の仕様を読む資料として使います」なら、正答は **D → A** へ変わる。
+
+変更後の正答：Aのタスクだけを使い、BはMCPの読取文脈として与える
+
+検証：Bを編集しない方針ならAのタスクとBの読取文脈で足りる。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentのタスクはrepo-Aを変更先にして始めました。repo-Bのコードを読むMCPは接続済みで、Bを含む説明は得られますがBのPRは作られていません。今回はAだけを変更してPRを作り、Bは現在の仕様を読む資料として使います。参照権限と変更先を分けた進め方はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「repo-Aを変更先」
+- 「それぞれPR」
+- 「相手repoの仕様」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「Bを読めてもBを変更先とするPR作成にはならない。」／今回不適合な理由：Bを読めてもBを変更先とするPR作成にはならない。
+- **B**：誘惑・見落としは「逆にAを変更先とする作業がなくなる。」／今回不適合な理由：逆にAを変更先とする作業がなくなる。
+- **C**：誘惑・見落としは「PRは分けられるが両方で相手仕様を参照する条件が失われる。」／今回不適合な理由：PRは分けられるが両方で相手仕様を参照する条件が失われる。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答32字／誤答（短い順）27・27・30字／誤答中央値27字／中央値比 **1.19**／正答表示位置 **D**。
+
+難易度判定：MCP読取とcloudタスクの変更先を分ける。 PRを作るrepoごとにタスクが必要と判定する。 相互参照の文脈は各タスクへ保つ。
+
+出典：[Copilot on GitHub](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github)
+
+### q-d1-e09-feature-20261016: 公開コード索引の範囲と更新
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilotのコード参照で、昨日初めて公開したrepo-Pのコードと、非公開のままのrepo-Qのコードを照合しました。どちらも参照は表示されませんでした。担当者は「参照なしなので独自実装として扱える」と判断しています。公開コード索引の範囲と反映時点から、PとQの結果をどう扱いますか。
+
+問題文：Copilotのコード参照で、昨日初めて公開したrepo-Pのコードと、非公開のままのrepo-Qのコードを照合しました。どちらも参照は表示されませんでした。担当者は「参照なしなので独自実装として扱える」と判断しています。公開コード索引の範囲と反映時点から、PとQの結果をどう扱いますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Pは反映未確認、Qは公開索引の対象外として、独自性は別に確認する【正答】
+- B：Pは反映確認済み、Qは公開索引の対象外として、独自性は別に確認する
+- C：Pは反映未確認、Qは公開索引の対象内として、独自性は別に確認する
+- D：Pは反映確認済み、Qは公開索引の対象内として、独自性は別に確認する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「昨日初めて公開」「非公開のまま」を外して四案を再読し、各案の操作・範囲・時点を比較した。公開直後という情報だけで索引反映済みとは断定できない。 非公開のままのQは公開コード索引の対象ではない。 Pの反映済みとQの対象内をどちらも根拠なく採用している。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：コード参照の索引対象を確認する。
+2. ステップ2（照合）：反映時点と対象範囲の限界をそれぞれ照合する。
+3. ステップ3（結論）：参照なしから独自性を証明しない。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「昨日初めて公開したrepo-P」が「公開索引への反映を別途確認したrepo-P」なら、正答は **A → B** へ変わる。
+
+変更後の正答：Pは反映確認済み、Qは公開索引の対象外として、独自性は別に確認する
+
+検証：Pの反映を確認した条件へ変われば、その事実は採用できる。非公開Qの範囲と独自性に関する留保は変わらない。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilotのコード参照で、公開索引への反映を別途確認したrepo-Pのコードと、非公開のままのrepo-Qのコードを照合しました。どちらも参照は表示されませんでした。担当者は「参照なしなので独自実装として扱える」と判断しています。公開コード索引の範囲と反映時点から、PとQの結果をどう扱いますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「昨日初めて公開」
+- 「非公開のまま」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「公開直後という情報だけで索引反映済みとは断定できない。」／今回不適合な理由：公開直後という情報だけで索引反映済みとは断定できない。
+- **C**：誘惑・見落としは「非公開のままのQは公開コード索引の対象ではない。」／今回不適合な理由：非公開のままのQは公開コード索引の対象ではない。
+- **D**：誘惑・見落としは「Pの反映済みとQの対象内をどちらも根拠なく採用している。」／今回不適合な理由：Pの反映済みとQの対象内をどちらも根拠なく採用している。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答32字／誤答（短い順）32・33・33字／誤答中央値33字／中央値比 **0.97**／正答表示位置 **A**。
+
+難易度判定：コード参照の索引対象を確認する。 反映時点と対象範囲の限界をそれぞれ照合する。 参照なしから独自性を証明しない。
+
+出典：[Finding public code that matches GitHub Copilot suggestions](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/find-matching-code)
+
+### q-d2-e02-feature-20261016: 個人設定とrulesetの自動レビュー
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilotの個人設定では自動レビューと追加pushのレビューを無効にしています。一方、PRに一致するrepo rulesetは両方を有効にしています。このPRだけでなく今後も、初回の自動レビューは続け、追加pushでは自動起動しない運用へ変えます。他の起動源はありません。変更すべき設定元と項目はどれですか。
+
+問題文：Copilotの個人設定では自動レビューと追加pushのレビューを無効にしています。一方、PRに一致するrepo rulesetは両方を有効にしています。このPRだけでなく今後も、初回の自動レビューは続け、追加pushでは自動起動しない運用へ変えます。他の起動源はありません。変更すべき設定元と項目はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：個人設定のReview new pushesだけを無効にし直す
+- B：repo rulesetのReview new pushesだけを無効にする【正答】
+- C：repo rulesetの自動レビュー全体を無効にする
+- D：個人設定の自動レビューを有効にし直す
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「repo rulesetは両方を有効」「初回の自動レビューは続け」を外して四案を再読し、各案の操作・範囲・時点を比較した。既に無効であり独立したrulesetの起動は止まらない。 追加pushは止まるが初回の自動レビューもなくなる。 個人側を有効化することは追加push抑制の対処ではない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：個人設定とrulesetの独立した起動を区別する。
+2. ステップ2（照合）：初回と追加pushを別のイベントとして扱う。
+3. ステップ3（結論）：有効な起動源の追加pushだけ止める。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「初回の自動レビューは続け、追加pushでは自動起動しない」が「初回も追加pushも自動起動しない」なら、正答は **B → C** へ変わる。
+
+変更後の正答：repo rulesetの自動レビュー全体を無効にする
+
+検証：全ての自動起動をやめるならrulesetの自動レビュー全体を外す。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilotの個人設定では自動レビューと追加pushのレビューを無効にしています。一方、PRに一致するrepo rulesetは両方を有効にしています。このPRだけでなく今後も、初回も追加pushも自動起動しない運用へ変えます。他の起動源はありません。変更すべき設定元と項目はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「repo rulesetは両方を有効」
+- 「初回の自動レビューは続け」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「既に無効であり独立したrulesetの起動は止まらない。」／今回不適合な理由：既に無効であり独立したrulesetの起動は止まらない。
+- **C**：誘惑・見落としは「追加pushは止まるが初回の自動レビューもなくなる。」／今回不適合な理由：追加pushは止まるが初回の自動レビューもなくなる。
+- **D**：誘惑・見落としは「個人側を有効化することは追加push抑制の対処ではない。」／今回不適合な理由：個人側を有効化することは追加push抑制の対処ではない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答38字／誤答（短い順）18・27・31字／誤答中央値27字／中央値比 **1.41**／正答表示位置 **B**。
+
+難易度判定：個人設定とrulesetの独立した起動を区別する。 初回と追加pushを別のイベントとして扱う。 有効な起動源の追加pushだけ止める。
+
+出典：[Configuring code review](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review)
+
+### q-d2-e19-feature-20261016: Spaceのリンク元とアップロード版
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot Spaceに、GitHub上の仕様ファイルへのリンクと、同じ仕様のPDFをアップロードしています。GitHubの同じパスは改訂済みです。Spaceの回答はリンク側の新版を引用する一方、PDFの旧要件も引用します。リンクの継続追従は保ち、旧要件の混入だけを直します。資料の種類を踏まえた更新はどれですか。
+
+問題文：Copilot Spaceに、GitHub上の仕様ファイルへのリンクと、同じ仕様のPDFをアップロードしています。GitHubの同じパスは改訂済みです。Spaceの回答はリンク側の新版を引用する一方、PDFの旧要件も引用します。リンクの継続追従は保ち、旧要件の混入だけを直します。資料の種類を踏まえた更新はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：GitHubリンクをアップロードへ変え、既存PDFは維持する
+- B：GitHubリンクだけを同じパスへ付け直し、既存PDFは維持する
+- C：GitHubリンクは維持し、アップロードPDFを現行版へ差し替える【正答】
+- D：GitHubリンクと既存PDFを維持し、質問文に新版とだけ書く
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「PDFの旧要件も引用」「継続追従は保ち」を外して四案を再読し、各案の操作・範囲・時点を比較した。旧PDFが残り、GitHubリンクの追従性も失う。 同じリンクを付け直してもアップロード済みPDFは更新されない。 新版という指示だけでは旧PDFそのものの内容は変わらない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：回答の引用元を資料単位で分ける。
+2. ステップ2（照合）：リンクとアップロードの更新方式を照合する。
+3. ステップ3（結論）：旧スナップショットだけ差し替える。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「リンクの継続追従は保ち、旧要件の混入だけを直します」が「既存PDFの時点を監査用に残し、GitHubの内容も今の版をアップロードして固定します」なら、正答は **C → A** へ変わる。
+
+変更後の正答：GitHubリンクをアップロードへ変え、既存PDFは維持する
+
+検証：監査用スナップショットへ方針を変えるならリンクをアップロードへ変えて固定する。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot Spaceに、GitHub上の仕様ファイルへのリンクと、同じ仕様のPDFをアップロードしています。GitHubの同じパスは改訂済みです。Spaceの回答はリンク側の新版を引用する一方、PDFの旧要件も引用します。既存PDFの時点を監査用に残し、GitHubの内容も今の版をアップロードして固定します。資料の種類を踏まえた更新はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「PDFの旧要件も引用」
+- 「継続追従は保ち」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「旧PDFが残り、GitHubリンクの追従性も失う。」／今回不適合な理由：旧PDFが残り、GitHubリンクの追従性も失う。
+- **B**：誘惑・見落としは「同じリンクを付け直してもアップロード済みPDFは更新されない。」／今回不適合な理由：同じリンクを付け直してもアップロード済みPDFは更新されない。
+- **D**：誘惑・見落としは「新版という指示だけでは旧PDFそのものの内容は変わらない。」／今回不適合な理由：新版という指示だけでは旧PDFそのものの内容は変わらない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答33字／誤答（短い順）30・31・32字／誤答中央値31字／中央値比 **1.06**／正答表示位置 **C**。
+
+難易度判定：回答の引用元を資料単位で分ける。 リンクとアップロードの更新方式を照合する。 旧スナップショットだけ差し替える。
+
+出典：[About GitHub Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces)
+
+### q-d6-e02-feature-20261016: 外部ライセンスによるレビューの制限
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: 組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。
+
+問題文：組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Xの個人依頼もrulesetの自動レビューも動く
+- B：Xの個人依頼は動き、rulesetの自動レビューは止まる
+- C：Xの個人依頼もrulesetの自動レビューも止まる
+- D：Xの個人依頼は止まり、rulesetの自動レビューは動く【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。四案の判断対象を比較し、本文の「外部で取得した対応ライセンスだけ」「有効な組織ruleset」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Seat有無だけでなく、個人依頼とrulesetの起動経路に対する機能制限を照合する。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：Xのライセンス由来と個人依頼、組織rulesetの自動起動を分ける。
+2. ステップ2（照合）：authorized users制限の対象とrulesetの例外を照合する。
+3. ステップ3（結論）：現在の二つの経路の結果は整合しており維持すると結論する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。」が「組織のCopilot code reviewは有効です。Only allow Copilot code review to be triggered by authorized usersは無効です。Xは外部で取得した対応ライセンスを持ちます。PRは有効な組織rulesetの対象です。Xの個別依頼とruleset自動レビューの起動可否はどれですか。」なら、正答は **D → A** へ変わる。
+
+変更後の正答：Xの個人依頼もrulesetの自動レビューも動く
+
+検証：許可利用者限定の設定だけを無効にすると、対応ライセンスのXも個別依頼できる。ruleset起動は引き続き有効である。
+
+<details><summary>条件変更後の問題文</summary>
+
+組織のCopilot code reviewは有効です。Only allow Copilot code review to be triggered by authorized usersは無効です。Xは外部で取得した対応ライセンスを持ちます。PRは有効な組織rulesetの対象です。Xの個別依頼とruleset自動レビューの起動可否はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「外部で取得した対応ライセンスだけ」
+- 「有効な組織ruleset」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「外部ライセンスだけの未認可利用者の個人依頼は制限される。」／今回不適合な理由：外部ライセンスだけの未認可利用者の個人依頼は制限される。
+- **B**：誘惑・見落としは「個人側とruleset側の適用結果を逆に扱っている。」／今回不適合な理由：個人側とruleset側の適用結果を逆に扱っている。
+- **C**：誘惑・見落としは「個人側の制限をrulesetの自動レビューにも及ぼしている。」／今回不適合な理由：個人側の制限をrulesetの自動レビューにも及ぼしている。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答28字／誤答（短い順）24・25・28字／誤答中央値25字／中央値比 **1.12**／正答表示位置 **D**。
+
+難易度判定：Xのライセンス由来と個人依頼、組織rulesetの自動起動を分ける。 authorized users制限の対象とrulesetの例外を照合する。 現在の二つの経路の結果は整合しており維持すると結論する。
+
+出典：[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review)、[Configuring code review](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review)
+
+### q-sc03-2-feature-20261016: Askの調査から実装へ切り替える
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: VS CodeのLocal harnessで、同じ未コミット変更を持つローカルAgentのPとQを比較します。Pはsandboxのパス許可が足りていますが、npm testの実行前に毎回確認が出ます。QはAllow allでも外部テストデータのパスがsandboxで拒否されます。npm testだけは自動実行を認め、両方のsandboxと他コマンドの確認は保ちます。セッション別の変更はどれですか。
+
+問題文：VS CodeのLocal harnessで、同じ未コミット変更を持つローカルAgentのPとQを比較します。Pはsandboxのパス許可が足りていますが、npm testの実行前に毎回確認が出ます。QはAllow allでも外部テストデータのパスがsandboxで拒否されます。npm testだけは自動実行を認め、両方のsandboxと他コマンドの確認は保ちます。セッション別の変更はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Pはnpm testに一致するautoApproveのtrue規則、Qはsandboxの対象パス許可を追加する【正答】
+- B：Pはnpm testに一致するautoApproveのfalse規則、Qはsandboxの対象パス許可を追加する
+- C：Pはnpm testに一致するautoApproveのtrue規則、Qはsandboxのネットワーク許可を追加する
+- D：Pはnpm testに一致するautoApproveのfalse規則、Qはsandboxのネットワーク許可を追加する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「Pはsandboxのパス許可が足りています」「QはAllow allでも」「他コマンドの確認は保ち」を外して四案を再読し、各案の操作・範囲・時点を比較した。falseは確認を残すのでPの自動実行という目的と逆になる。 Pは直るがQの拒否は通信ではなくパスなので原因に合わない。 Pの確認もQのパス拒否も残る。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：確認ダイアログとsandbox拒否の実行段階を分ける。
+2. ステップ2（照合）：Pのコマンド別承認とQのファイル境界を別の設定へ対応させる。
+3. ステップ3（結論）：必要な範囲だけを変更してローカル実行を保つ。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「QはAllow allでも外部テストデータのパスがsandboxで拒否されます」が「QはAllow allでローカルパスを読めますが、データサーバーへの通信だけがsandboxで拒否されます」なら、正答は **A → C** へ変わる。
+
+変更後の正答：Pはnpm testに一致するautoApproveのtrue規則、Qはsandboxのネットワーク許可を追加する
+
+検証：Qの拒否だけがネットワーク境界へ変わるなら、Pのtrue規則を保ちQの通信許可を追加する。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのLocal harnessで、同じ未コミット変更を持つローカルAgentのPとQを比較します。Pはsandboxのパス許可が足りていますが、npm testの実行前に毎回確認が出ます。QはAllow allでローカルパスを読めますが、データサーバーへの通信だけがsandboxで拒否されます。npm testだけは自動実行を認め、両方のsandboxと他コマンドの確認は保ちます。セッション別の変更はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「Pはsandboxのパス許可が足りています」
+- 「QはAllow allでも」
+- 「他コマンドの確認は保ち」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「falseは確認を残すのでPの自動実行という目的と逆になる。」／今回不適合な理由：falseは確認を残すのでPの自動実行という目的と逆になる。
+- **C**：誘惑・見落としは「Pは直るがQの拒否は通信ではなくパスなので原因に合わない。」／今回不適合な理由：Pは直るがQの拒否は通信ではなくパスなので原因に合わない。
+- **D**：誘惑・見落としは「Pの確認もQのパス拒否も残る。」／今回不適合な理由：Pの確認もQのパス拒否も残る。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答55字／誤答（短い順）56・57・58字／誤答中央値57字／中央値比 **0.96**／正答表示位置 **A**。
+
+難易度判定：確認ダイアログとsandbox拒否の実行段階を分ける。 Pのコマンド別承認とQのファイル境界を別の設定へ対応させる。 必要な範囲だけを変更してローカル実行を保つ。
+
+出典：[GitHub Copilot in IDEs](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides)、[Use tools with agents](https://code.visualstudio.com/docs/agents/run/tools)、[VS Code approvals](https://code.visualstudio.com/docs/agents/run/approvals)
+
+### q-d3-e02-feature-20261016: GitHub外repoの意味索引の利用条件
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot Businessを使う二つの環境で、VS CodeからGitLabの作業repoを意味索引化しようとしています。一方はGitHub.com、もう一方はGHE.comに接続します。クライアントは対応版で、Semantic indexing for non-GitHub repositoriesの組織ポリシーはUnconfiguredです。GitHub.com側で必要な管理操作と、GHE.com側の対応可否について、正しい組合せはどれですか。
+
+問題文：Copilot Businessを使う二つの環境で、VS CodeからGitLabの作業repoを意味索引化しようとしています。一方はGitHub.com、もう一方はGHE.comに接続します。クライアントは対応版で、Semantic indexing for non-GitHub repositoriesの組織ポリシーはUnconfiguredです。GitHub.com側で必要な管理操作と、GHE.com側の対応可否について、正しい組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：GitHub.com側は追加のポリシー変更が不要で、GHE.com側はこの機能の対象外となる
+- B：GitHub.com側はポリシーの有効化が必要で、GHE.com側はこの機能の対象外となる【正答】
+- C：GitHub.com側はポリシーの有効化が必要で、GHE.com側も同じ変更で利用できる
+- D：GitHub.com側は追加のポリシー変更が不要で、GHE.com側も変更なしで利用できる
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。四案の判断対象を比較し、本文の「もう一方はGHE.com」「組織ポリシーはUnconfigured」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のGitLab接続ではなく、Copilotの外部repo意味索引の明示ポリシーとホスト対応を照合する。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：二環境の対応可否をGitHub.comとGHE.comで分ける。
+2. ステップ2（照合）：GitHub.comでも管理対象のUnconfiguredは無効で、Enabledが必要と照合する。
+3. ステップ3（結論）：GitHub.comでは管理者が有効化し、GHE.comは同じ設定だけでは利用できないと結論する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「組織ポリシーはUnconfigured」が「組織ポリシーはEnabled」なら、正答は **B → A** へ変わる。
+
+変更後の正答：GitHub.com側は追加のポリシー変更が不要で、GHE.com側はこの機能の対象外となる
+
+検証：GitHub.com側の追加の有効化操作は不要になるが、GHE.comの非対応は変わらない。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot Businessを使う二つの環境で、VS CodeからGitLabの作業repoを意味索引化しようとしています。一方はGitHub.com、もう一方はGHE.comに接続します。クライアントは対応版で、Semantic indexing for non-GitHub repositoriesの組織ポリシーはEnabledです。GitHub.com側で必要な管理操作と、GHE.com側の対応可否について、正しい組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「もう一方はGHE.com」
+- 「組織ポリシーはUnconfigured」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「Unconfiguredのままでは管理対象の利用許可にならない。」／今回不適合な理由：Unconfiguredのままでは管理対象の利用許可にならない。
+- **C**：誘惑・見落としは「GitHub.com側の操作は合うが、GHE.comはこの機能の対応環境ではない。」／今回不適合な理由：GitHub.com側の操作は合うが、GHE.comはこの機能の対応環境ではない。
+- **D**：誘惑・見落としは「未設定時の管理許可とGHE.comの対応範囲の両方を取り違えている。」／今回不適合な理由：未設定時の管理許可とGHE.comの対応範囲の両方を取り違えている。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答45字／誤答（短い順）44・45・46字／誤答中央値45字／中央値比 **1.00**／正答表示位置 **B**。
+
+難易度判定：二環境の対応可否をGitHub.comとGHE.comで分ける。 GitHub.comでも管理対象のUnconfiguredは無効で、Enabledが必要と照合する。 GitHub.comでは管理者が有効化し、GHE.comは同じ設定だけでは利用できないと結論する。
+
+出典：[Indexing repositories for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/repository-indexing)、[Managing policies and features for GitHub Copilot in your enterprise](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies)
+
+### q-sc08-2-feature-20261016: クラウドとローカルの設定経路
+
+- **出題形式**: 実験対照比較
+- **問題文要約**: Copilot cloud agentの新規タスクで依存取得が失敗します。session logではcopilot-setup-steps jobの資格情報読込stepが失敗し、それ以降の取得stepは実行されていません。ローカルIDEでは成功し、cloud側のMCP検索も成功します。同じcloud環境で準備を再現可能にするには、最初に何を直して検証しますか。
+
+問題文：Copilot cloud agentの新規タスクで依存取得が失敗します。session logではcopilot-setup-steps jobの資格情報読込stepが失敗し、それ以降の取得stepは実行されていません。ローカルIDEでは成功し、cloud側のMCP検索も成功します。同じcloud環境で準備を再現可能にするには、最初に何を直して検証しますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：repoのInternet accessを直し、AgentのBash通信だけを再確認する
+- B：ローカルIDEのproxy設定を直し、同じローカルセッションで再確認する
+- C：copilot-setup-stepsの資格情報設定を直し、新規タスクのsetupログを確認する【正答】
+- D：cloud側のMCP接続設定を直し、検索ツールの入力だけを再確認する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「資格情報読込stepが失敗」「取得stepは実行されていません」を外して四案を再読し、各案の操作・範囲・時点を比較した。CopilotのAgent firewallはsetup stepsの準備失敗を直す設定ではない。 ローカルIDEのproxyはcloudのsetup設定を変更しない。 MCP検索は成功しており、setupの資格情報とは別の経路である。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：session logの実行段階を特定する。
+2. ステップ2（照合）：setup失敗後の省略と依存不足を結ぶ。
+3. ステップ3（結論）：cloudのsetup資格情報を修正して再検証する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「session logではcopilot-setup-steps jobの資格情報読込stepが失敗し、それ以降の取得stepは実行されていません」が「setupは全て成功しましたが、AgentのBashから依存取得先への通信だけがCopilot firewallで拒否されています」なら、正答は **C → A** へ変わる。
+
+変更後の正答：repoのInternet accessを直し、AgentのBash通信だけを再確認する
+
+検証：失敗段階がAgentのBash通信ならrepoのInternet accessを確認する。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentの新規タスクで依存取得が失敗します。setupは全て成功しましたが、AgentのBashから依存取得先への通信だけがCopilot firewallで拒否されています。ローカルIDEでは成功し、cloud側のMCP検索も成功します。同じcloud環境で準備を再現可能にするには、最初に何を直して検証しますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「資格情報読込stepが失敗」
+- 「取得stepは実行されていません」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「CopilotのAgent firewallはsetup stepsの準備失敗を直す設定ではない。」／今回不適合な理由：CopilotのAgent firewallはsetup stepsの準備失敗を直す設定ではない。
+- **B**：誘惑・見落としは「ローカルIDEのproxyはcloudのsetup設定を変更しない。」／今回不適合な理由：ローカルIDEのproxyはcloudのsetup設定を変更しない。
+- **D**：誘惑・見落としは「MCP検索は成功しており、setupの資格情報とは別の経路である。」／今回不適合な理由：MCP検索は成功しており、setupの資格情報とは別の経路である。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答48字／誤答（短い順）34・36・44字／誤答中央値36字／中央値比 **1.33**／正答表示位置 **C**。
+
+難易度判定：session logの実行段階を特定する。 setup失敗後の省略と依存不足を結ぶ。 cloudのsetup資格情報を修正して再検証する。
+
+出典：[Copilot on GitHub](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github)、[Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)、[Troubleshooting network errors for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors)
+
+### q-d3-e07-feature-20261016: Copilotの補完とChatの疎通先
+
+- **出題形式**: 実験対照比較
+- **問題文要約**: 同じ社内端末でCopilotの通常補完は動きますがChatだけ接続できません。認証とSeatは正常です。ネットワーク担当はgithub.comへのブラウザ接続を確認済みです。次にCopilot固有の診断を取得し、失敗した経路だけを調べます。診断の入口と、障害側で確認するping先の組合せはどれですか。
+
+問題文：同じ社内端末でCopilotの通常補完は動きますがChatだけ接続できません。認証とSeatは正常です。ネットワーク担当はgithub.comへのブラウザ接続を確認済みです。次にCopilot固有の診断を取得し、失敗した経路だけを調べます。診断の入口と、障害側で確認するping先の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Chat DiagnosticsのReachabilityを取得し、copilot-proxy.githubusercontent.com/_pingを調べる
+- B：Extension Logs Folderだけを開き、api.github.comへの接続を調べる
+- C：Toggle Developer Toolsだけを開き、github.comへの接続を調べる
+- D：Chat DiagnosticsのReachabilityを取得し、api.githubcopilot.com/_pingを調べる【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「通常補完は動きますがChatだけ」「失敗した経路だけ」を外して四案を再読し、各案の操作・範囲・時点を比較した。診断の入口は合うが、通常補完の経路をChat側と取り違えている。 保存ログの取得とGitHub REST APIの確認だけでは目的のChat経路診断にならない。 ブラウザのGitHub疎通は確認済みで、Copilot Chat APIの到達性を代替しない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：認証問題と通常のGitHub疎通を除く。
+2. ステップ2（照合）：Copilot固有の到達性診断を選ぶ。
+3. ステップ3（結論）：Chat側の接続先を補完側と区別する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「通常補完は動きますがChatだけ接続できません」が「Chatは動きますが通常補完だけ接続できません」なら、正答は **D → A** へ変わる。
+
+変更後の正答：Chat DiagnosticsのReachabilityを取得し、copilot-proxy.githubusercontent.com/_pingを調べる
+
+検証：失敗が補完だけなら補完側のping先を調べる。末尾の目的は失敗した経路の調査のままで矛盾しない。
+
+<details><summary>条件変更後の問題文</summary>
+
+同じ社内端末でCopilotのChatは動きますが通常補完だけ接続できません。認証とSeatは正常です。ネットワーク担当はgithub.comへのブラウザ接続を確認済みです。次にCopilot固有の診断を取得し、失敗した経路だけを調べます。診断の入口と、障害側で確認するping先の組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「通常補完は動きますがChatだけ」
+- 「失敗した経路だけ」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「診断の入口は合うが、通常補完の経路をChat側と取り違えている。」／今回不適合な理由：診断の入口は合うが、通常補完の経路をChat側と取り違えている。
+- **B**：誘惑・見落としは「保存ログの取得とGitHub REST APIの確認だけでは目的のChat経路診断にならない。」／今回不適合な理由：保存ログの取得とGitHub REST APIの確認だけでは目的のChat経路診断にならない。
+- **C**：誘惑・見落としは「ブラウザのGitHub疎通は確認済みで、Copilot Chat APIの到達性を代替しない。」／今回不適合な理由：ブラウザのGitHub疎通は確認済みで、Copilot Chat APIの到達性を代替しない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答65字／誤答（短い順）46・49・79字／誤答中央値49字／中央値比 **1.33**／正答表示位置 **D**。
+
+難易度判定：認証問題と通常のGitHub疎通を除く。 Copilot固有の到達性診断を選ぶ。 Chat側の接続先を補完側と区別する。
+
+出典：[Troubleshooting network errors for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors)、[Viewing logs for GitHub Copilot in your environment](https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/view-logs)
+
+### q-d4-e05-feature-20261016: Subagentの文脈分離と読取専用ツール
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: VS CodeのLocal harnessで、主AgentからSubagentへ調査を委任したところ主会話の文脈は短くなりました。しかし両者のツールは同じ作業ディレクトリへアクセスします。今回は中間文脈の分離を保ち、調査中はファイル編集も実行も許可せず、読取・検索だけを認めます。追加worktreeは作りません。Agent定義の変更はどれですか。
+
+問題文：VS CodeのLocal harnessで、主AgentからSubagentへ調査を委任したところ主会話の文脈は短くなりました。しかし両者のツールは同じ作業ディレクトリへアクセスします。今回は中間文脈の分離を保ち、調査中はファイル編集も実行も許可せず、読取・検索だけを認めます。追加worktreeは作りません。Agent定義の変更はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Subagentのtoolsをreadとsearchへ限定し、委任は維持する【正答】
+- B：Subagentのtoolsを省略し、委任は維持する
+- C：Subagentのuser-invocableだけをfalseにし、toolsは維持する
+- D：主会話でcompactし、Subagentのtoolsは維持する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「中間文脈の分離を保ち」「読取・検索だけ」「追加worktreeは作りません」を外して四案を再読し、各案の操作・範囲・時点を比較した。省略すると利用可能な全ツールを許すため編集・実行が残り得る。 手動起動可否の設定でありツールの操作能力を制限しない。 compactは主会話の要約で、Subagentの編集・実行能力を制限しない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：文脈分離とファイル操作の権限を分ける。
+2. ステップ2（照合）：手動起動設定とtools設定の役割を比較する。
+3. ステップ3（結論）：調査委任を保ち提供ツールを読取専用へ絞る。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「調査中はファイル編集も実行も許可せず、読取・検索だけを認めます」が「調査用Agentでは利用可能な全ツールの使用を認め、既存の実行承認は別途扱います」なら、正答は **A → B** へ変わる。
+
+変更後の正答：Subagentのtoolsを省略し、委任は維持する
+
+検証：全候補を利用させる方針ならtools省略が合う。文脈分離と実行承認はそのまま別の話である。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのLocal harnessで、主AgentからSubagentへ調査を委任したところ主会話の文脈は短くなりました。しかし両者のツールは同じ作業ディレクトリへアクセスします。今回は中間文脈の分離を保ち、調査用Agentでは利用可能な全ツールの使用を認め、既存の実行承認は別途扱います。追加worktreeは作りません。Agent定義の変更はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「中間文脈の分離を保ち」
+- 「読取・検索だけ」
+- 「追加worktreeは作りません」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「省略すると利用可能な全ツールを許すため編集・実行が残り得る。」／今回不適合な理由：省略すると利用可能な全ツールを許すため編集・実行が残り得る。
+- **C**：誘惑・見落としは「手動起動可否の設定でありツールの操作能力を制限しない。」／今回不適合な理由：手動起動可否の設定でありツールの操作能力を制限しない。
+- **D**：誘惑・見落としは「compactは主会話の要約で、Subagentの編集・実行能力を制限しない。」／今回不適合な理由：compactは主会話の要約で、Subagentの編集・実行能力を制限しない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答38字／誤答（短い順）26・32・44字／誤答中央値32字／中央値比 **1.19**／正答表示位置 **A**。
+
+難易度判定：文脈分離とファイル操作の権限を分ける。 手動起動設定とtools設定の役割を比較する。 調査委任を保ち提供ツールを読取専用へ絞る。
+
+出典：[Understand context in AI agents](https://code.visualstudio.com/docs/agents/concepts/context)、[Comparing GitHub Copilot CLI customization features](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features)、[Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+
+### q-d4-e06-feature-20261016: 指示のパス条件とAgent除外
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilotの同じhead branchに二つのパス別指示があります。IはapplyTo: "src/**"、excludeAgent: "code-review"、JはapplyTo: "src/**/*.ts"でexcludeAgent指定なしです。src/api.tsとdocs/api.mdをcloud agentとcode reviewで扱います。指示ファイル自体の読込対象を比較した結果はどれですか。
+
+問題文：Copilotの同じhead branchに二つのパス別指示があります。IはapplyTo: "src/**"、excludeAgent: "code-review"、JはapplyTo: "src/**/*.ts"でexcludeAgent指定なしです。src/api.tsとdocs/api.mdをcloud agentとcode reviewで扱います。指示ファイル自体の読込対象を比較した結果はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：src/api.tsは実装でJ、レビューでIとJを読み、docsは両方で対象外
+- B：src/api.tsは実装でIとJ、レビューでJを読み、docsは両方で対象外【正答】
+- C：src/api.tsは実装でIとJ、レビューでIとJを読み、docsは両方で対象外
+- D：src/api.tsは実装でIとJ、レビューでJを読み、docsも両方でJを読む
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「excludeAgent: "code-review"」「src/api.tsとdocs/api.md」を外して四案を再読し、各案の操作・範囲・時点を比較した。excludeAgentのcode-reviewをcloud agentへの除外と逆に扱っている。 IのexcludeAgentを無視している。 docs/api.mdはどちらのsrcパターンにも一致しない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：二ファイルとapplyToを照合する。
+2. ステップ2（照合）：IのexcludeAgentをレビューだけへ適用する。
+3. ステップ3（結論）：実装とレビューの読込集合を比較する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「excludeAgent: "code-review"」が「excludeAgent: "cloud-agent"」なら、正答は **B → A** へ変わる。
+
+変更後の正答：src/api.tsは実装でJ、レビューでIとJを読み、docsは両方で対象外
+
+検証：除外先がcloud-agentならIは実装側から外れ、レビュー側には残る。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilotの同じhead branchに二つのパス別指示があります。IはapplyTo: "src/**"、excludeAgent: "cloud-agent"、JはapplyTo: "src/**/*.ts"でexcludeAgent指定なしです。src/api.tsとdocs/api.mdをcloud agentとcode reviewで扱います。指示ファイル自体の読込対象を比較した結果はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「excludeAgent: "code-review"」
+- 「src/api.tsとdocs/api.md」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「excludeAgentのcode-reviewをcloud agentへの除外と逆に扱っている。」／今回不適合な理由：excludeAgentのcode-reviewをcloud agentへの除外と逆に扱っている。
+- **C**：誘惑・見落としは「IのexcludeAgentを無視している。」／今回不適合な理由：IのexcludeAgentを無視している。
+- **D**：誘惑・見落としは「docs/api.mdはどちらのsrcパターンにも一致しない。」／今回不適合な理由：docs/api.mdはどちらのsrcパターンにも一致しない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答39字／誤答（短い順）39・40・41字／誤答中央値40字／中央値比 **0.97**／正答表示位置 **B**。
+
+難易度判定：二ファイルとapplyToを照合する。 IのexcludeAgentをレビューだけへ適用する。 実装とレビューの読込集合を比較する。
+
+出典：[Adding repository custom instructions for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions)
+
+### q-d4-e07-feature-20261016: Agent定義のクライアント依存項目
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: cloud agentのカスタムAgentをVS Codeへ移しました。定義にはmcp-serversとtools: [read, catalog/search]があります。VS Code側のMCP一覧にはcatalogがなく、同じAgentで内蔵読取だけは使えます。今後はcatalog/searchだけを追加し、既存のツール制限は保ちます。接続定義とツール定義をどの順で扱いますか。
+
+問題文：cloud agentのカスタムAgentをVS Codeへ移しました。定義にはmcp-serversとtools: [read, catalog/search]があります。VS Code側のMCP一覧にはcatalogがなく、同じAgentで内蔵読取だけは使えます。今後はcatalog/searchだけを追加し、既存のツール制限は保ちます。接続定義とツール定義をどの順で扱いますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Agentのmcp-serversだけを再保存し、Agentのtools指定を維持する
+- B：VS CodeのMCP設定へcatalogを登録し、Agentのtoolsを空配列にする
+- C：Agentのmcp-serversだけを再保存し、Agentのtools指定を省略する
+- D：VS CodeのMCP設定へcatalogを登録し、Agentのtools指定を維持する【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「MCP一覧にはcatalogがなく」「既存のツール制限は保ちます」を外して四案を再読し、各案の操作・範囲・時点を比較した。VS Code側に接続がないままである。 tools: []はツールを使わせないため検索も提供できない。 接続がないうえ、ツール制限の維持にも合わない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：接続設定とツール提供の失敗を分ける。
+2. ステップ2（照合）：クライアントごとのMCP定義場所を照合する。
+3. ステップ3（結論）：VS Code接続を作りAgent側の最小ツール指定を保つ。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「今後はcatalog/searchだけを追加し、既存のツール制限は保ちます」が「今回はMCP接続の登録だけを行い、このAgentには全ツールを提供しない方針です」なら、正答は **D → B** へ変わる。
+
+変更後の正答：VS CodeのMCP設定へcatalogを登録し、Agentのtoolsを空配列にする
+
+検証：接続を登録しつつAgentの全ツールを止める目的ならtools: []が合う。元の検索利用要件は明示的に置き換えている。
+
+<details><summary>条件変更後の問題文</summary>
+
+cloud agentのカスタムAgentをVS Codeへ移しました。定義にはmcp-serversとtools: [read, catalog/search]があります。VS Code側のMCP一覧にはcatalogがなく、同じAgentで内蔵読取だけは使えます。今回はMCP接続の登録だけを行い、このAgentには全ツールを提供しない方針です。接続定義とツール定義をどの順で扱いますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「MCP一覧にはcatalogがなく」
+- 「既存のツール制限は保ちます」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「VS Code側に接続がないままである。」／今回不適合な理由：VS Code側に接続がないままである。
+- **B**：誘惑・見落としは「tools: []はツールを使わせないため検索も提供できない。」／今回不適合な理由：tools: []はツールを使わせないため検索も提供できない。
+- **C**：誘惑・見落としは「接続がないうえ、ツール制限の維持にも合わない。」／今回不適合な理由：接続がないうえ、ツール制限の維持にも合わない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答44字／誤答（短い順）43・43・44字／誤答中央値43字／中央値比 **1.02**／正答表示位置 **D**。
+
+難易度判定：接続設定とツール提供の失敗を分ける。 クライアントごとのMCP定義場所を照合する。 VS Code接続を作りAgent側の最小ツール指定を保つ。
+
+出典：[Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)、[MCP configuration reference](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
+
+### q-d4-e08-feature-20261016: 同名Agentの優先順位と固定版
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: GitHub.comでEnterprise、Organization、repoに同名のカスタムAgentがあります。repo版を選んで作ったPR-Pの後で、repo版だけを更新しました。その後P内で追加依頼し、同じbranchから新規タスクQも開始します。追加依頼と新規タスクで使われる定義を、階層と版の二点から判定するとどれですか。
+
+問題文：GitHub.comでEnterprise、Organization、repoに同名のカスタムAgentがあります。repo版を選んで作ったPR-Pの後で、repo版だけを更新しました。その後P内で追加依頼し、同じbranchから新規タスクQも開始します。追加依頼と新規タスクで使われる定義を、階層と版の二点から判定するとどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：PもQも更新後のrepo版を使う
+- B：Pは開始時のrepo版、QはOrganization版を使う
+- C：Pは開始時のrepo版、Qは更新後のrepo版を使う【正答】
+- D：PもQもEnterprise版を使う
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「repo版だけを更新」「P内で追加依頼」「新規タスクQ」を外して四案を再読し、各案の操作・範囲・時点を比較した。PR内でも常に最新へ差し替わると誤解している。 新規タスクでも同名repo版があるためOrganization版へ落ちない。 上位階層が下位を常に上書きするという逆の解釈である。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：同名定義の階層優先順位を判定する。
+2. ステップ2（照合）：既存PRの版固定と新規タスクの読込を分ける。
+3. ステップ3（結論）：各タスクのrepo版と更新時点を組み合わせる。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「repo版を選んで作ったPR-Pの後で、repo版だけを更新しました」が「repo版を更新した後にPR-Pを作成しました」なら、正答は **C → A** へ変わる。
+
+変更後の正答：PもQも更新後のrepo版を使う
+
+検証：両タスクが更新後に始まるならどちらも更新後のrepo版になる。
+
+<details><summary>条件変更後の問題文</summary>
+
+GitHub.comでEnterprise、Organization、repoに同名のカスタムAgentがあります。repo版を更新した後にPR-Pを作成しました。その後P内で追加依頼し、同じbranchから新規タスクQも開始します。追加依頼と新規タスクで使われる定義を、階層と版の二点から判定するとどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「repo版だけを更新」
+- 「P内で追加依頼」
+- 「新規タスクQ」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「PR内でも常に最新へ差し替わると誤解している。」／今回不適合な理由：PR内でも常に最新へ差し替わると誤解している。
+- **B**：誘惑・見落としは「新規タスクでも同名repo版があるためOrganization版へ落ちない。」／今回不適合な理由：新規タスクでも同名repo版があるためOrganization版へ落ちない。
+- **D**：誘惑・見落としは「上位階層が下位を常に上書きするという逆の解釈である。」／今回不適合な理由：上位階層が下位を常に上書きするという逆の解釈である。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答26字／誤答（短い順）16・18・30字／誤答中央値18字／中央値比 **1.44**／正答表示位置 **C**。
+
+難易度判定：同名定義の階層優先順位を判定する。 既存PRの版固定と新規タスクの読込を分ける。 各タスクのrepo版と更新時点を組み合わせる。
+
+出典：[Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+
+### q-d4-e09-feature-20261016: CLIの文脈内訳とツール定義の削減
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot CLIで/contextを見ると、MCP Toolsが65%、Messagesが10%を占めています。複数のMCPを接続していますが、今回必要なのは社内検索一つだけです。会話の方針と必要なツールを保ち、占有の大きい部分を減らします。compactの対象とツール定義の違いを踏まえた次の操作はどれですか。
+
+問題文：Copilot CLIで/contextを見ると、MCP Toolsが65%、Messagesが10%を占めています。複数のMCPを接続していますが、今回必要なのは社内検索一つだけです。会話の方針と必要なツールを保ち、占有の大きい部分を減らします。compactの対象とツール定義の違いを踏まえた次の操作はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：不要なMCPツールの提供を外し、/contextで内訳を再確認する【正答】
+- B：/compactへ今回の方針を指定し、会話履歴を要約する
+- C：/session checkpointsで過去の要約を開き、引継ぎ内容だけ確認する
+- D：大きい出力の保存しきい値を上げ、MCPの結果全文を文脈へ入れる
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「MCP Toolsが65%、Messagesが10%」「必要なのは社内検索一つ」を外して四案を再読し、各案の操作・範囲・時点を比較した。Messagesの占有が主因なら候補だが、今回はMCP定義が主である。 過去の要約を確認しても、大きなMCP定義の占有は減らない。 出力のプレビューを全文へ増やすため、文脈節約の方向とは逆になる。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：contextの内訳から占有の主因を特定する。
+2. ステップ2（照合）：会話要約と固定ツール定義の対象範囲を分ける。
+3. ステップ3（結論）：必要な検索を残して不要な定義を減らす。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「MCP Toolsが65%、Messagesが10%」が「MCP Toolsが10%、Messagesが65%」なら、正答は **A → B** へ変わる。
+
+変更後の正答：/compactへ今回の方針を指定し、会話履歴を要約する
+
+検証：占有の主因が会話履歴へ変われば、方針を指定したcompactで履歴を要約する案が合う。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot CLIで/contextを見ると、MCP Toolsが10%、Messagesが65%を占めています。複数のMCPを接続していますが、今回必要なのは社内検索一つだけです。会話の方針と必要なツールを保ち、占有の大きい部分を減らします。compactの対象とツール定義の違いを踏まえた次の操作はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「MCP Toolsが65%、Messagesが10%」
+- 「必要なのは社内検索一つ」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「Messagesの占有が主因なら候補だが、今回はMCP定義が主である。」／今回不適合な理由：Messagesの占有が主因なら候補だが、今回はMCP定義が主である。
+- **C**：誘惑・見落としは「過去の要約を確認しても、大きなMCP定義の占有は減らない。」／今回不適合な理由：過去の要約を確認しても、大きなMCP定義の占有は減らない。
+- **D**：誘惑・見落としは「出力のプレビューを全文へ増やすため、文脈節約の方向とは逆になる。」／今回不適合な理由：出力のプレビューを全文へ増やすため、文脈節約の方向とは逆になる。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答33字／誤答（短い順）28・31・41字／誤答中央値31字／中央値比 **1.06**／正答表示位置 **A**。
+
+難易度判定：contextの内訳から占有の主因を特定する。 会話要約と固定ツール定義の対象範囲を分ける。 必要な検索を残して不要な定義を減らす。
+
+出典：[Understand context in AI agents](https://code.visualstudio.com/docs/agents/concepts/context)、[Add context to chat](https://code.visualstudio.com/docs/chat/copilot-chat-context)、[Managing context in GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management)、[GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+
+### q-d2-e01-feature-20261016: Agentのセットアップworkflowの検出条件
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot cloud agentのsetupを比較します。repo-Pはdefault branchの正しいworkflowパスにjob prepareがあり、repo-Qはjob copilot-setup-stepsを持ちますがfeature branchにしかありません。両方とも通常Actionsとしては成功します。新規Agentタスクで準備を使えるようにする、repo別の最小修正はどれですか。
+
+問題文：Copilot cloud agentのsetupを比較します。repo-Pはdefault branchの正しいworkflowパスにjob prepareがあり、repo-Qはjob copilot-setup-stepsを持ちますがfeature branchにしかありません。両方とも通常Actionsとしては成功します。新規Agentタスクで準備を使えるようにする、repo別の最小修正はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Pはworkflowをdefault branchへ反映し、Qはjob名を修正する
+- B：Pはjob名を修正し、Qはworkflowをdefault branchへ反映する【正答】
+- C：PもQもjob名を修正し、branch配置は維持する
+- D：PもQもworkflowをdefault branchへ反映し、job名は維持する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「repo-Pはdefault branch」「repo-Qはjob copilot-setup-steps」「feature branchにしか」を外して四案を再読し、各案の操作・範囲・時点を比較した。それぞれ既に満たす条件を直し、不足を残している。 Qの不足はjob名ではなくbranch配置である。 Pの不足はbranch配置ではなくjob名である。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：通常Actionsの成否と専用setupの認識条件を分ける。
+2. ステップ2（照合）：正式job名とdefault branchをrepo別に照合する。
+3. ステップ3（結論）：既に満たす条件を変えず不足だけ修正する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「repo-Pはdefault branchの正しいworkflowパスにjob prepareがあり」が「repo-Pもworkflowはfeature branchだけにありjob名はcopilot-setup-stepsで」なら、正答は **B → D** へ変わる。
+
+変更後の正答：PもQもworkflowをdefault branchへ反映し、job名は維持する
+
+検証：両repoでjob名が正しくbranch配置だけ不足するなら、両方をdefault branchへ反映する。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentのsetupを比較します。repo-Pもworkflowはfeature branchだけにありjob名はcopilot-setup-stepsで、repo-Qはjob copilot-setup-stepsを持ちますがfeature branchにしかありません。両方とも通常Actionsとしては成功します。新規Agentタスクで準備を使えるようにする、repo別の最小修正はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「repo-Pはdefault branch」
+- 「repo-Qはjob copilot-setup-steps」
+- 「feature branchにしか」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「それぞれ既に満たす条件を直し、不足を残している。」／今回不適合な理由：それぞれ既に満たす条件を直し、不足を残している。
+- **C**：誘惑・見落としは「Qの不足はjob名ではなくbranch配置である。」／今回不適合な理由：Qの不足はjob名ではなくbranch配置である。
+- **D**：誘惑・見落としは「Pの不足はbranch配置ではなくjob名である。」／今回不適合な理由：Pの不足はbranch配置ではなくjob名である。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答41字／誤答（短い順）26・41・41字／誤答中央値41字／中央値比 **1.00**／正答表示位置 **B**。
+
+難易度判定：通常Actionsの成否と専用setupの認識条件を分ける。 正式job名とdefault branchをrepo別に照合する。 既に満たす条件を変えず不足だけ修正する。
+
+出典：[Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)
+
+### q-d2-e07-feature-20261016: 修正案から実行検証へ進む権限
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: GitHub Copilot CLIでカスタムAgentを使います。プロファイルはtools: [read, search, edit, execute]です。起動オプションは--available-tools=view,grepで、テスト実行用に--allow-tool=shellも指定しました。通常の読取は成功しますが、編集とテストができません。観測に合う原因と、直すべき設定層はどれですか。必要な編集・実行は承認して行います。
+
+問題文：GitHub Copilot CLIでカスタムAgentを使います。プロファイルはtools: [read, search, edit, execute]です。起動オプションは--available-tools=view,grepで、テスト実行用に--allow-tool=shellも指定しました。通常の読取は成功しますが、編集とテストができません。観測に合う原因と、直すべき設定層はどれですか。必要な編集・実行は承認して行います。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Agentのtoolsを省略し、プロファイルの制限を解除する
+- B：shellの実行許可を追加し、CLIのツール一覧は維持する
+- C：CLIの利用可能ツールへ編集・実行の実ツール名を追加する【正答】
+- D：Agentのtoolsをreadとsearchへ絞り、許可は維持する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「tools: [read, search, edit, execute]」「--available-tools=view,grep」を外して四案を再読し、各案の操作・範囲・時点を比較した。プロファイルを広げてもCLI側で利用不能なツールは増えない。 allow-toolは利用可能ツールの一覧を増やさない。 読取専用への縮小では求める編集と実行を行えない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：Agent定義とCLIの候補制限を別に読む。
+2. ステップ2（照合）：編集・実行が候補から落ちる層を特定する。
+3. ステップ3（結論）：候補を修正し、実行許可は別途扱う。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「プロファイルはtools: [read, search, edit, execute]です。起動オプションは--available-tools=view,grepで」が「プロファイルはtools: [read, search]です。起動時の利用可能ツール制限はなく」なら、正答は **C → A** へ変わる。
+
+変更後の正答：Agentのtoolsを省略し、プロファイルの制限を解除する
+
+検証：CLI制限がなくAgentが読取専用なら、Agentのツール制限を外す案で編集・実行を提供できる。
+
+<details><summary>条件変更後の問題文</summary>
+
+GitHub Copilot CLIでカスタムAgentを使います。プロファイルはtools: [read, search]です。起動時の利用可能ツール制限はなく、テスト実行用に--allow-tool=shellも指定しました。通常の読取は成功しますが、編集とテストができません。観測に合う原因と、直すべき設定層はどれですか。必要な編集・実行は承認して行います。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「tools: [read, search, edit, execute]」
+- 「--available-tools=view,grep」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「プロファイルを広げてもCLI側で利用不能なツールは増えない。」／今回不適合な理由：プロファイルを広げてもCLI側で利用不能なツールは増えない。
+- **B**：誘惑・見落としは「allow-toolは利用可能ツールの一覧を増やさない。」／今回不適合な理由：allow-toolは利用可能ツールの一覧を増やさない。
+- **D**：誘惑・見落としは「読取専用への縮小では求める編集と実行を行えない。」／今回不適合な理由：読取専用への縮小では求める編集と実行を行えない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答28字／誤答（短い順）29・30・34字／誤答中央値30字／中央値比 **0.93**／正答表示位置 **C**。
+
+難易度判定：Agent定義とCLIの候補制限を別に読む。 編集・実行が候補から落ちる層を特定する。 候補を修正し、実行許可は別途扱う。
+
+出典：[Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)、[Use tools with agents](https://code.visualstudio.com/docs/agents/run/tools)、[GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)、[Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
+
+### q-d4-e01-feature-20261016: 既存PRへのAgentの追加修正
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot cloud agentが作った既存PRへ、閲覧権限のAが@copilotで追加修正を依頼しましたが作業が始まりません。書込権限のBも参加でき、Agent機能とライセンスは有効です。変更対象とbranchはそのPRのままで、新しいPRは増やしません。最小の依頼し直し方はどれですか。
+
+問題文：Copilot cloud agentが作った既存PRへ、閲覧権限のAが@copilotで追加修正を依頼しましたが作業が始まりません。書込権限のBも参加でき、Agent機能とライセンスは有効です。変更対象とbranchはそのPRのままで、新しいPRは増やしません。最小の依頼し直し方はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Aが既存PRのコメントで同じ依頼をもう一度送る
+- B：Bが新しいIssueをCopilotへ割り当てて別PRを作る
+- C：Aが既存PRのsummaryへ修正手順を追記する
+- D：Bが既存PRのコメントで@copilotへ修正を依頼する【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「閲覧権限のA」「書込権限のB」「新しいPRは増やしません」を外して四案を再読し、各案の操作・範囲・時点を比較した。閲覧だけという権限不足は再送で解消しない。 新規タスクは別PRとなり、既存PRを更新する条件に合わない。 summaryへの追記は権限のある追加作業依頼ではない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：失敗を機能無効ではなく依頼者の権限へ絞る。
+2. ステップ2（照合）：既存PR更新と新規タスク作成を区別する。
+3. ステップ3（結論）：書込権限者から同じPRへ依頼する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「変更対象とbranchはそのPRのままで、新しいPRは増やしません」が「変更は既存PRと分離し、新しいIssueを元に別PRとして管理します」なら、正答は **D → B** へ変わる。
+
+変更後の正答：Bが新しいIssueをCopilotへ割り当てて別PRを作る
+
+検証：既存PRと分離した作業なら新規Issueの割当が合う。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentが作った既存PRへ、閲覧権限のAが@copilotで追加修正を依頼しましたが作業が始まりません。書込権限のBも参加でき、Agent機能とライセンスは有効です。変更は既存PRと分離し、新しいIssueを元に別PRとして管理します。最小の依頼し直し方はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「閲覧権限のA」
+- 「書込権限のB」
+- 「新しいPRは増やしません」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「閲覧だけという権限不足は再送で解消しない。」／今回不適合な理由：閲覧だけという権限不足は再送で解消しない。
+- **B**：誘惑・見落としは「新規タスクは別PRとなり、既存PRを更新する条件に合わない。」／今回不適合な理由：新規タスクは別PRとなり、既存PRを更新する条件に合わない。
+- **C**：誘惑・見落としは「summaryへの追記は権限のある追加作業依頼ではない。」／今回不適合な理由：summaryへの追記は権限のある追加作業依頼ではない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答28字／誤答（短い順）23・24・30字／誤答中央値24字／中央値比 **1.17**／正答表示位置 **D**。
+
+難易度判定：失敗を機能無効ではなく依頼者の権限へ絞る。 既存PR更新と新規タスク作成を区別する。 書込権限者から同じPRへ依頼する。
+
+出典：[Risks and mitigations for GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations)、[Using GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
+
+### q-d5-e01-feature-20261016: 未pushの修正を実行検証する場所
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: VS CodeのAgents windowでrepo-Aを実行先にして、repo-Bを資料添付しました。Bの未コミット変更を含む説明は得られますが、修正はAへ保存されます。GitHub上のBにはその変更がありません。今回はBの手元の変更を公開せず、Copilotに編集・実行を反復させます。実行先、文脈、役割をそろえる構成はどれですか。
+
+問題文：VS CodeのAgents windowでrepo-Aを実行先にして、repo-Bを資料添付しました。Bの未コミット変更を含む説明は得られますが、修正はAへ保存されます。GitHub上のBにはその変更がありません。今回はBの手元の変更を公開せず、Copilotに編集・実行を反復させます。実行先、文脈、役割をそろえる構成はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Bを実行ワークスペースにしたローカルAgentで、Bの作業内容を使う【正答】
+- B：Aを実行ワークスペースにしたローカルAgentで、Bを添付して使う
+- C：Bを対象にしたcloud agentで、GitHub上のbranchを使う
+- D：Bを実行ワークスペースにしたローカルAskで、Bの作業内容を使う
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「repo-Aを実行先」「Bの未コミット変更」「公開せず」「編集・実行を反復」を外して四案を再読し、各案の操作・範囲・時点を比較した。資料添付は実行ワークスペースをBへ変更しない。 cloud側の共有済みbranchには未コミット変更がない。 文脈と場所は合うがAskでは編集・実行の反復を委任しない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：回答の参照元と実際の変更先が異なることを診断する。
+2. ステップ2（照合）：ローカル変更とGitHub側の版を区別する。
+3. ステップ3（結論）：Bを実行先にしたローカルAgentへ作業を委任する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「今回はBの手元の変更を公開せず、Copilotに編集・実行を反復させます」が「今回はAを編集・実行し、Bは参照する資料として使います」なら、正答は **A → B** へ変わる。
+
+変更後の正答：Aを実行ワークスペースにしたローカルAgentで、Bを添付して使う
+
+検証：Bを編集対象から参照専用へ変えた目的なら既存のA実行セッションを維持できる。
+
+<details><summary>条件変更後の問題文</summary>
+
+VS CodeのAgents windowでrepo-Aを実行先にして、repo-Bを資料添付しました。Bの未コミット変更を含む説明は得られますが、修正はAへ保存されます。GitHub上のBにはその変更がありません。今回はAを編集・実行し、Bは参照する資料として使います。実行先、文脈、役割をそろえる構成はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「repo-Aを実行先」
+- 「Bの未コミット変更」
+- 「公開せず」
+- 「編集・実行を反復」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「資料添付は実行ワークスペースをBへ変更しない。」／今回不適合な理由：資料添付は実行ワークスペースをBへ変更しない。
+- **C**：誘惑・見落としは「cloud側の共有済みbranchには未コミット変更がない。」／今回不適合な理由：cloud側の共有済みbranchには未コミット変更がない。
+- **D**：誘惑・見落としは「文脈と場所は合うがAskでは編集・実行の反復を委任しない。」／今回不適合な理由：文脈と場所は合うがAskでは編集・実行の反復を委任しない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答34字／誤答（短い順）32・33・37字／誤答中央値33字／中央値比 **1.03**／正答表示位置 **A**。
+
+難易度判定：回答の参照元と実際の変更先が異なることを診断する。 ローカル変更とGitHub側の版を区別する。 Bを実行先にしたローカルAgentへ作業を委任する。
+
+出典：[Copilot on GitHub](https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github)、[Use tools with agents](https://code.visualstudio.com/docs/agents/run/tools)、[Add context to chat](https://code.visualstudio.com/docs/chat/copilot-chat-context)
+
+### q-d5-e03-feature-20261016: セットアップ失敗後のAgent開始
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot cloud agentのsetupに、依存導入、補助CLI導入、構成ファイル作成の順で三つのstepを置きました。補助CLI導入が非ゼロで終了した後、Agentが実装を始めましたが構成ファイルがありません。チームはAgentのプロンプトに構成作成を追加する案と、setupを直す案を比較しています。既定の実行規則に沿う診断と恒久対処はどれですか。
+
+問題文：Copilot cloud agentのsetupに、依存導入、補助CLI導入、構成ファイル作成の順で三つのstepを置きました。補助CLI導入が非ゼロで終了した後、Agentが実装を始めましたが構成ファイルがありません。チームはAgentのプロンプトに構成作成を追加する案と、setupを直す案を比較しています。既定の実行規則に沿う診断と恒久対処はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：構成作成stepを新設し、新規タスクのsetupログでその実行を検証する
+- B：補助CLIの導入stepを直し、新規タスクのsetupログで後続stepを検証する【正答】
+- C：依存導入の保存先を直し、新規タスクのsetupログで依存の場所を検証する
+- D：Agentの参照パスを直し、新規タスクで作成済み構成の読込先を検証する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「補助CLI導入が非ゼロ」「構成ファイルがありません」を外して四案を再読し、各案の操作・範囲・時点を比較した。構成作成stepは既に存在し、その前の失敗が原因である。 依存導入の成功後に別stepが失敗しており、保存先誤りの証拠はない。 構成は未作成であり、作成済み構成の参照先だけの問題ではない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：setup途中失敗とAgent開始の両観測を照合する。
+2. ステップ2（照合）：後続stepの省略を説明する。
+3. ステップ3（結論）：環境準備としてsetupを修正し新規タスクで検証する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「補助CLI導入が非ゼロで終了した後、Agentが実装を始めましたが構成ファイルがありません」が「全stepが成功し構成も作成済みですが、Agentは作成先とは異なるパスを参照しています」なら、正答は **B → D** へ変わる。
+
+変更後の正答：Agentの参照パスを直し、新規タスクで作成済み構成の読込先を検証する
+
+検証：作成済みで参照先だけ違うなら、Agentの参照パスを直す。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentのsetupに、依存導入、補助CLI導入、構成ファイル作成の順で三つのstepを置きました。全stepが成功し構成も作成済みですが、Agentは作成先とは異なるパスを参照しています。チームはAgentのプロンプトに構成作成を追加する案と、setupを直す案を比較しています。既定の実行規則に沿う診断と恒久対処はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「補助CLI導入が非ゼロ」
+- 「構成ファイルがありません」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「構成作成stepは既に存在し、その前の失敗が原因である。」／今回不適合な理由：構成作成stepは既に存在し、その前の失敗が原因である。
+- **C**：誘惑・見落としは「依存導入の成功後に別stepが失敗しており、保存先誤りの証拠はない。」／今回不適合な理由：依存導入の成功後に別stepが失敗しており、保存先誤りの証拠はない。
+- **D**：誘惑・見落としは「構成は未作成であり、作成済み構成の参照先だけの問題ではない。」／今回不適合な理由：構成は未作成であり、作成済み構成の参照先だけの問題ではない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答41字／誤答（短い順）35・36・36字／誤答中央値36字／中央値比 **1.14**／正答表示位置 **B**。
+
+難易度判定：setup途中失敗とAgent開始の両観測を照合する。 後続stepの省略を説明する。 環境準備としてsetupを修正し新規タスクで検証する。
+
+出典：[Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)、[Managing agent sessions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents)
+
+### q-d5-e05-feature-20261016: Code review専用の準備環境
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: repoのcopilot-setup-steps.ymlはcloud agentとcode reviewの双方で使われています。レビュー専用のcopilot-code-review.ymlも用意したところ、レビューでは共通側だけに追加した解析ツールが見つかりません。実装Agentの準備を増やさず、レビューだけへこのツールを導入するにはどこを直しますか。
+
+問題文：repoのcopilot-setup-steps.ymlはcloud agentとcode reviewの双方で使われています。レビュー専用のcopilot-code-review.ymlも用意したところ、レビューでは共通側だけに追加した解析ツールが見つかりません。実装Agentの準備を増やさず、レビューだけへこのツールを導入するにはどこを直しますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：copilot-setup-steps.ymlへ解析ツールの導入stepを置く
+- B：レビューのパス別Instructionsへ導入コマンドだけを書く
+- C：copilot-code-review.ymlへ解析ツールの導入stepを置く【正答】
+- D：依頼者のローカルIDEへ解析ツールを導入する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「copilot-code-review.ymlも用意」「実装Agentの準備を増やさず」を外して四案を再読し、各案の操作・範囲・時点を比較した。実装側の準備を増やさない条件に合わず、レビュー専用定義も直さない。 Instructionsは事前に環境を準備するworkflowではない。 GitHub側の一時環境へローカル導入は引き継がれない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：共通setupとレビュー専用環境の参照を分ける。
+2. ステップ2（照合）：事前導入と自然言語の指示を区別する。
+3. ステップ3（結論）：レビュー専用workflowへ導入を置く。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「実装Agentの準備を増やさず、レビューだけへこのツールを導入する」が「レビュー専用workflowは廃止して共通setupへ統一し、両方へこのツールを導入する」なら、正答は **C → A** へ変わる。
+
+変更後の正答：copilot-setup-steps.ymlへ解析ツールの導入stepを置く
+
+検証：共通化して両方へ導入する方針なら共通setupにstepを置く。
+
+<details><summary>条件変更後の問題文</summary>
+
+repoのcopilot-setup-steps.ymlはcloud agentとcode reviewの双方で使われています。レビュー専用のcopilot-code-review.ymlも用意したところ、レビューでは共通側だけに追加した解析ツールが見つかりません。レビュー専用workflowは廃止して共通setupへ統一し、両方へこのツールを導入するにはどこを直しますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「copilot-code-review.ymlも用意」
+- 「実装Agentの準備を増やさず」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「実装側の準備を増やさない条件に合わず、レビュー専用定義も直さない。」／今回不適合な理由：実装側の準備を増やさない条件に合わず、レビュー専用定義も直さない。
+- **B**：誘惑・見落としは「Instructionsは事前に環境を準備するworkflowではない。」／今回不適合な理由：Instructionsは事前に環境を準備するworkflowではない。
+- **D**：誘惑・見落としは「GitHub側の一時環境へローカル導入は引き継がれない。」／今回不適合な理由：GitHub側の一時環境へローカル導入は引き継がれない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答39字／誤答（短い順）22・32・39字／誤答中央値32字／中央値比 **1.22**／正答表示位置 **C**。
+
+難易度判定：共通setupとレビュー専用環境の参照を分ける。 事前導入と自然言語の指示を区別する。 レビュー専用workflowへ導入を置く。
+
+出典：[Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)、[Using GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
+
+### q-sc02-1-feature-20261016: 指摘修正の成果物を別PRへ分ける
+
+- **出題形式**: インシデント切り分け
+- **問題文要約**: Copilot code reviewがfeature/authからmainへのPRに指摘を出しました。Fix with Copilotで修正を委任します。元PRへの直接コミットを避け、修正だけを別PRで確認してから元の変更へ取り込みます。修正の成果物と、元の変更への取り込み方として合うものはどれですか。
+
+問題文：Copilot code reviewがfeature/authからmainへのPRに指摘を出しました。Fix with Copilotで修正を委任します。元PRへの直接コミットを避け、修正だけを別PRで確認してから元の変更へ取り込みます。修正の成果物と、元の変更への取り込み方として合うものはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：宛先をmainにし、修正PRを取り込んでから元PRをmainへ進める
+- B：現在のPRへ直接コミットする選択を使い、修正専用PRは作らない
+- C：宛先を別の新規branchにし、元PRとの関係を付けずに完了する
+- D：宛先をfeature/authにし、修正PRを取り込んでから元PRをmainへ進める【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「feature/authからmain」「元PRへの直接コミットを避け」「元の変更へ取り込み」を外して四案を再読し、各案の操作・範囲・時点を比較した。元の未マージ変更を含む修正をmainへ直接向けると、修正だけを元変更へ取り込む流れと異なる。 先に元PRへ直接コミットすることが分離レビューの条件に反する。 修正を元の変更へ取り込む経路がない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：元PRのheadとbaseを区別する。
+2. ステップ2（照合）：Fix with Copilotの新PRをhead宛にする。
+3. ステップ3（結論）：修正PRの評価・取込と元PRのマージを別段階で進める。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「元PRへの直接コミットを避け、修正だけを別PRで確認してから元の変更へ取り込みます」が「今回だけは元PRへ直接コミットする方針で、修正専用PRは作りません」なら、正答は **D → B** へ変わる。
+
+変更後の正答：現在のPRへ直接コミットする選択を使い、修正専用PRは作らない
+
+検証：元PRへの直接変更を許す方針なら直接コミットの選択が合い、修正専用PRの宛先を決める必要はなくなる。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot code reviewがfeature/authからmainへのPRに指摘を出しました。Fix with Copilotで修正を委任します。今回だけは元PRへ直接コミットする方針で、修正専用PRは作りません。修正の成果物と、元の変更への取り込み方として合うものはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「feature/authからmain」
+- 「元PRへの直接コミットを避け」
+- 「元の変更へ取り込み」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「元の未マージ変更を含む修正をmainへ直接向けると、修正だけを元変更へ取り込む流れと異なる。」／今回不適合な理由：元の未マージ変更を含む修正をmainへ直接向けると、修正だけを元変更へ取り込む流れと異なる。
+- **B**：誘惑・見落としは「先に元PRへ直接コミットすることが分離レビューの条件に反する。」／今回不適合な理由：先に元PRへ直接コミットすることが分離レビューの条件に反する。
+- **C**：誘惑・見落としは「修正を元の変更へ取り込む経路がない。」／今回不適合な理由：修正を元の変更へ取り込む経路がない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答42字／誤答（短い順）31・32・34字／誤答中央値32字／中央値比 **1.31**／正答表示位置 **D**。
+
+難易度判定：元PRのheadとbaseを区別する。 Fix with Copilotの新PRをhead宛にする。 修正PRの評価・取込と元PRのマージを別段階で進める。
+
+出典：[Using GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
+
+### q-d3-e08-feature-20261016: Agent firewallの対象プロセス
+
+- **出題形式**: 実験対照比較
+- **問題文要約**: Copilot cloud agentで同一サイトへの要求を比較します。setup stepsとMCPサーバープロセスは成功し、AgentのBashだけが失敗します。session logにはCopilot firewallによる拒否が記録されています。経路ごとに通信制御の範囲を分けると、次に直す設定はどれですか。
+
+問題文：Copilot cloud agentで同一サイトへの要求を比較します。setup stepsとMCPサーバープロセスは成功し、AgentのBashだけが失敗します。session logにはCopilot firewallによる拒否が記録されています。経路ごとに通信制御の範囲を分けると、次に直す設定はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：repoのInternet accessへ必要なドメインを追加する【正答】
+- B：ローカルIDEのproxyへ必要なドメインを追加する
+- C：cloudのMCP設定でサーバー用の資格情報を更新する
+- D：cloudのsetup設定で取得に使うsecretを更新する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「AgentのBashだけ」「Copilot firewallによる拒否」を外して四案を再読し、各案の操作・範囲・時点を比較した。cloudのBash拒否をローカルIDEのproxyでは解除できない。 MCP経路の成功とBashの通信制御を混同している。 資格情報エラーではなくAgent firewallの拒否という観測に合わない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：三経路の実行主体を分ける。
+2. ステップ2（照合）：firewallの適用範囲と拒否ログを照合する。
+3. ステップ3（結論）：Bash経路の許可先をrepoで変更する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「setup stepsとMCPサーバープロセスは成功し、AgentのBashだけが失敗します。session logにはCopilot firewallによる拒否が記録されています」が「MCPサーバープロセスとAgentのBashは成功し、setup stepsだけが取得用secretの失効で失敗しています」なら、正答は **A → D** へ変わる。
+
+変更後の正答：cloudのsetup設定で取得に使うsecretを更新する
+
+検証：失敗経路とログがsetupの失効secretを指すなら、その資格情報を更新する。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot cloud agentで同一サイトへの要求を比較します。MCPサーバープロセスとAgentのBashは成功し、setup stepsだけが取得用secretの失効で失敗しています。経路ごとに通信制御の範囲を分けると、次に直す設定はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「AgentのBashだけ」
+- 「Copilot firewallによる拒否」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **B**：誘惑・見落としは「cloudのBash拒否をローカルIDEのproxyでは解除できない。」／今回不適合な理由：cloudのBash拒否をローカルIDEのproxyでは解除できない。
+- **C**：誘惑・見落としは「MCP経路の成功とBashの通信制御を混同している。」／今回不適合な理由：MCP経路の成功とBashの通信制御を混同している。
+- **D**：誘惑・見落としは「資格情報エラーではなくAgent firewallの拒否という観測に合わない。」／今回不適合な理由：資格情報エラーではなくAgent firewallの拒否という観測に合わない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答33字／誤答（短い順）26・27・30字／誤答中央値27字／中央値比 **1.22**／正答表示位置 **A**。
+
+難易度判定：三経路の実行主体を分ける。 firewallの適用範囲と拒否ログを照合する。 Bash経路の許可先をrepoで変更する。
+
+出典：[Customizing or disabling the firewall for GitHub Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall)、[Configure the development environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)
+
+### q-d5-e06-feature-20261016: draftと追加pushの自動レビュー
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: GitHub.comでCopilotの自動レビューをrulesetだけから起動します。通常PRでは初回に動き、draft作成時にも動きますが、レビュー後のpushでは動きません。通常PRの初回と追加pushを対象にし、draft作成時は対象から外す方針です。既存PRへの個別依頼は増やしません。rulesetのどの変更を組み合わせますか。
+
+問題文：GitHub.comでCopilotの自動レビューをrulesetだけから起動します。通常PRでは初回に動き、draft作成時にも動きますが、レビュー後のpushでは動きません。通常PRの初回と追加pushを対象にし、draft作成時は対象から外す方針です。既存PRへの個別依頼は増やしません。rulesetのどの変更を組み合わせますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Review draft pull requestsを有効、Review new pushesを無効にする
+- B：Review draft pull requestsを無効、Review new pushesを有効にする【正答】
+- C：Review draft pull requestsを無効、Review new pushesも無効にする
+- D：Review draft pull requestsを有効、Review new pushesも有効にする
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「rulesetだけ」「初回と追加pushを対象」を外して四案を再読し、各案の操作・範囲・時点を比較した。現状に近い設定で、変更したい二つの動作を直せない。 draftは除けるが追加pushのレビューが始まらない。 追加pushは直るがdraft作成時の起動が残る。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：観測から初回・draft・pushのイベントを分ける。
+2. ステップ2（照合）：二つのオプションと方針を照合する。
+3. ステップ3（結論）：起動源を増やさずrulesetを修正する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「通常PRの初回と追加pushを対象にし、draft作成時は対象から外す」が「通常PRの初回だけを対象にし、draft作成時と追加pushは対象から外す」なら、正答は **B → C** へ変わる。
+
+変更後の正答：Review draft pull requestsを無効、Review new pushesも無効にする
+
+検証：追加pushも不要なら両オプションを無効にする。
+
+<details><summary>条件変更後の問題文</summary>
+
+GitHub.comでCopilotの自動レビューをrulesetだけから起動します。通常PRでは初回に動き、draft作成時にも動きますが、レビュー後のpushでは動きません。通常PRの初回だけを対象にし、draft作成時と追加pushは対象から外す方針です。既存PRへの個別依頼は増やしません。rulesetのどの変更を組み合わせますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「rulesetだけ」
+- 「初回と追加pushを対象」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「現状に近い設定で、変更したい二つの動作を直せない。」／今回不適合な理由：現状に近い設定で、変更したい二つの動作を直せない。
+- **C**：誘惑・見落としは「draftは除けるが追加pushのレビューが始まらない。」／今回不適合な理由：draftは除けるが追加pushのレビューが始まらない。
+- **D**：誘惑・見落としは「追加pushは直るがdraft作成時の起動が残る。」／今回不適合な理由：追加pushは直るがdraft作成時の起動が残る。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答53字／誤答（短い順）53・53・53字／誤答中央値53字／中央値比 **1.00**／正答表示位置 **B**。
+
+難易度判定：観測から初回・draft・pushのイベントを分ける。 二つのオプションと方針を照合する。 起動源を増やさずrulesetを修正する。
+
+出典：[Configuring code review](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review)
+
+### q-d5-e07-feature-20261016: CLIで二つの候補制限を同時指定
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: LinuxのCopilot CLIで--available-tools=view,grep、--excluded-tools=grep、--allow-tool=shellを同時に指定しました。この環境にはview、grep、bashが実在します。検索を試みるモデルと、git statusを実行しようとするモデルへ提供される候補を比較します。候補制限を解釈した結果はどれですか。
+
+問題文：LinuxのCopilot CLIで--available-tools=view,grep、--excluded-tools=grep、--allow-tool=shellを同時に指定しました。この環境にはview、grep、bashが実在します。検索を試みるモデルと、git statusを実行しようとするモデルへ提供される候補を比較します。候補制限を解釈した結果はどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：grepは候補から外れ、bashも候補に入らない
+- B：grepは候補に残り、bashも候補に入る
+- C：grepは候補に残るが、bashは候補に入らない【正答】
+- D：grepは候補から外れ、bashは候補に入る
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「--available-tools=view,grep」「--excluded-tools=grep」「--allow-tool=shell」を外して四案を再読し、各案の操作・範囲・時点を比較した。二つの候補制限を差集合として解釈している。 実行許可を候補ツールの追加として扱っている。 候補制限の優先順位と実行許可の層を両方取り違えている。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：実ツール名とpermission kindを分ける。
+2. ステップ2（照合）：候補制限二指定の優先順位を適用する。
+3. ステップ3（結論）：実行許可ではbashが追加されないと判定する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「--available-tools=view,grep」が「--available-tools=view,grep,bash」なら、正答は **C → B** へ変わる。
+
+変更後の正答：grepは候補に残り、bashも候補に入る
+
+検証：bashも候補へ明示した場合はgrepとbashの両方が提供される。
+
+<details><summary>条件変更後の問題文</summary>
+
+LinuxのCopilot CLIで--available-tools=view,grep,bash、--excluded-tools=grep、--allow-tool=shellを同時に指定しました。この環境にはview、grep、bashが実在します。検索を試みるモデルと、git statusを実行しようとするモデルへ提供される候補を比較します。候補制限を解釈した結果はどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「--available-tools=view,grep」
+- 「--excluded-tools=grep」
+- 「--allow-tool=shell」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「二つの候補制限を差集合として解釈している。」／今回不適合な理由：二つの候補制限を差集合として解釈している。
+- **B**：誘惑・見落としは「実行許可を候補ツールの追加として扱っている。」／今回不適合な理由：実行許可を候補ツールの追加として扱っている。
+- **D**：誘惑・見落としは「候補制限の優先順位と実行許可の層を両方取り違えている。」／今回不適合な理由：候補制限の優先順位と実行許可の層を両方取り違えている。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答24字／誤答（短い順）21・22・24字／誤答中央値22字／中央値比 **1.09**／正答表示位置 **C**。
+
+難易度判定：実ツール名とpermission kindを分ける。 候補制限二指定の優先順位を適用する。 実行許可ではbashが追加されないと判定する。
+
+出典：[Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)、[GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+
+### q-d5-e08-feature-20261016: レビュー深度の実効設定
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot code reviewの深度は組織既定Lite、repo既定Balancedです。PR-Pは以前Liteでレビュー済み、PR-Qは未レビューです。今回はどちらも深度を明示せずレビューを依頼します。利用できる深度は確認済みです。PとQで選ばれる値と、PをBalancedでレビューするための操作の組合せはどれですか。
+
+問題文：Copilot code reviewの深度は組織既定Lite、repo既定Balancedです。PR-Pは以前Liteでレビュー済み、PR-Qは未レビューです。今回はどちらも深度を明示せずレビューを依頼します。利用できる深度は確認済みです。PとQで選ばれる値と、PをBalancedでレビューするための操作の組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：PもQもBalancedで、今回の依頼では深度を指定しない
+- B：PもQもLiteで、Pの依頼時にBalancedを指定する
+- C：PはBalanced、QはLiteで、今回の依頼では深度を指定しない
+- D：PはLite、QはBalancedで、Pの依頼時にBalancedを指定する【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「PR-Pは以前Lite」「PR-Qは未レビュー」を外して四案を再読し、各案の操作・範囲・時点を比較した。既存PRの直近値を飛ばしてrepo既定を優先している。 未レビューQでもrepo既定より組織既定が優先するわけではない。 PとQの既定選択を逆にしておりP変更の目的にも合わない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：既存PRと初回PRの既定参照先を分ける。
+2. ステップ2（照合）：直近値とrepo既定をそれぞれ照合する。
+3. ステップ3（結論）：単一依頼の明示指定でPだけを変更する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「PR-Pは以前Liteでレビュー済み、PR-Qは未レビューです」が「PR-PもPR-Qも未レビューです」なら、正答は **D → A** へ変わる。
+
+変更後の正答：PもQもBalancedで、今回の依頼では深度を指定しない
+
+検証：両方が初回ならrepo既定Balancedを使う。Pも既に目的のBalancedになるため今回の明示指定は不要。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot code reviewの深度は組織既定Lite、repo既定Balancedです。PR-PもPR-Qも未レビューです。今回はどちらも深度を明示せずレビューを依頼します。利用できる深度は確認済みです。PとQで選ばれる値と、PをBalancedでレビューするための操作の組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「PR-Pは以前Lite」
+- 「PR-Qは未レビュー」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「既存PRの直近値を飛ばしてrepo既定を優先している。」／今回不適合な理由：既存PRの直近値を飛ばしてrepo既定を優先している。
+- **B**：誘惑・見落としは「未レビューQでもrepo既定より組織既定が優先するわけではない。」／今回不適合な理由：未レビューQでもrepo既定より組織既定が優先するわけではない。
+- **C**：誘惑・見落としは「PとQの既定選択を逆にしておりP変更の目的にも合わない。」／今回不適合な理由：PとQの既定選択を逆にしておりP変更の目的にも合わない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答38字／誤答（短い順）29・29・34字／誤答中央値29字／中央値比 **1.31**／正答表示位置 **D**。
+
+難易度判定：既存PRと初回PRの既定参照先を分ける。 直近値とrepo既定をそれぞれ照合する。 単一依頼の明示指定でPだけを変更する。
+
+出典：[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review)、[Configuring code review](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review)
+
+### q-d6-e04-feature-20261016: 除外の設定主体と適用利用者
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: 同一Enterpriseのrepo-Rを、組織AのSeat利用者Xと組織BのSeat利用者Yが使います。repo管理者とAのownerの双方が設定可能です。Rのprivate/**だけをXとYの通常補完から除外し、他repoは変えません。管理対象Seat向け設定とrepo設定を比較した場合、どちらを使いますか。
+
+問題文：同一Enterpriseのrepo-Rを、組織AのSeat利用者Xと組織BのSeat利用者Yが使います。repo管理者とAのownerの双方が設定可能です。Rのprivate/**だけをXとYの通常補完から除外し、他repoは変えません。管理対象Seat向け設定とrepo設定を比較した場合、どちらを使いますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：組織AのSeat向け除外へrepo-Rのprivate/**を設定する
+- B：repo-RのContent Exclusionへprivate/**を設定する【正答】
+- C：組織BのSeat向け除外へrepo-Rのprivate/**を設定する
+- D：組織AのSeat向け除外へ全repoのprivate/**を設定する
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「XとY」「他repoは変えません」「管理対象Seat」を外して四案を再読し、各案の操作・範囲・時点を比較した。Xには適用できるがBのSeat利用者Yの範囲を満たさない。 Y側だけとなりXの条件を満たさない。 Yを含めないうえ他repoまで変わる。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：適用対象の利用者集合をSeat管理元で比較する。
+2. ステップ2（照合）：repo範囲と利用者範囲を別々に絞る。
+3. ステップ3（結論）：R内の全対象者へ適用するrepo設定を選ぶ。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「Rのprivate/**だけをXとYの通常補完から除外し、他repoは変えません」が「Rのprivate/**をXだけから除外し、Yと他repoは変えません」なら、正答は **B → A** へ変わる。
+
+変更後の正答：組織AのSeat向け除外へrepo-Rのprivate/**を設定する
+
+検証：AのSeat利用者だけへRの限定パスを適用するならAの組織設定を使う。
+
+<details><summary>条件変更後の問題文</summary>
+
+同一Enterpriseのrepo-Rを、組織AのSeat利用者Xと組織BのSeat利用者Yが使います。repo管理者とAのownerの双方が設定可能です。Rのprivate/**をXだけから除外し、Yと他repoは変えません。管理対象Seat向け設定とrepo設定を比較した場合、どちらを使いますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「XとY」
+- 「他repoは変えません」
+- 「管理対象Seat」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「Xには適用できるがBのSeat利用者Yの範囲を満たさない。」／今回不適合な理由：Xには適用できるがBのSeat利用者Yの範囲を満たさない。
+- **C**：誘惑・見落としは「Y側だけとなりXの条件を満たさない。」／今回不適合な理由：Y側だけとなりXの条件を満たさない。
+- **D**：誘惑・見落としは「Yを含めないうえ他repoまで変わる。」／今回不適合な理由：Yを含めないうえ他repoまで変わる。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答40字／誤答（短い順）34・35・35字／誤答中央値35字／中央値比 **1.14**／正答表示位置 **B**。
+
+難易度判定：適用対象の利用者集合をSeat管理元で比較する。 repo範囲と利用者範囲を別々に絞る。 R内の全対象者へ適用するrepo設定を選ぶ。
+
+出典：[Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion)
+
+### q-sc10-3-feature-20261016: repo参照のプロトコルとポート
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: 組織のCopilot除外でgit@host.example:team/repo.gitのsecrets/**を登録しました。Pのremoteはhttps://host.example/team/repo、Qはssh://user@host.example:2222/team/repo.git、Rはhttps://host.example/team/forkです。対応する通常補完を使い、全員のファイルパスと設定反映は同じです。除外が適用されるcloneの組合せはどれですか。
+
+問題文：組織のCopilot除外でgit@host.example:team/repo.gitのsecrets/**を登録しました。Pのremoteはhttps://host.example/team/repo、Qはssh://user@host.example:2222/team/repo.git、Rはhttps://host.example/team/forkです。対応する通常補完を使い、全員のファイルパスと設定反映は同じです。除外が適用されるcloneの組合せはどれですか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：Qだけに適用され、PとRにはこのrepoルールは適用されない
+- B：PとRに適用され、Qにはこのrepoルールは適用されない
+- C：PとQに適用され、Rにはこのrepoルールは適用されない【正答】
+- D：PとQとRに適用され、この三つは同じrepoとして扱われる
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「team/repo.git」「team/fork」を外して四案を再読し、各案の操作・範囲・時点を比較した。HTTPSという表記差だけでPを別repoとする誤りである。 Qの表記差とRの異なるrepo pathを逆に評価している。 同じhostだけでは異なるrepoへ同一ルールは適用されない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：remoteのhostとrepo pathを比較する。
+2. ステップ2（照合）：正規化される表記差と実際の別repoを分ける。
+3. ステップ3（結論）：パス一致とrepo一致の両方で対象を決める。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「Rはhttps://host.example/team/fork」が「Rはhttps://host.example/team/repo.git」なら、正答は **C → D** へ変わる。
+
+変更後の正答：PとQとRに適用され、この三つは同じrepoとして扱われる
+
+検証：Rも同じrepo pathなら三者へ適用される。
+
+<details><summary>条件変更後の問題文</summary>
+
+組織のCopilot除外でgit@host.example:team/repo.gitのsecrets/**を登録しました。Pのremoteはhttps://host.example/team/repo、Qはssh://user@host.example:2222/team/repo.git、Rはhttps://host.example/team/repo.gitです。対応する通常補完を使い、全員のファイルパスと設定反映は同じです。除外が適用されるcloneの組合せはどれですか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「team/repo.git」
+- 「team/fork」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「HTTPSという表記差だけでPを別repoとする誤りである。」／今回不適合な理由：HTTPSという表記差だけでPを別repoとする誤りである。
+- **B**：誘惑・見落としは「Qの表記差とRの異なるrepo pathを逆に評価している。」／今回不適合な理由：Qの表記差とRの異なるrepo pathを逆に評価している。
+- **D**：誘惑・見落としは「同じhostだけでは異なるrepoへ同一ルールは適用されない。」／今回不適合な理由：同じhostだけでは異なるrepoへ同一ルールは適用されない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答28字／誤答（短い順）28・29・30字／誤答中央値29字／中央値比 **0.97**／正答表示位置 **C**。
+
+難易度判定：remoteのhostとrepo pathを比較する。 正規化される表記差と実際の別repoを分ける。 パス一致とrepo一致の両方で対象を決める。
+
+出典：[Excluding content from GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot)
+
+### q-d6-e07-feature-20261016: CLIとMCPの二つの入力経路
+
+- **出題形式**: 複合制約トレードオフ
+- **問題文要約**: Copilot CLIで機密ファイルを扱います。通常補完ではContent Exclusionが効きますが、CLIでviewと社内MCP検索から内容を取得できました。非機密の検索は残したまま、次回CLIではviewと機密MCPをモデルに提供しない方針です。起動時の候補制限とサーバー制御をどのように組み合わせますか。
+
+問題文：Copilot CLIで機密ファイルを扱います。通常補完ではContent Exclusionが効きますが、CLIでviewと社内MCP検索から内容を取得できました。非機密の検索は残したまま、次回CLIではviewと機密MCPをモデルに提供しない方針です。起動時の候補制限とサーバー制御をどのように組み合わせますか。
+
+**選択肢構成**（アプリの表示順）
+
+- A：viewは実行時に拒否し、機密MCPは候補から外す
+- B：viewは候補から外し、機密MCPは実行時に拒否する
+- C：viewと機密MCPを、どちらも候補に残して実行時に拒否する
+- D：viewと機密MCPを、どちらも利用可能な候補から外す【正答】
+
+**【レビュー① ブラインドチェック】**
+
+変更前：DRAFT。全面改稿の初稿。既存問題のPASSを引き継がず再読した。
+
+修正後：PASS。本文の条件「viewと社内MCP検索」「モデルに提供しない」を外して四案を再読し、各案の操作・範囲・時点を比較した。viewの実行拒否と候補提供停止は違う。 MCPの実行拒否ではモデルの選択試行は残る。 両経路を拒否するが、候補を提供しないという方針に合わない。 独立した受験者の実験ではない。
+
+**【レビュー② 多段階推論】**
+
+1. ステップ1（分析）：通常補完とCLIの保護範囲を区別する。
+2. ステップ2（照合）：ローカルと外部検索の取得経路を分ける。
+3. ステップ3（結論）：提供停止の方針を両経路へ適用する。
+
+**【レビュー③ 反実仮想（Counterfactual）】**
+
+「次回CLIではviewと機密MCPをモデルに提供しない方針です」が「次回CLIではviewは候補に残して実行だけ拒否し、機密MCPは候補から外す方針です」なら、正答は **D → A** へ変わる。
+
+変更後の正答：viewは実行時に拒否し、機密MCPは候補から外す
+
+検証：ローカル側だけ実行時拒否へ変えた方針ならBとなる。元の候補停止要件は残さない。
+
+<details><summary>条件変更後の問題文</summary>
+
+Copilot CLIで機密ファイルを扱います。通常補完ではContent Exclusionが効きますが、CLIでviewと社内MCP検索から内容を取得できました。非機密の検索は残したまま、次回CLIではviewは候補に残して実行だけ拒否し、機密MCPは候補から外す方針です。起動時の候補制限とサーバー制御をどのように組み合わせますか。
+
+</details>
+
+**【レビュー④ 客観的手がかり（Clues）】**
+
+- 「viewと社内MCP検索」
+- 「モデルに提供しない」
+
+**【レビュー⑤ 誤答の罠（Distractor Analysis）】**
+
+- **A**：誘惑・見落としは「viewの実行拒否と候補提供停止は違う。」／今回不適合な理由：viewの実行拒否と候補提供停止は違う。
+- **B**：誘惑・見落としは「MCPの実行拒否ではモデルの選択試行は残る。」／今回不適合な理由：MCPの実行拒否ではモデルの選択試行は残る。
+- **C**：誘惑・見落としは「両経路を拒否するが、候補を提供しないという方針に合わない。」／今回不適合な理由：両経路を拒否するが、候補を提供しないという方針に合わない。
+
+**【レビュー⑥ 文字長・位置】**
+
+正答27字／誤答（短い順）25・26・30字／誤答中央値26字／中央値比 **1.04**／正答表示位置 **D**。
+
+難易度判定：通常補完とCLIの保護範囲を区別する。 ローカルと外部検索の取得経路を分ける。 提供停止の方針を両経路へ適用する。
+
+出典：[Excluding content from GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot)、[Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
 
 ## 検証と限界
 

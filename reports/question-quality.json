@@ -1,7 +1,7 @@
 {
   "rubricVersion": 1,
-  "total": 310,
-  "storedTotal": 322,
+  "total": 254,
+  "storedTotal": 395,
   "retiredQuestionIds": [
     "q-d3-a08",
     "q-d4-a15",
@@ -14,7 +14,136 @@
     "q-d5-a01",
     "q-d2-e09",
     "q-d2-a16",
-    "q-d5-a13"
+    "q-d5-a13",
+    "q01",
+    "q-d1-a01",
+    "q-d1-a02",
+    "q-d1-a03",
+    "q-d1-a04",
+    "q-d1-a07",
+    "q-d1-a08",
+    "q-d1-a09",
+    "q-d1-a10",
+    "q-d1-e01",
+    "q-d1-e02",
+    "q-d1-e03",
+    "q-d1-e05",
+    "q-d1-e07",
+    "q-d1-e08",
+    "q-d2-a04",
+    "q-d5-e02",
+    "q-sc02-2",
+    "q-sc05-1",
+    "q-sc05-2",
+    "q-sc09-3",
+    "q-d1-a12",
+    "q-d1-a13",
+    "q-d1-a14",
+    "q-d2-a26",
+    "q-d1-e09",
+    "q-d2-e20",
+    "q-d1-a15",
+    "q-d1-a16",
+    "q-d1-a17",
+    "q-d1-a18",
+    "q-d1-a19",
+    "q-d1-a20",
+    "q-d1-a21",
+    "q-d1-a22",
+    "q-d2-a07",
+    "q-d2-a18",
+    "q-d2-e02",
+    "q-d2-e11",
+    "q-d2-e15",
+    "q-d2-e19",
+    "q-d6-e02",
+    "q-d6-e05",
+    "q-sc03-1",
+    "q-sc03-2",
+    "q-sc07-1",
+    "q-sc07-2",
+    "q-d2-e22",
+    "q-d2-e23",
+    "q-d3-a03",
+    "q-d3-a05",
+    "q-d3-a09",
+    "q-d3-e01",
+    "q-d3-e02",
+    "q-sc08-2",
+    "q-d3-e06",
+    "q-d3-e07",
+    "q-d3-a16",
+    "q-d3-a19",
+    "q07",
+    "q-d2-a02",
+    "q-d3-a01",
+    "q-d3-a06",
+    "q-d3-a07",
+    "q-d4-a01",
+    "q-d4-a02",
+    "q-d4-a03",
+    "q-d4-a05",
+    "q-d4-a06",
+    "q-d4-a09",
+    "q-d4-a10",
+    "q-d4-e03",
+    "q-d4-e04",
+    "q-d4-e05",
+    "q-d5-a04",
+    "q-sc02-3",
+    "q-sc03-3",
+    "q-sc06-2",
+    "q-d3-a14",
+    "q-d4-e06",
+    "q-d4-e07",
+    "q-d4-e08",
+    "q-d4-e09",
+    "q10",
+    "q-d2-e01",
+    "q-d2-e07",
+    "q-d2-e10",
+    "q-d2-e14",
+    "q-d3-e03",
+    "q-d4-e01",
+    "q-d5-a03",
+    "q-d5-a06",
+    "q-d5-a07",
+    "q-d5-a08",
+    "q-d5-a09",
+    "q-d5-a10",
+    "q-d5-a11",
+    "q-d5-e01",
+    "q-d5-e03",
+    "q-d5-e04",
+    "q-d5-e05",
+    "q-sc02-1",
+    "q-sc04-3",
+    "q-sc09-1",
+    "q-d3-a15",
+    "q-d4-a14",
+    "q-d5-a12",
+    "q-d5-a14",
+    "q-d5-a15",
+    "q-d3-e08",
+    "q-d5-e06",
+    "q-d5-e07",
+    "q-d5-e08",
+    "q-d1-e04",
+    "q-d6-a03",
+    "q-d6-e03",
+    "q-d6-e04",
+    "q-sc05-3",
+    "q-sc10-3",
+    "q-d1-a11",
+    "q-d6-a13",
+    "q-d6-e07",
+    "q-sc01-3",
+    "q-d1-e06",
+    "q-d6-a10",
+    "q-d6-a14",
+    "q-d6-a12",
+    "q-d6-a08",
+    "q-d2-e16"
   ],
   "groups": {
     "beginner": {
@@ -251,20 +380,20 @@
       "missingOrStaleReviews": 0
     },
     "intermediate": {
-      "total": 90,
+      "total": 48,
       "single": {
-        "questions": 90,
+        "questions": 48,
         "counts": [
-          24,
-          23,
-          20,
-          23
+          13,
+          12,
+          11,
+          12
         ],
         "percentages": [
-          26.666666666666668,
-          25.555555555555554,
-          22.22222222222222,
-          25.555555555555554
+          27.083333333333332,
+          25,
+          22.916666666666664,
+          25
         ]
       },
       "multiple": {
@@ -285,18 +414,18 @@
       "byDomain": {
         "d1": {
           "single": {
-            "questions": 24,
+            "questions": 6,
             "counts": [
-              5,
-              7,
-              6,
-              6
+              2,
+              1,
+              1,
+              2
             ],
             "percentages": [
-              20.833333333333336,
-              29.166666666666668,
-              25,
-              25
+              33.33333333333333,
+              16.666666666666664,
+              16.666666666666664,
+              33.33333333333333
             ]
           },
           "multiple": {
@@ -317,18 +446,18 @@
         },
         "d2": {
           "single": {
-            "questions": 14,
+            "questions": 15,
             "counts": [
               4,
-              3,
+              4,
               3,
               4
             ],
             "percentages": [
-              28.57142857142857,
-              21.428571428571427,
-              21.428571428571427,
-              28.57142857142857
+              26.666666666666668,
+              26.666666666666668,
+              20,
+              26.666666666666668
             ]
           },
           "multiple": {
@@ -351,15 +480,15 @@
           "single": {
             "questions": 6,
             "counts": [
+              1,
               2,
-              2,
-              0,
+              1,
               2
             ],
             "percentages": [
+              16.666666666666664,
               33.33333333333333,
-              33.33333333333333,
-              0,
+              16.666666666666664,
               33.33333333333333
             ]
           },
@@ -381,12 +510,44 @@
         },
         "d4": {
           "single": {
-            "questions": 16,
+            "questions": 7,
             "counts": [
-              4,
-              4,
-              4,
-              4
+              2,
+              2,
+              2,
+              1
+            ],
+            "percentages": [
+              28.57142857142857,
+              28.57142857142857,
+              28.57142857142857,
+              14.285714285714285
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d5": {
+          "single": {
+            "questions": 4,
+            "counts": [
+              1,
+              1,
+              1,
+              1
             ],
             "percentages": [
               25,
@@ -411,52 +572,20 @@
             ]
           }
         },
-        "d5": {
-          "single": {
-            "questions": 17,
-            "counts": [
-              5,
-              4,
-              4,
-              4
-            ],
-            "percentages": [
-              29.411764705882355,
-              23.52941176470588,
-              23.52941176470588,
-              23.52941176470588
-            ]
-          },
-          "multiple": {
-            "questions": 0,
-            "counts": [
-              0,
-              0,
-              0,
-              0
-            ],
-            "percentages": [
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        },
         "d6": {
           "single": {
-            "questions": 13,
+            "questions": 10,
             "counts": [
-              4,
               3,
+              2,
               3,
-              3
+              2
             ],
             "percentages": [
-              30.76923076923077,
-              23.076923076923077,
-              23.076923076923077,
-              23.076923076923077
+              30,
+              20,
+              30,
+              20
             ]
           },
           "multiple": {
@@ -479,25 +608,25 @@
       "weakDistractorQuestions": 0,
       "potentialMultipleAnswer": 0,
       "choiceLengthBias": 0,
-      "questionsWithTwoStrongDistractors": 90,
+      "questionsWithTwoStrongDistractors": 48,
       "twoStrongDistractorPercentage": 100,
       "missingOrStaleReviews": 0
     },
     "advanced": {
-      "total": 57,
+      "total": 43,
       "single": {
-        "questions": 57,
+        "questions": 43,
         "counts": [
-          15,
-          15,
-          12,
-          15
+          10,
+          11,
+          11,
+          11
         ],
         "percentages": [
-          26.31578947368421,
-          26.31578947368421,
-          21.052631578947366,
-          26.31578947368421
+          23.25581395348837,
+          25.581395348837212,
+          25.581395348837212,
+          25.581395348837212
         ]
       },
       "multiple": {
@@ -518,18 +647,18 @@
       "byDomain": {
         "d1": {
           "single": {
-            "questions": 11,
+            "questions": 5,
             "counts": [
-              3,
-              3,
-              3,
-              2
+              1,
+              2,
+              1,
+              1
             ],
             "percentages": [
-              27.27272727272727,
-              27.27272727272727,
-              27.27272727272727,
-              18.181818181818183
+              20,
+              40,
+              20,
+              20
             ]
           },
           "multiple": {
@@ -550,18 +679,18 @@
         },
         "d2": {
           "single": {
-            "questions": 14,
+            "questions": 13,
             "counts": [
               3,
               3,
-              4,
+              3,
               4
             ],
             "percentages": [
-              21.428571428571427,
-              21.428571428571427,
-              28.57142857142857,
-              28.57142857142857
+              23.076923076923077,
+              23.076923076923077,
+              23.076923076923077,
+              30.76923076923077
             ]
           },
           "multiple": {
@@ -582,18 +711,18 @@
         },
         "d3": {
           "single": {
-            "questions": 5,
+            "questions": 4,
             "counts": [
-              2,
               1,
-              0,
-              2
+              1,
+              1,
+              1
             ],
             "percentages": [
-              40,
-              20,
-              0,
-              40
+              25,
+              25,
+              25,
+              25
             ]
           },
           "multiple": {
@@ -613,6 +742,70 @@
           }
         },
         "d4": {
+          "single": {
+            "questions": 6,
+            "counts": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "percentages": [
+              33.33333333333333,
+              16.666666666666664,
+              33.33333333333333,
+              16.666666666666664
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d5": {
+          "single": {
+            "questions": 7,
+            "counts": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "percentages": [
+              14.285714285714285,
+              28.57142857142857,
+              28.57142857142857,
+              28.57142857142857
+            ]
+          },
+          "multiple": {
+            "questions": 0,
+            "counts": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "percentages": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "d6": {
           "single": {
             "questions": 8,
             "counts": [
@@ -643,76 +836,12 @@
               0
             ]
           }
-        },
-        "d5": {
-          "single": {
-            "questions": 13,
-            "counts": [
-              3,
-              4,
-              3,
-              3
-            ],
-            "percentages": [
-              23.076923076923077,
-              30.76923076923077,
-              23.076923076923077,
-              23.076923076923077
-            ]
-          },
-          "multiple": {
-            "questions": 0,
-            "counts": [
-              0,
-              0,
-              0,
-              0
-            ],
-            "percentages": [
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        },
-        "d6": {
-          "single": {
-            "questions": 6,
-            "counts": [
-              2,
-              2,
-              0,
-              2
-            ],
-            "percentages": [
-              33.33333333333333,
-              33.33333333333333,
-              0,
-              33.33333333333333
-            ]
-          },
-          "multiple": {
-            "questions": 0,
-            "counts": [
-              0,
-              0,
-              0,
-              0
-            ],
-            "percentages": [
-              0,
-              0,
-              0,
-              0
-            ]
-          }
         }
       },
       "weakDistractorQuestions": 0,
       "potentialMultipleAnswer": 0,
       "choiceLengthBias": 0,
-      "questionsWithTwoStrongDistractors": 57,
+      "questionsWithTwoStrongDistractors": 43,
       "twoStrongDistractorPercentage": 100,
       "missingOrStaleReviews": 0
     }
@@ -737,16 +866,10 @@
       "detail": "A: 30.4% (7/23)"
     },
     {
-      "id": "intermediate/d6",
+      "id": "advanced/d2",
       "severity": "warning",
       "rule": "answer-distribution",
-      "detail": "A: 30.8% (4/13)"
-    },
-    {
-      "id": "advanced/d5",
-      "severity": "warning",
-      "rule": "answer-distribution",
-      "detail": "B: 30.8% (4/13)"
+      "detail": "D: 30.8% (4/13)"
     }
   ],
   "passed": true,

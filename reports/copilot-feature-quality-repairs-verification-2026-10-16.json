@@ -1,0 +1,59 @@
+{
+  "verifiedAt": "2026-10-16",
+  "bankFingerprint": "a6837e39b66af2327736cfe8ad49f5452e9ebbbf76ebe71b20fc5b6ac1099261",
+  "unit": {
+    "passed": 244,
+    "files": 23,
+    "command": "npm test -- --reporter=dot"
+  },
+  "typeCheck": {
+    "passed": true,
+    "command": "npm run check"
+  },
+  "productionBuild": {
+    "passed": true,
+    "bundler": "webpack",
+    "command": "npm run build -- --webpack"
+  },
+  "e2e": {
+    "passed": 16,
+    "projects": [
+      "desktop",
+      "mobile"
+    ],
+    "reviewedQuestionsPerDevice": 91,
+    "batches": [
+      46,
+      45
+    ],
+    "normalClicks": true,
+    "viewportComparedTo": "document.documentElement.clientWidth",
+    "command": "CERTMASTER_E2E_WEBPACK=1 npx playwright test tests/e2e/feature-refresh.spec.ts tests/e2e/practice.spec.ts --reporter=line"
+  },
+  "integrity": {
+    "stored": 395,
+    "active": 254,
+    "archivedUnchanged": 141,
+    "foundationUnchanged": true,
+    "changedQuestions": 76,
+    "classificationAndAnswerIdentityUnchanged": true
+  },
+  "limitations": {
+    "independentReviewer": false,
+    "learnerDifficultyMeasured": false,
+    "realExamEquivalenceValidated": false
+  },
+  "environmentNotes": [
+    "Default Turbopack failed to start a PostCSS worker in the sandbox; the production Webpack build passed.",
+    "Windows sandbox temporary paths and generated directory writes required a workspace temp path and approved escalation."
+  ],
+  "uiRegression": {
+    "questionId": "q-sc10-3-feature-20261016",
+    "before": {
+      "clientWidth": 390,
+      "scrollWidth": 520,
+      "normalAnswerClick": "failed"
+    },
+    "after": "All 91 questions passed normal answer clicks and clientWidth-based overflow assertions on desktop and mobile."
+  }
+}

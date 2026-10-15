@@ -955,6 +955,8 @@ footer > span:first-child {
 }
 
 .question {
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 28px;
   background: var(--surface-1);
 }
