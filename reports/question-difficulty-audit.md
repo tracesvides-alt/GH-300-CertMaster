@@ -1,14 +1,14 @@
-# GH-300 全322問の難易度台帳
+# GH-300 全395問の難易度台帳
 
-保存資産322問の台帳。新規出題は310問で、12問を対象外とする。以下の過去比較は保存資産の累計で、対象外を現行の合格問題として数えない。
+保存資産395問の台帳。新規出題は254問で、141問を対象外とする。以下の過去比較は保存資産の累計で、対象外を現行の合格問題として数えない。
 
-新規11問は独立した追加台帳から読み込み、変更前の件数と難易度遷移には含めない。固定された過去のベースラインファイルは維持する。
+新規84問は独立した追加台帳から読み込み、変更前の件数と難易度遷移には含めない。固定された過去のベースラインファイルは維持する。
 
 ## 結論
 
 従来の難易度は適切とは言えなかった。Foundationの基本知識確認は維持できる一方、Appliedには操作の記憶問題、Examには長い状況説明を付けただけの機能名識別が含まれていた。選択肢のもっともらしさと、解答に必要な思考の深さは別に評価する必要がある。
 
-各レビューの累計で、全322問の台帳に225問の実質改稿、64問の下位への再分類を記録した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。
+各レビューの累計で、全395問の台帳に315問の実質改稿、64問の下位への再分類を記録した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。
 
 ## 追加レビューの履歴
 
@@ -21,14 +21,16 @@
 - 2026-10-13：q07、q10、q-d2-a02、q-d2-a15、q-d2-a16、q-d2-e09、q-d2-e14、q-d3-a01、q-d3-a06、q-d3-a07、q-d3-a08、q-d3-a10、q-d3-e03、q-d4-a01、q-d4-a02、q-d4-a03、q-d4-a04、q-d4-a05、q-d4-a06、q-d4-a07、q-d4-a09、q-d4-a10、q-d4-a11、q-d5-a01、q-d5-a02、q-d5-a03、q-d5-a04、q-d5-a05、q-d5-a06、q-d5-a07、q-d5-a08、q-d5-a09、q-d5-a10、q-d5-a11、q-d5-e04、q-sc02-3、q-sc03-3、q-sc04-3、q-d3-a14、q-d3-a15、q-d4-a12、q-d4-a13、q-d4-a14、q-d4-a15、q-d5-a12、q-d5-a13、q-d5-a14、q-d5-a15。[記録](d4-d5-applied-cleanup-review.md)。
 - 2026-10-13：q-d1-a15、q-d1-a16、q-d1-a17、q-d1-a18、q-d1-a19、q-d1-a20、q-d1-a21、q-d1-a22、q-d3-a16、q-d3-a17、q-d3-a18、q-d3-a19。[記録](d1-d3-final-additions-review.md)。
 - 2026-10-13：q01、q07、q10、q-d1-a01、q-d1-a02、q-d1-a03、q-d1-a04、q-d1-a07、q-d1-a08、q-d1-a09、q-d1-a10、q-d1-e04、q-d1-e06、q-d2-a02、q-d2-a04、q-d2-a07、q-d2-a15、q-d2-a18、q-d2-a20、q-d2-e08、q-d2-e14、q-d2-e15、q-d2-e16、q-d3-a01、q-d3-a03、q-d3-a05、q-d3-a06、q-d3-a07、q-d3-a09、q-d3-a11、q-d3-e03、q-d4-a01、q-d4-a02、q-d4-a03、q-d4-a05、q-d4-a06、q-d4-a09、q-d4-a10、q-d5-a02、q-d5-a03、q-d5-a04、q-d5-a05、q-d5-a06、q-d5-a07、q-d5-a08、q-d5-a09、q-d5-a10、q-d5-a11、q-d5-e04、q-d6-a01、q-d6-a03、q-d6-a08、q-d6-a09、q-d6-a10、q-sc01-2、q-sc02-3、q-sc03-1、q-sc03-3、q-sc04-3、q-sc05-1、q-sc05-2、q-sc05-3、q-sc06-3、q-sc07-1、q-d1-a11、q-d1-a12、q-d1-a13、q-d1-a14、q-d2-a23、q-d2-a24、q-d2-a25、q-d2-a26、q-d3-a12、q-d3-a13、q-d3-a14、q-d3-a15、q-d4-a14、q-d5-a12、q-d5-a14、q-d5-a15、q-d6-a11、q-d6-a12、q-d6-a13、q-d6-a14、q-d1-a15、q-d1-a16、q-d1-a17、q-d1-a18、q-d1-a19、q-d1-a20、q-d1-a21、q-d1-a22、q-d3-a16、q-d3-a17、q-d3-a18、q-d3-a19、q-d2-a06、q-d2-a08、q-d2-a09、q-d2-a11、q-d2-a21、q-d2-a22。[記録](applied-remediation-review.md)。
+- undefined：q01、q-d2-a23、q-d3-a17、q-sc02-3、q-d5-a11、q-sc05-3、q-d1-a10、q-d1-a18、q-d1-a19、q-d1-a21、q-d3-e03、q-sc04-3、q-d3-a15、q-d5-a12、q-d6-a09、q-d2-a25、q-d3-a13、q-d3-a16、q-d3-a19、q-d4-a06、q-sc03-3、q-d3-a14、q-d6-a13。[記録](applied-23-focus-improvement-review.md)。
+- 2026-10-16：q-d2-e11-feature-20261016、q-d3-a19-feature-20261016、q-d4-e04-feature-20261016、q-d6-e03-feature-20261016、q01-feature-20261016、q-d1-a04-feature-20261016、q-d1-a07-feature-20261016、q-d1-a10-feature-20261016、q-d2-a04-feature-20261016、q-sc05-1-feature-20261016、q-d2-a26-feature-20261016、q-d1-a16-feature-20261016、q-d1-a17-feature-20261016、q-d1-a18-feature-20261016、q-d1-a19-feature-20261016、q-d1-a21-feature-20261016、q-d1-e01-feature-20261016、q-d1-e02-feature-20261016、q-d1-e03-feature-20261016、q-d1-e07-feature-20261016、q-d1-e08-feature-20261016、q-d5-e02-feature-20261016、q-sc02-2-feature-20261016、q-d1-e09-feature-20261016、q-d2-a18-feature-20261016、q-d2-e02-feature-20261016、q-d2-e15-feature-20261016、q-d2-e19-feature-20261016、q-d6-e02-feature-20261016、q-sc03-1-feature-20261016、q-sc03-2-feature-20261016、q-sc07-1-feature-20261016、q-d3-a03-feature-20261016、q-d3-e02-feature-20261016、q-sc08-2-feature-20261016、q-d3-e07-feature-20261016、q-d3-a16-feature-20261016、q-d3-a06-feature-20261016、q-d3-a07-feature-20261016、q-d4-a01-feature-20261016、q-d4-a02-feature-20261016、q-d4-e05-feature-20261016、q-sc02-3-feature-20261016、q-sc03-3-feature-20261016、q-d3-a14-feature-20261016、q-d4-e06-feature-20261016、q-d4-e07-feature-20261016、q-d4-e08-feature-20261016、q-d4-e09-feature-20261016、q-d2-e01-feature-20261016、q-d2-e07-feature-20261016、q-d4-e01-feature-20261016、q-d5-a09-feature-20261016、q-d5-e01-feature-20261016、q-d5-e03-feature-20261016、q-d5-e04-feature-20261016、q-d5-e05-feature-20261016、q-sc02-1-feature-20261016、q-d4-a14-feature-20261016、q-d5-a14-feature-20261016、q-d5-a15-feature-20261016、q-d3-e08-feature-20261016、q-d5-e06-feature-20261016、q-d5-e07-feature-20261016、q-d5-e08-feature-20261016、q-d1-e04-feature-20261016、q-d6-a03-feature-20261016、q-d6-e04-feature-20261016、q-sc05-3-feature-20261016、q-sc10-3-feature-20261016、q-d1-a11-feature-20261016、q-d6-a13-feature-20261016、q-d6-e07-feature-20261016。[記録](copilot-feature-refresh-2026-10-16.md)。
 
 履歴の各対象を追加評価しており、現在の全問を毎回新たに意味的再評価したという主張ではない。
 
 | 難易度 | 変更前 | 変更後 | 判断基準 |
 | --- | ---: | ---: | --- |
 | Foundation | 118 | 163 | 用語・機能・原則・操作の識別 |
-| Applied | 98 | 102 | 具体的な入力・不具合・用途へ知識を適用 |
-| Exam | 95 | 57 | 証拠や処理段階を比較し、原因・未検証条件・最小変更を導く |
+| Applied | 98 | 138 | 具体的な入力・不具合・用途へ知識を適用 |
+| Exam | 95 | 94 | 証拠や処理段階を比較し、原因・未検証条件・最小変更を導く |
 
 ## 何を難しくしたか
 
@@ -62,7 +64,7 @@
 
 変更前: 複数サービスの設計文書をまとめ、チームが共通の背景資料を参照して仕様を相談したい。今回は外部APIの実行ではなく、選んだ資料の共有が目的です。適する機能は？
 
-変更後: 複数サービスの設計文書をまとめ、チームが共通の背景資料を参照して仕様を相談したい。今回は外部APIの実行ではなく、選んだ資料の共有が目的です。適する機能は？
+変更後: 複数サービスにまたがる設計文書をまとめ、チームで共通の背景資料を参照しながらCopilotに仕様を相談したいと考えています。外部APIの呼び出しではなく、指定した資料の共有と参照を目的とする場合、最も適したGitHub Copilotの機能はどれですか？
 
 評価: 単一の機能・用語・条件の識別を問うFoundation。
 
@@ -78,11 +80,11 @@
 
 変更前: Copilotが生成した日付処理は通常の入力で動き、説明も自然です。月末だけ失敗する報告があるとき、採用判断に直接役立つ次の確認はどれですか？
 
-変更後: Copilotが生成した「翌月の同じ日へ進める」処理を検証しています。1月15日は2月15日になりますが、1月31日は3月3日になってしまいます。承認済みの仕様では、翌月に同じ日がない場合は翌月末にする必要があります。2025年の1月31日を入力する回帰テストでは、どの結果を期待すべきですか。
+変更後: Copilotが生成した月送り処理は、1月31日を3月3日へ進めます。Copilotが同時に作ったテストも3月3日を期待し、成功しています。一方、承認済みの仕様は「翌月に同じ日がなければ翌月末へ進める」です。呼び出し側は仕様どおりの入力を渡しており、仕様変更は認められていません。採用前にCopilotへ依頼する修正範囲と検証はどれですか。
 
-評価: 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。
+評価: 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。
 
-条件を変えた場合: 2024年の同じ入力なら2月29日を期待する。
+条件を変えた場合: B：テストは既に2月末を期待し、実装だけが3月3日を返すなら、実装を修正して既存の期待値で再検証する。 C：実装は既に2月末を返し、生成テストだけが3月3日を期待しているなら、テストを修正する。 D：実装とテストは仕様に合い、呼び出し側が変換時に誤った日付を渡すなら、入力補正を修正する。
 
 ### q-d5-a01: Applied → Applied
 
@@ -166,27 +168,27 @@
 
 条件を変えた場合: 「チーム人数が5→10」→「チーム人数が5→5」なら表示B。人数が一定なら20/5=4、30/5=6となり、手戻り率だけ20→30%のまま。元の4→3は不適合になる。
 
-## 全322問の評価台帳
+## 全395問の評価台帳
 
 | ID | 元の難易度 | 現在 | 文面 | 評価理由・必要な判断 |
 | --- | --- | --- | --- | --- |
-| q01 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q01 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q04 | Applied | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q04 | Applied | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q05 | Foundation | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
 | q06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q07 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q08 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q09 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q10 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q11 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q12 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q12 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d1-f01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d1-f03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d1-f04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-f05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d1-a01 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a02 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a03 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
@@ -196,7 +198,7 @@
 | q-d1-a07 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a08 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a09 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d1-a10 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d1-a10 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d1-e01 | Exam | Exam | 改稿 | 本番相当として維持・強化。最新・同名という表面的な一致を、配布物ごとの出所・機能の有効範囲から分離する。最も慎重な両方保留という選択肢の見た目では正答が決まらない。 |
 | q-d1-e02 | Exam | Exam | 改稿 | 本番相当として維持・強化。成功ラベル、実行経路、承認対象の粒度が違う証跡を比較し、再利用の可否を個別に導く。単に「テスト・承認がない」という明示条件の言い換えを解消。 |
 | q-d1-e03 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。PとQの保持・待機関係から循環を導く → 一般的な反復試験と再現すべき順序を区別する → 記録は相互待ちを示す。個々の取得の説明では足りず、取得順の整合と問題の交差順序の再現が必要。 |
@@ -205,17 +207,17 @@
 | q-d1-e06 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-e07 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。三試験の測定値を二つの受入条件と照合する → 障害時だけ未達の整合性へ検証を絞る → 遅延目標は三条件とも達成済みだが、停止時だけ欠落がある。受付と保存・再処理の境界を調べることが未達条件の検証に直結する。 |
 | q-d1-e08 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。採用率の増加と成果の改善を分け、案件難易度の変化を交絡として読む。 → 目的の品質・負担と各比較の指標を照合する。 → 同種案件で品質とレビュー時間を測り、結論の範囲を限定する。 |
-| q-d2-f01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f06 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f07 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f08 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f09 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f10 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-f11 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f07 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f10 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-f11 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-a01 | Applied | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-a02 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d2-a03 | Applied | Foundation | 改稿 | 相談と局所編集の機能の使い分けで、具体的な修正案の適合判定がない。 |
@@ -240,7 +242,7 @@
 | q-d2-e01 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。CLIの要約ではなく実行コマンドを読む → モック境界と変更範囲の差から不足テストを導く → CLIの実行ログとテストの境界を照合すると、変更したルートの実動作は未検証。必要な承認の下で契約を実行する。 |
 | q-d2-e02 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。元APIの正しさと再利用結果の差から、キャッシュの境界へ絞る。 → 担当変更の即時反映と25msの両制約を各方式へ照合する。 → 権限・更新版を確認でき、時間内のPを選ぶ。 |
 | q-d2-e03 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-e04 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-e04 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-e05 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-e06 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。利用可能ツールと実行許可という二層を分ける → PとQそれぞれの有効範囲を求める → PはGitの許可に個別拒否が優先する。Qは実行ツールが利用対象外なので、Gitの許可だけでは操作できない。 |
 | q-d2-e07 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。公開ツール数と実際の実行権限を区別する → 認証済みでも残る引数からシェルへの経路を特定する → 認証済みでも引数がシェル構文として解釈される経路を閉じる。 |
@@ -248,19 +250,19 @@
 | q-d2-e09 | Exam | Applied | 改稿 | 改稿。現行部品が受ける値へ入力を合わせる。 |
 | q-d2-e10 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。契約の以上とコードの大なりを照合する → テスト成功が期待値の改変で生じたことを見抜く → 100を含む契約に対し、実装と期待値の双方が境界を除外している。合格結果ではなく合意した契約を基準に戻す。 |
 | q-d2-e11 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。本文拒否とメタデータ返却を別経路として追う → 認可済み集合を件数・候補にも適用する → 本文拒否だけでは件数と候補から文書の存在が漏れる。 |
-| q-d2-e12 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-e13 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-e12 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-e13 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-e14 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d2-e15 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d2-e16 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d2-e17 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-e18 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-e19 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。呼出し解決の失敗と実行後の失敗を切り分ける → 修正に使える診断を適切な返却経路へ載せる → ①は存在するツールの実行失敗なので修正可能な情報をisErrorで返す。②はツールを解決できないプロトコル側の失敗。 |
-| q-d3-f01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-f01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-f03 | Foundation | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
 | q-d3-f04 | Foundation | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
-| q-d3-f05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-a01 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d3-a02 | Applied | Foundation | 改稿 | 前後のコードを活かす中間挿入の操作識別であり、生成案の具体的な整合性を判定していない。 |
 | q-d3-a03 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
@@ -273,20 +275,20 @@
 | q-d3-a10 | Applied | Applied | 改稿 | 改稿。疑わしい資料の版だけを変えられる。 |
 | q-d3-e01 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。警告と回答の欠落位置から二つの制約を区別する → 各制約に対応する独立した改善を選ぶ → Pは出力側の打切り、Qは入力容量の不足をまず疑う観測。入力と出力の制約を分けて変更し、改善を比較する。 |
 | q-d3-e02 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。各PCが到達した通信段階をログから追う → TLSの信頼とプロキシ認証を別の修復対象へ割り当てる → Pは接続後の証明書検証、Qはトンネル確立前の認証で止まっている。停止段階の違いで対処を分ける。 |
-| q-d3-e03 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d3-e03 | Exam | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d3-e04 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。同一パスで異なる二経路の結果を比較する → ルールの修正ではなくアクセス境界の変更を導く → 設定不一致ではなく利用経路の非対応なので、Agentが読めるファイルの権限や環境を別途制限する。 |
 | q-d3-e05 | Exam | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
 | q-d4-f01 | Foundation | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
-| q-d4-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-f03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-f04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-f05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-f03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-f04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d4-a01 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d4-a02 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d4-a03 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d4-a04 | Applied | Applied | 改稿 | 維持。履歴を切っても旧添付を持ち込めば原因が残るため、資料の版を修正する。 |
 | q-d4-a05 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d4-a06 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d4-a06 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d4-a07 | Applied | Applied | 改稿 | 維持。前後に余分な文字がある負例で、全体一致の条件を示す。 |
 | q-d4-a08 | Applied | Foundation | 改稿 | 未知対象の検索と既知対象の添付という基本操作の用途識別。 |
 | q-d4-a09 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
@@ -297,10 +299,10 @@
 | q-d4-e03 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。loggerの改善と残った同期IOを別の観測へ分ける。 → 測定したい具体例と、維持するBの成果を照合する。 → 非同期API例だけを足し、同じモデル・条件で比較する。 |
 | q-d4-e04 | Exam | Exam | 改稿 | 本番相当として維持。対象の依存関係を解析した後、維持契約と予算を照合する。正答だけが全部入りではなく、対象違い・不足・全文過剰という異なる誤りを判断する。 |
 | q-d4-e05 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。状態とイベントの組を許可表に照合する → 一般的な異常例から今回の欠陥を通る例を選ぶ → 観測された二つの誤受理を直接通る例。許可表の確認と、その外の拒否例をプロンプトへ加える。 |
-| q-d5-f01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-f02-b | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-f04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-f01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-f02-b | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-f04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d5-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d5-a01 | Applied | Applied | 改稿 | 維持。外部依存で失敗を再現し、対象が行う注文状態の判断を検証する。 |
 | q-d5-a03 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
@@ -310,17 +312,17 @@
 | q-d5-a08 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d5-a09 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d5-a10 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d5-a11 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d5-a11 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d5-e01 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。最終入力時刻から発火境界を計算する → 境界前後と保存引数を組み合わせて不具合を検出する → 最後の入力Bは200msなので境界は500ms。直前の0回と境界でのBの1回を確認し、早期実行や古い値の保存も区別する。 |
 | q-d5-e02 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。型検査で覆われない応答の意味とログの公開を分ける。 → 承認証跡の有無と公開サンプル規則へ照合する。 → 応答承認を確認し、サンプルと要約を差分へ整合させる。 |
 | q-d5-e03 | Exam | Exam | 改稿 | 本番相当として維持。未検出という同じ結果を、未到達とオラクルの見逃しという二原因へ分け、別々の最小追加を導く。生成器と検証器を全部強化するだけの問題を解消。テスト内容に合わせObjectiveをd5o1からd5o2へ修正。 |
 | q-d5-e04 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d5-e05 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。各差分を承認済み仕様へ対応させる → 期待値更新と回帰修正を別々に判断する → 仕様上の意図した差分と回帰を分ける。①は期待値変更、②は実装修正であり、一括更新は回帰を正当化する。 |
-| q-d6-f01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d6-f02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d6-f03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d6-f04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d6-f05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-f01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-f02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-f03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-f04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-f05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-a01 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d6-a02 | Applied | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-a03 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
@@ -329,139 +331,139 @@
 | q-d6-a06 | Applied | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-a07 | Applied | Foundation | 改稿 | 基礎を維持。単一の目的・概念・ログの種類を識別する。複合証跡の比較や多段階の原因推論を要求しない。 |
 | q-d6-a08 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d6-a09 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d6-a09 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d6-a10 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d6-e01 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。①の成功から通常補完の設定そのものを除外する。 → ②のリンクと③のモードを別の適用境界へ照合する。 → パス追加では補えない二経路を、権限・環境などで別に制限する。 |
 | q-d6-e02 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。UTCをJSTへ換算しE1=13:50、E2=14:10と並べる。 → 14:00以前と対象Aという必要条件を各イベントへ照合する。 → E1だけを候補とし、監査イベントだけで原因とは断定しない。 |
 | q-d6-e03 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。Pの通知版7aと現HEAD、Qの通知なしを別の証拠へ分ける。 → 架空の採用基準へ通知版の条件と未確認状態を照合する。 → 両方をそれぞれ異なる理由で保留し、個別審査を進める。 |
 | q-d6-e04 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。S1/S2/S3の対象軸とS2の版を分ける。 → 現行保持条件と社内入力の前処理をそれぞれ照合する。 → 非学習・30日・識別子除去の三欄を独立した根拠で記録する。 |
 | q-d6-e05 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。二つの日付条件を各利用者へ適用する → 不明値を無活動へ変換せず別の処理へ分ける → 二つの日付条件を満たすのはA。nullを古い時刻へ変換せずBとDを別確認に回す。候補化は自動解除の承認ではない。 |
-| q-sc01-1 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc01-1 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc01-2 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-sc01-3 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。PとQそれぞれの強制・委任を判定する → 申請の一部だけを満たす最小変更を選ぶ → Pは上位で強制したまま、委任済みのQだけ組織で変えれば要件を満たす。 |
 | q-sc02-1 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。旧観測と承認契約の一致、新案と同時生成テストの一致を区別する。 → どちらが独立した期待値の根拠になるか承認範囲へ照合する。 → 0拒否を先に固定して新案の回帰を直す。 |
 | q-sc02-2 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。偶数丸めを二つの境界へ適用する → 実装と同時生成テストの一致を独立検証から区別する → 偶数丸めでは2.5は2へ、3.5は4へ進む。同時生成された実装とテストが同じ誤解を共有しており、契約を独立した基準にする。 |
-| q-sc02-3 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-sc02-3 | Exam | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-sc03-1 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-sc03-2 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。401と403、空の入力と本人認証成功を段階別に分類する。 → Bは本人認証、Cは対象DB認可という差を共有条件へ照合する。 → Bのローカル資格情報とCの担当範囲を別に確認する。 |
-| q-sc03-3 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-sc04-1 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc03-3 | Exam | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-sc04-1 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc04-2 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-sc04-3 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-sc04-3 | Exam | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-sc05-1 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-sc05-2 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-sc05-3 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-sc06-1 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc05-3 | Exam | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-sc06-1 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc06-2 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。throwとBパスを規約競合・固定参照という別の原因へ分ける。 → 合意規約とA/B両方への再利用条件を各編集へ照合する。 → 例をResultへ合わせ、参照先だけ入力化する。 |
 | q-sc06-3 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-sc07-1 | Exam | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-sc07-2 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。検索経路と直接取得経路の認可を比較する → 接続承認と文書単位の認可を区別する → 検索で絞るだけでは直接取得の経路を守れない。取得時にも対象文書の認可を行う必要がある。 |
 | q-sc07-3 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-sc08-1 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc08-1 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc08-2 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。モデルを固定した二つの文脈の結果を比較する → 証拠が支持する取得元の版の差に診断を限定する → Xの引用と明示したYの成功から、取得版の差がまず支持される。 |
 | q-sc08-3 | Exam | Foundation | 改稿 | 参照先が明記された二ファイルの添付操作の識別であり、対象選別を推論する必要がない。 |
 | q-sc09-1 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。人数とPR数を分母にして二つの指標を比較する → 観測できる変化と因果の断定を区別する → PR/人数と手戻りPR/総PRを別に計算する。総数増加から個人の生産性や因果は断定しない。 |
 | q-sc09-2 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc09-3 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。質問回数だけの成功判定を他の二指標で見直す → 原因を仮説にとどめて検証できる研修を選ぶ → 質問の減少と理解・手戻りの悪化が同時に起きている。因果を断定せず、提案を自力で説明・検証できるか確かめる施策がこの仮説に合う。 |
-| q-sc10-1 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-sc10-2 | Exam | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc10-1 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-sc10-2 | Exam | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-sc10-3 | Exam | Exam | 改稿 | 本番相当として維持。同じ送信先と同じ要求ログ期間という紛らわしい一致を、結果保存とデータ分類の変更から分離する。GitHub側と第三者の条件も区別し、差分審査と証跡再利用を両立する。保持値は架空の社内契約で、GitHubの共通仕様ではない。 |
-| q-d1-g01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-g02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-g03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-g04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-g05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d1-g06 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d1-g06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g07 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g10 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g11 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g12 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g13 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g14 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g15 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g16 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d2-g17 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g10 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g11 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g12 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g13 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g14 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g15 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g16 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d2-g17 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g18 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g19 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g20 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g21 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d2-g22 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g06 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g07 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g08 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g09 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g10 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g11 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g12 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g12 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d3-g13 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d3-g14 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g06 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g07 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g08 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d4-g09 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g01 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g02 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g03 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g05 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g06 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g07 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g08 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g09 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d3-g14 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g07 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d4-g09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g06 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g07 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g08 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g09 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d5-g10 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g11 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g12 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g11 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g12 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d5-g13 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d5-g14 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g15 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g16 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g17 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d5-g18 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g15 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g16 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g17 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d5-g18 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-g01 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-g02 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-g03 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
-| q-d6-g04 | Foundation | Foundation | 維持 | 単一の機能・用語・条件の識別を問うFoundation。 |
+| q-d6-g04 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d6-g05 | Foundation | Foundation | 改稿 | 単一の機能・用語・条件の識別を問うFoundation。 |
 | q-d1-a11 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a12 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a13 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a14 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d2-a23 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d2-a23 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d2-a24 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d2-a25 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d2-a25 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d2-a26 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a13 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a14 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a15 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d3-a13 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d3-a14 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d3-a15 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d4-a12 | Applied | Applied | 改稿 | 改稿。未確認の形式を承認済みの契約に沿って示す。 |
 | q-d4-a13 | Applied | Applied | 改稿 | 改稿。許容方式と呼出し側の受取契約を具体化する。 |
 | q-d4-a14 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d4-a15 | Applied | Applied | 改稿 | 改稿。既知の対象と必要な依存定義を直接渡す。 |
-| q-d5-a12 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d5-a12 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d5-a13 | Applied | Applied | 改稿 | 改稿。101×10%=10.1の税額を10へ丸め、101に足して111になる。現行値を無条件に仕様とみなさず承認済み規則から計算する。 |
 | q-d5-a14 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d5-a15 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d6-a11 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d6-a12 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d6-a13 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d6-a13 | Applied | Applied | 改稿 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d6-a14 | Applied | Applied | 改稿 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-e09 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。業務属性を固定した比較で郵便番号の影響と、除去実験の差を読む。 → 地域不使用と正答率維持の二条件へ、両候補の結果を照合する。 → 郵便番号なし案を候補にし、未使用の標本で再検証する。 |
 | q-d2-e20 | Exam | Exam | 改稿 | 三段階の分析・照合・結論を要求する。開始前の保存差分とAgentの記録を分ける。 → .envは実行中の未承認変更、parserは開始前のユーザー変更と照合する。 → .envだけを戻し、既存作業を保った状態で復旧を検証する。 |
@@ -484,14 +486,87 @@
 | q-d1-a15 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a16 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
 | q-d1-a17 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d1-a18 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d1-a19 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d1-a18 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d1-a19 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d1-a20 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d1-a21 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d1-a21 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
 | q-d1-a22 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a16 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a17 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
-| q-d3-a19 | 新規 | Applied | 新規追加 | 具体的な観測・仕様を整理し、その条件へ検証・修正案を適用する応用の入口から中程度。単なる機能名識別へ変わった題材は条件比較へ戻した。 |
+| q-d3-a16 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d3-a17 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d3-a19 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測・目的・確認済み条件を整理し、Copilotの依頼・文脈・検証・設定の判断へ適用する二段階。機能名の暗記や計算結果の選択だけでは解けない構成。本番相当の複数証跡の統合までは要求しない。 |
+| q-d2-e11-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d3-a19-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d4-e04-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d6-e03-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q01-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a04-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a07-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a10-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d2-a04-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-sc05-1-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d2-a26-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a16-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a17-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a18-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a19-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-a21-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d1-e01-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e02-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e03-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e08-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e02-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc02-2-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e09-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d2-a18-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d2-e02-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d2-e15-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d2-e19-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d6-e02-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc03-1-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-sc03-2-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc07-1-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-a03-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-e02-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc08-2-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d3-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d3-a16-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-a06-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-a07-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d4-a01-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d4-a02-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d4-e05-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc02-3-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-sc03-3-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-a14-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d4-e06-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d4-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d4-e08-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d4-e09-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d2-e01-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d2-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d4-e01-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-a09-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d5-e01-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e03-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e04-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d5-e05-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc02-1-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d4-a14-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d5-a14-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d5-a15-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d3-e08-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e06-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d5-e08-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-e04-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d6-a03-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d6-e04-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-sc05-3-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-sc10-3-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
+| q-d1-a11-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d6-a13-feature-20261016 | 新規 | Applied | 新規追加 | 応用の入口〜中程度。観測された状態と設定範囲を結び、次の機能操作を判断する。実測正答率は未取得。 |
+| q-d6-e07-feature-20261016 | 新規 | Exam | 新規追加 | 本番相当の入口〜中程度。クライアント・設定・適用範囲の複数条件を照合する。実試験との難度等価性は未測定。 |
 
 ## 検証方法と限界
 

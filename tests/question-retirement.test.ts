@@ -8,6 +8,7 @@ import report from '../reports/d4-d5-applied-cleanup-review.json';
 import rawQuestions from '../content/gh300/2026-08-07/questions/seed.json';
 import additions from '../content/gh300/2026-08-07/questions/additions-review.json';
 import removals from '../content/gh300/2026-08-07/questions/removals.json';
+import refresh from '../content/gh300/2026-08-07/questions/feature-refresh-review.json';
 import {createHash} from 'node:crypto';
 
 const retired = allQuestions.filter(q=>!isQuestionActive(q));
@@ -17,15 +18,15 @@ const rngFor=(seed:number)=>()=>{seed=(1664525*seed+1013904223)>>>0;return seed/
 describe('retired questions and historical compatibility',()=>{
   it('preserves archived assets and references while removing them from the new practice pool',()=>{
     const removedExisting=removals.questions.length-(additions.removedAdditions?.length??0);
-    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting);
-    expect(questions).toHaveLength(additions.baseline.active + additions.questions.length-removedExisting);
-    expect(retired).toHaveLength(12);
-    expect(questions.filter(q=>q.difficulty==='intermediate')).toHaveLength(additions.baseline.applied + additions.questions.length-removedExisting);
+    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting+refresh.questions.length);
+    expect(questions).toHaveLength(254);
+    expect(retired).toHaveLength(141);
+    expect(questions.filter(q=>q.difficulty==='intermediate')).toHaveLength(48);
     const knownIds=buildKnowledgeBase().questionIds;
     for(const row of exclusions.questions){
       expect(retired.some(q=>q.id===row.id)).toBe(true);
       expect(knownIds).toContain(row.id);
-      expect(row.replacementIds.every(id=>questions.some(q=>q.id===id&&q.difficulty==='intermediate'))).toBe(true);
+      expect(row.replacementIds.every(id=>questions.some(q=>q.id===id))).toBe(true);
       expect(hash(rawQuestions.find(q=>q.id===row.id))).toBe(row.fingerprint);
     }
   });

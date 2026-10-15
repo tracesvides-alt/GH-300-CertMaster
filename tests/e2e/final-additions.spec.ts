@@ -1,8 +1,11 @@
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 const ledger=JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/additions-review.json','utf8'));
+const retiredIds=new Set(JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/selection-exclusions.json','utf8')).questions.map((q:{id:string})=>q.id));
+ledger.questions=ledger.questions.filter((q:{id:string})=>!retiredIds.has(q.id));
 
 test('all remaining new Applied questions can be selected, answered and persisted',async({page})=>{
+  expect(ledger.questions.length).toBeGreaterThan(0);
   test.setTimeout(60000);
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');

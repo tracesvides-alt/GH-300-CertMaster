@@ -4119,14 +4119,16 @@
         "domainIds": [
           "d2",
           "d4",
-          "d3"
+          "d3",
+          "d6"
         ],
         "objectiveIds": [
           "d2o1",
           "d2o3",
           "d2o4",
           "d4o2",
-          "d3o2"
+          "d3o2",
+          "d6o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -4296,12 +4298,15 @@
         "publisher": "VS Code Docs",
         "domainIds": [
           "d2",
-          "d4"
+          "d4",
+          "d6"
         ],
         "objectiveIds": [
           "d2o3",
           "d2o1",
-          "d4o1"
+          "d4o1",
+          "d4o2",
+          "d6o1"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-09-07"
@@ -4654,10 +4659,12 @@
         "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
         "publisher": "GitHub Docs",
         "domainIds": [
-          "d2"
+          "d2",
+          "d6"
         ],
         "objectiveIds": [
-          "d2o2"
+          "d2o2",
+          "d6o2"
         ],
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-12",
@@ -5076,6 +5083,494 @@
         "syllabusVersion": "2026-08-07",
         "lastCheckedAt": "2026-10-13",
         "lastVerifiedAt": "2026-10-13",
+        "status": "verified"
+      },
+      {
+        "id": "copilot-seat-api",
+        "title": "REST API endpoints for Copilot user management",
+        "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o4"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-14",
+        "status": "verified"
+      },
+      {
+        "id": "copilot-metrics-data",
+        "title": "Metrics data properties for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/reference/metrics-data",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o4"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-14",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-review-howto",
+        "title": "Using Copilot code review",
+        "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d2o3",
+          "d5o2",
+          "d5o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-instructions",
+        "title": "Repository custom instructions",
+        "url": "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2",
+          "d4"
+        ],
+        "objectiveIds": [
+          "d2o3",
+          "d4o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-logs",
+        "title": "Viewing Copilot logs",
+        "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/view-logs",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-prompt",
+        "title": "VS Code prompt files",
+        "url": "https://code.visualstudio.com/docs/agent-customization/prompt-files",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d4"
+        ],
+        "objectiveIds": [
+          "d4o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-tools",
+        "title": "Use tools with agents",
+        "url": "https://code.visualstudio.com/docs/agents/run/tools",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d4",
+          "d1",
+          "d2",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d4o2",
+          "d1o2",
+          "d2o1",
+          "d4o1",
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-reference",
+        "title": "Official Docs source: finding matching code",
+        "url": "https://github.com/github/docs/blob/main/content/copilot/how-tos/get-code-suggestions/find-matching-code.md",
+        "publisher": "GitHub Docs Repository",
+        "domainIds": [
+          "d6"
+        ],
+        "objectiveIds": [
+          "d6o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-approval",
+        "title": "VS Code approvals",
+        "url": "https://code.visualstudio.com/docs/agents/run/approvals",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-firewall",
+        "title": "Copilot firewall configuration",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d1",
+          "d3"
+        ],
+        "objectiveIds": [
+          "d1o2",
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-autopilot",
+        "title": "Copilot CLI Autopilot",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/autopilot",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-context",
+        "title": "Add context to chat",
+        "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d3",
+          "d4",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d3o1",
+          "d4o1",
+          "d4o2",
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-review-config",
+        "title": "Configuring code review",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d5",
+          "d1",
+          "d2"
+        ],
+        "objectiveIds": [
+          "d5o2",
+          "d1o2",
+          "d2o3",
+          "d2o4"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-risk",
+        "title": "Cloud agent risks and mitigations",
+        "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d1",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d1o2",
+          "d5o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-edits",
+        "title": "Review and revert agent changes",
+        "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-trust",
+        "title": "VS Code trust and safety",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d1"
+        ],
+        "objectiveIds": [
+          "d1o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-cloud",
+        "title": "Copilot on GitHub",
+        "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2",
+          "d3",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d2o3",
+          "d3o1",
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-cli-reference",
+        "title": "Copilot CLI reference",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-custom-agent",
+        "title": "Custom agents configuration",
+        "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2",
+          "d4",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d2o3",
+          "d4o2",
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-ide",
+        "title": "Copilot in the IDE",
+        "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-policies",
+        "title": "Managing enterprise policies",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3"
+        ],
+        "objectiveIds": [
+          "d3o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-setup",
+        "title": "Cloud agent development environment",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d3",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d3o1",
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-models",
+        "title": "Supported AI models",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d4",
+          "d5"
+        ],
+        "objectiveIds": [
+          "d4o2",
+          "d5o1"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-context-model",
+        "title": "Understand context in AI agents",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/context",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d3",
+          "d4"
+        ],
+        "objectiveIds": [
+          "d3o1",
+          "d4o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-cli-compare",
+        "title": "Comparing CLI customization features",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d4"
+        ],
+        "objectiveIds": [
+          "d4o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-vscode-instructions",
+        "title": "Use custom instructions in VS Code",
+        "url": "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d4"
+        ],
+        "objectiveIds": [
+          "d4o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-inline",
+        "title": "Inline suggestions from GitHub Copilot in VS Code",
+        "url": "https://code.visualstudio.com/docs/editing/ai-powered-suggestions",
+        "publisher": "VS Code Docs",
+        "domainIds": [
+          "d5",
+          "d6"
+        ],
+        "objectiveIds": [
+          "d5o1",
+          "d6o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
+        "status": "verified"
+      },
+      {
+        "id": "feature-refresh-sessions",
+        "title": "Managing agent sessions",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents",
+        "publisher": "GitHub Docs",
+        "domainIds": [
+          "d5"
+        ],
+        "objectiveIds": [
+          "d5o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastCheckedAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-16",
         "status": "verified"
       }
     ]

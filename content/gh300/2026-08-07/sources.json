@@ -772,7 +772,12 @@
       "q-d6-g04",
       "q-d6-a11",
       "q-d6-a12",
-      "q-d6-a14"
+      "q-d6-a14",
+      "q-d1-e04-feature-20261016",
+      "q-sc05-3-feature-20261016",
+      "q-sc10-3-feature-20261016",
+      "q-d6-a13-feature-20261016",
+      "q-d6-e07-feature-20261016"
     ],
     "relatedDomainIds": [
       "d2",
@@ -1057,7 +1062,8 @@
       "d2o3",
       "d2o4",
       "d4o2",
-      "d3o2"
+      "d3o2",
+      "d6o1"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -1084,12 +1090,15 @@
       "q-sc07-1",
       "q-d2-g22",
       "q-d3-g13",
-      "q-d2-e21"
+      "q-d2-e21",
+      "q-d1-a21-feature-20261016",
+      "q-d2-e19-feature-20261016"
     ],
     "relatedDomainIds": [
       "d2",
       "d4",
-      "d3"
+      "d3",
+      "d6"
     ]
   },
   {
@@ -1121,11 +1130,11 @@
   },
   {
     "id": "code-review",
-    "title": "About GitHub Copilot code review",
-    "url": "https://docs.github.com/en/copilot/concepts/agents/code-review",
+    "title": "GitHub Copilot code review",
+    "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-16",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o2",
@@ -1136,7 +1145,7 @@
       "d2o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-16",
     "relatedLessonIds": [
       "lesson-d1-security-review",
       "lesson-d2-pr-code-review"
@@ -1164,7 +1173,10 @@
       "q-d2-g14",
       "q-d2-g21",
       "q-d2-e20",
-      "q-sc04-3"
+      "q-sc04-3",
+      "q-d1-e08-feature-20261016",
+      "q-d6-e02-feature-20261016",
+      "q-d5-e08-feature-20261016"
     ],
     "relatedDomainIds": [
       "d1",
@@ -1475,18 +1487,23 @@
     "relatedObjectiveIds": [
       "d2o3",
       "d2o1",
-      "d4o1"
+      "d4o1",
+      "d4o2",
+      "d6o1"
     ],
     "relatedLessonIds": [],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-sc03-2",
-      "q-d2-a23"
+      "q-d2-a23",
+      "q-d4-e07-feature-20261016",
+      "q-d5-a15-feature-20261016"
     ],
     "relatedDomainIds": [
       "d2",
-      "d4"
+      "d4",
+      "d6"
     ]
   },
   {
@@ -1629,7 +1646,10 @@
       "q-d3-a09",
       "q-d3-e02",
       "q-d3-g07",
-      "q-d3-e06"
+      "q-d3-e06",
+      "q-d3-a19-feature-20261016",
+      "q-sc08-2-feature-20261016",
+      "q-d3-e07-feature-20261016"
     ],
     "relatedDomainIds": [
       "d3"
@@ -1671,7 +1691,10 @@
       "q-sc01-1",
       "q-sc01-2",
       "q-sc10-1",
-      "q-d6-e07"
+      "q-d6-e07",
+      "q-d6-e03-feature-20261016",
+      "q-d6-a03-feature-20261016",
+      "q-d6-e04-feature-20261016"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1717,7 +1740,10 @@
       "q-d1-a11",
       "q-d6-e06",
       "q-d3-a17",
-      "q-d6-a13"
+      "q-d6-a13",
+      "q-d6-e03-feature-20261016",
+      "q-d1-e02-feature-20261016",
+      "q-d1-e09-feature-20261016"
     ],
     "relatedDomainIds": [
       "d3",
@@ -2091,7 +2117,8 @@
     "lastCheckedAt": "2026-10-12",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
-      "d2o2"
+      "d2o2",
+      "d6o2"
     ],
     "status": "verified",
     "lastVerifiedAt": "2026-10-12",
@@ -2108,10 +2135,15 @@
       "q-d2-g08",
       "q-d2-g09",
       "q-d2-e22",
-      "q-d2-a25"
+      "q-d2-a25",
+      "q-d1-a10-feature-20261016",
+      "q-d2-a04-feature-20261016",
+      "q-d5-e07-feature-20261016",
+      "q-d6-e07-feature-20261016"
     ],
     "relatedDomainIds": [
-      "d2"
+      "d2",
+      "d6"
     ]
   },
   {
@@ -2366,7 +2398,10 @@
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d3-g13"
+      "q-d3-g13",
+      "q-d3-a03-feature-20261016",
+      "q-d3-e02-feature-20261016",
+      "q-d3-a16-feature-20261016"
     ],
     "relatedDomainIds": [
       "d2",
@@ -2832,5 +2867,674 @@
     "relatedQuestionIds": [
       "q-d6-a09"
     ]
+  },
+  {
+    "id": "feature-refresh-review-howto",
+    "title": "Using GitHub Copilot code review",
+    "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d5o2",
+      "d5o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-d1-a18-feature-20261016",
+      "q-d4-e01-feature-20261016",
+      "q-d5-e05-feature-20261016",
+      "q-sc02-1-feature-20261016",
+      "q-d5-a14-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-instructions",
+    "title": "Adding repository custom instructions for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2",
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-d4-e06-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-logs",
+    "title": "Viewing logs for GitHub Copilot in your environment",
+    "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/view-logs",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-a19-feature-20261016",
+      "q-d3-e07-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-prompt",
+    "title": "VS Code prompt files",
+    "url": "https://code.visualstudio.com/docs/agent-customization/prompt-files",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-e04-feature-20261016",
+      "q-d3-a06-feature-20261016",
+      "q-d3-a07-feature-20261016",
+      "q-d4-a01-feature-20261016",
+      "q-sc03-3-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-tools",
+    "title": "Use tools with agents",
+    "url": "https://code.visualstudio.com/docs/agents/run/tools",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4",
+      "d1",
+      "d2",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2",
+      "d1o2",
+      "d2o1",
+      "d4o1",
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-e04-feature-20261016",
+      "q-d1-a19-feature-20261016",
+      "q-sc03-2-feature-20261016",
+      "q-d3-a14-feature-20261016",
+      "q-d2-e07-feature-20261016",
+      "q-d5-e01-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-approval",
+    "title": "VS Code approvals",
+    "url": "https://code.visualstudio.com/docs/agents/run/approvals",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q01-feature-20261016",
+      "q-d1-a04-feature-20261016",
+      "q-d2-a26-feature-20261016",
+      "q-d1-a16-feature-20261016",
+      "q-d1-e07-feature-20261016",
+      "q-d5-e02-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-firewall",
+    "title": "Customizing or disabling the firewall for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1",
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2",
+      "d3o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-a07-feature-20261016",
+      "q-d3-e08-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-autopilot",
+    "title": "Using Autopilot mode in GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/use-autopilot-mode",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-a10-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-context",
+    "title": "Add context to chat",
+    "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d3",
+      "d4",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d4o1",
+      "d4o2",
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc05-1-feature-20261016",
+      "q-d1-a17-feature-20261016",
+      "q-d3-a03-feature-20261016",
+      "q-d3-a16-feature-20261016",
+      "q-d4-a02-feature-20261016",
+      "q-d4-e09-feature-20261016",
+      "q-d5-e01-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-review-config",
+    "title": "Configuring code review",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d5",
+      "d1",
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d5o2",
+      "d1o2",
+      "d2o3",
+      "d2o4"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-a18-feature-20261016",
+      "q-d1-e08-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d6-e02-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-risk",
+    "title": "Risks and mitigations for GitHub Copilot cloud agent",
+    "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2",
+      "d5o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-e01-feature-20261016",
+      "q-d4-e01-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-edits",
+    "title": "Review and revert agent changes",
+    "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-e03-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-trust",
+    "title": "VS Code trust and safety",
+    "url": "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d1"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d1-e03-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-cloud",
+    "title": "Copilot on GitHub",
+    "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2",
+      "d3",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d3o1",
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc02-2-feature-20261016",
+      "q-sc08-2-feature-20261016",
+      "q-d5-e01-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-cli-reference",
+    "title": "GitHub Copilot CLI command reference",
+    "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-a18-feature-20261016",
+      "q-sc03-1-feature-20261016",
+      "q-sc07-1-feature-20261016",
+      "q-d5-e07-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-custom-agent",
+    "title": "Custom agents configuration",
+    "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2",
+      "d4",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3",
+      "d4o2",
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d2-e15-feature-20261016",
+      "q-d4-e07-feature-20261016",
+      "q-d4-e08-feature-20261016",
+      "q-d2-e07-feature-20261016",
+      "q-d4-a14-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-ide",
+    "title": "GitHub Copilot in IDEs",
+    "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc03-2-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-policies",
+    "title": "Managing policies and features for GitHub Copilot in your enterprise",
+    "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d3-e02-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-setup",
+    "title": "Configure the development environment",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d3",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc08-2-feature-20261016",
+      "q-d2-e01-feature-20261016",
+      "q-d5-e03-feature-20261016",
+      "q-d5-e05-feature-20261016",
+      "q-d3-e08-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-models",
+    "title": "Supported AI models",
+    "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2",
+      "d5o1"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-a01-feature-20261016",
+      "q-d5-e04-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-context-model",
+    "title": "Understand context in AI agents",
+    "url": "https://code.visualstudio.com/docs/agents/concepts/context",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d3",
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1",
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-a02-feature-20261016",
+      "q-d4-e05-feature-20261016",
+      "q-d4-e09-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-cli-compare",
+    "title": "Comparing GitHub Copilot CLI customization features",
+    "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d4-e05-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-vscode-instructions",
+    "title": "Use custom instructions in VS Code",
+    "url": "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d4"
+    ],
+    "relatedObjectiveIds": [
+      "d4o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-sc02-3-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-inline",
+    "title": "Inline suggestions from GitHub Copilot in VS Code",
+    "url": "https://code.visualstudio.com/docs/editing/ai-powered-suggestions",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d5",
+      "d6"
+    ],
+    "relatedObjectiveIds": [
+      "d5o1",
+      "d6o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d5-a09-feature-20261016",
+      "q-d5-e04-feature-20261016",
+      "q-d1-a11-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "feature-refresh-sessions",
+    "title": "Managing agent sessions",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d5o2"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d5-e03-feature-20261016"
+    ],
+    "lastCheckedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
   }
 ]

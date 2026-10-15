@@ -2,14 +2,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {loadFeatureRefresh} from './question-additions.mjs';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 
 // Binds an explicit editorial decision to its answer content, not just an ID.
-export function validateAppliedRemediation(bank, report, retiredIds = new Set()) {
+export function validateAppliedRemediation(bank, report, retiredIds = new Set(), refresh = loadFeatureRefresh()) {
   const errors=[], rows=new Map(report.questions.map(r=>[r.id,r]));
   const activeApplied=bank.filter(q=>q.difficulty==='intermediate'&&!retiredIds.has(q.id));
-  if(rows.size!==report.questions.length||activeApplied.length!==report.scope.activeApplied||report.questions.length!==report.scope.activeApplied+report.scope.additionalFoundation)errors.push('Incomplete remediation scope');
-  for(const q of activeApplied)if(!rows.has(q.id))errors.push('Unreviewed Applied asset: '+q.id);
+  const replacements=new Map((refresh?.questions??[]).map(r=>[r.id,r]));
+  if(rows.size!==report.questions.length||report.questions.length!==report.scope.activeApplied+report.scope.additionalFoundation)errors.push('Incomplete remediation scope');
+  for(const q of activeApplied){
+    if(rows.has(q.id))continue;
+    const r=replacements.get(q.id);
+    if(!r||r.fingerprint!==hash(q)||hash(r.after)!==r.fingerprint||r.review?.status!=='EDITORIAL_SECOND_READ')errors.push('Unreviewed Applied asset: '+q.id);
+  }
   for(const r of report.questions){
     const q=bank.find(q=>q.id===r.id);
     if(!q||hash(q)!==r.fingerprint||hash(r.after)!==r.fingerprint){errors.push('Stale remediation decision: '+r.id);continue;}

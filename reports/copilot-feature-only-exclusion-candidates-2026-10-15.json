@@ -1,0 +1,979 @@
+{
+  "reviewedAt": "2026-10-15",
+  "status": "CANDIDATES_ONLY_NOT_APPLIED",
+  "review": "reports/copilot-feature-only-review-2026-10-15.json",
+  "bankFingerprint": "0c55dd179e13bf67a07aefd13c71386c095a88c4584f895aea18448a86c0e197",
+  "questions": [
+    {
+      "id": "q01",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "12ba500ebaa49a8fb5f1080eb8723b9463350a0f1bad82ef1af63f221cdba457",
+      "reason": "月末補正の仕様と実装・期待値の修正範囲。手書き実装でも同じ判断。"
+    },
+    {
+      "id": "q07",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "e7cf07442b65f9b89075fd7a875a0ed4b7e748d18c67c6246237df97965070d2",
+      "reason": "DD/MMの日付解釈と入出力例。Copilotの機能選択や設定を問わない。"
+    },
+    {
+      "id": "q10",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "80737e38a145482577b1e2baceeeccc71913331647678250ba863a3a90f2506f",
+      "reason": "外部通信を隔離するモックと引数assertion。一般の単体テスト設計。"
+    },
+    {
+      "id": "q-d1-a01",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "0555ffcecff96bedd2e80faf430ade048a13bc2729b6ac50852814b63942aad2",
+      "reason": "parse例外時のcloseを検証する異常系テスト。"
+    },
+    {
+      "id": "q-d1-a02",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "7b175ff332b043993a077f04adb9e84b88b4678bee07d8381b1ee7b017c7d463",
+      "reason": "SQL連結を避けORMやパラメータ化を求める一般的な安全実装・指示内容。"
+    },
+    {
+      "id": "q-d1-a03",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "814f349244a14283095b8c477d34dc64344a8297a34719f2c82cc3578608598d",
+      "reason": "viewerの拒否を確認する権限の境界テスト。"
+    },
+    {
+      "id": "q-d1-a04",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "eb698b409814d7165c781cb2f5adc9b6a305e2557fec5d2e229baccceeb778b1",
+      "reason": "秘密のハードコード防止とリポジトリの秘密検知。Copilotの機能知識が正答を分けない。"
+    },
+    {
+      "id": "q-d1-a07",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "aa5361425dacd7d7db7628f6e49d648a38c1ed4e0f6fddd27b813bb40b5509a2",
+      "reason": "AIレビューを人の承認の代わりにしない一般的なガバナンス。Code Reviewの具体的な設定・承認機能の操作を問わない。"
+    },
+    {
+      "id": "q-d1-a08",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "f9901de5087b85121de4f9147deba8e68d726dd58d5a232f92b9215641aa6ebb",
+      "reason": "変異実装でassertionの欠陥検出力を確認する一般的なテスト評価。"
+    },
+    {
+      "id": "q-d1-a09",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "a203bc94ec2ce6c41cf818dc47f3c9a4786c19f9e29fb255ac53de0f73756f08",
+      "reason": "型・規約検査と業務回帰テストの検証範囲の違い。"
+    },
+    {
+      "id": "q-d1-a10",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "b73bdb68045b3d0ca7f3695aa677bfc57a008c221b641020737e537fcdb0ea8b",
+      "reason": "性能を満たしても空入力の戻り値契約を守るという実装の採用判断。"
+    },
+    {
+      "id": "q-d1-e01",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "2a60af5b9495df3224fa44a02d39192f6a535030727df0d5c9048a9b6e7ae4cd",
+      "reason": "配布物hash、出所証跡、Linux検査を照合する一般的な採用審査。"
+    },
+    {
+      "id": "q-d1-e02",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "cec16c91db202f35cec63635f16f58315bf7677302520300be5caeb34354a1f8",
+      "reason": "変更POSTの実ルート検証と挙動変更の承認。AgentのPR作成機能は背景にとどまる。"
+    },
+    {
+      "id": "q-d1-e03",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "894c0109382736984a3c35f97c0eee4864f2b6ec71d95e02151672c9c9f56a2a",
+      "reason": "循環待ちをロック取得順序の統一で直す並行処理。"
+    },
+    {
+      "id": "q-d1-e04",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "7c994e826ccd27d86039222e2c8358c7a194e666be8adca64266878ea96b1446",
+      "reason": "ログの一貫した仮ID化と秘密除去。一般的な匿名化・診断データの前処理。"
+    },
+    {
+      "id": "q-d1-e05",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "4af639a75159ad79f7d6d5f83e7b7cdba1b1e3585c760a02c8e0941317affc50",
+      "reason": "フォーカス復帰先とaria-expandedを直すアクセシビリティ。"
+    },
+    {
+      "id": "q-d1-e07",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "8755df0ff4e3215cb4d1d27d810d9e55bd0dadf94b2658e944562ec7292770be",
+      "reason": "遅延よりノード停止時の注文欠落を調査するキューの耐障害性。"
+    },
+    {
+      "id": "q-d1-e08",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "d73fa01e27d996cccdd1850ca42874136c34d1049b40ad77f72dd5b639befb2c",
+      "reason": "案件難易度を統制して品質とレビュー時間を比較する研修効果の評価。"
+    },
+    {
+      "id": "q-d2-a02",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "fe77719a7b488cb755461a650a84bfef84403ac34bcb9263f4c7827ef18fc61f",
+      "reason": "省略可能な型と呼出側を追加資料にする一般的な修正依頼。"
+    },
+    {
+      "id": "q-d2-a04",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "35c5cdeb30b731b6e89f4c89ba83b913c817ed4d21f9e47e31b02d82cf0dfacb",
+      "reason": "削除コマンドの対象を実行前に確認する一般的なシェル運用。CLIという名前を外しても同じ正答。"
+    },
+    {
+      "id": "q-d2-a07",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "559011bea6e4007685108aea57f3cf95e9edd1bbb597646895a04e5f31a5b456",
+      "reason": "MCPという名前でも、正答はサーバー側の認可・読取限定・最新メタデータというAPI設計。Copilotへの接続設定を問わない。"
+    },
+    {
+      "id": "q-d2-a18",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8f1962d02c338ca1f7f9a174c65bff6952482860319746f9d4c6be5369cc0ce8",
+      "reason": "ツールJSONの返却項目を許可リストへ制限する情報漏洩対策。一般のAPIレスポンス設計。"
+    },
+    {
+      "id": "q-d2-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "52888f5f7f51b9444a0aaffe967d7fc3710113a03fb39ef9b443a73954a4da86",
+      "reason": "実ルートをモック化した単体テストでは統合契約を確認できないという検査範囲。"
+    },
+    {
+      "id": "q-d2-e02",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "c8c887b2e03384db2552b43bad10a00c93018b57ee0f7d385ad984d0df5ce406",
+      "reason": "最新権限と版を照合するキャッシュ再利用の認可設計。"
+    },
+    {
+      "id": "q-d2-e07",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7187c383ddd230b3606248e4b5049c5bd7e1af2c1510c45701c8331e413b77b8",
+      "reason": "MCPサーバーで入力をシェルへ連結しないコマンドインジェクション対策。"
+    },
+    {
+      "id": "q-d2-e10",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a0d4d105d410c454f76ae04c489dcac3b0590681adef2dddc8e6ec455a4225bc",
+      "reason": "割引境界100と期待値を承認契約へ戻すテスト・実装の修正。"
+    },
+    {
+      "id": "q-d2-e11",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "f9e204ea09ddad7488a15ff72c40ae0640f2125bdbbb41d631b4394daf83f535",
+      "reason": "本文と検索件数・タイトルに同じ認可を適用する一般の情報漏洩対策。"
+    },
+    {
+      "id": "q-d2-e14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "d86ad06ca935e8a11713e1d7a00afc2c85bdbd4ab63ed2ec1df22c7bc160e85f",
+      "reason": "調査と実装を分け引き継ぐ工程論。Sub-Agentsという語はあるが、製品の起動・設定・権限・文脈分離の具体的挙動を正答判定に要求しない。"
+    },
+    {
+      "id": "q-d2-e15",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "459311980637296ae062d37f988886930f35699c5d75d7efc0d5e1167232de1d",
+      "reason": "大量文書を検索・抜粋して段階取得するAPIと文脈の設計。Copilot固有の接続・呼出設定を問わない。"
+    },
+    {
+      "id": "q-d2-e19",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "1a22aa16b445aff7684ebe609f2c26c9bd0c83f6b8131476e60ca8856c44dfb4",
+      "reason": "MCPサーバーのJSON-RPCとCallToolResult.isErrorの実装仕様。Copilot側の機能・操作・設定を問わない。"
+    },
+    {
+      "id": "q-d3-a01",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "b595e2b1193b20102e79f0a1275aec0098872deb5b3ca18c4d878ed0516e329e",
+      "reason": "資料の版だけを変えて影響を見る一変数実験。"
+    },
+    {
+      "id": "q-d3-a03",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "b88ec8548773c114eb98ebf059e8c21f0f6de8475af1ed5f360039a3c89cf614",
+      "reason": "TLS証明書チェーンとCA信頼ストア。Copilot固有の設定項目や接続先の知識を要求しない。"
+    },
+    {
+      "id": "q-d3-a05",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "7d18b33cdc7aa54abcd1c7a17b66c92cf7083c860f0e472847cc979b395f8ef1",
+      "reason": "プロキシ経由だけ失敗する場合の一般的な通信診断。"
+    },
+    {
+      "id": "q-d3-a06",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "5ba175377649c1c8a66d7f3656988bf7cdd079d5dfeb33a5ff877557b26847a7",
+      "reason": "撤回・決定・未決定を区別する一般的な引継ぎ要約。"
+    },
+    {
+      "id": "q-d3-a07",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "bb11189066abf9e4567b5b5fd1759c7a8187ea05c165bceee2f1c7a20decb69e",
+      "reason": "入力量だけを変え、モデルや通信を固定する対照実験。"
+    },
+    {
+      "id": "q-d3-a09",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "cfa665d49b906e065100441d4200b4e552cdc14bc5428319a440455dcae7ea09",
+      "reason": "指定された外向きHTTPSの宛先を許可するファイアウォールの対応付け。"
+    },
+    {
+      "id": "q-d3-e01",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "fingerprint": "f15532ff2b0f8896579da4601e28debd87e960abd12c5606a8df8004e2629ac2",
+      "reason": "一般的なLLMの入力上限と出力打切りを分ける実験。Copilot固有の機能を要求しない。"
+    },
+    {
+      "id": "q-d3-e02",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "e7fb1dddb6ea034e731325721c6d1b956d906226ff1320ca797f359b09fd8e8c",
+      "reason": "CONNECT後の証明書エラーと407認証を分けるHTTP/TLSの一般知識。"
+    },
+    {
+      "id": "q-d3-e03",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "9efcc9bc413e8f5a49f7ea6367f4c536e4f9a74f0bf6d36c0c2939e668f457bd",
+      "reason": "ドル入力とAPIのセント引数を検証する単位契約のテスト。"
+    },
+    {
+      "id": "q-d4-a01",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d98d94cc7b487212750b6e270435e45f9fa74937150609b8ce70cf7ae0146bb1",
+      "reason": "TypeScript/Prisma/重複拒否という開発要件を全部含む指示文の選択。"
+    },
+    {
+      "id": "q-d4-a02",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "c10ab88f646302d80459911ba0a1a1246c38b6f9e4d139935b318277a253d991",
+      "reason": "禁止だけでなく既存loggerの使い方を示す一般的な依頼・例示。"
+    },
+    {
+      "id": "q-d4-a03",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d88cffa85082bc2afde8dcc7e83a442dcbffcbf2b8596aa583da44c996318a00",
+      "reason": "JSONの型とキー位置に合う出力例を選ぶ一般的なスキーマの問題。"
+    },
+    {
+      "id": "q-d4-a05",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "c56658f9d874de0f80f0265c9d451a548fecc6dff7e8179034d27fb9e21946c4",
+      "reason": "有効なゼロと不正文字列を分ける入出力例。"
+    },
+    {
+      "id": "q-d4-a06",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "28fd8d5c4677a837b8c618fd9d3e3532e5b7407bde1c968bfecbff29ee9c4879",
+      "reason": "古い資料を除いて現行ソースを渡す一般的な資料整理。製品の検索設定・索引挙動の問題ではない。"
+    },
+    {
+      "id": "q-d4-a09",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "2cb6c58203de68786458e963447846e295385dc263e82941fc9efb9c8e1ba406",
+      "reason": "保守性を変更の波及範囲へ具体化する一般的なレビュー依頼。"
+    },
+    {
+      "id": "q-d4-a10",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "65cb05f5ef65f0634b6e5d1adb7f7c863edf94e2aa5b5b14146fe7d7a7aedadc",
+      "reason": "CIだけのモジュール解決失敗を再現する実行条件の提示。"
+    },
+    {
+      "id": "q-d4-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "dacf92bfeb7d03097c512acff567ea577e8d919f5b1949e2d55ba3cb15697c86",
+      "reason": "検証器と送信器をつなぐok:trueフィルターと結合テスト。"
+    },
+    {
+      "id": "q-d4-e03",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "9ce0c039c4b37b248159bb70038659b0490381150461444eac0d52beda75feb8",
+      "reason": "非同期APIの例だけを追加する一変数のプロンプト比較。"
+    },
+    {
+      "id": "q-d4-e04",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "4afcaa347e38bc09dee878891feb815c8524153f47ab772e449715e1579b6adb",
+      "reason": "呼出元と設定元の情報を容量内に選ぶ、依存関係と入力予算のパズル。"
+    },
+    {
+      "id": "q-d4-e05",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "36b894a6eabd14ca912d65589a39df3f500a383730825acbb2d59fc6bd0b5cdd",
+      "reason": "決済の禁止状態遷移を検出する拒否ケースの追加。"
+    },
+    {
+      "id": "q-d5-a03",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "a84c50a5174689c5bb8828fe17de7629fd7d6f06f8c6ca5a8ab5f47d71e051bd",
+      "reason": "削除したAPI引数と移行例をPR説明へ反映する一般的な変更文書の問題。"
+    },
+    {
+      "id": "q-d5-a04",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "e98fb595cf33cee531f287ef81249b29034cc687dacc82ae9734983eb51cbd3f",
+      "reason": "注文0件の顧客が欠落するSQLを再現するテストデータ。"
+    },
+    {
+      "id": "q-d5-a06",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "724c5f3881fec412caa2fc235efe7c9eab2ecfaa5dd85b6077bbf939a14beebf",
+      "reason": "複数仕様のテストを独立して実行できる単位へ分ける整理。"
+    },
+    {
+      "id": "q-d5-a07",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "2d2e73fd19073f6c9894d873965d274e21b3697fc50d112cd8433864aa31fd88",
+      "reason": "時刻固定とタイムゾーンの境界値テスト。"
+    },
+    {
+      "id": "q-d5-a08",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "273ad7052118339db3eb1274446520202cc4aec5231b214a771a568007a04d77",
+      "reason": "SQLiteでのCRUDと本番DB固有機能の結合テストの分担。"
+    },
+    {
+      "id": "q-d5-a09",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "8c38f046b36ee3aa509d202c06dc01bb34a2a15e6bb56c7d76c69647f9bfa782",
+      "reason": "宣言型に反してnullがある実入力の回帰テスト。"
+    },
+    {
+      "id": "q-d5-a10",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "39ab9c6b9e0f9257339295c651f739c3129fad9600504d0e81ab70d622cdfdd4",
+      "reason": "本番規模・重複キー・順序を保持した性能比較。"
+    },
+    {
+      "id": "q-d5-a11",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "46706a3d1d3e8f1c43f6c644cdbf27fb1bff3a60c158486119407d4859d39f74",
+      "reason": "起動に必要な環境変数をREADMEへ補って再現する文書検証。"
+    },
+    {
+      "id": "q-d5-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "f17e590323a9bc8e2ce5476c1988daba5bb54c1347d6eb9f41409e9af911789d",
+      "reason": "debounceの時刻・回数・保存内容を偽タイマーで検証する。"
+    },
+    {
+      "id": "q-d5-e02",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "d47897cbcfa2447f7cd54275ff5ce01be48b4bad7f248401b77276186460183a",
+      "reason": "API契約変更の承認、顧客識別子の除去、誤ったPR要約の修正。"
+    },
+    {
+      "id": "q-d5-e03",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fba258edba97c1bc09a427f939c7e175c11aaf8c9ba704b4149884ea2a7a75b4",
+      "reason": "残高の変化と操作列で変異実装を検出するテスト設計。"
+    },
+    {
+      "id": "q-d5-e04",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "71c00e5be08eb80a59bc8a821d5a3bf3eb5550dd07f169a4a5225b7c0c6219f9",
+      "reason": "生成JSDocだけを現行API契約へ合わせる一般的な文書修正。"
+    },
+    {
+      "id": "q-d5-e05",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7089ed65424ea0282fc6ab3ea551064addc4f9a6c5344f22309aaeee0d666cc9",
+      "reason": "承認した表示変更と不具合を分けてスナップショットを更新する。"
+    },
+    {
+      "id": "q-d6-a03",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "b278340db9a3feb709e75cd4ed492022b8aa5121873f8809124051aadb54a26c",
+      "reason": "正答は送信前のログのトークン除去。Push protectionや公開一致Blockは誤答側で、正答は一般的な秘密の前処理。"
+    },
+    {
+      "id": "q-d6-e02",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "fingerprint": "d986597d034fce3f5f58f1cfd0761e48cb7c25bffc0dea692bc3fe24a0e196fe",
+      "reason": "UTC/JSTの換算と対象組織の一致から監査イベント候補を選ぶ。Copilot監査機能の操作を問わない。"
+    },
+    {
+      "id": "q-d6-e03",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "fingerprint": "967a2173a370aa80bff82af8a09fd3e599b255b67dc199bc5922afab914c6ba6",
+      "reason": "GPL/MITと出所不明を架空の採用基準へ当てはめる審査。Blockという語はあるが、判定の中心はライセンスと社内規則。"
+    },
+    {
+      "id": "q-d6-e04",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "fc0c6c5dd9e0e67a32164359f8bc365af1e104a7207a49ee31bee5eb77986dbb",
+      "reason": "架空の保持契約30日と社内の入力規則を三欄へ転記する読解。実在する機能や保持仕様を学ばない。"
+    },
+    {
+      "id": "q-d6-e05",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "fingerprint": "4e0c87e83b58c7e58f6224d5aca1675917e1095670e9eea9df6dd9a0a90992c1",
+      "reason": "架空の30日ルールとnullの扱いに従う回収候補の判定。Copilot APIの具体的仕様・操作ではない。"
+    },
+    {
+      "id": "q-sc02-1",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fbcb3d7e3f7c7ba4f1daccece70a6231a4a7c1b932aac2d685657222e4b7ef8f",
+      "reason": "承認済みの0拒否・1受理を独立したテスト期待値にする。"
+    },
+    {
+      "id": "q-sc02-2",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "3be2fbae1c10c905d5319a230fc3ac92b06b8ab3761c8e381623c820890e4821",
+      "reason": "偶数丸め2.5の実装とテスト期待値の共通誤り。"
+    },
+    {
+      "id": "q-sc02-3",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "6432ddd96260e265c70d89b1819655a5deb9e8b6ab68d325afbe9a47e5911a62",
+      "reason": "丸め方式を区別するfew-shot例。Copilot以外のLLMや実装者にも同じ例を渡す。"
+    },
+    {
+      "id": "q-sc03-1",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8e9dbac42bfde57df7b39274457187c2b3444a8837bb99618aa29e7381d3bad9",
+      "reason": "担当範囲の認可と読取専用のAPIを組み合わせる一般的な連携設計。"
+    },
+    {
+      "id": "q-sc03-2",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "fingerprint": "21c2699b5fb4a39edc6df2f80f44c36314aac3e072f504f7585f34ba91f9c8d2",
+      "reason": "401認証と403認可を区別する一般的なHTTP/APIの障害対応。"
+    },
+    {
+      "id": "q-sc03-3",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d7ac6a3ed7cbf203f0acdacdb7c0e5a9a955b9ad5e18e00305cbeb0d89df4c86",
+      "reason": "一要求の経路を追うログを抜粋する一般的な障害調査の資料選択。"
+    },
+    {
+      "id": "q-sc04-3",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a21246a8f1f5cef7e74c520e7542f103a09fb1711ed710ed4af3b9e444d5b105",
+      "reason": "AIレビューの有無にかかわらず必要な、担当内外の認可の動作テスト。"
+    },
+    {
+      "id": "q-sc05-1",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "a6cf6cfc0767bd277a03af14252d5c3761a3fc1e3dca62708796701a0eb89dca",
+      "reason": "実在するSDKメソッドと承認契約へ合わせるAPIの修正。Copilotの機能操作は答えではない。"
+    },
+    {
+      "id": "q-sc05-2",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "c5d872b09fb04639820f0a3c88834164bf9ff47fbfa7bda32ee52f1944d1d546",
+      "reason": "自由モックが存在しないAPIを隠すため、実SDKの型・契約で検査する一般的なテスト設計。"
+    },
+    {
+      "id": "q-sc05-3",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "0f65bf339ac5d3f9406dca29b9732c42f5c5f18a1570bc212a1ff7abdaa2f857",
+      "reason": "機密除去済みのログで要求経路を追う資料構成。Copilotの保護機能そのものを選ばない。"
+    },
+    {
+      "id": "q-sc06-2",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "4cf09d1ae601f303f40671061fe127705e43eaf99b6aa5ada78d1795d97715cd",
+      "reason": "例を業務規約へ合わせ、固定パスをパラメーターにするテンプレート内容の編集。Prompt Fileの具体的構文・呼出方法・適用制約を問わない。"
+    },
+    {
+      "id": "q-sc07-1",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8f6594167c723576d0ac034938f9a6fc2ad9a2a6879e256588391b4b2779d2d1",
+      "reason": "最新の脆弱性DBを認可付き読取APIで検索する設計。MCP名を通常のAPI連携へ替えても同じ判断。"
+    },
+    {
+      "id": "q-sc07-2",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "f08a2458fff711d5b443453f4e6d3e096451f7cd20b473cf20d0fe755f96c076",
+      "reason": "getDocument(id)に対象文書の認可を追加するBOLA/IDOR対策。MCPという名前を替えても同じ。"
+    },
+    {
+      "id": "q-sc08-2",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "9ef1a05c4128cec33e8e3168bf5116d690ee11cbcc61e4c697145319095f2727",
+      "reason": "引用元の旧版と明示添付の新版を比較する一般のRAG・参照資料の診断。"
+    },
+    {
+      "id": "q-sc09-1",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "e78145b87ea1f71b71d06fcd85563897789348733a3a8b9541faacbea6094702",
+      "reason": "PR数・人数・手戻り率の算数。Copilotの測定APIの操作や仕様を問わない。"
+    },
+    {
+      "id": "q-sc09-3",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "d4233bd6b27d79a0625fc37757079c8c37a861e9f8c943fe98412b27b8cba34b",
+      "reason": "AIへの過度の依存を疑い自力で説明させる一般的な育成方針。"
+    },
+    {
+      "id": "q-sc10-3",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "8eb095ca1aee33cf85116ba30e384e7428647665de85b14b41e203b3c7b905ab",
+      "reason": "変わったデータ分類と保存条件だけを追加審査する一般の変更審査。"
+    },
+    {
+      "id": "q-d1-a11",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "fingerprint": "0d83bdd5fdc498941c7808070037b72ca431b72a76665b76d148a0223f8d7f59",
+      "reason": "一致コミットとHEADのGPL/MITを照合する一般的なOSSライセンス審査。参照機能の操作・設定を問わない。"
+    },
+    {
+      "id": "q-d1-a12",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "f0968514717f11c94dc5e5aa153875812d4201f380481852cd36ec10b6a4b2eb",
+      "reason": "属性を統制して地域だけ変える公平性の評価設計。"
+    },
+    {
+      "id": "q-d1-a13",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "5d9d6a19005a9f1a419f2bafd4331fab4813e8b6db7d2f2509f9e98df1627811",
+      "reason": "拒否テストと人の承認をマージ条件にする一般のCI・レビュー統制。"
+    },
+    {
+      "id": "q-d1-a14",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "c5e896bd305f28fbc4745aa49b5b64154b8795e8917536a59bc1a66c0d246e22",
+      "reason": "承認済み技術基準を守って再検証する採用判断。"
+    },
+    {
+      "id": "q-d2-a26",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
+      "reason": "依頼外の依存更新を分け、元の環境で修正を検証する変更管理。"
+    },
+    {
+      "id": "q-d3-a14",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "13b0abed4432c4345e48a442ed4d5a455be44d8a1d75539f9d857f0b61566cf3",
+      "reason": "修正する関数のコード・型・再現例を保持して背景を要約する一般的な文脈選択。"
+    },
+    {
+      "id": "q-d3-a15",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fa75928150180b55e042cc2df23dd3d1db57e90551f976148a0b402b041f5595",
+      "reason": "数値assertionと出力文字列の桁数assertionの違い。"
+    },
+    {
+      "id": "q-d4-a14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "99423fa6c0c7ad496a10fa10438b3248c1f178c071297869bb9c59d993825905",
+      "reason": "残高不足時に注文状態と通知回数を検証する結合テスト。"
+    },
+    {
+      "id": "q-d5-a12",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fd8e518052746f5f5961fb9e195b83794d55332f8e0630354f2be3cc21e2d6fc",
+      "reason": "割引価格99/100の境界値によって実装を絞るTDD。"
+    },
+    {
+      "id": "q-d5-a14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7cc060a41db3a9ea3fbc96e7449a6bd2cd9a62adf142197c041008d41fff1d58",
+      "reason": "外部APIの再試行と機密を返さない例外処理。Copilotの製品機能ではない。"
+    },
+    {
+      "id": "q-d5-a15",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a7862e5b706ba4c3c61207a1b3cebbc171a0e400b56493a180eb91f53cc769f2",
+      "reason": "年齢の型・整数・範囲の検証と境界値テスト。"
+    },
+    {
+      "id": "q-d6-a13",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "b4d625759e1171ec12175e06f996993eb0e7ef88137190bae69c4745d7a5eebf",
+      "reason": "適用契約の軽減策と対象機能の設定を照合する一般的な契約審査。具体的なCopilotの機能仕様・設定値を答えない。"
+    },
+    {
+      "id": "q-d1-e09",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "58118b389d737c8c2e1b1360467d3230b215faebaad83f7c75dbf7f816ab9c0e",
+      "reason": "郵便番号の代理変数と独立データによる公平性評価。"
+    },
+    {
+      "id": "q-d2-e20",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "ecf598f2d45c32810d9eb171fd7e2405518a6387edc2b059a95ae672922dc635",
+      "reason": "元のユーザー差分を残し未承認差分だけ戻す一般的な変更帰属・復旧。"
+    },
+    {
+      "id": "q-d2-e22",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "fingerprint": "bfc235ab00812bcb894e32dac6f604e512e149d43f706e43946eff1fa8526f62",
+      "reason": "入力読取専用・成果物ディレクトリだけ書込・実行不可という一般的なコンテナ隔離。CLI固有の権限フラグやsandbox設定を問わない。"
+    },
+    {
+      "id": "q-d2-e23",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "3438fb76538a5ab41f9c3f7347aaf73207a677aaa40f06e3fa10a41f771942a9",
+      "reason": "prototype配下かつ内部専用という架空の規約例外。Prompt Fileは生成元という背景。"
+    },
+    {
+      "id": "q-d3-e06",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "a79e690ea54a1f5b8d0b21a08873f3514885477d66d8050e7c00f860a726a4dc",
+      "reason": "OSストアとNodeプロセスの追加CAを区別する一般的な証明書設定。"
+    },
+    {
+      "id": "q-d3-e07",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "a327a18db9aa7388a5d281ddcbc11126a2c3bc89b5548a0dbe07172c94f9c504",
+      "reason": "モデルと指示を固定して引用版だけ変える対照実験。"
+    },
+    {
+      "id": "q-d3-e08",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "14875cbcfa2ac0c6b564eb7b740f95c65a79940d08334abc4c5dc88682b4abab",
+      "reason": "中間補完という語はあるが、正答はxの不要な変換と早期returnを除くプログラムの読解。"
+    },
+    {
+      "id": "q-d4-e06",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "05f42e7ce0b39077ff153ddd009c76bc79ff6500f1a526401cb4546bb53b96cd",
+      "reason": "古い設定例と現行例の差から更新する資料を選ぶ比較。"
+    },
+    {
+      "id": "q-d4-e07",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "84ebdc06bd9dcb7b7786c873fa2e6405a142e3475bca51219df0519497e5804e",
+      "reason": "モデルを固定して指示形式だけを比較する一変数実験。"
+    },
+    {
+      "id": "q-d4-e08",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "b2c7304665d1baba3361527cfed20f9569f28cf9660d600254c2d4b1bd9b2072",
+      "reason": "社内のfetch規約とpolyfillで実行互換を満たす選択。組織/repo指示の具体的な優先規則を知らずに解ける。"
+    },
+    {
+      "id": "q-d4-e09",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "be521fa26a73e956a468b5aacd70a34f07a100dea3c32a45176941853acfbc37",
+      "reason": "LEFT JOINを区別する例、表名、容量条件の照合。一般のSQLと例示の問題。"
+    },
+    {
+      "id": "q-d5-e06",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "eeeeb95333039f47439998ff57707398cf79920578c0123b521b7b2660ab277c",
+      "reason": "Autofixという名はあるが、値の束縛と列名の許可リストというSQL安全実装を答える。"
+    },
+    {
+      "id": "q-d5-e07",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "c2eee38e76721fd4ff11d5b1fe52cdadb6c273a3ebeb31f52c2fbf3c3512bd3d",
+      "reason": "外部HTTPだけをスタブ化しparse・validate・更新を実行する結合テスト。"
+    },
+    {
+      "id": "q-d5-e08",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "61e4988f4fb3ca176e63e2530a125a794a1f2c032b29c64aac0578f4de244bb3",
+      "reason": "手戻り率・時間/PR・満足度という架空の数値基準から候補を選ぶ算数。"
+    },
+    {
+      "id": "q-d1-a15",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "514b535fda40418a717303822921035cf6900905637c4f79e55c545e3aae996a",
+      "reason": "画像の問題。展開対象の言語を評価集合へ追加する一般的なテスト設計。Copilot機能を知らなくても解ける。"
+    },
+    {
+      "id": "q-d1-a16",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "e1b80a2df4137c6483e86fab8b4b95db997e4687f86ea4719d30385bcfd51ab7",
+      "reason": "群別の母数と失敗率を計算して公平性の採用条件を判定する。"
+    },
+    {
+      "id": "q-d1-a17",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "e594aea385af9187067ce788b75f6cf0da3998361ff1a31aec7b1d426091879e",
+      "reason": "性別の表現を除き職務権限を正確に記す一般的な文章修正。"
+    },
+    {
+      "id": "q-d1-a18",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "607be880ec104ca5c5a5290a0466d6edcd62264a38b225745c2af0606314ac10",
+      "reason": "未決定の業務条件を確定して実装と期待値を見直す要件確認。"
+    },
+    {
+      "id": "q-d1-a19",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "2d4b07eb6b656bd947995a1c246ff965fa60b289dae9df14680ab5120e6cbfaa",
+      "reason": "未承認の本番削除を検証環境へ限定する作業範囲の統制。Agentの具体的権限制御ではない。"
+    },
+    {
+      "id": "q-d1-a20",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
+      "reason": "時間的な前後関係と因果の未確認を分ける一般的な報告。"
+    },
+    {
+      "id": "q-d1-a21",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "3ec7b5ba9bfc441311660e15422b1a8832d64396b64430366ea830842f8c4179",
+      "reason": "キーボードでの並べ替えを実装・検証するアクセシビリティ。"
+    },
+    {
+      "id": "q-d1-a22",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
+      "reason": "調整に使わない同対象のデータで評価するホールドアウト設計。"
+    },
+    {
+      "id": "q-d3-a16",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "70b817a0f7e305c465ba972d1d677f44abc0f2dfee17f533d77d4e804784cfb0",
+      "reason": "提案の不一致を調べるためにコード・型・依頼・提案をそろえる一般的な再現資料の準備。"
+    },
+    {
+      "id": "q-d3-a19",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "673c796cfec55470173cd3d97b3e8b0863a2f6cfac5c7821e878224c62a5cc84",
+      "reason": "入力上限と履歴・指示・添付を確認する一般的なLLMの文脈制約。Copilotの設定・具体操作や機能差を問わない。"
+    }
+  ],
+  "holdForFeatureFactFixIds": [
+    "q-d6-e07"
+  ]
+}

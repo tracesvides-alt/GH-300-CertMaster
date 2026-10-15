@@ -50,7 +50,7 @@ import {
   type GlossaryFilter,
   type SearchResult,
 } from '@/lib/content';
-import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive } from '@/lib/db';
+import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive, getCurrentConfusionPairs } from '@/lib/db';
 import { getLessonNav } from '@/lib/lesson-nav';
 import { LessonFooterNav } from './components/lesson-footer-nav';
 import { StudyItemNav } from './components/study-item-nav';
@@ -62,7 +62,7 @@ import { choiceLabel, answerLabels } from '@/lib/choice-labels';
 import { withTimeout } from '@/lib/with-timeout';
 import { mastery, score, streak, type Attempt } from '@/lib/learning';
 import { withCurrentAttemptClassification, withCurrentQuestionClassification } from '@/lib/question-classification';
-import { isQuestionActive, withoutDeletedSessionQuestions } from '@/lib/question-availability';
+import { isQuestionActive, withoutDeletedSessionQuestions, getQuestionRetirement } from '@/lib/question-availability';
 import PracticeSetup, { CountPicker } from './components/practice-setup';
 import PracticeResult from './components/practice-result';
 import WrongAnswerNotebook from './components/wrong-answer-notebook';
@@ -188,7 +188,7 @@ export default function App() {
   const wrongAnswers = useLiveQuery(async () =>
     (await db.wrongAnswers.toArray()).map(withCurrentAttemptClassification), []) ?? [];
   const questionReviews = useLiveQuery(() => db.questionReviews.toArray(), []) ?? [];
-  const confusionPairs = useLiveQuery(() => db.confusionPairs.toArray(), []) ?? [];
+  const confusionPairs = useLiveQuery(getCurrentConfusionPairs, []) ?? [];
   const [reviewSubTab, setReviewSubTab] = useState<'notebook' | 'confusion' | 'history'>('notebook');
 
   const footerNavRef = useRef<HTMLDivElement>(null);
@@ -428,7 +428,7 @@ export default function App() {
     try {
       const [history, saved, marks, reviews, pairs] = await withTimeout(Promise.all([
         db.attempts.toArray(), db.generated.toArray(), db.bookmarks.toArray(),
-        db.questionReviews.toArray(), db.confusionPairs.toArray(),
+        db.questionReviews.toArray(), getCurrentConfusionPairs(),
       ]));
       const result = selectQuestions([...questions, ...saved], options, {
         attempts: history,
@@ -820,6 +820,16 @@ export default function App() {
                   );
                 })()}
                 <h2>{q!.question}</h2>
+                {getQuestionRetirement(q!.id) && (
+                  <aside className="notice" aria-label="旧問題について">
+                    <p>この問題は旧版で、新規出題の対象外です。過去の回答と解説はそのまま確認できます。</p>
+                    {!activeMock && <button className="secondary" onClick={() => {
+                      const ids=getQuestionRetirement(q!.id)!.replacementIds;
+                      const current=questions.filter(item=>ids.includes(item.id));
+                      if(current.length){start(current);setTab('Practice');}
+                    }}>関連する現行問題を解く</button>}
+                  </aside>
+                )}
                 <fieldset disabled={revealed || busy}>
                   <legend className="sr-only">回答を選択</legend>
                   {q!.choices.map((c) => (
@@ -2627,10 +2637,10 @@ export default function App() {
 
                   {reviewSubTab === 'notebook' && (
                     <WrongAnswerNotebook
-                      wrongAnswers={wrongAnswers}
+                      wrongAnswers={wrongAnswers.filter(a=>isQuestionActive({id:a.questionId}))}
                       confusionPairs={confusionPairs}
                       allQuestions={questions}
-                      attempts={attempts}
+                      attempts={attempts.filter(a=>isQuestionActive({id:a.questionId}))}
                       onStartQuickReview={(qs) => {
                         start(qs);
                         setTab('Practice');

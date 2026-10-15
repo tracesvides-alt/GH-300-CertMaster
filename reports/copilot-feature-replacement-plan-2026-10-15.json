@@ -1,0 +1,4161 @@
+{
+  "date": "2026-10-15",
+  "status": "PLAN_ONLY_NOT_IMPLEMENTED",
+  "scope": {
+    "replacementSlots": 121,
+    "applied": 72,
+    "exam": 49,
+    "keptFeatureCandidates": 25,
+    "separateFactCorrectionId": "q-d6-e07",
+    "foundationReviewed": false
+  },
+  "bankFingerprint": "0c55dd179e13bf67a07aefd13c71386c095a88c4584f895aea18448a86c0e197",
+  "inventoryGoal": {
+    "activeFoundation": 163,
+    "activeApplied": 90,
+    "activeExam": 57,
+    "activeTotal": 310,
+    "newActiveQuestions": 0
+  },
+  "classificationPolicy": "旧Domainは作業枠の集計のみ。新問の主たる学習目標で再判定し、全310問と難度別の比率差分を示してから確定。機能名だけでD2へ集約せず、旧比率を守るためD1/D5へ無理に置かない。",
+  "sources": [
+    {
+      "id": "guide",
+      "title": "GH-300 Study Guide",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "approval",
+      "title": "VS Code approvals",
+      "url": "https://code.visualstudio.com/docs/agents/run/approvals",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "trust",
+      "title": "VS Code trust and safety",
+      "url": "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "risk",
+      "title": "Cloud agent risks and mitigations",
+      "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/risks-and-mitigations",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "reference",
+      "title": "Copilot code referencing",
+      "url": "https://docs.github.com/en/copilot/concepts/completions/code-referencing",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "edits",
+      "title": "Review and revert agent changes",
+      "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "mcp-tools",
+      "title": "MCP in VS Code",
+      "url": "https://code.visualstudio.com/docs/copilot/customization/mcp-servers",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "firewall",
+      "title": "Copilot firewall configuration",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "context",
+      "title": "Add context to chat",
+      "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "tools",
+      "title": "Use tools with agents",
+      "url": "https://code.visualstudio.com/docs/agents/run/tools",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "autopilot",
+      "title": "Copilot CLI Autopilot",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/autopilot",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "cli",
+      "title": "Allowing and denying tool use",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "spaces",
+      "title": "Copilot Spaces",
+      "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "review",
+      "title": "Copilot code review",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/code-review",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "review-config",
+      "title": "Configuring code review",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "review-howto",
+      "title": "Using Copilot code review",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "cloud",
+      "title": "Copilot on GitHub",
+      "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "sessions",
+      "title": "Managing agent sessions",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "chat",
+      "title": "Use the Chat view",
+      "url": "https://code.visualstudio.com/docs/agents/run/chat-view",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "policies",
+      "title": "Managing enterprise policies",
+      "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "testing",
+      "title": "VS Code AI-assisted testing",
+      "url": "https://code.visualstudio.com/docs/debugtest/testing",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "summary",
+      "title": "Creating PR summaries",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/copilot-for-github-tasks/create-a-pr-summary",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "cli-start",
+      "title": "Using Copilot CLI",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "cli-reference",
+      "title": "Copilot CLI reference",
+      "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "custom-agent",
+      "title": "Custom agents configuration",
+      "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "seats",
+      "title": "Copilot REST user management",
+      "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "ide",
+      "title": "Copilot in the IDE",
+      "url": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "cli-compare",
+      "title": "Comparing CLI customization features",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "models",
+      "title": "Supported AI models",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "index",
+      "title": "Repository indexing",
+      "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "exclusion",
+      "title": "Content exclusion",
+      "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "exclusion-howto",
+      "title": "Excluding content from Copilot",
+      "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "network",
+      "title": "Troubleshooting network errors",
+      "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-network-errors",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "logs",
+      "title": "Viewing Copilot logs",
+      "url": "https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/view-logs",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "prompt",
+      "title": "VS Code prompt files",
+      "url": "https://code.visualstudio.com/docs/agent-customization/prompt-files",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "instructions",
+      "title": "Repository custom instructions",
+      "url": "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "setup",
+      "title": "Cloud agent development environment",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    },
+    {
+      "id": "completion",
+      "title": "Copilot code suggestions",
+      "url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/get-ide-code-suggestions",
+      "evidenceStatus": "PLANNING_REFERENCE_RECHECK_EXACT_SECTION_BEFORE_DRAFT"
+    }
+  ],
+  "keptComparisonAnchors": [
+    {
+      "id": "q-d1-e06",
+      "difficulty": "intermediate",
+      "reason": "公開コード一致Blockの役割と、ライセンス適合を保証する機能ではないという限界を問う。"
+    },
+    {
+      "id": "q-d2-a20",
+      "difficulty": "intermediate",
+      "reason": "Spacesのアップロード資料、MCPでのAPI照会、Instructions、Prompt Fileの使い分けを選ぶ機能選択。"
+    },
+    {
+      "id": "q-d2-e06",
+      "difficulty": "advanced",
+      "reason": "CLIの利用可能ツール集合、allow、denyの優先関係を二つのセッションへ適用する。"
+    },
+    {
+      "id": "q-d2-e08",
+      "difficulty": "intermediate",
+      "reason": "VS Codeのパス別指示とapplyTo、共通指示からの除去という適用範囲の設定。AAAのテスト内容は答えではない。"
+    },
+    {
+      "id": "q-d2-e16",
+      "difficulty": "intermediate",
+      "reason": "共通規約とパス別規約というCopilot Instructionsの適用範囲を整理する。"
+    },
+    {
+      "id": "q-d3-e04",
+      "difficulty": "advanced",
+      "reason": "通常補完と非対応のAgentでContent Exclusionの保護範囲が違う機能制約。"
+    },
+    {
+      "id": "q-d6-a01",
+      "difficulty": "intermediate",
+      "reason": "複製先repoの識別と対象パスへCopilot Content Exclusionを適用する設定。"
+    },
+    {
+      "id": "q-d6-a08",
+      "difficulty": "intermediate",
+      "reason": "Content excluded表示と他ファイルの通常補完を使う、Copilot除外機能の診断。"
+    },
+    {
+      "id": "q-d6-a09",
+      "difficulty": "intermediate",
+      "reason": "CopilotのIDE活動記録にテレメトリーの収集条件があることを区別する管理機能の問題。PR数の計算問題とは分ける。"
+    },
+    {
+      "id": "q-d6-a10",
+      "difficulty": "intermediate",
+      "reason": "Privateという公開範囲とCopilot除外の適用先を区別して設定する。"
+    },
+    {
+      "id": "q-d6-e01",
+      "difficulty": "advanced",
+      "reason": "Content Exclusionのsymlink経路と非対応Agentの制約を区別する。"
+    },
+    {
+      "id": "q-sc01-2",
+      "difficulty": "intermediate",
+      "reason": "repoルールを削除しても組織の除外ルールが残るという適用範囲と設定元。"
+    },
+    {
+      "id": "q-sc01-3",
+      "difficulty": "advanced",
+      "reason": "CopilotのEnterprise強制設定とOrganizationへ委任したポリシーの実効範囲・変更権限。"
+    },
+    {
+      "id": "q-sc06-3",
+      "difficulty": "intermediate",
+      "reason": "GitHub.comの個人指示とrepo指示の適用範囲・競合の整理。JSDocの正しい書き方を答えない。"
+    },
+    {
+      "id": "q-d2-a23",
+      "difficulty": "intermediate",
+      "reason": "VS CodeでstdioのMCPをHTTPとして設定した方式不一致。実際のクライアント接続設定を問う。"
+    },
+    {
+      "id": "q-d2-a24",
+      "difficulty": "intermediate",
+      "reason": "常時適用する共通指示と必要なときに使うPrompt Fileという機能・起動の使い分け。"
+    },
+    {
+      "id": "q-d2-a25",
+      "difficulty": "intermediate",
+      "reason": "Copilot CLIの提供ツールと実行権限、sessionのallow/denyと保存済み承認の区別。"
+    },
+    {
+      "id": "q-d3-a13",
+      "difficulty": "intermediate",
+      "reason": "Copilot座席割当API、利用集計、機能ポリシー、監査という管理機能の使い分け。"
+    },
+    {
+      "id": "q-d6-a11",
+      "difficulty": "intermediate",
+      "reason": "Copilot Content Exclusionへ実際に指定するパス範囲と再帰パターン。"
+    },
+    {
+      "id": "q-d6-a12",
+      "difficulty": "intermediate",
+      "reason": "Copilot除外の設定反映、IDE再読込、除外表示の確認という機能の検証操作。"
+    },
+    {
+      "id": "q-d6-a14",
+      "difficulty": "intermediate",
+      "reason": "組織由来とrepo由来の除外設定を区別して変更する。"
+    },
+    {
+      "id": "q-d2-e21",
+      "difficulty": "advanced",
+      "reason": "Spaceへの共有権限と参照元repo権限が別である、Copilot Spacesの実際のアクセス範囲。"
+    },
+    {
+      "id": "q-d2-e24",
+      "difficulty": "advanced",
+      "reason": "廃止されたGitHub App型Copilot Extensionsと、存続する通常App機能、MCP移行の区別。旧機能の現行扱いではない。"
+    },
+    {
+      "id": "q-d6-e06",
+      "difficulty": "advanced",
+      "reason": "Suggestions matching public codeのEnterprise強制BlockとOrg保存値・承認記録の違い。"
+    },
+    {
+      "id": "q-d3-a17",
+      "difficulty": "intermediate",
+      "reason": "Copilotの公開コード一致Allow/Blockと候補表示の変化を、入力除外・接続・補完設定と区別する。"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "q01",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "12ba500ebaa49a8fb5f1080eb8723b9463350a0f1bad82ef1af63f221cdba457",
+      "reason": "月末補正の仕様と実装・期待値の修正範囲。手書き実装でも同じ判断。",
+      "previousReason": "月末補正の仕様と実装・期待値の修正範囲。手書き実装でも同じ判断。",
+      "title": "ローカルAgentの承認範囲",
+      "scenario": "ファイル編集は許可し、外部コマンドの実行は都度確認したい。Copilotの承認設定で分離する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "編集承認",
+        "ターミナル承認",
+        "全許可",
+        "Chat指示"
+      ],
+      "sourceIds": [
+        "approval"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a01",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "0555ffcecff96bedd2e80faf430ade048a13bc2729b6ac50852814b63942aad2",
+      "reason": "parse例外時のcloseを検証する異常系テスト。",
+      "previousReason": "parse例外時のcloseを検証する異常系テスト。",
+      "title": "クラウドAgentの実行確認",
+      "scenario": "PRは作成されたがActionsが未実行。既定の承認待ち表示から、利用者が行うCopilot PRの操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Approve and run",
+        "再割当",
+        "MCP許可",
+        "IDE承認"
+      ],
+      "sourceIds": [
+        "risk"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a02",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "7b175ff332b043993a077f04adb9e84b88b4678bee07d8381b1ee7b017c7d463",
+      "reason": "SQL連結を避けORMやパラメータ化を求める一般的な安全実装・指示内容。",
+      "previousReason": "SQL連結を避けORMやパラメータ化を求める一般的な安全実装・指示内容。",
+      "title": "コード参照の表示経路",
+      "scenario": "IDEのインライン提案を採用した後、公開コードとの一致元を確認したい。該当クライアントの参照表示を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "コード参照ログ",
+        "Used references",
+        "PR summary",
+        "Agent実行ログ"
+      ],
+      "sourceIds": [
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a03",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "814f349244a14283095b8c477d34dc64344a8297a34719f2c82cc3578608598d",
+      "reason": "viewerの拒否を確認する権限の境界テスト。",
+      "previousReason": "viewerの拒否を確認する権限の境界テスト。",
+      "title": "変更の部分採用",
+      "scenario": "Copilotが複数ファイルを変更し、一部だけ採用したい。対象クライアントの差分レビュー操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "変更単位の採否",
+        "ファイル単位の取消",
+        "checkpoint復元",
+        "レビュー後の追加依頼"
+      ],
+      "sourceIds": [
+        "edits"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a04",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "eb698b409814d7165c781cb2f5adc9b6a305e2557fec5d2e229baccceeb778b1",
+      "reason": "秘密のハードコード防止とリポジトリの秘密検知。Copilotの機能知識が正答を分けない。",
+      "previousReason": "秘密のハードコード防止とリポジトリの秘密検知。Copilotの機能知識が正答を分けない。",
+      "title": "外部コンテキストの取得承認",
+      "scenario": "CopilotにMCPを追加した後、ツール結果を取り込む前に確認したい。ツール承認と結果確認の区別を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "実行前承認",
+        "結果の確認",
+        "サーバー信頼",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "approval",
+        "mcp-tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a07",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "aa5361425dacd7d7db7628f6e49d648a38c1ed4e0f6fddd27b813bb40b5509a2",
+      "reason": "AIレビューを人の承認の代わりにしない一般的なガバナンス。Code Reviewの具体的な設定・承認機能の操作を問わない。",
+      "previousReason": "AIレビューを人の承認の代わりにしない一般的なガバナンス。Code Reviewの具体的な設定・承認機能の操作を問わない。",
+      "title": "Agentのネットワーク接続制限",
+      "scenario": "クラウドAgentだけが指定ドメインへ接続できない。外部接続の制御箇所を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Agent firewall",
+        "ローカルプロキシ",
+        "モデル選択",
+        "コード参照設定"
+      ],
+      "sourceIds": [
+        "firewall"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a08",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "f9901de5087b85121de4f9147deba8e68d726dd58d5a232f92b9215641aa6ebb",
+      "reason": "変異実装でassertionの欠陥検出力を確認する一般的なテスト評価。",
+      "previousReason": "変異実装でassertionの欠陥検出力を確認する一般的なテスト評価。",
+      "title": "提案の根拠の確認",
+      "scenario": "Chat回答と実際に参照したファイルを照合したい。回答の参照情報を開く操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Used references",
+        "コード参照",
+        "モデル選択",
+        "利用状況集計"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a09",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "a203bc94ec2ce6c41cf818dc47f3c9a4786c19f9e29fb255ac53de0f73756f08",
+      "reason": "型・規約検査と業務回帰テストの検証範囲の違い。",
+      "previousReason": "型・規約検査と業務回帰テストの検証範囲の違い。",
+      "title": "非破壊の調査と実装の分離",
+      "scenario": "同じCopilot環境でまず読み取り調査だけを行い、後から編集したい。利用可能なモード・ツール設定を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "調査用ツール制限",
+        "全実行許可",
+        "常設Instructions",
+        "モデル変更"
+      ],
+      "sourceIds": [
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a10",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "b73bdb68045b3d0ca7f3695aa677bfc57a008c221b641020737e537fcdb0ea8b",
+      "reason": "性能を満たしても空入力の戻り値契約を守るという実装の採用判断。",
+      "previousReason": "性能を満たしても空入力の戻り値契約を守るという実装の採用判断。",
+      "title": "継続実行と権限の違い",
+      "scenario": "CLIで自律的な継続を有効にしたが、危険な操作の許可範囲は変えたくない。継続モードと許可設定の関係を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Autopilot",
+        "allow-all",
+        "個別ツール許可",
+        "確認応答設定"
+      ],
+      "sourceIds": [
+        "autopilot",
+        "cli"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e06",
+        "q-d2-a25"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e01",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "2a60af5b9495df3224fa44a02d39192f6a535030727df0d5c9048a9b6e7ae4cd",
+      "reason": "配布物hash、出所証跡、Linux検査を照合する一般的な採用審査。",
+      "previousReason": "配布物hash、出所証跡、Linux検査を照合する一般的な採用審査。",
+      "title": "クラウドPRの承認者と実行者",
+      "scenario": "Copilotへ依頼した人、別の書込権限者、必須承認を示し、Agent PRの実行承認とマージ承認を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ワークフロー承認",
+        "依頼者のレビュー",
+        "別担当レビュー",
+        "Agentへの再依頼"
+      ],
+      "sourceIds": [
+        "risk"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e02",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "cec16c91db202f35cec63635f16f58315bf7677302520300be5caeb34354a1f8",
+      "reason": "変更POSTの実ルート検証と挙動変更の承認。AgentのPR作成機能は背景にとどまる。",
+      "previousReason": "変更POSTの実ルート検証と挙動変更の承認。AgentのPR作成機能は背景にとどまる。",
+      "title": "参照ログの証跡の限界",
+      "scenario": "インライン採用・手修正・Chat出力の記録を比較し、Copilotコード参照で確認できる範囲を特定する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "採用提案ログ",
+        "手修正コード",
+        "チャット参照",
+        "Git差分"
+      ],
+      "sourceIds": [
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e03",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "894c0109382736984a3c35f97c0eee4864f2b6ec71d95e02151672c9c9f56a2a",
+      "reason": "循環待ちをロック取得順序の統一で直す並行処理。",
+      "previousReason": "循環待ちをロック取得順序の統一で直す並行処理。",
+      "title": "ローカル変更の復元範囲",
+      "scenario": "Agentのファイル変更と外部ツール操作が混在。クライアントの復元機能が扱う範囲を前提に回復操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "checkpoint復元",
+        "差分取り消し",
+        "外部操作の別処理",
+        "会話削除"
+      ],
+      "sourceIds": [
+        "edits",
+        "trust"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e05",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "4af639a75159ad79f7d6d5f83e7b7cdba1b1e3585c760a02c8e0941317affc50",
+      "reason": "フォーカス復帰先とaria-expandedを直すアクセシビリティ。",
+      "previousReason": "フォーカス復帰先とaria-expandedを直すアクセシビリティ。",
+      "title": "公開Spaceへ移す前の共有設定",
+      "scenario": "個人Spaceから共有を広げたいが、元データの公開範囲と所有者設定が異なる。Spacesで変更可能な共有範囲を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "個人公開共有",
+        "組織内共有",
+        "元リポジトリ公開",
+        "閲覧ロール"
+      ],
+      "sourceIds": [
+        "spaces"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a20",
+        "q-d2-e21"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e07",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "8755df0ff4e3215cb4d1d27d810d9e55bd0dadf94b2658e944562ec7292770be",
+      "reason": "遅延よりノード停止時の注文欠落を調査するキューの耐障害性。",
+      "previousReason": "遅延よりノード停止時の注文欠落を調査するキューの耐障害性。",
+      "title": "複数の承認レイヤー",
+      "scenario": "MCPサーバーは信頼済みだが、個別の書込ツールに承認が出る。サーバー信頼とツール実行承認を分けて最小変更を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "サーバー再信頼",
+        "ツール承認",
+        "接続設定",
+        "全ツール自動承認"
+      ],
+      "sourceIds": [
+        "approval",
+        "mcp-tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e08",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "d73fa01e27d996cccdd1850ca42874136c34d1049b40ad77f72dd5b639befb2c",
+      "reason": "案件難易度を統制して品質とレビュー時間を比較する研修効果の評価。",
+      "previousReason": "案件難易度を統制して品質とレビュー時間を比較する研修効果の評価。",
+      "title": "Copilotレビューと必須承認",
+      "scenario": "Copilotのレビュー所見はあるが必須承認が満たされない。preview承認を無効と明記し、レビュー機能の役割を判定する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "所見",
+        "承認カウント",
+        "再レビュー",
+        "人間レビュー"
+      ],
+      "sourceIds": [
+        "review"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-a04",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "35c5cdeb30b731b6e89f4c89ba83b913c817ed4d21f9e47e31b02d82cf0dfacb",
+      "reason": "削除コマンドの対象を実行前に確認する一般的なシェル運用。CLIという名前を外しても同じ正答。",
+      "previousReason": "削除コマンドの対象を実行前に確認する一般的なシェル運用。CLIという名前を外しても同じ正答。",
+      "title": "公開コード参照と入力参照",
+      "scenario": "同じChat画面の資料参照とコード一致参照を見分け、生成コードの一致元を確認する表示を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "回答の資料参照",
+        "public code reference",
+        "プロンプト添付",
+        "利用ログ"
+      ],
+      "sourceIds": [
+        "reference",
+        "context"
+      ],
+      "compareWithKeptIds": [
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e02",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "d47897cbcfa2447f7cd54275ff5ce01be48b4bad7f248401b77276186460183a",
+      "reason": "API契約変更の承認、顧客識別子の除去、誤ったPR要約の修正。",
+      "previousReason": "API契約変更の承認、顧客識別子の除去、誤ったPR要約の修正。",
+      "title": "Agentへの過剰許可の戻し方",
+      "scenario": "IDEの広い自動承認を戻し、一部の読取操作だけ許可を維持したい。Copilotクライアントの承認ルールを調整する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "個別許可",
+        "全許可解除",
+        "ツール非表示",
+        "Chatによる禁止"
+      ],
+      "sourceIds": [
+        "approval"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc02-2",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "3be2fbae1c10c905d5319a230fc3ac92b06b8ab3761c8e381623c820890e4821",
+      "reason": "偶数丸め2.5の実装とテスト期待値の共通誤り。",
+      "previousReason": "偶数丸め2.5の実装とテスト期待値の共通誤り。",
+      "title": "リポジトリ境界のある委任",
+      "scenario": "クラウドAgentの一つのタスクで二つのリポジトリを変更しようとしている。作業対象の機能上の境界に合う分割を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "別タスク化",
+        "追加コンテキスト",
+        "MCP読取",
+        "権限拡大"
+      ],
+      "sourceIds": [
+        "cloud"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc05-1",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "a6cf6cfc0767bd277a03af14252d5c3761a3fc1e3dca62708796701a0eb89dca",
+      "reason": "実在するSDKメソッドと承認契約へ合わせるAPIの修正。Copilotの機能操作は答えではない。",
+      "previousReason": "実在するSDKメソッドと承認契約へ合わせるAPIの修正。Copilotの機能操作は答えではない。",
+      "title": "ローカルとクラウドの作業場所",
+      "scenario": "Copilotの実行ログは進んでいるが手元ファイルは変わらない。委任先とローカルAgentの実行場所を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "クラウドセッション",
+        "ローカルAgent",
+        "インラインChat",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "cloud"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc05-2",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "c5d872b09fb04639820f0a3c88834164bf9ff47fbfa7bda32ee52f1944d1d546",
+      "reason": "自由モックが存在しないAPIを隠すため、実SDKの型・契約で検査する一般的なテスト設計。",
+      "previousReason": "自由モックが存在しないAPIを隠すため、実SDKの型・契約で検査する一般的なテスト設計。",
+      "title": "Agent実行の追跡",
+      "scenario": "Copilotがどのツールを実行したかを確認したい。セッションの実行記録を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "セッションログ",
+        "回答本文",
+        "PR summary",
+        "利用集計"
+      ],
+      "sourceIds": [
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc09-3",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "d4233bd6b27d79a0625fc37757079c8c37a861e9f8c943fe98412b27b8cba34b",
+      "reason": "AIへの過度の依存を疑い自力で説明させる一般的な育成方針。",
+      "previousReason": "AIへの過度の依存を疑い自力で説明させる一般的な育成方針。",
+      "title": "共有されたセッションの閲覧",
+      "scenario": "チームへAgentの作業を共有したいが、リポジトリアクセスは広げない。セッション共有の閲覧条件を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "セッション共有",
+        "リポジトリ権限",
+        "Space共有",
+        "公開リンク"
+      ],
+      "sourceIds": [
+        "sessions",
+        "cloud"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a12",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "f0968514717f11c94dc5e5aa153875812d4201f380481852cd36ec10b6a4b2eb",
+      "reason": "属性を統制して地域だけ変える公平性の評価設計。",
+      "previousReason": "属性を統制して地域だけ変える公平性の評価設計。",
+      "title": "Spaceの編集権限",
+      "scenario": "共有資料を読むだけのメンバーに、ソース変更権限は与えたくない。Spacesのロールを選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "viewer",
+        "editor",
+        "admin",
+        "所有者変更"
+      ],
+      "sourceIds": [
+        "spaces"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a20",
+        "q-d2-e21"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a13",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "5d9d6a19005a9f1a419f2bafd4331fab4813e8b6db7d2f2509f9e98df1627811",
+      "reason": "拒否テストと人の承認をマージ条件にする一般のCI・レビュー統制。",
+      "previousReason": "拒否テストと人の承認をマージ条件にする一般のCI・レビュー統制。",
+      "title": "Copilot提案のフィードバック",
+      "scenario": "誤ったChat回答を報告したいが組織ポリシーは変えない。回答へのフィードバックと管理操作を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "回答評価",
+        "サポート診断",
+        "管理ポリシー",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "chat"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a14",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "c5e896bd305f28fbc4745aa49b5b64154b8795e8917536a59bc1a66c0d246e22",
+      "reason": "承認済み技術基準を守って再検証する採用判断。",
+      "previousReason": "承認済み技術基準を守って再検証する採用判断。",
+      "title": "実行中のAgentへの指示",
+      "scenario": "Copilotの実装途中で制約が変わった。現在のセッションを確認し、追加指示で作業を修正する操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "実行中セッションへの指示",
+        "別セッション",
+        "モデル設定",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-a26",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
+      "reason": "依頼外の依存更新を分け、元の環境で修正を検証する変更管理。",
+      "previousReason": "依頼外の依存更新を分け、元の環境で修正を検証する変更管理。",
+      "title": "一回限りのターミナル承認",
+      "scenario": "一つの操作だけ実行を認め、以後のコマンドを自動許可しない。IDEの承認UIの適用範囲を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "今回許可",
+        "セッション許可",
+        "永続ルール",
+        "全許可"
+      ],
+      "sourceIds": [
+        "approval"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e09",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "58118b389d737c8c2e1b1360467d3230b215faebaad83f7c75dbf7f816ab9c0e",
+      "reason": "郵便番号の代理変数と独立データによる公平性評価。",
+      "previousReason": "郵便番号の代理変数と独立データによる公平性評価。",
+      "title": "参照のない回答の解釈",
+      "scenario": "コード一致参照が出ないケースを、非公開コード・編集済み提案・通常の不一致で比較する。検出対象の境界を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "公開索引との一致",
+        "全コードの出所証明",
+        "入力参照",
+        "許可設定"
+      ],
+      "sourceIds": [
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e20",
+      "difficulty": "advanced",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "ecf598f2d45c32810d9eb171fd7e2405518a6387edc2b059a95ae672922dc635",
+      "reason": "元のユーザー差分を残し未承認差分だけ戻す一般的な変更帰属・復旧。",
+      "previousReason": "元のユーザー差分を残し未承認差分だけ戻す一般的な変更帰属・復旧。",
+      "title": "実行権限と利用ポリシーの切分け",
+      "scenario": "組織ではAgent利用可だがIDEで特定ツールだけ承認待ち。組織の利用可否とクライアントの実行権限を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "組織ポリシー",
+        "IDE承認",
+        "ツール有効化",
+        "モデル設定"
+      ],
+      "sourceIds": [
+        "policies",
+        "approval"
+      ],
+      "compareWithKeptIds": [
+        "q-sc01-3",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a15",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "514b535fda40418a717303822921035cf6900905637c4f79e55c545e3aae996a",
+      "reason": "画像の問題。展開対象の言語を評価集合へ追加する一般的なテスト設計。Copilot機能を知らなくても解ける。",
+      "previousReason": "画像の問題。展開対象の言語を評価集合へ追加する一般的なテスト設計。Copilot機能を知らなくても解ける。",
+      "title": "テスト生成の対象指定",
+      "scenario": "画像の氏名テスト問題を廃止。対象関数だけ選択済みで、既存のテスト先を踏まえてCopilotのGenerate Testsを起動する方法を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "選択コードのGenerate Tests",
+        "Fix Test Failure",
+        "setupTests",
+        "リポジトリ全体へのAgent依頼"
+      ],
+      "sourceIds": [
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a16",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "e1b80a2df4137c6483e86fab8b4b95db997e4687f86ea4719d30385bcfd51ab7",
+      "reason": "群別の母数と失敗率を計算して公平性の採用条件を判定する。",
+      "previousReason": "群別の母数と失敗率を計算して公平性の採用条件を判定する。",
+      "title": "資料に埋め込まれた指示とツール権限",
+      "scenario": "外部資料を読ませても利用可能なツール範囲は広げない。Copilotで設定するツール制限を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ツール構成",
+        "資料への注意書き",
+        "モデル切替",
+        "Instructions削除"
+      ],
+      "sourceIds": [
+        "tools",
+        "trust"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a17",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "e594aea385af9187067ce788b75f6cf0da3998361ff1a31aec7b1d426091879e",
+      "reason": "性別の表現を除き職務権限を正確に記す一般的な文章修正。",
+      "previousReason": "性別の表現を除き職務権限を正確に記す一般的な文章修正。",
+      "title": "チャットへの添付内容の確認",
+      "scenario": "送信前に意図しないファイル添付を外し、必要なファイルだけ明示したい。Copilot Chatのコンテキスト操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "添付の削除・追加",
+        "モデル変更",
+        "公開コードBlock",
+        "回答評価"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a18",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "607be880ec104ca5c5a5290a0466d6edcd62264a38b225745c2af0606314ac10",
+      "reason": "未決定の業務条件を確定して実装と期待値を見直す要件確認。",
+      "previousReason": "未決定の業務条件を確定して実装と期待値を見直す要件確認。",
+      "title": "Copilot変更への再レビュー",
+      "scenario": "Copilotが作成したPRへ追加コミットした。対象差分についてレビューを依頼する機能操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "再レビュー依頼",
+        "PR summary再生成",
+        "Agent新規割当",
+        "ローカルテスト起動"
+      ],
+      "sourceIds": [
+        "review"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a19",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "2d4b07eb6b656bd947995a1c246ff965fa60b289dae9df14680ab5120e6cbfaa",
+      "reason": "未承認の本番削除を検証環境へ限定する作業範囲の統制。Agentの具体的権限制御ではない。",
+      "previousReason": "未承認の本番削除を検証環境へ限定する作業範囲の統制。Agentの具体的権限制御ではない。",
+      "title": "認可済みMCPツールの無効化",
+      "scenario": "接続を維持したまま不要な書込ツールをCopilotに使わせない。クライアント側の有効ツール選択を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ツール選択",
+        "サーバー削除",
+        "Instructions",
+        "Spaceロール"
+      ],
+      "sourceIds": [
+        "tools",
+        "mcp-tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a20",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
+      "reason": "時間的な前後関係と因果の未確認を分ける一般的な報告。",
+      "previousReason": "時間的な前後関係と因果の未確認を分ける一般的な報告。",
+      "title": "説明と実行結果の見分け",
+      "scenario": "Copilotが「実行した」と説明したが、実際のツール結果を確認したい。UI上で調べる対象を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ツール呼出し結果",
+        "生成されたコマンド文",
+        "回答評価",
+        "モデル一覧"
+      ],
+      "sourceIds": [
+        "sessions",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a21",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "fingerprint": "3ec7b5ba9bfc441311660e15422b1a8832d64396b64430366ea830842f8c4179",
+      "reason": "キーボードでの並べ替えを実装・検証するアクセシビリティ。",
+      "previousReason": "キーボードでの並べ替えを実装・検証するアクセシビリティ。",
+      "title": "共有Spaceの閲覧者の変更",
+      "scenario": "組織所有Spaceでメンバーの既定アクセスを絞りたい。Space共有設定とリポジトリ権限を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Space既定アクセス",
+        "ファイル公開",
+        "Seat削除",
+        "MCP許可"
+      ],
+      "sourceIds": [
+        "spaces"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a20",
+        "q-d2-e21"
+      ],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a22",
+      "difficulty": "intermediate",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "fingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
+      "reason": "調整に使わない同対象のデータで評価するホールドアウト設計。",
+      "previousReason": "調整に使わない同対象のデータで評価するホールドアウト設計。",
+      "title": "Agentの停止と履歴保持",
+      "scenario": "実行中の変更を止めたいが、調査用のセッション記録は残したい。停止と履歴削除を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "実行停止",
+        "会話削除",
+        "差分復元",
+        "PRクローズ"
+      ],
+      "sourceIds": [
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d1",
+        "objectiveId": "d1o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-a07",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "559011bea6e4007685108aea57f3cf95e9edd1bbb597646895a04e5f31a5b456",
+      "reason": "MCPという名前でも、正答はサーバー側の認可・読取限定・最新メタデータというAPI設計。Copilotへの接続設定を問わない。",
+      "previousReason": "MCPという名前でも、正答はサーバー側の認可・読取限定・最新メタデータというAPI設計。Copilotへの接続設定を問わない。",
+      "title": "PR summaryとCode review",
+      "scenario": "差分の説明文はできたが欠陥の指摘はない。目的に合うCopilot機能へ切り替える",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "PR summary",
+        "Code review",
+        "Agent実装",
+        "Chat説明"
+      ],
+      "sourceIds": [
+        "summary",
+        "review"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-a18",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8f1962d02c338ca1f7f9a174c65bff6952482860319746f9d4c6be5369cc0ce8",
+      "reason": "ツールJSONの返却項目を許可リストへ制限する情報漏洩対策。一般のAPIレスポンス設計。",
+      "previousReason": "ツールJSONの返却項目を許可リストへ制限する情報漏洩対策。一般のAPIレスポンス設計。",
+      "title": "CLIのディレクトリ信頼",
+      "scenario": "CLI開始時に作業ディレクトリの信頼を求められる。コマンド許可やMCP認可と区別して設定を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ディレクトリ信頼",
+        "ツール許可",
+        "MCPログイン",
+        "モデル選択"
+      ],
+      "sourceIds": [
+        "cli-start",
+        "cli"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e06",
+        "q-d2-a25"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e02",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "c8c887b2e03384db2552b43bad10a00c93018b57ee0f7d385ad984d0df5ce406",
+      "reason": "最新権限と版を照合するキャッシュ再利用の認可設計。",
+      "previousReason": "最新権限と版を照合するキャッシュ再利用の認可設計。",
+      "title": "自動レビューの起動条件",
+      "scenario": "PR作成時と追加push時でレビュー有無が違う。Copilot自動レビューのトリガー設定から説明・変更を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "新規PR",
+        "新規push",
+        "draft",
+        "個別レビュー依頼"
+      ],
+      "sourceIds": [
+        "review-config"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e11",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "f9e204ea09ddad7488a15ff72c40ae0640f2125bdbbb41d631b4394daf83f535",
+      "reason": "本文と検索件数・タイトルに同じ認可を適用する一般の情報漏洩対策。",
+      "previousReason": "本文と検索件数・タイトルに同じ認可を適用する一般の情報漏洩対策。",
+      "title": "Code reviewのInstructions参照版",
+      "scenario": "同じPRでレビュー指示を変更した。現行のhead branch参照を踏まえ、再レビューに使われる指示を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "head版",
+        "base版",
+        "個人指示",
+        "PR本文"
+      ],
+      "sourceIds": [
+        "review-howto"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e15",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "459311980637296ae062d37f988886930f35699c5d75d7efc0d5e1167232de1d",
+      "reason": "大量文書を検索・抜粋して段階取得するAPIと文脈の設計。Copilot固有の接続・呼出設定を問わない。",
+      "previousReason": "大量文書を検索・抜粋して段階取得するAPIと文脈の設計。Copilot固有の接続・呼出設定を問わない。",
+      "title": "カスタムAgentのツール範囲",
+      "scenario": "汎用Agentでは使えるツールが特定プロファイルで使えない。プロファイルのtools定義を読み原因を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "プロファイル定義",
+        "MCP接続",
+        "ツール承認",
+        "モデル選択"
+      ],
+      "sourceIds": [
+        "custom-agent"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e19",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "1a22aa16b445aff7684ebe609f2c26c9bd0c83f6b8131476e60ca8856c44dfb4",
+      "reason": "MCPサーバーのJSON-RPCとCallToolResult.isErrorの実装仕様。Copilot側の機能・操作・設定を問わない。",
+      "previousReason": "MCPサーバーのJSON-RPCとCallToolResult.isErrorの実装仕様。Copilot側の機能・操作・設定を問わない。",
+      "title": "Spaceのソース更新",
+      "scenario": "GitHubのリンク元は更新されたがアップロード資料は旧版。ソースの種類ごとにCopilot Spacesでの更新方法を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "リンク元更新",
+        "アップロード差替",
+        "共有ロール",
+        "再インデックス"
+      ],
+      "sourceIds": [
+        "spaces"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a20",
+        "q-d2-e21"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-e02",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "fingerprint": "d986597d034fce3f5f58f1cfd0761e48cb7c25bffc0dea692bc3fe24a0e196fe",
+      "reason": "UTC/JSTの換算と対象組織の一致から監査イベント候補を選ぶ。Copilot監査機能の操作を問わない。",
+      "previousReason": "UTC/JSTの換算と対象組織の一致から監査イベント候補を選ぶ。Copilot監査機能の操作を問わない。",
+      "title": "レビュー機能の組織設定",
+      "scenario": "一部メンバーだけCopilotレビューを使えない。ライセンスの有無と組織のレビュー許可条件を表から特定する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "レビュー利用許可",
+        "Seat割当",
+        "PR書込権限",
+        "自動レビュー設定"
+      ],
+      "sourceIds": [
+        "review",
+        "policies"
+      ],
+      "compareWithKeptIds": [
+        "q-sc01-3",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o4"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-e05",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "fingerprint": "4e0c87e83b58c7e58f6224d5aca1675917e1095670e9eea9df6dd9a0a90992c1",
+      "reason": "架空の30日ルールとnullの扱いに従う回収候補の判定。Copilot APIの具体的仕様・操作ではない。",
+      "previousReason": "架空の30日ルールとnullの扱いに従う回収候補の判定。Copilot APIの具体的仕様・操作ではない。",
+      "title": "管理APIの用途の区別",
+      "scenario": "退職者のCopilotアクセスを停止する作業と使用量監査がある。必要なCopilot管理API操作と参照APIを選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Seat取消",
+        "Seat一覧",
+        "利用集計",
+        "監査ログ"
+      ],
+      "sourceIds": [
+        "seats"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a13"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o4"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc03-1",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8e9dbac42bfde57df7b39274457187c2b3444a8837bb99618aa29e7381d3bad9",
+      "reason": "担当範囲の認可と読取専用のAPIを組み合わせる一般的な連携設計。",
+      "previousReason": "担当範囲の認可と読取専用のAPIを組み合わせる一般的な連携設計。",
+      "title": "CLIの非対話実行",
+      "scenario": "CI用途で単発プロンプトを実行したい。CLIの非対話実行方式と対話セッションの違いを問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "単発プロンプト",
+        "対話開始",
+        "セッション再開",
+        "Agentプロファイル"
+      ],
+      "sourceIds": [
+        "cli-reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a25"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc03-2",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "fingerprint": "21c2699b5fb4a39edc6df2f80f44c36314aac3e072f504f7585f34ba91f9c8d2",
+      "reason": "401認証と403認可を区別する一般的なHTTP/APIの障害対応。",
+      "previousReason": "401認証と403認可を区別する一般的なHTTP/APIの障害対応。",
+      "title": "IDEの部分編集と自律実装",
+      "scenario": "対象ファイルは決まっているが、変更後のコマンド実行は不要。編集支援とAgentを作業範囲から選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "対象指定の編集",
+        "Agent実装",
+        "説明用Chat",
+        "インライン補完"
+      ],
+      "sourceIds": [
+        "ide"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc07-1",
+      "difficulty": "intermediate",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "8f6594167c723576d0ac034938f9a6fc2ad9a2a6879e256588391b4b2779d2d1",
+      "reason": "最新の脆弱性DBを認可付き読取APIで検索する設計。MCP名を通常のAPI連携へ替えても同じ判断。",
+      "previousReason": "最新の脆弱性DBを認可付き読取APIで検索する設計。MCP名を通常のAPI連携へ替えても同じ判断。",
+      "title": "CLIのセッション再開",
+      "scenario": "別日にCLI作業を続けたい。シェル履歴ではなくCopilotの既存セッションを再開する機能を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "resume",
+        "新規prompt",
+        "プロファイル変更",
+        "ディレクトリ移動"
+      ],
+      "sourceIds": [
+        "cli-reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a25"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc07-2",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "f08a2458fff711d5b443453f4e6d3e096451f7cd20b473cf20d0fe755f96c076",
+      "reason": "getDocument(id)に対象文書の認可を追加するBOLA/IDOR対策。MCPという名前を替えても同じ。",
+      "previousReason": "getDocument(id)に対象文書の認可を追加するBOLA/IDOR対策。MCPという名前を替えても同じ。",
+      "title": "SubagentとカスタムAgent",
+      "scenario": "独立した調査を並行委任する必要と、毎回同じ役割・ツールを使う必要を比較し、Copilotの機能の組合せを選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Subagent",
+        "カスタムAgent",
+        "Instructions",
+        "Prompt File"
+      ],
+      "sourceIds": [
+        "cli-compare",
+        "custom-agent"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e22",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "fingerprint": "bfc235ab00812bcb894e32dac6f604e512e149d43f706e43946eff1fa8526f62",
+      "reason": "入力読取専用・成果物ディレクトリだけ書込・実行不可という一般的なコンテナ隔離。CLI固有の権限フラグやsandbox設定を問わない。",
+      "previousReason": "入力読取専用・成果物ディレクトリだけ書込・実行不可という一般的なコンテナ隔離。CLI固有の権限フラグやsandbox設定を問わない。",
+      "title": "CLIの作業場所と追加アクセス",
+      "scenario": "作業ルートは変えず別の資料フォルダを読ませたい。CLIのディレクトリアクセス設定と移動・コマンド許可を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "追加ディレクトリ許可",
+        "cd",
+        "shell許可",
+        "MCP設定"
+      ],
+      "sourceIds": [
+        "cli-reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a25"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e23",
+      "difficulty": "advanced",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "fingerprint": "3438fb76538a5ab41f9c3f7347aaf73207a677aaa40f06e3fa10a41f771942a9",
+      "reason": "prototype配下かつ内部専用という架空の規約例外。Prompt Fileは生成元という背景。",
+      "previousReason": "prototype配下かつ内部専用という架空の規約例外。Prompt Fileは生成元という背景。",
+      "title": "モデル利用可否の判定",
+      "scenario": "同一IDEでユーザーごとにモデル一覧が違う。プラン・組織ポリシー・クライアント対応を照合して適切な確認先を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "モデルポリシー",
+        "クライアント対応",
+        "MCP設定",
+        "Spaceロール"
+      ],
+      "sourceIds": [
+        "models",
+        "policies"
+      ],
+      "compareWithKeptIds": [
+        "q-sc01-3",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d2",
+        "objectiveId": "d2o3"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a03",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "b88ec8548773c114eb98ebf059e8c21f0f6de8475af1ed5f360039a3c89cf614",
+      "reason": "TLS証明書チェーンとCA信頼ストア。Copilot固有の設定項目や接続先の知識を要求しない。",
+      "previousReason": "TLS証明書チェーンとCA信頼ストア。Copilot固有の設定項目や接続先の知識を要求しない。",
+      "title": "索引と会話コンテキスト",
+      "scenario": "リポジトリ全体を索引化済みでも、回答が特定仕様を参照しない。索引と今回の明示添付の役割を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "索引",
+        "明示ファイル添付",
+        "モデル学習",
+        "履歴削除"
+      ],
+      "sourceIds": [
+        "index",
+        "context"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a05",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "7d18b33cdc7aa54abcd1c7a17b66c92cf7083c860f0e472847cc979b395f8ef1",
+      "reason": "プロキシ経由だけ失敗する場合の一般的な通信診断。",
+      "previousReason": "プロキシ経由だけ失敗する場合の一般的な通信診断。",
+      "title": "リモート索引の利用",
+      "scenario": "大規模リポジトリについてCopilotが関連コードを探す経路を、意味検索とモデル学習から区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "semantic index",
+        "モデル再学習",
+        "全ファイル固定送信",
+        "公開コード索引"
+      ],
+      "sourceIds": [
+        "index"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a09",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "cfa665d49b906e065100441d4200b4e552cdc14bc5428319a440455dcae7ea09",
+      "reason": "指定された外向きHTTPSの宛先を許可するファイアウォールの対応付け。",
+      "previousReason": "指定された外向きHTTPSの宛先を許可するファイアウォールの対応付け。",
+      "title": "除外とプロンプト構築の関係",
+      "scenario": "索引には対象があっても管理除外ルールに一致する。Chatへ渡す文脈のフィルタ段階を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "索引利用時のフィルタ",
+        "公開一致フィルタ",
+        "モデル再学習",
+        "アクセス権削除"
+      ],
+      "sourceIds": [
+        "index",
+        "exclusion"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17",
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e01",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "fingerprint": "f15532ff2b0f8896579da4601e28debd87e960abd12c5606a8df8004e2629ac2",
+      "reason": "一般的なLLMの入力上限と出力打切りを分ける実験。Copilot固有の機能を要求しない。",
+      "previousReason": "一般的なLLMの入力上限と出力打切りを分ける実験。Copilot固有の機能を要求しない。",
+      "title": "公開コード索引と文脈索引",
+      "scenario": "同じ「検索」でもリポジトリの意味検索と公開コード一致検出で対象が違う。観察ログから該当する経路を判定する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "semantic index",
+        "public match index",
+        "添付ファイル",
+        "モデル学習"
+      ],
+      "sourceIds": [
+        "index",
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17",
+        "q-d1-e06",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e02",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "e7fb1dddb6ea034e731325721c6d1b956d906226ff1320ca797f359b09fd8e8c",
+      "reason": "CONNECT後の証明書エラーと407認証を分けるHTTP/TLSの一般知識。",
+      "previousReason": "CONNECT後の証明書エラーと407認証を分けるHTTP/TLSの一般知識。",
+      "title": "GitHub外の索引利用条件",
+      "scenario": "GitHub外の作業リポジトリでVS Codeの意味索引を使いたい。対応ホストと管理ポリシーを明記して利用条件を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "外部repo索引ポリシー",
+        "公開コードBlock",
+        "Space共有",
+        "MCP許可"
+      ],
+      "sourceIds": [
+        "index",
+        "policies"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17",
+        "q-sc01-3",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc08-2",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "9ef1a05c4128cec33e8e3168bf5116d690ee11cbcc61e4c697145319095f2727",
+      "reason": "引用元の旧版と明示添付の新版を比較する一般のRAG・参照資料の診断。",
+      "previousReason": "引用元の旧版と明示添付の新版を比較する一般のRAG・参照資料の診断。",
+      "title": "ChatとAgentの実行場所の境界",
+      "scenario": "GitHubのAgentはクラウド、IDEはローカルという実行経路を示し、ローカル設定を変えてもクラウドの障害が解消しない理由を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "実行環境",
+        "共有索引",
+        "利用Seat",
+        "モデル選択"
+      ],
+      "sourceIds": [
+        "cloud",
+        "network"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a09"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e06",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "a79e690ea54a1f5b8d0b21a08873f3514885477d66d8050e7c00f860a726a4dc",
+      "reason": "OSストアとNodeプロセスの追加CAを区別する一般的な証明書設定。",
+      "previousReason": "OSストアとNodeプロセスの追加CAを区別する一般的な証明書設定。",
+      "title": "添付・検索・履歴の優先確認",
+      "scenario": "旧APIの回答が続き、添付版・参照ファイル・会話履歴を提示。Copilotが実際に参照した文脈を確認する操作順を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "添付一覧",
+        "参照表示",
+        "新規会話",
+        "モデル切替"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e07",
+      "difficulty": "advanced",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "a327a18db9aa7388a5d281ddcbc11126a2c3bc89b5548a0dbe07172c94f9c504",
+      "reason": "モデルと指示を固定して引用版だけ変える対照実験。",
+      "previousReason": "モデルと指示を固定して引用版だけ変える対照実験。",
+      "title": "ネットワーク経路の切分け",
+      "scenario": "Copilot補完とChatの疎通結果が異なる。公式の診断対象を使い、失敗しているCopilot接続経路を特定する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "補完endpoint",
+        "Chat endpoint",
+        "MCP endpoint",
+        "Agent firewall"
+      ],
+      "sourceIds": [
+        "network"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a09"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a16",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "70b817a0f7e305c465ba972d1d677f44abc0f2dfee17f533d77d4e804784cfb0",
+      "reason": "提案の不一致を調べるためにコード・型・依頼・提案をそろえる一般的な再現資料の準備。",
+      "previousReason": "提案の不一致を調べるためにコード・型・依頼・提案をそろえる一般的な再現資料の準備。",
+      "title": "未コミット内容とリモート文脈",
+      "scenario": "ローカルの未コミット変更を前提に質問したい。GitHub上のコード参照では足りない条件からIDE側のコンテキストを選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ローカルファイル文脈",
+        "GitHubリポジトリ文脈",
+        "公開索引",
+        "Spaceリンク"
+      ],
+      "sourceIds": [
+        "context",
+        "index"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-a17"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a19",
+      "difficulty": "intermediate",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "fingerprint": "673c796cfec55470173cd3d97b3e8b0863a2f6cfac5c7821e878224c62a5cc84",
+      "reason": "入力上限と履歴・指示・添付を確認する一般的なLLMの文脈制約。Copilotの設定・具体操作や機能差を問わない。",
+      "previousReason": "入力上限と履歴・指示・添付を確認する一般的なLLMの文脈制約。Copilotの設定・具体操作や機能差を問わない。",
+      "title": "診断ログと会話履歴",
+      "scenario": "Copilotだけ接続エラーが続く。会話削除ではなく環境診断ログを取得する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Copilot診断ログ",
+        "Chat履歴",
+        "Git履歴",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "logs",
+        "network"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a09"
+      ],
+      "oldClassification": {
+        "domainId": "d3",
+        "objectiveId": "d3o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q07",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "e7cf07442b65f9b89075fd7a875a0ed4b7e748d18c67c6246237df97965070d2",
+      "reason": "DD/MMの日付解釈と入出力例。Copilotの機能選択や設定を問わない。",
+      "previousReason": "DD/MMの日付解釈と入出力例。Copilotの機能選択や設定を問わない。",
+      "title": "シンボルを明示したChat",
+      "scenario": "同名関数が複数ある。Copilot Chatへ対象シンボルを明示し、参照先を確認する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "symbol添付",
+        "folder添付",
+        "会話再開",
+        "モデル変更"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-a02",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "fe77719a7b488cb755461a650a84bfef84403ac34bcb9263f4c7827ef18fc61f",
+      "reason": "省略可能な型と呼出側を追加資料にする一般的な修正依頼。",
+      "previousReason": "省略可能な型と呼出側を追加資料にする一般的な修正依頼。",
+      "title": "ターミナル出力の明示文脈",
+      "scenario": "エラーがターミナルにだけある。Copilot Chatにその出力を文脈として渡す操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "terminal context",
+        "file添付",
+        "PR summary",
+        "Space作成"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a01",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "b595e2b1193b20102e79f0a1275aec0098872deb5b3ca18c4d878ed0516e329e",
+      "reason": "資料の版だけを変えて影響を見る一変数実験。",
+      "previousReason": "資料の版だけを変えて影響を見る一変数実験。",
+      "title": "Prompt Fileの相対参照",
+      "scenario": "共通プロンプトから別の仕様ファイルを参照したい。クライアントのPrompt Fileの参照方法と基準位置を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Markdown参照",
+        "パス別applyTo",
+        "ツール設定",
+        "個人Instructions"
+      ],
+      "sourceIds": [
+        "prompt"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a06",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "5ba175377649c1c8a66d7f3656988bf7cdd079d5dfeb33a5ff877557b26847a7",
+      "reason": "撤回・決定・未決定を区別する一般的な引継ぎ要約。",
+      "previousReason": "撤回・決定・未決定を区別する一般的な引継ぎ要約。",
+      "title": "Prompt Fileの引数",
+      "scenario": "同じ処理を対象名だけ変えて繰り返す。Prompt Fileの入力変数・引数の使い方を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "入力変数",
+        "applyTo",
+        "常設指示",
+        "モデル設定"
+      ],
+      "sourceIds": [
+        "prompt"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a07",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "bb11189066abf9e4567b5b5fd1759c7a8187ea05c165bceee2f1c7a20decb69e",
+      "reason": "入力量だけを変え、モデルや通信を固定する対照実験。",
+      "previousReason": "入力量だけを変え、モデルや通信を固定する対照実験。",
+      "title": "Prompt Fileの実行環境",
+      "scenario": "保存済みPrompt Fileが意図しないAgent・ツールで動く。frontmatterの対応項目を確認し修正する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "agent指定",
+        "tools指定",
+        "description",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "prompt"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a01",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d98d94cc7b487212750b6e270435e45f9fa74937150609b8ce70cf7ae0146bb1",
+      "reason": "TypeScript/Prisma/重複拒否という開発要件を全部含む指示文の選択。",
+      "previousReason": "TypeScript/Prisma/重複拒否という開発要件を全部含む指示文の選択。",
+      "title": "選択範囲の文脈",
+      "scenario": "選択した関数への質問なのに別範囲が使われる。Copilotの選択範囲添付と参照確認を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "selection添付",
+        "ファイル添付",
+        "フォルダ添付",
+        "履歴"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a02",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "c10ab88f646302d80459911ba0a1a1246c38b6f9e4d139935b318277a253d991",
+      "reason": "禁止だけでなく既存loggerの使い方を示す一般的な依頼・例示。",
+      "previousReason": "禁止だけでなく既存loggerの使い方を示す一般的な依頼・例示。",
+      "title": "フォルダ単位の文脈",
+      "scenario": "実装が複数ファイルにまたがり、対象フォルダだけを質問に含めたい。Copilotのフォルダ添付とcodebase検索を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "folder添付",
+        "codebase検索",
+        "symbol添付",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a03",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d88cffa85082bc2afde8dcc7e83a442dcbffcbf2b8596aa583da44c996318a00",
+      "reason": "JSONの型とキー位置に合う出力例を選ぶ一般的なスキーマの問題。",
+      "previousReason": "JSONの型とキー位置に合う出力例を選ぶ一般的なスキーマの問題。",
+      "title": "Web資料を添付する機能",
+      "scenario": "コードにない現行API資料を参照させたい。Web取得ツールとローカルファイル添付を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Web取得",
+        "workspace検索",
+        "MCP任意ツール",
+        "会話履歴"
+      ],
+      "sourceIds": [
+        "context",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a05",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "c56658f9d874de0f80f0265c9d451a548fecc6dff7e8179034d27fb9e21946c4",
+      "reason": "有効なゼロと不正文字列を分ける入出力例。",
+      "previousReason": "有効なゼロと不正文字列を分ける入出力例。",
+      "title": "汚れた会話の切替",
+      "scenario": "前の作業の前提が残っている。必要な文脈を指定し直してCopilotの会話を分離する機能操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "新規会話",
+        "既存履歴継続",
+        "モデル変更",
+        "Prompt File編集"
+      ],
+      "sourceIds": [
+        "chat",
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a06",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "28fd8d5c4677a837b8c618fd9d3e3532e5b7407bde1c968bfecbff29ee9c4879",
+      "reason": "古い資料を除いて現行ソースを渡す一般的な資料整理。製品の検索設定・索引挙動の問題ではない。",
+      "previousReason": "古い資料を除いて現行ソースを渡す一般的な資料整理。製品の検索設定・索引挙動の問題ではない。",
+      "title": "Prompt Fileの発見条件",
+      "scenario": "プロンプトがコマンドとして見つからない。対応する保存場所・拡張子とクライアントの検出設定を確認する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "prompt配置",
+        "instructions配置",
+        "agent配置",
+        "MCP配置"
+      ],
+      "sourceIds": [
+        "prompt"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a09",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "2cb6c58203de68786458e963447846e295385dc263e82941fc9efb9c8e1ba406",
+      "reason": "保守性を変更の波及範囲へ具体化する一般的なレビュー依頼。",
+      "previousReason": "保守性を変更の波及範囲へ具体化する一般的なレビュー依頼。",
+      "title": "変更差分の文脈",
+      "scenario": "ファイル全体ではなく現在の未コミット差分について質問したい。ソース管理の変更をChatへ渡す機能を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "changes文脈",
+        "file添付",
+        "symbol添付",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a10",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "65cb05f5ef65f0634b6e5d1adb7f7c863edf94e2aa5b5b14146fe7d7a7aedadc",
+      "reason": "CIだけのモジュール解決失敗を再現する実行条件の提示。",
+      "previousReason": "CIだけのモジュール解決失敗を再現する実行条件の提示。",
+      "title": "参照資料と指示ファイル",
+      "scenario": "資料本文を参照したいだけなのに常設指示へ入れてしまった。資料添付とInstructionsの役割に合う構成を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "資料添付",
+        "Instructions",
+        "Prompt File",
+        "MCP"
+      ],
+      "sourceIds": [
+        "context",
+        "instructions"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e03",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "9ce0c039c4b37b248159bb70038659b0490381150461444eac0d52beda75feb8",
+      "reason": "非同期APIの例だけを追加する一変数のプロンプト比較。",
+      "previousReason": "非同期APIの例だけを追加する一変数のプロンプト比較。",
+      "title": "複数Prompt Fileの参照解決",
+      "scenario": "同名の仕様ファイルが別フォルダにある。Prompt Fileの位置と明示参照から実際に使う資料を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "相対参照",
+        "絶対参照",
+        "添付済み資料",
+        "作業root"
+      ],
+      "sourceIds": [
+        "prompt"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e04",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "4afcaa347e38bc09dee878891feb815c8524153f47ab772e449715e1579b6adb",
+      "reason": "呼出元と設定元の情報を容量内に選ぶ、依存関係と入力予算のパズル。",
+      "previousReason": "呼出元と設定元の情報を容量内に選ぶ、依存関係と入力予算のパズル。",
+      "title": "Prompt Fileとツールの二重制約",
+      "scenario": "プロンプトが指定するツールとセッションで有効なツールが異なる。利用可否を照合して必要な修正を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "prompt tools",
+        "セッションtools",
+        "MCP接続",
+        "実行許可"
+      ],
+      "sourceIds": [
+        "prompt",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24",
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e05",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "36b894a6eabd14ca912d65589a39df3f500a383730825acbb2d59fc6bd0b5cdd",
+      "reason": "決済の禁止状態遷移を検出する拒否ケースの追加。",
+      "previousReason": "決済の禁止状態遷移を検出する拒否ケースの追加。",
+      "title": "別セッションへ渡す文脈",
+      "scenario": "調査は別セッションへ分けたいが、元会話の全履歴を前提にしたくない。委任時の文脈・結果の受渡し方法を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Subagent委任",
+        "新規会話",
+        "Prompt File",
+        "常設指示"
+      ],
+      "sourceIds": [
+        "cli-compare",
+        "custom-agent"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a04",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "e98fb595cf33cee531f287ef81249b29034cc687dacc82ae9734983eb51cbd3f",
+      "reason": "注文0件の顧客が欠落するSQLを再現するテストデータ。",
+      "previousReason": "注文0件の顧客が欠落するSQLを再現するテストデータ。",
+      "title": "画像を添付したChat",
+      "scenario": "画面の見た目を参照させたいが、コードだけが添付されている。対応クライアントで画像を文脈へ加える操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "画像添付",
+        "コード検索",
+        "PR summary",
+        "MCP構成"
+      ],
+      "sourceIds": [
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc02-3",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "6432ddd96260e265c70d89b1819655a5deb9e8b6ab68d325afbe9a47e5911a62",
+      "reason": "丸め方式を区別するfew-shot例。Copilot以外のLLMや実装者にも同じ例を渡す。",
+      "previousReason": "丸め方式を区別するfew-shot例。Copilot以外のLLMや実装者にも同じ例を渡す。",
+      "title": "Instructionsの適用確認",
+      "scenario": "指示を書いたのに回答に反映されない。文言の良し悪しでなく、クライアントが読んだInstructionsを確認する経路を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "指示参照表示",
+        "回答評価",
+        "モデル変更",
+        "Space共有"
+      ],
+      "sourceIds": [
+        "instructions",
+        "context"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc03-3",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "d7ac6a3ed7cbf203f0acdacdb7c0e5a9a955b9ad5e18e00305cbeb0d89df4c86",
+      "reason": "一要求の経路を追うログを抜粋する一般的な障害調査の資料選択。",
+      "previousReason": "一要求の経路を追うログを抜粋する一般的な障害調査の資料選択。",
+      "title": "特定タスクだけのモデル指定",
+      "scenario": "保存プロンプトの実行時だけ利用可能モデルを指定したい。クライアント対応を明記してPrompt File設定を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "prompt model",
+        "default model",
+        "Instructions",
+        "Space設定"
+      ],
+      "sourceIds": [
+        "prompt",
+        "models"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc06-2",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "4cf09d1ae601f303f40671061fe127705e43eaf99b6aa5ada78d1795d97715cd",
+      "reason": "例を業務規約へ合わせ、固定パスをパラメーターにするテンプレート内容の編集。Prompt Fileの具体的構文・呼出方法・適用制約を問わない。",
+      "previousReason": "例を業務規約へ合わせ、固定パスをパラメーターにするテンプレート内容の編集。Prompt Fileの具体的構文・呼出方法・適用制約を問わない。",
+      "title": "GitHubからAgentへ会話を渡す",
+      "scenario": "Chatで合意した調査内容を同じ文脈でクラウド実装へ委任したい。会話とAgentセッションの引継ぎ機能を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "会話から委任",
+        "独立issue割当",
+        "Space",
+        "モデル変更"
+      ],
+      "sourceIds": [
+        "cloud",
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a14",
+      "difficulty": "intermediate",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "fingerprint": "13b0abed4432c4345e48a442ed4d5a455be44d8a1d75539f9d857f0b61566cf3",
+      "reason": "修正する関数のコード・型・再現例を保持して背景を要約する一般的な文脈選択。",
+      "previousReason": "修正する関数のコード・型・再現例を保持して背景を要約する一般的な文脈選択。",
+      "title": "ツールの明示指定",
+      "scenario": "検索用MCPツールは有効だがCopilotが使わない。Chatで対象ツールを明示する方法を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "tool mention",
+        "サーバー再登録",
+        "Instructions",
+        "モデル設定"
+      ],
+      "sourceIds": [
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e06",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "05f42e7ce0b39077ff153ddd009c76bc79ff6500f1a526401cb4546bb53b96cd",
+      "reason": "古い設定例と現行例の差から更新する資料を選ぶ比較。",
+      "previousReason": "古い設定例と現行例の差から更新する資料を選ぶ比較。",
+      "title": "Instructionsの使用対象の制限",
+      "scenario": "Chat用の指示をCode reviewには適用したくない。対応する除外指定とパス条件を照合して設定を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "excludeAgent",
+        "applyTo",
+        "Prompt File",
+        "別branch"
+      ],
+      "sourceIds": [
+        "instructions",
+        "review-howto"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e07",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "84ebdc06bd9dcb7b7786c873fa2e6405a142e3475bca51219df0519497e5804e",
+      "reason": "モデルを固定して指示形式だけを比較する一変数実験。",
+      "previousReason": "モデルを固定して指示形式だけを比較する一変数実験。",
+      "title": "Prompt Fileのモード依存",
+      "scenario": "同じプロンプトでも別の実行モードではツールが使えない。frontmatterとクライアントの対応を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "agent指定",
+        "tool利用可否",
+        "ファイル参照",
+        "モデル対応"
+      ],
+      "sourceIds": [
+        "prompt",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24",
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e08",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "b2c7304665d1baba3361527cfed20f9569f28cf9660d600254c2d4b1bd9b2072",
+      "reason": "社内のfetch規約とpolyfillで実行互換を満たす選択。組織/repo指示の具体的な優先規則を知らずに解ける。",
+      "previousReason": "社内のfetch規約とpolyfillで実行互換を満たす選択。組織/repo指示の具体的な優先規則を知らずに解ける。",
+      "title": "サブ調査のツール範囲",
+      "scenario": "親Agentと調査用Agentに異なるツール一覧を与える。プロファイルと委任先を照合して過剰なツールを減らす",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "委任先tools",
+        "親tools",
+        "全MCP切断",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "custom-agent",
+        "cli-compare"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e09",
+      "difficulty": "advanced",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "fingerprint": "be521fa26a73e956a468b5aacd70a34f07a100dea3c32a45176941853acfbc37",
+      "reason": "LEFT JOINを区別する例、表名、容量条件の照合。一般のSQLと例示の問題。",
+      "previousReason": "LEFT JOINを区別する例、表名、容量条件の照合。一般のSQLと例示の問題。",
+      "title": "コンテキストの欠落の診断",
+      "scenario": "大量の会話と添付があるのに対象資料が使われない。参照情報とクライアントのコンテキスト管理表示を基に再構成する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "コンテキスト確認",
+        "対象の明示添付",
+        "モデル選択",
+        "会話要約"
+      ],
+      "sourceIds": [
+        "context",
+        "chat"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d4",
+        "objectiveId": "d4o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q10",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "80737e38a145482577b1e2baceeeccc71913331647678250ba863a3a90f2506f",
+      "reason": "外部通信を隔離するモックと引数assertion。一般の単体テスト設計。",
+      "previousReason": "外部通信を隔離するモックと引数assertion。一般の単体テスト設計。",
+      "title": "失敗テストからの起動",
+      "scenario": "失敗したテストとエラー出力をCopilotへ渡したい。Test ExplorerのFix Test Failureから開始する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Fix Test Failure",
+        "Generate Tests",
+        "setupTests",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "52888f5f7f51b9444a0aaffe967d7fc3710113a03fb39ef9b443a73954a4da86",
+      "reason": "実ルートをモック化した単体テストでは統合契約を確認できないという検査範囲。",
+      "previousReason": "実ルートをモック化した単体テストでは統合契約を確認できないという検査範囲。",
+      "title": "クラウドのセットアップ未実行",
+      "scenario": "Copilotの作業環境だけ依存がない。セットアップworkflowの場所・job・実行記録を照合して有効化する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "setup steps workflow",
+        "本番CI",
+        "ローカル設定",
+        "MCP"
+      ],
+      "sourceIds": [
+        "setup"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e07",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7187c383ddd230b3606248e4b5049c5bd7e1af2c1510c45701c8331e413b77b8",
+      "reason": "MCPサーバーで入力をシェルへ連結しないコマンドインジェクション対策。",
+      "previousReason": "MCPサーバーで入力をシェルへ連結しないコマンドインジェクション対策。",
+      "title": "テスト実装と実行の経路",
+      "scenario": "Chatにはテスト案があるがファイル変更も実行結果もない。Agentの編集・実行ツールを使う流れへ切替える",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Agent編集実行",
+        "Chat回答",
+        "Generate Tests",
+        "PR review"
+      ],
+      "sourceIds": [
+        "ide",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e10",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a0d4d105d410c454f76ae04c489dcac3b0590681adef2dddc8e6ec455a4225bc",
+      "reason": "割引境界100と期待値を承認契約へ戻すテスト・実装の修正。",
+      "previousReason": "割引境界100と期待値を承認契約へ戻すテスト・実装の修正。",
+      "title": "外部サービスを使うAgent環境",
+      "scenario": "クラウドAgentのセットアップに認証が必要。Copilot用環境のsecretとローカルenv・MCP認証を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Copilot environment secret",
+        "ローカルenv",
+        "MCP認証",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "setup"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d2-e14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "d86ad06ca935e8a11713e1d7a00afc2c85bdbd4ab63ed2ec1df22c7bc160e85f",
+      "reason": "調査と実装を分け引き継ぐ工程論。Sub-Agentsという語はあるが、製品の起動・設定・権限・文脈分離の具体的挙動を正答判定に要求しない。",
+      "previousReason": "調査と実装を分け引き継ぐ工程論。Sub-Agentsという語はあるが、製品の起動・設定・権限・文脈分離の具体的挙動を正答判定に要求しない。",
+      "title": "関数だけの変更提案",
+      "scenario": "同じファイルの他領域を変えず、選択関数のリファクタ差分を確認したい。Inline Chatの適用範囲を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Inline Chat",
+        "全体Agent",
+        "補完",
+        "PR review"
+      ],
+      "sourceIds": [
+        "ide"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e03",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "9efcc9bc413e8f5a49f7ea6367f4c536e4f9a74f0bf6d36c0c2939e668f457bd",
+      "reason": "ドル入力とAPIのセント引数を検証する単位契約のテスト。",
+      "previousReason": "ドル入力とAPIのセント引数を検証する単位契約のテスト。",
+      "title": "テスト基盤の初期設定支援",
+      "scenario": "テスト用の設定と拡張がまだない。CopilotのsetupTestsと既存テスト修正の起動方法を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "setupTests",
+        "Generate Tests",
+        "Fix Test Failure",
+        "Code review"
+      ],
+      "sourceIds": [
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "dacf92bfeb7d03097c512acff567ea577e8d919f5b1949e2d55ba3cb15697c86",
+      "reason": "検証器と送信器をつなぐok:trueフィルターと結合テスト。",
+      "previousReason": "検証器と送信器をつなぐok:trueフィルターと結合テスト。",
+      "title": "PR修正の継続委任",
+      "scenario": "Copilot作成PRの特定コメントを踏まえて追加修正させたい。既存PR・Agentセッションへの指示先を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "既存PRへのCopilot指示",
+        "新規issue",
+        "PR summary",
+        "自動レビュー"
+      ],
+      "sourceIds": [
+        "cloud",
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a03",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "a84c50a5174689c5bb8828fe17de7629fd7d6f06f8c6ca5a8ab5f47d71e051bd",
+      "reason": "削除したAPI引数と移行例をPR説明へ反映する一般的な変更文書の問題。",
+      "previousReason": "削除したAPI引数と移行例をPR説明へ反映する一般的な変更文書の問題。",
+      "title": "補完の候補比較",
+      "scenario": "インライン提案が目的に合わず、ファイル編集を広げずに別候補を検討したい。補完の候補操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "次の候補",
+        "ChatでAgent起動",
+        "Code review",
+        "Prompt File"
+      ],
+      "sourceIds": [
+        "completion"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a06",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "724c5f3881fec412caa2fc235efe7c9eab2ecfaa5dd85b6077bbf939a14beebf",
+      "reason": "複数仕様のテストを独立して実行できる単位へ分ける整理。",
+      "previousReason": "複数仕様のテストを独立して実行できる単位へ分ける整理。",
+      "title": "既存テストを文脈へ渡す",
+      "scenario": "生成テストのフレームワークが既存と違う。テスト内容の正誤ではなく、Copilotへ既存テストと対象コードを渡す操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "テストと実装の添付",
+        "モデル変更",
+        "setupTests",
+        "PR review"
+      ],
+      "sourceIds": [
+        "testing",
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a07",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "2d2e73fd19073f6c9894d873965d274e21b3697fc50d112cd8433864aa31fd88",
+      "reason": "時刻固定とタイムゾーンの境界値テスト。",
+      "previousReason": "時刻固定とタイムゾーンの境界値テスト。",
+      "title": "テスト生成の常設規約",
+      "scenario": "毎回のGenerate Testsで既存の規約を参照させたい。実行機能とInstructionsを組み合わせる構成を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Instructions＋生成",
+        "Prompt Fileだけ",
+        "Spaceロール",
+        "実行許可"
+      ],
+      "sourceIds": [
+        "testing",
+        "instructions"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a08",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "273ad7052118339db3eb1274446520202cc4aec5231b214a771a568007a04d77",
+      "reason": "SQLiteでのCRUDと本番DB固有機能の結合テストの分担。",
+      "previousReason": "SQLiteでのCRUDと本番DB固有機能の結合テストの分担。",
+      "title": "テスト修正時の承認待ち",
+      "scenario": "Agentが修正を提案した後、テストコマンドだけ待機している。Copilotのツール実行承認を調べる操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "コマンド承認",
+        "テスト再生成",
+        "モデル変更",
+        "Instructions"
+      ],
+      "sourceIds": [
+        "approval",
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a09",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "8c38f046b36ee3aa509d202c06dc01bb34a2a15e6bb56c7d76c69647f9bfa782",
+      "reason": "宣言型に反してnullがある実入力の回帰テスト。",
+      "previousReason": "宣言型に反してnullがある実入力の回帰テスト。",
+      "title": "テスト結果の追加文脈",
+      "scenario": "IDE外で実行したテストの出力をCopilotに扱わせたい。出力添付と自動実行を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "結果添付",
+        "Agent再実行",
+        "Generate Tests",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "context",
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a10",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "39ab9c6b9e0f9257339295c651f739c3129fad9600504d0e81ab70d622cdfdd4",
+      "reason": "本番規模・重複キー・順序を保持した性能比較。",
+      "previousReason": "本番規模・重複キー・順序を保持した性能比較。",
+      "title": "失敗箇所を限定した再依頼",
+      "scenario": "複数テストのうち一件の失敗だけをCopilotに調査させたい。Test ExplorerとChatの対象指定を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "単一失敗のFix",
+        "全体Generate",
+        "setupTests",
+        "リポジトリ検索"
+      ],
+      "sourceIds": [
+        "testing"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a11",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "46706a3d1d3e8f1c43f6c644cdbf27fb1bff3a60c158486119407d4859d39f74",
+      "reason": "起動に必要な環境変数をREADMEへ補って再現する文書検証。",
+      "previousReason": "起動に必要な環境変数をREADMEへ補って再現する文書検証。",
+      "title": "説明だけを得るChat",
+      "scenario": "レガシーコードの読解で変更を作りたくない。対象ファイルを文脈にした説明と編集機能を区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "説明Chat",
+        "Inline編集",
+        "Agent実装",
+        "Code review"
+      ],
+      "sourceIds": [
+        "ide",
+        "context"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e01",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "f17e590323a9bc8e2ce5476c1988daba5bb54c1347d6eb9f41409e9af911789d",
+      "reason": "debounceの時刻・回数・保存内容を偽タイマーで検証する。",
+      "previousReason": "debounceの時刻・回数・保存内容を偽タイマーで検証する。",
+      "title": "手元だけで再現する失敗",
+      "scenario": "未コミットのテスト設定が原因でクラウドでは再現しない。Copilotの実行場所と渡された文脈を比較して作業先を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "ローカルAgent",
+        "クラウドAgent",
+        "PR review",
+        "Space"
+      ],
+      "sourceIds": [
+        "cloud",
+        "ide"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e03",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fba258edba97c1bc09a427f939c7e175c11aaf8c9ba704b4149884ea2a7a75b4",
+      "reason": "残高の変化と操作列で変異実装を検出するテスト設計。",
+      "previousReason": "残高の変化と操作列で変異実装を検出するテスト設計。",
+      "title": "セットアップとタスク実行の区別",
+      "scenario": "環境準備のログは成功だがAgentのテスト実行は失敗。Copilot setup stepsとタスク中のツールログを区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "セットアップjob",
+        "Agent実行",
+        "PRのCI",
+        "IDE出力"
+      ],
+      "sourceIds": [
+        "setup",
+        "sessions"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e04",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "71c00e5be08eb80a59bc8a821d5a3bf3eb5550dd07f169a4a5225b7c0c6219f9",
+      "reason": "生成JSDocだけを現行API契約へ合わせる一般的な文書修正。",
+      "previousReason": "生成JSDocだけを現行API契約へ合わせる一般的な文書修正。",
+      "title": "複数ファイルの意図した編集",
+      "scenario": "実装とテストの対象ファイルは指定済み。Copilot Editsで編集対象を調整し、差分を確認する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "編集対象指定",
+        "対象無制限Agent",
+        "Inline Chat",
+        "Code review"
+      ],
+      "sourceIds": [
+        "ide",
+        "edits"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e05",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7089ed65424ea0282fc6ab3ea551064addc4f9a6c5344f22309aaeee0d666cc9",
+      "reason": "承認した表示変更と不具合を分けてスナップショットを更新する。",
+      "previousReason": "承認した表示変更と不具合を分けてスナップショットを更新する。",
+      "title": "テスト規約のレビューへの適用",
+      "scenario": "生成時の規約とPRレビュー基準を同じリポジトリで使いたい。対応するInstructionsの範囲とレビュー参照版を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "repo instructions",
+        "prompt",
+        "個人設定",
+        "base branch"
+      ],
+      "sourceIds": [
+        "review-howto",
+        "instructions"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc02-1",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fbcb3d7e3f7c7ba4f1daccece70a6231a4a7c1b932aac2d685657222e4b7ef8f",
+      "reason": "承認済みの0拒否・1受理を独立したテスト期待値にする。",
+      "previousReason": "承認済みの0拒否・1受理を独立したテスト期待値にする。",
+      "title": "レビュー指摘から修正へ",
+      "scenario": "Copilotのレビュー指摘を一件だけ修正したい。提案の適用とAgentへの修正委任を、変更範囲から選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "提案適用",
+        "Agent委任",
+        "PR summary",
+        "再レビュー"
+      ],
+      "sourceIds": [
+        "review-howto",
+        "cloud"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc04-3",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a21246a8f1f5cef7e74c520e7542f103a09fb1711ed710ed4af3b9e444d5b105",
+      "reason": "AIレビューの有無にかかわらず必要な、担当内外の認可の動作テスト。",
+      "previousReason": "AIレビューの有無にかかわらず必要な、担当内外の認可の動作テスト。",
+      "title": "差分の一部を戻して再依頼",
+      "scenario": "Agentが作成したテストの一部を戻し、残りは保持したい。対応クライアントで差分採否と追加依頼を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "部分取消",
+        "全checkpoint",
+        "新規会話",
+        "PR close"
+      ],
+      "sourceIds": [
+        "edits"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc09-1",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "e78145b87ea1f71b71d06fcd85563897789348733a3a8b9541faacbea6094702",
+      "reason": "PR数・人数・手戻り率の算数。Copilotの測定APIの操作や仕様を問わない。",
+      "previousReason": "PR数・人数・手戻り率の算数。Copilotの測定APIの操作や仕様を問わない。",
+      "title": "PR説明の更新",
+      "scenario": "追加コミットでPR説明が古くなった。Copilotのsummary機能で差分説明を更新する操作を、レビュー再実行と区別する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "summary再生成",
+        "Code review",
+        "Agent実装",
+        "commit説明"
+      ],
+      "sourceIds": [
+        "summary"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-a15",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fa75928150180b55e042cc2df23dd3d1db57e90551f976148a0b402b041f5595",
+      "reason": "数値assertionと出力文字列の桁数assertionの違い。",
+      "previousReason": "数値assertionと出力文字列の桁数assertionの違い。",
+      "title": "診断情報付きの修正依頼",
+      "scenario": "IDEのProblemsにだけエラーがある。Copilotへ診断情報を渡して対象修正を依頼する操作を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Problems文脈",
+        "ファイル全体",
+        "Web検索",
+        "PR summary"
+      ],
+      "sourceIds": [
+        "context",
+        "ide"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d4-a14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "99423fa6c0c7ad496a10fa10438b3248c1f178c071297869bb9c59d993825905",
+      "reason": "残高不足時に注文状態と通知回数を検証する結合テスト。",
+      "previousReason": "残高不足時に注文状態と通知回数を検証する結合テスト。",
+      "title": "テスト生成の再利用プロンプト",
+      "scenario": "担当者ごとに同じ生成タスクを手動起動したい。常設規約とは別に、再利用するPrompt Fileを設計する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Prompt File起動",
+        "Instructions自動適用",
+        "MCP",
+        "Code review"
+      ],
+      "sourceIds": [
+        "prompt",
+        "testing"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a12",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "fd8e518052746f5f5961fb9e195b83794d55332f8e0630354f2be3cc21e2d6fc",
+      "reason": "割引価格99/100の境界値によって実装を絞るTDD。",
+      "previousReason": "割引価格99/100の境界値によって実装を絞るTDD。",
+      "title": "複数ファイル実装の委任",
+      "scenario": "関連する実装とテストをCopilotが探索して変更・実行する必要がある。既知ファイルだけの編集との違いから選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "Agent探索実行",
+        "Edits対象指定",
+        "Inline Chat",
+        "補完"
+      ],
+      "sourceIds": [
+        "ide",
+        "tools"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a14",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "7cc060a41db3a9ea3fbc96e7449a6bd2cd9a62adf142197c041008d41fff1d58",
+      "reason": "外部APIの再試行と機密を返さない例外処理。Copilotの製品機能ではない。",
+      "previousReason": "外部APIの再試行と機密を返さない例外処理。Copilotの製品機能ではない。",
+      "title": "PR内のコードレビュー依頼",
+      "scenario": "テストを含むPRについてCopilotの指摘が欲しい。説明文生成ではなくレビューを起動する場所を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "reviewer依頼",
+        "summary",
+        "issue割当",
+        "Inline補完"
+      ],
+      "sourceIds": [
+        "review-howto",
+        "summary"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-a15",
+      "difficulty": "intermediate",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "a7862e5b706ba4c3c61207a1b3cebbc171a0e400b56493a180eb91f53cc769f2",
+      "reason": "年齢の型・整数・範囲の検証と境界値テスト。",
+      "previousReason": "年齢の型・整数・範囲の検証と境界値テスト。",
+      "title": "テスト生成先の文脈",
+      "scenario": "別モジュールのテストへ生成される。Copilotに対象実装・既存テスト・編集対象を明示する操作を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "添付と編集対象",
+        "生成内容の業務修正",
+        "モデル変更",
+        "索引削除"
+      ],
+      "sourceIds": [
+        "testing",
+        "context",
+        "ide"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d3-e08",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "14875cbcfa2ac0c6b564eb7b740f95c65a79940d08334abc4c5dc88682b4abab",
+      "reason": "中間補完という語はあるが、正答はxの不要な変換と早期returnを除くプログラムの読解。",
+      "previousReason": "中間補完という語はあるが、正答はxの不要な変換と早期returnを除くプログラムの読解。",
+      "title": "Agentの外部依存取得",
+      "scenario": "クラウドAgentの依存取得失敗とMCP通信成功を示し、セットアップとAgent firewallのどこを調べるか選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "setupログ",
+        "firewall",
+        "MCP設定",
+        "IDEプロキシ"
+      ],
+      "sourceIds": [
+        "setup",
+        "firewall"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e06",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "eeeeb95333039f47439998ff57707398cf79920578c0123b521b7b2660ab277c",
+      "reason": "Autofixという名はあるが、値の束縛と列名の許可リストというSQL安全実装を答える。",
+      "previousReason": "Autofixという名はあるが、値の束縛と列名の許可リストというSQL安全実装を答える。",
+      "title": "自動レビューのdraftとpush",
+      "scenario": "draft作成・ready化・追加コミットの各時点でレビューを行いたい。Copilotのトリガー設定を組み合わせる",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "draft設定",
+        "push設定",
+        "ready化",
+        "個別依頼"
+      ],
+      "sourceIds": [
+        "review-config"
+      ],
+      "compareWithKeptIds": [],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e07",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "fingerprint": "c2eee38e76721fd4ff11d5b1fe52cdadb6c273a3ebeb31f52c2fbf3c3512bd3d",
+      "reason": "外部HTTPだけをスタブ化しparse・validate・更新を実行する結合テスト。",
+      "previousReason": "外部HTTPだけをスタブ化しparse・validate・更新を実行する結合テスト。",
+      "title": "ツール実行が必要なテスト改善",
+      "scenario": "同じ対象でChat生成は可能だが実行環境依存の確認が必要。Agentのツール有効化・実行承認・結果取得を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "生成機能",
+        "tool有効化",
+        "実行承認",
+        "モデル選択"
+      ],
+      "sourceIds": [
+        "tools",
+        "approval",
+        "testing"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-a23"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d5-e08",
+      "difficulty": "advanced",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "fingerprint": "61e4988f4fb3ca176e63e2530a125a794a1f2c032b29c64aac0578f4de244bb3",
+      "reason": "手戻り率・時間/PR・満足度という架空の数値基準から候補を選ぶ算数。",
+      "previousReason": "手戻り率・時間/PR・満足度という架空の数値基準から候補を選ぶ算数。",
+      "title": "レビュー基準の継承元",
+      "scenario": "リポジトリに共通・パス別の指示があり、変更ファイルごとにCopilotレビューの対象規約が違う。実際の適用範囲を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "共通指示",
+        "パス別指示",
+        "個人Chat指示",
+        "Prompt File"
+      ],
+      "sourceIds": [
+        "review-howto",
+        "instructions"
+      ],
+      "compareWithKeptIds": [
+        "q-d2-e08",
+        "q-d2-e16",
+        "q-sc06-3",
+        "q-d2-a24"
+      ],
+      "oldClassification": {
+        "domainId": "d5",
+        "objectiveId": "d5o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-e04",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "7c994e826ccd27d86039222e2c8358c7a194e666be8adca64266878ea96b1446",
+      "reason": "ログの一貫した仮ID化と秘密除去。一般的な匿名化・診断データの前処理。",
+      "previousReason": "ログの一貫した仮ID化と秘密除去。一般的な匿名化・診断データの前処理。",
+      "title": "組織と個人の除外設定",
+      "scenario": "個人側で除外設定を探しているが管理Seatのリポジトリ除外が必要。Content Exclusionの管理場所と管理主体を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "org",
+        "repository",
+        "個人Chat",
+        "IDE添付"
+      ],
+      "sourceIds": [
+        "exclusion-howto"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a01",
+        "q-d6-a10"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-a03",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "b278340db9a3feb709e75cd4ed492022b8aa5121873f8809124051aadb54a26c",
+      "reason": "正答は送信前のログのトークン除去。Push protectionや公開一致Blockは誤答側で、正答は一般的な秘密の前処理。",
+      "previousReason": "正答は送信前のログのトークン除去。Push protectionや公開一致Blockは誤答側で、正答は一般的な秘密の前処理。",
+      "title": "除外ルールの対象モード",
+      "scenario": "同じパスで通常補完と非対応モードを比較する。Content Exclusionの対応表から保護対象の違いを選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "対応モード",
+        "パス変更",
+        "再認証",
+        "public code Block"
+      ],
+      "sourceIds": [
+        "exclusion"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-e03",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "fingerprint": "967a2173a370aa80bff82af8a09fd3e599b255b67dc199bc5922afab914c6ba6",
+      "reason": "GPL/MITと出所不明を架空の採用基準へ当てはめる審査。Blockという語はあるが、判定の中心はライセンスと社内規則。",
+      "previousReason": "GPL/MITと出所不明を架空の採用基準へ当てはめる審査。Blockという語はあるが、判定の中心はライセンスと社内規則。",
+      "title": "除外・アクセス・公開一致の分離",
+      "scenario": "ファイルは読めるが補完文脈から外れ、公開一致出力も制限される。三つの仕組みの効果を分ける",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "アクセス権",
+        "Content Exclusion",
+        "public match",
+        "索引"
+      ],
+      "sourceIds": [
+        "exclusion",
+        "reference",
+        "index"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14",
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-e04",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "fc0c6c5dd9e0e67a32164359f8bc365af1e104a7207a49ee31bee5eb77986dbb",
+      "reason": "架空の保持契約30日と社内の入力規則を三欄へ転記する読解。実在する機能や保持仕様を学ばない。",
+      "previousReason": "架空の保持契約30日と社内の入力規則を三欄へ転記する読解。実在する機能や保持仕様を学ばない。",
+      "title": "ホストとプランの対応範囲",
+      "scenario": "複数のCopilot利用環境に同じ除外を展開したい。現行のホスト・プラン・クライアント対応表を照合する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "管理プラン",
+        "ホスト",
+        "client mode",
+        "ローカルパス"
+      ],
+      "sourceIds": [
+        "exclusion-howto",
+        "exclusion"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a01",
+        "q-d6-a10",
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc05-3",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "0f65bf339ac5d3f9406dca29b9732c42f5c5f18a1570bc212a1ff7abdaa2f857",
+      "reason": "機密除去済みのログで要求経路を追う資料構成。Copilotの保護機能そのものを選ばない。",
+      "previousReason": "機密除去済みのログで要求経路を追う資料構成。Copilotの保護機能そのものを選ばない。",
+      "title": "除外されたファイルと手入力",
+      "scenario": "管理除外された元ファイルと、利用者がChatに手入力する内容の扱いを区別する。除外が制御する対象を問う",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "自動文脈",
+        "明示入力",
+        "repo権限",
+        "公開一致検出"
+      ],
+      "sourceIds": [
+        "exclusion"
+      ],
+      "compareWithKeptIds": [
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-sc10-3",
+      "difficulty": "advanced",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "8eb095ca1aee33cf85116ba30e384e7428647665de85b14b41e203b3c7b905ab",
+      "reason": "変わったデータ分類と保存条件だけを追加審査する一般の変更審査。",
+      "previousReason": "変わったデータ分類と保存条件だけを追加審査する一般の変更審査。",
+      "title": "除外対象の派生情報",
+      "scenario": "除外元と別ファイルに複製された内容を示し、Content Exclusionのファイル単位の境界から必要なルールを判断する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "元ファイルルール",
+        "派生ファイルルール",
+        "公開Block",
+        "Space設定"
+      ],
+      "sourceIds": [
+        "exclusion-howto",
+        "exclusion"
+      ],
+      "compareWithKeptIds": [
+        "q-d6-a01",
+        "q-d6-a10",
+        "q-d3-e04",
+        "q-d6-a08",
+        "q-d6-e01",
+        "q-sc01-2",
+        "q-d6-a11",
+        "q-d6-a12",
+        "q-d6-a14"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "機能の対応範囲・設定の適用範囲・実行状態のうち2種類以上を照合する3段階。条件変更で別選択肢が正解になる。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d1-a11",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "fingerprint": "0d83bdd5fdc498941c7808070037b72ca431b72a76665b76d148a0223f8d7f59",
+      "reason": "一致コミットとHEADのGPL/MITを照合する一般的なOSSライセンス審査。参照機能の操作・設定を問わない。",
+      "previousReason": "一致コミットとHEADのGPL/MITを照合する一般的なOSSライセンス審査。参照機能の操作・設定を問わない。",
+      "title": "公開一致Blockの設定主体",
+      "scenario": "管理Seatと個人設定で表示が異なる。公開一致フィルタの実効設定を確認する場所を選ぶ",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "管理ポリシー",
+        "個人設定",
+        "コード参照ログ",
+        "Content Exclusion"
+      ],
+      "sourceIds": [
+        "policies",
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-sc01-3",
+        "q-d6-e06",
+        "q-d1-e06",
+        "q-d3-a17"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o2"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    },
+    {
+      "id": "q-d6-a13",
+      "difficulty": "intermediate",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "fingerprint": "b4d625759e1171ec12175e06f996993eb0e7ef88137190bae69c4745d7a5eebf",
+      "reason": "適用契約の軽減策と対象機能の設定を照合する一般的な契約審査。具体的なCopilotの機能仕様・設定値を答えない。",
+      "previousReason": "適用契約の軽減策と対象機能の設定を照合する一般的な契約審査。具体的なCopilotの機能仕様・設定値を答えない。",
+      "title": "public matchの索引範囲",
+      "scenario": "非公開コードとの一致を調べたい要望に対し、Copilotコード参照の検索対象と利用可能な表示を判断する",
+      "answerTarget": "Copilotの機能・設定・操作・対応範囲",
+      "competingControls": [
+        "public index",
+        "private repo文脈",
+        "手修正コード",
+        "Agentログ"
+      ],
+      "sourceIds": [
+        "reference"
+      ],
+      "compareWithKeptIds": [
+        "q-d1-e06",
+        "q-d3-a17",
+        "q-d6-e06"
+      ],
+      "oldClassification": {
+        "domainId": "d6",
+        "objectiveId": "d6o1"
+      },
+      "proposedClassificationStatus": "REQUIRES_SUBSTANTIVE_SYLLABUS_REVIEW_NOT_FIXED_BY_OLD_SLOT",
+      "difficultyDesign": "観測された状態を解釈し、対応する機能操作を選ぶ2段階。用語の名前だけでは解けない。",
+      "reviewStatus": "BLUEPRINT_ONLY_NOT_QUALITY_PASSED"
+    }
+  ]
+}

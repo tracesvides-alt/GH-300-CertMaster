@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-16",
+  "unitTestsPassed": 240,
+  "e2eTestsPassed": 50,
+  "mockSample": {
+    "runs": 100,
+    "meanByLevel": {
+      "beginner": 1.28,
+      "intermediate": 16.48,
+      "advanced": 32.24
+    },
+    "domainMin": [
+      8,
+      14,
+      5,
+      5,
+      5,
+      5
+    ],
+    "domainMax": [
+      10,
+      15,
+      7,
+      7,
+      7,
+      7
+    ]
+  },
+  "sourcesChecked": 34,
+  "sourceFailures": [],
+  "build": "Next.js production build using Webpack, isolated .next-e2e. Default Turbopack failed to start a PostCSS worker in the sandbox.",
+  "semantics": "Automated tests verify structure and behavior. Blind solvability and difficulty remain editorial judgments, without independent reviewers or learner measurements."
+}

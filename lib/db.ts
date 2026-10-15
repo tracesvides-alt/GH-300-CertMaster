@@ -10,6 +10,7 @@ import {
   analyzeMistake,
   updateConfusionPairs,
   checkPairRecovery,
+  currentConfusionPairs,
 } from './adaptive-learning';
 import {
   type QuestionReviewState,
@@ -21,6 +22,11 @@ import {
 export interface LessonCompletion {
   id: string; // lessonId
   completedAt: string;
+}
+
+export async function getCurrentConfusionPairs():Promise<ConceptConfusionPair[]> {
+  const [records,attempts]=await Promise.all([db.wrongAnswers.toArray(),db.attempts.toArray()]);
+  return currentConfusionPairs(records,attempts);
 }
 
 export class LearningDB extends Dexie {

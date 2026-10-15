@@ -9,7 +9,7 @@ test('historical mistakes use the corrected objective without rewriting the stor
       request.onerror=()=>reject(request.error);
       request.onsuccess=()=>{
         const db=request.result,tx=db.transaction('attempts','readwrite');
-        tx.objectStore('attempts').put({id:'historical-classification',questionId:'q01',domainId:'d1',objectiveId:'d1o1',
+        tx.objectStore('attempts').put({id:'historical-classification',questionId:'q-d6-a05',domainId:'d1',objectiveId:'d1o1',
           answer:[],correct:false,at:Date.now(),status:'verified'});
         tx.oncomplete=()=>{db.close();resolve();};tx.onerror=()=>{db.close();reject(tx.error);};
       };
@@ -19,7 +19,7 @@ test('historical mistakes use the corrected objective without rewriting the stor
   const nav=page.viewportSize()!.width<640?'モバイルナビゲーション':'メインナビゲーション';
   await page.getByRole('navigation',{name:nav,exact:true}).getByRole('button',{name:/Review/}).click();
   await page.getByRole('tab',{name:/By Objective/}).click();
-  await expect(page.getByRole('heading',{name:'Validate and operate AI tools',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Manage organization-wide settings and policies',exact:true})).toBeVisible();
   await expect(page.getByRole('heading',{name:'Understand responsible AI principles',exact:true})).toHaveCount(0);
   const stored=await page.evaluate(()=>new Promise<{objectiveId:string}>((resolve,reject)=>{
     const request=indexedDB.open('gh300-certmaster');request.onerror=()=>reject(request.error);

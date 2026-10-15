@@ -2,7 +2,9 @@ import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const env = { ...process.env, CERTMASTER_E2E: '1' };
-const built = spawnSync(process.execPath, [require.resolve('next/dist/bin/next'), 'build'], {
+// Optional fallback for environments where Turbopack's PostCSS worker cannot start.
+const buildArgs = ['build', ...(process.env.CERTMASTER_E2E_WEBPACK === '1' ? ['--webpack'] : [])];
+const built = spawnSync(process.execPath, [require.resolve('next/dist/bin/next'), ...buildArgs], {
   env,
   stdio: 'inherit',
 });

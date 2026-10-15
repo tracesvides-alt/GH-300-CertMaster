@@ -23733,6 +23733,663 @@
         ]
       },
       "latestReview": "reports/applied-23-focus-improvement-review.json"
+    },
+    "q-d2-e11-feature-20261016": {
+      "fingerprint": "bce1d8ba2b09a9f9d8b1381ec34af0abbadd6f6ea0a7c0b474cc54b34d7b6bc6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「PRのhead branchでは「英語」」「src/**/*.ts」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。維持候補の通常Chatでの言語規約分割と異なり、レビューのhead参照と変更ファイル別の適用を同時に判定する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a19-feature-20261016": {
+      "fingerprint": "af941bda38939ff09f7bdfe1981254ba32e53467f1c5df05c4b9dccd1a5539f6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「接続先ごとの到達性」「最初に取得する情報」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存の除外表示・プロキシ一般の問題とは異なり、Copilotが提供する診断機能の情報粒度を選ぶ。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e04-feature-20261016": {
+      "fingerprint": "9b08ecda9874db0eb74f45388c32fd786d94f723dae02eaddb4752726761f156",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「tools: [read, metrics/get]」「MCPサーバーは未接続」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。CLIのallow/deny既存問ではなく、VS CodeのPrompt FileとAgent定義の優先順位および接続状態を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-e03-feature-20261016": {
+      "fingerprint": "6f9a51b94d195654c73228bc5f4b1c8baa449ae2d8318b7bb897cabfe29f99ef",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「legacy.tsに一致するContent Exclusion」「公開コード一致は引き続き抑制する」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存のパスglob・再読込・非対応Agentとは異なり、code reviewにも及ぶ除外と補完の出力フィルタの二つを独立に変更する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q01-feature-20261016": {
+      "fingerprint": "297c5c025749648bee85ea70d8856bec87cd22665b50c1736f591f1f6a774b49",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「npm publishだけ」「既存の承認は保ちます」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。CLIのdenyで実行自体を拒否する既存問と違い、VS Codeでコマンド単位の確認を要求する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a04-feature-20261016": {
+      "fingerprint": "9d43f67da57857900a4ba9db443d1ed1b4e6ad8726c75b7256dcfd2f82053822",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「通信開始は自動承認」「結果をChatの文脈へ追加する前」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。MCP接続方式ではなく、Copilotの外部結果取込の承認境界を操作する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a07-feature-20261016": {
+      "fingerprint": "e5252d35b06436c7aa14415157fb4683aed94bcac6a825446170cb482df52ef2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「firewallで拒否」「仕様サイトだけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のネットワーク許可ではなく、Copilot cloud agent専用の接続設定場所を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a10-feature-20261016": {
+      "fingerprint": "931641949b07a617171ad353619c0b3bcd27a3b9f2af605846aa6552d0403417",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「通常モードでは一段階」「自律的に進める実行方式」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。CLI既存問の許可対象の選択ではなく、実行継続と許可の機能差を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-a04-feature-20261016": {
+      "fingerprint": "a1b5943b1da01413b30dd08a2f9e0e49d8a4a886bfbef842f28a403572fc5741",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「このrepoでは次回から確認しない」「そのURLには確認が出ません」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。コード参照案の重複を廃止。維持候補のCLIセッション限定allow/denyとは異なり、永続承認の保存スコープを扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc05-1-feature-20261016": {
+      "fingerprint": "304055cf3c4537d9707a9d3c0cec26962cf53fb66733550fe1c425b18e448c04",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Bを資料として添付」「AではなくBを主な変更先」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。追加プロジェクトの文脈と、セッションの主たる実行先を分離する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-a26-feature-20261016": {
+      "fingerprint": "f1fdc6759a3c3e3646adfce6fe486610e5559764227fccca9bee1b6743f219fb",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「次回の同じツールの呼出しでも」「ほかの既存承認は変えません」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。ツールを有効にする問題ではなく、同じ操作の承認の保存範囲を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a16-feature-20261016": {
+      "fingerprint": "7a5c5cdabf88f9b54d5e06ad82c18272b0513ebaf2d9c4677fa864a1611639a7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「ターミナル操作を承認した後」「sandbox境界で拒否」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。MCPの注入対策一般から、承認とsandboxの独立した制御へ変更した。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a17-feature-20261016": {
+      "fingerprint": "6e4780b4ad66b980d377b0a1cf4ee6c1c6038a18b25176dbb7e1d9a818759873",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「二つの関数を文脈として明示」「片方のファイルしか開いていない」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単なるfile添付の案はこの問題へ統合。シンボル候補の条件と添付の粒度を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a18-feature-20261016": {
+      "fingerprint": "01530d57941f7d1f82a69be5e72713e7179ec693cf9ae266e8cc25b02f08e1fa",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Review new pushesは無効」「今回だけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。レビュー機能の名称でなく、自動起動設定と一回限りの再依頼の範囲を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a19-feature-20261016": {
+      "fingerprint": "82cd5b54908508e8dd57ebc6a460e152d073061ce2b68d8f6ab4cd2542454bd9",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「searchは使い続けます」「選ぶ候補から外したい」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。stdio接続やCLIのdenyと異なり、接続中MCPの特定ツールをIDEで候補から外す。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a21-feature-20261016": {
+      "fingerprint": "eee4ba220bf15fa836762c628bd712a670c625eb54b5d0b795e40cc001dc03d8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「一般の組織メンバーにはSpaceを表示しない」「リポジトリの既存の権限は維持」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Spaceを使える一人のロールではなく、組織の既定アクセスを設定する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e01-feature-20261016": {
+      "fingerprint": "931e18d0e1c19c5c88492e768545f7fda1c8dd5fcd314e0f616fdc7b308952a6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Bはタスクの依頼者ではありません」「人による必須承認」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単に承認を推奨する一般論ではなく、Copilot PRでの依頼者制限と実行承認主体の違いを問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e02-feature-20261016": {
+      "fingerprint": "beedf8779f0268b1f8f0d647598f806f45ee902bf0cdddf404ef21f1881f31c3",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「候補Pはインライン提案として表示した後に破棄」「候補Qはそのまま採用」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存のBlock設定やログを開く操作とは違い、表示・採用・手修正のイベントと記録対象を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e03-feature-20261016": {
+      "fingerprint": "0764506c7a65772ba7eb731339876c1c9a6e93067c563e42ea28d87bf88c87bc",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「外部サービスの更新をcheckpointで巻き戻す機能はありません」「両方を作業前へ戻す」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。部分採用のUIではなく、復元機能が外部操作まで戻すとは限らない境界を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e07-feature-20261016": {
+      "fingerprint": "056473bb5cfd6eab19b221417ad96641a7f3060fbb7aebd79b66a731a6bff25b",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「approveRequest: true、approveResponse: false」「応答内容は毎回確認」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。MCPの実行前後の承認から区別し、URL単位の要求と応答の独立した設定値を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e08-feature-20261016": {
+      "fingerprint": "3dd098b5128a4e482b6e815b8b39424c6f9c5faa638a803b273d6b514bc7bb09",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「public preview」「人の必須承認数は変えず」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。「Copilotレビューは常に承認にならない」という古い断定を避け、previewの条件を本文で固定する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e02-feature-20261016": {
+      "fingerprint": "aa8bf8ab196ae4e96706cc9e20a57c8382ced7ce6a131dcc9b8245bdc59b1eb2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「read_reportの承認は維持」「実行前確認を復活」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一回限りのAllowではなく、特定ツールの保存済み承認の変更を段階別に問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc02-2-feature-20261016": {
+      "fingerprint": "ddd7e5588c1c1bc960d1d1e07330ee105794ad49b2b22bede5a79b6af7af9fbe",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「変更先はAとしてセッションを開始」「別々のPR」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。MCPサーバーの認可実装でなく、Copilot cloud agentのコンテキスト権限と変更先を区別する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e09-feature-20261016": {
+      "fingerprint": "9e250a48e234b0b5ef1777c953a512ed64248fcd707d69988f50ef0506f6b14f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Pは昨日公開したばかり」「Qは一度も公開していない」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。ライセンス審査の一般論ではなく、Copilot公開コード索引の対象と更新限界を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-a18-feature-20261016": {
+      "fingerprint": "e41d3998d03ac61cdf9f26d2405138d54db28110875c08033779ee2bc43bd6be",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「実際に読み込んだ構成」「まとめて確認」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単なる信頼ダイアログの暗記を避け、設定追加後の読込状態の確認機能へ変更。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-e02-feature-20261016": {
+      "fingerprint": "f42c35160d88449ca5cb0294224b5a188748e8fcc560a1f2331b55100d1ed973",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「個人設定は自動レビューとReview new pushesを無効」「rulesetは自動レビューと新規pushのレビューを有効」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単一トリガーの設定名ではなく、独立した自動レビュー起動元の合成を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-e15-feature-20261016": {
+      "fingerprint": "1123d4e764c637c80223ea06d54f771ba8c4add736a0f95f7d9e9f9c6f3c15ca",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「tools: []」「検索だけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。読取専用の新規構成ではなく、特定Agentだけ使えない状態の切分けを扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-e19-feature-20261016": {
+      "fingerprint": "e0d5a66773310f4a9c4b576e8d04ea3e0e488b81862d1f8c40189469852221db",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「GitHub側のリンク先は更新済み」「アップロードしたPDFはまだ旧版」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。SpaceとライブMCPの鮮度比較ではなく、Space内のソース種類による更新経路を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-e02-feature-20261016": {
+      "fingerprint": "0ddec06a730c355acaa4a7fc14b1c1e576ce43fb4a2952d8cf5d6b386afd4f2a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「外部で取得した対応ライセンスだけ」「有効な組織ruleset」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Seat有無だけでなく、個人依頼とrulesetの起動経路に対する機能制限を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc03-1-feature-20261016": {
+      "fingerprint": "c601abefa5fb234f58a128c710239e0cee6566e081cedd63a330f73ad2c31f3a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「回答後にプロセスを終了」「回答だけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単純なCLIの定義でなく、実行寿命と出力形式の二条件を選ぶ。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc03-2-feature-20261016": {
+      "fingerprint": "5d5d774e4b9d814609fc11cf9bf1f59232e4fb94af913b837f576d1fb20f7586",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「実際のコマンド結果」「ターミナルツールが無効」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。対象探索の有無ではなく、Askから実行へ移るときのモードと無効ツールの二条件を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc07-1-feature-20261016": {
+      "fingerprint": "6e6bac97a9da44c1f8515a2ff21a3f09ea2203828aea372d1671e731c0c5710a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「TTYがなく」「セッションIDは分かっています」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。セッション再開の名称だけでなく、TTYの有無と複数候補の選択条件を扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a03-feature-20261016": {
+      "fingerprint": "0c2b3be1354e17bbc5979e951bfc2e8063cd86ed9dad2a6c8ff8c0749c020869",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「旧版の仕様も候補」「特定ファイルを必ず質問へ含めたい」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。添付の記法でなく、リポジトリ索引と今回の明示入力の段階を分ける。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-e02-feature-20261016": {
+      "fingerprint": "b1b84a894df638bde0ef841a5772f26d9b71d6f74d097d3d695a5a49ee607382",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「もう一方はGHE.com」「組織ポリシーはUnconfigured」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のGitLab接続ではなく、Copilotの外部repo意味索引の明示ポリシーとホスト対応を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc08-2-feature-20261016": {
+      "fingerprint": "09d5e7f58987faa3f03ed87b794236067ea04d9eddf81d1624fcc756022af6fd",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「クラウド側のセッションログ」「同じ作業をクラウドで続けたい」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のHTTP切分けでなく、Copilot Agentの実行環境による設定元の違いを問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-e07-feature-20261016": {
+      "fingerprint": "39af9621878da210d7e7a5706de458fcdd2dc7907e0b5dd079a82f12aeccbdb8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「api.githubcopilot.com/_pingは到達できません」「通常補完は動き」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。TLSやHTTPの一般知識を答えさせず、Copilotが用意する機能別診断先と不具合を結び付ける。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a16-feature-20261016": {
+      "fingerprint": "0146a1ad5ef2ae1ea866468475c2a5d421855b8ee029ffbd03a594ec22a56728",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「コミットもpushもしていません」「手元の修正版」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。索引の一般的な遅れではなく、未送信のローカル変更が存在する入力経路を選ぶ。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a06-feature-20261016": {
+      "fingerprint": "38328892e0968dfa0a5ffdaccbbb9b864c48a5af9e08aef5262bff44ca415c3a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「argument-hint」「毎回利用者へ対象を尋ね」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Prompt File再利用の定義でなく、ヒントと実際の入力要求の役割を適用する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a07-feature-20261016": {
+      "fingerprint": "2e02ca07e9ea2473e09effccaa01497626fa2f802051829828c568292c20340a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「name: inspect」「agentは省略」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。保存場所の識別でなく、frontmatterの省略・上書きによる二つの実効値を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-a01-feature-20261016": {
+      "fingerprint": "a8311df58f733bc39ed2c90361a4543d2738406f2f436ff4f65e4303126e99d7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「model指定がありません」「通常の選択Mは維持」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。管理でモデルを解放する問題ではなく、許可済みモデルの選択範囲を分ける。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-a02-feature-20261016": {
+      "fingerprint": "fc05b80ff65b332e3ed2f1e44ce7e8fbb2f2f39a1824bbd2a1e46c5d48441583",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「添付候補として示されています」「その一ファイル全体」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般の資料選びではなく、VS CodeのAskとAgentの暗黙文脈の違いを適用する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e05-feature-20261016": {
+      "fingerprint": "25196c5636e4c5b9fc3d3c122eaa4571ff459b3d650e2c370e8530a735d34582",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「同じ作業ディレクトリ」「変更ファイルも分離」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。専門プロファイルの再利用から分け、Copilotのcontext isolationを作業ファイルの隔離と誤認しないかを問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc02-3-feature-20261016": {
+      "fingerprint": "eecde019243e25364344778d374d5b6acac988b59e55d4d0d7d207948dda1e4a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「今回の回答に使われたか」「ファイルの発見と回答への適用」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Instructionsの中身の妥当性を答えさせず、検出と使用というクライアントの確認経路を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc03-3-feature-20261016": {
+      "fingerprint": "839238ac2aac2bc6ee3fcf322adfba16def3a857ec493390a9899aa48373673c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「別のPCでも」「個人用プロンプト」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。モデル指定の案は既存案と統合し、Prompt Fileの端末同期へ差し替えた。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-a14-feature-20261016": {
+      "fingerprint": "8dbbbbb64fa734a8294f232c822cc1787829a51c025293d721f803b526fc6881",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「接続・認証・有効化が済んで」「社内検索を明示的に」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。MCPサーバー実装や接続方式と異なり、Copilotのプロンプトで既存ツールを明示利用する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e06-feature-20261016": {
+      "fingerprint": "1eebb052dd0ee54dd2c90820706d5f8978e81fa896b42ab6d1ef2b2cb43e24d2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「excludeAgent: \"code-review\"」「src/api.ts」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。通常のapplyToだけの問題とは異なり、GitHubの主体除外を二段階目に照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e07-feature-20261016": {
+      "fingerprint": "915ac8547677504a1a10d5de2b7d451c4e0f8fce3d51c3d46727e6178ee8a6d9",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「VS CodeのMCP設定はまだ作っていません」「mcp-serversだけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Prompt Fileのツール優先順位の案を統合し、Agentプロファイルの可搬性とMCP設定元を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e08-feature-20261016": {
+      "fingerprint": "16accd27b6d06d0282d4e843bbf9d97e72c55c769d6c660e57172e97e1104a4f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「同じファイル名」「現在のPR内での追加対話」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。主AgentとSubagentのツール範囲の類題を避け、GitHub上の名前解決とPRのAgent版を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e09-feature-20261016": {
+      "fingerprint": "add10a4ea65f1e2f9cd4552554e78726ced74a2e625b00667bb7ce9f2eff45b6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「会話の大きな方針は正しく残っています」「同じタスクを続け」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。会話を新しくするかcompactするかの選択ではなく、圧縮後に不足した原資料を補う機能操作を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-e01-feature-20261016": {
+      "fingerprint": "e165be40145f3ce7aebcd263fe9a8466affb906300dde1fb3de7048dd2d61d9c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「job名はprepare」「feature branchだけ」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単に依存をインストールする一般問題でなく、Copilotセットアップの検出条件を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d2-e07-feature-20261016": {
+      "fingerprint": "d6e82f6e19d32001aa611754a9fcd0e06ecd7b69bdf0ad576b5a9abdc40e1661",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「実行は承認済み」「tools: [read, search]」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。CLIの二層の表とは異なり、読取専用Agentから修正・検証へ進むため不足能力を特定する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-e01-feature-20261016": {
+      "fingerprint": "2b8971d096ea4c4ddfc00397555d0407abb8f085db91f517b0ce295b1af09257",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「書込権限を持っています」「現在のPRのbranch」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単なるコメント返信ではなく、Copilotの起動権限と既存PRへの書込範囲を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-a09-feature-20261016": {
+      "fingerprint": "928c787582db039fba2834423155a2fb4c28f17719d07a5d43674a7f94a962ae",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Markdownでは自動インライン提案を止め」「TypeScriptでは使い続け」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。入力ログ添付の重複案から、Copilotの言語別補完制御へ差し替えた。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e01-feature-20261016": {
+      "fingerprint": "b539b762d9f6ffbe7239cf66381b1c829077a54d8a73b7b3f463458e417ef26f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「修正版はまだ共有せず」「今のローカル環境」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。資料の説明だけを得る問題と異なり、実行場所・コード版・実行可能なモードを照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e03-feature-20261016": {
+      "fingerprint": "aef66f32ba6e835e38fe76a09164726affb511bbb285d29c019b0803244cab9c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「手順2が非ゼロで失敗」「残りの手順3」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。setup workflowの検出条件とは違い、部分失敗後の実行状態をセッションログと照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e04-feature-20261016": {
+      "fingerprint": "c99c8223eba734ae8a69609707fa2fc3f133a138a592075a3a583ad356a3ebd0",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「ghost textの提案モデルはM」「ChatはNを保ち」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。編集対象の指定の類題を廃止し、Copilotの二つのモデル選択面を切り分ける。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e05-feature-20261016": {
+      "fingerprint": "a755bc65d0233b8a696b036932e6a373cf0f934842294fff521992860501a5af",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「レビュー側だけ」「実装Agentの準備は保ち」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。レビュー規約の指示ではなく、Copilotレビューが使う実行環境の準備を分ける。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc02-1-feature-20261016": {
+      "fingerprint": "3b5435716bf47c3791b561b7224152b631d63ba8c34909deb569088ff1e71b7f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「元branchを宛先にする別PR」「Fix with Copilot」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Fixボタンの入口そのものと異なり、修正の成果物を既存PRか別PRへ出す判断を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d4-a14-feature-20261016": {
+      "fingerprint": "1340f7e72bafd32e6c81ad3f6f9831d94085cdec1d54cd6a4007b8ca688f7ad0",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「利用者が選択して呼ぶことは認め」「自動的にそのAgentへ委任するのは止め」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。Prompt Fileの再利用案の重複を避け、現行のカスタムAgentの起動可否設定へ変更。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-a14-feature-20261016": {
+      "fingerprint": "e25ec954adfd6b5de86bca57e67c0f81e97b786276caad51187551fcc8d8ca40",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「通常の返信」「実装も修正させたい」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。レビュー起動や修正PRの出し先でなく、レビューコメントへ返信してもAgentへ届かない境界を扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-a15-feature-20261016": {
+      "fingerprint": "049190d761271ba4f273b8fc14c1743fdc318dec8bfecbfca67606d12c8fd6f6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「接続時に利用者が入力した秘密値」「入力欄でも値を隠したい」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のMCPサーバーのsecret実装でなく、CopilotクライアントのMCP入力変数を設定する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d3-e08-feature-20261016": {
+      "fingerprint": "79c8ce5008f86e2382cfc742affde702f7cacd2d5bbd5abffabc5653311d0897",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Bashツールからの取得だけ」「setup stepsからの取得とMCPサーバープロセスの取得は成功」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のネットワーク障害でなく、Copilotのfirewallがどのプロセスへ適用するかを比較する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e06-feature-20261016": {
+      "fingerprint": "86f19af5875acd11d69b046f5683d57ee6514a4c5ca4e203609d05823b66b461",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「他の起動元はありません」「Review new pushesは有効」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。個人とrulesetの合成ではなく、一つの起動元内のdraft・pushの二条件を操作する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e07-feature-20261016": {
+      "fingerprint": "a88947036d7365c750f8dee8ee6127528359f2a875adc5ef93c76895e5b0715a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「--available-tools=read,search」「--excluded-tools=search」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存のdeny優先と異なり、availableとexcludedの併用時の優先と実行許可を照合する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d5-e08-feature-20261016": {
+      "fingerprint": "f7ad89d3d54e6bff3ba6a9c0e3b265a2d1bda4ad5dae03005bb3b9e0b0610149",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「依頼時にBalancedを明示」「前回レビューはLite」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般のレビュー品質でなく、Copilotの深度の優先順位と自動起動の独立性を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-e04-feature-20261016": {
+      "fingerprint": "7b8432d18db54c50e4358ebd7ac3d46ae40e4aa7e632f9d94ac284bd6f06d64d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「AのOrganization owner」「Bのrepo-RではMaintainロール」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。同じEnterpriseでも別組織のownerとrepoのMaintainを混同しない。単一のロール名の暗記から、二つの設定主体と権限の照合へ変更。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-a03-feature-20261016": {
+      "fingerprint": "50ca972792a74068e739ca2728573e0d08b1426cd6f50eec978aee2874918e11",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「IDEの型情報」「設定反映とパス一致は確認済み」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存のAgent非対応の問題を繰り返さず、IDEから渡る間接意味情報という別の限界を扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-e04-feature-20261016": {
+      "fingerprint": "a1e160ecd50f42ab296de3a970f0b246478837b403a5239c1be84626f2c53a01",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「同じEnterprise」「AのSeat利用者だけでなく」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。単なる上位ルールの合成でなく、repoの除外とSeatを管理する組織の適用利用者を比較する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc05-3-feature-20261016": {
+      "fingerprint": "cf23072030dd18686ab07074b054bc5a273243d735d30cc15952615d79c70c1c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「Git管理外」「.envファイル」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。既存の階層globの問題と分け、Copilot組織設定のrepo境界の外の除外を扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-sc10-3-feature-20261016": {
+      "fingerprint": "09158cdda0370b5287e1142d94fb4852426e4cf49d60c4c9f7edd60fa6e98b70",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「同じhostとrepo path」「ユーザー名とポート」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。repo-A/Bの名前変更の類題でなく、Copilot除外のrepo参照正規化の具体的な範囲を問う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d1-a11-feature-20261016": {
+      "fingerprint": "f5522b169d5c2092905657d5bffc6aad18a24ace588468ddcdce9f164e5c1b57",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「接続をmeteredとして扱う」「今回必要な一回のインライン提案」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。上位の公開一致ポリシーの類題を避け、Copilot補完のネットワーク条件による起動差を扱う。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-a13-feature-20261016": {
+      "fingerprint": "bbd7bd256944086e5e47c119035ba7848f75591b57a46a67e659cc02621cad0c",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「別ディレクトリのsecrets.envは残します」「大文字小文字を区別しない」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。一般的なOSの大小文字の常識と、Copilotのcase-insensitiveなパターン照合を区別する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    "q-d6-e07-feature-20261016": {
+      "fingerprint": "ef38e6147bd8c1235bda67188bffb4acd7a300a24e789202e9809369c9d27ba7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四案の判断対象を比較し、本文の「ローカル読取ツールからも」「MCPの検索ツールからも」がない状態では必要な操作・適用範囲を確定できないことを著者が再読。121候補の外の前提修正。CLIが除外対応という旧前提を廃止し、ローカルとMCPの入力を分離する。",
+      "latestReview": "reports/copilot-feature-refresh-2026-10-16.json"
     }
   },
   "choiceAudit": {
@@ -23750,7 +24407,7 @@
       "q-d3-a10"
     ]
   },
-  "lastUpdated": "2026-10-14",
+  "lastUpdated": "2026-10-16",
   "followUpReviews": [
     {
       "reviewedAt": "2026-10-13",
@@ -24194,6 +24851,85 @@
         "q-d6-a13"
       ],
       "note": "Copilotの利用判断へ焦点を合わせた23問の改稿。既存の初回分類・基準スナップショットは保持。"
+    },
+    {
+      "reviewedAt": "2026-10-16",
+      "questionIds": [
+        "q-d2-e11-feature-20261016",
+        "q-d3-a19-feature-20261016",
+        "q-d4-e04-feature-20261016",
+        "q-d6-e03-feature-20261016",
+        "q01-feature-20261016",
+        "q-d1-a04-feature-20261016",
+        "q-d1-a07-feature-20261016",
+        "q-d1-a10-feature-20261016",
+        "q-d2-a04-feature-20261016",
+        "q-sc05-1-feature-20261016",
+        "q-d2-a26-feature-20261016",
+        "q-d1-a16-feature-20261016",
+        "q-d1-a17-feature-20261016",
+        "q-d1-a18-feature-20261016",
+        "q-d1-a19-feature-20261016",
+        "q-d1-a21-feature-20261016",
+        "q-d1-e01-feature-20261016",
+        "q-d1-e02-feature-20261016",
+        "q-d1-e03-feature-20261016",
+        "q-d1-e07-feature-20261016",
+        "q-d1-e08-feature-20261016",
+        "q-d5-e02-feature-20261016",
+        "q-sc02-2-feature-20261016",
+        "q-d1-e09-feature-20261016",
+        "q-d2-a18-feature-20261016",
+        "q-d2-e02-feature-20261016",
+        "q-d2-e15-feature-20261016",
+        "q-d2-e19-feature-20261016",
+        "q-d6-e02-feature-20261016",
+        "q-sc03-1-feature-20261016",
+        "q-sc03-2-feature-20261016",
+        "q-sc07-1-feature-20261016",
+        "q-d3-a03-feature-20261016",
+        "q-d3-e02-feature-20261016",
+        "q-sc08-2-feature-20261016",
+        "q-d3-e07-feature-20261016",
+        "q-d3-a16-feature-20261016",
+        "q-d3-a06-feature-20261016",
+        "q-d3-a07-feature-20261016",
+        "q-d4-a01-feature-20261016",
+        "q-d4-a02-feature-20261016",
+        "q-d4-e05-feature-20261016",
+        "q-sc02-3-feature-20261016",
+        "q-sc03-3-feature-20261016",
+        "q-d3-a14-feature-20261016",
+        "q-d4-e06-feature-20261016",
+        "q-d4-e07-feature-20261016",
+        "q-d4-e08-feature-20261016",
+        "q-d4-e09-feature-20261016",
+        "q-d2-e01-feature-20261016",
+        "q-d2-e07-feature-20261016",
+        "q-d4-e01-feature-20261016",
+        "q-d5-a09-feature-20261016",
+        "q-d5-e01-feature-20261016",
+        "q-d5-e03-feature-20261016",
+        "q-d5-e04-feature-20261016",
+        "q-d5-e05-feature-20261016",
+        "q-sc02-1-feature-20261016",
+        "q-d4-a14-feature-20261016",
+        "q-d5-a14-feature-20261016",
+        "q-d5-a15-feature-20261016",
+        "q-d3-e08-feature-20261016",
+        "q-d5-e06-feature-20261016",
+        "q-d5-e07-feature-20261016",
+        "q-d5-e08-feature-20261016",
+        "q-d1-e04-feature-20261016",
+        "q-d6-a03-feature-20261016",
+        "q-d6-e04-feature-20261016",
+        "q-sc05-3-feature-20261016",
+        "q-sc10-3-feature-20261016",
+        "q-d1-a11-feature-20261016",
+        "q-d6-a13-feature-20261016",
+        "q-d6-e07-feature-20261016"
+      ],
+      "report": "reports/copilot-feature-refresh-2026-10-16.json"
     }
   ],
   "pendingFollowUpQuestionIds": [],

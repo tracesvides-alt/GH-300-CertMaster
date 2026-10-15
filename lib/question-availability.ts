@@ -3,6 +3,11 @@ import removals from '@/content/gh300/2026-08-07/questions/removals.json';
 
 const retiredIds = new Set(exclusions.questions.map(row => row.id));
 const removedIds = new Set(removals.questions.map(row => row.id));
+const retirementById = new Map(exclusions.questions.map(row=>[row.id,row]));
+
+export function getQuestionRetirement(id?:string) {
+  return id ? retirementById.get(id) : undefined;
+}
 
 /** Retain archived assets for history, but do not start a new exercise with them. */
 export function isQuestionActive(question: { id: string }): boolean {

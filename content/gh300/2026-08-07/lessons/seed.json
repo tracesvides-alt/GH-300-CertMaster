@@ -221,7 +221,18 @@
       "q02",
       "q-d1-a18",
       "q-d1-a19",
-      "q-d1-a22"
+      "q-d1-a22",
+      "q01-feature-20261016",
+      "q-d1-a04-feature-20261016",
+      "q-d1-a07-feature-20261016",
+      "q-d2-a26-feature-20261016",
+      "q-d1-a16-feature-20261016",
+      "q-d1-a19-feature-20261016",
+      "q-d1-e01-feature-20261016",
+      "q-d1-e03-feature-20261016",
+      "q-d1-e07-feature-20261016",
+      "q-d1-e08-feature-20261016",
+      "q-d5-e02-feature-20261016"
     ],
     "sourceIds": [
       "responsible",
@@ -288,7 +299,19 @@
       "g-secret-leak-prevention"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q01-feature-20261016",
+      "q-d1-a04-feature-20261016",
+      "q-d1-a07-feature-20261016",
+      "q-d2-a26-feature-20261016",
+      "q-d1-a16-feature-20261016",
+      "q-d1-a19-feature-20261016",
+      "q-d1-e01-feature-20261016",
+      "q-d1-e03-feature-20261016",
+      "q-d1-e07-feature-20261016",
+      "q-d1-e08-feature-20261016",
+      "q-d5-e02-feature-20261016"
+    ],
     "sourceIds": [
       "responsible",
       "code-review",
@@ -366,7 +389,8 @@
       "cmp-chat-vs-inline"
     ],
     "questionIds": [
-      "q03"
+      "q03",
+      "q-sc03-2-feature-20261016"
     ],
     "sourceIds": [
       "responsible",
@@ -460,7 +484,16 @@
     ],
     "questionIds": [
       "q04",
-      "q05"
+      "q05",
+      "q-d2-e11-feature-20261016",
+      "q-sc02-2-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d2-e15-feature-20261016",
+      "q-d2-e19-feature-20261016",
+      "q-sc03-2-feature-20261016",
+      "q-d4-a14-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
     ],
     "sourceIds": [
       "chat",
@@ -539,7 +572,14 @@
       "g-agent-sessions"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a10-feature-20261016",
+      "q-d2-a04-feature-20261016",
+      "q-d2-a18-feature-20261016",
+      "q-sc03-1-feature-20261016",
+      "q-sc07-1-feature-20261016",
+      "q-d5-e07-feature-20261016"
+    ],
     "sourceIds": [
       "cli",
       "cli-current",
@@ -625,7 +665,16 @@
       "cmp-sessions-vs-subagents",
       "cmp-mcp-vs-agent-mode"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-sc02-2-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d2-e15-feature-20261016",
+      "q-d2-e19-feature-20261016",
+      "q-d4-a14-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
+    ],
     "sourceIds": [
       "agent-mode",
       "chat",
@@ -700,7 +749,16 @@
       "cmp-mcp-vs-extensions",
       "cmp-mcp-vs-agent-mode"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-sc02-2-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d2-e15-feature-20261016",
+      "q-d2-e19-feature-20261016",
+      "q-d4-a14-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
+    ],
     "sourceIds": [
       "mcp",
       "agent-mode",
@@ -770,7 +828,16 @@
     "comparisonIds": [
       "cmp-instructions-vs-prompts"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-sc02-2-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d2-e15-feature-20261016",
+      "q-d2-e19-feature-20261016",
+      "q-d4-a14-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
+    ],
     "sourceIds": [
       "instructions",
       "prompt-files",
@@ -839,7 +906,16 @@
     "comparisonIds": [
       "cmp-review-vs-summary"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d2-e11-feature-20261016",
+      "q-sc02-2-feature-20261016",
+      "q-d2-e02-feature-20261016",
+      "q-d2-e15-feature-20261016",
+      "q-d2-e19-feature-20261016",
+      "q-d4-a14-feature-20261016",
+      "q-d5-e06-feature-20261016",
+      "q-d5-e08-feature-20261016"
+    ],
     "sourceIds": [
       "code-review",
       "policies",
@@ -921,7 +997,9 @@
     "comparisonIds": [
       "cmp-org-vs-enterprise-policies"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-e02-feature-20261016"
+    ],
     "sourceIds": [
       "policies",
       "audit-log",
@@ -1013,7 +1091,16 @@
       "q06",
       "q-d3-a16",
       "q-d3-a17",
-      "q-d3-a19"
+      "q-d3-a19",
+      "q-d3-a19-feature-20261016",
+      "q-sc05-1-feature-20261016",
+      "q-d3-a03-feature-20261016",
+      "q-d3-e02-feature-20261016",
+      "q-sc08-2-feature-20261016",
+      "q-d3-e07-feature-20261016",
+      "q-d3-a16-feature-20261016",
+      "q-d4-a02-feature-20261016",
+      "q-d3-e08-feature-20261016"
     ],
     "sourceIds": [
       "responsible",
@@ -1106,7 +1193,16 @@
       "q-d3-e03",
       "q-d3-a16",
       "q-d3-a17",
-      "q-d3-a19"
+      "q-d3-a19",
+      "q-d3-a19-feature-20261016",
+      "q-sc05-1-feature-20261016",
+      "q-d3-a03-feature-20261016",
+      "q-d3-e02-feature-20261016",
+      "q-sc08-2-feature-20261016",
+      "q-d3-e07-feature-20261016",
+      "q-d3-a16-feature-20261016",
+      "q-d4-a02-feature-20261016",
+      "q-d3-e08-feature-20261016"
     ],
     "sourceIds": [
       "architecture",
@@ -1183,7 +1279,17 @@
       "g-post-processing"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d3-a19-feature-20261016",
+      "q-sc05-1-feature-20261016",
+      "q-d3-a03-feature-20261016",
+      "q-d3-e02-feature-20261016",
+      "q-sc08-2-feature-20261016",
+      "q-d3-e07-feature-20261016",
+      "q-d3-a16-feature-20261016",
+      "q-d4-a02-feature-20261016",
+      "q-d3-e08-feature-20261016"
+    ],
     "sourceIds": [
       "privacy-training",
       "model-hosting",
@@ -1321,7 +1427,9 @@
     "comparisonIds": [],
     "questionIds": [
       "q07",
-      "q08"
+      "q08",
+      "q-d1-a17-feature-20261016",
+      "q-d3-a14-feature-20261016"
     ],
     "sourceIds": [
       "prompt",
@@ -1396,7 +1504,9 @@
       "cmp-zero-vs-few-shot"
     ],
     "questionIds": [
-      "q07"
+      "q07",
+      "q-d1-a17-feature-20261016",
+      "q-d3-a14-feature-20261016"
     ],
     "sourceIds": [
       "prompt",
@@ -1464,7 +1574,18 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q08"
+      "q08",
+      "q-d4-e04-feature-20261016",
+      "q-d3-a06-feature-20261016",
+      "q-d3-a07-feature-20261016",
+      "q-d4-a01-feature-20261016",
+      "q-d4-e05-feature-20261016",
+      "q-sc02-3-feature-20261016",
+      "q-sc03-3-feature-20261016",
+      "q-d4-e06-feature-20261016",
+      "q-d4-e07-feature-20261016",
+      "q-d4-e08-feature-20261016",
+      "q-d4-e09-feature-20261016"
     ],
     "sourceIds": [
       "prompt",
@@ -1533,7 +1654,18 @@
     ],
     "comparisonIds": [],
     "questionIds": [
-      "q08"
+      "q08",
+      "q-d4-e04-feature-20261016",
+      "q-d3-a06-feature-20261016",
+      "q-d3-a07-feature-20261016",
+      "q-d4-a01-feature-20261016",
+      "q-d4-e05-feature-20261016",
+      "q-sc02-3-feature-20261016",
+      "q-sc03-3-feature-20261016",
+      "q-d4-e06-feature-20261016",
+      "q-d4-e07-feature-20261016",
+      "q-d4-e08-feature-20261016",
+      "q-d4-e09-feature-20261016"
     ],
     "sourceIds": [
       "prompt",
@@ -1617,7 +1749,10 @@
       "cmp-quality-attributes"
     ],
     "questionIds": [
-      "q-d5-a11"
+      "q-d5-a11",
+      "q-d4-e01-feature-20261016",
+      "q-d5-a09-feature-20261016",
+      "q-d5-e04-feature-20261016"
     ],
     "sourceIds": [
       "chat",
@@ -1686,7 +1821,11 @@
       "g-slash-commands"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d4-e01-feature-20261016",
+      "q-d5-a09-feature-20261016",
+      "q-d5-e04-feature-20261016"
+    ],
     "sourceIds": [
       "chat",
       "guide"
@@ -1777,7 +1916,15 @@
     ],
     "questionIds": [
       "q09",
-      "q10"
+      "q10",
+      "q-d1-a18-feature-20261016",
+      "q-d2-e01-feature-20261016",
+      "q-d2-e07-feature-20261016",
+      "q-d5-e01-feature-20261016",
+      "q-d5-e03-feature-20261016",
+      "q-d5-e05-feature-20261016",
+      "q-sc02-1-feature-20261016",
+      "q-d5-a14-feature-20261016"
     ],
     "sourceIds": [
       "tests",
@@ -1856,7 +2003,16 @@
       "g-test-assertions-mocking"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a18-feature-20261016",
+      "q-d2-e01-feature-20261016",
+      "q-d2-e07-feature-20261016",
+      "q-d5-e01-feature-20261016",
+      "q-d5-e03-feature-20261016",
+      "q-d5-e05-feature-20261016",
+      "q-sc02-1-feature-20261016",
+      "q-d5-a14-feature-20261016"
+    ],
     "sourceIds": [
       "tests",
       "chat",
@@ -1932,7 +2088,14 @@
       "cmp-exclusion-vs-publicmatch"
     ],
     "questionIds": [
-      "q11"
+      "q11",
+      "q-d1-a21-feature-20261016",
+      "q-d5-a15-feature-20261016",
+      "q-d1-e04-feature-20261016",
+      "q-d6-e04-feature-20261016",
+      "q-sc05-3-feature-20261016",
+      "q-sc10-3-feature-20261016",
+      "q-d6-a13-feature-20261016"
     ],
     "sourceIds": [
       "exclusion",
@@ -2001,7 +2164,15 @@
       "g-subscription-plans"
     ],
     "comparisonIds": [],
-    "questionIds": [],
+    "questionIds": [
+      "q-d1-a21-feature-20261016",
+      "q-d5-a15-feature-20261016",
+      "q-d1-e04-feature-20261016",
+      "q-d6-e04-feature-20261016",
+      "q-sc05-3-feature-20261016",
+      "q-sc10-3-feature-20261016",
+      "q-d6-a13-feature-20261016"
+    ],
     "sourceIds": [
       "privacy",
       "guide",
@@ -2079,7 +2250,14 @@
       "cmp-exclusion-vs-publicmatch",
       "cmp-safety-filter-types"
     ],
-    "questionIds": [],
+    "questionIds": [
+      "q-d6-e03-feature-20261016",
+      "q-d1-e02-feature-20261016",
+      "q-d1-e09-feature-20261016",
+      "q-d6-a03-feature-20261016",
+      "q-d1-a11-feature-20261016",
+      "q-d6-e07-feature-20261016"
+    ],
     "sourceIds": [
       "public-code",
       "policies",
@@ -2152,7 +2330,13 @@
     "comparisonIds": [],
     "questionIds": [
       "q11",
-      "q12"
+      "q12",
+      "q-d6-e03-feature-20261016",
+      "q-d1-e02-feature-20261016",
+      "q-d1-e09-feature-20261016",
+      "q-d6-a03-feature-20261016",
+      "q-d1-a11-feature-20261016",
+      "q-d6-e07-feature-20261016"
     ],
     "sourceIds": [
       "exclusion",

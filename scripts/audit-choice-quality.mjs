@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import {loadQuestionAdditions,validateQuestionAdditions,combinedChoiceBaseline} from './question-additions.mjs';
+import {loadQuestionAdditions,validateQuestionAdditions,combinedChoiceBaseline,loadFeatureRefresh} from './question-additions.mjs';
 
 const root = new URL('../', import.meta.url);
 const bankPath = 'content/gh300/2026-08-07/questions/seed.json';
@@ -14,6 +14,7 @@ const additions = loadQuestionAdditions(root);
 const additionErrors = validateQuestionAdditions(bank, additions);
 if (additionErrors.length) throw Error(additionErrors.join('\n'));
 const additionById = new Map(additions?.questions.map(r => [r.id, r]) ?? []);
+const replacementsById = new Map(loadFeatureRefresh()?.questions.map(r=>[r.id,r])??[]);
 const contentBaseline = combinedChoiceBaseline(read('reports/question-choice-content-baseline.json'), additions);
 const unchangedReasons = {
   q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',
@@ -105,7 +106,7 @@ const inventory = bank.map(q => {
     choiceExplanations: q.choiceExplanations, testedConcepts: q.testedConcepts ?? [],
     answer, sourceIds: q.sourceIds, status: q.status,
     modified: changed.has(q.id), newlyAdded: additionById.has(q.id), optionOnly: retiredIds.has(q.id) ? 'EXCLUDED' : 'PASS',
-    optionOnlyReason: additionById.get(q.id)?.review.optionOnlyEvidence ?? (changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id] ?? (contentBaseline.questions[q.id]?.added ? '用語問題として新規追加。誤答は同じ領域の隣接概念で、設問の定義文で区別する。' : undefined)),
+    optionOnlyReason: replacementsById.get(q.id)?.review.blindRationale ?? additionById.get(q.id)?.review.optionOnlyEvidence ?? (changed.has(q.id) ? '同じ作業領域の選択肢に改稿し、設問条件で区別する。' : unchangedReasons[q.id] ?? (contentBaseline.questions[q.id]?.added ? '用語問題として新規追加。誤答は同じ領域の隣接概念で、設問の定義文で区別する。' : undefined)),
     multipleAnswerRisk: false, lengthBias, missingExplanation, score,
     scoreBreakdown: { relevance, plausibility, uniqueness, symmetry, scenario, explanations },
     requirementMapping: q.requirementMapping ?? [],

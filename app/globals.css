@@ -59,6 +59,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-block: 80px 100px;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-base);
@@ -1030,7 +1034,13 @@ fieldset {
   accent-color: var(--accent);
   width: 17px;
   height: 17px;
+  flex: 0 0 17px;
   cursor: pointer;
+}
+
+.choice > span:last-of-type {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .choice-letter {

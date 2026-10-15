@@ -100,5 +100,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const errors = validateAppliedReview(bank, report);
   if (errors.length) throw Error(errors.join('\n'));
   if (!process.argv.includes('--check')) fs.writeFileSync(new URL('reports/applied-question-quality-review.md',root), render(report));
-  console.log(JSON.stringify(report.summary));
+  console.log(JSON.stringify({historicalInitialReview:report.summary,currentSelection:report.selectionSummary,reviewedAssets:report.questions.length}));
 }

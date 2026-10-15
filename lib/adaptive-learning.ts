@@ -9,6 +9,8 @@ import {
   type LegacyLesson,
 } from './content';
 import type { Attempt } from './learning';
+import {isQuestionActive} from './question-availability';
+import {withCurrentAttemptClassification} from './question-classification';
 
 export type MistakeType =
   | 'concept-confusion'
@@ -305,6 +307,17 @@ export function checkPairRecovery(
   return { status: 'Active', recoveryCount: consecutiveCorrect };
 }
 
+/** Rebuild current confusion counts from current-version records; leave stored history intact. */
+export function currentConfusionPairs(records: WrongAnswerRecord[], attempts: Attempt[]): ConceptConfusionPair[] {
+  const activeAttempts=attempts.filter(a=>isQuestionActive({id:a.questionId}));
+  let pairs:ConceptConfusionPair[]=[];
+  for(const record of [...records].filter(r=>isQuestionActive({id:r.questionId})).sort((a,b)=>a.answeredAt-b.answeredAt)){
+    const current=withCurrentAttemptClassification(record);
+    pairs=updateConfusionPairs(pairs,current,activeAttempts,record.answeredAt);
+  }
+  return pairs.map(pair=>({...pair,...checkPairRecovery(pair,activeAttempts)}));
+}
+
 // ────────────────────────────────────────────
 // Bidirectional Question Extractors (3-Question / 5-Question checks)
 // ────────────────────────────────────────────
@@ -434,7 +447,7 @@ export function getQuestionsForConfusionPair(
     else if (q.difficulty === 'intermediate') score += 20;
 
     // Direct related question bonus
-    if (pair.relatedQuestionIds.includes(q.id)) score += 25;
+    if (pair.relatedQuestionIds.includes(q.id)) score += 40;
 
     // Avoid questions answered very recently
     if (attemptedSet.has(q.id)) score -= 20;

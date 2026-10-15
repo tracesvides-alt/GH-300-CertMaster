@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const record=JSON.parse(fs.readFileSync('reports/applied-six-deletion-review.json','utf8'));
 const removed=record.questions.map((q:{before:unknown})=>q.before);
 const bank=JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/seed.json','utf8'));
-const active=bank.find((q:{id:string})=>q.id==='q-d3-a19');
+const active=bank.find((q:{id:string})=>q.id==='q-d3-a19-feature-20261016');
 const nav=(page:import('@playwright/test').Page)=>page.getByRole('navigation',{name:page.viewportSize()!.width<640?'モバイルナビゲーション':'メインナビゲーション',exact:true});
 
 test('deleted snapshots in bookmarks and generated storage never enter new practice',async({page})=>{
@@ -21,7 +21,7 @@ test('deleted snapshots in bookmarks and generated storage never enter new pract
  await page.getByRole('combobox',{name:'復習対象',exact:true}).selectOption('bookmarked');
  await page.getByRole('button',{name:'演習を開始する'}).click();
  await expect(page.locator('.question h2')).toHaveText(active.question);
- const option=active.choices.findIndex((c:{text:string})=>/^前置き＋本文Yを送信し、前置き＋本文Xは送信しない$/.test(c.text));
+ const option=active.choices.findIndex((c:{text:string})=>/^Developer: Chat Diagnosticsを実行し、Reachabilityの結果を確認する$/.test(c.text));
  await page.locator('.question fieldset input').nth(option).check();await page.getByRole('button',{name:'回答を確認する'}).click();
  await expect(page.getByRole('heading',{name:'正解です！',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'演習を終了する'}).click();await expect(page.locator('.result-score')).toContainText('1 / 1');

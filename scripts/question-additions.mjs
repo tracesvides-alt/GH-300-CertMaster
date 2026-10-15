@@ -2,6 +2,10 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {questionRemovals,removedQuestionIds} from './question-removals.mjs';
 export const questionFingerprint=q=>createHash('sha256').update(JSON.stringify(q)).digest('hex');
+export function loadFeatureRefresh(root=new URL('../',import.meta.url)){
+ const file=new URL('content/gh300/2026-08-07/questions/feature-refresh-review.json',root);
+ return fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null;
+}
 const editorial=q=>JSON.stringify({question:q.question,choices:q.choices,explanation:q.explanation,choiceExplanations:q.choiceExplanations});
 export function loadQuestionAdditions(root=new URL('../',import.meta.url)){
  const file=new URL('content/gh300/2026-08-07/questions/additions-review.json',root);
@@ -36,6 +40,11 @@ export function combinedChoiceBaseline(historical,ledger){
   questions[r.id]={contentHash:createHash('sha256').update(editorial(r.initial)).digest('hex'),
    distractorHashes:Object.fromEntries(r.initial.choices.filter(c=>!r.initial.answer.includes(c.id)).map(c=>[c.id,createHash('sha256').update(c.text).digest('hex')])),added:true,origin:'additions-review.json'};
  }
+ for(const row of loadFeatureRefresh()?.questions??[]){
+  if(questions[row.id])throw Error('Replacement also appears in historical baseline: '+row.id);
+  questions[row.id]={contentHash:createHash('sha256').update(editorial(row.initial)).digest('hex'),
+   distractorHashes:Object.fromEntries(row.initial.choices.filter(c=>!row.initial.answer.includes(c.id)).map(c=>[c.id,createHash('sha256').update(c.text).digest('hex')])),added:true,origin:'feature-refresh-review.json'};
+ }
  return {...historical,questions};
 }
 export function combinedDifficultyBaseline(historical,ledger){
@@ -43,6 +52,10 @@ export function combinedDifficultyBaseline(historical,ledger){
  for(const r of ledger?.questions??[]){
   if(questions.some(q=>q.id===r.id))throw Error('Addition also appears in historical difficulty baseline: '+r.id);
   questions.push(r.initial);
+ }
+ for(const row of loadFeatureRefresh()?.questions??[]){
+  if(questions.some(q=>q.id===row.id))throw Error('Replacement also appears in historical difficulty baseline: '+row.id);
+  questions.push(row.initial);
  }
  return {...historical,questions};
 }

@@ -77,7 +77,7 @@ export function calculateObjectiveStats(
   attempts: Attempt[],
   objectiveIds: string[] = [],
 ): Record<string, ObjectiveStats> {
-  const verified = attempts.filter((a) => a.status === 'verified').map(withCurrentAttemptClassification);
+  const verified = attempts.filter((a) => a.status === 'verified' && isQuestionActive({id:a.questionId})).map(withCurrentAttemptClassification);
   const ids = new Set([...objectiveIds, ...verified.map((a) => a.objectiveId)]);
   return Object.fromEntries(
     [...ids].map((id) => {
@@ -181,7 +181,7 @@ export function calculateQuestionWeights(
   const difficultyMultipliers = {
     balanced: { beginner: 1.0, intermediate: 1.0, advanced: 1.0 },
     foundation: { beginner: 3.5, intermediate: 1.0, advanced: 0.15 },
-    exam: { beginner: 0.05, intermediate: 0.6, advanced: 3.0 },
+    exam: { beginner: 0.005, intermediate: 0.6, advanced: 3.0 },
   }[options.difficultyMode ?? 'balanced'];
 
   return new Map(

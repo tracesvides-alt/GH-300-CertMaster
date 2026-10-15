@@ -60,6 +60,34 @@
       "IDE活動の欠測を未利用と断定しない。割当一覧と利用集計を区別する。",
       "stdio/HTTP、CLIのモデルへ提供するツールと実行権限を区別する。",
       "補償の成立は断定せず、対象機能に適用する契約条件・軽減策・設定への確認を問う。"
+    ],
+    "urlValidation": [
+      {
+        "id": "copilot-seat-api",
+        "savedUrl": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "status": 200,
+        "finalUrl": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "canonicalUrl": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "canonicalEvidence": "final-200-url",
+        "title": "REST API endpoints for Copilot user management - GitHub Docs",
+        "redirects": [],
+        "fragmentValid": null,
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "id": "copilot-metrics-data",
+        "savedUrl": "https://docs.github.com/en/copilot/reference/metrics-data",
+        "status": 200,
+        "finalUrl": "https://docs.github.com/en/copilot/reference/metrics-data",
+        "canonicalUrl": "https://docs.github.com/en/copilot/reference/metrics-data",
+        "canonicalEvidence": "final-200-url",
+        "title": "Metrics data properties for GitHub Copilot - GitHub Docs",
+        "redirects": [],
+        "fragmentValid": null,
+        "warnings": [],
+        "errors": []
+      }
     ]
   },
   "questions": [
@@ -7144,6 +7172,51 @@
     }
   ],
   "verification": {
-    "status": "PENDING"
+    "status": "PASS",
+    "typecheck": "npx tsc --noEmit: exit 0",
+    "unitTests": {
+      "command": "npx vitest run",
+      "passed": 235,
+      "files": 21
+    },
+    "build": {
+      "command": "node scripts/e2e-server.mjs",
+      "result": "Next.js 16.3.4 production build succeeded",
+      "outputDirectory": ".next-e2e"
+    },
+    "browser": {
+      "command": "npx playwright test applied-focus.spec.ts applied-remediation.spec.ts --config artifacts/applied-focus.playwright.config.ts --workers 1",
+      "passed": 4,
+      "exitCode": 0,
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "focusQuestionsPerViewport": 23,
+      "otherRegressionQuestionsPerViewport": 12,
+      "checked": [
+        "演習開始",
+        "23問すべての正答・各誤答と採点の一致（単体テスト）",
+        "23問すべての正答選択・解説・23/23結果表示（ブラウザー）",
+        "IndexedDBの回答履歴23件と正解フラグ",
+        "重複なしの選択",
+        "JavaScriptエラーなし",
+        "PC/スマートフォンの画像確認",
+        "q-d3-a19で横方向のはみ出しなし"
+      ]
+    },
+    "ledgers": [
+      "applied:focus:check",
+      "applied:remediation:check",
+      "applied:cleanup:check",
+      "applied:check",
+      "quality:check",
+      "difficulty:check",
+      "classification:check",
+      "exam:check"
+    ],
+    "syllabus": "公式Study Guideの照合：UNCHANGED",
+    "newSources": "追加2件ともHTTP 200、ページ題名一致、リダイレクトなし",
+    "scopePreservation": "登録時に対象外299問のオブジェクト同一性を検査。ドメイン・技能・難易度・正答ID・表示順を維持。"
   }
 }

@@ -170,5 +170,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const errors = validateExamReview(bank,report);
   if (errors.length) throw Error(errors.join('\n'));
   if (!process.argv.includes('--check')) fs.writeFileSync(new URL('reports/exam-question-quality-review.md',root),render(report,read('content/gh300/2026-08-07/sources.json')));
-  console.log(JSON.stringify(report.summary));
+  console.log(JSON.stringify({historicalInitialReview:report.summary,currentSelection:report.selectionSummary,reviewedAssets:report.questions.length}));
 }

@@ -1,9 +1,12 @@
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
-import {focusDecisions} from '../fixtures/applied-focus-decisions';
+import {focusDecisions as historicalFocusDecisions} from '../fixtures/applied-focus-decisions';
+import exclusions from '../../content/gh300/2026-08-07/questions/selection-exclusions.json';
+const focusDecisions=historicalFocusDecisions.filter(([id])=>!exclusions.questions.some(q=>q.id===id));
 const bank=JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/seed.json','utf8'));
 
-test('all 23 Copilot focus actions score and persist in practice',async({page},testInfo)=>{
+test('surviving historical Copilot focus actions score and persist in practice',async({page},testInfo)=>{
+ expect(focusDecisions.length).toBeGreaterThan(0);
  test.setTimeout(90000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');

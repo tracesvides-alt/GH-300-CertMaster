@@ -1,122 +1,1456 @@
 {
-  "reviewedAt": "2026-10-13",
+  "reviewedAt": "2026-10-16",
   "purpose": "重複・学習上の追加が小さい応用問題を新規演習から外す。問題資産と保存済み履歴は保持する。",
   "questions": [
     {
       "id": "q-d3-a08",
       "replacementIds": [
-        "q-d2-a02",
-        "q-d3-a14"
+        "q-d3-a19-feature-20261016",
+        "q-d3-a14-feature-20261016"
       ],
       "reason": "対象コードと依存型を残す判断は既存の型契約文脈・入力予算問題と重なる。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "9ef0c483818d53ac2123e8de9bf6d6cd5403e57ad9fde6cb3adabfa141a1e3c4"
+      "fingerprint": "9ef0c483818d53ac2123e8de9bf6d6cd5403e57ad9fde6cb3adabfa141a1e3c4",
+      "priorReplacementIds": [
+        "q-d2-a02",
+        "q-d3-a14"
+      ]
     },
     {
       "id": "q-d4-a15",
       "replacementIds": [
-        "q-d2-a02"
+        "q-d3-a19-feature-20261016"
       ],
       "reason": "対象実装と依存型の添付という正答行動が同じで、別製品という背景の違いにとどまる。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "7bc2d4a36cea9669dc71ad7008a9958775c84ef97db46ed771b67bf84e1f437a"
+      "fingerprint": "7bc2d4a36cea9669dc71ad7008a9958775c84ef97db46ed771b67bf84e1f437a",
+      "priorReplacementIds": [
+        "q-d2-a02"
+      ]
     },
     {
       "id": "q-d3-a10",
       "replacementIds": [
-        "q-d3-a01"
+        "q-d4-e04-feature-20261016"
       ],
       "reason": "モデル等を固定し関連文脈だけを変更する対照実験を繰り返している。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "269041dfca11c900ab3a261d91eb54196b22b9a1952da110f2c5dcd4de7d3950"
+      "fingerprint": "269041dfca11c900ab3a261d91eb54196b22b9a1952da110f2c5dcd4de7d3950",
+      "priorReplacementIds": [
+        "q-d3-a01"
+      ]
     },
     {
       "id": "q-d4-a04",
       "replacementIds": [
-        "q-d3-a01",
-        "q-d3-a06"
+        "q-d4-e04-feature-20261016",
+        "q-d3-a06-feature-20261016"
       ],
       "reason": "新規Chatという背景を加えても、現行資料へ置き換える判断は既存の文脈比較と履歴整理で扱える。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "659785decf66070db4a25a151bd8a3c40960b853c8b37ca4238e8b1f73e8c2cd"
+      "fingerprint": "659785decf66070db4a25a151bd8a3c40960b853c8b37ca4238e8b1f73e8c2cd",
+      "priorReplacementIds": [
+        "q-d3-a01",
+        "q-d3-a06"
+      ]
     },
     {
       "id": "q-d4-a11",
       "replacementIds": [
-        "q-d3-a06"
+        "q-d3-a06-feature-20261016"
       ],
       "reason": "要約で現行契約を残し失効した情報を除く判断が同じ。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "e14b1201f28267ddbd8a27bcae99241c6730e3b2338113d34a185c40bc5f6d20"
+      "fingerprint": "e14b1201f28267ddbd8a27bcae99241c6730e3b2338113d34a185c40bc5f6d20",
+      "priorReplacementIds": [
+        "q-d3-a06"
+      ]
     },
     {
       "id": "q-d4-a12",
       "replacementIds": [
-        "q07",
-        "q-d4-a05",
-        "q-sc02-3"
+        "q-d1-a17-feature-20261016",
+        "q-d2-a24",
+        "q-sc02-3-feature-20261016"
       ],
       "reason": "失敗した入力形式の例を契約に沿って追加する判断の反復。日付解釈・正常ゼロ対不正入力・丸め方式推定は残す。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "495e587528f502f78a7eb3ddf3c109fcb3ad1b4b9d002cf0ebe303faf6b119e1"
+      "fingerprint": "495e587528f502f78a7eb3ddf3c109fcb3ad1b4b9d002cf0ebe303faf6b119e1",
+      "priorReplacementIds": [
+        "q07",
+        "q-d4-a05",
+        "q-sc02-3"
+      ]
     },
     {
       "id": "q-d4-a13",
       "replacementIds": [
-        "q-d4-a01",
-        "q-d4-a05"
+        "q-d4-a01-feature-20261016",
+        "q-d2-a24"
       ],
       "reason": "awaitとPromiseの対応を一つ識別するだけで、既存の契約に沿うプロンプト具体化に比べ学習上の追加が小さい。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "ae4024960e2c3c2d603c56d2a850585645c923212920ff93503f1720374fc103"
+      "fingerprint": "ae4024960e2c3c2d603c56d2a850585645c923212920ff93503f1720374fc103",
+      "priorReplacementIds": [
+        "q-d4-a01",
+        "q-d4-a05"
+      ]
     },
     {
       "id": "q-d4-a07",
       "replacementIds": [
-        "q-d4-a05"
+        "q-d2-a24"
       ],
       "reason": "正常例・負例を対比して曖昧な契約を具体化する判断が同じ。正規表現の全体一致は教材で維持する。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "9da427a1288365396ebbc11eaf3ea91824427f9a1aef67f64fd31c11c7febcc8"
+      "fingerprint": "9da427a1288365396ebbc11eaf3ea91824427f9a1aef67f64fd31c11c7febcc8",
+      "priorReplacementIds": [
+        "q-d4-a05"
+      ]
     },
     {
       "id": "q-d5-a01",
       "replacementIds": [
-        "q-d4-a14",
-        "q10"
+        "q-d4-a14-feature-20261016",
+        "q-d5-g12"
       ],
       "reason": "決済APIの失敗をモックで再現し注文状態を観測する判断が結合テスト問題と重なる。依存隔離と引数観測はq10で残す。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "bfe6e0267551ce9e1e75775c102c31518db4d26b3dc394afd7d501707868171a"
+      "fingerprint": "bfe6e0267551ce9e1e75775c102c31518db4d26b3dc394afd7d501707868171a",
+      "priorReplacementIds": [
+        "q-d4-a14",
+        "q10"
+      ]
     },
     {
       "id": "q-d2-e09",
       "replacementIds": [
-        "q-d2-e14"
+        "q-d2-f01"
       ],
       "reason": "size文字列を既知の値へ置換するだけで、参照経路や互換性へ契約を適用する既存問より判断量が少ない。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f"
+      "fingerprint": "e54f8313132dd3fd68c5023a107e70eec8a1868179e8b066ddba9b1062d5d44f",
+      "priorReplacementIds": [
+        "q-d2-e14"
+      ]
     },
     {
       "id": "q-d2-a16",
       "replacementIds": [
-        "q-d1-a13",
-        "q-d2-e14"
+        "q-d2-a18-feature-20261016",
+        "q-d2-f01"
       ],
       "reason": "テストで確認できる変更単位から進むという一般的な判断は、採用ゲートと移行の検証問題で具体的に練習できる。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "cd2be04042dad80d3e01ecbd67b717a746014b2f08e3b066aba0ece1672e4787"
+      "fingerprint": "cd2be04042dad80d3e01ecbd67b717a746014b2f08e3b066aba0ece1672e4787",
+      "priorReplacementIds": [
+        "q-d1-a13",
+        "q-d2-e14"
+      ]
     },
     {
       "id": "q-d5-a13",
       "replacementIds": [
-        "q-d3-e03",
-        "q-sc02-3"
+        "q-d5-g12",
+        "q-sc02-3-feature-20261016"
       ],
       "reason": "単一の税額計算だけになっている。変換段階を照合する回帰検証と、複数例から丸め方式を適用する問題を残す。",
       "retiredAt": "2026-10-13",
-      "fingerprint": "63ea3aae0140be74bd1c48a43c7fa221925b4fa3a76dd99a5e8fcef8efb716ce"
+      "fingerprint": "63ea3aae0140be74bd1c48a43c7fa221925b4fa3a76dd99a5e8fcef8efb716ce",
+      "priorReplacementIds": [
+        "q-d3-e03",
+        "q-sc02-3"
+      ]
+    },
+    {
+      "id": "q01",
+      "replacementIds": [
+        "q01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "12ba500ebaa49a8fb5f1080eb8723b9463350a0f1bad82ef1af63f221cdba457",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a01",
+      "replacementIds": [
+        "q-d1-e01-feature-20261016"
+      ],
+      "reason": "実行承認だけの案は、担当者とPR承認も区別する問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "0555ffcecff96bedd2e80faf430ade048a13bc2729b6ac50852814b63942aad2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a02",
+      "replacementIds": [
+        "q-d1-e02-feature-20261016"
+      ],
+      "reason": "採用記録の表示だけでなく、採用・破棄の範囲を判定する問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7b175ff332b043993a077f04adb9e84b88b4678bee07d8381b1ee7b017c7d463",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a03",
+      "replacementIds": [
+        "q-d2-g10"
+      ],
+      "reason": "差分確認という一般論が強く、選択肢の一つだけが網羅的。独立の応用として採用しない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "814f349244a14283095b8c477d34dc64344a8297a34719f2c82cc3578608598d",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a04",
+      "replacementIds": [
+        "q-d1-a04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "eb698b409814d7165c781cb2f5adc9b6a305e2557fec5d2e229baccceeb778b1",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a07",
+      "replacementIds": [
+        "q-d1-a07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "aa5361425dacd7d7db7628f6e49d648a38c1ed4e0f6fddd27b813bb40b5509a2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a08",
+      "replacementIds": [
+        "q-sc02-3-feature-20261016"
+      ],
+      "reason": "参照を開く操作だけの案は、発見と使用を分ける診断の問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f9901de5087b85121de4f9147deba8e68d726dd58d5a232f92b9215641aa6ebb",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a09",
+      "replacementIds": [
+        "q-d2-e15-feature-20261016"
+      ],
+      "reason": "必要なツールだけ列挙する判断を、特定Agentだけ使えない診断へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a203bc94ec2ce6c41cf818dc47f3c9a4786c19f9e29fb255ac53de0f73756f08",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a10",
+      "replacementIds": [
+        "q-d1-a10-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b73bdb68045b3d0ca7f3695aa677bfc57a008c221b641020737e537fcdb0ea8b",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e01",
+      "replacementIds": [
+        "q-d1-e01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "2a60af5b9495df3224fa44a02d39192f6a535030727df0d5c9048a9b6e7ae4cd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e02",
+      "replacementIds": [
+        "q-d1-e02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "cec16c91db202f35cec63635f16f58315bf7677302520300be5caeb34354a1f8",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e03",
+      "replacementIds": [
+        "q-d1-e03-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "894c0109382736984a3c35f97c0eee4864f2b6ec71d95e02151672c9c9f56a2a",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e05",
+      "replacementIds": [
+        "q-d1-a21-feature-20261016"
+      ],
+      "reason": "所有形態と共有の識別だけで本番相当と呼べないため、共有設定の応用へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "4af639a75159ad79f7d6d5f83e7b7cdba1b1e3585c760a02c8e0941317affc50",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e07",
+      "replacementIds": [
+        "q-d1-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8755df0ff4e3215cb4d1d27d810d9e55bd0dadf94b2658e944562ec7292770be",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e08",
+      "replacementIds": [
+        "q-d1-e08-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d73fa01e27d996cccdd1850ca42874136c34d1049b40ad77f72dd5b639befb2c",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a04",
+      "replacementIds": [
+        "q-d2-a04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "35c5cdeb30b731b6e89f4c89ba83b913c817ed4d21f9e47e31b02d82cf0dfacb",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e02",
+      "replacementIds": [
+        "q-d5-e02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d47897cbcfa2447f7cd54275ff5ce01be48b4bad7f248401b77276186460183a",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc02-2",
+      "replacementIds": [
+        "q-sc02-2-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "3be2fbae1c10c905d5319a230fc3ac92b06b8ab3761c8e381623c820890e4821",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc05-1",
+      "replacementIds": [
+        "q-sc05-1-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a6cf6cfc0767bd277a03af14252d5c3761a3fc1e3dca62708796701a0eb89dca",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc05-2",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "ログを開く導線の暗記で、応用の独立した判断が弱い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c5d872b09fb04639820f0a3c88834164bf9ff47fbfa7bda32ee52f1944d1d546",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc09-3",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "共有ローカルセッションの単一制限だけを問うため、本番相当として不採用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d4233bd6b27d79a0625fc37757079c8c37a861e9f8c943fe98412b27b8cba34b",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a12",
+      "replacementIds": [
+        "q-d2-e21"
+      ],
+      "reason": "閲覧と編集のロール名だけに寄り、権限境界を問う既存問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f0968514717f11c94dc5e5aa153875812d4201f380481852cd36ec10b6a4b2eb",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a13",
+      "replacementIds": [
+        "q-d2-a18-feature-20261016"
+      ],
+      "reason": "診断コマンドの用途識別だけの案は、設定追加後の読込確認へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "5d9d6a19005a9f1a419f2bafd4331fab4813e8b6db7d2f2509f9e98df1627811",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a14",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "実行中の追加指示の操作名の識別に留まる。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c5e896bd305f28fbc4745aa49b5b64154b8795e8917536a59bc1a66c0d246e22",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a26",
+      "replacementIds": [
+        "q-d2-a26-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "263600b922cb7b390966503ee83dfff0c11e2a23338839ca4926146b723ba784",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e09",
+      "replacementIds": [
+        "q-d1-e09-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "58118b389d737c8c2e1b1360467d3230b215faebaad83f7c75dbf7f816ab9c0e",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e20",
+      "replacementIds": [
+        "q-d1-a19-feature-20261016"
+      ],
+      "reason": "候補と実行承認の切分けは応用で扱う判断と重なる。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "ecf598f2d45c32810d9eb171fd7e2405518a6387edc2b059a95ae672922dc635",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a15",
+      "replacementIds": [
+        "q-d2-f03"
+      ],
+      "reason": "テスト生成の起動を答えるだけで既存の基礎と重なる。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "514b535fda40418a717303822921035cf6900905637c4f79e55c545e3aae996a",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a16",
+      "replacementIds": [
+        "q-d1-a16-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e1b80a2df4137c6483e86fab8b4b95db997e4687f86ea4719d30385bcfd51ab7",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a17",
+      "replacementIds": [
+        "q-d1-a17-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e594aea385af9187067ce788b75f6cf0da3998361ff1a31aec7b1d426091879e",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a18",
+      "replacementIds": [
+        "q-d1-a18-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "607be880ec104ca5c5a5290a0466d6edcd62264a38b225745c2af0606314ac10",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a19",
+      "replacementIds": [
+        "q-d1-a19-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "2d4b07eb6b656bd947995a1c246ff965fa60b289dae9df14680ab5120e6cbfaa",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a20",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "最も丁寧なログ確認だけが正解に見え、応用としての独立性が弱い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "252b39e4229ed8f4f1110f91b37ee81cc33e58856e1cf1b69a9ed018723d90ad",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a21",
+      "replacementIds": [
+        "q-d1-a21-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "3ec7b5ba9bfc441311660e15422b1a8832d64396b64430366ea830842f8c4179",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a22",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "停止と一覧整理の定義に近く、独立した応用として採用しない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "89079a2bd9fff5e0cee73cc93b5bf5023c4d07b20bd87208375c5ab68577d258",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a07",
+      "replacementIds": [
+        "q-d2-g14"
+      ],
+      "reason": "レビューとsummaryの機能名の使い分けは既存の基礎と重なる。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "559011bea6e4007685108aea57f3cf95e9edd1bbb597646895a04e5f31a5b456",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a18",
+      "replacementIds": [
+        "q-d2-a18-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8f1962d02c338ca1f7f9a174c65bff6952482860319746f9d4c6be5369cc0ce8",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e02",
+      "replacementIds": [
+        "q-d2-e02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c8c887b2e03384db2552b43bad10a00c93018b57ee0f7d385ad984d0df5ce406",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e11",
+      "replacementIds": [
+        "q-d2-e11-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f9e204ea09ddad7488a15ff72c40ae0640f2125bdbbb41d631b4394daf83f535",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e15",
+      "replacementIds": [
+        "q-d2-e15-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "459311980637296ae062d37f988886930f35699c5d75d7efc0d5e1167232de1d",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e19",
+      "replacementIds": [
+        "q-d2-e19-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "1a22aa16b445aff7684ebe609f2c26c9bd0c83f6b8131476e60ca8856c44dfb4",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-e02",
+      "replacementIds": [
+        "q-d6-e02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d986597d034fce3f5f58f1cfd0761e48cb7c25bffc0dea692bc3fe24a0e196fe",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-e05",
+      "replacementIds": [
+        "q-d3-a13"
+      ],
+      "reason": "pending取消の一仕様を知れば解け、本番相当の多段階性が不足。新機能の詳細まで既存問が網羅するとは扱わない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "4e0c87e83b58c7e58f6224d5aca1675917e1095670e9eea9df6dd9a0a90992c1",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc03-1",
+      "replacementIds": [
+        "q-sc03-1-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8e9dbac42bfde57df7b39274457187c2b3444a8837bb99618aa29e7381d3bad9",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc03-2",
+      "replacementIds": [
+        "q-sc03-2-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "21c2699b5fb4a39edc6df2f80f44c36314aac3e072f504f7585f34ba91f9c8d2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc07-1",
+      "replacementIds": [
+        "q-sc07-1-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8f6594167c723576d0ac034938f9a6fc2ad9a2a6879e256588391b4b2779d2d1",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc07-2",
+      "replacementIds": [
+        "q-d4-e05-feature-20261016"
+      ],
+      "reason": "役割再利用とSubagentの定義の識別に寄るため、文脈とファイルの分離を問う問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f08a2458fff711d5b443453f4e6d3e096451f7cd20b473cf20d0fe755f96c076",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e22",
+      "replacementIds": [
+        "q-d2-g09"
+      ],
+      "reason": "CLIの作業先と追加先の計算が中心で、本番相当の判断負荷が足りない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "bfc235ab00812bcb894e32dac6f604e512e149d43f706e43946eff1fa8526f62",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e23",
+      "replacementIds": [
+        "q-d2-g18"
+      ],
+      "reason": "ポリシー差を本文で明示しただけでは、原因がそのまま正答となる。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "3438fb76538a5ab41f9c3f7347aaf73207a677aaa40f06e3fa10a41f771942a9",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a03",
+      "replacementIds": [
+        "q-d3-a03-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b88ec8548773c114eb98ebf059e8c21f0f6de8475af1ed5f360039a3c89cf614",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a05",
+      "replacementIds": [
+        "q-d3-g02"
+      ],
+      "reason": "索引と学習の定義識別で、適用判断が弱い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7d18b33cdc7aa54abcd1c7a17b66c92cf7083c860f0e472847cc979b395f8ef1",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a09",
+      "replacementIds": [
+        "q-d3-e02-feature-20261016"
+      ],
+      "reason": "入力フィルタの説明だけでは応用の判断が弱い。入力・索引設定の具体条件を扱う問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "cfa665d49b906e065100441d4200b4e552cdc14bc5428319a440455dcae7ea09",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e01",
+      "replacementIds": [
+        "q-d1-e09-feature-20261016"
+      ],
+      "reason": "検索の評価一般へ戻りやすく、公開索引の対象・更新を問う機能問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f15532ff2b0f8896579da4601e28debd87e960abd12c5606a8df8004e2629ac2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e02",
+      "replacementIds": [
+        "q-d3-e02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e7fb1dddb6ea034e731325721c6d1b956d906226ff1320ca797f359b09fd8e8c",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc08-2",
+      "replacementIds": [
+        "q-sc08-2-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "9ef1a05c4128cec33e8e3168bf5116d690ee11cbcc61e4c697145319095f2727",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e06",
+      "replacementIds": [
+        "q08"
+      ],
+      "reason": "無関係な会話を分ける判断は既存の基礎と同じ。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a79e690ea54a1f5b8d0b21a08873f3514885477d66d8050e7c00f860a726a4dc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e07",
+      "replacementIds": [
+        "q-d3-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a327a18db9aa7388a5d281ddcbc11126a2c3bc89b5548a0dbe07172c94f9c504",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a16",
+      "replacementIds": [
+        "q-d3-a16-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "70b817a0f7e305c465ba972d1d677f44abc0f2dfee17f533d77d4e804784cfb0",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a19",
+      "replacementIds": [
+        "q-d3-a19-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "673c796cfec55470173cd3d97b3e8b0863a2f6cfac5c7821e878224c62a5cc84",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q07",
+      "replacementIds": [
+        "q-d1-a17-feature-20261016"
+      ],
+      "reason": "URL添付だけの識別では応用として弱い。明示コンテキストの粒度の問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e7cf07442b65f9b89075fd7a875a0ed4b7e748d18c67c6246237df97965070d2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a02",
+      "replacementIds": [
+        "q-d3-a19-feature-20261016"
+      ],
+      "reason": "文脈の名称だけの識別は採らず、必要な診断情報を選ぶ問題を残す。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fe77719a7b488cb755461a650a84bfef84403ac34bcb9263f4c7827ef18fc61f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a01",
+      "replacementIds": [
+        "q-d4-e04-feature-20261016"
+      ],
+      "reason": "相対参照の定義と単純なパス計算に寄り、独立の応用として採らない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b595e2b1193b20102e79f0a1275aec0098872deb5b3ca18c4d878ed0516e329e",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a06",
+      "replacementIds": [
+        "q-d3-a06-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "5ba175377649c1c8a66d7f3656988bf7cdd079d5dfeb33a5ff877557b26847a7",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a07",
+      "replacementIds": [
+        "q-d3-a07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "bb11189066abf9e4567b5b5fd1759c7a8187ea05c165bceee2f1c7a20decb69e",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a01",
+      "replacementIds": [
+        "q-d4-a01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d98d94cc7b487212750b6e270435e45f9fa74937150609b8ce70cf7ae0146bb1",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a02",
+      "replacementIds": [
+        "q-d4-a02-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c10ab88f646302d80459911ba0a1a1246c38b6f9e4d139935b318277a253d991",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a03",
+      "replacementIds": [
+        "q-d3-a14-feature-20261016"
+      ],
+      "reason": "取得ツール名だけの識別は採らず、接続・有効化済みツールの明示選択へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d88cffa85082bc2afde8dcc7e83a442dcbffcbf2b8596aa583da44c996318a00",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a05",
+      "replacementIds": [
+        "q-d2-a24"
+      ],
+      "reason": "常設指示と手動タスクの区別は維持候補で既に扱う。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c56658f9d874de0f80f0265c9d451a548fecc6dff7e8179034d27fb9e21946c4",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a06",
+      "replacementIds": [
+        "q-d2-f09"
+      ],
+      "reason": "既定の配置場所だけで決まるため基礎と重複。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "28fd8d5c4677a837b8c618fd9d3e3532e5b7407bde1c968bfecbff29ee9c4879",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a09",
+      "replacementIds": [
+        "q-d1-a17-feature-20261016"
+      ],
+      "reason": "文脈の種類の識別だけの案を増やさず、対象粒度を照合する問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "2cb6c58203de68786458e963447846e295385dc263e82941fc9efb9c8e1ba406",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a10",
+      "replacementIds": [
+        "q-d2-a24"
+      ],
+      "reason": "常設指示と必要時の資料を分ける判断が再利用タスクの既存問と近い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "65cb05f5ef65f0634b6e5d1adb7f7c863edf94e2aa5b5b14146fe7d7a7aedadc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e03",
+      "replacementIds": [
+        "q-d4-e08-feature-20261016"
+      ],
+      "reason": "パス計算へ難しさが偏り、本番相当の機能判断が不足。再利用定義の版・範囲を扱う問題を残す。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "9ce0c039c4b37b248159bb70038659b0490381150461444eac0d52beda75feb8",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e04",
+      "replacementIds": [
+        "q-d4-e04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "4afcaa347e38bc09dee878891feb815c8524153f47ab772e449715e1579b6adb",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e05",
+      "replacementIds": [
+        "q-d4-e05-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "36b894a6eabd14ca912d65589a39df3f500a383730825acbb2d59fc6bd0b5cdd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a04",
+      "replacementIds": [
+        "q-d1-a17-feature-20261016"
+      ],
+      "reason": "画像添付の機能名だけの識別に留まり、応用の独立問題として増やさない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e98fb595cf33cee531f287ef81249b29034cc687dacc82ae9734983eb51cbd3f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc02-3",
+      "replacementIds": [
+        "q-sc02-3-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "6432ddd96260e265c70d89b1819655a5deb9e8b6ab68d325afbe9a47e5911a62",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc03-3",
+      "replacementIds": [
+        "q-sc03-3-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d7ac6a3ed7cbf203f0acdacdb7c0e5a9a955b9ad5e18e00305cbeb0d89df4c86",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc06-2",
+      "replacementIds": [
+        "q-d2-g12"
+      ],
+      "reason": "会話からAgentへ渡す機能の識別だけでは本番相当の難度に足りない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "4cf09d1ae601f303f40671061fe127705e43eaf99b6aa5ada78d1795d97715cd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a14",
+      "replacementIds": [
+        "q-d3-a14-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "13b0abed4432c4345e48a442ed4d5a455be44d8a1d75539f9d857f0b61566cf3",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e06",
+      "replacementIds": [
+        "q-d4-e06-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "05f42e7ce0b39077ff153ddd009c76bc79ff6500f1a526401cb4546bb53b96cd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e07",
+      "replacementIds": [
+        "q-d4-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "84ebdc06bd9dcb7b7786c873fa2e6405a142e3475bca51219df0519497e5804e",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e08",
+      "replacementIds": [
+        "q-d4-e08-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b2c7304665d1baba3361527cfed20f9569f28cf9660d600254c2d4b1bd9b2072",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e09",
+      "replacementIds": [
+        "q-d4-e09-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "be521fa26a73e956a468b5aacd70a34f07a100dea3c32a45176941853acfbc37",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q10",
+      "replacementIds": [
+        "q-d5-g12"
+      ],
+      "reason": "失敗テストからの起動の識別が中心で、テスト設計の一般問題も再使用しない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "80737e38a145482577b1e2baceeeccc71913331647678250ba863a3a90f2506f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e01",
+      "replacementIds": [
+        "q-d2-e01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "52888f5f7f51b9444a0aaffe967d7fc3710113a03fb39ef9b443a73954a4da86",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e07",
+      "replacementIds": [
+        "q-d2-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7187c383ddd230b3606248e4b5049c5bd7e1af2c1510c45701c8331e413b77b8",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e10",
+      "replacementIds": [
+        "q-d5-a15-feature-20261016"
+      ],
+      "reason": "秘密を直書きする不正解で正答が目立つ。クライアントの入力変数を使う具体設定へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a0d4d105d410c454f76ae04c489dcac3b0590681adef2dddc8e6ec455a4225bc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e14",
+      "replacementIds": [
+        "q-d2-f01"
+      ],
+      "reason": "一関数のInline Chat利用は既存の基礎と重複。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d86ad06ca935e8a11713e1d7a00afc2c85bdbd4ab63ed2ec1df22c7bc160e85f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e03",
+      "replacementIds": [
+        "q-d5-g12"
+      ],
+      "reason": "setupTestsという名称を知れば解けるため、独立した応用として採らない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "9efcc9bc413e8f5a49f7ea6367f4c536e4f9a74f0bf6d36c0c2939e668f457bd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-e01",
+      "replacementIds": [
+        "q-d4-e01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "dacf92bfeb7d03097c512acff567ea577e8d919f5b1949e2d55ba3cb15697c86",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a03",
+      "replacementIds": [
+        "q-d2-a12"
+      ],
+      "reason": "部分採用のキー操作は既存の基礎と重複。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a84c50a5174689c5bb8828fe17de7629fd7d6f06f8c6ca5a8ab5f47d71e051bd",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a06",
+      "replacementIds": [
+        "q-d3-a03-feature-20261016"
+      ],
+      "reason": "生成内容へフレームワークを指定する一般的な追加依頼に寄り、文脈指定の問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "724c5f3881fec412caa2fc235efe7c9eab2ecfaa5dd85b6077bbf939a14beebf",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a07",
+      "replacementIds": [
+        "q-d2-a26-feature-20261016"
+      ],
+      "reason": "誤入力を拒否する安全な一択に見え、ツール承認の範囲を問う問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "2d2e73fd19073f6c9894d873965d274e21b3697fc50d112cd8433864aa31fd88",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a08",
+      "replacementIds": [
+        "q-sc02-1-feature-20261016"
+      ],
+      "reason": "Fix with Copilotの起動名だけの案は、修正成果物の出し先を選ぶ問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "273ad7052118339db3eb1274446520202cc4aec5231b214a771a568007a04d77",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a09",
+      "replacementIds": [
+        "q-d5-a09-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8c38f046b36ee3aa509d202c06dc01bb34a2a15e6bb56c7d76c69647f9bfa782",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a10",
+      "replacementIds": [
+        "q-d2-g01"
+      ],
+      "reason": "NESの機能名を選ぶだけの案は増やさない。ghost textの基礎がNESを網羅すると主張する参照ではない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "39ab9c6b9e0f9257339295c651f739c3129fad9600504d0e81ab70d622cdfdd4",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a11",
+      "replacementIds": [
+        "q-d2-a14"
+      ],
+      "reason": "計画と実装を分ける機能名の識別に寄り、基礎の相談と編集の使い分けへ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "46706a3d1d3e8f1c43f6c644cdbf27fb1bff3a60c158486119407d4859d39f74",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e01",
+      "replacementIds": [
+        "q-d5-e01-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "f17e590323a9bc8e2ce5476c1988daba5bb54c1347d6eb9f41409e9af911789d",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e03",
+      "replacementIds": [
+        "q-d5-e03-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fba258edba97c1bc09a427f939c7e175c11aaf8c9ba704b4149884ea2a7a75b4",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e04",
+      "replacementIds": [
+        "q-d5-e04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "71c00e5be08eb80a59bc8a821d5a3bf3eb5550dd07f169a4a5225b7c0c6219f9",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e05",
+      "replacementIds": [
+        "q-d5-e05-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7089ed65424ea0282fc6ab3ea551064addc4f9a6c5344f22309aaeee0d666cc9",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc02-1",
+      "replacementIds": [
+        "q-sc02-1-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fbcb3d7e3f7c7ba4f1daccece70a6231a4a7c1b932aac2d685657222e4b7ef8f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc04-3",
+      "replacementIds": [
+        "q-d2-g10"
+      ],
+      "reason": "KeepとUndoの操作の識別に留まるため、応用として新たに採用しない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a21246a8f1f5cef7e74c520e7542f103a09fb1711ed710ed4af3b9e444d5b105",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc09-1",
+      "replacementIds": [
+        "q-d2-a11"
+      ],
+      "reason": "summary生成の既存基礎と重なり、本番相当の多段階判断もない。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "e78145b87ea1f71b71d06fcd85563897789348733a3a8b9541faacbea6094702",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-a15",
+      "replacementIds": [
+        "q-d3-a19-feature-20261016"
+      ],
+      "reason": "診断の入力名だけの案は、情報の粒度を判断するCopilot診断の問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fa75928150180b55e042cc2df23dd3d1db57e90551f976148a0b402b041f5595",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d4-a14",
+      "replacementIds": [
+        "q-d4-a14-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "99423fa6c0c7ad496a10fa10438b3248c1f178c071297869bb9c59d993825905",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a12",
+      "replacementIds": [
+        "q-d2-f04"
+      ],
+      "reason": "探索・編集・実行をAgentへ委任する識別は基礎で既に扱う。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fd8e518052746f5f5961fb9e195b83794d55332f8e0630354f2be3cc21e2d6fc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a14",
+      "replacementIds": [
+        "q-d5-a14-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7cc060a41db3a9ea3fbc96e7449a6bd2cd9a62adf142197c041008d41fff1d58",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-a15",
+      "replacementIds": [
+        "q-d5-a15-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "a7862e5b706ba4c3c61207a1b3cebbc171a0e400b56493a180eb91f53cc769f2",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d3-e08",
+      "replacementIds": [
+        "q-d3-e08-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "14875cbcfa2ac0c6b564eb7b740f95c65a79940d08334abc4c5dc88682b4abab",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e06",
+      "replacementIds": [
+        "q-d5-e06-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "eeeeb95333039f47439998ff57707398cf79920578c0123b521b7b2660ab277c",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e07",
+      "replacementIds": [
+        "q-d5-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "c2eee38e76721fd4ff11d5b1fe52cdadb6c273a3ebeb31f52c2fbf3c3512bd3d",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d5-e08",
+      "replacementIds": [
+        "q-d5-e08-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "61e4988f4fb3ca176e63e2530a125a794a1f2c032b29c64aac0578f4de244bb3",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e04",
+      "replacementIds": [
+        "q-d1-e04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7c994e826ccd27d86039222e2c8358c7a194e666be8adca64266878ea96b1446",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a03",
+      "replacementIds": [
+        "q-d6-a03-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b278340db9a3feb709e75cd4ed492022b8aa5121873f8809124051aadb54a26c",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-e03",
+      "replacementIds": [
+        "q-d6-e03-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "967a2173a370aa80bff82af8a09fd3e599b255b67dc199bc5922afab914c6ba6",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-e04",
+      "replacementIds": [
+        "q-d6-e04-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "fc0c6c5dd9e0e67a32164359f8bc365af1e104a7207a49ee31bee5eb77986dbb",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc05-3",
+      "replacementIds": [
+        "q-sc05-3-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "0f65bf339ac5d3f9406dca29b9732c42f5c5f18a1570bc212a1ff7abdaa2f857",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc10-3",
+      "replacementIds": [
+        "q-sc10-3-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "8eb095ca1aee33cf85116ba30e384e7428647665de85b14b41e203b3c7b905ab",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-a11",
+      "replacementIds": [
+        "q-d1-a11-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "0d83bdd5fdc498941c7808070037b72ca431b72a76665b76d148a0223f8d7f59",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a13",
+      "replacementIds": [
+        "q-d6-a13-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "b4d625759e1171ec12175e06f996993eb0e7ef88137190bae69c4745d7a5eebf",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-e07",
+      "replacementIds": [
+        "q-d6-e07-feature-20261016"
+      ],
+      "reason": "Copilotの機能を判断する新問へ置換。旧問の履歴・保存済みセッションを維持するため新IDを使用。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "4873ad4bf3597afdf847bc324a9ee27412174429443eb30fad3e2673258280cc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-sc01-3",
+      "replacementIds": [
+        "q-d6-e06"
+      ],
+      "reason": "P/Qという抽象ポリシーの優先順位だけで解け、Copilotの具体機能を判断しない。公開コード一致ポリシーを扱う既存問へ統合。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "ccc625dcade0d2442dd7c81f52e753dd7bd8a700c213a2f677796d273cea47a9",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d1-e06",
+      "replacementIds": [
+        "q-d1-a05"
+      ],
+      "reason": "選択肢のうち審査を続ける案だけが明らかに慎重で、基礎の公開一致通知の扱いと近い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "182c61651cccbd6ad3e8afb43997190846ed9f3214cabf6d602dc70416e0aeac",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a10",
+      "replacementIds": [
+        "q-d6-a01"
+      ],
+      "reason": "別repoに除外設定がないことを直す判断が重複。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "483f69b3c4111570e03a29ea61c53c5252fac14123a594ae661af1afc0b36e4f",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a14",
+      "replacementIds": [
+        "q-sc01-2"
+      ],
+      "reason": "重なる除外設定の設定元を修正する判断が近い。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "9acba8a7dc72032b14bffe7109557a188f20714085d4b35e242587cc49ebecce",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a12",
+      "replacementIds": [
+        "q12"
+      ],
+      "reason": "古いIDEを再読込する判断は基礎と重複。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "16f701ce2aba0771a5a523955cbcca1098a29865d9cde8c21a3d47440c4d9cdc",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d6-a08",
+      "replacementIds": [
+        "q-d6-f02"
+      ],
+      "reason": "Content excluded表示から除外機能を答えるだけで基礎寄り。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "d0f640dbb21fd5bc3a40d7d202f422910535d7152ed55f406de9eef68e3926c7",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-e16",
+      "replacementIds": [
+        "q-d2-e08"
+      ],
+      "reason": "言語別の指示分割という判断が近く、より具体的な適用条件の問題へ集約。",
+      "retiredAt": "2026-10-16",
+      "fingerprint": "7fb5da595b0696f3f5746dd2e13fb346de4d9203a2be5e2a0a50da83b99a2e09",
+      "review": "reports/copilot-feature-refresh-2026-10-16.json"
     }
   ]
 }

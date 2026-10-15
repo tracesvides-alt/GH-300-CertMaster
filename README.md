@@ -31,7 +31,7 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 - **多軸比較ガイド 17本**:
   - 試験で最も混同しやすい技術概念（Copilot Free vs Pro vs Business vs Enterprise、Content Exclusion vs Policy、Embeddings vs RAG等）を徹底整理。
   - `Comparison Table`（多軸比較表）、`Decision Guide`（選択決定フロー）、`Common Traps`（共通トラップ）、`Exam Tips`を収録。
-- **公式出典台帳 63件**:
+- **公式出典台帳 66件**:
   - Microsoft LearnおよびGitHub Docsの公式ドキュメントURL、確認日、関連Objectiveを一元管理。
 
 ### 3. 多彩な学習・演習モード & 3段階難易度モデル
@@ -185,6 +185,12 @@ npm run syllabus:check
 - [GitHub Trust Center: Privacy and Data Protection](https://resources.github.com/copilot-trust-center/)
 
 2026-10-13の見直しは[日本語・採点・選択肢の修正記録](reports/applied-remediation-review.md)にまとめています。当時の応用96問と関連する基礎6問を確認し、採点不一致14問、極端な誤答、難度の低下、日本語を修正しました。2026-10-14には、関連性レビューに基づき応用6問を削除しました。[削除記録](reports/applied-six-deletion-review.md)に対象と確認結果を記載しています。`npm run applied:remediation:check`で、残った応用90問と基礎6問の文面・承認した正答内容の対応を検査できます。
+
+2026-10-14には、一般的な計算・コード知識へ寄っていた応用23問を、Copilotへの依頼、文脈の選択、出力の検証、設定の判断へ改稿しました。[23問の実施レビュー](reports/applied-23-focus-improvement-review.md)に、選択肢単体の手がかり、二段階の判断、誤答3件の成立条件、近接問題との違いを記録しています。応用90問、全体310問、D1〜D6の配分は維持しています。`npm run applied:focus:check`で、この23問の承認した正答内容とレビューの対応を検査できます。難易度は編集評価であり、受験者による実測ではありません。
+
+2026-10-15には、「Copilotの機能・設定・挙動を問う問題に限定」という条件で応用90問と本番相当57問を再点検しました。[機能限定の事前レビュー](reports/copilot-feature-only-review-2026-10-15.md)では、維持候補25問・一般問題の対象外候補121問・機能の前提修正1問と判定しています。過去の広い関連性による維持判定とは区別してください。この段階では、対象外化や問題数の変更は未実施でした。
+
+2026-10-16に[機能限定の見直し](reports/copilot-feature-refresh-2026-10-16.md)を反映しました。対象121問のうち72問を全面改稿、49問を統合・新規出題から除外しました。別の前提修正1問を含む新73問は新IDで管理し、維持候補からも7問を統合しました。現行在庫は基礎163・応用48・本番相当43の254問（通常のVerified出題は253問）です。在庫比率はD1が9.4%、D2が38.6%でシラバスに一致しません。模試50問の抽選は100シードすべてで公式Domain範囲内でした。単体240件・PC/モバイル画面50件が通過し、Webpackによる検証専用本番ビルドも成功しています。難度・ブラインド判定は編集評価です。`npm run feature:check`で採否・版・履歴とレビュー記録の整合を確認できます。
 
 旧`rewrite-d*-applied.mjs`によるレビュー済み問題の直接上書きは停止しました。改稿は未レビューの草案として作成し、選択肢IDと正しい本文の対応を確認してからレビュー記録を更新します。
 

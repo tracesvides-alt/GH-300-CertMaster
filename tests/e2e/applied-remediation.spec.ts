@@ -1,9 +1,12 @@
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
-import {remediationDecisions} from '../fixtures/applied-remediation-decisions';
+import {remediationDecisions as historicalRemediationDecisions} from '../fixtures/applied-remediation-decisions';
+import exclusions from '../../content/gh300/2026-08-07/questions/selection-exclusions.json';
+const remediationDecisions=historicalRemediationDecisions.filter(([id])=>!exclusions.questions.some(q=>q.id===id));
 const bank=JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/seed.json','utf8'));
 
 test('correct actions in all remaining repaired questions score correctly in practice',async({page},testInfo)=>{
+ expect(remediationDecisions.length).toBeGreaterThan(0);
  test.setTimeout(90000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');
