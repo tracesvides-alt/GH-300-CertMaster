@@ -1,7 +1,7 @@
 {
   "rubricVersion": 1,
   "total": 254,
-  "storedTotal": 395,
+  "storedTotal": 405,
   "retiredQuestionIds": [
     "q-d3-a08",
     "q-d4-a15",
@@ -143,7 +143,17 @@
     "q-d6-a14",
     "q-d6-a12",
     "q-d6-a08",
-    "q-d2-e16"
+    "q-d2-e16",
+    "q-d2-a10",
+    "q-d2-e03",
+    "q-d2-a22",
+    "q-d2-e12",
+    "q-d2-a05",
+    "q-d2-e18",
+    "q-d2-a01",
+    "q-d2-e05",
+    "q-d2-a06",
+    "q-d2-e13"
   ],
   "groups": {
     "beginner": {

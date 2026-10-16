@@ -2,11 +2,22 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {loadFoundationPriority,validateFoundationPriority} from './foundation-priority-review.mjs';
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
 // Evidence integrity only. This does not independently measure question quality.
 export function validateFeatureRefresh(bank, ledger, exclusions, plan) {
- const errors=[],byId=new Map(bank.map(q=>[q.id,q])),retired=new Set(exclusions.questions.map(r=>r.id));
+ // This ledger describes the earlier refresh. Replay its exact inventory only
+ // after validating the later Foundation replacement's history and evidence.
+ const foundation=loadFoundationPriority();
+ let foundationErrors=[];
+ if(foundation&&foundation.questions.some(r=>bank.some(q=>q.id===r.id))){
+  foundationErrors=validateFoundationPriority(bank,exclusions,foundation);
+  const newIds=new Set(foundation.questions.map(r=>r.id)),oldIds=new Set(foundation.questions.map(r=>r.oldId));
+  bank=bank.filter(q=>!newIds.has(q.id));
+  exclusions={...exclusions,questions:exclusions.questions.filter(r=>!oldIds.has(r.id))};
+ }
+ const errors=[...foundationErrors],byId=new Map(bank.map(q=>[q.id,q])),retired=new Set(exclusions.questions.map(r=>r.id));
  const candidates=new Set(plan.blueprints.map(r=>r.id));
  if(ledger.decisions.length!==121||new Set(ledger.decisions.map(r=>r.oldId)).size!==121||ledger.decisions.some(r=>!candidates.has(r.oldId)))errors.push('Incomplete candidate decisions');
  if(ledger.questions.length!==73||ledger.decisions.filter(r=>r.decision==='REPLACED').length!==72||ledger.decisions.filter(r=>r.decision==='CONSOLIDATED').length!==49)errors.push('Unexpected disposition counts');

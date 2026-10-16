@@ -1,0 +1,69 @@
+{
+  "verifiedAt": "2026-10-17",
+  "bankFingerprint": "2d6c1049a97ea70c4882916773f7a6103d6688bb57f6ea6634aad5712a72e2df",
+  "unit": {
+    "passed": 247,
+    "files": 24,
+    "command": "npm test -- --reporter=dot"
+  },
+  "typeCheck": {
+    "passed": true,
+    "command": "npm run check"
+  },
+  "build": {
+    "passed": true,
+    "command": "CERTMASTER_E2E_WEBPACK=1 next build --webpack (Playwright webServer)",
+    "outputDirectory": ".next-e2e"
+  },
+  "e2e": {
+    "passed": 14,
+    "projects": [
+      "desktop",
+      "mobile"
+    ],
+    "newQuestionsPerDevice": 10,
+    "normalClicks": true,
+    "incorrectAndCorrectScoring": true,
+    "reloadPersistence": true,
+    "oldBookmarksExcluded": true,
+    "viewportComparedTo": "document.documentElement.clientWidth",
+    "command": "CERTMASTER_E2E_WEBPACK=1 npx playwright test tests/e2e/foundation-priority.spec.ts tests/e2e/practice.spec.ts --reporter=line"
+  },
+  "integrity": {
+    "originalQuestionFingerprintsUnchanged": 395,
+    "replacedQuestions": 10,
+    "stored": 405,
+    "retired": 151,
+    "activeAssets": 254,
+    "eligible": 253,
+    "foundationAssets": 163,
+    "eligibleFoundation": 162,
+    "domainCountsUnchanged": true,
+    "difficultyCountsUnchanged": true,
+    "glossaryAnchorsUnchanged": true
+  },
+  "checks": [
+    "validateFoundationPriority",
+    "check-feature-refresh",
+    "check-applied-focus",
+    "check-applied-remediation",
+    "audit-applied-question-review --check",
+    "audit-exam-question-review --check",
+    "audit-question-difficulty --check",
+    "audit-question-classification",
+    "audit-questions --check",
+    "audit-foundation-glossary",
+    "audit-glossary-coverage --strict",
+    "git diff --check"
+  ],
+  "limitations": {
+    "independentReviewer": false,
+    "learnerBlindExperiment": false,
+    "learnerDifficultyMeasured": false,
+    "realExamEquivalenceValidated": false
+  },
+  "notes": [
+    "既存の正答位置のWarningは保持。問題の表示順を維持したため今回の置換で分布は変わらない。",
+    "Next.jsのテスト用Webpack本番ビルドを使用。利用者の.next成果物は置き換えていない。"
+  ]
+}

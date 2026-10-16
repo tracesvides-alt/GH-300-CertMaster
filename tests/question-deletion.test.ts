@@ -4,12 +4,13 @@ import {isQuestionActive,withoutDeletedSessionQuestions} from '../lib/question-a
 import {selectQuestions,selectMockQuestions,defaultSelectionOptions} from '../lib/selection';
 import removals from '../content/gh300/2026-08-07/questions/removals.json';
 import record from '../reports/applied-six-deletion-review.json';
+import foundation from '../content/gh300/2026-08-07/questions/foundation-priority-review.json';
 
 const expected=['q-d2-a15','q-d3-a11','q-d3-a12','q-d3-a18','q-d5-a02','q-d5-a05'];
 describe('six explicitly deleted Applied questions',()=>{
  it('removes exactly the approved six assets and all live knowledge references',()=>{
   expect(removals.questions.map(q=>q.id).sort()).toEqual([...expected].sort());
-  expect(allQuestions).toHaveLength(395);expect(questions).toHaveLength(254);
+  expect(allQuestions).toHaveLength(foundation.baseline.stored+foundation.questions.length);expect(questions).toHaveLength(254);
   expect(questions.filter(q=>q.difficulty==='intermediate')).toHaveLength(48);
   const kb=buildKnowledgeBase();
   for(const id of expected){expect(allQuestions.some(q=>q.id===id)).toBe(false);expect(kb.questionIds).not.toContain(id);expect(isQuestionActive({id})).toBe(false);}

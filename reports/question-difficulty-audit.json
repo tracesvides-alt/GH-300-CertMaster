@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16",
+  "generatedAt": "2026-10-17",
   "baselineCommit": "bbd2b11",
   "summary": {
-    "total": 395,
-    "added": 84,
+    "total": 405,
+    "added": 94,
     "historicalTotal": 311,
     "rewritten": 375,
     "reclassified": 64,
@@ -13,7 +13,7 @@
       "advanced": 95
     },
     "after": {
-      "beginner": 163,
+      "beginner": 173,
       "intermediate": 138,
       "advanced": 94
     },
@@ -42,7 +42,7 @@
   },
   "selectionSummary": {
     "active": 254,
-    "retired": 141,
+    "retired": 151,
     "after": {
       "beginner": 163,
       "intermediate": 48,
@@ -667,6 +667,22 @@
         "q-d6-e01"
       ],
       "report": "reports/copilot-feature-quality-repairs-2026-10-16.json"
+    },
+    {
+      "reviewedAt": "2026-10-17",
+      "questionIds": [
+        "q-fnd-cli-install-20261017",
+        "q-fnd-cli-login-20261017",
+        "q-fnd-cli-create-file-20261017",
+        "q-fnd-seat-api-20261017",
+        "q-fnd-cloud-issue-20261017",
+        "q-fnd-plan-20261017",
+        "q-fnd-nes-20261017",
+        "q-fnd-ide-matrix-20261017",
+        "q-fnd-ide-signin-20261017",
+        "q-fnd-mobile-file-20261017"
+      ],
+      "report": "reports/foundation-priority-2026-10-17.json"
     }
   ],
   "methodology": "全件の編集評価。実測正答率・識別力・実試験との等価性は未測定。",
@@ -8128,6 +8144,186 @@
       "beforeQuestion": "機密ファイルをCopilotのContent Exclusionへ登録しています。通常補完での除外は確認済みですが、Copilot CLIではローカル読取ツールからも、社内MCPの検索ツールからも同じ内容を取得できます。今回のCLIでは機密への両経路を候補から外し、通常補完の除外は維持したいと考えています。CLIがContent Exclusion非対応という前提で、必要な対処はどれですか。",
       "question": "Copilot CLIで機密ファイルを扱います。通常補完ではContent Exclusionが効きますが、CLIでviewと社内MCP検索から内容を取得できました。非機密の検索は残したまま、次回CLIではviewと機密MCPをモデルに提供しない方針です。起動時の候補制限とサーバー制御をどのように組み合わせますか。",
       "fingerprint": "a111b77c1ec23a6665b48c81983b801ada1e8e268d9dd4b567a24d09dc95ef82"
+    },
+    {
+      "id": "q-fnd-cli-install-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "npmでの現行CLI導入を一つ識別する基礎。依存障害の原因分析や複数設定の推論は要求しない。",
+      "reasoningSteps": [
+        "npmでの現行CLI導入を一つ識別する基礎。依存障害の原因分析や複数設定の推論は要求しない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Linuxの端末に現行のGitHub Copilot CLIを導入します。Node.js 22とnpmは利用でき、HomebrewとWinGetは導入していません。今回はnpmを使ってCLIをインストールします。実行するコマンドはどれですか。",
+      "question": "Linuxの端末に現行のGitHub Copilot CLIを導入します。Node.js 22とnpmは利用でき、HomebrewとWinGetは導入していません。今回はnpmを使ってCLIをインストールします。実行するコマンドはどれですか。",
+      "fingerprint": "7ea9e296ad06c00557bae8343d411253eb612db7607e2b4b9a2d7923b2f16a85"
+    },
+    {
+      "id": "q-fnd-cli-login-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "未ログインという一つの状態を認証操作へ対応付ける基礎。トークン優先順位や認証障害の分析は求めない。",
+      "reasoningSteps": [
+        "未ログインという一つの状態を認証操作へ対応付ける基礎。トークン優先順位や認証障害の分析は求めない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "現行Copilot CLIをインストールし、作業フォルダーでcopilotを起動しました。フォルダーの信頼確認は済んでいますが、未ログインと表示されます。トークンによる認証は設定していません。対話画面からGitHubアカウントの認証を始めるコマンドはどれですか。",
+      "question": "現行Copilot CLIをインストールし、作業フォルダーでcopilotを起動しました。フォルダーの信頼確認は済んでいますが、未ログインと表示されます。トークンによる認証は設定していません。対話画面からGitHubアカウントの認証を始めるコマンドはどれですか。",
+      "fingerprint": "ec0bb7f805561b8e420c6c03fbc91a27bd3390bdb9d17059f7ae9ca54e8abd5b"
+    },
+    {
+      "id": "q-fnd-cli-create-file-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "CLIに依頼できる作業の基本範囲を識別する。ログ整理アルゴリズムやシェル構文そのものは問わない。",
+      "reasoningSteps": [
+        "CLIに依頼できる作業の基本範囲を識別する。ログ整理アルゴリズムやシェル構文そのものは問わない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "認証済みのCopilot CLIで、作業フォルダー内のログを整理するためのスクリプトを用意します。整理の手順は決まっていますが、スクリプトファイルはまだありません。まず実行せずにスクリプトを作って保存したい場合、CLIへの依頼として目的に合うものはどれですか。",
+      "question": "認証済みのCopilot CLIで、作業フォルダー内のログを整理するためのスクリプトを用意します。整理の手順は決まっていますが、スクリプトファイルはまだありません。まず実行せずにスクリプトを作って保存したい場合、CLIへの依頼として目的に合うものはどれですか。",
+      "fingerprint": "0973b87e0bdad9dbec31d3cc189d56d6160982c6b2159ec30f47edaaff2667e8"
+    },
+    {
+      "id": "q-fnd-seat-api-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "要求する管理対象とAPIの役割を一つ対応付ける基礎。ページネーション、HTTPエラーや課金周期の複合判断は要求しない。",
+      "reasoningSteps": [
+        "要求する管理対象とAPIの役割を一つ対応付ける基礎。ページネーション、HTTPエラーや課金周期の複合判断は要求しない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "組織の入社手続きに、対象者へのCopilotシート付与を組み込みます。対象者の組織への所属は確認済みで、管理者権限と認証も用意しています。管理画面で手作業をせず、プログラムからシート割り当てを変更するために使うAPIはどれですか。",
+      "question": "組織の入社手続きに、対象者へのCopilotシート付与を組み込みます。対象者の組織への所属は確認済みで、管理者権限と認証も用意しています。管理画面で手作業をせず、プログラムからシート割り当てを変更するために使うAPIはどれですか。",
+      "fingerprint": "a7e891470fe8d2e5bbb12ceda09d929ac34f9fa90c54574c94b6c58f375f372b"
+    },
+    {
+      "id": "q-fnd-cloud-issue-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "Issue割当とPR作成という機能の入口を識別する基礎。cloud agentのsetup、firewallや権限の切り分けは要求しない。",
+      "reasoningSteps": [
+        "Issue割当とPR作成という機能の入口を識別する基礎。cloud agentのsetup、firewallや権限の切り分けは要求しない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "GitHub.comのIssueに書いた修正作業をCopilotへ割り当て、開発者のIDEとは別の環境で実装を進めさせます。開発者は作業後に作成されたPull Requestの変更をレビューします。このIssueからの委任を担当する機能はどれですか。",
+      "question": "GitHub.comのIssueに書いた修正作業をCopilotへ割り当て、開発者のIDEとは別の環境で実装を進めさせます。開発者は作業後に作成されたPull Requestの変更をレビューします。このIssueからの委任を担当する機能はどれですか。",
+      "fingerprint": "195f91959460fef8a85126da5401a38598dc8f60de6c863d043f33e2040221b1"
+    },
+    {
+      "id": "q-fnd-plan-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "専用モードの用途を識別する基礎。Askでも計画を相談できることと、専用Planの存在を混同しない表現にした。",
+      "reasoningSteps": [
+        "専用モードの用途を識別する基礎。Askでも計画を相談できることと、専用Planの存在を混同しない表現にした。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "対応するVS CodeのCopilotで、関連コードを調べて実装案をまとめ、内容を確認してから実装用のAgentへ引き継ぐ専用ワークフローを使います。この用途のために用意されているモードはどれですか。",
+      "question": "対応するVS CodeのCopilotで、関連コードを調べて実装案をまとめ、内容を確認してから実装用のAgentへ引き継ぐ専用ワークフローを使います。この用途のために用意されているモードはどれですか。",
+      "fingerprint": "dee45fa08baf6e4df2d2f5a976d833baaf4d01706541a698e5bf99c505d7d580"
+    },
+    {
+      "id": "q-fnd-nes-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "表示された挙動を機能名へ対応付ける基礎。モデル選択やネットワーク制御等の複合条件は含めない。",
+      "reasoningSteps": [
+        "表示された挙動を機能名へ対応付ける基礎。モデル選択やネットワーク制御等の複合条件は含めない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "対応するVS Codeで変数名を修正すると、現在のカーソルから離れた関連箇所にも変更候補が示されました。矢印から次の編集位置へ移動し、その箇所の提案を採用できます。この位置の予測も行うCopilotの機能はどれですか。",
+      "question": "対応するVS Codeで変数名を修正すると、現在のカーソルから離れた関連箇所にも変更候補が示されました。矢印から次の編集位置へ移動し、その箇所の提案を採用できます。この位置の予測も行うCopilotの機能はどれですか。",
+      "fingerprint": "1f2ea0262c7ca99a0669b6e4cb96316e0fb05972700e1c7d8b09516db63385a9"
+    },
+    {
+      "id": "q-fnd-ide-matrix-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "対象環境に適した資料を選ぶ基礎。個別バージョンの対応表の丸暗記は求めない。",
+      "reasoningSteps": [
+        "対象環境に適した資料を選ぶ基礎。個別バージョンの対応表の丸暗記は求めない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "チームではVS CodeとNeovimを併用しています。どちらでもCopilotのコード補完を使っていますが、ChatやAgentも同じように使えるとは限りません。導入前にIDEごとの機能対応を直接比較するために確認する公式資料はどれですか。",
+      "question": "チームではVS CodeとNeovimを併用しています。どちらでもCopilotのコード補完を使っていますが、ChatやAgentも同じように使えるとは限りません。導入前にIDEごとの機能対応を直接比較するために確認する公式資料はどれですか。",
+      "fingerprint": "b6002bef2741a71b408b9a4effad21d85855dad6143181af9ce3c33dd36de8a6"
+    },
+    {
+      "id": "q-fnd-ide-signin-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "利用資格とサインイン先の対応を確認する基礎。接続障害やポリシー階層の分析へ広げない。",
+      "reasoningSteps": [
+        "利用資格とサインイン先の対応を確認する基礎。接続障害やポリシー階層の分析へ広げない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "仕事用のGitHubアカウントには組織からCopilotのシートが割り当てられています。一方、VS CodeのCopilotは個人用アカウントでサインインしています。通信には問題がありません。仕事用の利用資格でCopilotを使い始めるため、最初に行う操作はどれですか。",
+      "question": "仕事用のGitHubアカウントには組織からCopilotのシートが割り当てられています。一方、VS CodeのCopilotは個人用アカウントでサインインしています。通信には問題がありません。仕事用の利用資格でCopilotを使い始めるため、最初に行う操作はどれですか。",
+      "fingerprint": "6958836443d291643e547c26b61a165a86b09a57e76264b28660149dd2453fdf"
+    },
+    {
+      "id": "q-fnd-mobile-file-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": false,
+      "reclassified": false,
+      "assessment": "Mobileで特定ファイルを文脈にする基本操作の識別。IDEと同等の編集・実行ができるとは教えない。",
+      "reasoningSteps": [
+        "Mobileで特定ファイルを文脈にする基本操作の識別。IDEと同等の編集・実行ができるとは教えない。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "外出先でGitHub Mobileを使い、リポジトリ内のファイルを確認しています。ファイルの内容を手動でコピーせず、そのファイル全体を文脈としてCopilotへ質問するには、どの操作から始めますか。",
+      "question": "外出先でGitHub Mobileを使い、リポジトリ内のファイルを確認しています。ファイルの内容を手動でコピーせず、そのファイル全体を文脈としてCopilotへ質問するには、どの操作から始めますか。",
+      "fingerprint": "18c5c73d59d64c50e932ad6108ebc4d64221e0b9a1cfe9da7dcb446f58072287"
     }
   ]
 }

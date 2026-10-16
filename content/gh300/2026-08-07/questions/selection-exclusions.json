@@ -1,6 +1,6 @@
 {
-  "reviewedAt": "2026-10-16",
-  "purpose": "重複・学習上の追加が小さい応用問題を新規演習から外す。問題資産と保存済み履歴は保持する。",
+  "reviewedAt": "2026-10-17",
+  "purpose": "レビュー済みの問題置換・重複整理に伴う新規演習からの除外。旧問題資産と保存済み履歴は保持する。",
   "questions": [
     {
       "id": "q-d3-a08",
@@ -1451,6 +1451,96 @@
       "retiredAt": "2026-10-16",
       "fingerprint": "7fb5da595b0696f3f5746dd2e13fb346de4d9203a2be5e2a0a50da83b99a2e09",
       "review": "reports/copilot-feature-refresh-2026-10-16.json"
+    },
+    {
+      "id": "q-d2-a10",
+      "replacementIds": [
+        "q-fnd-cli-install-20261017"
+      ],
+      "reason": "Prompt Fileの配置と再利用はq-d2-f09で維持し、重複した配置問題をCLI導入へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "5698bc7abedd2130e1a156da940ddddd9fb90743c35ec3be8a0edfcf06375b1e"
+    },
+    {
+      "id": "q-d2-e03",
+      "replacementIds": [
+        "q-fnd-cli-login-20261017"
+      ],
+      "reason": "定型プロンプトの保存・共有は他の基礎で維持し、長いリリースノート事例の同概念問題を初回認証へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "06b537f9d01afbfbcff2381d11a64e16508764771480dddd78ad622c9ce35538"
+    },
+    {
+      "id": "q-d2-a22",
+      "replacementIds": [
+        "q-fnd-cli-create-file-20261017"
+      ],
+      "reason": "端末で相談するツールの識別はq-d2-f11に残し、同じツール名を答える類題を生成・保存の利用判断へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "d082b454a65b9fb8b30de3ee60d0141eb442dba22f5965b43a10ccabe4def270"
+    },
+    {
+      "id": "q-d2-e12",
+      "replacementIds": [
+        "q-fnd-seat-api-20261017"
+      ],
+      "reason": "Prompt Filesの同概念反復を減らし、購読管理APIという未出題の基礎へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "d309338e3777895a9d50969a4798ce0e1ea856a400783aab6c78ca56e5227f35"
+    },
+    {
+      "id": "q-d2-a05",
+      "replacementIds": [
+        "q-fnd-cloud-issue-20261017"
+      ],
+      "reason": "IDE Agentの編集・実行ループはq-d2-f04とq-sc04-1に残し、同じ優位性を答える類題をcloud agentの基礎へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "7c6b876e2a2502d82029b8f8acad92db34c4c8032cd1aca02d2c8154b3a52bbc"
+    },
+    {
+      "id": "q-d2-e18",
+      "replacementIds": [
+        "q-fnd-plan-20261017"
+      ],
+      "reason": "Agentの複数ファイル編集と実行は既存問題に残し、長いUI実装事例の同概念問題をPlanの基礎へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "5eed9348d3a099be0c921cfe0f48e63680d6a408968a93510063f1a3be698f3f"
+    },
+    {
+      "id": "q-d2-a01",
+      "replacementIds": [
+        "q-fnd-nes-20261017"
+      ],
+      "reason": "Inline Chatによる局所編集は他の基礎に残し、同じ操作を尋ねる問題をNESの識別へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "1e1e1aba3975185c5325c46652420eba27bb8e9c8d5ae1e4c0723033afa6071b"
+    },
+    {
+      "id": "q-d2-e05",
+      "replacementIds": [
+        "q-fnd-ide-matrix-20261017"
+      ],
+      "reason": "Inline Chatの局所編集はq-d2-f01、診断の利用はq-d2-e17に残し、同じ局所編集の類題を対応環境の確認へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "509e41e5f0b312b33db624b560447891fde9d8b472d96ff8852dc51501c237c9"
+    },
+    {
+      "id": "q-d2-a06",
+      "replacementIds": [
+        "q-fnd-ide-signin-20261017"
+      ],
+      "reason": "実行結果を使うAgentループはq-d2-f04等で維持し、同じループ名の類題を初期アカウント設定へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "c39e577607d322f4f240066c2c99f5467b7d80a6342a4f01e833f2b6ed58c97e"
+    },
+    {
+      "id": "q-d2-e13",
+      "replacementIds": [
+        "q-fnd-mobile-file-20261017"
+      ],
+      "reason": "CLIの選択と実行前の許可確認は他の基礎で維持し、同じCLI選択の類題をMobileの文脈指定へ置き換える。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "038329cdff58de5728725f673cd090719e7ae1ba4874b348a1d743b0fa588538"
     }
   ]
 }

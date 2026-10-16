@@ -9,6 +9,8 @@ const editorial=read(dir+'questions/quality-review.json');
 const ledger=editorial.questions;
 const followUpReviews=(editorial.followUpReviews??[]).filter(r=>r.questionIds.some(id=>bank.some(q=>q.id===id&&q.difficulty==='beginner')));
 const qs=bank.filter(q=>q.difficulty==='beginner');
+const excludedIds=new Set(read(dir+'questions/selection-exclusions.json').questions.map(q=>q.id));
+const activeQs=qs.filter(q=>!excludedIds.has(q.id));
 const failures=[];
 const inventory=qs.map(q=>{
   const review=ledger[q.id];
@@ -25,12 +27,12 @@ const coverage=terms.map(t=>({termId:t.id,term:t.term,questionId:t.basicQuestion
 for(const t of coverage)if(t.status==='missing')failures.push(t.termId+': no question');
 const report={reviewedAt:'2026-10-12',lastUpdated:editorial.lastUpdated??'2026-10-12',followUpReviews,
   method:'各レビュー時点で記録した編集判断を、現在の問題の指紋と用語対応で検証する。追加レビューは記載した対象のみで、全問を毎回新たに意味的再評価したという主張ではない。生成時の採点から合否を推論しない。',
-  summary:{terms:terms.length,foundationQuestions:qs.length,revised:inventory.filter(q=>q.revised).length,
+  summary:{terms:terms.length,foundationQuestions:qs.length,activeFoundationQuestions:activeQs.length,eligibleFoundationQuestions:activeQs.filter(q=>q.status==='verified').length,revised:inventory.filter(q=>q.revised).length,
     missingTerms:coverage.filter(t=>t.status==='missing').length,needsReviewTerms:coverage.filter(t=>t.status==='needs-review').map(t=>t.termId),failures},coverage,inventory};
 fs.writeFileSync('reports/foundation-glossary-quality-review.json',JSON.stringify(report,null,2)+'\n');
 const esc=s=>s.replaceAll('|','／').replaceAll('\n',' ');
 const lines=['# 用語集と基礎問題の全件品質レビュー','','## 結果','',
-  `用語 ${terms.length} 件すべてに基礎問題が対応。現在の基礎 ${qs.length} 問の指紋とレビュー記録を検査し、基礎レビューの累積改稿は${report.summary.revised} 問。未対応用語 ${report.summary.missingTerms} 件。`,
+  `用語 ${terms.length} 件すべてに基礎問題が対応。保存済み基礎 ${qs.length} 問（旧問題を含む）の指紋とレビュー記録を検査。現行基礎資産${activeQs.length}問のうち演習対象は${report.summary.eligibleFoundationQuestions}問。基礎レビューの累積改稿は${report.summary.revised} 問。未対応用語 ${report.summary.missingTerms} 件。`,
   '基礎問題として名称・役割・単一条件の識別を残しています。本文なしで正答を推測できる懸念があった対象を追加改稿しました。編集判断の記録があることだけで、全問題の推測リスク解消を保証しません。',
   '同義の別解、MCP Clientとの間接的な対応、旧CLIの現行誤認、一律ゼロ保持、完全な決定性、ローカル限定という断定も修正しました。','',
   '## 追加レビューの履歴','',

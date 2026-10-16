@@ -1,14 +1,14 @@
-# GH-300 全395問の難易度台帳
+# GH-300 全405問の難易度台帳
 
-保存資産395問の台帳。新規出題は254問で、141問を対象外とする。以下の過去比較は保存資産の累計で、対象外を現行の合格問題として数えない。
+保存資産405問の台帳。新規出題は254問で、151問を対象外とする。以下の過去比較は保存資産の累計で、対象外を現行の合格問題として数えない。
 
-新規84問は独立した追加台帳から読み込み、変更前の件数と難易度遷移には含めない。固定された過去のベースラインファイルは維持する。
+新規94問は独立した追加台帳から読み込み、変更前の件数と難易度遷移には含めない。固定された過去のベースラインファイルは維持する。
 
 ## 結論
 
 従来の難易度は適切とは言えなかった。Foundationの基本知識確認は維持できる一方、Appliedには操作の記憶問題、Examには長い状況説明を付けただけの機能名識別が含まれていた。選択肢のもっともらしさと、解答に必要な思考の深さは別に評価する必要がある。
 
-各レビューの累計で、全395問の台帳に375問の実質改稿、64問の下位への再分類を記録した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。
+各レビューの累計で、全405問の台帳に375問の実質改稿、64問の下位への再分類を記録した。総数と正答IDは維持。表示順だけの変更は改稿数に含めない。
 
 ## 追加レビューの履歴
 
@@ -24,12 +24,13 @@
 - undefined：q01、q-d2-a23、q-d3-a17、q-sc02-3、q-d5-a11、q-sc05-3、q-d1-a10、q-d1-a18、q-d1-a19、q-d1-a21、q-d3-e03、q-sc04-3、q-d3-a15、q-d5-a12、q-d6-a09、q-d2-a25、q-d3-a13、q-d3-a16、q-d3-a19、q-d4-a06、q-sc03-3、q-d3-a14、q-d6-a13。[記録](applied-23-focus-improvement-review.md)。
 - 2026-10-16：q-d2-e11-feature-20261016、q-d3-a19-feature-20261016、q-d4-e04-feature-20261016、q-d6-e03-feature-20261016、q01-feature-20261016、q-d1-a04-feature-20261016、q-d1-a07-feature-20261016、q-d1-a10-feature-20261016、q-d2-a04-feature-20261016、q-sc05-1-feature-20261016、q-d2-a26-feature-20261016、q-d1-a16-feature-20261016、q-d1-a17-feature-20261016、q-d1-a18-feature-20261016、q-d1-a19-feature-20261016、q-d1-a21-feature-20261016、q-d1-e01-feature-20261016、q-d1-e02-feature-20261016、q-d1-e03-feature-20261016、q-d1-e07-feature-20261016、q-d1-e08-feature-20261016、q-d5-e02-feature-20261016、q-sc02-2-feature-20261016、q-d1-e09-feature-20261016、q-d2-a18-feature-20261016、q-d2-e02-feature-20261016、q-d2-e15-feature-20261016、q-d2-e19-feature-20261016、q-d6-e02-feature-20261016、q-sc03-1-feature-20261016、q-sc03-2-feature-20261016、q-sc07-1-feature-20261016、q-d3-a03-feature-20261016、q-d3-e02-feature-20261016、q-sc08-2-feature-20261016、q-d3-e07-feature-20261016、q-d3-a16-feature-20261016、q-d3-a06-feature-20261016、q-d3-a07-feature-20261016、q-d4-a01-feature-20261016、q-d4-a02-feature-20261016、q-d4-e05-feature-20261016、q-sc02-3-feature-20261016、q-sc03-3-feature-20261016、q-d3-a14-feature-20261016、q-d4-e06-feature-20261016、q-d4-e07-feature-20261016、q-d4-e08-feature-20261016、q-d4-e09-feature-20261016、q-d2-e01-feature-20261016、q-d2-e07-feature-20261016、q-d4-e01-feature-20261016、q-d5-a09-feature-20261016、q-d5-e01-feature-20261016、q-d5-e03-feature-20261016、q-d5-e04-feature-20261016、q-d5-e05-feature-20261016、q-sc02-1-feature-20261016、q-d4-a14-feature-20261016、q-d5-a14-feature-20261016、q-d5-a15-feature-20261016、q-d3-e08-feature-20261016、q-d5-e06-feature-20261016、q-d5-e07-feature-20261016、q-d5-e08-feature-20261016、q-d1-e04-feature-20261016、q-d6-a03-feature-20261016、q-d6-e04-feature-20261016、q-sc05-3-feature-20261016、q-sc10-3-feature-20261016、q-d1-a11-feature-20261016、q-d6-a13-feature-20261016、q-d6-e07-feature-20261016。[記録](copilot-feature-refresh-2026-10-16.md)。
 - 2026-10-16：q-d3-a13、q-d1-a21-feature-20261016、q-d2-e07-feature-20261016、q-d5-a14-feature-20261016、q-sc05-1-feature-20261016、q-d4-e06-feature-20261016、q-d2-e21、q-d3-e07-feature-20261016、q-d2-e24、q-d6-a09、q-d2-e11-feature-20261016、q-d6-e02-feature-20261016、q-d4-a14-feature-20261016、q-d5-e03-feature-20261016、q-d6-a11、q-d2-a23、q-sc03-3-feature-20261016、q-d6-e06、q-d5-e06-feature-20261016、q-d1-e02-feature-20261016、q-sc06-3、q-d2-e15-feature-20261016、q-d6-a13-feature-20261016、q-d3-a17、q-d6-a01、q-d5-e08-feature-20261016、q-d6-e03-feature-20261016、q-d4-e07-feature-20261016、q-d1-a10-feature-20261016、q-d2-a24、q-sc10-3-feature-20261016、q-d1-e08-feature-20261016、q-d2-e08、q-d2-e02-feature-20261016、q-sc08-2-feature-20261016、q-d1-a04-feature-20261016、q-d4-e01-feature-20261016、q-d3-a07-feature-20261016、q-d3-a06-feature-20261016、q-d3-a03-feature-20261016、q-d1-e09-feature-20261016、q-sc05-3-feature-20261016、q-d3-e08-feature-20261016、q-d5-e07-feature-20261016、q-d6-a03-feature-20261016、q-d2-a20、q-d2-e19-feature-20261016、q-d5-a09-feature-20261016、q-d2-e06、q-d5-e02-feature-20261016、q-d1-e03-feature-20261016、q-d1-e07-feature-20261016、q-d1-a11-feature-20261016、q-d1-a17-feature-20261016、q-sc07-1-feature-20261016、q-d5-e05-feature-20261016、q-d4-e08-feature-20261016、q-d4-e04-feature-20261016、q-d3-a19-feature-20261016、q01-feature-20261016、q-sc03-1-feature-20261016、q-d2-e01-feature-20261016、q-d3-a16-feature-20261016、q-d5-a15-feature-20261016、q-d6-e07-feature-20261016、q-d3-a14-feature-20261016、q-d5-e01-feature-20261016、q-d5-e04-feature-20261016、q-d4-e09-feature-20261016、q-d3-e04、q-sc01-2、q-sc02-2-feature-20261016、q-d1-a19-feature-20261016、q-d1-a16-feature-20261016、q-d3-e02-feature-20261016、q-d2-a26-feature-20261016、q-d6-e04-feature-20261016、q-d1-a07-feature-20261016、q-d4-a01-feature-20261016、q-d4-a02-feature-20261016、q-d2-a04-feature-20261016、q-sc03-2-feature-20261016、q-d2-a25、q-d2-a18-feature-20261016、q-sc02-3-feature-20261016、q-d1-e01-feature-20261016、q-d4-e05-feature-20261016、q-d1-e04-feature-20261016、q-sc02-1-feature-20261016、q-d1-a18-feature-20261016、q-d6-e01。[記録](copilot-feature-quality-repairs-2026-10-16.md)。
+- 2026-10-17：q-fnd-cli-install-20261017、q-fnd-cli-login-20261017、q-fnd-cli-create-file-20261017、q-fnd-seat-api-20261017、q-fnd-cloud-issue-20261017、q-fnd-plan-20261017、q-fnd-nes-20261017、q-fnd-ide-matrix-20261017、q-fnd-ide-signin-20261017、q-fnd-mobile-file-20261017。[記録](foundation-priority-2026-10-17.md)。
 
 履歴の各対象を追加評価しており、現在の全問を毎回新たに意味的再評価したという主張ではない。
 
 | 難易度 | 変更前 | 変更後 | 判断基準 |
 | --- | ---: | ---: | --- |
-| Foundation | 118 | 163 | 用語・機能・原則・操作の識別 |
+| Foundation | 118 | 173 | 用語・機能・原則・操作の識別 |
 | Applied | 98 | 138 | 具体的な入力・不具合・用途へ知識を適用 |
 | Exam | 95 | 94 | 証拠や処理段階を比較し、原因・未検証条件・最小変更を導く |
 
@@ -169,7 +170,7 @@
 
 条件を変えた場合: 「チーム人数が5→10」→「チーム人数が5→5」なら表示B。人数が一定なら20/5=4、30/5=6となり、手戻り率だけ20→30%のまま。元の4→3は不適合になる。
 
-## 全395問の評価台帳
+## 全405問の評価台帳
 
 | ID | 元の難易度 | 現在 | 文面 | 評価理由・必要な判断 |
 | --- | --- | --- | --- | --- |
@@ -568,6 +569,16 @@
 | q-d1-a11-feature-20261016 | 新規 | Applied | 新規追加 | サービス障害と自動要求の抑制を分ける。 明示的なインライン要求で取得を試す。 |
 | q-d6-a13-feature-20261016 | 新規 | Applied | 新規追加 | 表記の大小差とパスの場所を別に照合する。 大小非区別による一致を設定エラーと区別する。 |
 | q-d6-e07-feature-20261016 | 新規 | Exam | 新規追加 | 通常補完とCLIの保護範囲を区別する。 ローカルと外部検索の取得経路を分ける。 提供停止の方針を両経路へ適用する。 |
+| q-fnd-cli-install-20261017 | 新規 | Foundation | 新規追加 | npmでの現行CLI導入を一つ識別する基礎。依存障害の原因分析や複数設定の推論は要求しない。 |
+| q-fnd-cli-login-20261017 | 新規 | Foundation | 新規追加 | 未ログインという一つの状態を認証操作へ対応付ける基礎。トークン優先順位や認証障害の分析は求めない。 |
+| q-fnd-cli-create-file-20261017 | 新規 | Foundation | 新規追加 | CLIに依頼できる作業の基本範囲を識別する。ログ整理アルゴリズムやシェル構文そのものは問わない。 |
+| q-fnd-seat-api-20261017 | 新規 | Foundation | 新規追加 | 要求する管理対象とAPIの役割を一つ対応付ける基礎。ページネーション、HTTPエラーや課金周期の複合判断は要求しない。 |
+| q-fnd-cloud-issue-20261017 | 新規 | Foundation | 新規追加 | Issue割当とPR作成という機能の入口を識別する基礎。cloud agentのsetup、firewallや権限の切り分けは要求しない。 |
+| q-fnd-plan-20261017 | 新規 | Foundation | 新規追加 | 専用モードの用途を識別する基礎。Askでも計画を相談できることと、専用Planの存在を混同しない表現にした。 |
+| q-fnd-nes-20261017 | 新規 | Foundation | 新規追加 | 表示された挙動を機能名へ対応付ける基礎。モデル選択やネットワーク制御等の複合条件は含めない。 |
+| q-fnd-ide-matrix-20261017 | 新規 | Foundation | 新規追加 | 対象環境に適した資料を選ぶ基礎。個別バージョンの対応表の丸暗記は求めない。 |
+| q-fnd-ide-signin-20261017 | 新規 | Foundation | 新規追加 | 利用資格とサインイン先の対応を確認する基礎。接続障害やポリシー階層の分析へ広げない。 |
+| q-fnd-mobile-file-20261017 | 新規 | Foundation | 新規追加 | Mobileで特定ファイルを文脈にする基本操作の識別。IDEと同等の編集・実行ができるとは教えない。 |
 
 ## 検証方法と限界
 

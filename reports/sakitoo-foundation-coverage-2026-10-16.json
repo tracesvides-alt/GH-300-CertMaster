@@ -1,0 +1,3022 @@
+{
+  "reviewedAt": "2026-10-16",
+  "repositoryCommit": "6bad9a9856e6c0e692aadb54c21deb8dfff51028",
+  "scope": "指定サイトの全137問と基礎資産163問を確認。カバレッジは実際の演習対象162問を基準とし、要レビューq11は充足根拠へ加算しない。問題・選択肢の転載なし。問題資産は変更しない。",
+  "source": {
+    "url": "https://sakitoo.com/gh-300-mondaishu/",
+    "title": "GH-300 GitHub Copilot 認定 問題集",
+    "declaredQuestionCount": 137,
+    "observedQuestionCount": 137,
+    "pageModifiedDate": "2026-10-07",
+    "retrievedAt": "2026-10-16",
+    "htmlSha256": "bba9d45b45ca0c5c71ff5253f6759fcbe782f741d9d65935b8b4c41df4e7a7a8",
+    "authority": "third-party-original-practice-not-official"
+  },
+  "local": {
+    "bankPath": "content/gh300/2026-08-07/questions/seed.json",
+    "stored": 395,
+    "nonRetired": 254,
+    "eligibleVerified": 253,
+    "foundationAssets": 163,
+    "eligibleFoundation": 162,
+    "foundationByDomain": {
+      "d1": 13,
+      "d2": 70,
+      "d3": 23,
+      "d4": 22,
+      "d5": 21,
+      "d6": 14
+    },
+    "eligibleFoundationByDomain": {
+      "d1": 13,
+      "d2": 70,
+      "d3": 23,
+      "d4": 22,
+      "d5": 21,
+      "d6": 13
+    },
+    "foundationByStatus": {
+      "verified": 162,
+      "needs-review": 1
+    },
+    "bankParsedSha256": "a6837e39b66af2327736cfe8ad49f5452e9ebbbf76ebe71b20fc5b6ac1099261",
+    "exclusionsParsedSha256": "fd05915a498b665965bc39240f6d9eb88c9cda39966a388996ef4c1091e12f6b",
+    "removalsParsedSha256": "3d587dde4168ae4a5fb8a9577f38f7a9c9c04ca2df212d0f61048a12a458eb7a"
+  },
+  "definitions": {
+    "C": "主概念を、基礎問題の本文・正答が学習対象として扱う。複数問で分担する場合を含む。",
+    "P": "関連概念は既出だが、特定の操作・下位概念・利用判断が直接の正答になっていない。",
+    "M": "対応する直接出題がない。foundationIdsは代替にならない近接問題であり、カバレッジの証拠ではない。"
+  },
+  "sourceQuestionCoverageCounts": {
+    "C": 110,
+    "P": 21,
+    "M": 6
+  },
+  "caveats": [
+    "件数は第三者サイトの設問単位。独立概念数や公式シラバスの網羅率ではない。",
+    "coverageは問題の妥当性、誤答品質、現行仕様の全件正確性を保証しない。",
+    "応用・本番相当は不足候補の所在確認に限って参照し、今回の基礎カバレッジへ加算しない。",
+    "サイト全文・問題文・選択肢はレポートへ転載しない。",
+    "レポートはHEADの問題資産に対する静的監査。保存済み端末データは対象外。"
+  ],
+  "questions": [
+    {
+      "sourceQuestion": 1,
+      "sourceDomain": "d1",
+      "concept": "採用前の検証",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g02",
+        "q02",
+        "q-d1-a05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "正確性・安全性・権利確認を既存問題で扱う。"
+    },
+    {
+      "sourceQuestion": 2,
+      "sourceDomain": "d1",
+      "concept": "ハルシネーション",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f02",
+        "q06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "現象の認識と公式APIによる照合がある。"
+    },
+    {
+      "sourceQuestion": 3,
+      "sourceDomain": "d1",
+      "concept": "データの偏り",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "代表性不足を原因として問う。"
+    },
+    {
+      "sourceQuestion": 4,
+      "sourceDomain": "d1",
+      "concept": "生成コードの利用条件",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-a05",
+        "q-d6-a04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "コード参照とライセンス照合を直接問う。"
+    },
+    {
+      "sourceQuestion": 5,
+      "sourceDomain": "d1",
+      "concept": "人による最終判断",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f01",
+        "q-d1-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "採用者の説明責任を直接問う。"
+    },
+    {
+      "sourceQuestion": 6,
+      "sourceDomain": "d1",
+      "concept": "認証情報の扱い",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "安全な保管とハードコード回避を扱う。"
+    },
+    {
+      "sourceQuestion": 7,
+      "sourceDomain": "d1",
+      "concept": "責任あるAIの原則体系",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-g02",
+        "q-d1-g03",
+        "q-d1-f04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "各論はあるが、包括性等を含む原則の区別は弱い。"
+    },
+    {
+      "sourceQuestion": 8,
+      "sourceDomain": "d1",
+      "concept": "出力の裏付け",
+      "status": "C",
+      "foundationIds": [
+        "q02",
+        "q06",
+        "q-d5-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "期待値、公式資料、静的解析との照合がある。"
+    },
+    {
+      "sourceQuestion": 9,
+      "sourceDomain": "d1",
+      "concept": "導入時の利用ルール",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-g02",
+        "q-d2-g18"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "管理ポリシーと倫理原則はあるが、利用者教育・運用体制の選択は直接問わない。"
+    },
+    {
+      "sourceQuestion": 10,
+      "sourceDomain": "d1",
+      "concept": "生成コードの脆弱性対処",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f05",
+        "q-d5-g08",
+        "q-d5-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "修正と静的解析連携を扱う。"
+    },
+    {
+      "sourceQuestion": 11,
+      "sourceDomain": "d1",
+      "concept": "採用レビューの目的",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-a06",
+        "q-d1-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "型検査と意味的検証の違いを問う。"
+    },
+    {
+      "sourceQuestion": 12,
+      "sourceDomain": "d1",
+      "concept": "AI利用と検証過程の可視化",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-g03",
+        "q-d1-f01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "参照元の透明性はあるが、AI支援範囲や検証経緯の共有は直接問わない。"
+    },
+    {
+      "sourceQuestion": 13,
+      "sourceDomain": "d1",
+      "concept": "依存しすぎるリスク",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g05",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "自動化バイアスと批判的評価を扱う。"
+    },
+    {
+      "sourceQuestion": 14,
+      "sourceDomain": "d1",
+      "concept": "リスクと軽減策の対応付け",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f02",
+        "q-d1-f04",
+        "q-d1-g06",
+        "q-d5-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "主要リスクを複数の基礎問題で扱う。追加の総合常識問題は不要。"
+    },
+    {
+      "sourceQuestion": 15,
+      "sourceDomain": "d1",
+      "concept": "公平性の確認",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-f04",
+        "q-d1-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "偏りの認識はあるが、Copilot出力の公平性をどう点検するかは薄い。"
+    },
+    {
+      "sourceQuestion": 16,
+      "sourceDomain": "d1",
+      "concept": "動作の客観的検証",
+      "status": "C",
+      "foundationIds": [
+        "q02",
+        "q-d1-f03"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "仕様と実際の結果を照合する基礎がある。"
+    },
+    {
+      "sourceQuestion": 17,
+      "sourceDomain": "d1",
+      "concept": "入力する情報の選別",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g11",
+        "q-d6-f02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "秘密情報の回避と参照除外を扱う。"
+    },
+    {
+      "sourceQuestion": 18,
+      "sourceDomain": "d1",
+      "concept": "採用後の責任主体",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-f01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 19,
+      "sourceDomain": "d1",
+      "concept": "補助ツールとしての利用",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g06",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "定型生成と批判的評価を組み合わせて扱う。"
+    },
+    {
+      "sourceQuestion": 20,
+      "sourceDomain": "d1",
+      "concept": "検証根拠の記録",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-f01",
+        "q-d6-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "責任主体・管理監査はあるが、生成物の採用根拠をPR等へ残す判断は直接問わない。"
+    },
+    {
+      "sourceQuestion": 21,
+      "sourceDomain": "d1",
+      "concept": "モデルの限界",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g12",
+        "q-d3-g09",
+        "q-d1-g04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "知識時点、文脈上限、非決定性を扱う。"
+    },
+    {
+      "sourceQuestion": 22,
+      "sourceDomain": "d1",
+      "concept": "脆弱な生成案の修正",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g08",
+        "q-d1-f05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "脆弱性修正を扱う。特定のSQL構文暗記を増やす必要はない。"
+    },
+    {
+      "sourceQuestion": 23,
+      "sourceDomain": "d1",
+      "concept": "管理イベントの追跡",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f04",
+        "q-d6-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "監査ログと追跡可能性を扱う。"
+    },
+    {
+      "sourceQuestion": 24,
+      "sourceDomain": "d1",
+      "concept": "能力と限界の理解",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g06",
+        "q-d3-g13"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "批判的評価と参照範囲の限界がある。"
+    },
+    {
+      "sourceQuestion": 25,
+      "sourceDomain": "d1",
+      "concept": "利用者への制約の周知",
+      "status": "P",
+      "foundationIds": [
+        "q-d1-g02",
+        "q-d1-g03"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "制約そのものは既出。利用者への周知という運用面は直接問わない。"
+    },
+    {
+      "sourceQuestion": 26,
+      "sourceDomain": "d2",
+      "concept": "入力位置の補完",
+      "status": "C",
+      "foundationIds": [
+        "q03",
+        "q-d2-g01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 27,
+      "sourceDomain": "d2",
+      "concept": "対話による相談",
+      "status": "C",
+      "foundationIds": [
+        "q04",
+        "q-d2-a14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "コードを変えずに相談する用途がある。"
+    },
+    {
+      "sourceQuestion": 28,
+      "sourceDomain": "d2",
+      "concept": "明示的なコンテキスト指定",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f02",
+        "q-d3-a02",
+        "q-d2-a21"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "選択範囲・ファイル参照を扱う。"
+    },
+    {
+      "sourceQuestion": 29,
+      "sourceDomain": "d2",
+      "concept": "IDE Agentの編集と実行",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f04",
+        "q-d2-a05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "編集・実行・再修正の反復を扱う。"
+    },
+    {
+      "sourceQuestion": 30,
+      "sourceDomain": "d2",
+      "concept": "指定ファイル群の編集",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g10"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Copilot Editsを直接問う。"
+    },
+    {
+      "sourceQuestion": 31,
+      "sourceDomain": "d2",
+      "concept": "実装前のPlan",
+      "status": "M",
+      "foundationIds": [
+        "q-d2-a14",
+        "q-d4-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "相談とタスク分解は関連するが、Planの役割と実装への引継ぎを問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 32,
+      "sourceDomain": "d2",
+      "concept": "現行CLIの導入・認証・開始",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-f11",
+        "q-d2-a22",
+        "q-d2-g07",
+        "q-d2-g12"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "CLIの識別はあるが、インストール、初回認証、対話開始の手順を確認できない。旧拡張混在にも注意。"
+    },
+    {
+      "sourceQuestion": 33,
+      "sourceDomain": "d2",
+      "concept": "ターミナルでの相談",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f11",
+        "q-d2-a22"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "現行CLIの用途として扱う。"
+    },
+    {
+      "sourceQuestion": 34,
+      "sourceDomain": "d2",
+      "concept": "AIによるコードレビュー",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g14",
+        "q-d2-g21"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "機能と管理ポリシーを扱う。"
+    },
+    {
+      "sourceQuestion": 35,
+      "sourceDomain": "d2",
+      "concept": "共有コンテキスト",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f10",
+        "q-d2-e04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Spacesとして直接対応する。"
+    },
+    {
+      "sourceQuestion": 36,
+      "sourceDomain": "d2",
+      "concept": "自然言語によるアプリ作成",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g16"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Sparkを直接問う。"
+    },
+    {
+      "sourceQuestion": 37,
+      "sourceDomain": "d2",
+      "concept": "サブタスクの委任",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g13"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Sub-Agentsを直接問う。"
+    },
+    {
+      "sourceQuestion": 38,
+      "sourceDomain": "d2",
+      "concept": "外部ツールの接続規約",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f06",
+        "q-d2-f07"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "MCPとToolの役割を扱う。"
+    },
+    {
+      "sourceQuestion": 39,
+      "sourceDomain": "d2",
+      "concept": "CLIでの生成とファイル操作",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-f11",
+        "q-d2-g08",
+        "q-d2-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "自然言語の相談、実行許可、参照範囲は既出だが、CLIへスクリプト作成やファイル整理を依頼する用途は直接問わない。"
+    },
+    {
+      "sourceQuestion": 40,
+      "sourceDomain": "d2",
+      "concept": "補完の採用・却下",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-a12",
+        "q-d3-g08"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "部分採用やライフサイクルはあるが、TabとEscの操作を正答として直接区別しない。"
+    },
+    {
+      "sourceQuestion": 41,
+      "sourceDomain": "d2",
+      "concept": "代替候補の確認",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-a13",
+        "q-d2-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "候補切替と一覧パネルを扱う。"
+    },
+    {
+      "sourceQuestion": 42,
+      "sourceDomain": "d2",
+      "concept": "未知のコードの理解",
+      "status": "C",
+      "foundationIds": [
+        "q04",
+        "q-d2-a14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 43,
+      "sourceDomain": "d2",
+      "concept": "リポジトリ横断の文脈",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-a08",
+        "q-sc08-1"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "検索・索引・明示添付を扱う。WebとIDEの記法は統一しない。"
+    },
+    {
+      "sourceQuestion": 44,
+      "sourceDomain": "d2",
+      "concept": "テスト生成コマンド",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f03"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 45,
+      "sourceDomain": "d2",
+      "concept": "修正用スラッシュコマンド",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-e17",
+        "q-d5-g08"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "修正操作はあるが、/fix自体は正答の識別対象になっていない。"
+    },
+    {
+      "sourceQuestion": 46,
+      "sourceDomain": "d2",
+      "concept": "設定変更の監査",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f04",
+        "q-sc07-3"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "変更主体と日時の確認がある。"
+    },
+    {
+      "sourceQuestion": 47,
+      "sourceDomain": "d2",
+      "concept": "IDEごとの対応環境",
+      "status": "M",
+      "foundationIds": [
+        "q-d2-g04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "VS Codeのメニュー名はあるが、対応IDE・機能差や初期利用の確認を問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 48,
+      "sourceDomain": "d2",
+      "concept": "説明用スラッシュコマンド",
+      "status": "P",
+      "foundationIds": [
+        "q04",
+        "q-d2-a14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "説明依頼はあるが、/explain自体の使い分けは直接問わない。"
+    },
+    {
+      "sourceQuestion": 49,
+      "sourceDomain": "d2",
+      "concept": "Agentのツール承認",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 50,
+      "sourceDomain": "d2",
+      "concept": "次の編集箇所の予測",
+      "status": "M",
+      "foundationIds": [
+        "q03",
+        "q-d2-g01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "通常のghost textはあるが、Next Edit Suggestionsとの違いを問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 51,
+      "sourceDomain": "d2",
+      "concept": "MobileでのChat",
+      "status": "M",
+      "foundationIds": [],
+      "nonEligibleRelatedIds": [],
+      "note": "GitHub Mobileの利用場面やコード文脈の指定を問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 52,
+      "sourceDomain": "d2",
+      "concept": "関連タブの利用",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f02",
+        "q-d3-e05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "関連文脈の利用と無関係タブの整理がある。"
+    },
+    {
+      "sourceQuestion": 53,
+      "sourceDomain": "d2",
+      "concept": "シート管理のAPI自動化",
+      "status": "M",
+      "foundationIds": [
+        "q-d6-a05",
+        "q-d6-f05",
+        "q-sc09-2"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "手動Seat解除と利用統計APIはあるが、購読管理REST APIの役割を問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 54,
+      "sourceDomain": "d2",
+      "concept": "Chat回答からのコード挿入",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-f01",
+        "q-d2-e05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Inline Chatの差分適用はあるが、Chat回答のコードブロック操作とは異なる。"
+    },
+    {
+      "sourceQuestion": 55,
+      "sourceDomain": "d2",
+      "concept": "複数ファイル編集の選択",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f04",
+        "q-d2-g10"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "AgentとEditsを扱う。"
+    },
+    {
+      "sourceQuestion": 56,
+      "sourceDomain": "d2",
+      "concept": "CLIの危険な操作の確認",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g08",
+        "q-d2-e13"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "許可・拒否と実行前確認がある。"
+    },
+    {
+      "sourceQuestion": 57,
+      "sourceDomain": "d2",
+      "concept": "AIレビューによる支援",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Code Reviewを扱う。人の最終判断はq-d1-f01で扱う。"
+    },
+    {
+      "sourceQuestion": 58,
+      "sourceDomain": "d2",
+      "concept": "Issue等の議論の要約",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-a11",
+        "q-d5-f04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "PR差分の説明生成はあるが、Issue等の会話要約と同一とはみなさない。"
+    },
+    {
+      "sourceQuestion": 59,
+      "sourceDomain": "d2",
+      "concept": "MCPによる文脈拡張",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f06",
+        "q-d2-a17"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "参照データと操作を扱う。"
+    },
+    {
+      "sourceQuestion": 60,
+      "sourceDomain": "d2",
+      "concept": "組織の機能管理",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g18",
+        "q-d2-g19",
+        "q-d2-g21"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "組織・企業・レビューの管理を扱う。"
+    },
+    {
+      "sourceQuestion": 61,
+      "sourceDomain": "d2",
+      "concept": "Spacesの用途",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f10",
+        "q-d2-e04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 62,
+      "sourceDomain": "d2",
+      "concept": "継続的な共通指示",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f08",
+        "q-sc06-1"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "instructionsの配置と用途を扱う。"
+    },
+    {
+      "sourceQuestion": 63,
+      "sourceDomain": "d2",
+      "concept": "実行結果を使う反復",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-a05",
+        "q-d2-a06",
+        "q-d2-f05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "反復と承認を扱う。"
+    },
+    {
+      "sourceQuestion": 64,
+      "sourceDomain": "d2",
+      "concept": "補完の一時無効化",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-g04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "メニューによる有効・無効の切替を扱う。ただし停止を機密保護全体の代用にしない。"
+    },
+    {
+      "sourceQuestion": 65,
+      "sourceDomain": "d2",
+      "concept": "古いAPIの照合",
+      "status": "C",
+      "foundationIds": [
+        "q06",
+        "q-d3-g12"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "公式資料の照合と知識時点がある。"
+    },
+    {
+      "sourceQuestion": 66,
+      "sourceDomain": "d2",
+      "concept": "GitHub上の非同期実装委任",
+      "status": "M",
+      "foundationIds": [
+        "q-d2-f04",
+        "q-d2-g14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "IDE Agentとレビューはあるが、Issueからcloud agentへ委任する基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 67,
+      "sourceDomain": "d3",
+      "concept": "LLMによる生成",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g01",
+        "q-d3-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "生成AI・候補トークンの確率分布を扱う。単一モデル固定の説明は不要。"
+    },
+    {
+      "sourceQuestion": 68,
+      "sourceDomain": "d3",
+      "concept": "補完に使う文脈",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f02",
+        "q-d3-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "関連タブとプロンプト構築がある。"
+    },
+    {
+      "sourceQuestion": 69,
+      "sourceDomain": "d3",
+      "concept": "企業向けデータの学習利用",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f03"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 70,
+      "sourceDomain": "d3",
+      "concept": "要求から提案への経路",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 71,
+      "sourceDomain": "d3",
+      "concept": "文脈容量の上限",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 72,
+      "sourceDomain": "d3",
+      "concept": "提案の生成工程",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g01",
+        "q-d3-g02",
+        "q-d3-g06",
+        "q-d3-g08"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "構築・生成・後処理・表示を扱う。秘密情報が必ず除去されるとは教えない。"
+    },
+    {
+      "sourceQuestion": 73,
+      "sourceDomain": "d3",
+      "concept": "関連コードの利用理由",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f02",
+        "q-d3-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "文脈構築の基礎がある。"
+    },
+    {
+      "sourceQuestion": 74,
+      "sourceDomain": "d3",
+      "concept": "ツールからの文脈取得",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f06",
+        "q-d2-a17"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "MCPとして対応する。"
+    },
+    {
+      "sourceQuestion": 75,
+      "sourceDomain": "d3",
+      "concept": "中継基盤と出力処理",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g03",
+        "q-d3-g06",
+        "q-d6-f01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "中継と出力フィルタを分けて扱う。"
+    },
+    {
+      "sourceQuestion": 76,
+      "sourceDomain": "d3",
+      "concept": "非決定性",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g04",
+        "q-d3-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "非決定性と温度設定を扱う。"
+    },
+    {
+      "sourceQuestion": 77,
+      "sourceDomain": "d3",
+      "concept": "データ条件の公式確認",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-a07",
+        "q-d3-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "保持条件と契約条項の確認を直接問う。"
+    },
+    {
+      "sourceQuestion": 78,
+      "sourceDomain": "d3",
+      "concept": "補完とChatの生成処理",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-g01",
+        "q-d3-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "共通の文脈・生成経路を扱う。UIごとの完全同一処理までは主張しない。"
+    },
+    {
+      "sourceQuestion": 79,
+      "sourceDomain": "d3",
+      "concept": "学習利用と保持の区別",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f03",
+        "q-d6-a07",
+        "q-d3-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "現行問題の方が区別が明確。全機能で保持なしという一般化を追加しない。"
+    },
+    {
+      "sourceQuestion": 80,
+      "sourceDomain": "d3",
+      "concept": "文脈の選別",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g07",
+        "q-d3-e05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "必要な文脈への絞り込みがある。"
+    },
+    {
+      "sourceQuestion": 81,
+      "sourceDomain": "d3",
+      "concept": "組織コードの検索利用",
+      "status": "C",
+      "foundationIds": [
+        "q-sc08-1",
+        "q-d2-f10"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "検索索引とSpacesを扱う。旧Knowledge Basesへの回帰は不要。"
+    },
+    {
+      "sourceQuestion": 82,
+      "sourceDomain": "d3",
+      "concept": "テキストの処理単位",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 83,
+      "sourceDomain": "d3",
+      "concept": "応答遅延の要因",
+      "status": "P",
+      "foundationIds": [
+        "q-d3-g10",
+        "q-d3-f04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "速度と品質のトレードオフ、通信確認はあるが、遅延要因の区別を直接問わない。"
+    },
+    {
+      "sourceQuestion": 84,
+      "sourceDomain": "d3",
+      "concept": "外部送信と公開の区別",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f03",
+        "q-d6-f03",
+        "q-d6-a07"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "送信・学習・保持を区別できる。非学習から非送信を導く説明は避ける。"
+    },
+    {
+      "sourceQuestion": 85,
+      "sourceDomain": "d4",
+      "concept": "指示の構成",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g01",
+        "q-d4-f01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "目的・制約・出力形式を扱う。"
+    },
+    {
+      "sourceQuestion": 86,
+      "sourceDomain": "d4",
+      "concept": "意図コメントを使う生成",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "仕様コメントとシグネチャからの生成がある。"
+    },
+    {
+      "sourceQuestion": 87,
+      "sourceDomain": "d4",
+      "concept": "少数例による指示",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-f02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 88,
+      "sourceDomain": "d4",
+      "concept": "プロンプトの改善",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g05",
+        "q-d2-a19"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "反復と具体化がある。"
+    },
+    {
+      "sourceQuestion": 89,
+      "sourceDomain": "d4",
+      "concept": "回答形式の指定",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g09",
+        "q-d4-f01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 90,
+      "sourceDomain": "d4",
+      "concept": "例の有無による違い",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g02",
+        "q-d4-f02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "zero-shotとfew-shotを扱う。"
+    },
+    {
+      "sourceQuestion": 91,
+      "sourceDomain": "d4",
+      "concept": "対象の明示",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-a02",
+        "q05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "選択範囲・ファイル添付を扱う。"
+    },
+    {
+      "sourceQuestion": 92,
+      "sourceDomain": "d4",
+      "concept": "タスクの分割",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。Plan固有の不足はNo.31へ集約する。"
+    },
+    {
+      "sourceQuestion": 93,
+      "sourceDomain": "d4",
+      "concept": "専門家の視点の指定",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 94,
+      "sourceDomain": "d4",
+      "concept": "秘密情報を含めない指示",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 95,
+      "sourceDomain": "d4",
+      "concept": "出力の簡潔さの制御",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-f01",
+        "q-d4-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "出力条件の指定がある。"
+    },
+    {
+      "sourceQuestion": 96,
+      "sourceDomain": "d4",
+      "concept": "対話での修正指示",
+      "status": "C",
+      "foundationIds": [
+        "q-d4-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 97,
+      "sourceDomain": "d4",
+      "concept": "タスク用プロンプトの再利用",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f09",
+        "q-d2-a10"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Prompt Filesとして直接対応する。"
+    },
+    {
+      "sourceQuestion": 98,
+      "sourceDomain": "d4",
+      "concept": "型や実装を文脈へ加える",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-f02",
+        "q-d3-g02",
+        "q05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "周辺文脈と明示添付がある。"
+    },
+    {
+      "sourceQuestion": 99,
+      "sourceDomain": "d4",
+      "concept": "テスト生成時の条件指定",
+      "status": "C",
+      "foundationIds": [
+        "q09",
+        "q-d5-f02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "境界値・異常系・期待値の指示がある。"
+    },
+    {
+      "sourceQuestion": 100,
+      "sourceDomain": "d4",
+      "concept": "指示改善後も必要な検証",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g06",
+        "q02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "生成結果の独立した検証を扱う。"
+    },
+    {
+      "sourceQuestion": 101,
+      "sourceDomain": "d4",
+      "concept": "不足文脈の補充",
+      "status": "C",
+      "foundationIds": [
+        "q05",
+        "q-d3-a02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "関連ファイルの明示がある。"
+    },
+    {
+      "sourceQuestion": 102,
+      "sourceDomain": "d4",
+      "concept": "使用可能技術の制限",
+      "status": "C",
+      "foundationIds": [
+        "q-d3-a04",
+        "q-d4-g08"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "ライブラリ制約と禁止条件を扱う。"
+    },
+    {
+      "sourceQuestion": 103,
+      "sourceDomain": "d5",
+      "concept": "定型コードの生成",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 104,
+      "sourceDomain": "d5",
+      "concept": "テスト生成の支援",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f03",
+        "q09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "生成入口とテスト観点の指定がある。"
+    },
+    {
+      "sourceQuestion": 105,
+      "sourceDomain": "d5",
+      "concept": "生成した文書の確認",
+      "status": "P",
+      "foundationIds": [
+        "q-d5-f01",
+        "q-d5-g18",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "文書生成と一般的な批判的評価はあるが、文書を実装と照合する運用は直接問わない。"
+    },
+    {
+      "sourceQuestion": 106,
+      "sourceDomain": "d5",
+      "concept": "オンボーディングの支援",
+      "status": "C",
+      "foundationIds": [
+        "q04",
+        "q-d2-a14"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "未知のコードを説明させる利用判断がある。"
+    },
+    {
+      "sourceQuestion": 107,
+      "sourceDomain": "d5",
+      "concept": "挙動を保った改稿",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g02",
+        "q02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "リファクタリングの不変条件と仕様検証を扱う。"
+    },
+    {
+      "sourceQuestion": 108,
+      "sourceDomain": "d5",
+      "concept": "境界と検証条件の生成",
+      "status": "C",
+      "foundationIds": [
+        "q09",
+        "q-d5-f02",
+        "q-d5-g13"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "境界値・期待結果・assertの構造がある。"
+    },
+    {
+      "sourceQuestion": 109,
+      "sourceDomain": "d5",
+      "concept": "生成スクリプトの検証",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-e13",
+        "q02",
+        "q-d2-g08"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "実行前の内容確認と結果検証の基礎がある。"
+    },
+    {
+      "sourceQuestion": 110,
+      "sourceDomain": "d5",
+      "concept": "診断情報の活用",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-e17",
+        "q-d5-g09"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Problemsと静的解析結果の利用がある。"
+    },
+    {
+      "sourceQuestion": 111,
+      "sourceDomain": "d5",
+      "concept": "チーム規約の共有",
+      "status": "C",
+      "foundationIds": [
+        "q-d2-f08",
+        "q-sc06-1"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "共通instructionsを扱う。"
+    },
+    {
+      "sourceQuestion": 112,
+      "sourceDomain": "d5",
+      "concept": "説明と裏取りによる学習",
+      "status": "C",
+      "foundationIds": [
+        "q04",
+        "q06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "コード理解と公式資料照合の組み合わせがある。"
+    },
+    {
+      "sourceQuestion": 113,
+      "sourceDomain": "d5",
+      "concept": "単体・統合テストの依頼範囲",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-f03",
+        "q-d5-g07",
+        "q-d5-f05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "テスト種別とモックはあるが、Copilotへの依頼で統合経路・モック範囲を区別する確認は薄い。"
+    },
+    {
+      "sourceQuestion": 114,
+      "sourceDomain": "d5",
+      "concept": "生成速度と保守性",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g14",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "品質特性と採用前評価がある。一般的な技術的負債問題を増やす必要はない。"
+    },
+    {
+      "sourceQuestion": 115,
+      "sourceDomain": "d5",
+      "concept": "変更説明の下書き",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-f02-b",
+        "q-d5-f04",
+        "q-d2-a11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "コミットメッセージとPR説明を扱う。"
+    },
+    {
+      "sourceQuestion": 116,
+      "sourceDomain": "d5",
+      "concept": "理解を伴う利用",
+      "status": "C",
+      "foundationIds": [
+        "q04",
+        "q-d1-g05",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "説明・過信回避・批判的評価を扱う。"
+    },
+    {
+      "sourceQuestion": 117,
+      "sourceDomain": "d5",
+      "concept": "反復入力の省力化",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "定型コードの生成として対応する。"
+    },
+    {
+      "sourceQuestion": 118,
+      "sourceDomain": "d5",
+      "concept": "既存コード刷新とデータ生成",
+      "status": "P",
+      "foundationIds": [
+        "q-d5-g03",
+        "q04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "近代化とコード理解はあるが、サンプルデータ生成を利用判断として問う基礎問題はない。"
+    },
+    {
+      "sourceQuestion": 119,
+      "sourceDomain": "d5",
+      "concept": "採用の速度と検証",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g06",
+        "q02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "独立検証を前提とするため、概念追加は不要。"
+    },
+    {
+      "sourceQuestion": 120,
+      "sourceDomain": "d5",
+      "concept": "導入効果の評価",
+      "status": "P",
+      "foundationIds": [
+        "q-d6-f05",
+        "q-sc09-2"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "利用統計APIはあるが、受容率と品質・時間・体験を区別する出題はない。追加優先度は低い。"
+    },
+    {
+      "sourceQuestion": 121,
+      "sourceDomain": "d6",
+      "concept": "参照対象の除外",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f02",
+        "q-sc01-1"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "機能の目的を直接問う。"
+    },
+    {
+      "sourceQuestion": 122,
+      "sourceDomain": "d6",
+      "concept": "除外設定の管理範囲",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f02",
+        "q-d6-g01"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "リポジトリ・組織の設定範囲を扱う。"
+    },
+    {
+      "sourceQuestion": 123,
+      "sourceDomain": "d6",
+      "concept": "公開コード一致の制御",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f01",
+        "q-d6-a04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "Blockと参照通知を区別して扱う。"
+    },
+    {
+      "sourceQuestion": 124,
+      "sourceDomain": "d6",
+      "concept": "管理可能なポリシー",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f01",
+        "q-d2-g18"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 125,
+      "sourceDomain": "d6",
+      "concept": "機密パスへの除外指定",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f02",
+        "q-d6-g02"
+      ],
+      "nonEligibleRelatedIds": [
+        "q11"
+      ],
+      "note": "パス指定は既出。ただし対応モードを問うq11は要レビューで演習対象外。全モードの読取禁止を保証しない。"
+    },
+    {
+      "sourceQuestion": 126,
+      "sourceDomain": "d6",
+      "concept": "生成物の権利関係",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-g03",
+        "q-d1-a05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "所有権と第三者の条件を区別する。解説中の補償条件は別途契約確認が必要。"
+    },
+    {
+      "sourceQuestion": 127,
+      "sourceDomain": "d6",
+      "concept": "企業向けの非学習条件",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f03"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 128,
+      "sourceDomain": "d6",
+      "concept": "入力する秘密情報の回避",
+      "status": "C",
+      "foundationIds": [
+        "q-d5-g11"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 129,
+      "sourceDomain": "d6",
+      "concept": "単一対策の限界",
+      "status": "P",
+      "foundationIds": [
+        "q-d5-g11",
+        "q-d1-g06"
+      ],
+      "nonEligibleRelatedIds": [
+        "q11"
+      ],
+      "note": "秘密管理・レビューは既出。ただしモード別の除外制限を問うq11は演習対象外で、直接学習の根拠に加算できない。"
+    },
+    {
+      "sourceQuestion": 130,
+      "sourceDomain": "d6",
+      "concept": "シート回収",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-a05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。API自動化との差分はNo.53へ集約する。"
+    },
+    {
+      "sourceQuestion": 131,
+      "sourceDomain": "d6",
+      "concept": "公開コード一致の抑制",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f01",
+        "q-sc10-1"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "直接対応する。"
+    },
+    {
+      "sourceQuestion": 132,
+      "sourceDomain": "d6",
+      "concept": "除外設定の反映確認",
+      "status": "C",
+      "foundationIds": [
+        "q12",
+        "q-d6-g04"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "再読込と反映遅延を扱う。"
+    },
+    {
+      "sourceQuestion": 133,
+      "sourceDomain": "d6",
+      "concept": "除外設定の切り分け",
+      "status": "P",
+      "foundationIds": [
+        "q12",
+        "q-d6-g02",
+        "q-d6-g04"
+      ],
+      "nonEligibleRelatedIds": [
+        "q11"
+      ],
+      "note": "パス・同期は既出。モード差のq11は演習対象外。既存会話や保存済み生成物を遡及削除しない点も直接問わない。"
+    },
+    {
+      "sourceQuestion": 134,
+      "sourceDomain": "d6",
+      "concept": "監査と利用統計",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-f04",
+        "q-d6-f05",
+        "q-d6-g05"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "管理イベントと利用状況の情報源がある。"
+    },
+    {
+      "sourceQuestion": 135,
+      "sourceDomain": "d6",
+      "concept": "日常的な安全な利用",
+      "status": "C",
+      "foundationIds": [
+        "q-d1-g06",
+        "q-d5-g11",
+        "q-d6-f02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "検証・秘密情報・除外を扱う。"
+    },
+    {
+      "sourceQuestion": 136,
+      "sourceDomain": "d6",
+      "concept": "最新条件の公式確認",
+      "status": "C",
+      "foundationIds": [
+        "q-d6-a07",
+        "q06"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "データ条件とAPI仕様について公式資料へ照合する出題がある。"
+    },
+    {
+      "sourceQuestion": 137,
+      "sourceDomain": "d6",
+      "concept": "導入の複数対策",
+      "status": "P",
+      "foundationIds": [
+        "q-d2-g18",
+        "q-d6-f02",
+        "q-d1-g02"
+      ],
+      "nonEligibleRelatedIds": [],
+      "note": "個別設定はあるが、教育・運用責任まで組み合わせる出題は薄い。一般ガバナンス問題の大量追加は不要。"
+    }
+  ],
+  "foundationEvidence": [
+    {
+      "id": "q02",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d5d7735e78d3bd1d0497873a04a4668fcd51095760ce7791402b687937929d0f"
+    },
+    {
+      "id": "q03",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "57b35ffd5e6f649a7c8be1c2ad2cfe299e97096935a4b02c78f29fd8017b8730"
+    },
+    {
+      "id": "q04",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6ffbeeb2c0dddb90008e951af6af0a88012305c4d8a0e697ff2dadb82bf0245e"
+    },
+    {
+      "id": "q05",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "47e3b47aeed8d29e2cdaa94584eb9a21d861172a937301b13c16e4bfc9dec971"
+    },
+    {
+      "id": "q06",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "248afd227e442b487898e812cd56a3c020177cb765a50de37905107ff25587fe"
+    },
+    {
+      "id": "q08",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c4d44ce58261ef1c701a61691ad3bc3040eb2cd303067410186d0f4eb087289b"
+    },
+    {
+      "id": "q09",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "95fcef045e5a00f085c1f507224e151ec540127a6f607aa05536744f3702decd"
+    },
+    {
+      "id": "q11",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "needs-review",
+      "eligible": false,
+      "sha256": "c5a21a84c8834dd1f2c4d58e19d32b477b47d24fa46acf145f5174839d7938ac"
+    },
+    {
+      "id": "q12",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d20c6a3aa649618f011ca3088d41a3cc788e27c690f281b130625853cb0a189a"
+    },
+    {
+      "id": "q-d1-f01",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d7f35f0dfdd4156a170cae8ea65f922c5421e3f9628524b069ba445793ac07e7"
+    },
+    {
+      "id": "q-d1-f02",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0ca873aad13e5b4b78cf8f57787e0912ee93fe17225d029906ab3ca68b43851b"
+    },
+    {
+      "id": "q-d1-f03",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c1acb279c3c4289045ee53b96638182afa7c5c9fd91d4dff0b3aa1b0e72a1979"
+    },
+    {
+      "id": "q-d1-f04",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "b16c09d4ff0712d535838f20a394099b1d091797c379ee4999d2e515457f0f0a"
+    },
+    {
+      "id": "q-d1-f05",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7cb9d263669d0adf76c1932136b931a644b154d20b3dd7fa65b1124cbcc7aa73"
+    },
+    {
+      "id": "q-d1-a05",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "096dc264214180f6108e2fbd48a63e93fe5c6776e662584b9894d6b25d3b0682"
+    },
+    {
+      "id": "q-d1-a06",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5d8891dc5bac61977d6b94a9f2eaf1626450c756b22db32eee014ed09cd03ef4"
+    },
+    {
+      "id": "q-d2-f01",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a620b80bfe0db21b87858bf9e3799eab5e8ef86b65cba46234975c5abe1471c6"
+    },
+    {
+      "id": "q-d2-f02",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e4f07dab50e313e730a2d16ef16a577fc51a28977ec20cdce267712e4f2371a5"
+    },
+    {
+      "id": "q-d2-f03",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "82d9d49e7d59f2f9aa0a6e1312d285a439986f794140d99d2509819cfa8b41f8"
+    },
+    {
+      "id": "q-d2-f04",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "681003ca04ca8d2230e238100fc76c33815fa8e824074341699fa3b957d4b274"
+    },
+    {
+      "id": "q-d2-f05",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6c0af329d2ba24e71ea2e61cc1a1c35e5cf85f0a86193c0a82fe055b417c6683"
+    },
+    {
+      "id": "q-d2-f06",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7072ec1d4d1c03c4bada423dae0560b86e4333c837245c87e1952992f470661e"
+    },
+    {
+      "id": "q-d2-f07",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0aed4ea92592541ea3a0878ed0ce6d06b1e7bccddd5dc3d5b49109f11e5a3086"
+    },
+    {
+      "id": "q-d2-f08",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d4f0a945c9586251f598c33253e2261ff8d0f12143081abf62f3f9121579c4c9"
+    },
+    {
+      "id": "q-d2-f09",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d5f199477c563a384edd25b29ca00291a3abc5f8527a7e2cdc354ea46985b029"
+    },
+    {
+      "id": "q-d2-f10",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "21a28d3b10cbca030582377f559d97ca58571d6670b288b3fb908e068a1b1326"
+    },
+    {
+      "id": "q-d2-f11",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "1c662aaf0961b6d7095c7d42cca0c98fcd46478f49ca4c8d4a1de57bb0a41ee7"
+    },
+    {
+      "id": "q-d2-a01",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "1e1e1aba3975185c5325c46652420eba27bb8e9c8d5ae1e4c0723033afa6071b"
+    },
+    {
+      "id": "q-d2-a03",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c8bc901cb2ec59d64c0a249b4742c42fd5328b779cdf44f39e55272875164d20"
+    },
+    {
+      "id": "q-d2-a05",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7c6b876e2a2502d82029b8f8acad92db34c4c8032cd1aca02d2c8154b3a52bbc"
+    },
+    {
+      "id": "q-d2-a06",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c39e577607d322f4f240066c2c99f5467b7d80a6342a4f01e833f2b6ed58c97e"
+    },
+    {
+      "id": "q-d2-a08",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e4496e7d6632c7f29ad1ddf3302b1c657ccf83aea3192edadbfef24a213761d6"
+    },
+    {
+      "id": "q-d2-a09",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "1ce03d5992a15ed5b672df1f78aa85ffe0a25eec52b18be6ab555a2ae1f9c8a1"
+    },
+    {
+      "id": "q-d2-a10",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5698bc7abedd2130e1a156da940ddddd9fb90743c35ec3be8a0edfcf06375b1e"
+    },
+    {
+      "id": "q-d2-a11",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "8e595345932de1b1afa161c59d20a245d1ba08c0502c9bf2d8174cf81ff7a884"
+    },
+    {
+      "id": "q-d2-a12",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "2c467bfd018e6153f6e6fe5e17b74fa8b3212d0a6d4867580a32791a42f2b949"
+    },
+    {
+      "id": "q-d2-a13",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "f540321cf37c2b9e038df206530dd8e1134d8ae1814deeb6181a92d4ce47990a"
+    },
+    {
+      "id": "q-d2-a14",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7ccda05b768cdba926acabd8ba7553a5ede8c1aeae40703739bd1b4949fa3c1f"
+    },
+    {
+      "id": "q-d2-a17",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d58b5671205b61df9319ca3d0733315feda9d02b81f4cce776cbc3dc159b9a6b"
+    },
+    {
+      "id": "q-d2-a19",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "55681690f8526b55e513f170e7cfb82157ffddb06292ec7006167e45e6fb6cb9"
+    },
+    {
+      "id": "q-d2-a21",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "831f1b55d85a9bbc4d60de8ca989f8a3d604b81fe8cfaa80d35ce80adcc09a34"
+    },
+    {
+      "id": "q-d2-a22",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d082b454a65b9fb8b30de3ee60d0141eb442dba22f5965b43a10ccabe4def270"
+    },
+    {
+      "id": "q-d2-e03",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "06b537f9d01afbfbcff2381d11a64e16508764771480dddd78ad622c9ce35538"
+    },
+    {
+      "id": "q-d2-e04",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "47e3bc3b83ca3ea092b9eb0d930f12408dd9f3846d3afdc7c19c7d7f0d6529c3"
+    },
+    {
+      "id": "q-d2-e05",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "509e41e5f0b312b33db624b560447891fde9d8b472d96ff8852dc51501c237c9"
+    },
+    {
+      "id": "q-d2-e12",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d309338e3777895a9d50969a4798ce0e1ea856a400783aab6c78ca56e5227f35"
+    },
+    {
+      "id": "q-d2-e13",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "038329cdff58de5728725f673cd090719e7ae1ba4874b348a1d743b0fa588538"
+    },
+    {
+      "id": "q-d2-e17",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c1b5e56bce44469225ff19df418c5aaac0c2ccf48b59c0a5f16047a6ff4ae821"
+    },
+    {
+      "id": "q-d2-e18",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5eed9348d3a099be0c921cfe0f48e63680d6a408968a93510063f1a3be698f3f"
+    },
+    {
+      "id": "q-d3-f01",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "09001227a73a2c7030c26d11886b30d700f8506f0939e9dd94e5204ab0dd25c0"
+    },
+    {
+      "id": "q-d3-f02",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fd37118aa3c4b67e4d2417b30fa7c8d3358af68372b4d10a9fc36bc5a1d4fb24"
+    },
+    {
+      "id": "q-d3-f03",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fee1070191cd4d42a53378eecce6f3326fc3e0c41091265d12c42e87577eeca3"
+    },
+    {
+      "id": "q-d3-f04",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "11e7aa646ffc1642c90eb659ac8ce9991a9698eda742ed90f99f072646ff67c4"
+    },
+    {
+      "id": "q-d3-f05",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "de4ebdb387ec654e1861c5cedf3d1a9b71640c4d674e6f0cafb008bc7bc55c2a"
+    },
+    {
+      "id": "q-d3-a02",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "80ed04ddaec9561b349f29754804955e49a31f2574f0fdb52b186350e55011a0"
+    },
+    {
+      "id": "q-d3-a04",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "25762d992292ac2327ca53a0a8002085b1a2f7bb6f3806c13d8990ad68b54883"
+    },
+    {
+      "id": "q-d3-e05",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "bd88dd31a24e99d02f0604457d1630a08487cfce794b1361d27b31232f4ed35d"
+    },
+    {
+      "id": "q-d4-f01",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a7b2d81ed9c9c7ac17ddc247f59c37971365357fa5ec52039864ad8048883db0"
+    },
+    {
+      "id": "q-d4-f02",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "df1e877a7da70def5a5647a259ae5a4957d50d41f8d6ac4b82b8658bda2430ac"
+    },
+    {
+      "id": "q-d4-f03",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "bdac5944382cc082ce62656cfe80faee7a508126f3e521e142ac8bd07e108488"
+    },
+    {
+      "id": "q-d4-f04",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "653d363dc73638989c8a3112a8c6b94e2fd84b8a15de256f48dc1d40d076f2bc"
+    },
+    {
+      "id": "q-d4-f05",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0b56650e00752556049d9fd8e85a00710cea8e3975322edd6fd6dcce1e4954b6"
+    },
+    {
+      "id": "q-d4-a08",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "536710d8d48c08ea1ac4232fcbd553d037f68946e3073cabf82add7d2c89edd6"
+    },
+    {
+      "id": "q-d4-e02",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0dd39d3c3469617b5d2c6ae403a2f55871f3df48539474b3b25214d2c1db8a83"
+    },
+    {
+      "id": "q-d5-f01",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "8113fa598296e4f7e4bfd2d1eb1245e00f5afbc271cd629370ccb82ede73b83c"
+    },
+    {
+      "id": "q-d5-f02",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e567e6b0bc794a8ae2bd40024d2710b16ddbf83759494a6aa6f3952b5bb6a0df"
+    },
+    {
+      "id": "q-d5-f02-b",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "1d88043dd921dad0eb2a9de2fe9d02abcbebc2c0097e8489616f4fba6f9de28d"
+    },
+    {
+      "id": "q-d5-f04",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a43def4bff90a1a4cd991eed0e13135d616c221324e4c69c4ac4c5b803c4f5ff"
+    },
+    {
+      "id": "q-d5-f05",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "269f625e1538919f81d3e7d8645528c0ef7f5015d937ded020cbb1fb7c943c15"
+    },
+    {
+      "id": "q-d6-f01",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "926adf02af4c1ca183eb1799bbde91423386267046d103ddc92b85edfd31ee55"
+    },
+    {
+      "id": "q-d6-f02",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6ca975c3b23af82dde4963f59914b92dd13fa6f194039027e54be1f2fb31e7fd"
+    },
+    {
+      "id": "q-d6-f03",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "ea9bed238dd429e46bec4585be85e9cf1aa4db6e0beef5abb38ccad7fe94e53d"
+    },
+    {
+      "id": "q-d6-f04",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "72b2e03c6761eee5262903e6b9b864364cbadc6476612c138151b23f33640df3"
+    },
+    {
+      "id": "q-d6-f05",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c998cdb34af16d51037d69e2a8801095778668c5bfebd1c642177c0a4dad3727"
+    },
+    {
+      "id": "q-d6-a02",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7315af9651c46253d373b444f6da54718a14bc2035755ed11bb8dbff683811f5"
+    },
+    {
+      "id": "q-d6-a04",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "3072b9db65e3e53d0071d5ee9a9fd1b5b22f09f0b8c2de808ba34a4bf76e375d"
+    },
+    {
+      "id": "q-d6-a05",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "67005c92a9d0e945d55b3cdf4746131c33f71f4fdd7edf0bcc92a0ce73e620af"
+    },
+    {
+      "id": "q-d6-a06",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7b5b2dbc1064492231d203f20b104f0135ab4f1909f850248cec6ddc4be6c259"
+    },
+    {
+      "id": "q-d6-a07",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fb21ecc9afeca6eda1d09c26badfe6c53910e3406519bd96ebf0bcff79b083cc"
+    },
+    {
+      "id": "q-sc01-1",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "1c6789e9e0ad16b2ad51dcf42a04b03ffa401b5b86065a30af780d8d0fc03f94"
+    },
+    {
+      "id": "q-sc04-1",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "9c62ba514b0ecc71d28367155251ec6d52ea1cfdd670827effa3d57be82a138a"
+    },
+    {
+      "id": "q-sc04-2",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "2aaa7e65e537183dfe43ff6e4cfba3362cef1664d0f82c5ef9f66096604e978e"
+    },
+    {
+      "id": "q-sc06-1",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "306f917688079743b4cea103eca79e3e92542ae7a8b1437f4f56488ca186917b"
+    },
+    {
+      "id": "q-sc07-3",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "2164f0656340fd59582014c5f104f623ca712c752c9689b12a2c115bb15f0f9c"
+    },
+    {
+      "id": "q-sc08-1",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "62478d01a56e79acaec8c48843c3f76b629de631ad63d0f6e983dc71b29b177e"
+    },
+    {
+      "id": "q-sc08-3",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7b3c23f0eb0fcc3de78e4059ed89a891dce49159de22587fe37fc205c6fff303"
+    },
+    {
+      "id": "q-sc09-2",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e28ee207aa1685bc1ee74733902e7aa397e30e3ac0b62ae508aac5a6ed5d54fc"
+    },
+    {
+      "id": "q-sc10-1",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "46dd2bbf0fbea11a776b9d0b2863b714a698549027be9731cf45451a952ea260"
+    },
+    {
+      "id": "q-sc10-2",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e92bfe75ad30db2f38ee26a5388fa603b83ba73efc1cea7768caf4d703b5c6f5"
+    },
+    {
+      "id": "q-d1-g01",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "3d2b0961da669fef5cee4540264f121b9254a3922c3f0cd715fe49b6a9ba0973"
+    },
+    {
+      "id": "q-d1-g02",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5918029d9c7f67c1be25e14bca425c48e07359156e4110979fac1b0a50a3a363"
+    },
+    {
+      "id": "q-d1-g03",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "96c3b2ced484870e8c9f088ff731d56545107289cbc38fdbdaa1e66cf0ff0d89"
+    },
+    {
+      "id": "q-d1-g04",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "387d6ffb110940dc12f70da03b3e9b93c1cfe7ea3bf1be0bea4efcc033227a40"
+    },
+    {
+      "id": "q-d1-g05",
+      "domainId": "d1",
+      "objectiveId": "d1o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "b53e5d69568c48ad08f61998972a3862f16c2543fef7d0d94ba08a9d40cf5940"
+    },
+    {
+      "id": "q-d1-g06",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "babef74d705b4c12df299059a92f418ca926865ef15f2a1df98a7de6683d150f"
+    },
+    {
+      "id": "q-d2-g01",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "94291c4eee3aca9394a98c3f8736f3e6562527be4eb8ed3822139e0ee484d9b5"
+    },
+    {
+      "id": "q-d2-g02",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "ab60dd7114c33720c30642daf6435a8b69f730be030031be7f1398501770a6ea"
+    },
+    {
+      "id": "q-d2-g03",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "85e1674497cc55695e9c403e2d946681f7757f5bd487cf1ea4c80d9dcafd1f8a"
+    },
+    {
+      "id": "q-d2-g04",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "4fd009abca905655628898ec5d22e3344ffc403a6ffccbe5117717febcd555b4"
+    },
+    {
+      "id": "q-d2-g05",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "ba1b05da74ba7983389fc10e0a52766a39f716debca4215d21cdcd8995b43ec3"
+    },
+    {
+      "id": "q-d2-g06",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "da8911e2b313b751cfde0c5564d59b9a1f9246275fdf340b7f0c1a70263ef90a"
+    },
+    {
+      "id": "q-d2-g07",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c1d41aa0e9ca62d41645c753bfb5ea46886887ddbf38d7634d97abaf8938e316"
+    },
+    {
+      "id": "q-d2-g08",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "388412d260ab3fb6c051532d08475dfd6a275f138a894208f55904cfd093a9d8"
+    },
+    {
+      "id": "q-d2-g09",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "b2949889aaa628aa057ab4859261fe5be837008f12391d0a1213c1152e2963ba"
+    },
+    {
+      "id": "q-d2-g10",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a98698fcd788afebf0a0ac1170b9551badc51ed4e384fad0ce62237b1a8afafd"
+    },
+    {
+      "id": "q-d2-g11",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0ef3418497cb913818143d3c44f4d8eb5e2e1c1878ee0d7a729cf88b4f45cf82"
+    },
+    {
+      "id": "q-d2-g12",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "10ebe8d282e5b4657c4a82a0b8055785912ce9772741ebd17871853d934cebee"
+    },
+    {
+      "id": "q-d2-g13",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "0a71bb647c0790d3333502b0e30c5b1d4117be0def595c636fac8f989a5e7734"
+    },
+    {
+      "id": "q-d2-g14",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "4df76d3ffb483fc42c90401fd21b4ad7ad57d2183c24717ddafd280f8f0c4f1a"
+    },
+    {
+      "id": "q-d2-g15",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "d1012c5bbd1432229bad6e311bbfcf5f397a9b615a795754381b79eebf957a06"
+    },
+    {
+      "id": "q-d2-g16",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "84cf6e5389601e608345ab5ed9b22f9f6d52f6d58cef4d53af064c9daff88080"
+    },
+    {
+      "id": "q-d2-g17",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "857d6c445beccc72fca0b5233d76d821dfcd4ed293f7988038d06fc648c81197"
+    },
+    {
+      "id": "q-d2-g18",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c61ace853e8c41f6789c55262172917917521d9104151d997deefb1198b7de9d"
+    },
+    {
+      "id": "q-d2-g19",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "642d930fe9d1ae913a3c192029c52a70b9ceadad5b538b0c1af0724506304b4a"
+    },
+    {
+      "id": "q-d2-g20",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fd83bb44ab9f0f65b67acfffc878c0ddb62e2e081b95e614c446d799e3a0531c"
+    },
+    {
+      "id": "q-d2-g21",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fe93cb7f0e17b2290208c6374cc5917c1b52bf0b52ce3f6e30fdf7b7b0b4ea36"
+    },
+    {
+      "id": "q-d2-g22",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "73a10f010a28891882dbdbc0009da36b7e02e11688c9514d13bef2085b07bb01"
+    },
+    {
+      "id": "q-d3-g01",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "b151a13daf0e238962b24150c401ae9b603cb4489dc0f2956b37bb7ddbbdc416"
+    },
+    {
+      "id": "q-d3-g02",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c310cb32ac151829a531a5bccc4a31a6fa1f0db4eea68c28b8215b6a86d9bed9"
+    },
+    {
+      "id": "q-d3-g03",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "802b6ee3be0e29620a880bfdb17b06b24f2a6a44547e1e080e59522fecfcbb0b"
+    },
+    {
+      "id": "q-d3-g04",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "861f486d409ba7c29478c32ac9144ac3cdc267ad680a930b2a21dd7b253b275d"
+    },
+    {
+      "id": "q-d3-g05",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6af759e92c89992bc2487a57bd8fe83e31f4015365edcfcb4c74c06cf3765a19"
+    },
+    {
+      "id": "q-d3-g06",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "e673f35304a281bee85c4e4da5dd993fe505acd310aafb5d7c72261761fb1d95"
+    },
+    {
+      "id": "q-d3-g07",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "ed9542868629f9986c4fa373ecb1c968b92b6924c585867c9a6663a3f7d1c641"
+    },
+    {
+      "id": "q-d3-g08",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c7a929e0c25889acd8ac3493f6725bb92d93643bda0da8db3e552d0feacd84b7"
+    },
+    {
+      "id": "q-d3-g09",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "2de6c1baa949501ff53fd64987837e5bce5aa92d3817437a3019fe2be0bbfdd8"
+    },
+    {
+      "id": "q-d3-g10",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "62c0529e43892c1d3d0a26ed6217c25965df837d86d92334e1c20124c76a6329"
+    },
+    {
+      "id": "q-d3-g11",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c5e4e13abea6ed40d3b078aab966864d61e6b08f18c329684de65770d4cc15f2"
+    },
+    {
+      "id": "q-d3-g12",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "feb1f232ed541fd1f027246b47c425e4dca488e551c947578f3b78e76c79455f"
+    },
+    {
+      "id": "q-d3-g13",
+      "domainId": "d3",
+      "objectiveId": "d3o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "46ac2d8778fea280f13f962b9113ac09b69dae9748feeaf72e3f389130434dc6"
+    },
+    {
+      "id": "q-d3-g14",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "4d61f59254ca625086b7da8134bf8a16c02b3ba1d63aeb247f84d6d331068de7"
+    },
+    {
+      "id": "q-d4-g01",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "f79b983ee4b938c7b69e07f47fc3ee43c78a5eda21c05861ea40386775b5751b"
+    },
+    {
+      "id": "q-d4-g02",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "867c80f82fb5a54a0371538437dac08e3672892f889e151f4421d416f318c24f"
+    },
+    {
+      "id": "q-d4-g03",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a3ec264e61f7bbbed79c850d029ed1f7e97ab0afc2579d411050b5821e9e0590"
+    },
+    {
+      "id": "q-d4-g04",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "342fee9a42d2294677ae2da77d62bebaa2c894c5c10affdb1852b5fe6f374be9"
+    },
+    {
+      "id": "q-d4-g05",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6cb8f05ea73b1410815e26586ba43ec08c0ae1539112a1288a051fd868128555"
+    },
+    {
+      "id": "q-d4-g06",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a639f6a47de8af1619e73f923780e6790fb44a7b8c997d0bbc9a48b3552c2757"
+    },
+    {
+      "id": "q-d4-g07",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "eeaefe8cba4f863c0e27d52119a8764c636457b2d5aab0830875af89915d37f1"
+    },
+    {
+      "id": "q-d4-g08",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c3f42da9c6fde3ea7dcf2e36f4bdd18869159486cbe0be9c22bfd32fcae30cf2"
+    },
+    {
+      "id": "q-d4-g09",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "785746a5eafc4d25e9625f41fe3ee285e62847d95d92030919e23423bb2575ee"
+    },
+    {
+      "id": "q-d5-g01",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c8b773fd8ac6e2ee65aef7bdc7523d9b8d5f28ef0f9ca85694ad326824175f85"
+    },
+    {
+      "id": "q-d5-g02",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "25a5e53a37e927baf03ea7e7402f039962e2ca2607a33484544a2fd4f1770e75"
+    },
+    {
+      "id": "q-d5-g03",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5dfe166dafa20ea79463ddf5113cfc61802e535e6d63c4c11d54eccb766d0177"
+    },
+    {
+      "id": "q-d5-g04",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "538d82acfa8d865f7b49fc10d40b5a2191e5c59c4582e9e6350af88a294f0436"
+    },
+    {
+      "id": "q-d5-g05",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fdd7af6c7de52da52a230ad1de3adb8daf473f1b687e5347ec0ecf4a6b94b337"
+    },
+    {
+      "id": "q-d5-g06",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "a468c5c8321136de1b09bf0890f1e2d67364da881bb909c388d85bef8c4af078"
+    },
+    {
+      "id": "q-d5-g07",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "c99bb46088e578f978e6a95c827085f608ef27d1095ec3957b1b731773367b20"
+    },
+    {
+      "id": "q-d5-g08",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "78f71ac26e0807a14147b5d3a62e25e8cba413d86d07a1d505767f785e3686ad"
+    },
+    {
+      "id": "q-d5-g09",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "cb5caf9180b233e2824e6c352010fc0c3c71a5d104e63a3f99302c2c05b6b60c"
+    },
+    {
+      "id": "q-d5-g10",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "f3bb4884451a808768983c1ba9f02dca4de4258819591ededdf74021a9aa0faa"
+    },
+    {
+      "id": "q-d5-g11",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "3af04f1f383d260c4daa60b8d34901e40438aeee5d441ef9416470d9dc0e4336"
+    },
+    {
+      "id": "q-d5-g12",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "6702bbc3f570ea09847e9c4408e2811a0a6abffe2bfabf3a1901b398009d2f8a"
+    },
+    {
+      "id": "q-d5-g13",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "f43d1ecced0eeb07c465f5f061484d4e51f1d9efa8935223b0337de65cf535b8"
+    },
+    {
+      "id": "q-d5-g14",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "67a1640425f3617808567ff7fa8f91ff63d067415088813c19f607df748e9758"
+    },
+    {
+      "id": "q-d5-g15",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "5540bc974de7a5fadb39e19612dc1abebe25ea713a6f4b5a63be664d2f27e90f"
+    },
+    {
+      "id": "q-d5-g16",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "580976039c3da3399af531418ce629ec67655fd2f54d74fbdbd0243538295daf"
+    },
+    {
+      "id": "q-d5-g17",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "cdfdcaae57e86752bbe84eec3ee71b54fe47bcd5a1433292e7319201b90bf339"
+    },
+    {
+      "id": "q-d5-g18",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7fbbdadcef50de3202b7fdfee7d6fb42271ac89d8cc0f88b96a246de7fa01b1d"
+    },
+    {
+      "id": "q-d6-g01",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "2f9950a873c01cb970b7520ef1bc715f4cb00640b959f885f7699c0f53d2d557"
+    },
+    {
+      "id": "q-d6-g02",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "fbc07bfe61042971d04d816d5f5a5581a4605116123df19f74604e1a67eb43b5"
+    },
+    {
+      "id": "q-d6-g03",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "8d7b5af0e1edff4850abe979c218a5097aa5f4ed5bf6f1ec069b1018f0d4ab24"
+    },
+    {
+      "id": "q-d6-g04",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "34e87764f52e0b24c424f9a44b43a0138f1ac7847808c1a69d981aab581272a5"
+    },
+    {
+      "id": "q-d6-g05",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "status": "verified",
+      "eligible": true,
+      "sha256": "7348b65dba84dad4d47d16b46864e4624cf523b1ae9b304f6ef63abd9fc3c5d1"
+    }
+  ]
+}

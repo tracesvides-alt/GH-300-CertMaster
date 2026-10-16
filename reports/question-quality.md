@@ -1,6 +1,6 @@
 # Foundation / Applied / Exam Question Quality Report
 
-Active: 254; stored: 395; excluded: 141. Stage 2: content-fingerprint bound.
+Active: 254; stored: 405; excluded: 151. Stage 2: content-fingerprint bound.
 
 位置はUIの表示順で集計。保存用choice IDとは別です。複数選択は正解出現数を分母として別集計します。
 

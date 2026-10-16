@@ -2,7 +2,7 @@
 
 ## 結果
 
-用語 120 件すべてに基礎問題が対応。現在の基礎 163 問の指紋とレビュー記録を検査し、基礎レビューの累積改稿は46 問。未対応用語 0 件。
+用語 120 件すべてに基礎問題が対応。保存済み基礎 173 問（旧問題を含む）の指紋とレビュー記録を検査。現行基礎資産163問のうち演習対象は162問。基礎レビューの累積改稿は46 問。未対応用語 0 件。
 基礎問題として名称・役割・単一条件の識別を残しています。本文なしで正答を推測できる懸念があった対象を追加改稿しました。編集判断の記録があることだけで、全問題の推測リスク解消を保証しません。
 同義の別解、MCP Clientとの間接的な対応、旧CLIの現行誤認、一律ゼロ保持、完全な決定性、ローカル限定という断定も修正しました。
 
@@ -12,6 +12,7 @@
 - 2026-10-13：q05、q06、q11、q-d1-f03、q-d1-f05、q-d1-a05、q-d2-f04、q-d2-f05、q-d2-f08、q-d2-f09、q-d2-f10、q-d2-f11、q-d2-a05、q-d2-a06、q-d2-a09、q-d2-a10、q-d2-a11、q-d2-a19、q-d2-a22、q-d2-e03、q-d2-e04、q-d2-e12、q-d2-e13、q-d2-e18、q-d3-f03、q-d3-f04、q-d3-f05、q-d3-a02、q-d3-a04、q-d3-e05、q-d4-a08、q-d5-f01、q-d5-f02、q-d5-f02-b、q-d5-f04、q-d5-f05、q-d6-f01、q-d6-f03、q-d6-f04、q-d6-f05、q-d6-a02、q-d6-a04、q-d6-a05、q-d6-a06、q-d6-a07、q-sc04-1、q-sc04-2、q-sc06-1、q-sc09-2、q-sc10-1、q-sc10-2、q-d1-g04、q-d1-g05、q-d2-g12、q-d4-g08、q-d4-g09、q-d5-g05、q-d6-g05。[変更前後と判定理由](question-objective-classification-review.md)。
 - 2026-10-13：q-d1-f03、q-d1-f05。[変更前後と判定理由](d1-d5-classification-correction.md)。
 - 2026-10-13：q-d2-a06、q-d2-a08、q-d2-a09、q-d2-a11、q-d2-a21、q-d2-a22。[変更前後と判定理由](applied-remediation-review.md)。
+- 2026-10-17：q-fnd-cli-install-20261017、q-fnd-cli-login-20261017、q-fnd-cli-create-file-20261017、q-fnd-seat-api-20261017、q-fnd-cloud-issue-20261017、q-fnd-plan-20261017、q-fnd-nes-20261017、q-fnd-ide-matrix-20261017、q-fnd-ide-signin-20261017、q-fnd-mobile-file-20261017。[変更前後と判定理由](foundation-priority-2026-10-17.md)。
 
 追加時点で新たに再読したのは上記の対象です。現在の基礎全問を同時に新たに再評価したという意味ではありません。
 
@@ -312,6 +313,16 @@ g-exclusion-limitations → q11はneeds-reviewを維持。IDE Agentでの除外�
 | q-d6-g03 | g-output-ownership | 修正 | 生成物についての所有権・権利関係を扱う。第三者の権利や利用条件は別途確認する。 |
 | q-d6-g04 | g-exclusion-propagation | 維持 | サーバー上のContent Exclusion設定が世界中の各IDEクライアントへ伝播・同期されるまでに生じる最大30分程度の遅れがPropagation Delayである。 |
 | q-d6-g05 | g-compliance-auditability | 修正 | 監査ログの記録やポリシー適用履歴を追跡・提出し、組織の規則遵守を証明できる体制がCompliance and Auditabilityである。 |
+| q-fnd-cli-install-20261017 | 補助問題 | 維持 | 現行Copilot CLIのnpmパッケージは@github/copilotです。npmでの導入にはNode.js 22以降が必要です。導入後はcopilotで起動します。 |
+| q-fnd-cli-login-20261017 | 補助問題 | 維持 | /loginを入力し、画面の案内に従ってGitHubアカウントで認証します。CLIの導入やフォルダーの信頼確認とは別の手順です。 |
+| q-fnd-cli-create-file-20261017 | 補助問題 | 維持 | Copilot CLIはコマンドの説明だけでなく、スクリプトの生成やファイル操作も支援します。作成・保存を依頼し、必要なファイル変更の許可を確認します。保存後の内容確認と実行は別の段階です。 |
+| q-fnd-seat-api-20261017 | 補助問題 | 維持 | Copilotの購読管理REST APIには、対象ユーザーへのシート追加等の操作があります。利用統計の取得とは異なり、利用資格の割り当てを管理します。実際の実行には組織の条件と書込権限の確認が必要です。 |
+| q-fnd-cloud-issue-20261017 | 補助問題 | 維持 | IssueをCopilotへ割り当てるとcloud agentが実装を進め、Pull Requestを作成します。開発者は生成された変更をレビューします。IDE内のAgentや既存差分へのAIレビューとは別の利用形態です。 |
+| q-fnd-plan-20261017 | 補助問題 | 維持 | Planは、関連コードの調査や要件の確認を通じて実装案をまとめ、確認後に実装へ引き継ぐための専用ワークフローです。 |
+| q-fnd-nes-20261017 | 補助問題 | 維持 | NESは直前の編集に基づき、次に編集する場所と変更内容を予測します。現在の入力位置へ続きを示すghost textとは異なります。 |
+| q-fnd-ide-matrix-20261017 | 補助問題 | 維持 | Feature MatrixはIDEやそのバージョンごとのCopilot機能対応を比較する公式資料です。補完が使えることからChatやAgentの対応まで推測せず、対象環境を確認します。 |
+| q-fnd-ide-signin-20261017 | 補助問題 | 維持 | Copilotはサインインしているアカウントの利用資格を使います。仕事用のシートを使うには、その資格を持つアカウントでCopilotへサインインします。 |
+| q-fnd-mobile-file-20261017 | 補助問題 | 維持 | GitHub Mobileでは対象ファイルを開き、ファイル画面のCopilotアイコンからその内容について質問できます。ファイル全体を手動で貼り付ける必要はありません。利用可否は組織のポリシー等も確認します。 |
 
 各選択肢の誤りの理由とレビュー根拠は同名JSONに記載しています。
 

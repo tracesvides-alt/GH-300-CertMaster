@@ -24396,6 +24396,86 @@
       "requirementCoverage": true,
       "rationale": "本文の条件「viewと社内MCP検索」「モデルに提供しない」を外して四案を再読し、各案の操作・範囲・時点を比較した。viewの実行拒否と候補提供停止は違う。 MCPの実行拒否ではモデルの選択試行は残る。 両経路を拒否するが、候補を提供しないという方針に合わない。 独立した受験者の実験ではない。",
       "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
+    },
+    "q-fnd-cli-install-20261017": {
+      "fingerprint": "7ea9e296ad06c00557bae8343d411253eb612db7607e2b4b9a2d7923b2f16a85",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "npm・WinGet・HomebrewによるCLI導入とVS Code拡張の導入を並べた。いずれも用途のあるコマンドであり、OS・導入対象・使用する管理ツールの指定なしには一つに決まらない。 WindowsのWinGetを使う導入手順です。今回指定されたnpmの手順ではありません。 Homebrewを使う導入手順です。今回の端末にはHomebrewがなく、npmを使う条件にも合いません。 VS Code向けのCopilot拡張を導入するコマンドであり、独立したCopilot CLIのnpm導入ではありません。"
+    },
+    "q-fnd-cli-login-20261017": {
+      "fingerprint": "ec0bb7f805561b8e420c6c03fbc91a27bd3390bdb9d17059f7ae9ca54e8abd5b",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四つとも現行CLIの操作で、認証・モデル選択・再開・ヘルプのどれが目的かは本文に依存する。正答だけを詳しく説明しない。 /modelは使用するモデルの選択に使います。GitHubアカウントの認証を始めるコマンドではありません。 /resumeは以前のセッションを再開するために使います。未ログイン状態を解消する認証手順ではありません。 /helpは使えるコマンド等の案内を表示します。認証そのものを始める操作ではありません。"
+    },
+    "q-fnd-cli-create-file-20261017": {
+      "fingerprint": "0973b87e0bdad9dbec31d3cc189d56d6160982c6b2159ec30f47edaaff2667e8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "生成・既存コードの説明・対象調査・計画というCLIの有用な依頼を並べた。最も慎重な文章や最も包括的な文章を一つだけ置かず、必要な成果物によって選択が変わる。 既存のスクリプトを理解する依頼です。今回はファイルがまだなく、新規作成と保存が必要です。 整理対象を調査する依頼です。一覧・件数の集計だけでは、求めるスクリプトファイルを用意できません。 整理方針を決める段階の依頼です。今回は方針が決まっており、次はスクリプトの作成と保存です。"
+    },
+    "q-fnd-seat-api-20261017": {
+      "fingerprint": "a7e891470fe8d2e5bbb12ceda09d929ac34f9fa90c54574c94b6c58f375f372b",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四つの正規の管理APIを、操作対象をそろえた表現で並べた。割当・統計・監査・所属のどれを変更または取得するかが示されないと正答は決まらない。 利用統計は活動状況を集計するための情報です。統計の取得で対象者のCopilotシートを付与することはできません。 監査ログは管理操作の主体や履歴を追跡する情報です。履歴の取得はシート付与の操作ではありません。 組織への所属とCopilotのシート割り当ては別の管理対象です。対象者は既に所属しており、今回はCopilotの利用資格を付与します。"
+    },
+    "q-fnd-cloud-issue-20261017": {
+      "fingerprint": "195f91959460fef8a85126da5401a38598dc8f60de6c863d043f33e2040221b1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四つとも編集・実装・レビューに関係する現行のCopilot機能であり、正答だけに品質保証や人の確認を付けていない。実行場所と開始方法がないと一つに決まらない。 Code reviewは変更差分を評価して指摘を返す機能です。今回のIssueを受けて実装とPR作成を進める担当はcloud agentです。 IDEのAgentはIDE側の作業環境で編集やツール実行を進めます。GitHubのIssue割当を起点に別環境へ実装を委任する機能ではありません。 CLIは端末で作業を依頼する利用形態です。GitHub上のIssue割当からPRを作る今回の入口とは異なります。"
+    },
+    "q-fnd-plan-20261017": {
+      "fingerprint": "dee45fa08baf6e4df2d2f5a976d833baaf4d01706541a698e5bf99c505d7d580",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四つのモード名のみを並べ、正答だけに説明を追加していない。相談・計画・対象編集・実行のどれが目的かを本文で確認する必要がある。 Askでも方針を相談できますが、設問は実装への引き継ぎを備えた専用のPlanワークフローを尋ねています。相談ができることだけでは同じ機能とはいえません。 Editは対象ファイルの編集提案を進める用途です。今回選ぶのは実装前に調査と計画を行う専用ワークフローです。 Agentは編集やツール実行を伴う作業を進める用途です。今回は実装を始める前の専用ワークフローを選びます。"
+    },
+    "q-fnd-nes-20261017": {
+      "fingerprint": "1f2ea0262c7ca99a0669b6e4cb96316e0fb05972700e1c7d8b09516db63385a9",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "いずれもエディタ内の提案・編集機能で、同じ粒度の名前と短い説明を付けた。補完位置、対話、候補一覧、次位置のどれを求めるかで選択が変わる。 Ghost textは主に現在のカーソル位置に未確定のコード補完を示します。設問は次に編集する位置の予測も行う機能です。 Inline Chatは選択コード等について利用者が指示して対話編集する機能です。編集履歴から次の位置を予測して示すNESとは異なります。 Completions Panelは補完候補を一覧で比べるものです。関連する別の編集位置を予測して誘導する機能ではありません。"
+    },
+    "q-fnd-ide-matrix-20261017": {
+      "fingerprint": "b6002bef2741a71b408b9a4effad21d85855dad6143181af9ce3c33dd36de8a6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "公式資料の対象をそろえた選択肢で、プラン・IDE・端末コマンド・モデルのどれを比較するかは本文に依存する。正答だけを現行・安全などの価値語で飾らない。 プランは利用資格や契約上の機能差の確認に必要ですが、今回の主題であるIDEごとの実装・対応状況を直接比較する資料ではありません。 CLIのコマンドや引数を調べる資料です。VS CodeとNeovimの機能対応表ではありません。 モデルの特徴や用途を比べる資料です。IDEごとのUIやAgent機能の対応表ではありません。"
+    },
+    "q-fnd-ide-signin-20261017": {
+      "fingerprint": "6958836443d291643e547c26b61a165a86b09a57e76264b28660149dd2453fdf",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "アカウント・モデル・会話・補完設定の切替を同じ形式で並べた。すべて通常の操作であり、症状と目的が示されないと優先すべき操作は決まらない。 モデルを切り替えてもCopilotのサインイン先は変わりません。仕事用アカウントの利用資格を使う操作ではありません。 新規Chatは会話履歴を切り替える操作です。利用資格に結びつくGitHubアカウントは変わりません。 言語別の補完設定は提案表示の制御です。サインイン先の利用資格を切り替える操作ではありません。"
+    },
+    "q-fnd-mobile-file-20261017": {
+      "fingerprint": "18c5c73d59d64c50e932ad6108ebc4d64221e0b9a1cfe9da7dcb446f58072287",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "四択ともMobileでCopilotへ相談する使い方で、ローカルコンパイルや課金のような無関係な誤答を置かない。ファイル全体・選択行・repo全体・一般質問という文脈の違いを本文で選ぶ。 選択した数行を文脈として渡す場合の操作です。今回は手動コピーをせずにファイル全体を対象にします。 リポジトリ全体について探索的な質問をする入口です。今回求める特定ファイルの画面からの質問操作とは異なります。 一般的な開発や言語の質問をする使い方です。特定のリポジトリのファイルを文脈とする今回の操作ではありません。"
     }
   },
   "choiceAudit": {
@@ -24413,7 +24493,7 @@
       "q-d3-a10"
     ]
   },
-  "lastUpdated": "2026-10-16",
+  "lastUpdated": "2026-10-17",
   "followUpReviews": [
     {
       "reviewedAt": "2026-10-13",
@@ -25033,6 +25113,22 @@
         "q-d6-e01"
       ],
       "report": "reports/copilot-feature-quality-repairs-2026-10-16.json"
+    },
+    {
+      "reviewedAt": "2026-10-17",
+      "questionIds": [
+        "q-fnd-cli-install-20261017",
+        "q-fnd-cli-login-20261017",
+        "q-fnd-cli-create-file-20261017",
+        "q-fnd-seat-api-20261017",
+        "q-fnd-cloud-issue-20261017",
+        "q-fnd-plan-20261017",
+        "q-fnd-nes-20261017",
+        "q-fnd-ide-matrix-20261017",
+        "q-fnd-ide-signin-20261017",
+        "q-fnd-mobile-file-20261017"
+      ],
+      "report": "reports/foundation-priority-2026-10-17.json"
     }
   ],
   "pendingFollowUpQuestionIds": [],

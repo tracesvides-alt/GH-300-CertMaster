@@ -7860,10 +7860,172 @@
       "reasoning": "通常補完とCLIの保護範囲を区別する。 ローカルと外部検索の取得経路を分ける。 提供停止の方針を両経路へ適用する。",
       "reviewRequired": false,
       "latestReview": "reports/copilot-feature-quality-repairs-2026-10-16.json"
+    },
+    "q-fnd-cli-install-20261017": {
+      "fingerprint": "7ea9e296ad06c00557bae8343d411253eb612db7607e2b4b9a2d7923b2f16a85",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "npmでの現行CLI導入を一つ識別する基礎。依存障害の原因分析や複数設定の推論は要求しない。",
+      "reasoningSteps": [
+        "npmでの現行CLI導入を一つ識別する基礎。依存障害の原因分析や複数設定の推論は要求しない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "cli-install",
+        "cli",
+        "foundation-vscode-cli"
+      ]
+    },
+    "q-fnd-cli-login-20261017": {
+      "fingerprint": "ec0bb7f805561b8e420c6c03fbc91a27bd3390bdb9d17059f7ae9ca54e8abd5b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "未ログインという一つの状態を認証操作へ対応付ける基礎。トークン優先順位や認証障害の分析は求めない。",
+      "reasoningSteps": [
+        "未ログインという一つの状態を認証操作へ対応付ける基礎。トークン優先順位や認証障害の分析は求めない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "cli",
+        "feature-refresh-cli-reference"
+      ]
+    },
+    "q-fnd-cli-create-file-20261017": {
+      "fingerprint": "0973b87e0bdad9dbec31d3cc189d56d6160982c6b2159ec30f47edaaff2667e8",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "CLIに依頼できる作業の基本範囲を識別する。ログ整理アルゴリズムやシェル構文そのものは問わない。",
+      "reasoningSteps": [
+        "CLIに依頼できる作業の基本範囲を識別する。ログ整理アルゴリズムやシェル構文そのものは問わない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "cli-usage",
+        "cli-tool-permissions"
+      ]
+    },
+    "q-fnd-seat-api-20261017": {
+      "fingerprint": "a7e891470fe8d2e5bbb12ceda09d929ac34f9fa90c54574c94b6c58f375f372b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "要求する管理対象とAPIの役割を一つ対応付ける基礎。ページネーション、HTTPエラーや課金周期の複合判断は要求しない。",
+      "reasoningSteps": [
+        "要求する管理対象とAPIの役割を一つ対応付ける基礎。ページネーション、HTTPエラーや課金周期の複合判断は要求しない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "copilot-seat-api",
+        "rest-api",
+        "audit-log"
+      ]
+    },
+    "q-fnd-cloud-issue-20261017": {
+      "fingerprint": "195f91959460fef8a85126da5401a38598dc8f60de6c863d043f33e2040221b1",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "Issue割当とPR作成という機能の入口を識別する基礎。cloud agentのsetup、firewallや権限の切り分けは要求しない。",
+      "reasoningSteps": [
+        "Issue割当とPR作成という機能の入口を識別する基礎。cloud agentのsetup、firewallや権限の切り分けは要求しない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "foundation-cloud-task",
+        "agent-mode",
+        "code-review"
+      ]
+    },
+    "q-fnd-plan-20261017": {
+      "fingerprint": "dee45fa08baf6e4df2d2f5a976d833baaf4d01706541a698e5bf99c505d7d580",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "専用モードの用途を識別する基礎。Askでも計画を相談できることと、専用Planの存在を混同しない表現にした。",
+      "reasoningSteps": [
+        "専用モードの用途を識別する基礎。Askでも計画を相談できることと、専用Planの存在を混同しない表現にした。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "foundation-vscode-plan"
+      ]
+    },
+    "q-fnd-nes-20261017": {
+      "fingerprint": "1f2ea0262c7ca99a0669b6e4cb96316e0fb05972700e1c7d8b09516db63385a9",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "表示された挙動を機能名へ対応付ける基礎。モデル選択やネットワーク制御等の複合条件は含めない。",
+      "reasoningSteps": [
+        "表示された挙動を機能名へ対応付ける基礎。モデル選択やネットワーク制御等の複合条件は含めない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-refresh-inline",
+        "inline-usage"
+      ]
+    },
+    "q-fnd-ide-matrix-20261017": {
+      "fingerprint": "b6002bef2741a71b408b9a4effad21d85855dad6143181af9ce3c33dd36de8a6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "対象環境に適した資料を選ぶ基礎。個別バージョンの対応表の丸暗記は求めない。",
+      "reasoningSteps": [
+        "対象環境に適した資料を選ぶ基礎。個別バージョンの対応表の丸暗記は求めない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-matrix",
+        "plans",
+        "feature-refresh-cli-reference",
+        "foundation-model-comparison"
+      ]
+    },
+    "q-fnd-ide-signin-20261017": {
+      "fingerprint": "6958836443d291643e547c26b61a165a86b09a57e76264b28660149dd2453fdf",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "利用資格とサインイン先の対応を確認する基礎。接続障害やポリシー階層の分析へ広げない。",
+      "reasoningSteps": [
+        "利用資格とサインイン先の対応を確認する基礎。接続障害やポリシー階層の分析へ広げない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "foundation-vscode-setup"
+      ]
+    },
+    "q-fnd-mobile-file-20261017": {
+      "fingerprint": "18c5c73d59d64c50e932ad6108ebc4d64221e0b9a1cfe9da7dcb446f58072287",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": false,
+      "reclassified": false,
+      "assessment": "Mobileで特定ファイルを文脈にする基本操作の識別。IDEと同等の編集・実行ができるとは教えない。",
+      "reasoningSteps": [
+        "Mobileで特定ファイルを文脈にする基本操作の識別。IDEと同等の編集・実行ができるとは教えない。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "foundation-mobile-chat"
+      ]
     }
   },
   "secondPass": "従来の改稿90問の再読、基礎154問の再評価に続き、応用102問を全件再評価。適用条件・全選択肢の差・条件を変えた場合の判断を記録。同じ編集者の再読であり、独立した別人のレビューではない。 本番相当60問の本文・全選択肢・変更後の反実仮想を全件再読。",
-  "lastUpdated": "2026-10-16",
+  "lastUpdated": "2026-10-17",
   "followUpReviews": [
     {
       "reviewedAt": "2026-10-13",
@@ -8482,6 +8644,22 @@
         "q-d6-e01"
       ],
       "report": "reports/copilot-feature-quality-repairs-2026-10-16.json"
+    },
+    {
+      "reviewedAt": "2026-10-17",
+      "questionIds": [
+        "q-fnd-cli-install-20261017",
+        "q-fnd-cli-login-20261017",
+        "q-fnd-cli-create-file-20261017",
+        "q-fnd-seat-api-20261017",
+        "q-fnd-cloud-issue-20261017",
+        "q-fnd-plan-20261017",
+        "q-fnd-nes-20261017",
+        "q-fnd-ide-matrix-20261017",
+        "q-fnd-ide-signin-20261017",
+        "q-fnd-mobile-file-20261017"
+      ],
+      "report": "reports/foundation-priority-2026-10-17.json"
     }
   ],
   "deletionFollowUp": {

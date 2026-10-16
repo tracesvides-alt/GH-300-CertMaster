@@ -792,14 +792,14 @@
     "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d6o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-17",
     "relatedLessonIds": [
       "lesson-d2-cli",
       "lesson-d6-troubleshooting-limits"
@@ -817,7 +817,9 @@
     "relatedQuestionIds": [
       "q-d2-g05",
       "q-d2-g06",
-      "q-d2-g07"
+      "q-d2-g07",
+      "q-fnd-cli-install-20261017",
+      "q-fnd-cli-login-20261017"
     ],
     "relatedDomainIds": [
       "d2",
@@ -877,7 +879,8 @@
       "q-d2-g13",
       "q-d2-a26",
       "q-d2-e20",
-      "q-d1-a19"
+      "q-d1-a19",
+      "q-fnd-cloud-issue-20261017"
     ],
     "relatedDomainIds": [
       "d2",
@@ -1148,7 +1151,8 @@
     "lastVerifiedAt": "2026-10-16",
     "relatedLessonIds": [
       "lesson-d1-security-review",
-      "lesson-d2-pr-code-review"
+      "lesson-d2-pr-code-review",
+      "lesson-d2-agent-edits"
     ],
     "relatedGlossaryIds": [
       "g-peer-review-ai",
@@ -1176,7 +1180,8 @@
       "q-sc04-3",
       "q-d1-e08-feature-20261016",
       "q-d6-e02-feature-20261016",
-      "q-d5-e08-feature-20261016"
+      "q-d5-e08-feature-20261016",
+      "q-fnd-cloud-issue-20261017"
     ],
     "relatedDomainIds": [
       "d1",
@@ -1283,7 +1288,8 @@
       "q-d6-f05",
       "q-d6-e02",
       "q-sc07-3",
-      "q-d6-g05"
+      "q-d6-g05",
+      "q-fnd-seat-api-20261017"
     ],
     "relatedDomainIds": [
       "d2"
@@ -1320,7 +1326,8 @@
       "q-sc07-3",
       "q-sc09-2",
       "q-d6-a09",
-      "q-d3-a13"
+      "q-d3-a13",
+      "q-fnd-seat-api-20261017"
     ],
     "relatedDomainIds": [
       "d2",
@@ -1565,7 +1572,8 @@
     "lastVerifiedAt": "2026-10-12",
     "relatedLessonIds": [
       "lesson-d3-data-flow",
-      "lesson-d3-prompt-pipeline"
+      "lesson-d3-prompt-pipeline",
+      "lesson-d2-inline-suggestions"
     ],
     "relatedGlossaryIds": [
       "g-fill-in-the-middle"
@@ -1580,7 +1588,8 @@
       "q-d2-g02",
       "q-d3-g08",
       "q-d5-g06",
-      "q-d3-e08"
+      "q-d3-e08",
+      "q-fnd-nes-20261017"
     ],
     "relatedDomainIds": [
       "d3",
@@ -1957,18 +1966,21 @@
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
-      "d6o1"
+      "d6o1",
+      "d2o1"
     ],
     "status": "verified",
     "relatedLessonIds": [
-      "lesson-d2-org-governance"
+      "lesson-d2-org-governance",
+      "lesson-d2-inline-suggestions"
     ],
     "relatedGlossaryIds": [
       "g-subscription-plans"
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
-      "q-d2-g20"
+      "q-d2-g20",
+      "q-fnd-ide-matrix-20261017"
     ],
     "relatedDomainIds": [
       "d2",
@@ -1981,8 +1993,8 @@
     "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
-    "lastVerifiedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
@@ -1998,7 +2010,9 @@
       "g-subscription-plans"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-ide-matrix-20261017"
+    ],
     "relatedDomainIds": [
       "d2",
       "d6"
@@ -2114,14 +2128,14 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d6o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-17",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
@@ -2140,7 +2154,8 @@
       "q-d2-a04-feature-20261016",
       "q-d5-e07-feature-20261016",
       "q-d6-e07-feature-20261016",
-      "q-d2-e07-feature-20261016"
+      "q-d2-e07-feature-20261016",
+      "q-fnd-cli-create-file-20261017"
     ],
     "relatedDomainIds": [
       "d2",
@@ -2191,19 +2206,21 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-17",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-cli-install-20261017"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -2214,19 +2231,21 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-17",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-cli-create-file-20261017"
+    ],
     "relatedDomainIds": [
       "d2"
     ]
@@ -2820,7 +2839,7 @@
     "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-14",
+    "lastCheckedAt": "2026-10-17",
     "syllabusVersion": "2026-08-07",
     "status": "verified",
     "relatedDomainIds": [
@@ -2839,8 +2858,10 @@
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d6-a09",
-      "q-d3-a13"
-    ]
+      "q-d3-a13",
+      "q-fnd-seat-api-20261017"
+    ],
+    "lastVerifiedAt": "2026-10-17"
   },
   {
     "id": "copilot-metrics-data",
@@ -3269,9 +3290,13 @@
       "d2"
     ],
     "relatedObjectiveIds": [
-      "d2o2"
+      "d2o2",
+      "d2o1"
     ],
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-cli",
+      "lesson-d2-inline-suggestions"
+    ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
@@ -3280,10 +3305,12 @@
       "q-sc07-1-feature-20261016",
       "q-d5-e07-feature-20261016",
       "q-d2-e07-feature-20261016",
-      "q-d4-e09-feature-20261016"
+      "q-d4-e09-feature-20261016",
+      "q-fnd-cli-login-20261017",
+      "q-fnd-ide-matrix-20261017"
     ],
-    "lastCheckedAt": "2026-10-16",
-    "lastVerifiedAt": "2026-10-16",
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
     "status": "verified"
   },
   {
@@ -3501,22 +3528,27 @@
     "syllabusVersion": "2026-08-07",
     "relatedDomainIds": [
       "d5",
-      "d6"
+      "d6",
+      "d2"
     ],
     "relatedObjectiveIds": [
       "d5o1",
-      "d6o2"
+      "d6o2",
+      "d2o1"
     ],
-    "relatedLessonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
     "relatedGlossaryIds": [],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d5-a09-feature-20261016",
       "q-d5-e04-feature-20261016",
-      "q-d1-a11-feature-20261016"
+      "q-d1-a11-feature-20261016",
+      "q-fnd-nes-20261017"
     ],
-    "lastCheckedAt": "2026-10-16",
-    "lastVerifiedAt": "2026-10-16",
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
     "status": "verified"
   },
   {
@@ -3563,6 +3595,156 @@
     ],
     "lastCheckedAt": "2026-10-16",
     "lastVerifiedAt": "2026-10-16",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-cloud-task",
+    "title": "Kick off a task with Copilot agents on GitHub",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/kick-off-a-task",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-agent-edits"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-cloud-issue-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-vscode-plan",
+    "title": "Plan work with agents in VS Code",
+    "url": "https://code.visualstudio.com/docs/agents/run/planning",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-agent-edits"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-plan-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-vscode-setup",
+    "title": "Set up GitHub Copilot in VS Code",
+    "url": "https://code.visualstudio.com/docs/setup/copilot",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o1"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-ide-signin-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-mobile-chat",
+    "title": "Asking GitHub Copilot questions in GitHub Mobile",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/chat-with-copilot/chat-in-mobile",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o3"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-chat-essentials"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-mobile-file-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-vscode-cli",
+    "title": "Visual Studio Code command line interface",
+    "url": "https://code.visualstudio.com/docs/configure/command-line",
+    "publisher": "VS Code Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o2"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-cli"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-cli-install-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
+    "status": "verified"
+  },
+  {
+    "id": "foundation-model-comparison",
+    "title": "AI model comparison",
+    "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o1"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-inline-suggestions"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-fnd-ide-matrix-20261017"
+    ],
+    "lastCheckedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-17",
     "status": "verified"
   }
 ]

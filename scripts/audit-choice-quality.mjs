@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import {loadQuestionAdditions,validateQuestionAdditions,combinedChoiceBaseline,loadFeatureRefresh} from './question-additions.mjs';
+import {loadFoundationPriority} from './foundation-priority-review.mjs';
 
 const root = new URL('../', import.meta.url);
 const bankPath = 'content/gh300/2026-08-07/questions/seed.json';
@@ -14,7 +15,7 @@ const additions = loadQuestionAdditions(root);
 const additionErrors = validateQuestionAdditions(bank, additions);
 if (additionErrors.length) throw Error(additionErrors.join('\n'));
 const additionById = new Map(additions?.questions.map(r => [r.id, r]) ?? []);
-const replacementsById = new Map(loadFeatureRefresh()?.questions.map(r=>[r.id,r])??[]);
+const replacementsById = new Map([...(loadFeatureRefresh()?.questions.map(r=>[r.id,r])??[]),...(loadFoundationPriority()?.questions.map(r=>[r.id,r])??[])]);
 const contentBaseline = combinedChoiceBaseline(read('reports/question-choice-content-baseline.json'), additions);
 const unchangedReasons = {
   q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',

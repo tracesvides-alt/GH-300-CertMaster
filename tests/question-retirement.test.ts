@@ -9,6 +9,7 @@ import rawQuestions from '../content/gh300/2026-08-07/questions/seed.json';
 import additions from '../content/gh300/2026-08-07/questions/additions-review.json';
 import removals from '../content/gh300/2026-08-07/questions/removals.json';
 import refresh from '../content/gh300/2026-08-07/questions/feature-refresh-review.json';
+import foundation from '../content/gh300/2026-08-07/questions/foundation-priority-review.json';
 import {createHash} from 'node:crypto';
 
 const retired = allQuestions.filter(q=>!isQuestionActive(q));
@@ -18,9 +19,9 @@ const rngFor=(seed:number)=>()=>{seed=(1664525*seed+1013904223)>>>0;return seed/
 describe('retired questions and historical compatibility',()=>{
   it('preserves archived assets and references while removing them from the new practice pool',()=>{
     const removedExisting=removals.questions.length-(additions.removedAdditions?.length??0);
-    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting+refresh.questions.length);
+    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting+refresh.questions.length+foundation.questions.length);
     expect(questions).toHaveLength(254);
-    expect(retired).toHaveLength(141);
+    expect(retired).toHaveLength(141+foundation.questions.length);
     expect(questions.filter(q=>q.difficulty==='intermediate')).toHaveLength(48);
     const knownIds=buildKnowledgeBase().questionIds;
     for(const row of exclusions.questions){

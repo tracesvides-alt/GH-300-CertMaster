@@ -390,7 +390,10 @@
     ],
     "questionIds": [
       "q03",
-      "q-sc03-2-feature-20261016"
+      "q-sc03-2-feature-20261016",
+      "q-fnd-nes-20261017",
+      "q-fnd-ide-matrix-20261017",
+      "q-fnd-ide-signin-20261017"
     ],
     "sourceIds": [
       "responsible",
@@ -493,7 +496,8 @@
       "q-sc03-2-feature-20261016",
       "q-d4-a14-feature-20261016",
       "q-d5-e06-feature-20261016",
-      "q-d5-e08-feature-20261016"
+      "q-d5-e08-feature-20261016",
+      "q-fnd-mobile-file-20261017"
     ],
     "sourceIds": [
       "chat",
@@ -578,7 +582,10 @@
       "q-d2-a18-feature-20261016",
       "q-sc03-1-feature-20261016",
       "q-sc07-1-feature-20261016",
-      "q-d5-e07-feature-20261016"
+      "q-d5-e07-feature-20261016",
+      "q-fnd-cli-install-20261017",
+      "q-fnd-cli-login-20261017",
+      "q-fnd-cli-create-file-20261017"
     ],
     "sourceIds": [
       "cli",
@@ -673,7 +680,9 @@
       "q-d2-e19-feature-20261016",
       "q-d4-a14-feature-20261016",
       "q-d5-e06-feature-20261016",
-      "q-d5-e08-feature-20261016"
+      "q-d5-e08-feature-20261016",
+      "q-fnd-cloud-issue-20261017",
+      "q-fnd-plan-20261017"
     ],
     "sourceIds": [
       "agent-mode",
@@ -998,7 +1007,8 @@
       "cmp-org-vs-enterprise-policies"
     ],
     "questionIds": [
-      "q-d6-e02-feature-20261016"
+      "q-d6-e02-feature-20261016",
+      "q-fnd-seat-api-20261017"
     ],
     "sourceIds": [
       "policies",
