@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {reviewMultiSelectLayer} from './multi-select-review.mjs';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -10,7 +11,8 @@ const fingerprint = value => createHash('sha256').update(JSON.stringify(value)).
 // Verifies the scope and freshness of a human/editorial decision, not semantics.
 // Any new Applied question or text change needs another actual editorial review.
 export function validateAppliedReview(bank, report) {
-  const errors = [];
+  const layer=reviewMultiSelectLayer(bank);bank=layer.bank;
+  const errors = [...layer.errors];
   const reviewed = new Map(report.questions.map(row => [row.id, row]));
   if (reviewed.size !== report.questions.length) errors.push('Duplicate review ID');
   for (const q of bank.filter(q => q.difficulty === 'intermediate')) {

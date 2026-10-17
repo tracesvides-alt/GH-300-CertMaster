@@ -170,7 +170,7 @@ export function LessonFooterNav({
               <span>全教材（全28件）の学習完了！</span>
             </div>
             <p className="text-xs text-slate-400 mb-2">
-              全Domainの基礎を網羅しました。本番レベルの問題演習で理解度をチェックしましょう。
+              全Domainの基礎を網羅しました。応用・高難度の問題演習で理解度をチェックしましょう。
             </p>
             {onStartPractice && (
               <button

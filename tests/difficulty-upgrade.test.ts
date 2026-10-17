@@ -86,7 +86,7 @@ describe('Scenario Sets Integration', () => {
 
       // All questionIds must exist in questions bank
       for (const qId of set.questionIds) {
-        const found = questions.find((q) => q.id === qId);
+        const found = allQuestions.find((q) => q.id === qId);
         expect(found).toBeDefined();
         expect(found?.scenarioSetId).toBe(set.id);
         // A shared scenario does not by itself make a question Exam difficulty.

@@ -127,8 +127,8 @@ export default function PracticeSetup({
           },
           {
             id: 'exam',
-            title: '本番レベル',
-            text: 'Examを優先。証拠の比較や複数条件の判断を練習します。',
+            title: '高難度中心',
+            text: '応用より難しい問題を優先。複数の条件や証拠を照らし合わせて判断する練習をします。',
             icon: Flame,
           },
         ].map(({ id, title, text, icon: Icon }) => (
@@ -168,27 +168,7 @@ export default function PracticeSetup({
           />
           最近解いた問題を避ける
         </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={options.verifiedOnly}
-            onChange={(e) =>
-              patch({ verifiedOnly: e.target.checked, includeAI: !e.target.checked })
-            }
-          />
-          Verifiedのみ
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={options.includeAI}
-            onChange={(e) =>
-              patch({ includeAI: e.target.checked, verifiedOnly: !e.target.checked })
-            }
-          />
-          AI問題を含める
-        </label>
-        <p className="caption">AI問題を含める場合もVerifiedを優先。AI Generatedは未検証です。</p>
+        <p className="caption">出題対象は確認済みの固定問題です。</p>
       </fieldset>
       <details className="advanced-filters">
         <summary>Domain・Objective・復習対象を絞る</summary>

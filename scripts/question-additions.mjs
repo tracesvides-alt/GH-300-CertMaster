@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {questionRemovals,removedQuestionIds} from './question-removals.mjs';
 import {reviewedQuestionSnapshot} from './question-repair-history.mjs';
 import {loadFoundationPriority} from './foundation-priority-review.mjs';
+import {loadMultiSelect} from './multi-select-review.mjs';
 export const questionFingerprint=q=>createHash('sha256').update(JSON.stringify(q)).digest('hex');
 export function loadFeatureRefresh(root=new URL('../',import.meta.url)){
  const file=new URL('content/gh300/2026-08-07/questions/feature-refresh-review.json',root);
@@ -47,7 +48,7 @@ export function combinedChoiceBaseline(historical,ledger){
   questions[row.id]={contentHash:createHash('sha256').update(editorial(row.initial)).digest('hex'),
    distractorHashes:Object.fromEntries(row.initial.choices.filter(c=>!row.initial.answer.includes(c.id)).map(c=>[c.id,createHash('sha256').update(c.text).digest('hex')])),added:true,origin:'feature-refresh-review.json'};
  }
- for(const row of loadFoundationPriority()?.questions??[]){
+ for(const row of [...(loadFoundationPriority()?.questions??[]),...(loadMultiSelect()?.questions??[])]){
   if(questions[row.id])throw Error('Foundation replacement also appears in historical baseline: '+row.id);
   questions[row.id]={contentHash:createHash('sha256').update(editorial(row.initial)).digest('hex'),
    distractorHashes:Object.fromEntries(row.initial.choices.filter(c=>!row.initial.answer.includes(c.id)).map(c=>[c.id,createHash('sha256').update(c.text).digest('hex')])),added:true,origin:'foundation-priority-review.json'};
@@ -64,7 +65,7 @@ export function combinedDifficultyBaseline(historical,ledger){
   if(questions.some(q=>q.id===row.id))throw Error('Replacement also appears in historical difficulty baseline: '+row.id);
   questions.push(row.initial);
  }
- for(const row of loadFoundationPriority()?.questions??[]){
+ for(const row of [...(loadFoundationPriority()?.questions??[]),...(loadMultiSelect()?.questions??[])]){
   if(questions.some(q=>q.id===row.id))throw Error('Foundation replacement also appears in historical difficulty baseline: '+row.id);
   questions.push(row.initial);
  }

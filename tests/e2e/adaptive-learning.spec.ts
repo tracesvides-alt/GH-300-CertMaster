@@ -69,6 +69,7 @@ test.describe('Adaptive Learning Upgrade E2E Scenario', () => {
     const wrongIndex = question!.choices.findIndex((choice) => !question!.answer.includes(choice.id));
     expect(wrongIndex).toBeGreaterThanOrEqual(0);
     await page.locator('.question fieldset label.choice').nth(wrongIndex).click();
+    if(question!.answer.length===2)await page.locator('.question fieldset input').nth(question!.choices.findIndex(c=>c.id===question!.answer[0])).check();
     await page.getByRole('button', { name: '回答を確認する' }).click();
 
     // 3. Explanation is displayed

@@ -8022,6 +8022,940 @@
       "evidence": [
         "foundation-mobile-chat"
       ]
+    },
+    "q-d1-f03-ms-20261017": {
+      "fingerprint": "d97eb1262f1a39ee41fa9571aea393489fb308cd6c93b56cbe6d1060e4d43de5",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "responsible",
+        "guide",
+        "agent-mode"
+      ]
+    },
+    "q-d2-f05-ms-20261017": {
+      "fingerprint": "5cbed5f0f096789add87f7c2a413efaae93ecaade64a6c87b1f3c4dccd5fa34a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "agent-mode",
+        "guide",
+        "public-code",
+        "exclusion"
+      ]
+    },
+    "q-d2-a03-ms-20261017": {
+      "fingerprint": "4268a6fa807695a76e8bab02ed9002db1ba535d03107574a11e6cfc07d2d1237",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "agent-mode",
+        "chat",
+        "foundation-cloud-task",
+        "feature-refresh-inline"
+      ]
+    },
+    "q-d2-a09-ms-20261017": {
+      "fingerprint": "ecd900f4d9cc7f4f9e348120e9c972081112adbf139c55553fd3a99e1bf92654",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "chat",
+        "prompt"
+      ]
+    },
+    "q-d2-a11-ms-20261017": {
+      "fingerprint": "23ecf3bcf35b178bfefdc0f18674690e27a0290404778d26129382618712aad7",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "code-review",
+        "responsible",
+        "foundation-cloud-task"
+      ]
+    },
+    "q-d2-a12-ms-20261017": {
+      "fingerprint": "8d7808115874cb8d1a37fd3e7be6c591b78367357c4b64019b0bd9a1c32eb3d6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "inline-usage"
+      ]
+    },
+    "q-d2-a13-ms-20261017": {
+      "fingerprint": "5f00e28ef82f36d5b097b717e309f3f113955e854b328e27a54d5ee30b89361b",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "inline-usage"
+      ]
+    },
+    "q-d2-a17-ms-20261017": {
+      "fingerprint": "887dbb25c0bc3dfe19f7af7e8ebdf99580b571320ee899797c5e13a25ce65eda",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "mcp-spec",
+        "mcp",
+        "instructions"
+      ]
+    },
+    "q-d2-a19-ms-20261017": {
+      "fingerprint": "2f5fabe889746f71994c512b5252c2a0325f891e766aa25f6ab404c84cee228e",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "instructions",
+        "prompt-files",
+        "prompt"
+      ]
+    },
+    "q-d2-a21-ms-20261017": {
+      "fingerprint": "6ac1bf68a6c779fb4b7dc93ca37d2844403ec593f4c2d075bc1fdc6021e87ec8",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt",
+        "chat",
+        "public-code"
+      ]
+    },
+    "q-d2-e04-ms-20261017": {
+      "fingerprint": "97da640da72279e5f73021219f1afdb58c4678e0dbfdd36593d4863eb34b3e98",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "spaces",
+        "mcp",
+        "prompt-files",
+        "instructions"
+      ]
+    },
+    "q-d3-f03-ms-20261017": {
+      "fingerprint": "206f5049abeb6738448da353a24615c99b97dd14d855dd08c50940127f96aad2",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "network-settings",
+        "chat",
+        "copilot-allowlist",
+        "architecture",
+        "model-hosting"
+      ]
+    },
+    "q-d3-f04-ms-20261017": {
+      "fingerprint": "b2c1c2bdd86aea1122a16e36fb330164d81f5ab9dc0ca67b1975822608c1dc89",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "network",
+        "network-settings",
+        "copilot-allowlist"
+      ]
+    },
+    "q-d3-a02-ms-20261017": {
+      "fingerprint": "8af016496e7b627df07057af3ad1b0000ff3f11db02f5d2f8536d7915a00b7e2",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "inline-usage",
+        "prompt",
+        "chat",
+        "architecture",
+        "feature-refresh-context",
+        "feature-refresh-vscode-instructions"
+      ]
+    },
+    "q-d3-a04-ms-20261017": {
+      "fingerprint": "852f0f4fab7c0b80b2eeeb1ee2336f8ce8a552140c8cc107f1618cc9a26c3823",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt"
+      ]
+    },
+    "q-d3-e05-ms-20261017": {
+      "fingerprint": "1fc9ba3bb429ec474d78df049a61db46bcceedef62c361467bb187fb42cf4a8f",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt",
+        "fim-context"
+      ]
+    },
+    "q-d4-f03-ms-20261017": {
+      "fingerprint": "683d972e07b04b88b76da6fe00d4489c4403d6352884c0cdaa5cbf547ceeb733",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "chat",
+        "prompt"
+      ]
+    },
+    "q-d4-f05-ms-20261017": {
+      "fingerprint": "d8083f08d2adb45fe153036f3fcd1efaf3ffe677c18501cc90682c99e8889621",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt",
+        "chat",
+        "instructions"
+      ]
+    },
+    "q-d4-a08-ms-20261017": {
+      "fingerprint": "3e82441b5a821f9baabe0636643d097d1ecc9a00f0b763b58d14492220702525",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt",
+        "workspace-context",
+        "chat",
+        "public-code"
+      ]
+    },
+    "q-d4-e02-ms-20261017": {
+      "fingerprint": "9ebb31a12a011a06a024d4caf112face804ee51b51dc91849006d7a3f680e02a",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "prompt",
+        "instructions",
+        "architecture"
+      ]
+    },
+    "q-d5-f02-b-ms-20261017": {
+      "fingerprint": "674acddd75d94ca012bb4dc156f569ab5b224098cedd6f87f920c5ac703d82a6",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "guide",
+        "code-review",
+        "chat",
+        "responsible"
+      ]
+    },
+    "q-d6-a02-ms-20261017": {
+      "fingerprint": "ccf5f7b583180cae27c30755a966eac845e76b0abc489c45c8703cf63f95e5d4",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "public-code",
+        "exclusion-concept",
+        "secret-scanning",
+        "exclusion"
+      ]
+    },
+    "q-d6-a07-ms-20261017": {
+      "fingerprint": "04958b331f650902a66f16d457c13f28cdf1630392b926919a13f48455e182f9",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "model-hosting",
+        "privacy"
+      ]
+    },
+    "q-sc04-2-ms-20261017": {
+      "fingerprint": "e00a88107d9713c565a242250bd1912a5d5858559b84694b18b748a586d2e722",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "responsible",
+        "code-review",
+        "chat"
+      ]
+    },
+    "q-sc06-1-ms-20261017": {
+      "fingerprint": "0cccd97f6aaed627a4ad61165fbc3b4a9c3c8a66287a29eaca6b9152028c4835",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "instructions",
+        "prompt-files",
+        "spaces",
+        "feature-refresh-vscode-instructions"
+      ]
+    },
+    "q-sc08-1-ms-20261017": {
+      "fingerprint": "8bd5c907eff43de0ca4b5d24354b13a771113c0fe2cd4b4b517adacb0d16b810",
+      "beforeDifficulty": "beginner",
+      "difficulty": "beginner",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "workspace-context",
+        "repository-indexing",
+        "architecture",
+        "responsible"
+      ]
+    },
+    "q-d2-a24-ms-20261017": {
+      "fingerprint": "c75cccb9d98cd3a17f5ea34a1019cf5e718ff578ecfe2caec2052fb70a57a546",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "instructions",
+        "prompt-files"
+      ]
+    },
+    "q-d3-a17-ms-20261017": {
+      "fingerprint": "104cdc4df0de8f1903f0e99d63ed29e64954d14ceb9d59d3052accb39292fb1f",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "responsible",
+        "public-code",
+        "exclusion"
+      ]
+    },
+    "q-d6-a09-ms-20261017": {
+      "fingerprint": "f7c35fa01d14a374b673151649cc2a012d24964d0913f97f1ac004e30602e850",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "copilot-seat-api",
+        "copilot-metrics-data",
+        "rest-api",
+        "audit-log"
+      ]
+    },
+    "q-d3-a13-ms-20261017": {
+      "fingerprint": "97634126cd3fd832ea041765e5fbadaa400cf17cdde2faca37534047652e27e4",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "copilot-seat-api",
+        "rest-api",
+        "copilot-metrics-data"
+      ]
+    },
+    "q-d6-a03-feature-20261016-ms-20261017": {
+      "fingerprint": "e0e426051394ac891f33b9d40f429a6eb41a71a3abb4910adb4a8f57dc9559fb",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "exclusion-concept",
+        "public-code"
+      ]
+    },
+    "q-d1-a11-feature-20261016-ms-20261017": {
+      "fingerprint": "558099d3ebe07e0690ff963d18e48e21ead1ebdc3b45c7ca45af1ae126834af8",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-refresh-inline"
+      ]
+    },
+    "q-d5-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "9efc7ca91a6269be5669d269aab625426d1972700bd7ca8baa538830ad4c27cd",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-refresh-inline",
+        "feature-refresh-models"
+      ]
+    },
+    "q-d2-a20-ms-20261017": {
+      "fingerprint": "37e2c55d8be92336b0f5800ddc83ac35743a9c9dcd622771a6d443bda817cfbf",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "spaces",
+        "mcp"
+      ]
+    },
+    "q-d2-e08-ms-20261017": {
+      "fingerprint": "84261f6415495c49410a214c7c81427535dfe117f89391dbc6ab062a412f2343",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "instructions",
+        "prompt-files",
+        "feature-refresh-vscode-instructions"
+      ]
+    },
+    "q-d2-a23-ms-20261017": {
+      "fingerprint": "1af7355b5aba80a7288c8335a859baab0c3fa2700cbc7c954617895427418cab",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "mcp",
+        "mcp-config"
+      ]
+    },
+    "q-d2-a25-ms-20261017": {
+      "fingerprint": "a4aec5684845e367b69a506b0f1f5bf829c76f82a6a594232dfe67eb4484e21f",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "cli-tool-permissions",
+        "cli-current"
+      ]
+    },
+    "q-d5-a15-feature-20261016-ms-20261017": {
+      "fingerprint": "455064529989fd0bc44a1667e9b8f34b61f13cce949a028e84c4c79adfad6d73",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "mcp-config"
+      ]
+    },
+    "q-sc03-3-feature-20261016-ms-20261017": {
+      "fingerprint": "732c3933b2148446e428d440ed22e4440b990d434d02bede05da4e7a20afbc2a",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-refresh-prompt"
+      ]
+    },
+    "q-d2-a18-feature-20261016-ms-20261017": {
+      "fingerprint": "b7dc82f16944cff8dfeb11e9f93b9ae022ab539316494405c28891e3f1a3638d",
+      "beforeDifficulty": "intermediate",
+      "difficulty": "intermediate",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "evidence": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    "q-d5-e08-feature-20261016-ms-20261017": {
+      "fingerprint": "43c5bdd8386e74f1d926bf5b5c385faeb17733e8953c0c38f04eadc86170e191",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 過去の結果と次のレビューに使う現在設定は別である。 明示したPR設定を下位優先にするのは順序が逆である。",
+      "evidence": [
+        "code-review",
+        "feature-refresh-review-config"
+      ]
+    },
+    "q-d3-e04-ms-20261017": {
+      "fingerprint": "58f09d7f6f347ea9d1ea1201c53f8d40d1dc1e38030605f28af019632244eb43",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 今回の取得経路はMCPではなくローカルツールである。 公開コード一致は出力側の制御で入力除外の代替ではない。",
+      "evidence": [
+        "exclusion-concept"
+      ]
+    },
+    "q-d2-e21-ms-20261017": {
+      "fingerprint": "3fc4f58acb418651099724426c131677864e2772c73c5bd778e4a5597d954b06",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では BはSpaceへ既にアクセスでき、R側の不足が残る。 CはRへ既にアクセスでき、Space側の不足が残る。",
+      "evidence": [
+        "spaces",
+        "guide"
+      ]
+    },
+    "q-d6-e06-ms-20261017": {
+      "fingerprint": "9aefe955636ff92a4505e6f39c1ea51da9383628e6c4db324508ad9eb0e96007",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 組織保存値と上位強制を反映した実効値を混同している。 個人設定でもEnterpriseの強制を緩和できない。",
+      "evidence": [
+        "policies",
+        "public-code"
+      ]
+    },
+    "q-d2-e11-feature-20261016-ms-20261017": {
+      "fingerprint": "d9a05fb53ba168243b28a811a27014de08ae4285a4252ce00e5ac699b70019d1",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では baseの指示を読むというブランチの取り違えである。 docsのMarkdownは指定されたsrcのTypeScriptパスに一致しない。",
+      "evidence": [
+        "feature-refresh-review-howto",
+        "feature-refresh-instructions"
+      ]
+    },
+    "q-d1-e03-feature-20261016-ms-20261017": {
+      "fingerprint": "455d472a74710986c42bb7f91a63d76f323b6e54133ad4f568885c9e1ac7d4db",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では ファイル復元と外部状態の補償を混同している。 保持すべき利用者の変更まで失うので復元目標に反する。",
+      "evidence": [
+        "feature-refresh-edits",
+        "feature-refresh-trust"
+      ]
+    },
+    "q-d5-e07-feature-20261016-ms-20261017": {
+      "fingerprint": "0bcbfd355e736975e01332974f22a232587f65d7a3606b6122c10a4cad78b0a0",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 同時指定での優先規則を逆にしている。 権限許可を候補ツールの登録と混同している。",
+      "evidence": [
+        "cli-tool-permissions",
+        "feature-refresh-cli-reference"
+      ]
+    },
+    "q-d2-e06-ms-20261017": {
+      "fingerprint": "89e33f64b42429f5234e5da602fbf0ccf4a88f2a4b5fd61f54d106128159d304",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では gitは今回の提供ツール名ではなく、サブコマンド権限制御にならない。 allow指定は実行拒否という要件と逆である。",
+      "evidence": [
+        "cli-tool-permissions"
+      ]
+    },
+    "q-d4-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "51c3513e5e56de81ad1630419636173eb5671942dfd97ef5507ae4d526bc601e",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 既にあるsearchの追記でも優先する明示一覧へ併合されない。 未接続という証拠があり、記載だけでは呼び出せない。",
+      "evidence": [
+        "feature-refresh-prompt",
+        "feature-refresh-tools"
+      ]
+    },
+    "q-d4-e09-feature-20261016-ms-20261017": {
+      "fingerprint": "585cfce6f8c79a78feaed081d7521e094761c1e11196a3da3676386f6c38e2ea",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 会話の要約はツール定義そのものの要約ではない。 小さい占有部分を消し、保持すべき会話も失う。",
+      "evidence": [
+        "feature-refresh-context-model",
+        "feature-refresh-context",
+        "feature-repair-cli-context",
+        "feature-refresh-cli-reference"
+      ]
+    },
+    "q-d4-e06-feature-20261016-ms-20261017": {
+      "fingerprint": "1ec516b6df64315517c9b484865beda03dcb68e93803c631222d4b163b34436f",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では docsはIのsrc/**に一致しない。 除外されるIと除外されないJを逆にしている。",
+      "evidence": [
+        "feature-refresh-instructions"
+      ]
+    },
+    "q-d5-e03-feature-20261016-ms-20261017": {
+      "fingerprint": "72ab8135651fda7161c50f0e57941ab103b40b89932f073e54c5dac93ad28c4a",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では Agentは現在の環境で開始できるため開始と準備完了は異なる。 毎回の準備をsetupで完了するという目的が未解決のままである。",
+      "evidence": [
+        "feature-refresh-setup",
+        "feature-refresh-sessions"
+      ]
+    },
+    "q-d5-e05-feature-20261016-ms-20261017": {
+      "fingerprint": "c074d3f6951ec9cca9229b93c8adc9b04285f4207cc0c33109c5b494850deef1",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では レビュー専用定義を使う構成では共通側の重複追加では直らない。 レビューだけへ導入する境界を失いcloud agentにも影響する。",
+      "evidence": [
+        "feature-refresh-setup",
+        "feature-refresh-review-howto"
+      ]
+    },
+    "q-d6-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "0a616dc6f6774b7198e5b43bb9f7579ca6210e9fbf4cdd18d4e633dee3d9e917",
+      "beforeDifficulty": "advanced",
+      "difficulty": "advanced",
+      "textRewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では Yは組織BのSeat利用者でありAの管理Seat向け設定の対象ではない。 他repoを変えないという指定を破る。",
+      "evidence": [
+        "exclusion-concept"
+      ]
     }
   },
   "secondPass": "従来の改稿90問の再読、基礎154問の再評価に続き、応用102問を全件再評価。適用条件・全選択肢の差・条件を変えた場合の判断を記録。同じ編集者の再読であり、独立した別人のレビューではない。 本番相当60問の本文・全選択肢・変更後の反実仮想を全件再読。",

@@ -6,7 +6,14 @@ const removedIds = new Set(removals.questions.map(row => row.id));
 const retirementById = new Map(exclusions.questions.map(row=>[row.id,row]));
 
 export function getQuestionRetirement(id?:string) {
-  return id ? retirementById.get(id) : undefined;
+  const row=id?retirementById.get(id):undefined;
+  if(!row)return undefined;
+  const destinations=(next:string,seen:Set<string>):string[]=>{
+    if(seen.has(next))return [];
+    const retired=retirementById.get(next);
+    return retired?retired.replacementIds.flatMap(id=>destinations(id,new Set([...seen,next]))):removedIds.has(next)?[]:[next];
+  };
+  return {...row,replacementIds:[...new Set(row.replacementIds.flatMap(id=>destinations(id,new Set([row.id]))))]};
 }
 
 /** Retain archived assets for history, but do not start a new exercise with them. */
@@ -14,20 +21,21 @@ export function isQuestionActive(question: { id: string }): boolean {
   return !retiredIds.has(question.id) && !removedIds.has(question.id);
 }
 
-/** Strip deleted items from unfinished snapshots without erasing completed history. */
+/** Strip deleted/formerly generated items from unfinished sessions; keep completed history. */
 export function withoutDeletedSessionQuestions<T extends {
-  questions: Array<{ id: string }>;
+  questions: Array<{ id: string; status?:string }>;
   answers: Record<string, string[]>;
   index: number;
   completed: boolean;
 }>(session: T): T {
-  if (session.completed || !session.questions.some(q => removedIds.has(q.id))) return session;
-  const questions = session.questions.filter(q => !removedIds.has(q.id));
-  const preceding = session.questions.slice(0, session.index).filter(q => !removedIds.has(q.id)).length;
+  const unavailable=(q:{id:string;status?:string})=>removedIds.has(q.id)||q.status==='ai-generated';
+  if (session.completed || !session.questions.some(unavailable)) return session;
+  const questions = session.questions.filter(q => !unavailable(q));
+  const preceding = session.questions.slice(0, session.index).filter(q => !unavailable(q)).length;
   return {
     ...session,
     questions,
     index: Math.max(0, Math.min(preceding, questions.length - 1)),
-    answers: Object.fromEntries(Object.entries(session.answers).filter(([id]) => !removedIds.has(id))),
+    answers: Object.fromEntries(Object.entries(session.answers).filter(([id]) => questions.some(q=>q.id===id))),
   };
 }

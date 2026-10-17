@@ -1,5 +1,5 @@
 import { type Question, domains, objectives, lessons } from './content';
-import { type Attempt } from './learning';
+import { type Attempt,formatAccuracy } from './learning';
 import { calculateObjectiveStats, type ObjectiveStats, type SelectionOptions } from './selection';
 import { withCurrentAttemptClassification } from './question-classification';
 export type PracticeRun = {
@@ -20,6 +20,7 @@ export function practiceResult(run: PracticeRun) {
     correct,
     total: run.questions.length,
     accuracy: run.questions.length ? (100 * correct) / run.questions.length : 0,
+    byFormat:formatAccuracy(run.answers,run.questions),
     byDomain: domains
       .map((d) => ({
         id: d.id,
@@ -31,7 +32,7 @@ export function practiceResult(run: PracticeRun) {
     byDifficulty: [
       {
         difficulty: 'beginner' as const,
-        label: 'Foundation（基礎）',
+        label: '基礎',
         total: run.questions.filter((q) => q.difficulty === 'beginner').length,
         correct: run.answers.filter((a) => {
           const q = run.questions.find((x) => x.id === a.questionId);
@@ -40,7 +41,7 @@ export function practiceResult(run: PracticeRun) {
       },
       {
         difficulty: 'intermediate' as const,
-        label: 'Applied（標準応用）',
+        label: '応用',
         total: run.questions.filter((q) => q.difficulty === 'intermediate').length,
         correct: run.answers.filter((a) => {
           const q = run.questions.find((x) => x.id === a.questionId);
@@ -49,7 +50,7 @@ export function practiceResult(run: PracticeRun) {
       },
       {
         difficulty: 'advanced' as const,
-        label: 'Exam（本番レベル）',
+        label: '高難度',
         total: run.questions.filter((q) => q.difficulty === 'advanced').length,
         correct: run.answers.filter((a) => {
           const q = run.questions.find((x) => x.id === a.questionId);

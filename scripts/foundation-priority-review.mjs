@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
+import {rewindMultiSelect} from './multi-select-review.mjs';
 export const foundationFingerprint=q=>createHash('sha256').update(JSON.stringify(q)).digest('hex');
 export function loadFoundationPriority(root=new URL('../',import.meta.url)){
  const path=new URL('content/gh300/2026-08-07/questions/foundation-priority-review.json',root);
@@ -7,7 +8,8 @@ export function loadFoundationPriority(root=new URL('../',import.meta.url)){
 }
 export function validateFoundationPriority(bank,exclusions,ledger){
  if(!ledger)return [];
- const errors=[],byId=new Map(bank.map(q=>[q.id,q])),retired=new Map(exclusions.questions.map(q=>[q.id,q]));
+ const rewound=rewindMultiSelect(bank,exclusions);bank=rewound.bank;exclusions=rewound.exclusions;
+ const errors=[...rewound.errors],byId=new Map(bank.map(q=>[q.id,q])),retired=new Map(exclusions.questions.map(q=>[q.id,q]));
  const ids=new Set(ledger.questions.map(q=>q.id)),oldIds=new Set(ledger.questions.map(q=>q.oldId));
  if(ledger.status!=='EDITORIALLY_REVIEWED'||ledger.questions.length!==10||ids.size!==10||oldIds.size!==10)errors.push('Invalid Foundation replacement scope');
  if(bank.length!==ledger.baseline.stored+ids.size||bank.filter(q=>!retired.has(q.id)).length!==ledger.baseline.nonRetired)errors.push('Changed replacement inventory');

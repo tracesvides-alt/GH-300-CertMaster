@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-10-17",
+  "unit": {
+    "passed": 256,
+    "files": 26,
+    "failed": 0
+  },
+  "typecheck": "PASS",
+  "productionWebpackBuild": "PASS via isolated Playwright web server",
+  "fullBrowserSuite": {
+    "passed": 60,
+    "skipped": 4,
+    "failed": 0,
+    "skippedReason": "Fully retired historical focus and addition cohorts; their current replacements are covered by feature-refresh and multi-select."
+  },
+  "finalMultiSelectRetest": {
+    "passed": 8,
+    "failed": 0,
+    "questionsExercisedPerDevice": 54,
+    "devices": [
+      "Desktop Chrome",
+      "iPhone 13 Chromium"
+    ],
+    "includes": [
+      "two-selection limit",
+      "deselection",
+      "exact scoring",
+      "all explanations",
+      "wrong notebook",
+      "review schedule",
+      "analytics",
+      "mock reload",
+      "mock timeout"
+    ]
+  },
+  "checks": {
+    "quality": "PASS",
+    "choice": "PASS, zero length/explanation/plausibility warnings",
+    "difficulty": "PASS",
+    "classification": "PASS",
+    "historicalAssets": "PASS",
+    "syllabusSnapshot": "UNCHANGED"
+  },
+  "learnerMeasuredDifficulty": false,
+  "independentHumanReview": false,
+  "readabilityRetest": {
+    "unitTestsPassed": 259,
+    "e2ePassed": 8,
+    "typecheck": "PASS",
+    "productionWebpackBuild": "PASS",
+    "choiceAuditWarnings": 0,
+    "quality": "PASS",
+    "difficulty": "PASS",
+    "classification": "PASS",
+    "historicalAssets": "PASS",
+    "learnerReadabilityMeasured": false,
+    "report": "reports/multi-select-readability-review-2026-10-17.json",
+    "questionsReviewed": 54,
+    "choiceTextClarified": 29
+  },
+  "aiFeatureRemoval": {
+    "removed": [
+      "tutor UI",
+      "question generation",
+      "AI opt-in settings",
+      "tutor API",
+      "provider and API-key configuration"
+    ],
+    "tutorEndpointStatus": 404,
+    "requiresAPIKey": false,
+    "legacyHistoryPreserved": true,
+    "generatedQuestionsEligible": false
+  }
+}

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {reviewMultiSelectLayer} from './multi-select-review.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -19,7 +20,8 @@ export function examLengths(q) {
 // These checks bind the editorial decision to its data and counterfactual replay.
 // They cannot establish semantic correctness or measured learner difficulty.
 export function validateExamReview(bank, report) {
-  const errors = [];
+  const layer=reviewMultiSelectLayer(bank);bank=layer.bank;
+  const errors = [...layer.errors];
   const reviewed = new Map(report.questions.map(row => [row.id, row]));
   if (reviewed.size !== report.questions.length) errors.push('Duplicate review ID');
   const archived = report.reclassifiedQuestions ?? [];

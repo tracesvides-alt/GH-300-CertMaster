@@ -329,7 +329,7 @@
   "method": "各レビュー時点で記録した編集判断を、現在の問題の指紋と用語対応で検証する。追加レビューは記載した対象のみで、全問を毎回新たに意味的再評価したという主張ではない。生成時の採点から合否を推論しない。",
   "summary": {
     "terms": 120,
-    "foundationQuestions": 173,
+    "foundationQuestions": 199,
     "activeFoundationQuestions": 163,
     "eligibleFoundationQuestions": 162,
     "revised": 46,
@@ -11810,6 +11810,1150 @@
         "difficultyConsistent": true,
         "requirementCoverage": true,
         "rationale": "四択ともMobileでCopilotへ相談する使い方で、ローカルコンパイルや課金のような無関係な誤答を置かない。ファイル全体・選択行・repo全体・一般質問という文脈の違いを本文で選ぶ。 選択した数行を文脈として渡す場合の操作です。今回は手動コピーをせずにファイル全体を対象にします。 リポジトリ全体について探索的な質問をする入口です。今回求める特定ファイルの画面からの質問操作とは異なります。 一般的な開発や言語の質問をする使い方です。特定のリポジトリのファイルを文脈とする今回の操作ではありません。"
+      }
+    },
+    {
+      "questionId": "q-d1-f03-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "VS CodeのCopilot Agentがファイル削除を伴うツールの実行承認を求めています。今回だけ、提示された対象パスと操作内容を確認して実行可否を決めたいと考えています。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "承認画面でツールの引数と対象パスを確認する"
+        },
+        {
+          "id": "B",
+          "text": "対象が依頼と異なる場合は実行を拒否して指示を見直す"
+        },
+        {
+          "id": "C",
+          "text": "今後の同種ツールも含む自動承認へ切り替える"
+        },
+        {
+          "id": "D",
+          "text": "コードの編集差分を採用する操作でツールの実行承認も済ませる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "実行する前の承認で実際の操作対象を確認する。 操作を実行する前に止めて依頼内容を修正できる。",
+      "distractorReasons": {
+        "A": "実行する前の承認で実際の操作対象を確認する。",
+        "B": "操作を実行する前に止めて依頼内容を修正できる。",
+        "C": "今回だけ判断する目的に対し、以後の承認範囲まで広げてしまう。",
+        "D": "編集差分の採用とツールの実行承認は別の判断である。"
+      },
+      "review": {
+        "fingerprint": "5022e1bdffc397d4928aa98aa4a648d16fe14f4ce1ab44bc9c27b537e029be29",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したVS CodeのCopilot Agentがファイル削除を伴うツールの実行承認を求めていますという条件との照合が必要。誤答は 今回だけ判断する目的に対し、以後の承認範囲まで広げてしまう。 編集差分の採用とツールの実行承認は別の判断である。"
+      }
+    },
+    {
+      "questionId": "q-d2-f05-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot IDE Agentのツール承認を使い、変更を伴う操作の実行前に内容を判断します。この承認の仕組みによる利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "提案された操作を実行する前に利用者が確認できる"
+        },
+        {
+          "id": "C",
+          "text": "公開コードと一致する補完を出力段階で検出できる"
+        },
+        {
+          "id": "B",
+          "text": "予定外の操作を拒否して別の進め方を指示できる"
+        },
+        {
+          "id": "D",
+          "text": "リポジトリ内の機密パスを入力文脈から除外できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "承認はツール実行の前段で判断する機会を与える。 拒否した操作を行わずに指示を見直せる。",
+      "distractorReasons": {
+        "A": "承認はツール実行の前段で判断する機会を与える。",
+        "B": "拒否した操作を行わずに指示を見直せる。",
+        "C": "公開コード一致は出力フィルタの役割で、操作の承認とは異なる。",
+        "D": "参照除外はContent Exclusionの役割で、ツール承認だけでは設定されない。"
+      },
+      "review": {
+        "fingerprint": "ad389a4fd2b4f2382a4b41e90c3cab4db9c1a117791eeefe7ef216a6c15a6cee",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot IDE Agentのツール承認を使い、変更を伴う操作の実行前に内容を判断しますという条件との照合が必要。誤答は 公開コード一致は出力フィルタの役割で、操作の承認とは異なる。 参照除外はContent Exclusionの役割で、ツール承認だけでは設定されない。"
+      }
+    },
+    {
+      "questionId": "q-d2-a03-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "VS Codeで、選択したコードをその場で相談・修正するInline Chatの特徴を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "選択したコードを対象に編集を依頼できる"
+        },
+        {
+          "id": "C",
+          "text": "GitHub上のIssue割当を受けて別環境でPRを作る"
+        },
+        {
+          "id": "D",
+          "text": "編集履歴から次の修正位置を自動的に予測する"
+        },
+        {
+          "id": "B",
+          "text": "エディタ内の編集案を確認して採用を判断できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "Inline Chatの対象を選択コードに絞れる。 その場で編集結果を確認する用途に適する。",
+      "distractorReasons": {
+        "A": "Inline Chatの対象を選択コードに絞れる。",
+        "B": "その場で編集結果を確認する用途に適する。",
+        "C": "これはcloud agentの入口で、IDE内のInline Chatではない。",
+        "D": "これはNESの用途で、対話編集を開始するInline Chatとは異なる。"
+      },
+      "review": {
+        "fingerprint": "7d1c3fca38c22cd4db7398a3562a389ef47630c2861bb8ff15711b149d054b76",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したVS Codeで、選択したコードをその場で相談・修正するInline Chatの特徴を選びますという条件との照合が必要。誤答は これはcloud agentの入口で、IDE内のInline Chatではない。 これはNESの用途で、対話編集を開始するInline Chatとは異なる。"
+      }
+    },
+    {
+      "questionId": "q-d2-a09-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot Chatで前の無関係なタスクの要件が混ざります。別のタスクを始めるときの、会話文脈の扱いを選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "前の会話を残し新旧の要件を区別せず追加する"
+        },
+        {
+          "id": "A",
+          "text": "新しいChatを開始して前の会話履歴と分ける"
+        },
+        {
+          "id": "B",
+          "text": "今回必要な要件と関連ファイルを改めて示す"
+        },
+        {
+          "id": "D",
+          "text": "新しいChatを開いたので今回の対象ファイルの指定を省く"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "会話履歴を分けると旧タスクの混入を抑えられる。 新しい会話にも現在の対象を与える必要がある。",
+      "distractorReasons": {
+        "A": "会話履歴を分けると旧タスクの混入を抑えられる。",
+        "B": "新しい会話にも現在の対象を与える必要がある。",
+        "C": "同じ案件の続きなら履歴は有用だが、今回は無関係な前提が混入している。",
+        "D": "履歴を切ることと必要なプロジェクト文脈の提供は別である。"
+      },
+      "review": {
+        "fingerprint": "4c009c440ed83e41d9524ec952f4d0d0c6ff495da05a578fd5b6f16103e99be4",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot Chatで前の無関係なタスクの要件が混ざりますという条件との照合が必要。誤答は 同じ案件の続きなら履歴は有用だが、今回は無関係な前提が混入している。 履歴を切ることと必要なプロジェクト文脈の提供は別である。"
+      }
+    },
+    {
+      "questionId": "q-d2-a11-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot Pull Request summariesで変更説明の下書きを作ります。この機能を使う利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "Issueを割り当てて未実装の変更そのものを作成できる"
+        },
+        {
+          "id": "A",
+          "text": "PRの差分から変更概要の下書きを得られる"
+        },
+        {
+          "id": "D",
+          "text": "変更行へ改善点を指摘するレビューコメントを得られる"
+        },
+        {
+          "id": "B",
+          "text": "生成した説明を作成者が補足・編集して共有できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "既存の変更差分を説明する文章の下書きを生成する。 作成者が背景や意図を補い、文章を仕上げられる。",
+      "distractorReasons": {
+        "A": "既存の変更差分を説明する文章の下書きを生成する。",
+        "B": "作成者が背景や意図を補い、文章を仕上げられる。",
+        "C": "実装を作るのはcloud agent等の作業で、要約機能の役割ではない。",
+        "D": "変更行の改善点を指摘するのはcode reviewの役割で、変更概要の要約ではない。"
+      },
+      "review": {
+        "fingerprint": "999d9c1c1247b65ea0882d223cc2b987ed02673278305bbaa57265bf349332ee",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot Pull Request summariesで変更説明の下書きを作りますという条件との照合が必要。誤答は 実装を作るのはcloud agent等の作業で、要約機能の役割ではない。 変更行の改善点を指摘するのはcode reviewの役割で、変更概要の要約ではない。"
+      }
+    },
+    {
+      "questionId": "q-d2-a12-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "VS CodeのCopilotインライン提案の採用操作について選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "候補を表示した時点で選択行が保存済みの変更になる"
+        },
+        {
+          "id": "D",
+          "text": "次候補への切替操作で現在候補の全体採用が行われる"
+        },
+        {
+          "id": "A",
+          "text": "表示された候補全体をTabで採用できる"
+        },
+        {
+          "id": "B",
+          "text": "対応する部分採用の操作で単語や行単位に採用できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "Tabは提示された補完を採用する操作である。 候補全部を採らず一部を採用する方法がある。",
+      "distractorReasons": {
+        "A": "Tabは提示された補完を採用する操作である。",
+        "B": "候補全部を採らず一部を採用する方法がある。",
+        "C": "未確定の表示とファイルへの採用は別の状態である。",
+        "D": "切替は比較する候補を変える操作で、全体採用とは異なる。"
+      },
+      "review": {
+        "fingerprint": "c73f5988c5224c057443635f7d76bf4d39c89ec37d2c3d37078fd9fd007807cb",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したVS CodeのCopilotインライン提案の採用操作について選びますという条件との照合が必要。誤答は 未確定の表示とファイルへの採用は別の状態である。 切替は比較する候補を変える操作で、全体採用とは異なる。"
+      }
+    },
+    {
+      "questionId": "q-d2-a13-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotのインライン候補に別案があるか、まだ採用せずに比較したいと考えています。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "次または前の補完候補へ切り替える"
+        },
+        {
+          "id": "B",
+          "text": "補完候補の一覧パネルを開いて比べる"
+        },
+        {
+          "id": "C",
+          "text": "Tabで現在の候補全体を確定する"
+        },
+        {
+          "id": "D",
+          "text": "部分採用で現在候補の先頭をコードへ取り込む"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "代替候補を順に確認する操作である。 一覧で複数案を比べる方法である。",
+      "distractorReasons": {
+        "A": "代替候補を順に確認する操作である。",
+        "B": "一覧で複数案を比べる方法である。",
+        "C": "候補を採用するときには適切だが、今回は採用前の比較が目的である。",
+        "D": "必要部分を採用するときには適切だが、別案の比較ではない。"
+      },
+      "review": {
+        "fingerprint": "ba0edf3d7424eeadf7252e6029f539fc800ad8b172a97b3da66526543260d326",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotのインライン候補に別案があるか、まだ採用せずに比較したいと考えていますという条件との照合が必要。誤答は 候補を採用するときには適切だが、今回は採用前の比較が目的である。 必要部分を採用するときには適切だが、別案の比較ではない。"
+      }
+    },
+    {
+      "questionId": "q-d2-a17-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotから利用するMCPサーバーで、設計資料の参照と、引数を受け取るチケット作成を提供します。この二つの用途に対応する公開内容を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "設計資料を参照するためのResourceを提供する"
+        },
+        {
+          "id": "C",
+          "text": "よく使う質問のテンプレートをPromptとして提供する"
+        },
+        {
+          "id": "B",
+          "text": "引数を受けてチケットを作るToolを提供する"
+        },
+        {
+          "id": "D",
+          "text": "設計資料の参照をチケット作成Toolの実行結果だけで代用する"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "Resourceは参照データを提供する区分である。 Toolは引数を伴う操作を公開できる。",
+      "distractorReasons": {
+        "A": "Resourceは参照データを提供する区分である。",
+        "B": "Toolは引数を伴う操作を公開できる。",
+        "C": "実在するMCPの構成要素だが、今回の二つの用途はテンプレート提供ではない。",
+        "D": "操作の実行結果と、単独で参照する資料の公開を混同している。"
+      },
+      "review": {
+        "fingerprint": "34534bfb713b9614adfdc8839427be7da38fb424243220e1f049d026792d424c",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotから利用するMCPサーバーで、設計資料の参照と、引数を受け取るチケット作成を提供しますという条件との照合が必要。誤答は 実在するMCPの構成要素だが、今回の二つの用途はテンプレート提供ではない。 操作の実行結果と、単独で参照する資料の公開を混同している。"
+      }
+    },
+    {
+      "questionId": "q-d2-a19-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotに既存プロジェクトのログ出力を実装させます。チームの既存方式へ合わせる指示を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "使用するロガーのAPI名を明示する"
+        },
+        {
+          "id": "C",
+          "text": "ロガー名を指定せず一般的な方式を比較させる"
+        },
+        {
+          "id": "D",
+          "text": "利用中の実装例を除き別製品の例だけを渡す"
+        },
+        {
+          "id": "B",
+          "text": "既存の同種処理を文脈として示す"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "具体的なAPI名が実装上の制約になる。 プロジェクト内の例を文脈にして慣習を伝えられる。",
+      "distractorReasons": {
+        "A": "具体的なAPI名が実装上の制約になる。",
+        "B": "プロジェクト内の例を文脈にして慣習を伝えられる。",
+        "C": "方式選定には使えるが、今回は既存方式へ合わせる要求を伝えていない。",
+        "D": "別製品の調査には使えるが、今回のプロジェクトの慣習を示していない。"
+      },
+      "review": {
+        "fingerprint": "452b7101ca4d38cfa9d347ec0f83a3ab2f168ad7eace67bce57186d609c5fd17",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotに既存プロジェクトのログ出力を実装させますという条件との照合が必要。誤答は 方式選定には使えるが、今回は既存方式へ合わせる要求を伝えていない。 別製品の調査には使えるが、今回のプロジェクトの慣習を示していない。"
+      }
+    },
+    {
+      "questionId": "q-d2-a21-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "対応するIDEのCopilot Chatへ、特定ファイルを明示的な文脈として渡す方法を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "コード補完の候補切替で対象ファイルを参照指定する"
+        },
+        {
+          "id": "A",
+          "text": "Chatのファイル参照機能から対象を指定する"
+        },
+        {
+          "id": "B",
+          "text": "対象ファイルをChat入力欄へドラッグして添付する"
+        },
+        {
+          "id": "D",
+          "text": "公開コード一致の設定で参照対象ファイルを指定する"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "ファイル参照は明示的に対象を渡す操作である。 対応するIDEではドラッグによるファイル添付も使える。",
+      "distractorReasons": {
+        "A": "ファイル参照は明示的に対象を渡す操作である。",
+        "B": "対応するIDEではドラッグによるファイル添付も使える。",
+        "C": "候補切替は補完の比較操作で、Chatへのファイル指定ではない。",
+        "D": "公開コード一致は出力の制御で、Chatの対象指定ではない。"
+      },
+      "review": {
+        "fingerprint": "461ccb8782a18e93aa672d00acc64882f47507d8453d022ec840e66111c7436a",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定した対応するIDEのCopilot Chatへ、特定ファイルを明示的な文脈として渡す方法を選びますという条件との照合が必要。誤答は 候補切替は補完の比較操作で、Chatへのファイル指定ではない。 公開コード一致は出力の制御で、Chatの対象指定ではない。"
+      }
+    },
+    {
+      "questionId": "q-d2-e04-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "チームでCopilot Spacesへ関連資料を集めて共有する利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "参照資料から社内APIへの更新操作を自動的に公開できる"
+        },
+        {
+          "id": "A",
+          "text": "共通の背景資料に基づいて質問しやすくなる"
+        },
+        {
+          "id": "D",
+          "text": "Spaceへの参加をもって元repoの閲覧権限を付与できる"
+        },
+        {
+          "id": "B",
+          "text": "オンボーディング用の文脈を会話履歴と別に再利用できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "整理された共有文脈が回答の関連性を高める助けになる。 個別の会話を超えて資料を共有・再利用できる。",
+      "distractorReasons": {
+        "A": "整理された共有文脈が回答の関連性を高める助けになる。",
+        "B": "個別の会話を超えて資料を共有・再利用できる。",
+        "C": "操作の公開はMCP等のツール接続が担い、資料の追加だけでAPI操作は公開されない。",
+        "D": "Spaceと元repoの権限は別で、共有だけでrepo権限は増えない。"
+      },
+      "review": {
+        "fingerprint": "ff17a617e5f35a2f43c489c65aa6fe00acb32246aa70904c8dee76fb0e4e5d91",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したチームでCopilot Spacesへ関連資料を集めて共有する利点を選びますという条件との照合が必要。誤答は 操作の公開はMCP等のツール接続が担い、資料の追加だけでAPI操作は公開されない。 Spaceと元repoの権限は別で、共有だけでrepo権限は増えない。"
+      }
+    },
+    {
+      "questionId": "q-d3-f03-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotの通常のクラウド生成で、端末から提案が届くまでのデータの扱いを選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "入力文脈の送信は顧客コードの基盤モデル再学習と同じ処理である"
+        },
+        {
+          "id": "D",
+          "text": "出力の公開コード一致検査が端末の参照ファイルを選ぶ処理である"
+        },
+        {
+          "id": "A",
+          "text": "利用する文脈を含む要求が生成サービスへ送られる"
+        },
+        {
+          "id": "B",
+          "text": "モデルの生成結果が後処理を経て端末へ返される"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "提案のために必要な入力がリモートで処理される。 生成と出力へのフィルタ等の後処理は別段階である。",
+      "distractorReasons": {
+        "A": "提案のために必要な入力がリモートで処理される。",
+        "B": "生成と出力へのフィルタ等の後処理は別段階である。",
+        "C": "推論時の処理とモデル重みの学習は別である。",
+        "D": "公開コード一致は出力の確認で、入力文脈の選別とは異なる。"
+      },
+      "review": {
+        "fingerprint": "f110c7de815077b074aba9bc94fa8040dc3a3dd55eac9f1d8d584ad81ee4b769",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotの通常のクラウド生成で、端末から提案が届くまでのデータの扱いを選びますという条件との照合が必要。誤答は 推論時の処理とモデル重みの学習は別である。 公開コード一致は出力の確認で、入力文脈の選別とは異なる。"
+      }
+    },
+    {
+      "questionId": "q-d3-f04-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "社内ネットワークでCopilotの接続を許可するため、外向き通信の確認を行います。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "利用する機能に必要な公式接続先を確認する"
+        },
+        {
+          "id": "B",
+          "text": "社内のプロキシやファイアウォールの許可設定を照合する"
+        },
+        {
+          "id": "C",
+          "text": "GitHubのWeb画面が開くことだけでCopilotの各経路を確認済みとする"
+        },
+        {
+          "id": "D",
+          "text": "利用するLLM名だけを調べて接続先の確認に代える"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "機能によって必要な接続先が異なるため公式一覧を確認する。 端末と宛先の間の制御を照合する。",
+      "distractorReasons": {
+        "A": "機能によって必要な接続先が異なるため公式一覧を確認する。",
+        "B": "端末と宛先の間の制御を照合する。",
+        "C": "Web疎通は一つの情報だが、Copilot固有の接続確認には不足する。",
+        "D": "モデル選択と通信経路の許可は異なる論点である。"
+      },
+      "review": {
+        "fingerprint": "5c52a27a9eefd58800703c2b50c9178338a08551402f4ca5d8424be1d17860f7",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定した社内ネットワークでCopilotの接続を許可するため、外向き通信の確認を行いますという条件との照合が必要。誤答は Web疎通は一つの情報だが、Copilot固有の接続確認には不足する。 モデル選択と通信経路の許可は異なる論点である。"
+      }
+    },
+    {
+      "questionId": "q-d3-a02-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot Chatで関連するファイルや選択範囲を明示して質問する利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "回答で扱ってほしい実装箇所を伝えられる"
+        },
+        {
+          "id": "C",
+          "text": "会話を要約して履歴の占有量を減らせる"
+        },
+        {
+          "id": "B",
+          "text": "対象の型や契約を質問の文脈として提供できる"
+        },
+        {
+          "id": "D",
+          "text": "パス別指示で特定拡張子だけへ規約を適用できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "対象を明確にして別の実装についての回答を減らす助けになる。 対象が使う型や仕様をその場の生成へ与えられる。",
+      "distractorReasons": {
+        "A": "対象を明確にして別の実装についての回答を減らす助けになる。",
+        "B": "対象が使う型や仕様をその場の生成へ与えられる。",
+        "C": "会話の占有量を減らすのは要約の用途で、対象ファイルの明示とは別の操作である。",
+        "D": "パス別指示の対象指定と、今回の会話へのファイル参照は別の仕組みである。"
+      },
+      "review": {
+        "fingerprint": "191aece441be661dfc3da78600e321887f8698eb5c96a61695dd92092a444a8f",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot Chatで関連するファイルや選択範囲を明示して質問する利点を選びますという条件との照合が必要。誤答は 会話の占有量を減らすのは要約の用途で、対象ファイルの明示とは別の操作である。 パス別指示の対象指定と、今回の会話へのファイル参照は別の仕組みである。"
+      }
+    },
+    {
+      "questionId": "q-d3-a04-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotに未導入のライブラリを使わず実装してほしいと考えています。指示に含める内容を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "プロジェクトで使用可能なライブラリを具体的に示す"
+        },
+        {
+          "id": "C",
+          "text": "別のライブラリ候補を自由に探索するよう依頼する"
+        },
+        {
+          "id": "D",
+          "text": "使用中のライブラリ情報を省き一般的な実装を依頼する"
+        },
+        {
+          "id": "B",
+          "text": "新しい依存パッケージを追加しない制約を示す"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "利用可能なAPIの範囲を伝える。 新規依存を増やさない条件を明示する。",
+      "distractorReasons": {
+        "A": "利用可能なAPIの範囲を伝える。",
+        "B": "新規依存を増やさない条件を明示する。",
+        "C": "技術選定には適切だが、今回の既存依存へ限定する目的と合わない。",
+        "D": "一般的な比較には使えるが、現行環境の制約が伝わらない。"
+      },
+      "review": {
+        "fingerprint": "9e617454389e77a0a6fe955aaddde26e6cf67a5a8bbbfbcf591b42ed55a26b98",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotに未導入のライブラリを使わず実装してほしいと考えていますという条件との照合が必要。誤答は 技術選定には適切だが、今回の既存依存へ限定する目的と合わない。 一般的な比較には使えるが、現行環境の制約が伝わらない。"
+      }
+    },
+    {
+      "questionId": "q-d3-e05-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "インライン補完の文脈を整理します。作業中の画面に関係するファイルと、前の別タスクのタブが混在しています。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "現在の画面が参照する型定義から先に閉じる"
+        },
+        {
+          "id": "A",
+          "text": "現在の画面の型や規則を定義する関連タブを残す"
+        },
+        {
+          "id": "B",
+          "text": "今回と無関係な前タスクのタブを閉じる"
+        },
+        {
+          "id": "D",
+          "text": "関連性を見ずファイル名の短いタブだけ残す"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "関連タブは現在の実装を理解する文脈になる。 無関係な文脈の混入を減らす。",
+      "distractorReasons": {
+        "A": "関連タブは現在の実装を理解する文脈になる。",
+        "B": "無関係な文脈の混入を減らす。",
+        "C": "関連する型契約を失うため、今回の文脈整理としては逆である。",
+        "D": "名前の短さは関連性を判断する根拠ではなく、必要な文脈が落ち得る。"
+      },
+      "review": {
+        "fingerprint": "4f9cd74afaa8814a7acae27dccbba74954ae347916aebe0cc70fc08640c02690",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したインライン補完の文脈を整理しますという条件との照合が必要。誤答は 関連する型契約を失うため、今回の文脈整理としては逆である。 名前の短さは関連性を判断する根拠ではなく、必要な文脈が落ち得る。"
+      }
+    },
+    {
+      "questionId": "q-d4-f03-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "無関係な新タスクへ移るとき、Copilot Chatへ渡す要件の管理を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "旧タスクの要件を新タスクの制約として引き継ぐ"
+        },
+        {
+          "id": "A",
+          "text": "旧タスクとは別の新しいChatを開く"
+        },
+        {
+          "id": "D",
+          "text": "旧回答の長さを保つことを優先して履歴を追加する"
+        },
+        {
+          "id": "B",
+          "text": "現行の要件を対象コードとともに渡す"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "無関係な会話履歴を分ける。 新タスクを解くための入力は改めて必要になる。",
+      "distractorReasons": {
+        "A": "無関係な会話履歴を分ける。",
+        "B": "新タスクを解くための入力は改めて必要になる。",
+        "C": "継続作業なら役立つ場合があるが、今回は別タスクである。",
+        "D": "会話の量は現在の要件への関連性を保証しない。"
+      },
+      "review": {
+        "fingerprint": "c76472302afcb44ca7ce57ab5d44b417e64fd6fa6acc01890248c05e33aa970f",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定した無関係な新タスクへ移るとき、Copilot Chatへ渡す要件の管理を選びますという条件との照合が必要。誤答は 継続作業なら役立つ場合があるが、今回は別タスクである。 会話の量は現在の要件への関連性を保証しない。"
+      }
+    },
+    {
+      "questionId": "q-d4-f05-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot Chatの会話履歴を長く使うときの性質を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "新しいChatへ移る操作がrepoの共通指示を削除する"
+        },
+        {
+          "id": "D",
+          "text": "会話履歴を増やす操作がモデルの知識時点を更新する"
+        },
+        {
+          "id": "A",
+          "text": "過去のやり取りが後続の回答の文脈に影響する"
+        },
+        {
+          "id": "B",
+          "text": "古い要件が残ると現在の条件と混ざる場合がある"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "後続の相談で履歴を利用する。 現在の要求と無関係な履歴は混入要因になる。",
+      "distractorReasons": {
+        "A": "後続の相談で履歴を利用する。",
+        "B": "現在の要求と無関係な履歴は混入要因になる。",
+        "C": "会話履歴とrepoの指示ファイルは別に管理される。",
+        "D": "履歴を渡しても事前学習の知識時点そのものは更新されない。"
+      },
+      "review": {
+        "fingerprint": "ed68c2086193ba3ba97f53ddbc46708c8dc0052de25dc5025387a7c140425e38",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot Chatの会話履歴を長く使うときの性質を選びますという条件との照合が必要。誤答は 会話履歴とrepoの指示ファイルは別に管理される。 履歴を渡しても事前学習の知識時点そのものは更新されない。"
+      }
+    },
+    {
+      "questionId": "q-d4-a08-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotへ実装の文脈を渡す手段と、その対象を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ワークスペース検索で質問に関連する実装を探せる"
+        },
+        {
+          "id": "B",
+          "text": "ファイルを明示的に参照して対象を指定できる"
+        },
+        {
+          "id": "C",
+          "text": "公開コード一致のBlock設定でrepo内の検索対象を選べる"
+        },
+        {
+          "id": "D",
+          "text": "モデル選択で特定のファイルを会話に添付できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "変更箇所が未特定の調査で検索を使う。 対象が分かる場合はファイル参照で渡す。",
+      "distractorReasons": {
+        "A": "変更箇所が未特定の調査で検索を使う。",
+        "B": "対象が分かる場合はファイル参照で渡す。",
+        "C": "出力側の設定であり入力の検索対象を決めるものではない。",
+        "D": "モデルと添付資料の指定は別の操作である。"
+      },
+      "review": {
+        "fingerprint": "d41d6c511f738aaa1a52444c42fe48a950c2257409bc739cd415fd4ff60808e9",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotへ実装の文脈を渡す手段と、その対象を選びますという条件との照合が必要。誤答は 出力側の設定であり入力の検索対象を決めるものではない。 モデルと添付資料の指定は別の操作である。"
+      }
+    },
+    {
+      "questionId": "q-d4-e02-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "別機能の相談を新しいCopilot Chatで始め、現在の要件だけを渡す利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "前のタスクの会話要件が混ざるのを抑えられる"
+        },
+        {
+          "id": "C",
+          "text": "モデルが学習済みのライブラリ知識を更新できる"
+        },
+        {
+          "id": "B",
+          "text": "現在の目的に必要な文脈を整理して渡し直せる"
+        },
+        {
+          "id": "D",
+          "text": "repoに保存した共通規約を一時的に無効化できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "無関係な会話履歴を切り離す。 会話開始時に必要な対象を選べる。",
+      "distractorReasons": {
+        "A": "無関係な会話履歴を切り離す。",
+        "B": "会話開始時に必要な対象を選べる。",
+        "C": "会話の開始は基盤モデルの再学習ではない。",
+        "D": "新規Chatは共通指示を無効化する設定ではない。"
+      },
+      "review": {
+        "fingerprint": "d2137299c6662817f1d2fb580f2eed6cc45e9d33f9adddb238b5ed94e99ed0a4",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定した別機能の相談を新しいCopilot Chatで始め、現在の要件だけを渡す利点を選びますという条件との照合が必要。誤答は 会話の開始は基盤モデルの再学習ではない。 新規Chatは共通指示を無効化する設定ではない。"
+      }
+    },
+    {
+      "questionId": "q-d5-f02-b-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "VS CodeのCopilotによるコミットメッセージ生成を使います。特徴として適切なものを選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ステージ済みの変更差分を説明する下書きを得られる"
+        },
+        {
+          "id": "C",
+          "text": "メッセージ生成の操作が変更のレビュー承認を代行する"
+        },
+        {
+          "id": "D",
+          "text": "メッセージ生成の操作がリモートへのpushを完了する"
+        },
+        {
+          "id": "B",
+          "text": "生成された文章を利用者が編集して採用できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "ソース管理の差分をもとに文章を提案する。 下書きの正確性や背景を利用者が確認・調整する。",
+      "distractorReasons": {
+        "A": "ソース管理の差分をもとに文章を提案する。",
+        "B": "下書きの正確性や背景を利用者が確認・調整する。",
+        "C": "文章の生成はコードレビューの承認ではない。",
+        "D": "文章の生成とコミットやpushの実行は別である。"
+      },
+      "review": {
+        "fingerprint": "095e9c5f059db064ab64d3e0650c5d4c23e0c92e3ee3b54edb2fd42bf98bfe03",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したVS CodeのCopilotによるコミットメッセージ生成を使いますという条件との照合が必要。誤答は 文章の生成はコードレビューの承認ではない。 文章の生成とコミットやpushの実行は別である。"
+      }
+    },
+    {
+      "questionId": "q-d6-a02-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotの公開コード一致に関する仕組みを、入力側の除外と区別します。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "Block設定を機密ファイルの入力除外パターンとして使える"
+        },
+        {
+          "id": "A",
+          "text": "一致する提案をBlock設定で抑制できる"
+        },
+        {
+          "id": "B",
+          "text": "コード参照から一致元やライセンスの情報を確認できる"
+        },
+        {
+          "id": "D",
+          "text": "一致元の表示を第三者ライセンスへの適合判定として使える"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "検出された公開コード一致の提案に対する制御である。 一致情報は人が利用条件を照合する根拠になる。",
+      "distractorReasons": {
+        "A": "検出された公開コード一致の提案に対する制御である。",
+        "B": "一致情報は人が利用条件を照合する根拠になる。",
+        "C": "入力参照の除外はContent Exclusionで別に管理する。",
+        "D": "参照情報は判断材料だが自社利用への適合性の最終判定ではない。"
+      },
+      "review": {
+        "fingerprint": "6f67df8b5df62d38106802e85333f7f563725051b2b56bdf2f6baa6bf8bf1d79",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotの公開コード一致に関する仕組みを、入力側の除外と区別しますという条件との照合が必要。誤答は 入力参照の除外はContent Exclusionで別に管理する。 参照情報は判断材料だが自社利用への適合性の最終判定ではない。"
+      }
+    },
+    {
+      "questionId": "q-d6-a07-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilot Businessのデータ取り扱いを公式資料で確認します。学習利用の非対象と分けて確認する事項を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "学習に使わないという記載を全機能の即時破棄の根拠にする"
+        },
+        {
+          "id": "A",
+          "text": "利用する機能やモデルに応じた保持条件を確認する"
+        },
+        {
+          "id": "D",
+          "text": "利用統計の受容率をプロンプト保持期間の根拠にする"
+        },
+        {
+          "id": "B",
+          "text": "適用されるデータ保護の契約条件を確認する"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "学習利用と保持は別の論点であり条件を個別に確認する。 契約と実際の処理条件も照合対象になる。",
+      "distractorReasons": {
+        "A": "学習利用と保持は別の論点であり条件を個別に確認する。",
+        "B": "契約と実際の処理条件も照合対象になる。",
+        "C": "非学習から保持ゼロを導くことはできない。",
+        "D": "受容率は利用統計でありデータ保持の契約条件を表さない。"
+      },
+      "review": {
+        "fingerprint": "bf9f189a020276110d2d1d1f41f57be19c0c0edc7881e961e165dafec1ff60cc",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilot Businessのデータ取り扱いを公式資料で確認しますという条件との照合が必要。誤答は 非学習から保持ゼロを導くことはできない。 受容率は利用統計でありデータ保持の契約条件を表さない。"
+      }
+    },
+    {
+      "questionId": "q-sc04-2-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "PR作成時にCopilotへ変更説明の下書きを依頼する利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "C",
+          "text": "差分の説明を生成する操作で修正コミットも作成できる"
+        },
+        {
+          "id": "D",
+          "text": "生成した説明をもってテスト実行の証跡に代えられる"
+        },
+        {
+          "id": "A",
+          "text": "複数コミットの変更点を説明する文章の作成を支援できる"
+        },
+        {
+          "id": "B",
+          "text": "作成者が背景や意図を補足するためのたたき台を得られる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "変更差分の要約に使える。 説明の確認と背景の補足を利用者が行える。",
+      "distractorReasons": {
+        "A": "変更差分の要約に使える。",
+        "B": "説明の確認と背景の補足を利用者が行える。",
+        "C": "文章生成の役割であり実装変更を行う依頼とは異なる。",
+        "D": "テストの説明文と実行結果は別の根拠である。"
+      },
+      "review": {
+        "fingerprint": "a6f0f0b983ca1300ae3a0ec091e6ee5879b4e2dcf4f047f72b2ae09892bef04d",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したPR作成時にCopilotへ変更説明の下書きを依頼する利点を選びますという条件との照合が必要。誤答は 文章生成の役割であり実装変更を行う依頼とは異なる。 テストの説明文と実行結果は別の根拠である。"
+      }
+    },
+    {
+      "questionId": "q-sc06-1-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "repoのCopilotカスタム指示ファイルを利用するときの特徴を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "共通の規約をファイルで管理して共有できる"
+        },
+        {
+          "id": "B",
+          "text": "対象の応答で指示が参照されたかを確認できる"
+        },
+        {
+          "id": "C",
+          "text": "指示を書いたことをコードが規約へ適合した証明にできる"
+        },
+        {
+          "id": "D",
+          "text": "共通指示の配置をタスク用Prompt Fileの明示実行と同じ扱いにできる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "共有の規約をバージョン管理できる。 対応する表示で参照を調べ、実際の遵守と別に判断する。",
+      "distractorReasons": {
+        "A": "共有の規約をバージョン管理できる。",
+        "B": "対応する表示で参照を調べ、実際の遵守と別に判断する。",
+        "C": "読込や記述は遵守の保証ではなく生成物との照合が必要である。",
+        "D": "常時の指示とタスクごとに呼ぶPrompt Fileは適用方法が異なる。"
+      },
+      "review": {
+        "fingerprint": "70cede8b0a442b94a9a488d523ba5105c30de0c355568638b2de0132a25c50e1",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したrepoのCopilotカスタム指示ファイルを利用するときの特徴を選びますという条件との照合が必要。誤答は 読込や記述は遵守の保証ではなく生成物との照合が必要である。 常時の指示とタスクごとに呼ぶPrompt Fileは適用方法が異なる。"
+      }
+    },
+    {
+      "questionId": "q-sc08-1-ms-20261017",
+      "termIds": [],
+      "status": "verified",
+      "question": "Copilotがコード検索の索引から関連実装を取得して文脈に加える仕組みの利点を選びます。 適切なものを2つ選んでください。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "質問に関連するコードを回答の材料へ加えられる"
+        },
+        {
+          "id": "C",
+          "text": "取得操作によってモデルの重みをrepo専用に学習し直せる"
+        },
+        {
+          "id": "B",
+          "text": "全コードを一度に渡さず必要な箇所を取得できる"
+        },
+        {
+          "id": "D",
+          "text": "検索結果に含まれるコードの採用前検証を省略できる"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "revised": false,
+      "discriminator": "検索で現行実装をその場の生成へ提供する。 容量に限りがある文脈へ関連箇所を選んで加える。",
+      "distractorReasons": {
+        "A": "検索で現行実装をその場の生成へ提供する。",
+        "B": "容量に限りがある文脈へ関連箇所を選んで加える。",
+        "C": "取得と基盤モデルの再学習は別である。",
+        "D": "取得した材料も生成物の正しさを保証するものではない。"
+      },
+      "review": {
+        "fingerprint": "32ba5e1fcfe8594b3213c4febc9892702b19aca5ecc3bf9ad48fb6d03af4c612",
+        "multipleAnswerRisk": false,
+        "answerWithoutReading": false,
+        "difficultyConsistent": true,
+        "requirementCoverage": true,
+        "rationale": "本文が指定したCopilotがコード検索の索引から関連実装を取得して文脈に加える仕組みの利点を選びますという条件との照合が必要。誤答は 取得と基盤モデルの再学習は別である。 取得した材料も生成物の正しさを保証するものではない。"
       }
     }
   ]

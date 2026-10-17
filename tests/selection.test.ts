@@ -66,7 +66,7 @@ describe('selection contract', () => {
     expect(selectionOptionsSchema.parse({})).toEqual(defaults);
     expect(defaults.count).toBe(10);
     expect(() => selectionOptionsSchema.parse({ ...defaults, count: 6 })).toThrow();
-    expect(() => selectionOptionsSchema.parse({ ...defaults, includeAI: true })).toThrow();
+    expect(selectionOptionsSchema.parse({ ...defaults, includeAI: true, verifiedOnly: false })).toEqual(defaults);
   });
   it('deduplicates the input bank', () => {
     const result = selectQuestions([...largeBank, ...largeBank], options({ count: 50 }), {
@@ -282,14 +282,12 @@ describe('AI eligibility', () => {
     ).toBe(true);
     expect(selectQuestions(ai, defaults, { attempts: [] }).actualCount).toBe(0);
   });
-  it('includes AI only on opt-in and gives verified questions higher base weight', () => {
-    const opts = options({ verifiedOnly: false, includeAI: true, count: 50 });
+  it('ignores retired AI opt-in settings and never selects generated questions', () => {
+    const opts = selectionOptionsSchema.parse({ verifiedOnly: false, includeAI: true, count: 50 });
     const bank = [largeBank[0], ai[0]];
     const weights = calculateQuestionWeights(bank, opts, { attempts: [] });
     expect(weights.get(bank[0].id)!).toBeGreaterThan(weights.get(bank[1].id)!);
-    expect(selectQuestions(bank, opts, { attempts: [] }).questions.map((q) => q.status)).toContain(
-      'ai-generated',
-    );
+    expect(selectQuestions(bank, opts, { attempts: [] }).questions.map(q=>q.status)).toEqual(['verified']);
   });
 });
 describe('practice results and DB migration', () => {

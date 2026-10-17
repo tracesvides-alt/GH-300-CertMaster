@@ -2,10 +2,10 @@
   "generatedAt": "2026-10-17",
   "baselineCommit": "bbd2b11",
   "summary": {
-    "total": 405,
-    "added": 94,
+    "total": 459,
+    "added": 148,
     "historicalTotal": 311,
-    "rewritten": 375,
+    "rewritten": 429,
     "reclassified": 64,
     "before": {
       "beginner": 118,
@@ -13,9 +13,9 @@
       "advanced": 95
     },
     "after": {
-      "beginner": 173,
-      "intermediate": 138,
-      "advanced": 94
+      "beginner": 199,
+      "intermediate": 152,
+      "advanced": 108
     },
     "rewritesByOriginalDifficulty": {
       "beginner": 117,
@@ -42,7 +42,7 @@
   },
   "selectionSummary": {
     "active": 254,
-    "retired": 151,
+    "retired": 205,
     "after": {
       "beginner": 163,
       "intermediate": 48,
@@ -8324,6 +8324,1020 @@
       "beforeQuestion": "外出先でGitHub Mobileを使い、リポジトリ内のファイルを確認しています。ファイルの内容を手動でコピーせず、そのファイル全体を文脈としてCopilotへ質問するには、どの操作から始めますか。",
       "question": "外出先でGitHub Mobileを使い、リポジトリ内のファイルを確認しています。ファイルの内容を手動でコピーせず、そのファイル全体を文脈としてCopilotへ質問するには、どの操作から始めますか。",
       "fingerprint": "18c5c73d59d64c50e932ad6108ebc4d64221e0b9a1cfe9da7dcb446f58072287"
+    },
+    {
+      "id": "q-d1-f03-ms-20261017",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS CodeのCopilot Agentがファイル削除を伴うツールの実行承認を求めています。今回だけ、提示された対象パスと操作内容を確認して実行可否を決めたいと考えています。 適切なものを2つ選んでください。",
+      "question": "VS CodeのCopilot Agentが、ファイルを削除するツールの実行許可を求めています。今後の操作をまとめて許可するのではなく、今回の操作について対象パスと実行内容を確認し、実行してよいか判断したいと考えています。利用者が行う対応として適切なものを2つ選んでください。",
+      "fingerprint": "d97eb1262f1a39ee41fa9571aea393489fb308cd6c93b56cbe6d1060e4d43de5"
+    },
+    {
+      "id": "q-d2-f05-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot IDE Agentのツール承認を使い、変更を伴う操作の実行前に内容を判断します。この承認の仕組みによる利点を選びます。 適切なものを2つ選んでください。",
+      "question": "IDEでCopilot Agentを使い、ファイルの変更などを行うツールの実行前に、利用者が承認する運用にしています。この承認の仕組みによって得られる利点を2つ選んでください。",
+      "fingerprint": "5cbed5f0f096789add87f7c2a413efaae93ecaade64a6c87b1f3c4dccd5fa34a"
+    },
+    {
+      "id": "q-d2-a03-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeで、選択したコードをその場で相談・修正するInline Chatの特徴を選びます。 適切なものを2つ選んでください。",
+      "question": "VS CodeのInline Chatを使って、選択したコードについてその場で相談したり、修正を依頼したりします。この機能の特徴として適切なものを2つ選んでください。",
+      "fingerprint": "4268a6fa807695a76e8bab02ed9002db1ba535d03107574a11e6cfc07d2d1237"
+    },
+    {
+      "id": "q-d2-a09-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot Chatで前の無関係なタスクの要件が混ざります。別のタスクを始めるときの、会話文脈の扱いを選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Chatで新しい作業を始めると、前に相談した別の作業の要件が回答へ混ざってしまいます。今回の作業に必要な情報を伝えつつ、無関係な会話履歴の影響を減らすには、どのように対応すべきですか。適切な対応を2つ選んでください。",
+      "fingerprint": "ecd900f4d9cc7f4f9e348120e9c972081112adbf139c55553fd3a99e1bf92654"
+    },
+    {
+      "id": "q-d2-a11-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot Pull Request summariesで変更説明の下書きを作ります。この機能を使う利点を選びます。 適切なものを2つ選んでください。",
+      "question": "CopilotのPull Request summariesを使い、プルリクエスト（PR）の説明文の下書きを作成します。この機能を使う利点として適切なものを2つ選んでください。",
+      "fingerprint": "23ecf3bcf35b178bfefdc0f18674690e27a0290404778d26129382618712aad7"
+    },
+    {
+      "id": "q-d2-a12-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS CodeのCopilotインライン提案の採用操作について選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeに表示されたCopilotのインライン補完候補を、コードへ取り込もうとしています。候補を採用する操作の説明として正しいものを2つ選んでください。",
+      "fingerprint": "8d7808115874cb8d1a37fd3e7be6c591b78367357c4b64019b0bd9a1c32eb3d6"
+    },
+    {
+      "id": "q-d2-a13-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotのインライン候補に別案があるか、まだ採用せずに比較したいと考えています。 適切なものを2つ選んでください。",
+      "question": "Copilotのインライン補完に表示された候補を、まだコードへ取り込まずに、別の候補と比較したいと考えています。この目的に合う操作を2つ選んでください。",
+      "fingerprint": "5f00e28ef82f36d5b097b717e309f3f113955e854b328e27a54d5ee30b89361b"
+    },
+    {
+      "id": "q-d2-a17-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotから利用するMCPサーバーで、設計資料の参照と、引数を受け取るチケット作成を提供します。この二つの用途に対応する公開内容を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotから利用するMCPサーバーを設計しています。設計資料を参照する機能と、指定された引数に基づいてチケットを作成する機能を提供したいと考えています。この2つの用途に合うMCPの構成要素の使い方を、2つ選んでください。",
+      "fingerprint": "887dbb25c0bc3dfe19f7af7e8ebdf99580b571320ee899797c5e13a25ce65eda"
+    },
+    {
+      "id": "q-d2-a19-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotに既存プロジェクトのログ出力を実装させます。チームの既存方式へ合わせる指示を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotにログ出力の処理を実装させます。新しいログの仕組みを選ぶのではなく、プロジェクトですでに使っているロガーと実装方法に合わせたいと考えています。プロンプトに含める情報として適切なものを2つ選んでください。",
+      "fingerprint": "2f5fabe889746f71994c512b5252c2a0325f891e766aa25f6ab404c84cee228e"
+    },
+    {
+      "id": "q-d2-a21-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "対応するIDEのCopilot Chatへ、特定ファイルを明示的な文脈として渡す方法を選びます。 適切なものを2つ選んでください。",
+      "question": "VS CodeでCopilot Chatを使っています。特定のファイルの内容を参考にして回答してほしいとき、そのファイルを明示的に渡す方法を2つ選んでください。",
+      "fingerprint": "6ac1bf68a6c779fb4b7dc93ca37d2844403ec593f4c2d075bc1fdc6021e87ec8"
+    },
+    {
+      "id": "q-d2-e04-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "チームでCopilot Spacesへ関連資料を集めて共有する利点を選びます。 適切なものを2つ選んでください。",
+      "question": "チームの関連資料をCopilot Spacesにまとめ、メンバーが共通の資料を使って質問できるようにします。この使い方によって得られる利点を2つ選んでください。",
+      "fingerprint": "97da640da72279e5f73021219f1afdb58c4678e0dbfdd36593d4863eb34b3e98"
+    },
+    {
+      "id": "q-d3-f03-ms-20261017",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotの通常のクラウド生成で、端末から提案が届くまでのデータの扱いを選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotがクラウド上でコードの補完候補を生成し、利用者のIDEへ返すときのデータの流れについて考えます。この処理の説明として正しいものを2つ選んでください。",
+      "fingerprint": "206f5049abeb6738448da353a24615c99b97dd14d855dd08c50940127f96aad2"
+    },
+    {
+      "id": "q-d3-f04-ms-20261017",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "社内ネットワークでCopilotの接続を許可するため、外向き通信の確認を行います。 適切なものを2つ選んでください。",
+      "question": "社内ネットワークからCopilotを利用できるように、開発端末から外部への通信を確認しています。必要な接続を許可するために確認すべき事項を2つ選んでください。",
+      "fingerprint": "b2c1c2bdd86aea1122a16e36fb330164d81f5ab9dc0ca67b1975822608c1dc89"
+    },
+    {
+      "id": "q-d3-a02-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot Chatで関連するファイルや選択範囲を明示して質問する利点を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Chatでコードについて質問するときに、関連するファイルやコードの選択範囲を、回答の参考情報として明示的に渡します。この操作の利点を2つ選んでください。",
+      "fingerprint": "8af016496e7b627df07057af3ad1b0000ff3f11db02f5d2f8536d7915a00b7e2"
+    },
+    {
+      "id": "q-d3-a04-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotに未導入のライブラリを使わず実装してほしいと考えています。指示に含める内容を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotに実装を依頼します。プロジェクトで現在利用しているライブラリだけを使い、新しい依存パッケージは追加したくありません。この条件を伝えるために、プロンプトへ含める内容を2つ選んでください。",
+      "fingerprint": "852f0f4fab7c0b80b2eeeb1ee2336f8ce8a552140c8cc107f1618cc9a26c3823"
+    },
+    {
+      "id": "q-d3-e05-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "インライン補完の文脈を整理します。作業中の画面に関係するファイルと、前の別タスクのタブが混在しています。 適切なものを2つ選んでください。",
+      "question": "Copilotのインライン補完を使って画面を実装しています。エディタには、今回の画面で使う型定義や規則のファイルと、前の別の作業で開いた無関係なファイルが混在しています。今回の作業に合う情報をCopilotへ伝えやすくするために、タブをどう整理すべきですか。適切な対応を2つ選んでください。",
+      "fingerprint": "1fc9ba3bb429ec474d78df049a61db46bcceedef62c361467bb187fb42cf4a8f"
+    },
+    {
+      "id": "q-d4-f03-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "無関係な新タスクへ移るとき、Copilot Chatへ渡す要件の管理を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Chatで、これまでの相談とは関係のない新しい作業を始めます。前の作業の要件を混ぜずに、今回の作業内容を伝えるための対応を2つ選んでください。",
+      "fingerprint": "683d972e07b04b88b76da6fe00d4489c4403d6352884c0cdaa5cbf547ceeb733"
+    },
+    {
+      "id": "q-d4-f05-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot Chatの会話履歴を長く使うときの性質を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Chatの同じ会話で、複数のやり取りを続けています。過去のやり取りが、その後の回答へ与える影響について、正しい説明を2つ選んでください。",
+      "fingerprint": "d8083f08d2adb45fe153036f3fcd1efaf3ffe677c18501cc90682c99e8889621"
+    },
+    {
+      "id": "q-d4-a08-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotへ実装の文脈を渡す手段と、その対象を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Chatに、プロジェクト内の実装を参考にして回答してほしいと考えています。関連するコードを探したり、参考にするファイルを指定したりする方法の説明として、正しいものを2つ選んでください。",
+      "fingerprint": "3e82441b5a821f9baabe0636643d097d1ecc9a00f0b763b58d14492220702525"
+    },
+    {
+      "id": "q-d4-e02-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "別機能の相談を新しいCopilot Chatで始め、現在の要件だけを渡す利点を選びます。 適切なものを2つ選んでください。",
+      "question": "前の相談とは別の機能についてCopilotに質問するため、新しいChatを開き、今回の作業に必要な要件を伝え直します。この進め方の利点を2つ選んでください。",
+      "fingerprint": "9ebb31a12a011a06a024d4caf112face804ee51b51dc91849006d7a3f680e02a"
+    },
+    {
+      "id": "q-d5-f02-b-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS CodeのCopilotによるコミットメッセージ生成を使います。特徴として適切なものを選びます。 適切なものを2つ選んでください。",
+      "question": "VS CodeでCopilotのコミットメッセージ生成機能を使います。この機能の説明として正しいものを2つ選んでください。",
+      "fingerprint": "674acddd75d94ca012bb4dc156f569ab5b224098cedd6f87f920c5ac703d82a6"
+    },
+    {
+      "id": "q-d6-a02-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotの公開コード一致に関する仕組みを、入力側の除外と区別します。 適切なものを2つ選んでください。",
+      "question": "Copilotの補完候補が公開コードと一致する場合の仕組みについて確認しています。機密ファイルを入力情報から除外する設定と混同せず、公開コードとの一致に関する説明として正しいものを2つ選んでください。",
+      "fingerprint": "ccf5f7b583180cae27c30755a966eac845e76b0abc489c45c8703cf63f95e5d4"
+    },
+    {
+      "id": "q-d6-a07-ms-20261017",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot Businessのデータ取り扱いを公式資料で確認します。学習利用の非対象と分けて確認する事項を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Businessで扱われるデータについて、公式資料を確認しています。「モデルの学習に使われない」ことだけで、データの保持や契約上の扱いまで判断しないようにしたいと考えています。別途確認すべき事項を2つ選んでください。",
+      "fingerprint": "04958b331f650902a66f16d457c13f28cdf1630392b926919a13f48455e182f9"
+    },
+    {
+      "id": "q-sc04-2-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "PR作成時にCopilotへ変更説明の下書きを依頼する利点を選びます。 適切なものを2つ選んでください。",
+      "question": "プルリクエスト（PR）を作成するときに、Copilotへ変更内容を説明する文章の下書きを依頼します。この使い方の利点として適切なものを2つ選んでください。",
+      "fingerprint": "e00a88107d9713c565a242250bd1912a5d5858559b84694b18b748a586d2e722"
+    },
+    {
+      "id": "q-sc06-1-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "repoのCopilotカスタム指示ファイルを利用するときの特徴を選びます。 適切なものを2つ選んでください。",
+      "question": "リポジトリにCopilotのカスタム指示ファイルを置き、チームで利用します。この指示ファイルの管理や、回答時の参照について、正しい説明を2つ選んでください。",
+      "fingerprint": "0cccd97f6aaed627a4ad61165fbc3b4a9c3c8a66287a29eaca6b9152028c4835"
+    },
+    {
+      "id": "q-sc08-1-ms-20261017",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "beginner",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "本文が指定する機能・目的と各候補を照合する。",
+      "reasoningSteps": [
+        "本文が指定する機能・目的と各候補を照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilotがコード検索の索引から関連実装を取得して文脈に加える仕組みの利点を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotがコード検索の索引（インデックス）を使い、質問に関連する実装を探して、回答の参考情報として利用します。この仕組みの利点を2つ選んでください。",
+      "fingerprint": "8bd5c907eff43de0ca4b5d24354b13a771113c0fe2cd4b4b517adacb0d16b810"
+    },
+    {
+      "id": "q-d2-a24-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeで共通の命名規約は毎回使い、リリースノート作成は利用者が選ぶときだけ実行します。チームへ共有する配置を選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeで使うCopilotの指示を、チームで共有します。命名規約は通常の開発でも常に参照させたい一方、リリースノートの作成手順は利用者が必要なときだけ呼び出したいと考えています。それぞれの指示の配置先として適切なものを2つ選んでください。",
+      "fingerprint": "c75cccb9d98cd3a17f5ea34a1019cf5e718ff578ecfe2caec2052fb70a57a546"
+    },
+    {
+      "id": "q-d3-a17-ms-20261017",
+      "domainId": "d3",
+      "objectiveId": "d3o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "通常補完でAは公開コード一致をAllowにしたときだけ候補が出ます。BはContent Exclusion対象で、Allowへ変えても除外表示が残ります。認証と通信は正常です。AとBの現象の判断を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotの通常のコード補完を、ファイルAとファイルBで確認しています。ファイルAでは、公開コードとの一致を許可する設定（Allow）にしたときだけ補完候補が表示されます。ファイルBはContent Exclusionの対象で、同じ設定をAllowに変えても、入力情報から除外されていることを示す表示が残ります。認証と通信に問題はありません。それぞれの現象の説明として適切なものを2つ選んでください。",
+      "fingerprint": "104cdc4df0de8f1903f0e99d63ed29e64954d14ceb9d59d3052accb39292fb1f"
+    },
+    {
+      "id": "q-d6-a09-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "利用者XにはCopilotのSeatがあり、IDEでも利用できます。しかしIDEテレメトリーは無効です。割当一覧にはXがいますが、IDE活動レポートにはいません。この差の説明を選びます。 適切なものを2つ選んでください。",
+      "question": "利用者XにはCopilotのライセンス（Seat）が割り当てられており、IDEからCopilotを利用できています。ただし、IDEの利用情報を送信するテレメトリーは無効です。管理者が確認すると、XはSeatの割り当て一覧には載っていますが、IDEの活動レポートには載っていません。この違いについて、適切な説明を2つ選んでください。",
+      "fingerprint": "f7c35fa01d14a374b673151649cc2a012d24964d0913f97f1ac004e30602e850"
+    },
+    {
+      "id": "q-d3-a13-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot管理者は承認済みの対象者へSeatを追加します。前日の利用統計に対象者がいませんが、すでに割当済みかもしれません。重複を避ける確認について選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotの管理者が、社内で利用を承認された人へライセンス（Seat）を割り当てようとしています。その人は前日の利用統計には載っていませんが、Seatがすでに割り当てられている可能性があります。現在の割り当て状況と対象アカウントを確認するために、行うべきことを2つ選んでください。",
+      "fingerprint": "97634126cd3fd832ea041765e5fbadaa400cf17cdde2faca37534047652e27e4"
+    },
+    {
+      "id": "q-d6-a03-feature-20261016-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "除外済みの型定義ファイルにはCopilotの除外表示があります。一方、IDEが呼出側へ渡すhoverの型説明を踏まえた提案が出ます。パス一致と反映は確認済みです。この観測について選びます。 適切なものを2つ選んでください。",
+      "question": "型定義ファイルをContent Exclusionの対象に設定し、Copilotでも除外を示す表示を確認しました。しかし、その型を使うコードでは、IDEがホバー表示などで提供する型の説明に沿った補完候補が出ます。除外するパスが正しく、設定も反映済みであることは確認しています。この現象を解釈するうえで適切な説明を2つ選んでください。",
+      "fingerprint": "e0e426051394ac891f33b9d40f429a6eb41a71a3abb4910adb4a8f57dc9559fb"
+    },
+    {
+      "id": "q-d1-a11-feature-20261016-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeのbuilt-in Copilot providerで接続がmeteredになった後、ghost textとNESの自動要求が止まりました。認証は正常でChatは使えます。従量制設定を維持して切り分ける判断を選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeに組み込まれたCopilotの機能を使っています。ネットワークが従量制課金接続（metered connection）として扱われるようになってから、インライン補完（ghost text）と次の編集候補（NES）の自動表示が止まりました。認証に問題はなく、Copilot Chatは利用できます。従量制課金接続の設定を変えずに原因を調べるため、適切な確認や操作を2つ選んでください。",
+      "fingerprint": "558099d3ebe07e0690ff963d18e48e21ead1ebdc3b45c7ca45af1ae126834af8"
+    },
+    {
+      "id": "q-d5-e04-feature-20261016-ms-20261017",
+      "domainId": "d5",
+      "objectiveId": "d5o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS CodeのChatモデルをNへ変えましたが、ghost textはMのままです。ChatのNと各言語の有効設定を保ちながら、補完モデルだけを変えたいと考えています。判断を選びます。 適切なものを2つ選んでください。",
+      "question": "VS CodeでCopilot Chatの使用モデルをモデルNへ変更しましたが、インライン補完（ghost text）ではモデルMが使われたままです。ChatではモデルNを使い続け、言語ごとの補完の有効・無効も変更せずに、インライン補完のモデルだけを切り替えたいと考えています。設定の扱いや確認先として適切なものを2つ選んでください。",
+      "fingerprint": "9efc7ca91a6269be5669d269aab625426d1972700bd7ca8baa538830ad4c27cd"
+    },
+    {
+      "id": "q-d2-a20-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "社内注文の現在値をCopilotへ問い合わせます。Spaceには朝のCSVがあります。注文検索MCPはツール一覧に見えますが、呼出し時の認証が未完了です。午後の変更を利用者の閲覧範囲で調べる対応を選びます。 適切なものを2つ選んでください。",
+      "question": "午後に更新された注文の状況を、Copilotで調べたいと考えています。Copilot Spaceには、朝の時点の注文データを保存したCSVファイルがあります。また、注文検索用のMCPサーバーのツールは一覧に表示されていますが、呼び出しに必要な利用者の認証が完了していません。利用者に閲覧権限のある注文の最新情報を調べるために、必要な対応を2つ選んでください。",
+      "fingerprint": "37e2c55d8be92336b0f5800ddc83ac35743a9c9dcd622771a6d443bda817cfbf"
+    },
+    {
+      "id": "q-d2-e08-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeのrepo共通指示にテストのAAA規約を置くと、通常の実装ファイルにもその指示が入ります。規約の内容は保ち、*.test.tsだけへ適用したいと考えています。 適切なものを2つ選んでください。",
+      "question": "VS Codeで使うCopilotのリポジトリ共通指示に、テストを「準備・実行・検証」の順で書くAAA形式の規約を記載しています。そのため、テスト以外の実装ファイルを編集するときにも、この規約が参照されます。規約の内容は変えず、リポジトリ内のどの階層にあるファイルでも、名前が.test.tsで終わるテストファイルだけへ適用したいと考えています。必要な変更を2つ選んでください。",
+      "fingerprint": "84261f6415495c49410a214c7c81427535dfe117f89391dbc6ab062a412f2343"
+    },
+    {
+      "id": "q-d2-a23-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "ローカルのチケットMCPをVS Codeから標準入出力で起動します。WebのURLはなく、実行ファイルと起動引数が提供されています。接続構成へ設定する内容を選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeから、チケット管理用のMCPサーバーをローカルプロセスとして起動します。サーバーとの通信には標準入出力（stdio）を使い、起動する実行ファイルと引数が指定されています。HTTP接続用のURLは提供されていません。VS CodeのMCP接続設定へ記載する内容として適切なものを2つ選んでください。",
+      "fingerprint": "1af7355b5aba80a7288c8335a859baab0c3fa2700cbc7c954617895427418cab"
+    },
+    {
+      "id": "q-d2-a25-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "現行Copilot CLIでGitの操作を進めます。ツール候補にはbashがあります。今回のセッションではGit操作以外へ許可を広げず、gitの利用を許可しつつgit pushを実行禁止にします。追加する権限設定を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot CLIで、Gitの調査やコミットなどの操作を行いたいと考えています。CLIが利用できるツールの一覧にはbashが含まれています。今回のセッションでは、Git以外の操作へ実行許可を広げず、git pushだけは拒否する必要があります。追加すべき権限設定を2つ選んでください。",
+      "fingerprint": "a4aec5684845e367b69a506b0f1f5bf829c76f82a6a594232dfe67eb4484e21f"
+    },
+    {
+      "id": "q-d5-a15-feature-20261016-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeの共有mcp.jsonで、APIキーを利用者に入力させます。入力IDはapiKey、typeはpromptStringです。秘密値を共有ファイルに保存せず、入力欄も隠す構成要素を選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeのチーム共有用mcp.jsonで、MCPサーバーに渡すAPIキーを利用者に入力してもらいます。入力定義のidはapiKey、typeはpromptStringです。APIキーの実際の値を共有ファイルへ書き込まず、入力中の文字も画面に表示されないようにしたいと考えています。この入力値を環境変数API_KEYへ渡すために、必要な設定を2つ選んでください。",
+      "fingerprint": "455064529989fd0bc44a1667e9b8f34b61f13cce949a028e84c4c79adfad6d73"
+    },
+    {
+      "id": "q-sc03-3-feature-20261016-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "VS Codeで個人用Prompt Fileを別PCへ自動同期します。repoへのコミットと手動配布は行いません。Settings Syncは有効ですがプロンプトだけ現れません。保存範囲と同期対象について選びます。 適切なものを2つ選んでください。",
+      "question": "VS Codeの個人用Prompt Fileを、別のPCでも自動的に利用できるようにしたいと考えています。リポジトリへのコミットや手動でのコピーは行いません。Settings Syncは有効ですが、Prompt Fileが別のPCへ同期されていません。ファイルを置く場所と、Settings Syncで同期する項目について、確認すべき内容を2つ選んでください。",
+      "fingerprint": "732c3933b2148446e428d440ed22e4440b990d434d02bede05da4e7a20afbc2a"
+    },
+    {
+      "id": "q-d2-a18-feature-20261016-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "intermediate",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "指定された用途・現状を整理する。 機能の適用範囲と操作の前提を各候補へ照合する。",
+      "reasoningSteps": [
+        "指定された用途・現状を整理する。",
+        "機能の適用範囲と操作の前提を各候補へ照合する。"
+      ],
+      "counterfactual": null,
+      "beforeQuestion": "Copilot CLIでMCPサーバーとカスタムAgentをユーザー範囲へ追加します。repoのファイルは変更せず、既定のユーザー構成ディレクトリを使用します。MCPだけはIDE用のmcp.jsonへ記入してもCLIに現れませんでした。CLIへ読み込ませる配置を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot CLIで、自分用のMCPサーバー設定とカスタムAgentの定義を追加します。リポジトリ内のファイルは変更せず、CLIの既定のユーザー設定フォルダーを使います。MCPサーバーの接続情報をIDE用のmcp.jsonへ書きましたが、Copilot CLIでは読み込まれませんでした。CLIに読み込ませるための配置先を2つ選んでください。",
+      "fingerprint": "b7dc82f16944cff8dfeb11e9f93b9ae022ab539316494405c28891e3f1a3638d"
+    },
+    {
+      "id": "q-d5-e08-feature-20261016-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 過去の結果と次のレビューに使う現在設定は別である。 明示したPR設定を下位優先にするのは順序が逆である。",
+      "beforeQuestion": "Copilot code reviewの組織既定はLite、repo既定はBalancedです。PR-Pは以前LiteでレビューしましたがPR個別指定はありません。PR-QだけDeepを明示指定しています。repo既定をDeepへ変えて新規レビューを開始する場合、既定値と個別値の扱いを選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot code reviewのレビュー深度は、組織の既定値がLite、リポジトリの既定値がBalancedです。プルリクエストPは以前Liteでレビューされましたが、PRごとの深度は指定していません。プルリクエストQでは、Deepを個別に指定しています。この状態でリポジトリの既定値をDeepへ変更し、両方のPRで改めてレビューを実行します。それぞれに適用される設定の説明として正しいものを2つ選んでください。",
+      "fingerprint": "43c5bdd8386e74f1d926bf5b5c385faeb17733e8953c0c38f04eadc86170e191"
+    },
+    {
+      "id": "q-d3-e04-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 今回の取得経路はMCPではなくローカルツールである。 公開コード一致は出力側の制御で入力除外の代替ではない。",
+      "beforeQuestion": "Copilot Businessの通常補完では機密ファイルの除外表示が出ます。同じファイルをVS Code Agentはローカルツールで読めました。パス一致・設定反映・通常ファイルであることは確認済みです。通常補完の保護を保ち、Agentの読取も止めたい場合の判断を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Businessの通常のコード補完では、機密ファイルにContent Exclusionの除外表示が出ています。しかし、VS CodeのCopilot Agentはローカルのファイル読み取りツールで、そのファイルを読めました。除外設定のパスが正しく、設定も反映済みで、ファイルはシンボリックリンクではないことを確認しています。通常のコード補完に対する除外を維持しながら、Agentにも内容を読ませないための判断や対応を2つ選んでください。",
+      "fingerprint": "58f09d7f6f347ea9d1ea1201c53f8d40d1dc1e38030605f28af019632244eb43"
+    },
+    {
+      "id": "q-d2-e21-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では BはSpaceへ既にアクセスでき、R側の不足が残る。 CはRへ既にアクセスでき、Space側の不足が残る。",
+      "beforeQuestion": "Spaceにrepo-Rのリンクとアップロード資料Uがあります。BはSpaceとUを読めますがRを直接開くと403です。CはRを読めますがSpaceのURLが403です。Uの公開範囲を広げず、両者が同じSpaceを使うための対応を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot Spaceに、リポジトリRへのリンクと、アップロードした資料Uがあります。利用者BはSpaceと資料Uを開けますが、リポジトリRを直接開くと403（アクセス拒否）になります。利用者CはリポジトリRを開けますが、SpaceのURLへアクセスすると403になります。資料Uの公開範囲を広げずに、2人が同じSpaceでリポジトリRの情報を使えるようにするには、どのような権限の対応が必要ですか。適切なものを2つ選んでください。",
+      "fingerprint": "3fc4f58acb418651099724426c131677864e2772c73c5bd778e4a5597d954b06"
+    },
+    {
+      "id": "q-d6-e06-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o4",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 組織保存値と上位強制を反映した実効値を混同している。 個人設定でもEnterpriseの強制を緩和できない。",
+      "beforeQuestion": "公開コード一致ポリシーをEnterpriseがBlockに強制しています。Org-Aの保存値はAllow、Org-BはBlockです。対象アカウントと反映は確認済みです。両組織の実効値と、Aだけの例外を検討する際の変更先について選びます。 適切なものを2つ選んでください。",
+      "question": "Copilotの公開コード一致ポリシーについて、Enterpriseの管理者がBlockを強制しています。一方、組織Aに保存されている設定値はAllow、組織Bの設定値はBlockです。対象アカウントが正しく、Enterpriseの設定も反映済みであることを確認しています。両組織で実際に有効になる設定と、組織Aだけに例外を設けるために見直すべき設定の説明として、正しいものを2つ選んでください。",
+      "fingerprint": "9aefe955636ff92a4505e6f39c1ea51da9383628e6c4db324508ad9eb0e96007"
+    },
+    {
+      "id": "q-d2-e11-feature-20261016-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o3",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では baseの指示を読むというブランチの取り違えである。 docsのMarkdownは指定されたsrcのTypeScriptパスに一致しない。",
+      "beforeQuestion": "GitHub.comのCopilot code reviewでmainの共通指示は日本語、PRのhead branchでは英語へ変更されています。headにはapplyTo: src/**/*.tsのセキュリティ指示もあります。変更ファイルはsrc/auth.tsとdocs/auth.mdです。他の指示はありません。読み込まれる指示について選びます。 適切なものを2つ選んでください。",
+      "question": "GitHub.comでCopilot code reviewを実行します。mainブランチの共通カスタム指示は「日本語で回答する」ですが、PRの変更元ブランチ（head branch）では「英語で回答する」に変更されています。変更元ブランチには、applyTo: src/**/*.tsを指定したセキュリティ確認用のパス別指示もあります。PRの変更ファイルはsrc/auth.tsとdocs/auth.mdで、ほかの指示はありません。今回読み込まれる指示について、正しい説明を2つ選んでください。",
+      "fingerprint": "d9a05fb53ba168243b28a811a27014de08ae4285a4252ce00e5ac699b70019d1"
+    },
+    {
+      "id": "q-d1-e03-feature-20261016-ms-20261017",
+      "domainId": "d1",
+      "objectiveId": "d1o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では ファイル復元と外部状態の補償を混同している。 保持すべき利用者の変更まで失うので復元目標に反する。",
+      "beforeQuestion": "VS Code Agentへの依頼直前、自分の未コミット変更を含むcheckpointを作成しました。Agentはコードを編集し、MCPで外部チケットも更新しました。元のチケット状態は記録済みです。自分の変更を残し、依頼前のコードとチケットへ戻す判断を選びます。 適切なものを2つ選んでください。",
+      "question": "VS CodeのCopilot Agentへ作業を依頼する直前に、自分の未コミットの変更を含むチェックポイント（checkpoint）を作成しました。その後、Agentがコードを編集し、MCPツールで外部のチケットの状態も更新しました。チケットを更新する前の状態は記録してあります。自分の未コミットの変更を残したまま、コードとチケットの両方を依頼直前の状態へ戻すには、どのように対応すべきですか。適切な対応を2つ選んでください。",
+      "fingerprint": "455d472a74710986c42bb7f91a63d76f323b6e54133ad4f568885c9e1ac7d4db"
+    },
+    {
+      "id": "q-d5-e07-feature-20261016-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 同時指定での優先規則を逆にしている。 権限許可を候補ツールの登録と混同している。",
+      "beforeQuestion": "LinuxのCopilot CLIで--available-tools=view,grep、--excluded-tools=grep、--allow-tool=shellを指定しました。実在するツールはview、grep、bashです。検索とgit statusを依頼する場合、モデルに提供される候補と実行許可を分けて判断します。 適切なものを2つ選んでください。",
+      "question": "LinuxでCopilot CLIを起動し、--available-tools=view,grep、--excluded-tools=grep、--allow-tool=shellを同時に指定しました。この環境にはview、grep、bashの各ツールがインストールされています。Copilotへファイルの検索とgit statusの実行を依頼するとき、モデルに提示されるツールの一覧はどうなりますか。正しい説明を2つ選んでください。",
+      "fingerprint": "0bcbfd355e736975e01332974f22a232587f65d7a3606b6122c10a4cad78b0a0"
+    },
+    {
+      "id": "q-d2-e06-ms-20261017",
+      "domainId": "d2",
+      "objectiveId": "d2o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では gitは今回の提供ツール名ではなく、サブコマンド権限制御にならない。 allow指定は実行拒否という要件と逆である。",
+      "beforeQuestion": "LinuxのCopilot CLIで現在--available-tools=view,grepを指定しています。今回のセッションではgit commitを行い、git pushを拒否したいと考えています。bashはインストール済みですが候補外で、--allow-tool=\"shell(git:*)\"は既に指定済みです。追加する変更を選びます。 適切なものを2つ選んでください。",
+      "question": "LinuxでCopilot CLIを使っています。起動時には--available-tools=view,grepと--allow-tool=\"shell(git:*)\"を指定しています。bashはインストールされていますが、現在モデルへ提示するツールの一覧には含まれていません。このセッションでgit commitを実行できるようにしつつ、git pushは拒否したいと考えています。追加すべき設定変更を2つ選んでください。",
+      "fingerprint": "89e33f64b42429f5234e5da602fbf0ccf4a88f2a4b5fd61f54d106128159d304"
+    },
+    {
+      "id": "q-d4-e04-feature-20261016-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 既にあるsearchの追記でも優先する明示一覧へ併合されない。 未接続という証拠があり、記載だけでは呼び出せない。",
+      "beforeQuestion": "VS CodeのLocal harnessでカスタムAgentはtools: [read, search]です。Prompt FileはそのAgentを指定しtools: [read, metrics/get]を明記しています。readとsearchは接続済み、metricsのMCPは未接続です。Prompt Fileの指定を保ってmetricsを使える状態にします。 適切なものを2つ選んでください。",
+      "question": "VS Codeのローカル実行環境（Local harness）で、カスタムAgentとPrompt Fileを使います。Agent側のtoolsは[read, search]で、Prompt FileはそのAgentを指定し、独自のtoolsとして[read, metrics/get]を記載しています。readとsearchは利用できますが、metrics/getを提供するMCPサーバーにはまだ接続していません。Prompt Fileの指定を変えずにmetrics/getを使うため、ツール一覧の扱いと必要な接続について、適切なものを2つ選んでください。",
+      "fingerprint": "51c3513e5e56de81ad1630419636173eb5671942dfd97ef5507ae4d526bc601e"
+    },
+    {
+      "id": "q-d4-e09-feature-20261016-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では 会話の要約はツール定義そのものの要約ではない。 小さい占有部分を消し、保持すべき会話も失う。",
+      "beforeQuestion": "Copilot CLIの/contextではMCP Toolsが65%、Messagesが10%です。複数のMCPを接続していますが必要なのは社内検索だけです。現在の会話方針と社内検索を保ち、主な占有源を減らす対応を選びます。 適切なものを2つ選んでください。",
+      "question": "Copilot CLIで/contextを確認すると、コンテキストの使用量のうちMCP Toolsが65%、Messagesが10%を占めていました。複数のMCPサーバーを接続していますが、今回の作業に必要なのは社内検索のツールだけです。これまでの会話で伝えた方針と社内検索の機能を残しながら、使用量の大きい部分を減らすには、どのように対応すべきですか。適切な対応を2つ選んでください。",
+      "fingerprint": "585cfce6f8c79a78feaed081d7521e094761c1e11196a3da3676386f6c38e2ea"
+    },
+    {
+      "id": "q-d4-e06-feature-20261016-ms-20261017",
+      "domainId": "d4",
+      "objectiveId": "d4o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では docsはIのsrc/**に一致しない。 除外されるIと除外されないJを逆にしている。",
+      "beforeQuestion": "同じhead branchの指示IはapplyTo: src/**、excludeAgent: code-reviewです。指示JはapplyTo: src/**/*.tsで除外指定はありません。src/api.tsとdocs/api.mdをcloud agentとcode reviewが扱います。指示ファイルの読み込みを確認するチェック項目を選びます。 適切なものを2つ選んでください。",
+      "question": "PRの変更元ブランチに、パス別のCopilotカスタム指示が2つあります。指示IはapplyTo: src/**とexcludeAgent: code-reviewを指定しています。指示JはapplyTo: src/**/*.tsを指定し、Agentを除外する設定はありません。cloud agentとcode reviewのそれぞれで、src/api.tsとdocs/api.mdを扱います。各ファイルを処理するときに読み込まれる指示の説明として、正しいものを2つ選んでください。",
+      "fingerprint": "1ec516b6df64315517c9b484865beda03dcb68e93803c631222d4b163b34436f"
+    },
+    {
+      "id": "q-d5-e03-feature-20261016-ms-20261017",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では Agentは現在の環境で開始できるため開始と準備完了は異なる。 毎回の準備をsetupで完了するという目的が未解決のままである。",
+      "beforeQuestion": "cloud agentのsetupは依存導入、補助CLI導入、構成作成の順です。CLI導入が非ゼロで終了した後、Agentは実装を開始しましたが構成がありません。構成作成stepは既に正しく定義されており、毎回同じ準備を完了させたいと考えています。 適切なものを2つ選んでください。",
+      "question": "Copilot cloud agentのセットアップには、依存パッケージのインストール、補助CLIのインストール、構成ファイルの作成という3つのステップを、この順番で定義しています。補助CLIのインストールがエラーを示す終了コードで失敗した後も、Agentは実装を始めましたが、構成ファイルは作成されていません。構成ファイルを作るステップ自体は正しく定義済みです。毎回のセットアップを最後まで完了させるために、行うべき対応を2つ選んでください。",
+      "fingerprint": "72ab8135651fda7161c50f0e57941ab103b40b89932f073e54c5dac93ad28c4a"
+    },
+    {
+      "id": "q-d5-e05-feature-20261016-ms-20261017",
+      "domainId": "d5",
+      "objectiveId": "d5o2",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では レビュー専用定義を使う構成では共通側の重複追加では直らない。 レビューだけへ導入する境界を失いcloud agentにも影響する。",
+      "beforeQuestion": "repoでは共通copilot-setup-steps.ymlとレビュー専用copilot-code-review.ymlがあります。共通側だけへ追加した解析ツールがcode reviewでは見つかりません。cloud agentの準備内容を増やさずレビューへ導入し、不要な共通側の追加も解消します。 適切なものを2つ選んでください。",
+      "question": "リポジトリには、Copilotの共通セットアップ用copilot-setup-steps.ymlと、code review専用のcopilot-code-review.ymlがあります。解析ツールのインストールを共通セットアップだけへ追加したところ、code reviewの実行環境ではそのツールが見つかりませんでした。解析ツールはcode reviewだけで使い、cloud agentの実行環境には追加したくありません。この要件を満たすようにセットアップを整理する変更を2つ選んでください。",
+      "fingerprint": "c074d3f6951ec9cca9229b93c8adc9b04285f4207cc0c33109c5b494850deef1"
+    },
+    {
+      "id": "q-d6-e04-feature-20261016-ms-20261017",
+      "domainId": "d6",
+      "objectiveId": "d6o1",
+      "origin": "new-addition",
+      "beforeDifficulty": null,
+      "difficulty": "advanced",
+      "rewritten": true,
+      "reclassified": false,
+      "assessment": "観測結果と保持すべき制約を整理する。 適用範囲・優先順位・処理段階をそれぞれ照合する。 二つの判断を統合し、他の候補が破る条件を特定する。",
+      "reasoningSteps": [
+        "観測結果と保持すべき制約を整理する。",
+        "適用範囲・優先順位・処理段階をそれぞれ照合する。",
+        "二つの判断を統合し、他の候補が破る条件を特定する。"
+      ],
+      "counterfactual": "本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では Yは組織BのSeat利用者でありAの管理Seat向け設定の対象ではない。 他repoを変えないという指定を破る。",
+      "beforeQuestion": "同一Enterpriseのrepo-Rを組織AのSeat利用者Xと組織BのSeat利用者Yが使います。通常補完でRのprivate/**を両者から除外し、他repoは変えません。repo管理者とAのownerは設定可能です。管理Seat向け除外との範囲の差を踏まえた対応を選びます。 適切なものを2つ選んでください。",
+      "question": "同じEnterpriseに属する組織Aと組織Bが、リポジトリRを利用しています。利用者XのCopilotライセンス（Seat）は組織Aから、利用者YのSeatは組織Bから割り当てられています。2人が通常のコード補完を使うときに、リポジトリRのprivate/**だけを入力情報から除外し、ほかのリポジトリには影響させたくありません。リポジトリRの管理者と組織Aのownerは、必要な設定を変更できます。組織の管理対象Seat向け設定とリポジトリ単位の設定の範囲を踏まえて、適切な対応を2つ選んでください。",
+      "fingerprint": "0a616dc6f6774b7198e5b43bb9f7579ca6210e9fbf4cdd18d4e633dee3d9e917"
     }
   ]
 }

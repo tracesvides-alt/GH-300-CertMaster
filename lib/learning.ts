@@ -1,5 +1,6 @@
 import { allocateQuestionsByDomain } from './selection';
 import { domains, objectives, questions, type Question } from './content';
+import {answerDetails,questionType,multiSelectKind,validSelection,type MultiSelectPattern,type QuestionType} from './question-format';
 export type Attempt = {
   id: string;
   questionId: string;
@@ -10,6 +11,13 @@ export type Attempt = {
   at: number;
   status: Question['status'];
   sessionId?: string;
+  questionType?:QuestionType;
+  multiSelectPattern?:MultiSelectPattern;
+  selectedChoiceIds?:string[];
+  correctChoiceIds?:string[];
+  missingCorrectChoiceIds?:string[];
+  selectedWrongChoiceIds?:string[];
+  partialMatch?:number;
 };
 export const difficultyMasteryWeights = {
   beginner: 1.0,
@@ -18,9 +26,22 @@ export const difficultyMasteryWeights = {
 } as const;
 
 export const score = (q: Question, answer: string[]) =>
+  validSelection(q,answer) &&
   answer.length === q.answer.length &&
   new Set(answer).size === answer.length &&
   answer.every((a) => q.answer.includes(a));
+export function attemptFormat(q:Question,selected:string[]) {
+ return {...answerDetails(q.answer,selected),questionType:questionType(q),multiSelectPattern:q.multiSelectPattern};
+}
+export function formatAccuracy(attempts:Attempt[],bank:Question[]) {
+ const byId=new Map(bank.map(q=>[q.id,q]));
+ const rows=attempts.map(a=>{const q=byId.get(a.questionId);return {a,type:a.questionType??(q?questionType(q):undefined),pattern:a.multiSelectPattern??q?.multiSelectPattern};});
+ const groups=[['single','単一選択',rows.filter(r=>r.type==='single_select')],['multi','複数選択',rows.filter(r=>r.type==='multi_select')],
+  ['knowledge','知識型・複数選択',rows.filter(r=>r.type==='multi_select'&&r.pattern&&multiSelectKind(r.pattern)==='knowledge')],
+  ['scenario','シナリオ型・複数選択',rows.filter(r=>r.type==='multi_select'&&r.pattern&&multiSelectKind(r.pattern)==='scenario')],
+  ...(['benefits','characteristics','best_practices','scenario_judgment','scenario_actions'] as const).map(p=>[p,p,rows.filter(r=>r.type==='multi_select'&&r.pattern===p)])] as [string,string,typeof rows][];
+ return groups.map(([id,label,items])=>({id,label,total:items.length,correct:items.filter(r=>r.a.correct).length,accuracy:items.length?items.filter(r=>r.a.correct).length/items.length*100:null}));
+}
 export function mastery(attempts: Attempt[]) {
   const official = attempts.filter((a) => a.status === 'verified');
   const latest = new Map<string, Attempt>();

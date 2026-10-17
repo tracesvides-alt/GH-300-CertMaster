@@ -1,3 +1,4 @@
+import {answerExplanation} from '../../lib/answer-explanation';
 import {test,expect} from '@playwright/test';
 import ledger from '../../content/gh300/2026-08-07/questions/foundation-priority-review.json';
 
@@ -33,7 +34,7 @@ test('original Foundation replacements start, score and persist while old bookma
   await page.locator('.question fieldset input').nth(q.choices.findIndex(c=>c.id===answer)).check();
   await page.getByRole('button',{name:'回答を確認する'}).click();
   await expect(page.getByRole('heading',{name:'選択肢ごとの詳細分析'})).toBeVisible();
-  await expect(page.locator('.explanation-body')).toContainText(q.explanation);
+  for(const paragraph of answerExplanation(q).split('\n\n')) await expect(page.locator('.explanation-body')).toContainText(paragraph);
   if(i>0)await expect(page.getByRole('heading',{name:'正解です！',exact:true})).toBeVisible();
   await page.getByRole('button',{name:i<questions.length-1?'次の問題へ':'演習を終了する'}).click();
  }

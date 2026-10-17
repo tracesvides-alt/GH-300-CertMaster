@@ -342,6 +342,11 @@ export default function WrongAnswerNotebook({
                   </span>
                 </div>
                 <p>{question.question}</p>
+                {question.answer.length===2&&<div className="multi-answer-analysis">
+                  <p>選択した回答：{attempt.answer.map(id=>question.choices.findIndex(c=>c.id===id)).map(i=>'ABCD'[i]).join('・')||'未回答'}</p>
+                  <p>選び忘れ：{question.answer.filter(id=>!attempt.answer.includes(id)).map(id=>'ABCD'[question.choices.findIndex(c=>c.id===id)]).join('・')||'なし'}</p>
+                  <p>誤って選択：{attempt.answer.filter(id=>!question.answer.includes(id)).map(id=>'ABCD'[question.choices.findIndex(c=>c.id===id)]).join('・')||'なし'}</p>
+                </div>}
                 <div className="question-row-actions">
                   <button
                     className="textbutton"

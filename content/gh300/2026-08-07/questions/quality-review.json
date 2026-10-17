@@ -24476,6 +24476,438 @@
       "difficultyConsistent": true,
       "requirementCoverage": true,
       "rationale": "四択ともMobileでCopilotへ相談する使い方で、ローカルコンパイルや課金のような無関係な誤答を置かない。ファイル全体・選択行・repo全体・一般質問という文脈の違いを本文で選ぶ。 選択した数行を文脈として渡す場合の操作です。今回は手動コピーをせずにファイル全体を対象にします。 リポジトリ全体について探索的な質問をする入口です。今回求める特定ファイルの画面からの質問操作とは異なります。 一般的な開発や言語の質問をする使い方です。特定のリポジトリのファイルを文脈とする今回の操作ではありません。"
+    },
+    "q-d1-f03-ms-20261017": {
+      "fingerprint": "d97eb1262f1a39ee41fa9571aea393489fb308cd6c93b56cbe6d1060e4d43de5",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。今回だけ判断する目的に対し、以後の承認範囲まで広げてしまう。 編集差分の採用とツールの実行承認は別の判断である。"
+    },
+    "q-d2-f05-ms-20261017": {
+      "fingerprint": "5cbed5f0f096789add87f7c2a413efaae93ecaade64a6c87b1f3c4dccd5fa34a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。公開コード一致は出力フィルタの役割で、操作の承認とは異なる。 参照除外はContent Exclusionの役割で、ツール承認だけでは設定されない。"
+    },
+    "q-d2-a03-ms-20261017": {
+      "fingerprint": "4268a6fa807695a76e8bab02ed9002db1ba535d03107574a11e6cfc07d2d1237",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。これはcloud agentの入口で、IDE内のInline Chatではない。 これはNESの用途で、対話編集を開始するInline Chatとは異なる。"
+    },
+    "q-d2-a09-ms-20261017": {
+      "fingerprint": "ecd900f4d9cc7f4f9e348120e9c972081112adbf139c55553fd3a99e1bf92654",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。同じ案件の続きなら履歴は有用だが、今回は無関係な前提が混入している。 履歴を切ることと必要なプロジェクト文脈の提供は別である。"
+    },
+    "q-d2-a11-ms-20261017": {
+      "fingerprint": "23ecf3bcf35b178bfefdc0f18674690e27a0290404778d26129382618712aad7",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。実装を作るのはcloud agent等の作業で、要約機能の役割ではない。 変更行の改善点を指摘するのはcode reviewの役割で、変更概要の要約ではない。"
+    },
+    "q-d2-a12-ms-20261017": {
+      "fingerprint": "8d7808115874cb8d1a37fd3e7be6c591b78367357c4b64019b0bd9a1c32eb3d6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。未確定の表示とファイルへの採用は別の状態である。 切替は比較する候補を変える操作で、全体採用とは異なる。"
+    },
+    "q-d2-a13-ms-20261017": {
+      "fingerprint": "5f00e28ef82f36d5b097b717e309f3f113955e854b328e27a54d5ee30b89361b",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。候補を採用するときには適切だが、今回は採用前の比較が目的である。 必要部分を採用するときには適切だが、別案の比較ではない。"
+    },
+    "q-d2-a17-ms-20261017": {
+      "fingerprint": "887dbb25c0bc3dfe19f7af7e8ebdf99580b571320ee899797c5e13a25ce65eda",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。実在するMCPの構成要素だが、今回の二つの用途はテンプレート提供ではない。 操作の実行結果と、単独で参照する資料の公開を混同している。"
+    },
+    "q-d2-a19-ms-20261017": {
+      "fingerprint": "2f5fabe889746f71994c512b5252c2a0325f891e766aa25f6ab404c84cee228e",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。方式選定には使えるが、今回は既存方式へ合わせる要求を伝えていない。 別製品の調査には使えるが、今回のプロジェクトの慣習を示していない。"
+    },
+    "q-d2-a21-ms-20261017": {
+      "fingerprint": "6ac1bf68a6c779fb4b7dc93ca37d2844403ec593f4c2d075bc1fdc6021e87ec8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。候補切替は補完の比較操作で、Chatへのファイル指定ではない。 公開コード一致は出力の制御で、Chatの対象指定ではない。"
+    },
+    "q-d2-e04-ms-20261017": {
+      "fingerprint": "97da640da72279e5f73021219f1afdb58c4678e0dbfdd36593d4863eb34b3e98",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。操作の公開はMCP等のツール接続が担い、資料の追加だけでAPI操作は公開されない。 Spaceと元のリポジトリの権限は別で、共有だけでrepo権限は増えない。"
+    },
+    "q-d3-f03-ms-20261017": {
+      "fingerprint": "206f5049abeb6738448da353a24615c99b97dd14d855dd08c50940127f96aad2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。推論時の処理とモデル重みの学習は別である。 公開コード一致は出力の確認で、入力文脈の選別とは異なる。"
+    },
+    "q-d3-f04-ms-20261017": {
+      "fingerprint": "b2c1c2bdd86aea1122a16e36fb330164d81f5ab9dc0ca67b1975822608c1dc89",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。Web疎通は一つの情報だが、Copilot固有の接続確認には不足する。 モデル選択と通信経路の許可は異なる論点である。"
+    },
+    "q-d3-a02-ms-20261017": {
+      "fingerprint": "8af016496e7b627df07057af3ad1b0000ff3f11db02f5d2f8536d7915a00b7e2",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。会話の占有量を減らすのは要約の用途で、対象ファイルの明示とは別の操作である。 パス別指示の対象指定と、今回の会話へのファイル参照は別の仕組みである。"
+    },
+    "q-d3-a04-ms-20261017": {
+      "fingerprint": "852f0f4fab7c0b80b2eeeb1ee2336f8ce8a552140c8cc107f1618cc9a26c3823",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。技術選定には適切だが、今回の既存依存へ限定する目的と合わない。 一般的な比較には使えるが、現行環境の制約が伝わらない。"
+    },
+    "q-d3-e05-ms-20261017": {
+      "fingerprint": "1fc9ba3bb429ec474d78df049a61db46bcceedef62c361467bb187fb42cf4a8f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。関連する型契約を失うため、今回の文脈整理としては逆である。 前タスクの実装例は今回の型や規則を伝える対象の代わりにならない。"
+    },
+    "q-d4-f03-ms-20261017": {
+      "fingerprint": "683d972e07b04b88b76da6fe00d4489c4403d6352884c0cdaa5cbf547ceeb733",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。継続作業なら役立つ場合があるが、今回は別タスクである。 要約は会話の量を減らせても、今回と無関係な要件を前提にする問題は残る。"
+    },
+    "q-d4-f05-ms-20261017": {
+      "fingerprint": "d8083f08d2adb45fe153036f3fcd1efaf3ffe677c18501cc90682c99e8889621",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。会話履歴とリポジトリの指示ファイルは別に管理される。 履歴を渡しても事前学習の知識時点そのものは更新されない。"
+    },
+    "q-d4-a08-ms-20261017": {
+      "fingerprint": "3e82441b5a821f9baabe0636643d097d1ecc9a00f0b763b58d14492220702525",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。出力側の設定であり入力の検索対象を決めるものではない。 モデルと添付資料の指定は別の操作である。"
+    },
+    "q-d4-e02-ms-20261017": {
+      "fingerprint": "9ebb31a12a011a06a024d4caf112face804ee51b51dc91849006d7a3f680e02a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。会話の開始は基盤モデルの再学習ではない。 新規Chatは共通指示を無効化する設定ではない。"
+    },
+    "q-d5-f02-b-ms-20261017": {
+      "fingerprint": "674acddd75d94ca012bb4dc156f569ab5b224098cedd6f87f920c5ac703d82a6",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。文章の生成はコードレビューの承認ではない。 文章の生成とコミットやpushの実行は別である。"
+    },
+    "q-d6-a02-ms-20261017": {
+      "fingerprint": "ccf5f7b583180cae27c30755a966eac845e76b0abc489c45c8703cf63f95e5d4",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。入力参照の除外はContent Exclusionで別に管理する。 参照情報は判断材料だが自社利用への適合性の最終判定ではない。"
+    },
+    "q-d6-a07-ms-20261017": {
+      "fingerprint": "04958b331f650902a66f16d457c13f28cdf1630392b926919a13f48455e182f9",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。非学習から保持ゼロを導くことはできない。 受容率は利用統計でありデータ保持の契約条件を表さない。"
+    },
+    "q-sc04-2-ms-20261017": {
+      "fingerprint": "e00a88107d9713c565a242250bd1912a5d5858559b84694b18b748a586d2e722",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。文章生成の役割であり実装変更を行う依頼とは異なる。 テストの説明文と実行結果は別の根拠である。"
+    },
+    "q-sc06-1-ms-20261017": {
+      "fingerprint": "0cccd97f6aaed627a4ad61165fbc3b4a9c3c8a66287a29eaca6b9152028c4835",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。読込や記述は遵守の保証ではなく生成物との照合が必要である。 常に参照する指示とタスクごとに呼ぶPrompt Fileは適用方法が異なる。"
+    },
+    "q-sc08-1-ms-20261017": {
+      "fingerprint": "8bd5c907eff43de0ca4b5d24354b13a771113c0fe2cd4b4b517adacb0d16b810",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。取得と基盤モデルの再学習は別である。 取得した材料も生成物の正しさを保証するものではない。"
+    },
+    "q-d2-a24-ms-20261017": {
+      "fingerprint": "c75cccb9d98cd3a17f5ea34a1019cf5e718ff578ecfe2caec2052fb70a57a546",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。規約として毎回適用したい指示には適するが、任意実行という今回の要件と合わない。 ノート以外の作業でも必要な命名規約を失う。"
+    },
+    "q-d3-a17-ms-20261017": {
+      "fingerprint": "104cdc4df0de8f1903f0e99d63ed29e64954d14ceb9d59d3052accb39292fb1f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。パス除外なら公開コードのAllowだけで解消する観測と合わない。 出力フィルタだけでは除外表示が維持される観測を説明しない。"
+    },
+    "q-d6-a09-ms-20261017": {
+      "fingerprint": "f7c35fa01d14a374b673151649cc2a012d24964d0913f97f1ac004e30602e850",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。Xに割当があることは別の情報源で確認済みである。 管理イベントの取得とIDEテレメトリー設定は別である。"
+    },
+    "q-d3-a13-ms-20261017": {
+      "fingerprint": "97634126cd3fd832ea041765e5fbadaa400cf17cdde2faca37534047652e27e4",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。未利用や収集条件の違いでも活動がない場合がある。 表示名はアカウントの一意な識別を保証しない。"
+    },
+    "q-d6-a03-feature-20261016-ms-20261017": {
+      "fingerprint": "e0e426051394ac891f33b9d40f429a6eb41a71a3abb4910adb4a8f57dc9559fb",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。間接経路の例外があるので表示だけで全経路を否定できない。 公開コード一致は生成出力の制御で、IDEの型情報供給とは別である。"
+    },
+    "q-d1-a11-feature-20261016-ms-20261017": {
+      "fingerprint": "558099d3ebe07e0690ff963d18e48e21ead1ebdc3b45c7ca45af1ae126834af8",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。同じ提供元でも機能ごとのトリガー条件は異なる。 NESも自動要求の抑制対象なので種類の変更だけでは根拠にならない。"
+    },
+    "q-d5-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "9efc7ca91a6269be5669d269aab625426d1972700bd7ca8baa538830ad4c27cd",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。会話履歴の切替は補完モデルの切替ではない。 提案の有効・無効とモデルの指定は別の設定である。"
+    },
+    "q-d2-a20-ms-20261017": {
+      "fingerprint": "37e2c55d8be92336b0f5800ddc83ac35743a9c9dcd622771a6d443bda817cfbf",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。同じスナップショットを再添付しても午後の変更は増えない。 発見と認証・認可は異なる段階である。"
+    },
+    "q-d2-e08-ms-20261017": {
+      "fingerprint": "84261f6415495c49410a214c7c81427535dfe117f89391dbc6ab062a412f2343",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。狭い指示を追加しても広い共通指示の適用は取り消されない。 適用範囲がリポジトリ全体のままなので目的を満たさない。"
+    },
+    "q-d2-a23-ms-20261017": {
+      "fingerprint": "1af7355b5aba80a7288c8335a859baab0c3fa2700cbc7c954617895427418cab",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。HTTPサーバーのURLは提供されておらず接続方式が異なる。 envはプロセスの環境変数を設定する項目で、提供されたCLI引数を渡すargsの代用にはならない。"
+    },
+    "q-d2-a25-ms-20261017": {
+      "fingerprint": "a4aec5684845e367b69a506b0f1f5bf829c76f82a6a594232dfe67eb4484e21f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。候補ツールの制御とshellサブコマンドの実行権限は別で、gitという候補ツールも提供されていない。 Git操作以外のツールにも許可を広げるため今回の範囲指定に反する。"
+    },
+    "q-d5-a15-feature-20261016-ms-20261017": {
+      "fingerprint": "455064529989fd0bc44a1667e9b8f34b61f13cce949a028e84c4c79adfad6d73",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。入力定義への参照ではなく固定文字列になり認証値を渡せない。 実値が共有構成に残るため今回の秘密値を保存しない条件に反する。"
+    },
+    "q-sc03-3-feature-20261016-ms-20261017": {
+      "fingerprint": "732c3933b2148446e428d440ed22e4440b990d434d02bede05da4e7a20afbc2a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。リポジトリの共有はGit等による配布で、今回の個人用自動同期の条件と違う。 一度の会話への貼付はファイルの変更を別PCへ自動同期しない。"
+    },
+    "q-d2-a18-feature-20261016-ms-20261017": {
+      "fingerprint": "b7dc82f16944cff8dfeb11e9f93b9ae022ab539316494405c28891e3f1a3638d",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。一般設定とMCPの接続構成は読込先が異なる。 Prompt FileとAgent定義は別で、指定したCLIのユーザー範囲にもならない。"
+    },
+    "q-d5-e08-feature-20261016-ms-20261017": {
+      "fingerprint": "43c5bdd8386e74f1d926bf5b5c385faeb17733e8953c0c38f04eadc86170e191",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。過去の結果と次のレビューに使う現在設定は別である。 明示したPR設定を下位優先にするのは順序が逆である。"
+    },
+    "q-d3-e04-ms-20261017": {
+      "fingerprint": "58f09d7f6f347ea9d1ea1201c53f8d40d1dc1e38030605f28af019632244eb43",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。今回の取得経路はMCPではなくローカルツールである。 公開コード一致は出力側の制御で入力除外の代替ではない。"
+    },
+    "q-d2-e21-ms-20261017": {
+      "fingerprint": "3fc4f58acb418651099724426c131677864e2772c73c5bd778e4a5597d954b06",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。BはSpaceへ既にアクセスでき、R側の不足が残る。 CはRへ既にアクセスでき、Space側の不足が残る。"
+    },
+    "q-d6-e06-ms-20261017": {
+      "fingerprint": "9aefe955636ff92a4505e6f39c1ea51da9383628e6c4db324508ad9eb0e96007",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。組織保存値と上位強制を反映した実効値を混同している。 個人設定でもEnterpriseの強制を緩和できない。"
+    },
+    "q-d2-e11-feature-20261016-ms-20261017": {
+      "fingerprint": "d9a05fb53ba168243b28a811a27014de08ae4285a4252ce00e5ac699b70019d1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。baseの指示を読むというブランチの取り違えである。 docsのMarkdownは指定されたsrcのTypeScriptパスに一致しない。"
+    },
+    "q-d1-e03-feature-20261016-ms-20261017": {
+      "fingerprint": "455d472a74710986c42bb7f91a63d76f323b6e54133ad4f568885c9e1ac7d4db",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。ファイル復元と外部状態の補償を混同している。 保持すべき利用者の変更まで失うので復元目標に反する。"
+    },
+    "q-d5-e07-feature-20261016-ms-20261017": {
+      "fingerprint": "0bcbfd355e736975e01332974f22a232587f65d7a3606b6122c10a4cad78b0a0",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。同時指定での優先規則を逆にしている。 権限許可を候補ツールの登録と混同している。"
+    },
+    "q-d2-e06-ms-20261017": {
+      "fingerprint": "89e33f64b42429f5234e5da602fbf0ccf4a88f2a4b5fd61f54d106128159d304",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。gitは今回の提供ツール名ではなく、サブコマンド権限制御にならない。 allow指定は実行拒否という要件と逆である。"
+    },
+    "q-d4-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "51c3513e5e56de81ad1630419636173eb5671942dfd97ef5507ae4d526bc601e",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。既にあるsearchの追記でも優先する明示一覧へ併合されない。 未接続という証拠があり、記載だけでは呼び出せない。"
+    },
+    "q-d4-e09-feature-20261016-ms-20261017": {
+      "fingerprint": "585cfce6f8c79a78feaed081d7521e094761c1e11196a3da3676386f6c38e2ea",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。会話の要約はツール定義そのものの要約ではない。 小さい占有部分を消し、保持すべき会話も失う。"
+    },
+    "q-d4-e06-feature-20261016-ms-20261017": {
+      "fingerprint": "1ec516b6df64315517c9b484865beda03dcb68e93803c631222d4b163b34436f",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。docsはIのsrc/**に一致しない。 除外されるIと除外されないJを逆にしている。"
+    },
+    "q-d5-e03-feature-20261016-ms-20261017": {
+      "fingerprint": "72ab8135651fda7161c50f0e57941ab103b40b89932f073e54c5dac93ad28c4a",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。Agentは現在の環境で開始できるため開始と準備完了は異なる。 毎回の準備をsetupで完了するという目的が未解決のままである。"
+    },
+    "q-d5-e05-feature-20261016-ms-20261017": {
+      "fingerprint": "c074d3f6951ec9cca9229b93c8adc9b04285f4207cc0c33109c5b494850deef1",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。レビュー専用定義を使う構成では共通側の重複追加では直らない。 レビューだけへ導入する境界を失いcloud agentにも影響する。"
+    },
+    "q-d6-e04-feature-20261016-ms-20261017": {
+      "fingerprint": "0a616dc6f6774b7198e5b43bb9f7579ca6210e9fbf4cdd18d4e633dee3d9e917",
+      "multipleAnswerRisk": false,
+      "answerWithoutReading": false,
+      "difficultyConsistent": true,
+      "requirementCoverage": true,
+      "rationale": "本文の対象・目的・保持すべき条件を確認して各候補を照合する。Yは組織BのSeat利用者でありAの管理Seat向け設定の対象ではない。 ほかのリポジトリを変えないという指定を破る。"
     }
   },
   "choiceAudit": {

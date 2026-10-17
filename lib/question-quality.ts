@@ -28,7 +28,9 @@ export function questionIssues(q: AuditableQuestion, review?: QualityReview): Qu
     const v = q.choiceQuality?.[c.id];
     return v && v.plausibility >= 2 && ['partial-match', 'wrong-scope', 'wrong-mechanism', 'common-confusion', 'wrong-use-case'].includes(v.distractorType);
   }).length;
-  if (strong < (q.difficulty === 'intermediate' ? 1 : 2)) fail('distractors', '条件を見落とすと選ぶ不正解が不足しています。');
+  const multi=q.type==='multi_select'||q.type==='multiple-select';
+  if (strong < (multi?2:q.difficulty === 'intermediate' ? 1 : 2)) fail('distractors', '条件を見落とすと選ぶ不正解が不足しています。');
+  if(multi&&(q.answer.length!==2||q.choices.length!==4))fail('multi-correct-count','複数選択は四択から厳密に二つの正答です。');
   if (q.difficulty === 'advanced' && (!q.requirementMapping?.length || q.requirementMapping.some(m =>
     !m.requirement?.trim() || !m.correctReason?.trim() || wrong.some(c => !m.distractorFailures[c.id]?.trim()))))
     fail('requirements', '要件・正解理由・各不正解の失敗理由の対応が必要です。');
@@ -49,8 +51,8 @@ export function questionIssues(q: AuditableQuestion, review?: QualityReview): Qu
 }
 export function positionDistribution(bank: AuditableQuestion[]) {
   // Multiple-select is reported separately: count occurrences / all correct occurrences.
-  const single = bank.filter(q => q.type === 'single-select');
-  const multiple = bank.filter(q => q.type === 'multiple-select');
+  const single = bank.filter(q => q.type === 'single-select'||q.type==='single_select');
+  const multiple = bank.filter(q => q.type === 'multiple-select'||q.type==='multi_select');
   const count = (qs: AuditableQuestion[]) => {
     const counts = [0, 0, 0, 0];
     for (const q of qs) q.choices.forEach((c, i) => { if (q.answer.includes(c.id)) counts[i]++; });

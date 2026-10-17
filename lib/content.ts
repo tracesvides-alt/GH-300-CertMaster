@@ -7,6 +7,7 @@ import comparisonsData from '@/content/gh300/2026-08-07/comparisons/guides.json'
 import scenarioSetsData from '@/content/gh300/2026-08-07/scenario-sets/seed.json';
 import seeds from '@/content/gh300/2026-08-07/questions/seed.json';
 import { isQuestionActive } from './question-availability';
+import {isMultiSelect,multiSelectPatterns} from './question-format';
 import {
   type Lesson,
   type GlossaryTerm,
@@ -186,14 +187,22 @@ export function buildKnowledgeBase(): KnowledgeBase {
 // Question schema (extended with difficulty & exam metadata)
 // ────────────────────────────────────────────
 const nonempty = z.string().trim().min(1);
-export const questionSchema = z
+export const questionSchema = z.preprocess(value=>{
+ if(!value||typeof value!=='object')return value;
+ const q=value as Record<string,unknown>;
+ return {...q,answer:q.answer??q.correctChoiceIds};
+}, z
   .object({
     id: nonempty,
     syllabusVersion: z.literal('2026-08-07'),
     domainId: nonempty,
     objectiveId: nonempty,
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
-    type: z.enum(['single-select', 'multiple-select']),
+    type: z.enum(['single-select', 'multiple-select', 'single_select', 'multi_select']),
+    requiredSelections:z.number().int().min(1).max(3).optional(),
+    correctChoiceIds:z.array(nonempty).optional(),
+    multiSelectPattern:z.enum(multiSelectPatterns).optional(),
+    choiceConceptIds:z.record(z.string(),z.array(nonempty)).optional(),
     status: z.enum(['verified', 'needs-review', 'ai-generated']),
     question: nonempty,
     choices: z.array(z.object({ id: nonempty, text: nonempty })).length(4),
@@ -240,7 +249,13 @@ export const questionSchema = z
       q.answer.some((a) => !q.choices.some((x) => x.id === a))
     )
       fail('Invalid answer');
-    if (q.type === 'single-select' && q.answer.length !== 1) fail('Single answer required');
+    if (!isMultiSelect(q) && (q.answer.length !== 1 || (q.requiredSelections!==undefined&&q.requiredSelections!==1))) fail('Single answer required');
+    if (isMultiSelect(q) && (q.answer.length!==2||(q.requiredSelections!==undefined&&q.requiredSelections!==2))) fail('Multi Select requires exactly 2 correct answers and requiredSelections = 2');
+    if(q.type==='multi_select'&&(q.requiredSelections!==2||!q.multiSelectPattern))fail('Multi Select metadata required');
+    if(q.correctChoiceIds&&(new Set(q.correctChoiceIds).size!==q.correctChoiceIds.length||q.correctChoiceIds.length!==q.answer.length||q.correctChoiceIds.some(id=>!q.answer.includes(id))))fail('Answer aliases disagree');
+    if(!isMultiSelect(q)&&q.multiSelectPattern)fail('Single Select cannot have a multi-select pattern');
+    if(isMultiSelect(q)&&q.multiSelectPattern&&q.difficulty==='beginner'&&q.multiSelectPattern.startsWith('scenario_'))fail('Foundation Multi Select uses Knowledge patterns');
+    if(isMultiSelect(q)&&q.difficulty==='advanced'&&(!q.multiSelectPattern?.startsWith('scenario_')||!q.requirementMapping||q.requirementMapping.length<2))fail('Exam Multi Select requires a scenario and multiple constraints');
     if (q.choices.some((x) => !q.choiceExplanations[x.id])) fail('Every choice needs explanation');
     if (q.sourceIds.some((id) => !sources.some((s) => s.id === id))) fail('Unknown source');
     if (q.status === 'verified' && !q.lastVerifiedAt) fail('Verification date required');
@@ -249,18 +264,7 @@ export const questionSchema = z
       return !metadata || metadata.sourceIds.some(id => !q.sourceIds.includes(id)) ||
         (metadata.distractorType === 'correct') !== q.answer.includes(choice.id);
     })) fail('Choice quality metadata must match answers and sources');
-  });
+  }));
 export type Question = z.infer<typeof questionSchema>;
 export const allQuestions = seeds.map((q) => questionSchema.parse(q));
 export const questions = allQuestions.filter(isQuestionActive);
-export function validateAI(value: unknown, objectiveId: string, allowedSources: string[]) {
-  const q = questionSchema.parse(value);
-  if (
-    q.status !== 'ai-generated' ||
-    q.lastVerifiedAt !== null ||
-    q.objectiveId !== objectiveId ||
-    q.sourceIds.some((id) => !allowedSources.includes(id))
-  )
-    throw Error('AI provenance mismatch');
-  return q;
-}

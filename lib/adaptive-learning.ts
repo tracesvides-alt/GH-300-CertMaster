@@ -11,6 +11,7 @@ import {
 import type { Attempt } from './learning';
 import {isQuestionActive} from './question-availability';
 import {withCurrentAttemptClassification} from './question-classification';
+import {answerDetails} from './question-format';
 
 export type MistakeType =
   | 'concept-confusion'
@@ -29,6 +30,10 @@ export interface WrongAnswerRecord {
   answeredAt: number;
   selectedChoiceIds: string[];
   correctChoiceIds: string[];
+  missingCorrectChoiceIds?:string[];
+  selectedWrongChoiceIds?:string[];
+  correctSelectedChoiceIds?:string[];
+  partialMatch?:number;
   domainId: string;
   objectiveId: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
@@ -87,6 +92,8 @@ export function extractConceptsForChoice(
   choiceId: string
 ): string[] {
   const matched = new Set<string>();
+  const explicit=question.choiceConceptIds?.[choiceId];
+  if(explicit)return explicit;
 
   // Only the choice text and its own rationale can identify a choice-specific concept.
   // testedConcepts describes the whole question, so assigning it to every choice
@@ -121,11 +128,12 @@ export function analyzeMistake(
   now = Date.now()
 ): WrongAnswerRecord {
   const correctChoiceIds = question.answer;
+  const details=answerDetails(correctChoiceIds,selectedChoiceIds);
   const testedConcepts = question.testedConcepts ?? [];
 
   // Extract concepts from selected wrong choices
   const selectedConceptsSet = new Set<string>();
-  for (const cid of selectedChoiceIds) {
+  for (const cid of details.selectedWrongChoiceIds) {
     const choice = question.choices.find((c) => c.id === cid);
     if (choice) {
       extractConceptsForChoice(choice.text, question, cid).forEach((c) => selectedConceptsSet.add(c));
@@ -134,7 +142,7 @@ export function analyzeMistake(
 
   // Extract concepts from correct choices
   const correctConceptsSet = new Set<string>();
-  for (const cid of correctChoiceIds) {
+  for (const cid of details.missingCorrectChoiceIds) {
     const choice = question.choices.find((c) => c.id === cid);
     if (choice) {
       extractConceptsForChoice(choice.text, question, cid).forEach((c) => correctConceptsSet.add(c));
@@ -189,6 +197,10 @@ export function analyzeMistake(
     answeredAt: now,
     selectedChoiceIds,
     correctChoiceIds,
+    missingCorrectChoiceIds:details.missingCorrectChoiceIds,
+    selectedWrongChoiceIds:details.selectedWrongChoiceIds,
+    correctSelectedChoiceIds:details.correctSelectedChoiceIds,
+    partialMatch:details.partialMatch,
     domainId: question.domainId,
     objectiveId: question.objectiveId,
     difficulty: question.difficulty,

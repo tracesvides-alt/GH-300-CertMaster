@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import {loadQuestionAdditions,validateQuestionAdditions,combinedChoiceBaseline,loadFeatureRefresh} from './question-additions.mjs';
 import {loadFoundationPriority} from './foundation-priority-review.mjs';
+import {loadMultiSelect} from './multi-select-review.mjs';
 
 const root = new URL('../', import.meta.url);
 const bankPath = 'content/gh300/2026-08-07/questions/seed.json';
@@ -15,7 +16,7 @@ const additions = loadQuestionAdditions(root);
 const additionErrors = validateQuestionAdditions(bank, additions);
 if (additionErrors.length) throw Error(additionErrors.join('\n'));
 const additionById = new Map(additions?.questions.map(r => [r.id, r]) ?? []);
-const replacementsById = new Map([...(loadFeatureRefresh()?.questions.map(r=>[r.id,r])??[]),...(loadFoundationPriority()?.questions.map(r=>[r.id,r])??[])]);
+const replacementsById = new Map([...(loadFeatureRefresh()?.questions.map(r=>[r.id,r])??[]),...(loadFoundationPriority()?.questions.map(r=>[r.id,r])??[]),...(loadMultiSelect()?.questions.map(r=>[r.id,r])??[])]);
 const contentBaseline = combinedChoiceBaseline(read('reports/question-choice-content-baseline.json'), additions);
 const unchangedReasons = {
   q10: 'モック・スタブ・実環境・画面検証の目的が異なり、通信と引数確認の条件が必要。',
@@ -79,7 +80,7 @@ const inventory = bank.map(q => {
   if (review.answerWithoutReading || review.multipleAnswerRisk) throw Error(`Unresolved semantic review: ${q.id}`);
   const answer = q.answer[0];
   const options = q.choices.map(c => {
-    const correct = c.id === answer;
+    const correct = q.answer.includes(c.id);
     const quality = q.choiceQuality?.[c.id];
     return {
       id: c.id, text: c.text, correct,
@@ -89,9 +90,10 @@ const inventory = bank.map(q => {
     };
   });
   const wrong = options.filter(o => !o.correct);
-  const medianWrongLength = wrong.map(o => o.text.length).sort((a, b) => a - b)[1];
+  const wrongLengths=wrong.map(o=>o.text.length).sort((a,b)=>a-b);
+  const medianWrongLength = wrongLengths.length===2?(wrongLengths[0]+wrongLengths[1])/2:wrongLengths[1];
   const answerLength = options.find(o => o.correct).text.length;
-  const lengthBias = answerLength > Math.max(30, medianWrongLength * 1.5) || answerLength < medianWrongLength * .5;
+  const lengthBias = options.filter(o=>o.correct).some(o=>o.text.length > Math.max(30, medianWrongLength * 1.5) || o.text.length < medianWrongLength * .5);
   const missingExplanation = options.some(o => !o.explanation.trim());
   const relevance = Math.round(25 * avg(wrong.map(o => o.category === 'PARTIAL_MATCH' || o.category === 'COMMON_CONFUSION' ? 1 : .7)));
   const plausibility = Math.round(25 * avg(wrong.map(o => o.plausibility / 3)));

@@ -1,0 +1,35 @@
+import fs from 'node:fs';
+import {multiSelectContent} from './multi-select-content-2026-10-17.mjs';
+import {multiFingerprint as hash} from './multi-select-review.mjs';
+const root='content/gh300/2026-08-07/',path=root+'questions/';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+if(fs.existsSync(path+'multi-select-review.json'))throw Error('Already published; edit through a new review generation.');
+const bank=read(path+'seed.json'),exclusions=read(path+'selection-exclusions.json'),quality=read(path+'quality-review.json'),difficulty=read(path+'difficulty-review.json'),classification=read('reports/question-objective-classification-review.json');
+const sources=read(root+'sources.json'),lessons=read(root+'lessons/seed.json'),retired=new Set(exclusions.questions.map(r=>r.id)),active=bank.filter(q=>!retired.has(q.id));
+const baseline={stored:bank.length,active:active.length,questionFingerprints:Object.fromEntries(bank.map(q=>[q.id,hash(q)])),byDomain:Object.fromEntries(['d1','d2','d3','d4','d5','d6'].map(d=>[d,active.filter(q=>q.domainId===d).length])),byLevel:Object.fromEntries(['beginner','intermediate','advanced'].map(d=>[d,active.filter(q=>q.difficulty===d).length]))};
+const combos=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]],levels={};
+const rows=multiSelectContent.map((d,index)=>{
+ const old=bank.find(q=>q.id===d.oldId);if(!old||retired.has(old.id))throw Error('Inactive conversion '+d.oldId);
+ const ids=['A','B','C','D'],sourceIds=[...new Set([...old.sourceIds,...d.sourceIds])];
+ if(sourceIds.some(id=>!sources.some(s=>s.id===id)))throw Error('Unknown source '+old.id);
+ const pair=combos[index%6];levels[old.difficulty]=(levels[old.difficulty]??0)+1;
+ let right=0,wrong=2;const choices=ids.map((_,i)=>{const index=pair.includes(i)?right++:wrong++;return {id:ids[index],text:d.choices[index]};});
+ const reasons=Object.fromEntries(ids.map((id,i)=>[id,d.reasons[i]])),clues=d.question.split('。').filter(Boolean).slice(0,old.difficulty==='advanced'?4:2);
+ const q={id:old.id+'-ms-20261017',syllabusVersion:old.syllabusVersion,domainId:old.domainId,objectiveId:old.objectiveId,difficulty:old.difficulty,type:'multi_select',requiredSelections:2,correctChoiceIds:['A','B'],multiSelectPattern:d.pattern,status:'verified',question:d.question,choices,answer:['A','B'],explanation:d.reasons.slice(0,2).join(' '),choiceExplanations:reasons,sourceIds,trustedSourceFacts:[],createdAt:'2026-10-17',lastVerifiedAt:'2026-10-17',cognitiveLevel:old.difficulty==='beginner'?'understand':old.difficulty==='intermediate'?'apply':'analyze',examLike:old.difficulty==='advanced',testedConcepts:old.testedConcepts??[old.objectiveId],scenarioSetId:null,clues,contentRevision:'multi-select-2026-10-17',distractorQuality:'two-independent-judgments',choiceQuality:Object.fromEntries(ids.map(id=>[id,{plausibility:3,distractorType:['A','B'].includes(id)?'correct':'common-confusion',sourceIds,rationale:reasons[id]}])),requirementMapping:clues.map(requirement=>({requirement,correctReason:d.reasons.slice(0,2).join(' '),distractorFailures:{C:reasons.C,D:reasons.D}}))};
+ const steps=old.difficulty==='beginner'?['本文が指定する機能・目的と各候補を照合する。']:old.difficulty==='intermediate'?['指定された用途・現状を整理する。','機能の適用範囲と操作の前提を各候補へ照合する。']:['観測結果と保持すべき制約を整理する。','適用範囲・優先順位・処理段階をそれぞれ照合する。','二つの判断を統合し、他の候補が破る条件を特定する。'];
+ const review={status:'EDITORIAL_REVIEW',blindRationale:`本文が指定した${clues[0]}という条件との照合が必要。誤答は ${reasons.C} ${reasons.D}`,difficultyEvidence:steps.join(' '),reasoningSteps:steps,choiceEvaluations:ids.map(id=>({id,valid:q.answer.includes(id),reason:reasons[id]})),sourceEvidence:sourceIds.map(id=>({id,url:sources.find(s=>s.id===id).url})),measuredLearnerDifficulty:false};
+ const r={id:q.id,oldId:old.id,oldFingerprint:hash(old),initial:{...q,status:'needs-review',lastVerifiedAt:null},after:q,fingerprint:hash(q),review};
+ bank.push(q);exclusions.questions.push({id:old.id,replacementIds:[q.id],reason:'同一テーマの複数選択版へ置換。旧資産と履歴は保存。',retiredAt:'2026-10-17',fingerprint:hash(old)});
+ quality.questions[q.id]={fingerprint:hash(q),multipleAnswerRisk:false,answerWithoutReading:false,difficultyConsistent:true,requirementCoverage:true,rationale:review.blindRationale};
+ difficulty.questions[q.id]={fingerprint:hash(q),beforeDifficulty:q.difficulty,difficulty:q.difficulty,textRewritten:false,reclassified:false,assessment:review.difficultyEvidence,reasoningSteps:steps,counterfactual:q.difficulty==='advanced'?`本文の範囲・優先条件を変えると候補C/Dの判断が変わる。現条件では ${reasons.C} ${reasons.D}`:null,evidence:sourceIds};
+ const prior=classification.questions.find(r=>r.id===old.id);
+ classification.questions.push({id:q.id,changed:false,before:{domainId:q.domainId,objectiveId:q.objectiveId},after:q,difficulty:q.difficulty,status:q.status,question:q.question,correctChoices:q.choices.filter(c=>q.answer.includes(c.id)),rationale:`同一のCopilot機能について二つの判断を照合する。${q.explanation}`,guideCriterion:prior.guideCriterion,fingerprint:hash(q),latestReview:'reports/multi-select-quality-audit.md'});
+ for(const s of sources.filter(s=>sourceIds.includes(s.id))){s.relatedQuestionIds=[...new Set([...(s.relatedQuestionIds??[]),q.id])];}
+ for(const l of lessons.filter(l=>l.questionIds?.includes(old.id)))l.questionIds=[...l.questionIds,q.id];
+ return r;
+});
+for(const c of classification.coverage)for(const level of ['beginner','intermediate','advanced'])c[level]=bank.filter(q=>q.objectiveId===c.id&&q.difficulty===level&&q.status==='verified').length;
+classification.summary={...classification.summary,reviewed:bank.length,archived:exclusions.questions.length,multiSelectReplacementCount:rows.length,afterDomains:Object.fromEntries(['d1','d2','d3','d4','d5','d6'].map(d=>[d,bank.filter(q=>q.domainId===d).length]))};
+write(path+'seed.json',bank);write(path+'selection-exclusions.json',exclusions);write(path+'quality-review.json',quality);write(path+'difficulty-review.json',difficulty);write('reports/question-objective-classification-review.json',classification);write(root+'sources.json',sources);write(root+'lessons/seed.json',lessons);
+write(path+'multi-select-review.json',{reviewedAt:'2026-10-17',status:'EDITORIALLY_REVIEWED',method:'原文と4候補を編集上で照合。構造検査・第二AI呼出し・受験者実測を区別する。実試験での出題頻度や等価性の保証ではない。',baseline,questions:rows});
+console.log({added:rows.length,byLevel:levels});

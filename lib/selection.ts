@@ -3,6 +3,7 @@ import { domains, type Question } from './content';
 import type { Attempt } from './learning';
 import { withCurrentAttemptClassification } from './question-classification';
 import { isQuestionActive } from './question-availability';
+import {isMultiSelect} from './question-format';
 export const questionCounts = [5, 10, 20, 30, 50] as const;
 export const selectionOptionsSchema = z
   .object({
@@ -14,17 +15,11 @@ export const selectionOptionsSchema = z
       .default('Random'),
     preferUnanswered: z.boolean().default(true),
     avoidRecent: z.boolean().default(true),
-    verifiedOnly: z.boolean().default(true),
-    includeAI: z.boolean().default(false),
     domainId: z.string().default('all'),
     objectiveId: z.string().default('all'),
     scope: z.enum(['all', 'incorrect', 'bookmarked']).default('all'),
     difficultyMode: z.enum(['balanced', 'foundation', 'exam']).default('balanced'),
-  })
-  .refine(
-    (o) => !(o.verifiedOnly && o.includeAI),
-    'Verified only and include AI are mutually exclusive',
-  );
+  });
 export type SelectionOptions = z.infer<typeof selectionOptionsSchema>;
 export const defaultSelectionOptions = selectionOptionsSchema.parse({});
 export type QuestionHistory = {
@@ -116,7 +111,7 @@ export function filterEligibleQuestions(
     (q) =>
       isQuestionActive(q) &&
       domains.some((d) => d.id === q.domainId) &&
-      (q.status === 'verified' || (q.status === 'ai-generated' && !options.verifiedOnly && options.includeAI)) &&
+      q.status === 'verified' &&
       (options.domainId === 'all' || q.domainId === options.domainId) &&
       (options.objectiveId === 'all' || q.objectiveId === options.objectiveId) &&
       (options.scope !== 'incorrect' || history[q.id]?.latestCorrect === false) &&
@@ -437,7 +432,7 @@ export function selectQuestions(
     method = 'random';
     notices.push('弱点を判断する回答履歴がまだ少ないため、ランダムで出題します。');
   }
-  const selected =
+  let selected =
     method === 'due-review'
       ? selectDueForReviewQuestions(eligible, options, context)
       : method === 'random'
@@ -445,6 +440,25 @@ export function selectQuestions(
         : method === 'weak-points'
           ? selectWeakPointQuestions(eligible, options, context)
           : selectSyllabusWeightedQuestions(eligible, options, context);
+  // Keep due-date ordering authoritative. Else swap only inside the already
+  // allocated domain/difficulty (and Objective for Weak Points), never relax
+  // the user's scope or alter the original allocation to meet a type quota.
+  if(method!=='due-review'&&eligible.some(isMultiSelect)&&eligible.some(q=>!isMultiSelect(q))){
+    const desired=Math.round(selected.length*.25),weights=calculateQuestionWeights(eligible,options,context,method==='weak-points');
+    const rng=context.rng??Math.random,copy=[...selected];
+    while(copy.filter(isMultiSelect).length!==desired){
+      const needMulti=copy.filter(isMultiSelect).length<desired;
+      const ids=new Set(copy.map(q=>q.id));
+      const swaps=copy.flatMap((q,index)=>{
+        if(isMultiSelect(q)===needMulti)return [];
+        const candidates=eligible.filter(v=>!ids.has(v.id)&&isMultiSelect(v)===needMulti&&v.domainId===q.domainId&&v.difficulty===q.difficulty&&(method!=='weak-points'||v.objectiveId===q.objectiveId));
+        return candidates.length?[{index,candidates}]:[];
+      });
+      if(!swaps.length)break;
+      const swap=draw(swaps,()=>1,rng);copy[swap.index]=pick(swap.candidates,1,weights,rng,copy)[0];
+    }
+    selected=copy;
+  }
   if (method === 'due-review') {
     const now = context.now ?? Date.now();
     const dueCount = eligible.filter((q) => {
@@ -506,7 +520,6 @@ export function selectMockQuestions(
       count,
       mode: 'Syllabus Weighted',
       difficultyMode: 'exam',
-      verifiedOnly: true,
     },
     context,
   );

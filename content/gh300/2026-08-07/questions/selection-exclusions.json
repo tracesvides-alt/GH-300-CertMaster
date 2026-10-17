@@ -1541,6 +1541,492 @@
       "reason": "CLIの選択と実行前の許可確認は他の基礎で維持し、同じCLI選択の類題をMobileの文脈指定へ置き換える。",
       "retiredAt": "2026-10-17",
       "fingerprint": "038329cdff58de5728725f673cd090719e7ae1ba4874b348a1d743b0fa588538"
+    },
+    {
+      "id": "q-d1-f03",
+      "replacementIds": [
+        "q-d1-f03-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "c1acb279c3c4289045ee53b96638182afa7c5c9fd91d4dff0b3aa1b0e72a1979"
+    },
+    {
+      "id": "q-d2-f05",
+      "replacementIds": [
+        "q-d2-f05-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "6c0af329d2ba24e71ea2e61cc1a1c35e5cf85f0a86193c0a82fe055b417c6683"
+    },
+    {
+      "id": "q-d2-a03",
+      "replacementIds": [
+        "q-d2-a03-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "c8bc901cb2ec59d64c0a249b4742c42fd5328b779cdf44f39e55272875164d20"
+    },
+    {
+      "id": "q-d2-a09",
+      "replacementIds": [
+        "q-d2-a09-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "1ce03d5992a15ed5b672df1f78aa85ffe0a25eec52b18be6ab555a2ae1f9c8a1"
+    },
+    {
+      "id": "q-d2-a11",
+      "replacementIds": [
+        "q-d2-a11-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "8e595345932de1b1afa161c59d20a245d1ba08c0502c9bf2d8174cf81ff7a884"
+    },
+    {
+      "id": "q-d2-a12",
+      "replacementIds": [
+        "q-d2-a12-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2c467bfd018e6153f6e6fe5e17b74fa8b3212d0a6d4867580a32791a42f2b949"
+    },
+    {
+      "id": "q-d2-a13",
+      "replacementIds": [
+        "q-d2-a13-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "f540321cf37c2b9e038df206530dd8e1134d8ae1814deeb6181a92d4ce47990a"
+    },
+    {
+      "id": "q-d2-a17",
+      "replacementIds": [
+        "q-d2-a17-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "d58b5671205b61df9319ca3d0733315feda9d02b81f4cce776cbc3dc159b9a6b"
+    },
+    {
+      "id": "q-d2-a19",
+      "replacementIds": [
+        "q-d2-a19-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "55681690f8526b55e513f170e7cfb82157ffddb06292ec7006167e45e6fb6cb9"
+    },
+    {
+      "id": "q-d2-a21",
+      "replacementIds": [
+        "q-d2-a21-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "831f1b55d85a9bbc4d60de8ca989f8a3d604b81fe8cfaa80d35ce80adcc09a34"
+    },
+    {
+      "id": "q-d2-e04",
+      "replacementIds": [
+        "q-d2-e04-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "47e3bc3b83ca3ea092b9eb0d930f12408dd9f3846d3afdc7c19c7d7f0d6529c3"
+    },
+    {
+      "id": "q-d3-f03",
+      "replacementIds": [
+        "q-d3-f03-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "fee1070191cd4d42a53378eecce6f3326fc3e0c41091265d12c42e87577eeca3"
+    },
+    {
+      "id": "q-d3-f04",
+      "replacementIds": [
+        "q-d3-f04-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "11e7aa646ffc1642c90eb659ac8ce9991a9698eda742ed90f99f072646ff67c4"
+    },
+    {
+      "id": "q-d3-a02",
+      "replacementIds": [
+        "q-d3-a02-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "80ed04ddaec9561b349f29754804955e49a31f2574f0fdb52b186350e55011a0"
+    },
+    {
+      "id": "q-d3-a04",
+      "replacementIds": [
+        "q-d3-a04-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "25762d992292ac2327ca53a0a8002085b1a2f7bb6f3806c13d8990ad68b54883"
+    },
+    {
+      "id": "q-d3-e05",
+      "replacementIds": [
+        "q-d3-e05-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "bd88dd31a24e99d02f0604457d1630a08487cfce794b1361d27b31232f4ed35d"
+    },
+    {
+      "id": "q-d4-f03",
+      "replacementIds": [
+        "q-d4-f03-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "bdac5944382cc082ce62656cfe80faee7a508126f3e521e142ac8bd07e108488"
+    },
+    {
+      "id": "q-d4-f05",
+      "replacementIds": [
+        "q-d4-f05-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "0b56650e00752556049d9fd8e85a00710cea8e3975322edd6fd6dcce1e4954b6"
+    },
+    {
+      "id": "q-d4-a08",
+      "replacementIds": [
+        "q-d4-a08-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "536710d8d48c08ea1ac4232fcbd553d037f68946e3073cabf82add7d2c89edd6"
+    },
+    {
+      "id": "q-d4-e02",
+      "replacementIds": [
+        "q-d4-e02-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "0dd39d3c3469617b5d2c6ae403a2f55871f3df48539474b3b25214d2c1db8a83"
+    },
+    {
+      "id": "q-d5-f02-b",
+      "replacementIds": [
+        "q-d5-f02-b-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "1d88043dd921dad0eb2a9de2fe9d02abcbebc2c0097e8489616f4fba6f9de28d"
+    },
+    {
+      "id": "q-d6-a02",
+      "replacementIds": [
+        "q-d6-a02-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "7315af9651c46253d373b444f6da54718a14bc2035755ed11bb8dbff683811f5"
+    },
+    {
+      "id": "q-d6-a07",
+      "replacementIds": [
+        "q-d6-a07-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "fb21ecc9afeca6eda1d09c26badfe6c53910e3406519bd96ebf0bcff79b083cc"
+    },
+    {
+      "id": "q-sc04-2",
+      "replacementIds": [
+        "q-sc04-2-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2aaa7e65e537183dfe43ff6e4cfba3362cef1664d0f82c5ef9f66096604e978e"
+    },
+    {
+      "id": "q-sc06-1",
+      "replacementIds": [
+        "q-sc06-1-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "306f917688079743b4cea103eca79e3e92542ae7a8b1437f4f56488ca186917b"
+    },
+    {
+      "id": "q-sc08-1",
+      "replacementIds": [
+        "q-sc08-1-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "62478d01a56e79acaec8c48843c3f76b629de631ad63d0f6e983dc71b29b177e"
+    },
+    {
+      "id": "q-d2-a24",
+      "replacementIds": [
+        "q-d2-a24-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "ee2819a4c443d8d6fe973b610ae1006e39e48dfde9594c43391111b7afa525dc"
+    },
+    {
+      "id": "q-d3-a17",
+      "replacementIds": [
+        "q-d3-a17-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "227efd19a514264987f89338aa2a32090fbf94d4fb311aedd134f489837c4096"
+    },
+    {
+      "id": "q-d6-a09",
+      "replacementIds": [
+        "q-d6-a09-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "0b72261c8bca4bfa75266772ac357cdb4add31233e4ae081aed4aa63a065daea"
+    },
+    {
+      "id": "q-d3-a13",
+      "replacementIds": [
+        "q-d3-a13-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2e84e24616754da05dfedc4f75b3963c43a8dad8c7f617bd1552684f0021bdba"
+    },
+    {
+      "id": "q-d6-a03-feature-20261016",
+      "replacementIds": [
+        "q-d6-a03-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "cf07bf2d12f254b32fe201b7d1f77af457ee6a0781719334d6b519ab43695490"
+    },
+    {
+      "id": "q-d1-a11-feature-20261016",
+      "replacementIds": [
+        "q-d1-a11-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "c7d8018c0d495dba23ebfcc787846619a3302da572850e7f25c8800c3c9b1cf7"
+    },
+    {
+      "id": "q-d5-e04-feature-20261016",
+      "replacementIds": [
+        "q-d5-e04-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "58ae5d6b162f4ca24e8701154e5dd275cc2a194ef172f87aff4d337ebc5767ae"
+    },
+    {
+      "id": "q-d2-a20",
+      "replacementIds": [
+        "q-d2-a20-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "4996cfdfc285948c0921f06b5a8bcf6dd1d6bc6da7a14fb86cd72fd91a9c00a5"
+    },
+    {
+      "id": "q-d2-e08",
+      "replacementIds": [
+        "q-d2-e08-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "9611d9c4ebc6384e15db8f0c99712a99413a6c7d93b923ec2201dfdb7b478cea"
+    },
+    {
+      "id": "q-d2-a23",
+      "replacementIds": [
+        "q-d2-a23-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "ae82994d085485137864a95b3d507f269b09f605f468a0238f75961b59fcbd07"
+    },
+    {
+      "id": "q-d2-a25",
+      "replacementIds": [
+        "q-d2-a25-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "ec662bee2c9f417f9e306c436c1f14ed48d8aaf672dd45f0582b6a3c6085ba6b"
+    },
+    {
+      "id": "q-d5-a15-feature-20261016",
+      "replacementIds": [
+        "q-d5-a15-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "26ba5767d080f13748b9a8c6fb74881fc3261d25142708f4a5a6f27e2a506272"
+    },
+    {
+      "id": "q-sc03-3-feature-20261016",
+      "replacementIds": [
+        "q-sc03-3-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "fcb39a42c780ca6d7868f95d7cca02db4b55bfbb02e1afff7170be812a8613a4"
+    },
+    {
+      "id": "q-d2-a18-feature-20261016",
+      "replacementIds": [
+        "q-d2-a18-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "bd69c56ef7007007a489d8a29df4a8e04e8e0411cd3153ca97f95449237a5639"
+    },
+    {
+      "id": "q-d5-e08-feature-20261016",
+      "replacementIds": [
+        "q-d5-e08-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "c89e14b88bfe4766fd5ccaea4120e5f50c1c5b0079c5460a9dc14866102d5eb6"
+    },
+    {
+      "id": "q-d3-e04",
+      "replacementIds": [
+        "q-d3-e04-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "8ee9b3ca8bd3cf45ad8f3e6b3381809b512fb94eaf7049597cd00982604ec9f4"
+    },
+    {
+      "id": "q-d2-e21",
+      "replacementIds": [
+        "q-d2-e21-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "4506fc07f6ef92cd4e629068fee3428c15d0d99b4eca4b6e05050efddcf5b195"
+    },
+    {
+      "id": "q-d6-e06",
+      "replacementIds": [
+        "q-d6-e06-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "9cacd930f15e7d9f18481e3a17fc68d1436b4318a2e0a616658f81fb50eda81a"
+    },
+    {
+      "id": "q-d2-e11-feature-20261016",
+      "replacementIds": [
+        "q-d2-e11-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "bce1d8ba2b09a9f9d8b1381ec34af0abbadd6f6ea0a7c0b474cc54b34d7b6bc6"
+    },
+    {
+      "id": "q-d1-e03-feature-20261016",
+      "replacementIds": [
+        "q-d1-e03-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "96a8008859b6cffdc6b5a70d189976ec93cb62613bc64b2460126e06dc9a13be"
+    },
+    {
+      "id": "q-d5-e07-feature-20261016",
+      "replacementIds": [
+        "q-d5-e07-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2ac22d3f8b6860fca48807b250d2881941aafaf5ae7a3d11e05a944aaa6dae4a"
+    },
+    {
+      "id": "q-d2-e06",
+      "replacementIds": [
+        "q-d2-e06-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "59fa2cff975b23f0600cfc4587d503ad81471dd2137d127105bbdc38f0510684"
+    },
+    {
+      "id": "q-d4-e04-feature-20261016",
+      "replacementIds": [
+        "q-d4-e04-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "fa00cd65cd4cce0f13e1b2bae19ef4968b8eae2429089743dc29418d2b59326d"
+    },
+    {
+      "id": "q-d4-e09-feature-20261016",
+      "replacementIds": [
+        "q-d4-e09-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2ed0cc5f34ea0c5298a00036631ebdfa4d11142849f0ce7f7cc8eca8b319f9c3"
+    },
+    {
+      "id": "q-d4-e06-feature-20261016",
+      "replacementIds": [
+        "q-d4-e06-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "ff5451e4e038173f29b55cad3ed7f607d54c14849d53a8e639fe3f607feea5d5"
+    },
+    {
+      "id": "q-d5-e03-feature-20261016",
+      "replacementIds": [
+        "q-d5-e03-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "eb65aa15690a4e7d91bb364dd979ca46c15da582ebdb08d176c2eea91d4bb6f8"
+    },
+    {
+      "id": "q-d5-e05-feature-20261016",
+      "replacementIds": [
+        "q-d5-e05-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "2c42db0e8c6c78c6bf29fa01d094d26d69457ef3f047701262bd6c1f5c3f3088"
+    },
+    {
+      "id": "q-d6-e04-feature-20261016",
+      "replacementIds": [
+        "q-d6-e04-feature-20261016-ms-20261017"
+      ],
+      "reason": "同一テーマの複数選択版へ置換。旧資産と履歴は保存。",
+      "retiredAt": "2026-10-17",
+      "fingerprint": "a34c7fcf3fe8a30d42a6c90233b8df1d18f7f585747c93dad64e4eb0da988cbe"
     }
   ]
 }

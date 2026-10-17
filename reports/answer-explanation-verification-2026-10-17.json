@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-17",
+  "unitTests": {
+    "command": "npm test",
+    "filesPassed": 27,
+    "testsPassed": 260,
+    "notes": "初回はWindows sandboxの一時ファイルrename制限で未開始。通常の実行環境で再実行し全件通過。"
+  },
+  "typeCheck": { "command": "npm run check", "exitCode": 0 },
+  "explanationIntegrity": { "command": "npm run explanations:check", "exitCode": 0, "boundQuestions": 253, "questionBankUnchanged": true },
+  "e2e": {
+    "command": "$env:CERTMASTER_E2E_WEBPACK='1'; npx playwright test tests/e2e/answer-explanation.spec.ts tests/e2e/feature-refresh.spec.ts tests/e2e/foundation-priority.spec.ts",
+    "testsPassed": 8,
+    "testsFailed": 0,
+    "projects": ["desktop", "mobile"],
+    "productionWebpackBuild": "passed through the E2E server harness",
+    "checks": ["各難易度・単一/複数選択の先行6問と元の画像の問題の詳細解説", "回答前の解説非表示", "複数段落の全文表示", "選択肢別の短い解説の維持", "Key Cluesの非表示", "採点と回答保存", "既存問題群の表示と履歴", "横方向のはみ出しなし"]
+  },
+  "visualInspection": {
+    "screenshots": ["artifacts/answer-explanation-mobile-q-d1-a18-feature-20261016.png", "artifacts/answer-explanation-desktop-q-d2-e21-ms-20261017.png"],
+    "notes": "段落の区切りと選択肢解説との区別を目視確認。画像はE2Eの一時成果物であり、再実行時に生成される。"
+  },
+  "knownQuestionIssues": ["q-d5-e08-feature-20261016-ms-20261017: review effortの既存正答が現行公式仕様と不整合。今回の解説に要レビューを明記し、問題自体の修正を別途記録。"],
+  "limitations": "内容の品質確認は同じ編集者による評価。学習者による理解度の実測や、全登録URLの独立した鮮度監査ではない。"
+}

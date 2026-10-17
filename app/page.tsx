@@ -1,4 +1,5 @@
 'use client';
+import { answerExplanation } from '@/lib/answer-explanation';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import {
@@ -50,7 +51,7 @@ import {
   type GlossaryFilter,
   type SearchResult,
 } from '@/lib/content';
-import { db, saveGenerated, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive, getCurrentConfusionPairs } from '@/lib/db';
+import { db, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive, getCurrentConfusionPairs } from '@/lib/db';
 import { getLessonNav } from '@/lib/lesson-nav';
 import { LessonFooterNav } from './components/lesson-footer-nav';
 import { StudyItemNav } from './components/study-item-nav';
@@ -60,11 +61,13 @@ import { ItemReadingCompanion } from './components/item-reading-companion';
 import { ResumeLearningCard } from './components/resume-learning-card';
 import { choiceLabel, answerLabels } from '@/lib/choice-labels';
 import { withTimeout } from '@/lib/with-timeout';
-import { mastery, score, streak, type Attempt } from '@/lib/learning';
+import { mastery, score, streak,attemptFormat,formatAccuracy, type Attempt } from '@/lib/learning';
+import {isMultiSelect,requiredSelectionCount,validSelection,toggleSelection} from '@/lib/question-format';
 import { withCurrentAttemptClassification, withCurrentQuestionClassification } from '@/lib/question-classification';
 import { isQuestionActive, withoutDeletedSessionQuestions, getQuestionRetirement } from '@/lib/question-availability';
 import PracticeSetup, { CountPicker } from './components/practice-setup';
 import PracticeResult from './components/practice-result';
+import FormatAnalytics from './components/format-analytics';
 import WrongAnswerNotebook from './components/wrong-answer-notebook';
 import ConceptConfusionMap from './components/concept-confusion-map';
 import SpacedRepetitionCard from './components/spaced-repetition-card';
@@ -98,7 +101,7 @@ const labels = ['学習ダッシュボード', '教材を読む', '問題演習'
 type StudyTab = 'Learn' | 'Glossary' | 'Compare';
 const kb = buildKnowledgeBase();
 const importanceLabels = { essential: '必須', important: '重要', supplementary: '補助' };
-const difficulty = { beginner: '基礎', intermediate: '応用', advanced: '本番相当' };
+const difficulty = { beginner: '基礎', intermediate: '応用', advanced: '高難度' };
 type Session = {
   id: string;
   questions: Question[];
@@ -143,10 +146,6 @@ export default function App() {
     [session, setSession] = useState<Session | null>(null),
     [now, setNow] = useState(Date.now()),
     [online, setOnline] = useState(true);
-  const [aiOpen, setAiOpen] = useState(false),
-    [aiText, setAiText] = useState(''),
-    [aiAnswer, setAiAnswer] = useState(''),
-    [aiMode, setAiMode] = useState('explain');
   const [practiceOptions, setPracticeOptions] = useState<SelectionOptions>(defaultSelectionOptions);
   const [settingsReady, setSettingsReady] = useState(false);
   const [practiceRun, setPracticeRun] = useState<PracticeRun | null>(null);
@@ -178,7 +177,7 @@ export default function App() {
   const attempts = useLiveQuery(async () =>
     (await db.attempts.orderBy('at').reverse().toArray()).map(withCurrentAttemptClassification), []) ?? [];
   const bookmarks = useLiveQuery(() => db.bookmarks.toArray(), []) ?? [];
-  const generated = useLiveQuery(() => db.generated.toArray(), []) ?? [];
+  const legacyGenerated = useLiveQuery(() => db.generated.toArray(), []) ?? [];
   const sessions = useLiveQuery(async () => (await db.sessions.toArray()).map(s =>
     s.completed ? s : withoutDeletedSessionQuestions({ ...s, questions: s.questions.map(withCurrentQuestionClassification) })), []) ?? [];
   const lessonCompletions = useLiveQuery(() => db.lessonCompletions.toArray(), []) ?? [];
@@ -238,7 +237,7 @@ export default function App() {
   }, [lessonId]);
 
   const m = mastery(attempts),
-    bank = [...questions, ...generated],
+    bank = questions,
     q = session && !session.completed ? session.questions[session.index] : queue[index];
   const activeMock = !!session && !session.completed;
   const isStudyDetail = tab === 'Study' && (lessonId !== null || glossaryTermId !== null || comparisonId !== null);
@@ -323,11 +322,6 @@ export default function App() {
   }
 
   const lock = useRef(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
-    if (aiOpen) dialogRef.current?.showModal();
-    else dialogRef.current?.close();
-  }, [aiOpen]);
   useEffect(() => {
     const update = () => setOnline(navigator.onLine);
     update();
@@ -381,7 +375,7 @@ export default function App() {
     setNotice('');
   }
   function start(requested: Question[], options = practiceOptions, history = attempts) {
-    const list = requested.filter(isQuestionActive);
+    const list = requested.filter(q=>isQuestionActive(q)&&q.status==='verified');
     setPracticeSummary(null);
     setPracticeRun(
       list.length
@@ -426,11 +420,11 @@ export default function App() {
     setBusy(true);
     setNotice('');
     try {
-      const [history, saved, marks, reviews, pairs] = await withTimeout(Promise.all([
-        db.attempts.toArray(), db.generated.toArray(), db.bookmarks.toArray(),
+      const [history, marks, reviews, pairs] = await withTimeout(Promise.all([
+        db.attempts.toArray(), db.bookmarks.toArray(),
         db.questionReviews.toArray(), getCurrentConfusionPairs(),
       ]));
-      const result = selectQuestions([...questions, ...saved], options, {
+      const result = selectQuestions(questions, options, {
         attempts: history,
         bookmarkIds: marks.map((b) => b.id),
         reviewStates: Object.fromEntries(reviews.map((review) => [review.questionId, review])),
@@ -480,7 +474,7 @@ export default function App() {
     }
   }
   async function answer() {
-    if (!q || !selected.length || lock.current || revealed) return;
+    if (!q || !validSelection(q,selected) || lock.current || revealed) return;
     lock.current = true;
     setBusy(true);
     try {
@@ -496,6 +490,7 @@ export default function App() {
         at: nowTimestamp,
         status: q.status,
         sessionId: practiceRun?.id,
+        ...attemptFormat(q,selected),
       };
       const updated = practiceRun
         ? { ...practiceRun, answers: [...practiceRun.answers, response] }
@@ -564,6 +559,7 @@ export default function App() {
   }
   async function moveMock(delta: number) {
     if (!session || !q) return;
+    if(selected.length&&!validSelection(q,selected))return;
     try {
       const s = {
         ...session,
@@ -600,44 +596,6 @@ export default function App() {
       setNotice('模試結果を保存できませんでした。もう一度終了してください。');
     } finally {
       lock.current = false;
-      setBusy(false);
-    }
-  }
-  async function tutor(action = aiMode) {
-    setBusy(true);
-    setAiAnswer('');
-    try {
-      const target =
-        (action === 'weakness'
-          ? attempts.find((a) => !a.correct && a.status === 'verified')?.objectiveId
-          : undefined) ||
-        q?.objectiveId ||
-        (objective !== 'all' ? objective : weak[0]?.id) ||
-        objectives[0].id;
-      const response = await fetch('/api/tutor', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action,
-          objectiveId: target,
-          questionId: q?.id,
-          message: aiText,
-          wrongQuestionIds: attempts
-            .filter((a) => !a.correct)
-            .slice(0, 10)
-            .map((a) => a.questionId),
-        }),
-      });
-      const data = await response.json();
-      if (!response.ok) throw Error(data.error || 'AIの応答に失敗しました');
-      if (data.question) {
-        const newQ = await saveGenerated(data.question);
-        setAiOpen(false);
-        start([newQ]);
-      } else setAiAnswer(data.text);
-    } catch (e) {
-      setAiAnswer((e as Error).message);
-    } finally {
       setBusy(false);
     }
   }
@@ -785,16 +743,16 @@ export default function App() {
                 <div className="question-meta">
                   <span className={q!.status === 'verified' ? 'verified' : 'ai-badge'}>
                     {q!.status === 'verified' ? <ShieldCheck size={14} /> : <Sparkles size={14} />}{' '}
-                    {q!.status === 'verified' ? 'Verified · 公式準拠' : 'AI Generated'}
+                    {q!.status === 'verified' ? 'Verified · 公式準拠' : q!.status==='needs-review' ? '要レビュー' : '旧生成問題 · 未検証'}
                   </span>
                   <span className="tag">{domains.find((d) => d.id === q!.domainId)?.name}</span>
                   <span className="tag">
                     {objectives.find((o) => o.id === q!.objectiveId)?.title}
                   </span>
                   <span className="tag">{difficulty[q!.difficulty]}</span>
-                  {q!.examLike && <span className="tag exam-badge">本番シナリオ型</span>}
+                  {q!.examLike && <span className="tag exam-badge">シナリオ型</span>}
                   <span className="tag">
-                    {q!.type === 'single-select' ? '単一選択' : '複数選択'}
+                    {isMultiSelect(q!) ? `${requiredSelectionCount(q!)}つ選択` : '単一選択'}
                   </span>
                 </div>
                 {(() => {
@@ -830,7 +788,8 @@ export default function App() {
                     }}>関連する現行問題を解く</button>}
                   </aside>
                 )}
-                <fieldset disabled={revealed || busy}>
+                {isMultiSelect(q!)&&<p id="selection-counter" role="status" className="selection-counter">選択中 {selected.length} / {requiredSelectionCount(q!)} · 最大{requiredSelectionCount(q!)}つまで選択</p>}
+                <fieldset disabled={revealed || busy} aria-describedby={isMultiSelect(q!)?'selection-counter':undefined}>
                   <legend className="sr-only">回答を選択</legend>
                   {q!.choices.map((c) => (
                     <label
@@ -838,18 +797,11 @@ export default function App() {
                       className={`choice ${selected.includes(c.id) ? 'selected' : ''} ${revealed && q!.answer.includes(c.id) ? 'correct' : ''}`}
                     >
                       <input
-                        type={q!.type === 'single-select' ? 'radio' : 'checkbox'}
+                        type={isMultiSelect(q!) ? 'checkbox' : 'radio'}
                         name="answer"
                         checked={selected.includes(c.id)}
-                        onChange={() =>
-                          setSelected(
-                            q!.type === 'single-select'
-                              ? [c.id]
-                              : selected.includes(c.id)
-                                ? selected.filter((a) => a !== c.id)
-                                : [...selected, c.id],
-                          )
-                        }
+                        disabled={isMultiSelect(q!)&&!selected.includes(c.id)&&selected.length>=requiredSelectionCount(q!)}
+                        onChange={() => setSelected(current=>toggleSelection(q!,current,c.id))}
                       />
                       <span className="choice-letter">{choiceLabel(q!, c.id)}</span>
                       <span>{c.text}</span>
@@ -859,17 +811,17 @@ export default function App() {
                 </fieldset>
                 {activeMock ? (
                   <div className="actions">
-                    <button disabled={session!.index === 0 || busy} onClick={() => moveMock(-1)}>
+                    <button disabled={session!.index === 0 || busy||(selected.length>0&&!validSelection(q!,selected))} onClick={() => moveMock(-1)}>
                       前の問題
                     </button>
                     {session!.index < session!.questions.length - 1 ? (
-                      <button className="primary" disabled={busy} onClick={() => moveMock(1)}>
+                      <button className="primary" disabled={busy||(selected.length>0&&!validSelection(q!,selected))} onClick={() => moveMock(1)}>
                         回答を保存して次へ <ArrowRight size={17} />
                       </button>
                     ) : (
                       <button
                         className="primary"
-                        disabled={busy}
+                        disabled={busy||(selected.length>0&&!validSelection(q!,selected))}
                         onClick={() => finishMock(session!)}
                       >
                         模試を終了する
@@ -879,7 +831,7 @@ export default function App() {
                 ) : !revealed ? (
                   <button
                     className="primary answerbutton"
-                    disabled={!selected.length || busy}
+                    disabled={!validSelection(q!,selected) || busy}
                     onClick={answer}
                   >
                     回答を確認する <ArrowRight size={17} />
@@ -889,7 +841,7 @@ export default function App() {
                     <div className="explanation" aria-live="polite">
                       <div className="explanation-header">
                         <span className="ai-insight-badge">
-                          <Sparkles size={14} /> AI INSIGHT
+                          <Sparkles size={14} /> 回答解説
                         </span>
                         <h3
                           className={score(q!, selected) ? 'correct-heading' : 'incorrect-heading'}
@@ -910,26 +862,12 @@ export default function App() {
                         </div>
                       </div>
                       <div className="explanation-body">
+                        {isMultiSelect(q!)&&<p>選び忘れ: {answerLabels(q!,q!.answer.filter(id=>!selected.includes(id)))||'なし'} ／ 誤って選んだ項目: {answerLabels(q!,selected.filter(id=>!q!.answer.includes(id)))||'なし'}</p>}
                         <h4>Why this is correct</h4>
-                        <p>{q!.explanation}</p>
+                        {answerExplanation(q!).split('\n\n').map((paragraph, index) => (
+                          <p className="answer-reason" key={index}>{paragraph}</p>
+                        ))}
                       </div>
-                      {q!.clues && q!.clues.length > 0 && (
-                        <div className="key-clues-section">
-                          <h4>
-                            <Lightbulb size={16} /> Key Clues（問題文中の判断材料）
-                          </h4>
-                          <div className="clues-list">
-                            {q!.clues.map((clue, ci) => (
-                              <span key={ci} className="clue-tag">
-                                &ldquo;{clue}&rdquo;
-                              </span>
-                            ))}
-                          </div>
-                          <p className="caption">
-                            実務要件と制約から上記の条件を抽出し、最適なアプローチを判断します。
-                          </p>
-                        </div>
-                      )}
                       <div className="choice-explanations">
                         <h4>選択肢ごとの詳細分析</h4>
                         {q!.choices.map((c) => (
@@ -1084,15 +1022,6 @@ export default function App() {
                         類題を解く
                       </button>
                       <button onClick={() => readLesson(q!.domainId)}>教材を読む</button>
-                      <button
-                        onClick={() => {
-                          setAiOpen(true);
-                          setAiMode('explain');
-                        }}
-                      >
-                        <Sparkles size={16} />
-                        AIに質問
-                      </button>
                     </div>
                     <button
                       className="primary answerbutton"
@@ -1206,11 +1135,11 @@ export default function App() {
                                   tag: 'バランス',
                                 }
                               : {
-                                  title: '本番レベル実戦 20問',
+                                  title: '高難度チャレンジ 20問',
                                   mode: 'exam' as const,
                                   count: 20 as const,
-                                  desc: '複数要件の抽出と高度な判断を問う本番相当シナリオで総仕上げを行います。',
-                                  tag: '本番レベル',
+                                  desc: '複数の条件や証拠を照らし合わせて判断する、高難度の問題に挑戦します。',
+                                  tag: '高難度',
                                 };
                         return (
                           <>
@@ -2453,16 +2382,6 @@ export default function App() {
                     notice={notice}
                     verifiedCount={questions.filter(q => q.status === 'verified').length}
                   />
-                  <button
-                    className="textbutton"
-                    onClick={() => {
-                      setAiOpen(true);
-                      setAiMode('generate');
-                    }}
-                  >
-                    <Sparkles size={17} />
-                    AIでObjectiveの問題を生成する
-                  </button>
                 </>
               )}
               {tab === 'Mock' && !activeMock && (
@@ -2470,6 +2389,7 @@ export default function App() {
                   {session?.completed ? (
                     <article className="panel">
                       <span className="eyebrow">MOCK RESULTS</span>
+                      <FormatAnalytics rows={formatAccuracy(attempts.filter(a=>a.sessionId===session.id),session.questions)}/>
                       <h2>模試、おつかれさまでした。</h2>
                       <p className="caption">
                         指定{session.requestedCount ?? session.questions.length}問 / 実施
@@ -2614,6 +2534,7 @@ export default function App() {
               )}
               {tab === 'Review' && (
                 <>
+                  <FormatAnalytics rows={formatAccuracy(attempts,[...allQuestions,...legacyGenerated])}/>
                   <div className="review-subnav-bar">
                     <button
                       className={`subnav-tab-btn ${reviewSubTab === 'notebook' ? 'active' : ''}`}
@@ -2711,16 +2632,6 @@ export default function App() {
                       )}
                       <div className="section-title">
                         <h2>学びを、定着させる。</h2>
-                        <button
-                          className="textbutton"
-                          onClick={() => {
-                            setAiOpen(true);
-                            setAiMode('weakness');
-                          }}
-                        >
-                          <Sparkles size={17} />
-                          AIで間違い傾向を振り返る
-                        </button>
                       </div>
                       <div className="actions">
                         <button
@@ -2749,17 +2660,17 @@ export default function App() {
                               <div className="row">
                                 <span className={a.correct ? 'green' : 'amber'}>
                                   {a.correct ? '✓ 正解' : '↻ 要復習'} ·{' '}
-                                  {a.status === 'verified' ? 'Verified' : 'AI生成'}
+                                  {a.status === 'verified' ? 'Verified' : a.status==='needs-review' ? '要レビュー' : '旧生成問題'}
                                 </span>
                                 <span className="caption">
                                   {new Date(a.at).toLocaleString('ja-JP')}
                                 </span>
                               </div>
-                              <p>{[...allQuestions, ...generated].find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
+                              <p>{[...allQuestions, ...legacyGenerated].find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
                               <button
                                 className="textbutton"
                                 onClick={() => {
-                                  const item = [...allQuestions, ...generated].find((q) => q.id === a.questionId);
+                                  const item = [...allQuestions, ...legacyGenerated].find((q) => q.id === a.questionId);
                                   if (item) {
                                     showHistoricalAnswer(item, a.answer);
                                   }
@@ -2780,17 +2691,6 @@ export default function App() {
                           </div>
                         )}
                       </article>
-                      {generated.length > 0 && (
-                        <article className="panel">
-                          <h2>保存済みのAI生成問題 · 未検証</h2>
-                          {generated.map((q) => (
-                            <button className="resume" key={q.id} onClick={() => start([q])}>
-                              {q.question}
-                              <ArrowRight size={16} />
-                            </button>
-                          ))}
-                        </article>
-                      )}
                     </>
                   )}
                 </>
@@ -2820,53 +2720,7 @@ export default function App() {
           </button>
         ))}
       </nav>
-      {aiOpen && (
-        <dialog
-          ref={dialogRef}
-          onCancel={() => setAiOpen(false)}
-          className="ai-dialog"
-          aria-labelledby="ai-title"
-        >
-          <div className="row">
-            <h2 id="ai-title">
-              <Sparkles size={22} /> AI Tutor
-            </h2>
-            <button className="iconbutton" aria-label="AIを閉じる" onClick={() => setAiOpen(false)}>
-              <X />
-            </button>
-          </div>
-          <p>公式資料に基づく学習補助です。AI生成の回答・問題は未検証です。</p>
-          <label>
-            サポート内容
-            <select value={aiMode} onChange={(e) => setAiMode(e.target.value)}>
-              <option value="explain">問題の追加解説</option>
-              <option value="term">用語を質問</option>
-              <option value="similar">類題を生成</option>
-              <option value="generate">Objectiveの問題を生成</option>
-              <option value="weakness">間違い傾向の解説</option>
-            </select>
-          </label>
-          <label>
-            質問・補足
-            <textarea
-              maxLength={2000}
-              value={aiText}
-              onChange={(e) => setAiText(e.target.value)}
-              placeholder="どの部分を詳しく知りたいですか？"
-            />
-          </label>
-          <button className="primary" disabled={busy || !online} onClick={() => tutor()}>
-            {busy ? '確認しています…' : 'AIに送信する'}
-            <ArrowRight size={17} />
-          </button>
-          <div className="ai-output" role="status">
-            {aiAnswer}
-          </div>
-          <p className="caption">
-            オンライン接続とサーバー側のAI設定が必要です。送信した質問はAI提供元で処理されます。
-          </p>
-        </dialog>
-      )}
+
     </div>
   );
 }

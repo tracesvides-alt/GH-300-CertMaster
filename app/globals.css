@@ -960,6 +960,9 @@ footer > span:first-child {
   padding: 28px;
   background: var(--surface-1);
 }
+.selection-counter { color: var(--text-secondary); margin: 1rem 0; }
+.choice:has(input:disabled):not(.selected) { opacity: .65; }
+.multi-answer-analysis { padding: .75rem; border: 1px solid var(--border); border-radius: .5rem; }
 
 .question h2 {
   font-size: 22px;
@@ -1208,6 +1211,11 @@ fieldset {
 
 .explanation-body {
   margin: 16px 0;
+  overflow-wrap: anywhere;
+}
+
+.explanation-body p + p {
+  margin-top: 12px;
 }
 
 .explanation-body h4 {
@@ -2415,42 +2423,6 @@ summary {
   border: 1px solid rgba(239, 68, 68, 0.4) !important;
   color: #fca5a5 !important;
   font-weight: 600 !important;
-}
-
-.key-clues-section {
-  margin: 18px 0;
-  padding: 14px 18px;
-  background: rgba(234, 179, 8, 0.06);
-  border: 1px solid rgba(234, 179, 8, 0.25);
-  border-radius: 10px;
-}
-
-.key-clues-section h4 {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #fbbf24;
-  font-size: 13px;
-  font-weight: 600;
-  margin: 0 0 10px;
-}
-
-.clues-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.clue-tag {
-  background: rgba(234, 179, 8, 0.12);
-  color: #fef08a;
-  border: 1px solid rgba(234, 179, 8, 0.3);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-family: var(--font-mono);
-  font-weight: 500;
 }
 
 .difficulty-results-grid {

@@ -1,3 +1,4 @@
+import {answerExplanation} from '../../lib/answer-explanation';
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 import {focusDecisions as historicalFocusDecisions} from '../fixtures/applied-focus-decisions';
@@ -6,6 +7,7 @@ const focusDecisions=historicalFocusDecisions.filter(([id])=>!exclusions.questio
 const bank=JSON.parse(fs.readFileSync('content/gh300/2026-08-07/questions/seed.json','utf8'));
 
 test('surviving historical Copilot focus actions score and persist in practice',async({page},testInfo)=>{
+ test.skip(focusDecisions.length===0,'The historical cohort is fully retired; replacement content is exercised in feature-refresh and multi-select.');
  expect(focusDecisions.length).toBeGreaterThan(0);
  test.setTimeout(90000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
@@ -41,7 +43,7 @@ test('surviving historical Copilot focus actions score and persist in practice',
   await page.locator('.question fieldset input').nth(options[0].index).check();
   await page.getByRole('button',{name:'回答を確認する'}).click();
   await expect(page.getByRole('heading',{name:'正解です！',exact:true})).toBeVisible();
-  await expect(page.locator('.explanation-body')).toContainText(q.explanation);
+  for(const paragraph of answerExplanation(q).split('\n\n')) await expect(page.locator('.explanation-body')).toContainText(paragraph);
   await page.getByRole('button',{name:i<focusDecisions.length-1?'次の問題へ':'演習を終了する'}).click();
  }
  await expect(page.getByRole('heading',{name:'今回の学習結果'})).toBeVisible();

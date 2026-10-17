@@ -8,6 +8,7 @@ import {allQuestions,questionSchema} from '../lib/content';
 import {mastery,score,type Attempt} from '../lib/learning';
 import {calculateObjectiveStats,selectQuestions,defaultSelectionOptions} from '../lib/selection';
 import {analyzeMistake,currentConfusionPairs} from '../lib/adaptive-learning';
+import {isQuestionActive} from '../lib/question-availability';
 
 describe('feature replacement publication and history boundary',()=>{
  it('binds all approved and rejected decisions to current assets',()=>{
@@ -24,7 +25,7 @@ describe('feature replacement publication and history boundary',()=>{
   const attempts:Attempt[]=ledger.questions.map((r,i)=>{const q=r.after;return {id:'old-'+i,questionId:r.oldId,domainId:q.domainId,objectiveId:q.objectiveId,answer:['A'],correct:true,status:'verified',at:i};});
   expect(mastery(attempts).readiness).toBe(0);
   expect(Object.values(calculateObjectiveStats(attempts)).reduce((n,s)=>n+s.attempts,0)).toBe(0);
-  const q=allQuestions.find(q=>q.id===ledger.questions[0].id)!;
+  const q=allQuestions.find(q=>ledger.questions.some(r=>r.id===q.id)&&isQuestionActive(q))!;
   const fresh:Attempt={...attempts[0],id:'new',questionId:q.id,answer:q.answer,correct:true};
   expect(mastery([...attempts,fresh]).readiness).toBeGreaterThan(0);
   expect(calculateObjectiveStats([...attempts,fresh])[q.objectiveId].attempts).toBe(1);
@@ -37,7 +38,7 @@ describe('feature replacement publication and history boundary',()=>{
   expect(score(old,old.choices.filter(c=>!old.answer.includes(c.id)).slice(0,1).map(c=>c.id))).toBe(false);
  });
  it('rebuilds concept counts from current records while preserving mixed archived records',()=>{
-  const old=allQuestions.find(q=>q.id===ledger.questions[0].oldId)!,fresh=allQuestions.find(q=>q.id===ledger.questions[0].id)!;
+  const old=allQuestions.find(q=>q.id===ledger.questions[0].oldId)!,fresh=allQuestions.find(q=>ledger.questions.some(r=>r.id===q.id)&&isQuestionActive(q))!;
   const records=[old,old,old,fresh].map((q,i)=>({...analyzeMistake(q,[],i),id:'record-'+i,confusionPairIds:['g-mcp__g-prompt-files']}));
   const before=JSON.stringify(records);
   const pairs=currentConfusionPairs(records,[]);

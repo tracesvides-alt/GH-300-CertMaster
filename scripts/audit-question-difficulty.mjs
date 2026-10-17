@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import {loadQuestionAdditions,validateQuestionAdditions,combinedDifficultyBaseline,loadFeatureRefresh} from './question-additions.mjs';
 import {loadFoundationPriority} from './foundation-priority-review.mjs';
+import {loadMultiSelect} from './multi-select-review.mjs';
 const root = new URL('../', import.meta.url);
 const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
 const bank = read('content/gh300/2026-08-07/questions/seed.json');
@@ -11,7 +12,7 @@ const additions = loadQuestionAdditions(root);
 const additionErrors = validateQuestionAdditions(bank, additions);
 if (additionErrors.length) throw Error(additionErrors.join('\n'));
 const baseline = combinedDifficultyBaseline(read('reports/question-difficulty-baseline.json'), additions);
-const additionIds = new Set([...(additions?.questions.map(r => r.id) ?? []),...(loadFeatureRefresh()?.questions.map(r=>r.id)??[]),...(loadFoundationPriority()?.questions.map(r=>r.id)??[])]);
+const additionIds = new Set([...(additions?.questions.map(r => r.id) ?? []),...(loadFeatureRefresh()?.questions.map(r=>r.id)??[]),...(loadFoundationPriority()?.questions.map(r=>r.id)??[]),...(loadMultiSelect()?.questions.map(r=>r.id)??[])]);
 const names = { beginner: 'Foundation', intermediate: 'Applied', advanced: 'Exam' };
 const fingerprint = q => createHash('sha256').update(JSON.stringify(q)).digest('hex');
 // Display-order changes do not count as editorial rewrites in this audit.

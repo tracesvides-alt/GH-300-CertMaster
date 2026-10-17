@@ -1,4 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect,type Page } from '@playwright/test';
+async function selectFirst(page:Page){
+ await page.locator('.question fieldset input').first().check();
+ if(await page.locator('.question fieldset input[type=checkbox]').count())await page.locator('.question fieldset input').nth(1).check();
+}
 test('dashboard → practice → answer → explanation persists', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: '学習ダッシュボード' })).toBeVisible();
@@ -8,7 +12,7 @@ test('dashboard → practice → answer → explanation persists', async ({ page
     .getByRole('button', { name: /Practice/ })
     .click();
   await page.getByRole('button', { name: '演習を開始する' }).click();
-  await page.locator('.question fieldset input').first().check();
+  await selectFirst(page);
   await page.getByRole('button', { name: '回答を確認する' }).click();
   await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Official Source' })).toBeVisible();
@@ -30,7 +34,7 @@ test('mini mock resumes and shows results', async ({ page }) => {
     .getByRole('button', { name: /Mock/ })
     .click();
   await page.getByRole('button', { name: '5問のミニ模試' }).click();
-  await page.locator('.question fieldset input').first().check();
+  await selectFirst(page);
   await page.getByRole('button', { name: '回答を保存して次へ' }).click();
   await page.reload();
   await page
@@ -39,7 +43,7 @@ test('mini mock resumes and shows results', async ({ page }) => {
     .click();
   await page.getByRole('button', { name: /中断した模試を再開/ }).click();
   for (let i = 1; i < 5; i++) {
-    await page.locator('.question fieldset input').first().check();
+    await selectFirst(page);
     await page
       .getByRole('button', { name: i < 4 ? '回答を保存して次へ' : '模試を終了する' })
       .click();

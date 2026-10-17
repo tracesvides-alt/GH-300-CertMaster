@@ -7,6 +7,7 @@ import baseline from '../reports/question-choice-content-baseline.json';
 import exclusions from '../content/gh300/2026-08-07/questions/selection-exclusions.json';
 import additions from '../content/gh300/2026-08-07/questions/additions-review.json';
 import repairs from '../reports/copilot-feature-quality-repairs-2026-10-16.json';
+import multi from '../content/gh300/2026-08-07/questions/multi-select-review.json';
 import {combinedChoiceBaseline} from '../scripts/question-additions.mjs';
 
 describe('choice-quality inventory', () => {
@@ -47,7 +48,7 @@ describe('choice-quality inventory', () => {
       expect(row.multipleAnswerRisk).toBe(false);
       expect(row.lengthBias).toBe(false);
       expect(row.options.filter(c => !c.correct && c.plausibility >= 2).length).toBeGreaterThanOrEqual(2);
-      if (row.difficulty === 'advanced') {
+      if (row.difficulty === 'advanced' && row.correctAnswer.length===1) {
         // An assigned score of 3 is not evidence that a distractor is difficult.
         // Bind each current Exam item to its actual explanation and alternate case.
         const record = repairs.questions.find(r => r.id === row.questionId)!;
@@ -60,8 +61,14 @@ describe('choice-quality inventory', () => {
           expect(c.explanation.trim()).toBeTruthy();
         }
       }
+      if(row.correctAnswer.length===2){
+        const record=multi.questions.find(r=>r.id===row.questionId)!;
+        expect(record).toBeDefined();
+        expect(record.review.choiceEvaluations.map(r=>[r.id,r.valid])).toEqual(['A','B','C','D'].map(id=>[id,row.correctAnswer.includes(id)]));
+        if(row.difficulty==='advanced')expect(record.review.reasoningSteps).toHaveLength(3);
+      }
       expect(row.requirementMapping[0].correctReason).toBeTruthy();
-      expect(Object.keys(row.requirementMapping[0].distractorFailures)).toHaveLength(3);
+      expect(Object.keys(row.requirementMapping[0].distractorFailures)).toHaveLength(4-row.correctAnswer.length);
     }
   });
 

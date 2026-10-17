@@ -1,10 +1,12 @@
+import {answerExplanation} from '../../lib/answer-explanation';
 import {test,expect} from '@playwright/test';
 import ledger from '../../reports/copilot-feature-quality-repairs-2026-10-16.json';
+import multi from '../../content/gh300/2026-08-07/questions/multi-select-review.json';
 
 for(const [batch,start,end] of [[1,0,46],[2,46,91]]){
  test(`quality repair batch ${batch}: every reviewed question scores and persists`,async({page},info)=>{
   test.setTimeout(180000);
-  const questions=ledger.questions.slice(start,end).map(r=>r.after);
+  const questions=ledger.questions.slice(start,end).map(r=>multi.questions.find(m=>m.oldId===r.id)?.after??r.after);
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');
   await expect(page.getByRole('heading',{name:'学習ダッシュボード'})).toBeVisible();
@@ -34,11 +36,11 @@ for(const [batch,start,end] of [[1,0,46],[2,46,91]]){
    // viewport so long URLs cannot silently widen cards and break hit testing.
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth+1)).toBe(true);
    if(i===0)await page.screenshot({path:`artifacts/feature-refresh-${info.project.name}-${batch}.png`,fullPage:true});
-   const ids=i===0?[q.choices.find(c=>!q.answer.includes(c.id))!.id]:q.answer;
+   const ids=i===0?[...(q.answer.length===2?[q.answer[0]]:[]),q.choices.find(c=>!q.answer.includes(c.id))!.id]:q.answer;
    for(const id of ids)await page.locator('.question fieldset input').nth(q.choices.findIndex(c=>c.id===id)).check();
    await page.getByRole('button',{name:'回答を確認する'}).click();
    await expect(page.getByRole('heading',{name:'選択肢ごとの詳細分析'})).toBeVisible();
-   await expect(page.locator('.explanation-body')).toContainText(q.explanation);
+   for(const paragraph of answerExplanation(q).split('\n\n')) await expect(page.locator('.explanation-body')).toContainText(paragraph);
    if(i>0)await expect(page.getByRole('heading',{name:'正解です！',exact:true})).toBeVisible();
    await page.getByRole('button',{name:i<questions.length-1?'次の問題へ':'演習を終了する'}).click();
   }

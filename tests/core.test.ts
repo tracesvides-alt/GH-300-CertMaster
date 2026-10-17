@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { questions, questionSchema, validateAI, domains, objectives } from '../lib/content';
+import { questions, questionSchema, domains, objectives } from '../lib/content';
 import { score, mastery, allocate, streak, type Attempt } from '../lib/learning';
 import { LearningDB } from '../lib/db';
-import { runTutor } from '../lib/ai';
 const q = questions[0];
 const attempt = (question = q, correct = true, at = Date.now()): Attempt => ({
   id: crypto.randomUUID(),
@@ -114,57 +113,6 @@ describe('IndexedDB', () => {
     await reopened.delete();
   });
 });
-describe('AI provenance', () => {
-  const generated = { ...q, status: 'ai-generated', lastVerifiedAt: null };
-  it('rejects false verified status and irrelevant sources', () => {
-    expect(() => validateAI(q, q.objectiveId, q.sourceIds)).toThrow();
-    expect(() =>
-      validateAI({ ...generated, sourceIds: ['prompt'] }, q.objectiveId, q.sourceIds),
-    ).toThrow();
-    expect(validateAI(generated, q.objectiveId, q.sourceIds).status).toBe('ai-generated');
-  });
-  it('validates and stamps generated output', async () => {
-    const response = await runTutor(
-      { action: 'similar', objectiveId: q.objectiveId },
-      {
-        complete: async (system, input) => {
-          expect(input).toContain('trustedSourceFacts');
-          if (system.includes('第2段階')) return JSON.stringify({
-            multipleAnswerRisk: false, answerWithoutReading: false,
-            difficultyConsistent: true, requirementCoverage: true,
-            rationale: '月末の期待値を独立に検証する条件があり、他の案では月末の正否を確認できない。',
-            choiceScores: { A: 3, B: 2, C: 2, D: 2 },
-          });
-          expect(system).toContain('ai-generated');
-          return JSON.stringify({ question: generated });
-        },
-      },
-    );
-    expect('question' in response && response.question?.id.startsWith('ai-')).toBe(true);
-  });
-  it('rejects empty-source output', async () => {
-    await expect(
-      runTutor(
-        { action: 'generate', objectiveId: q.objectiveId },
-        { complete: async () => JSON.stringify({ question: { ...generated, sourceIds: [] } }) },
-      ),
-    ).rejects.toThrow();
-  });
-  it('rejects uncovered objectives', async () => {
-    const missing = objectives.find((o) => !questions.some((q) => q.objectiveId === o.id));
-    if (missing) {
-      await expect(
-        runTutor({ action: 'generate', objectiveId: missing.id }, { complete: async () => '' }),
-      ).rejects.toThrow('未収録');
-    } else {
-      expect(objectives.every((o) => questions.some((q) => q.objectiveId === o.id))).toBe(true);
-      await expect(
-        runTutor({ action: 'generate', objectiveId: 'd9o9' }, { complete: async () => '' }),
-      ).rejects.toThrow('Objectiveが見つかりません');
-    }
-  });
-});
-
 // ────────────────────────────────────────────
 // Knowledge Base tests (Phase 1)
 // ────────────────────────────────────────────

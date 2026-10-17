@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {reviewMultiSelectLayer} from './multi-select-review.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -8,7 +9,8 @@ const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex
 
 // Binds an explicit editorial decision to its answer content, not just an ID.
 export function validateAppliedRemediation(bank, report, retiredIds = new Set(), refresh = loadFeatureRefresh()) {
-  const errors=[], rows=new Map(report.questions.map(r=>[r.id,r]));
+  const layer=reviewMultiSelectLayer(bank);bank=layer.bank;
+  const errors=[...layer.errors], rows=new Map(report.questions.map(r=>[r.id,r]));
   const activeApplied=bank.filter(q=>q.difficulty==='intermediate'&&!retiredIds.has(q.id));
   const replacements=new Map((refresh?.questions??[]).map(r=>[r.id,r]));
   if(rows.size!==report.questions.length||report.questions.length!==report.scope.activeApplied+report.scope.additionalFoundation)errors.push('Incomplete remediation scope');

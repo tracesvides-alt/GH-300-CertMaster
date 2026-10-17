@@ -1,6 +1,6 @@
 import {describe,expect,it} from 'vitest';
 import {allQuestions,questions,buildKnowledgeBase} from '../lib/content';
-import {isQuestionActive} from '../lib/question-availability';
+import {isQuestionActive,getQuestionRetirement} from '../lib/question-availability';
 import {selectQuestions,selectMockQuestions,defaultSelectionOptions} from '../lib/selection';
 import {withCurrentAttemptClassification,withCurrentQuestionClassification} from '../lib/question-classification';
 import exclusions from '../content/gh300/2026-08-07/questions/selection-exclusions.json';
@@ -10,6 +10,7 @@ import additions from '../content/gh300/2026-08-07/questions/additions-review.js
 import removals from '../content/gh300/2026-08-07/questions/removals.json';
 import refresh from '../content/gh300/2026-08-07/questions/feature-refresh-review.json';
 import foundation from '../content/gh300/2026-08-07/questions/foundation-priority-review.json';
+import multi from '../content/gh300/2026-08-07/questions/multi-select-review.json';
 import {createHash} from 'node:crypto';
 
 const retired = allQuestions.filter(q=>!isQuestionActive(q));
@@ -19,15 +20,15 @@ const rngFor=(seed:number)=>()=>{seed=(1664525*seed+1013904223)>>>0;return seed/
 describe('retired questions and historical compatibility',()=>{
   it('preserves archived assets and references while removing them from the new practice pool',()=>{
     const removedExisting=removals.questions.length-(additions.removedAdditions?.length??0);
-    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting+refresh.questions.length+foundation.questions.length);
+    expect(allQuestions).toHaveLength(additions.baseline.stored + additions.questions.length-removedExisting+refresh.questions.length+foundation.questions.length+multi.questions.length);
     expect(questions).toHaveLength(254);
-    expect(retired).toHaveLength(141+foundation.questions.length);
+    expect(retired).toHaveLength(141+foundation.questions.length+multi.questions.length);
     expect(questions.filter(q=>q.difficulty==='intermediate')).toHaveLength(48);
     const knownIds=buildKnowledgeBase().questionIds;
     for(const row of exclusions.questions){
       expect(retired.some(q=>q.id===row.id)).toBe(true);
       expect(knownIds).toContain(row.id);
-      expect(row.replacementIds.every(id=>questions.some(q=>q.id===id))).toBe(true);
+      expect(getQuestionRetirement(row.id)!.replacementIds.every(id=>questions.some(q=>q.id===id))).toBe(true);
       expect(hash(rawQuestions.find(q=>q.id===row.id))).toBe(row.fingerprint);
     }
   });

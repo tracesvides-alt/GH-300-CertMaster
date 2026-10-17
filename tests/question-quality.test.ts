@@ -4,7 +4,6 @@ import { distributionIssues, positionDistribution, questionIssues } from '../lib
 import { choiceLabel, answerLabels } from '../lib/choice-labels';
 import { score } from '../lib/learning';
 import { withTimeout } from '../lib/with-timeout';
-import { runTutor } from '../lib/ai';
 const exam = questions.find(q => q.difficulty === 'advanced')!;
 afterEach(() => vi.useRealTimers());
 describe('quality gates', () => {
@@ -65,14 +64,6 @@ describe('quality gates', () => {
     const multi = { ...q, type: 'multiple-select', answer: [q.choices[0].id, q.choices[3].id] };
     expect(positionDistribution([multi]).multiple.percentages).toEqual([50, 0, 0, 50]);
     expect(positionDistribution([multi]).single.questions).toBe(0);
-  });
-  it('does not accept a generated Exam question before the second review', async () => {
-    const complete = vi.fn().mockResolvedValueOnce(JSON.stringify({ question: { ...exam, status: 'ai-generated', lastVerifiedAt: null } }))
-      .mockResolvedValueOnce(JSON.stringify({ multipleAnswerRisk: true, answerWithoutReading: false,
-        difficultyConsistent: true, requirementCoverage: true, rationale: '条件を一つ変えなくても不正解の案が要件を満たす可能性が残っている。',
-        choiceScores: { A: 3, B: 2, C: 2, D: 2 } }));
-    await expect(runTutor({ action: 'generate', objectiveId: exam.objectiveId }, { complete })).rejects.toThrow('品質レビュー');
-    expect(complete).toHaveBeenCalledTimes(2);
   });
 });
 describe('practice storage responsiveness', () => {

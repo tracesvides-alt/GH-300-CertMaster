@@ -11,7 +11,7 @@ async function solve(page: Page, n: number) {
   for (let i = 0; i < n; i++) {
     const title = await page.locator('.question h2').innerText();
     const q = seed.find((q) => q.question === title)!;
-    const ids = i === 0 ? [q.choices.find((c) => !q.answer.includes(c.id))!.id] : q.answer;
+    const ids = i === 0 ? [...(q.answer.length===2?[q.answer[0]]:[]),q.choices.find((c) => !q.answer.includes(c.id))!.id] : q.answer;
     for (const id of ids)
       await page
         .locator('.question fieldset input')
@@ -22,7 +22,7 @@ async function solve(page: Page, n: number) {
     await page.getByRole('button', { name: i === n - 1 ? '演習を終了する' : '次の問題へ' }).click();
   }
 }
-test('defaults, persistent options and mutually exclusive AI switches', async ({ page }) => {
+test('fixed questions, defaults and persistent options', async ({ page }) => {
   await page.goto('/');
   await navigate(page, 'Practice');
   await expect(page.getByRole('button', { name: '演習を開始する' })).toBeEnabled();
@@ -31,13 +31,11 @@ test('defaults, persistent options and mutually exclusive AI switches', async ({
     'true',
   );
   await expect(page.getByRole('radio', { name: /ランダム/ })).toBeChecked();
-  for (const label of ['未回答問題を優先', '最近解いた問題を避ける', 'Verifiedのみ'])
+  for (const label of ['未回答問題を優先', '最近解いた問題を避ける'])
     await expect(page.getByRole('checkbox', { name: label, exact: true })).toBeChecked();
-  await expect(page.getByRole('checkbox', { name: 'AI問題を含める' })).not.toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'AI問題を含める' })).toHaveCount(0);
   await page.getByRole('button', { name: '30問', exact: true }).click();
   await page.getByRole('radio', { name: /シラバス準拠/ }).check();
-  await page.getByRole('checkbox', { name: 'AI問題を含める' }).check();
-  await expect(page.getByRole('checkbox', { name: 'Verifiedのみ' })).not.toBeChecked();
   await page.reload();
   await navigate(page, 'Practice');
   await expect(page.getByRole('button', { name: '30問', exact: true })).toHaveAttribute(
@@ -45,9 +43,7 @@ test('defaults, persistent options and mutually exclusive AI switches', async ({
     'true',
   );
   await expect(page.getByRole('radio', { name: /シラバス準拠/ })).toBeChecked();
-  await expect(page.getByRole('checkbox', { name: 'AI問題を含める' })).toBeChecked();
-  await page.getByRole('checkbox', { name: 'Verifiedのみ' }).check();
-  await expect(page.getByRole('checkbox', { name: 'AI問題を含める' })).not.toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'AI問題を含める' })).toHaveCount(0);
 });
 test('five-question result and one-tap weak retry with recent fallback', async ({ page }) => {
   await page.goto('/');
@@ -101,6 +97,7 @@ test('50-question practice remains immediate-feedback and small bank fallback is
     `1 / ${Math.min(50, seed.length)}`,
   );
   await page.locator('.question fieldset input').first().check();
+  if(await page.locator('.question fieldset input[type=checkbox]').count())await page.locator('.question fieldset input').nth(1).check();
   await page.getByRole('button', { name: '回答を確認する' }).click();
   await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
 });

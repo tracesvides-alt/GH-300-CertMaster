@@ -21,8 +21,8 @@ test('deleted snapshots in bookmarks and generated storage never enter new pract
  await page.getByRole('combobox',{name:'復習対象',exact:true}).selectOption('bookmarked');
  await page.getByRole('button',{name:'演習を開始する'}).click();
  await expect(page.locator('.question h2')).toHaveText(active.question);
- const option=active.choices.findIndex((c:{text:string})=>/^Developer: Chat Diagnosticsを実行し、Reachabilityの結果を確認する$/.test(c.text));
- await page.locator('.question fieldset input').nth(option).check();await page.getByRole('button',{name:'回答を確認する'}).click();
+ for(const id of active.answer){const option=active.choices.findIndex((c:{id:string})=>c.id===id);expect(option).toBeGreaterThanOrEqual(0);await page.locator('.question fieldset input').nth(option).check();}
+ await page.getByRole('button',{name:'回答を確認する'}).click();
  await expect(page.getByRole('heading',{name:'正解です！',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'演習を終了する'}).click();await expect(page.locator('.result-score')).toContainText('1 / 1');
  expect(errors).toEqual([]);

@@ -4,6 +4,7 @@ import { objectives } from '@/lib/content';
 import type { Attempt } from '@/lib/learning';
 import { practiceResult, improvedObjectives, type PracticeRun } from '@/lib/practice-session';
 import type { RecommendedAction } from '@/lib/adaptive-learning';
+import FormatAnalytics from './format-analytics';
 
 export default function PracticeResult({
   run,
@@ -33,7 +34,7 @@ export default function PracticeResult({
       <div className="row">
         <span className="eyebrow">PRACTICE COMPLETE</span>
         <span className="ai-insight-badge">
-          <Sparkles size={14} /> AI INSIGHT
+          <Sparkles size={14} /> 学習結果
         </span>
       </div>
       <h2>今回の学習結果</h2>
@@ -104,6 +105,7 @@ export default function PracticeResult({
           </div>
         ))}
       </div>
+      <FormatAnalytics rows={result.byFormat}/>
       <h3>Domain別結果</h3>
       {result.byDomain.map((d) => (
         <div key={d.id} className="result-row">

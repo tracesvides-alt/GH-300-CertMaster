@@ -1,6 +1,7 @@
 import Dexie, { type EntityTable } from 'dexie';
-import { type Question, questionSchema, questions } from './content';
-import { type Attempt } from './learning';
+import { type Question, questions } from './content';
+import { type Attempt,score,attemptFormat } from './learning';
+import {answerDetails} from './question-format';
 import { withCurrentQuestionClassification } from './question-classification';
 import type { SelectionOptions } from './selection';
 import type { PracticeRun } from './practice-session';
@@ -32,6 +33,7 @@ export async function getCurrentConfusionPairs():Promise<ConceptConfusionPair[]>
 export class LearningDB extends Dexie {
   attempts!: EntityTable<Attempt, 'id'>;
   bookmarks!: EntityTable<{ id: string }, 'id'>;
+  // Read-only application use: retained solely for previously saved answer history.
   generated!: EntityTable<Question, 'id'>;
   settings!: EntityTable<{ id: string; value: SelectionOptions }, 'id'>;
   practiceRuns!: EntityTable<PracticeRun, 'id'>;
@@ -66,6 +68,11 @@ export class LearningDB extends Dexie {
       wrongAnswers: 'id, questionId, objectiveId, domainId, answeredAt, recovered',
       questionReviews: 'questionId, nextReviewAt, reviewPriority, lapseCount',
       confusionPairs: 'id, severity, status, lastMistakeAt',
+    });
+    this.version(5).stores({}).upgrade(async tx=>{
+      await tx.table('wrongAnswers').toCollection().modify(record=>{
+        Object.assign(record,answerDetails(record.correctChoiceIds,record.selectedChoiceIds));
+      });
     });
   }
 }
@@ -102,7 +109,9 @@ export async function recordAttemptAdaptive(
   sessionId?: string,
   now = Date.now()
 ): Promise<Attempt> {
+  return db.transaction('rw',db.attempts,db.questionReviews,db.wrongAnswers,db.confusionPairs,async()=>{
   q = withCurrentQuestionClassification(q);
+  correct=score(q,selected);
   const att: Attempt = {
     id: crypto.randomUUID(),
     questionId: q.id,
@@ -113,6 +122,7 @@ export async function recordAttemptAdaptive(
     at: now,
     status: q.status,
     sessionId,
+    ...attemptFormat(q,selected),
   };
 
   // 1. Put attempt in standard attempts table
@@ -138,6 +148,7 @@ export async function recordAttemptAdaptive(
       await db.confusionPairs.put(p);
     }
   } else {
+    await db.wrongAnswers.where('questionId').equals(q.id).modify({recovered:true,lastReviewedAt:now});
     // On correct answer, check if any active confusion pairs can advance recovery
     for (const p of existingPairs) {
       if (p.relatedQuestionIds.includes(q.id)) {
@@ -154,6 +165,7 @@ export async function recordAttemptAdaptive(
   }
 
   return att;
+  });
 }
 
 /**
@@ -178,11 +190,3 @@ export async function getDueReviewQuestions(now = Date.now()): Promise<Question[
   scored.sort((a, b) => b.score - a.score);
   return scored.map((s) => s.q);
 }
-
-export async function saveGenerated(value: unknown) {
-  const q = questionSchema.parse(value);
-  if (q.status !== 'ai-generated') throw Error('AI status required');
-  await db.generated.put(q);
-  return q;
-}
-

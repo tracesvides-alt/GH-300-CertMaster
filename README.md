@@ -8,12 +8,12 @@ GitHub Copilot Certification「**GH-300**」のための、知的な開発者ワ
 
 ## 🌟 主な特徴
 
-### 1. 「AI・開発者ツール・知的なワークスペース」デザインシステム
+### 1. 開発者ワークスペースのデザインシステム
 
 単なる一般的な問題集アプリではなく、洗練された開発環境のような上質さと学習効率を両立したUIを提供します。
 
 - **トーンの黄金比**: `70% clean and minimal` / `20% technical and intelligent` / `10% futuristic accent`
-- **Color System**: 深みのあるダークグラファイト（`#0b0f14`, `#131922`）を基調とし、知的なクールAIシアン（`#00d4e6`）をアクセントに採用。
+- **Color System**: ダークグラファイト（`#0b0f14`, `#131922`）を基調とし、シアン（`#00d4e6`）をアクセントに採用。
 - **Background Treatment**: 文字可読性を100%維持した微小ソフトビネットと極小テクニカルパターンテクスチャ。
 - **Typography**: 本文には極上の可読性を誇る `Inter` / システムフォント、数字・スコア・バッジ・コードには `JetBrains Mono`（等幅フォント）を適用。
 - **Mobile First**: 片手操作に最適化された48px以上のタップ領域と、ブラー効果を備えた洗練されたボトムナビゲーション。
@@ -41,26 +41,25 @@ GH-300の全6 Domain / 14 Objectiveを隙間なくカバーする高品質な教
 - **3段階難易度モデル（Difficulty Architecture）**:
   - **Difficulty 1: Foundation（163問）**: 用語・原則・操作の確認。120語の用語集と1対1対応し、機能名や設定キーを確実に定着。
   - **Difficulty 2: Applied（90問）**: 具体的な入力、失敗例、利用条件、契約・テスト境界へ知識を適用する問題。過去の追加・改稿後、GH-300関連性レビューで出題軸の変更を優先とした6問は、利用者の指示により変更ではなく削除。D1～D6は24／14／6／16／17／13問。
-  - **Difficulty 3: Exam（57問）**: 複数の証拠、処理段階、契約とテストの差を比較する本番を想定した分析問題。実試験との難易度等価性は未測定。
+  - **Difficulty 3: 高難度**: 応用より難しく、複数の条件や証拠を照らし合わせて判断する分析問題。実試験との難易度等価性を示す分類ではありません。
   - 全6 Domain / 14 Objectiveに問題を配置。所属分類の再評価後、IDE操作（d2o1）の応用問題は未配備。細目別の不足は [所属分類レビュー](reports/question-objective-classification-review.md) に記録。
   - 追加はD1・D3の最終12問で停止し、今後は既存問題の品質改善を優先。[追加レビュー記録](reports/d1-d3-final-additions-review.md)。新問は独立した追加台帳で管理し、過去の固定ベースラインは維持。
 - **10組の Scenario Sets（共通実務シナリオ問題）**:
   - 1つの包括的な実務ケースから複数角度で出題する共通シナリオ問題群。スマートフォンでも読み返しやすいアコーディオンパネルを装備。
-- **Key Clues Highlighting（回答後の判断材料表示）**:
-  - 本番シナリオ問題において、問題文のどの要件・制約が正解を決定づけたかの着眼点を回答後解説にハイライト表示。
-- **Dashboard（AI学習コックピット）**:
+- **Dashboard（学習ダッシュボード）**:
   - **Exam Readiness ヒーローカード**: 合格目標ライン（700点 / 70%）への到達度を示す知的なテクニカルリングプログレス。
-  - **Recommended Practice**: Exam Readinessの習熟度に応じて「基礎10問」「バランス10問」「本番レベル20問」を動的レコメンド。
+  - **Recommended Practice**: Exam Readinessの習熟度に応じて「基礎10問」「バランス10問」「高難度チャレンジ20問」を動的レコメンド。
   - **Domain Mastery**: 6分野の出題重み比率と習熟度バーを即座に可視化。
 - **Practice（問題演習）**:
   - 出題数: 5 / 10 / 20 / 30 / 50問から選択（CountPicker）。
   - 出題モード: ランダム出題 / シラバス重み準拠 / 苦手分野集中（Weak Points）。
-  - **難易度バランス選択**: バランス（標準） / 基礎中心 / 本番レベル。
-  - **AI INSIGHT 解説**: 「Why this is correct（正解の根拠）」「選択肢ごとの詳細分析」「Key Clues」を構造化して表示。
-  - **Difficulty Analytics**: セッション終了時にFoundation / Applied / Examごとの難易度別正答率を表示。
+  - **難易度バランス選択**: バランス（標準） / 基礎中心 / 高難度中心。
+  - **固定解説**: 「Why this is correct（正解の根拠）」は機能の仕組み・条件への当てはめ・結論を説明し、「選択肢ごとの詳細分析」は短い正誤解説を表示。
+  - 詳細解説は `questions/answer-explanations.json` で版管理し、本文・選択肢・正解などが一致する場合だけ適用。過去の問題・品質台帳は保持。[全253問の解説レビュー](reports/answer-explanation-review-2026-10-17.md)に変更前後と問題自体の要修正事項を記録。`npm run explanations:check` で対象と不変条件を検証。
+  - **Difficulty Analytics**: セッション終了時に基礎 / 応用 / 高難度ごとの難易度別正答率を表示。
 - **Mock（模擬試験）**:
   - 50問（または5/10/20/30問）の本番想定模試。
-  - Verified固定、Syllabus Weighted、**Difficulty 2 / 3（Exam中心）**の本格的試験負荷を再現。
+  - Verified固定、Syllabus Weighted、**Difficulty 2 / 3（高難度中心）**で出題。
   - 試験時間カウントダウンタイマー（問題数×90秒）、中断保存・再開、終了後の総合レポート。
 - **Study（教材・用語・比較）**:
   - レッスン、用語集、比較ガイドの3大サブタブと、全体を横断検索できる**Global Search**を搭載。
@@ -99,6 +98,8 @@ npm run dev
 
 ブラウザで [http://localhost:3000](http://localhost:3000)（または表示されたポート）を開いてください。
 
+APIキーや外部AIサービスの設定は不要です。AIチューター・質問送信・問題生成は削除し、確認済みの固定問題だけを出題します。苦手分野の分析や復習スケジュールは端末内で計算します。過去の回答履歴は保持し、旧生成問題を新しい演習へ追加することはありません。
+
 ### 本番ビルドと起動
 
 ```bash
@@ -117,11 +118,9 @@ app/
   globals.css                    デザインシステム（Tokens, Surfaces, Components）
   components/
     practice-setup.tsx           問題数ピッカー（CountPicker）と出題設定
-    practice-result.tsx          演習結果サマリー、改善Objective分析、AI Insight
+    practice-result.tsx          演習結果サマリー、改善Objective分析
     lesson-footer-nav.tsx        教材末尾ナビゲーション（前後移動、進捗文脈、読了トグル）
     resume-learning-card.tsx     続きから学習（Resume Learning）ダッシュボードカード
-  api/
-    tutor/route.ts               AIチューター用サーバーエンドポイント
 content/gh300/2026-08-07/
   syllabus.json                  GH-300シラバス（6 Domain / 14 Objective / トピック一覧）
   sources.json                   64件の公式ドキュメント出典台帳

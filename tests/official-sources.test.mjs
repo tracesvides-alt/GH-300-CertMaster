@@ -39,7 +39,7 @@ describe('GitHub official source registry', () => {
     }
   });
 
-  it('keeps needs-review questions out of practice even when AI questions are allowed', () => {
+  it('keeps needs-review questions out of practice even with legacy opt-in settings', () => {
     const pending = questions.filter((q) => q.status === 'needs-review');
     expect(pending.length).toBeGreaterThan(0);
     const options = selectionOptionsSchema.parse({ verifiedOnly: false, includeAI: true });
