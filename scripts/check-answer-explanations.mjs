@@ -16,4 +16,4 @@ for (const q of eligible) {
   if (row.contract!==contract || !row.text.trim() || row.text===q.explanation) throw Error('Unbound explanation: '+q.id);
   if (JSON.stringify(review.choices)!==JSON.stringify(q.choices) || JSON.stringify(review.answer)!==JSON.stringify(q.answer) || JSON.stringify(review.choiceExplanations)!==JSON.stringify(q.choiceExplanations)) throw Error('Changed answer or short analysis: '+q.id);
 }
-console.log('PASS: 253 bound explanations, unchanged question bank, answers, choices and short analyses; 1 documented question-level inconsistency. Editorial quality is not measured by this check.');
+console.log('PASS: historical 2026-10-17 publication has 253 bound explanations and unchanged baseline assets, including its documented issue. Current corrections are verified by alignment:check. Editorial quality is not measured by this check.');

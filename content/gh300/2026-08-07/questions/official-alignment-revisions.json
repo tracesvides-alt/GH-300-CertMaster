@@ -1,0 +1,1718 @@
+{
+  "revision": "official-alignment-2026-10-18",
+  "quarantinedQuestionIds": [],
+  "questions": [
+    {
+      "id": "q-d5-e08-feature-20261016-ms-20261017",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F01",
+      "beforeContract": "{\"id\":\"q-d5-e08-feature-20261016-ms-20261017\",\"question\":\"Copilot code reviewのレビュー深度は、組織の既定値がLite、リポジトリの既定値がBalancedです。プルリクエストPは以前Liteでレビューされましたが、PRごとの深度は指定していません。プルリクエストQでは、Deepを個別に指定しています。この状態でリポジトリの既定値をDeepへ変更し、両方のPRで改めてレビューを実行します。それぞれに適用される設定の説明として正しいものを2つ選んでください。\",\"choices\":[{\"id\":\"C\",\"text\":\"PR Pは過去のレビュー深度Liteが次回も固定される\"},{\"id\":\"A\",\"text\":\"個別指定のないPR Pには現在のリポジトリの既定値Deepが適用される\"},{\"id\":\"D\",\"text\":\"PR Qは個別指定より組織既定Liteを優先する\"},{\"id\":\"B\",\"text\":\"PR Qの明示した個別指定Deepはリポジトリの既定値の変更後も有効である\"}],\"answer\":[\"A\",\"B\"],\"difficulty\":\"advanced\",\"type\":\"multi_select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o3\",\"explanation\":\"過去の実施値を個別設定の保存値と取り違えない。 PRに明示された深度の優先順位を適用する。\",\"choiceExplanations\":{\"A\":\"過去の実施値を個別設定の保存値と取り違えない。\",\"B\":\"PRに明示された深度の優先順位を適用する。\",\"C\":\"過去の結果と次のレビューに使う現在設定は別である。\",\"D\":\"明示したPR設定を下位優先にするのは順序が逆である。\"},\"sourceIds\":[\"code-review\",\"feature-refresh-review-config\"],\"contentRevision\":\"multi-select-readability-2026-10-17\"}",
+      "afterContract": "{\"id\":\"q-d5-e08-feature-20261016-ms-20261017\",\"question\":\"GitHub.comのCopilot code reviewで、組織のレビュー深度はBalanced、リポジトリの既定値はLiteです。PR Pは前回Balancedでレビューされました。Pの依頼者の設定はLiteで、今回の依頼時には深度を指定しません。PR Qも前回はBalancedで、Qの依頼者の設定もBalancedですが、今回はレビュー依頼時にLiteを明示指定します。この2回のレビューに適用される深度の説明として、正しいものを2つ選んでください。\",\"choices\":[{\"id\":\"C\",\"text\":\"PR Pの今回のレビュー深度は、Balancedになる\"},{\"id\":\"A\",\"text\":\"PR Pの今回のレビュー深度は、Liteになる\"},{\"id\":\"D\",\"text\":\"PR Qの今回のレビュー深度は、Liteになる\"},{\"id\":\"B\",\"text\":\"PR Qの今回のレビュー深度は、Balancedになる\"}],\"answer\":[\"C\",\"D\"],\"difficulty\":\"advanced\",\"type\":\"multi_select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o3\",\"explanation\":\"Pは前回使ったBalanced、Qは今回明示指定したLiteを使う。依頼時の指定は前回値より、前回値は依頼者やrepoの既定値より優先する。\",\"choiceExplanations\":{\"A\":\"Pでは前回のBalancedがrepoのLiteより優先する。\",\"B\":\"Qでは今回指定したLiteが前回のBalancedより優先する。\",\"C\":\"Pは今回の指定がないため、前回のBalancedが選ばれる。\",\"D\":\"Qは今回の依頼時にLiteを指定しており、その指定が優先する。\"},\"sourceIds\":[\"code-review\",\"feature-refresh-review-config\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "43c5bdd8386e74f1d926bf5b5c385faeb17733e8953c0c38f04eadc86170e191",
+      "afterFingerprint": "a56e32f415e371852d9ada767bb67d53265c47fc9441a9e8e7286c6c0af125cf",
+      "invalidatePreviousSnapshots": true,
+      "after": {
+        "id": "q-d5-e08-feature-20261016-ms-20261017",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o3",
+        "difficulty": "advanced",
+        "type": "multi_select",
+        "requiredSelections": 2,
+        "correctChoiceIds": [
+          "C",
+          "D"
+        ],
+        "multiSelectPattern": "scenario_judgment",
+        "status": "verified",
+        "question": "GitHub.comのCopilot code reviewで、組織のレビュー深度はBalanced、リポジトリの既定値はLiteです。PR Pは前回Balancedでレビューされました。Pの依頼者の設定はLiteで、今回の依頼時には深度を指定しません。PR Qも前回はBalancedで、Qの依頼者の設定もBalancedですが、今回はレビュー依頼時にLiteを明示指定します。この2回のレビューに適用される深度の説明として、正しいものを2つ選んでください。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "PR Pの今回のレビュー深度は、Balancedになる"
+          },
+          {
+            "id": "A",
+            "text": "PR Pの今回のレビュー深度は、Liteになる"
+          },
+          {
+            "id": "D",
+            "text": "PR Qの今回のレビュー深度は、Liteになる"
+          },
+          {
+            "id": "B",
+            "text": "PR Qの今回のレビュー深度は、Balancedになる"
+          }
+        ],
+        "answer": [
+          "C",
+          "D"
+        ],
+        "explanation": "Pは前回使ったBalanced、Qは今回明示指定したLiteを使う。依頼時の指定は前回値より、前回値は依頼者やrepoの既定値より優先する。",
+        "choiceExplanations": {
+          "A": "Pでは前回のBalancedがrepoのLiteより優先する。",
+          "B": "Qでは今回指定したLiteが前回のBalancedより優先する。",
+          "C": "Pは今回の指定がないため、前回のBalancedが選ばれる。",
+          "D": "Qは今回の依頼時にLiteを指定しており、その指定が優先する。"
+        },
+        "sourceIds": [
+          "code-review",
+          "feature-refresh-review-config"
+        ],
+        "trustedSourceFacts": [
+          "Pでは前回のBalancedがrepoのLiteより優先する。",
+          "Qでは今回指定したLiteが前回のBalancedより優先する。",
+          "Pは今回の指定がないため、前回のBalancedが選ばれる。",
+          "Qは今回の依頼時にLiteを指定しており、その指定が優先する。"
+        ],
+        "createdAt": "2026-10-17",
+        "lastVerifiedAt": "2026-10-18",
+        "cognitiveLevel": "analyze",
+        "examLike": true,
+        "testedConcepts": [
+          "レビュー深度の実効設定"
+        ],
+        "scenarioSetId": null,
+        "clues": [
+          "Pは前回Balancedでレビューされました",
+          "今回はレビュー依頼時にLiteを明示指定します"
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "distractorQuality": "two-independent-judgments",
+        "choiceQuality": {
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "Pは今回の指定がないため、前回のBalancedが選ばれる。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "Pでは前回のBalancedがrepoのLiteより優先する。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "Qは今回の依頼時にLiteを指定しており、その指定が優先する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "Qでは今回指定したLiteが前回のBalancedより優先する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Pの依頼時には指定せず、前回Balanced・依頼者Lite・repo Liteがある",
+            "correctReason": "Pは前回使ったBalanced、Qは今回明示指定したLiteを使う。依頼時の指定は前回値より、前回値は依頼者やrepoの既定値より優先する。",
+            "distractorFailures": {
+              "A": "Pでは前回のBalancedがrepoのLiteより優先する。",
+              "B": "Qでは今回指定したLiteが前回のBalancedより優先する。"
+            }
+          },
+          {
+            "requirement": "Qの依頼時にはLiteを明示し、前回と依頼者はBalancedである",
+            "correctReason": "Pは前回使ったBalanced、Qは今回明示指定したLiteを使う。依頼時の指定は前回値より、前回値は依頼者やrepoの既定値より優先する。",
+            "distractorFailures": {
+              "A": "Pでは前回のBalancedがrepoのLiteより優先する。",
+              "B": "Qでは今回指定したLiteが前回のBalancedより優先する。"
+            }
+          }
+        ]
+      },
+      "displayedExplanation": "レビュー深度は、今回の依頼時の明示指定、同じPRで前回使った値、依頼者の設定、リポジトリの設定、組織などの設定という順で評価し、最初に当てはまる値を使います。前回の値があっても、今回の依頼時に別の値を指定すれば、その指定が優先します。\n\nPには今回の明示指定がなく、前回のBalancedがあります。そのため、依頼者とリポジトリがLiteでもBalancedになります。Qでは今回Liteを明示しているので、前回と依頼者のBalancedよりLiteが優先します。二つのPRについて、値の名前だけでなく、いつ・どこで設定した値かを照合することが要点です。",
+      "review": {
+        "blindCheck": "選択肢はP/Qそれぞれの結果だけを同じ書式で記載し、設定元や優先する理由をヒントとして書かない。LiteとBalancedは正答・誤答に一つずつあり、本文のPRごとの条件を読まないと正しい二つを選べない。",
+        "reasoningSteps": [
+          "PRごとに今回の指定、前回値、依頼者設定、repo設定を分ける",
+          "今回の指定→前回値→依頼者→repoという順に照合する",
+          "PはBalanced、QはLiteと結論づける"
+        ],
+        "counterfactuals": [
+          {
+            "condition": "Pも今回Liteを明示指定する",
+            "newCorrectIds": [
+              "A",
+              "D"
+            ],
+            "reason": "Pでも今回の指定が前回値に優先する。"
+          },
+          {
+            "condition": "Qの今回の明示指定を省く",
+            "newCorrectIds": [
+              "B",
+              "C"
+            ],
+            "reason": "Qは前回のBalancedを使う。"
+          }
+        ],
+        "difficulty": "高難度を維持。二つのPRで優先する設定元が異なるため、設定の抽出と優先規則の適用が必要。単なる深度名の暗記にはしない。",
+        "distractors": {
+          "A": "repoが具体的に設定済みなら前回値より優先すると誤解すると選ぶ。",
+          "B": "前回値は次の明示指定でも変えられないと誤解すると選ぶ。"
+        },
+        "choiceLengths": [
+          {
+            "id": "C",
+            "displayPosition": "A",
+            "characters": 27,
+            "medianRatio": 1.08,
+            "correct": true
+          },
+          {
+            "id": "A",
+            "displayPosition": "B",
+            "characters": 23,
+            "medianRatio": 0.92,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "C",
+            "characters": 23,
+            "medianRatio": 0.92,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "displayPosition": "D",
+            "characters": 27,
+            "medianRatio": 1.08,
+            "correct": false
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Copilot code review — Review effort level",
+          "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review#review-effort-level",
+          "note": "現行の優先順位は依頼時の指定、同じPRの前回値、依頼者、repo、組織等。利用可能な深度はLite/Balanced。"
+        },
+        {
+          "title": "Copilot code review effort levels are generally available",
+          "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/",
+          "date": "2026-08-07",
+          "note": "8月7日の告知でも正式名称はLite/Balanced。Deepを正式な値とする根拠はない。前回値を含む現在の詳細な優先順位が当日も同一だったかは、この告知だけでは断定しない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-g14",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F02",
+      "beforeContract": "{\"id\":\"q-d3-g14\",\"question\":\"Public Code MatchingやContent Exclusionとは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"パブリックコード一致フィルター（Public Code Matching Filter）\"},{\"id\":\"B\",\"text\":\"有害コンテンツフィルタリング（Harmful Output Filtering）\"},{\"id\":\"C\",\"text\":\"コンテンツ除外ゲートウェイ（Content Exclusion Gateway）\"},{\"id\":\"D\",\"text\":\"シークレットスキャニング（Secret Scanning）\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o1\",\"explanation\":\"出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。\",\"choiceExplanations\":{\"A\":\"GitHub上の公開コードと150文字以上一致する提案を検知・抑止する知的財産保護フィルターである。\",\"B\":\"出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。\",\"C\":\"機密ファイルや除外対象パスのコードがプロンプトとして送信されるのを未然に遮断する機能である。\",\"D\":\"コードやコミット内にハードコードされたAPIキーや認証トークンを検知・警告する機能である。\"},\"sourceIds\":[\"responsible\",\"architecture\"],\"contentRevision\":\"glossary-coverage-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d3-g14\",\"question\":\"Public Code MatchingやContent Exclusionとは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"パブリックコード一致フィルター（Public Code Matching Filter）\"},{\"id\":\"B\",\"text\":\"有害コンテンツフィルタリング（Harmful Output Filtering）\"},{\"id\":\"C\",\"text\":\"コンテンツ除外ゲートウェイ（Content Exclusion Gateway）\"},{\"id\":\"D\",\"text\":\"シークレットスキャニング（Secret Scanning）\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o1\",\"explanation\":\"出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。\",\"choiceExplanations\":{\"A\":\"候補と周辺コードを公開コードと照合する。約150文字は周辺コードの説明で、一致の最低文字数ではない。\",\"B\":\"有害な出力内容を検出・抑制する仕組みであり、この問いの対象に当たる。\",\"C\":\"対応機能の入力文脈から指定パスを除外する設定で、有害な出力内容を判定するものではない。\",\"D\":\"コードに含まれる資格情報を検出する機能で、有害な生成出力全般の評価とは異なる。\"},\"sourceIds\":[\"responsible\",\"architecture\",\"feature-refresh-ide\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "4d61f59254ca625086b7da8134bf8a16c02b3ba1d63aeb247f84d6d331068de7",
+      "afterFingerprint": "6357996340b4f3a497c9ec0fc3f6ca10a44d24ed0cf750989efa845f07b8b99d",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d3-g14",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Public Code MatchingやContent Exclusionとは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードとして、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "パブリックコード一致フィルター（Public Code Matching Filter）"
+          },
+          {
+            "id": "B",
+            "text": "有害コンテンツフィルタリング（Harmful Output Filtering）"
+          },
+          {
+            "id": "C",
+            "text": "コンテンツ除外ゲートウェイ（Content Exclusion Gateway）"
+          },
+          {
+            "id": "D",
+            "text": "シークレットスキャニング（Secret Scanning）"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。",
+        "choiceExplanations": {
+          "A": "候補と周辺コードを公開コードと照合する。約150文字は周辺コードの説明で、一致の最低文字数ではない。",
+          "B": "有害な出力内容を検出・抑制する仕組みであり、この問いの対象に当たる。",
+          "C": "対応機能の入力文脈から指定パスを除外する設定で、有害な出力内容を判定するものではない。",
+          "D": "コードに含まれる資格情報を検出する機能で、有害な生成出力全般の評価とは異なる。"
+        },
+        "sourceIds": [
+          "responsible",
+          "architecture",
+          "feature-refresh-ide"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "候補と周辺コードを公開コードと照合する。約150文字は周辺コードの説明で、一致の最低文字数ではない。",
+          "有害な出力内容を検出・抑制する仕組みであり、この問いの対象に当たる。",
+          "対応機能の入力文脈から指定パスを除外する設定で、有害な出力内容を判定するものではない。",
+          "コードに含まれる資格情報を検出する機能で、有害な生成出力全般の評価とは異なる。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "architecture",
+              "feature-refresh-ide"
+            ],
+            "rationale": "候補と周辺コードを公開コードと照合する。約150文字は周辺コードの説明で、一致の最低文字数ではない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "responsible",
+              "architecture",
+              "feature-refresh-ide"
+            ],
+            "rationale": "有害な出力内容を検出・抑制する仕組みであり、この問いの対象に当たる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "responsible",
+              "architecture",
+              "feature-refresh-ide"
+            ],
+            "rationale": "対応機能の入力文脈から指定パスを除外する設定で、有害な出力内容を判定するものではない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "responsible",
+              "architecture",
+              "feature-refresh-ide"
+            ],
+            "rationale": "コードに含まれる資格情報を検出する機能で、有害な生成出力全般の評価とは異なる。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Public Code MatchingやContent Exclusionとは異なり、差別・ヘイトスピーチ、自傷、悪意あるエクスプロイトコードなど、出力内容そのものの危険性や有害性を評価してブロックするセーフガードとして、最も適切なものはどれですか？",
+            "correctReason": "出力内容そのものの有害性・倫理的リスク・攻撃性を検知してブロックするセーフガードがHarmful Output Filteringである。",
+            "distractorFailures": {
+              "A": "候補と周辺コードを公開コードと照合する。約150文字は周辺コードの説明で、一致の最低文字数ではない。",
+              "C": "対応機能の入力文脈から指定パスを除外する設定で、有害な出力内容を判定するものではない。",
+              "D": "コードに含まれる資格情報を検出する機能で、有害な生成出力全般の評価とは異なる。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "Harmful Output Filteringは、出力内容そのものの有害性や危険性を検出・抑制する安全機構です。公開コードとの類似を調べる仕組みとは、評価する目的が異なります。フィルターがあってもすべての危険を排除できるとは限らないため、出力のレビューは引き続き必要です。",
+      "review": {
+        "blindCheck": "選択肢本文と正解は変更せず、公開コード一致の誤った数値説明を訂正。四つの安全機構のどの役割を尋ねているかは本文が必要。",
+        "difficulty": "既存の基礎の役割識別を維持。",
+        "choiceLengths": [
+          {
+            "id": "A",
+            "displayPosition": "A",
+            "characters": 44,
+            "medianRatio": 1.1,
+            "correct": false
+          },
+          {
+            "id": "B",
+            "displayPosition": "B",
+            "characters": 40,
+            "medianRatio": 1,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 40,
+            "medianRatio": 1,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 29,
+            "medianRatio": 0.725,
+            "correct": false
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Managing GitHub Copilot policies as an individual subscriber",
+          "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies",
+          "note": "候補と約150文字の周辺コードを公開コードと照合する説明。一致長150文字以上という最低閾値の説明ではない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d2-g15",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F05",
+      "beforeContract": "{\"id\":\"q-d2-g15\",\"question\":\"リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"スコープ付きインストラクション（Scoped Instructions）\"},{\"id\":\"B\",\"text\":\"リポジトリルールセット（Repository Rulesets）\"},{\"id\":\"C\",\"text\":\"プロンプトファイル（Prompt Files）\"},{\"id\":\"D\",\"text\":\"ワークスペースプロファイル（Workspace Profiles）\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o3\",\"explanation\":\"特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。\",\"choiceExplanations\":{\"A\":\"特定パスや対象スコープごとに個別の指示ファイル（`.github/instructions/*.md`など）を適用する構成がScoped Instructionsである。\",\"B\":\"ブランチ保護やタグ付け規則を強制するGitHubのガバナンス機能であり、Copilot用の指示ファイルではない。\",\"C\":\"特定のタスクを呼び出す再利用可能なテンプレート（`.prompt.md`）であり、ディレクトリ単位の自動適用指示とは異なる。\",\"D\":\"VS Codeの拡張機能やUI構成を切り替える機能であり、Copilotの指示ファイルの適用機能ではない。\"},\"sourceIds\":[\"instructions\"],\"contentRevision\":\"glossary-coverage-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g15\",\"question\":\"リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"スコープ付きインストラクション（Scoped Instructions）\"},{\"id\":\"B\",\"text\":\"リポジトリルールセット（Repository Rulesets）\"},{\"id\":\"C\",\"text\":\"プロンプトファイル（Prompt Files）\"},{\"id\":\"D\",\"text\":\"ワークスペースプロファイル（Workspace Profiles）\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o3\",\"explanation\":\"パス別指示は.github/instructions/NAME.instructions.mdに記述し、applyToで対象パスを指定する。\",\"choiceExplanations\":{\"A\":\"NAME.instructions.mdとapplyToで、指示を適用するファイルの範囲を指定する。\",\"B\":\"ブランチ等のルールを強制する設定で、Copilotへのパス別の指示ではない。\",\"C\":\"必要時に呼び出すタスク用の依頼文で、パスに応じた常時指示とは異なる。\",\"D\":\"エディタの拡張やUI設定を切り替える構成で、パス別のCopilot指示ではない。\"},\"sourceIds\":[\"instructions\",\"prompt-files\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "d1012c5bbd1432229bad6e311bbfcf5f397a9b615a795754381b79eebf957a06",
+      "afterFingerprint": "acc7116b6cdca44b77980e8b28f59c168d9ec5d7c5cff58894d371365e89b26f",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d2-g15",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o3",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法として、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "スコープ付きインストラクション（Scoped Instructions）"
+          },
+          {
+            "id": "B",
+            "text": "リポジトリルールセット（Repository Rulesets）"
+          },
+          {
+            "id": "C",
+            "text": "プロンプトファイル（Prompt Files）"
+          },
+          {
+            "id": "D",
+            "text": "ワークスペースプロファイル（Workspace Profiles）"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "パス別指示は.github/instructions/NAME.instructions.mdに記述し、applyToで対象パスを指定する。",
+        "choiceExplanations": {
+          "A": "NAME.instructions.mdとapplyToで、指示を適用するファイルの範囲を指定する。",
+          "B": "ブランチ等のルールを強制する設定で、Copilotへのパス別の指示ではない。",
+          "C": "必要時に呼び出すタスク用の依頼文で、パスに応じた常時指示とは異なる。",
+          "D": "エディタの拡張やUI設定を切り替える構成で、パス別のCopilot指示ではない。"
+        },
+        "sourceIds": [
+          "instructions",
+          "prompt-files"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "NAME.instructions.mdとapplyToで、指示を適用するファイルの範囲を指定する。",
+          "ブランチ等のルールを強制する設定で、Copilotへのパス別の指示ではない。",
+          "必要時に呼び出すタスク用の依頼文で、パスに応じた常時指示とは異なる。",
+          "エディタの拡張やUI設定を切り替える構成で、パス別のCopilot指示ではない。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "instructions",
+              "prompt-files"
+            ],
+            "rationale": "NAME.instructions.mdとapplyToで、指示を適用するファイルの範囲を指定する。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "instructions",
+              "prompt-files"
+            ],
+            "rationale": "ブランチ等のルールを強制する設定で、Copilotへのパス別の指示ではない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "instructions",
+              "prompt-files"
+            ],
+            "rationale": "必要時に呼び出すタスク用の依頼文で、パスに応じた常時指示とは異なる。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "instructions",
+              "prompt-files"
+            ],
+            "rationale": "エディタの拡張やUI設定を切り替える構成で、パス別のCopilot指示ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "リポジトリ全体の共通規約（`copilot-instructions.md`）とは別に、特定のサブディレクトリやファイル種別（フロントエンド、バックエンド等）に限定して指示を適用する設定手法として、最も適切なものはどれですか？",
+            "correctReason": "パス別指示は.github/instructions/NAME.instructions.mdに記述し、applyToで対象パスを指定する。",
+            "distractorFailures": {
+              "B": "ブランチ等のルールを強制する設定で、Copilotへのパス別の指示ではない。",
+              "C": "必要時に呼び出すタスク用の依頼文で、パスに応じた常時指示とは異なる。",
+              "D": "エディタの拡張やUI設定を切り替える構成で、パス別のCopilot指示ではない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "パス別のカスタム指示は、特定のディレクトリやファイル種別にだけ規約を伝えるためのものです。.github/instructions/NAME.instructions.mdという名前のファイルを用意し、先頭のfrontmatterにapplyToで対象のパスを記載します。\n\nたとえばapplyTo: \"**/*.ts\"ならTypeScriptファイルが対象です。リポジトリ全体の共通規約へすべての言語のルールを書く代わりに、必要な範囲へ分けられます。任意の名前の.mdを置くだけでは、この指示ファイルの命名要件を満たしません。",
+      "review": {
+        "blindCheck": "選択肢本文を維持し、適用範囲を尋ねる基礎問題として確認。ファイル名の仕様を解説で具体化した。",
+        "difficulty": "設定手法の識別を維持し、複合的な設定の計算問題へは変えていない。",
+        "choiceLengths": [
+          {
+            "id": "A",
+            "displayPosition": "A",
+            "characters": 36,
+            "medianRatio": 1.108,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "displayPosition": "B",
+            "characters": 32,
+            "medianRatio": 0.985,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 23,
+            "medianRatio": 0.708,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 33,
+            "medianRatio": 1.015,
+            "correct": false
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Adding repository custom instructions for GitHub Copilot",
+          "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions",
+          "note": "パス別指示は.github/instructions配下のNAME.instructions.mdにapplyToを記載する。任意の.mdを置くだけでは十分でない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-g04",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F06",
+      "beforeContract": "{\"id\":\"q-d3-g04\",\"question\":\"Copilotの利用において、ソースコードそのもの（Code Snippets）とは厳格に区別され、提案の受入・却下イベント、レイテンシ、エラーログなどサービスの監視・改善目的で収集される利用統計データとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Prompt Content\"},{\"id\":\"B\",\"text\":\"Audit Events\"},{\"id\":\"C\",\"text\":\"Training Dataset\"},{\"id\":\"D\",\"text\":\"Engagement / Telemetry\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o1\",\"explanation\":\"顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。\",\"choiceExplanations\":{\"D\":\"顧客のコード本体とは明確に分離され、製品稼働状況や受入率などを測定・改善するために収集されるメトリクスがTelemetry Dataである。\",\"A\":\"補完やチャット提案を生成するためにエディタから一時送信されるコードそのものである。\",\"B\":\"Enterprise管理者がポリシー変更やシート割り当て履歴などを追跡するためのセキュリティ管理ログである。\",\"C\":\"基盤LLMの言語モデル自体を事前学習・調整するために用いられる大規模コーパスである。\"},\"sourceIds\":[\"privacy\",\"architecture\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d3-g04\",\"question\":\"Copilotの利用状況を確認するため、提案の採用・却下イベントや応答の遅延、エラーの発生件数を集計しています。こうした利用・動作の情報を表す分類として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Prompt Content\"},{\"id\":\"B\",\"text\":\"Audit Events\"},{\"id\":\"C\",\"text\":\"Training Dataset\"},{\"id\":\"D\",\"text\":\"Engagement / Telemetry\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o1\",\"explanation\":\"採用イベントや応答の遅延など、利用・動作を把握する情報はTelemetryに当たる。収集内容は機能や設定によって異なる。\",\"choiceExplanations\":{\"A\":\"回答生成に渡す指示文や関連コード等の文脈であり、今回の利用・動作の集計ではない。\",\"B\":\"管理操作の主体や日時を追跡する記録で、今回の補完イベントや遅延の集計とは目的が異なる。\",\"C\":\"モデルの学習に使うデータであり、今回の利用・動作の集計ではない。\",\"D\":\"採用イベントや遅延など、利用状況や稼働状態を把握する情報に当たる。\"},\"sourceIds\":[\"privacy\",\"architecture\",\"alignment-telemetry\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "861f486d409ba7c29478c32ac9144ac3cdc267ad680a930b2a21dd7b253b275d",
+      "afterFingerprint": "46f3244175eff945bc44ccceedf8c83838c9a3903163fc544f1b526405c35271",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d3-g04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilotの利用状況を確認するため、提案の採用・却下イベントや応答の遅延、エラーの発生件数を集計しています。こうした利用・動作の情報を表す分類として、最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Prompt Content"
+          },
+          {
+            "id": "B",
+            "text": "Audit Events"
+          },
+          {
+            "id": "C",
+            "text": "Training Dataset"
+          },
+          {
+            "id": "D",
+            "text": "Engagement / Telemetry"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "採用イベントや応答の遅延など、利用・動作を把握する情報はTelemetryに当たる。収集内容は機能や設定によって異なる。",
+        "choiceExplanations": {
+          "A": "回答生成に渡す指示文や関連コード等の文脈であり、今回の利用・動作の集計ではない。",
+          "B": "管理操作の主体や日時を追跡する記録で、今回の補完イベントや遅延の集計とは目的が異なる。",
+          "C": "モデルの学習に使うデータであり、今回の利用・動作の集計ではない。",
+          "D": "採用イベントや遅延など、利用状況や稼働状態を把握する情報に当たる。"
+        },
+        "sourceIds": [
+          "privacy",
+          "architecture",
+          "alignment-telemetry"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "回答生成に渡す指示文や関連コード等の文脈であり、今回の利用・動作の集計ではない。",
+          "管理操作の主体や日時を追跡する記録で、今回の補完イベントや遅延の集計とは目的が異なる。",
+          "モデルの学習に使うデータであり、今回の利用・動作の集計ではない。",
+          "採用イベントや遅延など、利用状況や稼働状態を把握する情報に当たる。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "privacy",
+              "architecture",
+              "alignment-telemetry"
+            ],
+            "rationale": "回答生成に渡す指示文や関連コード等の文脈であり、今回の利用・動作の集計ではない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "privacy",
+              "architecture",
+              "alignment-telemetry"
+            ],
+            "rationale": "管理操作の主体や日時を追跡する記録で、今回の補完イベントや遅延の集計とは目的が異なる。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "privacy",
+              "architecture",
+              "alignment-telemetry"
+            ],
+            "rationale": "モデルの学習に使うデータであり、今回の利用・動作の集計ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "privacy",
+              "architecture",
+              "alignment-telemetry"
+            ],
+            "rationale": "採用イベントや遅延など、利用状況や稼働状態を把握する情報に当たる。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotの利用状況を確認するため、提案の採用・却下イベントや応答の遅延、エラーの発生件数を集計しています。こうした利用・動作の情報を表す分類として、最も適切なものはどれですか？",
+            "correctReason": "採用イベントや応答の遅延など、利用・動作を把握する情報はTelemetryに当たる。収集内容は機能や設定によって異なる。",
+            "distractorFailures": {
+              "A": "回答生成に渡す指示文や関連コード等の文脈であり、今回の利用・動作の集計ではない。",
+              "B": "管理操作の主体や日時を追跡する記録で、今回の補完イベントや遅延の集計とは目的が異なる。",
+              "C": "モデルの学習に使うデータであり、今回の利用・動作の集計ではない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "Telemetryは、サービスやクライアントの利用状況・動作を観測する情報です。今回は採用・却下イベント、応答の遅延、エラー件数を集計しているため、この分類になります。回答のために渡す指示文やコード、管理者の操作を追跡する監査イベントとは、収集の目的が異なります。\n\nTelemetryという名前だけで、コードや機密情報が含まれないと判断してはいけません。たとえば現行のOpenTelemetry監視では、管理者が内容収集を有効にするとプロンプトやツール結果等を含められます。今回の統計の識別と、個々の収集設定の確認は別の判断です。",
+      "review": {
+        "blindCheck": "選択肢の四分類はいずれも実在するデータ区分。採用・遅延・件数という本文の収集対象から分類する。",
+        "difficulty": "基本的なデータ区分の理解を維持。高度な監視設定の値を正解選択へ要求しない。",
+        "choiceLengths": [
+          {
+            "id": "A",
+            "displayPosition": "A",
+            "characters": 14,
+            "medianRatio": 0.933,
+            "correct": false
+          },
+          {
+            "id": "B",
+            "displayPosition": "B",
+            "characters": 12,
+            "medianRatio": 0.8,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 16,
+            "medianRatio": 1.067,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 22,
+            "medianRatio": 1.467,
+            "correct": true
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "OpenTelemetry for agent monitoring",
+          "url": "https://docs.github.com/en/copilot/concepts/enterprise/opentelemetry",
+          "note": "標準の統計と、明示的に内容収集を有効にした監視を区別する。後者にはコード・プロンプト・ツール結果等を含められるため、Telemetry全般をコードと厳格に分離すると一般化しない。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-g09",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F07",
+      "beforeContract": "{\"id\":\"q-d3-g09\",\"question\":\"LLMが1回のプロンプトと応答で同時に保持・処理できる情報量（トークン数）の物理的な上限枠であり、超過時には優先度の低い文脈が切り捨てられる境界を表す用語として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"コンテキストウィンドウ（Context Window）\"},{\"id\":\"B\",\"text\":\"ナレッジカットオフ（Knowledge Cutoff）\"},{\"id\":\"C\",\"text\":\"推論レイテンシ（Inference Latency）\"},{\"id\":\"D\",\"text\":\"サンプリング温度（Sampling Temperature）\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o2\",\"explanation\":\"モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。\",\"choiceExplanations\":{\"A\":\"モデルが一度に処理できる最大トークン容量の枠組みであり、これを超えると古い文脈が溢れるのがContext Windowである。\",\"B\":\"モデルが事前学習を完了した日時の境界であり、それ以降の最新出来事を知らない制限である。\",\"C\":\"リクエストを送信してから最初のトークンまたは提案が返却されるまでの所要時間である。\",\"D\":\"次のトークンを選択する際の確率分布の平坦度合いを調整するハイパーパラメータである。\"},\"sourceIds\":[\"architecture\",\"prompt\"],\"contentRevision\":\"glossary-coverage-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d3-g09\",\"question\":\"Copilot Chatへ大量のコードや会話履歴を渡すとき、LLMが1回の要求で扱える情報量には上限があります。この上限をトークン数で表す文脈の枠を何と呼びますか？\",\"choices\":[{\"id\":\"A\",\"text\":\"コンテキストウィンドウ（Context Window）\"},{\"id\":\"B\",\"text\":\"ナレッジカットオフ（Knowledge Cutoff）\"},{\"id\":\"C\",\"text\":\"推論レイテンシ（Inference Latency）\"},{\"id\":\"D\",\"text\":\"サンプリング温度（Sampling Temperature）\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o2\",\"explanation\":\"Context Windowは、モデルが1回の要求で扱える文脈量の上限を表す。要約や省略などの対処方法とは区別する。\",\"choiceExplanations\":{\"A\":\"一度に扱える文脈量の上限を表す。超過への対処はクライアント等によって異なる。\",\"B\":\"学習済み知識の時点を表し、一度に扱える情報量の上限ではない。\",\"C\":\"要求から応答までの時間を表し、文脈の容量ではない。\",\"D\":\"生成のばらつきへ影響する値であり、文脈の容量ではない。\"},\"sourceIds\":[\"architecture\",\"prompt\",\"feature-refresh-context-model\",\"alignment-cutoff\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "2de6c1baa949501ff53fd64987837e5bce5aa92d3817437a3019fe2be0bbfdd8",
+      "afterFingerprint": "22ecd90d35eca5b1134718e40e3cd1f14b41f9181cc50fc4ea994411057c475a",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d3-g09",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot Chatへ大量のコードや会話履歴を渡すとき、LLMが1回の要求で扱える情報量には上限があります。この上限をトークン数で表す文脈の枠を何と呼びますか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "コンテキストウィンドウ（Context Window）"
+          },
+          {
+            "id": "B",
+            "text": "ナレッジカットオフ（Knowledge Cutoff）"
+          },
+          {
+            "id": "C",
+            "text": "推論レイテンシ（Inference Latency）"
+          },
+          {
+            "id": "D",
+            "text": "サンプリング温度（Sampling Temperature）"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Context Windowは、モデルが1回の要求で扱える文脈量の上限を表す。要約や省略などの対処方法とは区別する。",
+        "choiceExplanations": {
+          "A": "一度に扱える文脈量の上限を表す。超過への対処はクライアント等によって異なる。",
+          "B": "学習済み知識の時点を表し、一度に扱える情報量の上限ではない。",
+          "C": "要求から応答までの時間を表し、文脈の容量ではない。",
+          "D": "生成のばらつきへ影響する値であり、文脈の容量ではない。"
+        },
+        "sourceIds": [
+          "architecture",
+          "prompt",
+          "feature-refresh-context-model",
+          "alignment-cutoff"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "一度に扱える文脈量の上限を表す。超過への対処はクライアント等によって異なる。",
+          "学習済み知識の時点を表し、一度に扱える情報量の上限ではない。",
+          "要求から応答までの時間を表し、文脈の容量ではない。",
+          "生成のばらつきへ影響する値であり、文脈の容量ではない。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "prompt",
+              "feature-refresh-context-model",
+              "alignment-cutoff"
+            ],
+            "rationale": "一度に扱える文脈量の上限を表す。超過への対処はクライアント等によって異なる。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "prompt",
+              "feature-refresh-context-model",
+              "alignment-cutoff"
+            ],
+            "rationale": "学習済み知識の時点を表し、一度に扱える情報量の上限ではない。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "prompt",
+              "feature-refresh-context-model",
+              "alignment-cutoff"
+            ],
+            "rationale": "要求から応答までの時間を表し、文脈の容量ではない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "architecture",
+              "prompt",
+              "feature-refresh-context-model",
+              "alignment-cutoff"
+            ],
+            "rationale": "生成のばらつきへ影響する値であり、文脈の容量ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot Chatへ大量のコードや会話履歴を渡すとき、LLMが1回の要求で扱える情報量には上限があります。この上限をトークン数で表す文脈の枠を何と呼びますか？",
+            "correctReason": "Context Windowは、モデルが1回の要求で扱える文脈量の上限を表す。要約や省略などの対処方法とは区別する。",
+            "distractorFailures": {
+              "B": "学習済み知識の時点を表し、一度に扱える情報量の上限ではない。",
+              "C": "要求から応答までの時間を表し、文脈の容量ではない。",
+              "D": "生成のばらつきへ影響する値であり、文脈の容量ではない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "Context Windowは、モデルが1回の要求で扱える情報量の上限に関係する枠です。ユーザーの入力だけでなく、会話履歴、指示、関連ファイルやツール結果も、この限られた容量を使います。トークン数で数える文脈の上限を問う今回の説明に対応します。\n\n容量の上限と、上限に近づいたときの対処は別です。現行のVS Codeでは古い会話を要約して空きを作る仕組みがあり、常に古い情報がそのまま切り捨てられると決まっているわけではありません。必要な条件が残っているかを確認して作業を続けます。",
+      "review": {
+        "blindCheck": "四つの用語はそれぞれ容量、知識の時点、時間、生成分布を表す。どれを問うかは本文で決まる。",
+        "difficulty": "文脈容量の基本用語を識別する基礎問題を維持。",
+        "choiceLengths": [
+          {
+            "id": "A",
+            "displayPosition": "A",
+            "characters": 27,
+            "medianRatio": 1,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "displayPosition": "B",
+            "characters": 27,
+            "medianRatio": 1,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 26,
+            "medianRatio": 0.963,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 30,
+            "medianRatio": 1.111,
+            "correct": false
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Understand context in AI agents",
+          "url": "https://code.visualstudio.com/docs/agents/concepts/context",
+          "note": "文脈枠へ近づくと古い会話を要約する仕組みがある。容量上限と、製品側の圧縮・省略・エラーという対処は別。"
+        }
+      ]
+    },
+    {
+      "id": "q-d3-g12",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F08",
+      "beforeContract": "{\"id\":\"q-d3-g12\",\"question\":\"基盤LLMが事前学習を完了した特定の日付境界であり、それ以降にリリースされた最新フレームワークの仕様変更や新機能について外部コンテキストを与えない限りモデルが知らないという制約を表す用語として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"コンテキストウィンドウ上限（Context Window Limit）\"},{\"id\":\"B\",\"text\":\"ハルシネーション（Hallucination）\"},{\"id\":\"C\",\"text\":\"モデルドリフト（Model Drift）\"},{\"id\":\"D\",\"text\":\"ナレッジカットオフ（Knowledge Cutoff）\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o2\",\"explanation\":\"モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。\",\"choiceExplanations\":{\"A\":\"会話セッションが長くなりすぎて過去の指示やコードがトークン枠から溢れる現象である。\",\"B\":\"モデルが事実に基づかない架空の仕様や関数をあたかも実在するかのように出力する現象である。\",\"C\":\"実運用のデータ分布が学習時と変化することで、AIの予測精度が時間経過とともに劣化する現象である。\",\"D\":\"モデルの事前学習が終了した時点の境界日であり、それ以降の知識を持たない制約がKnowledge Cutoffである。\"},\"sourceIds\":[\"architecture\",\"guide\"],\"contentRevision\":\"glossary-coverage-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d3-g12\",\"question\":\"Copilotで使うLLMについて、学習済み知識がカバーする時点を確認しています。その時点より後のフレームワークの仕様変更は、学習済み知識だけでは正確に答えられるとは限りません。この知識の時点を表す用語はどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"コンテキストウィンドウ上限（Context Window Limit）\"},{\"id\":\"B\",\"text\":\"ハルシネーション（Hallucination）\"},{\"id\":\"C\",\"text\":\"モデルドリフト（Model Drift）\"},{\"id\":\"D\",\"text\":\"ナレッジカットオフ（Knowledge Cutoff）\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d3\",\"objectiveId\":\"d3o2\",\"explanation\":\"Knowledge Cutoffは、モデルの学習済み知識の時点を表す。学習処理の完了日や、回答が必ず正しい範囲を示すものではない。\",\"choiceExplanations\":{\"A\":\"一度に扱える文脈量の上限であり、学習済み知識の時点ではない。\",\"B\":\"事実に反する内容をもっともらしく生成する現象であり、知識の時点ではない。\",\"C\":\"学習時と運用時の条件の変化等に伴う性能変化であり、知識の時点ではない。\",\"D\":\"学習済み知識の時点を表す。新しい仕様は必要な外部情報と照合する。\"},\"sourceIds\":[\"architecture\",\"guide\",\"alignment-cutoff\",\"chat\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "feb1f232ed541fd1f027246b47c425e4dca488e551c947578f3b78e76c79455f",
+      "afterFingerprint": "ab220ba95d622667efcf72ae1d829acbea6647e7b9deb0bc9d0300d1228459b5",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d3-g12",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d3",
+        "objectiveId": "d3o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilotで使うLLMについて、学習済み知識がカバーする時点を確認しています。その時点より後のフレームワークの仕様変更は、学習済み知識だけでは正確に答えられるとは限りません。この知識の時点を表す用語はどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "コンテキストウィンドウ上限（Context Window Limit）"
+          },
+          {
+            "id": "B",
+            "text": "ハルシネーション（Hallucination）"
+          },
+          {
+            "id": "C",
+            "text": "モデルドリフト（Model Drift）"
+          },
+          {
+            "id": "D",
+            "text": "ナレッジカットオフ（Knowledge Cutoff）"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "Knowledge Cutoffは、モデルの学習済み知識の時点を表す。学習処理の完了日や、回答が必ず正しい範囲を示すものではない。",
+        "choiceExplanations": {
+          "A": "一度に扱える文脈量の上限であり、学習済み知識の時点ではない。",
+          "B": "事実に反する内容をもっともらしく生成する現象であり、知識の時点ではない。",
+          "C": "学習時と運用時の条件の変化等に伴う性能変化であり、知識の時点ではない。",
+          "D": "学習済み知識の時点を表す。新しい仕様は必要な外部情報と照合する。"
+        },
+        "sourceIds": [
+          "architecture",
+          "guide",
+          "alignment-cutoff",
+          "chat"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "一度に扱える文脈量の上限であり、学習済み知識の時点ではない。",
+          "事実に反する内容をもっともらしく生成する現象であり、知識の時点ではない。",
+          "学習時と運用時の条件の変化等に伴う性能変化であり、知識の時点ではない。",
+          "学習済み知識の時点を表す。新しい仕様は必要な外部情報と照合する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "guide",
+              "alignment-cutoff",
+              "chat"
+            ],
+            "rationale": "一度に扱える文脈量の上限であり、学習済み知識の時点ではない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "architecture",
+              "guide",
+              "alignment-cutoff",
+              "chat"
+            ],
+            "rationale": "事実に反する内容をもっともらしく生成する現象であり、知識の時点ではない。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "architecture",
+              "guide",
+              "alignment-cutoff",
+              "chat"
+            ],
+            "rationale": "学習時と運用時の条件の変化等に伴う性能変化であり、知識の時点ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "architecture",
+              "guide",
+              "alignment-cutoff",
+              "chat"
+            ],
+            "rationale": "学習済み知識の時点を表す。新しい仕様は必要な外部情報と照合する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilotで使うLLMについて、学習済み知識がカバーする時点を確認しています。その時点より後のフレームワークの仕様変更は、学習済み知識だけでは正確に答えられるとは限りません。この知識の時点を表す用語はどれですか？",
+            "correctReason": "Knowledge Cutoffは、モデルの学習済み知識の時点を表す。学習処理の完了日や、回答が必ず正しい範囲を示すものではない。",
+            "distractorFailures": {
+              "A": "一度に扱える文脈量の上限であり、学習済み知識の時点ではない。",
+              "B": "事実に反する内容をもっともらしく生成する現象であり、知識の時点ではない。",
+              "C": "学習時と運用時の条件の変化等に伴う性能変化であり、知識の時点ではない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "Knowledge Cutoffは、モデルの学習済み知識がカバーする時点を考えるための情報です。学習処理そのものが終わった日時や、その日以前の出来事をすべて正確に知っているという保証とは区別します。対象モデルの公式仕様で知識の時点を確認することが基本です。\n\nそれより新しいフレームワークの仕様は、学習済み知識だけで正確に答えられるとは限りません。Copilotが利用できる最新の公式資料や検索結果を文脈に加えると補える場合がありますが、回答を資料と照合する必要は残ります。知識の時点と、その場で取得する情報を分けて理解します。",
+      "review": {
+        "blindCheck": "用語の選択肢は維持し、時点・容量・誤生成・性能変化のどれを問うかを本文から判断する。",
+        "difficulty": "知識の時点の概念を識別する基礎問題を維持。",
+        "choiceLengths": [
+          {
+            "id": "A",
+            "displayPosition": "A",
+            "characters": 35,
+            "medianRatio": 1.4,
+            "correct": false
+          },
+          {
+            "id": "B",
+            "displayPosition": "B",
+            "characters": 23,
+            "medianRatio": 0.92,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 20,
+            "medianRatio": 0.8,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 27,
+            "medianRatio": 1.08,
+            "correct": true
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Responsible use of GitHub Copilot Chat",
+          "url": "https://docs.github.com/en/copilot/responsible-use/chat",
+          "note": "回答は学習データに加えrepo文脈や有効な検索結果等に基づく。新しい仕様は公式情報との照合が必要。知識時点を学習ジョブの完了日時と同一視しない。"
+        },
+        {
+          "title": "Microsoft Learn — Model training data knowledge cutoff FAQ",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/faq",
+          "note": "個別モデルの学習データの知識時点はモデルの公式仕様で確認する。時点以前の全情報が収録済みとは限らず、外部情報による根拠付けと区別する。一般的なLLMの概念を補足する資料であり、GitHub Copilotの全モデルの個別仕様ではない。"
+        }
+      ]
+    },
+    {
+      "id": "q-sc01-1",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F09",
+      "beforeContract": "{\"id\":\"q-sc01-1\",\"question\":\"【AnyCompany Tech事例】機密コードを通常のコード補完やChatのコンテキストから確実に除外する方針を定めています。既存の.gitignore設定とは別に、Copilot環境で設定すべき機能として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"B\",\"text\":\".gitignoreへ機密パスを指定し、通常補完の動作を検証する\"},{\"id\":\"C\",\"text\":\"公開コード一致をBlockにし、Chatでの参照は手動で避ける\"},{\"id\":\"D\",\"text\":\"Secret Scanningで機密パスを検査し、Copilotの設定は変えない\"},{\"id\":\"A\",\"text\":\"対象リポジトリとパスにContent Exclusionを設定する\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d6\",\"objectiveId\":\"d6o1\",\"explanation\":\"対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。\",\"choiceExplanations\":{\"A\":\"対応するCopilot機能に対する入力文脈の除外である。非対応モードや手動入力には別の対策が必要。\",\"B\":\"Git追跡設定はCopilotの文脈除外を保証しない。\",\"C\":\"出力側の制御で入力側の文脈を除外できない。\",\"D\":\"秘密情報検出はファイル内容の文脈利用を止めない。\"},\"sourceIds\":[\"exclusion-concept\",\"secret-scanning\",\"public-code\"],\"contentRevision\":\"difficulty-audit-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-sc01-1\",\"question\":\"【AnyCompany Tech事例】Copilot Businessを使うチームで、VS Codeの通常のコード補完とChatのAskモードから、指定した機密ファイルを直接の入力文脈として除外する方針です。.gitignoreとは別に、管理者が設定するCopilotの機能として最も適切なものはどれですか？\",\"choices\":[{\"id\":\"B\",\"text\":\".gitignoreへ機密パスを指定し、通常補完の動作を検証する\"},{\"id\":\"C\",\"text\":\"公開コード一致をBlockにし、Chatでの参照は手動で避ける\"},{\"id\":\"D\",\"text\":\"Secret Scanningで機密パスを検査し、Copilotの設定は変えない\"},{\"id\":\"A\",\"text\":\"対象リポジトリとパスにContent Exclusionを設定する\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d6\",\"objectiveId\":\"d6o1\",\"explanation\":\"指定したファイルの直接参照を、対応する補完やChatの入力文脈から除外する設定を使う。\",\"choiceExplanations\":{\"A\":\"Content Exclusionで対象パスを指定する。適用する機能や参照経路の制約も確認する。\",\"B\":\"Gitの追跡対象を指定する設定で、Copilotの入力文脈の除外設定とは別である。\",\"C\":\"公開コード一致は生成後の提案を制御し、今回の入力ファイルを除外する設定ではない。\",\"D\":\"資格情報の検出だけでは、対象ファイルをCopilotの入力文脈から外せない。\"},\"sourceIds\":[\"exclusion-concept\",\"secret-scanning\",\"public-code\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "1c6789e9e0ad16b2ad51dcf42a04b03ffa401b5b86065a30af780d8d0fc03f94",
+      "afterFingerprint": "db30fbba85ac780744ddfdb6b2d1df052ee93faa8f2f7169532ecb5bf904c5c4",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-sc01-1",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc01",
+        "scenarioType": "enterprise",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "testedConcepts": [
+          "d6o1",
+          "scenario-requirement-matching"
+        ],
+        "clues": [],
+        "question": "【AnyCompany Tech事例】Copilot Businessを使うチームで、VS Codeの通常のコード補完とChatのAskモードから、指定した機密ファイルを直接の入力文脈として除外する方針です。.gitignoreとは別に、管理者が設定するCopilotの機能として最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": ".gitignoreへ機密パスを指定し、通常補完の動作を検証する"
+          },
+          {
+            "id": "C",
+            "text": "公開コード一致をBlockにし、Chatでの参照は手動で避ける"
+          },
+          {
+            "id": "D",
+            "text": "Secret Scanningで機密パスを検査し、Copilotの設定は変えない"
+          },
+          {
+            "id": "A",
+            "text": "対象リポジトリとパスにContent Exclusionを設定する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "指定したファイルの直接参照を、対応する補完やChatの入力文脈から除外する設定を使う。",
+        "choiceExplanations": {
+          "A": "Content Exclusionで対象パスを指定する。適用する機能や参照経路の制約も確認する。",
+          "B": "Gitの追跡対象を指定する設定で、Copilotの入力文脈の除外設定とは別である。",
+          "C": "公開コード一致は生成後の提案を制御し、今回の入力ファイルを除外する設定ではない。",
+          "D": "資格情報の検出だけでは、対象ファイルをCopilotの入力文脈から外せない。"
+        },
+        "sourceIds": [
+          "exclusion-concept",
+          "secret-scanning",
+          "public-code"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "Content Exclusionで対象パスを指定する。適用する機能や参照経路の制約も確認する。",
+          "Gitの追跡対象を指定する設定で、Copilotの入力文脈の除外設定とは別である。",
+          "公開コード一致は生成後の提案を制御し、今回の入力ファイルを除外する設定ではない。",
+          "資格情報の検出だけでは、対象ファイルをCopilotの入力文脈から外せない。"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "exclusion-concept",
+              "secret-scanning",
+              "public-code"
+            ],
+            "rationale": "Gitの追跡対象を指定する設定で、Copilotの入力文脈の除外設定とは別である。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "partial-match",
+            "sourceIds": [
+              "exclusion-concept",
+              "secret-scanning",
+              "public-code"
+            ],
+            "rationale": "公開コード一致は生成後の提案を制御し、今回の入力ファイルを除外する設定ではない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-mechanism",
+            "sourceIds": [
+              "exclusion-concept",
+              "secret-scanning",
+              "public-code"
+            ],
+            "rationale": "資格情報の検出だけでは、対象ファイルをCopilotの入力文脈から外せない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "exclusion-concept",
+              "secret-scanning",
+              "public-code"
+            ],
+            "rationale": "Content Exclusionで対象パスを指定する。適用する機能や参照経路の制約も確認する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "【AnyCompany Tech事例】Copilot Businessを使うチームで、VS Codeの通常のコード補完とChatのAskモードから、指定した機密ファイルを直接の入力文脈として除外する方針です。.gitignoreとは別に、管理者が設定するCopilotの機能として最も適切なものはどれですか？",
+            "correctReason": "指定したファイルの直接参照を、対応する補完やChatの入力文脈から除外する設定を使う。",
+            "distractorFailures": {
+              "B": "Gitの追跡対象を指定する設定で、Copilotの入力文脈の除外設定とは別である。",
+              "C": "公開コード一致は生成後の提案を制御し、今回の入力ファイルを除外する設定ではない。",
+              "D": "資格情報の検出だけでは、対象ファイルをCopilotの入力文脈から外せない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18"
+      },
+      "displayedExplanation": "Content Exclusionは、管理者が指定したファイルやパスを、対応するCopilot機能の入力文脈から外す設定です。今回はVS Codeの通常補完とAskモードで、機密ファイルの直接参照を管理するため、この機能を使います。.gitignoreのGit追跡設定とは別に設定する必要があります。\n\nこの設定は、すべての参照経路を遮断する保証ではありません。Agent・Editモードの非対応や、IDE経由の型情報などの間接的な文脈にも注意します。利用する機能と参照経路を特定して、除外表示や動作を確認します。",
+      "review": {
+        "blindCheck": "各選択肢は追跡管理、出力一致、秘密検知、入力除外を扱う。本文で求める入力側の制御に照合する必要がある。",
+        "difficulty": "通常補完とAskを明記し、非対応モードの診断を要求する高難度問題にはしない。",
+        "choiceLengths": [
+          {
+            "id": "B",
+            "displayPosition": "A",
+            "characters": 32,
+            "medianRatio": 0.985,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "B",
+            "characters": 31,
+            "medianRatio": 0.954,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "C",
+            "characters": 40,
+            "medianRatio": 1.231,
+            "correct": false
+          },
+          {
+            "id": "A",
+            "displayPosition": "D",
+            "characters": 33,
+            "medianRatio": 1.015,
+            "correct": true
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "About content exclusion",
+          "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
+          "note": "対応機能に限る除外。VS CodeのEdit/Agent、symlink等の制約やIDEからの間接情報を区別する。"
+        }
+      ]
+    },
+    {
+      "id": "q-sc08-3",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F10",
+      "beforeContract": "{\"id\":\"q-sc08-3\",\"question\":\"【DataFlow Analytics事例】IDEのCopilot Chatにおいて、DataPipeline.tsとSchemaValidator.tsの現行実装を確実に参照させた上で質問したいと考えています。参照対象ファイルが事前に特定できている場合の基本操作として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"B\",\"text\":\"名前だけを書き、検索結果に取得範囲を任せる\"},{\"id\":\"D\",\"text\":\"DataPipeline.tsだけを添付して質問\"},{\"id\":\"C\",\"text\":\"二ファイルの命名規約だけを共通指示へ追加\"},{\"id\":\"A\",\"text\":\"対象二ファイルを明示的に添付して質問\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o1\",\"explanation\":\"既知の参照対象を直接渡す。システム指示など他の文脈が完全に排除される保証ではない。\",\"choiceExplanations\":{\"A\":\"既知の参照対象を直接渡す。システム指示など他の文脈が完全に排除される保証ではない。\",\"B\":\"名前の指定だけでは必要な現行コードの取得を確認できない。\",\"D\":\"依頼した二ファイルの一方が欠ける。\",\"C\":\"命名規約は現行実装そのものを提供しない。\"},\"sourceIds\":[\"prompt\"],\"contentRevision\":\"applied-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-sc08-3\",\"question\":\"【DataFlow Analytics事例】VS CodeのCopilot Chatで、DataPipeline.tsとSchemaValidator.tsの現行実装について質問します。対象はこの二つと分かっているため、ファイル名だけで自動検索に任せず、両方を文脈として明示したいと考えています。基本操作として最も適切なものはどれですか？\",\"choices\":[{\"id\":\"B\",\"text\":\"名前だけを書き、検索結果に取得範囲を任せる\"},{\"id\":\"D\",\"text\":\"DataPipeline.tsだけを添付して質問\"},{\"id\":\"C\",\"text\":\"二ファイルの命名規約だけを共通指示へ追加\"},{\"id\":\"A\",\"text\":\"対象二ファイルを明示的に添付して質問\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o1\",\"explanation\":\"既知の二ファイルを明示添付して対象を指定する。全内容の利用や正しい解釈まで保証するものではない。\",\"choiceExplanations\":{\"A\":\"二ファイルを直接指定できる。回答でどう使われたかは内容を照合する。\",\"B\":\"検索へ対象の取得を任せており、二ファイルを直接添付する操作ではない。\",\"C\":\"命名規約の指示だけでは、今回の二ファイルの実装を文脈へ渡せない。\",\"D\":\"今回必要な二ファイルのうち、一方が指定されていない。\"},\"sourceIds\":[\"prompt\",\"feature-refresh-context\",\"feature-refresh-context-model\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "7b3c23f0eb0fcc3de78e4059ed89a891dce49159de22587fe37fc205c6fff303",
+      "afterFingerprint": "3fde39548e14b2127d6af96dc01f5f34f811b23980a5c3394d5c4251bbe923bb",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-sc08-3",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "scenarioSetId": "sc08",
+        "scenarioType": "enterprise",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "testedConcepts": [
+          "d2o1",
+          "condition-application"
+        ],
+        "clues": [],
+        "question": "【DataFlow Analytics事例】VS CodeのCopilot Chatで、DataPipeline.tsとSchemaValidator.tsの現行実装について質問します。対象はこの二つと分かっているため、ファイル名だけで自動検索に任せず、両方を文脈として明示したいと考えています。基本操作として最も適切なものはどれですか？",
+        "choices": [
+          {
+            "id": "B",
+            "text": "名前だけを書き、検索結果に取得範囲を任せる"
+          },
+          {
+            "id": "D",
+            "text": "DataPipeline.tsだけを添付して質問"
+          },
+          {
+            "id": "C",
+            "text": "二ファイルの命名規約だけを共通指示へ追加"
+          },
+          {
+            "id": "A",
+            "text": "対象二ファイルを明示的に添付して質問"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "既知の二ファイルを明示添付して対象を指定する。全内容の利用や正しい解釈まで保証するものではない。",
+        "choiceExplanations": {
+          "A": "二ファイルを直接指定できる。回答でどう使われたかは内容を照合する。",
+          "B": "検索へ対象の取得を任せており、二ファイルを直接添付する操作ではない。",
+          "C": "命名規約の指示だけでは、今回の二ファイルの実装を文脈へ渡せない。",
+          "D": "今回必要な二ファイルのうち、一方が指定されていない。"
+        },
+        "sourceIds": [
+          "prompt",
+          "feature-refresh-context",
+          "feature-refresh-context-model"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "二ファイルを直接指定できる。回答でどう使われたかは内容を照合する。",
+          "検索へ対象の取得を任せており、二ファイルを直接添付する操作ではない。",
+          "命名規約の指示だけでは、今回の二ファイルの実装を文脈へ渡せない。",
+          "今回必要な二ファイルのうち、一方が指定されていない。"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt",
+              "feature-refresh-context",
+              "feature-refresh-context-model"
+            ],
+            "rationale": "検索へ対象の取得を任せており、二ファイルを直接添付する操作ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt",
+              "feature-refresh-context",
+              "feature-refresh-context-model"
+            ],
+            "rationale": "今回必要な二ファイルのうち、一方が指定されていない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "prompt",
+              "feature-refresh-context",
+              "feature-refresh-context-model"
+            ],
+            "rationale": "命名規約の指示だけでは、今回の二ファイルの実装を文脈へ渡せない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "prompt",
+              "feature-refresh-context",
+              "feature-refresh-context-model"
+            ],
+            "rationale": "二ファイルを直接指定できる。回答でどう使われたかは内容を照合する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "【DataFlow Analytics事例】VS CodeのCopilot Chatで、DataPipeline.tsとSchemaValidator.tsの現行実装について質問します。対象はこの二つと分かっているため、ファイル名だけで自動検索に任せず、両方を文脈として明示したいと考えています。基本操作として最も適切なものはどれですか？",
+            "correctReason": "既知の二ファイルを明示添付して対象を指定する。全内容の利用や正しい解釈まで保証するものではない。",
+            "distractorFailures": {
+              "B": "検索へ対象の取得を任せており、二ファイルを直接添付する操作ではない。",
+              "D": "今回必要な二ファイルのうち、一方が指定されていない。",
+              "C": "命名規約の指示だけでは、今回の二ファイルの実装を文脈へ渡せない。"
+            }
+          }
+        ],
+        "contentRevision": "official-alignment-2026-10-18"
+      },
+      "displayedExplanation": "参照してほしいファイルが分かっている場合は、Add Contextやファイルのドラッグで対象を明示添付できます。今回はDataPipeline.tsとSchemaValidator.tsの両方が必要なので、二つを指定して質問します。ファイル名だけを書いて自動検索へ任せるより、参照してほしい対象を直接伝えられます。\n\n明示添付は、全内容の利用や正しい解釈の保証ではありません。回答が二ファイルの現行実装を適切に踏まえているか、内容と参照表示を確認します。対象を指定する操作と、回答の正確さを確かめる作業を分けることが要点です。",
+      "review": {
+        "blindCheck": "二ファイル、片方だけ、規約、探索という操作の違いを本文の対象指定に当てはめる。正解だけに安全性の保証を付けない。",
+        "difficulty": "既知のファイルの明示添付という基礎操作を維持。",
+        "choiceLengths": [
+          {
+            "id": "B",
+            "displayPosition": "A",
+            "characters": 21,
+            "medianRatio": 1.024,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "B",
+            "characters": 24,
+            "medianRatio": 1.171,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "C",
+            "characters": 20,
+            "medianRatio": 0.976,
+            "correct": false
+          },
+          {
+            "id": "A",
+            "displayPosition": "D",
+            "characters": 18,
+            "medianRatio": 0.878,
+            "correct": true
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Add context to your prompts",
+          "url": "https://code.visualstudio.com/docs/chat/copilot-chat-context",
+          "note": "対象ファイル・シンボル等を明示する操作。指定した全内容の使用や正しい解釈まで保証する説明にしない。"
+        },
+        {
+          "title": "Understand context in AI agents",
+          "url": "https://code.visualstudio.com/docs/agents/concepts/context",
+          "note": "文脈枠へ近づくと古い会話を要約する仕組みがある。容量上限と、製品側の圧縮・省略・エラーという対処は別。"
+        }
+      ]
+    },
+    {
+      "id": "q-d1-e08-feature-20261016",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F03",
+      "beforeContract": "{\"id\":\"q-d1-e08-feature-20261016\",\"question\":\"Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。\",\"choices\":[{\"id\":\"B\",\"text\":\"CopilotがApproveを出せる設定だけを有効にし、人の必須承認も得る\"},{\"id\":\"C\",\"text\":\"Review new pushesだけを有効にし、人の必須承認も得る\"},{\"id\":\"A\",\"text\":\"Copilot承認を要件へ数える設定を有効にし、人の必須承認も得る\"},{\"id\":\"D\",\"text\":\"Copilot承認を要件へ数える設定を有効にし、人の必須承認を外す\"}],\"answer\":[\"A\"],\"difficulty\":\"advanced\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d1\",\"objectiveId\":\"d1o2\",\"explanation\":\"Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。\",\"choiceExplanations\":{\"A\":\"Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。\",\"B\":\"Approveは既に出ているためその許可だけでは算入不足を直せない。\",\"C\":\"レビュー起動の設定は承認の算入可否を変えない。\",\"D\":\"算入とは別に維持する人の要件を外している。\"},\"sourceIds\":[\"feature-refresh-review-config\",\"code-review\"],\"contentRevision\":\"copilot-feature-quality-repairs-2026-10-16\"}",
+      "afterContract": "{\"id\":\"q-d1-e08-feature-20261016\",\"question\":\"Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。\",\"choices\":[{\"id\":\"B\",\"text\":\"CopilotがApproveを出せる設定だけを有効にし、人の必須承認も得る\"},{\"id\":\"C\",\"text\":\"Review new pushesだけを有効にし、人の必須承認も得る\"},{\"id\":\"A\",\"text\":\"Copilot承認を要件へ数える設定を有効にし、人の必須承認も得る\"},{\"id\":\"D\",\"text\":\"Copilot承認を要件へ数える設定を有効にし、人の必須承認を外す\"}],\"answer\":[\"A\"],\"difficulty\":\"advanced\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d1\",\"objectiveId\":\"d1o2\",\"explanation\":\"Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。\",\"choiceExplanations\":{\"A\":\"Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。\",\"B\":\"Approveは既に出ているためその許可だけでは算入不足を直せない。\",\"C\":\"レビュー起動の設定は承認の算入可否を変えない。\",\"D\":\"算入とは別に維持する人の要件を外している。\"},\"sourceIds\":[\"feature-refresh-review-config\",\"code-review\",\"alignment-approvals-release\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "ede001f9e770adc29f2f414ef5c05b0588eca79341f2b105f3f359f80e2251a8",
+      "afterFingerprint": "7402c026e5fea2ade67792fe67fec8638909604e73bad0006ca36ffd0c703240",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d1-e08-feature-20261016",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d1",
+        "objectiveId": "d1o2",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "question": "Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "CopilotがApproveを出せる設定だけを有効にし、人の必須承認も得る"
+          },
+          {
+            "id": "C",
+            "text": "Review new pushesだけを有効にし、人の必須承認も得る"
+          },
+          {
+            "id": "A",
+            "text": "Copilot承認を要件へ数える設定を有効にし、人の必須承認も得る"
+          },
+          {
+            "id": "D",
+            "text": "Copilot承認を要件へ数える設定を有効にし、人の必須承認を外す"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。",
+        "choiceExplanations": {
+          "A": "Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。",
+          "B": "Approveは既に出ているためその許可だけでは算入不足を直せない。",
+          "C": "レビュー起動の設定は承認の算入可否を変えない。",
+          "D": "算入とは別に維持する人の要件を外している。"
+        },
+        "sourceIds": [
+          "feature-refresh-review-config",
+          "code-review",
+          "alignment-approvals-release"
+        ],
+        "trustedSourceFacts": [
+          "Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。",
+          "Approveは既に出ているためその許可だけでは算入不足を直せない。",
+          "レビュー起動の設定は承認の算入可否を変えない。",
+          "算入とは別に維持する人の要件を外している。"
+        ],
+        "createdAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-18",
+        "cognitiveLevel": "analyze",
+        "scenarioType": "feature-scope-diagnosis",
+        "testedConcepts": [
+          "Copilotレビューの承認カウント"
+        ],
+        "estimatedAnswerSeconds": 100,
+        "examLike": true,
+        "scenarioSetId": null,
+        "clues": [
+          "Approveを出しました",
+          "必須承認数は減りません",
+          "人による必須承認"
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "distractorQuality": "conditional-feature-controls",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "feature-refresh-review-config",
+              "code-review",
+              "alignment-approvals-release"
+            ],
+            "rationale": "Approveは既に出ているためその許可だけでは算入不足を直せない。"
+          },
+          "C": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "feature-refresh-review-config",
+              "code-review",
+              "alignment-approvals-release"
+            ],
+            "rationale": "レビュー起動の設定は承認の算入可否を変えない。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "feature-refresh-review-config",
+              "code-review",
+              "alignment-approvals-release"
+            ],
+            "rationale": "Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "feature-refresh-review-config",
+              "code-review",
+              "alignment-approvals-release"
+            ],
+            "rationale": "算入とは別に維持する人の要件を外している。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot approvalsのpublic previewを利用できるrepoで、CopilotがApproveを出しました。しかし必須承認数は減りません。上位の設定は利用を許可し、人による必須承認の設定は維持します。自動レビューは既に動きます。この観測から不足する設定と、変更後も別に満たす要件はどれですか。",
+            "correctReason": "Approveの生成と承認要件への算入は別の設定である。算入を有効にしても維持するとした人の必須要件を削除しない。",
+            "distractorFailures": {
+              "B": "Approveは既に出ているためその許可だけでは算入不足を直せない。",
+              "C": "レビュー起動の設定は承認の算入可否を変えない。",
+              "D": "算入とは別に維持する人の要件を外している。"
+            }
+          }
+        ]
+      },
+      "displayedExplanation": "CopilotがApproveを出せることと、その承認がマージ要件へ数えられることは別の設定です。今回はApproveが実際に出ているので、承認の生成を許可する設定だけを見直しても不足は解消しません。\n\n上位設定が許可しているという条件のもとで、Copilotの承認をマージ要件へ数える設定を有効にします。ただし、人による必須承認も維持すると明示されています。その要件まで削除せず、人のレビューは別途受ける必要があります。\n\nこのPR承認機能は2026年9月1日にPublic previewとして追加されたもので、8月7日時点の機能と区別して学習します。設定や対応範囲は変更され得るため、利用時は公式資料を確認します。",
+      "review": {
+        "blindCheck": "既存の設問・四択・正解を維持。今回の変更は解説の時点注記と日付付き公式出典のみ。",
+        "difficulty": "承認の生成、算入、人の必須要件を分ける既存の高難度を維持。",
+        "choiceLengths": [
+          {
+            "id": "B",
+            "displayPosition": "A",
+            "characters": 38,
+            "medianRatio": 1.134,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "B",
+            "characters": 34,
+            "medianRatio": 1.015,
+            "correct": false
+          },
+          {
+            "id": "A",
+            "displayPosition": "C",
+            "characters": 33,
+            "medianRatio": 0.985,
+            "correct": true
+          },
+          {
+            "id": "D",
+            "displayPosition": "D",
+            "characters": 33,
+            "medianRatio": 0.985,
+            "correct": false
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Copilot code review can now approve pull requests",
+          "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/",
+          "date": "2026-09-01",
+          "note": "CopilotによるPR承認をPublic previewとして追加。8月7日より後の追加機能。"
+        },
+        {
+          "title": "Configuring code review by GitHub Copilot — Auto-approval",
+          "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+          "note": "承認する許可と、承認をマージ要件へ算入する許可は別。後者の対象パス制限もある。"
+        }
+      ]
+    },
+    {
+      "id": "q-d6-e02-feature-20261016",
+      "revision": "official-alignment-2026-10-18",
+      "findingId": "F04",
+      "beforeContract": "{\"id\":\"q-d6-e02-feature-20261016\",\"question\":\"組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。\",\"choices\":[{\"id\":\"B\",\"text\":\"Xの個人依頼もrulesetの自動レビューも動く\"},{\"id\":\"C\",\"text\":\"Xの個人依頼は動き、rulesetの自動レビューは止まる\"},{\"id\":\"D\",\"text\":\"Xの個人依頼もrulesetの自動レビューも止まる\"},{\"id\":\"A\",\"text\":\"Xの個人依頼は止まり、rulesetの自動レビューは動く\"}],\"answer\":[\"A\"],\"difficulty\":\"advanced\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。\",\"choiceExplanations\":{\"A\":\"authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。\",\"B\":\"外部ライセンスだけの未認可利用者の個人依頼は制限される。\",\"C\":\"個人側とruleset側の適用結果を逆に扱っている。\",\"D\":\"個人側の制限をrulesetの自動レビューにも及ぼしている。\"},\"sourceIds\":[\"code-review\",\"feature-refresh-review-config\"],\"contentRevision\":\"copilot-feature-refresh-2026-10-16\"}",
+      "afterContract": "{\"id\":\"q-d6-e02-feature-20261016\",\"question\":\"組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。\",\"choices\":[{\"id\":\"B\",\"text\":\"Xの個人依頼もrulesetの自動レビューも動く\"},{\"id\":\"C\",\"text\":\"Xの個人依頼は動き、rulesetの自動レビューは止まる\"},{\"id\":\"D\",\"text\":\"Xの個人依頼もrulesetの自動レビューも止まる\"},{\"id\":\"A\",\"text\":\"Xの個人依頼は止まり、rulesetの自動レビューは動く\"}],\"answer\":[\"A\"],\"difficulty\":\"advanced\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。\",\"choiceExplanations\":{\"A\":\"authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。\",\"B\":\"外部ライセンスだけの未認可利用者の個人依頼は制限される。\",\"C\":\"個人側とruleset側の適用結果を逆に扱っている。\",\"D\":\"個人側の制限をrulesetの自動レビューにも及ぼしている。\"},\"sourceIds\":[\"code-review\",\"feature-refresh-review-config\",\"alignment-authorized-release\"],\"contentRevision\":\"official-alignment-2026-10-18\"}",
+      "beforeFingerprint": "0ddec06a730c355acaa4a7fc14b1c1e576ce43fb4a2952d8cf5d6b386afd4f2a",
+      "afterFingerprint": "3ca9184e3c6c41f675cf72e63228477513ceef97e5df48a795df98fd2dbfb4b0",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d6-e02-feature-20261016",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "advanced",
+        "type": "single-select",
+        "status": "verified",
+        "question": "組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "Xの個人依頼もrulesetの自動レビューも動く"
+          },
+          {
+            "id": "C",
+            "text": "Xの個人依頼は動き、rulesetの自動レビューは止まる"
+          },
+          {
+            "id": "D",
+            "text": "Xの個人依頼もrulesetの自動レビューも止まる"
+          },
+          {
+            "id": "A",
+            "text": "Xの個人依頼は止まり、rulesetの自動レビューは動く"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。",
+        "choiceExplanations": {
+          "A": "authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。",
+          "B": "外部ライセンスだけの未認可利用者の個人依頼は制限される。",
+          "C": "個人側とruleset側の適用結果を逆に扱っている。",
+          "D": "個人側の制限をrulesetの自動レビューにも及ぼしている。"
+        },
+        "sourceIds": [
+          "code-review",
+          "feature-refresh-review-config",
+          "alignment-authorized-release"
+        ],
+        "trustedSourceFacts": [
+          "authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。",
+          "外部ライセンスだけの未認可利用者の個人依頼は制限される。",
+          "個人側とruleset側の適用結果を逆に扱っている。",
+          "個人側の制限をrulesetの自動レビューにも及ぼしている。"
+        ],
+        "createdAt": "2026-10-16",
+        "lastVerifiedAt": "2026-10-18",
+        "cognitiveLevel": "analyze",
+        "scenarioType": "feature-scope-diagnosis",
+        "testedConcepts": [
+          "外部ライセンスによるレビューの制限"
+        ],
+        "estimatedAnswerSeconds": 100,
+        "examLike": true,
+        "scenarioSetId": "sc09",
+        "clues": [
+          "外部で取得した対応ライセンスだけ",
+          "有効な組織ruleset"
+        ],
+        "contentRevision": "official-alignment-2026-10-18",
+        "distractorQuality": "conditional-feature-controls",
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config",
+              "alignment-authorized-release"
+            ],
+            "rationale": "外部ライセンスだけの未認可利用者の個人依頼は制限される。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config",
+              "alignment-authorized-release"
+            ],
+            "rationale": "個人側とruleset側の適用結果を逆に扱っている。"
+          },
+          "D": {
+            "plausibility": 2,
+            "distractorType": "wrong-scope",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config",
+              "alignment-authorized-release"
+            ],
+            "rationale": "個人側の制限をrulesetの自動レビューにも及ぼしている。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "code-review",
+              "feature-refresh-review-config",
+              "alignment-authorized-release"
+            ],
+            "rationale": "authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "組織はCopilot code reviewと、Only allow Copilot code review to be triggered by authorized usersを有効にしています。Xは外部で取得した対応ライセンスだけを持ち、この組織が認める利用者ではありません。Xからの個別依頼と、このPRに一致する有効な組織rulesetからの自動レビューについて、起動できる経路の組合せはどれですか。",
+            "correctReason": "authorized users制限は未認可の個人依頼を止めるが、rulesetによる自動レビューは実行される。",
+            "distractorFailures": {
+              "B": "外部ライセンスだけの未認可利用者の個人依頼は制限される。",
+              "C": "個人側とruleset側の適用結果を逆に扱っている。",
+              "D": "個人側の制限をrulesetの自動レビューにも及ぼしている。"
+            }
+          }
+        ]
+      },
+      "displayedExplanation": "authorized usersの制限では、個人からのレビュー依頼と、組織が設定したrulesetによる自動レビューを区別します。Xは外部ライセンスを持っていても、この組織が認める利用者ではないため、個別の依頼は制限されます。\n\n一方、条件に一致する有効な組織rulesetは自動レビューを起動できます。個人への制限を、そのまま組織の自動起動へ広げて解釈してはいけません。したがって、Xの依頼は止まり、rulesetのレビューは動く組み合わせです。\n\nこの外部ライセンス利用者からの依頼を制限する設定は、2026年10月8日に追加された機能です。8月7日時点の仕様と混同せず、現行の追加機能として、個人の依頼と組織rulesetによる起動を分けて理解します。",
+      "review": {
+        "blindCheck": "個人依頼とrulesetの二経路の組合せを問う既存の四択を維持。本文なしでは起動可否の組合せは決まらない。",
+        "difficulty": "外部ライセンスの制限と起動元の適用範囲を照合する高難度を維持。",
+        "choiceLengths": [
+          {
+            "id": "B",
+            "displayPosition": "A",
+            "characters": 24,
+            "medianRatio": 0.906,
+            "correct": false
+          },
+          {
+            "id": "C",
+            "displayPosition": "B",
+            "characters": 28,
+            "medianRatio": 1.057,
+            "correct": false
+          },
+          {
+            "id": "D",
+            "displayPosition": "C",
+            "characters": 25,
+            "medianRatio": 0.943,
+            "correct": false
+          },
+          {
+            "id": "A",
+            "displayPosition": "D",
+            "characters": 28,
+            "medianRatio": 1.057,
+            "correct": true
+          }
+        ]
+      },
+      "officialEvidence": [
+        {
+          "title": "Copilot code review: New organization billing options and controls",
+          "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+          "date": "2026-10-08",
+          "note": "外部ライセンス利用者からのレビュー依頼を制限する設定を追加。8月7日より後の追加機能。"
+        },
+        {
+          "title": "Reviews requested with an external Copilot license",
+          "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review#reviews-requested-with-an-external-copilot-license",
+          "note": "認可されない個人の依頼を制限する一方、repo/組織rulesetによる自動レビューは動作する。"
+        }
+      ]
+    }
+  ]
+}

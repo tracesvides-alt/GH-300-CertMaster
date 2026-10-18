@@ -35,6 +35,8 @@ import {
   objectives,
   questions,
   allQuestions,
+  questionForHistoricalAttempt,
+  directQuestionStudyLinks,
   lessons,
   sources,
   version,
@@ -51,10 +53,11 @@ import {
   type GlossaryFilter,
   type SearchResult,
 } from '@/lib/content';
-import { db, markLessonCompleted, toggleLessonCompleted, recordAttemptAdaptive, getCurrentConfusionPairs } from '@/lib/db';
+import { db, markLessonCompleted, recordAttemptAdaptive, getCurrentConfusionPairs } from '@/lib/db';
 import { getLessonNav } from '@/lib/lesson-nav';
 import { LessonFooterNav } from './components/lesson-footer-nav';
 import { StudyItemNav } from './components/study-item-nav';
+import { LessonReferenceTable } from './components/lesson-reference-table';
 import { ScrollToTopBtn } from './components/scroll-to-top-btn';
 import { LessonReadingCompanion } from './components/lesson-reading-companion';
 import { ItemReadingCompanion } from './components/item-reading-companion';
@@ -517,8 +520,8 @@ export default function App() {
       setNotice('ブックマークを保存できませんでした。');
     }
   }
-  function readLesson(d: string) {
-    const target = lessons.find((l) => l.domainId === d) ?? lessons.find((l) => l.id === `lesson-${d}`);
+  function readLesson(d: string, question?:Question) {
+    const target = (question?directQuestionStudyLinks(question)?.lesson:undefined) ?? lessons.find((l) => l.domainId === d) ?? lessons.find((l) => l.id === `lesson-${d}`);
     setLessonId(target?.id ?? `lesson-${d}`);
     setTab('Study');
     setStudyTab('Learn');
@@ -896,9 +899,10 @@ export default function App() {
                       {(() => {
                         const isWrong = !score(q!, selected);
                         const mistakeAnalysis = isWrong ? analyzeMistake(q!, selected) : null;
+                        const directLinks = directQuestionStudyLinks(q!);
                         const relLesson =
-                          lessons.find((l) => l.domainId === q!.domainId || l.relatedObjectives.includes(q!.objectiveId));
-                        const relComparisons = comparisonGuides.filter((c) =>
+                          directLinks?.lesson ?? lessons.find((l) => l.domainId === q!.domainId || l.relatedObjectives.includes(q!.objectiveId));
+                        const relComparisons = directLinks?.comparisons ?? comparisonGuides.filter((c) =>
                           c.objectiveIds.includes(q!.objectiveId) ||
                           c.lessonIds?.includes(relLesson?.id ?? '') ||
                           (mistakeAnalysis?.confusionPairIds &&
@@ -907,7 +911,7 @@ export default function App() {
                               return pair && (c.comparedTermIds.includes(pair.conceptAId) || c.comparedTermIds.includes(pair.conceptBId));
                             }))
                         );
-                        const relGlossaries = glossaryTerms.filter(
+                        const relGlossaries = directLinks?.terms ?? glossaryTerms.filter(
                           (g) =>
                             g.lessonIds?.includes(relLesson?.id ?? '') ||
                             (q!.testedConcepts && q!.testedConcepts.includes(g.id)),
@@ -1021,7 +1025,7 @@ export default function App() {
                       >
                         類題を解く
                       </button>
-                      <button onClick={() => readLesson(q!.domainId)}>教材を読む</button>
+                      <button onClick={() => readLesson(q!.domainId,q!)}>教材を読む</button>
                     </div>
                     <button
                       className="primary answerbutton"
@@ -1417,6 +1421,7 @@ export default function App() {
                                         <h3>{s.heading}</h3>
                                       </div>
                                       <p>{s.content}</p>
+                                      {s.table&&<LessonReferenceTable table={s.table} sources={sources} />}
                                     </div>
                                   ))}
                                 </div>
@@ -1594,7 +1599,11 @@ export default function App() {
                                 <LessonFooterNav
                                   currentLessonId={lesson.id}
                                   isCompleted={completedLessonIds.includes(lesson.id)}
-                                  onToggleCompleted={() => void toggleLessonCompleted(lesson.id)}
+                                  onToggleCompleted={() => {
+                                    // Honor the rendered action even if auto-completion has just saved.
+                                    if (completedLessonIds.includes(lesson.id)) void db.lessonCompletions.delete(lesson.id);
+                                    else void markLessonCompleted(lesson.id);
+                                  }}
                                   onBackToList={() => {
                                     setLessonId(null);
                                     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -2445,7 +2454,7 @@ export default function App() {
                               >
                                 回答と解説
                               </button>
-                              <button onClick={() => readLesson(q.domainId)}>復習Lesson</button>
+                              <button onClick={() => readLesson(q.domainId,q)}>復習Lesson</button>
                             </div>
                           </div>
                         ))}
@@ -2568,10 +2577,7 @@ export default function App() {
                         scrollToTop();
                       }}
                       onSelectQuestion={(question, answer) => {
-                        start([question]);
-                        setSelected(answer);
-                        setRevealed(true);
-                        setTab('Practice');
+                        showHistoricalAnswer(question, answer);
                         scrollToTop();
                       }}
                       onNavigateToStudy={(type, id) => {
@@ -2666,13 +2672,13 @@ export default function App() {
                                   {new Date(a.at).toLocaleString('ja-JP')}
                                 </span>
                               </div>
-                              <p>{[...allQuestions, ...legacyGenerated].find((q) => q.id === a.questionId)?.question ?? a.questionId}</p>
+                              <p>{(() => {const item=[...allQuestions,...legacyGenerated].find(q=>q.id===a.questionId);return item?questionForHistoricalAttempt(item,a).question:a.questionId;})()}</p>
                               <button
                                 className="textbutton"
                                 onClick={() => {
                                   const item = [...allQuestions, ...legacyGenerated].find((q) => q.id === a.questionId);
                                   if (item) {
-                                    showHistoricalAnswer(item, a.answer);
+                                    showHistoricalAnswer(questionForHistoricalAttempt(item,a), a.answer);
                                   }
                                 }}
                               >

@@ -547,14 +547,14 @@
       {
         "axis": "目的",
         "values": [
-          "Code Review: バグ防止、セキュリティチェック、コード品質・可読性の担保",
+          "Code Review: 潜在的な問題の発見や改善を支援する。指摘の正確性は人間が検証する。",
           "PR Summaries: レビュアーが変更全体像を迅速に把握するための解説"
         ]
       },
       {
         "axis": "自動トリガー設定",
         "values": [
-          "Code Review: 組織ポリシーで新規PR作成時に自動実行可能",
+          "Code Review: 利用許可を確認し、rulesetや個人設定で自動レビューの起動条件を設定する。",
           "PR Summaries: 主にPR作成者・編集者がボタンを押してドラフト生成"
         ]
       }
@@ -576,10 +576,11 @@
     "questionIds": [],
     "sourceIds": [
       "code-review",
-      "guide"
+      "guide",
+      "feature-refresh-review-config"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -788,7 +789,7 @@
     "id": "cmp-org-vs-enterprise-policies",
     "title": "Organization Policies vs Enterprise Policies",
     "slug": "organization-vs-enterprise-policies",
-    "summary": "単一のOrganization内でシートや個別機能を管理するOrganization Policiesと、全社傘下の全組織に対してセキュリティ・知財設定を強制するEnterprise Policiesの階層関係。",
+    "summary": "企業側で決定するCopilotポリシーと、組織へ委任して決めるポリシーを比較します。プラン名、管理ロール、設定の適用先を分けて理解します。",
     "comparedTermIds": [
       "g-org-policies",
       "g-enterprise-policies"
@@ -803,36 +804,44 @@
     ],
     "comparisonAxes": [
       {
-        "axis": "管理スコープ",
+        "axis": "設定を管理する人と対象",
         "values": [
-          "Enterprise: 企業傘下のすべてのOrganizationおよびリポジトリ",
-          "Organization: 自組織に所属するリポジトリおよびチーム/メンバー"
+          "Enterprise: Enterprise ownerが企業側の対象ポリシーを管理する。",
+          "Organization: Organization ownerが自組織の対象ポリシーを管理する。"
         ]
       },
       {
-        "axis": "ポリシーの優先順位",
+        "axis": "決定と委任",
         "values": [
-          "Enterprise: 最上位。設定を「Enforce（強制）」するとOrgで変更不能",
-          "Organization: Enterpriseが「No policy (委任)」とした場合のみ設定可能"
+          "Enterprise: 対象ポリシーを企業で決めるか、組織へ判断を委任する。",
+          "Organization: 企業で決定済みの対象ポリシーは上書きできず、委任されたものを選択する。"
         ]
       },
       {
-        "axis": "主な管理対象",
+        "axis": "適用先の確認",
         "values": [
-          "Enterprise: 全社的なPublic code matching強制、知財補償要件、監査ログ集約",
-          "Organization: 日常のシート割当、チーム別アクセス権、個別PRレビューポリシー"
+          "Enterprise: 通常は企業から資格を得る利用者が対象。機能固有の例外も確認する。",
+          "Organization: 通常は組織から資格を得る利用者が対象。repoの所有関係だけで判断しない。"
+        ]
+      },
+      {
+        "axis": "別に扱う設定",
+        "values": [
+          "Enterprise: プラン名や企業アカウントがあることだけで、利用者へowner権限は付かない。",
+          "Organization: レビューの利用許可とrulesetによる自動起動、除外の追加と解除はそれぞれ区別する。"
         ]
       }
     ],
     "decisionGuide": [
-      "全社のすべてのリポジトリでパブリックコード一致を例外なく一括ブロックしたい → Enterprise Policies",
-      "自チームの開発リポジトリでCopilot Code Reviewの自動実行を有効化したい → Organization Policies"
+      "Orgで対象機能を変更できない → Enterprise側で方針が決定済みか、組織へ委任されているかを確認する。",
+      "自動レビューを全対象PRへ設定したい → 利用許可に加え、対象repo・ブランチのruleset等を確認する。"
     ],
     "commonTraps": [
-      "Organization管理者がEnterpriseレベルで強制されたポリシーを上書き解除できると誤認すること"
+      "すべての設定がEnterprise→Org→Repoという同じ継承方式だと思うこと。",
+      "Copilot Enterpriseを契約すれば、全利用者がEnterprise ownerになると思うこと。"
     ],
     "examTips": [
-      "「上位（Enterprise）でEnforcedされたポリシーは下位（Org）で変更できない」は鉄則です。"
+      "対象機能、管理ロール、資格の提供元、上位での決定か委任かを順に確認します。"
     ],
     "lessonIds": [
       "lesson-d2-org-governance"
@@ -840,10 +849,12 @@
     "questionIds": [],
     "sourceIds": [
       "policies",
-      "guide"
+      "feature-refresh-policies",
+      "admin-policy-model",
+      "feature-refresh-review-config"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {

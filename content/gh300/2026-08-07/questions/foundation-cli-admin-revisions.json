@@ -1,0 +1,714 @@
+{
+  "revision": "cli-admin-foundation-2026-10-18",
+  "questions": [
+    {
+      "id": "q-d2-g07",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d2-g07",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "セットアップ資料に、旧gh-copilot拡張のghcsとghceをシェルへ登録する手順が残っています。現在は、その拡張ではなく現行のGitHub Copilot CLIを導入済みです。ターミナルから対話画面を開くには、どのコマンドを使いますか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "copilot"
+          },
+          {
+            "id": "B",
+            "text": "ghcs"
+          },
+          {
+            "id": "C",
+            "text": "ghce"
+          },
+          {
+            "id": "D",
+            "text": "gh"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "現行Copilot CLIの対話画面を起動するコマンドです。",
+        "choiceExplanations": {
+          "A": "現行Copilot CLIの対話画面を起動するコマンドです。",
+          "B": "旧拡張で提案を求めるための短縮名で、現行CLIの起動とは異なります。",
+          "C": "旧拡張で説明を求めるための短縮名で、現行CLIの起動とは異なります。",
+          "D": "GitHub CLIのコマンドで、これだけではCopilot CLIの対話画面は開きません。"
+        },
+        "sourceIds": [
+          "cli-extension-sunset",
+          "feature-refresh-cli-reference"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "旧エイリアスの役割と現行CLIの起動を区別する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "cli-extension-sunset",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "現行Copilot CLIの対話画面を起動するコマンドです。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-extension-sunset",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "旧拡張で提案を求めるための短縮名で、現行CLIの起動とは異なります。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-extension-sunset",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "旧拡張で説明を求めるための短縮名で、現行CLIの起動とは異なります。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-extension-sunset",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "GitHub CLIのコマンドで、これだけではCopilot CLIの対話画面は開きません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "セットアップ資料に、旧gh-copilot拡張のghcsとghceをシェルへ登録する手順が残っています。現在は、その拡張ではなく現行のGitHub Copilot CLIを導入済みです。ターミナルから対話画面を開くには、どのコマンドを使いますか。",
+            "correctReason": "現行Copilot CLIの対話画面を起動するコマンドです。",
+            "distractorFailures": {
+              "B": "旧拡張で提案を求めるための短縮名で、現行CLIの起動とは異なります。",
+              "C": "旧拡張で説明を求めるための短縮名で、現行CLIの起動とは異なります。",
+              "D": "GitHub CLIのコマンドで、これだけではCopilot CLIの対話画面は開きません。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-cli-shell-aliases"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d2-g07\",\"question\":\"旧gh-copilot資料に記載されているghcs / ghceというシェルエイリアスについて、現行Copilot CLIへの移行説明として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"旧拡張用の短縮名で、現行はcopilotで起動する\"},{\"id\":\"B\",\"text\":\"旧拡張用の短縮名で、現行もghcsで起動する\"},{\"id\":\"C\",\"text\":\"現行CLIの標準名で、旧拡張もcopilotで起動した\"},{\"id\":\"D\",\"text\":\"現行CLIの標準名で、旧拡張もghceで起動した\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"旧短縮名を現行の必須設定と混同しない。\",\"choiceExplanations\":{\"A\":\"旧短縮名を現行の必須設定と混同しない。\",\"B\":\"ghcsは現行CLIの標準起動コマンドではない。\",\"C\":\"ghcs/ghceは旧拡張用で現行標準ではない。\",\"D\":\"世代と起動コマンドの関係を取り違えている。\"},\"sourceIds\":[\"cli-extension-sunset\",\"cli\",\"guide\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g07\",\"question\":\"セットアップ資料に、旧gh-copilot拡張のghcsとghceをシェルへ登録する手順が残っています。現在は、その拡張ではなく現行のGitHub Copilot CLIを導入済みです。ターミナルから対話画面を開くには、どのコマンドを使いますか。\",\"choices\":[{\"id\":\"A\",\"text\":\"copilot\"},{\"id\":\"B\",\"text\":\"ghcs\"},{\"id\":\"C\",\"text\":\"ghce\"},{\"id\":\"D\",\"text\":\"gh\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"現行Copilot CLIの対話画面を起動するコマンドです。\",\"choiceExplanations\":{\"A\":\"現行Copilot CLIの対話画面を起動するコマンドです。\",\"B\":\"旧拡張で提案を求めるための短縮名で、現行CLIの起動とは異なります。\",\"C\":\"旧拡張で説明を求めるための短縮名で、現行CLIの起動とは異なります。\",\"D\":\"GitHub CLIのコマンドで、これだけではCopilot CLIの対話画面は開きません。\"},\"sourceIds\":[\"cli-extension-sunset\",\"feature-refresh-cli-reference\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "c1d41aa0e9ca62d41645c753bfb5ea46886887ddbf38d7634d97abaf8938e316",
+      "afterFingerprint": "4cfcf28b46d89dda85055179e5fe6be768381d4f4573e0833b17ca40a4d280a9",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "今回は現行のCopilot CLIが導入済みで、ターミナルから対話画面を開くことが目的です。その起動コマンドはcopilotです。ghcsとghceは旧gh-copilot拡張の操作を呼び出すためのシェルエイリアスであり、現行CLIを使うための必須設定ではありません。古い資料の短縮名を、新しい製品の起動方法へそのまま引き継がないことが判断のポイントです。\n\n使い方を先に調べたい場合は、シェルでcopilot helpを使います。起動後の対話画面では/helpを使えます。起動、使い方の確認、認証は別の操作なので、目的と入力場所を分けて確認します。"
+    },
+    {
+      "id": "q-d2-g08",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d2-g08",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot CLIでdocs/guide.mdを編集します。書き込みツールは利用可能で、このファイルへのアクセスも許可済みです。実行を妨げる拒否設定はありません。このファイルへの書き込みを事前に許可するため、起動時に追加する指定はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "--deny-tool=\"write(docs/guide.md)\""
+          },
+          {
+            "id": "B",
+            "text": "--allow-tool=\"write(docs/guide.md)\""
+          },
+          {
+            "id": "C",
+            "text": "--allow-tool=\"read(docs/guide.md)\""
+          },
+          {
+            "id": "D",
+            "text": "--allow-tool=\"write(src/app.ts)\""
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "対象ファイルへの書き込みツールの実行を事前に許可します。",
+        "choiceExplanations": {
+          "A": "同じファイルへの書き込みを拒否する指定です。",
+          "B": "対象ファイルへの書き込みツールの実行を事前に許可します。",
+          "C": "読み取りに対する許可で、書き込みの許可にはなりません。",
+          "D": "書き込みを許可する対象が、別のファイルです。"
+        },
+        "sourceIds": [
+          "cli-tool-permissions",
+          "feature-refresh-cli-reference"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "ツールの実行許可を、操作の種類と対象で限定する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-tool-permissions",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "同じファイルへの書き込みを拒否する指定です。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "cli-tool-permissions",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "対象ファイルへの書き込みツールの実行を事前に許可します。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-tool-permissions",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "読み取りに対する許可で、書き込みの許可にはなりません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "cli-tool-permissions",
+              "feature-refresh-cli-reference"
+            ],
+            "rationale": "書き込みを許可する対象が、別のファイルです。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot CLIでdocs/guide.mdを編集します。書き込みツールは利用可能で、このファイルへのアクセスも許可済みです。実行を妨げる拒否設定はありません。このファイルへの書き込みを事前に許可するため、起動時に追加する指定はどれですか。",
+            "correctReason": "対象ファイルへの書き込みツールの実行を事前に許可します。",
+            "distractorFailures": {
+              "A": "同じファイルへの書き込みを拒否する指定です。",
+              "C": "読み取りに対する許可で、書き込みの許可にはなりません。",
+              "D": "書き込みを許可する対象が、別のファイルです。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-cli-execution-confirm"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d2-g08\",\"question\":\"現行Copilot CLIの変更系ツールにおいて、個別の実行確認を省略できる場合があります。この承認頻度に直接影響を与える仕組みとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"会話のコンテキスト圧縮\"},{\"id\":\"B\",\"text\":\"ツールの許可・拒否設定\"},{\"id\":\"C\",\"text\":\"出力の公開コード一致設定\"},{\"id\":\"D\",\"text\":\"モデルの入力トークン上限\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"保存済み許可や広い事前許可によって個別確認の扱いが変わる。\",\"choiceExplanations\":{\"B\":\"保存済み許可や広い事前許可によって個別確認の扱いが変わる。\",\"A\":\"圧縮は文脈量を管理するものでツール権限を与えない。\",\"C\":\"生成内容の一致制御はコマンド実行許可とは別。\",\"D\":\"入力上限は実行権限の設定ではない。\"},\"sourceIds\":[\"cli-tool-permissions\",\"cli-current\",\"guide\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g08\",\"question\":\"Copilot CLIでdocs/guide.mdを編集します。書き込みツールは利用可能で、このファイルへのアクセスも許可済みです。実行を妨げる拒否設定はありません。このファイルへの書き込みを事前に許可するため、起動時に追加する指定はどれですか。\",\"choices\":[{\"id\":\"A\",\"text\":\"--deny-tool=\\\"write(docs/guide.md)\\\"\"},{\"id\":\"B\",\"text\":\"--allow-tool=\\\"write(docs/guide.md)\\\"\"},{\"id\":\"C\",\"text\":\"--allow-tool=\\\"read(docs/guide.md)\\\"\"},{\"id\":\"D\",\"text\":\"--allow-tool=\\\"write(src/app.ts)\\\"\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"対象ファイルへの書き込みツールの実行を事前に許可します。\",\"choiceExplanations\":{\"A\":\"同じファイルへの書き込みを拒否する指定です。\",\"B\":\"対象ファイルへの書き込みツールの実行を事前に許可します。\",\"C\":\"読み取りに対する許可で、書き込みの許可にはなりません。\",\"D\":\"書き込みを許可する対象が、別のファイルです。\"},\"sourceIds\":[\"cli-tool-permissions\",\"feature-refresh-cli-reference\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "388412d260ab3fb6c051532d08475dfd6a275f138a894208f55904cfd093a9d8",
+      "afterFingerprint": "2800f1cb7707038bf42d060b0e5cc24f31d7214ccf64ad51f013017a79077d9f",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "問題では、書き込みツールの利用と対象ファイルへのアクセスは既に認められています。残っているのは、docs/guide.mdへの書き込み操作を事前に許可する指定です。--allow-toolのwriteに対象パスを渡すことで、そのファイルへの書き込みを許可できます。readを指定しても操作の種類が違い、別のパスを指定しても今回の編集対象には一致しません。\n\nこれは対象を限定した実行許可です。モデルへ提供するツールの候補や、アクセスできるフォルダーの設定とは別です。また、許可に一致する操作でも拒否設定が重なれば拒否が優先します。今回は競合する拒否がないと明記しているため、この一つの許可指定を選べます。"
+    },
+    {
+      "id": "q-d2-g09",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d2-g09",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o2",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot CLIをprojectフォルダーで起動します。隣にあるsharedフォルダーのファイルも調査したいのですが、sharedはまだアクセスを許可した範囲に含まれていません。読み取りと検索のツールは利用可能です。起動時にsharedへのアクセスを追加する指定はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "--allow-tool=read"
+          },
+          {
+            "id": "B",
+            "text": "--available-tools=view,grep"
+          },
+          {
+            "id": "C",
+            "text": "--add-dir=../shared"
+          },
+          {
+            "id": "D",
+            "text": "--resume=SESSION-ID"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。",
+        "choiceExplanations": {
+          "A": "読み取りツールへの実行許可であり、追加フォルダーのアクセス許可とは別です。",
+          "B": "モデルに提示するツールの候補を絞ります。フォルダーを追加する指定ではありません。",
+          "C": "現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。",
+          "D": "保存済みのセッションを再開する指定で、追加フォルダーを指定するものではありません。"
+        },
+        "sourceIds": [
+          "feature-refresh-cli-reference",
+          "cli-tool-permissions"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "アクセスできる情報源の範囲と、ツールの候補・実行許可を区別する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "feature-refresh-cli-reference",
+              "cli-tool-permissions"
+            ],
+            "rationale": "読み取りツールへの実行許可であり、追加フォルダーのアクセス許可とは別です。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "feature-refresh-cli-reference",
+              "cli-tool-permissions"
+            ],
+            "rationale": "モデルに提示するツールの候補を絞ります。フォルダーを追加する指定ではありません。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "feature-refresh-cli-reference",
+              "cli-tool-permissions"
+            ],
+            "rationale": "現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "feature-refresh-cli-reference",
+              "cli-tool-permissions"
+            ],
+            "rationale": "保存済みのセッションを再開する指定で、追加フォルダーを指定するものではありません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot CLIをprojectフォルダーで起動します。隣にあるsharedフォルダーのファイルも調査したいのですが、sharedはまだアクセスを許可した範囲に含まれていません。読み取りと検索のツールは利用可能です。起動時にsharedへのアクセスを追加する指定はどれですか。",
+            "correctReason": "現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。",
+            "distractorFailures": {
+              "A": "読み取りツールへの実行許可であり、追加フォルダーのアクセス許可とは別です。",
+              "B": "モデルに提示するツールの候補を絞ります。フォルダーを追加する指定ではありません。",
+              "D": "保存済みのセッションを再開する指定で、追加フォルダーを指定するものではありません。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-cli-context-limits"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d2-g09\",\"question\":\"現行Copilot CLIでローカルのプロジェクトファイルを調査し、回答の文脈に加えたいと考えています。CLIが取得できる情報範囲に直接関係する条件として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"選択モデルの入力・出力トークン上限\"},{\"id\":\"B\",\"text\":\"会話に残された以前の依頼と回答\"},{\"id\":\"C\",\"text\":\"実行場所とファイル・ツールの許可\"},{\"id\":\"D\",\"text\":\"質問文に指定した回答形式と例示\"}],\"answer\":[\"C\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"実際の参照元へのアクセス範囲を決める。\",\"choiceExplanations\":{\"C\":\"実際の参照元へのアクセス範囲を決める。\",\"A\":\"一度に使える情報量の上限でありアクセス権そのものではない。\",\"B\":\"参照済みの文脈は含むが、新規ファイルのアクセス権を決めない。\",\"D\":\"出力形式を誘導するが、参照元への権限を付与しない。\"},\"sourceIds\":[\"cli-current\",\"cli-tool-permissions\",\"guide\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g09\",\"question\":\"Copilot CLIをprojectフォルダーで起動します。隣にあるsharedフォルダーのファイルも調査したいのですが、sharedはまだアクセスを許可した範囲に含まれていません。読み取りと検索のツールは利用可能です。起動時にsharedへのアクセスを追加する指定はどれですか。\",\"choices\":[{\"id\":\"A\",\"text\":\"--allow-tool=read\"},{\"id\":\"B\",\"text\":\"--available-tools=view,grep\"},{\"id\":\"C\",\"text\":\"--add-dir=../shared\"},{\"id\":\"D\",\"text\":\"--resume=SESSION-ID\"}],\"answer\":[\"C\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o2\",\"explanation\":\"現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。\",\"choiceExplanations\":{\"A\":\"読み取りツールへの実行許可であり、追加フォルダーのアクセス許可とは別です。\",\"B\":\"モデルに提示するツールの候補を絞ります。フォルダーを追加する指定ではありません。\",\"C\":\"現在の作業フォルダーから見た../sharedを、アクセスできるディレクトリへ追加します。\",\"D\":\"保存済みのセッションを再開する指定で、追加フォルダーを指定するものではありません。\"},\"sourceIds\":[\"feature-refresh-cli-reference\",\"cli-tool-permissions\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "b2949889aaa628aa057ab4859261fe5be837008f12391d0a1213c1152e2963ba",
+      "afterFingerprint": "5583b0883c5128673b4c3e454656dd20c68056beddcfad1afa0fe2cc753c3163",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "今回不足しているのは読み取り・検索のツールではなく、作業フォルダーの外にあるsharedへのアクセスです。起動オプションの--add-dirにディレクトリを指定すると、その場所へのファイルアクセスを追加できます。projectとsharedが隣り合っているため、projectからの相対パスは../sharedです。ツールの候補を絞る指定や読み取りツールの実行許可だけでは、この追加ディレクトリの指定にはなりません。\n\nアクセスを認めることは、そこにある全ファイルが自動的に読み込まれたり、回答に使われたりする保証ではありません。また、追加先の.github/skillsや.github/agentsも信頼する設定として読み込まれるため、追加するフォルダーの内容を確認します。対話画面を既に開いている場合の/add-dirとは、入力する場所を区別してください。"
+    },
+    {
+      "id": "q-d2-g20",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d2-g20",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "ある開発者は、個人で契約したCopilot Proを利用しています。所属組織からCopilotシートは付与されておらず、組織・企業の管理ロールも持っていません。この個人契約に基づいて、本人が管理できるCopilotの設定はどれですか。",
+        "choices": [
+          {
+            "id": "A",
+            "text": "所属組織のメンバーへのCopilotシート割り当て"
+          },
+          {
+            "id": "B",
+            "text": "本人の個人アカウントにあるCopilotの利用設定"
+          },
+          {
+            "id": "C",
+            "text": "所属組織のメンバーに適用するCopilot機能ポリシー"
+          },
+          {
+            "id": "D",
+            "text": "所属企業の各組織に適用するCopilot機能ポリシー"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。",
+        "choiceExplanations": {
+          "A": "組織のシート管理には、その組織で必要な管理権限が別に必要です。",
+          "B": "個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。",
+          "C": "個人のPro契約は、組織ポリシーを変更する権限を付与しません。",
+          "D": "企業のポリシー管理にはEnterprise owner等の対象の権限が必要です。"
+        },
+        "sourceIds": [
+          "plans",
+          "privacy-training",
+          "policies",
+          "feature-refresh-policies"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "個人向けサブスクリプションの管理範囲と、組織・企業の管理ロールを区別する。"
+        ],
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "plans",
+              "privacy-training",
+              "policies",
+              "feature-refresh-policies"
+            ],
+            "rationale": "組織のシート管理には、その組織で必要な管理権限が別に必要です。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "plans",
+              "privacy-training",
+              "policies",
+              "feature-refresh-policies"
+            ],
+            "rationale": "個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "plans",
+              "privacy-training",
+              "policies",
+              "feature-refresh-policies"
+            ],
+            "rationale": "個人のPro契約は、組織ポリシーを変更する権限を付与しません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "plans",
+              "privacy-training",
+              "policies",
+              "feature-refresh-policies"
+            ],
+            "rationale": "企業のポリシー管理にはEnterprise owner等の対象の権限が必要です。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "ある開発者は、個人で契約したCopilot Proを利用しています。所属組織からCopilotシートは付与されておらず、組織・企業の管理ロールも持っていません。この個人契約に基づいて、本人が管理できるCopilotの設定はどれですか。",
+            "correctReason": "個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。",
+            "distractorFailures": {
+              "A": "組織のシート管理には、その組織で必要な管理権限が別に必要です。",
+              "C": "個人のPro契約は、組織ポリシーを変更する権限を付与しません。",
+              "D": "企業のポリシー管理にはEnterprise owner等の対象の権限が必要です。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-subscription-plans"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d2-g20\",\"question\":\"個人向けのFree・Pro、組織向けのBusiness・Enterpriseなど、利用可能な機能や顧客コードのプライバシーポリシー（モデル学習利用の有無）を規定するライセンス・プラン体系として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Seat Assignment\"},{\"id\":\"B\",\"text\":\"Subscription Plans\"},{\"id\":\"C\",\"text\":\"Billing Roles\"},{\"id\":\"D\",\"text\":\"Enterprise Managed Users\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。\",\"choiceExplanations\":{\"B\":\"利用条件、管理機能、プライバシー方針（学習利用の除外など）を定める契約区分がCopilot Subscription Plansである。\",\"A\":\"購入したライセンスを特定のユーザーに割り当てる運用操作であり、プラン体系そのものではない。\",\"C\":\"支払い情報の閲覧や請求書管理を行う権限ロールであり、Copilotの機能・規約プラン体系ではない。\",\"D\":\"IdPと連携してユーザーIDを一元管理するアカウント構成であり、Copilotのサブスクリプションプランではない。\"},\"sourceIds\":[\"policies\",\"privacy\",\"plans\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g20\",\"question\":\"ある開発者は、個人で契約したCopilot Proを利用しています。所属組織からCopilotシートは付与されておらず、組織・企業の管理ロールも持っていません。この個人契約に基づいて、本人が管理できるCopilotの設定はどれですか。\",\"choices\":[{\"id\":\"A\",\"text\":\"所属組織のメンバーへのCopilotシート割り当て\"},{\"id\":\"B\",\"text\":\"本人の個人アカウントにあるCopilotの利用設定\"},{\"id\":\"C\",\"text\":\"所属組織のメンバーに適用するCopilot機能ポリシー\"},{\"id\":\"D\",\"text\":\"所属企業の各組織に適用するCopilot機能ポリシー\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。\",\"choiceExplanations\":{\"A\":\"組織のシート管理には、その組織で必要な管理権限が別に必要です。\",\"B\":\"個人契約の利用者は、本人向けに提供されるCopilotの設定を管理します。\",\"C\":\"個人のPro契約は、組織ポリシーを変更する権限を付与しません。\",\"D\":\"企業のポリシー管理にはEnterprise owner等の対象の権限が必要です。\"},\"sourceIds\":[\"plans\",\"privacy-training\",\"policies\",\"feature-refresh-policies\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "fd83bb44ab9f0f65b67acfffc878c0ddb62e2e081b95e614c446d799e3a0531c",
+      "afterFingerprint": "5ea03def0c1022183071f1d03e9b8f0c50f9e23eeee00ffbcb896549f32abf05",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "Copilotのサブスクリプションは利用条件を定めるもので、組織や企業の管理ロールを付与するものではありません。今回は本人のPro契約だけを利用し、組織のシート提供も管理ロールもないため、管理できる対象は本人の個人アカウントに用意されたCopilotの利用設定です。個人向け設定の例には、公開コードに一致する提案の扱いなどがあります。\n\n組織のメンバーへのシート付与や、組織・企業の機能ポリシー変更は別の管理操作です。それらを行うには対象の組織・企業で必要なロールや委任を確認します。一方、組織からシートを得ている場合には個人で変更できず継承される設定もあるため、今回は組織からのシート提供がないという条件を明記しています。"
+    },
+    {
+      "id": "q-d6-f05",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d6-f05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot Businessを利用する組織で、担当者がAPIから組織全体のCopilot利用レポートを取得し、活動や機能の利用状況を集計します。ownerロールを付与せずに閲覧を委任したいと考えています。この目的に合う情報源と権限の組み合わせはどれですか。APIの認証設定は、選んだ情報源に必要な条件を満たすものとします。",
+        "choices": [
+          {
+            "id": "B",
+            "text": "企業のCopilot利用レポート／View Enterprise Copilot Metrics"
+          },
+          {
+            "id": "D",
+            "text": "企業の監査ログ／Read enterprise audit logs"
+          },
+          {
+            "id": "A",
+            "text": "組織のCopilot利用レポート／View Organization Copilot Metrics"
+          },
+          {
+            "id": "C",
+            "text": "組織のシート割り当て一覧／Organization owner"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。",
+        "choiceExplanations": {
+          "B": "企業全体のレポート用で、今回の組織を対象としたレポート・委任権限とは範囲が異なります。",
+          "D": "設定変更等の履歴を調べる情報源で、機能の利用状況を集計するレポートとは異なります。",
+          "A": "組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。",
+          "C": "シート一覧は資格の割り当てを確認する情報源です。ownerを付与しないという条件にも合いません。"
+        },
+        "sourceIds": [
+          "admin-usage-metrics",
+          "admin-copilot-audit",
+          "copilot-seat-api"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "Copilotの活動を取得する組織レポートと、その閲覧を委任する権限を対応させる。"
+        ],
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-usage-metrics",
+              "admin-copilot-audit",
+              "copilot-seat-api"
+            ],
+            "rationale": "企業全体のレポート用で、今回の組織を対象としたレポート・委任権限とは範囲が異なります。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-usage-metrics",
+              "admin-copilot-audit",
+              "copilot-seat-api"
+            ],
+            "rationale": "設定変更等の履歴を調べる情報源で、機能の利用状況を集計するレポートとは異なります。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "admin-usage-metrics",
+              "admin-copilot-audit",
+              "copilot-seat-api"
+            ],
+            "rationale": "組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-usage-metrics",
+              "admin-copilot-audit",
+              "copilot-seat-api"
+            ],
+            "rationale": "シート一覧は資格の割り当てを確認する情報源です。ownerを付与しないという条件にも合いません。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot Businessを利用する組織で、担当者がAPIから組織全体のCopilot利用レポートを取得し、活動や機能の利用状況を集計します。ownerロールを付与せずに閲覧を委任したいと考えています。この目的に合う情報源と権限の組み合わせはどれですか。APIの認証設定は、選んだ情報源に必要な条件を満たすものとします。",
+            "correctReason": "組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。",
+            "distractorFailures": {
+              "B": "企業全体のレポート用で、今回の組織を対象としたレポート・委任権限とは範囲が異なります。",
+              "D": "設定変更等の履歴を調べる情報源で、機能の利用状況を集計するレポートとは異なります。",
+              "C": "シート一覧は資格の割り当てを確認する情報源です。ownerを付与しないという条件にも合いません。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-usage-metrics-api"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d6-f05\",\"question\":\"組織全体のCopilot利用状況について、コード提案の受容率や言語別の統計データをプログラムから集計・取得するために使用するAPIとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"B\",\"text\":\"Copilot seat management API\"},{\"id\":\"D\",\"text\":\"Billing API\"},{\"id\":\"C\",\"text\":\"Audit Log API\"},{\"id\":\"A\",\"text\":\"Copilot Metrics API\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"利用指標の集計をAPIで取得する。\",\"choiceExplanations\":{\"A\":\"利用指標の集計をAPIで取得する。\",\"B\":\"割当状況の管理・取得で受容率などの指標とは異なる。\",\"C\":\"管理イベントの追跡で利用指標の集計ではない。\",\"D\":\"費用の確認で補完の受容率や言語別利用の集計ではない。\"},\"sourceIds\":[\"rest-api\",\"audit-log\"],\"contentRevision\":\"difficulty-audit-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d6-f05\",\"question\":\"Copilot Businessを利用する組織で、担当者がAPIから組織全体のCopilot利用レポートを取得し、活動や機能の利用状況を集計します。ownerロールを付与せずに閲覧を委任したいと考えています。この目的に合う情報源と権限の組み合わせはどれですか。APIの認証設定は、選んだ情報源に必要な条件を満たすものとします。\",\"choices\":[{\"id\":\"B\",\"text\":\"企業のCopilot利用レポート／View Enterprise Copilot Metrics\"},{\"id\":\"D\",\"text\":\"企業の監査ログ／Read enterprise audit logs\"},{\"id\":\"A\",\"text\":\"組織のCopilot利用レポート／View Organization Copilot Metrics\"},{\"id\":\"C\",\"text\":\"組織のシート割り当て一覧／Organization owner\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。\",\"choiceExplanations\":{\"B\":\"企業全体のレポート用で、今回の組織を対象としたレポート・委任権限とは範囲が異なります。\",\"D\":\"設定変更等の履歴を調べる情報源で、機能の利用状況を集計するレポートとは異なります。\",\"A\":\"組織の利用レポートは、View Organization Copilot Metricsを持つ利用者等が取得できます。\",\"C\":\"シート一覧は資格の割り当てを確認する情報源です。ownerを付与しないという条件にも合いません。\"},\"sourceIds\":[\"admin-usage-metrics\",\"admin-copilot-audit\",\"copilot-seat-api\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "c998cdb34af16d51037d69e2a8801095778668c5bfebd1c642177c0a4dad3727",
+      "afterFingerprint": "0ce97da37f0b15dccc27c2d3945bc267282bba6a94fb3685f0a3c02e23e23b17",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "確認したいのはシートを誰に付与したかや、誰が設定を変更したかではなく、対象組織でCopilotがどのように利用されているかです。そのため組織のCopilot利用レポートを選びます。公式のusage metrics APIでは、Organization ownerに加えてView Organization Copilot Metricsの権限を持つ利用者等が組織のレポートを取得できます。ownerを付与せず閲覧を委任したいという条件にも合います。\n\nAPIでは担当者の権限だけでなく、利用する認証方式に合うトークン等の権限も必要です。今回はその条件を満たす前提で、情報源と閲覧権限の対応を問うています。日次レポートAPIはdownload_links等を返し、そこからレポートを取得します。この閲覧権限が、シートの付与・解除や機能ポリシーの変更権限まで与えるわけではありません。"
+    },
+    {
+      "id": "q-d6-f04",
+      "revision": "cli-admin-foundation-2026-10-18",
+      "after": {
+        "id": "q-d6-f04",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Copilot Businessを提供する企業で、Copilotの組織ポリシーが変更されました。調査担当者は、企業の監査ログから変更を実行したアカウントと日時を確認します。Enterprise ownerにはせず、必要な閲覧をカスタムロールで委任する場合、使用する情報源と権限の組み合わせはどれですか。",
+        "choices": [
+          {
+            "id": "C",
+            "text": "組織のCopilot利用レポート／View Organization Copilot Metrics"
+          },
+          {
+            "id": "D",
+            "text": "企業のCopilot利用レポート／View Enterprise Copilot Metrics"
+          },
+          {
+            "id": "B",
+            "text": "組織のシート割り当て一覧／Organization owner"
+          },
+          {
+            "id": "A",
+            "text": "企業の監査ログ／Read enterprise audit logs"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。",
+        "choiceExplanations": {
+          "C": "組織の利用状況を取得する権限で、企業の監査ログを読むための権限ではありません。",
+          "D": "企業の利用レポートを読む権限で、設定変更の監査イベントを読む権限とは異なります。",
+          "A": "Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。",
+          "B": "現在のシート割り当ての確認と管理主体の組み合わせで、設定変更の監査には対応しません。"
+        },
+        "sourceIds": [
+          "admin-copilot-audit",
+          "admin-usage-metrics",
+          "copilot-seat-api",
+          "admin-audit-events"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "Copilot管理操作の履歴を監査イベントで調べ、そのEnterprise閲覧権限を委任する。"
+        ],
+        "choiceQuality": {
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-copilot-audit",
+              "admin-usage-metrics",
+              "copilot-seat-api",
+              "admin-audit-events"
+            ],
+            "rationale": "組織の利用状況を取得する権限で、企業の監査ログを読むための権限ではありません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-copilot-audit",
+              "admin-usage-metrics",
+              "copilot-seat-api",
+              "admin-audit-events"
+            ],
+            "rationale": "企業の利用レポートを読む権限で、設定変更の監査イベントを読む権限とは異なります。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "admin-copilot-audit",
+              "admin-usage-metrics",
+              "copilot-seat-api",
+              "admin-audit-events"
+            ],
+            "rationale": "現在のシート割り当ての確認と管理主体の組み合わせで、設定変更の監査には対応しません。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "admin-copilot-audit",
+              "admin-usage-metrics",
+              "copilot-seat-api",
+              "admin-audit-events"
+            ],
+            "rationale": "Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Copilot Businessを提供する企業で、Copilotの組織ポリシーが変更されました。調査担当者は、企業の監査ログから変更を実行したアカウントと日時を確認します。Enterprise ownerにはせず、必要な閲覧をカスタムロールで委任する場合、使用する情報源と権限の組み合わせはどれですか。",
+            "correctReason": "Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。",
+            "distractorFailures": {
+              "C": "組織の利用状況を取得する権限で、企業の監査ログを読むための権限ではありません。",
+              "D": "企業の利用レポートを読む権限で、設定変更の監査イベントを読む権限とは異なります。",
+              "B": "現在のシート割り当ての確認と管理主体の組み合わせで、設定変更の監査には対応しません。"
+            }
+          }
+        ],
+        "contentRevision": "cli-admin-foundation-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "g-audit-logs"
+        ]
+      },
+      "beforeContract": "{\"id\":\"q-d6-f04\",\"question\":\"Copilotのシート割り当て変更や組織ポリシーの変更履歴について、操作を実行した管理者アカウントと日時を追跡するために参照すべき情報源として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"C\",\"text\":\"Copilot seat management API\"},{\"id\":\"D\",\"text\":\"リポジトリのGit履歴\"},{\"id\":\"A\",\"text\":\"GitHub Audit Log\"},{\"id\":\"B\",\"text\":\"Copilot Metrics API\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"管理操作のイベントと実行者・時刻の追跡に使う。\",\"choiceExplanations\":{\"A\":\"管理操作のイベントと実行者・時刻の追跡に使う。\",\"B\":\"利用統計を集計するが管理操作の履歴ではない。\",\"C\":\"現在の割当の確認や操作には使えるが変更イベントの監査記録とは異なる。\",\"D\":\"コード変更の履歴で組織設定の操作は記録しない。\"},\"sourceIds\":[\"audit-log\",\"policies\"],\"contentRevision\":\"difficulty-audit-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d6-f04\",\"question\":\"Copilot Businessを提供する企業で、Copilotの組織ポリシーが変更されました。調査担当者は、企業の監査ログから変更を実行したアカウントと日時を確認します。Enterprise ownerにはせず、必要な閲覧をカスタムロールで委任する場合、使用する情報源と権限の組み合わせはどれですか。\",\"choices\":[{\"id\":\"C\",\"text\":\"組織のCopilot利用レポート／View Organization Copilot Metrics\"},{\"id\":\"D\",\"text\":\"企業のCopilot利用レポート／View Enterprise Copilot Metrics\"},{\"id\":\"B\",\"text\":\"組織のシート割り当て一覧／Organization owner\"},{\"id\":\"A\",\"text\":\"企業の監査ログ／Read enterprise audit logs\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。\",\"choiceExplanations\":{\"C\":\"組織の利用状況を取得する権限で、企業の監査ログを読むための権限ではありません。\",\"D\":\"企業の利用レポートを読む権限で、設定変更の監査イベントを読む権限とは異なります。\",\"A\":\"Read enterprise audit logsを含むカスタムロールで、企業の監査ログの閲覧を委任できます。\",\"B\":\"現在のシート割り当ての確認と管理主体の組み合わせで、設定変更の監査には対応しません。\"},\"sourceIds\":[\"admin-copilot-audit\",\"admin-usage-metrics\",\"copilot-seat-api\",\"admin-audit-events\"],\"contentRevision\":\"cli-admin-foundation-2026-10-18\"}",
+      "beforeFingerprint": "72b2e03c6761eee5262903e6b9b864364cbadc6476612c138151b23f33640df3",
+      "afterFingerprint": "1cd2344593bad469061b837f49b6ae920806ea6f89ff87ff221a39d191099212",
+      "invalidatePreviousSnapshots": true,
+      "requiresAttemptRevision": true,
+      "displayedExplanation": "今回調べるのは、Copilotのポリシーを誰がいつ変更したかという管理操作の履歴です。企業の監査ログには対応するイベントの実行者や日時が記録されます。Enterprise監査ログはEnterprise ownerに加えて、Read enterprise audit logsを含むカスタムロールを持つ利用者も閲覧できるため、ownerにせず閲覧を委任する条件を満たします。\n\nCopilotの利用レポートは活動や導入状況を確認する情報源で、設定変更の監査イベントとは目的が異なります。また、監査ログを読めることと、Copilotポリシーを変更したり、監査ログのストリーミングを設定したりする権限は別です。今回は閲覧を委任する問題であり、他の変更権限まで付与するとは判断しません。"
+    }
+  ]
+}

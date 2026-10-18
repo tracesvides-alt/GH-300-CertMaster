@@ -522,52 +522,427 @@
       "d2o2"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "現行Copilot CLIは `copilot` で起動するターミナル向けエージェントです。コードベースの調査やファイル編集も行えるため、ツール権限と変更結果を確認します。Content ExclusionのCLI適用範囲は公式資料間に矛盾があり要確認です。",
-    "estimatedMinutes": 10,
+    "summary": "シェルとCLI内の対話を分け、導入、認証、ヘルプ、モデル選択、実行、再開、ツール権限、会話管理のコマンドを目的から選びます。",
+    "estimatedMinutes": 18,
     "difficulty": "intermediate",
     "sections": [
       {
-        "heading": "1. このLessonで分かること",
-        "content": "現行のGitHub Copilot CLIの導入、対話型セッション、非対話型プロンプト、実行権限の確認方法を学びます。旧 `gh copilot explain/suggest` 拡張の説明とは区別します。"
+        "heading": "1. 導入・起動・認証",
+        "content": "シェルからcopilotを起動すると、CLI内の対話画面へ入ります。先頭が/のコマンドは、この対話画面へ入力します。認証、作業フォルダーの信頼、ツールの実行許可は別の確認です。",
+        "table": {
+          "id": "cli-start",
+          "caption": "導入・起動・認証のコマンド",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-install",
+              "cells": [
+                "CLIを導入する",
+                "npm install -g @github/copilot",
+                "OSのシェル",
+                "npmを使う例です。Node.js 22以降など、導入方法ごとの前提を確認します。IDEの拡張機能を入れる操作とは別です。"
+              ],
+              "sourceIds": [
+                "cli-install"
+              ],
+              "example": "Linuxでnpmを使うと指定されたら、このパッケージを選びます。"
+            },
+            {
+              "id": "cli-start",
+              "cells": [
+                "対話を開始する",
+                "copilot",
+                "OSのシェル",
+                "作業したいフォルダーで起動します。GitHub CLIのghや、旧拡張のgh copilotとは別のコマンドです。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "リポジトリのフォルダーへ移動してから対話画面を開きます。"
+            },
+            {
+              "id": "cli-login-shell",
+              "cells": [
+                "シェルから認証を始める",
+                "copilot login",
+                "OSのシェル",
+                "CLIをまだ開いていない状態からOAuth認証を始める方法です。トークン等による別の認証方法もあります。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "起動前にGitHubアカウントで認証します。"
+            },
+            {
+              "id": "cli-login-interactive",
+              "cells": [
+                "CLI内から認証を始める",
+                "/login",
+                "Copilot CLIの対話画面",
+                "既に対話画面を開いている場合に使います。ログイン成功だけで、組織の資格や機能許可が付与されるわけではありません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "未ログインの表示が出た対話画面から認証を始めます。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "2. 起動と利用",
-        "content": "Copilot CLIは全Copilotプランで利用でき、組織配布のライセンスではCLIポリシーの有効化が必要です。npm導入ではNode.js 22以降で `npm install -g @github/copilot` を実行します（WindowsではWinGetも選択可能）。対象コードのフォルダーで `copilot` を起動し、初回は作業場所への信頼と `/login` による認証を確認します。旧 `gh copilot explain/suggest` 拡張と現行CLIを区別します。"
+        "heading": "2. ヘルプとモデルを選ぶ",
+        "content": "使い方を調べる操作と、回答を生成するモデルを選ぶ操作を分けます。コマンドをどの画面へ入力するかも確認してください。",
+        "table": {
+          "id": "cli-help-model",
+          "caption": "ヘルプ・モデル選択のコマンド",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-help-shell",
+              "cells": [
+                "シェルから使い方を調べる",
+                "copilot help",
+                "OSのシェル",
+                "コマンドやオプションの説明を確認します。copilot help permissionsのように話題を指定することもできます。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "起動オプションの使い方を確認してからCLIを開始します。"
+            },
+            {
+              "id": "cli-help-interactive",
+              "cells": [
+                "対話中にコマンドを調べる",
+                "/help",
+                "Copilot CLIの対話画面",
+                "その対話画面で使えるスラッシュコマンド等を確認します。認証を始める/loginとは目的が異なります。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "対話を開いたまま、使用できる操作を調べます。"
+            },
+            {
+              "id": "cli-model",
+              "cells": [
+                "使用するモデルを選ぶ",
+                "/model",
+                "Copilot CLIの対話画面",
+                "利用可能なモデルから選びます。対象プランや管理ポリシーの条件もあり、モデル変更は認証やセッション再開の操作ではありません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "同じ作業を続けながら、使用モデルを選び直します。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "3. 権限と安全",
-        "content": "Copilot CLIはコードの調査、ファイル編集、コマンド実行などを支援します。ツール利用を許可・拒否する設定と提示された変更を確認し、機密情報をプロンプトに含めないでください。"
+        "heading": "3. 対話実行と非対話実行",
+        "content": "一回の質問を処理して終了したい場合と、その後も対話を続けたい場合では、起動時の指定を使い分けます。出力形式の指定は、ツールの実行許可を与えるものではありません。",
+        "table": {
+          "id": "cli-run",
+          "caption": "実行方法と出力の指定",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-prompt",
+              "cells": [
+                "回答後に終了する",
+                "copilot -p \"質問\"",
+                "OSのシェル",
+                "非対話でプロンプトを処理します。ファイル操作等を依頼する場合は、使用するツール・パス等の許可条件も別に確認します。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "スクリプトから一つの質問を渡し、応答後にプロセスを終えます。"
+            },
+            {
+              "id": "cli-interactive",
+              "cells": [
+                "最初の依頼の後も対話する",
+                "copilot -i \"最初の依頼\"",
+                "OSのシェル",
+                "最初のプロンプトを渡して対話モードを開始します。一回で終了する-pとは異なります。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "最初に調査を依頼し、その後は対話で追加の質問をします。"
+            },
+            {
+              "id": "cli-silent",
+              "cells": [
+                "統計を付けず応答を受け取る",
+                "copilot -p \"質問\" --silent",
+                "OSのシェル",
+                "--silentは利用統計等を省いて応答を出力します。非対話実行と組み合わせる指定で、確認を省略するための権限設定ではありません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "後続の処理へ、回答のみの標準出力を渡します。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "4. 試験向けシナリオ",
-        "content": "不明なシェルコマンドを実行する前にCopilot CLIへ意味と副作用を質問し、返答を公式マニュアルや安全な環境で検証します。提案をそのまま実行しません。"
+        "heading": "4. 作業の再開先を選ぶ",
+        "content": "別の作業を誤って再開しないよう、選択画面、特定のID、直近のセッションを区別します。TTYは対話入力できる端末のことです。",
+        "table": {
+          "id": "cli-resume",
+          "caption": "セッション再開のコマンド",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-resume-inside",
+              "cells": [
+                "対話中に別のセッションを選ぶ",
+                "/resume",
+                "Copilot CLIの対話画面",
+                "保存されたセッションを選び直します。新しい作業を開始する/clearと区別します。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "CLIを開いたまま、昨日の作業へ切り替えます。"
+            },
+            {
+              "id": "cli-resume-picker",
+              "cells": [
+                "起動時に一覧から選ぶ",
+                "copilot --resume",
+                "OSのシェル",
+                "値を省略した指定は対話的な選択画面を使います。TTYのないスクリプトでは、明示したID等を使います。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "複数の保存セッションから、人が対象を選んで再開します。"
+            },
+            {
+              "id": "cli-resume-id",
+              "cells": [
+                "指定した作業を再開する",
+                "copilot --resume=SESSION-ID",
+                "OSのシェル",
+                "SESSION-IDを記録した対象のIDへ置き換えます。直近の作業が別タスクでも、再開先を指定できます。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "選択画面のない復旧スクリプトで、記録したIDを再開します。"
+            },
+            {
+              "id": "cli-continue",
+              "cells": [
+                "直近の作業を再開する",
+                "copilot --continue",
+                "OSのシェル",
+                "現在の作業フォルダーの直近セッションを優先し、なければ全体の直近へ進みます。--resumeと同時には指定しません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "再開したい作業が直近のセッションだと確認できている場合に使います。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "5. Content Exclusionの制限",
-        "content": "GitHub Docsの除外設定ページはCopilot CLIを非対応と説明しますが、CLIのEnterprise管理ページは除外ポリシーがCLIに適用されると説明しています。現時点では適用可否を断定せず、管理設定、使用面、対象ファイルでの動作を確認してください。IDE ChatのAgent modeについても個別に確認が必要です。"
+        "heading": "5. ツールの候補と実行許可",
+        "content": "モデルが選べるツールを絞る設定と、選んだツールを実行してよいかを決める設定は別です。許可だけを追加しても、候補から外れたツールは利用できません。",
+        "table": {
+          "id": "cli-tools",
+          "caption": "利用可能なツールと実行許可",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-allow",
+              "cells": [
+                "特定の操作を許可する",
+                "--allow-tool=\"shell(git:*)\"",
+                "copilotに付ける起動オプション",
+                "Git操作に範囲を絞る例です。該当する操作の実行前確認を省けますが、Git以外の操作や候補外のツールを許可する指定ではありません。"
+              ],
+              "sourceIds": [
+                "cli-tool-permissions",
+                "feature-refresh-cli-reference"
+              ],
+              "example": "Gitの操作だけを許可し、他の操作まで広げないようにします。"
+            },
+            {
+              "id": "cli-deny",
+              "cells": [
+                "特定の操作を拒否する",
+                "--deny-tool=\"shell(git push)\"",
+                "copilotに付ける起動オプション",
+                "該当する操作を拒否します。同じ操作が広い許可にも一致する場合、拒否が優先します。"
+              ],
+              "sourceIds": [
+                "cli-tool-permissions",
+                "feature-refresh-cli-reference"
+              ],
+              "example": "Gitの操作は許可しつつ、git pushを実行させない設定を加えます。"
+            },
+            {
+              "id": "cli-permissions",
+              "cells": [
+                "現在の権限モードを確認する",
+                "/permissions show",
+                "Copilot CLIの対話画面",
+                "権限モードを確認する操作です。/permissionsはモード変更等も扱いますが、確認と広い権限の付与を混同しません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "事前の許可がどのモードで扱われているかを確認します。"
+            },
+            {
+              "id": "cli-available",
+              "cells": [
+                "提供する候補だけを指定する",
+                "--available-tools=view,grep",
+                "copilotに付ける起動オプション",
+                "読み取りと検索のツール名を指定する例です。シェルを候補へ入れていない場合、実行許可だけではシェル操作はできません。"
+              ],
+              "sourceIds": [
+                "cli-tool-permissions",
+                "feature-refresh-cli-reference"
+              ],
+              "example": "調査に必要なツールだけをモデルへ提示します。"
+            },
+            {
+              "id": "cli-excluded",
+              "cells": [
+                "提供する候補から外す",
+                "--excluded-tools=grep",
+                "copilotに付ける起動オプション",
+                "指定したツールを候補から外す設定です。available-toolsと両方を指定した場合はavailable側の一覧が使われるため、単純な差集合と考えません。"
+              ],
+              "sourceIds": [
+                "cli-tool-permissions",
+                "feature-refresh-cli-reference"
+              ],
+              "example": "grepを提供しない方針なら、同時に使う候補指定との関係も確認します。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "6. ファイル作業・セッション・スクリプト",
-        "content": "【例】「@src/auth.ts の認証失敗を調べ、修正案を示して」と依頼すると、CLIは権限の範囲でファイルを読み、必要に応じて変更やコマンドを提案できます。`copilot -p \"質問\"` のような非対話実行も可能です。対話を中断した後は `/resume`、`copilot --continue` などでセッションを再開でき、別タスクは新しいセッションに分けられます。セッションはプロンプト、応答、ツール実行、作業ディレクトリや権限などの状態を持ちます。スクリプト生成やファイル変更の結果は必ず差分と実行結果で検証します。"
+        "heading": "6. 文脈の使用量と会話を管理する",
+        "content": "使用量を調べる操作、会話を要約する操作、新しい会話へ切り替える操作は異なります。会話を短くするだけで、接続したMCPのツール定義まで減るとは限りません。",
+        "table": {
+          "id": "cli-context",
+          "caption": "文脈と会話を扱うコマンド",
+          "columns": [
+            "目的",
+            "コマンド・指定",
+            "入力する場所",
+            "条件・注意"
+          ],
+          "rows": [
+            {
+              "id": "cli-context-usage",
+              "cells": [
+                "文脈の使用量を調べる",
+                "/context",
+                "Copilot CLIの対話画面",
+                "会話やツール等が文脈を占める状況を確認します。確認しただけでは、会話やツールの候補は変更されません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "MessagesよりMCP Toolsが大きいなら、不要なツール定義も調べます。"
+            },
+            {
+              "id": "cli-compact",
+              "cells": [
+                "会話を要約して使用量を減らす",
+                "/compact",
+                "Copilot CLIの対話画面",
+                "会話履歴を要約して文脈使用量を減らします。ツール定義もまとめて消す操作や、新しい会話を開始する操作ではありません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "長い会話の要点を引き継ぎながら作業を続けたい場合に使います。"
+            },
+            {
+              "id": "cli-clear",
+              "cells": [
+                "新しい会話を始める",
+                "/clear",
+                "Copilot CLIの対話画面",
+                "会話を切り替える操作です。ファイル変更の取り消しや、MCP構成を削除する操作ではありません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-cli-reference"
+              ],
+              "example": "これまでの会話を新しい相談へ持ち越したくないときに使います。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
       },
       {
-        "heading": "7. 30秒チェック",
-        "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: CLIはリポジトリ内のファイルを調査できるか？ → 権限の範囲内で可能。\nQ3: CLIに対するContent Exclusionの適用可否は？ → 公式資料間に矛盾があるため管理設定と実際の適用範囲を確認する。\nQ4: 作業を再開する方法は？ → `/resume` または `copilot --continue`。"
+        "heading": "7. 応用操作と旧拡張の位置付け",
+        "content": "Autopilotによる継続と、個々のツールの実行許可は別です。追加フォルダーへのアクセスには--add-dir等、MCP接続にはCLIのMCP構成を確認します。設定したツールや参照先に応じて、差分と実行結果を検証します。旧gh copilot explain/suggestとghcs/ghceは旧拡張の操作・短縮名です。現行のcopilotコマンド、GitHub CLIのgh、Gitやシェルのコマンドを混同しないでください。CLIへのContent Exclusionの適用は公式ページ間に説明差があるため、全経路の保護として当てにせず、利用環境と参照経路を確認します。\n書き込みを事前に許可する例は、copilot --allow-tool=\"write(docs/guide.md)\"です。ツールが利用可能で、対象ファイルへのアクセスがあり、競合する拒否がない条件で、その書き込みを許可します。\nprojectとsharedが隣り合う配置でprojectから起動する場合、copilot --add-dir=../sharedでsharedへのアクセスを追加できます。対話中なら/add-dir ../sharedを使います。追加先の.github/skillsと.github/agentsも信頼する設定として読み込まれるため、内容を確認してください。フォルダーの追加は、全ファイルの読み込みや回答への利用を保証しません。"
+      },
+      {
+        "heading": "8. 30秒チェック",
+        "content": "Q1: 起動前に使い方を確認するには？ → シェルでcopilot help。対話中なら/helpです。\nQ2: 一回の応答だけを受け取って終了するには？ → -pを使い、統計が不要なら--silentを組み合わせます。\nQ3: 特定の保存作業を再開するには？ → IDを指定した--resumeを使います。\nQ4: /compactと/clearの違いは？ → 会話の要約と、新しい会話の開始です。\nQ5: ツールへ実行許可を与えれば、候補外のツールも使えるか？ → No。候補設定は別に確認します。"
       }
     ],
     "keyPoints": [
-      "現行Copilot CLIは `copilot` で起動し、コードベースを調査できる。",
-      "変更を伴うツールの権限と実行結果を確認する。",
-      "CLIへのContent Exclusion適用範囲は公式資料間で食い違うため要確認。",
-      "CLIは権限内でファイルを調査・変更でき、セッションを再開できる。"
+      "シェルへ入力するcopilotのコマンドと、CLI内のスラッシュコマンドを区別する。",
+      "-pは回答後に終了し、-iは対話を開始する。--silentは出力形式の指定である。",
+      "特定IDの再開、選択画面、直近の作業の再開を使い分ける。",
+      "ツールの候補、実行許可、Autopilotによる継続は別の条件である。",
+      "/contextは確認、/compactは会話の要約、/clearは新しい会話の開始である。"
     ],
     "commonMistakes": [
-      "旧 `gh copilot` 拡張のコマンドを現行CLIの標準操作として教えること。",
-      "権限を広く許可した後も、各変更で必ず個別確認があると考えること。",
-      "CLIを単発のコマンド提案器とみなし、ファイル操作やセッション継続を見落とすこと。"
+      "OSのシェルへ/loginを入力したり、CLI内へcopilot helpをスラッシュコマンドとして入力したりすること。",
+      "--continueで必ず指定した過去の作業へ戻れると思うこと。",
+      "ツールへ許可を与えれば候補外のツールも追加されると思うこと。",
+      "/compactをファイル変更の取り消しやMCP定義の削除として使おうとすること。"
     ],
     "examTips": [
-      "試験問題が旧拡張と現行CLIを混同していないか、製品名とコマンドを確認する。"
+      "何をしたいか、どこへ入力するか、回答後も対話を続けるかを先に整理します。",
+      "旧gh copilot拡張と現行CLIを区別します。現行コマンドの細部は公式資料と確認日を見ます。"
     ],
     "glossaryIds": [
       "g-copilot-cli",
@@ -583,15 +958,23 @@
     "questionIds": [
       "q-d1-a10-feature-20261016",
       "q-d2-a04-feature-20261016",
-      "q-d2-a18-feature-20261016",
       "q-sc03-1-feature-20261016",
       "q-sc07-1-feature-20261016",
-      "q-d5-e07-feature-20261016",
       "q-fnd-cli-install-20261017",
       "q-fnd-cli-login-20261017",
       "q-fnd-cli-create-file-20261017",
       "q-d2-a18-feature-20261016-ms-20261017",
-      "q-d5-e07-feature-20261016-ms-20261017"
+      "q-d5-e07-feature-20261016-ms-20261017",
+      "q-d2-g05",
+      "q-d2-g06",
+      "q-d2-g07",
+      "q-d2-g08",
+      "q-d2-g09",
+      "q-d2-e07-feature-20261016",
+      "q-d6-e07-feature-20261016",
+      "q-d2-a25-ms-20261017",
+      "q-d2-e06-ms-20261017",
+      "q-d4-e09-feature-20261016-ms-20261017"
     ],
     "sourceIds": [
       "cli",
@@ -602,9 +985,10 @@
       "cli-exclusion-admin",
       "cli-install",
       "cli-usage",
-      "cli-sessions"
+      "cli-sessions",
+      "feature-refresh-cli-reference"
     ],
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "status": "needs-review"
   },
   {
@@ -889,8 +1273,8 @@
         "content": "・Pull Request Summaries: PRに含まれるコミット群やDiffを分析し、変更点・影響範囲を箇条書きやウォークスルー形式でPR本文に自動ドラフトする機能。レビュアーの全体像把握を支援する。\n・Copilot Code Review: PRの差分行に対して、潜在バグ、セキュリティ懸念、可読性の改善案をインラインコメントとして自動投稿する機能。自動実行または手動リクエストで動作する。"
       },
       {
-        "heading": "3. How It Works: コードレビューの自動ポリシー運用",
-        "content": "組織管理者は、Settings > Copilot > Policies で新規PR作成時に自動でCopilot Code Reviewを実行するよう構成できます。レビューコメントには修正提案（Suggested changes）が含まれ、開発者はワンクリックで修正コミットを作成できます。"
+        "heading": "3. 利用許可と自動レビューの起動を分ける",
+        "content": "組織のCopilotポリシーでレビュー機能を利用できるかを管理することと、PRを自動レビューする条件を設定することは別です。リポジトリや組織のrulesetではAutomatically request Copilot code reviewを使い、対象リポジトリ・ブランチや新しいpush、draftの扱いを設定します。個人設定による自動レビューもあり、各起動元は独立して評価されます。設定を変更するには、そのrepoや組織のrulesetを管理する権限が必要です。レビュー指摘や修正提案は、内容を検証してから適用します。"
       },
       {
         "heading": "4. When to Use & 試験向けシナリオ",
@@ -898,25 +1282,25 @@
       },
       {
         "heading": "5. Limitations & Considerations",
-        "content": "・Copilot Code Reviewは有用な指摘を行いますが、ビジネスロジックの要件適合性までは判断できません。最終承認（Approve）は人間のレビュアーが担当します。"
+        "content": "Copilotの指摘は誤る場合があります。人間が内容を検証し、組織が定めたレビュー・マージ要件を満たします。Copilotによる承認は2026年9月1日追加のPublic previewで、承認を出す設定とマージ要件へ数える設定は別です。「Copilotは承認できない」とも「承認が出れば人の必須レビューは不要」とも一般化しません。"
       },
       {
         "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: PRの説明文に変更内容の概要を自動生成する機能は？ → Pull Request Summaries。\nQ2: PRの差分行に対して改善コメントを投稿する機能は？ → Copilot Code Review。\nQ3: Copilot Code ReviewがApproveを出せば人間レビューなしでマージしてよいか？ → No。"
+        "content": "Q1: PR本文の概要を生成する機能は？ → Pull Request Summaries。\nQ2: レビューの利用許可だけで全PRの自動レビューは設定できるか？ → No。ruleset等の起動条件も設定します。\nQ3: Copilotの承認が出れば、人の必須レビューを省略できるか？ → No。別途定めた要件を満たします。"
       }
     ],
     "keyPoints": [
-      "PR Summariesは変更内容の要約文作成、Code Reviewは品質・バグの指摘コメント投稿。",
-      "組織設定で新規PRに対する自動Code Reviewのトリガーポリシーを設定可能。",
-      "AIレビューは人間レビュアーの負担軽減ツールであり、最終承認は人間が行う。"
+      "PR Summariesは概要作成、Code Reviewは変更差分の分析を支援する。",
+      "レビュー機能の利用許可と、ruleset・個人設定による自動起動を分ける。",
+      "Copilotの指摘は人間が検証し、承認の算入と人の必須要件も区別する。"
     ],
     "commonMistakes": [
       "PR SummariesとCode Reviewの機能差を混同すること。",
       "AIによるレビューコメントが100%正しいと過信し、無検証で適用すること。"
     ],
     "examTips": [
-      "「変更内容の要約」ならPR Summaries、「コード差分への改善指摘」ならCode Reviewです。",
-      "組織レベルのポリシー設定で自動トリガーできる点が出題されます。"
+      "「変更の概要」と「差分の指摘」の目的を区別します。",
+      "自動レビューの問題は、利用許可・起動元・対象範囲を確認します。"
     ],
     "glossaryIds": [
       "g-copilot-code-review",
@@ -942,9 +1326,11 @@
     "sourceIds": [
       "code-review",
       "policies",
-      "guide"
+      "guide",
+      "feature-refresh-review-config",
+      "alignment-approvals-release"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -956,56 +1342,324 @@
       "d2o4"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "GitHub EnterpriseからOrganizationへのポリシー継承ルール、シートの付与・回収管理、Audit Logによる操作追跡、およびREST APIを用いた利用状況メトリクス分析の運用プラクティスを網羅します。",
-    "estimatedMinutes": 9,
+    "summary": "Copilotの契約・利用資格・管理ロールを分け、組織ポリシー、シート管理、利用状況レポート、監査ログの役割を学びます。",
+    "estimatedMinutes": 18,
     "difficulty": "advanced",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "企業や組織の管理者がCopilotを安全かつコスト効率よく統制・運用するための設定（ポリシー階層、ライセンス割当、監査証跡、API連携）を学びます。"
+        "content": "「契約しているプラン」「利用資格を持つアカウント」「変更する人の権限」「機能の利用許可」は別の条件です。これらを分けて、シートの割り当て、ポリシー設定、活動の確認に適した操作を判断します。"
       },
       {
-        "heading": "2. Core Concepts: ポリシー継承の絶対ルール",
-        "content": "Enterpriseレベルで「Enforced（強制）」または「Blocked（禁止）」に設定されたポリシーは、傘下のOrganizationやRepositoryで上書き・緩和することはできません。Enterprise側が「No policy (組織に委任)」としている場合のみ、各Organizationの管理者が独自に設定を決定できます。"
+        "heading": "2. 契約・認証・組織のシートを分ける",
+        "content": "Business/Enterpriseを組織から利用する場合は、その利用者にシートなどのアクセス付与が必要です。GitHubへサインインできることだけでは、その組織からCopilotの利用資格を得たことになりません。一方、組織のシートがない人にも、個人向けFreeや有料の個人プランという別の利用方法があります。「組織のシートがない＝Copilotを一切使えない」とは判断しません。 個人契約だけを利用する場合は、本人向けのCopilot設定を管理します。例えば公開コードに一致する提案の扱いを設定できますが、組織からシートを得る場合には継承されて個人で変更できない設定もあります。"
       },
       {
-        "heading": "3. How It Works: シート管理と監査ログ",
-        "content": "・シート管理: 個人またはチーム単位でCopilotシートを割り当て。シートを持つユーザーのみがIDE認証可能。\n・監査ログ (Audit Logs): シートの付与/剥奪、ポリシー変更などの管理イベントが追跡可能（プロンプト本文は記録されずプライバシー保護）。\n・REST API: `GET /orgs/{org}/copilot/usage` で日別のアクティブシート数や提案採用率（Acceptance rate）を集計取得可能。"
+        "heading": "3. 誰が、どの範囲を管理するか",
+        "content": "Organization ownerは自組織のCopilotアクセスやポリシーを管理します。Enterprise ownerは企業内の組織への提供や企業ポリシーを管理します。Repository adminが設定できるリポジトリのContent Exclusionは、組織のシート管理とは別です。Copilot Enterpriseはプラン名、Enterprise ownerはロール名であり、契約しただけで利用者に管理権限が付くわけではありません。委任された権限やAPIの認証権限は、操作ごとの公式条件を確認します。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】Organization管理者が「Public Code Matching」を有効化しようとしたが設定画面がグレーアウトして変更できない場合の原因。「Enterprise管理者がEnterpriseレベルでポリシーを一括強制（Enforce）しているため」が正解です。"
+        "heading": "4. ポリシーの強制と委任",
+        "content": "対象の機能ポリシーをEnterprise側で有効・無効などに決定した場合、Organization側から上書きできません。組織へ判断を委任した場合は、その組織で選択できます。ただし、すべての設定が同じ三段階の階層や同じ選択肢を持つわけではありません。多くのポリシーはライセンスの提供元に従い、複数の提供元や機能固有の例外もあるため、対象の機能と適用先を確認します。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・REST APIや監査ログで確認できるのは利用率や設定イベントなどの集計データであり、開発者が入力したプロンプトやコード全文はプライバシー保護のため取得できません。"
+        "heading": "5. 購読・シートを確認するAPI",
+        "content": "GET /orgs/{org}/copilot/billing は、組織の購読、シート内訳、機能ポリシー等を確認する例です。取得できることから、同じAPIで機能ポリシーを書き換えられるとは考えません。GET /orgs/{org}/copilot/billing/seats は、現在の割り当て一覧の取得に使います。シートの活動時刻にはIDEテレメトリー等の収集条件が関係するため、活動が見えないことを未割り当ての証拠にはしません。"
       },
       {
-        "heading": "プラン・シート・ポリシー・有効化の順序",
-        "content": "【定義・理由】Copilot Freeは現行の個人向けプランです。組織ではBusiness/Enterpriseの契約、利用者へのseat/accessの付与、組織・Enterpriseのfeature policy、対象機能の有効化を別の判断として扱います。【方法・例】「メンバーが利用できない」場合、契約の有無→seat付与→上位・組織ポリシー→IDEやGitHub上の機能対応を順に確認します。画面のドロップダウン位置は変わるため、旧問題のUI手順を丸暗記しません。【誤解と試験焦点】ポリシーで許可してもseatや対応環境がなければ利用できません。"
+        "heading": "6. シートを変更するAPIと必要権限",
+        "content": "選択した利用者への付与には POST /orgs/{org}/copilot/billing/selected_users、解除の予約には同じパスへのDELETEを使います。対象はselected_usernamesで指定します。解除は即時停止と決めつけず、請求期間末やチーム経由の資格が残る条件を確認します。公式のuser management APIはPublic previewです。OAuth等のスコープとfine-grained権限は別の認証方式の条件なので、利用する方式に合わせます。例えばシート一覧ではread:org等、付与・解除ではmanage_billing:copilotまたはadmin:orgが挙げられています。fine-grained方式ではGitHub Copilot BusinessまたはAdministrationのread/writeなど、各エンドポイントが要求する組織権限を確認します。"
       },
       {
-        "heading": "組織コードの索引とモデル訓練を区別する",
-        "content": "【定義・例】Copilot Chatは権限のあるリポジトリを索引化して質問の文脈に使えます。これは組織コードで基盤モデルを再訓練することと異なります。共有資料を整理する現行機能はCopilot Spacesです。【誤解と試験焦点】旧練習問題の「Enterpriseが組織コードで訓練する」を現行仕様として覚えず、索引・共有コンテキスト・モデル学習を分けます。"
+        "heading": "7. 利用状況はレポートから確認する",
+        "content": "利用状況の取得例は GET /orgs/{org}/copilot/metrics/reports/organization-1-day?day=YYYY-MM-DD です。応答のdownload_linksからレポートを取得し、対象日の活動や導入状況を調べます。最初の応答そのものに採用率などの集計値が入るとは説明しません。Organization ownerやView Organization Copilot Metricsを持つ利用者等が対象となり、トークンの権限も必要です。組織集計だけでなく利用者別のレポートもあるので、取得できる粒度と収集条件を確認します。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: Enterpriseで強制されたポリシーをOrganizationで無効化できるか？ → No（上位設定が優先）。\nQ2: 組織全体のCopilot受入率やアクティブ数を自動取得する手段は？ → Copilot Metrics REST API。\nQ3: 監査ログに開発者のプロンプト全文は記録されるか？ → No（管理操作イベントのみ記録）。"
+        "heading": "8. 監査ログと活動データの違い",
+        "content": "監査ログでは、設定変更やライセンス付与などのイベントのaction、actor、日時を確認します。例はcopilot.cfb_org_settings_changedとcopilot.cfb_seat_assignment_createdです。チーム経由の付与では、シート追加イベントのactorをメンバー変更者と即断せず、関連イベントを照合します。Enterprise監査ログの閲覧はEnterprise ownerやRead enterprise audit logsのカスタムロール等が対象です。クライアントへ入力したプロンプト全文を読む仕組みとは異なり、別途設定された監視・hooksの内容収集とは区別します。"
+      },
+      {
+        "heading": "9. 試験向けシナリオと確認順序",
+        "content": "入社者に資格を付与したいならシート管理、実際の利用を知りたいなら利用状況レポート、設定を変えた人を調べたいなら監査ログを使います。利用できない場合は、対象アカウントの資格、上位・組織のポリシー、対象環境の対応、クライアント設定を分けて調べます。自動レビューでは、レビュー機能の利用許可と、ruleset等の自動起動設定も別に確認します。"
+      },
+      {
+        "heading": "プラン別の管理の前提",
+        "content": "プランは利用条件、ロールは操作権限です。個人プランでCLIを利用できることと、組織のシート・ポリシーを管理できることは別です。価格や全モデルの暗記より、誰の資格をどの範囲で管理するかを確認します。",
+        "table": {
+          "id": "copilot-plan-management",
+          "caption": "Copilotプランと管理の前提",
+          "columns": [
+            "Copilotプラン",
+            "主な契約・管理主体",
+            "組織の資格・ポリシー管理",
+            "別途必要な前提"
+          ],
+          "rows": [
+            {
+              "id": "plan-free",
+              "cells": [
+                "Free",
+                "本人が個人の利用設定を管理する。",
+                "個人Freeの資格は、組織が付与するBusiness/Enterpriseのシートとは別です。",
+                "利用できる機能には制限があります。組織・企業から資格を得ていない個人向けの条件を確認します。"
+              ],
+              "sourceIds": [
+                "plans"
+              ],
+              "example": "個人でCLIを試せることから、組織の管理権限があるとは判断しません。"
+            },
+            {
+              "id": "plan-student",
+              "cells": [
+                "Student",
+                "認証された学生本人の資格・設定として扱う。",
+                "学生の個人資格だけで、組織へのシート付与やポリシー変更はできません。",
+                "学生認証などの対象条件を確認します。組織向け管理の前提とは区別します。"
+              ],
+              "sourceIds": [
+                "plans"
+              ]
+            },
+            {
+              "id": "plan-pro",
+              "cells": [
+                "Pro",
+                "個人の契約・設定を本人が管理する。",
+                "個人の有料契約と、組織のシートや管理権限は別です。",
+                "利用できる機能・モデル等は公式プラン表で確認します。"
+              ],
+              "sourceIds": [
+                "plans"
+              ]
+            },
+            {
+              "id": "plan-pro-plus",
+              "cells": [
+                "Pro+",
+                "個人の契約・設定を本人が管理する。",
+                "Proより利用枠等が広がっても、組織の管理ロールが付くわけではありません。",
+                "提供枠や機能差を確認し、組織向けのBusiness/Enterpriseと混同しません。"
+              ],
+              "sourceIds": [
+                "plans"
+              ]
+            },
+            {
+              "id": "plan-max",
+              "cells": [
+                "Max",
+                "個人の契約・設定を本人が管理する。",
+                "大きい利用枠を持つ個人プランであり、Enterprise ownerの権限とは別です。",
+                "組織の設定を変えるには、その操作に必要なロール・権限を別に確認します。"
+              ],
+              "sourceIds": [
+                "plans"
+              ]
+            },
+            {
+              "id": "plan-business",
+              "cells": [
+                "Business",
+                "組織・企業が利用者への提供を管理する。",
+                "シートや組織ポリシーを管理します。企業の管理下ではEnterpriseの決定も確認します。",
+                "組織向けの契約と、操作する人のロールが必要です。Content Exclusion等も対応条件を確認します。"
+              ],
+              "sourceIds": [
+                "plans",
+                "reference-enterprise-plan"
+              ],
+              "example": "プランがBusinessでも、企業側のポリシーが適用される場合があります。"
+            },
+            {
+              "id": "plan-enterprise",
+              "cells": [
+                "Enterprise",
+                "GitHub Enterprise Cloudを利用する企業向け。",
+                "Businessの管理機能を含みます。企業のownerは組織ごとのプラン選択等を管理します。",
+                "GitHub Enterprise Cloudとの関係を確認します。プランを契約しただけで、全利用者がownerにはなりません。"
+              ],
+              "sourceIds": [
+                "plans",
+                "reference-enterprise-plan"
+              ],
+              "example": "Copilot Enterpriseというプラン名と、Enterprise ownerというロール名を分けます。"
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
+      },
+      {
+        "heading": "操作から必要な管理権限を選ぶ",
+        "content": "同じ人でも、企業・組織・リポジトリで持つ権限は異なります。APIを使う場合は人のロールだけでなく、トークンやGitHub Appの権限も確認します。閲覧権限があることから、変更権限もあるとは推測しません。",
+        "table": {
+          "id": "copilot-admin-operations",
+          "caption": "操作別の管理権限と適用範囲",
+          "columns": [
+            "したい操作",
+            "主なロール・必要権限",
+            "対象範囲",
+            "追加条件・できないこと"
+          ],
+          "rows": [
+            {
+              "id": "admin-plan",
+              "cells": [
+                "組織へCopilotを提供しプランを選ぶ",
+                "組織のプラン管理はOrganization owner。企業管理下の組織のプラン選択はEnterprise owner。",
+                "その組織、または企業内の対象組織。",
+                "企業の管理下かを確認します。個人Pro等の契約者であることは、組織の管理権限を意味しません。"
+              ],
+              "sourceIds": [
+                "plans",
+                "reference-enterprise-plan",
+                "reference-org-management"
+              ]
+            },
+            {
+              "id": "admin-seat",
+              "cells": [
+                "シートを付与・解除する",
+                "Organization owner等の必要な管理権限。APIには対象操作の認証権限も必要。",
+                "指定した組織の利用者・チーム。",
+                "組織所属、直接付与かチーム経由か、解除の反映時点を確認します。機能ポリシーの無効化とは別です。"
+              ],
+              "sourceIds": [
+                "copilot-seat-api",
+                "admin-seat-assignment"
+              ],
+              "example": "一人の直接割り当てを解除するときに、組織全体の機能は無効にしません。"
+            },
+            {
+              "id": "admin-policy",
+              "cells": [
+                "機能やモデルの利用可否を設定する",
+                "Enterprise owner、または判断を委任された組織のOrganization owner。",
+                "企業・組織の対象ポリシーと、資格の提供先。",
+                "上位で決定済みの対象ポリシーはOrgで上書きできません。すべての機能が同じ継承方式とは限りません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-policies",
+                "policies",
+                "admin-policy-model"
+              ],
+              "example": "Orgの画面で選択できない場合は、企業側の決定と委任を確認します。"
+            },
+            {
+              "id": "admin-repo-exclusion",
+              "cells": [
+                "repoのContent Exclusionを変更する",
+                "Repository admin。Maintainは閲覧のみ。",
+                "同じ企業内で、そのrepoを使うCopilot利用者の対応機能。",
+                "継承された除外は解除できませんが、repo固有の除外を追加できます。"
+              ],
+              "sourceIds": [
+                "exclusion",
+                "exclusion-concept"
+              ],
+              "example": "別組織のownerでも、対象repoでMaintainしか持たなければ編集できません。"
+            },
+            {
+              "id": "admin-org-exclusion",
+              "cells": [
+                "組織・企業のContent Exclusionを変更する",
+                "Organization owner、Enterprise owner。",
+                "組織設定はその組織からシートを得る利用者。企業設定は企業のCopilot利用者全体。",
+                "repo所有者だけで適用先を判断しません。Agent等の非対応経路を、通常補完と同じに扱いません。"
+              ],
+              "sourceIds": [
+                "exclusion",
+                "exclusion-concept"
+              ],
+              "example": "シートの提供元が違う二人には、組織設定だけでは同じ除外が適用されない場合があります。"
+            },
+            {
+              "id": "admin-auto-review",
+              "cells": [
+                "対象PRの自動レビューを設定する",
+                "対象repo・組織のrulesetを管理できる権限。個人設定は本人。",
+                "指定するrepo・ブランチや、自分のPRなど、起動元ごとの範囲。",
+                "レビュー機能の利用許可とは別です。個人設定で、rulesetが有効にしたpush・draftレビューは無効化できません。"
+              ],
+              "sourceIds": [
+                "feature-refresh-review-config",
+                "policies"
+              ],
+              "example": "利用許可は有効なのに自動起動しない場合、ruleset等の対象条件を確認します。"
+            },
+            {
+              "id": "admin-org-metrics",
+              "cells": [
+                "組織の利用レポートを閲覧する",
+                "Organization owner、View Organization Copilot Metricsを持つ利用者等。",
+                "対象組織のレポート。",
+                "API認証方式に合う権限も必要です。レポートの欠落だけで、シート未割り当てとは判断しません。"
+              ],
+              "sourceIds": [
+                "admin-usage-metrics",
+                "copilot-seat-api"
+              ],
+              "example": "活動を確認したいときは、資格一覧や監査イベントと区別します。"
+            },
+            {
+              "id": "admin-enterprise-metrics",
+              "cells": [
+                "企業の利用レポートを閲覧する",
+                "Enterprise owner、billing manager、View Enterprise Copilot Metricsを持つ利用者等。",
+                "対象企業のレポート。",
+                "APIのトークン権限等も確認します。レポートを読めることから、シートや機能ポリシーも変更できるとは推測しません。"
+              ],
+              "sourceIds": [
+                "admin-usage-metrics"
+              ]
+            },
+            {
+              "id": "admin-audit-read",
+              "cells": [
+                "Enterprise監査ログを読む",
+                "Enterprise owner、Read enterprise audit logsのカスタムロール等。",
+                "対象企業の設定・資格変更や対応する活動イベント。",
+                "通常の監査ログと、利用レポートやクライアントの内容収集は別です。"
+              ],
+              "sourceIds": [
+                "admin-copilot-audit"
+              ],
+              "example": "ポリシーを変えた人と日時を調べる場合は、該当する監査イベントを照合します。"
+            },
+            {
+              "id": "admin-audit-stream",
+              "cells": [
+                "Enterprise監査ログのストリームを設定する",
+                "Enterprise owner。",
+                "Enterpriseの監査ログを外部の対応先へ送る設定。",
+                "GitHub Enterprise Cloudの機能・利用条件を確認します。Copilotの全プランの利用者が設定できるわけではありません。"
+              ],
+              "sourceIds": [
+                "admin-audit-stream"
+              ]
+            }
+          ],
+          "lastVerifiedAt": "2026-10-18"
+        }
+      },
+      {
+        "heading": "10. 30秒チェック（Mini Review）",
+        "content": "Q1: 組織のシートがない人はCopilotを一切使えないか？ → No。個人プランの資格とは別です。\nQ2: 現在のシート割り当てと実際の活動は同じ情報か？ → No。割り当て一覧と活動レポートを区別します。\nQ3: 日次レポートAPIの最初の応答から何を得るか？ → レポートのダウンロードリンク等です。\nQ4: ポリシーを変更したアカウントを調べる情報源は？ → 監査ログです。"
       }
     ],
     "keyPoints": [
-      "ポリシーはEnterprise → Organization → Repositoryの順で継承され、上位設定は下位で解除不能。",
-      "シートは個人またはチーム単位で付与・管理される。",
-      "Audit Logで設定変更履歴を追跡し、REST APIで利用状況・受入率を分析可能。",
-      "Copilot Freeの現行存在と、組織の契約・seat・policy・有効化の違いを押さえる。"
+      "認証、利用資格、管理ロール、機能の利用許可を分ける。",
+      "シートの割り当て一覧、活動レポート、監査イベントは目的が異なる。",
+      "Enterpriseで決定した対象ポリシーはOrgで上書きできない。全設定が同じ継承方式とは限らない。",
+      "APIはHTTPメソッド、対象パス、返却内容、認証方式ごとの権限を確認する。"
     ],
     "commonMistakes": [
-      "Organization管理者がEnterpriseの制限を解除できると思い込むこと。",
-      "REST APIで特定個人のプロンプト内容を監視できると誤認すること。"
+      "組織のシートがない人は個人プランでも利用できないと思うこと。",
+      "利用統計がないことからシート未割り当てと判断すること。",
+      "購読設定を取得するAPIで、すべての機能設定も変更できると思うこと。"
     ],
     "examTips": [
-      "ポリシーの階層構造（Enterprise Enforce時はOrg変更不可）は超頻出です。",
-      "監査ログとREST APIの目的（ガバナンスとメトリクス集計）を明確に区別しましょう。"
+      "操作の目的が資格の変更、活動の確認、変更履歴の追跡のどれかを先に判断します。",
+      "プラン名と管理ロールを区別し、誰がどの範囲を変更する問題かを読み取ります。"
     ],
     "glossaryIds": [
       "g-org-policies",
@@ -1022,7 +1676,22 @@
     ],
     "questionIds": [
       "q-d6-e02-feature-20261016",
-      "q-fnd-seat-api-20261017"
+      "q-fnd-seat-api-20261017",
+      "q-d6-a05",
+      "q-d2-g18",
+      "q-d2-g19",
+      "q-d6-e06-ms-20261017",
+      "q-d1-e04-feature-20261016",
+      "q-d6-e04-feature-20261016-ms-20261017",
+      "q-d6-g01",
+      "q-sc01-2",
+      "q-d2-g21",
+      "q-d6-a09-ms-20261017",
+      "q-d3-a13-ms-20261017",
+      "q-sc07-3",
+      "q-d6-f04",
+      "q-d2-g20",
+      "q-d6-f05"
     ],
     "sourceIds": [
       "policies",
@@ -1032,9 +1701,23 @@
       "plans",
       "feature-matrix",
       "repository-indexing",
-      "spaces"
+      "spaces",
+      "copilot-seat-api",
+      "admin-usage-metrics",
+      "admin-policy-model",
+      "feature-refresh-policies",
+      "admin-copilot-audit",
+      "admin-audit-events",
+      "reference-enterprise-plan",
+      "reference-org-management",
+      "admin-seat-assignment",
+      "exclusion",
+      "exclusion-concept",
+      "feature-refresh-review-config",
+      "admin-audit-stream",
+      "privacy-training"
     ],
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -2075,47 +2758,53 @@
       "d6o1"
     ],
     "syllabusVersion": "2026-08-07",
-    "summary": "機密ファイルや特定ディレクトリをCopilotの補完・参照対象から遮断するContent Exclusionの動作原理、組織・リポジトリでの設定構文、ワイルドカード規則を体系化します。",
+    "summary": "Content Exclusionの対応範囲、設定する人、資格の提供元による適用先、repo・組織・Enterpriseの設定構文を区別して学びます。",
     "estimatedMinutes": 8,
     "difficulty": "intermediate",
     "sections": [
       {
         "heading": "1. このLessonで分かること",
-        "content": "企業の知財や機密データを保護する最重要機能「Content Exclusion（コンテンツ除外）」の設定レベル、パス構文、および継承ルールを学びます。"
+        "content": "Content ExclusionはBusiness/Enterprise向けの設定です。どの利用者に、どのファイルの除外を適用するかを確認します。設定の変更権限と、実際に利用するCopilot機能の対応範囲を分けて考えます。"
       },
       {
-        "heading": "2. Core Concepts: Content Exclusionとは",
-        "content": "指定したファイルパスやリポジトリをCopilotの処理対象から除外する機能です。除外対象に指定されたファイルを開いている間は、エディタ上でのインライン補完（Ghost Text）が無効化され、Copilot Chatで明示的に参照しようとしてもアクセスが拒否されます。"
+        "heading": "2. 対応機能と参照経路",
+        "content": "指定したファイルを、対応するCopilot機能の入力文脈から除外します。VS Codeでは通常補完やChatのAskでの直接参照と、非対応のEdit・Agentモードを区別します。IDEが間接的に渡す型情報等やsymlinkにも制約があり、全経路を遮断する保証ではありません。CLIには公式ページ間の説明差があるため、別の制限を当てにせず、使用環境と対象経路を確認します。"
       },
       {
-        "heading": "3. How It Works: 組織レベル vs リポジトリレベル",
-        "content": "・組織設定 (Organization-level): `Settings > Copilot > Content exclusion` で設定。傘下のリポジトリすべて、または特定リポジトリ群に対して一括適用可能。\n・リポジトリ設定 (Repository-level): 個別リポジトリの `Settings > Copilot > Content exclusion` で設定。組織設定をリポジトリ側で解除することはできません（上位優先の原則）。\n・構文規則: `*`（同一階層マッチ）、`**`（複数階層の再帰的マッチ、例: `**/secrets/**`）。"
+        "heading": "3. 設定する人と適用される利用者",
+        "content": "Repository adminはrepo内の除外を設定できます。Maintainは閲覧できますが編集できません。repo単位の設定は、その企業内のCopilot利用者が対象repoで作業する範囲へ適用されます。Organization ownerの設定は、その組織からシートを得た利用者が対象です。Enterprise ownerの除外設定は、その企業のCopilot利用者全体へ適用されます。組織の設定だけで、他組織から資格を得た利用者まで同じように除外されるとは判断しません。"
       },
       {
-        "heading": "4. When to Use & 試験向けシナリオ",
-        "content": "【シナリオ】組織内の全リポジトリにおいて、環境変数設定ファイル（`.env` や `.env.production`）をCopilotの補完対象から除外したい場合。組織管理者は組織設定のContent exclusionに `**/.env*` というパターンを登録して一括強制します。"
+        "heading": "4. 除外の追加と解除を区別する",
+        "content": "repoの画面に継承された組織等の除外が表示されても、Repository adminはその除外を編集・解除できません。一方で、repo固有の除外パスを追加できます。上位の設定があることを、repo設定の追加自体が禁止される意味に取り違えないでください。"
       },
       {
-        "heading": "5. Limitations & Considerations",
-        "content": "・除外パスの指定において大文字小文字や先頭のスラッシュの扱いに誤りがあると意図通り除外されないため、正確な構文検証が必要です。"
+        "heading": "5. パス指定の例",
+        "content": "組織からシートを得る利用者について、Git管理内外の.envや.env.productionを通常補完から除外したい場合、Organization ownerは組織のContent exclusionで \"*\": [\"**/.env*\"] と指定できます。特定repoだけを対象とする場合は、repo参照をキーにして除外パスの配列を記載します。repo設定では - \"/private/**\" のようにパスを列挙します。組織用のrepoキーとrepo内のパス指定を混同しません。"
       },
       {
-        "heading": "6. 30秒チェック（Mini Review）",
-        "content": "Q1: 機密ファイルをCopilotの参照から遮断する機能は？ → Content Exclusion。\nQ2: リポジトリ管理者は組織レベルで設定された除外ルールを解除できるか？ → No（継承の原則）。\nQ3: ディレクトリ階層を越えて再帰的にマッチさせるワイルドカードは？ → `**`。"
+        "heading": "6. 設定後の確認",
+        "content": "パターンは大文字小文字を区別しません。先頭の/やワイルドカードの範囲を確認し、除外対象と対象外のファイルで動作を比べます。既に読み込まれたIDEへの反映には最大30分かかる場合があり、VS CodeではDeveloper: Reload Windowで再読み込みできます。"
+      },
+      {
+        "heading": "7. 30秒チェック（Mini Review）",
+        "content": "Q1: Maintainロールでrepoの除外を編集できるか？ → No。閲覧のみです。\nQ2: 組織の除外があると、repo固有の除外も追加できないか？ → No。継承ルールを解除できないこととは別です。\nQ3: 組織設定の対象利用者は？ → その組織からシートを得る利用者です。\nQ4: 設定すればAgentにも必ず効くか？ → No。対応機能と参照経路を確認します。"
       }
     ],
     "keyPoints": [
-      "Content Exclusionは指定パスのファイルに対する補完とチャット参照を遮断する。",
-      "組織レベルで一括設定でき、下位のリポジトリで組織の除外ルールを解除することはできない。",
-      "ワイルドカード `**` を用いてサブディレクトリを含めた再帰的除外が可能。"
+      "設定する人の権限と、除外が適用される利用者・repoの範囲を分ける。",
+      "継承された除外はrepo側で解除できないが、repo固有の除外は追加できる。",
+      "組織設定はその組織の管理対象Seat、Enterprise設定は企業のCopilot利用者を対象とする。",
+      "対応機能の制約、パターン、反映を確認し、すべての参照経路の遮断と一般化しない。"
     ],
     "commonMistakes": [
-      "リポジトリ管理者が組織の除外設定を勝手に解除できると思い込むこと。",
-      "`.gitignore` に書いておけば自動でContent Exclusionも有効になると勘違いすること（別機能）。"
+      "Organization ownerなら別の組織のrepoでも除外を変更できると思うこと。",
+      "組織が所有するrepoだけを見て、シート提供元の違いを見落とすこと。",
+      "上位の除外を解除できないことと、repoで追加できないことを混同すること。"
     ],
     "examTips": [
-      "「自社の機密コードをCopilotに送信させない」機能はContent Exclusionです。",
-      "階層継承（Orgで設定した除外はRepoで解除不能）が頻出します。"
+      "「設定できる人」「資格の提供元」「対象repo」「使用機能」を順に整理します。",
+      "Content Exclusionは入力側の除外であり、公開コード一致の出力制御とは別です。"
     ],
     "glossaryIds": [
       "g-content-exclusion",
@@ -2143,9 +2832,11 @@
     "sourceIds": [
       "exclusion",
       "policies",
-      "guide"
+      "guide",
+      "exclusion-concept",
+      "cli-exclusion-admin"
     ],
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {

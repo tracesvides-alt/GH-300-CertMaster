@@ -1,5 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
-import seed from '../../content/gh300/2026-08-07/questions/seed.json';
+import stored from '../../content/gh300/2026-08-07/questions/seed.json';
+import {applyQuestionRevision} from '../../lib/question-revision';
+const seed=stored.map(applyQuestionRevision);
 async function navigate(page: Page, name: string) {
   const nav = page.viewportSize()!.width < 640 ? 'モバイルナビゲーション' : 'メインナビゲーション';
   await page

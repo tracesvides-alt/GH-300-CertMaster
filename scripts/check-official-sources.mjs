@@ -6,15 +6,24 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const registryPath = path.join(root, 'content/gh300/2026-08-07/sources.json');
 const allowedHosts = new Set(['docs.github.com', 'github.blog', 'github.com']);
 
+function decodeHtmlText(value) {
+  const named = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' };
+  return value.replace(/&(#x[\da-f]+|#\d+|amp|quot|apos|lt|gt|nbsp);/gi, (entity, key) => {
+    if (!key.startsWith('#')) return named[key.toLowerCase()] ?? entity;
+    const code = key[1].toLowerCase() === 'x' ? parseInt(key.slice(2), 16) : parseInt(key.slice(1), 10);
+    return code > 0 && code <= 0x10ffff && !(code >= 0xd800 && code <= 0xdfff) ? String.fromCodePoint(code) : entity;
+  });
+}
+
 export function getMetadata(html) {
-  const title = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]
-    ?.replace(/\s+/g, ' ').trim() ?? '';
+  const title = decodeHtmlText(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '')
+    .replace(/\s+/g, ' ').trim();
   const links = html.match(/<link\b[^>]*>/gi) ?? [];
   const canonicalTag = links.find((tag) => /\brel\s*=\s*["']?canonical\b/i.test(tag));
   const canonical = canonicalTag?.match(/\bhref\s*=\s*["']([^"']+)["']/i)?.[1] ?? '';
   const anchors = new Set([...html.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)].map((m) => m[1]));
   const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)]
-    .map(m => m[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim());
+    .map(m => decodeHtmlText(m[1].replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim());
   return { title, canonical, anchors, headings };
 }
 

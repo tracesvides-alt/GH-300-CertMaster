@@ -1,4 +1,5 @@
 import {answerExplanation} from '../../lib/answer-explanation';
+import {applyQuestionRevision} from '../../lib/question-revision';
 import {test,expect} from '@playwright/test';
 import ledger from '../../reports/copilot-feature-quality-repairs-2026-10-16.json';
 import multi from '../../content/gh300/2026-08-07/questions/multi-select-review.json';
@@ -6,7 +7,7 @@ import multi from '../../content/gh300/2026-08-07/questions/multi-select-review.
 for(const [batch,start,end] of [[1,0,46],[2,46,91]]){
  test(`quality repair batch ${batch}: every reviewed question scores and persists`,async({page},info)=>{
   test.setTimeout(180000);
-  const questions=ledger.questions.slice(start,end).map(r=>multi.questions.find(m=>m.oldId===r.id)?.after??r.after);
+  const questions=ledger.questions.slice(start,end).map(r=>applyQuestionRevision(multi.questions.find(m=>m.oldId===r.id)?.after??r.after));
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');
   await expect(page.getByRole('heading',{name:'学習ダッシュボード'})).toBeVisible();

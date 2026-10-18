@@ -5,7 +5,7 @@
     "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
     "publisher": "Microsoft Learn",
     "sourceType": "study-guide",
-    "lastCheckedAt": "2026-10-13",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -236,7 +236,7 @@
       "d5",
       "d6"
     ],
-    "lastVerifiedAt": "2026-10-12"
+    "lastVerifiedAt": "2026-10-18"
   },
   {
     "id": "responsible",
@@ -244,7 +244,7 @@
     "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -386,7 +386,8 @@
       "d5",
       "d6",
       "d4"
-    ]
+    ],
+    "lastVerifiedAt": "2026-10-18"
   },
   {
     "id": "chat",
@@ -755,7 +756,7 @@
     "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
@@ -767,11 +768,12 @@
       "d2o4"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli",
       "lesson-d6-content-exclusion-setup",
-      "lesson-d6-troubleshooting-limits"
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d2-org-governance"
     ],
     "relatedGlossaryIds": [
       "g-ip-copyright",
@@ -784,7 +786,8 @@
       "g-exclusion-syntax",
       "g-exclusion-propagation",
       "g-client-exclusion-check",
-      "g-exclusion-limitations"
+      "g-exclusion-limitations",
+      "g-policy-inheritance"
     ],
     "relatedComparisonIds": [
       "cmp-exclusion-vs-publicmatch"
@@ -825,14 +828,14 @@
     "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d6o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli",
       "lesson-d6-troubleshooting-limits"
@@ -1111,7 +1114,7 @@
     "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
@@ -1122,7 +1125,7 @@
       "d6o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-chat-essentials",
       "lesson-d2-org-governance"
@@ -1194,7 +1197,7 @@
     "url": "https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-16",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o2",
@@ -1205,7 +1208,7 @@
       "d2o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-16",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d1-security-review",
       "lesson-d2-pr-code-review",
@@ -1256,7 +1259,7 @@
     "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o3",
@@ -1267,7 +1270,7 @@
       "d3o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-pr-code-review",
       "lesson-d2-org-governance",
@@ -1330,14 +1333,14 @@
     "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
       "d2o3"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-org-governance"
     ],
@@ -1364,7 +1367,7 @@
     "url": "https://docs.github.com/en/rest/copilot",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
@@ -1398,7 +1401,8 @@
       "d2",
       "d5",
       "d1"
-    ]
+    ],
+    "lastVerifiedAt": "2026-10-18"
   },
   {
     "id": "privacy",
@@ -1406,7 +1410,7 @@
     "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-13",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d1o1",
@@ -1418,7 +1422,7 @@
       "d6o2"
     ],
     "status": "needs-review",
-    "lastVerifiedAt": "2026-10-13",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d1-risks",
       "lesson-d1-security-review",
@@ -1680,14 +1684,14 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d5o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
@@ -1749,7 +1753,7 @@
     "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
@@ -1759,13 +1763,18 @@
       "d1o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d3-data-flow",
-      "lesson-d6-public-code-matching"
+      "lesson-d6-public-code-matching",
+      "lesson-d6-content-exclusion-setup",
+      "lesson-d2-org-governance"
     ],
     "relatedGlossaryIds": [
-      "g-exclusion-limitations"
+      "g-exclusion-limitations",
+      "g-repo-content-exclusion",
+      "g-org-content-exclusion",
+      "g-content-exclusion"
     ],
     "relatedComparisonIds": [
       "cmp-safety-filter-types"
@@ -1785,7 +1794,8 @@
       "q-d6-a02-ms-20261017",
       "q-d6-a03-feature-20261016-ms-20261017",
       "q-d3-e04-ms-20261017",
-      "q-d6-e04-feature-20261016-ms-20261017"
+      "q-d6-e04-feature-20261016-ms-20261017",
+      "q-d6-g01"
     ],
     "relatedDomainIds": [
       "d3",
@@ -2053,8 +2063,8 @@
     "url": "https://docs.github.com/en/copilot/get-started/plans",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
-    "lastVerifiedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
@@ -2067,7 +2077,8 @@
       "lesson-d2-inline-suggestions"
     ],
     "relatedGlossaryIds": [
-      "g-subscription-plans"
+      "g-subscription-plans",
+      "g-seat-management"
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
@@ -2085,8 +2096,8 @@
     "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-17",
-    "lastVerifiedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o1",
@@ -2162,27 +2173,32 @@
     "url": "https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
-    "lastVerifiedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d3o1",
-      "d6o1"
+      "d6o1",
+      "d2o4"
     ],
     "status": "verified",
     "relatedLessonIds": [
       "lesson-d3-retention-privacy",
-      "lesson-d6-ownership-privacy"
+      "lesson-d6-ownership-privacy",
+      "lesson-d2-org-governance"
     ],
     "relatedGlossaryIds": [
       "g-code-retention-policy",
       "g-enterprise-data-privacy"
     ],
     "relatedComparisonIds": [],
-    "relatedQuestionIds": [],
+    "relatedQuestionIds": [
+      "q-d2-g20"
+    ],
     "relatedDomainIds": [
       "d3",
-      "d6"
+      "d6",
+      "d2"
     ]
   },
   {
@@ -2222,20 +2238,21 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d6o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
     "relatedGlossaryIds": [
       "g-cli-execution-confirm",
-      "g-cli-context-limits"
+      "g-cli-context-limits",
+      "g-copilot-cli"
     ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
@@ -2265,7 +2282,7 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
@@ -2274,16 +2291,18 @@
       "d6o1"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli",
       "lesson-d3-data-flow",
-      "lesson-d6-troubleshooting-limits"
+      "lesson-d6-troubleshooting-limits",
+      "lesson-d6-content-exclusion-setup"
     ],
     "relatedGlossaryIds": [
       "g-copilot-cli",
       "g-cli-context-limits",
-      "g-exclusion-limitations"
+      "g-exclusion-limitations",
+      "g-content-exclusion"
     ],
     "relatedComparisonIds": [
       "cmp-exclusion-vs-publicmatch"
@@ -2303,13 +2322,13 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
@@ -2328,13 +2347,13 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-17",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
@@ -2353,14 +2372,14 @@
     "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2",
       "d2o3"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli",
       "lesson-d2-agent-edits"
@@ -2500,7 +2519,7 @@
     "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
     "publisher": "GitHub Docs",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o4",
@@ -2508,7 +2527,7 @@
       "d3o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-org-governance",
       "lesson-d3-prompt-pipeline"
@@ -2650,13 +2669,13 @@
     "url": "https://github.blog/changelog/2025-09-25-upcoming-deprecation-of-gh-copilot-cli-extension/",
     "publisher": "GitHub Blog",
     "sourceType": "documentation",
-    "lastCheckedAt": "2026-10-12",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "relatedObjectiveIds": [
       "d2o2"
     ],
     "status": "verified",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "relatedLessonIds": [
       "lesson-d2-cli"
     ],
@@ -2942,7 +2961,7 @@
     "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "status": "verified",
     "relatedDomainIds": [
@@ -2964,9 +2983,12 @@
       "q-d3-a13",
       "q-fnd-seat-api-20261017",
       "q-d6-a09-ms-20261017",
-      "q-d3-a13-ms-20261017"
+      "q-d3-a13-ms-20261017",
+      "q-d6-a05",
+      "q-d6-f05",
+      "q-d6-f04"
     ],
-    "lastVerifiedAt": "2026-10-17"
+    "lastVerifiedAt": "2026-10-18"
   },
   {
     "id": "copilot-metrics-data",
@@ -2974,7 +2996,7 @@
     "url": "https://docs.github.com/en/copilot/reference/metrics-data",
     "publisher": "GitHub Docs",
     "sourceType": "reference",
-    "lastCheckedAt": "2026-10-14",
+    "lastCheckedAt": "2026-10-18",
     "syllabusVersion": "2026-08-07",
     "status": "verified",
     "relatedDomainIds": [
@@ -2995,7 +3017,8 @@
       "q-d6-a09",
       "q-d6-a09-ms-20261017",
       "q-d3-a13-ms-20261017"
-    ]
+    ],
+    "lastVerifiedAt": "2026-10-18"
   },
   {
     "id": "feature-refresh-review-howto",
@@ -3271,17 +3294,29 @@
     "relatedDomainIds": [
       "d5",
       "d1",
-      "d2"
+      "d2",
+      "d6"
     ],
     "relatedObjectiveIds": [
       "d5o2",
       "d1o2",
       "d2o3",
-      "d2o4"
+      "d2o4",
+      "d5o1",
+      "d6o1"
     ],
-    "relatedLessonIds": [],
-    "relatedGlossaryIds": [],
-    "relatedComparisonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-pr-code-review",
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-code-review-policies",
+      "g-copilot-code-review"
+    ],
+    "relatedComparisonIds": [
+      "cmp-org-vs-enterprise-policies",
+      "cmp-review-vs-summary"
+    ],
     "relatedQuestionIds": [
       "q-d1-a18-feature-20261016",
       "q-d1-e08-feature-20261016",
@@ -3289,10 +3324,11 @@
       "q-d6-e02-feature-20261016",
       "q-d5-e06-feature-20261016",
       "q-d5-e08-feature-20261016",
-      "q-d5-e08-feature-20261016-ms-20261017"
+      "q-d5-e08-feature-20261016-ms-20261017",
+      "q-d2-g21"
     ],
-    "lastCheckedAt": "2026-10-16",
-    "lastVerifiedAt": "2026-10-16",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -3416,7 +3452,11 @@
       "lesson-d2-cli",
       "lesson-d2-inline-suggestions"
     ],
-    "relatedGlossaryIds": [],
+    "relatedGlossaryIds": [
+      "g-copilot-cli",
+      "g-cli-execution-confirm",
+      "g-cli-context-limits"
+    ],
     "relatedComparisonIds": [],
     "relatedQuestionIds": [
       "q-d2-a18-feature-20261016",
@@ -3429,10 +3469,13 @@
       "q-fnd-ide-matrix-20261017",
       "q-d2-a18-feature-20261016-ms-20261017",
       "q-d5-e07-feature-20261016-ms-20261017",
-      "q-d4-e09-feature-20261016-ms-20261017"
+      "q-d4-e09-feature-20261016-ms-20261017",
+      "q-d2-g07",
+      "q-d2-g08",
+      "q-d2-g09"
     ],
-    "lastCheckedAt": "2026-10-17",
-    "lastVerifiedAt": "2026-10-17",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -3498,19 +3541,31 @@
     "sourceType": "documentation",
     "syllabusVersion": "2026-08-07",
     "relatedDomainIds": [
-      "d3"
+      "d3",
+      "d2",
+      "d6"
     ],
     "relatedObjectiveIds": [
-      "d3o1"
+      "d3o1",
+      "d2o4",
+      "d6o1"
     ],
-    "relatedLessonIds": [],
-    "relatedGlossaryIds": [],
-    "relatedComparisonIds": [],
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-enterprise-policies",
+      "g-policy-inheritance"
+    ],
+    "relatedComparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
     "relatedQuestionIds": [
-      "q-d3-e02-feature-20261016"
+      "q-d3-e02-feature-20261016",
+      "q-d2-g20"
     ],
-    "lastCheckedAt": "2026-10-16",
-    "lastVerifiedAt": "2026-10-16",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified"
   },
   {
@@ -3882,5 +3937,325 @@
     "lastCheckedAt": "2026-10-17",
     "lastVerifiedAt": "2026-10-17",
     "status": "verified"
+  },
+  {
+    "id": "alignment-telemetry",
+    "title": "OpenTelemetry for agent monitoring",
+    "url": "https://docs.github.com/en/copilot/concepts/enterprise/opentelemetry",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "status": "verified",
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d3o1"
+    ],
+    "relatedQuestionIds": [
+      "q-d3-g04"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "alignment-cutoff",
+    "title": "Model training data knowledge cutoff FAQ",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/openai/faq",
+    "publisher": "Microsoft Learn",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "status": "verified",
+    "relatedDomainIds": [
+      "d3"
+    ],
+    "relatedObjectiveIds": [
+      "d3o2"
+    ],
+    "relatedQuestionIds": [
+      "q-d3-g09",
+      "q-d3-g12"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "alignment-approvals-release",
+    "title": "Copilot code review can now approve pull requests",
+    "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/",
+    "publisher": "GitHub Blog",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "status": "verified",
+    "relatedDomainIds": [
+      "d1",
+      "d2",
+      "d5"
+    ],
+    "relatedObjectiveIds": [
+      "d1o2",
+      "d2o3",
+      "d2o4",
+      "d5o1"
+    ],
+    "relatedQuestionIds": [
+      "q-d1-e08-feature-20261016"
+    ],
+    "relatedLessonIds": [
+      "lesson-d2-pr-code-review"
+    ],
+    "relatedGlossaryIds": [
+      "g-copilot-code-review"
+    ],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "alignment-authorized-release",
+    "title": "Copilot code review: New organization billing options and controls",
+    "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+    "publisher": "GitHub Blog",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "status": "verified",
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ],
+    "relatedQuestionIds": [
+      "q-d6-e02-feature-20261016"
+    ],
+    "relatedLessonIds": [],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": []
+  },
+  {
+    "id": "admin-usage-metrics",
+    "title": "REST API endpoints for Copilot usage metrics",
+    "url": "https://docs.github.com/en/rest/copilot/copilot-usage-metrics",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-usage-metrics-api"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f05",
+      "q-d6-f04"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
+  },
+  {
+    "id": "admin-policy-model",
+    "title": "GitHub Copilot policies for enterprises and organizations",
+    "url": "https://docs.github.com/en/copilot/concepts/enterprise/policies",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-org-policies",
+      "g-enterprise-policies",
+      "g-policy-inheritance"
+    ],
+    "relatedComparisonIds": [
+      "cmp-org-vs-enterprise-policies"
+    ],
+    "relatedQuestionIds": [
+      "q-d2-g18"
+    ],
+    "relatedDomainIds": [
+      "d2",
+      "d6"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4",
+      "d6o1"
+    ]
+  },
+  {
+    "id": "admin-copilot-audit",
+    "title": "Reviewing audit logs for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/review-audit-logs",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-audit-logs"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f05",
+      "q-d6-f04"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
+  },
+  {
+    "id": "admin-audit-events",
+    "title": "Audit log events for your organization",
+    "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/audit-log-events-for-your-organization",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-audit-logs"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-f04"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
+  },
+  {
+    "id": "admin-audit-stream",
+    "title": "Streaming the audit log for your enterprise",
+    "url": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-audit-logs"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
+  },
+  {
+    "id": "admin-seat-assignment",
+    "title": "GitHub Copilot seat assignment",
+    "url": "https://docs.github.com/en/copilot/reference/copilot-billing/seat-assignment",
+    "publisher": "GitHub Docs",
+    "sourceType": "reference",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-audit-logs"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [
+      "q-d6-a05"
+    ],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ]
+  },
+  {
+    "id": "reference-enterprise-plan",
+    "title": "Choosing your enterprise's plan for GitHub Copilot",
+    "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [
+      "g-subscription-plans"
+    ],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2",
+      "d6"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4",
+      "d6o1"
+    ],
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18"
+  },
+  {
+    "id": "reference-org-management",
+    "title": "Managing GitHub Copilot in your organization",
+    "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization",
+    "publisher": "GitHub Docs",
+    "sourceType": "documentation",
+    "syllabusVersion": "2026-08-07",
+    "status": "verified",
+    "relatedLessonIds": [
+      "lesson-d2-org-governance"
+    ],
+    "relatedGlossaryIds": [],
+    "relatedComparisonIds": [],
+    "relatedQuestionIds": [],
+    "relatedDomainIds": [
+      "d2"
+    ],
+    "relatedObjectiveIds": [
+      "d2o4"
+    ],
+    "lastCheckedAt": "2026-10-18",
+    "lastVerifiedAt": "2026-10-18"
   }
 ]

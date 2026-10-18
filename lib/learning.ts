@@ -12,6 +12,7 @@ export type Attempt = {
   status: Question['status'];
   sessionId?: string;
   questionType?:QuestionType;
+  questionRevision?:string;
   multiSelectPattern?:MultiSelectPattern;
   selectedChoiceIds?:string[];
   correctChoiceIds?:string[];
@@ -31,7 +32,7 @@ export const score = (q: Question, answer: string[]) =>
   new Set(answer).size === answer.length &&
   answer.every((a) => q.answer.includes(a));
 export function attemptFormat(q:Question,selected:string[]) {
- return {...answerDetails(q.answer,selected),questionType:questionType(q),multiSelectPattern:q.multiSelectPattern};
+ return {...answerDetails(q.answer,selected),questionType:questionType(q),multiSelectPattern:q.multiSelectPattern,questionRevision:q.contentRevision};
 }
 export function formatAccuracy(attempts:Attempt[],bank:Question[]) {
  const byId=new Map(bank.map(q=>[q.id,q]));

@@ -1,4 +1,5 @@
 import {test,expect,type Page} from '@playwright/test';
+import {applyQuestionRevision} from '../../lib/question-revision';
 import ledger from '../../content/gh300/2026-08-07/questions/multi-select-review.json';
 const navigate=async(page:Page,name:string)=>page.getByRole('navigation',{name:page.viewportSize()!.width<640?'モバイルナビゲーション':'メインナビゲーション',exact:true}).getByRole('button',{name:new RegExp(name)}).click();
 async function put(page:Page,table:string,rows:unknown[]){
@@ -9,7 +10,7 @@ async function put(page:Page,table:string,rows:unknown[]){
 async function read(page:Page,table:string){return page.evaluate(table=>new Promise<any[]>((resolve,reject)=>{const r=indexedDB.open('gh300-certmaster');r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result,tx=db.transaction(table),g=tx.objectStore(table).getAll();g.onsuccess=()=>resolve(g.result);g.onerror=()=>reject(g.error);tx.oncomplete=()=>db.close()}}),table)}
 for(const batch of [0,1])test(`multi-select batch ${batch+1}: all choices, scoring, notebook and reload`,async({page},info)=>{
  test.setTimeout(180000);
- const qs=ledger.questions.slice(batch*27,(batch+1)*27).map(r=>r.after),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ const qs=ledger.questions.slice(batch*27,(batch+1)*27).map(r=>applyQuestionRevision(r.after)),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.getByRole('heading',{name:'学習ダッシュボード'})).toBeVisible();
  await put(page,'bookmarks',qs.map(q=>({id:q.id})));await page.reload();await navigate(page,'Practice');
  await page.getByRole('button',{name:'30問',exact:true}).click();await page.getByText('Domain・Objective・復習対象を絞る',{exact:true}).click();
@@ -41,7 +42,7 @@ for(const batch of [0,1])test(`multi-select batch ${batch+1}: all choices, scori
  expect(errors).toEqual([]);
 });
 test('mock preserves two selections across reload and scores unanswered as incorrect',async({page})=>{
- const qs=ledger.questions.filter(r=>r.after.difficulty==='advanced').slice(0,2).map(r=>r.after);
+ const qs=ledger.questions.filter(r=>r.after.difficulty==='advanced').slice(0,2).map(r=>applyQuestionRevision(r.after));
  await page.goto('/');await expect(page.getByRole('heading',{name:'学習ダッシュボード'})).toBeVisible();
  await put(page,'sessions',[{id:'multi-mock',questions:qs,answers:{},index:0,deadline:Date.now()+600000,completed:false}]);await page.reload();await navigate(page,'Mock');
  // Existing incomplete session resumes through the normal control.
@@ -57,7 +58,7 @@ test('mock preserves two selections across reload and scores unanswered as incor
  const attempts=await read(page,'attempts');expect(attempts).toHaveLength(2);expect(attempts.filter(a=>a.correct)).toHaveLength(1);expect(attempts.every(a=>a.questionType==='multi_select')).toBe(true);
 });
 test('mock timeout saves a partial selection as incorrect without granting partial points',async({page})=>{
- const q=ledger.questions.find(r=>r.after.difficulty==='advanced')!.after;
+ const q=applyQuestionRevision(ledger.questions.find(r=>r.after.difficulty==='advanced')!.after);
  await page.goto('/');await expect(page.getByRole('heading',{name:'学習ダッシュボード'})).toBeVisible();
  await put(page,'sessions',[{id:'expired-multi',questions:[q],answers:{[q.id]:[q.answer[0]]},index:0,deadline:Date.now()-1000,completed:false}]);await page.reload();await navigate(page,'Mock');
  await page.getByRole('button',{name:/中断した模試を再開/}).click();await expect(page.getByRole('heading',{name:'模試、おつかれさまでした。'})).toBeVisible();

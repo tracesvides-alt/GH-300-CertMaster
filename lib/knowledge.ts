@@ -57,9 +57,31 @@ export type Objective = z.infer<typeof objectiveSchema>;
 // ────────────────────────────────────────────
 // Lesson Section
 // ────────────────────────────────────────────
+export const referenceTableSchema = z.object({
+  id: nonempty,
+  caption: nonempty,
+  columns: z.array(nonempty).min(2).max(4),
+  rows: z.array(z.object({
+    id: nonempty,
+    cells: z.array(nonempty),
+    example: nonempty.optional(),
+    sourceIds: z.array(nonempty).min(1),
+  })).min(1),
+  lastVerifiedAt: nonempty,
+}).superRefine((table,ctx)=>{
+  if(new Set(table.rows.map(row=>row.id)).size!==table.rows.length)
+    ctx.addIssue({code:'custom',path:['rows'],message:'Reference row IDs must be unique'});
+  table.rows.forEach((row,i)=>{
+    if(row.cells.length!==table.columns.length)
+      ctx.addIssue({code:'custom',path:['rows',i,'cells'],message:'Each row must match the column count'});
+  });
+});
+export type ReferenceTable = z.infer<typeof referenceTableSchema>;
+
 export const lessonSectionSchema = z.object({
   heading: nonempty,
   content: nonempty,
+  table: referenceTableSchema.optional(),
 });
 export type LessonSection = z.infer<typeof lessonSectionSchema>;
 
@@ -269,6 +291,11 @@ export function validateKnowledgeBase(kb: KnowledgeBase): ValidationError[] {
     checkRefs('Lesson', l.id, 'comparisonIds', l.comparisonIds, ids.comparisons, 'ComparisonGuide');
     checkRefs('Lesson', l.id, 'questionIds', l.questionIds, ids.questions, 'Question');
     checkRefs('Lesson', l.id, 'sourceIds', l.sourceIds, ids.sources, 'Source');
+    for(const section of l.sections)for(const row of section.table?.rows??[]){
+      checkRefs('Lesson',l.id,'table.sourceIds',row.sourceIds,ids.sources,'Source');
+      for(const sourceId of row.sourceIds)if(!l.sourceIds.includes(sourceId))
+        errors.push({entity:'Lesson',id:l.id,field:'table.sourceIds',message:`Table source "${sourceId}" must also appear in lesson sourceIds`});
+    }
     if (l.syllabusVersion !== kb.version) {
       errors.push({ entity: 'Lesson', id: l.id, field: 'syllabusVersion', message: `Expected "${kb.version}", got "${l.syllabusVersion}"` });
     }
@@ -381,7 +408,8 @@ export function globalSearch(
     if (
       l.title.toLowerCase().includes(q) ||
       l.summary.toLowerCase().includes(q) ||
-      l.sections.some((s) => s.content.toLowerCase().includes(q))
+      l.sections.some((s) => [s.heading,s.content,s.table?.caption??'',...(s.table?.columns??[]),
+        ...(s.table?.rows.flatMap(row=>[...row.cells,row.example??''])??[])].some(text=>text.toLowerCase().includes(q)))
     ) {
       results.push({ type: 'Lesson', id: l.id, title: l.title, detail: l.summary });
     }

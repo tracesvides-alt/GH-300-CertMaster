@@ -21,7 +21,14 @@ test('bundles load and starting practice scrolls the question into view', async 
   await expect(page.locator('.question')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toBeInViewport();
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
-  await page.locator('.question fieldset input').first().check();
+  const answers=page.locator('.question fieldset input');
+  await answers.first().check();
+  if(await answers.first().getAttribute('type')==='checkbox'){
+    // Multiple-select questions require two choices; one choice must stay disabled.
+    await expect(page.getByRole('button',{name:'回答を確認する'})).toBeDisabled();
+    await answers.nth(1).check();
+  }
+  await expect(page.getByRole('button',{name:'回答を確認する'})).toBeEnabled();
   await page.getByRole('button', { name: '回答を確認する' }).click();
   await expect(page.getByRole('heading', { name: '選択肢ごとの詳細分析' })).toBeVisible();
   expect(failures).toEqual([]);

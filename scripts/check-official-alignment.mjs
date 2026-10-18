@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const root='content/gh300/2026-08-07/';
+const read=path=>JSON.parse(fs.readFileSync(path,'utf8'));
+const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const seed=read(root+'questions/seed.json'),details=read(root+'questions/answer-explanations.json');
+const revisions=read(root+'questions/official-alignment-revisions.json');
+const report=read('reports/official-alignment-remediation-2026-10-18.json');
+const contract=q=>JSON.stringify({id:q.id,question:q.question,choices:q.choices,answer:q.answer,difficulty:q.difficulty,type:q.type,status:q.status,domainId:q.domainId,objectiveId:q.objectiveId,explanation:q.explanation,choiceExplanations:q.choiceExplanations,sourceIds:q.sourceIds,contentRevision:q.contentRevision});
+assert.equal(hash(seed),report.baselineSeedFingerprint,'Changed historical seed');
+assert.equal(hash(details),report.baselineDetailsFingerprint,'Changed historical explanation edition');
+assert.equal(revisions.questions.length,10);assert.equal(new Set(revisions.questions.map(q=>q.id)).size,10);
+assert.deepEqual(revisions.quarantinedQuestionIds,[]);
+const sources=read(root+'sources.json');
+for(const row of revisions.questions){
+  const before=seed.find(q=>q.id===row.id),record=report.questions.find(q=>q.id===row.id);
+  assert(before&&record);
+  assert.equal(hash(before),row.beforeFingerprint);assert.equal(contract(before),row.beforeContract);
+  assert.equal(hash(row.after),row.afterFingerprint);assert.equal(contract(row.after),row.afterContract);
+  assert.deepEqual(record.after,row.after);assert.equal(record.displayedExplanation,row.displayedExplanation);
+  for(const key of ['id','difficulty','domainId','objectiveId','type','status'])assert.equal(row.after[key],before[key]);
+  assert(row.after.sourceIds.every(id=>sources.some(s=>s.id===id)));
+  assert(row.after.choices.every(c=>row.after.choiceExplanations[c.id]===row.after.choiceQuality[c.id].rationale));
+  assert(row.after.choices.every(c=>(row.after.choiceQuality[c.id].distractorType==='correct')===row.after.answer.includes(c.id)));
+  assert(row.displayedExplanation.trim());assert(record.review.blindCheck&&record.review.difficulty);
+}
+const q=revisions.questions.find(q=>q.findingId==='F01');
+assert(q.invalidatePreviousSnapshots);assert.deepEqual(q.after.answer,['C','D']);assert.deepEqual(q.after.correctChoiceIds,['C','D']);
+assert(!JSON.stringify(q.after).includes('Deep'));assert(!q.displayedExplanation.includes('要レビュー'));
+console.log('PASS: 10 current revisions bound to reviewed questions and explanations; corrected C/D scoring, 4 short rationales per question, unchanged counts and historical assets. Semantic review is documented separately.');

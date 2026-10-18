@@ -48,6 +48,16 @@ describe('GitHub official source registry', () => {
 });
 
 describe('official source checker', () => {
+  it('compares rendered page titles when apostrophes and ampersands are HTML entities', async () => {
+    const source = { id: 'plan', title: "Choosing your enterprise's plan & permissions", publisher: 'GitHub Docs', url: 'https://docs.github.com/en/copilot/plan' };
+    for (const apostrophe of ['&#x27;', '&#39;', '&apos;']) {
+      const matching = await inspectSource(source, async () => response(page(`Choosing your enterprise${apostrophe}s plan &amp; permissions`)));
+      expect(matching.errors).toEqual([]);
+    }
+    const wrong = await inspectSource(source, async () => response(page('A different enterprise&#x27;s topic')));
+    expect(wrong.errors.some(e => e.includes('expected topic'))).toBe(true);
+  });
+
   it('checks contract document headings behind a shared browser title', async () => {
     const source = { id: 'terms', title: 'GitHub Generative AI Services Terms', publisher: 'GitHub Terms', url: 'https://github.com/customer-terms/github-generative-ai-services-terms' };
     const html = heading => `<title>Customer agreements · GitHub</title><h1><span>${heading}</span></h1>`;

@@ -1,0 +1,5591 @@
+{
+  "reviewedAt": "2026-10-18",
+  "beforeFingerprints": {
+    "lessons": {
+      "lesson-d1-principles": "46b9948d1e3a6ea0ff65f36d24383f171303779b81f0acb4b5ba14434ee70509",
+      "lesson-d1-risks": "301ae73456b96de527d21f4a309787871076e60bd3e908b8515f8209d86c760b",
+      "lesson-d1-validation": "27681293e7d6240df433491ced29bfbcb987f8a770d1d81287ae270e9c6f47da",
+      "lesson-d1-security-review": "f529dfc9e784d40e4522c8aae904b2f261b676aa2b24a87daaf20e04d8637590",
+      "lesson-d2-inline-suggestions": "82717452b008310d34d4e4077f1d373b7ec6634d7bcec34ce2a41b6d95566605",
+      "lesson-d2-chat-essentials": "07066bafa93b0b5b10e27c982794354ed74c7d7a944731422e4d4c14c6c6fa02",
+      "lesson-d2-cli": "070dee6c5c2f0c90278d7b92ce6324934d07a5871e1991e2184069ce4f659612",
+      "lesson-d2-agent-edits": "5a3b09de92bf7dca171114c2a53a36a021c85f999a11f82ba8c36350fbde0eda",
+      "lesson-d2-mcp": "769dc0a13a0452cc14696d8f377eba2c19ac0adf08757db65c88729a9badf9ee",
+      "lesson-d2-instructions-prompts": "e2c0b0a78f24f205bd8c0fc7af086c5e28b9158bf50adb892e3c08dca064bbb9",
+      "lesson-d2-pr-code-review": "46d5992e678f72161ab4a366293ca2913a3319ac112bc4d729126b172d5eb911",
+      "lesson-d2-org-governance": "275b4c00f24317a5bac224413b006cbea7fcd7d7be6c9882a58b85854545a6f4",
+      "lesson-d3-data-flow": "b434724bfe78191e02772c1fd35d4ccfbb67cc162620d919a3090012a604e07c",
+      "lesson-d3-prompt-pipeline": "05e4faba5748bb777d68ca41ffaefb58a37f9ce3ac41b5d3a7ac4c2b5e4d208f",
+      "lesson-d3-retention-privacy": "0e4cb4d096ba7c3e1fa9f8b23907bf64b42f2e7dec1280466db5fcd24ef9a023",
+      "lesson-d3-lifecycle-limits": "9149dd2ce86954b3dae5eefc9a427bfdc7573a1ecc617d9d4cbea3a584f2dc1e",
+      "lesson-d4-crafting": "2074cdcf6e8b6150a50ac617dd42e987ae82c614eef4731c0e01d45cfe2bbd13",
+      "lesson-d4-zero-few-shot": "e1922e30dda5c30667d9f08babdc9761ff6fbf8746bb404a83f82feac0b5a03d",
+      "lesson-d4-refinement": "a1cdce8dc9a45d5b0f69212283ced0e19b23f5135f059b8d6ba7f5dec47f6605",
+      "lesson-d4-decomposition-pruning": "c4341b04afc320b45182488c8962f4a5c26ed2afd5da844a3889cfb305cc5dec",
+      "lesson-d5-generation-refactoring": "3ce4f7d55042abe9e638b55e9c307ff9b10e0a79323be9aa0ac9d995dd6fda2f",
+      "lesson-d5-legacy-modernization": "573df5421d3133045707652e9fb0c6f63f666264fc6c0c8b515de41511f8bb3d",
+      "lesson-d5-testing": "9166990ba032a6acf67fdeced8ece87d9e29d0521fd1c09951ba826100682086",
+      "lesson-d5-security-remediation": "410a6db664b4763dccbb19d260ecda00dbc0ac4e25934028d5cd5f1692ccdffb",
+      "lesson-d6-content-exclusion-setup": "47bebd1988a75ad83f99aea9fb01514e219a3d72378bc31e10f122aa786af903",
+      "lesson-d6-ownership-privacy": "da7de0a658fa61d69886c44705c0f409ce2188905381cf7da458b617c60f70a4",
+      "lesson-d6-public-code-matching": "60b6eecd9532e695762a06f85f88858551f84121f634141fec7fc2c7915b8323",
+      "lesson-d6-troubleshooting-limits": "14eec30456467e05f94436611d66636e332f0348d0d652e121299d744432c6cd"
+    },
+    "glossary": {
+      "g-generative-ai": "b88f936e80d81fed547194a6f4ab17d521e78c198a7348f41e890e5e15e5bcb0",
+      "g-hallucination": "6964de16bb94d8e439b8345fb5b2f9e6ecc9627e6cce9c696b98da3da6b0f3ec",
+      "g-responsible-ai": "6b9d5e4479dcc4cdd0e6e182fe682161da6e01285f1c057b5c821694c522620c",
+      "g-ai-bias": "f8634d845cdd45204a1a93aab7b7bd599320291ad3d9532e0d14f99e39788aa7",
+      "g-ip-copyright": "4726647fab9b1ea6f4255da08be09823769ee0343d196956f7c1caa05af5e1bb",
+      "g-transparency": "49806430e4c236a029711aea06ffbcb76cdebcf58ef4777c3211e0ddb06d67d5",
+      "g-code-accountability": "c53a716b75df94af8494bc1f92624d81cdac25f29a7a3b615d4402df6e485f64",
+      "g-nondeterminism": "38f7a04debb27f3bfe8e5fc8213732731e036a4885e3ff609c42d996cf3a59bb",
+      "g-verification-validation": "18b2edb3db2cc12e91cfe19022c3ca1d2ec9167279635ce47f4a143314e08ed0",
+      "g-automation-bias": "00c5b187da92d962412f94f3ae87d06f2f415e35cba66f84a95e8e3827907383",
+      "g-critical-evaluation": "f75972600d3272ad34e7f756a0eec83c45d64f8b49728c7fdb4ec1f0adf7e712",
+      "g-code-correctness": "445d03fb2bdc95e284c38f21d406a91dac64d61725f1133aa5f42462b7dca358",
+      "g-security-vulnerability-scan": "3f707474d28d54a6cc0f2e4b618212fe57b40d1cff236ce77f076fa028592dc6",
+      "g-peer-review-ai": "6154865ddf939ef2fe89d3e4e9bfcb90187311afef1fcee11c8761dfe4068282",
+      "g-inline-suggestions": "0fee25e406ceee3a9592a18ff576edd5e5e2dab5e2bfc02b828acd7c63b3db15",
+      "g-ghost-text": "6988d556e521d6870240fa3bd154e29ee36f84d68d45ae80f320398669a58dee",
+      "g-completions-panel": "1e6498af72564c7f18219ef1511ab63ada9ff6fe6e56ca698fc59e3d4e113416",
+      "g-copilot-chat": "01f149dacdc41f9f4cbf9380db245ad249b259a3602b7a4c9cc2a4ffe7da2b41",
+      "g-inline-chat": "5c22ea2755442bab42ed3ecaca54f5ccd9d63eddfeaa532dec0a60a68c22091e",
+      "g-chat-participants": "36846ccaa509c262e1128d7559607aed924f2751c7d74decd6e451d923115198",
+      "g-slash-commands": "acf428985723c2d5941755a213e346fff090c9d4a2ba53d85e7c3f8b50678655",
+      "g-chat-variables": "d9179fdf1493ada06ef88d8bb485b72ac3a080468a9e18838350a8067ab2b92e",
+      "g-status-menu": "ed276690b78b5178e265d6140154ffb318b106ff612efbd752cbc59002209a04",
+      "g-copilot-cli": "503d2c73472b1c4ac78e46ab6237bfae78ebe75db072db6c5c90188ed06a66d4",
+      "g-gh-copilot-explain": "faaee9cc7131d9027353db8bbc15b8f1444b85b67edd1098d6d9b827d8744c76",
+      "g-gh-copilot-suggest": "e1c85a3f01a2a07618b071e561a827d81405cae2a3a8ce745b8ca610bc657076",
+      "g-cli-shell-aliases": "840583a6ac65a2d13d218cfdd47410ecd5b32ffe5692049904a389936ad43217",
+      "g-cli-execution-confirm": "4634c69112ff5bed4e4187dd7f0b8fb668e51df30e5fcd7a9b1d38909afb89f7",
+      "g-cli-context-limits": "a5a1659b722e60c8e1ea9a6c63d871e4d6b659d01352158752e2d62671482c55",
+      "g-agent-mode": "ac0436cde46099080cbbd2e9bb0a0c1ef15dee7f76972a799e4a85114accaf0b",
+      "g-copilot-edits": "6ea53fd7c9bc5e18fa9e8e3a3e42c149a8d898b0ac15255d102c8a0610320ad1",
+      "g-mcp": "7a8130d0b47416dba892489e286f9bafd6db66a8bb17383732f662aae3273363",
+      "g-mcp-server": "e7fec54aeb641358b10d3046b8b201a03486b2baded638da8136f8ef4ceeafc2",
+      "g-mcp-client": "2d479ced704b864d46d84242195a82aa456773eb64f4b99787479b445922abc2",
+      "g-mcp-tools": "5109c72a53b44566a5224880177654914a4e952c92b8bd8ceb827a51d5fee25e",
+      "g-agent-sessions": "d0784a36dd4218b39788628cadf34301a59b8b7aa4b81aff475bd759522c1043",
+      "g-sub-agents": "b621a7b7fc293cbece8ef8d3fbe8839a2febe35f5cd87eb90a0d2b0517e00d95",
+      "g-copilot-code-review": "9cebd66146f7dd8c1d5f7daa071e108c2706f42d22de47a8332582022a0c6396",
+      "g-pr-summaries": "0838f51a0cac83f18af7143ab86e62e01e1c7c6881803c4b1df1c0020c818e85",
+      "g-custom-instructions": "aae4e50c2cc11aa03febf6c1e56db8dd42fd612789e4e312c3b96e6ef15e1238",
+      "g-scoped-instructions": "b5b33e6cf58e097cf9e6eb85cbc8c5ca29581d1a819e191b24e9947473a6ebe2",
+      "g-prompt-files": "f042d4ec42a77ceb542c070cc60f33c816c73b818b80e341bca5669991c29e39",
+      "g-spaces": "025e570325d42b40f37aa53a5dafabfd04ee5de2e7a135919bcecc0b9361345f",
+      "g-spark": "4c422fcbe25468358b9017c1e4a8d3ef48e46656b099c38247a37d888810bf11",
+      "g-copilot-extensions": "73852a160286dd17a45aeaacc1fb0af94d3ba4aed6671b965134ee21103ae2f1",
+      "g-org-policies": "a9b3ee4b5a90f23975b188cfd04c7a9e23a9ef88a478ff2cfe72d2cdf7c9aab8",
+      "g-enterprise-policies": "a59c7e8ccd8752dfd3a19a3c9b95f94691620573a43ce35d0deeb9f5b05fe579",
+      "g-seat-management": "663db6584edd48d7a29ac859bd68d42e21f215ba88105ced8bd6a47816c174bc",
+      "g-subscription-plans": "69c19601e92a254cf594a57edc523a5dfc52afe300d1d7323d20f5053541c31d",
+      "g-audit-logs": "8c28ec6cc734cb0a4af16ffdd7f7bb9565ab8c954bfcd005b7d4b224d80452e9",
+      "g-usage-metrics-api": "42b7333396f41d1cbca5e6d639d013956c7ebf9185e9708449ae474721d615d8",
+      "g-code-review-policies": "747718c42833ca0d17e85787ebb2ad37844419c58fe0c64ed19049ef553781f2",
+      "g-policy-inheritance": "c3faaf0ddb597f15dbd1b3bf1e89dbacf074b43efc96d4c766f4529b45e147e2",
+      "g-data-flow": "ceec014c6812cda00203d178b99c7ea027a21343499e758732f34d3204c7475a",
+      "g-context-gathering": "86c1631672aa10a56e9bef47bb938af85a8f0253c491851302e5aa5ed19236d2",
+      "g-prompt-construction": "5746e0fb14f4f9e96a04189aa4dbf5181efedaa2b30cac29dadd58f1c6cff35a",
+      "g-copilot-proxy": "c711fb615ced9ff58820492e254a32c57fd3465ebadadefdb3fd33ee681a38c9",
+      "g-telemetry-data": "5c10f656a4636be06c39dd268495b10b89a7210ea85a1ea36b3c3f98d6347592",
+      "g-code-retention-policy": "d28e534b749c6b2c51aa8f2769993907de44c7e22e116a6fe110fe8325ef0e8a",
+      "g-tokenization": "4b0eaf10adb3773060b97b46aa5129c9ea66a80bb2e18d1b3b289607de7daeee",
+      "g-post-processing": "2b31b7b16d008abbdbc4a2b64b7fd8afef129a4546dc09175c3efb71ed24b39b",
+      "g-transit-encryption": "1f2d6ca71163493abb6798ab4d7652556c5a10f7299f7b971e75485c28ed12f5",
+      "g-suggestion-lifecycle": "23b1e8a2e4c7a3cd24fa2834533ec9beb5622222f44e1a036a9513ad7cfe82f4",
+      "g-context-window": "7c065bee75b95f9c0d67f2abd6dbe220ddf99b38b2c21b4f9090bdef54c3bbdf",
+      "g-latency-tradeoff": "e2d968fde8129309185886b4edf7a7dc9900c697f7279f66b38cbab29d87ce1e",
+      "g-temperature-determinism": "2fb39860db4e7baeaf626d85b74037f2545e6782c4f56d718bf5e0ad68422d21",
+      "g-knowledge-cutoff": "901168e7de2f64928e0b71119b0ebd1ba241ca3e45ddde3e302ca349d10e020f",
+      "g-context-scope-limits": "032e3ca647c5d98287001aacb200dd7da2b72bafc31e12703c8d650b07f2dd52",
+      "g-prompt-engineering": "643abc6a3a4c4577c3d5197e643f474183cf15a7b4e95df4d8abe5e30398bf14",
+      "g-zero-shot": "507bf60c75cafbd98fa0680a7c681cb5b3f7f1ebbe226f64e13a718c5140f6b7",
+      "g-few-shot": "c7ce942370eb8da4bc85cf125e1e223055190ed67af325c90d683ee6c8c14d8f",
+      "g-system-prompt": "8a23ce38ddf3174a390d3b7c30342ac2ab71f8bc1f96aedae6dda7916ae4a0a4",
+      "g-prompt-anatomy": "e5b2dd91cd11a8d0a5d5d1fc14768edce3281d2e147379b73f2b085f2afe8c12",
+      "g-role-prompting": "d5eec855afc1a955fb96304548cd65a21b44ad7a3cca8b3aee15a3919cf9fc48",
+      "g-step-by-step": "16b759bb2e5364b5ae6cebd3e475d434af393201d7107cdf688ff17d93c29bc2",
+      "g-context-priming": "4c5ad3a1b03462d9a9b3e7f4e0b25457ac811750c92e3bbb7c70b922bf93ef31",
+      "g-iterative-refinement": "25fdd972f75fee165336f1bdcb09a02d8e3bfe8c9cd1347eb03a12818ac75102",
+      "g-thread-reset": "ec9654806d40e406d3d6d5acc24323e82acd1c452ba175370eef2d29869e4adc",
+      "g-task-decomposition": "646f8f72c8d3d7ffc0bcfd6e8d30ca0bd38b561a366e4228bc9c5da53f2091ce",
+      "g-context-pruning": "2e1f5b27e79d9b8d863b20d119c67e8f3c25301dab33ee3c7e99546056d7f5dd",
+      "g-negative-prompting": "ae422e4139f1835a41db049abc2d48388fa90c5c9a51508bfc11d0e1aaa0b7a5",
+      "g-output-specification": "99a2e997fe692a69672974c42b86aae5d45a3039ee1eeb5daed46def02f02bc0",
+      "g-code-generation": "ee45cdec177c64ac28c5da37fe156a2c5c9792d9a8ac26eb41086db2e78e659b",
+      "g-code-refactoring": "56ddc0e06e1f9ab58ffe4a21979b0179a50fdc83cfaaa544001db8c856f33561",
+      "g-doc-generation": "0929a65f8f5cbb7e90d53808996254b4ef6cb9c11aab576b9b24db1877e39a3e",
+      "g-legacy-modernization": "23ce1f0f8bf23710dfd7b99c7fee129fe7a391e3cec61f9ec9fe03ffce05b5d4",
+      "g-code-translation": "cf88fdf65ab1f61070714da9e3d19f5e5bb36f4b9d690f64c0e5858da88bbc27",
+      "g-code-explanation": "38419d5bef72e0b64e289276fbd713b9f725d8800b0953695886c7ca3243675c",
+      "g-algorithm-optimization": "0c00e520550588dddb100f0a5a1b4078c987924d84d8c6ddab3e91fa82193425",
+      "g-boilerplate-reduction": "47fa5307bb738ccbec40d9f5c8bda91b48530b0d2089fae9ac592b8df6888ca0",
+      "g-unit-test-generation": "2fa3d28b061c1bd1f35c9e9c1548e668254d2c07cee60dbe269aac5ce6fc48ac",
+      "g-integration-test-generation": "150a43da6d3106464e5d35c68351b311c6d108d36cd7d5f45695d2c504bb9ddb",
+      "g-edge-case-discovery": "950bcd89f963810ddceb3a78c1ba98580deb6235a4d3519ee2462b5ee53f0c86",
+      "g-test-assertions-mocking": "4e74eda2e65314fc81c73d7929764060ecd6a9f19e3d984c7f89fb04f5e684b5",
+      "g-vulnerability-remediation": "e9a0c3d3bebc046a2ee70b73f9f5a72f1d5b54b03b04a1756896ca8a9e0a2acb",
+      "g-static-analysis-copilot": "caf4ee5477d6557e7809ce7712a8f6e4e8f9143985419817bde379510f55b8b6",
+      "g-perf-bottlenecks": "5c6068645cf72523084171127a1ba715dc402770e9fa22bbad1e809f4619ac9e",
+      "g-secret-leak-prevention": "b7da5b399d4ee02ec01d565bad79b9147f0aa41d09dee09609ead0f52b2fa88e",
+      "g-content-exclusion": "6e4884fc3153243e756b036de2e2b9983045f1bbcc48e8c006be9988d059112f",
+      "g-repo-content-exclusion": "225e2fb5d0865516207ec3782268011b784e8cdbd5e7c121d6412ced5335a366",
+      "g-org-content-exclusion": "4cabc73dbf5bd9d88b597e950199be90a268ef162aa70ab3d7223a90683dff84",
+      "g-exclusion-syntax": "3e34f3062fe4146d63411ba61581ba2c13679d6fab1c781991e5a4ff3960f89b",
+      "g-output-ownership": "1405552eb112080fb40065e366a7711576e23a6f0f511b27a764b6ce79af9029",
+      "g-enterprise-data-privacy": "3407cd9034a3974e2331be9d184036697e3c2c3832f2abee7d227e6c8e50b74a",
+      "g-public-code-matching": "1043a0c3a502ae96e2024a0fb1e718711db0ac7091467de49514130c0fbfe318",
+      "g-public-code-log": "6b5682ba53ddc5e085e12a6bfcf18d9750246b050334ea636a3f9958b6527bba",
+      "g-exclusion-propagation": "e63bc80d05c7eb7b265b703e33179016dc7f4a748672738f8a834d7e72599779",
+      "g-client-exclusion-check": "99c1973b4fa2dadc1a3a87a56e140b0189182a96a17df4ed01c2c7cdeb385f07",
+      "g-exclusion-limitations": "addd0772ded78e76aa718f8f90d075c8d54836884f1380e26a193151ca294822",
+      "g-compliance-auditability": "8ca8cfe2d2dfbed94588316733d90c8fe138b8beefbe4c58d49aa8428745aa64",
+      "g-fill-in-the-middle": "71eacf1cb809cd6499d520a018f2f4905279024242c64f1a613a67ebe663724d",
+      "g-test-explorer": "fbb4799f2757c9650176264c9b533fe971fb3fb2e72e557f55d7e713ba8cdd3b",
+      "g-arrange-act-assert": "8a40f53128551a5721113970b565e3850da20116be98a6adfe11e5472c51aca8",
+      "g-code-quality-attributes": "16b119e4008719e314c7611e0ec57478664eef0a191fc9081b5fbe18bf741036",
+      "g-reliability": "44905a956c606a7f44901bfcb1c66ee01b6973957e2dad76134e13e169507e38",
+      "g-safe-exception-handling": "7dde4c25608d7314b9fdf17b9c1a543b49c85d680aa0c85239e9324f2a25451d",
+      "g-input-validation": "255f0921762b40c5699f0ffbe86ce162db6bfad3c7df1dd68257b7626fab1273",
+      "g-project-documentation": "daa0b2488189b8dfd56ab973747f1a56dfdb4fe91d0c7eaa9213bb9a25526500",
+      "g-safety-filtering": "6051b8b5371b7905865bcf280271d4638cd54aada942a953a4dbc5e89110f972",
+      "g-legacy-knowledge-bases": "e45afb9209395f442a36576a2df964d95288de2a49ba3887faa4ba45cf2117ec"
+    },
+    "comparisons": {
+      "cmp-chat-vs-inline": "b230e74ce1f4ba43346c720e8a624b99529911638ff50d4ef7a8fd9a32df658c",
+      "cmp-agent-vs-edits": "0029779452480615a725f448b0bec9953a26a59f229d261b30d56310a499cfaa",
+      "cmp-agent-vs-chat": "c78730cd57c6a474524bc319462cea2c02533b66ae839778541d6c1bb62bb853",
+      "cmp-mcp-vs-agent-mode": "9318f36784219f7d57967ed5c58af2bb788414b6c0d473b27abf6ddcdf2e88c3",
+      "cmp-mcp-vs-extensions": "4a586ad371957d961c3d7ef80b384c0f1a1f44b60e97995c74122f8ae48c341c",
+      "cmp-instructions-vs-prompts": "dcde211e49ca581aab866a5c3956dd9168bfa728b400c9536ec21328f8de3e2e",
+      "cmp-spaces-vs-chat": "16cdbece41e79cd73cfc741c34ee7149733969c7cc05fc1c5d118893240663bd",
+      "cmp-sessions-vs-subagents": "3506ab5491a8660dff5fceacfa6baebed0aaf17deda1ba13d8700480dbb83099",
+      "cmp-review-vs-summary": "b250f52440526d577e444a50ae5e3d04487978edcc469f02fcd5724090d196ff",
+      "cmp-exclusion-vs-publicmatch": "3126d26a7fb0f19e60699e52f2ec66bbfbba2f431b21459427a600f6ed6ac1c8",
+      "cmp-zero-vs-few-shot": "cd8b8da2a7e9573fd4610d071ee79f85cc2bf7a7c0c81144b7e5aa866bebd72f",
+      "cmp-unit-vs-integration-tests": "e05fa31e39797a270d02cf655a3a8fb9c257d3d154cf9270a11424b8ab69f8ff",
+      "cmp-org-vs-enterprise-policies": "ae8e9f4519d7c55781596c38ea33e1ffb82e5b29adb5acfc388422eecfc5b8b7",
+      "cmp-test-generation-vs-explorer": "2de742b677d3cb04d7061c8c1c05d6588d41c181652a1b5d2608c05f7041ce8a",
+      "cmp-quality-attributes": "1e18cd02fc9629332694dd6450cae9a8b88b793825bcc670514d27a2db4dab4d",
+      "cmp-input-validation-vs-assertion": "b2aad93326edb3d43e240c2a3ba657948300e61cbff188d030bc786c86c6430c",
+      "cmp-safety-filter-types": "0606a6635d532b247b39c91633c3ce35f1ae1474bc87922e33c4e19e935e79c5"
+    },
+    "sources": {
+      "guide": "511b6d6739fbc11da7704553547cd877931920c6b724746d2af241e346e2ad64",
+      "responsible": "54e87a6e92b0131392cc62e6264abb481fa2d974b0a2c85f8eb0c864a85d52c7",
+      "chat": "4b864dc17d1a84bbb791fe86b6d9ce7f13dd27b74c3992286d6bb1ed32e5bb17",
+      "prompt": "b2b96b4aa16cb456885d8150ceebd386ca3366a712c427c22914b4ab965e4391",
+      "tests": "f70a9abc0df2706d6f26250f31057f0db1372ecdc66dc045d44daaffac930587",
+      "exclusion": "4073403c30c758a6d10defda16ad0afd419de100ed9b9720007a0107787ea693",
+      "cli": "a1e674d799d6edf4d0037e94b6084e86ae4fcc3b25482c39de90bbe8bf958eb1",
+      "agent-mode": "08de0d23cd36510137e758d84c69755f42f76aa6e1c369dc3326a52741f3e23b",
+      "mcp": "3f88fc5f4cb8dbc549019c58c897aeb1dc3df8c66a3d383fc8d3cb2a18c615c7",
+      "instructions": "883cff8c4ad35d8b08459b4dcebcff33eb324bdfcd5c0feea38308cdefc4b671",
+      "prompt-files": "158701f5130fad38a7aeb9d338ecb53099e8e2827d7fb16acc8e83cf6690c195",
+      "spaces": "85ed68ea7a8d2bcc137047a28ced39d084f705d8cdebe65c688676d492129a97",
+      "spark": "1965f33b70ff5b84de23d634dee44ab67e29068522b83273105432c39b181757",
+      "code-review": "9af2e52b6960390c6ebcb1c51fdb38a714ea1531c11c88b582ccbe60e1b39f14",
+      "policies": "c38ab48314c7b4613bc4dca19ad082434ba105be2b8acf2798d92d77118d7098",
+      "audit-log": "894ded563652c858a2f4280401b679d579f90b928a608b26951edf7be41963e0",
+      "rest-api": "fc0b002fca6d6937caa96d5a4933e9c474eb3c3267c2619f2c7f05b6f6691f5b",
+      "privacy": "7319996ae691a6cba45ddca559416b42bd6122f3f1d6ff7fd5a768381f21515c",
+      "architecture": "ea6034062e766b33ee18560cf77968312448a51018f89eeca1663d08d274691b",
+      "mcp-config": "8a42b1438a306a25deae1765f028374f25550f001d188832af209b8aa0c1bbe5",
+      "mcp-spec": "862406e28263d853b304d07f9131ce9d300ea3d382aa9854cd1637c0237d2645",
+      "inline-usage": "186f20bec0790579d7a5b4190d6a9bf22c59511f657c6b18b672466cdb943a95",
+      "cli-current": "6bc1864b3665f7b5b9dcfb377d0e0143a1813687c77eb4316e178193f91115a9",
+      "network": "efe7f3c49b63a49ca7944f930ef9cb370083de45c16788726c79fbf6b8fd1765",
+      "exclusion-concept": "1f9812955341ac9bdd4653bbf6a9612a04b36c617e05af84969397abed763e44",
+      "public-code": "b9c9ef197ba681898ac13e1980c885b96cd0778ab8333e2a54ce6e201072f5c0",
+      "workspace-context": "729e753620f9133bd30b52c1a565fe878016bafe54437ffb429fc8fb852a86b7",
+      "streaming": "c4b6f2b4b41fb053d1d211b8dfcd3525b7c4ac440e60c865c6c28e6daa45d03a",
+      "timer-testing": "0f3789b369a2c84166b40b17a6a55b064edda5d514edcde80f2a13a5cafc1f31",
+      "property-testing": "67780977cfd29e4c6941b009b359e711fafa165aa72fc4f756a4e754eed412d0",
+      "secret-scanning": "f841c207cbb8108e87a6e797457e26c221e7c05b8ada0382e1db8231048f4310",
+      "codeql": "117b1a0dd42e37e953468b1edc4acdf9156ea861c7f9f21996ec918797788379",
+      "space-framework": "75ad0d5e3c971fec5c7755caa76e7ee4f847fbcd5df5e895e9d360b9d885f120",
+      "plans": "527873a622df939e63a29691f19cee3db754fee13586f676426064db9a15741d",
+      "feature-matrix": "c840a1af17ff366c264f04f8b078b7a937db06201d33bb9e6baeca54c372190a",
+      "model-hosting": "63d4d94c826582c39156b20039ff74f48104a6355315505dfd7b8587627ec7c1",
+      "privacy-training": "9a464e6d5e89afcca311bf99f5d6dd782252ef32bc140537086e5323dcd2d421",
+      "extensions-sunset": "53b492484940a4561b55b2694e80ebe2eb3e36518ac596bbddc00ba9b6a4b426",
+      "cli-tool-permissions": "6efe4f9b7207b72b4f1eb135f1e286bf96eb54b0990f7d2bfe3bf1d26f5a6558",
+      "cli-exclusion-admin": "6f333975b69f70a04f0f29fd7fe5673891be47bdf7c753ba0d26ebe52fbba7f4",
+      "cli-install": "7c6ca0d77b40205dd3447cefdf6e6432da22c400e9295c20e42c1ff6fc9e609f",
+      "cli-usage": "67a0f7d3004620a33efa1c535e8e72a4ba0d11037ba8ba36f5c1a86148c8032e",
+      "cli-sessions": "176398e84b8156a50d574ebc7d3efcf291840c9b39864f62d3560ce0fa45f363",
+      "ide-subagents": "92d6b44baf12942cebea0b15be8e8dda0689330ee4e3253d5452fe56499a0e64",
+      "fim-context": "5739a272be403f34925d75ca5a0d01647c981715e4963dfec41864d9ac5e957b",
+      "vscode-testing": "f43c867ad56b40cc7047e5d23d625e80fa7806e7f985ad024c0f9ab54cc7489e",
+      "knowledge-bases-sunset": "d9043f7b9e52252cbd37029fc37e781bd20826fe4e34dee3b7e422cc8b524ed5",
+      "repository-indexing": "8e396c5ed012c591f9a2c5ed67776d4f47ffcaeeec384aa9c59331eba9cf5c85",
+      "network-settings": "a76586c2e2eec6f344a286da25fd412352ac33ba506f3f8ee67e8cca7b5079ba",
+      "unit-test-aaa": "413331bec71279e04d62f2ecf5e49a5d57d85e4058f0877bd674def430e68da7",
+      "exception-best-practices": "2cf8fa29b093d5e450386f397207fa379ef35065f0b146390f1630c11717cc0f",
+      "exception-sensitive": "3777caa7a2257e0d57fd3c79ec28f4b10a57a34d8b8d7f62462543b8cc794379",
+      "cli-extension-sunset": "0f1884ba2a5811a25b269a6b48dfbfc6a82a9b75225c5f9eec45e0e826257917",
+      "rest-best-practices": "9259cdaeb4b3e5ed15144e103235ec42a83bb74e2992a05e63bd700d338c8d81",
+      "copilot-contract-updates": "d981b27b476e05f779062b942ff4ea7bff10b9f705cf6d132c5e78b2c6706d53",
+      "personal-instructions": "2076c512ab6f177e5ddb70bac1f4f8bb9ac20cc79e43147907f58e024b3b557f",
+      "generative-ai-terms": "595caab146617c7047da48a893b92adc42c2be835a372dc575ba856cb3dd0027",
+      "ml-fairness": "7fa51d233e58f750f78e346fe54e0fc8b048d28bbf6151164643e754f2cab822",
+      "autofix-triage": "e9bda658abfe355ea0ce1e83cd8dc728284a3ed8d82e7d9941e44a4c5ae6485f",
+      "ml-sql-injection": "d647a5d23db768566702e70181fba3b549258c9060e91e9b790c8912014c69aa",
+      "ml-password-hashing": "2eb864cb0174d7492dc87edaa8ab84154c29bca95e4af437a8a7c5d98faac36e",
+      "artifact-attestations": "30dc3496348872e9902f038b6d7ea99c96c2c7f4f2c8feacf3bde52a215f29e2",
+      "copilot-allowlist": "8955a802c7cf05f686c5ec5faa863b166d64036665106ae91f67fce056227b97",
+      "dotnet-tokens": "9d07d0d9b3760a40267d292fb3e9eabd53fc42c8db37cac95d2a4261fc42cb53",
+      "copilot-seat-api": "0fde05b13bffe178d48b6ef03bec7a7dc9e319a4837bc2dcea39dba1cd87ab1d",
+      "copilot-metrics-data": "1199c06f56bcee7a0c8469667e9085c0566547fa1ddc43bb94f9d4f234636e7d",
+      "feature-refresh-review-howto": "1425a85b290b19898485ae3008da12e4b4dd4a1bb8f0a5420c6d29e5278b7ad6",
+      "feature-refresh-instructions": "696007413ddc816ab55d6c8a3687c31126a17c13d494a97dcc2fe076798977b4",
+      "feature-refresh-logs": "6fe298ddef386be18eef501c385f62b1abf2cfa345b586489dca51525de21f0c",
+      "feature-refresh-prompt": "c99af929ab7fde8ea134b49e6b224f2d177d37346284f0d1b52801881985f6fa",
+      "feature-refresh-tools": "f3f1338ebd7ea20da341106ab4f5229911e5b5102959af039b9415ce3052ac5a",
+      "feature-refresh-approval": "7e5214e91e3f6f444e599ac46ef9bc952fc90308ec78c3d6d9273ffc6419208a",
+      "feature-refresh-firewall": "24090323f3876f8b8a9a27fcd93d9b5335ef8b4fa51918254a3bb575ffa3dfb0",
+      "feature-refresh-autopilot": "099a3112e9654827b75245c8c4ae62673124892f483940547b348fa638d249d5",
+      "feature-refresh-context": "bd050a56d9e2ebcd2a91efa9ec5b74f6e62463bbebaffc18351098056594e63c",
+      "feature-refresh-review-config": "ea42f82da4a0c4bfa9062d4eec0135f04d9c453a8dcc075a2c6bf17b477c5bcc",
+      "feature-refresh-risk": "a53ac5a9b4ccbcaead7d8cf5792c23f4268b03bb2562004fcfecb41ed5fa05de",
+      "feature-refresh-edits": "f67801de2bf43d893c3bf69bb877e537967d7eade73ef852400e0daa8d474d85",
+      "feature-refresh-trust": "60f84e1df89e4a985a1b789796eb5b2f4578e8693939b2274b8f58ce6c718ba8",
+      "feature-refresh-cloud": "83daccf880954928b82495ddb1901d92cfe2fc265253c0ab254bb9208a399f13",
+      "feature-refresh-cli-reference": "fe4e44f74b109ce34ab238dd34b5947ae76b5940204d5281c0697a04d9e3290e",
+      "feature-refresh-custom-agent": "8832bb63e395cc5ce8ad9f83d52f97eb2e540c064d69a27849ceda1414a169ea",
+      "feature-refresh-ide": "e5d24f6f49d2001ee3ab3829b5744b942ac85ad6948838d5c013586f9d90a488",
+      "feature-refresh-policies": "4be2d535ef5f471471389f56294d87c4b0c9b5faa4f565b839e957355e983ff3",
+      "feature-refresh-setup": "4b1eb578e98e6858f64d03e5a2605f0dbc1f3b61b8749d8b5ddbf29a0a4718c2",
+      "feature-refresh-models": "8afee748ab7e4acb66d441f72997acb442f8e28a247cb0f5280686230ba24b3d",
+      "feature-refresh-context-model": "948133e3319a9c070378e5244c6a0353c8a851ab5825db4ecbacd7cf48a8002e",
+      "feature-refresh-cli-compare": "f734304402b1f60fad8321d4f5a751262b77bd20f7efe1e86371f11e36e24c7f",
+      "feature-refresh-vscode-instructions": "02f0d80d46c743dcaa5be80fc4afd441a290bd13d232ff458643f104e6221d60",
+      "feature-refresh-inline": "f3a189781245b90e0e9f624efcac85308b7d827708e9d923676289eb3cd2a6ba",
+      "feature-refresh-sessions": "b1f12cc75a4ae73e8004d53b8ecc85b802e28df15923b56b1d74fcffefe0438a",
+      "feature-repair-cli-context": "c0a6b9ceae9c2748d3eb3007895c56302d9f2cfea43a45ea01afa04e7ed0371c",
+      "foundation-cloud-task": "d1320273cd7ee778839bb34e90c647e157cc1545403b6e664b9e4edb312360f0",
+      "foundation-vscode-plan": "ffd12719fc5238069f319adc11800e476cbc6a71a2909d9fa742acfa84a27bb2",
+      "foundation-vscode-setup": "70fd4ac03bd9f8f5a11f0d0a036d9f9b0d693e19e4845592c826c1d5bf2c02be",
+      "foundation-mobile-chat": "81a4d94b1808ea038f161f62d7f2e32fdcc8c239f23a5a321fd30e017563b4e1",
+      "foundation-vscode-cli": "6375a024cbc8693a87958f305b1b7145dab659e7a81fc029b34deeefdaa59d3d",
+      "foundation-model-comparison": "0a6d5e3a76cd2e251103e241848288d63e458c044d2dc07fd844abfa968a2bac",
+      "alignment-telemetry": "89c2701fed4a30eb288d4ab8206e4cc3f1ae3b1457fc9cdf6b560b8f506321c5",
+      "alignment-cutoff": "b5753be96496b2d1c9499a85fbc4df478420dc3c2b1ddb1ae31fe8a6edb2568b",
+      "alignment-approvals-release": "156627853f7a50c5d7508b0eea284a5eb07abe458ae36c0e68c89894e5d21a02",
+      "alignment-authorized-release": "e54679d2ae749834e1287b01d6ddd976709d9822425f6f65abe8865df8575948",
+      "admin-usage-metrics": "df0906f1c4e3fcc7b4a2f68f00ba9594ad304c95f0c2b0a8f75e24f51e84e18b",
+      "admin-policy-model": "7c63e49069942a2617a77b42ff9c0caee755e2879d764e1679c45a89de00d87f",
+      "admin-copilot-audit": "d480b705e5b9f69b8ac55e37889cf35371059febf44e83a5e7af22c483fe5ba9",
+      "admin-audit-events": "3b08837ee5116d48b928643ba4c3670316e10838aacc50b4b8f1688b83fd9c1a",
+      "admin-audit-stream": "558025dee7cfb3ce41f8a937c9182707318bd1a2b1fdf2b4e45f76ed29fe5a9c",
+      "admin-seat-assignment": "d794ecae5005b976cd060df3c614850fbdb49be7d746fcc9cd6764fcdb338db7"
+    }
+  },
+  "questionFingerprints": {
+    "seed.json": "0659961ba6d09bdefbd7f1f5ddcbfc6218ffac5f652a082a1d580e81b6facf7b",
+    "answer-explanations.json": "60b3502bf394e4bf11fe1ad50ce35a4aca90f28a06e2b343efb9c64390d2a865",
+    "official-alignment-revisions.json": "7583ce86c7364c9759c2d963f9ebac97ddb08105f8345e6959040395f3e6121f",
+    "admin-content-revisions.json": "5729725110687e1961eb9e9f723278ee3802116c221e1faee0c523c265cddd83",
+    "selection-exclusions.json": "25601ec735345c7b71b14cbae01bb6f0c2af6fbb2a321d28b489b78f330112b7",
+    "removals.json": "3d587dde4168ae4a5fb8a9577f38f7a9c9c04ca2df212d0f61048a12a458eb7a"
+  },
+  "changes": [
+    {
+      "kind": "lessons",
+      "id": "lesson-d2-cli",
+      "reason": "目的別の6参照表と使用例を追加。既存のneeds-review状態は保持。",
+      "before": {
+        "id": "lesson-d2-cli",
+        "title": "現行GitHub Copilot CLIの利用と安全確認",
+        "slug": "github-copilot-cli-usage-safeguards",
+        "domainId": "d2",
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "summary": "現行Copilot CLIは `copilot` で起動するターミナル向けエージェントです。コードベースの調査やファイル編集も行えるため、ツール権限と変更結果を確認します。Content ExclusionのCLI適用範囲は公式資料間に矛盾があり要確認です。",
+        "estimatedMinutes": 10,
+        "difficulty": "intermediate",
+        "sections": [
+          {
+            "heading": "1. このLessonで分かること",
+            "content": "現行のGitHub Copilot CLIの導入、対話型セッション、非対話型プロンプト、実行権限の確認方法を学びます。旧 `gh copilot explain/suggest` 拡張の説明とは区別します。"
+          },
+          {
+            "heading": "2. 起動と利用",
+            "content": "Copilot CLIは全Copilotプランで利用でき、組織配布のライセンスではCLIポリシーの有効化が必要です。npm導入ではNode.js 22以降で `npm install -g @github/copilot` を実行します（WindowsではWinGetも選択可能）。対象コードのフォルダーで `copilot` を起動し、初回は作業場所への信頼と `/login` による認証を確認します。旧 `gh copilot explain/suggest` 拡張と現行CLIを区別します。"
+          },
+          {
+            "heading": "3. 権限と安全",
+            "content": "Copilot CLIはコードの調査、ファイル編集、コマンド実行などを支援します。ツール利用を許可・拒否する設定と提示された変更を確認し、機密情報をプロンプトに含めないでください。"
+          },
+          {
+            "heading": "4. 試験向けシナリオ",
+            "content": "不明なシェルコマンドを実行する前にCopilot CLIへ意味と副作用を質問し、返答を公式マニュアルや安全な環境で検証します。提案をそのまま実行しません。"
+          },
+          {
+            "heading": "5. Content Exclusionの制限",
+            "content": "GitHub Docsの除外設定ページはCopilot CLIを非対応と説明しますが、CLIのEnterprise管理ページは除外ポリシーがCLIに適用されると説明しています。現時点では適用可否を断定せず、管理設定、使用面、対象ファイルでの動作を確認してください。IDE ChatのAgent modeについても個別に確認が必要です。"
+          },
+          {
+            "heading": "6. ファイル作業・セッション・スクリプト",
+            "content": "【例】「@src/auth.ts の認証失敗を調べ、修正案を示して」と依頼すると、CLIは権限の範囲でファイルを読み、必要に応じて変更やコマンドを提案できます。`copilot -p \"質問\"` のような非対話実行も可能です。対話を中断した後は `/resume`、`copilot --continue` などでセッションを再開でき、別タスクは新しいセッションに分けられます。セッションはプロンプト、応答、ツール実行、作業ディレクトリや権限などの状態を持ちます。スクリプト生成やファイル変更の結果は必ず差分と実行結果で検証します。"
+          },
+          {
+            "heading": "7. 30秒チェック",
+            "content": "Q1: 現行CLIの起動コマンドは？ → `copilot`。\nQ2: CLIはリポジトリ内のファイルを調査できるか？ → 権限の範囲内で可能。\nQ3: CLIに対するContent Exclusionの適用可否は？ → 公式資料間に矛盾があるため管理設定と実際の適用範囲を確認する。\nQ4: 作業を再開する方法は？ → `/resume` または `copilot --continue`。"
+          }
+        ],
+        "keyPoints": [
+          "現行Copilot CLIは `copilot` で起動し、コードベースを調査できる。",
+          "変更を伴うツールの権限と実行結果を確認する。",
+          "CLIへのContent Exclusion適用範囲は公式資料間で食い違うため要確認。",
+          "CLIは権限内でファイルを調査・変更でき、セッションを再開できる。"
+        ],
+        "commonMistakes": [
+          "旧 `gh copilot` 拡張のコマンドを現行CLIの標準操作として教えること。",
+          "権限を広く許可した後も、各変更で必ず個別確認があると考えること。",
+          "CLIを単発のコマンド提案器とみなし、ファイル操作やセッション継続を見落とすこと。"
+        ],
+        "examTips": [
+          "試験問題が旧拡張と現行CLIを混同していないか、製品名とコマンドを確認する。"
+        ],
+        "glossaryIds": [
+          "g-copilot-cli",
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-shell-aliases",
+          "g-cli-execution-confirm",
+          "g-cli-context-limits",
+          "g-exclusion-limitations",
+          "g-agent-sessions"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d1-a10-feature-20261016",
+          "q-d2-a04-feature-20261016",
+          "q-d2-a18-feature-20261016",
+          "q-sc03-1-feature-20261016",
+          "q-sc07-1-feature-20261016",
+          "q-d5-e07-feature-20261016",
+          "q-fnd-cli-install-20261017",
+          "q-fnd-cli-login-20261017",
+          "q-fnd-cli-create-file-20261017",
+          "q-d2-a18-feature-20261016-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017"
+        ],
+        "sourceIds": [
+          "cli",
+          "cli-current",
+          "exclusion",
+          "guide",
+          "cli-tool-permissions",
+          "cli-exclusion-admin",
+          "cli-install",
+          "cli-usage",
+          "cli-sessions"
+        ],
+        "lastVerifiedAt": "2026-10-12",
+        "status": "needs-review"
+      },
+      "after": {
+        "id": "lesson-d2-cli",
+        "title": "現行GitHub Copilot CLIの利用と安全確認",
+        "slug": "github-copilot-cli-usage-safeguards",
+        "domainId": "d2",
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "summary": "シェルとCLI内の対話を分け、導入、認証、ヘルプ、モデル選択、実行、再開、ツール権限、会話管理のコマンドを目的から選びます。",
+        "estimatedMinutes": 18,
+        "difficulty": "intermediate",
+        "sections": [
+          {
+            "heading": "1. 導入・起動・認証",
+            "content": "シェルからcopilotを起動すると、CLI内の対話画面へ入ります。先頭が/のコマンドは、この対話画面へ入力します。認証、作業フォルダーの信頼、ツールの実行許可は別の確認です。",
+            "table": {
+              "id": "cli-start",
+              "caption": "導入・起動・認証のコマンド",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-install",
+                  "cells": [
+                    "CLIを導入する",
+                    "npm install -g @github/copilot",
+                    "OSのシェル",
+                    "npmを使う例です。Node.js 22以降など、導入方法ごとの前提を確認します。IDEの拡張機能を入れる操作とは別です。"
+                  ],
+                  "sourceIds": [
+                    "cli-install"
+                  ],
+                  "example": "Linuxでnpmを使うと指定されたら、このパッケージを選びます。"
+                },
+                {
+                  "id": "cli-start",
+                  "cells": [
+                    "対話を開始する",
+                    "copilot",
+                    "OSのシェル",
+                    "作業したいフォルダーで起動します。GitHub CLIのghや、旧拡張のgh copilotとは別のコマンドです。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "リポジトリのフォルダーへ移動してから対話画面を開きます。"
+                },
+                {
+                  "id": "cli-login-shell",
+                  "cells": [
+                    "シェルから認証を始める",
+                    "copilot login",
+                    "OSのシェル",
+                    "CLIをまだ開いていない状態からOAuth認証を始める方法です。トークン等による別の認証方法もあります。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "起動前にGitHubアカウントで認証します。"
+                },
+                {
+                  "id": "cli-login-interactive",
+                  "cells": [
+                    "CLI内から認証を始める",
+                    "/login",
+                    "Copilot CLIの対話画面",
+                    "既に対話画面を開いている場合に使います。ログイン成功だけで、組織の資格や機能許可が付与されるわけではありません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "未ログインの表示が出た対話画面から認証を始めます。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "2. ヘルプとモデルを選ぶ",
+            "content": "使い方を調べる操作と、回答を生成するモデルを選ぶ操作を分けます。コマンドをどの画面へ入力するかも確認してください。",
+            "table": {
+              "id": "cli-help-model",
+              "caption": "ヘルプ・モデル選択のコマンド",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-help-shell",
+                  "cells": [
+                    "シェルから使い方を調べる",
+                    "copilot help",
+                    "OSのシェル",
+                    "コマンドやオプションの説明を確認します。copilot help permissionsのように話題を指定することもできます。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "起動オプションの使い方を確認してからCLIを開始します。"
+                },
+                {
+                  "id": "cli-help-interactive",
+                  "cells": [
+                    "対話中にコマンドを調べる",
+                    "/help",
+                    "Copilot CLIの対話画面",
+                    "その対話画面で使えるスラッシュコマンド等を確認します。認証を始める/loginとは目的が異なります。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "対話を開いたまま、使用できる操作を調べます。"
+                },
+                {
+                  "id": "cli-model",
+                  "cells": [
+                    "使用するモデルを選ぶ",
+                    "/model",
+                    "Copilot CLIの対話画面",
+                    "利用可能なモデルから選びます。対象プランや管理ポリシーの条件もあり、モデル変更は認証やセッション再開の操作ではありません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "同じ作業を続けながら、使用モデルを選び直します。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "3. 対話実行と非対話実行",
+            "content": "一回の質問を処理して終了したい場合と、その後も対話を続けたい場合では、起動時の指定を使い分けます。出力形式の指定は、ツールの実行許可を与えるものではありません。",
+            "table": {
+              "id": "cli-run",
+              "caption": "実行方法と出力の指定",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-prompt",
+                  "cells": [
+                    "回答後に終了する",
+                    "copilot -p \"質問\"",
+                    "OSのシェル",
+                    "非対話でプロンプトを処理します。ファイル操作等を依頼する場合は、使用するツール・パス等の許可条件も別に確認します。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "スクリプトから一つの質問を渡し、応答後にプロセスを終えます。"
+                },
+                {
+                  "id": "cli-interactive",
+                  "cells": [
+                    "最初の依頼の後も対話する",
+                    "copilot -i \"最初の依頼\"",
+                    "OSのシェル",
+                    "最初のプロンプトを渡して対話モードを開始します。一回で終了する-pとは異なります。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "最初に調査を依頼し、その後は対話で追加の質問をします。"
+                },
+                {
+                  "id": "cli-silent",
+                  "cells": [
+                    "統計を付けず応答を受け取る",
+                    "copilot -p \"質問\" --silent",
+                    "OSのシェル",
+                    "--silentは利用統計等を省いて応答を出力します。非対話実行と組み合わせる指定で、確認を省略するための権限設定ではありません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "後続の処理へ、回答のみの標準出力を渡します。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "4. 作業の再開先を選ぶ",
+            "content": "別の作業を誤って再開しないよう、選択画面、特定のID、直近のセッションを区別します。TTYは対話入力できる端末のことです。",
+            "table": {
+              "id": "cli-resume",
+              "caption": "セッション再開のコマンド",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-resume-inside",
+                  "cells": [
+                    "対話中に別のセッションを選ぶ",
+                    "/resume",
+                    "Copilot CLIの対話画面",
+                    "保存されたセッションを選び直します。新しい作業を開始する/clearと区別します。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "CLIを開いたまま、昨日の作業へ切り替えます。"
+                },
+                {
+                  "id": "cli-resume-picker",
+                  "cells": [
+                    "起動時に一覧から選ぶ",
+                    "copilot --resume",
+                    "OSのシェル",
+                    "値を省略した指定は対話的な選択画面を使います。TTYのないスクリプトでは、明示したID等を使います。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "複数の保存セッションから、人が対象を選んで再開します。"
+                },
+                {
+                  "id": "cli-resume-id",
+                  "cells": [
+                    "指定した作業を再開する",
+                    "copilot --resume=SESSION-ID",
+                    "OSのシェル",
+                    "SESSION-IDを記録した対象のIDへ置き換えます。直近の作業が別タスクでも、再開先を指定できます。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "選択画面のない復旧スクリプトで、記録したIDを再開します。"
+                },
+                {
+                  "id": "cli-continue",
+                  "cells": [
+                    "直近の作業を再開する",
+                    "copilot --continue",
+                    "OSのシェル",
+                    "現在の作業フォルダーの直近セッションを優先し、なければ全体の直近へ進みます。--resumeと同時には指定しません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "再開したい作業が直近のセッションだと確認できている場合に使います。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "5. ツールの候補と実行許可",
+            "content": "モデルが選べるツールを絞る設定と、選んだツールを実行してよいかを決める設定は別です。許可だけを追加しても、候補から外れたツールは利用できません。",
+            "table": {
+              "id": "cli-tools",
+              "caption": "利用可能なツールと実行許可",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-allow",
+                  "cells": [
+                    "特定の操作を許可する",
+                    "--allow-tool=\"shell(git:*)\"",
+                    "copilotに付ける起動オプション",
+                    "Git操作に範囲を絞る例です。該当する操作の実行前確認を省けますが、Git以外の操作や候補外のツールを許可する指定ではありません。"
+                  ],
+                  "sourceIds": [
+                    "cli-tool-permissions",
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "Gitの操作だけを許可し、他の操作まで広げないようにします。"
+                },
+                {
+                  "id": "cli-deny",
+                  "cells": [
+                    "特定の操作を拒否する",
+                    "--deny-tool=\"shell(git push)\"",
+                    "copilotに付ける起動オプション",
+                    "該当する操作を拒否します。同じ操作が広い許可にも一致する場合、拒否が優先します。"
+                  ],
+                  "sourceIds": [
+                    "cli-tool-permissions",
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "Gitの操作は許可しつつ、git pushを実行させない設定を加えます。"
+                },
+                {
+                  "id": "cli-permissions",
+                  "cells": [
+                    "現在の権限モードを確認する",
+                    "/permissions show",
+                    "Copilot CLIの対話画面",
+                    "権限モードを確認する操作です。/permissionsはモード変更等も扱いますが、確認と広い権限の付与を混同しません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "事前の許可がどのモードで扱われているかを確認します。"
+                },
+                {
+                  "id": "cli-available",
+                  "cells": [
+                    "提供する候補だけを指定する",
+                    "--available-tools=view,grep",
+                    "copilotに付ける起動オプション",
+                    "読み取りと検索のツール名を指定する例です。シェルを候補へ入れていない場合、実行許可だけではシェル操作はできません。"
+                  ],
+                  "sourceIds": [
+                    "cli-tool-permissions",
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "調査に必要なツールだけをモデルへ提示します。"
+                },
+                {
+                  "id": "cli-excluded",
+                  "cells": [
+                    "提供する候補から外す",
+                    "--excluded-tools=grep",
+                    "copilotに付ける起動オプション",
+                    "指定したツールを候補から外す設定です。available-toolsと両方を指定した場合はavailable側の一覧が使われるため、単純な差集合と考えません。"
+                  ],
+                  "sourceIds": [
+                    "cli-tool-permissions",
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "grepを提供しない方針なら、同時に使う候補指定との関係も確認します。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "6. 文脈の使用量と会話を管理する",
+            "content": "使用量を調べる操作、会話を要約する操作、新しい会話へ切り替える操作は異なります。会話を短くするだけで、接続したMCPのツール定義まで減るとは限りません。",
+            "table": {
+              "id": "cli-context",
+              "caption": "文脈と会話を扱うコマンド",
+              "columns": [
+                "目的",
+                "コマンド・指定",
+                "入力する場所",
+                "条件・注意"
+              ],
+              "rows": [
+                {
+                  "id": "cli-context-usage",
+                  "cells": [
+                    "文脈の使用量を調べる",
+                    "/context",
+                    "Copilot CLIの対話画面",
+                    "会話やツール等が文脈を占める状況を確認します。確認しただけでは、会話やツールの候補は変更されません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "MessagesよりMCP Toolsが大きいなら、不要なツール定義も調べます。"
+                },
+                {
+                  "id": "cli-compact",
+                  "cells": [
+                    "会話を要約して使用量を減らす",
+                    "/compact",
+                    "Copilot CLIの対話画面",
+                    "会話履歴を要約して文脈使用量を減らします。ツール定義もまとめて消す操作や、新しい会話を開始する操作ではありません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "長い会話の要点を引き継ぎながら作業を続けたい場合に使います。"
+                },
+                {
+                  "id": "cli-clear",
+                  "cells": [
+                    "新しい会話を始める",
+                    "/clear",
+                    "Copilot CLIの対話画面",
+                    "会話を切り替える操作です。ファイル変更の取り消しや、MCP構成を削除する操作ではありません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-cli-reference"
+                  ],
+                  "example": "これまでの会話を新しい相談へ持ち越したくないときに使います。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "7. 応用操作と旧拡張の位置付け",
+            "content": "Autopilotによる継続と、個々のツールの実行許可は別です。追加フォルダーへのアクセスには--add-dir等、MCP接続にはCLIのMCP構成を確認します。設定したツールや参照先に応じて、差分と実行結果を検証します。旧gh copilot explain/suggestとghcs/ghceは旧拡張の操作・短縮名です。現行のcopilotコマンド、GitHub CLIのgh、Gitやシェルのコマンドを混同しないでください。CLIへのContent Exclusionの適用は公式ページ間に説明差があるため、全経路の保護として当てにせず、利用環境と参照経路を確認します。"
+          },
+          {
+            "heading": "8. 30秒チェック",
+            "content": "Q1: 起動前に使い方を確認するには？ → シェルでcopilot help。対話中なら/helpです。\nQ2: 一回の応答だけを受け取って終了するには？ → -pを使い、統計が不要なら--silentを組み合わせます。\nQ3: 特定の保存作業を再開するには？ → IDを指定した--resumeを使います。\nQ4: /compactと/clearの違いは？ → 会話の要約と、新しい会話の開始です。\nQ5: ツールへ実行許可を与えれば、候補外のツールも使えるか？ → No。候補設定は別に確認します。"
+          }
+        ],
+        "keyPoints": [
+          "シェルへ入力するcopilotのコマンドと、CLI内のスラッシュコマンドを区別する。",
+          "-pは回答後に終了し、-iは対話を開始する。--silentは出力形式の指定である。",
+          "特定IDの再開、選択画面、直近の作業の再開を使い分ける。",
+          "ツールの候補、実行許可、Autopilotによる継続は別の条件である。",
+          "/contextは確認、/compactは会話の要約、/clearは新しい会話の開始である。"
+        ],
+        "commonMistakes": [
+          "OSのシェルへ/loginを入力したり、CLI内へcopilot helpをスラッシュコマンドとして入力したりすること。",
+          "--continueで必ず指定した過去の作業へ戻れると思うこと。",
+          "ツールへ許可を与えれば候補外のツールも追加されると思うこと。",
+          "/compactをファイル変更の取り消しやMCP定義の削除として使おうとすること。"
+        ],
+        "examTips": [
+          "何をしたいか、どこへ入力するか、回答後も対話を続けるかを先に整理します。",
+          "旧gh copilot拡張と現行CLIを区別します。現行コマンドの細部は公式資料と確認日を見ます。"
+        ],
+        "glossaryIds": [
+          "g-copilot-cli",
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-shell-aliases",
+          "g-cli-execution-confirm",
+          "g-cli-context-limits",
+          "g-exclusion-limitations",
+          "g-agent-sessions"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d1-a10-feature-20261016",
+          "q-d2-a04-feature-20261016",
+          "q-sc03-1-feature-20261016",
+          "q-sc07-1-feature-20261016",
+          "q-fnd-cli-install-20261017",
+          "q-fnd-cli-login-20261017",
+          "q-fnd-cli-create-file-20261017",
+          "q-d2-a18-feature-20261016-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017",
+          "q-d2-g05",
+          "q-d2-g06",
+          "q-d2-g07",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-e07-feature-20261016",
+          "q-d6-e07-feature-20261016",
+          "q-d2-a25-ms-20261017",
+          "q-d2-e06-ms-20261017",
+          "q-d4-e09-feature-20261016-ms-20261017"
+        ],
+        "sourceIds": [
+          "cli",
+          "cli-current",
+          "exclusion",
+          "guide",
+          "cli-tool-permissions",
+          "cli-exclusion-admin",
+          "cli-install",
+          "cli-usage",
+          "cli-sessions",
+          "feature-refresh-cli-reference"
+        ],
+        "lastVerifiedAt": "2026-10-18",
+        "status": "needs-review"
+      }
+    },
+    {
+      "kind": "lessons",
+      "id": "lesson-d2-org-governance",
+      "reason": "訂正済み本文を保持し、プラン7行と管理操作10行の表を追加。",
+      "before": {
+        "id": "lesson-d2-org-governance",
+        "title": "組織・エンタープライズポリシーとシート・監査ログ管理",
+        "slug": "organization-enterprise-governance-audit-logs",
+        "domainId": "d2",
+        "objectiveIds": [
+          "d2o4"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "summary": "Copilotの契約・利用資格・管理ロールを分け、組織ポリシー、シート管理、利用状況レポート、監査ログの役割を学びます。",
+        "estimatedMinutes": 12,
+        "difficulty": "advanced",
+        "sections": [
+          {
+            "heading": "1. このLessonで分かること",
+            "content": "「契約しているプラン」「利用資格を持つアカウント」「変更する人の権限」「機能の利用許可」は別の条件です。これらを分けて、シートの割り当て、ポリシー設定、活動の確認に適した操作を判断します。"
+          },
+          {
+            "heading": "2. 契約・認証・組織のシートを分ける",
+            "content": "Business/Enterpriseを組織から利用する場合は、その利用者にシートなどのアクセス付与が必要です。GitHubへサインインできることだけでは、その組織からCopilotの利用資格を得たことになりません。一方、組織のシートがない人にも、個人向けFreeや有料の個人プランという別の利用方法があります。「組織のシートがない＝Copilotを一切使えない」とは判断しません。"
+          },
+          {
+            "heading": "3. 誰が、どの範囲を管理するか",
+            "content": "Organization ownerは自組織のCopilotアクセスやポリシーを管理します。Enterprise ownerは企業内の組織への提供や企業ポリシーを管理します。Repository adminが設定できるリポジトリのContent Exclusionは、組織のシート管理とは別です。Copilot Enterpriseはプラン名、Enterprise ownerはロール名であり、契約しただけで利用者に管理権限が付くわけではありません。委任された権限やAPIの認証権限は、操作ごとの公式条件を確認します。"
+          },
+          {
+            "heading": "4. ポリシーの強制と委任",
+            "content": "対象の機能ポリシーをEnterprise側で有効・無効などに決定した場合、Organization側から上書きできません。組織へ判断を委任した場合は、その組織で選択できます。ただし、すべての設定が同じ三段階の階層や同じ選択肢を持つわけではありません。多くのポリシーはライセンスの提供元に従い、複数の提供元や機能固有の例外もあるため、対象の機能と適用先を確認します。"
+          },
+          {
+            "heading": "5. 購読・シートを確認するAPI",
+            "content": "GET /orgs/{org}/copilot/billing は、組織の購読、シート内訳、機能ポリシー等を確認する例です。取得できることから、同じAPIで機能ポリシーを書き換えられるとは考えません。GET /orgs/{org}/copilot/billing/seats は、現在の割り当て一覧の取得に使います。シートの活動時刻にはIDEテレメトリー等の収集条件が関係するため、活動が見えないことを未割り当ての証拠にはしません。"
+          },
+          {
+            "heading": "6. シートを変更するAPIと必要権限",
+            "content": "選択した利用者への付与には POST /orgs/{org}/copilot/billing/selected_users、解除の予約には同じパスへのDELETEを使います。対象はselected_usernamesで指定します。解除は即時停止と決めつけず、請求期間末やチーム経由の資格が残る条件を確認します。公式のuser management APIはPublic previewです。OAuth等のスコープとfine-grained権限は別の認証方式の条件なので、利用する方式に合わせます。例えばシート一覧ではread:org等、付与・解除ではmanage_billing:copilotまたはadmin:orgが挙げられています。fine-grained方式ではGitHub Copilot BusinessまたはAdministrationのread/writeなど、各エンドポイントが要求する組織権限を確認します。"
+          },
+          {
+            "heading": "7. 利用状況はレポートから確認する",
+            "content": "利用状況の取得例は GET /orgs/{org}/copilot/metrics/reports/organization-1-day?day=YYYY-MM-DD です。応答のdownload_linksからレポートを取得し、対象日の活動や導入状況を調べます。最初の応答そのものに採用率などの集計値が入るとは説明しません。Organization ownerやView Organization Copilot Metricsを持つ利用者等が対象となり、トークンの権限も必要です。組織集計だけでなく利用者別のレポートもあるので、取得できる粒度と収集条件を確認します。"
+          },
+          {
+            "heading": "8. 監査ログと活動データの違い",
+            "content": "監査ログでは、設定変更やライセンス付与などのイベントのaction、actor、日時を確認します。例はcopilot.cfb_org_settings_changedとcopilot.cfb_seat_assignment_createdです。チーム経由の付与では、シート追加イベントのactorをメンバー変更者と即断せず、関連イベントを照合します。Enterprise監査ログの閲覧はEnterprise ownerやRead enterprise audit logsのカスタムロール等が対象です。クライアントへ入力したプロンプト全文を読む仕組みとは異なり、別途設定された監視・hooksの内容収集とは区別します。"
+          },
+          {
+            "heading": "9. 試験向けシナリオと確認順序",
+            "content": "入社者に資格を付与したいならシート管理、実際の利用を知りたいなら利用状況レポート、設定を変えた人を調べたいなら監査ログを使います。利用できない場合は、対象アカウントの資格、上位・組織のポリシー、対象環境の対応、クライアント設定を分けて調べます。自動レビューでは、レビュー機能の利用許可と、ruleset等の自動起動設定も別に確認します。"
+          },
+          {
+            "heading": "10. 30秒チェック（Mini Review）",
+            "content": "Q1: 組織のシートがない人はCopilotを一切使えないか？ → No。個人プランの資格とは別です。\nQ2: 現在のシート割り当てと実際の活動は同じ情報か？ → No。割り当て一覧と活動レポートを区別します。\nQ3: 日次レポートAPIの最初の応答から何を得るか？ → レポートのダウンロードリンク等です。\nQ4: ポリシーを変更したアカウントを調べる情報源は？ → 監査ログです。"
+          }
+        ],
+        "keyPoints": [
+          "認証、利用資格、管理ロール、機能の利用許可を分ける。",
+          "シートの割り当て一覧、活動レポート、監査イベントは目的が異なる。",
+          "Enterpriseで決定した対象ポリシーはOrgで上書きできない。全設定が同じ継承方式とは限らない。",
+          "APIはHTTPメソッド、対象パス、返却内容、認証方式ごとの権限を確認する。"
+        ],
+        "commonMistakes": [
+          "組織のシートがない人は個人プランでも利用できないと思うこと。",
+          "利用統計がないことからシート未割り当てと判断すること。",
+          "購読設定を取得するAPIで、すべての機能設定も変更できると思うこと。"
+        ],
+        "examTips": [
+          "操作の目的が資格の変更、活動の確認、変更履歴の追跡のどれかを先に判断します。",
+          "プラン名と管理ロールを区別し、誰がどの範囲を変更する問題かを読み取ります。"
+        ],
+        "glossaryIds": [
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-seat-management",
+          "g-subscription-plans",
+          "g-audit-logs",
+          "g-usage-metrics-api",
+          "g-policy-inheritance",
+          "g-spaces"
+        ],
+        "comparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "questionIds": [
+          "q-d6-e02-feature-20261016",
+          "q-fnd-seat-api-20261017"
+        ],
+        "sourceIds": [
+          "policies",
+          "audit-log",
+          "rest-api",
+          "guide",
+          "plans",
+          "feature-matrix",
+          "repository-indexing",
+          "spaces",
+          "copilot-seat-api",
+          "admin-usage-metrics",
+          "admin-policy-model",
+          "feature-refresh-policies",
+          "admin-copilot-audit",
+          "admin-audit-events"
+        ],
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      },
+      "after": {
+        "id": "lesson-d2-org-governance",
+        "title": "組織・エンタープライズポリシーとシート・監査ログ管理",
+        "slug": "organization-enterprise-governance-audit-logs",
+        "domainId": "d2",
+        "objectiveIds": [
+          "d2o4"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "summary": "Copilotの契約・利用資格・管理ロールを分け、組織ポリシー、シート管理、利用状況レポート、監査ログの役割を学びます。",
+        "estimatedMinutes": 18,
+        "difficulty": "advanced",
+        "sections": [
+          {
+            "heading": "1. このLessonで分かること",
+            "content": "「契約しているプラン」「利用資格を持つアカウント」「変更する人の権限」「機能の利用許可」は別の条件です。これらを分けて、シートの割り当て、ポリシー設定、活動の確認に適した操作を判断します。"
+          },
+          {
+            "heading": "2. 契約・認証・組織のシートを分ける",
+            "content": "Business/Enterpriseを組織から利用する場合は、その利用者にシートなどのアクセス付与が必要です。GitHubへサインインできることだけでは、その組織からCopilotの利用資格を得たことになりません。一方、組織のシートがない人にも、個人向けFreeや有料の個人プランという別の利用方法があります。「組織のシートがない＝Copilotを一切使えない」とは判断しません。"
+          },
+          {
+            "heading": "3. 誰が、どの範囲を管理するか",
+            "content": "Organization ownerは自組織のCopilotアクセスやポリシーを管理します。Enterprise ownerは企業内の組織への提供や企業ポリシーを管理します。Repository adminが設定できるリポジトリのContent Exclusionは、組織のシート管理とは別です。Copilot Enterpriseはプラン名、Enterprise ownerはロール名であり、契約しただけで利用者に管理権限が付くわけではありません。委任された権限やAPIの認証権限は、操作ごとの公式条件を確認します。"
+          },
+          {
+            "heading": "4. ポリシーの強制と委任",
+            "content": "対象の機能ポリシーをEnterprise側で有効・無効などに決定した場合、Organization側から上書きできません。組織へ判断を委任した場合は、その組織で選択できます。ただし、すべての設定が同じ三段階の階層や同じ選択肢を持つわけではありません。多くのポリシーはライセンスの提供元に従い、複数の提供元や機能固有の例外もあるため、対象の機能と適用先を確認します。"
+          },
+          {
+            "heading": "5. 購読・シートを確認するAPI",
+            "content": "GET /orgs/{org}/copilot/billing は、組織の購読、シート内訳、機能ポリシー等を確認する例です。取得できることから、同じAPIで機能ポリシーを書き換えられるとは考えません。GET /orgs/{org}/copilot/billing/seats は、現在の割り当て一覧の取得に使います。シートの活動時刻にはIDEテレメトリー等の収集条件が関係するため、活動が見えないことを未割り当ての証拠にはしません。"
+          },
+          {
+            "heading": "6. シートを変更するAPIと必要権限",
+            "content": "選択した利用者への付与には POST /orgs/{org}/copilot/billing/selected_users、解除の予約には同じパスへのDELETEを使います。対象はselected_usernamesで指定します。解除は即時停止と決めつけず、請求期間末やチーム経由の資格が残る条件を確認します。公式のuser management APIはPublic previewです。OAuth等のスコープとfine-grained権限は別の認証方式の条件なので、利用する方式に合わせます。例えばシート一覧ではread:org等、付与・解除ではmanage_billing:copilotまたはadmin:orgが挙げられています。fine-grained方式ではGitHub Copilot BusinessまたはAdministrationのread/writeなど、各エンドポイントが要求する組織権限を確認します。"
+          },
+          {
+            "heading": "7. 利用状況はレポートから確認する",
+            "content": "利用状況の取得例は GET /orgs/{org}/copilot/metrics/reports/organization-1-day?day=YYYY-MM-DD です。応答のdownload_linksからレポートを取得し、対象日の活動や導入状況を調べます。最初の応答そのものに採用率などの集計値が入るとは説明しません。Organization ownerやView Organization Copilot Metricsを持つ利用者等が対象となり、トークンの権限も必要です。組織集計だけでなく利用者別のレポートもあるので、取得できる粒度と収集条件を確認します。"
+          },
+          {
+            "heading": "8. 監査ログと活動データの違い",
+            "content": "監査ログでは、設定変更やライセンス付与などのイベントのaction、actor、日時を確認します。例はcopilot.cfb_org_settings_changedとcopilot.cfb_seat_assignment_createdです。チーム経由の付与では、シート追加イベントのactorをメンバー変更者と即断せず、関連イベントを照合します。Enterprise監査ログの閲覧はEnterprise ownerやRead enterprise audit logsのカスタムロール等が対象です。クライアントへ入力したプロンプト全文を読む仕組みとは異なり、別途設定された監視・hooksの内容収集とは区別します。"
+          },
+          {
+            "heading": "9. 試験向けシナリオと確認順序",
+            "content": "入社者に資格を付与したいならシート管理、実際の利用を知りたいなら利用状況レポート、設定を変えた人を調べたいなら監査ログを使います。利用できない場合は、対象アカウントの資格、上位・組織のポリシー、対象環境の対応、クライアント設定を分けて調べます。自動レビューでは、レビュー機能の利用許可と、ruleset等の自動起動設定も別に確認します。"
+          },
+          {
+            "heading": "プラン別の管理の前提",
+            "content": "プランは利用条件、ロールは操作権限です。個人プランでCLIを利用できることと、組織のシート・ポリシーを管理できることは別です。価格や全モデルの暗記より、誰の資格をどの範囲で管理するかを確認します。",
+            "table": {
+              "id": "copilot-plan-management",
+              "caption": "Copilotプランと管理の前提",
+              "columns": [
+                "Copilotプラン",
+                "主な契約・管理主体",
+                "組織の資格・ポリシー管理",
+                "別途必要な前提"
+              ],
+              "rows": [
+                {
+                  "id": "plan-free",
+                  "cells": [
+                    "Free",
+                    "本人が個人の利用設定を管理する。",
+                    "個人Freeの資格は、組織が付与するBusiness/Enterpriseのシートとは別です。",
+                    "利用できる機能には制限があります。組織・企業から資格を得ていない個人向けの条件を確認します。"
+                  ],
+                  "sourceIds": [
+                    "plans"
+                  ],
+                  "example": "個人でCLIを試せることから、組織の管理権限があるとは判断しません。"
+                },
+                {
+                  "id": "plan-student",
+                  "cells": [
+                    "Student",
+                    "認証された学生本人の資格・設定として扱う。",
+                    "学生の個人資格だけで、組織へのシート付与やポリシー変更はできません。",
+                    "学生認証などの対象条件を確認します。組織向け管理の前提とは区別します。"
+                  ],
+                  "sourceIds": [
+                    "plans"
+                  ]
+                },
+                {
+                  "id": "plan-pro",
+                  "cells": [
+                    "Pro",
+                    "個人の契約・設定を本人が管理する。",
+                    "個人の有料契約と、組織のシートや管理権限は別です。",
+                    "利用できる機能・モデル等は公式プラン表で確認します。"
+                  ],
+                  "sourceIds": [
+                    "plans"
+                  ]
+                },
+                {
+                  "id": "plan-pro-plus",
+                  "cells": [
+                    "Pro+",
+                    "個人の契約・設定を本人が管理する。",
+                    "Proより利用枠等が広がっても、組織の管理ロールが付くわけではありません。",
+                    "提供枠や機能差を確認し、組織向けのBusiness/Enterpriseと混同しません。"
+                  ],
+                  "sourceIds": [
+                    "plans"
+                  ]
+                },
+                {
+                  "id": "plan-max",
+                  "cells": [
+                    "Max",
+                    "個人の契約・設定を本人が管理する。",
+                    "大きい利用枠を持つ個人プランであり、Enterprise ownerの権限とは別です。",
+                    "組織の設定を変えるには、その操作に必要なロール・権限を別に確認します。"
+                  ],
+                  "sourceIds": [
+                    "plans"
+                  ]
+                },
+                {
+                  "id": "plan-business",
+                  "cells": [
+                    "Business",
+                    "組織・企業が利用者への提供を管理する。",
+                    "シートや組織ポリシーを管理します。企業の管理下ではEnterpriseの決定も確認します。",
+                    "組織向けの契約と、操作する人のロールが必要です。Content Exclusion等も対応条件を確認します。"
+                  ],
+                  "sourceIds": [
+                    "plans",
+                    "reference-enterprise-plan"
+                  ],
+                  "example": "プランがBusinessでも、企業側のポリシーが適用される場合があります。"
+                },
+                {
+                  "id": "plan-enterprise",
+                  "cells": [
+                    "Enterprise",
+                    "GitHub Enterprise Cloudを利用する企業向け。",
+                    "Businessの管理機能を含みます。企業のownerは組織ごとのプラン選択等を管理します。",
+                    "GitHub Enterprise Cloudとの関係を確認します。プランを契約しただけで、全利用者がownerにはなりません。"
+                  ],
+                  "sourceIds": [
+                    "plans",
+                    "reference-enterprise-plan"
+                  ],
+                  "example": "Copilot Enterpriseというプラン名と、Enterprise ownerというロール名を分けます。"
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "操作から必要な管理権限を選ぶ",
+            "content": "同じ人でも、企業・組織・リポジトリで持つ権限は異なります。APIを使う場合は人のロールだけでなく、トークンやGitHub Appの権限も確認します。閲覧権限があることから、変更権限もあるとは推測しません。",
+            "table": {
+              "id": "copilot-admin-operations",
+              "caption": "操作別の管理権限と適用範囲",
+              "columns": [
+                "したい操作",
+                "主なロール・必要権限",
+                "対象範囲",
+                "追加条件・できないこと"
+              ],
+              "rows": [
+                {
+                  "id": "admin-plan",
+                  "cells": [
+                    "組織へCopilotを提供しプランを選ぶ",
+                    "組織のプラン管理はOrganization owner。企業管理下の組織のプラン選択はEnterprise owner。",
+                    "その組織、または企業内の対象組織。",
+                    "企業の管理下かを確認します。個人Pro等の契約者であることは、組織の管理権限を意味しません。"
+                  ],
+                  "sourceIds": [
+                    "plans",
+                    "reference-enterprise-plan",
+                    "reference-org-management"
+                  ]
+                },
+                {
+                  "id": "admin-seat",
+                  "cells": [
+                    "シートを付与・解除する",
+                    "Organization owner等の必要な管理権限。APIには対象操作の認証権限も必要。",
+                    "指定した組織の利用者・チーム。",
+                    "組織所属、直接付与かチーム経由か、解除の反映時点を確認します。機能ポリシーの無効化とは別です。"
+                  ],
+                  "sourceIds": [
+                    "copilot-seat-api",
+                    "admin-seat-assignment"
+                  ],
+                  "example": "一人の直接割り当てを解除するときに、組織全体の機能は無効にしません。"
+                },
+                {
+                  "id": "admin-policy",
+                  "cells": [
+                    "機能やモデルの利用可否を設定する",
+                    "Enterprise owner、または判断を委任された組織のOrganization owner。",
+                    "企業・組織の対象ポリシーと、資格の提供先。",
+                    "上位で決定済みの対象ポリシーはOrgで上書きできません。すべての機能が同じ継承方式とは限りません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-policies",
+                    "policies",
+                    "admin-policy-model"
+                  ],
+                  "example": "Orgの画面で選択できない場合は、企業側の決定と委任を確認します。"
+                },
+                {
+                  "id": "admin-repo-exclusion",
+                  "cells": [
+                    "repoのContent Exclusionを変更する",
+                    "Repository admin。Maintainは閲覧のみ。",
+                    "同じ企業内で、そのrepoを使うCopilot利用者の対応機能。",
+                    "継承された除外は解除できませんが、repo固有の除外を追加できます。"
+                  ],
+                  "sourceIds": [
+                    "exclusion",
+                    "exclusion-concept"
+                  ],
+                  "example": "別組織のownerでも、対象repoでMaintainしか持たなければ編集できません。"
+                },
+                {
+                  "id": "admin-org-exclusion",
+                  "cells": [
+                    "組織・企業のContent Exclusionを変更する",
+                    "Organization owner、Enterprise owner。",
+                    "組織設定はその組織からシートを得る利用者。企業設定は企業のCopilot利用者全体。",
+                    "repo所有者だけで適用先を判断しません。Agent等の非対応経路を、通常補完と同じに扱いません。"
+                  ],
+                  "sourceIds": [
+                    "exclusion",
+                    "exclusion-concept"
+                  ],
+                  "example": "シートの提供元が違う二人には、組織設定だけでは同じ除外が適用されない場合があります。"
+                },
+                {
+                  "id": "admin-auto-review",
+                  "cells": [
+                    "対象PRの自動レビューを設定する",
+                    "対象repo・組織のrulesetを管理できる権限。個人設定は本人。",
+                    "指定するrepo・ブランチや、自分のPRなど、起動元ごとの範囲。",
+                    "レビュー機能の利用許可とは別です。個人設定で、rulesetが有効にしたpush・draftレビューは無効化できません。"
+                  ],
+                  "sourceIds": [
+                    "feature-refresh-review-config",
+                    "policies"
+                  ],
+                  "example": "利用許可は有効なのに自動起動しない場合、ruleset等の対象条件を確認します。"
+                },
+                {
+                  "id": "admin-org-metrics",
+                  "cells": [
+                    "組織の利用レポートを閲覧する",
+                    "Organization owner、View Organization Copilot Metricsを持つ利用者等。",
+                    "対象組織のレポート。",
+                    "API認証方式に合う権限も必要です。レポートの欠落だけで、シート未割り当てとは判断しません。"
+                  ],
+                  "sourceIds": [
+                    "admin-usage-metrics",
+                    "copilot-seat-api"
+                  ],
+                  "example": "活動を確認したいときは、資格一覧や監査イベントと区別します。"
+                },
+                {
+                  "id": "admin-enterprise-metrics",
+                  "cells": [
+                    "企業の利用レポートを閲覧する",
+                    "Enterprise owner、billing manager、View Enterprise Copilot Metricsを持つ利用者等。",
+                    "対象企業のレポート。",
+                    "APIのトークン権限等も確認します。レポートを読めることから、シートや機能ポリシーも変更できるとは推測しません。"
+                  ],
+                  "sourceIds": [
+                    "admin-usage-metrics"
+                  ]
+                },
+                {
+                  "id": "admin-audit-read",
+                  "cells": [
+                    "Enterprise監査ログを読む",
+                    "Enterprise owner、Read enterprise audit logsのカスタムロール等。",
+                    "対象企業の設定・資格変更や対応する活動イベント。",
+                    "通常の監査ログと、利用レポートやクライアントの内容収集は別です。"
+                  ],
+                  "sourceIds": [
+                    "admin-copilot-audit"
+                  ],
+                  "example": "ポリシーを変えた人と日時を調べる場合は、該当する監査イベントを照合します。"
+                },
+                {
+                  "id": "admin-audit-stream",
+                  "cells": [
+                    "Enterprise監査ログのストリームを設定する",
+                    "Enterprise owner。",
+                    "Enterpriseの監査ログを外部の対応先へ送る設定。",
+                    "GitHub Enterprise Cloudの機能・利用条件を確認します。Copilotの全プランの利用者が設定できるわけではありません。"
+                  ],
+                  "sourceIds": [
+                    "admin-audit-stream"
+                  ]
+                }
+              ],
+              "lastVerifiedAt": "2026-10-18"
+            }
+          },
+          {
+            "heading": "10. 30秒チェック（Mini Review）",
+            "content": "Q1: 組織のシートがない人はCopilotを一切使えないか？ → No。個人プランの資格とは別です。\nQ2: 現在のシート割り当てと実際の活動は同じ情報か？ → No。割り当て一覧と活動レポートを区別します。\nQ3: 日次レポートAPIの最初の応答から何を得るか？ → レポートのダウンロードリンク等です。\nQ4: ポリシーを変更したアカウントを調べる情報源は？ → 監査ログです。"
+          }
+        ],
+        "keyPoints": [
+          "認証、利用資格、管理ロール、機能の利用許可を分ける。",
+          "シートの割り当て一覧、活動レポート、監査イベントは目的が異なる。",
+          "Enterpriseで決定した対象ポリシーはOrgで上書きできない。全設定が同じ継承方式とは限らない。",
+          "APIはHTTPメソッド、対象パス、返却内容、認証方式ごとの権限を確認する。"
+        ],
+        "commonMistakes": [
+          "組織のシートがない人は個人プランでも利用できないと思うこと。",
+          "利用統計がないことからシート未割り当てと判断すること。",
+          "購読設定を取得するAPIで、すべての機能設定も変更できると思うこと。"
+        ],
+        "examTips": [
+          "操作の目的が資格の変更、活動の確認、変更履歴の追跡のどれかを先に判断します。",
+          "プラン名と管理ロールを区別し、誰がどの範囲を変更する問題かを読み取ります。"
+        ],
+        "glossaryIds": [
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-seat-management",
+          "g-subscription-plans",
+          "g-audit-logs",
+          "g-usage-metrics-api",
+          "g-policy-inheritance",
+          "g-spaces"
+        ],
+        "comparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "questionIds": [
+          "q-d6-e02-feature-20261016",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a05",
+          "q-d2-g18",
+          "q-d2-g19",
+          "q-d6-e06-ms-20261017",
+          "q-d1-e04-feature-20261016",
+          "q-d6-e04-feature-20261016-ms-20261017",
+          "q-d6-g01",
+          "q-sc01-2",
+          "q-d2-g21",
+          "q-d6-a09-ms-20261017",
+          "q-d3-a13-ms-20261017",
+          "q-sc07-3",
+          "q-d6-f04"
+        ],
+        "sourceIds": [
+          "policies",
+          "audit-log",
+          "rest-api",
+          "guide",
+          "plans",
+          "feature-matrix",
+          "repository-indexing",
+          "spaces",
+          "copilot-seat-api",
+          "admin-usage-metrics",
+          "admin-policy-model",
+          "feature-refresh-policies",
+          "admin-copilot-audit",
+          "admin-audit-events",
+          "reference-enterprise-plan",
+          "reference-org-management",
+          "admin-seat-assignment",
+          "exclusion",
+          "exclusion-concept",
+          "feature-refresh-review-config",
+          "admin-audit-stream"
+        ],
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      }
+    },
+    {
+      "kind": "glossary",
+      "id": "g-copilot-cli",
+      "reason": "参照表の基本説明と入力場所・プランとロールの違いをそろえる。",
+      "before": {
+        "id": "g-copilot-cli",
+        "term": "GitHub Copilot in the CLI",
+        "fullName": "GitHub Copilot in the CLI",
+        "aliases": [
+          "gh copilot",
+          "Copilot CLI"
+        ],
+        "shortDefinition": "現行のGitHub Copilot CLIは、ターミナルで対話し、コード調査・編集やコマンド実行を支援するエージェント型ツール。",
+        "detailedDefinition": "現行CLIは @github/copilot パッケージなどで導入し、copilot コマンドで起動する。初回認証や作業ディレクトリへの信頼確認を行う。旧 gh copilot 拡張の explain/suggest とは区別する。",
+        "category": "Copilot機能",
+        "importance": "essential",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "ターミナルやコマンドライン上での自然言語によるコマンド提案・解説や実行前確認の安全策など、CLI環境特有のAI支援シナリオで頻出。",
+        "useCases": [
+          "複雑なfindやawk、sedコマンドの作成",
+          "難解なgit rebaseやcherry-pickコマンドの解説",
+          "スクリプト実行前の挙動確認"
+        ],
+        "examPoints": [
+          "現行CLIは copilot で起動する",
+          "コマンドとファイル変更の許可を確認する",
+          "CLIへのContent Exclusion適用は公式資料間で説明が食い違う"
+        ],
+        "commonConfusions": [
+          "IDE内ターミナルの `@terminal` と、スタンドアロンの `gh copilot` コマンドの混同"
+        ],
+        "relatedTermIds": [
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-execution-confirm"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-f11"
+        ],
+        "sourceIds": [
+          "cli",
+          "guide",
+          "cli-current",
+          "cli-exclusion-admin"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "needs-review",
+        "basicQuestionId": "q-d2-f11"
+      },
+      "after": {
+        "id": "g-copilot-cli",
+        "term": "GitHub Copilot in the CLI",
+        "fullName": "GitHub Copilot in the CLI",
+        "aliases": [
+          "gh copilot",
+          "Copilot CLI"
+        ],
+        "shortDefinition": "現行のGitHub Copilot CLIは、ターミナルで対話し、コード調査・編集やコマンド実行を支援するエージェント型ツール。",
+        "detailedDefinition": "現行CLIはcopilotで起動し、対話内では/login、/help、/model等を使います。シェルでのcopilot loginやcopilot helpとは入力場所を区別します。ファイルの調査・編集やコマンド実行も支援するため、対象フォルダーの信頼とツール権限、変更結果を確認します。旧gh copilot拡張のexplain/suggestは現行の標準サブコマンドではありません。目的別の操作と使用例はCLI教材の参照表で確認できます。",
+        "category": "Copilot機能",
+        "importance": "essential",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "ターミナルやコマンドライン上での自然言語によるコマンド提案・解説や実行前確認の安全策など、CLI環境特有のAI支援シナリオで頻出。",
+        "useCases": [
+          "複雑なfindやawk、sedコマンドの作成",
+          "難解なgit rebaseやcherry-pickコマンドの解説",
+          "スクリプト実行前の挙動確認"
+        ],
+        "examPoints": [
+          "シェルのコマンドと、CLI対話中のスラッシュコマンドを区別する。",
+          "導入・認証、実行方法、再開先、文脈管理を目的に応じて選ぶ。",
+          "CLIへのContent Exclusionの適用には公式資料間の説明差があるため確認する。"
+        ],
+        "commonConfusions": [
+          "現行のcopilot、旧拡張のgh copilot、GitHub CLIのgh、一般のシェルコマンドを混同すること。"
+        ],
+        "relatedTermIds": [
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-execution-confirm"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-f11"
+        ],
+        "sourceIds": [
+          "cli",
+          "guide",
+          "cli-current",
+          "cli-exclusion-admin",
+          "feature-refresh-cli-reference",
+          "cli-tool-permissions"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "needs-review",
+        "basicQuestionId": "q-d2-f11"
+      }
+    },
+    {
+      "kind": "glossary",
+      "id": "g-cli-execution-confirm",
+      "reason": "参照表の基本説明と入力場所・プランとロールの違いをそろえる。",
+      "before": {
+        "id": "g-cli-execution-confirm",
+        "term": "CLI Execution Confirmation & Safeguards",
+        "fullName": "CLI実行確認とセーフガード",
+        "aliases": [
+          "実行確認",
+          "コマンド実行保護"
+        ],
+        "shortDefinition": "Copilot CLIの変更系ツールには許可設定があり、事前に広い権限を与えた場合は毎回の確認なしに実行されることもある。",
+        "detailedDefinition": "現行の `copilot` CLIでは読み取り系操作と変更系操作で権限の扱いが異なる。変更系ツールは通常承認を求めるが、保存した許可や `--allow-all`、autopilotモードなどの設定によって個別確認を省略できる。旧 `gh copilot suggest` の「Execute command」メニューは現行CLIの標準操作ではない。",
+        "category": "Copilot機能",
+        "importance": "important",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "Responsible AI原則（Human-in-the-loop）がCLI製品においてどう実装されているかを示す好例。",
+        "useCases": [
+          "ファイル変更やシェルコマンドに付与する権限を確認する",
+          "広い権限を許可したセッションの変更差分を検査する"
+        ],
+        "examPoints": [
+          "CLIは権限に基づきファイル編集やコマンド実行を行える",
+          "承認の頻度は事前許可と実行モードによって変わる"
+        ],
+        "commonConfusions": [
+          "CLIは危険なので実行機能自体が存在しないという誤解（確認付きで実行可能）"
+        ],
+        "relatedTermIds": [
+          "g-copilot-cli",
+          "g-code-accountability",
+          "g-gh-copilot-suggest"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g08"
+        ],
+        "sourceIds": [
+          "cli",
+          "responsible",
+          "cli-tool-permissions"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "basicQuestionId": "q-d2-g08"
+      },
+      "after": {
+        "id": "g-cli-execution-confirm",
+        "term": "CLI Execution Confirmation & Safeguards",
+        "fullName": "CLI実行確認とセーフガード",
+        "aliases": [
+          "実行確認",
+          "コマンド実行保護"
+        ],
+        "shortDefinition": "Copilot CLIの変更系ツールには許可設定があり、事前に広い権限を与えた場合は毎回の確認なしに実行されることもある。",
+        "detailedDefinition": "CLIではモデルへ提示するツールの候補と、実行を許可・拒否する条件を分けます。--allow-toolで範囲を絞って許可し、--deny-toolで拒否します。重なる操作では拒否が優先します。/permissions showでは現在の権限モードを確認できます。事前許可によって毎回の確認が省かれる場合がありますが、Autopilotによる次ターンへの継続とは別の仕組みです。",
+        "category": "Copilot機能",
+        "importance": "important",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "Responsible AI原則（Human-in-the-loop）がCLI製品においてどう実装されているかを示す好例。",
+        "useCases": [
+          "ファイル変更やシェルコマンドに付与する権限を確認する",
+          "広い権限を許可したセッションの変更差分を検査する"
+        ],
+        "examPoints": [
+          "候補として提供されていることと、その実行が許可されることは別である。",
+          "許可と拒否が重なる操作では拒否が優先する。",
+          "権限モードの確認と、広い権限の付与を区別する。"
+        ],
+        "commonConfusions": [
+          "CLIは危険なので実行機能自体が存在しないという誤解（確認付きで実行可能）"
+        ],
+        "relatedTermIds": [
+          "g-copilot-cli",
+          "g-code-accountability",
+          "g-gh-copilot-suggest"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g08"
+        ],
+        "sourceIds": [
+          "cli",
+          "responsible",
+          "cli-tool-permissions",
+          "feature-refresh-cli-reference"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified",
+        "basicQuestionId": "q-d2-g08"
+      }
+    },
+    {
+      "kind": "glossary",
+      "id": "g-cli-context-limits",
+      "reason": "参照表の基本説明と入力場所・プランとロールの違いをそろえる。",
+      "before": {
+        "id": "g-cli-context-limits",
+        "term": "CLI Context Limitations",
+        "fullName": "CLIにおけるコンテキスト制約",
+        "aliases": [
+          "CLIコンテキスト制限"
+        ],
+        "shortDefinition": "Copilot CLIは権限内でリポジトリのファイルを読み調査できる。利用できる外部データやツールは権限と設定に依存する。",
+        "detailedDefinition": "現行Copilot CLIはコードベースの検索、ファイル読み取り・編集、コマンド実行などのツールを使える。コンテキストが入力プロンプトだけに限定されるという旧CLI前提は誤り。アクセスできる範囲は実行場所、権限、設定したツールによって変わる。",
+        "category": "Copilot機能",
+        "importance": "important",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "IDE版とCLI版の動作の違い・使い分けを問う問題の要点。",
+        "useCases": [
+          "プロンプトに環境情報（例: Ubuntu 24.04上）を含めて質問",
+          "エラーメッセージをプロンプトに引用して原因調査"
+        ],
+        "examPoints": [
+          "現行CLIは権限内のリポジトリを調査できる",
+          "Content ExclusionのCLI適用について公式資料間に矛盾がある"
+        ],
+        "commonConfusions": [
+          "旧 `gh copilot` 拡張の制限を現行 `copilot` CLIに当てはめること"
+        ],
+        "relatedTermIds": [
+          "g-copilot-cli",
+          "g-exclusion-limitations"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g09"
+        ],
+        "sourceIds": [
+          "cli",
+          "exclusion",
+          "cli-tool-permissions",
+          "cli-exclusion-admin"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-09-06",
+        "status": "needs-review",
+        "basicQuestionId": "q-d2-g09"
+      },
+      "after": {
+        "id": "g-cli-context-limits",
+        "term": "CLI Context Limitations",
+        "fullName": "CLIにおけるコンテキスト制約",
+        "aliases": [
+          "CLIコンテキスト制限"
+        ],
+        "shortDefinition": "Copilot CLIは権限内でリポジトリのファイルを読み調査できる。利用できる外部データやツールは権限と設定に依存する。",
+        "detailedDefinition": "ファイルを取得できる範囲は、実行場所、アクセスを許可したフォルダー、利用可能なツール等に依存します。取得できることと、文脈へ保持できる量も別です。/contextで使用量を確認し、/compactで会話を要約し、/clearで新しい会話を開始します。これらはアクセス権の追加や、MCPのツール定義を削除する操作ではありません。",
+        "category": "Copilot機能",
+        "importance": "important",
+        "domainIds": [
+          "d2"
+        ],
+        "objectiveIds": [
+          "d2o2"
+        ],
+        "whyItMatters": "IDE版とCLI版の動作の違い・使い分けを問う問題の要点。",
+        "useCases": [
+          "プロンプトに環境情報（例: Ubuntu 24.04上）を含めて質問",
+          "エラーメッセージをプロンプトに引用して原因調査"
+        ],
+        "examPoints": [
+          "CLIは権限内のファイルを調査・変更できる。",
+          "/context、/compact、/clearを目的で区別する。",
+          "会話の圧縮だけで、すべてのツール定義まで減るとは判断しない。"
+        ],
+        "commonConfusions": [
+          "旧 `gh copilot` 拡張の制限を現行 `copilot` CLIに当てはめること"
+        ],
+        "relatedTermIds": [
+          "g-copilot-cli",
+          "g-exclusion-limitations"
+        ],
+        "lessonIds": [
+          "lesson-d2-cli"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g09"
+        ],
+        "sourceIds": [
+          "cli",
+          "exclusion",
+          "cli-tool-permissions",
+          "cli-exclusion-admin",
+          "feature-refresh-cli-reference"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "needs-review",
+        "basicQuestionId": "q-d2-g09"
+      }
+    },
+    {
+      "kind": "glossary",
+      "id": "g-subscription-plans",
+      "reason": "参照表の基本説明と入力場所・プランとロールの違いをそろえる。",
+      "before": {
+        "id": "g-subscription-plans",
+        "term": "Copilot Subscription Plans (Business vs Enterprise vs Pro)",
+        "fullName": "Copilot サブスクリプションプラン体系",
+        "aliases": [
+          "Copilotプラン",
+          "Business vs Enterprise"
+        ],
+        "shortDefinition": "個人向けFree・Student・Pro・Pro+・Maxと、組織向けBusiness・Enterpriseなど、GitHub Copilotの利用条件と管理機能を定めるプラン。",
+        "detailedDefinition": "利用可能な機能、AIクレジット、モデル、組織ポリシーはプランで異なり、管理者設定や利用面によっても変わります。現行プラン表と機能マトリクスを確認し、特定機能がEnterprise専用などと固定的に断言しないでください。 Copilot Freeは現行の個人向けプランとして存在する。古い練習問題の「一般利用者に無料なし」は現行仕様ではない。",
+        "category": "プライバシーと管理",
+        "importance": "essential",
+        "domainIds": [
+          "d2",
+          "d6"
+        ],
+        "objectiveIds": [
+          "d2o4",
+          "d6o1"
+        ],
+        "whyItMatters": "Business、Enterprise、Pro各プランにおける機能差（管理ポリシー、Content Exclusion、監査ログ、CLI・エージェント利用可否など）を問うシナリオ問題の必須知識。",
+        "useCases": [
+          "企業導入時のプラン選定",
+          "コンプライアンス要件に応じたBusiness以上の選択"
+        ],
+        "examPoints": [
+          "Business/Enterprise顧客データはモデル学習に使用されない",
+          "Content ExclusionはBusiness/Enterpriseで利用可能",
+          "機能の提供範囲は現行プラン表と機能マトリクスで確認する"
+        ],
+        "commonConfusions": [
+          "個人プランと組織プランでプライバシーポリシーが同一であるという誤解"
+        ],
+        "relatedTermIds": [
+          "g-code-retention-policy",
+          "g-enterprise-data-privacy",
+          "g-content-exclusion"
+        ],
+        "lessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d3-retention-privacy",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-ownership-privacy"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g20"
+        ],
+        "sourceIds": [
+          "policies",
+          "privacy",
+          "guide",
+          "plans",
+          "feature-matrix"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-12",
+        "status": "verified",
+        "basicQuestionId": "q-d2-g20"
+      },
+      "after": {
+        "id": "g-subscription-plans",
+        "term": "Copilot Subscription Plans (Business vs Enterprise vs Pro)",
+        "fullName": "Copilot サブスクリプションプラン体系",
+        "aliases": [
+          "Copilotプラン",
+          "Business vs Enterprise"
+        ],
+        "shortDefinition": "個人向けFree・Student・Pro・Pro+・Maxと、組織向けBusiness・Enterpriseなど、GitHub Copilotの利用条件と管理機能を定めるプラン。",
+        "detailedDefinition": "Copilot Freeは現行の個人プランです。個人向けにはFree・Student・Pro・Pro+・Max、組織向けにはBusiness・Enterpriseがあります。プランは利用条件であり、管理ロールではありません。個人の有料プランでも、組織のシートやポリシーを変更する権限は付与されません。Copilot EnterpriseはGitHub Enterprise Cloudを利用する企業向けで、企業のownerが組織ごとのプラン選択を管理します。詳細は組織管理教材のプラン表と、別に用意した操作別権限表を照合します。",
+        "category": "プライバシーと管理",
+        "importance": "essential",
+        "domainIds": [
+          "d2",
+          "d6"
+        ],
+        "objectiveIds": [
+          "d2o4",
+          "d6o1"
+        ],
+        "whyItMatters": "Business、Enterprise、Pro各プランにおける機能差（管理ポリシー、Content Exclusion、監査ログ、CLI・エージェント利用可否など）を問うシナリオ問題の必須知識。",
+        "useCases": [
+          "企業導入時のプラン選定",
+          "コンプライアンス要件に応じたBusiness以上の選択"
+        ],
+        "examPoints": [
+          "プラン名、GitHubの契約・アカウント、管理ロールを区別する。",
+          "CLIを利用できることと、組織管理を行えることは別である。",
+          "Business/Enterpriseでも対象機能の許可・シート・操作権限等を確認する。"
+        ],
+        "commonConfusions": [
+          "個人プランと組織プランでプライバシーポリシーが同一であるという誤解"
+        ],
+        "relatedTermIds": [
+          "g-code-retention-policy",
+          "g-enterprise-data-privacy",
+          "g-content-exclusion"
+        ],
+        "lessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d3-retention-privacy",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-ownership-privacy"
+        ],
+        "comparisonIds": [],
+        "questionIds": [
+          "q-d2-g20"
+        ],
+        "sourceIds": [
+          "policies",
+          "privacy",
+          "guide",
+          "plans",
+          "feature-matrix",
+          "reference-enterprise-plan"
+        ],
+        "syllabusVersion": "2026-08-07",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified",
+        "basicQuestionId": "q-d2-g20"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "guide",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "guide",
+        "title": "GH-300 Study Guide",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+        "publisher": "Microsoft Learn",
+        "sourceType": "study-guide",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d2o1",
+          "d2o3",
+          "d2o2",
+          "d2o4",
+          "d3o1",
+          "d3o2",
+          "d4o1",
+          "d4o2",
+          "d5o1",
+          "d5o2",
+          "d6o1",
+          "d6o2"
+        ],
+        "relatedLessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks",
+          "lesson-d1-validation",
+          "lesson-d1-security-review",
+          "lesson-d2-inline-suggestions",
+          "lesson-d2-chat-essentials",
+          "lesson-d2-cli",
+          "lesson-d2-agent-edits",
+          "lesson-d2-mcp",
+          "lesson-d2-instructions-prompts",
+          "lesson-d2-pr-code-review",
+          "lesson-d2-org-governance",
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline",
+          "lesson-d3-retention-privacy",
+          "lesson-d3-lifecycle-limits",
+          "lesson-d4-crafting",
+          "lesson-d4-zero-few-shot",
+          "lesson-d4-refinement",
+          "lesson-d4-decomposition-pruning",
+          "lesson-d5-generation-refactoring",
+          "lesson-d5-legacy-modernization",
+          "lesson-d5-testing",
+          "lesson-d5-security-remediation",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-ownership-privacy",
+          "lesson-d6-public-code-matching",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "relatedGlossaryIds": [
+          "g-generative-ai",
+          "g-responsible-ai",
+          "g-code-accountability",
+          "g-inline-suggestions",
+          "g-completions-panel",
+          "g-copilot-chat",
+          "g-chat-participants",
+          "g-slash-commands",
+          "g-status-menu",
+          "g-copilot-cli",
+          "g-agent-mode",
+          "g-mcp",
+          "g-copilot-code-review",
+          "g-pr-summaries",
+          "g-custom-instructions",
+          "g-spaces",
+          "g-spark",
+          "g-copilot-extensions",
+          "g-org-policies",
+          "g-subscription-plans",
+          "g-usage-metrics-api",
+          "g-policy-inheritance",
+          "g-data-flow",
+          "g-prompt-construction",
+          "g-code-retention-policy",
+          "g-suggestion-lifecycle",
+          "g-context-scope-limits",
+          "g-prompt-engineering",
+          "g-zero-shot",
+          "g-few-shot",
+          "g-prompt-anatomy",
+          "g-context-priming",
+          "g-iterative-refinement",
+          "g-thread-reset",
+          "g-task-decomposition",
+          "g-code-generation",
+          "g-code-refactoring",
+          "g-doc-generation",
+          "g-legacy-modernization",
+          "g-code-explanation",
+          "g-boilerplate-reduction",
+          "g-unit-test-generation",
+          "g-edge-case-discovery",
+          "g-vulnerability-remediation",
+          "g-content-exclusion",
+          "g-output-ownership",
+          "g-enterprise-data-privacy",
+          "g-public-code-matching",
+          "g-exclusion-propagation",
+          "g-exclusion-limitations",
+          "g-compliance-auditability",
+          "g-arrange-act-assert",
+          "g-code-quality-attributes",
+          "g-fill-in-the-middle",
+          "g-input-validation",
+          "g-legacy-knowledge-bases",
+          "g-project-documentation",
+          "g-reliability",
+          "g-safe-exception-handling",
+          "g-safety-filtering",
+          "g-test-explorer"
+        ],
+        "relatedComparisonIds": [
+          "cmp-chat-vs-inline",
+          "cmp-agent-vs-edits",
+          "cmp-agent-vs-chat",
+          "cmp-mcp-vs-extensions",
+          "cmp-instructions-vs-prompts",
+          "cmp-spaces-vs-chat",
+          "cmp-sessions-vs-subagents",
+          "cmp-review-vs-summary",
+          "cmp-exclusion-vs-publicmatch",
+          "cmp-zero-vs-few-shot",
+          "cmp-unit-vs-integration-tests",
+          "cmp-org-vs-enterprise-policies",
+          "cmp-mcp-vs-agent-mode",
+          "cmp-input-validation-vs-assertion",
+          "cmp-quality-attributes",
+          "cmp-safety-filter-types",
+          "cmp-test-generation-vs-explorer"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-f01",
+          "q-d1-f03",
+          "q-d2-f01",
+          "q-d2-f02",
+          "q-d2-f04",
+          "q-d2-f05",
+          "q-d2-f06",
+          "q-d2-f08",
+          "q-d2-f09",
+          "q-d2-a08",
+          "q-d3-f01",
+          "q-d3-f02",
+          "q-d4-f02",
+          "q-d5-f01",
+          "q-d5-f02",
+          "q-d5-f02-b",
+          "q-d5-f04",
+          "q-d5-f05",
+          "q-sc06-3",
+          "q-d1-g01",
+          "q-d1-g02",
+          "q-d2-g01",
+          "q-d2-g02",
+          "q-d2-g03",
+          "q-d2-g04",
+          "q-d2-g05",
+          "q-d2-g06",
+          "q-d2-g07",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-g10",
+          "q-d2-g16",
+          "q-d2-g18",
+          "q-d2-g22",
+          "q-d3-g01",
+          "q-d3-g02",
+          "q-d3-g03",
+          "q-d3-g05",
+          "q-d3-g08",
+          "q-d3-g10",
+          "q-d3-g12",
+          "q-d3-g13",
+          "q-d4-g01",
+          "q-d4-g02",
+          "q-d4-g04",
+          "q-d4-g06",
+          "q-d4-g08",
+          "q-d4-g09",
+          "q-d5-g01",
+          "q-d5-g02",
+          "q-d5-g03",
+          "q-d5-g04",
+          "q-d5-g05",
+          "q-d5-g06",
+          "q-d5-g07",
+          "q-d5-g08",
+          "q-d5-g10",
+          "q-d5-g12",
+          "q-d5-g13",
+          "q-d5-g14",
+          "q-d5-g15",
+          "q-d5-g17",
+          "q-d5-g18",
+          "q-d6-g02",
+          "q-d6-g04",
+          "q-d1-a12",
+          "q-d1-a13",
+          "q-d1-a14",
+          "q-d2-a26",
+          "q-d4-a12",
+          "q-d4-a13",
+          "q-d4-a14",
+          "q-d5-a13",
+          "q-d5-a15",
+          "q-d6-a11",
+          "q-d6-a12",
+          "q-d1-e09",
+          "q-d2-e20",
+          "q-d2-e21",
+          "q-d2-e24",
+          "q-d3-e08",
+          "q-d4-e07",
+          "q-d4-e08",
+          "q-d5-e06",
+          "q-d5-e08",
+          "q-d6-e07",
+          "q-d1-a20",
+          "q-d1-f03-ms-20261017",
+          "q-d2-f05-ms-20261017",
+          "q-d5-f02-b-ms-20261017",
+          "q-d2-e21-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d4",
+          "d5",
+          "d6"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      },
+      "after": {
+        "id": "guide",
+        "title": "GH-300 Study Guide",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
+        "publisher": "Microsoft Learn",
+        "sourceType": "study-guide",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d2o1",
+          "d2o3",
+          "d2o2",
+          "d2o4",
+          "d3o1",
+          "d3o2",
+          "d4o1",
+          "d4o2",
+          "d5o1",
+          "d5o2",
+          "d6o1",
+          "d6o2"
+        ],
+        "relatedLessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks",
+          "lesson-d1-validation",
+          "lesson-d1-security-review",
+          "lesson-d2-inline-suggestions",
+          "lesson-d2-chat-essentials",
+          "lesson-d2-cli",
+          "lesson-d2-agent-edits",
+          "lesson-d2-mcp",
+          "lesson-d2-instructions-prompts",
+          "lesson-d2-pr-code-review",
+          "lesson-d2-org-governance",
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline",
+          "lesson-d3-retention-privacy",
+          "lesson-d3-lifecycle-limits",
+          "lesson-d4-crafting",
+          "lesson-d4-zero-few-shot",
+          "lesson-d4-refinement",
+          "lesson-d4-decomposition-pruning",
+          "lesson-d5-generation-refactoring",
+          "lesson-d5-legacy-modernization",
+          "lesson-d5-testing",
+          "lesson-d5-security-remediation",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-ownership-privacy",
+          "lesson-d6-public-code-matching",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "relatedGlossaryIds": [
+          "g-generative-ai",
+          "g-responsible-ai",
+          "g-code-accountability",
+          "g-inline-suggestions",
+          "g-completions-panel",
+          "g-copilot-chat",
+          "g-chat-participants",
+          "g-slash-commands",
+          "g-status-menu",
+          "g-copilot-cli",
+          "g-agent-mode",
+          "g-mcp",
+          "g-copilot-code-review",
+          "g-pr-summaries",
+          "g-custom-instructions",
+          "g-spaces",
+          "g-spark",
+          "g-copilot-extensions",
+          "g-org-policies",
+          "g-subscription-plans",
+          "g-usage-metrics-api",
+          "g-policy-inheritance",
+          "g-data-flow",
+          "g-prompt-construction",
+          "g-code-retention-policy",
+          "g-suggestion-lifecycle",
+          "g-context-scope-limits",
+          "g-prompt-engineering",
+          "g-zero-shot",
+          "g-few-shot",
+          "g-prompt-anatomy",
+          "g-context-priming",
+          "g-iterative-refinement",
+          "g-thread-reset",
+          "g-task-decomposition",
+          "g-code-generation",
+          "g-code-refactoring",
+          "g-doc-generation",
+          "g-legacy-modernization",
+          "g-code-explanation",
+          "g-boilerplate-reduction",
+          "g-unit-test-generation",
+          "g-edge-case-discovery",
+          "g-vulnerability-remediation",
+          "g-content-exclusion",
+          "g-output-ownership",
+          "g-enterprise-data-privacy",
+          "g-public-code-matching",
+          "g-exclusion-propagation",
+          "g-exclusion-limitations",
+          "g-compliance-auditability",
+          "g-arrange-act-assert",
+          "g-code-quality-attributes",
+          "g-fill-in-the-middle",
+          "g-input-validation",
+          "g-legacy-knowledge-bases",
+          "g-project-documentation",
+          "g-reliability",
+          "g-safe-exception-handling",
+          "g-safety-filtering",
+          "g-test-explorer"
+        ],
+        "relatedComparisonIds": [
+          "cmp-chat-vs-inline",
+          "cmp-agent-vs-edits",
+          "cmp-agent-vs-chat",
+          "cmp-mcp-vs-extensions",
+          "cmp-instructions-vs-prompts",
+          "cmp-spaces-vs-chat",
+          "cmp-sessions-vs-subagents",
+          "cmp-review-vs-summary",
+          "cmp-exclusion-vs-publicmatch",
+          "cmp-zero-vs-few-shot",
+          "cmp-unit-vs-integration-tests",
+          "cmp-org-vs-enterprise-policies",
+          "cmp-mcp-vs-agent-mode",
+          "cmp-input-validation-vs-assertion",
+          "cmp-quality-attributes",
+          "cmp-safety-filter-types",
+          "cmp-test-generation-vs-explorer"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-f01",
+          "q-d1-f03",
+          "q-d2-f01",
+          "q-d2-f02",
+          "q-d2-f04",
+          "q-d2-f05",
+          "q-d2-f06",
+          "q-d2-f08",
+          "q-d2-f09",
+          "q-d2-a08",
+          "q-d3-f01",
+          "q-d3-f02",
+          "q-d4-f02",
+          "q-d5-f01",
+          "q-d5-f02",
+          "q-d5-f02-b",
+          "q-d5-f04",
+          "q-d5-f05",
+          "q-sc06-3",
+          "q-d1-g01",
+          "q-d1-g02",
+          "q-d2-g01",
+          "q-d2-g02",
+          "q-d2-g03",
+          "q-d2-g04",
+          "q-d2-g05",
+          "q-d2-g06",
+          "q-d2-g07",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-g10",
+          "q-d2-g16",
+          "q-d2-g18",
+          "q-d2-g22",
+          "q-d3-g01",
+          "q-d3-g02",
+          "q-d3-g03",
+          "q-d3-g05",
+          "q-d3-g08",
+          "q-d3-g10",
+          "q-d3-g12",
+          "q-d3-g13",
+          "q-d4-g01",
+          "q-d4-g02",
+          "q-d4-g04",
+          "q-d4-g06",
+          "q-d4-g08",
+          "q-d4-g09",
+          "q-d5-g01",
+          "q-d5-g02",
+          "q-d5-g03",
+          "q-d5-g04",
+          "q-d5-g05",
+          "q-d5-g06",
+          "q-d5-g07",
+          "q-d5-g08",
+          "q-d5-g10",
+          "q-d5-g12",
+          "q-d5-g13",
+          "q-d5-g14",
+          "q-d5-g15",
+          "q-d5-g17",
+          "q-d5-g18",
+          "q-d6-g02",
+          "q-d6-g04",
+          "q-d1-a12",
+          "q-d1-a13",
+          "q-d1-a14",
+          "q-d2-a26",
+          "q-d4-a12",
+          "q-d4-a13",
+          "q-d4-a14",
+          "q-d5-a13",
+          "q-d5-a15",
+          "q-d6-a11",
+          "q-d6-a12",
+          "q-d1-e09",
+          "q-d2-e20",
+          "q-d2-e21",
+          "q-d2-e24",
+          "q-d3-e08",
+          "q-d4-e07",
+          "q-d4-e08",
+          "q-d5-e06",
+          "q-d5-e08",
+          "q-d6-e07",
+          "q-d1-a20",
+          "q-d1-f03-ms-20261017",
+          "q-d2-f05-ms-20261017",
+          "q-d5-f02-b-ms-20261017",
+          "q-d2-e21-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d4",
+          "d5",
+          "d6"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "responsible",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "responsible",
+        "title": "Application card: GitHub Copilot inline suggestions",
+        "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-12",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d2o1",
+          "d3o1",
+          "d5o2",
+          "d5o1",
+          "d2o2",
+          "d6o1",
+          "d4o1",
+          "d2o3",
+          "d2o4",
+          "d6o2",
+          "d3o2"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks",
+          "lesson-d1-validation",
+          "lesson-d1-security-review",
+          "lesson-d2-inline-suggestions",
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline",
+          "lesson-d5-security-remediation"
+        ],
+        "relatedGlossaryIds": [
+          "g-generative-ai",
+          "g-hallucination",
+          "g-responsible-ai",
+          "g-ai-bias",
+          "g-transparency",
+          "g-code-accountability",
+          "g-verification-validation",
+          "g-automation-bias",
+          "g-critical-evaluation",
+          "g-security-vulnerability-scan",
+          "g-peer-review-ai",
+          "g-inline-suggestions",
+          "g-ghost-text",
+          "g-completions-panel",
+          "g-cli-execution-confirm",
+          "g-data-flow",
+          "g-copilot-proxy",
+          "g-code-generation",
+          "g-static-analysis-copilot",
+          "g-code-quality-attributes",
+          "g-reliability",
+          "g-safe-exception-handling"
+        ],
+        "relatedComparisonIds": [
+          "cmp-chat-vs-inline",
+          "cmp-quality-attributes"
+        ],
+        "relatedQuestionIds": [
+          "q02",
+          "q03",
+          "q-d1-f01",
+          "q-d1-f02",
+          "q-d1-f03",
+          "q-d1-f04",
+          "q-d1-f05",
+          "q-d1-a01",
+          "q-d1-a02",
+          "q-d1-a03",
+          "q-d1-a04",
+          "q-d1-a05",
+          "q-d1-a06",
+          "q-d1-a07",
+          "q-d1-e01",
+          "q-d1-e02",
+          "q-d1-e03",
+          "q-d1-e04",
+          "q-d1-e05",
+          "q-d1-e06",
+          "q-d1-e07",
+          "q-d1-e08",
+          "q-d2-a11",
+          "q-d2-e14",
+          "q-d4-f04",
+          "q-d5-a03",
+          "q-d5-a10",
+          "q-d5-e02",
+          "q-d5-e04",
+          "q-d6-a04",
+          "q-d6-e03",
+          "q-sc02-1",
+          "q-sc02-2",
+          "q-sc04-2",
+          "q-sc05-1",
+          "q-sc05-2",
+          "q-sc09-3",
+          "q-d1-g01",
+          "q-d1-g02",
+          "q-d1-g03",
+          "q-d1-g05",
+          "q-d1-g06",
+          "q-d3-g03",
+          "q-d3-g06",
+          "q-d3-g14",
+          "q-d5-g01",
+          "q-d5-g08",
+          "q-d5-g09",
+          "q-d5-g11",
+          "q-d5-g14",
+          "q-d5-g17",
+          "q-d6-g03",
+          "q-d1-a11",
+          "q-d1-a12",
+          "q-d1-a13",
+          "q-d1-a14",
+          "q-d5-a15",
+          "q-d1-e09",
+          "q-d5-e06",
+          "q01",
+          "q-d3-a17",
+          "q-d5-a11",
+          "q-sc05-3",
+          "q-d1-a10",
+          "q-d1-a18",
+          "q-d1-a19",
+          "q-d1-a21",
+          "q-d3-e03",
+          "q-sc04-3",
+          "q-d3-a16",
+          "q-d6-a13",
+          "q-d1-f03-ms-20261017",
+          "q-d2-a11-ms-20261017",
+          "q-d5-f02-b-ms-20261017",
+          "q-sc04-2-ms-20261017",
+          "q-sc08-1-ms-20261017",
+          "q-d3-a17-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d5",
+          "d6",
+          "d4"
+        ]
+      },
+      "after": {
+        "id": "responsible",
+        "title": "Application card: GitHub Copilot inline suggestions",
+        "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d2o1",
+          "d3o1",
+          "d5o2",
+          "d5o1",
+          "d2o2",
+          "d6o1",
+          "d4o1",
+          "d2o3",
+          "d2o4",
+          "d6o2",
+          "d3o2"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d1-principles",
+          "lesson-d1-risks",
+          "lesson-d1-validation",
+          "lesson-d1-security-review",
+          "lesson-d2-inline-suggestions",
+          "lesson-d3-data-flow",
+          "lesson-d3-prompt-pipeline",
+          "lesson-d5-security-remediation"
+        ],
+        "relatedGlossaryIds": [
+          "g-generative-ai",
+          "g-hallucination",
+          "g-responsible-ai",
+          "g-ai-bias",
+          "g-transparency",
+          "g-code-accountability",
+          "g-verification-validation",
+          "g-automation-bias",
+          "g-critical-evaluation",
+          "g-security-vulnerability-scan",
+          "g-peer-review-ai",
+          "g-inline-suggestions",
+          "g-ghost-text",
+          "g-completions-panel",
+          "g-cli-execution-confirm",
+          "g-data-flow",
+          "g-copilot-proxy",
+          "g-code-generation",
+          "g-static-analysis-copilot",
+          "g-code-quality-attributes",
+          "g-reliability",
+          "g-safe-exception-handling"
+        ],
+        "relatedComparisonIds": [
+          "cmp-chat-vs-inline",
+          "cmp-quality-attributes"
+        ],
+        "relatedQuestionIds": [
+          "q02",
+          "q03",
+          "q-d1-f01",
+          "q-d1-f02",
+          "q-d1-f03",
+          "q-d1-f04",
+          "q-d1-f05",
+          "q-d1-a01",
+          "q-d1-a02",
+          "q-d1-a03",
+          "q-d1-a04",
+          "q-d1-a05",
+          "q-d1-a06",
+          "q-d1-a07",
+          "q-d1-e01",
+          "q-d1-e02",
+          "q-d1-e03",
+          "q-d1-e04",
+          "q-d1-e05",
+          "q-d1-e06",
+          "q-d1-e07",
+          "q-d1-e08",
+          "q-d2-a11",
+          "q-d2-e14",
+          "q-d4-f04",
+          "q-d5-a03",
+          "q-d5-a10",
+          "q-d5-e02",
+          "q-d5-e04",
+          "q-d6-a04",
+          "q-d6-e03",
+          "q-sc02-1",
+          "q-sc02-2",
+          "q-sc04-2",
+          "q-sc05-1",
+          "q-sc05-2",
+          "q-sc09-3",
+          "q-d1-g01",
+          "q-d1-g02",
+          "q-d1-g03",
+          "q-d1-g05",
+          "q-d1-g06",
+          "q-d3-g03",
+          "q-d3-g06",
+          "q-d3-g14",
+          "q-d5-g01",
+          "q-d5-g08",
+          "q-d5-g09",
+          "q-d5-g11",
+          "q-d5-g14",
+          "q-d5-g17",
+          "q-d6-g03",
+          "q-d1-a11",
+          "q-d1-a12",
+          "q-d1-a13",
+          "q-d1-a14",
+          "q-d5-a15",
+          "q-d1-e09",
+          "q-d5-e06",
+          "q01",
+          "q-d3-a17",
+          "q-d5-a11",
+          "q-sc05-3",
+          "q-d1-a10",
+          "q-d1-a18",
+          "q-d1-a19",
+          "q-d1-a21",
+          "q-d3-e03",
+          "q-sc04-3",
+          "q-d3-a16",
+          "q-d6-a13",
+          "q-d1-f03-ms-20261017",
+          "q-d2-a11-ms-20261017",
+          "q-d5-f02-b-ms-20261017",
+          "q-sc04-2-ms-20261017",
+          "q-sc08-1-ms-20261017",
+          "q-d3-a17-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d5",
+          "d6",
+          "d4"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "exclusion",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "exclusion",
+        "title": "Excluding content from GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o1",
+          "d6o2",
+          "d1o1",
+          "d2o1",
+          "d5o2",
+          "d2o4"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "relatedGlossaryIds": [
+          "g-ip-copyright",
+          "g-status-menu",
+          "g-cli-context-limits",
+          "g-secret-leak-prevention",
+          "g-content-exclusion",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-exclusion-syntax",
+          "g-exclusion-propagation",
+          "g-client-exclusion-check",
+          "g-exclusion-limitations",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q11",
+          "q12",
+          "q-d6-f02",
+          "q-d6-a01",
+          "q-d6-a08",
+          "q-d6-a10",
+          "q-sc01-2",
+          "q-d6-g01",
+          "q-d6-g02",
+          "q-d6-g04",
+          "q-d6-a11",
+          "q-d6-a12",
+          "q-d6-a14",
+          "q-d1-e04-feature-20261016",
+          "q-sc05-3-feature-20261016",
+          "q-sc10-3-feature-20261016",
+          "q-d6-a13-feature-20261016",
+          "q-d6-e07-feature-20261016",
+          "q-d2-f05-ms-20261017",
+          "q-d6-a02-ms-20261017",
+          "q-d3-a17-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6",
+          "d1",
+          "d5"
+        ]
+      },
+      "after": {
+        "id": "exclusion",
+        "title": "Excluding content from GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o1",
+          "d6o2",
+          "d1o1",
+          "d2o1",
+          "d5o2",
+          "d2o4"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-troubleshooting-limits",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-ip-copyright",
+          "g-status-menu",
+          "g-cli-context-limits",
+          "g-secret-leak-prevention",
+          "g-content-exclusion",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-exclusion-syntax",
+          "g-exclusion-propagation",
+          "g-client-exclusion-check",
+          "g-exclusion-limitations",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q11",
+          "q12",
+          "q-d6-f02",
+          "q-d6-a01",
+          "q-d6-a08",
+          "q-d6-a10",
+          "q-sc01-2",
+          "q-d6-g01",
+          "q-d6-g02",
+          "q-d6-g04",
+          "q-d6-a11",
+          "q-d6-a12",
+          "q-d6-a14",
+          "q-d1-e04-feature-20261016",
+          "q-sc05-3-feature-20261016",
+          "q-sc10-3-feature-20261016",
+          "q-d6-a13-feature-20261016",
+          "q-d6-e07-feature-20261016",
+          "q-d2-f05-ms-20261017",
+          "q-d6-a02-ms-20261017",
+          "q-d3-a17-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6",
+          "d1",
+          "d5"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli",
+        "title": "Getting started with GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-17",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-17",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli",
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-shell-aliases",
+          "g-cli-execution-confirm",
+          "g-cli-context-limits",
+          "g-exclusion-limitations"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g05",
+          "q-d2-g06",
+          "q-d2-g07",
+          "q-fnd-cli-install-20261017",
+          "q-fnd-cli-login-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "cli",
+        "title": "Getting started with GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/get-started/cli-quickstart",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d6-troubleshooting-limits"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli",
+          "g-gh-copilot-explain",
+          "g-gh-copilot-suggest",
+          "g-cli-shell-aliases",
+          "g-cli-execution-confirm",
+          "g-cli-context-limits",
+          "g-exclusion-limitations"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g05",
+          "q-d2-g06",
+          "q-d2-g07",
+          "q-fnd-cli-install-20261017",
+          "q-fnd-cli-login-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "spaces",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "spaces",
+        "title": "About GitHub Copilot Spaces",
+        "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o1",
+          "d2o3",
+          "d2o4",
+          "d4o2",
+          "d3o2",
+          "d6o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-chat-essentials",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-spaces",
+          "g-legacy-knowledge-bases"
+        ],
+        "relatedComparisonIds": [
+          "cmp-spaces-vs-chat"
+        ],
+        "relatedQuestionIds": [
+          "q-d2-f10",
+          "q-d2-a09",
+          "q-d2-a10",
+          "q-d2-a20",
+          "q-d2-e03",
+          "q-d2-e04",
+          "q-d2-e12",
+          "q-sc06-1",
+          "q-sc07-1",
+          "q-d2-g22",
+          "q-d3-g13",
+          "q-d2-e21",
+          "q-d1-a21-feature-20261016",
+          "q-d2-e19-feature-20261016",
+          "q-d2-e04-ms-20261017",
+          "q-sc06-1-ms-20261017",
+          "q-d2-a20-ms-20261017",
+          "q-d2-e21-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d4",
+          "d3",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "spaces",
+        "title": "About GitHub Copilot Spaces",
+        "url": "https://docs.github.com/en/copilot/concepts/context/spaces",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o1",
+          "d2o3",
+          "d2o4",
+          "d4o2",
+          "d3o2",
+          "d6o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-chat-essentials",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-spaces",
+          "g-legacy-knowledge-bases"
+        ],
+        "relatedComparisonIds": [
+          "cmp-spaces-vs-chat"
+        ],
+        "relatedQuestionIds": [
+          "q-d2-f10",
+          "q-d2-a09",
+          "q-d2-a10",
+          "q-d2-a20",
+          "q-d2-e03",
+          "q-d2-e04",
+          "q-d2-e12",
+          "q-sc06-1",
+          "q-sc07-1",
+          "q-d2-g22",
+          "q-d3-g13",
+          "q-d2-e21",
+          "q-d1-a21-feature-20261016",
+          "q-d2-e19-feature-20261016",
+          "q-d2-e04-ms-20261017",
+          "q-sc06-1-ms-20261017",
+          "q-d2-a20-ms-20261017",
+          "q-d2-e21-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d4",
+          "d3",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "policies",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "policies",
+        "title": "Managing policies and features for GitHub Copilot in your organization",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o3",
+          "d2o4",
+          "d6o1",
+          "d6o2",
+          "d5o1",
+          "d3o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-pr-code-review",
+          "lesson-d2-org-governance",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-public-code-matching"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-code-review",
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-seat-management",
+          "g-subscription-plans",
+          "g-audit-logs",
+          "g-code-review-policies",
+          "g-policy-inheritance",
+          "g-content-exclusion",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-public-code-matching",
+          "g-public-code-log",
+          "g-compliance-auditability"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch",
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-a05",
+          "q-d1-e06",
+          "q-d6-f01",
+          "q-d6-f02",
+          "q-d6-f03",
+          "q-d6-f04",
+          "q-d6-a05",
+          "q-d6-a06",
+          "q-sc01-3",
+          "q-d2-g14",
+          "q-d2-g18",
+          "q-d2-g19",
+          "q-d2-g20",
+          "q-d2-g21",
+          "q-d6-g01",
+          "q-d6-g03",
+          "q-d6-g05",
+          "q-d6-a14",
+          "q-d2-e24",
+          "q-d6-e06",
+          "q-d6-e06-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6",
+          "d5",
+          "d3"
+        ]
+      },
+      "after": {
+        "id": "policies",
+        "title": "Managing policies and features for GitHub Copilot in your organization",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o3",
+          "d2o4",
+          "d6o1",
+          "d6o2",
+          "d5o1",
+          "d3o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-pr-code-review",
+          "lesson-d2-org-governance",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d6-public-code-matching"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-code-review",
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-seat-management",
+          "g-subscription-plans",
+          "g-audit-logs",
+          "g-code-review-policies",
+          "g-policy-inheritance",
+          "g-content-exclusion",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-public-code-matching",
+          "g-public-code-log",
+          "g-compliance-auditability"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch",
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-a05",
+          "q-d1-e06",
+          "q-d6-f01",
+          "q-d6-f02",
+          "q-d6-f03",
+          "q-d6-f04",
+          "q-d6-a05",
+          "q-d6-a06",
+          "q-sc01-3",
+          "q-d2-g14",
+          "q-d2-g18",
+          "q-d2-g19",
+          "q-d2-g20",
+          "q-d2-g21",
+          "q-d6-g01",
+          "q-d6-g03",
+          "q-d6-g05",
+          "q-d6-a14",
+          "q-d2-e24",
+          "q-d6-e06",
+          "q-d6-e06-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6",
+          "d5",
+          "d3"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "audit-log",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "audit-log",
+        "title": "Reviewing the audit log for your organization",
+        "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d2o3"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-f04",
+          "q-d6-f05",
+          "q-d6-e02",
+          "q-sc07-3",
+          "q-d6-g05",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      },
+      "after": {
+        "id": "audit-log",
+        "title": "Reviewing the audit log for your organization",
+        "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d2o3"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-f04",
+          "q-d6-f05",
+          "q-d6-e02",
+          "q-sc07-3",
+          "q-d6-g05",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "rest-api",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "rest-api",
+        "title": "REST API endpoints for Copilot",
+        "url": "https://docs.github.com/en/rest/copilot",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d2o3",
+          "d5o1",
+          "d1o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-seat-management",
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-f05",
+          "q-d6-a05",
+          "q-d6-e02",
+          "q-d6-e05",
+          "q-sc07-3",
+          "q-sc09-2",
+          "q-d6-a09",
+          "q-d3-a13",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017",
+          "q-d3-a13-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d5",
+          "d1"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      },
+      "after": {
+        "id": "rest-api",
+        "title": "REST API endpoints for Copilot",
+        "url": "https://docs.github.com/en/rest/copilot",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d2o3",
+          "d5o1",
+          "d1o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-seat-management",
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-f05",
+          "q-d6-a05",
+          "q-d6-e02",
+          "q-d6-e05",
+          "q-sc07-3",
+          "q-sc09-2",
+          "q-d6-a09",
+          "q-d3-a13",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017",
+          "q-d3-a13-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d5",
+          "d1"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "privacy",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "privacy",
+        "title": "Resources for getting approval of GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-13",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d5o2",
+          "d6o1",
+          "d2o4",
+          "d3o1",
+          "d6o2"
+        ],
+        "status": "needs-review",
+        "lastVerifiedAt": "2026-10-13",
+        "relatedLessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-security-review",
+          "lesson-d5-security-remediation",
+          "lesson-d6-ownership-privacy"
+        ],
+        "relatedGlossaryIds": [
+          "g-ip-copyright",
+          "g-security-vulnerability-scan",
+          "g-subscription-plans",
+          "g-data-flow",
+          "g-copilot-proxy",
+          "g-telemetry-data",
+          "g-code-retention-policy",
+          "g-post-processing",
+          "g-transit-encryption",
+          "g-secret-leak-prevention",
+          "g-output-ownership",
+          "g-enterprise-data-privacy",
+          "g-public-code-matching",
+          "g-public-code-log",
+          "g-compliance-auditability"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-f05",
+          "q-d1-e04",
+          "q-d6-f01",
+          "q-d6-f03",
+          "q-d6-a03",
+          "q-d6-a07",
+          "q-d6-e04",
+          "q-sc10-3",
+          "q-d2-g20",
+          "q-d3-g04",
+          "q-d3-g05",
+          "q-sc05-3",
+          "q-d6-a07-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d5",
+          "d6",
+          "d2",
+          "d3"
+        ]
+      },
+      "after": {
+        "id": "privacy",
+        "title": "Resources for getting approval of GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d1o1",
+          "d1o2",
+          "d5o2",
+          "d6o1",
+          "d2o4",
+          "d3o1",
+          "d6o2"
+        ],
+        "status": "needs-review",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d1-risks",
+          "lesson-d1-security-review",
+          "lesson-d5-security-remediation",
+          "lesson-d6-ownership-privacy"
+        ],
+        "relatedGlossaryIds": [
+          "g-ip-copyright",
+          "g-security-vulnerability-scan",
+          "g-subscription-plans",
+          "g-data-flow",
+          "g-copilot-proxy",
+          "g-telemetry-data",
+          "g-code-retention-policy",
+          "g-post-processing",
+          "g-transit-encryption",
+          "g-secret-leak-prevention",
+          "g-output-ownership",
+          "g-enterprise-data-privacy",
+          "g-public-code-matching",
+          "g-public-code-log",
+          "g-compliance-auditability"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-f05",
+          "q-d1-e04",
+          "q-d6-f01",
+          "q-d6-f03",
+          "q-d6-a03",
+          "q-d6-a07",
+          "q-d6-e04",
+          "q-sc10-3",
+          "q-d2-g20",
+          "q-d3-g04",
+          "q-d3-g05",
+          "q-sc05-3",
+          "q-d6-a07-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d1",
+          "d5",
+          "d6",
+          "d2",
+          "d3"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-current",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-current",
+        "title": "Use GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-12",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d5o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-12",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-f11",
+          "q-d2-a22",
+          "q-d2-e01",
+          "q-d2-e13",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-a25",
+          "q-d2-a25-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d5"
+        ]
+      },
+      "after": {
+        "id": "cli-current",
+        "title": "Use GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d5o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-f11",
+          "q-d2-a22",
+          "q-d2-e01",
+          "q-d2-e13",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-a25",
+          "q-d2-a25-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d5"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "exclusion-concept",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "exclusion-concept",
+        "title": "Content exclusion for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d3o1",
+          "d6o2",
+          "d6o1",
+          "d2o4",
+          "d1o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d6-public-code-matching",
+          "lesson-d6-content-exclusion-setup"
+        ],
+        "relatedGlossaryIds": [
+          "g-exclusion-limitations",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-content-exclusion"
+        ],
+        "relatedComparisonIds": [
+          "cmp-safety-filter-types"
+        ],
+        "relatedQuestionIds": [
+          "q-d3-e04",
+          "q-d6-a02",
+          "q-d6-a04",
+          "q-d6-e01",
+          "q-sc01-1",
+          "q-sc01-2",
+          "q-sc10-1",
+          "q-d6-e07",
+          "q-d6-e03-feature-20261016",
+          "q-d6-a03-feature-20261016",
+          "q-d6-e04-feature-20261016",
+          "q-d6-a02-ms-20261017",
+          "q-d6-a03-feature-20261016-ms-20261017",
+          "q-d3-e04-ms-20261017",
+          "q-d6-e04-feature-20261016-ms-20261017",
+          "q-d6-g01"
+        ],
+        "relatedDomainIds": [
+          "d3",
+          "d6",
+          "d2",
+          "d1"
+        ]
+      },
+      "after": {
+        "id": "exclusion-concept",
+        "title": "Content exclusion for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d3o1",
+          "d6o2",
+          "d6o1",
+          "d2o4",
+          "d1o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d3-data-flow",
+          "lesson-d6-public-code-matching",
+          "lesson-d6-content-exclusion-setup",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-exclusion-limitations",
+          "g-repo-content-exclusion",
+          "g-org-content-exclusion",
+          "g-content-exclusion"
+        ],
+        "relatedComparisonIds": [
+          "cmp-safety-filter-types"
+        ],
+        "relatedQuestionIds": [
+          "q-d3-e04",
+          "q-d6-a02",
+          "q-d6-a04",
+          "q-d6-e01",
+          "q-sc01-1",
+          "q-sc01-2",
+          "q-sc10-1",
+          "q-d6-e07",
+          "q-d6-e03-feature-20261016",
+          "q-d6-a03-feature-20261016",
+          "q-d6-e04-feature-20261016",
+          "q-d6-a02-ms-20261017",
+          "q-d6-a03-feature-20261016-ms-20261017",
+          "q-d3-e04-ms-20261017",
+          "q-d6-e04-feature-20261016-ms-20261017",
+          "q-d6-g01"
+        ],
+        "relatedDomainIds": [
+          "d3",
+          "d6",
+          "d2",
+          "d1"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "plans",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "plans",
+        "title": "Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d6o1",
+          "d2o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d2-inline-suggestions"
+        ],
+        "relatedGlossaryIds": [
+          "g-subscription-plans",
+          "g-seat-management"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g20",
+          "q-fnd-ide-matrix-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "plans",
+        "title": "Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d6o1",
+          "d2o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d2-inline-suggestions"
+        ],
+        "relatedGlossaryIds": [
+          "g-subscription-plans",
+          "g-seat-management"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g20",
+          "q-fnd-ide-matrix-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "feature-matrix",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "feature-matrix",
+        "title": "Copilot feature matrix",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o1",
+          "d2o4",
+          "d6o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-inline-suggestions",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-subscription-plans"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-ide-matrix-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "feature-matrix",
+        "title": "Copilot feature matrix",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o1",
+          "d2o4",
+          "d6o1"
+        ],
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-inline-suggestions",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-subscription-plans"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-ide-matrix-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-tool-permissions",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-tool-permissions",
+        "title": "Allowing and denying tool use",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-17",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-17",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [
+          "g-cli-execution-confirm",
+          "g-cli-context-limits"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-e06",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-e22",
+          "q-d2-a25",
+          "q-d1-a10-feature-20261016",
+          "q-d2-a04-feature-20261016",
+          "q-d5-e07-feature-20261016",
+          "q-d6-e07-feature-20261016",
+          "q-d2-e07-feature-20261016",
+          "q-fnd-cli-create-file-20261017",
+          "q-d2-a25-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017",
+          "q-d2-e06-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "cli-tool-permissions",
+        "title": "Allowing and denying tool use",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d6o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [
+          "g-cli-execution-confirm",
+          "g-cli-context-limits",
+          "g-copilot-cli"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-e06",
+          "q-d2-g08",
+          "q-d2-g09",
+          "q-d2-e22",
+          "q-d2-a25",
+          "q-d1-a10-feature-20261016",
+          "q-d2-a04-feature-20261016",
+          "q-d5-e07-feature-20261016",
+          "q-d6-e07-feature-20261016",
+          "q-d2-e07-feature-20261016",
+          "q-fnd-cli-create-file-20261017",
+          "q-d2-a25-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017",
+          "q-d2-e06-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-exclusion-admin",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-exclusion-admin",
+        "title": "Administering Copilot CLI for your enterprise",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d3o1",
+          "d6o2",
+          "d6o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d3-data-flow",
+          "lesson-d6-troubleshooting-limits",
+          "lesson-d6-content-exclusion-setup"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli",
+          "g-cli-context-limits",
+          "g-exclusion-limitations",
+          "g-content-exclusion"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q-d6-e07"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d3",
+          "d6"
+        ]
+      },
+      "after": {
+        "id": "cli-exclusion-admin",
+        "title": "Administering Copilot CLI for your enterprise",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d3o1",
+          "d6o2",
+          "d6o1"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d3-data-flow",
+          "lesson-d6-troubleshooting-limits",
+          "lesson-d6-content-exclusion-setup"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli",
+          "g-cli-context-limits",
+          "g-exclusion-limitations",
+          "g-content-exclusion"
+        ],
+        "relatedComparisonIds": [
+          "cmp-exclusion-vs-publicmatch"
+        ],
+        "relatedQuestionIds": [
+          "q-d6-e07"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d3",
+          "d6"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-install",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-install",
+        "title": "Installing GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-17",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-17",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-cli-install-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      },
+      "after": {
+        "id": "cli-install",
+        "title": "Installing GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-cli-install-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-usage",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-usage",
+        "title": "Using GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-17",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-17",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-cli-create-file-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      },
+      "after": {
+        "id": "cli-usage",
+        "title": "Using GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-fnd-cli-create-file-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "cli-sessions",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "cli-sessions",
+        "title": "Working with multiple GitHub Copilot CLI sessions",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-12",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d2o3"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-12",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d2-agent-edits"
+        ],
+        "relatedGlossaryIds": [
+          "g-agent-sessions"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g12",
+          "q-d2-e22"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      },
+      "after": {
+        "id": "cli-sessions",
+        "title": "Working with multiple GitHub Copilot CLI sessions",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d2o3"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d2-agent-edits"
+        ],
+        "relatedGlossaryIds": [
+          "g-agent-sessions"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-g12",
+          "q-d2-e22"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "repository-indexing",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "repository-indexing",
+        "title": "Indexing repositories for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d3o1",
+          "d3o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d3-g13",
+          "q-d3-a03-feature-20261016",
+          "q-d3-e02-feature-20261016",
+          "q-d3-a16-feature-20261016",
+          "q-sc08-1-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d3"
+        ]
+      },
+      "after": {
+        "id": "repository-indexing",
+        "title": "Indexing repositories for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/concepts/context/repository-indexing",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d3o1",
+          "d3o2"
+        ],
+        "status": "verified",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance",
+          "lesson-d3-prompt-pipeline"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d3-g13",
+          "q-d3-a03-feature-20261016",
+          "q-d3-e02-feature-20261016",
+          "q-d3-a16-feature-20261016",
+          "q-sc08-1-ms-20261017"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d3"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "copilot-seat-api",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "copilot-seat-api",
+        "title": "REST API endpoints for Copilot user management",
+        "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-seat-management",
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-a09",
+          "q-d3-a13",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017",
+          "q-d3-a13-ms-20261017",
+          "q-d6-a05"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      },
+      "after": {
+        "id": "copilot-seat-api",
+        "title": "REST API endpoints for Copilot user management",
+        "url": "https://docs.github.com/en/rest/copilot/copilot-user-management",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "lastCheckedAt": "2026-10-18",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-seat-management",
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-a09",
+          "q-d3-a13",
+          "q-fnd-seat-api-20261017",
+          "q-d6-a09-ms-20261017",
+          "q-d3-a13-ms-20261017",
+          "q-d6-a05"
+        ],
+        "lastVerifiedAt": "2026-10-18"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "feature-refresh-review-config",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "feature-refresh-review-config",
+        "title": "Configuring code review",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d5",
+          "d1",
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d5o2",
+          "d1o2",
+          "d2o3",
+          "d2o4",
+          "d5o1",
+          "d6o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-pr-code-review"
+        ],
+        "relatedGlossaryIds": [
+          "g-code-review-policies",
+          "g-copilot-code-review"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies",
+          "cmp-review-vs-summary"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-a18-feature-20261016",
+          "q-d1-e08-feature-20261016",
+          "q-d2-e02-feature-20261016",
+          "q-d6-e02-feature-20261016",
+          "q-d5-e06-feature-20261016",
+          "q-d5-e08-feature-20261016",
+          "q-d5-e08-feature-20261016-ms-20261017",
+          "q-d2-g21"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      },
+      "after": {
+        "id": "feature-refresh-review-config",
+        "title": "Configuring code review",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d5",
+          "d1",
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d5o2",
+          "d1o2",
+          "d2o3",
+          "d2o4",
+          "d5o1",
+          "d6o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-pr-code-review",
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-code-review-policies",
+          "g-copilot-code-review"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies",
+          "cmp-review-vs-summary"
+        ],
+        "relatedQuestionIds": [
+          "q-d1-a18-feature-20261016",
+          "q-d1-e08-feature-20261016",
+          "q-d2-e02-feature-20261016",
+          "q-d6-e02-feature-20261016",
+          "q-d5-e06-feature-20261016",
+          "q-d5-e08-feature-20261016",
+          "q-d5-e08-feature-20261016-ms-20261017",
+          "q-d2-g21"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "feature-refresh-cli-reference",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "feature-refresh-cli-reference",
+        "title": "GitHub Copilot CLI command reference",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d2o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d2-inline-suggestions"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-a18-feature-20261016",
+          "q-sc03-1-feature-20261016",
+          "q-sc07-1-feature-20261016",
+          "q-d5-e07-feature-20261016",
+          "q-d2-e07-feature-20261016",
+          "q-d4-e09-feature-20261016",
+          "q-fnd-cli-login-20261017",
+          "q-fnd-ide-matrix-20261017",
+          "q-d2-a18-feature-20261016-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017",
+          "q-d4-e09-feature-20261016-ms-20261017"
+        ],
+        "lastCheckedAt": "2026-10-17",
+        "lastVerifiedAt": "2026-10-17",
+        "status": "verified"
+      },
+      "after": {
+        "id": "feature-refresh-cli-reference",
+        "title": "GitHub Copilot CLI command reference",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o2",
+          "d2o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-cli",
+          "lesson-d2-inline-suggestions"
+        ],
+        "relatedGlossaryIds": [
+          "g-copilot-cli",
+          "g-cli-execution-confirm",
+          "g-cli-context-limits"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d2-a18-feature-20261016",
+          "q-sc03-1-feature-20261016",
+          "q-sc07-1-feature-20261016",
+          "q-d5-e07-feature-20261016",
+          "q-d2-e07-feature-20261016",
+          "q-d4-e09-feature-20261016",
+          "q-fnd-cli-login-20261017",
+          "q-fnd-ide-matrix-20261017",
+          "q-d2-a18-feature-20261016-ms-20261017",
+          "q-d5-e07-feature-20261016-ms-20261017",
+          "q-d4-e09-feature-20261016-ms-20261017"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "feature-refresh-policies",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "feature-refresh-policies",
+        "title": "Managing policies and features for GitHub Copilot in your enterprise",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d3",
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d3o1",
+          "d2o4",
+          "d6o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-enterprise-policies",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d3-e02-feature-20261016"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      },
+      "after": {
+        "id": "feature-refresh-policies",
+        "title": "Managing policies and features for GitHub Copilot in your enterprise",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "relatedDomainIds": [
+          "d3",
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d3o1",
+          "d2o4",
+          "d6o1"
+        ],
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-enterprise-policies",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d3-e02-feature-20261016"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "status": "verified"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-usage-metrics",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-usage-metrics",
+        "title": "REST API endpoints for Copilot usage metrics",
+        "url": "https://docs.github.com/en/rest/copilot/copilot-usage-metrics",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      },
+      "after": {
+        "id": "admin-usage-metrics",
+        "title": "REST API endpoints for Copilot usage metrics",
+        "url": "https://docs.github.com/en/rest/copilot/copilot-usage-metrics",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-usage-metrics-api"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-policy-model",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-policy-model",
+        "title": "GitHub Copilot policies for enterprises and organizations",
+        "url": "https://docs.github.com/en/copilot/concepts/enterprise/policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d2-g18"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d6o1"
+        ]
+      },
+      "after": {
+        "id": "admin-policy-model",
+        "title": "GitHub Copilot policies for enterprises and organizations",
+        "url": "https://docs.github.com/en/copilot/concepts/enterprise/policies",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-org-policies",
+          "g-enterprise-policies",
+          "g-policy-inheritance"
+        ],
+        "relatedComparisonIds": [
+          "cmp-org-vs-enterprise-policies"
+        ],
+        "relatedQuestionIds": [
+          "q-d2-g18"
+        ],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d6o1"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-copilot-audit",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-copilot-audit",
+        "title": "Reviewing audit logs for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/review-audit-logs",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      },
+      "after": {
+        "id": "admin-copilot-audit",
+        "title": "Reviewing audit logs for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/review-audit-logs",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-audit-events",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-audit-events",
+        "title": "Audit log events for your organization",
+        "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/audit-log-events-for-your-organization",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      },
+      "after": {
+        "id": "admin-audit-events",
+        "title": "Audit log events for your organization",
+        "url": "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/audit-log-events-for-your-organization",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-audit-stream",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-audit-stream",
+        "title": "Streaming the audit log for your enterprise",
+        "url": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      },
+      "after": {
+        "id": "admin-audit-stream",
+        "title": "Streaming the audit log for your enterprise",
+        "url": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "admin-seat-assignment",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": {
+        "id": "admin-seat-assignment",
+        "title": "GitHub Copilot seat assignment",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-billing/seat-assignment",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-a05"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      },
+      "after": {
+        "id": "admin-seat-assignment",
+        "title": "GitHub Copilot seat assignment",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-billing/seat-assignment",
+        "publisher": "GitHub Docs",
+        "sourceType": "reference",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-audit-logs"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [
+          "q-d6-a05"
+        ],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ]
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "reference-enterprise-plan",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": null,
+      "after": {
+        "id": "reference-enterprise-plan",
+        "title": "Choosing your enterprise's plan for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [
+          "g-subscription-plans"
+        ],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2",
+          "d6"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4",
+          "d6o1"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18"
+      }
+    },
+    {
+      "kind": "sources",
+      "id": "reference-org-management",
+      "reason": "参照表・用語との出典対応と確認日",
+      "before": null,
+      "after": {
+        "id": "reference-org-management",
+        "title": "Managing GitHub Copilot in your organization",
+        "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization",
+        "publisher": "GitHub Docs",
+        "sourceType": "documentation",
+        "syllabusVersion": "2026-08-07",
+        "status": "verified",
+        "relatedLessonIds": [
+          "lesson-d2-org-governance"
+        ],
+        "relatedGlossaryIds": [],
+        "relatedComparisonIds": [],
+        "relatedQuestionIds": [],
+        "relatedDomainIds": [
+          "d2"
+        ],
+        "relatedObjectiveIds": [
+          "d2o4"
+        ],
+        "lastCheckedAt": "2026-10-18",
+        "lastVerifiedAt": "2026-10-18"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-start",
+      "rowId": "cli-install",
+      "topic": "CLIを導入する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-fnd-cli-install-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "cli-install"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-start",
+      "rowId": "cli-start",
+      "topic": "対話を開始する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d2-g07"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-start",
+      "rowId": "cli-login-shell",
+      "topic": "シェルから認証を始める",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-start",
+      "rowId": "cli-login-interactive",
+      "topic": "CLI内から認証を始める",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-fnd-cli-login-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-help-model",
+      "rowId": "cli-help-shell",
+      "topic": "シェルから使い方を調べる",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-help-model",
+      "rowId": "cli-help-interactive",
+      "topic": "対話中にコマンドを調べる",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-fnd-cli-login-20261017"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-help-model",
+      "rowId": "cli-model",
+      "topic": "使用するモデルを選ぶ",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-fnd-cli-login-20261017"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-run",
+      "rowId": "cli-prompt",
+      "topic": "回答後に終了する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-sc03-1-feature-20261016"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-run",
+      "rowId": "cli-interactive",
+      "topic": "最初の依頼の後も対話する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-sc03-1-feature-20261016",
+        "q-sc07-1-feature-20261016"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-run",
+      "rowId": "cli-silent",
+      "topic": "統計を付けず応答を受け取る",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-sc03-1-feature-20261016"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-resume",
+      "rowId": "cli-resume-inside",
+      "topic": "対話中に別のセッションを選ぶ",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-fnd-cli-login-20261017"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-resume",
+      "rowId": "cli-resume-picker",
+      "topic": "起動時に一覧から選ぶ",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-sc03-1-feature-20261016",
+        "q-sc07-1-feature-20261016"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-resume",
+      "rowId": "cli-resume-id",
+      "topic": "指定した作業を再開する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-sc07-1-feature-20261016"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-resume",
+      "rowId": "cli-continue",
+      "topic": "直近の作業を再開する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-sc07-1-feature-20261016"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-tools",
+      "rowId": "cli-allow",
+      "topic": "特定の操作を許可する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d2-a25-ms-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "cli-tool-permissions",
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-tools",
+      "rowId": "cli-deny",
+      "topic": "特定の操作を拒否する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d2-a25-ms-20261017",
+        "q-d2-e06-ms-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "cli-tool-permissions",
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-tools",
+      "rowId": "cli-permissions",
+      "topic": "現在の権限モードを確認する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-tools",
+      "rowId": "cli-available",
+      "topic": "提供する候補だけを指定する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-d2-e07-feature-20261016",
+        "q-d5-e07-feature-20261016-ms-20261017",
+        "q-d2-e06-ms-20261017"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "cli-tool-permissions",
+        "feature-refresh-cli-reference"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-tools",
+      "rowId": "cli-excluded",
+      "topic": "提供する候補から外す",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-d5-e07-feature-20261016-ms-20261017"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "cli-tool-permissions",
+        "feature-refresh-cli-reference"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-context",
+      "rowId": "cli-context-usage",
+      "topic": "文脈の使用量を調べる",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-d4-e09-feature-20261016-ms-20261017"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-context",
+      "rowId": "cli-compact",
+      "topic": "会話を要約して使用量を減らす",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-d4-e09-feature-20261016-ms-20261017"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-cli",
+      "tableId": "cli-context",
+      "rowId": "cli-clear",
+      "topic": "新しい会話を始める",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [
+        "q-d4-e09-feature-20261016-ms-20261017"
+      ],
+      "classification": "DISTRACTOR_ONLY",
+      "sourceIds": [
+        "feature-refresh-cli-reference"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-free",
+      "topic": "Free",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-student",
+      "topic": "Student",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-pro",
+      "topic": "Pro",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-pro-plus",
+      "topic": "Pro+",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-max",
+      "topic": "Max",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-business",
+      "topic": "Business",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans",
+        "reference-enterprise-plan"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-plan-management",
+      "rowId": "plan-enterprise",
+      "topic": "Enterprise",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans",
+        "reference-enterprise-plan"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-plan",
+      "topic": "組織へCopilotを提供しプランを選ぶ",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "plans",
+        "reference-enterprise-plan",
+        "reference-org-management"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-seat",
+      "topic": "シートを付与・解除する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d6-a05",
+        "q-fnd-seat-api-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "copilot-seat-api",
+        "admin-seat-assignment"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-policy",
+      "topic": "機能やモデルの利用可否を設定する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d2-g18",
+        "q-d2-g19",
+        "q-d6-e06-ms-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "feature-refresh-policies",
+        "policies",
+        "admin-policy-model"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-repo-exclusion",
+      "topic": "repoのContent Exclusionを変更する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d1-e04-feature-20261016",
+        "q-d6-e04-feature-20261016-ms-20261017"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "exclusion",
+        "exclusion-concept"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-org-exclusion",
+      "topic": "組織・企業のContent Exclusionを変更する",
+      "taught": true,
+      "correctChoiceQuestionIds": [
+        "q-d6-g01",
+        "q-sc01-2"
+      ],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "CORRECT_CHOICE",
+      "sourceIds": [
+        "exclusion",
+        "exclusion-concept"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-auto-review",
+      "topic": "対象PRの自動レビューを設定する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-d2-g21"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "feature-refresh-review-config",
+        "policies"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-org-metrics",
+      "topic": "組織の利用レポートを閲覧する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-d6-a09-ms-20261017",
+        "q-d3-a13-ms-20261017"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "admin-usage-metrics",
+        "copilot-seat-api"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-enterprise-metrics",
+      "topic": "企業の利用レポートを閲覧する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "admin-usage-metrics"
+      ]
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-audit-read",
+      "topic": "Enterprise監査ログを読む",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [
+        "q-sc07-3",
+        "q-d6-f04"
+      ],
+      "distractorOnlyQuestionIds": [],
+      "classification": "SCENARIO_ONLY",
+      "sourceIds": [
+        "admin-copilot-audit"
+      ],
+      "note": "関連シナリオはあるが、この操作・権限そのものを正解として選ぶ確認とは区別する。"
+    },
+    {
+      "lessonId": "lesson-d2-org-governance",
+      "tableId": "copilot-admin-operations",
+      "rowId": "admin-audit-stream",
+      "topic": "Enterprise監査ログのストリームを設定する",
+      "taught": true,
+      "correctChoiceQuestionIds": [],
+      "scenarioQuestionIds": [],
+      "distractorOnlyQuestionIds": [],
+      "classification": "NOT_TESTED",
+      "sourceIds": [
+        "admin-audit-stream"
+      ]
+    }
+  ],
+  "counts": {
+    "eligible": 253,
+    "byDifficulty": {
+      "beginner": 162,
+      "intermediate": 48,
+      "advanced": 43
+    },
+    "byDomain": {
+      "d1": 24,
+      "d2": 98,
+      "d4": 35,
+      "d5": 32,
+      "d6": 31,
+      "d3": 33
+    }
+  },
+  "nextCandidates": [
+    {
+      "id": "q-d2-g07",
+      "retainConcept": "旧エイリアスと現行CLIの識別",
+      "proposal": "旧ghcs/ghceを現行標準とせず、現行CLIの使い方を調べる入口まで問う案を検討する。",
+      "caution": "旧用語の基礎対応を維持できるか確認してから置換する。"
+    },
+    {
+      "id": "q-d2-g08",
+      "retainConcept": "CLIの実行許可・拒否",
+      "proposal": "一般的な仕組み名の識別から、特定操作だけを許可・拒否するコマンドの選択へ見直す。",
+      "caution": "既存の応用のGit許可・push拒否と同じ問題にせず、基礎の単一判断にする。"
+    },
+    {
+      "id": "q-d2-g09",
+      "retainConcept": "CLIのファイル参照範囲",
+      "proposal": "参照範囲を決める条件から、必要なディレクトリアクセスを指定する基本操作の判断へ見直す案を検討する。",
+      "caution": "追加フォルダーが扱えることと、全ファイルを保証して使うことを混同しない。"
+    }
+  ],
+  "unresolved": [
+    "/model、会話管理、プラン別の管理範囲、委任された閲覧ロール等には、直接の正解選択問題が不足する。候補3件だけで全て解消したとは扱わない。",
+    "CLIへのContent Exclusionの公式資料間の説明差は維持。"
+  ]
+}

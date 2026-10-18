@@ -1,0 +1,173 @@
+{
+  "checkedAt": "2026-10-18T06:26:27.077Z",
+  "result": "PASS_WITH_DOCUMENTED_SKIPS",
+  "scope": "今回追加したCLI・管理教材、基礎6問および既存機能の回帰検証",
+  "unit": {
+    "files": 31,
+    "passed": 285
+  },
+  "typecheck": "passed",
+  "explanationCheck": "passed",
+  "productionBuild": "next build --webpack: passed",
+  "e2e": {
+    "stats": {
+      "startTime": "2026-10-18T06:19:59.097Z",
+      "duration": 149185.565,
+      "expected": 92,
+      "skipped": 4,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "projects": {
+      "desktop": {
+        "passed": 46,
+        "skipped": 2,
+        "failed": 0
+      },
+      "mobile": {
+        "passed": 46,
+        "skipped": 2,
+        "failed": 0
+      }
+    },
+    "skipped": [
+      {
+        "project": "desktop",
+        "title": "surviving historical Copilot focus actions score and persist in practice",
+        "reasons": [
+          "The historical cohort is fully retired; replacement content is exercised in feature-refresh and multi-select."
+        ]
+      },
+      {
+        "project": "mobile",
+        "title": "surviving historical Copilot focus actions score and persist in practice",
+        "reasons": [
+          "The historical cohort is fully retired; replacement content is exercised in feature-refresh and multi-select."
+        ]
+      },
+      {
+        "project": "desktop",
+        "title": "all remaining new Applied questions can be selected, answered and persisted",
+        "reasons": [
+          "All questions in this historical cohort have been retired; current replacements are covered by feature-refresh and multi-select."
+        ]
+      },
+      {
+        "project": "mobile",
+        "title": "all remaining new Applied questions can be selected, answered and persisted",
+        "reasons": [
+          "All questions in this historical cohort have been retired; current replacements are covered by feature-refresh and multi-select."
+        ]
+      }
+    ],
+    "report": "artifacts/app-regression-2026-10-18.json"
+  },
+  "runningApp": {
+    "checkedAt": "2026-10-18T06:24:48.445Z",
+    "baseURL": "http://localhost:3000",
+    "isolatedBrowserStorage": true,
+    "views": [
+      {
+        "name": "desktop",
+        "steps": [
+          "dashboard-loaded",
+          "practice-started",
+          "answer-explanation-rendered",
+          "isolated-history-persisted",
+          "latest-cli-lesson-search-and-tables"
+        ],
+        "errors": [],
+        "assetFailures": [],
+        "status": "passed"
+      },
+      {
+        "name": "mobile",
+        "steps": [
+          "dashboard-loaded",
+          "practice-started",
+          "answer-explanation-rendered",
+          "isolated-history-persisted",
+          "latest-cli-lesson-search-and-tables"
+        ],
+        "errors": [],
+        "assetFailures": [],
+        "status": "passed"
+      }
+    ]
+  },
+  "counts": {
+    "eligible": 253,
+    "byDifficulty": {
+      "beginner": 162,
+      "intermediate": 48,
+      "advanced": 43
+    },
+    "byDomain": {
+      "d1": 24,
+      "d2": 98,
+      "d4": 35,
+      "d5": 32,
+      "d6": 31,
+      "d3": 33
+    }
+  },
+  "fingerprints": [
+    {
+      "path": "questions/seed.json",
+      "before": "037fc3b22118ea5dc88ef362a1563e241004bacf231c504395bce0a5684185c1",
+      "after": "037fc3b22118ea5dc88ef362a1563e241004bacf231c504395bce0a5684185c1",
+      "unchanged": true
+    },
+    {
+      "path": "questions/answer-explanations.json",
+      "before": "56a219fdbac316ec4e6acc0c8f4ad0dcb1b08236c69ffc8bccb6d192c371c444",
+      "after": "56a219fdbac316ec4e6acc0c8f4ad0dcb1b08236c69ffc8bccb6d192c371c444",
+      "unchanged": true
+    },
+    {
+      "path": "questions/official-alignment-revisions.json",
+      "before": "0d2bfb74a52a52ad40f2a52bfd06e8d349b911ea0dac79c6789990620fc9c268",
+      "after": "0d2bfb74a52a52ad40f2a52bfd06e8d349b911ea0dac79c6789990620fc9c268",
+      "unchanged": true
+    },
+    {
+      "path": "questions/admin-content-revisions.json",
+      "before": "803173968565ac072ac8d7f838eb5deea68961454de118b026565ae8cf86a40b",
+      "after": "803173968565ac072ac8d7f838eb5deea68961454de118b026565ae8cf86a40b",
+      "unchanged": true
+    },
+    {
+      "path": "questions/foundation-cli-admin-revisions.json",
+      "before": "ea52c137571193a6a97318ab08b4e4548bea7c34fe5aaf35a3408987e89cecb5",
+      "after": "ea52c137571193a6a97318ab08b4e4548bea7c34fe5aaf35a3408987e89cecb5",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/seed.json",
+      "before": "2b6f7ec14ef6fa7f7e01929dd61a87724c300bcd1d7e4ffbdf9c968218760485",
+      "after": "2b6f7ec14ef6fa7f7e01929dd61a87724c300bcd1d7e4ffbdf9c968218760485",
+      "unchanged": true
+    },
+    {
+      "path": "glossary/terms.json",
+      "before": "4b379f1d3e537c8558ff30ba3964732876ff4741f04732f5b1aec175e6b736bf",
+      "after": "4b379f1d3e537c8558ff30ba3964732876ff4741f04732f5b1aec175e6b736bf",
+      "unchanged": true
+    },
+    {
+      "path": "sources.json",
+      "before": "507ce7df61c529d216f6fc1768527247ab1b4d51b6ccabec9b1f8bff65ffced9",
+      "after": "507ce7df61c529d216f6fc1768527247ab1b4d51b6ccabec9b1f8bff65ffced9",
+      "unchanged": true
+    }
+  ],
+  "applicationChangesDuringInspection": [],
+  "testChanges": [
+    "tests/e2e/runtime-regression.spec.ts: 複数選択では1件の選択で無効、2件で有効になることを確認して解答する。"
+  ],
+  "limitations": [
+    "ChromiumでPC・モバイル表示を検証。実機SafariやFirefoxの追加検証はしていない。",
+    "ローカル開発版はlocalhostでクライアントコード読込完了後に操作した。",
+    "全253問を一問ずつブラウザで回答したとの主張ではない。"
+  ]
+}

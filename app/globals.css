@@ -4183,6 +4183,31 @@ summary {
   font-size: 15px;
   line-height: 1.75;
   color: #e2e8f0;
+  overflow-wrap: anywhere;
+}
+
+/* Reference rows keep their header associations when stacked on small screens. */
+.lesson-reference { margin-top: 22px; min-width: 0; }
+.reference-verification { margin-bottom: 10px; }
+.lesson-reference-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 14px; line-height: 1.7; }
+.lesson-reference-table caption { text-align: left; font-size: 16px; font-weight: 700; color: #7dd3fc; padding-bottom: 14px; }
+.lesson-reference-table th, .lesson-reference-table td { padding: 14px 12px; text-align: left; vertical-align: top; border: 1px solid #334155; overflow-wrap: anywhere; }
+.lesson-reference-table thead th { background: #0c2533; color: #a5e9fc; }
+.lesson-reference-table tbody th { color: #e2e8f0; background: #14232e; font-weight: 650; }
+.lesson-reference-table td { color: #d8e3ef; background: #101d28; }
+.reference-cell-label { display: none; }
+.reference-example { font-size: 13px; color: #b7c7d9; margin: 12px 0 0; }
+.reference-row-sources { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+.reference-row-sources a { color: #67e8f9; text-decoration: underline; text-underline-offset: 3px; }
+.reference-row-sources a:focus-visible { outline: 2px solid #67e8f9; outline-offset: 4px; }
+@media (max-width: 800px) {
+  .lesson-reference-table, .lesson-reference-table tbody { display: block; }
+  .lesson-reference-table caption { display: block; }
+  .lesson-reference-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+  .lesson-reference-table tbody tr { display: block; border: 1px solid #334155; border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+  .lesson-reference-table tbody th, .lesson-reference-table td { display: block; border: 0; padding: 12px 14px; }
+  .lesson-reference-table td { border-top: 1px solid #263545; }
+  .reference-cell-label { display: block; font-size: 12px; font-weight: 700; color: #82bdd5; margin-bottom: 4px; }
 }
 
 /* Section List & Items */

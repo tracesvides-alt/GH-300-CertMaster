@@ -1,4 +1,5 @@
 import details from '@/content/gh300/2026-08-07/questions/answer-explanations.json';
+import { revisedAnswerExplanation } from './question-revision';
 
 type ExplanationQuestion = {
   id: string;
@@ -15,6 +16,8 @@ const byId = new Map(details.questions.map(row => [row.id, row]));
 
 /** New prose is bound to the exact question, including saved-session snapshots. */
 export function answerExplanation(q: ExplanationQuestion): string {
+  const revised = revisedAnswerExplanation(q);
+  if (revised !== undefined) return revised;
   const row = byId.get(q.id);
   if (!row) return q.explanation;
   const contract = JSON.stringify({ question: q.question, choices: q.choices, answer: q.answer,

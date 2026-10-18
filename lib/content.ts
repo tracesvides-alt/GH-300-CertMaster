@@ -6,6 +6,7 @@ import glossaryData from '@/content/gh300/2026-08-07/glossary/terms.json';
 import comparisonsData from '@/content/gh300/2026-08-07/comparisons/guides.json';
 import scenarioSetsData from '@/content/gh300/2026-08-07/scenario-sets/seed.json';
 import seeds from '@/content/gh300/2026-08-07/questions/seed.json';
+import { applyQuestionRevision, isQuestionRevisionUnavailable, requiresAttemptRevision } from './question-revision';
 import { isQuestionActive } from './question-availability';
 import {isMultiSelect,multiSelectPatterns} from './question-format';
 import {
@@ -74,7 +75,7 @@ export type LegacyLesson = {
   objectiveIds?: string[];
   estimatedMinutes?: number;
   difficulty?: string;
-  sections?: Array<{ heading: string; content: string }>;
+  sections?: Lesson['sections'];
   glossaryIds?: string[];
   comparisonIds?: string[];
   questionIds?: string[];
@@ -266,5 +267,28 @@ export const questionSchema = z.preprocess(value=>{
     })) fail('Choice quality metadata must match answers and sources');
   }));
 export type Question = z.infer<typeof questionSchema>;
-export const allQuestions = seeds.map((q) => questionSchema.parse(q));
+export const allQuestions = seeds.map((q) => questionSchema.parse(applyQuestionRevision(q)));
 export const questions = allQuestions.filter(isQuestionActive);
+
+const originalQuestionById = new Map(seeds.map(q=>[q.id,q]));
+
+/** New attempts carry an edition marker; legacy attempts retain their original question. */
+export function questionForHistoricalAttempt(question:Question, attempt:{correctChoiceIds?:string[];questionRevision?:string}):Question {
+  const original=originalQuestionById.get(question.id);
+  if (!original || !isQuestionRevisionUnavailable(original)) return question;
+  if (requiresAttemptRevision(question.id))
+    return attempt.questionRevision===question.contentRevision ? question : questionSchema.parse(original);
+  const sameKey=attempt.correctChoiceIds?.length===question.answer.length &&
+    attempt.correctChoiceIds.every(id=>question.answer.includes(id));
+  return sameKey ? question : questionSchema.parse(original);
+}
+
+/** Explicit teaching links for the six reviewed editions; keep legacy fallback elsewhere. */
+export function directQuestionStudyLinks(question:Question) {
+  if(!requiresAttemptRevision(question.id))return undefined;
+  const terms=glossaryTerms.filter(term=>term.basicQuestionId===question.id);
+  if(!terms.length)return undefined;
+  const lesson=lessons.find(item=>terms.some(term=>term.lessonIds[0]===item.id));
+  const comparisons=comparisonGuides.filter(item=>terms.some(term=>term.comparisonIds.includes(item.id)));
+  return {lesson,terms,comparisons};
+}

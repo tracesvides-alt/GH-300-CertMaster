@@ -17,6 +17,7 @@ import {
   domains,
   glossaryTerms,
   comparisonGuides,
+  questionForHistoricalAttempt,
 } from '@/lib/content';
 import type { WrongAnswerRecord, ConceptConfusionPair } from '@/lib/adaptive-learning';
 import type { Attempt } from '@/lib/learning';
@@ -109,7 +110,7 @@ export default function WrongAnswerNotebook({
       if (!q) return;
       const lastA = latestAttemptByQ[qid];
       const record = wrongAnswers.find((w) => w.questionId === qid);
-      list.push({ question: q, attempt: lastA, record });
+      list.push({ question: questionForHistoricalAttempt(q,lastA), attempt: lastA, record });
     });
     return list.sort((a, b) => b.attempt.at - a.attempt.at);
   }, [attempts, allQuestions, wrongAnswers]);
@@ -356,7 +357,7 @@ export default function WrongAnswerNotebook({
                   </button>
                   <button
                     className="small-action-btn"
-                    onClick={() => onStartQuickReview([question])}
+                    onClick={() => onStartQuickReview([allQuestions.find(q=>q.id===question.id)??question])}
                   >
                     <RotateCcw size={14} /> もう一度解く
                   </button>

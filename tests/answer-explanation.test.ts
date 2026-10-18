@@ -5,6 +5,9 @@ import { answerExplanation } from '../lib/answer-explanation';
 import seed from '../content/gh300/2026-08-07/questions/seed.json';
 import details from '../content/gh300/2026-08-07/questions/answer-explanations.json';
 import report from '../reports/answer-explanation-review-2026-10-17.json';
+import revisions from '../content/gh300/2026-08-07/questions/official-alignment-revisions.json';
+import adminRevisions from '../content/gh300/2026-08-07/questions/admin-content-revisions.json';
+import foundationRevisions from '../content/gh300/2026-08-07/questions/foundation-cli-admin-revisions.json';
 
 describe('versioned answer explanations', () => {
   it('covers every eligible question and preserves the question bank and short analyses', () => {
@@ -13,6 +16,14 @@ describe('versioned answer explanations', () => {
     expect(createHash('sha256').update(JSON.stringify(seed)).digest('hex')).toBe(report.baselineSeedFingerprint);
     for (const q of eligible) {
       const row=report.questions.find(row=>row.id===q.id)!;
+      const revision=[...revisions.questions,...adminRevisions.questions,...foundationRevisions.questions].find(row=>row.id===q.id);
+      if(revision){
+        expect(answerExplanation(q)).toBe(revision.displayedExplanation);
+        expect(q.question).toBe(revision.after.question);
+        expect(q.answer).toEqual(revision.after.answer);
+        expect(q.choiceExplanations).toEqual(revision.after.choiceExplanations);
+        continue;
+      }
       expect(answerExplanation(q)).toBe(row.after);
       expect(row.before).toBe(q.explanation);
       expect(row.choices).toEqual(q.choices);
@@ -38,11 +49,14 @@ describe('versioned answer explanations', () => {
     for (const q of allQuestions.filter(q=>!current.has(q.id))) expect(answerExplanation(q)).toBe(q.explanation);
   });
 
-  it('records the discovered review-effort contradiction without presenting it as verified', () => {
+  it('preserves the historical warning while serving the corrected review-effort question', () => {
     const issue=report.issues[0];
     expect(issue.id).toBe('q-d5-e08-feature-20261016-ms-20261017');
     expect(issue.status).toBe('QUESTION_REVISION_REQUIRED');
-    expect(answerExplanation(questions.find(q=>q.id===issue.id)!)).toContain('要レビュー');
-    expect(answerExplanation(questions.find(q=>q.id===issue.id)!)).toContain('当該PRで前回使用した深度');
+    expect(answerExplanation(seed.find(q=>q.id===issue.id)!)).toContain('要レビュー');
+    const current=questions.find(q=>q.id===issue.id)!;
+    expect(current.answer).toEqual(['C','D']);
+    expect(answerExplanation(current)).not.toContain('要レビュー');
+    expect(answerExplanation(current)).toContain('Pには今回の明示指定がなく');
   });
 });

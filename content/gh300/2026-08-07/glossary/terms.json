@@ -1297,7 +1297,7 @@
       "Copilot CLI"
     ],
     "shortDefinition": "現行のGitHub Copilot CLIは、ターミナルで対話し、コード調査・編集やコマンド実行を支援するエージェント型ツール。",
-    "detailedDefinition": "現行CLIは @github/copilot パッケージなどで導入し、copilot コマンドで起動する。初回認証や作業ディレクトリへの信頼確認を行う。旧 gh copilot 拡張の explain/suggest とは区別する。",
+    "detailedDefinition": "現行CLIはcopilotで起動し、対話内では/login、/help、/model等を使います。シェルでのcopilot loginやcopilot helpとは入力場所を区別します。ファイルの調査・編集やコマンド実行も支援するため、対象フォルダーの信頼とツール権限、変更結果を確認します。旧gh copilot拡張のexplain/suggestは現行の標準サブコマンドではありません。目的別の操作と使用例はCLI教材の参照表で確認できます。",
     "category": "Copilot機能",
     "importance": "essential",
     "domainIds": [
@@ -1313,12 +1313,12 @@
       "スクリプト実行前の挙動確認"
     ],
     "examPoints": [
-      "現行CLIは copilot で起動する",
-      "コマンドとファイル変更の許可を確認する",
-      "CLIへのContent Exclusion適用は公式資料間で説明が食い違う"
+      "シェルのコマンドと、CLI対話中のスラッシュコマンドを区別する。",
+      "導入・認証、実行方法、再開先、文脈管理を目的に応じて選ぶ。",
+      "CLIへのContent Exclusionの適用には公式資料間の説明差があるため確認する。"
     ],
     "commonConfusions": [
-      "IDE内ターミナルの `@terminal` と、スタンドアロンの `gh copilot` コマンドの混同"
+      "現行のcopilot、旧拡張のgh copilot、GitHub CLIのgh、一般のシェルコマンドを混同すること。"
     ],
     "relatedTermIds": [
       "g-gh-copilot-explain",
@@ -1337,10 +1337,12 @@
       "cli",
       "guide",
       "cli-current",
-      "cli-exclusion-admin"
+      "cli-exclusion-admin",
+      "feature-refresh-cli-reference",
+      "cli-tool-permissions"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "status": "needs-review",
     "basicQuestionId": "q-d2-f11"
   },
@@ -1506,7 +1508,7 @@
       "コマンド実行保護"
     ],
     "shortDefinition": "Copilot CLIの変更系ツールには許可設定があり、事前に広い権限を与えた場合は毎回の確認なしに実行されることもある。",
-    "detailedDefinition": "現行の `copilot` CLIでは読み取り系操作と変更系操作で権限の扱いが異なる。変更系ツールは通常承認を求めるが、保存した許可や `--allow-all`、autopilotモードなどの設定によって個別確認を省略できる。旧 `gh copilot suggest` の「Execute command」メニューは現行CLIの標準操作ではない。",
+    "detailedDefinition": "CLIではモデルへ提示するツールの候補と、実行を許可・拒否する条件を分けます。--allow-toolで範囲を絞って許可し、--deny-toolで拒否します。重なる操作では拒否が優先します。/permissions showでは現在の権限モードを確認できます。事前許可によって毎回の確認が省かれる場合がありますが、Autopilotによる次ターンへの継続とは別の仕組みです。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -1521,8 +1523,9 @@
       "広い権限を許可したセッションの変更差分を検査する"
     ],
     "examPoints": [
-      "CLIは権限に基づきファイル編集やコマンド実行を行える",
-      "承認の頻度は事前許可と実行モードによって変わる"
+      "候補として提供されていることと、その実行が許可されることは別である。",
+      "許可と拒否が重なる操作では拒否が優先する。",
+      "権限モードの確認と、広い権限の付与を区別する。"
     ],
     "commonConfusions": [
       "CLIは危険なので実行機能自体が存在しないという誤解（確認付きで実行可能）"
@@ -1542,10 +1545,11 @@
     "sourceIds": [
       "cli",
       "responsible",
-      "cli-tool-permissions"
+      "cli-tool-permissions",
+      "feature-refresh-cli-reference"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g08"
   },
@@ -1557,7 +1561,7 @@
       "CLIコンテキスト制限"
     ],
     "shortDefinition": "Copilot CLIは権限内でリポジトリのファイルを読み調査できる。利用できる外部データやツールは権限と設定に依存する。",
-    "detailedDefinition": "現行Copilot CLIはコードベースの検索、ファイル読み取り・編集、コマンド実行などのツールを使える。コンテキストが入力プロンプトだけに限定されるという旧CLI前提は誤り。アクセスできる範囲は実行場所、権限、設定したツールによって変わる。",
+    "detailedDefinition": "ファイルを取得できる範囲は、実行場所、アクセスを許可したフォルダー、利用可能なツール等に依存します。取得できることと、文脈へ保持できる量も別です。/contextで使用量を確認し、/compactで会話を要約し、/clearで新しい会話を開始します。これらはアクセス権の追加や、MCPのツール定義を削除する操作ではありません。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -1572,8 +1576,9 @@
       "エラーメッセージをプロンプトに引用して原因調査"
     ],
     "examPoints": [
-      "現行CLIは権限内のリポジトリを調査できる",
-      "Content ExclusionのCLI適用について公式資料間に矛盾がある"
+      "CLIは権限内のファイルを調査・変更できる。",
+      "/context、/compact、/clearを目的で区別する。",
+      "会話の圧縮だけで、すべてのツール定義まで減るとは判断しない。"
     ],
     "commonConfusions": [
       "旧 `gh copilot` 拡張の制限を現行 `copilot` CLIに当てはめること"
@@ -1593,10 +1598,11 @@
       "cli",
       "exclusion",
       "cli-tool-permissions",
-      "cli-exclusion-admin"
+      "cli-exclusion-admin",
+      "feature-refresh-cli-reference"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "needs-review",
     "basicQuestionId": "q-d2-g09"
   },
@@ -2053,7 +2059,7 @@
       "Copilot PR Review"
     ],
     "shortDefinition": "プルリクエストにおいて、変更差分をAIが自動分析してコード品質、潜在バグ、改善提案のコメントを投稿する機能。",
-    "detailedDefinition": "GitHub.com上のPull Requestで動作する。差分に含まれる論理エラー、セキュリティ上の懸念、可読性の問題を見つけ出し、該当行に直接サジェスト付きコメントを行う。組織ポリシーにより自動実行や必須レビュー対象として設定可能。",
+    "detailedDefinition": "PRの変更差分などを分析し、問題の指摘や修正案を提示する機能です。利用許可を管理するポリシーと、repo・組織のrulesetや個人設定で自動起動する条件は別です。Copilotによる承認は2026年9月1日追加のPublic previewで、承認の生成とマージ要件への算入も別の設定です。出力を検証し、組織が維持する人のレビュー要件も満たします。",
     "category": "Copilot機能",
     "importance": "essential",
     "domainIds": [
@@ -2071,9 +2077,9 @@
       "レビュアーの負荷軽減とレビューサイクルの短縮"
     ],
     "examPoints": [
-      "Pull Requestの差分に対してインラインコメントを投稿できる",
-      "組織設定で自動レビューポリシーを適用可能",
-      "最終的なマージ承認権限は人間のレビュアーが持つ"
+      "PRの差分に対して指摘や修正案を提示できる。",
+      "利用許可、自動レビューの起動、承認の算入は別の設定である。",
+      "Copilotの承認が出ても、人の必須レビューが不要とは判断しない。"
     ],
     "commonConfusions": [
       "PR Summary（要約作成）とCode Review（指摘・改善提案）の違い"
@@ -2098,10 +2104,11 @@
     "sourceIds": [
       "code-review",
       "policies",
-      "guide"
+      "feature-refresh-review-config",
+      "alignment-approvals-release"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g14"
   },
@@ -2506,8 +2513,8 @@
       "組織ポリシー",
       "Copilot設定ポリシー"
     ],
-    "shortDefinition": "GitHub Organizationの管理者が、所属メンバーのCopilot機能の有効化・制限・動作条件を一元管理するルール設定。",
-    "detailedDefinition": "組織管理者は、Suggestions matching public code（公開コード一致時のブロック）、Copilot in CLI、Copilot Chat in IDE、Copilot PR Reviewなどの各機能について、組織全体で「Enabled」「Disabled」またはEnterpriseからの継承を設定できる。",
+    "shortDefinition": "Organization ownerが、組織からCopilotの資格を得る利用者の機能・モデル等を管理する設定。",
+    "detailedDefinition": "Organization ownerはBusiness/Enterpriseの組織ポリシーを管理します。Enterpriseで対象ポリシーを決定している場合は上書きできず、組織へ判断を委任されている場合に選択できます。通常はライセンスの提供元が適用先を決めますが、全利用者を対象とする設定等の例外もあります。機能の利用許可と、自動レビューを起動するrulesetは別の設定です。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2524,9 +2531,9 @@
       "CLI版Copilotの社内利用の制限または許可"
     ],
     "examPoints": [
-      "Enterprise設定でロックされていない限りOrgレベルで上書き・設定可能",
-      "Public code suggestionsのブロック設定はポリシーで強制可能",
-      "ポリシー変更は組織内の全シートに適用される"
+      "対象ポリシーをEnterprise側で決定していればOrgから上書きできない。",
+      "通常の適用先は、その組織から資格を得る利用者である。",
+      "機能の利用許可だけで、個別の自動起動条件まで決まるわけではない。"
     ],
     "commonConfusions": [
       "個々の開発者が個人設定で組織のポリシーを無効化できるという誤解（組織ポリシーが優先）"
@@ -2551,10 +2558,10 @@
     ],
     "sourceIds": [
       "policies",
-      "guide"
+      "admin-policy-model"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g18"
   },
@@ -2566,8 +2573,8 @@
       "Enterprise Policies",
       "企業全体ポリシー"
     ],
-    "shortDefinition": "GitHub Enterpriseの管理者が、傘下のすべてのOrganizationに対して適用する最上位の統制ポリシー。",
-    "detailedDefinition": "Enterprise管理者は、Copilotポリシー（Public Code Matching、Copilot Chat、CLI、Code Review等）に対して「No policy (組織に委任)」「Allowed」「Blocked」のいずれかを強制（Enforce）でき、傘下のOrg管理者が勝手に緩めることを禁止できる。",
+    "shortDefinition": "Enterprise ownerが、企業内のCopilotの機能やモデル等の利用方針を管理する設定。",
+    "detailedDefinition": "Enterprise ownerは対象機能の利用方針を企業側で決めるか、Organizationへ判断を委任できます。企業側で決定した対象ポリシーをOrg側で上書きすることはできません。Copilot Enterpriseというプラン名とEnterprise ownerという管理ロールは別です。利用できる選択肢や適用先はポリシーごとに確認し、全設定に同じ三段階の継承を当てはめません。",
     "category": "プライバシーと管理",
     "importance": "important",
     "domainIds": [
@@ -2584,8 +2591,9 @@
       "社内全OrgでのCopilot Code Reviewの統一適用"
     ],
     "examPoints": [
-      "EnterpriseでEnforceされたポリシーは傘下のOrganizationで変更不可",
-      "最上位のガバナンス層として機能する"
+      "企業側で決定した対象ポリシーはOrg側で上書きできない。",
+      "組織への委任と、企業で方針を決めることを区別する。",
+      "Copilot Businessでも企業ポリシーの対象となり得る。プラン名とロールを混同しない。"
     ],
     "commonConfusions": [
       "Org設定がEnterprise設定に勝てるという誤解"
@@ -2606,10 +2614,11 @@
       "q-d2-g19"
     ],
     "sourceIds": [
-      "policies"
+      "feature-refresh-policies",
+      "admin-policy-model"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g19"
   },
@@ -2621,8 +2630,8 @@
       "Seat assignment",
       "ライセンス付与"
     ],
-    "shortDefinition": "GitHub Copilotの有料サブスクリプションシートを組織メンバーやチームに対して割り当て、剥奪、監視する運用。",
-    "detailedDefinition": "組織管理者は、特定のユーザー個人、または特定のGitHub Teamに対してCopilotシートを付与できる。シートが割り当てられたユーザーのみがIDEやCLIでCopilotを認証・利用可能となり、月額利用料がカウントされる。",
+    "shortDefinition": "組織が提供するCopilotの利用資格を、利用者やチームへのシート割り当てとして管理すること。",
+    "detailedDefinition": "Business/Enterpriseを組織から利用する場合、Organization owner等の必要な権限を持つ担当者が、ユーザーやチームへのアクセスを管理します。組織シートがないことは、個人Free等の別の資格でもCopilotを使えないという意味ではありません。APIでの付与・解除には、エンドポイントの条件と認証方式ごとの権限が必要です。解除予約の時点と実際に資格を失う時点、チーム経由で残る資格も区別します。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2637,12 +2646,13 @@
       "未アクティブユーザーからのシート回収とコスト最適化"
     ],
     "examPoints": [
-      "個人指定またはチーム単位でシートを付与できる",
-      "シートを持たないユーザーは利用不可",
-      "REST APIを使用して割り当ての自動化が可能"
+      "組織提供の資格と、GitHubへのサインイン・個人プランの資格は別である。",
+      "シートの割り当てと実際の利用状況は別のデータで確認する。",
+      "APIでシートを変更するには対象組織と認証方式に合う書込権限等が必要である。"
     ],
     "commonConfusions": [
-      "Organizationに所属していれば自動で全員が使えるという誤解（シート割り当てが必要）"
+      "組織に所属するだけでCopilotの資格も付与されると思うこと。",
+      "組織のシート解除だけで、その人のあらゆるCopilot利用が直ちに停止すると考えること。"
     ],
     "relatedTermIds": [
       "g-subscription-plans",
@@ -2656,11 +2666,11 @@
       "q-d6-a05"
     ],
     "sourceIds": [
-      "policies",
-      "rest-api"
+      "copilot-seat-api",
+      "plans"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d6-a05"
   },
@@ -2673,7 +2683,7 @@
       "Business vs Enterprise"
     ],
     "shortDefinition": "個人向けFree・Student・Pro・Pro+・Maxと、組織向けBusiness・Enterpriseなど、GitHub Copilotの利用条件と管理機能を定めるプラン。",
-    "detailedDefinition": "利用可能な機能、AIクレジット、モデル、組織ポリシーはプランで異なり、管理者設定や利用面によっても変わります。現行プラン表と機能マトリクスを確認し、特定機能がEnterprise専用などと固定的に断言しないでください。 Copilot Freeは現行の個人向けプランとして存在する。古い練習問題の「一般利用者に無料なし」は現行仕様ではない。",
+    "detailedDefinition": "Copilot Freeは現行の個人プランです。個人向けにはFree・Student・Pro・Pro+・Max、組織向けにはBusiness・Enterpriseがあります。プランは利用条件であり、管理ロールではありません。個人の有料プランでも、組織のシートやポリシーを変更する権限は付与されません。Copilot EnterpriseはGitHub Enterprise Cloudを利用する企業向けで、企業のownerが組織ごとのプラン選択を管理します。詳細は組織管理教材のプラン表と、別に用意した操作別権限表を照合します。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2690,9 +2700,9 @@
       "コンプライアンス要件に応じたBusiness以上の選択"
     ],
     "examPoints": [
-      "Business/Enterprise顧客データはモデル学習に使用されない",
-      "Content ExclusionはBusiness/Enterpriseで利用可能",
-      "機能の提供範囲は現行プラン表と機能マトリクスで確認する"
+      "プラン名、GitHubの契約・アカウント、管理ロールを区別する。",
+      "CLIを利用できることと、組織管理を行えることは別である。",
+      "Business/Enterpriseでも対象機能の許可・シート・操作権限等を確認する。"
     ],
     "commonConfusions": [
       "個人プランと組織プランでプライバシーポリシーが同一であるという誤解"
@@ -2717,10 +2727,11 @@
       "privacy",
       "guide",
       "plans",
-      "feature-matrix"
+      "feature-matrix",
+      "reference-enterprise-plan"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-10-12",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g20"
   },
@@ -2733,7 +2744,7 @@
       "Audit Events"
     ],
     "shortDefinition": "組織内でのCopilot関連の管理操作（シート付与/剥奪、ポリシー変更、除外ルール更新等）を記録した改ざん耐性のあるログ。",
-    "detailedDefinition": "GitHub Enterprise / OrganizationのAudit Log機能を通じて追跡できる。`copilot.enable`, `copilot.disable`, `copilot.cf_update` などのイベントタイプが記録され、いつ誰がどのポリシーを変更したかをコンプライアンス監査のために証明できる。",
+    "detailedDefinition": "設定やライセンス等の変更をaction、actor、日時から追跡する記録です。例はcopilot.cfb_org_settings_changedとcopilot.cfb_seat_assignment_createdです。チーム経由の付与では関連イベントも照合します。Enterprise監査ログはEnterprise ownerやRead enterprise audit logsのカスタムロール等が閲覧します。クライアントのプロンプト全文は通常の監査ログに含まれず、別の監視設定とは区別します。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2748,9 +2759,9 @@
       "ライセンス割り当て履歴の外部監査報告"
     ],
     "examPoints": [
-      "管理者の設定変更イベントが記録される",
-      "SIEMツール（Splunk, Datadog等）にストリーミング可能",
-      "個々のプロンプト内容自体は監査ログには記録されない（プライバシー保護）"
+      "設定・ライセンスの変更イベントと実行者・日時を確認する。",
+      "Enterpriseの長期保存には、Enterprise ownerが設定する監査ログのストリーミング等を利用できる。全プラン共通とは考えない。",
+      "活動レポートやクライアントの内容収集とは別の仕組みである。"
     ],
     "commonConfusions": [
       "監査ログに開発者の書いたソースコードやプロンプト全文が残るという誤解"
@@ -2768,10 +2779,13 @@
     ],
     "sourceIds": [
       "audit-log",
-      "policies"
+      "admin-copilot-audit",
+      "admin-audit-events",
+      "admin-audit-stream",
+      "admin-seat-assignment"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d6-f04"
   },
@@ -2783,8 +2797,8 @@
       "Usage Metrics API",
       "Copilot REST API"
     ],
-    "shortDefinition": "組織やEnterpriseにおけるCopilotの利用率、提案受入率、アクティブユーザー数をプログラマティックに取得・分析するためのREST API。",
-    "detailedDefinition": "`GET /orgs/{org}/copilot/usage` などのエンドポイントを通じて、日ごとのアクティブユーザー数、コード提案の合計提示数および採用数（受入率）、言語別の利用統計などの集計メトリクスを取得し、導入効果の測定やROI分析に役立てられる。",
+    "shortDefinition": "Copilotの活動・導入状況を、組織集計や利用者別レポートとして取得するREST API。",
+    "detailedDefinition": "GET /orgs/{org}/copilot/metrics/reports/organization-1-day?day=YYYY-MM-DD は日次レポートの取得例です。応答のdownload_linksから実際のレポートを取得します。組織集計のほか利用者別のレポートもあります。シートの割り当て一覧とは目的が異なり、活動の欠落だけで利用資格を判断しません。Organization ownerやView Organization Copilot Metricsを持つ利用者等と、必要なトークン権限を確認します。",
     "category": "Copilot機能",
     "importance": "important",
     "domainIds": [
@@ -2795,16 +2809,17 @@
     ],
     "whyItMatters": "組織内におけるCopilotの採用率、提案受諾率、アクティブユーザー数などを定量分析し、投資対効果（ROI）測定やライセンス最適化を行う管理者シナリオで出題される。",
     "useCases": [
-      "社内BIダッシュボードでのCopilot受入率の可視化",
-      "言語別のCopilot活用度合いの分析と教育施策の立案"
+      "活動や機能別の利用状況をレポートから分析する。",
+      "利用者別の活動傾向とシート割り当てを別々に確認する。"
     ],
     "examPoints": [
-      "組織・Enterprise全体の集計データを提供する",
-      "特定個人の詳細なコード内容を取得するAPIではない（プライバシー保護）",
-      "受入率（Acceptance rate）やアクティブシート数の把握に利用"
+      "購読・シート管理、活動レポート、監査イベントを区別する。",
+      "日次レポートAPIはダウンロードリンク等を返す。",
+      "組織集計か利用者別か、対象期間・権限・収集条件を確認する。"
     ],
     "commonConfusions": [
-      "APIで個人の書いたプロンプトを盗み見できるという誤解"
+      "活動データがない利用者をシート未割り当てと判断すること。",
+      "利用者別レポートがあることから、プロンプト全文も取得できると思うこと。"
     ],
     "relatedTermIds": [
       "g-seat-management",
@@ -2818,11 +2833,12 @@
       "q-d6-f05"
     ],
     "sourceIds": [
-      "rest-api",
-      "guide"
+      "admin-usage-metrics",
+      "copilot-metrics-data",
+      "copilot-seat-api"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d6-f05"
   },
@@ -2834,8 +2850,8 @@
       "PRレビューポリシー",
       "AIレビュー強制"
     ],
-    "shortDefinition": "組織管理者がPull RequestにおいてCopilotによる自動コードレビューを自動トリガーするかどうかを制御するポリシー。",
-    "detailedDefinition": "組織のSettings > Copilot > Policiesで設定可能。新規PR作成時に自動でCopilot Code Reviewを実行するか、あるいは作成者が手動で要求した場合のみにするかを組織一括で決定できる。",
+    "shortDefinition": "Copilot code reviewの利用許可を管理する設定。自動レビューの起動条件とは区別する。",
+    "detailedDefinition": "Organization ownerは組織ポリシーでCopilot code reviewの利用可否を管理します。特定のrepoやブランチで自動レビューを起動する条件は、ruleset等で別に設定します。個人の自動レビュー設定もあり、rulesetと独立して評価されます。利用許可を有効にしただけで、全PRの自動レビューが設定済みになるわけではありません。",
     "category": "プライバシーと管理",
     "importance": "important",
     "domainIds": [
@@ -2844,17 +2860,17 @@
     "objectiveIds": [
       "d2o4"
     ],
-    "whyItMatters": "自動コードレビューのトリガー条件（全PRか特定ラベルか）や適用範囲をOrganization/Enterprise単位で統制するガバナンス設定として問われる。",
+    "whyItMatters": "レビュー機能の利用許可、自動起動、対象repo・ブランチを分けて判断するために重要。",
     "useCases": [
-      "すべての新規Pull Requestに対する初動AIレビューの自動義務化",
-      "ドラフトPRに対するレビューの除外設定"
+      "組織でレビュー機能を利用できるようにする。",
+      "repoや組織のrulesetで自動レビューの対象を設定する。"
     ],
     "examPoints": [
-      "組織レベルでレビューのトリガー条件（自動/手動）を制御可能",
-      "レビュー担当者の負担軽減とセキュリティチェックの標準化に寄与"
+      "利用許可とrulesetによる自動起動は別の設定である。",
+      "個人設定で、rulesetが有効にしたpush・draftのレビューを無効化することはできない。"
     ],
     "commonConfusions": [
-      "人間のレビューを完全に代替・禁止できるという誤解"
+      "機能ポリシーを有効にすれば、すべてのPRが自動レビューされると思うこと。"
     ],
     "relatedTermIds": [
       "g-copilot-code-review",
@@ -2869,24 +2885,26 @@
       "q-d2-g21"
     ],
     "sourceIds": [
-      "code-review",
-      "policies"
+      "policies",
+      "feature-refresh-review-config",
+      "code-review"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d2-g21"
   },
   {
     "id": "g-policy-inheritance",
-    "term": "Policy Inheritance (Enterprise -> Org -> Repo)",
-    "fullName": "ポリシーの継承関係 (Enterprise → Organization → Repository)",
+    "term": "Copilot Policy Enforcement and Delegation",
+    "fullName": "Copilotポリシーの強制と委任",
     "aliases": [
       "ポリシー継承",
-      "階層的ガバナンス"
+      "階層的ガバナンス",
+      "Policy Inheritance (Enterprise -> Org -> Repo)"
     ],
-    "shortDefinition": "Enterpriseレベルで設定されたポリシーが組織（Organization）およびリポジトリ（Repository）に下り、上位の設定が下位を拘束する階層構造。",
-    "detailedDefinition": "上位のEnterpriseで「無効（Disabled）」または「強制（Enforced）」された設定は、下位のOrganizationやRepositoryで勝手に有効化または緩和することはできない。上位が「No policy (組織に委任)」としている場合のみ、下位で独自ルールを設定できる。",
+    "shortDefinition": "対象ポリシーを上位のEnterpriseで決定するか、Organizationへ判断を委任するかを分ける仕組み。",
+    "detailedDefinition": "Enterpriseで決定された機能ポリシーをOrganization側で上書きすることはできません。組織へ委任されていれば、その組織で判断します。ただし、すべての機能にrepoを含む同一の階層があるわけではありません。複数のライセンス提供元や設定の種類によっても適用規則が異なります。Content Exclusionの追加・解除やレビュー起動元の評価は、それぞれの公式規則に従います。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -2897,15 +2915,15 @@
       "d2o4",
       "d6o1"
     ],
-    "whyItMatters": "GitHubのガバナンスモデルの鉄則であり、トラブルシューティングや権限問題の最重要ロジック。",
+    "whyItMatters": "上位の制限、組織への委任、機能固有の設定規則を分けて、変更できない原因を判断するために重要。",
     "useCases": [
-      "「なぜOrgで設定が変更できないのか」の原因特定（Enterpriseでのロック）",
-      "Content Exclusionの組織からリポジトリへの継承"
+      "Orgで選択できない機能のEnterprise設定を確認する。",
+      "repoの除外追加と、継承された除外の解除を区別する。"
     ],
     "examPoints": [
-      "上位の制限を下位で解除することはできない",
-      "Enterpriseが最上位、次がOrganization、最下位がRepository",
-      "上位が『委任』した場合のみ下位で選択可能"
+      "上位で決定された対象ポリシーと、組織へ委任されたポリシーを区別する。",
+      "全設定がEnterprise→Org→Repoという同じ継承方式とは限らない。",
+      "ライセンスの提供元と使用機能を特定して実効設定を確認する。"
     ],
     "commonConfusions": [
       "リポジトリ管理者が企業のセキュリティポリシーを上書きできるという誤解"
@@ -2924,11 +2942,13 @@
       "q-d6-a06"
     ],
     "sourceIds": [
+      "admin-policy-model",
       "policies",
-      "guide"
+      "feature-refresh-policies",
+      "exclusion"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d6-a06"
   },
@@ -5368,8 +5388,8 @@
       "ファイル除外",
       "コンテキスト除外"
     ],
-    "shortDefinition": "特定のファイル、ディレクトリ、またはリポジトリ全体を、GitHub Copilotが参照・補完・処理する対象から除外するセキュリティ機能。",
-    "detailedDefinition": "Organization設定またはRepository設定でパスルール（ワイルドカード対応）を指定することで、対象ファイルを開いている際はInline Suggestionsが無効化され、Chatでの明示的参照もブロックされる。ただしCLIや一部のAgent Mode機能など、適用対象外となるツールが存在する点に注意が必要。",
+    "shortDefinition": "指定ファイルやパスを、対応するCopilot機能の入力文脈から除外するBusiness/Enterprise向け設定。",
+    "detailedDefinition": "Repository admin、Organization owner、Enterprise ownerが各範囲で設定します。通常補完や対応するChatからの直接参照と、非対応のEdit・AgentモードやIDEが間接的に渡す型情報を分けます。CLIは公式ページ間に説明差があるため、利用環境と参照経路を確認します。組織の設定はその組織から資格を得る利用者、企業の設定は企業のCopilot利用者が対象です。全機能・全経路の遮断を保証する設定ではありません。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5386,10 +5406,10 @@
       "サードパーティライセンス契約でAI処理が禁じられているリポジトリの除外"
     ],
     "examPoints": [
-      "ファイルパスのパターン（例: `secrets/*`）で指定可能",
-      "除外ファイルではインライン提案が無効になりアイコンが変化する",
-      "CLI、Cloud Agent、IDE ChatのAgent Modeでは除外がサポートされていない場合がある（重要）",
-      "設定変更のクライアント反映には最大30分の伝播遅延がある"
+      "設定権限、利用資格の提供元、対象repo、使用機能を確認する。",
+      "対応する通常補完では、除外対象ファイルで補完が無効になる。",
+      "CLIやAgentへの適用を通常補完と同じと推測しない。",
+      "IDEへ読み込まれた設定の変更反映には最大30分かかる場合がある。"
     ],
     "commonConfusions": [
       "Public Code Matchingとの混同",
@@ -5419,11 +5439,11 @@
     ],
     "sourceIds": [
       "exclusion",
-      "policies",
-      "guide"
+      "exclusion-concept",
+      "cli-exclusion-admin"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "needs-review",
     "basicQuestionId": "q-d6-f02"
   },
@@ -5436,7 +5456,7 @@
       "Repo Exclusion"
     ],
     "shortDefinition": "個別のリポジトリ設定画面（Settings > Copilot > Content exclusion）において、そのリポジトリ内の特定ファイルパスを除外する設定。",
-    "detailedDefinition": "リポジトリ管理者が構成可能。Organizationレベルで除外がロックされていない場合、プロジェクト固有の機密パス（例: `src/proprietary/*`）を柔軟に除外リストに追加できる。",
+    "detailedDefinition": "Repository adminはrepo内の除外パスを追加・変更できます。Maintainロールは閲覧のみです。repo単位の設定は、その企業内のCopilot利用者が対象repoで作業する範囲へ適用されます。継承された組織等の除外をrepo側で解除することはできませんが、repo固有の除外を追加することはできます。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5450,8 +5470,9 @@
       "特定リポジトリの `credentials.json` や `certs/*` の除外設定"
     ],
     "examPoints": [
-      "リポジトリレベルの除外設定にはリポジトリ管理者（Admin）権限が必要",
-      "Organizationレベルで設定された除外ルールをリポジトリ側で上書き解除することはできない"
+      "Repository adminは設定を変更でき、Maintainは閲覧のみである。",
+      "継承された除外の解除と、repo固有の除外の追加を区別する。",
+      "対応する機能と対象利用者の範囲を確認する。"
     ],
     "commonConfusions": [
       "リポジトリ設定でOrganizationの除外ルールを上書き無効化できるという誤解"
@@ -5472,10 +5493,10 @@
     ],
     "sourceIds": [
       "exclusion",
-      "policies"
+      "exclusion-concept"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-sc01-1"
   },
@@ -5487,8 +5508,8 @@
       "組織除外設定",
       "Org Exclusion"
     ],
-    "shortDefinition": "Organization設定において、傘下のすべてのリポジトリ、または特定のリポジトリ群に一括適用される最上位の除外ルール。",
-    "detailedDefinition": "組織管理者が構成する。`https://github.com/my-org/my-repo:path/to/file` の形式や、全リポジトリ共通のパターン（例: `**/.env*`）を指定して、組織全体で統一したコンテンツ保護を強制できる。",
+    "shortDefinition": "Organization ownerが、その組織からCopilotシートを得る利用者へ設定するファイル・repoの除外ルール。",
+    "detailedDefinition": "組織のContent exclusionで、repoの参照をキーにしたパス配列や、\"*\": [\"**/.env*\"]のような指定を使います。適用先はその組織の管理対象Seatの利用者であり、他組織が資格を提供する人にも一律に効くとは判断しません。Enterprise ownerが企業側で設定した除外は、その企業のCopilot利用者全体が対象です。repo側で継承ルールを解除することと、独自の除外を追加することは別です。",
     "category": "プライバシーと管理",
     "importance": "essential",
     "domainIds": [
@@ -5499,12 +5520,13 @@
     ],
     "whyItMatters": "企業セキュリティガバナンスにおける全社統一ルールの設定方法として問われる。",
     "useCases": [
-      "全リポジトリにおける本番環境設定ファイル（`config/production.*`）の一括除外",
-      "特定の極秘プロジェクトリポジトリの全ファイル除外"
+      "組織の管理対象Seatの利用者について、Git管理内外の.envを通常補完から除外する。",
+      "指定repoの機密パスを、組織の管理対象利用者の入力文脈から除外する。"
     ],
     "examPoints": [
-      "リポジトリURLを含めた構文で組織内の対象を特定可能",
-      "個別リポジトリの管理者が組織除外設定を解除することは不可能"
+      "組織設定の適用先は、その組織からシートを得る利用者である。",
+      "repoの参照とパス配列を分けて指定する。",
+      "企業全体と組織の管理対象Seat、repoの範囲を区別する。"
     ],
     "commonConfusions": [
       "各リポジトリで個別に同じ設定を手動入力しなければならないという誤解（Orgで一元管理可能）"
@@ -5525,10 +5547,10 @@
     ],
     "sourceIds": [
       "exclusion",
-      "policies"
+      "exclusion-concept"
     ],
     "syllabusVersion": "2026-08-07",
-    "lastVerifiedAt": "2026-09-06",
+    "lastVerifiedAt": "2026-10-18",
     "status": "verified",
     "basicQuestionId": "q-d6-g01"
   },

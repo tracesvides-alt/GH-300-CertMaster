@@ -1,0 +1,523 @@
+{
+  "revision": "admin-content-correction-2026-10-18",
+  "questions": [
+    {
+      "id": "q-d2-g21",
+      "revision": "admin-content-correction-2026-10-18",
+      "beforeContract": "{\"id\":\"q-d2-g21\",\"question\":\"組織の管理者が、Pull RequestにおけるCopilotによる自動コードレビューの動作（自動トリガーの有無や利用可否）を制御する管理ポリシーとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"PR Summary Policies\"},{\"id\":\"B\",\"text\":\"Content Exclusion Policies\"},{\"id\":\"C\",\"text\":\"Code Review Policies\"},{\"id\":\"D\",\"text\":\"Public Code Matching Policies\"}],\"answer\":[\"C\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"レビューの利用可否・自動動作を管理する。\",\"choiceExplanations\":{\"C\":\"レビューの利用可否・自動動作を管理する。\",\"A\":\"変更要約の機能管理でありレビュー指摘とは別。\",\"B\":\"入力側の参照対象を管理する。\",\"D\":\"生成物と公開コードの一致を管理する。\"},\"sourceIds\":[\"code-review\",\"policies\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g21\",\"question\":\"組織からCopilotの利用資格を得ているメンバーについて、PRの差分をAIが調べて改善点を指摘する機能の利用可否を設定します。自動レビューの起動条件は別に設定するとき、対象となる管理ポリシーはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"PR Summary Policies\"},{\"id\":\"B\",\"text\":\"Content Exclusion Policies\"},{\"id\":\"C\",\"text\":\"Code Review Policies\"},{\"id\":\"D\",\"text\":\"Public Code Matching Policies\"}],\"answer\":[\"C\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。\",\"choiceExplanations\":{\"C\":\"レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。\",\"A\":\"変更要約の機能管理でありレビュー指摘とは別。\",\"B\":\"入力側の参照対象を管理する。\",\"D\":\"生成物と公開コードの一致を管理する。\"},\"sourceIds\":[\"code-review\",\"policies\",\"feature-refresh-review-config\"],\"contentRevision\":\"admin-content-correction-2026-10-18\"}",
+      "beforeFingerprint": "fe93cb7f0e17b2290208c6374cc5917c1b52bf0b52ce3f6e30fdf7b7b0b4ea36",
+      "afterFingerprint": "655028e5e82ad4c748d91b0ede3553a9ac95fffd395efaa5e3b81861ed6f8b2d",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d2-g21",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "組織からCopilotの利用資格を得ているメンバーについて、PRの差分をAIが調べて改善点を指摘する機能の利用可否を設定します。自動レビューの起動条件は別に設定するとき、対象となる管理ポリシーはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "PR Summary Policies"
+          },
+          {
+            "id": "B",
+            "text": "Content Exclusion Policies"
+          },
+          {
+            "id": "C",
+            "text": "Code Review Policies"
+          },
+          {
+            "id": "D",
+            "text": "Public Code Matching Policies"
+          }
+        ],
+        "answer": [
+          "C"
+        ],
+        "explanation": "レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。",
+        "choiceExplanations": {
+          "C": "レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。",
+          "A": "変更要約の機能管理でありレビュー指摘とは別。",
+          "B": "入力側の参照対象を管理する。",
+          "D": "生成物と公開コードの一致を管理する。"
+        },
+        "sourceIds": [
+          "code-review",
+          "policies",
+          "feature-refresh-review-config"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。",
+          "変更要約の機能管理でありレビュー指摘とは別。",
+          "入力側の参照対象を管理する。",
+          "生成物と公開コードの一致を管理する。"
+        ],
+        "choiceQuality": {
+          "C": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "code-review",
+              "policies",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "code-review",
+              "policies",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "変更要約の機能管理でありレビュー指摘とは別。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "code-review",
+              "policies",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "入力側の参照対象を管理する。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "code-review",
+              "policies",
+              "feature-refresh-review-config"
+            ],
+            "rationale": "生成物と公開コードの一致を管理する。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "組織からCopilotの利用資格を得ているメンバーについて、PRの差分をAIが調べて改善点を指摘する機能の利用可否を設定します。自動レビューの起動条件は別に設定するとき、対象となる管理ポリシーはどれですか？",
+            "correctReason": "レビュー機能の利用許可を管理する。自動起動の条件はruleset等で別に設定する。",
+            "distractorFailures": {
+              "A": "変更要約の機能管理でありレビュー指摘とは別。",
+              "B": "入力側の参照対象を管理する。",
+              "D": "生成物と公開コードの一致を管理する。"
+            }
+          }
+        ],
+        "contentRevision": "admin-content-correction-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "今回は、PRの差分を分析して改善点を指摘するレビュー機能を、組織の利用者に許可するかを尋ねています。そのため、対象はCode Review Policiesです。変更要約、入力ファイルの除外、公開コード一致の制御とは目的が異なります。\n\n機能を利用できることと、自動でレビューを依頼することは別です。自動起動には対象repoやブランチのruleset、個人設定などを確認します。利用許可だけを有効にしても、全PRの自動レビューを設定したことにはなりません。",
+      "review": {
+        "reason": "教材訂正に伴う適用条件の明確化。正解・四択・分類は維持。",
+        "blindCheck": "四択は既存の管理対象を並列に記載したまま。本文の対象機能・利用資格・設定主体から判断する。",
+        "difficulty": "基本的な管理対象の識別を問う基礎を維持。API構文や複数ロールの複合判断は追加しない。"
+      },
+      "evidenceIds": [
+        "policies",
+        "feature-refresh-review-config"
+      ]
+    },
+    {
+      "id": "q-d6-g01",
+      "revision": "admin-content-correction-2026-10-18",
+      "beforeContract": "{\"id\":\"q-d6-g01\",\"question\":\"個々のリポジトリ管理者に設定を委ねず、OrganizationまたはEnterpriseの管理者が一括して定義し、傘下のリポジトリ管理者が解除・上書きできないよう強制適用するコンテンツ除外の設定レベルとして、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Repository Content Exclusion\"},{\"id\":\"B\",\"text\":\"Organization Content Exclusion\"},{\"id\":\"C\",\"text\":\"Personal Copilot Settings\"},{\"id\":\"D\",\"text\":\"Repository Instructions\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d6\",\"objectiveId\":\"d6o1\",\"explanation\":\"複数リポジトリへの組織単位の除外設定。\",\"choiceExplanations\":{\"B\":\"複数リポジトリへの組織単位の除外設定。\",\"A\":\"対象を一つのリポジトリに限定する。\",\"C\":\"個人の利用設定であり組織の除外設定ではない。\",\"D\":\"生成指示であり除外ポリシーを強制しない。\"},\"sourceIds\":[\"exclusion\",\"policies\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d6-g01\",\"question\":\"あるOrganizationからCopilotシートを得る利用者について、複数の作業リポジトリ内の機密ファイルを通常のコード補完の入力から除外します。その組織のownerが一元設定し、リポジトリ側ではそのルールを解除できないようにする場合、使う設定レベルはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Repository Content Exclusion\"},{\"id\":\"B\",\"text\":\"Organization Content Exclusion\"},{\"id\":\"C\",\"text\":\"Personal Copilot Settings\"},{\"id\":\"D\",\"text\":\"Repository Instructions\"}],\"answer\":[\"B\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d6\",\"objectiveId\":\"d6o1\",\"explanation\":\"その組織からシートを得る利用者へ、組織レベルの除外を設定する。\",\"choiceExplanations\":{\"B\":\"その組織からシートを得る利用者へ、組織レベルの除外を設定する。\",\"A\":\"対象を一つのリポジトリに限定する。\",\"C\":\"個人の利用設定であり組織の除外設定ではない。\",\"D\":\"生成指示であり除外ポリシーを強制しない。\"},\"sourceIds\":[\"exclusion\",\"policies\",\"exclusion-concept\"],\"contentRevision\":\"admin-content-correction-2026-10-18\"}",
+      "beforeFingerprint": "2f9950a873c01cb970b7520ef1bc715f4cb00640b959f885f7699c0f53d2d557",
+      "afterFingerprint": "cb1f5239fa62e7c3b635cf3ecd8390e1e206f92ea0a7ecc69c843322e852dac7",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d6-g01",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d6",
+        "objectiveId": "d6o1",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "あるOrganizationからCopilotシートを得る利用者について、複数の作業リポジトリ内の機密ファイルを通常のコード補完の入力から除外します。その組織のownerが一元設定し、リポジトリ側ではそのルールを解除できないようにする場合、使う設定レベルはどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Repository Content Exclusion"
+          },
+          {
+            "id": "B",
+            "text": "Organization Content Exclusion"
+          },
+          {
+            "id": "C",
+            "text": "Personal Copilot Settings"
+          },
+          {
+            "id": "D",
+            "text": "Repository Instructions"
+          }
+        ],
+        "answer": [
+          "B"
+        ],
+        "explanation": "その組織からシートを得る利用者へ、組織レベルの除外を設定する。",
+        "choiceExplanations": {
+          "B": "その組織からシートを得る利用者へ、組織レベルの除外を設定する。",
+          "A": "対象を一つのリポジトリに限定する。",
+          "C": "個人の利用設定であり組織の除外設定ではない。",
+          "D": "生成指示であり除外ポリシーを強制しない。"
+        },
+        "sourceIds": [
+          "exclusion",
+          "policies",
+          "exclusion-concept"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "その組織からシートを得る利用者へ、組織レベルの除外を設定する。",
+          "対象を一つのリポジトリに限定する。",
+          "個人の利用設定であり組織の除外設定ではない。",
+          "生成指示であり除外ポリシーを強制しない。"
+        ],
+        "choiceQuality": {
+          "B": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "exclusion",
+              "policies",
+              "exclusion-concept"
+            ],
+            "rationale": "その組織からシートを得る利用者へ、組織レベルの除外を設定する。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "exclusion",
+              "policies",
+              "exclusion-concept"
+            ],
+            "rationale": "対象を一つのリポジトリに限定する。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "exclusion",
+              "policies",
+              "exclusion-concept"
+            ],
+            "rationale": "個人の利用設定であり組織の除外設定ではない。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "exclusion",
+              "policies",
+              "exclusion-concept"
+            ],
+            "rationale": "生成指示であり除外ポリシーを強制しない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "あるOrganizationからCopilotシートを得る利用者について、複数の作業リポジトリ内の機密ファイルを通常のコード補完の入力から除外します。その組織のownerが一元設定し、リポジトリ側ではそのルールを解除できないようにする場合、使う設定レベルはどれですか？",
+            "correctReason": "その組織からシートを得る利用者へ、組織レベルの除外を設定する。",
+            "distractorFailures": {
+              "A": "対象を一つのリポジトリに限定する。",
+              "C": "個人の利用設定であり組織の除外設定ではない。",
+              "D": "生成指示であり除外ポリシーを強制しない。"
+            }
+          }
+        ],
+        "contentRevision": "admin-content-correction-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "この設問では、対象利用者のシート提供元と、設定する人のOrganizationをそろえています。複数の作業repoで対象パスを除外するため、Organization Content Exclusionを使います。repoごとに設定する方法や、生成指示を書く方法とは異なります。\n\n組織の設定があるからといって、その組織が所有するrepoの全利用者に一律で同じ条件が適用されるとは判断しません。また、repo側で組織の除外を解除できないことと、repo固有の除外を追加できることは別です。通常補完以外へも同じように効くとは推測せず、使用機能を確認します。",
+      "review": {
+        "reason": "教材訂正に伴う適用条件の明確化。正解・四択・分類は維持。",
+        "blindCheck": "四択は既存の管理対象を並列に記載したまま。本文の対象機能・利用資格・設定主体から判断する。",
+        "difficulty": "基本的な管理対象の識別を問う基礎を維持。API構文や複数ロールの複合判断は追加しない。"
+      },
+      "evidenceIds": [
+        "exclusion",
+        "exclusion-concept"
+      ]
+    },
+    {
+      "id": "q-d6-a05",
+      "revision": "admin-content-correction-2026-10-18",
+      "beforeContract": "{\"id\":\"q-d6-a05\",\"question\":\"組織内の特定の開発者1名のみCopilotの利用資格を回収し、他のメンバーの利用は継続させたいと考えています。管理者がGitHub組織の管理画面で直接変更すべき操作対象として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"GitHub Organizationの管理設定で、該当開発者のCopilotシート割り当て（Seat Assignment）を解除する\"},{\"id\":\"B\",\"text\":\"Organization全体のCopilot機能ポリシー（Feature Policy）を全体無効化（Disabled）に変更する\"},{\"id\":\"C\",\"text\":\"該当開発者がコミットしているすべての対象リポジトリにコンテンツ除外（Content Exclusion）を設定する\"},{\"id\":\"D\",\"text\":\"リポジトリにおける該当開発者のコラボレーター権限（Role）を「書き込み」から「読み取り」へ変更する\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"特定個人の利用資格のみを解除するには、組織のCopilot管理画面で該当ユーザーの「シート割り当て（Seat）」を解除するのが直接の管理操作です。\",\"choiceExplanations\":{\"A\":\"特定個人の利用資格のみを解除するには、組織のCopilot管理画面で該当ユーザーの「シート割り当て（Seat）」を解除するのが直接の管理操作です。\",\"B\":\"組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。\",\"C\":\"コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。\",\"D\":\"Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。\"},\"sourceIds\":[\"rest-api\",\"policies\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d6-a05\",\"question\":\"Organization ownerが、ユーザー単位で直接Copilotシートを割り当てた開発者1名について、その割り当てを解除します。チーム経由の割り当てはなく、他のメンバーの利用は継続させます。組織の管理画面で直接変更すべき操作対象はどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"GitHub Organizationの管理設定で、該当開発者のCopilotシート割り当て（Seat Assignment）を解除する\"},{\"id\":\"B\",\"text\":\"Organization全体のCopilot機能ポリシー（Feature Policy）を全体無効化（Disabled）に変更する\"},{\"id\":\"C\",\"text\":\"該当開発者がコミットしているすべての対象リポジトリにコンテンツ除外（Content Exclusion）を設定する\"},{\"id\":\"D\",\"text\":\"リポジトリにおける該当開発者のコラボレーター権限（Role）を「書き込み」から「読み取り」へ変更する\"}],\"answer\":[\"A\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。\",\"choiceExplanations\":{\"A\":\"対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。\",\"B\":\"組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。\",\"C\":\"コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。\",\"D\":\"Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。\"},\"sourceIds\":[\"rest-api\",\"policies\",\"copilot-seat-api\",\"admin-seat-assignment\"],\"contentRevision\":\"admin-content-correction-2026-10-18\"}",
+      "beforeFingerprint": "67005c92a9d0e945d55b3cdf4746131c33f71f4fdd7edf0bcc92a0ce73e620af",
+      "afterFingerprint": "136d4d662f5e453b2d5a41ce7ba9313663ea7da46360809cc7b710a96b148267",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d6-a05",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Organization ownerが、ユーザー単位で直接Copilotシートを割り当てた開発者1名について、その割り当てを解除します。チーム経由の割り当てはなく、他のメンバーの利用は継続させます。組織の管理画面で直接変更すべき操作対象はどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "GitHub Organizationの管理設定で、該当開発者のCopilotシート割り当て（Seat Assignment）を解除する"
+          },
+          {
+            "id": "B",
+            "text": "Organization全体のCopilot機能ポリシー（Feature Policy）を全体無効化（Disabled）に変更する"
+          },
+          {
+            "id": "C",
+            "text": "該当開発者がコミットしているすべての対象リポジトリにコンテンツ除外（Content Exclusion）を設定する"
+          },
+          {
+            "id": "D",
+            "text": "リポジトリにおける該当開発者のコラボレーター権限（Role）を「書き込み」から「読み取り」へ変更する"
+          }
+        ],
+        "answer": [
+          "A"
+        ],
+        "explanation": "対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。",
+        "choiceExplanations": {
+          "A": "対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。",
+          "B": "組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。",
+          "C": "コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。",
+          "D": "Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。"
+        },
+        "sourceIds": [
+          "rest-api",
+          "policies",
+          "copilot-seat-api",
+          "admin-seat-assignment"
+        ],
+        "createdAt": "2026-09-07",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。",
+          "組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。",
+          "コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。",
+          "Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。"
+        ],
+        "distractorQuality": "scenario-contrast",
+        "choiceQuality": {
+          "A": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "rest-api",
+              "policies",
+              "copilot-seat-api",
+              "admin-seat-assignment"
+            ],
+            "rationale": "対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "rest-api",
+              "policies",
+              "copilot-seat-api",
+              "admin-seat-assignment"
+            ],
+            "rationale": "組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "rest-api",
+              "policies",
+              "copilot-seat-api",
+              "admin-seat-assignment"
+            ],
+            "rationale": "コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。"
+          },
+          "D": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "rest-api",
+              "policies",
+              "copilot-seat-api",
+              "admin-seat-assignment"
+            ],
+            "rationale": "Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Organization ownerが、ユーザー単位で直接Copilotシートを割り当てた開発者1名について、その割り当てを解除します。チーム経由の割り当てはなく、他のメンバーの利用は継続させます。組織の管理画面で直接変更すべき操作対象はどれですか？",
+            "correctReason": "対象者への直接のシート割り当てを解除する。組織全体の機能やrepoの権限は変えない。",
+            "distractorFailures": {
+              "B": "組織全体のポリシーを無効化すると、全メンバーのCopilot利用まで停止してしまいます。",
+              "C": "コンテンツ除外は特定ファイルの参照を止める設定であり、個人のCopilot利用権限自体の回収にはなりません。",
+              "D": "Git権限を変更してもCopilotのライセンスシート自体は割り当てられたまま残ってしまいます。"
+            }
+          }
+        ],
+        "contentRevision": "admin-content-correction-2026-10-18",
+        "clues": [],
+        "testedConcepts": [
+          "d2o4",
+          "scenario-requirement-matching"
+        ]
+      },
+      "displayedExplanation": "変更する対象は、その利用者へのCopilotシート割り当てです。ユーザー単位で直接付与され、チーム経由の資格もないと条件を明示しているため、その割り当てを解除します。組織全体の機能ポリシーを無効にすると、他のメンバーにも影響します。\n\nContent Exclusionは入力ファイルの除外、repoのロール変更はGitHub上のアクセス管理であり、Copilotのシート解除とは別です。解除の操作と利用資格を失う時点も分け、実際の反映や請求条件を確認します。この組織の割り当てを解除することから、他の資格による利用まで停止すると一般化しません。",
+      "review": {
+        "reason": "教材訂正に伴う適用条件の明確化。正解・四択・分類は維持。",
+        "blindCheck": "四択は既存の管理対象を並列に記載したまま。本文の対象機能・利用資格・設定主体から判断する。",
+        "difficulty": "基本的な管理対象の識別を問う基礎を維持。API構文や複数ロールの複合判断は追加しない。"
+      },
+      "evidenceIds": [
+        "copilot-seat-api",
+        "admin-seat-assignment"
+      ]
+    },
+    {
+      "id": "q-d2-g18",
+      "revision": "admin-content-correction-2026-10-18",
+      "beforeContract": "{\"id\":\"q-d2-g18\",\"question\":\"GitHub Organizationの管理者が、所属メンバーに対して「公開コード一致提案のブロック」や「特定機能の有効化」を一括適用する管理設定として、最も適切なものはどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Enterprise Policies\"},{\"id\":\"B\",\"text\":\"Repository Instructions\"},{\"id\":\"C\",\"text\":\"Personal Settings\"},{\"id\":\"D\",\"text\":\"Organization Policies\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"組織内のメンバーへの機能管理という範囲。\",\"choiceExplanations\":{\"D\":\"組織内のメンバーへの機能管理という範囲。\",\"A\":\"Enterprise層の統制であり組織管理者の範囲ではない。\",\"B\":\"依頼内容を補助する指示であり管理ポリシーの強制ではない。\",\"C\":\"個人の利用設定であり組織階層全体の強制ではない。\"},\"sourceIds\":[\"policies\",\"guide\"],\"contentRevision\":\"foundation-review-2026-10-12\"}",
+      "afterContract": "{\"id\":\"q-d2-g18\",\"question\":\"Organization ownerが、その組織からCopilotの利用資格を得るメンバーに対して、公開コード一致提案の扱いや機能の利用可否を設定します。対象機能の判断はEnterpriseから組織へ委任されています。この範囲の管理設定はどれですか？\",\"choices\":[{\"id\":\"A\",\"text\":\"Enterprise Policies\"},{\"id\":\"B\",\"text\":\"Repository Instructions\"},{\"id\":\"C\",\"text\":\"Personal Settings\"},{\"id\":\"D\",\"text\":\"Organization Policies\"}],\"answer\":[\"D\"],\"difficulty\":\"beginner\",\"type\":\"single-select\",\"status\":\"verified\",\"domainId\":\"d2\",\"objectiveId\":\"d2o4\",\"explanation\":\"組織へ委任された対象機能を、組織の管理対象利用者について設定する。\",\"choiceExplanations\":{\"D\":\"組織へ委任された対象機能を、組織の管理対象利用者について設定する。\",\"A\":\"Enterprise層の統制であり組織管理者の範囲ではない。\",\"B\":\"依頼内容を補助する指示であり管理ポリシーの強制ではない。\",\"C\":\"個人の利用設定であり組織階層全体の強制ではない。\"},\"sourceIds\":[\"policies\",\"guide\",\"admin-policy-model\"],\"contentRevision\":\"admin-content-correction-2026-10-18\"}",
+      "beforeFingerprint": "c61ace853e8c41f6789c55262172917917521d9104151d997deefb1198b7de9d",
+      "afterFingerprint": "974d7ee7c2f037775a04d9a6ef2fc9ece5495eecc63ccc7f10d4e5a2c01466d6",
+      "invalidatePreviousSnapshots": false,
+      "after": {
+        "id": "q-d2-g18",
+        "syllabusVersion": "2026-08-07",
+        "domainId": "d2",
+        "objectiveId": "d2o4",
+        "difficulty": "beginner",
+        "type": "single-select",
+        "status": "verified",
+        "cognitiveLevel": "understand",
+        "examLike": false,
+        "question": "Organization ownerが、その組織からCopilotの利用資格を得るメンバーに対して、公開コード一致提案の扱いや機能の利用可否を設定します。対象機能の判断はEnterpriseから組織へ委任されています。この範囲の管理設定はどれですか？",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Enterprise Policies"
+          },
+          {
+            "id": "B",
+            "text": "Repository Instructions"
+          },
+          {
+            "id": "C",
+            "text": "Personal Settings"
+          },
+          {
+            "id": "D",
+            "text": "Organization Policies"
+          }
+        ],
+        "answer": [
+          "D"
+        ],
+        "explanation": "組織へ委任された対象機能を、組織の管理対象利用者について設定する。",
+        "choiceExplanations": {
+          "D": "組織へ委任された対象機能を、組織の管理対象利用者について設定する。",
+          "A": "Enterprise層の統制であり組織管理者の範囲ではない。",
+          "B": "依頼内容を補助する指示であり管理ポリシーの強制ではない。",
+          "C": "個人の利用設定であり組織階層全体の強制ではない。"
+        },
+        "sourceIds": [
+          "policies",
+          "guide",
+          "admin-policy-model"
+        ],
+        "createdAt": "2026-10-12",
+        "lastVerifiedAt": "2026-10-18",
+        "trustedSourceFacts": [
+          "組織へ委任された対象機能を、組織の管理対象利用者について設定する。",
+          "Enterprise層の統制であり組織管理者の範囲ではない。",
+          "依頼内容を補助する指示であり管理ポリシーの強制ではない。",
+          "個人の利用設定であり組織階層全体の強制ではない。"
+        ],
+        "choiceQuality": {
+          "D": {
+            "plausibility": 3,
+            "distractorType": "correct",
+            "sourceIds": [
+              "policies",
+              "guide",
+              "admin-policy-model"
+            ],
+            "rationale": "組織へ委任された対象機能を、組織の管理対象利用者について設定する。"
+          },
+          "A": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "policies",
+              "guide",
+              "admin-policy-model"
+            ],
+            "rationale": "Enterprise層の統制であり組織管理者の範囲ではない。"
+          },
+          "B": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "policies",
+              "guide",
+              "admin-policy-model"
+            ],
+            "rationale": "依頼内容を補助する指示であり管理ポリシーの強制ではない。"
+          },
+          "C": {
+            "plausibility": 3,
+            "distractorType": "common-confusion",
+            "sourceIds": [
+              "policies",
+              "guide",
+              "admin-policy-model"
+            ],
+            "rationale": "個人の利用設定であり組織階層全体の強制ではない。"
+          }
+        },
+        "requirementMapping": [
+          {
+            "requirement": "Organization ownerが、その組織からCopilotの利用資格を得るメンバーに対して、公開コード一致提案の扱いや機能の利用可否を設定します。対象機能の判断はEnterpriseから組織へ委任されています。この範囲の管理設定はどれですか？",
+            "correctReason": "組織へ委任された対象機能を、組織の管理対象利用者について設定する。",
+            "distractorFailures": {
+              "A": "Enterprise層の統制であり組織管理者の範囲ではない。",
+              "B": "依頼内容を補助する指示であり管理ポリシーの強制ではない。",
+              "C": "個人の利用設定であり組織階層全体の強制ではない。"
+            }
+          }
+        ],
+        "contentRevision": "admin-content-correction-2026-10-18",
+        "clues": []
+      },
+      "displayedExplanation": "対象は、同じ組織からCopilotの資格を得る利用者で、対象機能の判断も企業側から組織へ委任されています。Organization ownerがこの範囲を管理するので、Organization Policiesが適切です。repo内の指示ファイルや個人設定では、この組織の機能許可を管理できません。\n\nもしEnterprise側が対象ポリシーを決定済みなら、組織側で上書きすることはできません。今回のように委任されている条件と区別します。また、組織のポリシーを、その組織が所有するrepoの全利用者へ無条件に適用するものとは考えません。",
+      "review": {
+        "reason": "教材訂正に伴う適用条件の明確化。正解・四択・分類は維持。",
+        "blindCheck": "四択は既存の管理対象を並列に記載したまま。本文の対象機能・利用資格・設定主体から判断する。",
+        "difficulty": "基本的な管理対象の識別を問う基礎を維持。API構文や複数ロールの複合判断は追加しない。"
+      },
+      "evidenceIds": [
+        "policies",
+        "admin-policy-model"
+      ]
+    }
+  ]
+}
