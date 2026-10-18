@@ -9,6 +9,13 @@ Run both `npm audit --omit=dev` and `npm audit`, followed by `npm run check`,
 CI records a dependency audit and fails on high/critical findings or audit errors.
 Dependabot proposes weekly npm and GitHub Actions updates without auto-merging.
 
+All workflows pin external actions to full commit SHAs verified against their
+official repositories. Version comments let Dependabot track future updates.
+Checkout disables persisted Git credentials before repository scripts run, and
+workflow tokens retain read-only contents access. CI uses `.node-version` for the
+tested runtime and bounds job execution time. Artifact uploads list only the
+intended reports; do not expand them to whole working or environment directories.
+
 Production responses deny framing, disable MIME sniffing, set a referrer policy,
 and restrict camera, microphone and location access. CSP limits resource loading,
 connections and workers to this origin. Static Next.js bootstrap scripts and
