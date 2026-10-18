@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+// Validate bundled content without generating code, including under CSP.
+z.config({ jitless: true });
+
 // ────────────────────────────────────────────
 // Shared primitives
 // ────────────────────────────────────────────

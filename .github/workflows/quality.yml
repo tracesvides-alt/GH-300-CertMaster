@@ -1,5 +1,7 @@
 name: Question quality
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   quality:
     runs-on: ubuntu-latest
@@ -10,9 +12,25 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Audit production and development dependencies
+        run: |
+          mkdir -p artifacts
+          npm audit --audit-level=high --json > artifacts/dependency-audit.json
+      - name: Preserve dependency audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-audit
+          path: artifacts/dependency-audit.json
+          if-no-files-found: warn
+          retention-days: 30
       - run: npm run quality:check
       - run: npm run difficulty:check
       - run: npm run applied:check
       - run: npm run exam:check
       - run: npm run check
       - run: npm test
+      - name: Install browser for security regression tests
+        run: npx playwright install --with-deps chromium
+      - name: Verify browser protections and service worker downloads
+        run: npx playwright test security.spec.ts service-worker.spec.ts --workers=2
