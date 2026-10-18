@@ -25,6 +25,9 @@ cache generation when releasing security-sensitive client changes. A waiting
 worker does not force a page reload: finish the current answer, then close all
 application tabs and reopen online to activate the update. Test old-to-new updates,
 failed bundle downloads, offline operation and rollback before release.
+Downloads are fully drained before the cache is changed, so large uncached bodies
+cannot occupy every HTTP connection while other downloads wait for headers.
+CI runs browser security and cold-install download regressions on desktop/mobile.
 
 Learning history stays in IndexedDB in each browser profile. It is shared by people
 using the same profile and origin. Updates must preserve it; clearing site data

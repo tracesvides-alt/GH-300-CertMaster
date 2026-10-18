@@ -15,6 +15,10 @@ async function cacheShell(response) {
     urls.map(async (url) => {
       const asset = await fetch(url);
       if (!asset.ok) throw new Error('App bundle unavailable');
+      // Drain each download immediately: unread large bodies can occupy every
+      // HTTP connection while Promise.all waits for the remaining headers.
+      // Keep the original response so its URL, type and headers stay intact.
+      await asset.clone().arrayBuffer();
       return [url, asset];
     }),
   );

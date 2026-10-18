@@ -30,3 +30,7 @@ jobs:
       - run: npm run exam:check
       - run: npm run check
       - run: npm test
+      - name: Install browser for security regression tests
+        run: npx playwright install --with-deps chromium
+      - name: Verify browser protections and service worker downloads
+        run: npx playwright test security.spec.ts service-worker.spec.ts --workers=2
