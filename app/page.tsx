@@ -346,7 +346,7 @@ export default function App() {
     }
     if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production')
       navigator.serviceWorker
-        .register('/sw.js')
+        .register('/sw.js', { updateViaCache: 'none' })
         .catch(() =>
           setNotice('オフライン準備に失敗しました。オンラインで再読み込みしてください。'),
         );

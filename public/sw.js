@@ -1,5 +1,5 @@
 // Cache the HTML and its required bundles together: never save a broken app shell.
-const CACHE = 'certmaster-2026-08-07-v3';
+const CACHE = 'certmaster-2026-10-18-security-v4';
 async function cacheShell(response) {
   if (!response.ok) throw new Error('App shell unavailable');
   const html = await response.clone().text();
